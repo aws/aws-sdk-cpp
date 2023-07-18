@@ -91,8 +91,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
@@ -109,8 +116,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
@@ -127,8 +141,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
@@ -145,8 +166,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
@@ -163,8 +191,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline DisableMetricsCollectionRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
@@ -181,8 +216,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline DisableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
 
@@ -199,8 +241,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -217,8 +266,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
@@ -235,8 +291,15 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
-     * all metrics are disabled. </p>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
+     * parameter, all metrics are disabled. </p>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 

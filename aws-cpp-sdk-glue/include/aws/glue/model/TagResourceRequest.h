@@ -36,66 +36,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.</p>
+     * <p>The ARN of the Glue resource to which to add the tags. For more information
+     * about Glue resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.</p>
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

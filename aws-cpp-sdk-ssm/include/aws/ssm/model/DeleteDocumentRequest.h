@@ -178,8 +178,7 @@ namespace Model
      * before you can delete the document. For example, you must specify a
      * <code>Force</code> flag to delete a document of type
      * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
-     * policy.</p>
+     * <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
@@ -188,8 +187,7 @@ namespace Model
      * before you can delete the document. For example, you must specify a
      * <code>Force</code> flag to delete a document of type
      * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
-     * policy.</p>
+     * <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
@@ -198,8 +196,7 @@ namespace Model
      * before you can delete the document. For example, you must specify a
      * <code>Force</code> flag to delete a document of type
      * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
-     * policy.</p>
+     * <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
@@ -208,8 +205,7 @@ namespace Model
      * before you can delete the document. For example, you must specify a
      * <code>Force</code> flag to delete a document of type
      * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
-     * policy.</p>
+     * <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
      */
     inline DeleteDocumentRequest& WithForce(bool value) { SetForce(value); return *this;}
 

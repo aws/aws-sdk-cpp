@@ -132,6 +132,31 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the field can use the default value during a Create
+     * operation.</p>
+     */
+    inline bool GetIsDefaultedOnCreate() const{ return m_isDefaultedOnCreate; }
+
+    /**
+     * <p>Specifies whether the field can use the default value during a Create
+     * operation.</p>
+     */
+    inline bool IsDefaultedOnCreateHasBeenSet() const { return m_isDefaultedOnCreateHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the field can use the default value during a Create
+     * operation.</p>
+     */
+    inline void SetIsDefaultedOnCreate(bool value) { m_isDefaultedOnCreateHasBeenSet = true; m_isDefaultedOnCreate = value; }
+
+    /**
+     * <p>Specifies whether the field can use the default value during a Create
+     * operation.</p>
+     */
+    inline DestinationFieldProperties& WithIsDefaultedOnCreate(bool value) { SetIsDefaultedOnCreate(value); return *this;}
+
+
+    /**
      * <p> A list of supported write operations. For each write operation listed, this
      * field can be used in <code>idFieldNames</code> when that write operation is
      * present as a destination option. </p>
@@ -200,6 +225,9 @@ namespace Model
 
     bool m_isUpdatable;
     bool m_isUpdatableHasBeenSet;
+
+    bool m_isDefaultedOnCreate;
+    bool m_isDefaultedOnCreateHasBeenSet;
 
     Aws::Vector<WriteOperationType> m_supportedWriteOperations;
     bool m_supportedWriteOperationsHasBeenSet;

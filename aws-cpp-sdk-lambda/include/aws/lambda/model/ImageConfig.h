@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>Configuration values that override the container image Dockerfile settings.
    * See <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
    * settings</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ImageConfig">AWS
    * API Reference</a></p>

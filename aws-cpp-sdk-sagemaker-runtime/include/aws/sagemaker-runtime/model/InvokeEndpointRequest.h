@@ -152,8 +152,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
 
@@ -170,8 +170,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
 
@@ -188,8 +188,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
 
@@ -206,8 +206,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
 
@@ -224,8 +224,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.assign(value); }
 
@@ -242,8 +242,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
 
@@ -260,8 +260,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
 
@@ -278,8 +278,8 @@ namespace Model
      * in the response. If your code does not set this value in the response, an empty
      * value is returned. For example, if a custom attribute represents the trace ID,
      * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the AWS
-     * SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * post-processing function.</p> <p>This feature is currently supported in the
+     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
 
@@ -415,6 +415,63 @@ namespace Model
 
 
     /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline const Aws::String& GetTargetContainerHostname() const{ return m_targetContainerHostname; }
+
+    /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline bool TargetContainerHostnameHasBeenSet() const { return m_targetContainerHostnameHasBeenSet; }
+
+    /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline void SetTargetContainerHostname(const Aws::String& value) { m_targetContainerHostnameHasBeenSet = true; m_targetContainerHostname = value; }
+
+    /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline void SetTargetContainerHostname(Aws::String&& value) { m_targetContainerHostnameHasBeenSet = true; m_targetContainerHostname = std::move(value); }
+
+    /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline void SetTargetContainerHostname(const char* value) { m_targetContainerHostnameHasBeenSet = true; m_targetContainerHostname.assign(value); }
+
+    /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithTargetContainerHostname(const Aws::String& value) { SetTargetContainerHostname(value); return *this;}
+
+    /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithTargetContainerHostname(Aws::String&& value) { SetTargetContainerHostname(std::move(value)); return *this;}
+
+    /**
+     * <p>If the endpoint hosts multiple containers and is configured to use direct
+     * invocation, this parameter specifies the host name of the container to
+     * invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithTargetContainerHostname(const char* value) { SetTargetContainerHostname(value); return *this;}
+
+
+    /**
      * <p>If you provide a value, it is added to the captured data when you enable data
      * capture on the endpoint. For information about data capture, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
@@ -495,6 +552,9 @@ namespace Model
 
     Aws::String m_targetVariant;
     bool m_targetVariantHasBeenSet;
+
+    Aws::String m_targetContainerHostname;
+    bool m_targetContainerHostnameHasBeenSet;
 
     Aws::String m_inferenceId;
     bool m_inferenceIdHasBeenSet;

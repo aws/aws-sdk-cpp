@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/VerificationMessageTemplateType.h>
+#include <aws/cognito-idp/model/UserAttributeUpdateSettingsType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
@@ -171,32 +172,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS Lambda triggers associated with the user pool.</p>
+     * <p>The Lambda triggers associated with the user pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The AWS Lambda triggers associated with the user pool.</p>
+     * <p>The Lambda triggers associated with the user pool.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda triggers associated with the user pool.</p>
+     * <p>The Lambda triggers associated with the user pool.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The AWS Lambda triggers associated with the user pool.</p>
+     * <p>The Lambda triggers associated with the user pool.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The AWS Lambda triggers associated with the user pool.</p>
+     * <p>The Lambda triggers associated with the user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The AWS Lambda triggers associated with the user pool.</p>
+     * <p>The Lambda triggers associated with the user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
@@ -336,132 +337,132 @@ namespace Model
 
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline const Aws::Vector<VerifiedAttributeType>& GetAutoVerifiedAttributes() const{ return m_autoVerifiedAttributes; }
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline bool AutoVerifiedAttributesHasBeenSet() const { return m_autoVerifiedAttributesHasBeenSet; }
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline void SetAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = value; }
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline void SetAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = std::move(value); }
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline UserPoolType& WithAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { SetAutoVerifiedAttributes(value); return *this;}
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline UserPoolType& WithAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { SetAutoVerifiedAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline UserPoolType& AddAutoVerifiedAttributes(const VerifiedAttributeType& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     * <p>The attributes that are auto-verified in a user pool.</p>
      */
     inline UserPoolType& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline const Aws::Vector<AliasAttributeType>& GetAliasAttributes() const{ return m_aliasAttributes; }
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline bool AliasAttributesHasBeenSet() const { return m_aliasAttributesHasBeenSet; }
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline void SetAliasAttributes(const Aws::Vector<AliasAttributeType>& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes = value; }
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline void SetAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes = std::move(value); }
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline UserPoolType& WithAliasAttributes(const Aws::Vector<AliasAttributeType>& value) { SetAliasAttributes(value); return *this;}
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline UserPoolType& WithAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { SetAliasAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline UserPoolType& AddAliasAttributes(const AliasAttributeType& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     * <p>The attributes that are aliased in a user pool.</p>
      */
     inline UserPoolType& AddAliasAttributes(AliasAttributeType&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline const Aws::Vector<UsernameAttributeType>& GetUsernameAttributes() const{ return m_usernameAttributes; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline bool UsernameAttributesHasBeenSet() const { return m_usernameAttributesHasBeenSet; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline void SetUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = value; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline void SetUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = std::move(value); }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline UserPoolType& WithUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { SetUsernameAttributes(value); return *this;}
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline UserPoolType& WithUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { SetUsernameAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline UserPoolType& AddUsernameAttributes(const UsernameAttributeType& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline UserPoolType& AddUsernameAttributes(UsernameAttributeType&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(std::move(value)); return *this; }
 
@@ -662,10 +663,71 @@ namespace Model
 
 
     /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline const UserAttributeUpdateSettingsType& GetUserAttributeUpdateSettings() const{ return m_userAttributeUpdateSettings; }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline bool UserAttributeUpdateSettingsHasBeenSet() const { return m_userAttributeUpdateSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline void SetUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = value; }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline void SetUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = std::move(value); }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline UserPoolType& WithUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { SetUserAttributeUpdateSettings(value); return *this;}
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline UserPoolType& WithUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { SetUserAttributeUpdateSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
+     * tokens aren't required and can't be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
+     * registrations. You can only specify required when you're initially creating a
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
@@ -673,9 +735,9 @@ namespace Model
 
     /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
+     * tokens aren't required and can't be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
+     * registrations. You can only specify required when you're initially creating a
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
@@ -683,9 +745,9 @@ namespace Model
 
     /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
+     * tokens aren't required and can't be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
+     * registrations. You can only specify required when you're initially creating a
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
@@ -693,9 +755,9 @@ namespace Model
 
     /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
+     * tokens aren't required and can't be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
+     * registrations. You can only specify required when you're initially creating a
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
@@ -703,9 +765,9 @@ namespace Model
 
     /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
+     * tokens aren't required and can't be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
+     * registrations. You can only specify required when you're initially creating a
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
@@ -713,9 +775,9 @@ namespace Model
 
     /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
+     * tokens aren't required and can't be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
+     * registrations. You can only specify required when you're initially creating a
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
@@ -775,63 +837,105 @@ namespace Model
 
 
     /**
-     * <p>The email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for
+     * messages tfrom your user pool.</p>
      */
     inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
 
     /**
-     * <p>The email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for
+     * messages tfrom your user pool.</p>
      */
     inline bool EmailConfigurationHasBeenSet() const { return m_emailConfigurationHasBeenSet; }
 
     /**
-     * <p>The email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for
+     * messages tfrom your user pool.</p>
      */
     inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
 
     /**
-     * <p>The email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for
+     * messages tfrom your user pool.</p>
      */
     inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = std::move(value); }
 
     /**
-     * <p>The email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for
+     * messages tfrom your user pool.</p>
      */
     inline UserPoolType& WithEmailConfiguration(const EmailConfigurationType& value) { SetEmailConfiguration(value); return *this;}
 
     /**
-     * <p>The email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for
+     * messages tfrom your user pool.</p>
      */
     inline UserPoolType& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::move(value); }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline UserPoolType& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline UserPoolType& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
 
@@ -929,140 +1033,244 @@ namespace Model
 
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline const Aws::String& GetSmsConfigurationFailure() const{ return m_smsConfigurationFailure; }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline bool SmsConfigurationFailureHasBeenSet() const { return m_smsConfigurationFailureHasBeenSet; }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline void SetSmsConfigurationFailure(const Aws::String& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = value; }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline void SetSmsConfigurationFailure(Aws::String&& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = std::move(value); }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline void SetSmsConfigurationFailure(const char* value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure.assign(value); }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline UserPoolType& WithSmsConfigurationFailure(const Aws::String& value) { SetSmsConfigurationFailure(value); return *this;}
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline UserPoolType& WithSmsConfigurationFailure(Aws::String&& value) { SetSmsConfigurationFailure(std::move(value)); return *this;}
 
     /**
-     * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * <p>The reason why the SMS configuration can't send the messages to your
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <dl>
+     * <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> <p>The Identity and Access
+     * Management role that Amazon Cognito uses to send SMS messages isn't properly
+     * configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
+     * SMS Sandbox and messages will only reach verified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool
+     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
+     * account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
     inline UserPoolType& WithSmsConfigurationFailure(const char* value) { SetSmsConfigurationFailure(value); return *this;}
 
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline const Aws::String& GetEmailConfigurationFailure() const{ return m_emailConfigurationFailure; }
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline bool EmailConfigurationFailureHasBeenSet() const { return m_emailConfigurationFailureHasBeenSet; }
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline void SetEmailConfigurationFailure(const Aws::String& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = value; }
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline void SetEmailConfigurationFailure(Aws::String&& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = std::move(value); }
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline void SetEmailConfigurationFailure(const char* value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure.assign(value); }
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline UserPoolType& WithEmailConfigurationFailure(const Aws::String& value) { SetEmailConfigurationFailure(value); return *this;}
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline UserPoolType& WithEmailConfigurationFailure(Aws::String&& value) { SetEmailConfigurationFailure(std::move(value)); return *this;}
 
     /**
-     * <p>The reason why the email configuration cannot send the messages to your
-     * users.</p>
+     * <p>Deprecated. Review error codes from API requests with
+     * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
+     * about problems with user pool email configuration.</p>
      */
     inline UserPoolType& WithEmailConfigurationFailure(const char* value) { SetEmailConfigurationFailure(value); return *this;}
 
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline UserPoolType& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline UserPoolType& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
     inline UserPoolType& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -1070,8 +1278,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1080,8 +1289,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1090,8 +1300,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1100,8 +1311,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1110,8 +1322,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1120,8 +1333,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1130,8 +1344,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1140,8 +1355,9 @@ namespace Model
     /**
      * <p>A custom domain name that you provide to Amazon Cognito. This parameter
      * applies only if you use a custom domain to host the sign-up and sign-in pages
-     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
-     * more information about adding a custom domain to your user pool, see <a
+     * for your application. An example of a custom domain name might be
+     * <code>auth.example.com</code>.</p> <p>For more information about adding a custom
+     * domain to your user pool, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
@@ -1211,55 +1427,55 @@ namespace Model
 
 
     /**
-     * <p>You can choose to enable case sensitivity on the username input for the
-     * selected sign-in option. For example, when this is set to <code>False</code>,
-     * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity of the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
 
     /**
-     * <p>You can choose to enable case sensitivity on the username input for the
-     * selected sign-in option. For example, when this is set to <code>False</code>,
-     * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity of the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
 
     /**
-     * <p>You can choose to enable case sensitivity on the username input for the
-     * selected sign-in option. For example, when this is set to <code>False</code>,
-     * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity of the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
 
     /**
-     * <p>You can choose to enable case sensitivity on the username input for the
-     * selected sign-in option. For example, when this is set to <code>False</code>,
-     * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity of the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
 
     /**
-     * <p>You can choose to enable case sensitivity on the username input for the
-     * selected sign-in option. For example, when this is set to <code>False</code>,
-     * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity of the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline UserPoolType& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
 
     /**
-     * <p>You can choose to enable case sensitivity on the username input for the
-     * selected sign-in option. For example, when this is set to <code>False</code>,
-     * users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity of the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline UserPoolType& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
@@ -1307,68 +1523,68 @@ namespace Model
 
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline UserPoolType& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline UserPoolType& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
 
@@ -1421,6 +1637,9 @@ namespace Model
 
     Aws::String m_smsAuthenticationMessage;
     bool m_smsAuthenticationMessageHasBeenSet;
+
+    UserAttributeUpdateSettingsType m_userAttributeUpdateSettings;
+    bool m_userAttributeUpdateSettingsHasBeenSet;
 
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;

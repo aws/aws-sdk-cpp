@@ -168,106 +168,98 @@ namespace Model
 
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline const Aws::String& GetMediaRegion() const{ return m_mediaRegion; }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline void SetMediaRegion(const Aws::String& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = value; }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline void SetMediaRegion(Aws::String&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::move(value); }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline void SetMediaRegion(const char* value) { m_mediaRegionHasBeenSet = true; m_mediaRegion.assign(value); }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline CreateMeetingRequest& WithMediaRegion(const Aws::String& value) { SetMediaRegion(value); return *this;}
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline CreateMeetingRequest& WithMediaRegion(Aws::String&& value) { SetMediaRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p> <p>Available values: <code>af-south-1</code>,
-     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
-     * <code>ap-south-1</code>, <code>ap-southeast-1</code>,
-     * <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     * <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-     * <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-     * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     * <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p> The Region in which to create the meeting. Default: <code>us-east-1</code>.
+     * </p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code>
+     * , <code>ap-northeast-2</code> , <code>ap-south-1</code> ,
+     * <code>ap-southeast-1</code> , <code>ap-southeast-2</code> ,
+     * <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code>
+     * , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> ,
+     * <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> ,
+     * <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
      */
     inline CreateMeetingRequest& WithMediaRegion(const char* value) { SetMediaRegion(value); return *this;}
 

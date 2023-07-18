@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SubnetState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/PrivateDnsNameOptionsOnLaunch.h>
 #include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -210,6 +211,35 @@ namespace Model
      * <p>Indicates whether this is the default subnet for the Availability Zone.</p>
      */
     inline Subnet& WithDefaultForAz(bool value) { SetDefaultForAz(value); return *this;}
+
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline int GetEnableLniAtDeviceIndex() const{ return m_enableLniAtDeviceIndex; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline bool EnableLniAtDeviceIndexHasBeenSet() const { return m_enableLniAtDeviceIndexHasBeenSet; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline void SetEnableLniAtDeviceIndex(int value) { m_enableLniAtDeviceIndexHasBeenSet = true; m_enableLniAtDeviceIndex = value; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline Subnet& WithEnableLniAtDeviceIndex(int value) { SetEnableLniAtDeviceIndex(value); return *this;}
 
 
     /**
@@ -421,42 +451,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline Subnet& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline Subnet& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the subnet.</p>
+     * <p>The ID of the Amazon Web Services account that owns the subnet.</p>
      */
     inline Subnet& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -649,6 +679,93 @@ namespace Model
      */
     inline Subnet& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline bool GetEnableDns64() const{ return m_enableDns64; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline bool EnableDns64HasBeenSet() const { return m_enableDns64HasBeenSet; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline void SetEnableDns64(bool value) { m_enableDns64HasBeenSet = true; m_enableDns64 = value; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline Subnet& WithEnableDns64(bool value) { SetEnableDns64(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline bool GetIpv6Native() const{ return m_ipv6Native; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline Subnet& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
+
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline const PrivateDnsNameOptionsOnLaunch& GetPrivateDnsNameOptionsOnLaunch() const{ return m_privateDnsNameOptionsOnLaunch; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline bool PrivateDnsNameOptionsOnLaunchHasBeenSet() const { return m_privateDnsNameOptionsOnLaunchHasBeenSet; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline void SetPrivateDnsNameOptionsOnLaunch(const PrivateDnsNameOptionsOnLaunch& value) { m_privateDnsNameOptionsOnLaunchHasBeenSet = true; m_privateDnsNameOptionsOnLaunch = value; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline void SetPrivateDnsNameOptionsOnLaunch(PrivateDnsNameOptionsOnLaunch&& value) { m_privateDnsNameOptionsOnLaunchHasBeenSet = true; m_privateDnsNameOptionsOnLaunch = std::move(value); }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline Subnet& WithPrivateDnsNameOptionsOnLaunch(const PrivateDnsNameOptionsOnLaunch& value) { SetPrivateDnsNameOptionsOnLaunch(value); return *this;}
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline Subnet& WithPrivateDnsNameOptionsOnLaunch(PrivateDnsNameOptionsOnLaunch&& value) { SetPrivateDnsNameOptionsOnLaunch(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -665,6 +782,9 @@ namespace Model
 
     bool m_defaultForAz;
     bool m_defaultForAzHasBeenSet;
+
+    int m_enableLniAtDeviceIndex;
+    bool m_enableLniAtDeviceIndexHasBeenSet;
 
     bool m_mapPublicIpOnLaunch;
     bool m_mapPublicIpOnLaunchHasBeenSet;
@@ -701,6 +821,15 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet;
+
+    bool m_enableDns64;
+    bool m_enableDns64HasBeenSet;
+
+    bool m_ipv6Native;
+    bool m_ipv6NativeHasBeenSet;
+
+    PrivateDnsNameOptionsOnLaunch m_privateDnsNameOptionsOnLaunch;
+    bool m_privateDnsNameOptionsOnLaunchHasBeenSet;
   };
 
 } // namespace Model

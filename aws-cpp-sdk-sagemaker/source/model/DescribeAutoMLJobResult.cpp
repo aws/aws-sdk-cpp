@@ -111,6 +111,15 @@ DescribeAutoMLJobResult& DescribeAutoMLJobResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("PartialFailureReasons"))
+  {
+    Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
+    for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
+    {
+      m_partialFailureReasons.push_back(partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("BestCandidate"))
   {
     m_bestCandidate = jsonValue.GetObject("BestCandidate");
@@ -144,6 +153,18 @@ DescribeAutoMLJobResult& DescribeAutoMLJobResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ResolvedAttributes"))
   {
     m_resolvedAttributes = jsonValue.GetObject("ResolvedAttributes");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDeployConfig"))
+  {
+    m_modelDeployConfig = jsonValue.GetObject("ModelDeployConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDeployResult"))
+  {
+    m_modelDeployResult = jsonValue.GetObject("ModelDeployResult");
 
   }
 

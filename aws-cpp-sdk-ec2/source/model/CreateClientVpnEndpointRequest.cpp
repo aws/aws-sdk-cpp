@@ -32,7 +32,10 @@ CreateClientVpnEndpointRequest::CreateClientVpnEndpointRequest() :
     m_vpcIdHasBeenSet(false),
     m_selfServicePortal(SelfServicePortal::NOT_SET),
     m_selfServicePortalHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false)
+    m_clientConnectOptionsHasBeenSet(false),
+    m_sessionTimeoutHours(0),
+    m_sessionTimeoutHoursHasBeenSet(false),
+    m_clientLoginBannerOptionsHasBeenSet(false)
 {
 }
 
@@ -140,6 +143,16 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
   if(m_clientConnectOptionsHasBeenSet)
   {
     m_clientConnectOptions.OutputToStream(ss, "ClientConnectOptions");
+  }
+
+  if(m_sessionTimeoutHoursHasBeenSet)
+  {
+    ss << "SessionTimeoutHours=" << m_sessionTimeoutHours << "&";
+  }
+
+  if(m_clientLoginBannerOptionsHasBeenSet)
+  {
+    m_clientLoginBannerOptions.OutputToStream(ss, "ClientLoginBannerOptions");
   }
 
   ss << "Version=2016-11-15";

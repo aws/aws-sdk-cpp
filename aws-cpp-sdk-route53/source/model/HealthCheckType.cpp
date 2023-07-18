@@ -27,6 +27,7 @@ namespace Aws
         static const int TCP_HASH = HashingUtils::HashString("TCP");
         static const int CALCULATED_HASH = HashingUtils::HashString("CALCULATED");
         static const int CLOUDWATCH_METRIC_HASH = HashingUtils::HashString("CLOUDWATCH_METRIC");
+        static const int RECOVERY_CONTROL_HASH = HashingUtils::HashString("RECOVERY_CONTROL");
 
 
         HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return HealthCheckType::CLOUDWATCH_METRIC;
           }
+          else if (hashCode == RECOVERY_CONTROL_HASH)
+          {
+            return HealthCheckType::RECOVERY_CONTROL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "CALCULATED";
           case HealthCheckType::CLOUDWATCH_METRIC:
             return "CLOUDWATCH_METRIC";
+          case HealthCheckType::RECOVERY_CONTROL:
+            return "RECOVERY_CONTROL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

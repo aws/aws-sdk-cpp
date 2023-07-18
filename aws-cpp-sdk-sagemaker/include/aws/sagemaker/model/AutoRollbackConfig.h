@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Currently, the <code>AutoRollbackConfig</code> API is not
-   * supported.</p><p><h3>See Also:</h3>   <a
+   * <p>Automatic rollback configuration for handling endpoint deployment failures
+   * and recovery.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoRollbackConfig">AWS
    * API Reference</a></p>
    */
@@ -40,42 +40,58 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline AutoRollbackConfig& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline AutoRollbackConfig& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline AutoRollbackConfig& AddAlarms(const Alarm& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>List of CloudWatch alarms in your account that are configured to monitor
+     * metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker
+     * rolls back the deployment.</p>
      */
     inline AutoRollbackConfig& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 

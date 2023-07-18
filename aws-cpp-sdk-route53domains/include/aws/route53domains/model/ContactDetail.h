@@ -132,9 +132,9 @@ namespace Model
      * Type</code>. For the privacy protection settings for your TLD, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
-     * Developer Guide</i> </p> </li> <li> <p>For .es domains, if you specify
-     * <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.</p> </li> </ul>
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline const ContactType& GetContactType() const{ return m_contactType; }
 
@@ -147,9 +147,9 @@ namespace Model
      * Type</code>. For the privacy protection settings for your TLD, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
-     * Developer Guide</i> </p> </li> <li> <p>For .es domains, if you specify
-     * <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.</p> </li> </ul>
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline bool ContactTypeHasBeenSet() const { return m_contactTypeHasBeenSet; }
 
@@ -162,9 +162,9 @@ namespace Model
      * Type</code>. For the privacy protection settings for your TLD, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
-     * Developer Guide</i> </p> </li> <li> <p>For .es domains, if you specify
-     * <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.</p> </li> </ul>
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline void SetContactType(const ContactType& value) { m_contactTypeHasBeenSet = true; m_contactType = value; }
 
@@ -177,9 +177,9 @@ namespace Model
      * Type</code>. For the privacy protection settings for your TLD, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
-     * Developer Guide</i> </p> </li> <li> <p>For .es domains, if you specify
-     * <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.</p> </li> </ul>
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline void SetContactType(ContactType&& value) { m_contactTypeHasBeenSet = true; m_contactType = std::move(value); }
 
@@ -192,9 +192,9 @@ namespace Model
      * Type</code>. For the privacy protection settings for your TLD, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
-     * Developer Guide</i> </p> </li> <li> <p>For .es domains, if you specify
-     * <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.</p> </li> </ul>
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline ContactDetail& WithContactType(const ContactType& value) { SetContactType(value); return *this;}
 
@@ -207,9 +207,9 @@ namespace Model
      * Type</code>. For the privacy protection settings for your TLD, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
-     * Developer Guide</i> </p> </li> <li> <p>For .es domains, if you specify
-     * <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of
-     * <code>ES_LEGAL_FORM</code>.</p> </li> </ul>
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline ContactDetail& WithContactType(ContactType&& value) { SetContactType(std::move(value)); return *this;}
 

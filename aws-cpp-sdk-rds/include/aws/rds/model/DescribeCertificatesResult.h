@@ -42,94 +42,101 @@ namespace Model
 
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificates = value; }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = std::move(value); }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(const Certificate& value) { m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeCertificates</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeCertificates</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeCertificates</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeCertificates</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeCertificates</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeCertificatesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeCertificates</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeCertificates</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeCertificatesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

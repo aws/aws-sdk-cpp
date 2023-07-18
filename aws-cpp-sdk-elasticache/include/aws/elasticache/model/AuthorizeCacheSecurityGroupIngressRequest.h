@@ -131,58 +131,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline AuthorizeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline AuthorizeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
-     * is not the same thing as an AWS access key ID - you must provide a valid AWS
-     * account number for this parameter.</p>
+     * <p>The Amazon account number of the Amazon EC2 security group owner. Note that
+     * this is not the same thing as an Amazon access key ID - you must provide a valid
+     * Amazon account number for this parameter.</p>
      */
     inline AuthorizeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 

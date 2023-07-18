@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p> Details about a package, including its format, namespace, and name. The <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html">
-   * <code>ListPackages</code> </a> operation returns a list of
-   * <code>PackageSummary</code> objects. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html">ListPackages</a>
+   * operation returns a list of <code>PackageSummary</code> objects. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageSummary">AWS
    * API Reference</a></p>
    */
@@ -42,44 +42,32 @@ namespace Model
 
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline PackageSummary& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline PackageSummary& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -90,9 +78,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -102,9 +88,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
@@ -114,9 +98,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
@@ -126,9 +108,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
@@ -138,9 +118,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
@@ -150,9 +128,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline PackageSummary& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -162,9 +138,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline PackageSummary& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
@@ -174,9 +148,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline PackageSummary& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

@@ -129,117 +129,117 @@ namespace Model
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetPlayerDataMap() const{ return m_playerDataMap; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline bool PlayerDataMapHasBeenSet() const { return m_playerDataMapHasBeenSet; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline void SetPlayerDataMap(const Aws::Map<Aws::String, Aws::String>& value) { m_playerDataMapHasBeenSet = true; m_playerDataMap = value; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline void SetPlayerDataMap(Aws::Map<Aws::String, Aws::String>&& value) { m_playerDataMapHasBeenSet = true; m_playerDataMap = std::move(value); }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& WithPlayerDataMap(const Aws::Map<Aws::String, Aws::String>& value) { SetPlayerDataMap(value); return *this;}
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& WithPlayerDataMap(Aws::Map<Aws::String, Aws::String>&& value) { SetPlayerDataMap(std::move(value)); return *this;}
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(const Aws::String& key, const Aws::String& value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(key, value); return *this; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(Aws::String&& key, const Aws::String& value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(const Aws::String& key, Aws::String&& value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(Aws::String&& key, Aws::String&& value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(const char* key, Aws::String&& value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(Aws::String&& key, const char* value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
      * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Player data
-     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
-     * ignored. </p>
+     * use this data, so it can be formatted as needed for use in the game. Any player
+     * data strings for player IDs that are not included in the <code>PlayerIds</code>
+     * parameter are ignored. </p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(const char* key, const char* value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(key, value); return *this; }
 

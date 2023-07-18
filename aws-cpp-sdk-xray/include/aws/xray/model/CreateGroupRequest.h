@@ -190,15 +190,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -206,15 +206,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -222,15 +222,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -238,15 +238,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -254,15 +254,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline CreateGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -270,15 +270,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline CreateGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -286,15 +286,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline CreateGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -302,15 +302,15 @@ namespace Model
      * <p>A map that contains one or more tag keys and tag values to attach to an X-Ray
      * group. For more information about ways to use tags, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference</i>.</p> <p>The following
-     * restrictions apply to tags:</p> <ul> <li> <p>Maximum number of user-applied tags
-     * per resource: 50</p> </li> <li> <p>Maximum tag key length: 128 Unicode
-     * characters</p> </li> <li> <p>Maximum tag value length: 256 Unicode
-     * characters</p> </li> <li> <p>Valid values for key and value: a-z, A-Z, 0-9,
-     * space, and the following characters: _ . : / = + - and @</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Don't use
-     * <code>aws:</code> as a prefix for keys; it's reserved for AWS use.</p> </li>
-     * </ul>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>The following restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of user-applied tags per resource: 50</p> </li> <li>
+     * <p>Maximum tag key length: 128 Unicode characters</p> </li> <li> <p>Maximum tag
+     * value length: 256 Unicode characters</p> </li> <li> <p>Valid values for key and
+     * value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and
+     * @</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li>
+     * <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon
+     * Web Services use.</p> </li> </ul>
      */
     inline CreateGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

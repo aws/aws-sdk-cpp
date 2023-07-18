@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     WirelessDeviceId,
     DevEui,
-    ThingName
+    ThingName,
+    SidewalkManufacturingSn
   };
 
 namespace WirelessDeviceIdTypeMapper

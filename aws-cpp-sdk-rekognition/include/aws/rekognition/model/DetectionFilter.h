@@ -37,30 +37,30 @@ namespace Model
 
 
     /**
-     * <p>Sets confidence of word detection. Words with detection confidence below this
-     * will be excluded from the result. Values should be between 0.5 and 1 as Text in
-     * Video will not return any result below 0.5.</p>
+     * <p>Sets the confidence of word detection. Words with detection confidence below
+     * this will be excluded from the result. Values should be between 0 and 100. The
+     * default MinConfidence is 80.</p>
      */
     inline double GetMinConfidence() const{ return m_minConfidence; }
 
     /**
-     * <p>Sets confidence of word detection. Words with detection confidence below this
-     * will be excluded from the result. Values should be between 0.5 and 1 as Text in
-     * Video will not return any result below 0.5.</p>
+     * <p>Sets the confidence of word detection. Words with detection confidence below
+     * this will be excluded from the result. Values should be between 0 and 100. The
+     * default MinConfidence is 80.</p>
      */
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
 
     /**
-     * <p>Sets confidence of word detection. Words with detection confidence below this
-     * will be excluded from the result. Values should be between 0.5 and 1 as Text in
-     * Video will not return any result below 0.5.</p>
+     * <p>Sets the confidence of word detection. Words with detection confidence below
+     * this will be excluded from the result. Values should be between 0 and 100. The
+     * default MinConfidence is 80.</p>
      */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
 
     /**
-     * <p>Sets confidence of word detection. Words with detection confidence below this
-     * will be excluded from the result. Values should be between 0.5 and 1 as Text in
-     * Video will not return any result below 0.5.</p>
+     * <p>Sets the confidence of word detection. Words with detection confidence below
+     * this will be excluded from the result. Values should be between 0 and 100. The
+     * default MinConfidence is 80.</p>
      */
     inline DetectionFilter& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 

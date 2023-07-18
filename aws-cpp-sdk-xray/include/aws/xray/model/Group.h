@@ -173,7 +173,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the
      * group or false to disable insights for the group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * through Amazon EventBridge for the group.</p> </li> </ul>
      */
     inline const InsightsConfiguration& GetInsightsConfiguration() const{ return m_insightsConfiguration; }
@@ -182,7 +182,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the
      * group or false to disable insights for the group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * through Amazon EventBridge for the group.</p> </li> </ul>
      */
     inline bool InsightsConfigurationHasBeenSet() const { return m_insightsConfigurationHasBeenSet; }
@@ -191,7 +191,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the
      * group or false to disable insights for the group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * through Amazon EventBridge for the group.</p> </li> </ul>
      */
     inline void SetInsightsConfiguration(const InsightsConfiguration& value) { m_insightsConfigurationHasBeenSet = true; m_insightsConfiguration = value; }
@@ -200,7 +200,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the
      * group or false to disable insights for the group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * through Amazon EventBridge for the group.</p> </li> </ul>
      */
     inline void SetInsightsConfiguration(InsightsConfiguration&& value) { m_insightsConfigurationHasBeenSet = true; m_insightsConfiguration = std::move(value); }
@@ -209,7 +209,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the
      * group or false to disable insights for the group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * through Amazon EventBridge for the group.</p> </li> </ul>
      */
     inline Group& WithInsightsConfiguration(const InsightsConfiguration& value) { SetInsightsConfiguration(value); return *this;}
@@ -218,7 +218,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the
      * group or false to disable insights for the group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * through Amazon EventBridge for the group.</p> </li> </ul>
      */
     inline Group& WithInsightsConfiguration(InsightsConfiguration&& value) { SetInsightsConfiguration(std::move(value)); return *this;}

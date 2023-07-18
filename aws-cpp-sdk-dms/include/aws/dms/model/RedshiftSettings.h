@@ -135,113 +135,113 @@ namespace Model
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline const Aws::String& GetBucketFolder() const{ return m_bucketFolder; }
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline bool BucketFolderHasBeenSet() const { return m_bucketFolderHasBeenSet; }
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline void SetBucketFolder(const Aws::String& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = value; }
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline void SetBucketFolder(Aws::String&& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = std::move(value); }
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline void SetBucketFolder(const char* value) { m_bucketFolderHasBeenSet = true; m_bucketFolder.assign(value); }
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline RedshiftSettings& WithBucketFolder(const Aws::String& value) { SetBucketFolder(value); return *this;}
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline RedshiftSettings& WithBucketFolder(Aws::String&& value) { SetBucketFolder(std::move(value)); return *this;}
 
     /**
      * <p>An S3 folder where the comma-separated-value (.csv) files are stored before
-     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, AWS
-     * DMS converts source records into .csv files and loads them to the
-     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+     * being uploaded to the target Redshift cluster. </p> <p>For full load mode, DMS
+     * converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code>
      * command to upload the .csv files to the target table. The files are deleted once
      * the <code>COPY</code> operation has finished. For more information, see <a
-     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift Database Developer Guide</a> </p> <p>For change-data-capture (CDC)
-     * mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
-     * this <i>BucketFolder/NetChangesTableID</i> path.</p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in
+     * the <i>Amazon Redshift Database Developer Guide</i>.</p> <p>For
+     * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
+     * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
     inline RedshiftSettings& WithBucketFolder(const char* value) { SetBucketFolder(value); return *this;}
 
@@ -521,28 +521,28 @@ namespace Model
 
 
     /**
-     * <p>A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR
+     * <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR
      * fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields
      * to null. The default is <code>false</code>.</p>
      */
     inline bool GetEmptyAsNull() const{ return m_emptyAsNull; }
 
     /**
-     * <p>A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR
+     * <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR
      * fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields
      * to null. The default is <code>false</code>.</p>
      */
     inline bool EmptyAsNullHasBeenSet() const { return m_emptyAsNullHasBeenSet; }
 
     /**
-     * <p>A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR
+     * <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR
      * fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields
      * to null. The default is <code>false</code>.</p>
      */
     inline void SetEmptyAsNull(bool value) { m_emptyAsNullHasBeenSet = true; m_emptyAsNull = value; }
 
     /**
-     * <p>A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR
+     * <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR
      * fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields
      * to null. The default is <code>false</code>.</p>
      */
@@ -558,9 +558,9 @@ namespace Model
      * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
      * <code>SSE_S3</code>. But you can’t change the existing value from
      * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
-     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
-     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a
+     * policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline const EncryptionModeValue& GetEncryptionMode() const{ return m_encryptionMode; }
 
@@ -573,9 +573,9 @@ namespace Model
      * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
      * <code>SSE_S3</code>. But you can’t change the existing value from
      * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
-     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
-     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a
+     * policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
 
@@ -588,9 +588,9 @@ namespace Model
      * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
      * <code>SSE_S3</code>. But you can’t change the existing value from
      * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
-     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
-     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a
+     * policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline void SetEncryptionMode(const EncryptionModeValue& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
 
@@ -603,9 +603,9 @@ namespace Model
      * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
      * <code>SSE_S3</code>. But you can’t change the existing value from
      * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
-     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
-     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a
+     * policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline void SetEncryptionMode(EncryptionModeValue&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
 
@@ -618,9 +618,9 @@ namespace Model
      * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
      * <code>SSE_S3</code>. But you can’t change the existing value from
      * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
-     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
-     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a
+     * policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline RedshiftSettings& WithEncryptionMode(const EncryptionModeValue& value) { SetEncryptionMode(value); return *this;}
 
@@ -633,9 +633,9 @@ namespace Model
      * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
      * <code>SSE_S3</code>. But you can’t change the existing value from
      * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
-     * <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
-     * with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     * actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
+     * <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a
+     * policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
     inline RedshiftSettings& WithEncryptionMode(EncryptionModeValue&& value) { SetEncryptionMode(std::move(value)); return *this;}
 
@@ -724,29 +724,29 @@ namespace Model
 
     /**
      * <p>The amount of time to wait (in milliseconds) before timing out of operations
-     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
-     * DELETE, and UPDATE.</p>
+     * performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE,
+     * and UPDATE.</p>
      */
     inline int GetLoadTimeout() const{ return m_loadTimeout; }
 
     /**
      * <p>The amount of time to wait (in milliseconds) before timing out of operations
-     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
-     * DELETE, and UPDATE.</p>
+     * performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE,
+     * and UPDATE.</p>
      */
     inline bool LoadTimeoutHasBeenSet() const { return m_loadTimeoutHasBeenSet; }
 
     /**
      * <p>The amount of time to wait (in milliseconds) before timing out of operations
-     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
-     * DELETE, and UPDATE.</p>
+     * performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE,
+     * and UPDATE.</p>
      */
     inline void SetLoadTimeout(int value) { m_loadTimeoutHasBeenSet = true; m_loadTimeout = value; }
 
     /**
      * <p>The amount of time to wait (in milliseconds) before timing out of operations
-     * performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT,
-     * DELETE, and UPDATE.</p>
+     * performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE,
+     * and UPDATE.</p>
      */
     inline RedshiftSettings& WithLoadTimeout(int value) { SetLoadTimeout(value); return *this;}
 
@@ -1020,104 +1020,104 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline RedshiftSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline RedshiftSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
-     * Redshift service.</p>
+     * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline RedshiftSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
     inline const Aws::String& GetServerSideEncryptionKmsKeyId() const{ return m_serverSideEncryptionKmsKeyId; }
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
     inline bool ServerSideEncryptionKmsKeyIdHasBeenSet() const { return m_serverSideEncryptionKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
     inline void SetServerSideEncryptionKmsKeyId(const Aws::String& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
     inline void SetServerSideEncryptionKmsKeyId(Aws::String&& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
     inline void SetServerSideEncryptionKmsKeyId(const char* value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
     inline RedshiftSettings& WithServerSideEncryptionKmsKeyId(const Aws::String& value) { SetServerSideEncryptionKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
     inline RedshiftSettings& WithServerSideEncryptionKmsKeyId(Aws::String&& value) { SetServerSideEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the
+     * <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
@@ -1344,6 +1344,224 @@ namespace Model
      */
     inline RedshiftSettings& WithWriteBufferSize(int value) { SetWriteBufferSize(value); return *this;}
 
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline RedshiftSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline RedshiftSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Amazon Redshift endpoint.</p>  <p>You can specify one of two sets of
+     * values for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline RedshiftSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline RedshiftSettings& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline RedshiftSettings& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
+     * connection details.</p>
+     */
+    inline RedshiftSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
+
   private:
 
     bool m_acceptAnyDate;
@@ -1429,6 +1647,12 @@ namespace Model
 
     int m_writeBufferSize;
     bool m_writeBufferSizeHasBeenSet;
+
+    Aws::String m_secretsManagerAccessRoleArn;
+    bool m_secretsManagerAccessRoleArnHasBeenSet;
+
+    Aws::String m_secretsManagerSecretId;
+    bool m_secretsManagerSecretIdHasBeenSet;
   };
 
 } // namespace Model

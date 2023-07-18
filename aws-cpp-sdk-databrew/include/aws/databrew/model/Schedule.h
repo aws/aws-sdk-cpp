@@ -42,83 +42,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline Schedule& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline Schedule& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the schedule.</p>
+     * <p>The ID of the Amazon Web Services account that owns the schedule.</p>
      */
     inline Schedule& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline Schedule& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline Schedule& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the schedule.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
      */
     inline Schedule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -201,49 +201,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline Schedule& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline Schedule& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the
      * schedule.</p>
      */
     inline Schedule& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
@@ -322,50 +322,58 @@ namespace Model
 
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline const Aws::String& GetCronExpression() const{ return m_cronExpression; }
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(const Aws::String& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = value; }
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(Aws::String&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::move(value); }
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(const char* value) { m_cronExpressionHasBeenSet = true; m_cronExpression.assign(value); }
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline Schedule& WithCronExpression(const Aws::String& value) { SetCronExpression(value); return *this;}
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline Schedule& WithCronExpression(Aws::String&& value) { SetCronExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The date(s) and time(s), in <code>cron</code> format, when the job will
-     * run.</p>
+     * <p>The dates and times when the job is to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline Schedule& WithCronExpression(const char* value) { SetCronExpression(value); return *this;}
 

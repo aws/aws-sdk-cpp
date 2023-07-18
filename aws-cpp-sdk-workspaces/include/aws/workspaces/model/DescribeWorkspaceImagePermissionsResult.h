@@ -71,80 +71,87 @@ namespace Model
 
 
     /**
-     * <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+     * <p>The identifiers of the Amazon Web Services accounts that the image has been
+     * shared with.</p>
      */
     inline const Aws::Vector<ImagePermission>& GetImagePermissions() const{ return m_imagePermissions; }
 
     /**
-     * <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+     * <p>The identifiers of the Amazon Web Services accounts that the image has been
+     * shared with.</p>
      */
     inline void SetImagePermissions(const Aws::Vector<ImagePermission>& value) { m_imagePermissions = value; }
 
     /**
-     * <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+     * <p>The identifiers of the Amazon Web Services accounts that the image has been
+     * shared with.</p>
      */
     inline void SetImagePermissions(Aws::Vector<ImagePermission>&& value) { m_imagePermissions = std::move(value); }
 
     /**
-     * <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+     * <p>The identifiers of the Amazon Web Services accounts that the image has been
+     * shared with.</p>
      */
     inline DescribeWorkspaceImagePermissionsResult& WithImagePermissions(const Aws::Vector<ImagePermission>& value) { SetImagePermissions(value); return *this;}
 
     /**
-     * <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+     * <p>The identifiers of the Amazon Web Services accounts that the image has been
+     * shared with.</p>
      */
     inline DescribeWorkspaceImagePermissionsResult& WithImagePermissions(Aws::Vector<ImagePermission>&& value) { SetImagePermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+     * <p>The identifiers of the Amazon Web Services accounts that the image has been
+     * shared with.</p>
      */
     inline DescribeWorkspaceImagePermissionsResult& AddImagePermissions(const ImagePermission& value) { m_imagePermissions.push_back(value); return *this; }
 
     /**
-     * <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+     * <p>The identifiers of the Amazon Web Services accounts that the image has been
+     * shared with.</p>
      */
     inline DescribeWorkspaceImagePermissionsResult& AddImagePermissions(ImagePermission&& value) { m_imagePermissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The token to use to retrieve the next set of results, or null if no more
-     * results are available.</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to use to retrieve the next set of results, or null if no more
-     * results are available.</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token to use to retrieve the next set of results, or null if no more
-     * results are available.</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to use to retrieve the next set of results, or null if no more
-     * results are available.</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token to use to retrieve the next set of results, or null if no more
-     * results are available.</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return. </p>
      */
     inline DescribeWorkspaceImagePermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next set of results, or null if no more
-     * results are available.</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return. </p>
      */
     inline DescribeWorkspaceImagePermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next set of results, or null if no more
-     * results are available.</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return. </p>
      */
     inline DescribeWorkspaceImagePermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -34,6 +34,7 @@ namespace Aws
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
         static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
         static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
+        static const int eu_north_1_HASH = HashingUtils::HashString("eu-north-1");
 
 
         RegionName GetRegionNameForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return RegionName::ap_northeast_2;
           }
+          else if (hashCode == eu_north_1_HASH)
+          {
+            return RegionName::eu_north_1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -137,6 +142,8 @@ namespace Aws
             return "ap-northeast-1";
           case RegionName::ap_northeast_2:
             return "ap-northeast-2";
+          case RegionName::eu_north_1:
+            return "eu-north-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

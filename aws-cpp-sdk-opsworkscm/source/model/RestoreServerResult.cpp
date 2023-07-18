@@ -27,7 +27,13 @@ RestoreServerResult::RestoreServerResult(const Aws::AmazonWebServiceResult<JsonV
 
 RestoreServerResult& RestoreServerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Server"))
+  {
+    m_server = jsonValue.GetObject("Server");
+
+  }
+
 
 
   return *this;

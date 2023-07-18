@@ -20,6 +20,9 @@ namespace Model
 
 AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment() : 
     m_certificateHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false),
+    m_privilegedMode(false),
+    m_privilegedModeHasBeenSet(false),
     m_imagePullCredentialsTypeHasBeenSet(false),
     m_registryCredentialHasBeenSet(false),
     m_typeHasBeenSet(false)
@@ -28,6 +31,9 @@ AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment() :
 
 AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment(JsonView jsonValue) : 
     m_certificateHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false),
+    m_privilegedMode(false),
+    m_privilegedModeHasBeenSet(false),
     m_imagePullCredentialsTypeHasBeenSet(false),
     m_registryCredentialHasBeenSet(false),
     m_typeHasBeenSet(false)
@@ -42,6 +48,23 @@ AwsCodeBuildProjectEnvironment& AwsCodeBuildProjectEnvironment::operator =(JsonV
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnvironmentVariables"))
+  {
+    Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("EnvironmentVariables");
+    for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
+    {
+      m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());
+    }
+    m_environmentVariablesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivilegedMode"))
+  {
+    m_privilegedMode = jsonValue.GetBool("PrivilegedMode");
+
+    m_privilegedModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ImagePullCredentialsType"))
@@ -75,6 +98,23 @@ JsonValue AwsCodeBuildProjectEnvironment::Jsonize() const
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_environmentVariablesHasBeenSet)
+  {
+   Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
+   for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
+   {
+     environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
+   }
+   payload.WithArray("EnvironmentVariables", std::move(environmentVariablesJsonList));
+
+  }
+
+  if(m_privilegedModeHasBeenSet)
+  {
+   payload.WithBool("PrivilegedMode", m_privilegedMode);
 
   }
 

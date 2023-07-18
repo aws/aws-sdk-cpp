@@ -34,6 +34,47 @@ namespace Model
 
 
     /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline ImportPlaybackKeyPairRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline ImportPlaybackKeyPairRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline ImportPlaybackKeyPairRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
      * <p>The public portion of a customer-generated key pair.</p>
      */
     inline const Aws::String& GetPublicKeyMaterial() const{ return m_publicKeyMaterial; }
@@ -72,55 +113,6 @@ namespace Model
      * <p>The public portion of a customer-generated key pair.</p>
      */
     inline ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(const char* value) { SetPublicKeyMaterial(value); return *this;}
-
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline ImportPlaybackKeyPairRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline ImportPlaybackKeyPairRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
-     * the customer identify that resource. The value does not need to be unique.</p>
-     */
-    inline ImportPlaybackKeyPairRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -203,11 +195,11 @@ namespace Model
 
   private:
 
-    Aws::String m_publicKeyMaterial;
-    bool m_publicKeyMaterialHasBeenSet;
-
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_publicKeyMaterial;
+    bool m_publicKeyMaterialHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

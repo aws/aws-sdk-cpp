@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <aws/sagemaker/model/Parameter.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -203,59 +204,96 @@ namespace Model
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline StartPipelineExecutionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline StartPipelineExecutionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the operation. An idempotent operation completes no more than one
-     * time.</p>
+     * idempotency of the operation. An idempotent operation completes no more than
+     * once.</p>
      */
     inline StartPipelineExecutionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline StartPipelineExecutionRequest& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline StartPipelineExecutionRequest& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -273,6 +311,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    ParallelismConfiguration m_parallelismConfiguration;
+    bool m_parallelismConfigurationHasBeenSet;
   };
 
 } // namespace Model

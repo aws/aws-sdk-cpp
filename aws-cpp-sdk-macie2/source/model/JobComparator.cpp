@@ -27,6 +27,7 @@ namespace Aws
         static const int LTE_HASH = HashingUtils::HashString("LTE");
         static const int NE_HASH = HashingUtils::HashString("NE");
         static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
+        static const int STARTS_WITH_HASH = HashingUtils::HashString("STARTS_WITH");
 
 
         JobComparator GetJobComparatorForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return JobComparator::CONTAINS;
           }
+          else if (hashCode == STARTS_WITH_HASH)
+          {
+            return JobComparator::STARTS_WITH;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "NE";
           case JobComparator::CONTAINS:
             return "CONTAINS";
+          case JobComparator::STARTS_WITH:
+            return "STARTS_WITH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

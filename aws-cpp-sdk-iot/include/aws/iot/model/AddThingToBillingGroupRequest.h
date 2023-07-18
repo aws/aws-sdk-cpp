@@ -33,42 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline bool BillingGroupNameHasBeenSet() const { return m_billingGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = value; }
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline void SetBillingGroupName(Aws::String&& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = std::move(value); }
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline void SetBillingGroupName(const char* value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName.assign(value); }
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline AddThingToBillingGroupRequest& WithBillingGroupName(const Aws::String& value) { SetBillingGroupName(value); return *this;}
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline AddThingToBillingGroupRequest& WithBillingGroupName(Aws::String&& value) { SetBillingGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the billing group.</p>
+     * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
+     * might take several seconds for the detachment to propagate.</p> 
      */
     inline AddThingToBillingGroupRequest& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
 

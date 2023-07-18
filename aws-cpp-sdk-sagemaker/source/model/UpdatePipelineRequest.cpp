@@ -16,8 +16,10 @@ UpdatePipelineRequest::UpdatePipelineRequest() :
     m_pipelineNameHasBeenSet(false),
     m_pipelineDisplayNameHasBeenSet(false),
     m_pipelineDefinitionHasBeenSet(false),
+    m_pipelineDefinitionS3LocationHasBeenSet(false),
     m_pipelineDescriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_parallelismConfigurationHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,12 @@ Aws::String UpdatePipelineRequest::SerializePayload() const
 
   }
 
+  if(m_pipelineDefinitionS3LocationHasBeenSet)
+  {
+   payload.WithObject("PipelineDefinitionS3Location", m_pipelineDefinitionS3Location.Jsonize());
+
+  }
+
   if(m_pipelineDescriptionHasBeenSet)
   {
    payload.WithString("PipelineDescription", m_pipelineDescription);
@@ -52,6 +60,12 @@ Aws::String UpdatePipelineRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_parallelismConfigurationHasBeenSet)
+  {
+   payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
 
   }
 

@@ -20,6 +20,7 @@ namespace Model
 
 EntitiesDetectionJobProperties::EntitiesDetectionJobProperties() : 
     m_jobIdHasBeenSet(false),
+    m_jobArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -39,6 +40,7 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties() :
 
 EntitiesDetectionJobProperties::EntitiesDetectionJobProperties(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
+    m_jobArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -64,6 +66,13 @@ EntitiesDetectionJobProperties& EntitiesDetectionJobProperties::operator =(JsonV
     m_jobId = jsonValue.GetString("JobId");
 
     m_jobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobArn"))
+  {
+    m_jobArn = jsonValue.GetString("JobArn");
+
+    m_jobArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("JobName"))
@@ -160,6 +169,12 @@ JsonValue EntitiesDetectionJobProperties::Jsonize() const
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("JobId", m_jobId);
+
+  }
+
+  if(m_jobArnHasBeenSet)
+  {
+   payload.WithString("JobArn", m_jobArn);
 
   }
 

@@ -25,6 +25,7 @@ DescribedUser::DescribedUser() :
     m_homeDirectoryType(HomeDirectoryType::NOT_SET),
     m_homeDirectoryTypeHasBeenSet(false),
     m_policyHasBeenSet(false),
+    m_posixProfileHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_sshPublicKeysHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -39,6 +40,7 @@ DescribedUser::DescribedUser(JsonView jsonValue) :
     m_homeDirectoryType(HomeDirectoryType::NOT_SET),
     m_homeDirectoryTypeHasBeenSet(false),
     m_policyHasBeenSet(false),
+    m_posixProfileHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_sshPublicKeysHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -85,6 +87,13 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
     m_policy = jsonValue.GetString("Policy");
 
     m_policyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PosixProfile"))
+  {
+    m_posixProfile = jsonValue.GetObject("PosixProfile");
+
+    m_posixProfileHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Role"))
@@ -159,6 +168,12 @@ JsonValue DescribedUser::Jsonize() const
   if(m_policyHasBeenSet)
   {
    payload.WithString("Policy", m_policy);
+
+  }
+
+  if(m_posixProfileHasBeenSet)
+  {
+   payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
 
   }
 

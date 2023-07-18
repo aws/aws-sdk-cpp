@@ -40,6 +40,12 @@ UpdateAnswerResult& UpdateAnswerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("LensArn"))
+  {
+    m_lensArn = jsonValue.GetString("LensArn");
+
+  }
+
   if(jsonValue.ValueExists("Answer"))
   {
     m_answer = jsonValue.GetObject("Answer");

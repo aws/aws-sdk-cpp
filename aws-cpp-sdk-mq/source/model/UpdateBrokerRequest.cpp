@@ -23,6 +23,7 @@ UpdateBrokerRequest::UpdateBrokerRequest() :
     m_hostInstanceTypeHasBeenSet(false),
     m_ldapServerMetadataHasBeenSet(false),
     m_logsHasBeenSet(false),
+    m_maintenanceWindowStartTimeHasBeenSet(false),
     m_securityGroupsHasBeenSet(false)
 {
 }
@@ -69,6 +70,12 @@ Aws::String UpdateBrokerRequest::SerializePayload() const
   if(m_logsHasBeenSet)
   {
    payload.WithObject("logs", m_logs.Jsonize());
+
+  }
+
+  if(m_maintenanceWindowStartTimeHasBeenSet)
+  {
+   payload.WithObject("maintenanceWindowStartTime", m_maintenanceWindowStartTime.Jsonize());
 
   }
 

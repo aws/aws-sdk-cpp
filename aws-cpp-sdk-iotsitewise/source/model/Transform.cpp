@@ -20,13 +20,15 @@ namespace Model
 
 Transform::Transform() : 
     m_expressionHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_processingConfigHasBeenSet(false)
 {
 }
 
 Transform::Transform(JsonView jsonValue) : 
     m_expressionHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_processingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ Transform& Transform::operator =(JsonView jsonValue)
     m_variablesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("processingConfig"))
+  {
+    m_processingConfig = jsonValue.GetObject("processingConfig");
+
+    m_processingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue Transform::Jsonize() const
      variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());
    }
    payload.WithArray("variables", std::move(variablesJsonList));
+
+  }
+
+  if(m_processingConfigHasBeenSet)
+  {
+   payload.WithObject("processingConfig", m_processingConfig.Jsonize());
 
   }
 

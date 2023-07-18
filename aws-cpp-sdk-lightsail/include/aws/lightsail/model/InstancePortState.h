@@ -44,48 +44,68 @@ namespace Model
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP type for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP type for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP type for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP type for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP type for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP type for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP type for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP type for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline InstancePortState& WithFromPort(int value) { SetFromPort(value); return *this;}
 
@@ -93,48 +113,68 @@ namespace Model
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP code for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP code for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP code for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP code for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP code for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP code for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
-     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
-     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
-     * <a
+     * </li> <li> <p>ICMP - The ICMP code for IPv4 addresses. For example, specify
+     * <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as
+     * the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information,
+     * see <a
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
-     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> <li> <p>ICMPv6 - The ICMP code for
+     * IPv6 addresses. For example, specify <code>128</code> as the
+     * <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+     * (ICMPv6 code). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+     * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
     inline InstancePortState& WithToPort(int value) { SetToPort(value); return *this;}
 
@@ -340,94 +380,212 @@ namespace Model
 
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline InstancePortState& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline InstancePortState& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline InstancePortState& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline InstancePortState& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IP address, or range of IP addresses in CIDR notation, that are allowed
-     * to connect to an instance through the ports, and the protocol. Lightsail
-     * supports IPv4 addresses.</p> <p>For more information about CIDR block notation,
-     * see <a
+     * <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol.</p>
+     *  <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are
+     * allowed to connect to an instance.</p>  <p>For more information about
+     * CIDR block notation, see <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
     inline InstancePortState& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
+
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv6Cidrs() const{ return m_ipv6Cidrs; }
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline bool Ipv6CidrsHasBeenSet() const { return m_ipv6CidrsHasBeenSet; }
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline void SetIpv6Cidrs(const Aws::Vector<Aws::String>& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs = value; }
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline void SetIpv6Cidrs(Aws::Vector<Aws::String>&& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs = std::move(value); }
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline InstancePortState& WithIpv6Cidrs(const Aws::Vector<Aws::String>& value) { SetIpv6Cidrs(value); return *this;}
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline InstancePortState& WithIpv6Cidrs(Aws::Vector<Aws::String>&& value) { SetIpv6Cidrs(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline InstancePortState& AddIpv6Cidrs(const Aws::String& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline InstancePortState& AddIpv6Cidrs(Aws::String&& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are
+     * allowed to connect to an instance through the ports, and the protocol. Only
+     * devices with an IPv6 address can connect to an instance through IPv6; otherwise,
+     * IPv4 should be used.</p>  <p>The <code>cidrs</code> parameter lists the
+     * IPv4 addresses that are allowed to connect to an instance.</p>  <p>For
+     * more information about CIDR block notation, see <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+     * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
+     */
+    inline InstancePortState& AddIpv6Cidrs(const char* value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs.push_back(value); return *this; }
 
 
     /**
@@ -518,6 +676,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_cidrs;
     bool m_cidrsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_ipv6Cidrs;
+    bool m_ipv6CidrsHasBeenSet;
 
     Aws::Vector<Aws::String> m_cidrListAliases;
     bool m_cidrListAliasesHasBeenSet;

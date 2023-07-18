@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     Ec2Instance,
-    AutoScalingGroup
+    AutoScalingGroup,
+    EbsVolume,
+    LambdaFunction,
+    NotApplicable
   };
 
 namespace ResourceTypeMapper

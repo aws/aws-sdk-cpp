@@ -27,7 +27,8 @@ QueryExecution::QueryExecution() :
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
+    m_workGroupHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ QueryExecution::QueryExecution(JsonView jsonValue) :
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
+    m_workGroupHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_workGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineVersion"))
+  {
+    m_engineVersion = jsonValue.GetObject("EngineVersion");
+
+    m_engineVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,12 @@ JsonValue QueryExecution::Jsonize() const
   if(m_workGroupHasBeenSet)
   {
    payload.WithString("WorkGroup", m_workGroup);
+
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+   payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
 
   }
 

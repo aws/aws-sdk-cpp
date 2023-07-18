@@ -20,30 +20,40 @@ namespace Aws
       namespace TypeHintMapper
       {
 
-        static const int DATE_HASH = HashingUtils::HashString("DATE");
-        static const int DECIMAL_HASH = HashingUtils::HashString("DECIMAL");
-        static const int TIME_HASH = HashingUtils::HashString("TIME");
+        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static const int UUID_HASH = HashingUtils::HashString("UUID");
         static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
+        static const int DATE_HASH = HashingUtils::HashString("DATE");
+        static const int TIME_HASH = HashingUtils::HashString("TIME");
+        static const int DECIMAL_HASH = HashingUtils::HashString("DECIMAL");
 
 
         TypeHint GetTypeHintForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DATE_HASH)
+          if (hashCode == JSON_HASH)
+          {
+            return TypeHint::JSON;
+          }
+          else if (hashCode == UUID_HASH)
+          {
+            return TypeHint::UUID;
+          }
+          else if (hashCode == TIMESTAMP_HASH)
+          {
+            return TypeHint::TIMESTAMP;
+          }
+          else if (hashCode == DATE_HASH)
           {
             return TypeHint::DATE;
-          }
-          else if (hashCode == DECIMAL_HASH)
-          {
-            return TypeHint::DECIMAL;
           }
           else if (hashCode == TIME_HASH)
           {
             return TypeHint::TIME;
           }
-          else if (hashCode == TIMESTAMP_HASH)
+          else if (hashCode == DECIMAL_HASH)
           {
-            return TypeHint::TIMESTAMP;
+            return TypeHint::DECIMAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,14 +69,18 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case TypeHint::DATE:
-            return "DATE";
-          case TypeHint::DECIMAL:
-            return "DECIMAL";
-          case TypeHint::TIME:
-            return "TIME";
+          case TypeHint::JSON:
+            return "JSON";
+          case TypeHint::UUID:
+            return "UUID";
           case TypeHint::TIMESTAMP:
             return "TIMESTAMP";
+          case TypeHint::DATE:
+            return "DATE";
+          case TypeHint::TIME:
+            return "TIME";
+          case TypeHint::DECIMAL:
+            return "DECIMAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

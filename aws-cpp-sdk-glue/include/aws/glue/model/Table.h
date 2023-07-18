@@ -732,22 +732,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline bool GetIsRegisteredWithLakeFormation() const{ return m_isRegisteredWithLakeFormation; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline bool IsRegisteredWithLakeFormationHasBeenSet() const { return m_isRegisteredWithLakeFormationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline void SetIsRegisteredWithLakeFormation(bool value) { m_isRegisteredWithLakeFormationHasBeenSet = true; m_isRegisteredWithLakeFormation = value; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline Table& WithIsRegisteredWithLakeFormation(bool value) { SetIsRegisteredWithLakeFormation(value); return *this;}
 
@@ -829,6 +829,31 @@ namespace Model
      */
     inline Table& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    
+    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
+
+    
+    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
+
+    
+    inline Table& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    
+    inline Table& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
+
+    
+    inline Table& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -887,6 +912,9 @@ namespace Model
 
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
+    Aws::String m_versionId;
+    bool m_versionIdHasBeenSet;
   };
 
 } // namespace Model

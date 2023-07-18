@@ -46,6 +46,15 @@ GroupResourcesResult& GroupResourcesResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("Pending"))
+  {
+    Array<JsonView> pendingJsonList = jsonValue.GetArray("Pending");
+    for(unsigned pendingIndex = 0; pendingIndex < pendingJsonList.GetLength(); ++pendingIndex)
+    {
+      m_pending.push_back(pendingJsonList[pendingIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

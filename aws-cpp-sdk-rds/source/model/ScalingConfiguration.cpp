@@ -29,7 +29,9 @@ ScalingConfiguration::ScalingConfiguration() :
     m_autoPauseHasBeenSet(false),
     m_secondsUntilAutoPause(0),
     m_secondsUntilAutoPauseHasBeenSet(false),
-    m_timeoutActionHasBeenSet(false)
+    m_timeoutActionHasBeenSet(false),
+    m_secondsBeforeTimeout(0),
+    m_secondsBeforeTimeoutHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ScalingConfiguration::ScalingConfiguration(const XmlNode& xmlNode) :
     m_autoPauseHasBeenSet(false),
     m_secondsUntilAutoPause(0),
     m_secondsUntilAutoPauseHasBeenSet(false),
-    m_timeoutActionHasBeenSet(false)
+    m_timeoutActionHasBeenSet(false),
+    m_secondsBeforeTimeout(0),
+    m_secondsBeforeTimeoutHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +87,12 @@ ScalingConfiguration& ScalingConfiguration::operator =(const XmlNode& xmlNode)
       m_timeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(timeoutActionNode.GetText());
       m_timeoutActionHasBeenSet = true;
     }
+    XmlNode secondsBeforeTimeoutNode = resultNode.FirstChild("SecondsBeforeTimeout");
+    if(!secondsBeforeTimeoutNode.IsNull())
+    {
+      m_secondsBeforeTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondsBeforeTimeoutNode.GetText()).c_str()).c_str());
+      m_secondsBeforeTimeoutHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -115,6 +125,11 @@ void ScalingConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".TimeoutAction=" << StringUtils::URLEncode(m_timeoutAction.c_str()) << "&";
   }
 
+  if(m_secondsBeforeTimeoutHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SecondsBeforeTimeout=" << m_secondsBeforeTimeout << "&";
+  }
+
 }
 
 void ScalingConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -138,6 +153,10 @@ void ScalingConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_timeoutActionHasBeenSet)
   {
       oStream << location << ".TimeoutAction=" << StringUtils::URLEncode(m_timeoutAction.c_str()) << "&";
+  }
+  if(m_secondsBeforeTimeoutHasBeenSet)
+  {
+      oStream << location << ".SecondsBeforeTimeout=" << m_secondsBeforeTimeout << "&";
   }
 }
 

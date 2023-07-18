@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/model/JobTimers.h>
+#include <utility>
 
 namespace Aws
 {
@@ -99,6 +101,37 @@ namespace Model
      */
     inline JobProgressSummary& WithNumberOfTasksFailed(long long value) { SetNumberOfTasksFailed(value); return *this;}
 
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline const JobTimers& GetTimers() const{ return m_timers; }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline bool TimersHasBeenSet() const { return m_timersHasBeenSet; }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline void SetTimers(const JobTimers& value) { m_timersHasBeenSet = true; m_timers = value; }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline void SetTimers(JobTimers&& value) { m_timersHasBeenSet = true; m_timers = std::move(value); }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline JobProgressSummary& WithTimers(const JobTimers& value) { SetTimers(value); return *this;}
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline JobProgressSummary& WithTimers(JobTimers&& value) { SetTimers(std::move(value)); return *this;}
+
   private:
 
     long long m_totalNumberOfTasks;
@@ -109,6 +142,9 @@ namespace Model
 
     long long m_numberOfTasksFailed;
     bool m_numberOfTasksFailedHasBeenSet;
+
+    JobTimers m_timers;
+    bool m_timersHasBeenSet;
   };
 
 } // namespace Model

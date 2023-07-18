@@ -97,6 +97,12 @@ DescribeAssetResult& DescribeAssetResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("assetDescription"))
+  {
+    m_assetDescription = jsonValue.GetString("assetDescription");
+
+  }
+
 
 
   return *this;

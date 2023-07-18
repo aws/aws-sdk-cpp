@@ -36,7 +36,17 @@ KafkaSettings::KafkaSettings() :
     m_messageMaxBytes(0),
     m_messageMaxBytesHasBeenSet(false),
     m_includeNullAndEmpty(false),
-    m_includeNullAndEmptyHasBeenSet(false)
+    m_includeNullAndEmptyHasBeenSet(false),
+    m_securityProtocol(KafkaSecurityProtocol::NOT_SET),
+    m_securityProtocolHasBeenSet(false),
+    m_sslClientCertificateArnHasBeenSet(false),
+    m_sslClientKeyArnHasBeenSet(false),
+    m_sslClientKeyPasswordHasBeenSet(false),
+    m_sslCaCertificateArnHasBeenSet(false),
+    m_saslUsernameHasBeenSet(false),
+    m_saslPasswordHasBeenSet(false),
+    m_noHexPrefix(false),
+    m_noHexPrefixHasBeenSet(false)
 {
 }
 
@@ -58,7 +68,17 @@ KafkaSettings::KafkaSettings(JsonView jsonValue) :
     m_messageMaxBytes(0),
     m_messageMaxBytesHasBeenSet(false),
     m_includeNullAndEmpty(false),
-    m_includeNullAndEmptyHasBeenSet(false)
+    m_includeNullAndEmptyHasBeenSet(false),
+    m_securityProtocol(KafkaSecurityProtocol::NOT_SET),
+    m_securityProtocolHasBeenSet(false),
+    m_sslClientCertificateArnHasBeenSet(false),
+    m_sslClientKeyArnHasBeenSet(false),
+    m_sslClientKeyPasswordHasBeenSet(false),
+    m_sslCaCertificateArnHasBeenSet(false),
+    m_saslUsernameHasBeenSet(false),
+    m_saslPasswordHasBeenSet(false),
+    m_noHexPrefix(false),
+    m_noHexPrefixHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +155,62 @@ KafkaSettings& KafkaSettings::operator =(JsonView jsonValue)
     m_includeNullAndEmptyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityProtocol"))
+  {
+    m_securityProtocol = KafkaSecurityProtocolMapper::GetKafkaSecurityProtocolForName(jsonValue.GetString("SecurityProtocol"));
+
+    m_securityProtocolHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SslClientCertificateArn"))
+  {
+    m_sslClientCertificateArn = jsonValue.GetString("SslClientCertificateArn");
+
+    m_sslClientCertificateArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SslClientKeyArn"))
+  {
+    m_sslClientKeyArn = jsonValue.GetString("SslClientKeyArn");
+
+    m_sslClientKeyArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SslClientKeyPassword"))
+  {
+    m_sslClientKeyPassword = jsonValue.GetString("SslClientKeyPassword");
+
+    m_sslClientKeyPasswordHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SslCaCertificateArn"))
+  {
+    m_sslCaCertificateArn = jsonValue.GetString("SslCaCertificateArn");
+
+    m_sslCaCertificateArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SaslUsername"))
+  {
+    m_saslUsername = jsonValue.GetString("SaslUsername");
+
+    m_saslUsernameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SaslPassword"))
+  {
+    m_saslPassword = jsonValue.GetString("SaslPassword");
+
+    m_saslPasswordHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NoHexPrefix"))
+  {
+    m_noHexPrefix = jsonValue.GetBool("NoHexPrefix");
+
+    m_noHexPrefixHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +274,53 @@ JsonValue KafkaSettings::Jsonize() const
   if(m_includeNullAndEmptyHasBeenSet)
   {
    payload.WithBool("IncludeNullAndEmpty", m_includeNullAndEmpty);
+
+  }
+
+  if(m_securityProtocolHasBeenSet)
+  {
+   payload.WithString("SecurityProtocol", KafkaSecurityProtocolMapper::GetNameForKafkaSecurityProtocol(m_securityProtocol));
+  }
+
+  if(m_sslClientCertificateArnHasBeenSet)
+  {
+   payload.WithString("SslClientCertificateArn", m_sslClientCertificateArn);
+
+  }
+
+  if(m_sslClientKeyArnHasBeenSet)
+  {
+   payload.WithString("SslClientKeyArn", m_sslClientKeyArn);
+
+  }
+
+  if(m_sslClientKeyPasswordHasBeenSet)
+  {
+   payload.WithString("SslClientKeyPassword", m_sslClientKeyPassword);
+
+  }
+
+  if(m_sslCaCertificateArnHasBeenSet)
+  {
+   payload.WithString("SslCaCertificateArn", m_sslCaCertificateArn);
+
+  }
+
+  if(m_saslUsernameHasBeenSet)
+  {
+   payload.WithString("SaslUsername", m_saslUsername);
+
+  }
+
+  if(m_saslPasswordHasBeenSet)
+  {
+   payload.WithString("SaslPassword", m_saslPassword);
+
+  }
+
+  if(m_noHexPrefixHasBeenSet)
+  {
+   payload.WithBool("NoHexPrefix", m_noHexPrefix);
 
   }
 

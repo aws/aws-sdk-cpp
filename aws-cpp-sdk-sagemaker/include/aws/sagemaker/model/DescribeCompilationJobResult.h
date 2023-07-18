@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/ModelDigests.h>
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/OutputConfig.h>
+#include <aws/sagemaker/model/NeoVpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -76,44 +77,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline const Aws::String& GetCompilationJobArn() const{ return m_compilationJobArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline void SetCompilationJobArn(const Aws::String& value) { m_compilationJobArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline void SetCompilationJobArn(Aws::String&& value) { m_compilationJobArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline void SetCompilationJobArn(const char* value) { m_compilationJobArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithCompilationJobArn(const Aws::String& value) { SetCompilationJobArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithCompilationJobArn(Aws::String&& value) { SetCompilationJobArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithCompilationJobArn(const char* value) { SetCompilationJobArn(value); return *this;}
 
@@ -278,6 +272,92 @@ namespace Model
 
 
     /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
+    inline const Aws::String& GetInferenceImage() const{ return m_inferenceImage; }
+
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
+    inline void SetInferenceImage(const Aws::String& value) { m_inferenceImage = value; }
+
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
+    inline void SetInferenceImage(Aws::String&& value) { m_inferenceImage = std::move(value); }
+
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
+    inline void SetInferenceImage(const char* value) { m_inferenceImage.assign(value); }
+
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
+    inline DescribeCompilationJobResult& WithInferenceImage(const Aws::String& value) { SetInferenceImage(value); return *this;}
+
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
+    inline DescribeCompilationJobResult& WithInferenceImage(Aws::String&& value) { SetInferenceImage(std::move(value)); return *this;}
+
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
+    inline DescribeCompilationJobResult& WithInferenceImage(const char* value) { SetInferenceImage(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline const Aws::String& GetModelPackageVersionArn() const{ return m_modelPackageVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline void SetModelPackageVersionArn(const Aws::String& value) { m_modelPackageVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline void SetModelPackageVersionArn(Aws::String&& value) { m_modelPackageVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline void SetModelPackageVersionArn(const char* value) { m_modelPackageVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline DescribeCompilationJobResult& WithModelPackageVersionArn(const Aws::String& value) { SetModelPackageVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline DescribeCompilationJobResult& WithModelPackageVersionArn(Aws::String&& value) { SetModelPackageVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline DescribeCompilationJobResult& WithModelPackageVersionArn(const char* value) { SetModelPackageVersionArn(value); return *this;}
+
+
+    /**
      * <p>The time that the model compilation job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -428,37 +508,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -529,6 +616,52 @@ namespace Model
      */
     inline DescribeCompilationJobResult& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline const NeoVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(const NeoVpcConfig& value) { m_vpcConfig = value; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(NeoVpcConfig&& value) { m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline DescribeCompilationJobResult& WithVpcConfig(const NeoVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline DescribeCompilationJobResult& WithVpcConfig(NeoVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_compilationJobName;
@@ -542,6 +675,10 @@ namespace Model
     Aws::Utils::DateTime m_compilationEndTime;
 
     StoppingCondition m_stoppingCondition;
+
+    Aws::String m_inferenceImage;
+
+    Aws::String m_modelPackageVersionArn;
 
     Aws::Utils::DateTime m_creationTime;
 
@@ -558,6 +695,8 @@ namespace Model
     InputConfig m_inputConfig;
 
     OutputConfig m_outputConfig;
+
+    NeoVpcConfig m_vpcConfig;
   };
 
 } // namespace Model

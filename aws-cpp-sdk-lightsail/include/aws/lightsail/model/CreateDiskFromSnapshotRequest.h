@@ -350,8 +350,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDiskName() const{ return m_sourceDiskName; }
 
@@ -362,8 +362,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool SourceDiskNameHasBeenSet() const { return m_sourceDiskNameHasBeenSet; }
 
@@ -374,8 +374,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceDiskName(const Aws::String& value) { m_sourceDiskNameHasBeenSet = true; m_sourceDiskName = value; }
 
@@ -386,8 +386,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceDiskName(Aws::String&& value) { m_sourceDiskNameHasBeenSet = true; m_sourceDiskName = std::move(value); }
 
@@ -398,8 +398,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceDiskName(const char* value) { m_sourceDiskNameHasBeenSet = true; m_sourceDiskName.assign(value); }
 
@@ -410,8 +410,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithSourceDiskName(const Aws::String& value) { SetSourceDiskName(value); return *this;}
 
@@ -422,8 +422,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithSourceDiskName(Aws::String&& value) { SetSourceDiskName(std::move(value)); return *this;}
 
@@ -434,8 +434,8 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithSourceDiskName(const char* value) { SetSourceDiskName(value); return *this;}
 
@@ -450,8 +450,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetRestoreDate() const{ return m_restoreDate; }
 
@@ -465,8 +465,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool RestoreDateHasBeenSet() const { return m_restoreDateHasBeenSet; }
 
@@ -480,8 +480,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(const Aws::String& value) { m_restoreDateHasBeenSet = true; m_restoreDate = value; }
 
@@ -495,8 +495,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(Aws::String&& value) { m_restoreDateHasBeenSet = true; m_restoreDate = std::move(value); }
 
@@ -510,8 +510,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(const char* value) { m_restoreDateHasBeenSet = true; m_restoreDate.assign(value); }
 
@@ -525,8 +525,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithRestoreDate(const Aws::String& value) { SetRestoreDate(value); return *this;}
 
@@ -540,8 +540,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithRestoreDate(Aws::String&& value) { SetRestoreDate(std::move(value)); return *this;}
 
@@ -555,8 +555,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithRestoreDate(const char* value) { SetRestoreDate(value); return *this;}
 
@@ -568,8 +568,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new disk from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool GetUseLatestRestorableAutoSnapshot() const{ return m_useLatestRestorableAutoSnapshot; }
 
@@ -580,8 +580,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new disk from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool UseLatestRestorableAutoSnapshotHasBeenSet() const { return m_useLatestRestorableAutoSnapshotHasBeenSet; }
 
@@ -592,8 +592,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new disk from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetUseLatestRestorableAutoSnapshot(bool value) { m_useLatestRestorableAutoSnapshotHasBeenSet = true; m_useLatestRestorableAutoSnapshot = value; }
 
@@ -604,8 +604,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new disk from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithUseLatestRestorableAutoSnapshot(bool value) { SetUseLatestRestorableAutoSnapshot(value); return *this;}
 

@@ -11,6 +11,7 @@
 #include <aws/elasticloadbalancingv2/model/Matcher.h>
 #include <aws/elasticloadbalancingv2/model/TargetTypeEnum.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/TargetGroupIpAddressTypeEnum.h>
 #include <aws/elasticloadbalancingv2/model/Tag.h>
 #include <utility>
 
@@ -451,32 +452,32 @@ namespace Model
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline bool GetHealthCheckEnabled() const{ return m_healthCheckEnabled; }
 
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
 
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckEnabled(bool value) { SetHealthCheckEnabled(value); return *this;}
 
@@ -485,7 +486,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
@@ -493,7 +495,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
@@ -501,7 +504,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
@@ -509,7 +513,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
@@ -517,7 +522,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
@@ -525,7 +531,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
@@ -533,7 +540,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
@@ -541,48 +549,49 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 and 30
-     * seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10
-     * seconds. If the target type is <code>lambda</code>, the default is 35
-     * seconds.</p>
+     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
+     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
+     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
+     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
+     * 35 seconds.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 and 30
-     * seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10
-     * seconds. If the target type is <code>lambda</code>, the default is 35
-     * seconds.</p>
+     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
+     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
+     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
+     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
+     * 35 seconds.</p>
      */
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 and 30
-     * seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10
-     * seconds. If the target type is <code>lambda</code>, the default is 35
-     * seconds.</p>
+     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
+     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
+     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
+     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
+     * 35 seconds.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 and 30
-     * seconds. If the target type is <code>instance</code> or <code>ip</code>, the
-     * default is 30 seconds. If the target group protocol is GENEVE, the default is 10
-     * seconds. If the target type is <code>lambda</code>, the default is 35
-     * seconds.</p>
+     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
+     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
+     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
+     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
+     * 35 seconds.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
@@ -745,7 +754,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
 
@@ -759,7 +769,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
@@ -773,7 +784,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
@@ -787,7 +799,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
@@ -801,7 +814,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline CreateTargetGroupRequest& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
 
@@ -815,7 +829,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline CreateTargetGroupRequest& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -859,6 +874,49 @@ namespace Model
      * <p>The tags to assign to the target group.</p>
      */
     inline CreateTargetGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline const TargetGroupIpAddressTypeEnum& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(const TargetGroupIpAddressTypeEnum& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(TargetGroupIpAddressTypeEnum&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline CreateTargetGroupRequest& WithIpAddressType(const TargetGroupIpAddressTypeEnum& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline CreateTargetGroupRequest& WithIpAddressType(TargetGroupIpAddressTypeEnum&& value) { SetIpAddressType(std::move(value)); return *this;}
 
   private:
 
@@ -909,6 +967,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    TargetGroupIpAddressTypeEnum m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

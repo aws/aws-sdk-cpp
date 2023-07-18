@@ -17,13 +17,29 @@ using namespace Aws::Http;
 
 DescribeChannelModeratedByAppInstanceUserRequest::DescribeChannelModeratedByAppInstanceUserRequest() : 
     m_channelArnHasBeenSet(false),
-    m_appInstanceUserArnHasBeenSet(false)
+    m_appInstanceUserArnHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
 Aws::String DescribeChannelModeratedByAppInstanceUserRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection DescribeChannelModeratedByAppInstanceUserRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 void DescribeChannelModeratedByAppInstanceUserRequest::AddQueryStringParameters(URI& uri) const

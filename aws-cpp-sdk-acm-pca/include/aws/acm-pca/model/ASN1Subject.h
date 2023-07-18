@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm-pca/model/CustomAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -24,15 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the certificate subject. The certificate can be
-   * one issued by your private certificate authority (CA) or it can be your private
-   * CA certificate. The <b>Subject</b> field in the certificate identifies the
-   * entity that owns or controls the public key in the certificate. The entity can
-   * be a user, computer, device, or service. The <b>Subject</b> must contain an
-   * X.500 distinguished name (DN). A DN is a sequence of relative distinguished
-   * names (RDNs). The RDNs are separated by commas in the certificate. The DN must
-   * be unique for each entity, but your private CA can issue more than one
-   * certificate with the same DN to the same entity. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the certificate subject. The <code>Subject</code>
+   * field in the certificate identifies the entity that owns or controls the public
+   * key in the certificate. The entity can be a user, computer, device, or service.
+   * The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is
+   * a sequence of relative distinguished names (RDNs). The RDNs are separated by
+   * commas in the certificate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ASN1Subject">AWS
    * API Reference</a></p>
    */
@@ -275,50 +274,66 @@ namespace Model
 
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline const Aws::String& GetCommonName() const{ return m_commonName; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(const Aws::String& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(const char* value) { m_commonNameHasBeenSet = true; m_commonName.assign(value); }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(const Aws::String& value) { SetCommonName(value); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(const char* value) { SetCommonName(value); return *this;}
 
@@ -555,56 +570,56 @@ namespace Model
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline const Aws::String& GetInitials() const{ return m_initials; }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline bool InitialsHasBeenSet() const { return m_initialsHasBeenSet; }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline void SetInitials(const Aws::String& value) { m_initialsHasBeenSet = true; m_initials = value; }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline void SetInitials(Aws::String&& value) { m_initialsHasBeenSet = true; m_initials = std::move(value); }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline void SetInitials(const char* value) { m_initialsHasBeenSet = true; m_initials.assign(value); }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline ASN1Subject& WithInitials(const Aws::String& value) { SetInitials(value); return *this;}
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline ASN1Subject& WithInitials(Aws::String&& value) { SetInitials(std::move(value)); return *this;}
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline ASN1Subject& WithInitials(const char* value) { SetInitials(value); return *this;}
 
@@ -714,6 +729,87 @@ namespace Model
      */
     inline ASN1Subject& WithGenerationQualifier(const char* value) { SetGenerationQualifier(value); return *this;}
 
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline const Aws::Vector<CustomAttribute>& GetCustomAttributes() const{ return m_customAttributes; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline void SetCustomAttributes(const Aws::Vector<CustomAttribute>& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline void SetCustomAttributes(Aws::Vector<CustomAttribute>&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& WithCustomAttributes(const Aws::Vector<CustomAttribute>& value) { SetCustomAttributes(value); return *this;}
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& WithCustomAttributes(Aws::Vector<CustomAttribute>&& value) { SetCustomAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& AddCustomAttributes(const CustomAttribute& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(value); return *this; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& AddCustomAttributes(CustomAttribute&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_country;
@@ -757,6 +853,9 @@ namespace Model
 
     Aws::String m_generationQualifier;
     bool m_generationQualifierHasBeenSet;
+
+    Aws::Vector<CustomAttribute> m_customAttributes;
+    bool m_customAttributesHasBeenSet;
   };
 
 } // namespace Model

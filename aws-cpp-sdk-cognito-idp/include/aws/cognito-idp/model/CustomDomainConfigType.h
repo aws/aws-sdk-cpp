@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline CustomDomainConfigType& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline CustomDomainConfigType& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
-     * You use this certificate for the subdomain of your custom domain.</p>
+     * <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You
+     * use this certificate for the subdomain of your custom domain.</p>
      */
     inline CustomDomainConfigType& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 

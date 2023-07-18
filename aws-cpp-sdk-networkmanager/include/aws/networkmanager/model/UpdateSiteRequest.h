@@ -116,49 +116,49 @@ namespace Model
 
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline UpdateSiteRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline UpdateSiteRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of your site.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline UpdateSiteRequest& WithDescription(const char* value) { SetDescription(value); return *this;}

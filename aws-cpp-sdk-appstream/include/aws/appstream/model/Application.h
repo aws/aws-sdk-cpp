@@ -7,6 +7,10 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appstream/model/S3Location.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/appstream/model/PlatformType.h>
 #include <utility>
 
 namespace Aws
@@ -334,6 +338,319 @@ namespace Model
      */
     inline Application& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline Application& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline Application& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
+
+    /**
+     * <p>The working directory for the application.</p>
+     */
+    inline Application& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline Application& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline Application& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the application.</p>
+     */
+    inline Application& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline Application& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline Application& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline Application& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline const Aws::String& GetAppBlockArn() const{ return m_appBlockArn; }
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline bool AppBlockArnHasBeenSet() const { return m_appBlockArnHasBeenSet; }
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline void SetAppBlockArn(const Aws::String& value) { m_appBlockArnHasBeenSet = true; m_appBlockArn = value; }
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline void SetAppBlockArn(Aws::String&& value) { m_appBlockArnHasBeenSet = true; m_appBlockArn = std::move(value); }
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline void SetAppBlockArn(const char* value) { m_appBlockArnHasBeenSet = true; m_appBlockArn.assign(value); }
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline Application& WithAppBlockArn(const Aws::String& value) { SetAppBlockArn(value); return *this;}
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline Application& WithAppBlockArn(Aws::String&& value) { SetAppBlockArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The app block ARN of the application.</p>
+     */
+    inline Application& WithAppBlockArn(const char* value) { SetAppBlockArn(value); return *this;}
+
+
+    /**
+     * <p>The S3 location of the application icon.</p>
+     */
+    inline const S3Location& GetIconS3Location() const{ return m_iconS3Location; }
+
+    /**
+     * <p>The S3 location of the application icon.</p>
+     */
+    inline bool IconS3LocationHasBeenSet() const { return m_iconS3LocationHasBeenSet; }
+
+    /**
+     * <p>The S3 location of the application icon.</p>
+     */
+    inline void SetIconS3Location(const S3Location& value) { m_iconS3LocationHasBeenSet = true; m_iconS3Location = value; }
+
+    /**
+     * <p>The S3 location of the application icon.</p>
+     */
+    inline void SetIconS3Location(S3Location&& value) { m_iconS3LocationHasBeenSet = true; m_iconS3Location = std::move(value); }
+
+    /**
+     * <p>The S3 location of the application icon.</p>
+     */
+    inline Application& WithIconS3Location(const S3Location& value) { SetIconS3Location(value); return *this;}
+
+    /**
+     * <p>The S3 location of the application icon.</p>
+     */
+    inline Application& WithIconS3Location(S3Location&& value) { SetIconS3Location(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline const Aws::Vector<PlatformType>& GetPlatforms() const{ return m_platforms; }
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline bool PlatformsHasBeenSet() const { return m_platformsHasBeenSet; }
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline void SetPlatforms(const Aws::Vector<PlatformType>& value) { m_platformsHasBeenSet = true; m_platforms = value; }
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline void SetPlatforms(Aws::Vector<PlatformType>&& value) { m_platformsHasBeenSet = true; m_platforms = std::move(value); }
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline Application& WithPlatforms(const Aws::Vector<PlatformType>& value) { SetPlatforms(value); return *this;}
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline Application& WithPlatforms(Aws::Vector<PlatformType>&& value) { SetPlatforms(std::move(value)); return *this;}
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline Application& AddPlatforms(const PlatformType& value) { m_platformsHasBeenSet = true; m_platforms.push_back(value); return *this; }
+
+    /**
+     * <p>The platforms on which the application can run.</p>
+     */
+    inline Application& AddPlatforms(PlatformType&& value) { m_platformsHasBeenSet = true; m_platforms.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceFamilies() const{ return m_instanceFamilies; }
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline bool InstanceFamiliesHasBeenSet() const { return m_instanceFamiliesHasBeenSet; }
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline void SetInstanceFamilies(const Aws::Vector<Aws::String>& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies = value; }
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline void SetInstanceFamilies(Aws::Vector<Aws::String>&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies = std::move(value); }
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline Application& WithInstanceFamilies(const Aws::Vector<Aws::String>& value) { SetInstanceFamilies(value); return *this;}
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline Application& WithInstanceFamilies(Aws::Vector<Aws::String>&& value) { SetInstanceFamilies(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline Application& AddInstanceFamilies(const Aws::String& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(value); return *this; }
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline Application& AddInstanceFamilies(Aws::String&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The instance families for the application.</p>
+     */
+    inline Application& AddInstanceFamilies(const char* value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(value); return *this; }
+
+
+    /**
+     * <p>The time at which the application was created within the app block.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>The time at which the application was created within the app block.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The time at which the application was created within the app block.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>The time at which the application was created within the app block.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>The time at which the application was created within the app block.</p>
+     */
+    inline Application& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>The time at which the application was created within the app block.</p>
+     */
+    inline Application& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -356,6 +673,30 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet;
+
+    Aws::String m_workingDirectory;
+    bool m_workingDirectoryHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+
+    Aws::String m_appBlockArn;
+    bool m_appBlockArnHasBeenSet;
+
+    S3Location m_iconS3Location;
+    bool m_iconS3LocationHasBeenSet;
+
+    Aws::Vector<PlatformType> m_platforms;
+    bool m_platformsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_instanceFamilies;
+    bool m_instanceFamiliesHasBeenSet;
+
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet;
   };
 
 } // namespace Model

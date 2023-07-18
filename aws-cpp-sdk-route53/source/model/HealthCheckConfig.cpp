@@ -47,7 +47,8 @@ HealthCheckConfig::HealthCheckConfig() :
     m_regionsHasBeenSet(false),
     m_alarmIdentifierHasBeenSet(false),
     m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
-    m_insufficientDataHealthStatusHasBeenSet(false)
+    m_insufficientDataHealthStatusHasBeenSet(false),
+    m_routingControlArnHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode) :
     m_regionsHasBeenSet(false),
     m_alarmIdentifierHasBeenSet(false),
     m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
-    m_insufficientDataHealthStatusHasBeenSet(false)
+    m_insufficientDataHealthStatusHasBeenSet(false),
+    m_routingControlArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -202,6 +204,12 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     {
       m_insufficientDataHealthStatus = InsufficientDataHealthStatusMapper::GetInsufficientDataHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(insufficientDataHealthStatusNode.GetText()).c_str()).c_str());
       m_insufficientDataHealthStatusHasBeenSet = true;
+    }
+    XmlNode routingControlArnNode = resultNode.FirstChild("RoutingControlArn");
+    if(!routingControlArnNode.IsNull())
+    {
+      m_routingControlArn = Aws::Utils::Xml::DecodeEscapedXmlText(routingControlArnNode.GetText());
+      m_routingControlArnHasBeenSet = true;
     }
   }
 
@@ -335,6 +343,12 @@ void HealthCheckConfig::AddToNode(XmlNode& parentNode) const
   {
    XmlNode insufficientDataHealthStatusNode = parentNode.CreateChildElement("InsufficientDataHealthStatus");
    insufficientDataHealthStatusNode.SetText(InsufficientDataHealthStatusMapper::GetNameForInsufficientDataHealthStatus(m_insufficientDataHealthStatus));
+  }
+
+  if(m_routingControlArnHasBeenSet)
+  {
+   XmlNode routingControlArnNode = parentNode.CreateChildElement("RoutingControlArn");
+   routingControlArnNode.SetText(m_routingControlArn);
   }
 
 }

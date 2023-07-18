@@ -19,12 +19,14 @@ namespace Model
 {
 
 ResourceCollectionFilter::ResourceCollectionFilter() : 
-    m_cloudFormationHasBeenSet(false)
+    m_cloudFormationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 ResourceCollectionFilter::ResourceCollectionFilter(JsonView jsonValue) : 
-    m_cloudFormationHasBeenSet(false)
+    m_cloudFormationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,16 @@ ResourceCollectionFilter& ResourceCollectionFilter::operator =(JsonView jsonValu
     m_cloudFormationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +60,17 @@ JsonValue ResourceCollectionFilter::Jsonize() const
   if(m_cloudFormationHasBeenSet)
   {
    payload.WithObject("CloudFormation", m_cloudFormation.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

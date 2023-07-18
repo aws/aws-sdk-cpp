@@ -26,13 +26,12 @@ namespace Model
 
   /**
    * <p>The severity of the finding.</p> <p>The finding provider can provide the
-   * initial severity, but cannot update it after that. The severity can only be
-   * updated by a master account. It cannot be updated by a member account.</p>
-   * <p>The finding must have either <code>Label</code> or <code>Normalized</code>
-   * populated. If only one of these attributes is populated, then Security Hub
-   * automatically populates the other one. If neither attribute is populated, then
-   * the finding is invalid. <code>Label</code> is the preferred
-   * attribute.</p><p><h3>See Also:</h3>   <a
+   * initial severity. The finding provider can only update the severity if it has
+   * not been updated using <code>BatchUpdateFindings</code>.</p> <p>The finding must
+   * have either <code>Label</code> or <code>Normalized</code> populated. If only one
+   * of these attributes is populated, then Security Hub automatically populates the
+   * other one. If neither attribute is populated, then the finding is invalid.
+   * <code>Label</code> is the preferred attribute.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Severity">AWS
    * API Reference</a></p>
    */
@@ -48,32 +47,32 @@ namespace Model
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline double GetProduct() const{ return m_product; }
 
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}
 

@@ -20,6 +20,7 @@ def ParseArguments():
     parser = argparse.ArgumentParser(description="Generates an SDK given an sdk name and version")
     parser.add_argument("--outputLocation", action="store")
     parser.add_argument("--serviceName", action="store")
+    parser.add_argument("--clientConfigDefaults", action="store")
     parser.add_argument("--apiVersion", action="store")
     parser.add_argument("--namespace", action="store")
     parser.add_argument("--licenseText", action="store")
@@ -33,6 +34,7 @@ def ParseArguments():
     args = vars( parser.parse_args() )
     argMap[ "outputLocation" ] = args[ "outputLocation" ] or "./"
     argMap[ "serviceName" ] = args[ "serviceName" ] or None
+    argMap[ "clientConfigDefaults" ] = args[ "clientConfigDefaults" ] or None
     argMap[ "apiVersion" ] = args[ "apiVersion" ] or ""
     argMap[ "namespace" ] = args[ "namespace" ] or ""
     argMap[ "licenseText" ] = args[ "licenseText" ] or ""
@@ -47,6 +49,8 @@ def ParseArguments():
 
 serviceNameRemaps = {
     "runtime.lex" : "lex",
+    "runtime.lex.v2" : "lexv2-runtime",
+    "models.lex.v2" : "lexv2-models",
     "entitlement.marketplace" : "marketplace-entitlement",
     "runtime.sagemaker" : "sagemaker-runtime",
     "transfer" : "awstransfer",
@@ -72,6 +76,13 @@ def DiscoverAllAvailableSDKs(discoveryPath):
             sdk['filePath'] = join(discoveryPath, file)
             sdks['{}-{}'.format(sdk['serviceName'], sdk['apiVersion'])] = sdk
 
+            if serviceName == "s3":
+                s3crt = {}
+                s3crt['serviceName'] = "s3-crt"
+                s3crt['apiVersion'] = sdk['apiVersion']
+                s3crt['filePath'] = sdk['filePath']
+                sdks['s3-crt-{}'.format(s3crt['apiVersion'])] = s3crt
+
     return sdks
 
 def PrepareGenerator(generatorPath):
@@ -94,8 +105,27 @@ def GenerateSdk(generatorPath, sdk, outputDir, namespace, licenseText, standalon
             if output:
                  with zipfile.ZipFile(output.strip().decode('utf-8'), 'r') as zip:
                      zip.extractall(outputDir)
-    except EnvironmentError as  ex:
+    except EnvironmentError as ex:
         print('Error generating sdk {} with error {}'.format(sdk, ex))
+
+def GenerateDefaults(generatorPath, defaultsDefinitionPath, outputDir, namespace, licenseText):
+    try:
+       with codecs.open(defaultsDefinitionPath, 'rb', 'utf-8') as defaults_definition:
+            defaults_content = defaults_definition.read()
+            jar_path = join(generatorPath, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
+            process = Popen(['java', '-jar', jar_path, '--defaults', 'global', '--namespace', namespace, '--license-text', licenseText, '--language-binding', 'cpp', '--arbitrary'], stdout=PIPE, stdin=PIPE)
+            writer = codecs.getwriter('utf-8')
+            stdInWriter = writer(process.stdin)
+            stdInWriter.write(defaults_content)
+            process.stdin.close()
+            output = process.stdout.read()
+            if output:
+                 with zipfile.ZipFile(output.strip().decode('utf-8'), 'r') as zip:
+                     zip.extractall(outputDir)
+    except EnvironmentError as ex:
+        print('Error generating {} defaults with error {}'.format('global', ex))
+    except Exception as ex:
+        print('Error generating {} defaults with error {}'.format('global', ex))
 
 def Main():
     arguments = ParseArguments()
@@ -113,5 +143,10 @@ def Main():
         print('Generating {} api version {}.'.format(arguments['serviceName'], arguments['apiVersion']))
         key = '{}-{}'.format(arguments['serviceName'], arguments['apiVersion'])
         GenerateSdk(arguments['pathToGenerator'], sdks[key], arguments['outputLocation'], arguments['namespace'], arguments['licenseText'], arguments['standalone'], arguments['enableVirtualOperations'])
+
+    if arguments['clientConfigDefaults']:
+        print('Generating {} defaults api version.'.format(arguments['clientConfigDefaults']))
+        defaultsDefinitionPath = './code-generation/defaults/sdk-default-configuration.json'
+        GenerateDefaults(arguments['pathToGenerator'], defaultsDefinitionPath, arguments['outputLocation'], arguments['namespace'], arguments['licenseText'])
 
 Main()

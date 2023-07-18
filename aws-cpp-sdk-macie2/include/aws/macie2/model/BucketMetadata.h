@@ -6,11 +6,14 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/model/AllowsUnencryptedObjectUploads.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/macie2/model/BucketMetadataErrorCode.h>
 #include <aws/macie2/model/JobDetails.h>
 #include <aws/macie2/model/ObjectCountByEncryptionType.h>
 #include <aws/macie2/model/BucketPublicAccess.h>
 #include <aws/macie2/model/ReplicationDetails.h>
+#include <aws/macie2/model/BucketServerSideEncryption.h>
 #include <aws/macie2/model/SharedAccess.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/model/ObjectLevelStatistics.h>
@@ -33,8 +36,14 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an S3 bucket that Amazon Macie monitors and
-   * analyzes.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides statistical data and other information about an S3 bucket that
+   * Amazon Macie monitors and analyzes for your account. If an error occurs when
+   * Macie attempts to retrieve and process information about the bucket or the
+   * bucket's objects, the value for the versioning property is false and the value
+   * for most other properties is null. Exceptions are accountId, bucketArn,
+   * bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of
+   * the error, refer to the errorCode and errorMessage values.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata">AWS
    * API Reference</a></p>
    */
@@ -48,44 +57,149 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline BucketMetadata& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline BucketMetadata& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline BucketMetadata& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the bucket policy for the bucket requires server-side
+     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
+     * new objects. PutObject requests must include the x-amz-server-side-encryption
+     * header and the value for that header must be AES256 or aws:kms.</p></li>
+     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
+     * that doesn't require server-side encryption of new objects. If a bucket policy
+     * exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that
+     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul>
+     */
+    inline const AllowsUnencryptedObjectUploads& GetAllowsUnencryptedObjectUploads() const{ return m_allowsUnencryptedObjectUploads; }
+
+    /**
+     * <p>Specifies whether the bucket policy for the bucket requires server-side
+     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
+     * new objects. PutObject requests must include the x-amz-server-side-encryption
+     * header and the value for that header must be AES256 or aws:kms.</p></li>
+     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
+     * that doesn't require server-side encryption of new objects. If a bucket policy
+     * exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that
+     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul>
+     */
+    inline bool AllowsUnencryptedObjectUploadsHasBeenSet() const { return m_allowsUnencryptedObjectUploadsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the bucket policy for the bucket requires server-side
+     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
+     * new objects. PutObject requests must include the x-amz-server-side-encryption
+     * header and the value for that header must be AES256 or aws:kms.</p></li>
+     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
+     * that doesn't require server-side encryption of new objects. If a bucket policy
+     * exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that
+     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul>
+     */
+    inline void SetAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = value; }
+
+    /**
+     * <p>Specifies whether the bucket policy for the bucket requires server-side
+     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
+     * new objects. PutObject requests must include the x-amz-server-side-encryption
+     * header and the value for that header must be AES256 or aws:kms.</p></li>
+     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
+     * that doesn't require server-side encryption of new objects. If a bucket policy
+     * exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that
+     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul>
+     */
+    inline void SetAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = std::move(value); }
+
+    /**
+     * <p>Specifies whether the bucket policy for the bucket requires server-side
+     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
+     * new objects. PutObject requests must include the x-amz-server-side-encryption
+     * header and the value for that header must be AES256 or aws:kms.</p></li>
+     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
+     * that doesn't require server-side encryption of new objects. If a bucket policy
+     * exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that
+     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul>
+     */
+    inline BucketMetadata& WithAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
+
+    /**
+     * <p>Specifies whether the bucket policy for the bucket requires server-side
+     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
+     * new objects. PutObject requests must include the x-amz-server-side-encryption
+     * header and the value for that header must be AES256 or aws:kms.</p></li>
+     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
+     * that doesn't require server-side encryption of new objects. If a bucket policy
+     * exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that
+     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul>
+     */
+    inline BucketMetadata& WithAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { SetAllowsUnencryptedObjectUploads(std::move(value)); return *this;}
 
 
     /**
@@ -239,30 +353,172 @@ namespace Model
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline bool ClassifiableSizeInBytesHasBeenSet() const { return m_classifiableSizeInBytesHasBeenSet; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytesHasBeenSet = true; m_classifiableSizeInBytes = value; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline BucketMetadata& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
+
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline const BucketMetadataErrorCode& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline void SetErrorCode(const BucketMetadataErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline void SetErrorCode(BucketMetadataErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline BucketMetadata& WithErrorCode(const BucketMetadataErrorCode& value) { SetErrorCode(value); return *this;}
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline BucketMetadata& WithErrorCode(BucketMetadataErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline BucketMetadata& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline BucketMetadata& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline BucketMetadata& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
 
     /**
@@ -310,37 +566,43 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline BucketMetadata& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline BucketMetadata& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -410,231 +672,308 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline const BucketPublicAccess& GetPublicAccess() const{ return m_publicAccess; }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline bool PublicAccessHasBeenSet() const { return m_publicAccessHasBeenSet; }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline void SetPublicAccess(const BucketPublicAccess& value) { m_publicAccessHasBeenSet = true; m_publicAccess = value; }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline void SetPublicAccess(BucketPublicAccess&& value) { m_publicAccessHasBeenSet = true; m_publicAccess = std::move(value); }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline BucketMetadata& WithPublicAccess(const BucketPublicAccess& value) { SetPublicAccess(value); return *this;}
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline BucketMetadata& WithPublicAccess(BucketPublicAccess&& value) { SetPublicAccess(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline BucketMetadata& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline BucketMetadata& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline BucketMetadata& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline const ReplicationDetails& GetReplicationDetails() const{ return m_replicationDetails; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline bool ReplicationDetailsHasBeenSet() const { return m_replicationDetailsHasBeenSet; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline void SetReplicationDetails(const ReplicationDetails& value) { m_replicationDetailsHasBeenSet = true; m_replicationDetails = value; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline void SetReplicationDetails(ReplicationDetails&& value) { m_replicationDetailsHasBeenSet = true; m_replicationDetails = std::move(value); }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline BucketMetadata& WithReplicationDetails(const ReplicationDetails& value) { SetReplicationDetails(value); return *this;}
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline BucketMetadata& WithReplicationDetails(ReplicationDetails&& value) { SetReplicationDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline const BucketServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline void SetServerSideEncryption(const BucketServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline void SetServerSideEncryption(BucketServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline BucketMetadata& WithServerSideEncryption(const BucketServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline BucketMetadata& WithServerSideEncryption(BucketServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline const SharedAccess& GetSharedAccess() const{ return m_sharedAccess; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline bool SharedAccessHasBeenSet() const { return m_sharedAccessHasBeenSet; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline void SetSharedAccess(const SharedAccess& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = value; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline void SetSharedAccess(SharedAccess&& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = std::move(value); }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline BucketMetadata& WithSharedAccess(const SharedAccess& value) { SetSharedAccess(value); return *this;}
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline BucketMetadata& WithSharedAccess(SharedAccess&& value) { SetSharedAccess(std::move(value)); return *this;}
 
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline BucketMetadata& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline bool SizeInBytesCompressedHasBeenSet() const { return m_sizeInBytesCompressedHasBeenSet; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressedHasBeenSet = true; m_sizeInBytesCompressed = value; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline BucketMetadata& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
 
@@ -799,6 +1138,9 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
 
+    AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads;
+    bool m_allowsUnencryptedObjectUploadsHasBeenSet;
+
     Aws::String m_bucketArn;
     bool m_bucketArnHasBeenSet;
 
@@ -813,6 +1155,12 @@ namespace Model
 
     long long m_classifiableSizeInBytes;
     bool m_classifiableSizeInBytesHasBeenSet;
+
+    BucketMetadataErrorCode m_errorCode;
+    bool m_errorCodeHasBeenSet;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet;
 
     JobDetails m_jobDetails;
     bool m_jobDetailsHasBeenSet;
@@ -834,6 +1182,9 @@ namespace Model
 
     ReplicationDetails m_replicationDetails;
     bool m_replicationDetailsHasBeenSet;
+
+    BucketServerSideEncryption m_serverSideEncryption;
+    bool m_serverSideEncryptionHasBeenSet;
 
     SharedAccess m_sharedAccess;
     bool m_sharedAccessHasBeenSet;

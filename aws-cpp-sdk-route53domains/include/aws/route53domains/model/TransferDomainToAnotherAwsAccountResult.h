@@ -89,8 +89,8 @@ namespace Model
 
 
     /**
-     * <p>To finish transferring a domain to another AWS account, the account that the
-     * domain is being transferred to must submit an <a
+     * <p>To finish transferring a domain to another Amazon Web Services account, the
+     * account that the domain is being transferred to must submit an <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
      * request. The request must include the value of the <code>Password</code> element
      * that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -99,8 +99,8 @@ namespace Model
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>To finish transferring a domain to another AWS account, the account that the
-     * domain is being transferred to must submit an <a
+     * <p>To finish transferring a domain to another Amazon Web Services account, the
+     * account that the domain is being transferred to must submit an <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
      * request. The request must include the value of the <code>Password</code> element
      * that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -109,8 +109,8 @@ namespace Model
     inline void SetPassword(const Aws::String& value) { m_password = value; }
 
     /**
-     * <p>To finish transferring a domain to another AWS account, the account that the
-     * domain is being transferred to must submit an <a
+     * <p>To finish transferring a domain to another Amazon Web Services account, the
+     * account that the domain is being transferred to must submit an <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
      * request. The request must include the value of the <code>Password</code> element
      * that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -119,8 +119,8 @@ namespace Model
     inline void SetPassword(Aws::String&& value) { m_password = std::move(value); }
 
     /**
-     * <p>To finish transferring a domain to another AWS account, the account that the
-     * domain is being transferred to must submit an <a
+     * <p>To finish transferring a domain to another Amazon Web Services account, the
+     * account that the domain is being transferred to must submit an <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
      * request. The request must include the value of the <code>Password</code> element
      * that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -129,8 +129,8 @@ namespace Model
     inline void SetPassword(const char* value) { m_password.assign(value); }
 
     /**
-     * <p>To finish transferring a domain to another AWS account, the account that the
-     * domain is being transferred to must submit an <a
+     * <p>To finish transferring a domain to another Amazon Web Services account, the
+     * account that the domain is being transferred to must submit an <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
      * request. The request must include the value of the <code>Password</code> element
      * that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -139,8 +139,8 @@ namespace Model
     inline TransferDomainToAnotherAwsAccountResult& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>To finish transferring a domain to another AWS account, the account that the
-     * domain is being transferred to must submit an <a
+     * <p>To finish transferring a domain to another Amazon Web Services account, the
+     * account that the domain is being transferred to must submit an <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
      * request. The request must include the value of the <code>Password</code> element
      * that was returned in the <code>TransferDomainToAnotherAwsAccount</code>
@@ -149,8 +149,8 @@ namespace Model
     inline TransferDomainToAnotherAwsAccountResult& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>To finish transferring a domain to another AWS account, the account that the
-     * domain is being transferred to must submit an <a
+     * <p>To finish transferring a domain to another Amazon Web Services account, the
+     * account that the domain is being transferred to must submit an <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
      * request. The request must include the value of the <code>Password</code> element
      * that was returned in the <code>TransferDomainToAnotherAwsAccount</code>

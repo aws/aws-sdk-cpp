@@ -9,6 +9,7 @@
 #include <aws/pinpoint/model/CampaignCustomMessage.h>
 #include <aws/pinpoint/model/CampaignEmailMessage.h>
 #include <aws/pinpoint/model/CampaignSmsMessage.h>
+#include <aws/pinpoint/model/CampaignInAppMessage.h>
 #include <utility>
 
 namespace Aws
@@ -354,6 +355,37 @@ namespace Model
      */
     inline MessageConfiguration& WithSMSMessage(CampaignSmsMessage&& value) { SetSMSMessage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The in-app message configuration.</p>
+     */
+    inline const CampaignInAppMessage& GetInAppMessage() const{ return m_inAppMessage; }
+
+    /**
+     * <p>The in-app message configuration.</p>
+     */
+    inline bool InAppMessageHasBeenSet() const { return m_inAppMessageHasBeenSet; }
+
+    /**
+     * <p>The in-app message configuration.</p>
+     */
+    inline void SetInAppMessage(const CampaignInAppMessage& value) { m_inAppMessageHasBeenSet = true; m_inAppMessage = value; }
+
+    /**
+     * <p>The in-app message configuration.</p>
+     */
+    inline void SetInAppMessage(CampaignInAppMessage&& value) { m_inAppMessageHasBeenSet = true; m_inAppMessage = std::move(value); }
+
+    /**
+     * <p>The in-app message configuration.</p>
+     */
+    inline MessageConfiguration& WithInAppMessage(const CampaignInAppMessage& value) { SetInAppMessage(value); return *this;}
+
+    /**
+     * <p>The in-app message configuration.</p>
+     */
+    inline MessageConfiguration& WithInAppMessage(CampaignInAppMessage&& value) { SetInAppMessage(std::move(value)); return *this;}
+
   private:
 
     Message m_aDMMessage;
@@ -379,6 +411,9 @@ namespace Model
 
     CampaignSmsMessage m_sMSMessage;
     bool m_sMSMessageHasBeenSet;
+
+    CampaignInAppMessage m_inAppMessage;
+    bool m_inAppMessageHasBeenSet;
   };
 
 } // namespace Model

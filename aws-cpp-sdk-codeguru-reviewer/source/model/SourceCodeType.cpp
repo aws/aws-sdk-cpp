@@ -20,13 +20,19 @@ namespace Model
 
 SourceCodeType::SourceCodeType() : 
     m_commitDiffHasBeenSet(false),
-    m_repositoryHeadHasBeenSet(false)
+    m_repositoryHeadHasBeenSet(false),
+    m_branchDiffHasBeenSet(false),
+    m_s3BucketRepositoryHasBeenSet(false),
+    m_requestMetadataHasBeenSet(false)
 {
 }
 
 SourceCodeType::SourceCodeType(JsonView jsonValue) : 
     m_commitDiffHasBeenSet(false),
-    m_repositoryHeadHasBeenSet(false)
+    m_repositoryHeadHasBeenSet(false),
+    m_branchDiffHasBeenSet(false),
+    m_s3BucketRepositoryHasBeenSet(false),
+    m_requestMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +53,27 @@ SourceCodeType& SourceCodeType::operator =(JsonView jsonValue)
     m_repositoryHeadHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BranchDiff"))
+  {
+    m_branchDiff = jsonValue.GetObject("BranchDiff");
+
+    m_branchDiffHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3BucketRepository"))
+  {
+    m_s3BucketRepository = jsonValue.GetObject("S3BucketRepository");
+
+    m_s3BucketRepositoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RequestMetadata"))
+  {
+    m_requestMetadata = jsonValue.GetObject("RequestMetadata");
+
+    m_requestMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +90,24 @@ JsonValue SourceCodeType::Jsonize() const
   if(m_repositoryHeadHasBeenSet)
   {
    payload.WithObject("RepositoryHead", m_repositoryHead.Jsonize());
+
+  }
+
+  if(m_branchDiffHasBeenSet)
+  {
+   payload.WithObject("BranchDiff", m_branchDiff.Jsonize());
+
+  }
+
+  if(m_s3BucketRepositoryHasBeenSet)
+  {
+   payload.WithObject("S3BucketRepository", m_s3BucketRepository.Jsonize());
+
+  }
+
+  if(m_requestMetadataHasBeenSet)
+  {
+   payload.WithObject("RequestMetadata", m_requestMetadata.Jsonize());
 
   }
 

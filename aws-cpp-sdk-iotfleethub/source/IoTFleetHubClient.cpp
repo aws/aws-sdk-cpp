@@ -76,7 +76,7 @@ IoTFleetHubClient::~IoTFleetHubClient()
 {
 }
 
-void IoTFleetHubClient::init(const ClientConfiguration& config)
+void IoTFleetHubClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTFleetHub");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -105,9 +105,7 @@ void IoTFleetHubClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateApplicationOutcome IoTFleetHubClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -137,10 +135,8 @@ DeleteApplicationOutcome IoTFleetHubClient::DeleteApplication(const DeleteApplic
     return DeleteApplicationOutcome(Aws::Client::AWSError<IoTFleetHubErrors>(IoTFleetHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,10 +166,8 @@ DescribeApplicationOutcome IoTFleetHubClient::DescribeApplication(const Describe
     return DescribeApplicationOutcome(Aws::Client::AWSError<IoTFleetHubErrors>(IoTFleetHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return DescribeApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,9 +192,7 @@ void IoTFleetHubClient::DescribeApplicationAsyncHelper(const DescribeApplication
 ListApplicationsOutcome IoTFleetHubClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return ListApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -230,10 +222,8 @@ ListTagsForResourceOutcome IoTFleetHubClient::ListTagsForResource(const ListTags
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTFleetHubErrors>(IoTFleetHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,10 +253,8 @@ TagResourceOutcome IoTFleetHubClient::TagResource(const TagResourceRequest& requ
     return TagResourceOutcome(Aws::Client::AWSError<IoTFleetHubErrors>(IoTFleetHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -301,10 +289,8 @@ UntagResourceOutcome IoTFleetHubClient::UntagResource(const UntagResourceRequest
     return UntagResourceOutcome(Aws::Client::AWSError<IoTFleetHubErrors>(IoTFleetHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,10 +320,8 @@ UpdateApplicationOutcome IoTFleetHubClient::UpdateApplication(const UpdateApplic
     return UpdateApplicationOutcome(Aws::Client::AWSError<IoTFleetHubErrors>(IoTFleetHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return UpdateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -26,9 +26,8 @@ namespace Model
 
   /**
    * <p>Describes information used for one or more scheduled scaling action updates
-   * in a <a>BatchPutScheduledUpdateGroupAction</a> operation.</p> <p>When updating a
-   * scheduled scaling action, all optional parameters are left unchanged if not
-   * specified.</p><p><h3>See Also:</h3>   <a
+   * in a <a>BatchPutScheduledUpdateGroupAction</a> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupActionRequest">AWS
    * API Reference</a></p>
    */
@@ -152,38 +151,32 @@ namespace Model
 
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -196,7 +189,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
 
@@ -208,7 +202,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
 
@@ -220,7 +215,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
@@ -232,7 +228,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
@@ -244,7 +241,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
@@ -256,7 +254,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
@@ -268,7 +267,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
 
@@ -280,7 +280,8 @@ namespace Model
      * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
      * <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
+     * by default.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 
@@ -351,6 +352,87 @@ namespace Model
      */
     inline ScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline ScheduledUpdateGroupActionRequest& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline ScheduledUpdateGroupActionRequest& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline ScheduledUpdateGroupActionRequest& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+
   private:
 
     Aws::String m_scheduledActionName;
@@ -373,6 +455,9 @@ namespace Model
 
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
+
+    Aws::String m_timeZone;
+    bool m_timeZoneHasBeenSet;
   };
 
 } // namespace Model

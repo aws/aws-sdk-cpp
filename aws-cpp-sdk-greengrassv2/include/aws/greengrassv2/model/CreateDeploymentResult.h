@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline const Aws::String& GetIotJobId() const{ return m_iotJobId; }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(const Aws::String& value) { m_iotJobId = value; }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(Aws::String&& value) { m_iotJobId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(const char* value) { m_iotJobId.assign(value); }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline CreateDeploymentResult& WithIotJobId(const Aws::String& value) { SetIotJobId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline CreateDeploymentResult& WithIotJobId(Aws::String&& value) { SetIotJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline CreateDeploymentResult& WithIotJobId(const char* value) { SetIotJobId(value); return *this;}
 
@@ -107,49 +107,49 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline const Aws::String& GetIotJobArn() const{ return m_iotJobArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(const Aws::String& value) { m_iotJobArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(Aws::String&& value) { m_iotJobArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(const char* value) { m_iotJobArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline CreateDeploymentResult& WithIotJobArn(const Aws::String& value) { SetIotJobArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline CreateDeploymentResult& WithIotJobArn(Aws::String&& value) { SetIotJobArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline CreateDeploymentResult& WithIotJobArn(const char* value) { SetIotJobArn(value); return *this;}
 

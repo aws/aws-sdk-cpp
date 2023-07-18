@@ -81,57 +81,57 @@ namespace Model
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline CreateAliasRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline CreateAliasRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
-     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
-     * the alias already exists.</p>
+     * Amazon Web Services. This operation throws an
+     * <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
      */
     inline CreateAliasRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
 

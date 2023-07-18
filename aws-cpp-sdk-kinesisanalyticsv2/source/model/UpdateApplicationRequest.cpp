@@ -19,7 +19,8 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_applicationConfigurationUpdateHasBeenSet(false),
     m_serviceExecutionRoleUpdateHasBeenSet(false),
     m_runConfigurationUpdateHasBeenSet(false),
-    m_cloudWatchLoggingOptionUpdatesHasBeenSet(false)
+    m_cloudWatchLoggingOptionUpdatesHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
      cloudWatchLoggingOptionUpdatesJsonList[cloudWatchLoggingOptionUpdatesIndex].AsObject(m_cloudWatchLoggingOptionUpdates[cloudWatchLoggingOptionUpdatesIndex].Jsonize());
    }
    payload.WithArray("CloudWatchLoggingOptionUpdates", std::move(cloudWatchLoggingOptionUpdatesJsonList));
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
 
   }
 

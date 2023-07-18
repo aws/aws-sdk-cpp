@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS Lambda function to import to create a
+   * <p>Contains information about an Lambda function to import to create a
    * component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaFunctionRecipeSource">AWS
    * API Reference</a></p>
@@ -318,37 +318,37 @@ namespace Model
 
     /**
      * <p>The system and runtime parameters for the Lambda function as it runs on the
-     * AWS IoT Greengrass core device.</p>
+     * Greengrass core device.</p>
      */
     inline const LambdaExecutionParameters& GetComponentLambdaParameters() const{ return m_componentLambdaParameters; }
 
     /**
      * <p>The system and runtime parameters for the Lambda function as it runs on the
-     * AWS IoT Greengrass core device.</p>
+     * Greengrass core device.</p>
      */
     inline bool ComponentLambdaParametersHasBeenSet() const { return m_componentLambdaParametersHasBeenSet; }
 
     /**
      * <p>The system and runtime parameters for the Lambda function as it runs on the
-     * AWS IoT Greengrass core device.</p>
+     * Greengrass core device.</p>
      */
     inline void SetComponentLambdaParameters(const LambdaExecutionParameters& value) { m_componentLambdaParametersHasBeenSet = true; m_componentLambdaParameters = value; }
 
     /**
      * <p>The system and runtime parameters for the Lambda function as it runs on the
-     * AWS IoT Greengrass core device.</p>
+     * Greengrass core device.</p>
      */
     inline void SetComponentLambdaParameters(LambdaExecutionParameters&& value) { m_componentLambdaParametersHasBeenSet = true; m_componentLambdaParameters = std::move(value); }
 
     /**
      * <p>The system and runtime parameters for the Lambda function as it runs on the
-     * AWS IoT Greengrass core device.</p>
+     * Greengrass core device.</p>
      */
     inline LambdaFunctionRecipeSource& WithComponentLambdaParameters(const LambdaExecutionParameters& value) { SetComponentLambdaParameters(value); return *this;}
 
     /**
      * <p>The system and runtime parameters for the Lambda function as it runs on the
-     * AWS IoT Greengrass core device.</p>
+     * Greengrass core device.</p>
      */
     inline LambdaFunctionRecipeSource& WithComponentLambdaParameters(LambdaExecutionParameters&& value) { SetComponentLambdaParameters(std::move(value)); return *this;}
 

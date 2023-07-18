@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplify/model/ProductionBranch.h>
 #include <aws/amplify/model/AutoBranchCreationConfig.h>
+#include <aws/amplify/model/RepositoryCloneMethod.h>
 #include <aws/amplify/model/CustomRule.h>
 #include <utility>
 
@@ -276,42 +277,42 @@ namespace Model
 
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline const Aws::String& GetRepository() const{ return m_repository; }
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline App& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline App& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
 
     /**
-     * <p> The repository for the Amplify app. </p>
+     * <p> The Git repository for the Amplify app. </p>
      */
     inline App& WithRepository(const char* value) { SetRepository(value); return *this;}
 
@@ -633,42 +634,58 @@ namespace Model
 
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline const Aws::String& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(const Aws::String& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(Aws::String&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::move(value); }
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(const char* value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials.assign(value); }
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline App& WithBasicAuthCredentials(const Aws::String& value) { SetBasicAuthCredentials(value); return *this;}
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline App& WithBasicAuthCredentials(Aws::String&& value) { SetBasicAuthCredentials(std::move(value)); return *this;}
 
     /**
-     * <p> The basic authorization credentials for branches for the Amplify app. </p>
+     * <p> The basic authorization credentials for branches for the Amplify app. You
+     * must base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline App& WithBasicAuthCredentials(const char* value) { SetBasicAuthCredentials(value); return *this;}
 
@@ -947,6 +964,61 @@ namespace Model
      */
     inline App& WithAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { SetAutoBranchCreationConfig(std::move(value)); return *this;}
 
+
+    /**
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
+     */
+    inline const RepositoryCloneMethod& GetRepositoryCloneMethod() const{ return m_repositoryCloneMethod; }
+
+    /**
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
+     */
+    inline bool RepositoryCloneMethodHasBeenSet() const { return m_repositoryCloneMethodHasBeenSet; }
+
+    /**
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
+     */
+    inline void SetRepositoryCloneMethod(const RepositoryCloneMethod& value) { m_repositoryCloneMethodHasBeenSet = true; m_repositoryCloneMethod = value; }
+
+    /**
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
+     */
+    inline void SetRepositoryCloneMethod(RepositoryCloneMethod&& value) { m_repositoryCloneMethodHasBeenSet = true; m_repositoryCloneMethod = std::move(value); }
+
+    /**
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
+     */
+    inline App& WithRepositoryCloneMethod(const RepositoryCloneMethod& value) { SetRepositoryCloneMethod(value); return *this;}
+
+    /**
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
+     */
+    inline App& WithRepositoryCloneMethod(RepositoryCloneMethod&& value) { SetRepositoryCloneMethod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appId;
@@ -1017,6 +1089,9 @@ namespace Model
 
     AutoBranchCreationConfig m_autoBranchCreationConfig;
     bool m_autoBranchCreationConfigHasBeenSet;
+
+    RepositoryCloneMethod m_repositoryCloneMethod;
+    bool m_repositoryCloneMethodHasBeenSet;
   };
 
 } // namespace Model

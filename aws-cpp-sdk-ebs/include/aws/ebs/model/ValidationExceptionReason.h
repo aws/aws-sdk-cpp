@@ -26,7 +26,8 @@ namespace Model
     INVALID_TAG,
     INVALID_DEPENDENCY_REQUEST,
     INVALID_PARAMETER_VALUE,
-    INVALID_VOLUME_SIZE
+    INVALID_VOLUME_SIZE,
+    CONFLICTING_BLOCK_UPDATE
   };
 
 namespace ValidationExceptionReasonMapper

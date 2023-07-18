@@ -151,42 +151,42 @@ namespace Model
 
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline ComplianceItem& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline ComplianceItem& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     * <p>An ID for the resource. For a managed node, this is the node ID.</p>
      */
     inline ComplianceItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

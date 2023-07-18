@@ -102,32 +102,32 @@ namespace Model
 
 
     /**
-     * <p>The time period covered by this budget comparison.</p>
+     * <p>The time period that's covered by this budget comparison.</p>
      */
     inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The time period covered by this budget comparison.</p>
+     * <p>The time period that's covered by this budget comparison.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
-     * <p>The time period covered by this budget comparison.</p>
+     * <p>The time period that's covered by this budget comparison.</p>
      */
     inline void SetTimePeriod(const TimePeriod& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The time period covered by this budget comparison.</p>
+     * <p>The time period that's covered by this budget comparison.</p>
      */
     inline void SetTimePeriod(TimePeriod&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The time period covered by this budget comparison.</p>
+     * <p>The time period that's covered by this budget comparison.</p>
      */
     inline BudgetedAndActualAmounts& WithTimePeriod(const TimePeriod& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The time period covered by this budget comparison.</p>
+     * <p>The time period that's covered by this budget comparison.</p>
      */
     inline BudgetedAndActualAmounts& WithTimePeriod(TimePeriod&& value) { SetTimePeriod(std::move(value)); return *this;}
 

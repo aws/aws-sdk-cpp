@@ -47,7 +47,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
@@ -56,7 +56,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
@@ -65,7 +65,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
@@ -74,7 +74,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
@@ -83,7 +83,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline PartitionInput& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
@@ -92,7 +92,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline PartitionInput& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline PartitionInput& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
@@ -110,7 +110,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline PartitionInput& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
@@ -119,7 +119,7 @@ namespace Model
      * SDK, you must specify this parameter for a valid input.</p> <p>The values for
      * the keys for the new partition must be passed as an array of String objects that
      * must be ordered in the same order as the partition keys appearing in the Amazon
-     * S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.</p>
+     * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
     inline PartitionInput& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

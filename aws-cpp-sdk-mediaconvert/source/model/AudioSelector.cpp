@@ -23,6 +23,7 @@ AudioSelector::AudioSelector() :
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
     m_externalAudioFileInputHasBeenSet(false),
+    m_hlsRenditionGroupSettingsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_offset(0),
@@ -42,6 +43,7 @@ AudioSelector::AudioSelector(JsonView jsonValue) :
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
     m_externalAudioFileInputHasBeenSet(false),
+    m_hlsRenditionGroupSettingsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_offset(0),
@@ -78,6 +80,13 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
     m_externalAudioFileInput = jsonValue.GetString("externalAudioFileInput");
 
     m_externalAudioFileInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hlsRenditionGroupSettings"))
+  {
+    m_hlsRenditionGroupSettings = jsonValue.GetObject("hlsRenditionGroupSettings");
+
+    m_hlsRenditionGroupSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("languageCode"))
@@ -156,6 +165,12 @@ JsonValue AudioSelector::Jsonize() const
   if(m_externalAudioFileInputHasBeenSet)
   {
    payload.WithString("externalAudioFileInput", m_externalAudioFileInput);
+
+  }
+
+  if(m_hlsRenditionGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("hlsRenditionGroupSettings", m_hlsRenditionGroupSettings.Jsonize());
 
   }
 

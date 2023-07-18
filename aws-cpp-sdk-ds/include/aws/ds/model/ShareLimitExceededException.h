@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The maximum number of AWS accounts that you can share with this directory has
-   * been reached.</p><p><h3>See Also:</h3>   <a
+   * <p>The maximum number of Amazon Web Services accounts that you can share with
+   * this directory has been reached.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareLimitExceededException">AWS
    * API Reference</a></p>
    */

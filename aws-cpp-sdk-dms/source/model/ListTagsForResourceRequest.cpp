@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_resourceArnListHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,17 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_resourceArnListHasBeenSet)
+  {
+   Array<JsonValue> resourceArnListJsonList(m_resourceArnList.size());
+   for(unsigned resourceArnListIndex = 0; resourceArnListIndex < resourceArnListJsonList.GetLength(); ++resourceArnListIndex)
+   {
+     resourceArnListJsonList[resourceArnListIndex].AsString(m_resourceArnList[resourceArnListIndex]);
+   }
+   payload.WithArray("ResourceArnList", std::move(resourceArnListJsonList));
 
   }
 

@@ -27,7 +27,8 @@ StackSetOperationSummary::StackSetOperationSummary() :
     m_status(StackSetOperationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+    m_endTimestampHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ StackSetOperationSummary::StackSetOperationSummary(const XmlNode& xmlNode) :
     m_status(StackSetOperationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+    m_endTimestampHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +81,12 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
       m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimestampHasBeenSet = true;
     }
+    XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
+    if(!statusReasonNode.IsNull())
+    {
+      m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
+      m_statusReasonHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +119,11 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+
 }
 
 void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,6 +147,10 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
   if(m_endTimestampHasBeenSet)
   {
       oStream << location << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 }
 

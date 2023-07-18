@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline ListInfrastructureConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline ListInfrastructureConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline ListInfrastructureConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * <p>The list of infrastructure configurations. </p>
+     * <p>The list of infrastructure configurations.</p>
      */
     inline const Aws::Vector<InfrastructureConfigurationSummary>& GetInfrastructureConfigurationSummaryList() const{ return m_infrastructureConfigurationSummaryList; }
 
     /**
-     * <p>The list of infrastructure configurations. </p>
+     * <p>The list of infrastructure configurations.</p>
      */
     inline void SetInfrastructureConfigurationSummaryList(const Aws::Vector<InfrastructureConfigurationSummary>& value) { m_infrastructureConfigurationSummaryList = value; }
 
     /**
-     * <p>The list of infrastructure configurations. </p>
+     * <p>The list of infrastructure configurations.</p>
      */
     inline void SetInfrastructureConfigurationSummaryList(Aws::Vector<InfrastructureConfigurationSummary>&& value) { m_infrastructureConfigurationSummaryList = std::move(value); }
 
     /**
-     * <p>The list of infrastructure configurations. </p>
+     * <p>The list of infrastructure configurations.</p>
      */
     inline ListInfrastructureConfigurationsResult& WithInfrastructureConfigurationSummaryList(const Aws::Vector<InfrastructureConfigurationSummary>& value) { SetInfrastructureConfigurationSummaryList(value); return *this;}
 
     /**
-     * <p>The list of infrastructure configurations. </p>
+     * <p>The list of infrastructure configurations.</p>
      */
     inline ListInfrastructureConfigurationsResult& WithInfrastructureConfigurationSummaryList(Aws::Vector<InfrastructureConfigurationSummary>&& value) { SetInfrastructureConfigurationSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of infrastructure configurations. </p>
+     * <p>The list of infrastructure configurations.</p>
      */
     inline ListInfrastructureConfigurationsResult& AddInfrastructureConfigurationSummaryList(const InfrastructureConfigurationSummary& value) { m_infrastructureConfigurationSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>The list of infrastructure configurations. </p>
+     * <p>The list of infrastructure configurations.</p>
      */
     inline ListInfrastructureConfigurationsResult& AddInfrastructureConfigurationSummaryList(InfrastructureConfigurationSummary&& value) { m_infrastructureConfigurationSummaryList.push_back(std::move(value)); return *this; }
 

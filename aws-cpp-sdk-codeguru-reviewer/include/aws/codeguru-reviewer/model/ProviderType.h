@@ -19,7 +19,8 @@ namespace Model
     CodeCommit,
     GitHub,
     Bitbucket,
-    GitHubEnterpriseServer
+    GitHubEnterpriseServer,
+    S3Bucket
   };
 
 namespace ProviderTypeMapper

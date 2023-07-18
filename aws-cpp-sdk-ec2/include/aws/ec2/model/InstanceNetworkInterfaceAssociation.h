@@ -82,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline const Aws::String& GetCustomerOwnedIp() const{ return m_customerOwnedIp; }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline bool CustomerOwnedIpHasBeenSet() const { return m_customerOwnedIpHasBeenSet; }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline void SetCustomerOwnedIp(const Aws::String& value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp = value; }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline void SetCustomerOwnedIp(Aws::String&& value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp = std::move(value); }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline void SetCustomerOwnedIp(const char* value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp.assign(value); }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceAssociation& WithCustomerOwnedIp(const Aws::String& value) { SetCustomerOwnedIp(value); return *this;}
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceAssociation& WithCustomerOwnedIp(Aws::String&& value) { SetCustomerOwnedIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceAssociation& WithCustomerOwnedIp(const char* value) { SetCustomerOwnedIp(value); return *this;}
+
+
+    /**
      * <p>The ID of the owner of the Elastic IP address.</p>
      */
     inline const Aws::String& GetIpOwnerId() const{ return m_ipOwnerId; }
@@ -215,6 +256,9 @@ namespace Model
 
     Aws::String m_carrierIp;
     bool m_carrierIpHasBeenSet;
+
+    Aws::String m_customerOwnedIp;
+    bool m_customerOwnedIpHasBeenSet;
 
     Aws::String m_ipOwnerId;
     bool m_ipOwnerIdHasBeenSet;

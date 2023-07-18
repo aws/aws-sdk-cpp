@@ -45,7 +45,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
@@ -57,7 +57,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
@@ -69,7 +69,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
@@ -81,7 +81,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
@@ -93,7 +93,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
@@ -105,7 +105,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
      * the starting range value is omitted (<code>:n</code>), then <code>0</code> is
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
-     * node ranges must account for all nodes (<code>0:n</code>). You may nest node
+     * node ranges must account for all nodes (<code>0:n</code>). You can nest node
      * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */

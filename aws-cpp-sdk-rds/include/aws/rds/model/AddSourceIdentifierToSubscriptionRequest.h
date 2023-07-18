@@ -99,7 +99,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
@@ -114,7 +115,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
@@ -129,7 +131,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
@@ -144,7 +147,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
@@ -159,7 +163,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
@@ -174,7 +179,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
@@ -189,7 +195,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
@@ -204,7 +211,8 @@ namespace Model
      * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
      * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
      * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> </ul>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 

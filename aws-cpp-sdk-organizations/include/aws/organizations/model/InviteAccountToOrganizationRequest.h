@@ -38,86 +38,86 @@ namespace Model
 
 
     /**
-     * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements:</p>
-     * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
-     * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
-     * similar to the following example:</p> <p> <code>--target
+     * <p>The identifier (ID) of the Amazon Web Services account that you want to
+     * invite to join your organization. This is a JSON object that contains the
+     * following elements:</p> <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account
+     * id number</b> </i>&gt;" }</code> </p> <p>If you use the CLI, you can submit this
+     * as a single string, similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
-     * the email address that is associated with the account.</p> <p> <code>--target
-     * Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as
+     * the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+     * specify the email address that is associated with the account.</p> <p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline const HandshakeParty& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements:</p>
-     * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
-     * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
-     * similar to the following example:</p> <p> <code>--target
+     * <p>The identifier (ID) of the Amazon Web Services account that you want to
+     * invite to join your organization. This is a JSON object that contains the
+     * following elements:</p> <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account
+     * id number</b> </i>&gt;" }</code> </p> <p>If you use the CLI, you can submit this
+     * as a single string, similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
-     * the email address that is associated with the account.</p> <p> <code>--target
-     * Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as
+     * the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+     * specify the email address that is associated with the account.</p> <p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
-     * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements:</p>
-     * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
-     * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
-     * similar to the following example:</p> <p> <code>--target
+     * <p>The identifier (ID) of the Amazon Web Services account that you want to
+     * invite to join your organization. This is a JSON object that contains the
+     * following elements:</p> <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account
+     * id number</b> </i>&gt;" }</code> </p> <p>If you use the CLI, you can submit this
+     * as a single string, similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
-     * the email address that is associated with the account.</p> <p> <code>--target
-     * Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as
+     * the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+     * specify the email address that is associated with the account.</p> <p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline void SetTarget(const HandshakeParty& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements:</p>
-     * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
-     * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
-     * similar to the following example:</p> <p> <code>--target
+     * <p>The identifier (ID) of the Amazon Web Services account that you want to
+     * invite to join your organization. This is a JSON object that contains the
+     * following elements:</p> <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account
+     * id number</b> </i>&gt;" }</code> </p> <p>If you use the CLI, you can submit this
+     * as a single string, similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
-     * the email address that is associated with the account.</p> <p> <code>--target
-     * Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as
+     * the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+     * specify the email address that is associated with the account.</p> <p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline void SetTarget(HandshakeParty&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements:</p>
-     * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
-     * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
-     * similar to the following example:</p> <p> <code>--target
+     * <p>The identifier (ID) of the Amazon Web Services account that you want to
+     * invite to join your organization. This is a JSON object that contains the
+     * following elements:</p> <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account
+     * id number</b> </i>&gt;" }</code> </p> <p>If you use the CLI, you can submit this
+     * as a single string, similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
-     * the email address that is associated with the account.</p> <p> <code>--target
-     * Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as
+     * the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+     * specify the email address that is associated with the account.</p> <p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline InviteAccountToOrganizationRequest& WithTarget(const HandshakeParty& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements:</p>
-     * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
-     * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
-     * similar to the following example:</p> <p> <code>--target
+     * <p>The identifier (ID) of the Amazon Web Services account that you want to
+     * invite to join your organization. This is a JSON object that contains the
+     * following elements:</p> <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account
+     * id number</b> </i>&gt;" }</code> </p> <p>If you use the CLI, you can submit this
+     * as a single string, similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
-     * the email address that is associated with the account.</p> <p> <code>--target
-     * Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as
+     * the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+     * specify the email address that is associated with the account.</p> <p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline InviteAccountToOrganizationRequest& WithTarget(HandshakeParty&& value) { SetTarget(std::move(value)); return *this;}
 
@@ -177,16 +177,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -196,16 +196,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -215,16 +215,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -234,16 +234,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -253,16 +253,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -272,16 +272,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -291,16 +291,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -310,16 +310,16 @@ namespace Model
      * tag key and a value. You can set the value to an empty string, but you can't set
      * it to <code>null</code>. For more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
-     *  <p>Any tags in the request are checked for compliance with any
-     * applicable tag policies when the request is made. The request is rejected if the
-     * tags in the request don't match the requirements of the policy at that time. Tag
-     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
-     * accepted and the tags are actually attached to the account. That means that if
-     * the tag policy changes between the invitation and the acceptance, then that tags
-     * could potentially be non-compliant.</p>   <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags for an account, then
-     * the entire request fails and invitations are not sent.</p> 
+     * Organizations resources</a> in the Organizations User Guide.</p> 
+     * <p>Any tags in the request are checked for compliance with any applicable tag
+     * policies when the request is made. The request is rejected if the tags in the
+     * request don't match the requirements of the policy at that time. Tag policy
+     * compliance is <i> <b>not</b> </i> checked again when the invitation is accepted
+     * and the tags are actually attached to the account. That means that if the tag
+     * policy changes between the invitation and the acceptance, then that tags could
+     * potentially be non-compliant.</p>   <p>If any one of the tags
+     * is invalid or if you exceed the allowed number of tags for an account, then the
+     * entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

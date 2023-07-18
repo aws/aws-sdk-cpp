@@ -27,6 +27,10 @@ namespace Aws
         static const int TABLE_HASH = HashingUtils::HashString("TABLE");
         static const int CELL_HASH = HashingUtils::HashString("CELL");
         static const int SELECTION_ELEMENT_HASH = HashingUtils::HashString("SELECTION_ELEMENT");
+        static const int MERGED_CELL_HASH = HashingUtils::HashString("MERGED_CELL");
+        static const int TITLE_HASH = HashingUtils::HashString("TITLE");
+        static const int QUERY_HASH = HashingUtils::HashString("QUERY");
+        static const int QUERY_RESULT_HASH = HashingUtils::HashString("QUERY_RESULT");
 
 
         BlockType GetBlockTypeForName(const Aws::String& name)
@@ -60,6 +64,22 @@ namespace Aws
           {
             return BlockType::SELECTION_ELEMENT;
           }
+          else if (hashCode == MERGED_CELL_HASH)
+          {
+            return BlockType::MERGED_CELL;
+          }
+          else if (hashCode == TITLE_HASH)
+          {
+            return BlockType::TITLE;
+          }
+          else if (hashCode == QUERY_HASH)
+          {
+            return BlockType::QUERY;
+          }
+          else if (hashCode == QUERY_RESULT_HASH)
+          {
+            return BlockType::QUERY_RESULT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +108,14 @@ namespace Aws
             return "CELL";
           case BlockType::SELECTION_ELEMENT:
             return "SELECTION_ELEMENT";
+          case BlockType::MERGED_CELL:
+            return "MERGED_CELL";
+          case BlockType::TITLE:
+            return "TITLE";
+          case BlockType::QUERY:
+            return "QUERY";
+          case BlockType::QUERY_RESULT:
+            return "QUERY_RESULT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

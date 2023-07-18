@@ -11,10 +11,13 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/DataSetImportMode.h>
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
+#include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
+#include <aws/quicksight/model/DataSetUsageConfiguration.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/OutputColumn.h>
 #include <aws/quicksight/model/ColumnGroup.h>
+#include <aws/quicksight/model/FieldFolder.h>
 #include <aws/quicksight/model/ColumnLevelPermissionRule.h>
 #include <utility>
 
@@ -533,6 +536,67 @@ namespace Model
 
 
     /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline const Aws::Map<Aws::String, FieldFolder>& GetFieldFolders() const{ return m_fieldFolders; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline bool FieldFoldersHasBeenSet() const { return m_fieldFoldersHasBeenSet; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline void SetFieldFolders(const Aws::Map<Aws::String, FieldFolder>& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders = value; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline void SetFieldFolders(Aws::Map<Aws::String, FieldFolder>&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders = std::move(value); }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& WithFieldFolders(const Aws::Map<Aws::String, FieldFolder>& value) { SetFieldFolders(value); return *this;}
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& WithFieldFolders(Aws::Map<Aws::String, FieldFolder>&& value) { SetFieldFolders(std::move(value)); return *this;}
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& AddFieldFolders(const Aws::String& key, const FieldFolder& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, value); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& AddFieldFolders(Aws::String&& key, const FieldFolder& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& AddFieldFolders(const Aws::String& key, FieldFolder&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& AddFieldFolders(Aws::String&& key, FieldFolder&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& AddFieldFolders(const char* key, FieldFolder&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline DataSet& AddFieldFolders(const char* key, const FieldFolder& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The row-level security configuration for the dataset.</p>
      */
     inline const RowLevelPermissionDataSet& GetRowLevelPermissionDataSet() const{ return m_rowLevelPermissionDataSet; }
@@ -564,52 +628,128 @@ namespace Model
 
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline const RowLevelPermissionTagConfiguration& GetRowLevelPermissionTagConfiguration() const{ return m_rowLevelPermissionTagConfiguration; }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline bool RowLevelPermissionTagConfigurationHasBeenSet() const { return m_rowLevelPermissionTagConfigurationHasBeenSet; }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline void SetRowLevelPermissionTagConfiguration(const RowLevelPermissionTagConfiguration& value) { m_rowLevelPermissionTagConfigurationHasBeenSet = true; m_rowLevelPermissionTagConfiguration = value; }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline void SetRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration&& value) { m_rowLevelPermissionTagConfigurationHasBeenSet = true; m_rowLevelPermissionTagConfiguration = std::move(value); }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline DataSet& WithRowLevelPermissionTagConfiguration(const RowLevelPermissionTagConfiguration& value) { SetRowLevelPermissionTagConfiguration(value); return *this;}
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline DataSet& WithRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration&& value) { SetRowLevelPermissionTagConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline const Aws::Vector<ColumnLevelPermissionRule>& GetColumnLevelPermissionRules() const{ return m_columnLevelPermissionRules; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline bool ColumnLevelPermissionRulesHasBeenSet() const { return m_columnLevelPermissionRulesHasBeenSet; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline void SetColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = value; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline void SetColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = std::move(value); }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& WithColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { SetColumnLevelPermissionRules(value); return *this;}
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& WithColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { SetColumnLevelPermissionRules(std::move(value)); return *this;}
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& AddColumnLevelPermissionRules(const ColumnLevelPermissionRule& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(value); return *this; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& AddColumnLevelPermissionRules(ColumnLevelPermissionRule&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline const DataSetUsageConfiguration& GetDataSetUsageConfiguration() const{ return m_dataSetUsageConfiguration; }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline bool DataSetUsageConfigurationHasBeenSet() const { return m_dataSetUsageConfigurationHasBeenSet; }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline void SetDataSetUsageConfiguration(const DataSetUsageConfiguration& value) { m_dataSetUsageConfigurationHasBeenSet = true; m_dataSetUsageConfiguration = value; }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline void SetDataSetUsageConfiguration(DataSetUsageConfiguration&& value) { m_dataSetUsageConfigurationHasBeenSet = true; m_dataSetUsageConfiguration = std::move(value); }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline DataSet& WithDataSetUsageConfiguration(const DataSetUsageConfiguration& value) { SetDataSetUsageConfiguration(value); return *this;}
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline DataSet& WithDataSetUsageConfiguration(DataSetUsageConfiguration&& value) { SetDataSetUsageConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -646,11 +786,20 @@ namespace Model
     Aws::Vector<ColumnGroup> m_columnGroups;
     bool m_columnGroupsHasBeenSet;
 
+    Aws::Map<Aws::String, FieldFolder> m_fieldFolders;
+    bool m_fieldFoldersHasBeenSet;
+
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
 
+    RowLevelPermissionTagConfiguration m_rowLevelPermissionTagConfiguration;
+    bool m_rowLevelPermissionTagConfigurationHasBeenSet;
+
     Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
     bool m_columnLevelPermissionRulesHasBeenSet;
+
+    DataSetUsageConfiguration m_dataSetUsageConfiguration;
+    bool m_dataSetUsageConfigurationHasBeenSet;
   };
 
 } // namespace Model

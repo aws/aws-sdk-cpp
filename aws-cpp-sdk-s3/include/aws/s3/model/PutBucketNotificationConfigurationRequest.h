@@ -103,60 +103,85 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
+
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline bool GetSkipDestinationValidation() const{ return m_skipDestinationValidation; }
+
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline bool SkipDestinationValidationHasBeenSet() const { return m_skipDestinationValidationHasBeenSet; }
+
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline void SetSkipDestinationValidation(bool value) { m_skipDestinationValidationHasBeenSet = true; m_skipDestinationValidation = value; }
+
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline PutBucketNotificationConfigurationRequest& WithSkipDestinationValidation(bool value) { SetSkipDestinationValidation(value); return *this;}
 
 
     
@@ -208,6 +233,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet;
+
+    bool m_skipDestinationValidation;
+    bool m_skipDestinationValidationHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

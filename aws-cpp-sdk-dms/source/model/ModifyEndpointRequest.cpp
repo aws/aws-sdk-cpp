@@ -45,7 +45,11 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_sybaseSettingsHasBeenSet(false),
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
-    m_docDbSettingsHasBeenSet(false)
+    m_docDbSettingsHasBeenSet(false),
+    m_redisSettingsHasBeenSet(false),
+    m_exactSettings(false),
+    m_exactSettingsHasBeenSet(false),
+    m_gcpMySQLSettingsHasBeenSet(false)
 {
 }
 
@@ -228,6 +232,24 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   if(m_docDbSettingsHasBeenSet)
   {
    payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
+
+  }
+
+  if(m_redisSettingsHasBeenSet)
+  {
+   payload.WithObject("RedisSettings", m_redisSettings.Jsonize());
+
+  }
+
+  if(m_exactSettingsHasBeenSet)
+  {
+   payload.WithBool("ExactSettings", m_exactSettings);
+
+  }
+
+  if(m_gcpMySQLSettingsHasBeenSet)
+  {
+   payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
 
   }
 

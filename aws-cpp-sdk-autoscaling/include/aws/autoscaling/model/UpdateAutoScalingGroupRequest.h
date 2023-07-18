@@ -181,60 +181,54 @@ namespace Model
 
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. When you make
-     * changes to an existing policy, all optional parameters are left unchanged if not
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * <p>An embedded object that specifies a mixed instances policy. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. When you make
-     * changes to an existing policy, all optional parameters are left unchanged if not
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * <p>An embedded object that specifies a mixed instances policy. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. When you make
-     * changes to an existing policy, all optional parameters are left unchanged if not
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * <p>An embedded object that specifies a mixed instances policy. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. When you make
-     * changes to an existing policy, all optional parameters are left unchanged if not
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * <p>An embedded object that specifies a mixed instances policy. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. When you make
-     * changes to an existing policy, all optional parameters are left unchanged if not
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * <p>An embedded object that specifies a mixed instances policy. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. When you make
-     * changes to an existing policy, all optional parameters are left unchanged if not
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * <p>An embedded object that specifies a mixed instances policy. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -337,10 +331,9 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
@@ -348,10 +341,9 @@ namespace Model
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
@@ -359,10 +351,9 @@ namespace Model
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
@@ -370,10 +361,9 @@ namespace Model
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
@@ -430,186 +420,202 @@ namespace Model
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
+     * check. This is useful if your instances do not immediately pass these health
+     * checks after they enter the <code>InService</code> state. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
+     * check. This is useful if your instances do not immediately pass these health
+     * checks after they enter the <code>InService</code> state. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
+     * check. This is useful if your instances do not immediately pass these health
+     * checks after they enter the <code>InService</code> state. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
+     * check. This is useful if your instances do not immediately pass these health
+     * checks after they enter the <code>InService</code> state. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -774,8 +780,9 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
@@ -783,8 +790,9 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool NewInstancesProtectedFromScaleInHasBeenSet() const { return m_newInstancesProtectedFromScaleInHasBeenSet; }
 
@@ -792,8 +800,9 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
@@ -801,15 +810,16 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -818,7 +828,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -827,7 +837,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -836,7 +846,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -845,7 +855,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -854,7 +864,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -863,7 +873,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -872,7 +882,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. For more
+     * Scaling group uses to call other Amazon Web Services on your behalf. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -927,7 +937,7 @@ namespace Model
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -935,7 +945,7 @@ namespace Model
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -943,7 +953,7 @@ namespace Model
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -951,11 +961,238 @@ namespace Model
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
+
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithContext(const char* value) { SetContext(value); return *this;}
+
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline const Aws::String& GetDesiredCapacityType() const{ return m_desiredCapacityType; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline bool DesiredCapacityTypeHasBeenSet() const { return m_desiredCapacityTypeHasBeenSet; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline void SetDesiredCapacityType(const Aws::String& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = value; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline void SetDesiredCapacityType(Aws::String&& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = std::move(value); }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline void SetDesiredCapacityType(const char* value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType.assign(value); }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithDesiredCapacityType(const Aws::String& value) { SetDesiredCapacityType(value); return *this;}
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithDesiredCapacityType(Aws::String&& value) { SetDesiredCapacityType(std::move(value)); return *this;}
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithDesiredCapacityType(const char* value) { SetDesiredCapacityType(value); return *this;}
+
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p> 
+     */
+    inline int GetDefaultInstanceWarmup() const{ return m_defaultInstanceWarmup; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p> 
+     */
+    inline bool DefaultInstanceWarmupHasBeenSet() const { return m_defaultInstanceWarmupHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p> 
+     */
+    inline void SetDefaultInstanceWarmup(int value) { m_defaultInstanceWarmupHasBeenSet = true; m_defaultInstanceWarmup = value; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p> 
+     */
+    inline UpdateAutoScalingGroupRequest& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
 
   private:
 
@@ -1012,6 +1249,15 @@ namespace Model
 
     bool m_capacityRebalance;
     bool m_capacityRebalanceHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
+
+    Aws::String m_desiredCapacityType;
+    bool m_desiredCapacityTypeHasBeenSet;
+
+    int m_defaultInstanceWarmup;
+    bool m_defaultInstanceWarmupHasBeenSet;
   };
 
 } // namespace Model

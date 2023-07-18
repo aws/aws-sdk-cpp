@@ -24,7 +24,8 @@ Face::Face() :
     m_imageIdHasBeenSet(false),
     m_externalImageIdHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_indexFacesModelVersionHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Face::Face(JsonView jsonValue) :
     m_imageIdHasBeenSet(false),
     m_externalImageIdHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_indexFacesModelVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ Face& Face::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IndexFacesModelVersion"))
+  {
+    m_indexFacesModelVersion = jsonValue.GetString("IndexFacesModelVersion");
+
+    m_indexFacesModelVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +119,12 @@ JsonValue Face::Jsonize() const
   if(m_confidenceHasBeenSet)
   {
    payload.WithDouble("Confidence", m_confidence);
+
+  }
+
+  if(m_indexFacesModelVersionHasBeenSet)
+  {
+   payload.WithString("IndexFacesModelVersion", m_indexFacesModelVersion);
 
   }
 

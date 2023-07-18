@@ -11,6 +11,8 @@
 #include <aws/devops-guru/model/InsightTimeRange.h>
 #include <aws/devops-guru/model/PredictionTimeRange.h>
 #include <aws/devops-guru/model/ResourceCollection.h>
+#include <aws/devops-guru/model/ServiceCollection.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -126,32 +128,44 @@ namespace Model
 
 
     /**
-     * <p>The severity of the proactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const InsightSeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p>The severity of the proactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p>The severity of the proactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const InsightSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p>The severity of the proactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(InsightSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p>The severity of the proactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveInsightSummary& WithSeverity(const InsightSeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p>The severity of the proactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveInsightSummary& WithSeverity(InsightSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
@@ -243,6 +257,92 @@ namespace Model
     
     inline ProactiveInsightSummary& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline const ServiceCollection& GetServiceCollection() const{ return m_serviceCollection; }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline bool ServiceCollectionHasBeenSet() const { return m_serviceCollectionHasBeenSet; }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline void SetServiceCollection(const ServiceCollection& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = value; }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline void SetServiceCollection(ServiceCollection&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::move(value); }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline ProactiveInsightSummary& WithServiceCollection(const ServiceCollection& value) { SetServiceCollection(value); return *this;}
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline ProactiveInsightSummary& WithServiceCollection(ServiceCollection&& value) { SetServiceCollection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedResourceArns() const{ return m_associatedResourceArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline bool AssociatedResourceArnsHasBeenSet() const { return m_associatedResourceArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline void SetAssociatedResourceArns(const Aws::Vector<Aws::String>& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline void SetAssociatedResourceArns(Aws::Vector<Aws::String>&& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline ProactiveInsightSummary& WithAssociatedResourceArns(const Aws::Vector<Aws::String>& value) { SetAssociatedResourceArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline ProactiveInsightSummary& WithAssociatedResourceArns(Aws::Vector<Aws::String>&& value) { SetAssociatedResourceArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline ProactiveInsightSummary& AddAssociatedResourceArns(const Aws::String& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline ProactiveInsightSummary& AddAssociatedResourceArns(Aws::String&& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
+     * generated this insight.</p>
+     */
+    inline ProactiveInsightSummary& AddAssociatedResourceArns(const char* value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -265,6 +365,12 @@ namespace Model
 
     ResourceCollection m_resourceCollection;
     bool m_resourceCollectionHasBeenSet;
+
+    ServiceCollection m_serviceCollection;
+    bool m_serviceCollectionHasBeenSet;
+
+    Aws::Vector<Aws::String> m_associatedResourceArns;
+    bool m_associatedResourceArnsHasBeenSet;
   };
 
 } // namespace Model

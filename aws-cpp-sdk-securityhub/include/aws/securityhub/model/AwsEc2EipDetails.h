@@ -120,50 +120,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline AwsEc2EipDetails& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline AwsEc2EipDetails& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier that AWS assigns to represent the allocation of the Elastic IP
-     * address for use with Amazon VPC.</p>
+     * <p>The identifier that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with Amazon VPC.</p>
      */
     inline AwsEc2EipDetails& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
@@ -406,42 +406,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceOwnerId() const{ return m_networkInterfaceOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline bool NetworkInterfaceOwnerIdHasBeenSet() const { return m_networkInterfaceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(const Aws::String& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(Aws::String&& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(const char* value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline AwsEc2EipDetails& WithNetworkInterfaceOwnerId(const Aws::String& value) { SetNetworkInterfaceOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline AwsEc2EipDetails& WithNetworkInterfaceOwnerId(Aws::String&& value) { SetNetworkInterfaceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline AwsEc2EipDetails& WithNetworkInterfaceOwnerId(const char* value) { SetNetworkInterfaceOwnerId(value); return *this;}
 

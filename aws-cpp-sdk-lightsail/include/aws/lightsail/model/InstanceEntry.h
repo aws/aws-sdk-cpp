@@ -166,14 +166,24 @@ namespace Model
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
      * following configuration options are available:</p> <ul> <li> <p>
      * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
-     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
-     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
-     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
-     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul>  <p>If
-     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
-     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
-     * RDP clients to connect to your instance, that configuration is not carried over
-     * to your new Amazon EC2 instance.</p> 
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline const PortInfoSourceType& GetPortInfoSource() const{ return m_portInfoSource; }
 
@@ -181,14 +191,24 @@ namespace Model
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
      * following configuration options are available:</p> <ul> <li> <p>
      * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
-     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
-     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
-     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
-     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul>  <p>If
-     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
-     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
-     * RDP clients to connect to your instance, that configuration is not carried over
-     * to your new Amazon EC2 instance.</p> 
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline bool PortInfoSourceHasBeenSet() const { return m_portInfoSourceHasBeenSet; }
 
@@ -196,14 +216,24 @@ namespace Model
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
      * following configuration options are available:</p> <ul> <li> <p>
      * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
-     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
-     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
-     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
-     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul>  <p>If
-     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
-     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
-     * RDP clients to connect to your instance, that configuration is not carried over
-     * to your new Amazon EC2 instance.</p> 
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline void SetPortInfoSource(const PortInfoSourceType& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = value; }
 
@@ -211,14 +241,24 @@ namespace Model
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
      * following configuration options are available:</p> <ul> <li> <p>
      * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
-     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
-     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
-     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
-     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul>  <p>If
-     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
-     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
-     * RDP clients to connect to your instance, that configuration is not carried over
-     * to your new Amazon EC2 instance.</p> 
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline void SetPortInfoSource(PortInfoSourceType&& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = std::move(value); }
 
@@ -226,14 +266,24 @@ namespace Model
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
      * following configuration options are available:</p> <ul> <li> <p>
      * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
-     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
-     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
-     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
-     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul>  <p>If
-     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
-     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
-     * RDP clients to connect to your instance, that configuration is not carried over
-     * to your new Amazon EC2 instance.</p> 
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline InstanceEntry& WithPortInfoSource(const PortInfoSourceType& value) { SetPortInfoSource(value); return *this;}
 
@@ -241,14 +291,24 @@ namespace Model
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
      * following configuration options are available:</p> <ul> <li> <p>
      * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
-     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
-     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
-     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
-     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul>  <p>If
-     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
-     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
-     * RDP clients to connect to your instance, that configuration is not carried over
-     * to your new Amazon EC2 instance.</p> 
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline InstanceEntry& WithPortInfoSource(PortInfoSourceType&& value) { SetPortInfoSource(std::move(value)); return *this;}
 

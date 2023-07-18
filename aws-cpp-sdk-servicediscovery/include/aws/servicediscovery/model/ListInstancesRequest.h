@@ -149,30 +149,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
+     * <p>The maximum number of instances that you want Cloud Map to return in the
      * response to a <code>ListInstances</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.</p>
+     * for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
+     * <p>The maximum number of instances that you want Cloud Map to return in the
      * response to a <code>ListInstances</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.</p>
+     * for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
+     * <p>The maximum number of instances that you want Cloud Map to return in the
      * response to a <code>ListInstances</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.</p>
+     * for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
+     * <p>The maximum number of instances that you want Cloud Map to return in the
      * response to a <code>ListInstances</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.</p>
+     * for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
      */
     inline ListInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

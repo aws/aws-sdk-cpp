@@ -25,13 +25,14 @@ namespace Model
 
   /**
    * <p>A segment from a trace that has been ingested by the X-Ray service. The
-   * segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or
-   * an <code>inferred</code> segment for a downstream service, generated from a
+   * segment can be compiled from documents uploaded with <a
+   * href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>,
+   * or an <code>inferred</code> segment for a downstream service, generated from a
    * subsegment sent by the service that called it.</p> <p>For the full segment
    * document schema, see <a
-   * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
-   * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+   * Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray
+   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Segment">AWS API
    * Reference</a></p>
    */

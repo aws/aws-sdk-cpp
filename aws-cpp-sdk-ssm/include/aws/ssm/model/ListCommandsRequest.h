@@ -78,66 +78,66 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline ListCommandsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline ListCommandsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
-     * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
-     * reached the instance yet.</p> 
+     * <p>(Optional) Lists commands issued against this managed node ID.</p> 
+     * <p>You can't specify a managed node ID in the same command that you specify
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
+     * reached the managed node yet.</p> 
      */
     inline ListCommandsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance export task.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an export instance task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTask">AWS API
    * Reference</a></p>
    */

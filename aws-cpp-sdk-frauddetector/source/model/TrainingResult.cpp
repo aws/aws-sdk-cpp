@@ -20,13 +20,15 @@ namespace Model
 
 TrainingResult::TrainingResult() : 
     m_dataValidationMetricsHasBeenSet(false),
-    m_trainingMetricsHasBeenSet(false)
+    m_trainingMetricsHasBeenSet(false),
+    m_variableImportanceMetricsHasBeenSet(false)
 {
 }
 
 TrainingResult::TrainingResult(JsonView jsonValue) : 
     m_dataValidationMetricsHasBeenSet(false),
-    m_trainingMetricsHasBeenSet(false)
+    m_trainingMetricsHasBeenSet(false),
+    m_variableImportanceMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ TrainingResult& TrainingResult::operator =(JsonView jsonValue)
     m_trainingMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("variableImportanceMetrics"))
+  {
+    m_variableImportanceMetrics = jsonValue.GetObject("variableImportanceMetrics");
+
+    m_variableImportanceMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue TrainingResult::Jsonize() const
   if(m_trainingMetricsHasBeenSet)
   {
    payload.WithObject("trainingMetrics", m_trainingMetrics.Jsonize());
+
+  }
+
+  if(m_variableImportanceMetricsHasBeenSet)
+  {
+   payload.WithObject("variableImportanceMetrics", m_variableImportanceMetrics.Jsonize());
 
   }
 

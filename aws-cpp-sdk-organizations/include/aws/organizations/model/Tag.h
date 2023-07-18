@@ -26,9 +26,9 @@ namespace Model
   /**
    * <p>A custom key-value pair associated with a resource within your
    * organization.</p> <p>You can attach tags to any of the following organization
-   * resources.</p> <ul> <li> <p>AWS account</p> </li> <li> <p>Organizational unit
-   * (OU)</p> </li> <li> <p>Organization root</p> </li> <li> <p>Policy</p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * resources.</p> <ul> <li> <p>Amazon Web Services account</p> </li> <li>
+   * <p>Organizational unit (OU)</p> </li> <li> <p>Organization root</p> </li> <li>
+   * <p>Policy</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Tag">AWS
    * API Reference</a></p>
    */

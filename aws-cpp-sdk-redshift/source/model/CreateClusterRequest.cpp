@@ -50,7 +50,11 @@ CreateClusterRequest::CreateClusterRequest() :
     m_maintenanceTrackNameHasBeenSet(false),
     m_snapshotScheduleIdentifierHasBeenSet(false),
     m_availabilityZoneRelocation(false),
-    m_availabilityZoneRelocationHasBeenSet(false)
+    m_availabilityZoneRelocationHasBeenSet(false),
+    m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
+    m_aquaConfigurationStatusHasBeenSet(false),
+    m_defaultIamRoleArnHasBeenSet(false),
+    m_loadSampleDataHasBeenSet(false)
 {
 }
 
@@ -234,6 +238,21 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_availabilityZoneRelocationHasBeenSet)
   {
     ss << "AvailabilityZoneRelocation=" << std::boolalpha << m_availabilityZoneRelocation << "&";
+  }
+
+  if(m_aquaConfigurationStatusHasBeenSet)
+  {
+    ss << "AquaConfigurationStatus=" << AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus) << "&";
+  }
+
+  if(m_defaultIamRoleArnHasBeenSet)
+  {
+    ss << "DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
+  }
+
+  if(m_loadSampleDataHasBeenSet)
+  {
+    ss << "LoadSampleData=" << StringUtils::URLEncode(m_loadSampleData.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

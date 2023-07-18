@@ -27,8 +27,12 @@ namespace Model
 {
 
   /**
-   * <p>A single 5-tuple stateful rule, for use in a stateful rule
-   * group.</p><p><h3>See Also:</h3>   <a
+   * <p>A single Suricata rules specification, for use in a stateful rule group. Use
+   * this option to specify a simple Suricata rule with protocol, source and
+   * destination, ports, direction, and rule options. For information about the
+   * Suricata <code>Rules</code> format, see <a
+   * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+   * Format</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRule">AWS
    * API Reference</a></p>
    */
@@ -151,79 +155,87 @@ namespace Model
 
 
     /**
-     * <p>The stateful 5-tuple inspection criteria for this rule, used to inspect
-     * traffic flows. </p>
+     * <p>The stateful inspection criteria for this rule, used to inspect traffic
+     * flows. </p>
      */
     inline const Header& GetHeader() const{ return m_header; }
 
     /**
-     * <p>The stateful 5-tuple inspection criteria for this rule, used to inspect
-     * traffic flows. </p>
+     * <p>The stateful inspection criteria for this rule, used to inspect traffic
+     * flows. </p>
      */
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
 
     /**
-     * <p>The stateful 5-tuple inspection criteria for this rule, used to inspect
-     * traffic flows. </p>
+     * <p>The stateful inspection criteria for this rule, used to inspect traffic
+     * flows. </p>
      */
     inline void SetHeader(const Header& value) { m_headerHasBeenSet = true; m_header = value; }
 
     /**
-     * <p>The stateful 5-tuple inspection criteria for this rule, used to inspect
-     * traffic flows. </p>
+     * <p>The stateful inspection criteria for this rule, used to inspect traffic
+     * flows. </p>
      */
     inline void SetHeader(Header&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
 
     /**
-     * <p>The stateful 5-tuple inspection criteria for this rule, used to inspect
-     * traffic flows. </p>
+     * <p>The stateful inspection criteria for this rule, used to inspect traffic
+     * flows. </p>
      */
     inline StatefulRule& WithHeader(const Header& value) { SetHeader(value); return *this;}
 
     /**
-     * <p>The stateful 5-tuple inspection criteria for this rule, used to inspect
-     * traffic flows. </p>
+     * <p>The stateful inspection criteria for this rule, used to inspect traffic
+     * flows. </p>
      */
     inline StatefulRule& WithHeader(Header&& value) { SetHeader(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline const Aws::Vector<RuleOption>& GetRuleOptions() const{ return m_ruleOptions; }
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline bool RuleOptionsHasBeenSet() const { return m_ruleOptionsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline void SetRuleOptions(const Aws::Vector<RuleOption>& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = value; }
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline void SetRuleOptions(Aws::Vector<RuleOption>&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline StatefulRule& WithRuleOptions(const Aws::Vector<RuleOption>& value) { SetRuleOptions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline StatefulRule& WithRuleOptions(Aws::Vector<RuleOption>&& value) { SetRuleOptions(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline StatefulRule& AddRuleOptions(const RuleOption& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Additional options for the rule. These are the Suricata
+     * <code>RuleOptions</code> settings.</p>
      */
     inline StatefulRule& AddRuleOptions(RuleOption&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.push_back(std::move(value)); return *this; }
 

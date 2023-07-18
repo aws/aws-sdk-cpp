@@ -60,6 +60,18 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("PipelineExperimentConfig"))
+  {
+    m_pipelineExperimentConfig = jsonValue.GetObject("PipelineExperimentConfig");
+
+  }
+
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = jsonValue.GetString("FailureReason");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
@@ -81,6 +93,12 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator =(con
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
+
+  }
+
+  if(jsonValue.ValueExists("ParallelismConfiguration"))
+  {
+    m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
 
   }
 

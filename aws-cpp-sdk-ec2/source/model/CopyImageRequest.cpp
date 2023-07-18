@@ -19,6 +19,7 @@ CopyImageRequest::CopyImageRequest() :
     m_nameHasBeenSet(false),
     m_sourceImageIdHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
+    m_destinationOutpostArnHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -61,6 +62,11 @@ Aws::String CopyImageRequest::SerializePayload() const
   if(m_sourceRegionHasBeenSet)
   {
     ss << "SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
+  }
+
+  if(m_destinationOutpostArnHasBeenSet)
+  {
+    ss << "DestinationOutpostArn=" << StringUtils::URLEncode(m_destinationOutpostArn.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

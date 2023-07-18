@@ -25,6 +25,7 @@ namespace Aws
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int KVM_HASH = HashingUtils::HashString("KVM");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static const int SNOWBALL_HASH = HashingUtils::HashString("SNOWBALL");
 
 
         HostEnvironment GetHostEnvironmentForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return HostEnvironment::OTHER;
           }
+          else if (hashCode == SNOWBALL_HASH)
+          {
+            return HostEnvironment::SNOWBALL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "KVM";
           case HostEnvironment::OTHER:
             return "OTHER";
+          case HostEnvironment::SNOWBALL:
+            return "SNOWBALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

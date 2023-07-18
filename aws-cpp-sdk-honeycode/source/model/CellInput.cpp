@@ -19,12 +19,14 @@ namespace Model
 {
 
 CellInput::CellInput() : 
-    m_factHasBeenSet(false)
+    m_factHasBeenSet(false),
+    m_factsHasBeenSet(false)
 {
 }
 
 CellInput::CellInput(JsonView jsonValue) : 
-    m_factHasBeenSet(false)
+    m_factHasBeenSet(false),
+    m_factsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,16 @@ CellInput& CellInput::operator =(JsonView jsonValue)
     m_factHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("facts"))
+  {
+    Array<JsonView> factsJsonList = jsonValue.GetArray("facts");
+    for(unsigned factsIndex = 0; factsIndex < factsJsonList.GetLength(); ++factsIndex)
+    {
+      m_facts.push_back(factsJsonList[factsIndex].AsString());
+    }
+    m_factsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +60,17 @@ JsonValue CellInput::Jsonize() const
   if(m_factHasBeenSet)
   {
    payload.WithString("fact", m_fact);
+
+  }
+
+  if(m_factsHasBeenSet)
+  {
+   Array<JsonValue> factsJsonList(m_facts.size());
+   for(unsigned factsIndex = 0; factsIndex < factsJsonList.GetLength(); ++factsIndex)
+   {
+     factsJsonList[factsIndex].AsString(m_facts[factsIndex]);
+   }
+   payload.WithArray("facts", std::move(factsJsonList));
 
   }
 

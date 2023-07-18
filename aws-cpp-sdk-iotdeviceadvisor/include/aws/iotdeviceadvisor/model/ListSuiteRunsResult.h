@@ -35,73 +35,80 @@ namespace Model
 
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * runs in the list.</p>
      */
     inline const Aws::Vector<SuiteRunInformation>& GetSuiteRunsList() const{ return m_suiteRunsList; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * runs in the list.</p>
      */
     inline void SetSuiteRunsList(const Aws::Vector<SuiteRunInformation>& value) { m_suiteRunsList = value; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * runs in the list.</p>
      */
     inline void SetSuiteRunsList(Aws::Vector<SuiteRunInformation>&& value) { m_suiteRunsList = std::move(value); }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * runs in the list.</p>
      */
     inline ListSuiteRunsResult& WithSuiteRunsList(const Aws::Vector<SuiteRunInformation>& value) { SetSuiteRunsList(value); return *this;}
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * runs in the list.</p>
      */
     inline ListSuiteRunsResult& WithSuiteRunsList(Aws::Vector<SuiteRunInformation>&& value) { SetSuiteRunsList(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * runs in the list.</p>
      */
     inline ListSuiteRunsResult& AddSuiteRunsList(const SuiteRunInformation& value) { m_suiteRunsList.push_back(value); return *this; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * runs in the list.</p>
      */
     inline ListSuiteRunsResult& AddSuiteRunsList(SuiteRunInformation&& value) { m_suiteRunsList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Next pagination token for list suite run response.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Next pagination token for list suite run response.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Next pagination token for list suite run response.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Next pagination token for list suite run response.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Next pagination token for list suite run response.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline ListSuiteRunsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Next pagination token for list suite run response.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline ListSuiteRunsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Next pagination token for list suite run response.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline ListSuiteRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

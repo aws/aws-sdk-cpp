@@ -7,7 +7,9 @@
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribestreaming/model/LanguageCode.h>
 #include <aws/transcribestreaming/model/Alternative.h>
+#include <aws/transcribestreaming/model/LanguageWithScore.h>
 #include <utility>
 
 namespace Aws
@@ -289,6 +291,78 @@ namespace Model
      */
     inline Result& WithChannelId(const char* value) { SetChannelId(value); return *this;}
 
+
+    /**
+     * <p>The language code of the identified language in your media stream.</p>
+     */
+    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The language code of the identified language in your media stream.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The language code of the identified language in your media stream.</p>
+     */
+    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+
+    /**
+     * <p>The language code of the identified language in your media stream.</p>
+     */
+    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
+
+    /**
+     * <p>The language code of the identified language in your media stream.</p>
+     */
+    inline Result& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
+
+    /**
+     * <p>The language code of the identified language in your media stream.</p>
+     */
+    inline Result& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline const Aws::Vector<LanguageWithScore>& GetLanguageIdentification() const{ return m_languageIdentification; }
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline bool LanguageIdentificationHasBeenSet() const { return m_languageIdentificationHasBeenSet; }
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline void SetLanguageIdentification(const Aws::Vector<LanguageWithScore>& value) { m_languageIdentificationHasBeenSet = true; m_languageIdentification = value; }
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline void SetLanguageIdentification(Aws::Vector<LanguageWithScore>&& value) { m_languageIdentificationHasBeenSet = true; m_languageIdentification = std::move(value); }
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline Result& WithLanguageIdentification(const Aws::Vector<LanguageWithScore>& value) { SetLanguageIdentification(value); return *this;}
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline Result& WithLanguageIdentification(Aws::Vector<LanguageWithScore>&& value) { SetLanguageIdentification(std::move(value)); return *this;}
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline Result& AddLanguageIdentification(const LanguageWithScore& value) { m_languageIdentificationHasBeenSet = true; m_languageIdentification.push_back(value); return *this; }
+
+    /**
+     * <p>The language code of the dominant language identified in your media.</p>
+     */
+    inline Result& AddLanguageIdentification(LanguageWithScore&& value) { m_languageIdentificationHasBeenSet = true; m_languageIdentification.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_resultId;
@@ -308,6 +382,12 @@ namespace Model
 
     Aws::String m_channelId;
     bool m_channelIdHasBeenSet;
+
+    LanguageCode m_languageCode;
+    bool m_languageCodeHasBeenSet;
+
+    Aws::Vector<LanguageWithScore> m_languageIdentification;
+    bool m_languageIdentificationHasBeenSet;
   };
 
 } // namespace Model

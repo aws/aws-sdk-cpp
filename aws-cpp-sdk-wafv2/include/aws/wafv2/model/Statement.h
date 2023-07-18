@@ -13,7 +13,8 @@
 #include <aws/wafv2/model/RuleGroupReferenceStatement.h>
 #include <aws/wafv2/model/IPSetReferenceStatement.h>
 #include <aws/wafv2/model/RegexPatternSetReferenceStatement.h>
-#include <aws/wafv2/model/ManagedRuleGroupStatement.h>
+#include <aws/wafv2/model/LabelMatchStatement.h>
+#include <aws/wafv2/model/RegexMatchStatement.h>
 #include <utility>
 #include <memory>
 
@@ -35,15 +36,11 @@ namespace Model
   class AndStatement;
   class OrStatement;
   class NotStatement;
+  class ManagedRuleGroupStatement;
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>The processing guidance for a
-   * <a>Rule</a>, used by AWS WAF to determine whether a web request matches the
-   * rule. </p><p><h3>See Also:</h3>   <a
+   * <p>The processing guidance for a <a>Rule</a>, used by WAF to determine whether a
+   * web request matches the rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement">AWS API
    * Reference</a></p>
    */
@@ -57,62 +54,62 @@ namespace Model
 
 
     /**
-     * <p>A rule statement that defines a string match search for AWS WAF to apply to
-     * web requests. The byte match statement provides the bytes to search for, the
-     * location in requests that you want AWS WAF to search, and other settings. The
-     * bytes to search for are typically a string that corresponds with ASCII
-     * characters. In the AWS WAF console and the developer guide, this is refered to
-     * as a string match statement.</p>
+     * <p>A rule statement that defines a string match search for WAF to apply to web
+     * requests. The byte match statement provides the bytes to search for, the
+     * location in requests that you want WAF to search, and other settings. The bytes
+     * to search for are typically a string that corresponds with ASCII characters. In
+     * the WAF console and the developer guide, this is refered to as a string match
+     * statement.</p>
      */
     inline const ByteMatchStatement& GetByteMatchStatement() const{ return m_byteMatchStatement; }
 
     /**
-     * <p>A rule statement that defines a string match search for AWS WAF to apply to
-     * web requests. The byte match statement provides the bytes to search for, the
-     * location in requests that you want AWS WAF to search, and other settings. The
-     * bytes to search for are typically a string that corresponds with ASCII
-     * characters. In the AWS WAF console and the developer guide, this is refered to
-     * as a string match statement.</p>
+     * <p>A rule statement that defines a string match search for WAF to apply to web
+     * requests. The byte match statement provides the bytes to search for, the
+     * location in requests that you want WAF to search, and other settings. The bytes
+     * to search for are typically a string that corresponds with ASCII characters. In
+     * the WAF console and the developer guide, this is refered to as a string match
+     * statement.</p>
      */
     inline bool ByteMatchStatementHasBeenSet() const { return m_byteMatchStatementHasBeenSet; }
 
     /**
-     * <p>A rule statement that defines a string match search for AWS WAF to apply to
-     * web requests. The byte match statement provides the bytes to search for, the
-     * location in requests that you want AWS WAF to search, and other settings. The
-     * bytes to search for are typically a string that corresponds with ASCII
-     * characters. In the AWS WAF console and the developer guide, this is refered to
-     * as a string match statement.</p>
+     * <p>A rule statement that defines a string match search for WAF to apply to web
+     * requests. The byte match statement provides the bytes to search for, the
+     * location in requests that you want WAF to search, and other settings. The bytes
+     * to search for are typically a string that corresponds with ASCII characters. In
+     * the WAF console and the developer guide, this is refered to as a string match
+     * statement.</p>
      */
     inline void SetByteMatchStatement(const ByteMatchStatement& value) { m_byteMatchStatementHasBeenSet = true; m_byteMatchStatement = value; }
 
     /**
-     * <p>A rule statement that defines a string match search for AWS WAF to apply to
-     * web requests. The byte match statement provides the bytes to search for, the
-     * location in requests that you want AWS WAF to search, and other settings. The
-     * bytes to search for are typically a string that corresponds with ASCII
-     * characters. In the AWS WAF console and the developer guide, this is refered to
-     * as a string match statement.</p>
+     * <p>A rule statement that defines a string match search for WAF to apply to web
+     * requests. The byte match statement provides the bytes to search for, the
+     * location in requests that you want WAF to search, and other settings. The bytes
+     * to search for are typically a string that corresponds with ASCII characters. In
+     * the WAF console and the developer guide, this is refered to as a string match
+     * statement.</p>
      */
     inline void SetByteMatchStatement(ByteMatchStatement&& value) { m_byteMatchStatementHasBeenSet = true; m_byteMatchStatement = std::move(value); }
 
     /**
-     * <p>A rule statement that defines a string match search for AWS WAF to apply to
-     * web requests. The byte match statement provides the bytes to search for, the
-     * location in requests that you want AWS WAF to search, and other settings. The
-     * bytes to search for are typically a string that corresponds with ASCII
-     * characters. In the AWS WAF console and the developer guide, this is refered to
-     * as a string match statement.</p>
+     * <p>A rule statement that defines a string match search for WAF to apply to web
+     * requests. The byte match statement provides the bytes to search for, the
+     * location in requests that you want WAF to search, and other settings. The bytes
+     * to search for are typically a string that corresponds with ASCII characters. In
+     * the WAF console and the developer guide, this is refered to as a string match
+     * statement.</p>
      */
     inline Statement& WithByteMatchStatement(const ByteMatchStatement& value) { SetByteMatchStatement(value); return *this;}
 
     /**
-     * <p>A rule statement that defines a string match search for AWS WAF to apply to
-     * web requests. The byte match statement provides the bytes to search for, the
-     * location in requests that you want AWS WAF to search, and other settings. The
-     * bytes to search for are typically a string that corresponds with ASCII
-     * characters. In the AWS WAF console and the developer guide, this is refered to
-     * as a string match statement.</p>
+     * <p>A rule statement that defines a string match search for WAF to apply to web
+     * requests. The byte match statement provides the bytes to search for, the
+     * location in requests that you want WAF to search, and other settings. The bytes
+     * to search for are typically a string that corresponds with ASCII characters. In
+     * the WAF console and the developer guide, this is refered to as a string match
+     * statement.</p>
      */
     inline Statement& WithByteMatchStatement(ByteMatchStatement&& value) { SetByteMatchStatement(std::move(value)); return *this;}
 
@@ -122,7 +119,7 @@ namespace Model
      * to extract data from your database. To allow or block web requests that appear
      * to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+     * requests, such as the URI or the query string, that you want WAF to inspect.
      * Later in the process, when you create a web ACL, you specify whether to allow or
      * block requests that appear to contain malicious SQL code.</p>
      */
@@ -133,7 +130,7 @@ namespace Model
      * to extract data from your database. To allow or block web requests that appear
      * to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+     * requests, such as the URI or the query string, that you want WAF to inspect.
      * Later in the process, when you create a web ACL, you specify whether to allow or
      * block requests that appear to contain malicious SQL code.</p>
      */
@@ -144,7 +141,7 @@ namespace Model
      * to extract data from your database. To allow or block web requests that appear
      * to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+     * requests, such as the URI or the query string, that you want WAF to inspect.
      * Later in the process, when you create a web ACL, you specify whether to allow or
      * block requests that appear to contain malicious SQL code.</p>
      */
@@ -155,7 +152,7 @@ namespace Model
      * to extract data from your database. To allow or block web requests that appear
      * to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+     * requests, such as the URI or the query string, that you want WAF to inspect.
      * Later in the process, when you create a web ACL, you specify whether to allow or
      * block requests that appear to contain malicious SQL code.</p>
      */
@@ -166,7 +163,7 @@ namespace Model
      * to extract data from your database. To allow or block web requests that appear
      * to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+     * requests, such as the URI or the query string, that you want WAF to inspect.
      * Later in the process, when you create a web ACL, you specify whether to allow or
      * block requests that appear to contain malicious SQL code.</p>
      */
@@ -177,7 +174,7 @@ namespace Model
      * to extract data from your database. To allow or block web requests that appear
      * to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+     * requests, such as the URI or the query string, that you want WAF to inspect.
      * Later in the process, when you create a web ACL, you specify whether to allow or
      * block requests that appear to contain malicious SQL code.</p>
      */
@@ -186,67 +183,67 @@ namespace Model
 
     /**
      * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * AWS WAF to apply to web requests. XSS attacks are those where the attacker uses
+     * WAF to apply to web requests. XSS attacks are those where the attacker uses
      * vulnerabilities in a benign website as a vehicle to inject malicious client-site
      * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want AWS WAF to search and text transformations to
-     * use on the search area before AWS WAF searches for character sequences that are
-     * likely to be malicious strings. </p>
+     * location in requests that you want WAF to search and text transformations to use
+     * on the search area before WAF searches for character sequences that are likely
+     * to be malicious strings. </p>
      */
     inline const XssMatchStatement& GetXssMatchStatement() const{ return m_xssMatchStatement; }
 
     /**
      * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * AWS WAF to apply to web requests. XSS attacks are those where the attacker uses
+     * WAF to apply to web requests. XSS attacks are those where the attacker uses
      * vulnerabilities in a benign website as a vehicle to inject malicious client-site
      * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want AWS WAF to search and text transformations to
-     * use on the search area before AWS WAF searches for character sequences that are
-     * likely to be malicious strings. </p>
+     * location in requests that you want WAF to search and text transformations to use
+     * on the search area before WAF searches for character sequences that are likely
+     * to be malicious strings. </p>
      */
     inline bool XssMatchStatementHasBeenSet() const { return m_xssMatchStatementHasBeenSet; }
 
     /**
      * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * AWS WAF to apply to web requests. XSS attacks are those where the attacker uses
+     * WAF to apply to web requests. XSS attacks are those where the attacker uses
      * vulnerabilities in a benign website as a vehicle to inject malicious client-site
      * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want AWS WAF to search and text transformations to
-     * use on the search area before AWS WAF searches for character sequences that are
-     * likely to be malicious strings. </p>
+     * location in requests that you want WAF to search and text transformations to use
+     * on the search area before WAF searches for character sequences that are likely
+     * to be malicious strings. </p>
      */
     inline void SetXssMatchStatement(const XssMatchStatement& value) { m_xssMatchStatementHasBeenSet = true; m_xssMatchStatement = value; }
 
     /**
      * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * AWS WAF to apply to web requests. XSS attacks are those where the attacker uses
+     * WAF to apply to web requests. XSS attacks are those where the attacker uses
      * vulnerabilities in a benign website as a vehicle to inject malicious client-site
      * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want AWS WAF to search and text transformations to
-     * use on the search area before AWS WAF searches for character sequences that are
-     * likely to be malicious strings. </p>
+     * location in requests that you want WAF to search and text transformations to use
+     * on the search area before WAF searches for character sequences that are likely
+     * to be malicious strings. </p>
      */
     inline void SetXssMatchStatement(XssMatchStatement&& value) { m_xssMatchStatementHasBeenSet = true; m_xssMatchStatement = std::move(value); }
 
     /**
      * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * AWS WAF to apply to web requests. XSS attacks are those where the attacker uses
+     * WAF to apply to web requests. XSS attacks are those where the attacker uses
      * vulnerabilities in a benign website as a vehicle to inject malicious client-site
      * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want AWS WAF to search and text transformations to
-     * use on the search area before AWS WAF searches for character sequences that are
-     * likely to be malicious strings. </p>
+     * location in requests that you want WAF to search and text transformations to use
+     * on the search area before WAF searches for character sequences that are likely
+     * to be malicious strings. </p>
      */
     inline Statement& WithXssMatchStatement(const XssMatchStatement& value) { SetXssMatchStatement(value); return *this;}
 
     /**
      * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * AWS WAF to apply to web requests. XSS attacks are those where the attacker uses
+     * WAF to apply to web requests. XSS attacks are those where the attacker uses
      * vulnerabilities in a benign website as a vehicle to inject malicious client-site
      * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want AWS WAF to search and text transformations to
-     * use on the search area before AWS WAF searches for character sequences that are
-     * likely to be malicious strings. </p>
+     * location in requests that you want WAF to search and text transformations to use
+     * on the search area before WAF searches for character sequences that are likely
+     * to be malicious strings. </p>
      */
     inline Statement& WithXssMatchStatement(XssMatchStatement&& value) { SetXssMatchStatement(std::move(value)); return *this;}
 
@@ -255,13 +252,13 @@ namespace Model
      * <p>A rule statement that compares a number of bytes against the size of a
      * request component, using a comparison operator, such as greater than (&gt;) or
      * less than (&lt;). For example, you can use a size constraint statement to look
-     * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
-     * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
-     * KB). If the request body for your web requests never exceeds 8192 bytes, you can
-     * create a size constraint condition and block requests that have a request body
-     * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
-     * request to filter on, the slash (/) in the URI counts as one character. For
-     * example, the URI <code>/logo.jpg</code> is nine characters long.</p>
+     * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
+     * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
+     * the request body for your web requests never exceeds 8192 bytes, you can create
+     * a size constraint condition and block requests that have a request body greater
+     * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
+     * to filter on, the slash (/) in the URI counts as one character. For example, the
+     * URI <code>/logo.jpg</code> is nine characters long.</p>
      */
     inline const SizeConstraintStatement& GetSizeConstraintStatement() const{ return m_sizeConstraintStatement; }
 
@@ -269,13 +266,13 @@ namespace Model
      * <p>A rule statement that compares a number of bytes against the size of a
      * request component, using a comparison operator, such as greater than (&gt;) or
      * less than (&lt;). For example, you can use a size constraint statement to look
-     * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
-     * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
-     * KB). If the request body for your web requests never exceeds 8192 bytes, you can
-     * create a size constraint condition and block requests that have a request body
-     * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
-     * request to filter on, the slash (/) in the URI counts as one character. For
-     * example, the URI <code>/logo.jpg</code> is nine characters long.</p>
+     * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
+     * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
+     * the request body for your web requests never exceeds 8192 bytes, you can create
+     * a size constraint condition and block requests that have a request body greater
+     * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
+     * to filter on, the slash (/) in the URI counts as one character. For example, the
+     * URI <code>/logo.jpg</code> is nine characters long.</p>
      */
     inline bool SizeConstraintStatementHasBeenSet() const { return m_sizeConstraintStatementHasBeenSet; }
 
@@ -283,13 +280,13 @@ namespace Model
      * <p>A rule statement that compares a number of bytes against the size of a
      * request component, using a comparison operator, such as greater than (&gt;) or
      * less than (&lt;). For example, you can use a size constraint statement to look
-     * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
-     * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
-     * KB). If the request body for your web requests never exceeds 8192 bytes, you can
-     * create a size constraint condition and block requests that have a request body
-     * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
-     * request to filter on, the slash (/) in the URI counts as one character. For
-     * example, the URI <code>/logo.jpg</code> is nine characters long.</p>
+     * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
+     * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
+     * the request body for your web requests never exceeds 8192 bytes, you can create
+     * a size constraint condition and block requests that have a request body greater
+     * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
+     * to filter on, the slash (/) in the URI counts as one character. For example, the
+     * URI <code>/logo.jpg</code> is nine characters long.</p>
      */
     inline void SetSizeConstraintStatement(const SizeConstraintStatement& value) { m_sizeConstraintStatementHasBeenSet = true; m_sizeConstraintStatement = value; }
 
@@ -297,13 +294,13 @@ namespace Model
      * <p>A rule statement that compares a number of bytes against the size of a
      * request component, using a comparison operator, such as greater than (&gt;) or
      * less than (&lt;). For example, you can use a size constraint statement to look
-     * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
-     * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
-     * KB). If the request body for your web requests never exceeds 8192 bytes, you can
-     * create a size constraint condition and block requests that have a request body
-     * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
-     * request to filter on, the slash (/) in the URI counts as one character. For
-     * example, the URI <code>/logo.jpg</code> is nine characters long.</p>
+     * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
+     * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
+     * the request body for your web requests never exceeds 8192 bytes, you can create
+     * a size constraint condition and block requests that have a request body greater
+     * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
+     * to filter on, the slash (/) in the URI counts as one character. For example, the
+     * URI <code>/logo.jpg</code> is nine characters long.</p>
      */
     inline void SetSizeConstraintStatement(SizeConstraintStatement&& value) { m_sizeConstraintStatementHasBeenSet = true; m_sizeConstraintStatement = std::move(value); }
 
@@ -311,13 +308,13 @@ namespace Model
      * <p>A rule statement that compares a number of bytes against the size of a
      * request component, using a comparison operator, such as greater than (&gt;) or
      * less than (&lt;). For example, you can use a size constraint statement to look
-     * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
-     * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
-     * KB). If the request body for your web requests never exceeds 8192 bytes, you can
-     * create a size constraint condition and block requests that have a request body
-     * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
-     * request to filter on, the slash (/) in the URI counts as one character. For
-     * example, the URI <code>/logo.jpg</code> is nine characters long.</p>
+     * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
+     * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
+     * the request body for your web requests never exceeds 8192 bytes, you can create
+     * a size constraint condition and block requests that have a request body greater
+     * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
+     * to filter on, the slash (/) in the URI counts as one character. For example, the
+     * URI <code>/logo.jpg</code> is nine characters long.</p>
      */
     inline Statement& WithSizeConstraintStatement(const SizeConstraintStatement& value) { SetSizeConstraintStatement(value); return *this;}
 
@@ -325,13 +322,13 @@ namespace Model
      * <p>A rule statement that compares a number of bytes against the size of a
      * request component, using a comparison operator, such as greater than (&gt;) or
      * less than (&lt;). For example, you can use a size constraint statement to look
-     * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
-     * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
-     * KB). If the request body for your web requests never exceeds 8192 bytes, you can
-     * create a size constraint condition and block requests that have a request body
-     * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
-     * request to filter on, the slash (/) in the URI counts as one character. For
-     * example, the URI <code>/logo.jpg</code> is nine characters long.</p>
+     * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
+     * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
+     * the request body for your web requests never exceeds 8192 bytes, you can create
+     * a size constraint condition and block requests that have a request body greater
+     * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
+     * to filter on, the slash (/) in the URI counts as one character. For example, the
+     * URI <code>/logo.jpg</code> is nine characters long.</p>
      */
     inline Statement& WithSizeConstraintStatement(SizeConstraintStatement&& value) { SetSizeConstraintStatement(std::move(value)); return *this;}
 
@@ -378,8 +375,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline const RuleGroupReferenceStatement& GetRuleGroupReferenceStatement() const{ return m_ruleGroupReferenceStatement; }
 
@@ -388,8 +385,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline bool RuleGroupReferenceStatementHasBeenSet() const { return m_ruleGroupReferenceStatementHasBeenSet; }
 
@@ -398,8 +395,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline void SetRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = value; }
 
@@ -408,8 +405,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline void SetRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = std::move(value); }
 
@@ -418,8 +415,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline Statement& WithRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { SetRuleGroupReferenceStatement(value); return *this;}
 
@@ -428,8 +425,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline Statement& WithRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { SetRuleGroupReferenceStatement(std::move(value)); return *this;}
 
@@ -441,8 +438,8 @@ namespace Model
      * statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule
      * statement references an IP set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline const IPSetReferenceStatement& GetIPSetReferenceStatement() const{ return m_iPSetReferenceStatement; }
 
@@ -453,8 +450,8 @@ namespace Model
      * statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule
      * statement references an IP set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline bool IPSetReferenceStatementHasBeenSet() const { return m_iPSetReferenceStatementHasBeenSet; }
 
@@ -465,8 +462,8 @@ namespace Model
      * statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule
      * statement references an IP set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline void SetIPSetReferenceStatement(const IPSetReferenceStatement& value) { m_iPSetReferenceStatementHasBeenSet = true; m_iPSetReferenceStatement = value; }
 
@@ -477,8 +474,8 @@ namespace Model
      * statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule
      * statement references an IP set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline void SetIPSetReferenceStatement(IPSetReferenceStatement&& value) { m_iPSetReferenceStatementHasBeenSet = true; m_iPSetReferenceStatement = std::move(value); }
 
@@ -489,8 +486,8 @@ namespace Model
      * statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule
      * statement references an IP set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline Statement& WithIPSetReferenceStatement(const IPSetReferenceStatement& value) { SetIPSetReferenceStatement(value); return *this;}
 
@@ -501,8 +498,8 @@ namespace Model
      * statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule
      * statement references an IP set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline Statement& WithIPSetReferenceStatement(IPSetReferenceStatement&& value) { SetIPSetReferenceStatement(std::move(value)); return *this;}
 
@@ -516,8 +513,8 @@ namespace Model
      * see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement
      * references a regex pattern set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline const RegexPatternSetReferenceStatement& GetRegexPatternSetReferenceStatement() const{ return m_regexPatternSetReferenceStatement; }
 
@@ -530,8 +527,8 @@ namespace Model
      * see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement
      * references a regex pattern set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline bool RegexPatternSetReferenceStatementHasBeenSet() const { return m_regexPatternSetReferenceStatementHasBeenSet; }
 
@@ -544,8 +541,8 @@ namespace Model
      * see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement
      * references a regex pattern set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline void SetRegexPatternSetReferenceStatement(const RegexPatternSetReferenceStatement& value) { m_regexPatternSetReferenceStatementHasBeenSet = true; m_regexPatternSetReferenceStatement = value; }
 
@@ -558,8 +555,8 @@ namespace Model
      * see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement
      * references a regex pattern set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline void SetRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatement&& value) { m_regexPatternSetReferenceStatementHasBeenSet = true; m_regexPatternSetReferenceStatement = std::move(value); }
 
@@ -572,8 +569,8 @@ namespace Model
      * see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement
      * references a regex pattern set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline Statement& WithRegexPatternSetReferenceStatement(const RegexPatternSetReferenceStatement& value) { SetRegexPatternSetReferenceStatement(value); return *this;}
 
@@ -586,8 +583,8 @@ namespace Model
      * see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement
      * references a regex pattern set. You create and maintain the set independent of
      * your rules. This allows you to use the single set in multiple rules. When you
-     * update the referenced set, AWS WAF automatically updates all rules that
-     * reference it.</p>
+     * update the referenced set, WAF automatically updates all rules that reference
+     * it.</p>
      */
     inline Statement& WithRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatement&& value) { SetRegexPatternSetReferenceStatement(std::move(value)); return *this;}
 
@@ -597,12 +594,19 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
-     * requests from the IP address until the request rate falls below the limit.</p>
-     * <p>You can optionally nest another statement inside the rate-based statement, to
-     * narrow the scope of the rule so that it only counts requests that match the
-     * nested statement. For example, based on recent requests that you have seen from
-     * an attacker, you might create a rate-based rule with a nested AND rule statement
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
+     * optionally nest another statement inside the rate-based statement, to narrow the
+     * scope of the rule so that it only counts requests that match the nested
+     * statement. For example, based on recent requests that you have seen from an
+     * attacker, you might create a rate-based rule with a nested AND rule statement
      * that contains the following nested statements:</p> <ul> <li> <p>An IP match
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
@@ -611,9 +615,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     const RateBasedStatement& GetRateBasedStatement() const;
 
@@ -622,12 +627,19 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
-     * requests from the IP address until the request rate falls below the limit.</p>
-     * <p>You can optionally nest another statement inside the rate-based statement, to
-     * narrow the scope of the rule so that it only counts requests that match the
-     * nested statement. For example, based on recent requests that you have seen from
-     * an attacker, you might create a rate-based rule with a nested AND rule statement
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
+     * optionally nest another statement inside the rate-based statement, to narrow the
+     * scope of the rule so that it only counts requests that match the nested
+     * statement. For example, based on recent requests that you have seen from an
+     * attacker, you might create a rate-based rule with a nested AND rule statement
      * that contains the following nested statements:</p> <ul> <li> <p>An IP match
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
@@ -636,9 +648,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     bool RateBasedStatementHasBeenSet() const;
 
@@ -647,12 +660,19 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
-     * requests from the IP address until the request rate falls below the limit.</p>
-     * <p>You can optionally nest another statement inside the rate-based statement, to
-     * narrow the scope of the rule so that it only counts requests that match the
-     * nested statement. For example, based on recent requests that you have seen from
-     * an attacker, you might create a rate-based rule with a nested AND rule statement
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
+     * optionally nest another statement inside the rate-based statement, to narrow the
+     * scope of the rule so that it only counts requests that match the nested
+     * statement. For example, based on recent requests that you have seen from an
+     * attacker, you might create a rate-based rule with a nested AND rule statement
      * that contains the following nested statements:</p> <ul> <li> <p>An IP match
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
@@ -661,9 +681,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     void SetRateBasedStatement(const RateBasedStatement& value);
 
@@ -672,12 +693,19 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
-     * requests from the IP address until the request rate falls below the limit.</p>
-     * <p>You can optionally nest another statement inside the rate-based statement, to
-     * narrow the scope of the rule so that it only counts requests that match the
-     * nested statement. For example, based on recent requests that you have seen from
-     * an attacker, you might create a rate-based rule with a nested AND rule statement
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
+     * optionally nest another statement inside the rate-based statement, to narrow the
+     * scope of the rule so that it only counts requests that match the nested
+     * statement. For example, based on recent requests that you have seen from an
+     * attacker, you might create a rate-based rule with a nested AND rule statement
      * that contains the following nested statements:</p> <ul> <li> <p>An IP match
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
@@ -686,9 +714,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     void SetRateBasedStatement(RateBasedStatement&& value);
 
@@ -697,12 +726,19 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
-     * requests from the IP address until the request rate falls below the limit.</p>
-     * <p>You can optionally nest another statement inside the rate-based statement, to
-     * narrow the scope of the rule so that it only counts requests that match the
-     * nested statement. For example, based on recent requests that you have seen from
-     * an attacker, you might create a rate-based rule with a nested AND rule statement
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
+     * optionally nest another statement inside the rate-based statement, to narrow the
+     * scope of the rule so that it only counts requests that match the nested
+     * statement. For example, based on recent requests that you have seen from an
+     * attacker, you might create a rate-based rule with a nested AND rule statement
      * that contains the following nested statements:</p> <ul> <li> <p>An IP match
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
@@ -711,9 +747,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     Statement& WithRateBasedStatement(const RateBasedStatement& value);
 
@@ -722,12 +759,19 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
-     * requests from the IP address until the request rate falls below the limit.</p>
-     * <p>You can optionally nest another statement inside the rate-based statement, to
-     * narrow the scope of the rule so that it only counts requests that match the
-     * nested statement. For example, based on recent requests that you have seen from
-     * an attacker, you might create a rate-based rule with a nested AND rule statement
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
+     * optionally nest another statement inside the rate-based statement, to narrow the
+     * scope of the rule so that it only counts requests that match the nested
+     * statement. For example, based on recent requests that you have seen from an
+     * attacker, you might create a rate-based rule with a nested AND rule statement
      * that contains the following nested statements:</p> <ul> <li> <p>An IP match
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
@@ -736,9 +780,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     Statement& WithRateBasedStatement(RateBasedStatement&& value);
 
@@ -876,67 +921,183 @@ namespace Model
      * <p>A rule statement used to run the rules that are defined in a managed rule
      * group. To use this, provide the vendor name and the name of the rule group in
      * this statement. You can retrieve the required names by calling
-     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const{ return m_managedRuleGroupStatement; }
+    const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const;
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
      * group. To use this, provide the vendor name and the name of the rule group in
      * this statement. You can retrieve the required names by calling
-     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline bool ManagedRuleGroupStatementHasBeenSet() const { return m_managedRuleGroupStatementHasBeenSet; }
+    bool ManagedRuleGroupStatementHasBeenSet() const;
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
      * group. To use this, provide the vendor name and the name of the rule group in
      * this statement. You can retrieve the required names by calling
-     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = value; }
+    void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
      * group. To use this, provide the vendor name and the name of the rule group in
      * this statement. You can retrieve the required names by calling
-     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = std::move(value); }
+    void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
      * group. To use this, provide the vendor name and the name of the rule group in
      * this statement. You can retrieve the required names by calling
-     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { SetManagedRuleGroupStatement(value); return *this;}
+    Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
      * group. To use this, provide the vendor name and the name of the rule group in
      * this statement. You can retrieve the required names by calling
-     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+     * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { SetManagedRuleGroupStatement(std::move(value)); return *this;}
+    Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
+
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, WAF performs the search for
+     * labels that were added in the same context as the label match statement. </p>
+     */
+    inline const LabelMatchStatement& GetLabelMatchStatement() const{ return m_labelMatchStatement; }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, WAF performs the search for
+     * labels that were added in the same context as the label match statement. </p>
+     */
+    inline bool LabelMatchStatementHasBeenSet() const { return m_labelMatchStatementHasBeenSet; }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, WAF performs the search for
+     * labels that were added in the same context as the label match statement. </p>
+     */
+    inline void SetLabelMatchStatement(const LabelMatchStatement& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = value; }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, WAF performs the search for
+     * labels that were added in the same context as the label match statement. </p>
+     */
+    inline void SetLabelMatchStatement(LabelMatchStatement&& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = std::move(value); }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, WAF performs the search for
+     * labels that were added in the same context as the label match statement. </p>
+     */
+    inline Statement& WithLabelMatchStatement(const LabelMatchStatement& value) { SetLabelMatchStatement(value); return *this;}
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, WAF performs the search for
+     * labels that were added in the same context as the label match statement. </p>
+     */
+    inline Statement& WithLabelMatchStatement(LabelMatchStatement&& value) { SetLabelMatchStatement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline const RegexMatchStatement& GetRegexMatchStatement() const{ return m_regexMatchStatement; }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline bool RegexMatchStatementHasBeenSet() const { return m_regexMatchStatementHasBeenSet; }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline void SetRegexMatchStatement(const RegexMatchStatement& value) { m_regexMatchStatementHasBeenSet = true; m_regexMatchStatement = value; }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline void SetRegexMatchStatement(RegexMatchStatement&& value) { m_regexMatchStatementHasBeenSet = true; m_regexMatchStatement = std::move(value); }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline Statement& WithRegexMatchStatement(const RegexMatchStatement& value) { SetRegexMatchStatement(value); return *this;}
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline Statement& WithRegexMatchStatement(RegexMatchStatement&& value) { SetRegexMatchStatement(std::move(value)); return *this;}
 
   private:
 
@@ -976,8 +1137,14 @@ namespace Model
     std::shared_ptr<NotStatement> m_notStatement;
     bool m_notStatementHasBeenSet;
 
-    ManagedRuleGroupStatement m_managedRuleGroupStatement;
+    std::shared_ptr<ManagedRuleGroupStatement> m_managedRuleGroupStatement;
     bool m_managedRuleGroupStatementHasBeenSet;
+
+    LabelMatchStatement m_labelMatchStatement;
+    bool m_labelMatchStatementHasBeenSet;
+
+    RegexMatchStatement m_regexMatchStatement;
+    bool m_regexMatchStatementHasBeenSet;
   };
 
 } // namespace Model

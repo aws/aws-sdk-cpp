@@ -32,19 +32,29 @@ namespace Model
     ImportPlaybackKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const PlaybackKeyPair& GetKeyPair() const{ return m_keyPair; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKeyPair(const PlaybackKeyPair& value) { m_keyPair = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKeyPair(PlaybackKeyPair&& value) { m_keyPair = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ImportPlaybackKeyPairResult& WithKeyPair(const PlaybackKeyPair& value) { SetKeyPair(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ImportPlaybackKeyPairResult& WithKeyPair(PlaybackKeyPair&& value) { SetKeyPair(std::move(value)); return *this;}
 
   private:

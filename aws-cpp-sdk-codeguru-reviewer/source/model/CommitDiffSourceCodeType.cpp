@@ -20,13 +20,15 @@ namespace Model
 
 CommitDiffSourceCodeType::CommitDiffSourceCodeType() : 
     m_sourceCommitHasBeenSet(false),
-    m_destinationCommitHasBeenSet(false)
+    m_destinationCommitHasBeenSet(false),
+    m_mergeBaseCommitHasBeenSet(false)
 {
 }
 
 CommitDiffSourceCodeType::CommitDiffSourceCodeType(JsonView jsonValue) : 
     m_sourceCommitHasBeenSet(false),
-    m_destinationCommitHasBeenSet(false)
+    m_destinationCommitHasBeenSet(false),
+    m_mergeBaseCommitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ CommitDiffSourceCodeType& CommitDiffSourceCodeType::operator =(JsonView jsonValu
     m_destinationCommitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MergeBaseCommit"))
+  {
+    m_mergeBaseCommit = jsonValue.GetString("MergeBaseCommit");
+
+    m_mergeBaseCommitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue CommitDiffSourceCodeType::Jsonize() const
   if(m_destinationCommitHasBeenSet)
   {
    payload.WithString("DestinationCommit", m_destinationCommit);
+
+  }
+
+  if(m_mergeBaseCommitHasBeenSet)
+  {
+   payload.WithString("MergeBaseCommit", m_mergeBaseCommit);
 
   }
 

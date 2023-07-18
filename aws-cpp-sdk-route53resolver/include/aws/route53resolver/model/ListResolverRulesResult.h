@@ -108,44 +108,44 @@ namespace Model
 
 
     /**
-     * <p>The Resolver rules that were created using the current AWS account and that
-     * match the specified filters, if any.</p>
+     * <p>The Resolver rules that were created using the current Amazon Web Services
+     * account and that match the specified filters, if any.</p>
      */
     inline const Aws::Vector<ResolverRule>& GetResolverRules() const{ return m_resolverRules; }
 
     /**
-     * <p>The Resolver rules that were created using the current AWS account and that
-     * match the specified filters, if any.</p>
+     * <p>The Resolver rules that were created using the current Amazon Web Services
+     * account and that match the specified filters, if any.</p>
      */
     inline void SetResolverRules(const Aws::Vector<ResolverRule>& value) { m_resolverRules = value; }
 
     /**
-     * <p>The Resolver rules that were created using the current AWS account and that
-     * match the specified filters, if any.</p>
+     * <p>The Resolver rules that were created using the current Amazon Web Services
+     * account and that match the specified filters, if any.</p>
      */
     inline void SetResolverRules(Aws::Vector<ResolverRule>&& value) { m_resolverRules = std::move(value); }
 
     /**
-     * <p>The Resolver rules that were created using the current AWS account and that
-     * match the specified filters, if any.</p>
+     * <p>The Resolver rules that were created using the current Amazon Web Services
+     * account and that match the specified filters, if any.</p>
      */
     inline ListResolverRulesResult& WithResolverRules(const Aws::Vector<ResolverRule>& value) { SetResolverRules(value); return *this;}
 
     /**
-     * <p>The Resolver rules that were created using the current AWS account and that
-     * match the specified filters, if any.</p>
+     * <p>The Resolver rules that were created using the current Amazon Web Services
+     * account and that match the specified filters, if any.</p>
      */
     inline ListResolverRulesResult& WithResolverRules(Aws::Vector<ResolverRule>&& value) { SetResolverRules(std::move(value)); return *this;}
 
     /**
-     * <p>The Resolver rules that were created using the current AWS account and that
-     * match the specified filters, if any.</p>
+     * <p>The Resolver rules that were created using the current Amazon Web Services
+     * account and that match the specified filters, if any.</p>
      */
     inline ListResolverRulesResult& AddResolverRules(const ResolverRule& value) { m_resolverRules.push_back(value); return *this; }
 
     /**
-     * <p>The Resolver rules that were created using the current AWS account and that
-     * match the specified filters, if any.</p>
+     * <p>The Resolver rules that were created using the current Amazon Web Services
+     * account and that match the specified filters, if any.</p>
      */
     inline ListResolverRulesResult& AddResolverRules(ResolverRule&& value) { m_resolverRules.push_back(std::move(value)); return *this; }
 

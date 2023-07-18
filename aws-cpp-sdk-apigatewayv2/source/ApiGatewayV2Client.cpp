@@ -140,7 +140,7 @@ ApiGatewayV2Client::~ApiGatewayV2Client()
 {
 }
 
-void ApiGatewayV2Client::init(const ClientConfiguration& config)
+void ApiGatewayV2Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ApiGatewayV2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -169,9 +169,7 @@ void ApiGatewayV2Client::OverrideEndpoint(const Aws::String& endpoint)
 CreateApiOutcome ApiGatewayV2Client::CreateApi(const CreateApiRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis");
   return CreateApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -201,11 +199,9 @@ CreateApiMappingOutcome ApiGatewayV2Client::CreateApiMapping(const CreateApiMapp
     return CreateApiMappingOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/apimappings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apimappings");
   return CreateApiMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -235,11 +231,9 @@ CreateAuthorizerOutcome ApiGatewayV2Client::CreateAuthorizer(const CreateAuthori
     return CreateAuthorizerOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/authorizers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/authorizers");
   return CreateAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -269,11 +263,9 @@ CreateDeploymentOutcome ApiGatewayV2Client::CreateDeployment(const CreateDeploym
     return CreateDeploymentOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/deployments");
   return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -298,9 +290,7 @@ void ApiGatewayV2Client::CreateDeploymentAsyncHelper(const CreateDeploymentReque
 CreateDomainNameOutcome ApiGatewayV2Client::CreateDomainName(const CreateDomainNameRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames");
   return CreateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -330,11 +320,9 @@ CreateIntegrationOutcome ApiGatewayV2Client::CreateIntegration(const CreateInteg
     return CreateIntegrationOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations");
   return CreateIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -369,13 +357,11 @@ CreateIntegrationResponseOutcome ApiGatewayV2Client::CreateIntegrationResponse(c
     return CreateIntegrationResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  ss << "/integrationresponses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
+  uri.AddPathSegments("/integrationresponses");
   return CreateIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -405,11 +391,9 @@ CreateModelOutcome ApiGatewayV2Client::CreateModel(const CreateModelRequest& req
     return CreateModelOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/models";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/models");
   return CreateModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -439,11 +423,9 @@ CreateRouteOutcome ApiGatewayV2Client::CreateRoute(const CreateRouteRequest& req
     return CreateRouteOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes");
   return CreateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -478,13 +460,11 @@ CreateRouteResponseOutcome ApiGatewayV2Client::CreateRouteResponse(const CreateR
     return CreateRouteResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  ss << "/routeresponses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
+  uri.AddPathSegments("/routeresponses");
   return CreateRouteResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -514,11 +494,9 @@ CreateStageOutcome ApiGatewayV2Client::CreateStage(const CreateStageRequest& req
     return CreateStageOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages");
   return CreateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -543,9 +521,7 @@ void ApiGatewayV2Client::CreateStageAsyncHelper(const CreateStageRequest& reques
 CreateVpcLinkOutcome ApiGatewayV2Client::CreateVpcLink(const CreateVpcLinkRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/vpclinks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/vpclinks");
   return CreateVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -580,13 +556,11 @@ DeleteAccessLogSettingsOutcome ApiGatewayV2Client::DeleteAccessLogSettings(const
     return DeleteAccessLogSettingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  ss << "/accesslogsettings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  uri.AddPathSegments("/accesslogsettings");
   return DeleteAccessLogSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -616,10 +590,8 @@ DeleteApiOutcome ApiGatewayV2Client::DeleteApi(const DeleteApiRequest& request) 
     return DeleteApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
   return DeleteApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -654,12 +626,10 @@ DeleteApiMappingOutcome ApiGatewayV2Client::DeleteApiMapping(const DeleteApiMapp
     return DeleteApiMappingOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/apimappings/";
-  ss << request.GetApiMappingId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apimappings/");
+  uri.AddPathSegment(request.GetApiMappingId());
   return DeleteApiMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -694,12 +664,10 @@ DeleteAuthorizerOutcome ApiGatewayV2Client::DeleteAuthorizer(const DeleteAuthori
     return DeleteAuthorizerOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/authorizers/";
-  ss << request.GetAuthorizerId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/authorizers/");
+  uri.AddPathSegment(request.GetAuthorizerId());
   return DeleteAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -729,11 +697,9 @@ DeleteCorsConfigurationOutcome ApiGatewayV2Client::DeleteCorsConfiguration(const
     return DeleteCorsConfigurationOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/cors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/cors");
   return DeleteCorsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -768,12 +734,10 @@ DeleteDeploymentOutcome ApiGatewayV2Client::DeleteDeployment(const DeleteDeploym
     return DeleteDeploymentOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
   return DeleteDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -803,10 +767,8 @@ DeleteDomainNameOutcome ApiGatewayV2Client::DeleteDomainName(const DeleteDomainN
     return DeleteDomainNameOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
   return DeleteDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -841,12 +803,10 @@ DeleteIntegrationOutcome ApiGatewayV2Client::DeleteIntegration(const DeleteInteg
     return DeleteIntegrationOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
   return DeleteIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -886,14 +846,12 @@ DeleteIntegrationResponseOutcome ApiGatewayV2Client::DeleteIntegrationResponse(c
     return DeleteIntegrationResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationResponseId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  ss << "/integrationresponses/";
-  ss << request.GetIntegrationResponseId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
+  uri.AddPathSegments("/integrationresponses/");
+  uri.AddPathSegment(request.GetIntegrationResponseId());
   return DeleteIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -928,12 +886,10 @@ DeleteModelOutcome ApiGatewayV2Client::DeleteModel(const DeleteModelRequest& req
     return DeleteModelOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/models/";
-  ss << request.GetModelId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelId());
   return DeleteModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -968,12 +924,10 @@ DeleteRouteOutcome ApiGatewayV2Client::DeleteRoute(const DeleteRouteRequest& req
     return DeleteRouteOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
   return DeleteRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1013,14 +967,12 @@ DeleteRouteRequestParameterOutcome ApiGatewayV2Client::DeleteRouteRequestParamet
     return DeleteRouteRequestParameterOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  ss << "/requestparameters/";
-  ss << request.GetRequestParameterKey();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
+  uri.AddPathSegments("/requestparameters/");
+  uri.AddPathSegment(request.GetRequestParameterKey());
   return DeleteRouteRequestParameterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1060,14 +1012,12 @@ DeleteRouteResponseOutcome ApiGatewayV2Client::DeleteRouteResponse(const DeleteR
     return DeleteRouteResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteResponseId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  ss << "/routeresponses/";
-  ss << request.GetRouteResponseId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
+  uri.AddPathSegments("/routeresponses/");
+  uri.AddPathSegment(request.GetRouteResponseId());
   return DeleteRouteResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1107,14 +1057,12 @@ DeleteRouteSettingsOutcome ApiGatewayV2Client::DeleteRouteSettings(const DeleteR
     return DeleteRouteSettingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  ss << "/routesettings/";
-  ss << request.GetRouteKey();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  uri.AddPathSegments("/routesettings/");
+  uri.AddPathSegment(request.GetRouteKey());
   return DeleteRouteSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1149,12 +1097,10 @@ DeleteStageOutcome ApiGatewayV2Client::DeleteStage(const DeleteStageRequest& req
     return DeleteStageOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
   return DeleteStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1184,10 +1130,8 @@ DeleteVpcLinkOutcome ApiGatewayV2Client::DeleteVpcLink(const DeleteVpcLinkReques
     return DeleteVpcLinkOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/vpclinks/";
-  ss << request.GetVpcLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/vpclinks/");
+  uri.AddPathSegment(request.GetVpcLinkId());
   return DeleteVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1227,12 +1171,10 @@ ExportApiOutcome ApiGatewayV2Client::ExportApi(const ExportApiRequest& request) 
     return ExportApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Specification]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/exports/";
-  ss << request.GetSpecification();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/exports/");
+  uri.AddPathSegment(request.GetSpecification());
   return ExportApiOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1267,13 +1209,11 @@ ResetAuthorizersCacheOutcome ApiGatewayV2Client::ResetAuthorizersCache(const Res
     return ResetAuthorizersCacheOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  ss << "/cache/authorizers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  uri.AddPathSegments("/cache/authorizers");
   return ResetAuthorizersCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1303,10 +1243,8 @@ GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const
     return GetApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
   return GetApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1341,12 +1279,10 @@ GetApiMappingOutcome ApiGatewayV2Client::GetApiMapping(const GetApiMappingReques
     return GetApiMappingOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/apimappings/";
-  ss << request.GetApiMappingId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apimappings/");
+  uri.AddPathSegment(request.GetApiMappingId());
   return GetApiMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1376,11 +1312,9 @@ GetApiMappingsOutcome ApiGatewayV2Client::GetApiMappings(const GetApiMappingsReq
     return GetApiMappingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/apimappings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apimappings");
   return GetApiMappingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1405,9 +1339,7 @@ void ApiGatewayV2Client::GetApiMappingsAsyncHelper(const GetApiMappingsRequest& 
 GetApisOutcome ApiGatewayV2Client::GetApis(const GetApisRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis");
   return GetApisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1442,12 +1374,10 @@ GetAuthorizerOutcome ApiGatewayV2Client::GetAuthorizer(const GetAuthorizerReques
     return GetAuthorizerOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/authorizers/";
-  ss << request.GetAuthorizerId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/authorizers/");
+  uri.AddPathSegment(request.GetAuthorizerId());
   return GetAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1477,11 +1407,9 @@ GetAuthorizersOutcome ApiGatewayV2Client::GetAuthorizers(const GetAuthorizersReq
     return GetAuthorizersOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/authorizers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/authorizers");
   return GetAuthorizersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1516,12 +1444,10 @@ GetDeploymentOutcome ApiGatewayV2Client::GetDeployment(const GetDeploymentReques
     return GetDeploymentOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
   return GetDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1551,11 +1477,9 @@ GetDeploymentsOutcome ApiGatewayV2Client::GetDeployments(const GetDeploymentsReq
     return GetDeploymentsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/deployments");
   return GetDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1585,10 +1509,8 @@ GetDomainNameOutcome ApiGatewayV2Client::GetDomainName(const GetDomainNameReques
     return GetDomainNameOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
   return GetDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1613,9 +1535,7 @@ void ApiGatewayV2Client::GetDomainNameAsyncHelper(const GetDomainNameRequest& re
 GetDomainNamesOutcome ApiGatewayV2Client::GetDomainNames(const GetDomainNamesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames");
   return GetDomainNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1650,12 +1570,10 @@ GetIntegrationOutcome ApiGatewayV2Client::GetIntegration(const GetIntegrationReq
     return GetIntegrationOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
   return GetIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1695,14 +1613,12 @@ GetIntegrationResponseOutcome ApiGatewayV2Client::GetIntegrationResponse(const G
     return GetIntegrationResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationResponseId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  ss << "/integrationresponses/";
-  ss << request.GetIntegrationResponseId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
+  uri.AddPathSegments("/integrationresponses/");
+  uri.AddPathSegment(request.GetIntegrationResponseId());
   return GetIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1737,13 +1653,11 @@ GetIntegrationResponsesOutcome ApiGatewayV2Client::GetIntegrationResponses(const
     return GetIntegrationResponsesOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  ss << "/integrationresponses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
+  uri.AddPathSegments("/integrationresponses");
   return GetIntegrationResponsesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1773,11 +1687,9 @@ GetIntegrationsOutcome ApiGatewayV2Client::GetIntegrations(const GetIntegrations
     return GetIntegrationsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations");
   return GetIntegrationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1812,12 +1724,10 @@ GetModelOutcome ApiGatewayV2Client::GetModel(const GetModelRequest& request) con
     return GetModelOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/models/";
-  ss << request.GetModelId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelId());
   return GetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1852,13 +1762,11 @@ GetModelTemplateOutcome ApiGatewayV2Client::GetModelTemplate(const GetModelTempl
     return GetModelTemplateOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/models/";
-  ss << request.GetModelId();
-  ss << "/template";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelId());
+  uri.AddPathSegments("/template");
   return GetModelTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1888,11 +1796,9 @@ GetModelsOutcome ApiGatewayV2Client::GetModels(const GetModelsRequest& request) 
     return GetModelsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/models";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/models");
   return GetModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1927,12 +1833,10 @@ GetRouteOutcome ApiGatewayV2Client::GetRoute(const GetRouteRequest& request) con
     return GetRouteOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
   return GetRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1972,14 +1876,12 @@ GetRouteResponseOutcome ApiGatewayV2Client::GetRouteResponse(const GetRouteRespo
     return GetRouteResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteResponseId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  ss << "/routeresponses/";
-  ss << request.GetRouteResponseId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
+  uri.AddPathSegments("/routeresponses/");
+  uri.AddPathSegment(request.GetRouteResponseId());
   return GetRouteResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2014,13 +1916,11 @@ GetRouteResponsesOutcome ApiGatewayV2Client::GetRouteResponses(const GetRouteRes
     return GetRouteResponsesOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  ss << "/routeresponses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
+  uri.AddPathSegments("/routeresponses");
   return GetRouteResponsesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2050,11 +1950,9 @@ GetRoutesOutcome ApiGatewayV2Client::GetRoutes(const GetRoutesRequest& request) 
     return GetRoutesOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes");
   return GetRoutesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2089,12 +1987,10 @@ GetStageOutcome ApiGatewayV2Client::GetStage(const GetStageRequest& request) con
     return GetStageOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
   return GetStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2124,11 +2020,9 @@ GetStagesOutcome ApiGatewayV2Client::GetStages(const GetStagesRequest& request) 
     return GetStagesOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages");
   return GetStagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2158,10 +2052,8 @@ GetTagsOutcome ApiGatewayV2Client::GetTags(const GetTagsRequest& request) const
     return GetTagsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return GetTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2191,10 +2083,8 @@ GetVpcLinkOutcome ApiGatewayV2Client::GetVpcLink(const GetVpcLinkRequest& reques
     return GetVpcLinkOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/vpclinks/";
-  ss << request.GetVpcLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/vpclinks/");
+  uri.AddPathSegment(request.GetVpcLinkId());
   return GetVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2219,9 +2109,7 @@ void ApiGatewayV2Client::GetVpcLinkAsyncHelper(const GetVpcLinkRequest& request,
 GetVpcLinksOutcome ApiGatewayV2Client::GetVpcLinks(const GetVpcLinksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/vpclinks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/vpclinks");
   return GetVpcLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2246,9 +2134,7 @@ void ApiGatewayV2Client::GetVpcLinksAsyncHelper(const GetVpcLinksRequest& reques
 ImportApiOutcome ApiGatewayV2Client::ImportApi(const ImportApiRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis");
   return ImportApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2278,10 +2164,8 @@ ReimportApiOutcome ApiGatewayV2Client::ReimportApi(const ReimportApiRequest& req
     return ReimportApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
   return ReimportApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2311,10 +2195,8 @@ TagResourceOutcome ApiGatewayV2Client::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2349,10 +2231,8 @@ UntagResourceOutcome ApiGatewayV2Client::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2382,10 +2262,8 @@ UpdateApiOutcome ApiGatewayV2Client::UpdateApi(const UpdateApiRequest& request) 
     return UpdateApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
   return UpdateApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2420,12 +2298,10 @@ UpdateApiMappingOutcome ApiGatewayV2Client::UpdateApiMapping(const UpdateApiMapp
     return UpdateApiMappingOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/apimappings/";
-  ss << request.GetApiMappingId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apimappings/");
+  uri.AddPathSegment(request.GetApiMappingId());
   return UpdateApiMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2460,12 +2336,10 @@ UpdateAuthorizerOutcome ApiGatewayV2Client::UpdateAuthorizer(const UpdateAuthori
     return UpdateAuthorizerOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/authorizers/";
-  ss << request.GetAuthorizerId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/authorizers/");
+  uri.AddPathSegment(request.GetAuthorizerId());
   return UpdateAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2500,12 +2374,10 @@ UpdateDeploymentOutcome ApiGatewayV2Client::UpdateDeployment(const UpdateDeploym
     return UpdateDeploymentOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
   return UpdateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2535,10 +2407,8 @@ UpdateDomainNameOutcome ApiGatewayV2Client::UpdateDomainName(const UpdateDomainN
     return UpdateDomainNameOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/domainnames/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
   return UpdateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2573,12 +2443,10 @@ UpdateIntegrationOutcome ApiGatewayV2Client::UpdateIntegration(const UpdateInteg
     return UpdateIntegrationOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
   return UpdateIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2618,14 +2486,12 @@ UpdateIntegrationResponseOutcome ApiGatewayV2Client::UpdateIntegrationResponse(c
     return UpdateIntegrationResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationResponseId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/integrations/";
-  ss << request.GetIntegrationId();
-  ss << "/integrationresponses/";
-  ss << request.GetIntegrationResponseId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/integrations/");
+  uri.AddPathSegment(request.GetIntegrationId());
+  uri.AddPathSegments("/integrationresponses/");
+  uri.AddPathSegment(request.GetIntegrationResponseId());
   return UpdateIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2660,12 +2526,10 @@ UpdateModelOutcome ApiGatewayV2Client::UpdateModel(const UpdateModelRequest& req
     return UpdateModelOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/models/";
-  ss << request.GetModelId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelId());
   return UpdateModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2700,12 +2564,10 @@ UpdateRouteOutcome ApiGatewayV2Client::UpdateRoute(const UpdateRouteRequest& req
     return UpdateRouteOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
   return UpdateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2745,14 +2607,12 @@ UpdateRouteResponseOutcome ApiGatewayV2Client::UpdateRouteResponse(const UpdateR
     return UpdateRouteResponseOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteResponseId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/routes/";
-  ss << request.GetRouteId();
-  ss << "/routeresponses/";
-  ss << request.GetRouteResponseId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteId());
+  uri.AddPathSegments("/routeresponses/");
+  uri.AddPathSegment(request.GetRouteResponseId());
   return UpdateRouteResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2787,12 +2647,10 @@ UpdateStageOutcome ApiGatewayV2Client::UpdateStage(const UpdateStageRequest& req
     return UpdateStageOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/apis/";
-  ss << request.GetApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
   return UpdateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2822,10 +2680,8 @@ UpdateVpcLinkOutcome ApiGatewayV2Client::UpdateVpcLink(const UpdateVpcLinkReques
     return UpdateVpcLinkOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/vpclinks/";
-  ss << request.GetVpcLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/vpclinks/");
+  uri.AddPathSegment(request.GetVpcLinkId());
   return UpdateVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

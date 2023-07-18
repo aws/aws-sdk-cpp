@@ -24,7 +24,9 @@ BucketCountByEncryptionType::BucketCountByEncryptionType() :
     m_s3Managed(0),
     m_s3ManagedHasBeenSet(false),
     m_unencrypted(0),
-    m_unencryptedHasBeenSet(false)
+    m_unencryptedHasBeenSet(false),
+    m_unknown(0),
+    m_unknownHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ BucketCountByEncryptionType::BucketCountByEncryptionType(JsonView jsonValue) :
     m_s3Managed(0),
     m_s3ManagedHasBeenSet(false),
     m_unencrypted(0),
-    m_unencryptedHasBeenSet(false)
+    m_unencryptedHasBeenSet(false),
+    m_unknown(0),
+    m_unknownHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +66,13 @@ BucketCountByEncryptionType& BucketCountByEncryptionType::operator =(JsonView js
     m_unencryptedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unknown"))
+  {
+    m_unknown = jsonValue.GetInt64("unknown");
+
+    m_unknownHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +95,12 @@ JsonValue BucketCountByEncryptionType::Jsonize() const
   if(m_unencryptedHasBeenSet)
   {
    payload.WithInt64("unencrypted", m_unencrypted);
+
+  }
+
+  if(m_unknownHasBeenSet)
+  {
+   payload.WithInt64("unknown", m_unknown);
 
   }
 

@@ -377,28 +377,57 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline bool GetSigningDisabled() const{ return m_signingDisabled; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline bool SigningDisabledHasBeenSet() const { return m_signingDisabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline void SetSigningDisabled(bool value) { m_signingDisabledHasBeenSet = true; m_signingDisabled = value; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline AuthorizerDescription& WithSigningDisabled(bool value) { SetSigningDisabled(value); return *this;}
+
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline bool GetEnableCachingForHttp() const{ return m_enableCachingForHttp; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline bool EnableCachingForHttpHasBeenSet() const { return m_enableCachingForHttpHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline void SetEnableCachingForHttp(bool value) { m_enableCachingForHttpHasBeenSet = true; m_enableCachingForHttp = value; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline AuthorizerDescription& WithEnableCachingForHttp(bool value) { SetEnableCachingForHttp(value); return *this;}
 
   private:
 
@@ -428,6 +457,9 @@ namespace Model
 
     bool m_signingDisabled;
     bool m_signingDisabledHasBeenSet;
+
+    bool m_enableCachingForHttp;
+    bool m_enableCachingForHttpHasBeenSet;
   };
 
 } // namespace Model

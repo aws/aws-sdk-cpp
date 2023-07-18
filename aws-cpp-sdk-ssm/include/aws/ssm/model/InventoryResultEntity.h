@@ -40,58 +40,58 @@ namespace Model
 
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline InventoryResultEntity& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline InventoryResultEntity& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the inventory result entity. For example, for managed instance
-     * inventory the result will be the managed instance ID. For EC2 instance
-     * inventory, the result will be the instance ID. </p>
+     * <p>ID of the inventory result entity. For example, for managed node inventory
+     * the result will be the managed node ID. For EC2 instance inventory, the result
+     * will be the instance ID. </p>
      */
     inline InventoryResultEntity& WithId(const char* value) { SetId(value); return *this;}
 

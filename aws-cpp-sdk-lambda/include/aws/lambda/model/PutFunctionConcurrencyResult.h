@@ -33,7 +33,7 @@ namespace Model
     /**
      * <p>The number of concurrent executions that are reserved for this function. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
      * Concurrency</a>.</p>
      */
     inline int GetReservedConcurrentExecutions() const{ return m_reservedConcurrentExecutions; }
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The number of concurrent executions that are reserved for this function. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
      * Concurrency</a>.</p>
      */
     inline void SetReservedConcurrentExecutions(int value) { m_reservedConcurrentExecutions = value; }
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The number of concurrent executions that are reserved for this function. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
      * Concurrency</a>.</p>
      */
     inline PutFunctionConcurrencyResult& WithReservedConcurrentExecutions(int value) { SetReservedConcurrentExecutions(value); return *this;}

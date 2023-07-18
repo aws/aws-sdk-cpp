@@ -54,6 +54,12 @@ DeleteFileSystemResult& DeleteFileSystemResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("OpenZFSResponse"))
+  {
+    m_openZFSResponse = jsonValue.GetObject("OpenZFSResponse");
+
+  }
+
 
 
   return *this;

@@ -40,7 +40,10 @@ FileSystem::FileSystem() :
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false)
+    m_administrativeActionsHasBeenSet(false),
+    m_ontapConfigurationHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +69,10 @@ FileSystem::FileSystem(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false)
+    m_administrativeActionsHasBeenSet(false),
+    m_ontapConfigurationHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -211,6 +217,27 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_administrativeActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OntapConfiguration"))
+  {
+    m_ontapConfiguration = jsonValue.GetObject("OntapConfiguration");
+
+    m_ontapConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FileSystemTypeVersion"))
+  {
+    m_fileSystemTypeVersion = jsonValue.GetString("FileSystemTypeVersion");
+
+    m_fileSystemTypeVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OpenZFSConfiguration"))
+  {
+    m_openZFSConfiguration = jsonValue.GetObject("OpenZFSConfiguration");
+
+    m_openZFSConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -339,6 +366,24 @@ JsonValue FileSystem::Jsonize() const
      administrativeActionsJsonList[administrativeActionsIndex].AsObject(m_administrativeActions[administrativeActionsIndex].Jsonize());
    }
    payload.WithArray("AdministrativeActions", std::move(administrativeActionsJsonList));
+
+  }
+
+  if(m_ontapConfigurationHasBeenSet)
+  {
+   payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+
+  }
+
+  if(m_fileSystemTypeVersionHasBeenSet)
+  {
+   payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

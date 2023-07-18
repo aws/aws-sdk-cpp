@@ -99,7 +99,7 @@ SchemasClient::~SchemasClient()
 {
 }
 
-void SchemasClient::init(const ClientConfiguration& config)
+void SchemasClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("schemas");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -128,9 +128,7 @@ void SchemasClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateDiscovererOutcome SchemasClient::CreateDiscoverer(const CreateDiscovererRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discoverers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discoverers");
   return CreateDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -160,10 +158,8 @@ CreateRegistryOutcome SchemasClient::CreateRegistry(const CreateRegistryRequest&
     return CreateRegistryOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
   return CreateRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,12 +194,10 @@ CreateSchemaOutcome SchemasClient::CreateSchema(const CreateSchemaRequest& reque
     return CreateSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
   return CreateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -233,10 +227,8 @@ DeleteDiscovererOutcome SchemasClient::DeleteDiscoverer(const DeleteDiscovererRe
     return DeleteDiscovererOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DiscovererId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discoverers/id/";
-  ss << request.GetDiscovererId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discoverers/id/");
+  uri.AddPathSegment(request.GetDiscovererId());
   return DeleteDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -266,10 +258,8 @@ DeleteRegistryOutcome SchemasClient::DeleteRegistry(const DeleteRegistryRequest&
     return DeleteRegistryOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
   return DeleteRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -294,9 +284,7 @@ void SchemasClient::DeleteRegistryAsyncHelper(const DeleteRegistryRequest& reque
 DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/policy");
   return DeleteResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -331,12 +319,10 @@ DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& reque
     return DeleteSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
   return DeleteSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -376,14 +362,12 @@ DeleteSchemaVersionOutcome SchemasClient::DeleteSchemaVersion(const DeleteSchema
     return DeleteSchemaVersionOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  ss << "/version/";
-  ss << request.GetSchemaVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
+  uri.AddPathSegments("/version/");
+  uri.AddPathSegment(request.GetSchemaVersion());
   return DeleteSchemaVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -423,14 +407,12 @@ DescribeCodeBindingOutcome SchemasClient::DescribeCodeBinding(const DescribeCode
     return DescribeCodeBindingOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  ss << "/language/";
-  ss << request.GetLanguage();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
+  uri.AddPathSegments("/language/");
+  uri.AddPathSegment(request.GetLanguage());
   return DescribeCodeBindingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -460,10 +442,8 @@ DescribeDiscovererOutcome SchemasClient::DescribeDiscoverer(const DescribeDiscov
     return DescribeDiscovererOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DiscovererId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discoverers/id/";
-  ss << request.GetDiscovererId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discoverers/id/");
+  uri.AddPathSegment(request.GetDiscovererId());
   return DescribeDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -493,10 +473,8 @@ DescribeRegistryOutcome SchemasClient::DescribeRegistry(const DescribeRegistryRe
     return DescribeRegistryOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
   return DescribeRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -531,12 +509,10 @@ DescribeSchemaOutcome SchemasClient::DescribeSchema(const DescribeSchemaRequest&
     return DescribeSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
   return DescribeSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -576,13 +552,11 @@ ExportSchemaOutcome SchemasClient::ExportSchema(const ExportSchemaRequest& reque
     return ExportSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  ss << "/export";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
+  uri.AddPathSegments("/export");
   return ExportSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -622,15 +596,13 @@ GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBin
     return GetCodeBindingSourceOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  ss << "/language/";
-  ss << request.GetLanguage();
-  ss << "/source";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
+  uri.AddPathSegments("/language/");
+  uri.AddPathSegment(request.GetLanguage());
+  uri.AddPathSegments("/source");
   return GetCodeBindingSourceOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -655,9 +627,7 @@ void SchemasClient::GetCodeBindingSourceAsyncHelper(const GetCodeBindingSourceRe
 GetDiscoveredSchemaOutcome SchemasClient::GetDiscoveredSchema(const GetDiscoveredSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discover";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discover");
   return GetDiscoveredSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -682,9 +652,7 @@ void SchemasClient::GetDiscoveredSchemaAsyncHelper(const GetDiscoveredSchemaRequ
 GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/policy");
   return GetResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -709,9 +677,7 @@ void SchemasClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest&
 ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discoverers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discoverers");
   return ListDiscoverersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -736,9 +702,7 @@ void SchemasClient::ListDiscoverersAsyncHelper(const ListDiscoverersRequest& req
 ListRegistriesOutcome SchemasClient::ListRegistries(const ListRegistriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries");
   return ListRegistriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -773,13 +737,11 @@ ListSchemaVersionsOutcome SchemasClient::ListSchemaVersions(const ListSchemaVers
     return ListSchemaVersionsOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
+  uri.AddPathSegments("/versions");
   return ListSchemaVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -809,11 +771,9 @@ ListSchemasOutcome SchemasClient::ListSchemas(const ListSchemasRequest& request)
     return ListSchemasOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas");
   return ListSchemasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -843,10 +803,8 @@ ListTagsForResourceOutcome SchemasClient::ListTagsForResource(const ListTagsForR
     return ListTagsForResourceOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -886,14 +844,12 @@ PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest&
     return PutCodeBindingOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  ss << "/language/";
-  ss << request.GetLanguage();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
+  uri.AddPathSegments("/language/");
+  uri.AddPathSegment(request.GetLanguage());
   return PutCodeBindingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -918,9 +874,7 @@ void SchemasClient::PutCodeBindingAsyncHelper(const PutCodeBindingRequest& reque
 PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/policy");
   return PutResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -955,11 +909,9 @@ SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& re
     return SearchSchemasOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/search");
   return SearchSchemasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -989,11 +941,9 @@ StartDiscovererOutcome SchemasClient::StartDiscoverer(const StartDiscovererReque
     return StartDiscovererOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DiscovererId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discoverers/id/";
-  ss << request.GetDiscovererId();
-  ss << "/start";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discoverers/id/");
+  uri.AddPathSegment(request.GetDiscovererId());
+  uri.AddPathSegments("/start");
   return StartDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1023,11 +973,9 @@ StopDiscovererOutcome SchemasClient::StopDiscoverer(const StopDiscovererRequest&
     return StopDiscovererOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DiscovererId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discoverers/id/";
-  ss << request.GetDiscovererId();
-  ss << "/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discoverers/id/");
+  uri.AddPathSegment(request.GetDiscovererId());
+  uri.AddPathSegments("/stop");
   return StopDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1057,10 +1005,8 @@ TagResourceOutcome SchemasClient::TagResource(const TagResourceRequest& request)
     return TagResourceOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1095,10 +1041,8 @@ UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& re
     return UntagResourceOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1128,10 +1072,8 @@ UpdateDiscovererOutcome SchemasClient::UpdateDiscoverer(const UpdateDiscovererRe
     return UpdateDiscovererOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DiscovererId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/discoverers/id/";
-  ss << request.GetDiscovererId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/discoverers/id/");
+  uri.AddPathSegment(request.GetDiscovererId());
   return UpdateDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1161,10 +1103,8 @@ UpdateRegistryOutcome SchemasClient::UpdateRegistry(const UpdateRegistryRequest&
     return UpdateRegistryOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
   return UpdateRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1199,12 +1139,10 @@ UpdateSchemaOutcome SchemasClient::UpdateSchema(const UpdateSchemaRequest& reque
     return UpdateSchemaOutcome(Aws::Client::AWSError<SchemasErrors>(SchemasErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registries/name/";
-  ss << request.GetRegistryName();
-  ss << "/schemas/name/";
-  ss << request.GetSchemaName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registries/name/");
+  uri.AddPathSegment(request.GetRegistryName());
+  uri.AddPathSegments("/schemas/name/");
+  uri.AddPathSegment(request.GetSchemaName());
   return UpdateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

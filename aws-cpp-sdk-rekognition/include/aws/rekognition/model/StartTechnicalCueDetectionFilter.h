@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
+#include <aws/rekognition/model/BlackFrame.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,10 +87,62 @@ namespace Model
      */
     inline StartTechnicalCueDetectionFilter& WithMinSegmentConfidence(double value) { SetMinSegmentConfidence(value); return *this;}
 
+
+    /**
+     * <p> A filter that allows you to control the black frame detection by specifying
+     * the black levels and pixel coverage of black pixels in a frame. Videos can come
+     * from multiple sources, formats, and time periods, with different standards and
+     * varying noise levels for black frames that need to be accounted for. </p>
+     */
+    inline const BlackFrame& GetBlackFrame() const{ return m_blackFrame; }
+
+    /**
+     * <p> A filter that allows you to control the black frame detection by specifying
+     * the black levels and pixel coverage of black pixels in a frame. Videos can come
+     * from multiple sources, formats, and time periods, with different standards and
+     * varying noise levels for black frames that need to be accounted for. </p>
+     */
+    inline bool BlackFrameHasBeenSet() const { return m_blackFrameHasBeenSet; }
+
+    /**
+     * <p> A filter that allows you to control the black frame detection by specifying
+     * the black levels and pixel coverage of black pixels in a frame. Videos can come
+     * from multiple sources, formats, and time periods, with different standards and
+     * varying noise levels for black frames that need to be accounted for. </p>
+     */
+    inline void SetBlackFrame(const BlackFrame& value) { m_blackFrameHasBeenSet = true; m_blackFrame = value; }
+
+    /**
+     * <p> A filter that allows you to control the black frame detection by specifying
+     * the black levels and pixel coverage of black pixels in a frame. Videos can come
+     * from multiple sources, formats, and time periods, with different standards and
+     * varying noise levels for black frames that need to be accounted for. </p>
+     */
+    inline void SetBlackFrame(BlackFrame&& value) { m_blackFrameHasBeenSet = true; m_blackFrame = std::move(value); }
+
+    /**
+     * <p> A filter that allows you to control the black frame detection by specifying
+     * the black levels and pixel coverage of black pixels in a frame. Videos can come
+     * from multiple sources, formats, and time periods, with different standards and
+     * varying noise levels for black frames that need to be accounted for. </p>
+     */
+    inline StartTechnicalCueDetectionFilter& WithBlackFrame(const BlackFrame& value) { SetBlackFrame(value); return *this;}
+
+    /**
+     * <p> A filter that allows you to control the black frame detection by specifying
+     * the black levels and pixel coverage of black pixels in a frame. Videos can come
+     * from multiple sources, formats, and time periods, with different standards and
+     * varying noise levels for black frames that need to be accounted for. </p>
+     */
+    inline StartTechnicalCueDetectionFilter& WithBlackFrame(BlackFrame&& value) { SetBlackFrame(std::move(value)); return *this;}
+
   private:
 
     double m_minSegmentConfidence;
     bool m_minSegmentConfidenceHasBeenSet;
+
+    BlackFrame m_blackFrame;
+    bool m_blackFrameHasBeenSet;
   };
 
 } // namespace Model

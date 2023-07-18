@@ -17,6 +17,7 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_availSuppressionHasBeenSet(false),
     m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
@@ -55,6 +56,22 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_cdnConfigurationHasBeenSet)
   {
    payload.WithObject("CdnConfiguration", m_cdnConfiguration.Jsonize());
+
+  }
+
+  if(m_configurationAliasesHasBeenSet)
+  {
+   JsonValue configurationAliasesJsonMap;
+   for(auto& configurationAliasesItem : m_configurationAliases)
+   {
+     JsonValue __mapOf__stringJsonMap;
+     for(auto& __mapOf__stringItem : configurationAliasesItem.second)
+     {
+       __mapOf__stringJsonMap.WithString(__mapOf__stringItem.first, __mapOf__stringItem.second);
+     }
+     configurationAliasesJsonMap.WithObject(configurationAliasesItem.first, std::move(__mapOf__stringJsonMap));
+   }
+   payload.WithObject("ConfigurationAliases", std::move(configurationAliasesJsonMap));
 
   }
 

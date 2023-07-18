@@ -68,7 +68,11 @@ Explanation::Explanation() :
     m_vpcHasBeenSet(false),
     m_vpcEndpointHasBeenSet(false),
     m_vpnConnectionHasBeenSet(false),
-    m_vpnGatewayHasBeenSet(false)
+    m_vpnGatewayHasBeenSet(false),
+    m_transitGatewayHasBeenSet(false),
+    m_transitGatewayRouteTableHasBeenSet(false),
+    m_transitGatewayRouteTableRouteHasBeenSet(false),
+    m_transitGatewayAttachmentHasBeenSet(false)
 {
 }
 
@@ -120,7 +124,11 @@ Explanation::Explanation(const XmlNode& xmlNode) :
     m_vpcHasBeenSet(false),
     m_vpcEndpointHasBeenSet(false),
     m_vpnConnectionHasBeenSet(false),
-    m_vpnGatewayHasBeenSet(false)
+    m_vpnGatewayHasBeenSet(false),
+    m_transitGatewayHasBeenSet(false),
+    m_transitGatewayRouteTableHasBeenSet(false),
+    m_transitGatewayRouteTableRouteHasBeenSet(false),
+    m_transitGatewayAttachmentHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -442,6 +450,30 @@ Explanation& Explanation::operator =(const XmlNode& xmlNode)
     {
       m_vpnGateway = vpnGatewayNode;
       m_vpnGatewayHasBeenSet = true;
+    }
+    XmlNode transitGatewayNode = resultNode.FirstChild("transitGateway");
+    if(!transitGatewayNode.IsNull())
+    {
+      m_transitGateway = transitGatewayNode;
+      m_transitGatewayHasBeenSet = true;
+    }
+    XmlNode transitGatewayRouteTableNode = resultNode.FirstChild("transitGatewayRouteTable");
+    if(!transitGatewayRouteTableNode.IsNull())
+    {
+      m_transitGatewayRouteTable = transitGatewayRouteTableNode;
+      m_transitGatewayRouteTableHasBeenSet = true;
+    }
+    XmlNode transitGatewayRouteTableRouteNode = resultNode.FirstChild("transitGatewayRouteTableRoute");
+    if(!transitGatewayRouteTableRouteNode.IsNull())
+    {
+      m_transitGatewayRouteTableRoute = transitGatewayRouteTableRouteNode;
+      m_transitGatewayRouteTableRouteHasBeenSet = true;
+    }
+    XmlNode transitGatewayAttachmentNode = resultNode.FirstChild("transitGatewayAttachment");
+    if(!transitGatewayAttachmentNode.IsNull())
+    {
+      m_transitGatewayAttachment = transitGatewayAttachmentNode;
+      m_transitGatewayAttachmentHasBeenSet = true;
     }
   }
 
@@ -765,6 +797,34 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location, un
       m_vpnGateway.OutputToStream(oStream, vpnGatewayLocationAndMemberSs.str().c_str());
   }
 
+  if(m_transitGatewayHasBeenSet)
+  {
+      Aws::StringStream transitGatewayLocationAndMemberSs;
+      transitGatewayLocationAndMemberSs << location << index << locationValue << ".TransitGateway";
+      m_transitGateway.OutputToStream(oStream, transitGatewayLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_transitGatewayRouteTableHasBeenSet)
+  {
+      Aws::StringStream transitGatewayRouteTableLocationAndMemberSs;
+      transitGatewayRouteTableLocationAndMemberSs << location << index << locationValue << ".TransitGatewayRouteTable";
+      m_transitGatewayRouteTable.OutputToStream(oStream, transitGatewayRouteTableLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_transitGatewayRouteTableRouteHasBeenSet)
+  {
+      Aws::StringStream transitGatewayRouteTableRouteLocationAndMemberSs;
+      transitGatewayRouteTableRouteLocationAndMemberSs << location << index << locationValue << ".TransitGatewayRouteTableRoute";
+      m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_transitGatewayAttachmentHasBeenSet)
+  {
+      Aws::StringStream transitGatewayAttachmentLocationAndMemberSs;
+      transitGatewayAttachmentLocationAndMemberSs << location << index << locationValue << ".TransitGatewayAttachment";
+      m_transitGatewayAttachment.OutputToStream(oStream, transitGatewayAttachmentLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1038,6 +1098,30 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) co
       Aws::String vpnGatewayLocationAndMember(location);
       vpnGatewayLocationAndMember += ".VpnGateway";
       m_vpnGateway.OutputToStream(oStream, vpnGatewayLocationAndMember.c_str());
+  }
+  if(m_transitGatewayHasBeenSet)
+  {
+      Aws::String transitGatewayLocationAndMember(location);
+      transitGatewayLocationAndMember += ".TransitGateway";
+      m_transitGateway.OutputToStream(oStream, transitGatewayLocationAndMember.c_str());
+  }
+  if(m_transitGatewayRouteTableHasBeenSet)
+  {
+      Aws::String transitGatewayRouteTableLocationAndMember(location);
+      transitGatewayRouteTableLocationAndMember += ".TransitGatewayRouteTable";
+      m_transitGatewayRouteTable.OutputToStream(oStream, transitGatewayRouteTableLocationAndMember.c_str());
+  }
+  if(m_transitGatewayRouteTableRouteHasBeenSet)
+  {
+      Aws::String transitGatewayRouteTableRouteLocationAndMember(location);
+      transitGatewayRouteTableRouteLocationAndMember += ".TransitGatewayRouteTableRoute";
+      m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMember.c_str());
+  }
+  if(m_transitGatewayAttachmentHasBeenSet)
+  {
+      Aws::String transitGatewayAttachmentLocationAndMember(location);
+      transitGatewayAttachmentLocationAndMember += ".TransitGatewayAttachment";
+      m_transitGatewayAttachment.OutputToStream(oStream, transitGatewayAttachmentLocationAndMember.c_str());
   }
 }
 

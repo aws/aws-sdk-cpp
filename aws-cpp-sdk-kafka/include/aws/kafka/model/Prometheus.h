@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the JMX
+            <p>Indicates whether you want to turn on or turn off the JMX
      * Exporter.</p>
          
      */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the JMX
+            <p>Indicates whether you want to turn on or turn off the JMX
      * Exporter.</p>
          
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the JMX
+            <p>Indicates whether you want to turn on or turn off the JMX
      * Exporter.</p>
          
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the JMX
+            <p>Indicates whether you want to turn on or turn off the JMX
      * Exporter.</p>
          
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the JMX
+            <p>Indicates whether you want to turn on or turn off the JMX
      * Exporter.</p>
          
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the JMX
+            <p>Indicates whether you want to turn on or turn off the JMX
      * Exporter.</p>
          
      */
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -99,7 +99,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -115,7 +115,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */

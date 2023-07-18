@@ -27,7 +27,8 @@ ReplicaDescription::ReplicaDescription() :
     m_kMSMasterKeyIdHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
-    m_replicaInaccessibleDateTimeHasBeenSet(false)
+    m_replicaInaccessibleDateTimeHasBeenSet(false),
+    m_replicaTableClassSummaryHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ ReplicaDescription::ReplicaDescription(JsonView jsonValue) :
     m_kMSMasterKeyIdHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
-    m_replicaInaccessibleDateTimeHasBeenSet(false)
+    m_replicaInaccessibleDateTimeHasBeenSet(false),
+    m_replicaTableClassSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ ReplicaDescription& ReplicaDescription::operator =(JsonView jsonValue)
     m_replicaInaccessibleDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicaTableClassSummary"))
+  {
+    m_replicaTableClassSummary = jsonValue.GetObject("ReplicaTableClassSummary");
+
+    m_replicaTableClassSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -162,6 +171,12 @@ JsonValue ReplicaDescription::Jsonize() const
   if(m_replicaInaccessibleDateTimeHasBeenSet)
   {
    payload.WithDouble("ReplicaInaccessibleDateTime", m_replicaInaccessibleDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_replicaTableClassSummaryHasBeenSet)
+  {
+   payload.WithObject("ReplicaTableClassSummary", m_replicaTableClassSummary.Jsonize());
+
   }
 
   return payload;

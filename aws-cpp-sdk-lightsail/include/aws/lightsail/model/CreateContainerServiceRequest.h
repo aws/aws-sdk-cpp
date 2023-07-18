@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lightsail/model/ContainerServiceDeploymentRequest.h>
+#include <aws/lightsail/model/PrivateRegistryAccessRequest.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
 
@@ -49,10 +50,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
@@ -66,10 +68,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
@@ -83,10 +86,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
@@ -100,10 +104,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
@@ -117,10 +122,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
@@ -134,10 +140,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline CreateContainerServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
@@ -151,10 +158,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline CreateContainerServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
@@ -168,10 +176,11 @@ namespace Model
      * domain for your container service will be like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
-     * <li> <p>Must be unique within each AWS Region in your Lightsail account.</p>
-     * </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li> <p>Must contain
-     * only alphanumeric characters and hyphens.</p> </li> <li> <p>A hyphen (-) can
-     * separate words but cannot be at the start or end of the name.</p> </li> </ul>
+     * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
+     * account.</p> </li> <li> <p>Must contain 1 to 63 characters.</p> </li> <li>
+     * <p>Must contain only alphanumeric characters and hyphens.</p> </li> <li> <p>A
+     * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+     * </li> </ul>
      */
     inline CreateContainerServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -291,66 +300,74 @@ namespace Model
 
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline CreateContainerServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline CreateContainerServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline CreateContainerServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tag keys and optional values for the container service.</p> <p>For more
-     * information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline CreateContainerServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -608,6 +625,67 @@ namespace Model
      */
     inline CreateContainerServiceRequest& WithDeployment(ContainerServiceDeploymentRequest&& value) { SetDeployment(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline const PrivateRegistryAccessRequest& GetPrivateRegistryAccess() const{ return m_privateRegistryAccess; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline bool PrivateRegistryAccessHasBeenSet() const { return m_privateRegistryAccessHasBeenSet; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = value; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = std::move(value); }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { SetPrivateRegistryAccess(value); return *this;}
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { SetPrivateRegistryAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceName;
@@ -627,6 +705,9 @@ namespace Model
 
     ContainerServiceDeploymentRequest m_deployment;
     bool m_deploymentHasBeenSet;
+
+    PrivateRegistryAccessRequest m_privateRegistryAccess;
+    bool m_privateRegistryAccessHasBeenSet;
   };
 
 } // namespace Model

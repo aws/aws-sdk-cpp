@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline const ChannelStorage& GetChannelStorage() const{ return m_channelStorage; }
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline bool ChannelStorageHasBeenSet() const { return m_channelStorageHasBeenSet; }
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline void SetChannelStorage(const ChannelStorage& value) { m_channelStorageHasBeenSet = true; m_channelStorage = value; }
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline void SetChannelStorage(ChannelStorage&& value) { m_channelStorageHasBeenSet = true; m_channelStorage = std::move(value); }
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline UpdateChannelRequest& WithChannelStorage(const ChannelStorage& value) { SetChannelStorage(value); return *this;}
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline UpdateChannelRequest& WithChannelStorage(ChannelStorage&& value) { SetChannelStorage(std::move(value)); return *this;}
@@ -126,37 +126,37 @@ namespace Model
 
     /**
      * <p>How long, in days, message data is kept for the channel. The retention period
-     * cannot be updated if the channel's S3 storage is customer-managed.</p>
+     * can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
      * <p>How long, in days, message data is kept for the channel. The retention period
-     * cannot be updated if the channel's S3 storage is customer-managed.</p>
+     * can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
      */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>How long, in days, message data is kept for the channel. The retention period
-     * cannot be updated if the channel's S3 storage is customer-managed.</p>
+     * can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
      */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
      * <p>How long, in days, message data is kept for the channel. The retention period
-     * cannot be updated if the channel's S3 storage is customer-managed.</p>
+     * can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
      */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
 
     /**
      * <p>How long, in days, message data is kept for the channel. The retention period
-     * cannot be updated if the channel's S3 storage is customer-managed.</p>
+     * can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
      */
     inline UpdateChannelRequest& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
 
     /**
      * <p>How long, in days, message data is kept for the channel. The retention period
-     * cannot be updated if the channel's S3 storage is customer-managed.</p>
+     * can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
      */
     inline UpdateChannelRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 

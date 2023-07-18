@@ -176,13 +176,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -196,10 +197,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
@@ -212,13 +239,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -232,10 +260,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
@@ -248,13 +302,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -268,10 +323,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
@@ -284,13 +365,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -304,10 +386,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
@@ -320,13 +428,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -340,10 +449,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
@@ -356,13 +491,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -376,10 +512,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
@@ -392,13 +554,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -412,10 +575,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
@@ -428,13 +617,14 @@ namespace Model
     /**
      * <p>Contains information about any errors that have occurred. This data type can
      * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
-     * permission to start Data Exploration in Amazon Athena. Contact your AWS
-     * administrator for help. For more information, see <a
+     * permission to start Data Exploration in Amazon Athena. Contact your Amazon Web
+     * Services administrator for help. For more information, see <a
      * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
-     * Up AWS Application Discovery Service</a> in the Application Discovery Service
-     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
-     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
-     * streams or request a limit increase and try again. For more information, see <a
+     * Up Amazon Web Services Application Discovery Service</a> in the Application
+     * Discovery Service User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE -
+     * You reached the limit for Amazon Kinesis Data Firehose delivery streams. Reduce
+     * the number of streams or request a limit increase and try again. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
      * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
      * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
@@ -448,10 +638,36 @@ namespace Model
      * in an error state because your IAM User is missing one or more of the Kinesis
      * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
      * feature is in an error state because of an internal failure. Try again later. If
-     * this problem persists, contact AWS Support.</p> </li> <li>
-     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
-     * the number of Amazon S3 buckets or request a limit increase and try again. For
-     * more information, see <a
+     * this problem persists, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>LAKE_FORMATION_ACCESS_DENIED - You don't have sufficient lake formation
+     * permissions to start continuous export. For more information, see <a
+     * href="http://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html">
+     * Upgrading Amazon Web Services Glue Data Permissions to the Amazon Web Services
+     * Lake Formation Model </a> in the Amazon Web Services <i>Lake Formation Developer
+     * Guide</i>. </p> <p>You can use one of the following two ways to resolve this
+     * issue.</p> <ol> <li> <p>If you don’t want to use the Lake Formation permission
+     * model, you can change the default Data Catalog settings to use only Amazon Web
+     * Services Identity and Access Management (IAM) access control for new databases.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#setup-change-cat-settings">Change
+     * Data Catalog Settings</a> in the <i>Lake Formation Developer Guide</i>.</p>
+     * </li> <li> <p>You can give the service-linked IAM roles
+     * AWSServiceRoleForApplicationDiscoveryServiceContinuousExport and
+     * AWSApplicationDiscoveryServiceFirehose the required Lake Formation permissions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/granting-database-permissions.html">
+     * Granting Database Permissions</a> in the <i>Lake Formation Developer Guide</i>.
+     * </p> <ol> <li> <p>AWSServiceRoleForApplicationDiscoveryServiceContinuousExport -
+     * Grant database creator permissions, which gives the role database creation
+     * ability and implicit permissions for any created tables. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html">
+     * Implicit Lake Formation Permissions </a> in the <i>Lake Formation Developer
+     * Guide</i>.</p> </li> <li> <p>AWSApplicationDiscoveryServiceFirehose - Grant
+     * describe permissions for all tables in the database.</p> </li> </ol> </li> </ol>
+     * </li> <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3
+     * buckets. Reduce the number of S3 buckets or request a limit increase and try
+     * again. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
      * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for

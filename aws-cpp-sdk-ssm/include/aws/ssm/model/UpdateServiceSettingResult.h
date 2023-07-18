@@ -23,7 +23,7 @@ namespace SSM
 namespace Model
 {
   /**
-   * <p>The result body of the UpdateServiceSetting API action.</p><p><h3>See
+   * <p>The result body of the UpdateServiceSetting API operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSettingResult">AWS
    * API Reference</a></p>

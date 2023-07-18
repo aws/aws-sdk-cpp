@@ -23,6 +23,8 @@ NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings() :
     m_aggressiveModeHasBeenSet(false),
     m_postTemporalSharpening(NoiseFilterPostTemporalSharpening::NOT_SET),
     m_postTemporalSharpeningHasBeenSet(false),
+    m_postTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength::NOT_SET),
+    m_postTemporalSharpeningStrengthHasBeenSet(false),
     m_speed(0),
     m_speedHasBeenSet(false),
     m_strength(0),
@@ -35,6 +37,8 @@ NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings(JsonView 
     m_aggressiveModeHasBeenSet(false),
     m_postTemporalSharpening(NoiseFilterPostTemporalSharpening::NOT_SET),
     m_postTemporalSharpeningHasBeenSet(false),
+    m_postTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength::NOT_SET),
+    m_postTemporalSharpeningStrengthHasBeenSet(false),
     m_speed(0),
     m_speedHasBeenSet(false),
     m_strength(0),
@@ -57,6 +61,13 @@ NoiseReducerTemporalFilterSettings& NoiseReducerTemporalFilterSettings::operator
     m_postTemporalSharpening = NoiseFilterPostTemporalSharpeningMapper::GetNoiseFilterPostTemporalSharpeningForName(jsonValue.GetString("postTemporalSharpening"));
 
     m_postTemporalSharpeningHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("postTemporalSharpeningStrength"))
+  {
+    m_postTemporalSharpeningStrength = NoiseFilterPostTemporalSharpeningStrengthMapper::GetNoiseFilterPostTemporalSharpeningStrengthForName(jsonValue.GetString("postTemporalSharpeningStrength"));
+
+    m_postTemporalSharpeningStrengthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("speed"))
@@ -89,6 +100,11 @@ JsonValue NoiseReducerTemporalFilterSettings::Jsonize() const
   if(m_postTemporalSharpeningHasBeenSet)
   {
    payload.WithString("postTemporalSharpening", NoiseFilterPostTemporalSharpeningMapper::GetNameForNoiseFilterPostTemporalSharpening(m_postTemporalSharpening));
+  }
+
+  if(m_postTemporalSharpeningStrengthHasBeenSet)
+  {
+   payload.WithString("postTemporalSharpeningStrength", NoiseFilterPostTemporalSharpeningStrengthMapper::GetNameForNoiseFilterPostTemporalSharpeningStrength(m_postTemporalSharpeningStrength));
   }
 
   if(m_speedHasBeenSet)

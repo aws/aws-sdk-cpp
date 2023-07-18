@@ -32,19 +32,29 @@ namespace Model
     DeleteCapacityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The details of the capacity provider.</p>
+     */
     inline const CapacityProvider& GetCapacityProvider() const{ return m_capacityProvider; }
 
-    
+    /**
+     * <p>The details of the capacity provider.</p>
+     */
     inline void SetCapacityProvider(const CapacityProvider& value) { m_capacityProvider = value; }
 
-    
+    /**
+     * <p>The details of the capacity provider.</p>
+     */
     inline void SetCapacityProvider(CapacityProvider&& value) { m_capacityProvider = std::move(value); }
 
-    
+    /**
+     * <p>The details of the capacity provider.</p>
+     */
     inline DeleteCapacityProviderResult& WithCapacityProvider(const CapacityProvider& value) { SetCapacityProvider(value); return *this;}
 
-    
+    /**
+     * <p>The details of the capacity provider.</p>
+     */
     inline DeleteCapacityProviderResult& WithCapacityProvider(CapacityProvider&& value) { SetCapacityProvider(std::move(value)); return *this;}
 
   private:

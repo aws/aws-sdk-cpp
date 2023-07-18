@@ -421,6 +421,42 @@ namespace Model
      */
     inline DescribeAssetResult& WithAssetStatus(AssetStatus&& value) { SetAssetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline const Aws::String& GetAssetDescription() const{ return m_assetDescription; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(const Aws::String& value) { m_assetDescription = value; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(Aws::String&& value) { m_assetDescription = std::move(value); }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(const char* value) { m_assetDescription.assign(value); }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline DescribeAssetResult& WithAssetDescription(const Aws::String& value) { SetAssetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline DescribeAssetResult& WithAssetDescription(Aws::String&& value) { SetAssetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline DescribeAssetResult& WithAssetDescription(const char* value) { SetAssetDescription(value); return *this;}
+
   private:
 
     Aws::String m_assetId;
@@ -442,6 +478,8 @@ namespace Model
     Aws::Utils::DateTime m_assetLastUpdateDate;
 
     AssetStatus m_assetStatus;
+
+    Aws::String m_assetDescription;
   };
 
 } // namespace Model

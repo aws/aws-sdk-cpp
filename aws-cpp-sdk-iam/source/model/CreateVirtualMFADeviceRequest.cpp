@@ -12,7 +12,8 @@ using namespace Aws::Utils;
 
 CreateVirtualMFADeviceRequest::CreateVirtualMFADeviceRequest() : 
     m_pathHasBeenSet(false),
-    m_virtualMFADeviceNameHasBeenSet(false)
+    m_virtualMFADeviceNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -28,6 +29,16 @@ Aws::String CreateVirtualMFADeviceRequest::SerializePayload() const
   if(m_virtualMFADeviceNameHasBeenSet)
   {
     ss << "VirtualMFADeviceName=" << StringUtils::URLEncode(m_virtualMFADeviceName.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2010-05-08";

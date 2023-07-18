@@ -22,7 +22,9 @@ S3OutputFormatConfig::S3OutputFormatConfig() :
     m_fileType(FileType::NOT_SET),
     m_fileTypeHasBeenSet(false),
     m_prefixConfigHasBeenSet(false),
-    m_aggregationConfigHasBeenSet(false)
+    m_aggregationConfigHasBeenSet(false),
+    m_preserveSourceDataTyping(false),
+    m_preserveSourceDataTypingHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ S3OutputFormatConfig::S3OutputFormatConfig(JsonView jsonValue) :
     m_fileType(FileType::NOT_SET),
     m_fileTypeHasBeenSet(false),
     m_prefixConfigHasBeenSet(false),
-    m_aggregationConfigHasBeenSet(false)
+    m_aggregationConfigHasBeenSet(false),
+    m_preserveSourceDataTyping(false),
+    m_preserveSourceDataTypingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ S3OutputFormatConfig& S3OutputFormatConfig::operator =(JsonView jsonValue)
     m_aggregationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("preserveSourceDataTyping"))
+  {
+    m_preserveSourceDataTyping = jsonValue.GetBool("preserveSourceDataTyping");
+
+    m_preserveSourceDataTypingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,12 @@ JsonValue S3OutputFormatConfig::Jsonize() const
   if(m_aggregationConfigHasBeenSet)
   {
    payload.WithObject("aggregationConfig", m_aggregationConfig.Jsonize());
+
+  }
+
+  if(m_preserveSourceDataTypingHasBeenSet)
+  {
+   payload.WithBool("preserveSourceDataTyping", m_preserveSourceDataTyping);
 
   }
 

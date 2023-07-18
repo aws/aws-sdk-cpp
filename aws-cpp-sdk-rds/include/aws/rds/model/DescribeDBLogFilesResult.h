@@ -28,7 +28,7 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p> The response from a call to <code>DescribeDBLogFiles</code>. </p><p><h3>See
+   * <p>The response from a call to <code>DescribeDBLogFiles</code>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFilesResponse">AWS
    * API Reference</a></p>
@@ -78,44 +78,44 @@ namespace Model
 
 
     /**
-     * <p>A pagination token that can be used in a later DescribeDBLogFiles
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeDBLogFiles</code> request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeDBLogFiles
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeDBLogFiles</code> request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeDBLogFiles
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeDBLogFiles</code> request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeDBLogFiles
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeDBLogFiles</code> request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeDBLogFiles
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeDBLogFiles</code> request.</p>
      */
     inline DescribeDBLogFilesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a later DescribeDBLogFiles
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeDBLogFiles</code> request.</p>
      */
     inline DescribeDBLogFilesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a later DescribeDBLogFiles
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeDBLogFiles</code> request.</p>
      */
     inline DescribeDBLogFilesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

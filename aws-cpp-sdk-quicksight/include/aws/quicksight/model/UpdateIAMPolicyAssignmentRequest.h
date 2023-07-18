@@ -36,91 +36,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the IAM policy assignment. </p>
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
+     * assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline bool AssignmentNameHasBeenSet() const { return m_assignmentNameHasBeenSet; }
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = value; }
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::move(value); }
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline void SetAssignmentName(const char* value) { m_assignmentNameHasBeenSet = true; m_assignmentName.assign(value); }
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the assignment, also called a rule. This name must be unique
-     * within an AWS account.</p>
+     * within an Amazon Web Services account.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
 
@@ -228,123 +236,123 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIdentities() const{ return m_identities; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline bool IdentitiesHasBeenSet() const { return m_identitiesHasBeenSet; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline void SetIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline void SetIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_identitiesHasBeenSet = true; m_identities = std::move(value); }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetIdentities(value); return *this;}
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& AddIdentities(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, value); return *this; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& AddIdentities(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& AddIdentities(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& AddIdentities(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& AddIdentities(const char* key, Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The QuickSight users, groups, or both that you want to assign the policy
-     * to.</p>
+     * <p>The Amazon QuickSight users, groups, or both that you want to assign the
+     * policy to.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& AddIdentities(const char* key, const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, value); return *this; }
 

@@ -246,129 +246,129 @@ namespace Model
 
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline UpdateMLTransformRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline UpdateMLTransformRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline UpdateMLTransformRequest& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>When
+     * the <code>WorkerType</code> field is set to a value other than
      * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
      * and becomes read-only.</p>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>When
+     * the <code>WorkerType</code> field is set to a value other than
      * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
      * and becomes read-only.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>When
+     * the <code>WorkerType</code> field is set to a value other than
      * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
      * and becomes read-only.</p>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>When
+     * the <code>WorkerType</code> field is set to a value other than
      * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
      * and becomes read-only.</p>
      */

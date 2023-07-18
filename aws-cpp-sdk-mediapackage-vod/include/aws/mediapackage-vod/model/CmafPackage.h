@@ -100,6 +100,47 @@ namespace Model
 
 
     /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline bool GetIncludeEncoderConfigurationInSegments() const{ return m_includeEncoderConfigurationInSegments; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline bool IncludeEncoderConfigurationInSegmentsHasBeenSet() const { return m_includeEncoderConfigurationInSegmentsHasBeenSet; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline void SetIncludeEncoderConfigurationInSegments(bool value) { m_includeEncoderConfigurationInSegmentsHasBeenSet = true; m_includeEncoderConfigurationInSegments = value; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline CmafPackage& WithIncludeEncoderConfigurationInSegments(bool value) { SetIncludeEncoderConfigurationInSegments(value); return *this;}
+
+
+    /**
      * Duration (in seconds) of each fragment. Actual fragments will be
 rounded to the
      * nearest multiple of the source fragment duration.
@@ -138,6 +179,9 @@ rounded to the
 
     Aws::Vector<HlsManifest> m_hlsManifests;
     bool m_hlsManifestsHasBeenSet;
+
+    bool m_includeEncoderConfigurationInSegments;
+    bool m_includeEncoderConfigurationInSegmentsHasBeenSet;
 
     int m_segmentDurationSeconds;
     bool m_segmentDurationSecondsHasBeenSet;

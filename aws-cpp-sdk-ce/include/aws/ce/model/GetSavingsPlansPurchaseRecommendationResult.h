@@ -35,27 +35,27 @@ namespace Model
 
 
     /**
-     * <p>Information regarding this specific recommendation set.</p>
+     * <p>Information that regards this specific recommendation set.</p>
      */
     inline const SavingsPlansPurchaseRecommendationMetadata& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>Information regarding this specific recommendation set.</p>
+     * <p>Information that regards this specific recommendation set.</p>
      */
     inline void SetMetadata(const SavingsPlansPurchaseRecommendationMetadata& value) { m_metadata = value; }
 
     /**
-     * <p>Information regarding this specific recommendation set.</p>
+     * <p>Information that regards this specific recommendation set.</p>
      */
     inline void SetMetadata(SavingsPlansPurchaseRecommendationMetadata&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>Information regarding this specific recommendation set.</p>
+     * <p>Information that regards this specific recommendation set.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationResult& WithMetadata(const SavingsPlansPurchaseRecommendationMetadata& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>Information regarding this specific recommendation set.</p>
+     * <p>Information that regards this specific recommendation set.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationResult& WithMetadata(SavingsPlansPurchaseRecommendationMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
@@ -92,51 +92,51 @@ namespace Model
 
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

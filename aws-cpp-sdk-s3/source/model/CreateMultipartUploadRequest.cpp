@@ -53,6 +53,8 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
     m_objectLockLegalHoldStatus(ObjectLockLegalHoldStatus::NOT_SET),
     m_objectLockLegalHoldStatusHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -225,8 +227,8 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
 
   if(m_bucketKeyEnabledHasBeenSet)
   {
-    ss << m_bucketKeyEnabled;
-    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled",  ss.str());
+    ss << std::boolalpha << m_bucketKeyEnabled;
+    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled", ss.str());
     ss.str("");
   }
 
@@ -249,7 +251,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
 
   if(m_objectLockRetainUntilDateHasBeenSet)
   {
-    headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(DateFormat::RFC822));
+    headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_objectLockLegalHoldStatusHasBeenSet)
@@ -262,6 +264,11 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
   return headers;

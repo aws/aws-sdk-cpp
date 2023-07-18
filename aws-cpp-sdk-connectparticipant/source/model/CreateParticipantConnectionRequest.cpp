@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 
 CreateParticipantConnectionRequest::CreateParticipantConnectionRequest() : 
     m_typeHasBeenSet(false),
-    m_participantTokenHasBeenSet(false)
+    m_participantTokenHasBeenSet(false),
+    m_connectParticipant(false),
+    m_connectParticipantHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String CreateParticipantConnectionRequest::SerializePayload() const
      typeJsonList[typeIndex].AsString(ConnectionTypeMapper::GetNameForConnectionType(m_type[typeIndex]));
    }
    payload.WithArray("Type", std::move(typeJsonList));
+
+  }
+
+  if(m_connectParticipantHasBeenSet)
+  {
+   payload.WithBool("ConnectParticipant", m_connectParticipant);
 
   }
 

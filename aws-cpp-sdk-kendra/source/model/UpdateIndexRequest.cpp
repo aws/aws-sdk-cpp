@@ -21,7 +21,8 @@ UpdateIndexRequest::UpdateIndexRequest() :
     m_capacityUnitsHasBeenSet(false),
     m_userTokenConfigurationsHasBeenSet(false),
     m_userContextPolicy(UserContextPolicy::NOT_SET),
-    m_userContextPolicyHasBeenSet(false)
+    m_userContextPolicyHasBeenSet(false),
+    m_userGroupResolutionConfigurationHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,12 @@ Aws::String UpdateIndexRequest::SerializePayload() const
   if(m_userContextPolicyHasBeenSet)
   {
    payload.WithString("UserContextPolicy", UserContextPolicyMapper::GetNameForUserContextPolicy(m_userContextPolicy));
+  }
+
+  if(m_userGroupResolutionConfigurationHasBeenSet)
+  {
+   payload.WithObject("UserGroupResolutionConfiguration", m_userGroupResolutionConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

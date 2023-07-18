@@ -15,20 +15,18 @@ import java.util.regex.Pattern;
 
 @Data
 public class Http {
-    private static final Pattern URI_PARAM_PATTERN = Pattern.compile(".*\\{[\\w\\d-]+\\}");
+    private static final Pattern URI_PARAM_PATTERN = Pattern.compile(".*\\{[\\w\\d-]+\\+?\\}");
 
     private String method;
     private String requestUri;
     private String responseCode;
 
     public List<String> getRequestUriParts() {
-        String sanitizedUri = requestUri.replace("+", "");
-        return Arrays.asList(sanitizedUri.split("\\{[\\w\\d-]+\\}"));
+        return Arrays.asList(requestUri.split("\\{[\\w\\d-]+\\+?\\}"));
     }
 
     public List<String> getRequestParameters() {
-        String sanitizedUri = requestUri.replace("+", "");
-        String[] parts = sanitizedUri.split("/|\\?|&");
+        String[] parts = requestUri.split("/|\\?|&");
         List<String> paramList = new LinkedList<>();
 
         for (String part : parts) {

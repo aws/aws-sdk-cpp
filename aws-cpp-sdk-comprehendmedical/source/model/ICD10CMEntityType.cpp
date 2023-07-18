@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int DX_NAME_HASH = HashingUtils::HashString("DX_NAME");
+        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
 
 
         ICD10CMEntityType GetICD10CMEntityTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == DX_NAME_HASH)
           {
             return ICD10CMEntityType::DX_NAME;
+          }
+          else if (hashCode == TIME_EXPRESSION_HASH)
+          {
+            return ICD10CMEntityType::TIME_EXPRESSION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ICD10CMEntityType::DX_NAME:
             return "DX_NAME";
+          case ICD10CMEntityType::TIME_EXPRESSION:
+            return "TIME_EXPRESSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -18,7 +18,8 @@ GetAutoScalingGroupRecommendationsRequest::GetAutoScalingGroupRecommendationsReq
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_recommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,12 @@ Aws::String GetAutoScalingGroupRecommendationsRequest::SerializePayload() const
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
    }
    payload.WithArray("filters", std::move(filtersJsonList));
+
+  }
+
+  if(m_recommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
 
   }
 

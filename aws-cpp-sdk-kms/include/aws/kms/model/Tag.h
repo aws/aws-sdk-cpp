@@ -28,8 +28,8 @@ namespace Model
    * tag values are both required, but tag values can be empty (null) strings.</p>
    * <p>For information about the rules that apply to tag keys and tag values, see <a
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-   * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Tag">AWS API
    * Reference</a></p>
    */

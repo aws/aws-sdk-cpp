@@ -176,37 +176,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS instrumented services related to the insight.</p>
+     * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
     inline const Aws::Vector<InsightImpactGraphService>& GetServices() const{ return m_services; }
 
     /**
-     * <p>The AWS instrumented services related to the insight.</p>
+     * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
     inline void SetServices(const Aws::Vector<InsightImpactGraphService>& value) { m_services = value; }
 
     /**
-     * <p>The AWS instrumented services related to the insight.</p>
+     * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
     inline void SetServices(Aws::Vector<InsightImpactGraphService>&& value) { m_services = std::move(value); }
 
     /**
-     * <p>The AWS instrumented services related to the insight.</p>
+     * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
     inline GetInsightImpactGraphResult& WithServices(const Aws::Vector<InsightImpactGraphService>& value) { SetServices(value); return *this;}
 
     /**
-     * <p>The AWS instrumented services related to the insight.</p>
+     * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
     inline GetInsightImpactGraphResult& WithServices(Aws::Vector<InsightImpactGraphService>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS instrumented services related to the insight.</p>
+     * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
     inline GetInsightImpactGraphResult& AddServices(const InsightImpactGraphService& value) { m_services.push_back(value); return *this; }
 
     /**
-     * <p>The AWS instrumented services related to the insight.</p>
+     * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
     inline GetInsightImpactGraphResult& AddServices(InsightImpactGraphService&& value) { m_services.push_back(std::move(value)); return *this; }
 

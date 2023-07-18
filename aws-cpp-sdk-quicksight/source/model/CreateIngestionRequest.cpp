@@ -15,13 +15,22 @@ using namespace Aws::Utils;
 CreateIngestionRequest::CreateIngestionRequest() : 
     m_dataSetIdHasBeenSet(false),
     m_ingestionIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false)
+    m_awsAccountIdHasBeenSet(false),
+    m_ingestionType(IngestionType::NOT_SET),
+    m_ingestionTypeHasBeenSet(false)
 {
 }
 
 Aws::String CreateIngestionRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_ingestionTypeHasBeenSet)
+  {
+   payload.WithString("IngestionType", IngestionTypeMapper::GetNameForIngestionType(m_ingestionType));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

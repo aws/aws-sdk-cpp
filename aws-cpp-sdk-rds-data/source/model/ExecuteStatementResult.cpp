@@ -39,6 +39,12 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("formattedRecords"))
+  {
+    m_formattedRecords = jsonValue.GetString("formattedRecords");
+
+  }
+
   if(jsonValue.ValueExists("generatedFields"))
   {
     Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");

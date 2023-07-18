@@ -18,13 +18,17 @@ using namespace Aws;
 
 DescribeLimitsResult::DescribeLimitsResult() : 
     m_shardLimit(0),
-    m_openShardCount(0)
+    m_openShardCount(0),
+    m_onDemandStreamCount(0),
+    m_onDemandStreamCountLimit(0)
 {
 }
 
 DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_shardLimit(0),
-    m_openShardCount(0)
+    m_openShardCount(0),
+    m_onDemandStreamCount(0),
+    m_onDemandStreamCountLimit(0)
 {
   *this = result;
 }
@@ -41,6 +45,18 @@ DescribeLimitsResult& DescribeLimitsResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("OpenShardCount"))
   {
     m_openShardCount = jsonValue.GetInteger("OpenShardCount");
+
+  }
+
+  if(jsonValue.ValueExists("OnDemandStreamCount"))
+  {
+    m_onDemandStreamCount = jsonValue.GetInteger("OnDemandStreamCount");
+
+  }
+
+  if(jsonValue.ValueExists("OnDemandStreamCountLimit"))
+  {
+    m_onDemandStreamCountLimit = jsonValue.GetInteger("OnDemandStreamCountLimit");
 
   }
 

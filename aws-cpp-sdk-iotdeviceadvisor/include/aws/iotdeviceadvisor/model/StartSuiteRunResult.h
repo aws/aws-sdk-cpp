@@ -34,73 +34,73 @@ namespace Model
 
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run ID of the started suite run.</p>
      */
     inline const Aws::String& GetSuiteRunId() const{ return m_suiteRunId; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run ID of the started suite run.</p>
      */
     inline void SetSuiteRunId(const Aws::String& value) { m_suiteRunId = value; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run ID of the started suite run.</p>
      */
     inline void SetSuiteRunId(Aws::String&& value) { m_suiteRunId = std::move(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run ID of the started suite run.</p>
      */
     inline void SetSuiteRunId(const char* value) { m_suiteRunId.assign(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run ID of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunId(const Aws::String& value) { SetSuiteRunId(value); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run ID of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunId(Aws::String&& value) { SetSuiteRunId(std::move(value)); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run ID of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunId(const char* value) { SetSuiteRunId(value); return *this;}
 
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon Resource Name (ARN) of the started suite run.</p>
      */
     inline const Aws::String& GetSuiteRunArn() const{ return m_suiteRunArn; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon Resource Name (ARN) of the started suite run.</p>
      */
     inline void SetSuiteRunArn(const Aws::String& value) { m_suiteRunArn = value; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon Resource Name (ARN) of the started suite run.</p>
      */
     inline void SetSuiteRunArn(Aws::String&& value) { m_suiteRunArn = std::move(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon Resource Name (ARN) of the started suite run.</p>
      */
     inline void SetSuiteRunArn(const char* value) { m_suiteRunArn.assign(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon Resource Name (ARN) of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunArn(const Aws::String& value) { SetSuiteRunArn(value); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon Resource Name (ARN) of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunArn(Aws::String&& value) { SetSuiteRunArn(std::move(value)); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon Resource Name (ARN) of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunArn(const char* value) { SetSuiteRunArn(value); return *this;}
 

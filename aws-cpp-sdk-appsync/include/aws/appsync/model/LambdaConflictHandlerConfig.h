@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA
-   * as the Conflict Handler.</p><p><h3>See Also:</h3>   <a
+   * <p>The <code>LambdaConflictHandlerConfig</code> object when configuring
+   * <code>LAMBDA</code> as the Conflict Handler.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LambdaConflictHandlerConfig">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline const Aws::String& GetLambdaConflictHandlerArn() const{ return m_lambdaConflictHandlerArn; }
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline bool LambdaConflictHandlerArnHasBeenSet() const { return m_lambdaConflictHandlerArnHasBeenSet; }
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline void SetLambdaConflictHandlerArn(const Aws::String& value) { m_lambdaConflictHandlerArnHasBeenSet = true; m_lambdaConflictHandlerArn = value; }
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline void SetLambdaConflictHandlerArn(Aws::String&& value) { m_lambdaConflictHandlerArnHasBeenSet = true; m_lambdaConflictHandlerArn = std::move(value); }
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline void SetLambdaConflictHandlerArn(const char* value) { m_lambdaConflictHandlerArnHasBeenSet = true; m_lambdaConflictHandlerArn.assign(value); }
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline LambdaConflictHandlerConfig& WithLambdaConflictHandlerArn(const Aws::String& value) { SetLambdaConflictHandlerArn(value); return *this;}
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline LambdaConflictHandlerConfig& WithLambdaConflictHandlerArn(Aws::String&& value) { SetLambdaConflictHandlerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
+     * Handler.</p>
      */
     inline LambdaConflictHandlerConfig& WithLambdaConflictHandlerArn(const char* value) { SetLambdaConflictHandlerArn(value); return *this;}
 

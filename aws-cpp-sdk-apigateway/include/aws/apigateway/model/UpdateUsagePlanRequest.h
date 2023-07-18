@@ -39,91 +39,99 @@ namespace Model
 
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline UpdateUsagePlanRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline UpdateUsagePlanRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The Id of the to-be-updated usage plan.</p>
+     * <p>The Id of the to-be-updated usage plan.</p>
      */
     inline UpdateUsagePlanRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateUsagePlanRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateUsagePlanRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateUsagePlanRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateUsagePlanRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 

@@ -12,6 +12,7 @@
 #include <aws/gamelift/model/MetricName.h>
 #include <aws/gamelift/model/PolicyType.h>
 #include <aws/gamelift/model/TargetConfiguration.h>
+#include <aws/gamelift/model/LocationUpdateStatus.h>
 #include <utility>
 
 namespace Aws
@@ -31,14 +32,13 @@ namespace Model
 
   /**
    * <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely
-   * identified by the combination of name and fleet ID.</p> <ul> <li> <p>
-   * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-   * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
-   * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
-   * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
-   * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
-   * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+   * identified by the combination of name and fleet ID.</p> <p> <b>Related
+   * actions</b> </p> <p> <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> |
+   * <a>DescribeEC2InstanceLimits</a> | <a>PutScalingPolicy</a> |
+   * <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> |
+   * <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy">AWS
    * API Reference</a></p>
    */
@@ -52,99 +52,172 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for the fleet that is associated with this scaling
      * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline ScalingPolicy& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline ScalingPolicy& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline ScalingPolicy& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+
+
+    /**
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(const char* value) { SetName(value); return *this;}
 
@@ -678,39 +751,126 @@ namespace Model
 
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline const TargetConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline void SetTargetConfiguration(const TargetConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline ScalingPolicy& WithTargetConfiguration(const TargetConfiguration& value) { SetTargetConfiguration(value); return *this;}
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline ScalingPolicy& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current status of the fleet's scaling policies in a requested fleet
+     * location. The status <code>PENDING_UPDATE</code> indicates that an update was
+     * requested for the fleet but has not yet been completed for the location.</p>
+     */
+    inline const LocationUpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+
+    /**
+     * <p>The current status of the fleet's scaling policies in a requested fleet
+     * location. The status <code>PENDING_UPDATE</code> indicates that an update was
+     * requested for the fleet but has not yet been completed for the location.</p>
+     */
+    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the fleet's scaling policies in a requested fleet
+     * location. The status <code>PENDING_UPDATE</code> indicates that an update was
+     * requested for the fleet but has not yet been completed for the location.</p>
+     */
+    inline void SetUpdateStatus(const LocationUpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+
+    /**
+     * <p>The current status of the fleet's scaling policies in a requested fleet
+     * location. The status <code>PENDING_UPDATE</code> indicates that an update was
+     * requested for the fleet but has not yet been completed for the location.</p>
+     */
+    inline void SetUpdateStatus(LocationUpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
+
+    /**
+     * <p>The current status of the fleet's scaling policies in a requested fleet
+     * location. The status <code>PENDING_UPDATE</code> indicates that an update was
+     * requested for the fleet but has not yet been completed for the location.</p>
+     */
+    inline ScalingPolicy& WithUpdateStatus(const LocationUpdateStatus& value) { SetUpdateStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the fleet's scaling policies in a requested fleet
+     * location. The status <code>PENDING_UPDATE</code> indicates that an update was
+     * requested for the fleet but has not yet been completed for the location.</p>
+     */
+    inline ScalingPolicy& WithUpdateStatus(LocationUpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline ScalingPolicy& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline ScalingPolicy& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
+
+    /**
+     * <p> The fleet location. </p>
+     */
+    inline ScalingPolicy& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
 
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
+    Aws::String m_fleetArn;
+    bool m_fleetArnHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -741,6 +901,12 @@ namespace Model
 
     TargetConfiguration m_targetConfiguration;
     bool m_targetConfigurationHasBeenSet;
+
+    LocationUpdateStatus m_updateStatus;
+    bool m_updateStatusHasBeenSet;
+
+    Aws::String m_location;
+    bool m_locationHasBeenSet;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/AddOnRequest.h>
 #include <aws/lightsail/model/DiskMap.h>
@@ -364,8 +365,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
@@ -376,8 +377,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
@@ -388,8 +389,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -400,8 +401,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
@@ -412,8 +413,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
@@ -424,8 +425,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
@@ -436,8 +437,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
@@ -448,8 +449,8 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -602,6 +603,49 @@ namespace Model
 
 
     /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the source instance from which the source automatic snapshot was
      * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
      * together with the <code>instance snapshot name</code> parameter. The
@@ -609,8 +653,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceInstanceName() const{ return m_sourceInstanceName; }
 
@@ -622,8 +666,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool SourceInstanceNameHasBeenSet() const { return m_sourceInstanceNameHasBeenSet; }
 
@@ -635,8 +679,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceInstanceName(const Aws::String& value) { m_sourceInstanceNameHasBeenSet = true; m_sourceInstanceName = value; }
 
@@ -648,8 +692,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceInstanceName(Aws::String&& value) { m_sourceInstanceNameHasBeenSet = true; m_sourceInstanceName = std::move(value); }
 
@@ -661,8 +705,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceInstanceName(const char* value) { m_sourceInstanceNameHasBeenSet = true; m_sourceInstanceName.assign(value); }
 
@@ -674,8 +718,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateInstancesFromSnapshotRequest& WithSourceInstanceName(const Aws::String& value) { SetSourceInstanceName(value); return *this;}
 
@@ -687,8 +731,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateInstancesFromSnapshotRequest& WithSourceInstanceName(Aws::String&& value) { SetSourceInstanceName(std::move(value)); return *this;}
 
@@ -700,8 +744,8 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateInstancesFromSnapshotRequest& WithSourceInstanceName(const char* value) { SetSourceInstanceName(value); return *this;}
 
@@ -716,8 +760,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetRestoreDate() const{ return m_restoreDate; }
 
@@ -731,8 +775,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool RestoreDateHasBeenSet() const { return m_restoreDateHasBeenSet; }
 
@@ -746,8 +790,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(const Aws::String& value) { m_restoreDateHasBeenSet = true; m_restoreDate = value; }
 
@@ -761,8 +805,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(Aws::String&& value) { m_restoreDateHasBeenSet = true; m_restoreDate = std::move(value); }
 
@@ -776,8 +820,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(const char* value) { m_restoreDateHasBeenSet = true; m_restoreDate.assign(value); }
 
@@ -791,8 +835,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateInstancesFromSnapshotRequest& WithRestoreDate(const Aws::String& value) { SetRestoreDate(value); return *this;}
 
@@ -806,8 +850,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateInstancesFromSnapshotRequest& WithRestoreDate(Aws::String&& value) { SetRestoreDate(std::move(value)); return *this;}
 
@@ -821,8 +865,8 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateInstancesFromSnapshotRequest& WithRestoreDate(const char* value) { SetRestoreDate(value); return *this;}
 
@@ -834,8 +878,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new instance from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool GetUseLatestRestorableAutoSnapshot() const{ return m_useLatestRestorableAutoSnapshot; }
 
@@ -846,8 +890,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new instance from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool UseLatestRestorableAutoSnapshotHasBeenSet() const { return m_useLatestRestorableAutoSnapshotHasBeenSet; }
 
@@ -858,8 +902,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new instance from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline void SetUseLatestRestorableAutoSnapshot(bool value) { m_useLatestRestorableAutoSnapshotHasBeenSet = true; m_useLatestRestorableAutoSnapshot = value; }
 
@@ -870,8 +914,8 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new instance from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </li> </ul>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline CreateInstancesFromSnapshotRequest& WithUseLatestRestorableAutoSnapshot(bool value) { SetUseLatestRestorableAutoSnapshot(value); return *this;}
 
@@ -903,6 +947,9 @@ namespace Model
 
     Aws::Vector<AddOnRequest> m_addOns;
     bool m_addOnsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
 
     Aws::String m_sourceInstanceName;
     bool m_sourceInstanceNameHasBeenSet;

@@ -40,22 +40,34 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline const GrpcTimeout& GetGrpc() const{ return m_grpc; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline bool GrpcHasBeenSet() const { return m_grpcHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetGrpc(const GrpcTimeout& value) { m_grpcHasBeenSet = true; m_grpc = value; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetGrpc(GrpcTimeout&& value) { m_grpcHasBeenSet = true; m_grpc = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithGrpc(const GrpcTimeout& value) { SetGrpc(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithGrpc(GrpcTimeout&& value) { SetGrpc(std::move(value)); return *this;}
 
 

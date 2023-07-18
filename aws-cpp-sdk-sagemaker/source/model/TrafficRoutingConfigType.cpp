@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ALL_AT_ONCE_HASH = HashingUtils::HashString("ALL_AT_ONCE");
         static const int CANARY_HASH = HashingUtils::HashString("CANARY");
+        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
 
 
         TrafficRoutingConfigType GetTrafficRoutingConfigTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CANARY_HASH)
           {
             return TrafficRoutingConfigType::CANARY;
+          }
+          else if (hashCode == LINEAR_HASH)
+          {
+            return TrafficRoutingConfigType::LINEAR;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ALL_AT_ONCE";
           case TrafficRoutingConfigType::CANARY:
             return "CANARY";
+          case TrafficRoutingConfigType::LINEAR:
+            return "LINEAR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

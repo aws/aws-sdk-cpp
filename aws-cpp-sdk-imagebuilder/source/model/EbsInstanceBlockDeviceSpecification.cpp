@@ -30,7 +30,9 @@ EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() :
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_volumeType(EbsVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(JsonVie
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_volumeType(EbsVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +106,13 @@ EbsInstanceBlockDeviceSpecification& EbsInstanceBlockDeviceSpecification::operat
     m_volumeTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("throughput"))
+  {
+    m_throughput = jsonValue.GetInteger("throughput");
+
+    m_throughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +159,12 @@ JsonValue EbsInstanceBlockDeviceSpecification::Jsonize() const
   if(m_volumeTypeHasBeenSet)
   {
    payload.WithString("volumeType", EbsVolumeTypeMapper::GetNameForEbsVolumeType(m_volumeType));
+  }
+
+  if(m_throughputHasBeenSet)
+  {
+   payload.WithInteger("throughput", m_throughput);
+
   }
 
   return payload;

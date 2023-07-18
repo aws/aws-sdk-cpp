@@ -24,6 +24,7 @@ DestinationDescription::DestinationDescription() :
     m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
+    m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
     m_splunkDestinationDescriptionHasBeenSet(false),
     m_httpEndpointDestinationDescriptionHasBeenSet(false)
 {
@@ -35,6 +36,7 @@ DestinationDescription::DestinationDescription(JsonView jsonValue) :
     m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
+    m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
     m_splunkDestinationDescriptionHasBeenSet(false),
     m_httpEndpointDestinationDescriptionHasBeenSet(false)
 {
@@ -76,6 +78,13 @@ DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
     m_elasticsearchDestinationDescription = jsonValue.GetObject("ElasticsearchDestinationDescription");
 
     m_elasticsearchDestinationDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AmazonopensearchserviceDestinationDescription"))
+  {
+    m_amazonopensearchserviceDestinationDescription = jsonValue.GetObject("AmazonopensearchserviceDestinationDescription");
+
+    m_amazonopensearchserviceDestinationDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SplunkDestinationDescription"))
@@ -126,6 +135,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_elasticsearchDestinationDescriptionHasBeenSet)
   {
    payload.WithObject("ElasticsearchDestinationDescription", m_elasticsearchDestinationDescription.Jsonize());
+
+  }
+
+  if(m_amazonopensearchserviceDestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("AmazonopensearchserviceDestinationDescription", m_amazonopensearchserviceDestinationDescription.Jsonize());
 
   }
 

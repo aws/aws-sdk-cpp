@@ -387,6 +387,77 @@ namespace Model
      */
     inline SegmentDetection& WithShotSegment(ShotSegment&& value) { SetShotSegment(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The frame number of the start of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline long long GetStartFrameNumber() const{ return m_startFrameNumber; }
+
+    /**
+     * <p> The frame number of the start of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline bool StartFrameNumberHasBeenSet() const { return m_startFrameNumberHasBeenSet; }
+
+    /**
+     * <p> The frame number of the start of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline void SetStartFrameNumber(long long value) { m_startFrameNumberHasBeenSet = true; m_startFrameNumber = value; }
+
+    /**
+     * <p> The frame number of the start of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline SegmentDetection& WithStartFrameNumber(long long value) { SetStartFrameNumber(value); return *this;}
+
+
+    /**
+     * <p> The frame number at the end of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline long long GetEndFrameNumber() const{ return m_endFrameNumber; }
+
+    /**
+     * <p> The frame number at the end of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline bool EndFrameNumberHasBeenSet() const { return m_endFrameNumberHasBeenSet; }
+
+    /**
+     * <p> The frame number at the end of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline void SetEndFrameNumber(long long value) { m_endFrameNumberHasBeenSet = true; m_endFrameNumber = value; }
+
+    /**
+     * <p> The frame number at the end of a video segment, using a frame index that
+     * starts with 0. </p>
+     */
+    inline SegmentDetection& WithEndFrameNumber(long long value) { SetEndFrameNumber(value); return *this;}
+
+
+    /**
+     * <p> The duration of a video segment, expressed in frames. </p>
+     */
+    inline long long GetDurationFrames() const{ return m_durationFrames; }
+
+    /**
+     * <p> The duration of a video segment, expressed in frames. </p>
+     */
+    inline bool DurationFramesHasBeenSet() const { return m_durationFramesHasBeenSet; }
+
+    /**
+     * <p> The duration of a video segment, expressed in frames. </p>
+     */
+    inline void SetDurationFrames(long long value) { m_durationFramesHasBeenSet = true; m_durationFrames = value; }
+
+    /**
+     * <p> The duration of a video segment, expressed in frames. </p>
+     */
+    inline SegmentDetection& WithDurationFrames(long long value) { SetDurationFrames(value); return *this;}
+
   private:
 
     SegmentType m_type;
@@ -415,6 +486,15 @@ namespace Model
 
     ShotSegment m_shotSegment;
     bool m_shotSegmentHasBeenSet;
+
+    long long m_startFrameNumber;
+    bool m_startFrameNumberHasBeenSet;
+
+    long long m_endFrameNumber;
+    bool m_endFrameNumberHasBeenSet;
+
+    long long m_durationFrames;
+    bool m_durationFramesHasBeenSet;
   };
 
 } // namespace Model

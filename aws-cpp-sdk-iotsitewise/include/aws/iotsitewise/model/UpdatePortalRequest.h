@@ -8,6 +8,7 @@
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/Image.h>
+#include <aws/iotsitewise/model/Alarms.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -158,42 +159,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline const Aws::String& GetPortalContactEmail() const{ return m_portalContactEmail; }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline bool PortalContactEmailHasBeenSet() const { return m_portalContactEmailHasBeenSet; }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline void SetPortalContactEmail(const Aws::String& value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail = value; }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline void SetPortalContactEmail(Aws::String&& value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail = std::move(value); }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline void SetPortalContactEmail(const char* value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail.assign(value); }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline UpdatePortalRequest& WithPortalContactEmail(const Aws::String& value) { SetPortalContactEmail(value); return *this;}
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline UpdatePortalRequest& WithPortalContactEmail(Aws::String&& value) { SetPortalContactEmail(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline UpdatePortalRequest& WithPortalContactEmail(const char* value) { SetPortalContactEmail(value); return *this;}
 
@@ -220,10 +221,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
@@ -231,10 +232,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -242,10 +243,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
@@ -253,10 +254,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
@@ -264,10 +265,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
@@ -275,10 +276,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline UpdatePortalRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
@@ -286,10 +287,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline UpdatePortalRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
@@ -297,10 +298,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline UpdatePortalRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -362,6 +363,108 @@ namespace Model
      */
     inline UpdatePortalRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline const Aws::String& GetNotificationSenderEmail() const{ return m_notificationSenderEmail; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline bool NotificationSenderEmailHasBeenSet() const { return m_notificationSenderEmailHasBeenSet; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(const Aws::String& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = value; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(Aws::String&& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = std::move(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(const char* value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail.assign(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline UpdatePortalRequest& WithNotificationSenderEmail(const Aws::String& value) { SetNotificationSenderEmail(value); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline UpdatePortalRequest& WithNotificationSenderEmail(Aws::String&& value) { SetNotificationSenderEmail(std::move(value)); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline UpdatePortalRequest& WithNotificationSenderEmail(const char* value) { SetNotificationSenderEmail(value); return *this;}
+
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline const Alarms& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline void SetAlarms(const Alarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline void SetAlarms(Alarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline UpdatePortalRequest& WithAlarms(const Alarms& value) { SetAlarms(value); return *this;}
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline UpdatePortalRequest& WithAlarms(Alarms&& value) { SetAlarms(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_portalId;
@@ -384,6 +487,12 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::String m_notificationSenderEmail;
+    bool m_notificationSenderEmailHasBeenSet;
+
+    Alarms m_alarms;
+    bool m_alarmsHasBeenSet;
   };
 
 } // namespace Model

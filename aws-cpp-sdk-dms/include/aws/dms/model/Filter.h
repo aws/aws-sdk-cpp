@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p>Identifies the name and value of a filter object. This filter is used to
-   * limit the number and type of AWS DMS objects that are returned for a particular
+   * limit the number and type of DMS objects that are returned for a particular
    * <code>Describe*</code> call or similar operation. Filters are used as an
-   * optional parameter to the following APIs. </p><p><h3>See Also:</h3>   <a
+   * optional parameter for certain API operations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Filter">AWS API
    * Reference</a></p>
    */

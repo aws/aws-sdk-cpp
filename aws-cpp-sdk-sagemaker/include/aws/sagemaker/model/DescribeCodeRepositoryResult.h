@@ -161,40 +161,40 @@ namespace Model
     /**
      * <p>Configuration details about the repository, including the URL where the
      * repository is located, the default branch, and the Amazon Resource Name (ARN) of
-     * the AWS Secrets Manager secret that contains the credentials used to access the
-     * repository.</p>
+     * the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the repository.</p>
      */
     inline const GitConfig& GetGitConfig() const{ return m_gitConfig; }
 
     /**
      * <p>Configuration details about the repository, including the URL where the
      * repository is located, the default branch, and the Amazon Resource Name (ARN) of
-     * the AWS Secrets Manager secret that contains the credentials used to access the
-     * repository.</p>
+     * the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the repository.</p>
      */
     inline void SetGitConfig(const GitConfig& value) { m_gitConfig = value; }
 
     /**
      * <p>Configuration details about the repository, including the URL where the
      * repository is located, the default branch, and the Amazon Resource Name (ARN) of
-     * the AWS Secrets Manager secret that contains the credentials used to access the
-     * repository.</p>
+     * the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the repository.</p>
      */
     inline void SetGitConfig(GitConfig&& value) { m_gitConfig = std::move(value); }
 
     /**
      * <p>Configuration details about the repository, including the URL where the
      * repository is located, the default branch, and the Amazon Resource Name (ARN) of
-     * the AWS Secrets Manager secret that contains the credentials used to access the
-     * repository.</p>
+     * the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the repository.</p>
      */
     inline DescribeCodeRepositoryResult& WithGitConfig(const GitConfig& value) { SetGitConfig(value); return *this;}
 
     /**
      * <p>Configuration details about the repository, including the URL where the
      * repository is located, the default branch, and the Amazon Resource Name (ARN) of
-     * the AWS Secrets Manager secret that contains the credentials used to access the
-     * repository.</p>
+     * the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the repository.</p>
      */
     inline DescribeCodeRepositoryResult& WithGitConfig(GitConfig&& value) { SetGitConfig(std::move(value)); return *this;}
 

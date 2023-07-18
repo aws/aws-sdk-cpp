@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline const Aws::String& GetInfrastructureConfigurationArn() const{ return m_infrastructureConfigurationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline bool InfrastructureConfigurationArnHasBeenSet() const { return m_infrastructureConfigurationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline void SetInfrastructureConfigurationArn(const Aws::String& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline void SetInfrastructureConfigurationArn(Aws::String&& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline void SetInfrastructureConfigurationArn(const char* value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline DeleteInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(const Aws::String& value) { SetInfrastructureConfigurationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline DeleteInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(Aws::String&& value) { SetInfrastructureConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration to
+     * delete.</p>
      */
     inline DeleteInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(const char* value) { SetInfrastructureConfigurationArn(value); return *this;}
 

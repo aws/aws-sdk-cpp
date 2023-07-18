@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 CreateSchemaRequest::CreateSchemaRequest() : 
     m_nameHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+    m_schemaHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,11 @@ Aws::String CreateSchemaRequest::SerializePayload() const
   {
    payload.WithString("schema", m_schema);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   return payload.View().WriteReadable();

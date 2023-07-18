@@ -10,6 +10,7 @@
 #include <aws/acm-pca/model/RevocationConfiguration.h>
 #include <aws/acm-pca/model/CertificateAuthorityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/acm-pca/model/KeyStorageSecurityStandard.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm-pca/model/Tag.h>
 #include <utility>
@@ -77,68 +78,74 @@ namespace Model
 
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
 
@@ -175,84 +182,173 @@ namespace Model
 
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline const KeyStorageSecurityStandard& GetKeyStorageSecurityStandard() const{ return m_keyStorageSecurityStandard; }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline bool KeyStorageSecurityStandardHasBeenSet() const { return m_keyStorageSecurityStandardHasBeenSet; }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = value; }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = std::move(value); }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { SetKeyStorageSecurityStandard(value); return *this;}
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { SetKeyStorageSecurityStandard(std::move(value)); return *this;}
 
 
     /**
@@ -340,6 +436,9 @@ namespace Model
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
+    KeyStorageSecurityStandard m_keyStorageSecurityStandard;
+    bool m_keyStorageSecurityStandardHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

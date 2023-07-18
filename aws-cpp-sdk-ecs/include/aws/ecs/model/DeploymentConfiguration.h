@@ -216,11 +216,11 @@ namespace Model
      * capacity. For example, if your service has a desired number of four tasks and a
      * minimum healthy percent of 50%, the scheduler may stop two existing tasks to
      * free up cluster capacity before starting two new tasks. Tasks for services that
-     * <i>do not</i> use a load balancer are considered healthy if they are in the
+     * <i>do not</i> use a load balancer are considered healthy if they're in the
      * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
-     * balancer are considered healthy if they are in the <code>RUNNING</code> state
-     * and they are reported as healthy by the load balancer. The default value for
-     * minimum healthy percent is 100%.</p> <p>If a service is using the blue/green
+     * balancer are considered healthy if they're in the <code>RUNNING</code> state and
+     * they're reported as healthy by the load balancer. The default value for minimum
+     * healthy percent is 100%.</p> <p>If a service is using the blue/green
      * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and tasks
      * that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to
      * the default value and is used to define the lower limit on the number of the
@@ -242,11 +242,11 @@ namespace Model
      * capacity. For example, if your service has a desired number of four tasks and a
      * minimum healthy percent of 50%, the scheduler may stop two existing tasks to
      * free up cluster capacity before starting two new tasks. Tasks for services that
-     * <i>do not</i> use a load balancer are considered healthy if they are in the
+     * <i>do not</i> use a load balancer are considered healthy if they're in the
      * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
-     * balancer are considered healthy if they are in the <code>RUNNING</code> state
-     * and they are reported as healthy by the load balancer. The default value for
-     * minimum healthy percent is 100%.</p> <p>If a service is using the blue/green
+     * balancer are considered healthy if they're in the <code>RUNNING</code> state and
+     * they're reported as healthy by the load balancer. The default value for minimum
+     * healthy percent is 100%.</p> <p>If a service is using the blue/green
      * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and tasks
      * that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to
      * the default value and is used to define the lower limit on the number of the
@@ -268,11 +268,11 @@ namespace Model
      * capacity. For example, if your service has a desired number of four tasks and a
      * minimum healthy percent of 50%, the scheduler may stop two existing tasks to
      * free up cluster capacity before starting two new tasks. Tasks for services that
-     * <i>do not</i> use a load balancer are considered healthy if they are in the
+     * <i>do not</i> use a load balancer are considered healthy if they're in the
      * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
-     * balancer are considered healthy if they are in the <code>RUNNING</code> state
-     * and they are reported as healthy by the load balancer. The default value for
-     * minimum healthy percent is 100%.</p> <p>If a service is using the blue/green
+     * balancer are considered healthy if they're in the <code>RUNNING</code> state and
+     * they're reported as healthy by the load balancer. The default value for minimum
+     * healthy percent is 100%.</p> <p>If a service is using the blue/green
      * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and tasks
      * that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to
      * the default value and is used to define the lower limit on the number of the
@@ -294,11 +294,11 @@ namespace Model
      * capacity. For example, if your service has a desired number of four tasks and a
      * minimum healthy percent of 50%, the scheduler may stop two existing tasks to
      * free up cluster capacity before starting two new tasks. Tasks for services that
-     * <i>do not</i> use a load balancer are considered healthy if they are in the
+     * <i>do not</i> use a load balancer are considered healthy if they're in the
      * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
-     * balancer are considered healthy if they are in the <code>RUNNING</code> state
-     * and they are reported as healthy by the load balancer. The default value for
-     * minimum healthy percent is 100%.</p> <p>If a service is using the blue/green
+     * balancer are considered healthy if they're in the <code>RUNNING</code> state and
+     * they're reported as healthy by the load balancer. The default value for minimum
+     * healthy percent is 100%.</p> <p>If a service is using the blue/green
      * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and tasks
      * that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to
      * the default value and is used to define the lower limit on the number of the

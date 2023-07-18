@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Returned if the specified <code>AccessPointId</code> value doesn't exist in
-   * the requester's AWS account.</p><p><h3>See Also:</h3>   <a
+   * the requester's Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointNotFound">AWS
    * API Reference</a></p>
    */

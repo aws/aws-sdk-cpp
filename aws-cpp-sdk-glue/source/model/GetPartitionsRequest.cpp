@@ -20,7 +20,11 @@ GetPartitionsRequest::GetPartitionsRequest() :
     m_nextTokenHasBeenSet(false),
     m_segmentHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_excludeColumnSchema(false),
+    m_excludeColumnSchemaHasBeenSet(false),
+    m_transactionIdHasBeenSet(false),
+    m_queryAsOfTimeHasBeenSet(false)
 {
 }
 
@@ -68,6 +72,23 @@ Aws::String GetPartitionsRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_excludeColumnSchemaHasBeenSet)
+  {
+   payload.WithBool("ExcludeColumnSchema", m_excludeColumnSchema);
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
+
+  }
+
+  if(m_queryAsOfTimeHasBeenSet)
+  {
+   payload.WithDouble("QueryAsOfTime", m_queryAsOfTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

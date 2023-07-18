@@ -81,50 +81,32 @@ namespace Model
 
 
     /**
-     * <p> The status of a package version. Valid statuses are: </p> <ul> <li> <p>
-     * <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code> </p> </li>
-     * <li> <p> <code>Unlisted</code> </p> </li> <li> <p> <code>Archived</code> </p>
-     * </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The status of a package version. </p>
      */
     inline const PackageVersionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of a package version. Valid statuses are: </p> <ul> <li> <p>
-     * <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code> </p> </li>
-     * <li> <p> <code>Unlisted</code> </p> </li> <li> <p> <code>Archived</code> </p>
-     * </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The status of a package version. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status of a package version. Valid statuses are: </p> <ul> <li> <p>
-     * <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code> </p> </li>
-     * <li> <p> <code>Unlisted</code> </p> </li> <li> <p> <code>Archived</code> </p>
-     * </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The status of a package version. </p>
      */
     inline void SetStatus(const PackageVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status of a package version. Valid statuses are: </p> <ul> <li> <p>
-     * <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code> </p> </li>
-     * <li> <p> <code>Unlisted</code> </p> </li> <li> <p> <code>Archived</code> </p>
-     * </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The status of a package version. </p>
      */
     inline void SetStatus(PackageVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status of a package version. Valid statuses are: </p> <ul> <li> <p>
-     * <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code> </p> </li>
-     * <li> <p> <code>Unlisted</code> </p> </li> <li> <p> <code>Archived</code> </p>
-     * </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The status of a package version. </p>
      */
     inline SuccessfulPackageVersionInfo& WithStatus(const PackageVersionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of a package version. Valid statuses are: </p> <ul> <li> <p>
-     * <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code> </p> </li>
-     * <li> <p> <code>Unlisted</code> </p> </li> <li> <p> <code>Archived</code> </p>
-     * </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The status of a package version. </p>
      */
     inline SuccessfulPackageVersionInfo& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

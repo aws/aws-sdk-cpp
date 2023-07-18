@@ -31,7 +31,7 @@ namespace Model
 
   /**
    * <p>The <code>ResourceChange</code> structure describes the resource and the
-   * action that AWS CloudFormation will perform on it if you execute this change
+   * action that CloudFormation will perform on it if you execute this change
    * set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceChange">AWS
    * API Reference</a></p>
@@ -48,56 +48,56 @@ namespace Model
 
 
     /**
-     * <p>The action that AWS CloudFormation takes on the resource, such as
+     * <p>The action that CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that AWS CloudFormation takes on the resource, such as
+     * <p>The action that CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that AWS CloudFormation takes on the resource, such as
+     * <p>The action that CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that AWS CloudFormation takes on the resource, such as
+     * <p>The action that CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that AWS CloudFormation takes on the resource, such as
+     * <p>The action that CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline ResourceChange& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that AWS CloudFormation takes on the resource, such as
+     * <p>The action that CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline ResourceChange& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
@@ -193,56 +193,56 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline ResourceChange& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline ResourceChange& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS CloudFormation resource, such as
+     * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline ResourceChange& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
+     * <p>For the <code>Modify</code> action, indicates whether CloudFormation will
      * replace the resource by creating a new one and deleting the old one. This value
      * depends on the value of the <code>RequiresRecreation</code> property in the
      * <code>ResourceTargetDefinition</code> structure. For example, if the
@@ -260,7 +260,7 @@ namespace Model
     inline const Replacement& GetReplacement() const{ return m_replacement; }
 
     /**
-     * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
+     * <p>For the <code>Modify</code> action, indicates whether CloudFormation will
      * replace the resource by creating a new one and deleting the old one. This value
      * depends on the value of the <code>RequiresRecreation</code> property in the
      * <code>ResourceTargetDefinition</code> structure. For example, if the
@@ -278,7 +278,7 @@ namespace Model
     inline bool ReplacementHasBeenSet() const { return m_replacementHasBeenSet; }
 
     /**
-     * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
+     * <p>For the <code>Modify</code> action, indicates whether CloudFormation will
      * replace the resource by creating a new one and deleting the old one. This value
      * depends on the value of the <code>RequiresRecreation</code> property in the
      * <code>ResourceTargetDefinition</code> structure. For example, if the
@@ -296,7 +296,7 @@ namespace Model
     inline void SetReplacement(const Replacement& value) { m_replacementHasBeenSet = true; m_replacement = value; }
 
     /**
-     * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
+     * <p>For the <code>Modify</code> action, indicates whether CloudFormation will
      * replace the resource by creating a new one and deleting the old one. This value
      * depends on the value of the <code>RequiresRecreation</code> property in the
      * <code>ResourceTargetDefinition</code> structure. For example, if the
@@ -314,7 +314,7 @@ namespace Model
     inline void SetReplacement(Replacement&& value) { m_replacementHasBeenSet = true; m_replacement = std::move(value); }
 
     /**
-     * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
+     * <p>For the <code>Modify</code> action, indicates whether CloudFormation will
      * replace the resource by creating a new one and deleting the old one. This value
      * depends on the value of the <code>RequiresRecreation</code> property in the
      * <code>ResourceTargetDefinition</code> structure. For example, if the
@@ -332,7 +332,7 @@ namespace Model
     inline ResourceChange& WithReplacement(const Replacement& value) { SetReplacement(value); return *this;}
 
     /**
-     * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
+     * <p>For the <code>Modify</code> action, indicates whether CloudFormation will
      * replace the resource by creating a new one and deleting the old one. This value
      * depends on the value of the <code>RequiresRecreation</code> property in the
      * <code>ResourceTargetDefinition</code> structure. For example, if the
@@ -409,57 +409,57 @@ namespace Model
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline const Aws::Vector<ResourceChangeDetail>& GetDetails() const{ return m_details; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline void SetDetails(const Aws::Vector<ResourceChangeDetail>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline void SetDetails(Aws::Vector<ResourceChangeDetail>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& WithDetails(const Aws::Vector<ResourceChangeDetail>& value) { SetDetails(value); return *this;}
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& WithDetails(Aws::Vector<ResourceChangeDetail>&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& AddDetails(const ResourceChangeDetail& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
-     * CloudFormation will make to the resource. </p>
+     * <code>ResourceChangeDetail</code> structures that describes the changes that
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& AddDetails(ResourceChangeDetail&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 

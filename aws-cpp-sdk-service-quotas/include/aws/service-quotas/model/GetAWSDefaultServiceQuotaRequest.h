@@ -35,83 +35,83 @@ namespace Model
 
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline GetAWSDefaultServiceQuotaRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline GetAWSDefaultServiceQuotaRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline GetAWSDefaultServiceQuotaRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline GetAWSDefaultServiceQuotaRequest& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline GetAWSDefaultServiceQuotaRequest& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the service quota you want to select.</p>
+     * <p>The quota identifier.</p>
      */
     inline GetAWSDefaultServiceQuotaRequest& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 

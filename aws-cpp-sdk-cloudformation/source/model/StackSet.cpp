@@ -37,7 +37,8 @@ StackSet::StackSet() :
     m_autoDeploymentHasBeenSet(false),
     m_permissionModel(PermissionModels::NOT_SET),
     m_permissionModelHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false)
+    m_organizationalUnitIdsHasBeenSet(false),
+    m_managedExecutionHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ StackSet::StackSet(const XmlNode& xmlNode) :
     m_autoDeploymentHasBeenSet(false),
     m_permissionModel(PermissionModels::NOT_SET),
     m_permissionModelHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false)
+    m_organizationalUnitIdsHasBeenSet(false),
+    m_managedExecutionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -183,6 +185,12 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
 
       m_organizationalUnitIdsHasBeenSet = true;
     }
+    XmlNode managedExecutionNode = resultNode.FirstChild("ManagedExecution");
+    if(!managedExecutionNode.IsNull())
+    {
+      m_managedExecution = managedExecutionNode;
+      m_managedExecutionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -289,6 +297,13 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_managedExecutionHasBeenSet)
+  {
+      Aws::StringStream managedExecutionLocationAndMemberSs;
+      managedExecutionLocationAndMemberSs << location << index << locationValue << ".ManagedExecution";
+      m_managedExecution.OutputToStream(oStream, managedExecutionLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -376,6 +391,12 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
       {
         oStream << location << ".OrganizationalUnitIds.member." << organizationalUnitIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_managedExecutionHasBeenSet)
+  {
+      Aws::String managedExecutionLocationAndMember(location);
+      managedExecutionLocationAndMember += ".ManagedExecution";
+      m_managedExecution.OutputToStream(oStream, managedExecutionLocationAndMember.c_str());
   }
 }
 

@@ -67,6 +67,12 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("AsyncInferenceConfig"))
+  {
+    m_asyncInferenceConfig = jsonValue.GetObject("AsyncInferenceConfig");
+
+  }
+
 
 
   return *this;

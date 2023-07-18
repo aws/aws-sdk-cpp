@@ -26,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the properties for hyperparameter optimization (HPO). For use with
-   * the bring-your-own-recipe feature. Do not use for Amazon Personalize native
-   * recipes.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the properties for hyperparameter optimization (HPO).</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HPOConfig">AWS
    * API Reference</a></p>
    */
@@ -42,32 +41,38 @@ namespace Model
 
 
     /**
-     * <p>The metric to optimize during HPO.</p>
+     * <p>The metric to optimize during HPO.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline const HPOObjective& GetHpoObjective() const{ return m_hpoObjective; }
 
     /**
-     * <p>The metric to optimize during HPO.</p>
+     * <p>The metric to optimize during HPO.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline bool HpoObjectiveHasBeenSet() const { return m_hpoObjectiveHasBeenSet; }
 
     /**
-     * <p>The metric to optimize during HPO.</p>
+     * <p>The metric to optimize during HPO.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline void SetHpoObjective(const HPOObjective& value) { m_hpoObjectiveHasBeenSet = true; m_hpoObjective = value; }
 
     /**
-     * <p>The metric to optimize during HPO.</p>
+     * <p>The metric to optimize during HPO.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline void SetHpoObjective(HPOObjective&& value) { m_hpoObjectiveHasBeenSet = true; m_hpoObjective = std::move(value); }
 
     /**
-     * <p>The metric to optimize during HPO.</p>
+     * <p>The metric to optimize during HPO.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline HPOConfig& WithHpoObjective(const HPOObjective& value) { SetHpoObjective(value); return *this;}
 
     /**
-     * <p>The metric to optimize during HPO.</p>
+     * <p>The metric to optimize during HPO.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline HPOConfig& WithHpoObjective(HPOObjective&& value) { SetHpoObjective(std::move(value)); return *this;}
 

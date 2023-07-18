@@ -22,7 +22,8 @@ ProjectDescription::ProjectDescription() :
     m_projectArnHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_datasetsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ProjectDescription::ProjectDescription(JsonView jsonValue) :
     m_projectArnHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_datasetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,16 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Datasets"))
+  {
+    Array<JsonView> datasetsJsonList = jsonValue.GetArray("Datasets");
+    for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
+    {
+      m_datasets.push_back(datasetsJsonList[datasetsIndex].AsObject());
+    }
+    m_datasetsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +91,17 @@ JsonValue ProjectDescription::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ProjectStatusMapper::GetNameForProjectStatus(m_status));
+  }
+
+  if(m_datasetsHasBeenSet)
+  {
+   Array<JsonValue> datasetsJsonList(m_datasets.size());
+   for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
+   {
+     datasetsJsonList[datasetsIndex].AsObject(m_datasets[datasetsIndex].Jsonize());
+   }
+   payload.WithArray("Datasets", std::move(datasetsJsonList));
+
   }
 
   return payload;

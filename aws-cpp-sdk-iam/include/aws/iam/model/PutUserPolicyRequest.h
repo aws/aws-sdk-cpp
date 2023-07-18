@@ -176,9 +176,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -192,9 +192,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -208,9 +208,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -224,9 +224,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -240,9 +240,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -256,9 +256,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -272,9 +272,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -288,9 +288,9 @@ namespace Model
 
     /**
      * <p>The policy document.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character

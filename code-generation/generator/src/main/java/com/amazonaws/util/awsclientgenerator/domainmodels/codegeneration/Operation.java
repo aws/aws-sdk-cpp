@@ -23,6 +23,7 @@ public class Operation {
     private String authtype;
     private String authorizer;
     private boolean eventStream;
+    private boolean supportsChunkedEncoding;
 
     // ARN supports.
     private boolean arnEndpointAllowed;
@@ -40,6 +41,10 @@ public class Operation {
     private boolean outpostUseNonArnEndpoint;
     private boolean hasOutpostIdInArn;
 
+    // For S3 Object Lambda.
+    private boolean requiresServiceNameOverride;
+    private String serviceNameOverride;
+
     // For Host Prefix Injection.
     private boolean hasEndpointTrait;
     private Endpoint endpoint;
@@ -52,7 +57,12 @@ public class Operation {
     // For pre-signed URL generation
     private boolean hasPreSignedUrl;
 
-    public boolean hasEndpointDiscoveryTrait() {
-        return hasEndpointDiscoveryTrait;
-    }
+    // For S3 CRT
+    private boolean s3CrtSpecific;
+
+    // For flexible checksums
+    private boolean requestChecksumRequired;
+    private String requestAlgorithmMember;
+    private String requestValidationModeMember;
+    private List<String> responseAlgorithms;
 }

@@ -23,6 +23,7 @@ namespace Aws
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int Fargate_HASH = HashingUtils::HashString("Fargate");
         static const int Lambda_HASH = HashingUtils::HashString("Lambda");
+        static const int SageMaker_HASH = HashingUtils::HashString("SageMaker");
 
 
         SavingsPlanProductType GetSavingsPlanProductTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == Lambda_HASH)
           {
             return SavingsPlanProductType::Lambda;
+          }
+          else if (hashCode == SageMaker_HASH)
+          {
+            return SavingsPlanProductType::SageMaker;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "Fargate";
           case SavingsPlanProductType::Lambda:
             return "Lambda";
+          case SavingsPlanProductType::SageMaker:
+            return "SageMaker";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

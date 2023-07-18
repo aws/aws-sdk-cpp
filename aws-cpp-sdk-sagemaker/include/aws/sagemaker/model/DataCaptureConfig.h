@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Configuration to control how SageMaker captures inference data.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCaptureConfig">AWS
    * API Reference</a></p>
    */
@@ -41,197 +42,287 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
      */
     inline bool GetEnableCapture() const{ return m_enableCapture; }
 
     /**
-     * <p/>
+     * <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
      */
     inline bool EnableCaptureHasBeenSet() const { return m_enableCaptureHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
      */
     inline void SetEnableCapture(bool value) { m_enableCaptureHasBeenSet = true; m_enableCapture = value; }
 
     /**
-     * <p/>
+     * <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
      */
     inline DataCaptureConfig& WithEnableCapture(bool value) { SetEnableCapture(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The percentage of requests SageMaker will capture. A lower value is
+     * recommended for Endpoints with high traffic.</p>
      */
     inline int GetInitialSamplingPercentage() const{ return m_initialSamplingPercentage; }
 
     /**
-     * <p/>
+     * <p>The percentage of requests SageMaker will capture. A lower value is
+     * recommended for Endpoints with high traffic.</p>
      */
     inline bool InitialSamplingPercentageHasBeenSet() const { return m_initialSamplingPercentageHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The percentage of requests SageMaker will capture. A lower value is
+     * recommended for Endpoints with high traffic.</p>
      */
     inline void SetInitialSamplingPercentage(int value) { m_initialSamplingPercentageHasBeenSet = true; m_initialSamplingPercentage = value; }
 
     /**
-     * <p/>
+     * <p>The percentage of requests SageMaker will capture. A lower value is
+     * recommended for Endpoints with high traffic.</p>
      */
     inline DataCaptureConfig& WithInitialSamplingPercentage(int value) { SetInitialSamplingPercentage(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline const Aws::String& GetDestinationS3Uri() const{ return m_destinationS3Uri; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline bool DestinationS3UriHasBeenSet() const { return m_destinationS3UriHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline void SetDestinationS3Uri(const Aws::String& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline void SetDestinationS3Uri(Aws::String&& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline void SetDestinationS3Uri(const char* value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline DataCaptureConfig& WithDestinationS3Uri(const Aws::String& value) { SetDestinationS3Uri(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline DataCaptureConfig& WithDestinationS3Uri(Aws::String&& value) { SetDestinationS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location used to capture the data.</p>
      */
     inline DataCaptureConfig& WithDestinationS3Uri(const char* value) { SetDestinationS3Uri(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline DataCaptureConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline DataCaptureConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+     * </ul>
      */
     inline DataCaptureConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline const Aws::Vector<CaptureOption>& GetCaptureOptions() const{ return m_captureOptions; }
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline bool CaptureOptionsHasBeenSet() const { return m_captureOptionsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline void SetCaptureOptions(const Aws::Vector<CaptureOption>& value) { m_captureOptionsHasBeenSet = true; m_captureOptions = value; }
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline void SetCaptureOptions(Aws::Vector<CaptureOption>&& value) { m_captureOptionsHasBeenSet = true; m_captureOptions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline DataCaptureConfig& WithCaptureOptions(const Aws::Vector<CaptureOption>& value) { SetCaptureOptions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline DataCaptureConfig& WithCaptureOptions(Aws::Vector<CaptureOption>&& value) { SetCaptureOptions(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline DataCaptureConfig& AddCaptureOptions(const CaptureOption& value) { m_captureOptionsHasBeenSet = true; m_captureOptions.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Specifies data Model Monitor will capture. You can configure whether to
+     * collect only input, only output, or both</p>
      */
     inline DataCaptureConfig& AddCaptureOptions(CaptureOption&& value) { m_captureOptionsHasBeenSet = true; m_captureOptions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>Configuration specifying how to treat different headers. If no headers are
+     * specified SageMaker will by default base64 encode when capturing the data.</p>
      */
     inline const CaptureContentTypeHeader& GetCaptureContentTypeHeader() const{ return m_captureContentTypeHeader; }
 
     /**
-     * <p/>
+     * <p>Configuration specifying how to treat different headers. If no headers are
+     * specified SageMaker will by default base64 encode when capturing the data.</p>
      */
     inline bool CaptureContentTypeHeaderHasBeenSet() const { return m_captureContentTypeHeaderHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Configuration specifying how to treat different headers. If no headers are
+     * specified SageMaker will by default base64 encode when capturing the data.</p>
      */
     inline void SetCaptureContentTypeHeader(const CaptureContentTypeHeader& value) { m_captureContentTypeHeaderHasBeenSet = true; m_captureContentTypeHeader = value; }
 
     /**
-     * <p/>
+     * <p>Configuration specifying how to treat different headers. If no headers are
+     * specified SageMaker will by default base64 encode when capturing the data.</p>
      */
     inline void SetCaptureContentTypeHeader(CaptureContentTypeHeader&& value) { m_captureContentTypeHeaderHasBeenSet = true; m_captureContentTypeHeader = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Configuration specifying how to treat different headers. If no headers are
+     * specified SageMaker will by default base64 encode when capturing the data.</p>
      */
     inline DataCaptureConfig& WithCaptureContentTypeHeader(const CaptureContentTypeHeader& value) { SetCaptureContentTypeHeader(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Configuration specifying how to treat different headers. If no headers are
+     * specified SageMaker will by default base64 encode when capturing the data.</p>
      */
     inline DataCaptureConfig& WithCaptureContentTypeHeader(CaptureContentTypeHeader&& value) { SetCaptureContentTypeHeader(std::move(value)); return *this;}
 

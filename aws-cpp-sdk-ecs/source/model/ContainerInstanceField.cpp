@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int TAGS_HASH = HashingUtils::HashString("TAGS");
+        static const int CONTAINER_INSTANCE_HEALTH_HASH = HashingUtils::HashString("CONTAINER_INSTANCE_HEALTH");
 
 
         ContainerInstanceField GetContainerInstanceFieldForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == TAGS_HASH)
           {
             return ContainerInstanceField::TAGS;
+          }
+          else if (hashCode == CONTAINER_INSTANCE_HEALTH_HASH)
+          {
+            return ContainerInstanceField::CONTAINER_INSTANCE_HEALTH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ContainerInstanceField::TAGS:
             return "TAGS";
+          case ContainerInstanceField::CONTAINER_INSTANCE_HEALTH:
+            return "CONTAINER_INSTANCE_HEALTH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

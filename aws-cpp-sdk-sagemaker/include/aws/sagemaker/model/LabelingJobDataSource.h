@@ -78,32 +78,50 @@ namespace Model
 
 
     /**
-     * <p>An Amazon SNS data source used for streaming labeling jobs.</p>
+     * <p>An Amazon SNS data source used for streaming labeling jobs. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
+     * Data to a Streaming Labeling Job</a>. </p>
      */
     inline const LabelingJobSnsDataSource& GetSnsDataSource() const{ return m_snsDataSource; }
 
     /**
-     * <p>An Amazon SNS data source used for streaming labeling jobs.</p>
+     * <p>An Amazon SNS data source used for streaming labeling jobs. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
+     * Data to a Streaming Labeling Job</a>. </p>
      */
     inline bool SnsDataSourceHasBeenSet() const { return m_snsDataSourceHasBeenSet; }
 
     /**
-     * <p>An Amazon SNS data source used for streaming labeling jobs.</p>
+     * <p>An Amazon SNS data source used for streaming labeling jobs. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
+     * Data to a Streaming Labeling Job</a>. </p>
      */
     inline void SetSnsDataSource(const LabelingJobSnsDataSource& value) { m_snsDataSourceHasBeenSet = true; m_snsDataSource = value; }
 
     /**
-     * <p>An Amazon SNS data source used for streaming labeling jobs.</p>
+     * <p>An Amazon SNS data source used for streaming labeling jobs. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
+     * Data to a Streaming Labeling Job</a>. </p>
      */
     inline void SetSnsDataSource(LabelingJobSnsDataSource&& value) { m_snsDataSourceHasBeenSet = true; m_snsDataSource = std::move(value); }
 
     /**
-     * <p>An Amazon SNS data source used for streaming labeling jobs.</p>
+     * <p>An Amazon SNS data source used for streaming labeling jobs. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
+     * Data to a Streaming Labeling Job</a>. </p>
      */
     inline LabelingJobDataSource& WithSnsDataSource(const LabelingJobSnsDataSource& value) { SetSnsDataSource(value); return *this;}
 
     /**
-     * <p>An Amazon SNS data source used for streaming labeling jobs.</p>
+     * <p>An Amazon SNS data source used for streaming labeling jobs. To learn more,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
+     * Data to a Streaming Labeling Job</a>. </p>
      */
     inline LabelingJobDataSource& WithSnsDataSource(LabelingJobSnsDataSource&& value) { SetSnsDataSource(std::move(value)); return *this;}
 

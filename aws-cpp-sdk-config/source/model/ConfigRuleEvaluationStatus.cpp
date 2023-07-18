@@ -31,7 +31,10 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus() :
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
     m_firstEvaluationStarted(false),
-    m_firstEvaluationStartedHasBeenSet(false)
+    m_firstEvaluationStartedHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusReasonHasBeenSet(false),
+    m_lastDebugLogDeliveryTimeHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(JsonView jsonValue) :
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
     m_firstEvaluationStarted(false),
-    m_firstEvaluationStartedHasBeenSet(false)
+    m_firstEvaluationStartedHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusReasonHasBeenSet(false),
+    m_lastDebugLogDeliveryTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +145,27 @@ ConfigRuleEvaluationStatus& ConfigRuleEvaluationStatus::operator =(JsonView json
     m_firstEvaluationStartedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastDebugLogDeliveryStatus"))
+  {
+    m_lastDebugLogDeliveryStatus = jsonValue.GetString("LastDebugLogDeliveryStatus");
+
+    m_lastDebugLogDeliveryStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastDebugLogDeliveryStatusReason"))
+  {
+    m_lastDebugLogDeliveryStatusReason = jsonValue.GetString("LastDebugLogDeliveryStatusReason");
+
+    m_lastDebugLogDeliveryStatusReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastDebugLogDeliveryTime"))
+  {
+    m_lastDebugLogDeliveryTime = jsonValue.GetDouble("LastDebugLogDeliveryTime");
+
+    m_lastDebugLogDeliveryTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -210,6 +237,23 @@ JsonValue ConfigRuleEvaluationStatus::Jsonize() const
   {
    payload.WithBool("FirstEvaluationStarted", m_firstEvaluationStarted);
 
+  }
+
+  if(m_lastDebugLogDeliveryStatusHasBeenSet)
+  {
+   payload.WithString("LastDebugLogDeliveryStatus", m_lastDebugLogDeliveryStatus);
+
+  }
+
+  if(m_lastDebugLogDeliveryStatusReasonHasBeenSet)
+  {
+   payload.WithString("LastDebugLogDeliveryStatusReason", m_lastDebugLogDeliveryStatusReason);
+
+  }
+
+  if(m_lastDebugLogDeliveryTimeHasBeenSet)
+  {
+   payload.WithDouble("LastDebugLogDeliveryTime", m_lastDebugLogDeliveryTime.SecondsWithMSPrecision());
   }
 
   return payload;

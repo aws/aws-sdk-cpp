@@ -28,7 +28,8 @@ Record::Record() :
     m_timeUnit(TimeUnit::NOT_SET),
     m_timeUnitHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_measureValuesHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Record::Record(JsonView jsonValue) :
     m_timeUnit(TimeUnit::NOT_SET),
     m_timeUnitHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_measureValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,16 @@ Record& Record::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MeasureValues"))
+  {
+    Array<JsonView> measureValuesJsonList = jsonValue.GetArray("MeasureValues");
+    for(unsigned measureValuesIndex = 0; measureValuesIndex < measureValuesJsonList.GetLength(); ++measureValuesIndex)
+    {
+      m_measureValues.push_back(measureValuesJsonList[measureValuesIndex].AsObject());
+    }
+    m_measureValuesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +162,17 @@ JsonValue Record::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInt64("Version", m_version);
+
+  }
+
+  if(m_measureValuesHasBeenSet)
+  {
+   Array<JsonValue> measureValuesJsonList(m_measureValues.size());
+   for(unsigned measureValuesIndex = 0; measureValuesIndex < measureValuesJsonList.GetLength(); ++measureValuesIndex)
+   {
+     measureValuesJsonList[measureValuesIndex].AsObject(m_measureValues[measureValuesIndex].Jsonize());
+   }
+   payload.WithArray("MeasureValues", std::move(measureValuesJsonList));
 
   }
 

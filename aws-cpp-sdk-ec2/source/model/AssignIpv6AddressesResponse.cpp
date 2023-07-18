@@ -49,6 +49,17 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
       }
 
     }
+    XmlNode assignedIpv6PrefixesNode = resultNode.FirstChild("assignedIpv6PrefixSet");
+    if(!assignedIpv6PrefixesNode.IsNull())
+    {
+      XmlNode assignedIpv6PrefixesMember = assignedIpv6PrefixesNode.FirstChild("item");
+      while(!assignedIpv6PrefixesMember.IsNull())
+      {
+        m_assignedIpv6Prefixes.push_back(assignedIpv6PrefixesMember.GetText());
+        assignedIpv6PrefixesMember = assignedIpv6PrefixesMember.NextNode("item");
+      }
+
+    }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {

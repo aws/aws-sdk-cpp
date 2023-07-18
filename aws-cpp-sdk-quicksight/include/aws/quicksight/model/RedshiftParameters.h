@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if
-   * <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and
-   * <code>Port</code> fields can be blank if the <code>ClusterId</code> field is
-   * set.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for Amazon Redshift. The <code>ClusterId</code> field can be
+   * blank if <code>Host</code> and <code>Port</code> are both set. The
+   * <code>Host</code> and <code>Port</code> fields can be blank if the
+   * <code>ClusterId</code> field is set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RedshiftParameters">AWS
    * API Reference</a></p>
    */

@@ -22,11 +22,11 @@ namespace Model
 {
 
   /**
-   * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-   * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+   * Enclaves. For more information, see <a
+   * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
+   * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+   * Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateEnclaveOptionsRequest">AWS
    * API Reference</a></p>
    */
@@ -42,26 +42,26 @@ namespace Model
 
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>.</p>
      */
     inline LaunchTemplateEnclaveOptionsRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

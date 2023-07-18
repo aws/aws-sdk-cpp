@@ -13,7 +13,9 @@ using namespace Aws::Utils;
 ExecuteChangeSetRequest::ExecuteChangeSetRequest() : 
     m_changeSetNameHasBeenSet(false),
     m_stackNameHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_disableRollback(false),
+    m_disableRollbackHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,11 @@ Aws::String ExecuteChangeSetRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
+  if(m_disableRollbackHasBeenSet)
+  {
+    ss << "DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
 
   ss << "Version=2010-05-15";

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SCHEDULED,
     CONDITIONAL,
-    ON_DEMAND
+    ON_DEMAND,
+    EVENT
   };
 
 namespace TriggerTypeMapper

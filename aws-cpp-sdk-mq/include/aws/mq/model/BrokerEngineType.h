@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * Types of broker engines.<p><h3>See Also:</h3>   <a
+   * <p>Types of broker engines.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerEngineType">AWS
    * API Reference</a></p>
    */
@@ -40,73 +40,73 @@ namespace Model
 
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline BrokerEngineType& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline BrokerEngineType& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
 
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline const Aws::Vector<EngineVersion>& GetEngineVersions() const{ return m_engineVersions; }
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline bool EngineVersionsHasBeenSet() const { return m_engineVersionsHasBeenSet; }
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline void SetEngineVersions(const Aws::Vector<EngineVersion>& value) { m_engineVersionsHasBeenSet = true; m_engineVersions = value; }
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline void SetEngineVersions(Aws::Vector<EngineVersion>&& value) { m_engineVersionsHasBeenSet = true; m_engineVersions = std::move(value); }
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline BrokerEngineType& WithEngineVersions(const Aws::Vector<EngineVersion>& value) { SetEngineVersions(value); return *this;}
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline BrokerEngineType& WithEngineVersions(Aws::Vector<EngineVersion>&& value) { SetEngineVersions(std::move(value)); return *this;}
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline BrokerEngineType& AddEngineVersions(const EngineVersion& value) { m_engineVersionsHasBeenSet = true; m_engineVersions.push_back(value); return *this; }
 
     /**
-     * The list of engine versions.
+     * <p>The list of engine versions.</p>
      */
     inline BrokerEngineType& AddEngineVersions(EngineVersion&& value) { m_engineVersionsHasBeenSet = true; m_engineVersions.push_back(std::move(value)); return *this; }
 

@@ -90,74 +90,74 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline UpdateGameServerGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline UpdateGameServerGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline UpdateGameServerGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -170,11 +170,11 @@ namespace Model
     inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const{ return m_instanceDefinitions; }
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -187,11 +187,11 @@ namespace Model
     inline bool InstanceDefinitionsHasBeenSet() const { return m_instanceDefinitionsHasBeenSet; }
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -204,11 +204,11 @@ namespace Model
     inline void SetInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = value; }
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -221,11 +221,11 @@ namespace Model
     inline void SetInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::move(value); }
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -238,11 +238,11 @@ namespace Model
     inline UpdateGameServerGroupRequest& WithInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { SetInstanceDefinitions(value); return *this;}
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -255,11 +255,11 @@ namespace Model
     inline UpdateGameServerGroupRequest& WithInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { SetInstanceDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -272,11 +272,11 @@ namespace Model
     inline UpdateGameServerGroupRequest& AddInstanceDefinitions(const InstanceDefinition& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>An updated list of EC2 instance types to use in the Auto Scaling group. The
-     * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. This updated list replaces the entire current
-     * list of instance definitions for the game server group. For more information on
-     * instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -296,8 +296,8 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. This property is set
-     * to <code>NO_PROTECTION</code> by default.</p>
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline const GameServerProtectionPolicy& GetGameServerProtectionPolicy() const{ return m_gameServerProtectionPolicy; }
 
@@ -308,8 +308,8 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. This property is set
-     * to <code>NO_PROTECTION</code> by default.</p>
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline bool GameServerProtectionPolicyHasBeenSet() const { return m_gameServerProtectionPolicyHasBeenSet; }
 
@@ -320,8 +320,8 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. This property is set
-     * to <code>NO_PROTECTION</code> by default.</p>
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline void SetGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = value; }
 
@@ -332,8 +332,8 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. This property is set
-     * to <code>NO_PROTECTION</code> by default.</p>
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline void SetGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = std::move(value); }
 
@@ -344,8 +344,8 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. This property is set
-     * to <code>NO_PROTECTION</code> by default.</p>
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { SetGameServerProtectionPolicy(value); return *this;}
 
@@ -356,8 +356,8 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. This property is set
-     * to <code>NO_PROTECTION</code> by default.</p>
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { SetGameServerProtectionPolicy(std::move(value)); return *this;}
 

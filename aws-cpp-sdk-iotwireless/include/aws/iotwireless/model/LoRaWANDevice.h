@@ -10,6 +10,7 @@
 #include <aws/iotwireless/model/OtaaV1_0_x.h>
 #include <aws/iotwireless/model/AbpV1_1.h>
 #include <aws/iotwireless/model/AbpV1_0_x.h>
+#include <aws/iotwireless/model/FPorts.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>LoRa object for create functions.</p><p><h3>See Also:</h3>   <a
+   * <p>LoRaWAN object for create functions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANDevice">AWS
    * API Reference</a></p>
    */
@@ -258,34 +259,53 @@ namespace Model
 
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline const AbpV1_0_x& GetAbpV1_0_x() const{ return m_abpV1_0_x; }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline bool AbpV1_0_xHasBeenSet() const { return m_abpV1_0_xHasBeenSet; }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline void SetAbpV1_0_x(const AbpV1_0_x& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = value; }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline void SetAbpV1_0_x(AbpV1_0_x&& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = std::move(value); }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline LoRaWANDevice& WithAbpV1_0_x(const AbpV1_0_x& value) { SetAbpV1_0_x(value); return *this;}
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline LoRaWANDevice& WithAbpV1_0_x(AbpV1_0_x&& value) { SetAbpV1_0_x(std::move(value)); return *this;}
+
+
+    
+    inline const FPorts& GetFPorts() const{ return m_fPorts; }
+
+    
+    inline bool FPortsHasBeenSet() const { return m_fPortsHasBeenSet; }
+
+    
+    inline void SetFPorts(const FPorts& value) { m_fPortsHasBeenSet = true; m_fPorts = value; }
+
+    
+    inline void SetFPorts(FPorts&& value) { m_fPortsHasBeenSet = true; m_fPorts = std::move(value); }
+
+    
+    inline LoRaWANDevice& WithFPorts(const FPorts& value) { SetFPorts(value); return *this;}
+
+    
+    inline LoRaWANDevice& WithFPorts(FPorts&& value) { SetFPorts(std::move(value)); return *this;}
 
   private:
 
@@ -309,6 +329,9 @@ namespace Model
 
     AbpV1_0_x m_abpV1_0_x;
     bool m_abpV1_0_xHasBeenSet;
+
+    FPorts m_fPorts;
+    bool m_fPortsHasBeenSet;
   };
 
 } // namespace Model

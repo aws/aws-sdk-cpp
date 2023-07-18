@@ -28,7 +28,7 @@ namespace Model
 {
   /**
    * <p>Information about the dedicated IP addresses that are associated with your
-   * AWS account.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpsResponse">AWS
    * API Reference</a></p>
    */
@@ -41,44 +41,44 @@ namespace Model
 
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline const Aws::Vector<DedicatedIp>& GetDedicatedIps() const{ return m_dedicatedIps; }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline void SetDedicatedIps(const Aws::Vector<DedicatedIp>& value) { m_dedicatedIps = value; }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline void SetDedicatedIps(Aws::Vector<DedicatedIp>&& value) { m_dedicatedIps = std::move(value); }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& WithDedicatedIps(const Aws::Vector<DedicatedIp>& value) { SetDedicatedIps(value); return *this;}
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& WithDedicatedIps(Aws::Vector<DedicatedIp>&& value) { SetDedicatedIps(std::move(value)); return *this;}
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& AddDedicatedIps(const DedicatedIp& value) { m_dedicatedIps.push_back(value); return *this; }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& AddDedicatedIps(DedicatedIp&& value) { m_dedicatedIps.push_back(std::move(value)); return *this; }
 

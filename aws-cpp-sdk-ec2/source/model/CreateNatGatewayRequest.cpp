@@ -17,7 +17,9 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_connectivityType(ConnectivityType::NOT_SET),
+    m_connectivityTypeHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,11 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_connectivityTypeHasBeenSet)
+  {
+    ss << "ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
   }
 
   ss << "Version=2016-11-15";

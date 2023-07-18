@@ -49,8 +49,8 @@ namespace Model
      * is not supported for your configuration.</p> </li> <li> <p> <code>FAILED</code>
      * - Standards check failed for at least one evaluated resource.</p> </li> <li> <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-     * outage, API error, or because the result of the AWS Config evaluation was
-     * <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * outage, API error, or because the result of the Config evaluation was
+     * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
      * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
      * archives the finding.</p> </li> </ul> </li> </ul>
      */
@@ -64,8 +64,8 @@ namespace Model
      * is not supported for your configuration.</p> </li> <li> <p> <code>FAILED</code>
      * - Standards check failed for at least one evaluated resource.</p> </li> <li> <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-     * outage, API error, or because the result of the AWS Config evaluation was
-     * <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * outage, API error, or because the result of the Config evaluation was
+     * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
      * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
      * archives the finding.</p> </li> </ul> </li> </ul>
      */
@@ -79,8 +79,8 @@ namespace Model
      * is not supported for your configuration.</p> </li> <li> <p> <code>FAILED</code>
      * - Standards check failed for at least one evaluated resource.</p> </li> <li> <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-     * outage, API error, or because the result of the AWS Config evaluation was
-     * <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * outage, API error, or because the result of the Config evaluation was
+     * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
      * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
      * archives the finding.</p> </li> </ul> </li> </ul>
      */
@@ -94,8 +94,8 @@ namespace Model
      * is not supported for your configuration.</p> </li> <li> <p> <code>FAILED</code>
      * - Standards check failed for at least one evaluated resource.</p> </li> <li> <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-     * outage, API error, or because the result of the AWS Config evaluation was
-     * <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * outage, API error, or because the result of the Config evaluation was
+     * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
      * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
      * archives the finding.</p> </li> </ul> </li> </ul>
      */
@@ -109,8 +109,8 @@ namespace Model
      * is not supported for your configuration.</p> </li> <li> <p> <code>FAILED</code>
      * - Standards check failed for at least one evaluated resource.</p> </li> <li> <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-     * outage, API error, or because the result of the AWS Config evaluation was
-     * <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * outage, API error, or because the result of the Config evaluation was
+     * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
      * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
      * archives the finding.</p> </li> </ul> </li> </ul>
      */
@@ -124,8 +124,8 @@ namespace Model
      * is not supported for your configuration.</p> </li> <li> <p> <code>FAILED</code>
      * - Standards check failed for at least one evaluated resource.</p> </li> <li> <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-     * outage, API error, or because the result of the AWS Config evaluation was
-     * <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * outage, API error, or because the result of the Config evaluation was
+     * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
      * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
      * archives the finding.</p> </li> </ul> </li> </ul>
      */
@@ -201,7 +201,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline const Aws::Vector<StatusReason>& GetStatusReasons() const{ return m_statusReasons; }
 
@@ -210,7 +210,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline bool StatusReasonsHasBeenSet() const { return m_statusReasonsHasBeenSet; }
 
@@ -219,7 +219,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline void SetStatusReasons(const Aws::Vector<StatusReason>& value) { m_statusReasonsHasBeenSet = true; m_statusReasons = value; }
 
@@ -228,7 +228,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline void SetStatusReasons(Aws::Vector<StatusReason>&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons = std::move(value); }
 
@@ -237,7 +237,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline Compliance& WithStatusReasons(const Aws::Vector<StatusReason>& value) { SetStatusReasons(value); return *this;}
 
@@ -246,7 +246,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline Compliance& WithStatusReasons(Aws::Vector<StatusReason>&& value) { SetStatusReasons(std::move(value)); return *this;}
 
@@ -255,7 +255,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline Compliance& AddStatusReasons(const StatusReason& value) { m_statusReasonsHasBeenSet = true; m_statusReasons.push_back(value); return *this; }
 
@@ -264,7 +264,7 @@ namespace Model
      * <code>Status</code>. For the list of status reason codes and their meanings, see
      * <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline Compliance& AddStatusReasons(StatusReason&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons.push_back(std::move(value)); return *this; }
 

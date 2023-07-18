@@ -39,7 +39,12 @@ Job::Job() :
     m_completedAtHasBeenSet(false),
     m_jobProcessDetailsHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_jobTemplateArnHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false),
+    m_documentParametersHasBeenSet(false),
+    m_isConcurrent(false),
+    m_isConcurrentHasBeenSet(false)
 {
 }
 
@@ -64,7 +69,12 @@ Job::Job(JsonView jsonValue) :
     m_completedAtHasBeenSet(false),
     m_jobProcessDetailsHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_jobTemplateArnHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false),
+    m_documentParametersHasBeenSet(false),
+    m_isConcurrent(false),
+    m_isConcurrentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +210,37 @@ Job& Job::operator =(JsonView jsonValue)
     m_namespaceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jobTemplateArn"))
+  {
+    m_jobTemplateArn = jsonValue.GetString("jobTemplateArn");
+
+    m_jobTemplateArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobExecutionsRetryConfig"))
+  {
+    m_jobExecutionsRetryConfig = jsonValue.GetObject("jobExecutionsRetryConfig");
+
+    m_jobExecutionsRetryConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("documentParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> documentParametersJsonMap = jsonValue.GetObject("documentParameters").GetAllObjects();
+    for(auto& documentParametersItem : documentParametersJsonMap)
+    {
+      m_documentParameters[documentParametersItem.first] = documentParametersItem.second.AsString();
+    }
+    m_documentParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isConcurrent"))
+  {
+    m_isConcurrent = jsonValue.GetBool("isConcurrent");
+
+    m_isConcurrentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -312,6 +353,35 @@ JsonValue Job::Jsonize() const
   if(m_namespaceIdHasBeenSet)
   {
    payload.WithString("namespaceId", m_namespaceId);
+
+  }
+
+  if(m_jobTemplateArnHasBeenSet)
+  {
+   payload.WithString("jobTemplateArn", m_jobTemplateArn);
+
+  }
+
+  if(m_jobExecutionsRetryConfigHasBeenSet)
+  {
+   payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
+
+  }
+
+  if(m_documentParametersHasBeenSet)
+  {
+   JsonValue documentParametersJsonMap;
+   for(auto& documentParametersItem : m_documentParameters)
+   {
+     documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
+   }
+   payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
+
+  }
+
+  if(m_isConcurrentHasBeenSet)
+  {
+   payload.WithBool("isConcurrent", m_isConcurrent);
 
   }
 

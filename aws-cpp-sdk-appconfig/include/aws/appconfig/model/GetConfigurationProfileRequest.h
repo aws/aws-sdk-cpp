@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline GetConfigurationProfileRequest& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline GetConfigurationProfileRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline GetConfigurationProfileRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
 

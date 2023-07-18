@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>This API is not supported.</p><p><h3>See Also:</h3>   <a
+   * <p>An Amazon CloudWatch alarm configured to monitor metrics on an
+   * endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Alarm">AWS API
    * Reference</a></p>
    */
@@ -38,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline Alarm& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline Alarm& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of a CloudWatch alarm in your account.</p>
      */
     inline Alarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 

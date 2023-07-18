@@ -22,6 +22,7 @@ PackagingGroup::PackagingGroup() :
     m_arnHasBeenSet(false),
     m_authorizationHasBeenSet(false),
     m_domainNameHasBeenSet(false),
+    m_egressAccessLogsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ PackagingGroup::PackagingGroup(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_authorizationHasBeenSet(false),
     m_domainNameHasBeenSet(false),
+    m_egressAccessLogsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
     m_domainName = jsonValue.GetString("domainName");
 
     m_domainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("egressAccessLogs"))
+  {
+    m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
+
+    m_egressAccessLogsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -99,6 +108,12 @@ JsonValue PackagingGroup::Jsonize() const
   if(m_domainNameHasBeenSet)
   {
    payload.WithString("domainName", m_domainName);
+
+  }
+
+  if(m_egressAccessLogsHasBeenSet)
+  {
+   payload.WithObject("egressAccessLogs", m_egressAccessLogs.Jsonize());
 
   }
 

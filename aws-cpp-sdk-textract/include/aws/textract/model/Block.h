@@ -11,6 +11,7 @@
 #include <aws/textract/model/Geometry.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/model/SelectionStatus.h>
+#include <aws/textract/model/Query.h>
 #include <aws/textract/model/Relationship.h>
 #include <aws/textract/model/EntityType.h>
 #include <utility>
@@ -82,7 +83,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline const BlockType& GetBlockType() const{ return m_blockType; }
 
@@ -111,7 +116,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline bool BlockTypeHasBeenSet() const { return m_blockTypeHasBeenSet; }
 
@@ -140,7 +149,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline void SetBlockType(const BlockType& value) { m_blockTypeHasBeenSet = true; m_blockType = value; }
 
@@ -169,7 +182,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline void SetBlockType(BlockType&& value) { m_blockTypeHasBeenSet = true; m_blockType = std::move(value); }
 
@@ -198,7 +215,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline Block& WithBlockType(const BlockType& value) { SetBlockType(value); return *this;}
 
@@ -227,7 +248,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline Block& WithBlockType(BlockType&& value) { SetBlockType(std::move(value)); return *this;}
 
@@ -749,46 +774,77 @@ namespace Model
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline int GetPage() const{ return m_page; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline Block& WithPage(int value) { SetPage(value); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const Query& GetQuery() const{ return m_query; }
+
+    /**
+     * <p/>
+     */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetQuery(const Query& value) { m_queryHasBeenSet = true; m_query = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetQuery(Query&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline Block& WithQuery(const Query& value) { SetQuery(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Block& WithQuery(Query&& value) { SetQuery(std::move(value)); return *this;}
 
   private:
 
@@ -833,6 +889,9 @@ namespace Model
 
     int m_page;
     bool m_pageHasBeenSet;
+
+    Query m_query;
+    bool m_queryHasBeenSet;
   };
 
 } // namespace Model

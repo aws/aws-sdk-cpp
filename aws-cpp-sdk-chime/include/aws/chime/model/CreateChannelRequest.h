@@ -36,6 +36,8 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
      * <p>The ARN of the channel request.</p>
@@ -171,42 +173,42 @@ namespace Model
     /**
      * <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>.
      * Private channels aren't discoverable by users outside the channel. Public
-     * channels are discoverable by anyone in the app instance.</p>
+     * channels are discoverable by anyone in the <code>AppInstance</code>.</p>
      */
     inline const ChannelPrivacy& GetPrivacy() const{ return m_privacy; }
 
     /**
      * <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>.
      * Private channels aren't discoverable by users outside the channel. Public
-     * channels are discoverable by anyone in the app instance.</p>
+     * channels are discoverable by anyone in the <code>AppInstance</code>.</p>
      */
     inline bool PrivacyHasBeenSet() const { return m_privacyHasBeenSet; }
 
     /**
      * <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>.
      * Private channels aren't discoverable by users outside the channel. Public
-     * channels are discoverable by anyone in the app instance.</p>
+     * channels are discoverable by anyone in the <code>AppInstance</code>.</p>
      */
     inline void SetPrivacy(const ChannelPrivacy& value) { m_privacyHasBeenSet = true; m_privacy = value; }
 
     /**
      * <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>.
      * Private channels aren't discoverable by users outside the channel. Public
-     * channels are discoverable by anyone in the app instance.</p>
+     * channels are discoverable by anyone in the <code>AppInstance</code>.</p>
      */
     inline void SetPrivacy(ChannelPrivacy&& value) { m_privacyHasBeenSet = true; m_privacy = std::move(value); }
 
     /**
      * <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>.
      * Private channels aren't discoverable by users outside the channel. Public
-     * channels are discoverable by anyone in the app instance.</p>
+     * channels are discoverable by anyone in the <code>AppInstance</code>.</p>
      */
     inline CreateChannelRequest& WithPrivacy(const ChannelPrivacy& value) { SetPrivacy(value); return *this;}
 
     /**
      * <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>.
      * Private channels aren't discoverable by users outside the channel. Public
-     * channels are discoverable by anyone in the app instance.</p>
+     * channels are discoverable by anyone in the <code>AppInstance</code>.</p>
      */
     inline CreateChannelRequest& WithPrivacy(ChannelPrivacy&& value) { SetPrivacy(std::move(value)); return *this;}
 
@@ -293,29 +295,86 @@ namespace Model
     inline CreateChannelRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline CreateChannelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline CreateChannelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline CreateChannelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags for the creation request.</p>
+     */
     inline CreateChannelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline CreateChannelRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline CreateChannelRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline CreateChannelRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
   private:
 
@@ -339,6 +398,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_chimeBearer;
+    bool m_chimeBearerHasBeenSet;
   };
 
 } // namespace Model

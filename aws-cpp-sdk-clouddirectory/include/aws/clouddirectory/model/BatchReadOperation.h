@@ -267,22 +267,40 @@ namespace Model
     inline BatchReadOperation& WithGetObjectAttributes(BatchGetObjectAttributes&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline const BatchListObjectParents& GetListObjectParents() const{ return m_listObjectParents; }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline bool ListObjectParentsHasBeenSet() const { return m_listObjectParentsHasBeenSet; }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline void SetListObjectParents(const BatchListObjectParents& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = value; }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline void SetListObjectParents(BatchListObjectParents&& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = std::move(value); }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline BatchReadOperation& WithListObjectParents(const BatchListObjectParents& value) { SetListObjectParents(value); return *this;}
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline BatchReadOperation& WithListObjectParents(BatchListObjectParents&& value) { SetListObjectParents(std::move(value)); return *this;}
 
 

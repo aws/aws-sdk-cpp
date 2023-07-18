@@ -18,7 +18,9 @@ UpdateAuthorizerRequest::UpdateAuthorizerRequest() :
     m_tokenKeyNameHasBeenSet(false),
     m_tokenSigningPublicKeysHasBeenSet(false),
     m_status(AuthorizerStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_enableCachingForHttp(false),
+    m_enableCachingForHttpHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,12 @@ Aws::String UpdateAuthorizerRequest::SerializePayload() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", AuthorizerStatusMapper::GetNameForAuthorizerStatus(m_status));
+  }
+
+  if(m_enableCachingForHttpHasBeenSet)
+  {
+   payload.WithBool("enableCachingForHttp", m_enableCachingForHttp);
+
   }
 
   return payload.View().WriteReadable();

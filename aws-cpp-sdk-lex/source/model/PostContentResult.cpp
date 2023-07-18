@@ -30,11 +30,11 @@ PostContentResult::PostContentResult(PostContentResult&& toMove) :
     m_slots(std::move(toMove.m_slots)),
     m_sessionAttributes(std::move(toMove.m_sessionAttributes)),
     m_sentimentResponse(std::move(toMove.m_sentimentResponse)),
-    m_message(std::move(toMove.m_message)),
+    m_encodedMessage(std::move(toMove.m_encodedMessage)),
     m_messageFormat(toMove.m_messageFormat),
     m_dialogState(toMove.m_dialogState),
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
-    m_inputTranscript(std::move(toMove.m_inputTranscript)),
+    m_encodedInputTranscript(std::move(toMove.m_encodedInputTranscript)),
     m_audioStream(std::move(toMove.m_audioStream)),
     m_botVersion(std::move(toMove.m_botVersion)),
     m_sessionId(std::move(toMove.m_sessionId)),
@@ -56,11 +56,11 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    m_slots = std::move(toMove.m_slots);
    m_sessionAttributes = std::move(toMove.m_sessionAttributes);
    m_sentimentResponse = std::move(toMove.m_sentimentResponse);
-   m_message = std::move(toMove.m_message);
+   m_encodedMessage = std::move(toMove.m_encodedMessage);
    m_messageFormat = toMove.m_messageFormat;
    m_dialogState = toMove.m_dialogState;
    m_slotToElicit = std::move(toMove.m_slotToElicit);
-   m_inputTranscript = std::move(toMove.m_inputTranscript);
+   m_encodedInputTranscript = std::move(toMove.m_encodedInputTranscript);
    m_audioStream = std::move(toMove.m_audioStream);
    m_botVersion = std::move(toMove.m_botVersion);
    m_sessionId = std::move(toMove.m_sessionId);
@@ -123,10 +123,10 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
     m_sentimentResponse = sentimentResponseIter->second;
   }
 
-  const auto& messageIter = headers.find("x-amz-lex-message");
-  if(messageIter != headers.end())
+  const auto& encodedMessageIter = headers.find("x-amz-lex-encoded-message");
+  if(encodedMessageIter != headers.end())
   {
-    m_message = messageIter->second;
+    m_encodedMessage = encodedMessageIter->second;
   }
 
   const auto& messageFormatIter = headers.find("x-amz-lex-message-format");
@@ -147,10 +147,10 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
     m_slotToElicit = slotToElicitIter->second;
   }
 
-  const auto& inputTranscriptIter = headers.find("x-amz-lex-input-transcript");
-  if(inputTranscriptIter != headers.end())
+  const auto& encodedInputTranscriptIter = headers.find("x-amz-lex-encoded-input-transcript");
+  if(encodedInputTranscriptIter != headers.end())
   {
-    m_inputTranscript = inputTranscriptIter->second;
+    m_encodedInputTranscript = encodedInputTranscriptIter->second;
   }
 
   const auto& botVersionIter = headers.find("x-amz-lex-bot-version");

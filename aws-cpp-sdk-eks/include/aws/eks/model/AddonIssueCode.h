@@ -20,7 +20,10 @@ namespace Model
     InternalFailure,
     ClusterUnreachable,
     InsufficientNumberOfReplicas,
-    ConfigurationConflict
+    ConfigurationConflict,
+    AdmissionRequestDenied,
+    UnsupportedAddonModification,
+    K8sResourceNotFound
   };
 
 namespace AddonIssueCodeMapper

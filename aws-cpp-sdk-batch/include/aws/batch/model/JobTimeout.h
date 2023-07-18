@@ -37,29 +37,29 @@ namespace Model
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline int GetAttemptDurationSeconds() const{ return m_attemptDurationSeconds; }
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline bool AttemptDurationSecondsHasBeenSet() const { return m_attemptDurationSecondsHasBeenSet; }
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline void SetAttemptDurationSeconds(int value) { m_attemptDurationSecondsHasBeenSet = true; m_attemptDurationSeconds = value; }
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline JobTimeout& WithAttemptDurationSeconds(int value) { SetAttemptDurationSeconds(value); return *this;}
 

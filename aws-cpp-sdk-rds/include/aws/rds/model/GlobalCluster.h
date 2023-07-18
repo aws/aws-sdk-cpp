@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/FailoverState.h>
 #include <aws/rds/model/GlobalClusterMember.h>
 #include <utility>
 
@@ -43,107 +44,115 @@ namespace Model
 
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline GlobalCluster& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline GlobalCluster& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> Contains a user-supplied global database cluster identifier. This identifier
-     * is the unique key that identifies a global database cluster. </p>
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
      */
     inline GlobalCluster& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
 
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline const Aws::String& GetGlobalClusterResourceId() const{ return m_globalClusterResourceId; }
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline bool GlobalClusterResourceIdHasBeenSet() const { return m_globalClusterResourceIdHasBeenSet; }
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline void SetGlobalClusterResourceId(const Aws::String& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = value; }
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline void SetGlobalClusterResourceId(Aws::String&& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = std::move(value); }
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline void SetGlobalClusterResourceId(const char* value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId.assign(value); }
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(const Aws::String& value) { SetGlobalClusterResourceId(value); return *this;}
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(Aws::String&& value) { SetGlobalClusterResourceId(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
-     * customer master key (CMK) for the DB cluster is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
+     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is
+     * accessed.</p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(const char* value) { SetGlobalClusterResourceId(value); return *this;}
 
@@ -231,42 +240,42 @@ namespace Model
 
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline GlobalCluster& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline GlobalCluster& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p> The Aurora database engine used by the global database cluster. </p>
+     * <p>The Aurora database engine used by the global database cluster.</p>
      */
     inline GlobalCluster& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -313,135 +322,184 @@ namespace Model
 
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline GlobalCluster& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline GlobalCluster& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p> The default database name within the new global database cluster. </p>
+     * <p>The default database name within the new global database cluster.</p>
      */
     inline GlobalCluster& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
 
     /**
-     * <p> The storage encryption setting for the global database cluster. </p>
+     * <p>The storage encryption setting for the global database cluster.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p> The storage encryption setting for the global database cluster. </p>
+     * <p>The storage encryption setting for the global database cluster.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p> The storage encryption setting for the global database cluster. </p>
+     * <p>The storage encryption setting for the global database cluster.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p> The storage encryption setting for the global database cluster. </p>
+     * <p>The storage encryption setting for the global database cluster.</p>
      */
     inline GlobalCluster& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
 
     /**
-     * <p> The deletion protection setting for the new global database cluster. </p>
+     * <p>The deletion protection setting for the new global database cluster.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p> The deletion protection setting for the new global database cluster. </p>
+     * <p>The deletion protection setting for the new global database cluster.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p> The deletion protection setting for the new global database cluster. </p>
+     * <p>The deletion protection setting for the new global database cluster.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p> The deletion protection setting for the new global database cluster. </p>
+     * <p>The deletion protection setting for the new global database cluster.</p>
      */
     inline GlobalCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline const Aws::Vector<GlobalClusterMember>& GetGlobalClusterMembers() const{ return m_globalClusterMembers; }
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline bool GlobalClusterMembersHasBeenSet() const { return m_globalClusterMembersHasBeenSet; }
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline void SetGlobalClusterMembers(const Aws::Vector<GlobalClusterMember>& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers = value; }
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline void SetGlobalClusterMembers(Aws::Vector<GlobalClusterMember>&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers = std::move(value); }
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline GlobalCluster& WithGlobalClusterMembers(const Aws::Vector<GlobalClusterMember>& value) { SetGlobalClusterMembers(value); return *this;}
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline GlobalCluster& WithGlobalClusterMembers(Aws::Vector<GlobalClusterMember>&& value) { SetGlobalClusterMembers(std::move(value)); return *this;}
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline GlobalCluster& AddGlobalClusterMembers(const GlobalClusterMember& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.push_back(value); return *this; }
 
     /**
-     * <p> The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item. </p>
+     * <p>The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item.</p>
      */
     inline GlobalCluster& AddGlobalClusterMembers(GlobalClusterMember&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     */
+    inline const FailoverState& GetFailoverState() const{ return m_failoverState; }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     */
+    inline bool FailoverStateHasBeenSet() const { return m_failoverStateHasBeenSet; }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     */
+    inline void SetFailoverState(const FailoverState& value) { m_failoverStateHasBeenSet = true; m_failoverState = value; }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     */
+    inline void SetFailoverState(FailoverState&& value) { m_failoverStateHasBeenSet = true; m_failoverState = std::move(value); }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     */
+    inline GlobalCluster& WithFailoverState(const FailoverState& value) { SetFailoverState(value); return *this;}
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     */
+    inline GlobalCluster& WithFailoverState(FailoverState&& value) { SetFailoverState(std::move(value)); return *this;}
 
   private:
 
@@ -474,6 +532,9 @@ namespace Model
 
     Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
     bool m_globalClusterMembersHasBeenSet;
+
+    FailoverState m_failoverState;
+    bool m_failoverStateHasBeenSet;
   };
 
 } // namespace Model

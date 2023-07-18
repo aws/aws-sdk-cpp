@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The streaming configuration of an app instance.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of the streaming configuration of an
+   * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceStreamingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The data type of the app instance.</p>
+     * <p>The type of data to be streamed.</p>
      */
     inline const AppInstanceDataType& GetAppInstanceDataType() const{ return m_appInstanceDataType; }
 
     /**
-     * <p>The data type of the app instance.</p>
+     * <p>The type of data to be streamed.</p>
      */
     inline bool AppInstanceDataTypeHasBeenSet() const { return m_appInstanceDataTypeHasBeenSet; }
 
     /**
-     * <p>The data type of the app instance.</p>
+     * <p>The type of data to be streamed.</p>
      */
     inline void SetAppInstanceDataType(const AppInstanceDataType& value) { m_appInstanceDataTypeHasBeenSet = true; m_appInstanceDataType = value; }
 
     /**
-     * <p>The data type of the app instance.</p>
+     * <p>The type of data to be streamed.</p>
      */
     inline void SetAppInstanceDataType(AppInstanceDataType&& value) { m_appInstanceDataTypeHasBeenSet = true; m_appInstanceDataType = std::move(value); }
 
     /**
-     * <p>The data type of the app instance.</p>
+     * <p>The type of data to be streamed.</p>
      */
     inline AppInstanceStreamingConfiguration& WithAppInstanceDataType(const AppInstanceDataType& value) { SetAppInstanceDataType(value); return *this;}
 
     /**
-     * <p>The data type of the app instance.</p>
+     * <p>The type of data to be streamed.</p>
      */
     inline AppInstanceStreamingConfiguration& WithAppInstanceDataType(AppInstanceDataType&& value) { SetAppInstanceDataType(std::move(value)); return *this;}
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int BusinessCalling_HASH = HashingUtils::HashString("BusinessCalling");
         static const int VoiceConnector_HASH = HashingUtils::HashString("VoiceConnector");
+        static const int SipMediaApplicationDialIn_HASH = HashingUtils::HashString("SipMediaApplicationDialIn");
 
 
         PhoneNumberProductType GetPhoneNumberProductTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == VoiceConnector_HASH)
           {
             return PhoneNumberProductType::VoiceConnector;
+          }
+          else if (hashCode == SipMediaApplicationDialIn_HASH)
+          {
+            return PhoneNumberProductType::SipMediaApplicationDialIn;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "BusinessCalling";
           case PhoneNumberProductType::VoiceConnector:
             return "VoiceConnector";
+          case PhoneNumberProductType::SipMediaApplicationDialIn:
+            return "SipMediaApplicationDialIn";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

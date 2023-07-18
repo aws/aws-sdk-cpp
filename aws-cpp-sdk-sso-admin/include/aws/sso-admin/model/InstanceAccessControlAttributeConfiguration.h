@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline const Aws::Vector<AccessControlAttribute>& GetAccessControlAttributes() const{ return m_accessControlAttributes; }
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline bool AccessControlAttributesHasBeenSet() const { return m_accessControlAttributesHasBeenSet; }
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline void SetAccessControlAttributes(const Aws::Vector<AccessControlAttribute>& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes = value; }
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline void SetAccessControlAttributes(Aws::Vector<AccessControlAttribute>&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes = std::move(value); }
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline InstanceAccessControlAttributeConfiguration& WithAccessControlAttributes(const Aws::Vector<AccessControlAttribute>& value) { SetAccessControlAttributes(value); return *this;}
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline InstanceAccessControlAttributeConfiguration& WithAccessControlAttributes(Aws::Vector<AccessControlAttribute>&& value) { SetAccessControlAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline InstanceAccessControlAttributeConfiguration& AddAccessControlAttributes(const AccessControlAttribute& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Lists the attributes that are configured for ABAC in the specified AWS SSO
-     * instance.</p>
+     * <p>Lists the attributes that are configured for ABAC in the specified Amazon Web
+     * Services SSO instance.</p>
      */
     inline InstanceAccessControlAttributeConfiguration& AddAccessControlAttributes(AccessControlAttribute&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes.push_back(std::move(value)); return *this; }
 

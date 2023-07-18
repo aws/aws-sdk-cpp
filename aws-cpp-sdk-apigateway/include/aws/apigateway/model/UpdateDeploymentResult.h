@@ -28,18 +28,9 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>An immutable representation of a <a>RestApi</a> resource that can be called
-   * by users using <a>Stages</a>. A deployment must be associated with a
-   * <a>Stage</a> for it to be callable over the Internet.</p> <div
-   * class="remarks">To create a deployment, call <code>POST</code> on the
-   * <a>Deployments</a> resource of a <a>RestApi</a>. To view, update, or delete a
-   * deployment, call <code>GET</code>, <code>PATCH</code>, or <code>DELETE</code> on
-   * the specified deployment resource
-   * (<code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div> <div
-   * class="seeAlso"><a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>, <a
-   * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS
-   * CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div><p><h3>See
-   * Also:</h3>   <a
+   * <p>An immutable representation of a RestApi resource that can be called by users
+   * using Stages. A deployment must be associated with a Stage for it to be callable
+   * over the Internet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Deployment">AWS
    * API Reference</a></p>
    */
@@ -150,68 +141,68 @@ namespace Model
 
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>>& GetApiSummary() const{ return m_apiSummary; }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline void SetApiSummary(const Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>>& value) { m_apiSummary = value; }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline void SetApiSummary(Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>>&& value) { m_apiSummary = std::move(value); }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& WithApiSummary(const Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>>& value) { SetApiSummary(value); return *this;}
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& WithApiSummary(Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>>&& value) { SetApiSummary(std::move(value)); return *this;}
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& AddApiSummary(const Aws::String& key, const Aws::Map<Aws::String, MethodSnapshot>& value) { m_apiSummary.emplace(key, value); return *this; }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& AddApiSummary(Aws::String&& key, const Aws::Map<Aws::String, MethodSnapshot>& value) { m_apiSummary.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& AddApiSummary(const Aws::String& key, Aws::Map<Aws::String, MethodSnapshot>&& value) { m_apiSummary.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& AddApiSummary(Aws::String&& key, Aws::Map<Aws::String, MethodSnapshot>&& value) { m_apiSummary.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& AddApiSummary(const char* key, Aws::Map<Aws::String, MethodSnapshot>&& value) { m_apiSummary.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.</p>
+     * <p>A summary of the RestApi at the date and time that the deployment resource
+     * was created.</p>
      */
     inline UpdateDeploymentResult& AddApiSummary(const char* key, const Aws::Map<Aws::String, MethodSnapshot>& value) { m_apiSummary.emplace(key, value); return *this; }
 

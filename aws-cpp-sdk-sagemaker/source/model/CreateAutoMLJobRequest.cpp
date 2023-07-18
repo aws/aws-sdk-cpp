@@ -23,7 +23,8 @@ CreateAutoMLJobRequest::CreateAutoMLJobRequest() :
     m_roleArnHasBeenSet(false),
     m_generateCandidateDefinitionsOnly(false),
     m_generateCandidateDefinitionsOnlyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_modelDeployConfigHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,12 @@ Aws::String CreateAutoMLJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_modelDeployConfigHasBeenSet)
+  {
+   payload.WithObject("ModelDeployConfig", m_modelDeployConfig.Jsonize());
 
   }
 

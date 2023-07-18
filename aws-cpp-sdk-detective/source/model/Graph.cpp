@@ -42,7 +42,7 @@ Graph& Graph::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CreatedTime"))
   {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
+    m_createdTime = jsonValue.GetString("CreatedTime");
 
     m_createdTimeHasBeenSet = true;
   }
@@ -62,7 +62,7 @@ JsonValue Graph::Jsonize() const
 
   if(m_createdTimeHasBeenSet)
   {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+   payload.WithString("CreatedTime", m_createdTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   return payload;

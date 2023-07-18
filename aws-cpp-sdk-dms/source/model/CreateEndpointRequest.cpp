@@ -47,7 +47,9 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
-    m_docDbSettingsHasBeenSet(false)
+    m_docDbSettingsHasBeenSet(false),
+    m_redisSettingsHasBeenSet(false),
+    m_gcpMySQLSettingsHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,18 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_docDbSettingsHasBeenSet)
   {
    payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
+
+  }
+
+  if(m_redisSettingsHasBeenSet)
+  {
+   payload.WithObject("RedisSettings", m_redisSettings.Jsonize());
+
+  }
+
+  if(m_gcpMySQLSettingsHasBeenSet)
+  {
+   payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
 
   }
 

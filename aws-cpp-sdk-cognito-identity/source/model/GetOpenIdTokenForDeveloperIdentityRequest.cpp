@@ -16,6 +16,7 @@ GetOpenIdTokenForDeveloperIdentityRequest::GetOpenIdTokenForDeveloperIdentityReq
     m_identityPoolIdHasBeenSet(false),
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
+    m_principalTagsHasBeenSet(false),
     m_tokenDuration(0),
     m_tokenDurationHasBeenSet(false)
 {
@@ -45,6 +46,17 @@ Aws::String GetOpenIdTokenForDeveloperIdentityRequest::SerializePayload() const
      loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
    }
    payload.WithObject("Logins", std::move(loginsJsonMap));
+
+  }
+
+  if(m_principalTagsHasBeenSet)
+  {
+   JsonValue principalTagsJsonMap;
+   for(auto& principalTagsItem : m_principalTags)
+   {
+     principalTagsJsonMap.WithString(principalTagsItem.first, principalTagsItem.second);
+   }
+   payload.WithObject("PrincipalTags", std::move(principalTagsJsonMap));
 
   }
 

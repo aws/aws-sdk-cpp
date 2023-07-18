@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Represents the JSON-specific options that define how input is to be
-   * interpreted by AWS Glue DataBrew.</p><p><h3>See Also:</h3>   <a
+   * interpreted by Glue DataBrew.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JsonOptions">AWS
    * API Reference</a></p>
    */

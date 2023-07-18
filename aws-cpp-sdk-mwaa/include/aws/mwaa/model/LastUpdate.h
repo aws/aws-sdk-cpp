@@ -7,6 +7,7 @@
 #include <aws/mwaa/MWAA_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mwaa/model/UpdateError.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa/model/UpdateStatus.h>
 #include <utility>
 
@@ -26,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Last update information for the environment.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the status of the last update on the environment, and any errors
+   * that were encountered.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LastUpdate">AWS API
    * Reference</a></p>
    */
@@ -40,94 +42,143 @@ namespace Model
 
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline LastUpdate& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline LastUpdate& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline const UpdateError& GetError() const{ return m_error; }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline void SetError(const UpdateError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline void SetError(UpdateError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline LastUpdate& WithError(const UpdateError& value) { SetError(value); return *this;}
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline LastUpdate& WithError(UpdateError&& value) { SetError(std::move(value)); return *this;}
 
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline LastUpdate& WithSource(const Aws::String& value) { SetSource(value); return *this;}
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline LastUpdate& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline LastUpdate& WithSource(const char* value) { SetSource(value); return *this;}
+
+
+    /**
+     * <p>The status of the last update on the environment.</p>
      */
     inline const UpdateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline void SetStatus(const UpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline void SetStatus(UpdateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline LastUpdate& WithStatus(const UpdateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline LastUpdate& WithStatus(UpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -138,6 +189,9 @@ namespace Model
 
     UpdateError m_error;
     bool m_errorHasBeenSet;
+
+    Aws::String m_source;
+    bool m_sourceHasBeenSet;
 
     UpdateStatus m_status;
     bool m_statusHasBeenSet;

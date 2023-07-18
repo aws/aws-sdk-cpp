@@ -49,11 +49,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -62,11 +62,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -75,11 +75,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -88,11 +88,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -101,11 +101,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -114,11 +114,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline Alias& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -127,11 +127,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline Alias& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -140,11 +140,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline Alias& WithName(const char* value) { SetName(value); return *this;}
 
@@ -156,7 +156,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline const AliasLifecycle& GetLifecycle() const{ return m_lifecycle; }
@@ -168,7 +168,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -180,7 +180,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline void SetLifecycle(const AliasLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
@@ -192,7 +192,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline void SetLifecycle(AliasLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
@@ -204,7 +204,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline Alias& WithLifecycle(const AliasLifecycle& value) { SetLifecycle(value); return *this;}
@@ -216,7 +216,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline Alias& WithLifecycle(AliasLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}

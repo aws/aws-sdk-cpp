@@ -25,7 +25,8 @@ ApplicationConfigurationDescription::ApplicationConfigurationDescription() :
     m_flinkApplicationConfigurationDescriptionHasBeenSet(false),
     m_environmentPropertyDescriptionsHasBeenSet(false),
     m_applicationSnapshotConfigurationDescriptionHasBeenSet(false),
-    m_vpcConfigurationDescriptionsHasBeenSet(false)
+    m_vpcConfigurationDescriptionsHasBeenSet(false),
+    m_zeppelinApplicationConfigurationDescriptionHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ApplicationConfigurationDescription::ApplicationConfigurationDescription(JsonVie
     m_flinkApplicationConfigurationDescriptionHasBeenSet(false),
     m_environmentPropertyDescriptionsHasBeenSet(false),
     m_applicationSnapshotConfigurationDescriptionHasBeenSet(false),
-    m_vpcConfigurationDescriptionsHasBeenSet(false)
+    m_vpcConfigurationDescriptionsHasBeenSet(false),
+    m_zeppelinApplicationConfigurationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ ApplicationConfigurationDescription& ApplicationConfigurationDescription::operat
     m_vpcConfigurationDescriptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ZeppelinApplicationConfigurationDescription"))
+  {
+    m_zeppelinApplicationConfigurationDescription = jsonValue.GetObject("ZeppelinApplicationConfigurationDescription");
+
+    m_zeppelinApplicationConfigurationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue ApplicationConfigurationDescription::Jsonize() const
      vpcConfigurationDescriptionsJsonList[vpcConfigurationDescriptionsIndex].AsObject(m_vpcConfigurationDescriptions[vpcConfigurationDescriptionsIndex].Jsonize());
    }
    payload.WithArray("VpcConfigurationDescriptions", std::move(vpcConfigurationDescriptionsJsonList));
+
+  }
+
+  if(m_zeppelinApplicationConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ZeppelinApplicationConfigurationDescription", m_zeppelinApplicationConfigurationDescription.Jsonize());
 
   }
 

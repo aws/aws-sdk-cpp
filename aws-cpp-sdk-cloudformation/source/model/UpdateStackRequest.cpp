@@ -27,6 +27,8 @@ UpdateStackRequest::UpdateStackRequest() :
     m_stackPolicyURLHasBeenSet(false),
     m_notificationARNsHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_disableRollback(false),
+    m_disableRollbackHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false)
 {
 }
@@ -136,6 +138,11 @@ Aws::String UpdateStackRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_disableRollbackHasBeenSet)
+  {
+    ss << "DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
 
   if(m_clientRequestTokenHasBeenSet)

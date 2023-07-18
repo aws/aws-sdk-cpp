@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/databrew/model/AnalyticsMode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -25,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the data being being transformed during an AWS Glue DataBrew
-   * project session.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the data being transformed during an action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ViewFrame">AWS
    * API Reference</a></p>
    */
@@ -134,6 +135,89 @@ namespace Model
      */
     inline ViewFrame& AddHiddenColumns(const char* value) { m_hiddenColumnsHasBeenSet = true; m_hiddenColumns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The starting index for the range of rows to return in the view frame.</p>
+     */
+    inline int GetStartRowIndex() const{ return m_startRowIndex; }
+
+    /**
+     * <p>The starting index for the range of rows to return in the view frame.</p>
+     */
+    inline bool StartRowIndexHasBeenSet() const { return m_startRowIndexHasBeenSet; }
+
+    /**
+     * <p>The starting index for the range of rows to return in the view frame.</p>
+     */
+    inline void SetStartRowIndex(int value) { m_startRowIndexHasBeenSet = true; m_startRowIndex = value; }
+
+    /**
+     * <p>The starting index for the range of rows to return in the view frame.</p>
+     */
+    inline ViewFrame& WithStartRowIndex(int value) { SetStartRowIndex(value); return *this;}
+
+
+    /**
+     * <p>The number of rows to include in the view frame, beginning with the
+     * <code>StartRowIndex</code> value.</p>
+     */
+    inline int GetRowRange() const{ return m_rowRange; }
+
+    /**
+     * <p>The number of rows to include in the view frame, beginning with the
+     * <code>StartRowIndex</code> value.</p>
+     */
+    inline bool RowRangeHasBeenSet() const { return m_rowRangeHasBeenSet; }
+
+    /**
+     * <p>The number of rows to include in the view frame, beginning with the
+     * <code>StartRowIndex</code> value.</p>
+     */
+    inline void SetRowRange(int value) { m_rowRangeHasBeenSet = true; m_rowRange = value; }
+
+    /**
+     * <p>The number of rows to include in the view frame, beginning with the
+     * <code>StartRowIndex</code> value.</p>
+     */
+    inline ViewFrame& WithRowRange(int value) { SetRowRange(value); return *this;}
+
+
+    /**
+     * <p>Controls if analytics computation is enabled or disabled. Enabled by
+     * default.</p>
+     */
+    inline const AnalyticsMode& GetAnalytics() const{ return m_analytics; }
+
+    /**
+     * <p>Controls if analytics computation is enabled or disabled. Enabled by
+     * default.</p>
+     */
+    inline bool AnalyticsHasBeenSet() const { return m_analyticsHasBeenSet; }
+
+    /**
+     * <p>Controls if analytics computation is enabled or disabled. Enabled by
+     * default.</p>
+     */
+    inline void SetAnalytics(const AnalyticsMode& value) { m_analyticsHasBeenSet = true; m_analytics = value; }
+
+    /**
+     * <p>Controls if analytics computation is enabled or disabled. Enabled by
+     * default.</p>
+     */
+    inline void SetAnalytics(AnalyticsMode&& value) { m_analyticsHasBeenSet = true; m_analytics = std::move(value); }
+
+    /**
+     * <p>Controls if analytics computation is enabled or disabled. Enabled by
+     * default.</p>
+     */
+    inline ViewFrame& WithAnalytics(const AnalyticsMode& value) { SetAnalytics(value); return *this;}
+
+    /**
+     * <p>Controls if analytics computation is enabled or disabled. Enabled by
+     * default.</p>
+     */
+    inline ViewFrame& WithAnalytics(AnalyticsMode&& value) { SetAnalytics(std::move(value)); return *this;}
+
   private:
 
     int m_startColumnIndex;
@@ -144,6 +228,15 @@ namespace Model
 
     Aws::Vector<Aws::String> m_hiddenColumns;
     bool m_hiddenColumnsHasBeenSet;
+
+    int m_startRowIndex;
+    bool m_startRowIndexHasBeenSet;
+
+    int m_rowRange;
+    bool m_rowRangeHasBeenSet;
+
+    AnalyticsMode m_analytics;
+    bool m_analyticsHasBeenSet;
   };
 
 } // namespace Model

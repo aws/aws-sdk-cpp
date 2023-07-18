@@ -27,7 +27,8 @@ namespace Model
     VOICE,
     EMAIL,
     BAIDU,
-    CUSTOM
+    CUSTOM,
+    IN_APP
   };
 
 namespace ChannelTypeMapper

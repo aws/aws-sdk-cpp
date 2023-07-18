@@ -17,12 +17,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeBackupVaultResult::DescribeBackupVaultResult() : 
-    m_numberOfRecoveryPoints(0)
+    m_numberOfRecoveryPoints(0),
+    m_locked(false),
+    m_minRetentionDays(0),
+    m_maxRetentionDays(0)
 {
 }
 
 DescribeBackupVaultResult::DescribeBackupVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfRecoveryPoints(0)
+    m_numberOfRecoveryPoints(0),
+    m_locked(false),
+    m_minRetentionDays(0),
+    m_maxRetentionDays(0)
 {
   *this = result;
 }
@@ -63,6 +69,30 @@ DescribeBackupVaultResult& DescribeBackupVaultResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("NumberOfRecoveryPoints"))
   {
     m_numberOfRecoveryPoints = jsonValue.GetInt64("NumberOfRecoveryPoints");
+
+  }
+
+  if(jsonValue.ValueExists("Locked"))
+  {
+    m_locked = jsonValue.GetBool("Locked");
+
+  }
+
+  if(jsonValue.ValueExists("MinRetentionDays"))
+  {
+    m_minRetentionDays = jsonValue.GetInt64("MinRetentionDays");
+
+  }
+
+  if(jsonValue.ValueExists("MaxRetentionDays"))
+  {
+    m_maxRetentionDays = jsonValue.GetInt64("MaxRetentionDays");
+
+  }
+
+  if(jsonValue.ValueExists("LockDate"))
+  {
+    m_lockDate = jsonValue.GetDouble("LockDate");
 
   }
 

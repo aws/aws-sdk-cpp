@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArn = value; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const char* value) { m_appInstanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline ListAppInstanceUsersResult& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline ListAppInstanceUsersResult& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline ListAppInstanceUsersResult& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
 
 
     /**
-     * <p>The information for each of the requested app instance users.</p>
+     * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
     inline const Aws::Vector<AppInstanceUserSummary>& GetAppInstanceUsers() const{ return m_appInstanceUsers; }
 
     /**
-     * <p>The information for each of the requested app instance users.</p>
+     * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
     inline void SetAppInstanceUsers(const Aws::Vector<AppInstanceUserSummary>& value) { m_appInstanceUsers = value; }
 
     /**
-     * <p>The information for each of the requested app instance users.</p>
+     * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
     inline void SetAppInstanceUsers(Aws::Vector<AppInstanceUserSummary>&& value) { m_appInstanceUsers = std::move(value); }
 
     /**
-     * <p>The information for each of the requested app instance users.</p>
+     * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
     inline ListAppInstanceUsersResult& WithAppInstanceUsers(const Aws::Vector<AppInstanceUserSummary>& value) { SetAppInstanceUsers(value); return *this;}
 
     /**
-     * <p>The information for each of the requested app instance users.</p>
+     * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
     inline ListAppInstanceUsersResult& WithAppInstanceUsers(Aws::Vector<AppInstanceUserSummary>&& value) { SetAppInstanceUsers(std::move(value)); return *this;}
 
     /**
-     * <p>The information for each of the requested app instance users.</p>
+     * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
     inline ListAppInstanceUsersResult& AddAppInstanceUsers(const AppInstanceUserSummary& value) { m_appInstanceUsers.push_back(value); return *this; }
 
     /**
-     * <p>The information for each of the requested app instance users.</p>
+     * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
     inline ListAppInstanceUsersResult& AddAppInstanceUsers(AppInstanceUserSummary&& value) { m_appInstanceUsers.push_back(std::move(value)); return *this; }
 

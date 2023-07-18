@@ -199,6 +199,55 @@ namespace Model
 
 
     /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline const Aws::String& GetJobToken() const{ return m_jobToken; }
+
+    /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline bool JobTokenHasBeenSet() const { return m_jobTokenHasBeenSet; }
+
+    /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline void SetJobToken(const Aws::String& value) { m_jobTokenHasBeenSet = true; m_jobToken = value; }
+
+    /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline void SetJobToken(Aws::String&& value) { m_jobTokenHasBeenSet = true; m_jobToken = std::move(value); }
+
+    /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline void SetJobToken(const char* value) { m_jobTokenHasBeenSet = true; m_jobToken.assign(value); }
+
+    /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline CreateQuantumTaskRequest& WithJobToken(const Aws::String& value) { SetJobToken(value); return *this;}
+
+    /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline CreateQuantumTaskRequest& WithJobToken(Aws::String&& value) { SetJobToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token for an Amazon Braket job that associates it with the quantum
+     * task.</p>
+     */
+    inline CreateQuantumTaskRequest& WithJobToken(const char* value) { SetJobToken(value); return *this;}
+
+
+    /**
      * <p>The S3 bucket to store task result files in.</p>
      */
     inline const Aws::String& GetOutputS3Bucket() const{ return m_outputS3Bucket; }
@@ -387,6 +436,9 @@ namespace Model
 
     Aws::String m_deviceParameters;
     bool m_deviceParametersHasBeenSet;
+
+    Aws::String m_jobToken;
+    bool m_jobTokenHasBeenSet;
 
     Aws::String m_outputS3Bucket;
     bool m_outputS3BucketHasBeenSet;

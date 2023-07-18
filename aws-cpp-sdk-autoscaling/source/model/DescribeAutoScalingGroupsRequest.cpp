@@ -14,7 +14,8 @@ DescribeAutoScalingGroupsRequest::DescribeAutoScalingGroupsRequest() :
     m_autoScalingGroupNamesHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
+    m_maxRecordsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2011-01-01";

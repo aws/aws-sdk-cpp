@@ -24,7 +24,8 @@ ImprovementSummary::ImprovementSummary() :
     m_questionTitleHasBeenSet(false),
     m_risk(Risk::NOT_SET),
     m_riskHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false)
+    m_improvementPlanUrlHasBeenSet(false),
+    m_improvementPlansHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ImprovementSummary::ImprovementSummary(JsonView jsonValue) :
     m_questionTitleHasBeenSet(false),
     m_risk(Risk::NOT_SET),
     m_riskHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false)
+    m_improvementPlanUrlHasBeenSet(false),
+    m_improvementPlansHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,16 @@ ImprovementSummary& ImprovementSummary::operator =(JsonView jsonValue)
     m_improvementPlanUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImprovementPlans"))
+  {
+    Array<JsonView> improvementPlansJsonList = jsonValue.GetArray("ImprovementPlans");
+    for(unsigned improvementPlansIndex = 0; improvementPlansIndex < improvementPlansJsonList.GetLength(); ++improvementPlansIndex)
+    {
+      m_improvementPlans.push_back(improvementPlansJsonList[improvementPlansIndex].AsObject());
+    }
+    m_improvementPlansHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +121,17 @@ JsonValue ImprovementSummary::Jsonize() const
   if(m_improvementPlanUrlHasBeenSet)
   {
    payload.WithString("ImprovementPlanUrl", m_improvementPlanUrl);
+
+  }
+
+  if(m_improvementPlansHasBeenSet)
+  {
+   Array<JsonValue> improvementPlansJsonList(m_improvementPlans.size());
+   for(unsigned improvementPlansIndex = 0; improvementPlansIndex < improvementPlansJsonList.GetLength(); ++improvementPlansIndex)
+   {
+     improvementPlansJsonList[improvementPlansIndex].AsObject(m_improvementPlans[improvementPlansIndex].Jsonize());
+   }
+   payload.WithArray("ImprovementPlans", std::move(improvementPlansJsonList));
 
   }
 

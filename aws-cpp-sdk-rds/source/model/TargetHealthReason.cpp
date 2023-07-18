@@ -24,6 +24,7 @@ namespace Aws
         static const int CONNECTION_FAILED_HASH = HashingUtils::HashString("CONNECTION_FAILED");
         static const int AUTH_FAILURE_HASH = HashingUtils::HashString("AUTH_FAILURE");
         static const int PENDING_PROXY_CAPACITY_HASH = HashingUtils::HashString("PENDING_PROXY_CAPACITY");
+        static const int INVALID_REPLICATION_STATE_HASH = HashingUtils::HashString("INVALID_REPLICATION_STATE");
 
 
         TargetHealthReason GetTargetHealthReasonForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == PENDING_PROXY_CAPACITY_HASH)
           {
             return TargetHealthReason::PENDING_PROXY_CAPACITY;
+          }
+          else if (hashCode == INVALID_REPLICATION_STATE_HASH)
+          {
+            return TargetHealthReason::INVALID_REPLICATION_STATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "AUTH_FAILURE";
           case TargetHealthReason::PENDING_PROXY_CAPACITY:
             return "PENDING_PROXY_CAPACITY";
+          case TargetHealthReason::INVALID_REPLICATION_STATE:
+            return "INVALID_REPLICATION_STATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

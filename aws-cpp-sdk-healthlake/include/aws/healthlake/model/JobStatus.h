@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     SUBMITTED,
     IN_PROGRESS,
+    COMPLETED_WITH_ERRORS,
     COMPLETED,
     FAILED
   };

@@ -28,12 +28,12 @@ namespace Model
   /**
    * <p>Detailed information about the drift status of the stack set.</p> <p>For
    * stack sets, contains information about the last <i>completed</i> drift operation
-   * performed on the stack set. Information about drift operations in-progress is
-   * not included. </p> <p>For stack set operations, includes information about drift
+   * performed on the stack set. Information about drift operations in-progress isn't
+   * included.</p> <p>For stack set operations, includes information about drift
    * operations currently being performed on the stack set.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-   * Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User
+   * unmanaged changes in stack sets</a> in the <i>CloudFormation User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetDriftDetectionDetails">AWS
    * API Reference</a></p>
@@ -57,7 +57,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -72,7 +72,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -87,7 +87,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -102,7 +102,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -117,7 +117,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -132,7 +132,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -144,11 +144,11 @@ namespace Model
      * <p>The status of the stack set drift detection operation.</p> <ul> <li> <p>
      * <code>COMPLETED</code>: The drift detection operation completed without failing
      * on any stack instances.</p> </li> <li> <p> <code>FAILED</code>: The drift
-     * detection operation exceeded the specified failure tolerance. </p> </li> <li>
-     * <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed
-     * without exceeding the failure tolerance for the operation.</p> </li> <li> <p>
+     * detection operation exceeded the specified failure tolerance.</p> </li> <li> <p>
+     * <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
+     * exceeding the failure tolerance for the operation.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The drift detection operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has cancelled the
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
      * drift detection operation.</p> </li> </ul>
      */
     inline const StackSetDriftDetectionStatus& GetDriftDetectionStatus() const{ return m_driftDetectionStatus; }
@@ -157,11 +157,11 @@ namespace Model
      * <p>The status of the stack set drift detection operation.</p> <ul> <li> <p>
      * <code>COMPLETED</code>: The drift detection operation completed without failing
      * on any stack instances.</p> </li> <li> <p> <code>FAILED</code>: The drift
-     * detection operation exceeded the specified failure tolerance. </p> </li> <li>
-     * <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed
-     * without exceeding the failure tolerance for the operation.</p> </li> <li> <p>
+     * detection operation exceeded the specified failure tolerance.</p> </li> <li> <p>
+     * <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
+     * exceeding the failure tolerance for the operation.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The drift detection operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has cancelled the
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
      * drift detection operation.</p> </li> </ul>
      */
     inline bool DriftDetectionStatusHasBeenSet() const { return m_driftDetectionStatusHasBeenSet; }
@@ -170,11 +170,11 @@ namespace Model
      * <p>The status of the stack set drift detection operation.</p> <ul> <li> <p>
      * <code>COMPLETED</code>: The drift detection operation completed without failing
      * on any stack instances.</p> </li> <li> <p> <code>FAILED</code>: The drift
-     * detection operation exceeded the specified failure tolerance. </p> </li> <li>
-     * <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed
-     * without exceeding the failure tolerance for the operation.</p> </li> <li> <p>
+     * detection operation exceeded the specified failure tolerance.</p> </li> <li> <p>
+     * <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
+     * exceeding the failure tolerance for the operation.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The drift detection operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has cancelled the
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
      * drift detection operation.</p> </li> </ul>
      */
     inline void SetDriftDetectionStatus(const StackSetDriftDetectionStatus& value) { m_driftDetectionStatusHasBeenSet = true; m_driftDetectionStatus = value; }
@@ -183,11 +183,11 @@ namespace Model
      * <p>The status of the stack set drift detection operation.</p> <ul> <li> <p>
      * <code>COMPLETED</code>: The drift detection operation completed without failing
      * on any stack instances.</p> </li> <li> <p> <code>FAILED</code>: The drift
-     * detection operation exceeded the specified failure tolerance. </p> </li> <li>
-     * <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed
-     * without exceeding the failure tolerance for the operation.</p> </li> <li> <p>
+     * detection operation exceeded the specified failure tolerance.</p> </li> <li> <p>
+     * <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
+     * exceeding the failure tolerance for the operation.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The drift detection operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has cancelled the
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
      * drift detection operation.</p> </li> </ul>
      */
     inline void SetDriftDetectionStatus(StackSetDriftDetectionStatus&& value) { m_driftDetectionStatusHasBeenSet = true; m_driftDetectionStatus = std::move(value); }
@@ -196,11 +196,11 @@ namespace Model
      * <p>The status of the stack set drift detection operation.</p> <ul> <li> <p>
      * <code>COMPLETED</code>: The drift detection operation completed without failing
      * on any stack instances.</p> </li> <li> <p> <code>FAILED</code>: The drift
-     * detection operation exceeded the specified failure tolerance. </p> </li> <li>
-     * <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed
-     * without exceeding the failure tolerance for the operation.</p> </li> <li> <p>
+     * detection operation exceeded the specified failure tolerance.</p> </li> <li> <p>
+     * <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
+     * exceeding the failure tolerance for the operation.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The drift detection operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has cancelled the
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
      * drift detection operation.</p> </li> </ul>
      */
     inline StackSetDriftDetectionDetails& WithDriftDetectionStatus(const StackSetDriftDetectionStatus& value) { SetDriftDetectionStatus(value); return *this;}
@@ -209,11 +209,11 @@ namespace Model
      * <p>The status of the stack set drift detection operation.</p> <ul> <li> <p>
      * <code>COMPLETED</code>: The drift detection operation completed without failing
      * on any stack instances.</p> </li> <li> <p> <code>FAILED</code>: The drift
-     * detection operation exceeded the specified failure tolerance. </p> </li> <li>
-     * <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed
-     * without exceeding the failure tolerance for the operation.</p> </li> <li> <p>
+     * detection operation exceeded the specified failure tolerance.</p> </li> <li> <p>
+     * <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
+     * exceeding the failure tolerance for the operation.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The drift detection operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has cancelled the
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
      * drift detection operation.</p> </li> </ul>
      */
     inline StackSetDriftDetectionDetails& WithDriftDetectionStatus(StackSetDriftDetectionStatus&& value) { SetDriftDetectionStatus(std::move(value)); return *this;}
@@ -222,81 +222,81 @@ namespace Model
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline StackSetDriftDetectionDetails& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline StackSetDriftDetectionDetails& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The total number of stack instances belonging to this stack set. </p> <p>The
+     * <p>The total number of stack instances belonging to this stack set.</p> <p>The
      * total number of stack instances is equal to the total of:</p> <ul> <li> <p>Stack
-     * instances that match the stack set configuration. </p> </li> <li> <p>Stack
-     * instances that have drifted from the stack set configuration. </p> </li> <li>
+     * instances that match the stack set configuration.</p> </li> <li> <p>Stack
+     * instances that have drifted from the stack set configuration.</p> </li> <li>
      * <p>Stack instances where the drift detection operation has failed.</p> </li>
      * <li> <p>Stack instances currently being checked for drift.</p> </li> </ul>
      */
     inline int GetTotalStackInstancesCount() const{ return m_totalStackInstancesCount; }
 
     /**
-     * <p>The total number of stack instances belonging to this stack set. </p> <p>The
+     * <p>The total number of stack instances belonging to this stack set.</p> <p>The
      * total number of stack instances is equal to the total of:</p> <ul> <li> <p>Stack
-     * instances that match the stack set configuration. </p> </li> <li> <p>Stack
-     * instances that have drifted from the stack set configuration. </p> </li> <li>
+     * instances that match the stack set configuration.</p> </li> <li> <p>Stack
+     * instances that have drifted from the stack set configuration.</p> </li> <li>
      * <p>Stack instances where the drift detection operation has failed.</p> </li>
      * <li> <p>Stack instances currently being checked for drift.</p> </li> </ul>
      */
     inline bool TotalStackInstancesCountHasBeenSet() const { return m_totalStackInstancesCountHasBeenSet; }
 
     /**
-     * <p>The total number of stack instances belonging to this stack set. </p> <p>The
+     * <p>The total number of stack instances belonging to this stack set.</p> <p>The
      * total number of stack instances is equal to the total of:</p> <ul> <li> <p>Stack
-     * instances that match the stack set configuration. </p> </li> <li> <p>Stack
-     * instances that have drifted from the stack set configuration. </p> </li> <li>
+     * instances that match the stack set configuration.</p> </li> <li> <p>Stack
+     * instances that have drifted from the stack set configuration.</p> </li> <li>
      * <p>Stack instances where the drift detection operation has failed.</p> </li>
      * <li> <p>Stack instances currently being checked for drift.</p> </li> </ul>
      */
     inline void SetTotalStackInstancesCount(int value) { m_totalStackInstancesCountHasBeenSet = true; m_totalStackInstancesCount = value; }
 
     /**
-     * <p>The total number of stack instances belonging to this stack set. </p> <p>The
+     * <p>The total number of stack instances belonging to this stack set.</p> <p>The
      * total number of stack instances is equal to the total of:</p> <ul> <li> <p>Stack
-     * instances that match the stack set configuration. </p> </li> <li> <p>Stack
-     * instances that have drifted from the stack set configuration. </p> </li> <li>
+     * instances that match the stack set configuration.</p> </li> <li> <p>Stack
+     * instances that have drifted from the stack set configuration.</p> </li> <li>
      * <p>Stack instances where the drift detection operation has failed.</p> </li>
      * <li> <p>Stack instances currently being checked for drift.</p> </li> </ul>
      */
@@ -306,32 +306,32 @@ namespace Model
     /**
      * <p>The number of stack instances that have drifted from the expected template
      * and parameter configuration of the stack set. A stack instance is considered to
-     * have drifted if one or more of the resources in the associated stack do not
-     * match their expected configuration.</p>
+     * have drifted if one or more of the resources in the associated stack don't match
+     * their expected configuration.</p>
      */
     inline int GetDriftedStackInstancesCount() const{ return m_driftedStackInstancesCount; }
 
     /**
      * <p>The number of stack instances that have drifted from the expected template
      * and parameter configuration of the stack set. A stack instance is considered to
-     * have drifted if one or more of the resources in the associated stack do not
-     * match their expected configuration.</p>
+     * have drifted if one or more of the resources in the associated stack don't match
+     * their expected configuration.</p>
      */
     inline bool DriftedStackInstancesCountHasBeenSet() const { return m_driftedStackInstancesCountHasBeenSet; }
 
     /**
      * <p>The number of stack instances that have drifted from the expected template
      * and parameter configuration of the stack set. A stack instance is considered to
-     * have drifted if one or more of the resources in the associated stack do not
-     * match their expected configuration.</p>
+     * have drifted if one or more of the resources in the associated stack don't match
+     * their expected configuration.</p>
      */
     inline void SetDriftedStackInstancesCount(int value) { m_driftedStackInstancesCountHasBeenSet = true; m_driftedStackInstancesCount = value; }
 
     /**
      * <p>The number of stack instances that have drifted from the expected template
      * and parameter configuration of the stack set. A stack instance is considered to
-     * have drifted if one or more of the resources in the associated stack do not
-     * match their expected configuration.</p>
+     * have drifted if one or more of the resources in the associated stack don't match
+     * their expected configuration.</p>
      */
     inline StackSetDriftDetectionDetails& WithDriftedStackInstancesCount(int value) { SetDriftedStackInstancesCount(value); return *this;}
 

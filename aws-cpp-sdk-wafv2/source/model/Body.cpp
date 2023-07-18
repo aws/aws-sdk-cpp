@@ -18,24 +18,39 @@ namespace WAFV2
 namespace Model
 {
 
-Body::Body()
+Body::Body() : 
+    m_oversizeHandling(OversizeHandling::NOT_SET),
+    m_oversizeHandlingHasBeenSet(false)
 {
 }
 
-Body::Body(JsonView jsonValue)
+Body::Body(JsonView jsonValue) : 
+    m_oversizeHandling(OversizeHandling::NOT_SET),
+    m_oversizeHandlingHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Body& Body::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("OversizeHandling"))
+  {
+    m_oversizeHandling = OversizeHandlingMapper::GetOversizeHandlingForName(jsonValue.GetString("OversizeHandling"));
+
+    m_oversizeHandlingHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Body::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_oversizeHandlingHasBeenSet)
+  {
+   payload.WithString("OversizeHandling", OversizeHandlingMapper::GetNameForOversizeHandling(m_oversizeHandling));
+  }
 
   return payload;
 }

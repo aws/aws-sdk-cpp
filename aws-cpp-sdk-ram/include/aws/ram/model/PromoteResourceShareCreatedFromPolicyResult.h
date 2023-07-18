@@ -31,17 +31,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the request succeeded.</p>
+     * <p>A return value of <code>true</code> indicates that the request succeeded. A
+     * value of <code>false</code> indicates that the request failed.</p>
      */
     inline bool GetReturnValue() const{ return m_returnValue; }
 
     /**
-     * <p>Indicates whether the request succeeded.</p>
+     * <p>A return value of <code>true</code> indicates that the request succeeded. A
+     * value of <code>false</code> indicates that the request failed.</p>
      */
     inline void SetReturnValue(bool value) { m_returnValue = value; }
 
     /**
-     * <p>Indicates whether the request succeeded.</p>
+     * <p>A return value of <code>true</code> indicates that the request succeeded. A
+     * value of <code>false</code> indicates that the request failed.</p>
      */
     inline PromoteResourceShareCreatedFromPolicyResult& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
 

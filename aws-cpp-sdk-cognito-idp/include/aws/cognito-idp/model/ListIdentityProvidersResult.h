@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of identity provider objects.</p>
+     * <p>A list of IdP objects.</p>
      */
     inline const Aws::Vector<ProviderDescription>& GetProviders() const{ return m_providers; }
 
     /**
-     * <p>A list of identity provider objects.</p>
+     * <p>A list of IdP objects.</p>
      */
     inline void SetProviders(const Aws::Vector<ProviderDescription>& value) { m_providers = value; }
 
     /**
-     * <p>A list of identity provider objects.</p>
+     * <p>A list of IdP objects.</p>
      */
     inline void SetProviders(Aws::Vector<ProviderDescription>&& value) { m_providers = std::move(value); }
 
     /**
-     * <p>A list of identity provider objects.</p>
+     * <p>A list of IdP objects.</p>
      */
     inline ListIdentityProvidersResult& WithProviders(const Aws::Vector<ProviderDescription>& value) { SetProviders(value); return *this;}
 
     /**
-     * <p>A list of identity provider objects.</p>
+     * <p>A list of IdP objects.</p>
      */
     inline ListIdentityProvidersResult& WithProviders(Aws::Vector<ProviderDescription>&& value) { SetProviders(std::move(value)); return *this;}
 
     /**
-     * <p>A list of identity provider objects.</p>
+     * <p>A list of IdP objects.</p>
      */
     inline ListIdentityProvidersResult& AddProviders(const ProviderDescription& value) { m_providers.push_back(value); return *this; }
 
     /**
-     * <p>A list of identity provider objects.</p>
+     * <p>A list of IdP objects.</p>
      */
     inline ListIdentityProvidersResult& AddProviders(ProviderDescription&& value) { m_providers.push_back(std::move(value)); return *this; }
 

@@ -130,22 +130,12 @@ namespace Model
         virtual Model::GetRoleCredentialsOutcome GetRoleCredentials(const Model::GetRoleCredentialsRequest& request) const;
 
         /**
-         * <p>Returns the STS short-term credentials for a given role name that is assigned
-         * to the user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/GetRoleCredentials">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRoleCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRoleCredentialsOutcomeCallable GetRoleCredentialsCallable(const Model::GetRoleCredentialsRequest& request) const;
 
         /**
-         * <p>Returns the STS short-term credentials for a given role name that is assigned
-         * to the user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/GetRoleCredentials">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRoleCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRoleCredentialsAsync(const Model::GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -158,22 +148,12 @@ namespace Model
         virtual Model::ListAccountRolesOutcome ListAccountRoles(const Model::ListAccountRolesRequest& request) const;
 
         /**
-         * <p>Lists all roles that are assigned to the user for a given AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccountRoles">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAccountRoles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAccountRolesOutcomeCallable ListAccountRolesCallable(const Model::ListAccountRolesRequest& request) const;
 
         /**
-         * <p>Lists all roles that are assigned to the user for a given AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccountRoles">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAccountRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAccountRolesAsync(const Model::ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -189,28 +169,12 @@ namespace Model
         virtual Model::ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest& request) const;
 
         /**
-         * <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned
-         * by the administrator of the account. For more information, see <a
-         * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign
-         * User Access</a> in the <i>AWS SSO User Guide</i>. This operation returns a
-         * paginated response.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccounts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAccountsOutcomeCallable ListAccountsCallable(const Model::ListAccountsRequest& request) const;
 
         /**
-         * <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned
-         * by the administrator of the account. For more information, see <a
-         * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign
-         * User Access</a> in the <i>AWS SSO User Guide</i>. This operation returns a
-         * paginated response.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccounts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -223,22 +187,12 @@ namespace Model
         virtual Model::LogoutOutcome Logout(const Model::LogoutRequest& request) const;
 
         /**
-         * <p>Removes the client- and server-side session that is associated with the
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/Logout">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for Logout that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::LogoutOutcomeCallable LogoutCallable(const Model::LogoutRequest& request) const;
 
         /**
-         * <p>Removes the client- and server-side session that is associated with the
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/Logout">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for Logout that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void LogoutAsync(const Model::LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

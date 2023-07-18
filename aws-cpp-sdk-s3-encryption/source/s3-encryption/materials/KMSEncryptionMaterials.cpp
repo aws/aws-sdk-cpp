@@ -18,6 +18,13 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Client;
 using namespace Aws::S3Encryption;
 
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#endif
+
 namespace Aws
 {
     namespace S3Encryption

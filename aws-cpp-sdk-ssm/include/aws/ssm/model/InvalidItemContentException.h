@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>One or more content items is not valid.</p><p><h3>See Also:</h3>   <a
+   * <p>One or more content items isn't valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InvalidItemContentException">AWS
    * API Reference</a></p>
    */

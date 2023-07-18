@@ -135,68 +135,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline GetSampledRequestsRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline GetSampledRequestsRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -207,7 +213,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * WAF sets it to three hours ago.</p>
      */
     inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
 
@@ -217,7 +224,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * WAF sets it to three hours ago.</p>
      */
     inline bool TimeWindowHasBeenSet() const { return m_timeWindowHasBeenSet; }
 
@@ -227,7 +235,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * WAF sets it to three hours ago.</p>
      */
     inline void SetTimeWindow(const TimeWindow& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
 
@@ -237,7 +246,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * WAF sets it to three hours ago.</p>
      */
     inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::move(value); }
 
@@ -247,7 +257,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * WAF sets it to three hours ago.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
 
@@ -257,40 +268,45 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * WAF sets it to three hours ago.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 
 
     /**
-     * <p>The number of requests that you want AWS WAF to return from among the first
-     * 5,000 requests that your AWS resource received during the time range. If your
-     * resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them. </p>
+     * <p>The number of requests that you want WAF to return from among the first 5,000
+     * requests that your Amazon Web Services resource received during the time range.
+     * If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about
+     * all of them. </p>
      */
     inline long long GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The number of requests that you want AWS WAF to return from among the first
-     * 5,000 requests that your AWS resource received during the time range. If your
-     * resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them. </p>
+     * <p>The number of requests that you want WAF to return from among the first 5,000
+     * requests that your Amazon Web Services resource received during the time range.
+     * If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about
+     * all of them. </p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The number of requests that you want AWS WAF to return from among the first
-     * 5,000 requests that your AWS resource received during the time range. If your
-     * resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them. </p>
+     * <p>The number of requests that you want WAF to return from among the first 5,000
+     * requests that your Amazon Web Services resource received during the time range.
+     * If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about
+     * all of them. </p>
      */
     inline void SetMaxItems(long long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The number of requests that you want AWS WAF to return from among the first
-     * 5,000 requests that your AWS resource received during the time range. If your
-     * resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them. </p>
+     * <p>The number of requests that you want WAF to return from among the first 5,000
+     * requests that your Amazon Web Services resource received during the time range.
+     * If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about
+     * all of them. </p>
      */
     inline GetSampledRequestsRequest& WithMaxItems(long long value) { SetMaxItems(value); return *this;}
 

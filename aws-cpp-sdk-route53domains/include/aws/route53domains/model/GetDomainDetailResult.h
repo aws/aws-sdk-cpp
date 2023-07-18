@@ -713,37 +713,37 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Deprecated.</p>
      */
     inline const Aws::String& GetDnsSec() const{ return m_dnsSec; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetDnsSec(const Aws::String& value) { m_dnsSec = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetDnsSec(Aws::String&& value) { m_dnsSec = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetDnsSec(const char* value) { m_dnsSec.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Deprecated.</p>
      */
     inline GetDomainDetailResult& WithDnsSec(const Aws::String& value) { SetDnsSec(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Deprecated.</p>
      */
     inline GetDomainDetailResult& WithDnsSec(Aws::String&& value) { SetDnsSec(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Deprecated.</p>
      */
     inline GetDomainDetailResult& WithDnsSec(const char* value) { SetDnsSec(value); return *this;}
 

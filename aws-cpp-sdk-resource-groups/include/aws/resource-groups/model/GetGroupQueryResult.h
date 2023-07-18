@@ -33,27 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The resource query associated with the specified group.</p>
+     * <p>The resource query associated with the specified group. For more information
+     * about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>.</p>
      */
     inline const GroupQuery& GetGroupQuery() const{ return m_groupQuery; }
 
     /**
-     * <p>The resource query associated with the specified group.</p>
+     * <p>The resource query associated with the specified group. For more information
+     * about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>.</p>
      */
     inline void SetGroupQuery(const GroupQuery& value) { m_groupQuery = value; }
 
     /**
-     * <p>The resource query associated with the specified group.</p>
+     * <p>The resource query associated with the specified group. For more information
+     * about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>.</p>
      */
     inline void SetGroupQuery(GroupQuery&& value) { m_groupQuery = std::move(value); }
 
     /**
-     * <p>The resource query associated with the specified group.</p>
+     * <p>The resource query associated with the specified group. For more information
+     * about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>.</p>
      */
     inline GetGroupQueryResult& WithGroupQuery(const GroupQuery& value) { SetGroupQuery(value); return *this;}
 
     /**
-     * <p>The resource query associated with the specified group.</p>
+     * <p>The resource query associated with the specified group. For more information
+     * about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>.</p>
      */
     inline GetGroupQueryResult& WithGroupQuery(GroupQuery&& value) { SetGroupQuery(std::move(value)); return *this;}
 

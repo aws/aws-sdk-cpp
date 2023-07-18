@@ -199,42 +199,74 @@ namespace Model
 
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline AddLayerVersionPermissionRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline AddLayerVersionPermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+     * <p>An account ID, or <code>*</code> to grant layer usage permission to all
+     * accounts in an organization, or all Amazon Web Services accounts (if
+     * <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to
+     * this layer. </p>
      */
     inline AddLayerVersionPermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 

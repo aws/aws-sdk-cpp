@@ -123,6 +123,47 @@ namespace Model
      */
     inline MetricsAndOperator& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline MetricsAndOperator& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline MetricsAndOperator& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+     */
+    inline MetricsAndOperator& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+
   private:
 
     Aws::String m_prefix;
@@ -130,6 +171,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_accessPointArn;
+    bool m_accessPointArnHasBeenSet;
   };
 
 } // namespace Model

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CLASS_50,
     CLASS_100,
-    CLASS_200
+    CLASS_200,
+    CLASS_4K_2K
   };
 
 namespace AvcIntraClassMapper

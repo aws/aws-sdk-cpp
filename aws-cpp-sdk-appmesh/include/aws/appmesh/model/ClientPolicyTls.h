@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/ClientTlsCertificate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appmesh/model/TlsValidationContext.h>
 #include <utility>
@@ -37,6 +38,37 @@ namespace Model
     ClientPolicyTls(Aws::Utils::Json::JsonView jsonValue);
     ClientPolicyTls& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A reference to an object that represents a client's TLS certificate.</p>
+     */
+    inline const ClientTlsCertificate& GetCertificate() const{ return m_certificate; }
+
+    /**
+     * <p>A reference to an object that represents a client's TLS certificate.</p>
+     */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents a client's TLS certificate.</p>
+     */
+    inline void SetCertificate(const ClientTlsCertificate& value) { m_certificateHasBeenSet = true; m_certificate = value; }
+
+    /**
+     * <p>A reference to an object that represents a client's TLS certificate.</p>
+     */
+    inline void SetCertificate(ClientTlsCertificate&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents a client's TLS certificate.</p>
+     */
+    inline ClientPolicyTls& WithCertificate(const ClientTlsCertificate& value) { SetCertificate(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents a client's TLS certificate.</p>
+     */
+    inline ClientPolicyTls& WithCertificate(ClientTlsCertificate&& value) { SetCertificate(std::move(value)); return *this;}
 
 
     /**
@@ -131,6 +163,9 @@ namespace Model
     inline ClientPolicyTls& WithValidation(TlsValidationContext&& value) { SetValidation(std::move(value)); return *this;}
 
   private:
+
+    ClientTlsCertificate m_certificate;
+    bool m_certificateHasBeenSet;
 
     bool m_enforce;
     bool m_enforceHasBeenSet;

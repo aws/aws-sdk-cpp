@@ -15,6 +15,7 @@
 #include <aws/transcribestreaming/model/Specialty.h>
 #include <aws/transcribestreaming/model/Type.h>
 #include <aws/transcribestreaming/model/AudioStream.h>
+#include <aws/transcribestreaming/model/MedicalContentIdentificationType.h>
 #include <utility>
 
 namespace Aws
@@ -103,26 +104,30 @@ namespace Model
 
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline StartMedicalStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -442,6 +447,43 @@ namespace Model
      */
     inline StartMedicalStreamTranscriptionRequest& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
 
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline StartMedicalStreamTranscriptionRequest& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline StartMedicalStreamTranscriptionRequest& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -475,6 +517,9 @@ namespace Model
 
     int m_numberOfChannels;
     bool m_numberOfChannelsHasBeenSet;
+
+    MedicalContentIdentificationType m_contentIdentificationType;
+    bool m_contentIdentificationTypeHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartMedicalStreamTranscriptionHandler m_handler;
 

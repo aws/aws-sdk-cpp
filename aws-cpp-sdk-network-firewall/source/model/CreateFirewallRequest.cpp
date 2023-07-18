@@ -24,7 +24,8 @@ CreateFirewallRequest::CreateFirewallRequest() :
     m_firewallPolicyChangeProtection(false),
     m_firewallPolicyChangeProtectionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ Aws::String CreateFirewallRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

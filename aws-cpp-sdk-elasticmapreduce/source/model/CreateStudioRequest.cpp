@@ -24,6 +24,8 @@ CreateStudioRequest::CreateStudioRequest() :
     m_workspaceSecurityGroupIdHasBeenSet(false),
     m_engineSecurityGroupIdHasBeenSet(false),
     m_defaultS3LocationHasBeenSet(false),
+    m_idpAuthUrlHasBeenSet(false),
+    m_idpRelayStateParameterNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -93,6 +95,18 @@ Aws::String CreateStudioRequest::SerializePayload() const
   if(m_defaultS3LocationHasBeenSet)
   {
    payload.WithString("DefaultS3Location", m_defaultS3Location);
+
+  }
+
+  if(m_idpAuthUrlHasBeenSet)
+  {
+   payload.WithString("IdpAuthUrl", m_idpAuthUrl);
+
+  }
+
+  if(m_idpRelayStateParameterNameHasBeenSet)
+  {
+   payload.WithString("IdpRelayStateParameterName", m_idpRelayStateParameterName);
 
   }
 

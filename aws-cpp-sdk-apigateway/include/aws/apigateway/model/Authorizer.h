@@ -27,12 +27,8 @@ namespace Model
 
   /**
    * <p>Represents an authorization layer for methods. If enabled on a method, API
-   * Gateway will activate the authorizer when a client calls the method.</p> <div
-   * class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use
-   * Lambda Function as Authorizer</a> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
-   * Cognito User Pool as Authorizer</a> </div><p><h3>See Also:</h3>   <a
+   * Gateway will activate the authorizer when a client calls the
+   * method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Authorizer">AWS
    * API Reference</a></p>
    */
@@ -87,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline Authorizer& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline Authorizer& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the authorizer.</p>
+     * <p>The name of the authorizer.</p>
      */
     inline Authorizer& WithName(const char* value) { SetName(value); return *this;}
 
@@ -181,7 +177,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
 
@@ -190,7 +186,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline bool ProviderARNsHasBeenSet() const { return m_providerARNsHasBeenSet; }
 
@@ -199,7 +195,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline void SetProviderARNs(const Aws::Vector<Aws::String>& value) { m_providerARNsHasBeenSet = true; m_providerARNs = value; }
 
@@ -208,7 +204,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNsHasBeenSet = true; m_providerARNs = std::move(value); }
 
@@ -217,7 +213,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline Authorizer& WithProviderARNs(const Aws::Vector<Aws::String>& value) { SetProviderARNs(value); return *this;}
 
@@ -226,7 +222,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline Authorizer& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(std::move(value)); return *this;}
 
@@ -235,7 +231,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline Authorizer& AddProviderARNs(const Aws::String& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
@@ -244,7 +240,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline Authorizer& AddProviderARNs(Aws::String&& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(std::move(value)); return *this; }
 
@@ -253,7 +249,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined.</p>
+     * defined. </p>
      */
     inline Authorizer& AddProviderARNs(const char* value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
@@ -494,194 +490,194 @@ namespace Model
 
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline const Aws::String& GetIdentitySource() const{ return m_identitySource; }
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline bool IdentitySourceHasBeenSet() const { return m_identitySourceHasBeenSet; }
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline void SetIdentitySource(const Aws::String& value) { m_identitySourceHasBeenSet = true; m_identitySource = value; }
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline void SetIdentitySource(Aws::String&& value) { m_identitySourceHasBeenSet = true; m_identitySource = std::move(value); }
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline void SetIdentitySource(const char* value) { m_identitySourceHasBeenSet = true; m_identitySource.assign(value); }
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline Authorizer& WithIdentitySource(const Aws::String& value) { SetIdentitySource(value); return *this;}
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline Authorizer& WithIdentitySource(Aws::String&& value) { SetIdentitySource(std::move(value)); return *this;}
 
     /**
-     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <p>The identity source for which authorization is requested. For a
      * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
      * required and specifies the request header mapping expression for the custom
      * header holding the authorization token submitted by the client. For example, if
      * the token header name is <code>Auth</code>, the header mapping expression is
-     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * <code>method.request.header.Auth</code>. For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
      * request parameters. For example, if an <code>Auth</code> header, a
      * <code>Name</code> query string parameter are defined as identity sources, this
-     * value is <code>method.request.header.Auth,
-     * method.request.querystring.Name</code>. These parameters will be used to derive
-     * the authorization caching key and to perform runtime validation of the
+     * value is <code>method.request.header.Auth</code>,
+     * <code>method.request.querystring.Name</code>. These parameters will be used to
+     * derive the authorization caching key and to perform runtime validation of the
      * <code>REQUEST</code> authorizer by verifying all of the identity-related request
      * parameters are present, not null and non-empty. Only when this is true does the
      * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li></ul></p>
+     * optional. </p>
      */
     inline Authorizer& WithIdentitySource(const char* value) { SetIdentitySource(value); return *this;}
 

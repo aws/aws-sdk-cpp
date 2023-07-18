@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a Realtime script.</p> <p> <b>Related operations</b>
-   * </p> <ul> <li> <p> <a>CreateScript</a> </p> </li> <li> <p> <a>ListScripts</a>
-   * </p> </li> <li> <p> <a>DescribeScript</a> </p> </li> <li> <p>
-   * <a>UpdateScript</a> </p> </li> <li> <p> <a>DeleteScript</a> </p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a Realtime script.</p> <p> <b>Related actions</b> </p>
+   * <p> <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> |
+   * <a>UpdateScript</a> | <a>DeleteScript</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Script">AWS API
    * Reference</a></p>
    */
@@ -44,49 +44,49 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline const Aws::String& GetScriptId() const{ return m_scriptId; }
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline Script& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline Script& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a Realtime script</p>
+     * <p>A unique identifier for the Realtime script</p>
      */
     inline Script& WithScriptId(const char* value) { SetScriptId(value); return *this;}
 
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -94,8 +94,8 @@ namespace Model
     inline const Aws::String& GetScriptArn() const{ return m_scriptArn; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -103,8 +103,8 @@ namespace Model
     inline bool ScriptArnHasBeenSet() const { return m_scriptArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -112,8 +112,8 @@ namespace Model
     inline void SetScriptArn(const Aws::String& value) { m_scriptArnHasBeenSet = true; m_scriptArn = value; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -121,8 +121,8 @@ namespace Model
     inline void SetScriptArn(Aws::String&& value) { m_scriptArnHasBeenSet = true; m_scriptArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -130,8 +130,8 @@ namespace Model
     inline void SetScriptArn(const char* value) { m_scriptArnHasBeenSet = true; m_scriptArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -139,8 +139,8 @@ namespace Model
     inline Script& WithScriptArn(const Aws::String& value) { SetScriptArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -148,8 +148,8 @@ namespace Model
     inline Script& WithScriptArn(Aws::String&& value) { SetScriptArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
      * are unique across all Regions. In a GameLift script ARN, the resource ID matches
      * the <i>ScriptId</i> value.</p>
@@ -207,50 +207,50 @@ namespace Model
 
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline Script& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline Script& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline Script& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -281,44 +281,44 @@ namespace Model
 
 
     /**
-     * <p>A time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>A time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>A time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>A time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>A time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Script& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>A time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Script& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 

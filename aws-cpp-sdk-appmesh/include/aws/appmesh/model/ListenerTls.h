@@ -7,6 +7,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/ListenerTlsCertificate.h>
 #include <aws/appmesh/model/ListenerTlsMode.h>
+#include <aws/appmesh/model/ListenerTlsValidationContext.h>
 #include <utility>
 
 namespace Aws
@@ -40,32 +41,38 @@ namespace Model
 
 
     /**
-     * <p>A reference to an object that represents a listener's TLS certificate.</p>
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) certificate.</p>
      */
     inline const ListenerTlsCertificate& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>A reference to an object that represents a listener's TLS certificate.</p>
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) certificate.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>A reference to an object that represents a listener's TLS certificate.</p>
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) certificate.</p>
      */
     inline void SetCertificate(const ListenerTlsCertificate& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>A reference to an object that represents a listener's TLS certificate.</p>
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) certificate.</p>
      */
     inline void SetCertificate(ListenerTlsCertificate&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>A reference to an object that represents a listener's TLS certificate.</p>
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) certificate.</p>
      */
     inline ListenerTls& WithCertificate(const ListenerTlsCertificate& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>A reference to an object that represents a listener's TLS certificate.</p>
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) certificate.</p>
      */
     inline ListenerTls& WithCertificate(ListenerTlsCertificate&& value) { SetCertificate(std::move(value)); return *this;}
 
@@ -118,6 +125,43 @@ namespace Model
      */
     inline ListenerTls& WithMode(ListenerTlsMode&& value) { SetMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline const ListenerTlsValidationContext& GetValidation() const{ return m_validation; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline bool ValidationHasBeenSet() const { return m_validationHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline void SetValidation(const ListenerTlsValidationContext& value) { m_validationHasBeenSet = true; m_validation = value; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline void SetValidation(ListenerTlsValidationContext&& value) { m_validationHasBeenSet = true; m_validation = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline ListenerTls& WithValidation(const ListenerTlsValidationContext& value) { SetValidation(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents a listener's Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline ListenerTls& WithValidation(ListenerTlsValidationContext&& value) { SetValidation(std::move(value)); return *this;}
+
   private:
 
     ListenerTlsCertificate m_certificate;
@@ -125,6 +169,9 @@ namespace Model
 
     ListenerTlsMode m_mode;
     bool m_modeHasBeenSet;
+
+    ListenerTlsValidationContext m_validation;
+    bool m_validationHasBeenSet;
   };
 
 } // namespace Model

@@ -12,8 +12,10 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
+#include <aws/medialive/model/MaintenanceStatus.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/medialive/model/VpcOutputSettingsDescription.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -390,6 +392,32 @@ one destination per
 
 
     /**
+     * Maintenance settings for this channel.
+     */
+    inline const MaintenanceStatus& GetMaintenance() const{ return m_maintenance; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(const MaintenanceStatus& value) { m_maintenance = value; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(MaintenanceStatus&& value) { m_maintenance = std::move(value); }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline DeleteChannelResult& WithMaintenance(const MaintenanceStatus& value) { SetMaintenance(value); return *this;}
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline DeleteChannelResult& WithMaintenance(MaintenanceStatus&& value) { SetMaintenance(std::move(value)); return *this;}
+
+
+    /**
      * The name of the channel. (user-mutable)
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -589,6 +617,32 @@ one destination per
      */
     inline DeleteChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * Settings for VPC output
+     */
+    inline const VpcOutputSettingsDescription& GetVpc() const{ return m_vpc; }
+
+    /**
+     * Settings for VPC output
+     */
+    inline void SetVpc(const VpcOutputSettingsDescription& value) { m_vpc = value; }
+
+    /**
+     * Settings for VPC output
+     */
+    inline void SetVpc(VpcOutputSettingsDescription&& value) { m_vpc = std::move(value); }
+
+    /**
+     * Settings for VPC output
+     */
+    inline DeleteChannelResult& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
+
+    /**
+     * Settings for VPC output
+     */
+    inline DeleteChannelResult& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -611,6 +665,8 @@ one destination per
 
     LogLevel m_logLevel;
 
+    MaintenanceStatus m_maintenance;
+
     Aws::String m_name;
 
     Aws::Vector<PipelineDetail> m_pipelineDetails;
@@ -622,6 +678,8 @@ one destination per
     ChannelState m_state;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    VpcOutputSettingsDescription m_vpc;
   };
 
 } // namespace Model

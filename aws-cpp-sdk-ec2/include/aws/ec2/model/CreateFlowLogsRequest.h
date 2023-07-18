@@ -11,6 +11,7 @@
 #include <aws/ec2/model/FlowLogsResourceType.h>
 #include <aws/ec2/model/TrafficType.h>
 #include <aws/ec2/model/LogDestinationType.h>
+#include <aws/ec2/model/DestinationOptionsRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -78,7 +79,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -86,7 +87,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -94,7 +95,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -102,7 +103,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -110,7 +111,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -118,7 +119,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateFlowLogsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -126,7 +127,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateFlowLogsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -134,7 +135,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateFlowLogsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -405,66 +406,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline CreateFlowLogsRequest& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
@@ -472,9 +473,9 @@ namespace Model
 
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -492,9 +493,9 @@ namespace Model
     inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -512,9 +513,9 @@ namespace Model
     inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -532,9 +533,9 @@ namespace Model
     inline void SetLogDestination(const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination = value; }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -552,9 +553,9 @@ namespace Model
     inline void SetLogDestination(Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::move(value); }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -572,9 +573,9 @@ namespace Model
     inline void SetLogDestination(const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.assign(value); }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -592,9 +593,9 @@ namespace Model
     inline CreateFlowLogsRequest& WithLogDestination(const Aws::String& value) { SetLogDestination(value); return *this;}
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -612,9 +613,9 @@ namespace Model
     inline CreateFlowLogsRequest& WithLogDestination(Aws::String&& value) { SetLogDestination(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -636,11 +637,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
 
@@ -648,11 +649,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
 
@@ -660,11 +661,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
 
@@ -672,11 +673,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
 
@@ -684,11 +685,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
 
@@ -696,11 +697,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
 
@@ -708,11 +709,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
 
@@ -720,11 +721,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, surround this parameter value with single
+     * quotes on Linux or double quotes on Windows.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
 
@@ -810,6 +811,37 @@ namespace Model
      */
     inline CreateFlowLogsRequest& WithMaxAggregationInterval(int value) { SetMaxAggregationInterval(value); return *this;}
 
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline const DestinationOptionsRequest& GetDestinationOptions() const{ return m_destinationOptions; }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline bool DestinationOptionsHasBeenSet() const { return m_destinationOptionsHasBeenSet; }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline void SetDestinationOptions(const DestinationOptionsRequest& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = value; }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline void SetDestinationOptions(DestinationOptionsRequest&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::move(value); }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline CreateFlowLogsRequest& WithDestinationOptions(const DestinationOptionsRequest& value) { SetDestinationOptions(value); return *this;}
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline CreateFlowLogsRequest& WithDestinationOptions(DestinationOptionsRequest&& value) { SetDestinationOptions(std::move(value)); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -847,6 +879,9 @@ namespace Model
 
     int m_maxAggregationInterval;
     bool m_maxAggregationIntervalHasBeenSet;
+
+    DestinationOptionsRequest m_destinationOptions;
+    bool m_destinationOptionsHasBeenSet;
   };
 
 } // namespace Model

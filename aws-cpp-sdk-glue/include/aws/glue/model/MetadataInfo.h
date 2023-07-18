@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/OtherMetadataValueListItem.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +121,47 @@ namespace Model
      */
     inline MetadataInfo& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline const Aws::Vector<OtherMetadataValueListItem>& GetOtherMetadataValueList() const{ return m_otherMetadataValueList; }
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline bool OtherMetadataValueListHasBeenSet() const { return m_otherMetadataValueListHasBeenSet; }
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline void SetOtherMetadataValueList(const Aws::Vector<OtherMetadataValueListItem>& value) { m_otherMetadataValueListHasBeenSet = true; m_otherMetadataValueList = value; }
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline void SetOtherMetadataValueList(Aws::Vector<OtherMetadataValueListItem>&& value) { m_otherMetadataValueListHasBeenSet = true; m_otherMetadataValueList = std::move(value); }
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline MetadataInfo& WithOtherMetadataValueList(const Aws::Vector<OtherMetadataValueListItem>& value) { SetOtherMetadataValueList(value); return *this;}
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline MetadataInfo& WithOtherMetadataValueList(Aws::Vector<OtherMetadataValueListItem>&& value) { SetOtherMetadataValueList(std::move(value)); return *this;}
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline MetadataInfo& AddOtherMetadataValueList(const OtherMetadataValueListItem& value) { m_otherMetadataValueListHasBeenSet = true; m_otherMetadataValueList.push_back(value); return *this; }
+
+    /**
+     * <p>Other metadata belonging to the same metadata key.</p>
+     */
+    inline MetadataInfo& AddOtherMetadataValueList(OtherMetadataValueListItem&& value) { m_otherMetadataValueListHasBeenSet = true; m_otherMetadataValueList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_metadataValue;
@@ -126,6 +169,9 @@ namespace Model
 
     Aws::String m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    Aws::Vector<OtherMetadataValueListItem> m_otherMetadataValueList;
+    bool m_otherMetadataValueListHasBeenSet;
   };
 
 } // namespace Model

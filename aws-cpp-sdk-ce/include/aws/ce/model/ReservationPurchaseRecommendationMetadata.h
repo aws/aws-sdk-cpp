@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>Information about this specific recommendation, such as the timestamp for
-   * when AWS made a specific recommendation.</p><p><h3>See Also:</h3>   <a
+   * when Amazon Web Services made a specific recommendation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendationMetadata">AWS
    * API Reference</a></p>
    */
@@ -80,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline const Aws::String& GetGenerationTimestamp() const{ return m_generationTimestamp; }
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline bool GenerationTimestampHasBeenSet() const { return m_generationTimestampHasBeenSet; }
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const Aws::String& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = value; }
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(Aws::String&& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = std::move(value); }
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const char* value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp.assign(value); }
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline ReservationPurchaseRecommendationMetadata& WithGenerationTimestamp(const Aws::String& value) { SetGenerationTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline ReservationPurchaseRecommendationMetadata& WithGenerationTimestamp(Aws::String&& value) { SetGenerationTimestamp(std::move(value)); return *this;}
 
     /**
-     * <p>The timestamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline ReservationPurchaseRecommendationMetadata& WithGenerationTimestamp(const char* value) { SetGenerationTimestamp(value); return *this;}
 

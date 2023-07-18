@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int RULES_EVALUATION_HASH = HashingUtils::HashString("RULES_EVALUATION");
+        static const int CONNECT_CAMPAIGNS_HASH = HashingUtils::HashString("CONNECT_CAMPAIGNS");
 
 
         UseCaseType GetUseCaseTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == RULES_EVALUATION_HASH)
           {
             return UseCaseType::RULES_EVALUATION;
+          }
+          else if (hashCode == CONNECT_CAMPAIGNS_HASH)
+          {
+            return UseCaseType::CONNECT_CAMPAIGNS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case UseCaseType::RULES_EVALUATION:
             return "RULES_EVALUATION";
+          case UseCaseType::CONNECT_CAMPAIGNS:
+            return "CONNECT_CAMPAIGNS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

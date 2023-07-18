@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline CreateAccessPointRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline CreateAccessPointRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the owner of the bucket for which you want to create
-     * an access point.</p>
+     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
+     * want to create an access point.</p>
      */
     inline CreateAccessPointRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -130,8 +130,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -145,8 +145,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -160,8 +160,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -175,8 +175,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -190,8 +190,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -205,8 +205,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -220,8 +220,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -235,8 +235,8 @@ namespace Model
      * <p>The name of the bucket that you want to associate this access point with.</p>
      * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
      * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
-     * parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN
-     * of the bucket accessed in the format
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -296,22 +296,40 @@ namespace Model
     inline CreateAccessPointRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline const PublicAccessBlockConfiguration& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline bool PublicAccessBlockConfigurationHasBeenSet() const { return m_publicAccessBlockConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline void SetPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = std::move(value); }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline CreateAccessPointRequest& WithPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlockConfiguration(value); return *this;}
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline CreateAccessPointRequest& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 
   private:

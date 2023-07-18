@@ -30,9 +30,9 @@ Aws::String TagQueueRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      ss << "Tags.entry." << tagsCount << ".Key="
+      ss << "Tag." << tagsCount << ".Key="
           << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Tags.entry." << tagsCount << ".Value="
+      ss << "Tag." << tagsCount << ".Value="
           << StringUtils::URLEncode(item.second.c_str()) << "&";
       tagsCount++;
     }

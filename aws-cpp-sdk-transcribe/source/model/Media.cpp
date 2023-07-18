@@ -19,12 +19,14 @@ namespace Model
 {
 
 Media::Media() : 
-    m_mediaFileUriHasBeenSet(false)
+    m_mediaFileUriHasBeenSet(false),
+    m_redactedMediaFileUriHasBeenSet(false)
 {
 }
 
 Media::Media(JsonView jsonValue) : 
-    m_mediaFileUriHasBeenSet(false)
+    m_mediaFileUriHasBeenSet(false),
+    m_redactedMediaFileUriHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ Media& Media::operator =(JsonView jsonValue)
     m_mediaFileUriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RedactedMediaFileUri"))
+  {
+    m_redactedMediaFileUri = jsonValue.GetString("RedactedMediaFileUri");
+
+    m_redactedMediaFileUriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue Media::Jsonize() const
   if(m_mediaFileUriHasBeenSet)
   {
    payload.WithString("MediaFileUri", m_mediaFileUri);
+
+  }
+
+  if(m_redactedMediaFileUriHasBeenSet)
+  {
+   payload.WithString("RedactedMediaFileUri", m_redactedMediaFileUri);
 
   }
 

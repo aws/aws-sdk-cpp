@@ -28,6 +28,12 @@ ListStreamKeysResult::ListStreamKeysResult(const Aws::AmazonWebServiceResult<Jso
 ListStreamKeysResult& ListStreamKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("streamKeys"))
   {
     Array<JsonView> streamKeysJsonList = jsonValue.GetArray("streamKeys");
@@ -35,12 +41,6 @@ ListStreamKeysResult& ListStreamKeysResult::operator =(const Aws::AmazonWebServi
     {
       m_streamKeys.push_back(streamKeysJsonList[streamKeysIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

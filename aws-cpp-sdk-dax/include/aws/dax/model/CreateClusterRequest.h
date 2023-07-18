@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dax/model/SSESpecification.h>
+#include <aws/dax/model/ClusterEndpointEncryptionType.h>
 #include <aws/dax/model/Tag.h>
 #include <utility>
 
@@ -805,6 +806,49 @@ namespace Model
      */
     inline CreateClusterRequest& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline const ClusterEndpointEncryptionType& GetClusterEndpointEncryptionType() const{ return m_clusterEndpointEncryptionType; }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline bool ClusterEndpointEncryptionTypeHasBeenSet() const { return m_clusterEndpointEncryptionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline void SetClusterEndpointEncryptionType(const ClusterEndpointEncryptionType& value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = value; }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline void SetClusterEndpointEncryptionType(ClusterEndpointEncryptionType&& value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = std::move(value); }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithClusterEndpointEncryptionType(const ClusterEndpointEncryptionType& value) { SetClusterEndpointEncryptionType(value); return *this;}
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithClusterEndpointEncryptionType(ClusterEndpointEncryptionType&& value) { SetClusterEndpointEncryptionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -845,6 +889,9 @@ namespace Model
 
     SSESpecification m_sSESpecification;
     bool m_sSESpecificationHasBeenSet;
+
+    ClusterEndpointEncryptionType m_clusterEndpointEncryptionType;
+    bool m_clusterEndpointEncryptionTypeHasBeenSet;
   };
 
 } // namespace Model

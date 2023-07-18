@@ -362,7 +362,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline const BrokerSoftwareInfo& GetCurrentBrokerSoftwareInfo() const{ return m_currentBrokerSoftwareInfo; }
@@ -370,7 +370,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline bool CurrentBrokerSoftwareInfoHasBeenSet() const { return m_currentBrokerSoftwareInfoHasBeenSet; }
@@ -378,7 +378,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline void SetCurrentBrokerSoftwareInfo(const BrokerSoftwareInfo& value) { m_currentBrokerSoftwareInfoHasBeenSet = true; m_currentBrokerSoftwareInfo = value; }
@@ -386,7 +386,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline void SetCurrentBrokerSoftwareInfo(BrokerSoftwareInfo&& value) { m_currentBrokerSoftwareInfoHasBeenSet = true; m_currentBrokerSoftwareInfo = std::move(value); }
@@ -394,7 +394,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline ClusterInfo& WithCurrentBrokerSoftwareInfo(const BrokerSoftwareInfo& value) { SetCurrentBrokerSoftwareInfo(value); return *this;}
@@ -402,7 +402,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline ClusterInfo& WithCurrentBrokerSoftwareInfo(BrokerSoftwareInfo&& value) { SetCurrentBrokerSoftwareInfo(std::move(value)); return *this;}

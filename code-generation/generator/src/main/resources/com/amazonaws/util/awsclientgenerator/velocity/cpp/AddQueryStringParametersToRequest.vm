@@ -15,7 +15,7 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
     ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}ss.str("");
 #elseif($memberEntry.value.shape.timeStamp)
-    ${spaces}ss << ${memberVarName}.ToGmtString(DateFormat::RFC822);
+    ${spaces}ss << ${memberVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($memberEntry.value.shape));
     ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}ss.str("");
 #elseif($memberEntry.value.shape.map)

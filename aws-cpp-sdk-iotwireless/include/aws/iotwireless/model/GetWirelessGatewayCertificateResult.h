@@ -67,9 +67,54 @@ namespace Model
      */
     inline GetWirelessGatewayCertificateResult& WithIotCertificateId(const char* value) { SetIotCertificateId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the certificate that is associated with the wireless gateway and
+     * used for the LoRaWANNetworkServer endpoint.</p>
+     */
+    inline const Aws::String& GetLoRaWANNetworkServerCertificateId() const{ return m_loRaWANNetworkServerCertificateId; }
+
+    /**
+     * <p>The ID of the certificate that is associated with the wireless gateway and
+     * used for the LoRaWANNetworkServer endpoint.</p>
+     */
+    inline void SetLoRaWANNetworkServerCertificateId(const Aws::String& value) { m_loRaWANNetworkServerCertificateId = value; }
+
+    /**
+     * <p>The ID of the certificate that is associated with the wireless gateway and
+     * used for the LoRaWANNetworkServer endpoint.</p>
+     */
+    inline void SetLoRaWANNetworkServerCertificateId(Aws::String&& value) { m_loRaWANNetworkServerCertificateId = std::move(value); }
+
+    /**
+     * <p>The ID of the certificate that is associated with the wireless gateway and
+     * used for the LoRaWANNetworkServer endpoint.</p>
+     */
+    inline void SetLoRaWANNetworkServerCertificateId(const char* value) { m_loRaWANNetworkServerCertificateId.assign(value); }
+
+    /**
+     * <p>The ID of the certificate that is associated with the wireless gateway and
+     * used for the LoRaWANNetworkServer endpoint.</p>
+     */
+    inline GetWirelessGatewayCertificateResult& WithLoRaWANNetworkServerCertificateId(const Aws::String& value) { SetLoRaWANNetworkServerCertificateId(value); return *this;}
+
+    /**
+     * <p>The ID of the certificate that is associated with the wireless gateway and
+     * used for the LoRaWANNetworkServer endpoint.</p>
+     */
+    inline GetWirelessGatewayCertificateResult& WithLoRaWANNetworkServerCertificateId(Aws::String&& value) { SetLoRaWANNetworkServerCertificateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the certificate that is associated with the wireless gateway and
+     * used for the LoRaWANNetworkServer endpoint.</p>
+     */
+    inline GetWirelessGatewayCertificateResult& WithLoRaWANNetworkServerCertificateId(const char* value) { SetLoRaWANNetworkServerCertificateId(value); return *this;}
+
   private:
 
     Aws::String m_iotCertificateId;
+
+    Aws::String m_loRaWANNetworkServerCertificateId;
   };
 
 } // namespace Model

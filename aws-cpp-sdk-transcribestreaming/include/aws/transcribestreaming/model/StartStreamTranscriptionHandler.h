@@ -31,7 +31,7 @@ namespace Model
 
     public:
         StartStreamTranscriptionHandler();
-        StartStreamTranscriptionHandler& operator=(const StartStreamTranscriptionHandler& handler) = default;
+        StartStreamTranscriptionHandler& operator=(const StartStreamTranscriptionHandler&) = default;
 
         virtual void OnEvent() override;
 

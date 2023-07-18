@@ -11,6 +11,7 @@
 #include <aws/athena/model/QueryExecutionContext.h>
 #include <aws/athena/model/QueryExecutionStatus.h>
 #include <aws/athena/model/QueryExecutionStatistics.h>
+#include <aws/athena/model/EngineVersion.h>
 #include <utility>
 
 namespace Aws
@@ -130,7 +131,7 @@ namespace Model
      * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
      * query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
      */
     inline const StatementType& GetStatementType() const{ return m_statementType; }
 
@@ -139,7 +140,7 @@ namespace Model
      * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
      * query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
      */
     inline bool StatementTypeHasBeenSet() const { return m_statementTypeHasBeenSet; }
 
@@ -148,7 +149,7 @@ namespace Model
      * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
      * query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
      */
     inline void SetStatementType(const StatementType& value) { m_statementTypeHasBeenSet = true; m_statementType = value; }
 
@@ -157,7 +158,7 @@ namespace Model
      * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
      * query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
      */
     inline void SetStatementType(StatementType&& value) { m_statementTypeHasBeenSet = true; m_statementType = std::move(value); }
 
@@ -166,7 +167,7 @@ namespace Model
      * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
      * query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
      */
     inline QueryExecution& WithStatementType(const StatementType& value) { SetStatementType(value); return *this;}
 
@@ -175,7 +176,7 @@ namespace Model
      * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
      * query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
      */
     inline QueryExecution& WithStatementType(StatementType&& value) { SetStatementType(std::move(value)); return *this;}
 
@@ -380,6 +381,37 @@ namespace Model
      */
     inline QueryExecution& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
 
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline const EngineVersion& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline void SetEngineVersion(const EngineVersion& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline void SetEngineVersion(EngineVersion&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline QueryExecution& WithEngineVersion(const EngineVersion& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline QueryExecution& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryExecutionId;
@@ -405,6 +437,9 @@ namespace Model
 
     Aws::String m_workGroup;
     bool m_workGroupHasBeenSet;
+
+    EngineVersion m_engineVersion;
+    bool m_engineVersionHasBeenSet;
   };
 
 } // namespace Model

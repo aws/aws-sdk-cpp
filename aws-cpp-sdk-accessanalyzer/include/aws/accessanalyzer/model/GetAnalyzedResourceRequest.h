@@ -42,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
 

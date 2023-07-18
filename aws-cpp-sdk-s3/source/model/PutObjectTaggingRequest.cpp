@@ -21,8 +21,12 @@ PutObjectTaggingRequest::PutObjectTaggingRequest() :
     m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_taggingHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
+    m_requestPayerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -83,6 +87,11 @@ Aws::Http::HeaderValueCollection PutObjectTaggingRequest::GetRequestSpecificHead
     ss.str("");
   }
 
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
   if(m_expectedBucketOwnerHasBeenSet)
   {
     ss << m_expectedBucketOwner;
@@ -90,5 +99,23 @@ Aws::Http::HeaderValueCollection PutObjectTaggingRequest::GetRequestSpecificHead
     ss.str("");
   }
 
+  if(m_requestPayerHasBeenSet)
+  {
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
+  }
+
   return headers;
 }
+
+Aws::String PutObjectTaggingRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

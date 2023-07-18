@@ -244,6 +244,47 @@ namespace Model
 
 
     /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline const Aws::String& GetSourceConnectorLabel() const{ return m_sourceConnectorLabel; }
+
+    /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline bool SourceConnectorLabelHasBeenSet() const { return m_sourceConnectorLabelHasBeenSet; }
+
+    /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline void SetSourceConnectorLabel(const Aws::String& value) { m_sourceConnectorLabelHasBeenSet = true; m_sourceConnectorLabel = value; }
+
+    /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline void SetSourceConnectorLabel(Aws::String&& value) { m_sourceConnectorLabelHasBeenSet = true; m_sourceConnectorLabel = std::move(value); }
+
+    /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline void SetSourceConnectorLabel(const char* value) { m_sourceConnectorLabelHasBeenSet = true; m_sourceConnectorLabel.assign(value); }
+
+    /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline FlowDefinition& WithSourceConnectorLabel(const Aws::String& value) { SetSourceConnectorLabel(value); return *this;}
+
+    /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline FlowDefinition& WithSourceConnectorLabel(Aws::String&& value) { SetSourceConnectorLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The label of the source connector in the flow.</p>
+     */
+    inline FlowDefinition& WithSourceConnectorLabel(const char* value) { SetSourceConnectorLabel(value); return *this;}
+
+
+    /**
      * <p> Specifies the destination connector type, such as Salesforce, Amazon S3,
      * Amplitude, and so on. </p>
      */
@@ -278,6 +319,47 @@ namespace Model
      * Amplitude, and so on. </p>
      */
     inline FlowDefinition& WithDestinationConnectorType(ConnectorType&& value) { SetDestinationConnectorType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline const Aws::String& GetDestinationConnectorLabel() const{ return m_destinationConnectorLabel; }
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline bool DestinationConnectorLabelHasBeenSet() const { return m_destinationConnectorLabelHasBeenSet; }
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline void SetDestinationConnectorLabel(const Aws::String& value) { m_destinationConnectorLabelHasBeenSet = true; m_destinationConnectorLabel = value; }
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline void SetDestinationConnectorLabel(Aws::String&& value) { m_destinationConnectorLabelHasBeenSet = true; m_destinationConnectorLabel = std::move(value); }
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline void SetDestinationConnectorLabel(const char* value) { m_destinationConnectorLabelHasBeenSet = true; m_destinationConnectorLabel.assign(value); }
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline FlowDefinition& WithDestinationConnectorLabel(const Aws::String& value) { SetDestinationConnectorLabel(value); return *this;}
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline FlowDefinition& WithDestinationConnectorLabel(Aws::String&& value) { SetDestinationConnectorLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The label of the destination connector in the flow.</p>
+     */
+    inline FlowDefinition& WithDestinationConnectorLabel(const char* value) { SetDestinationConnectorLabel(value); return *this;}
 
 
     /**
@@ -574,8 +656,14 @@ namespace Model
     ConnectorType m_sourceConnectorType;
     bool m_sourceConnectorTypeHasBeenSet;
 
+    Aws::String m_sourceConnectorLabel;
+    bool m_sourceConnectorLabelHasBeenSet;
+
     ConnectorType m_destinationConnectorType;
     bool m_destinationConnectorTypeHasBeenSet;
+
+    Aws::String m_destinationConnectorLabel;
+    bool m_destinationConnectorLabelHasBeenSet;
 
     TriggerType m_triggerType;
     bool m_triggerTypeHasBeenSet;

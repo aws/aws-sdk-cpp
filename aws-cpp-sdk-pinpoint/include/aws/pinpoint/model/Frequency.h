@@ -21,7 +21,8 @@ namespace Model
     DAILY,
     WEEKLY,
     MONTHLY,
-    EVENT
+    EVENT,
+    IN_APP_EVENT
   };
 
 namespace FrequencyMapper

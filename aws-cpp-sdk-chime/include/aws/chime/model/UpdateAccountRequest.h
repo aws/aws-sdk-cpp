@@ -7,6 +7,7 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/ChimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime/model/License.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +114,43 @@ namespace Model
      */
     inline UpdateAccountRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The default license applied when you add users to an Amazon Chime
+     * account.</p>
+     */
+    inline const License& GetDefaultLicense() const{ return m_defaultLicense; }
+
+    /**
+     * <p>The default license applied when you add users to an Amazon Chime
+     * account.</p>
+     */
+    inline bool DefaultLicenseHasBeenSet() const { return m_defaultLicenseHasBeenSet; }
+
+    /**
+     * <p>The default license applied when you add users to an Amazon Chime
+     * account.</p>
+     */
+    inline void SetDefaultLicense(const License& value) { m_defaultLicenseHasBeenSet = true; m_defaultLicense = value; }
+
+    /**
+     * <p>The default license applied when you add users to an Amazon Chime
+     * account.</p>
+     */
+    inline void SetDefaultLicense(License&& value) { m_defaultLicenseHasBeenSet = true; m_defaultLicense = std::move(value); }
+
+    /**
+     * <p>The default license applied when you add users to an Amazon Chime
+     * account.</p>
+     */
+    inline UpdateAccountRequest& WithDefaultLicense(const License& value) { SetDefaultLicense(value); return *this;}
+
+    /**
+     * <p>The default license applied when you add users to an Amazon Chime
+     * account.</p>
+     */
+    inline UpdateAccountRequest& WithDefaultLicense(License&& value) { SetDefaultLicense(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -120,6 +158,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    License m_defaultLicense;
+    bool m_defaultLicenseHasBeenSet;
   };
 
 } // namespace Model

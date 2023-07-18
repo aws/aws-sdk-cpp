@@ -241,6 +241,88 @@ namespace Model
      */
     inline SoftwarePackage& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline const Aws::String& GetPackageManager() const{ return m_packageManager; }
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline bool PackageManagerHasBeenSet() const { return m_packageManagerHasBeenSet; }
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline void SetPackageManager(const Aws::String& value) { m_packageManagerHasBeenSet = true; m_packageManager = value; }
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline void SetPackageManager(Aws::String&& value) { m_packageManagerHasBeenSet = true; m_packageManager = std::move(value); }
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline void SetPackageManager(const char* value) { m_packageManagerHasBeenSet = true; m_packageManager.assign(value); }
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline SoftwarePackage& WithPackageManager(const Aws::String& value) { SetPackageManager(value); return *this;}
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline SoftwarePackage& WithPackageManager(Aws::String&& value) { SetPackageManager(std::move(value)); return *this;}
+
+    /**
+     * <p>The source of the package.</p>
+     */
+    inline SoftwarePackage& WithPackageManager(const char* value) { SetPackageManager(value); return *this;}
+
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline const Aws::String& GetFilePath() const{ return m_filePath; }
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline SoftwarePackage& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline SoftwarePackage& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
+
+    /**
+     * <p>The file system path to the package manager inventory file.</p>
+     */
+    inline SoftwarePackage& WithFilePath(const char* value) { SetFilePath(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -257,6 +339,12 @@ namespace Model
 
     Aws::String m_architecture;
     bool m_architectureHasBeenSet;
+
+    Aws::String m_packageManager;
+    bool m_packageManagerHasBeenSet;
+
+    Aws::String m_filePath;
+    bool m_filePathHasBeenSet;
   };
 
 } // namespace Model

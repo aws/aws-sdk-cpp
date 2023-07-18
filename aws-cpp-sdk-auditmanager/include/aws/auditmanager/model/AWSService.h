@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> An AWS service such as Amazon S3, AWS CloudTrail, and so on. </p><p><h3>See
+   * <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AWSService">AWS
    * API Reference</a></p>
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline AWSService& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline AWSService& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the AWS service. </p>
+     * <p> The name of the Amazon Web Service. </p>
      */
     inline AWSService& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

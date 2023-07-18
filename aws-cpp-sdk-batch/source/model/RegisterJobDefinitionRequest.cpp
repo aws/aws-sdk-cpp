@@ -17,6 +17,8 @@ RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() :
     m_type(JobDefinitionType::NOT_SET),
     m_typeHasBeenSet(false),
     m_parametersHasBeenSet(false),
+    m_schedulingPriority(0),
+    m_schedulingPriorityHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
     m_nodePropertiesHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
@@ -51,6 +53,12 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
    }
    payload.WithObject("parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_schedulingPriorityHasBeenSet)
+  {
+   payload.WithInteger("schedulingPriority", m_schedulingPriority);
 
   }
 

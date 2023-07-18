@@ -11,6 +11,7 @@
 #include <aws/macie2/model/JobStatus.h>
 #include <aws/macie2/model/JobType.h>
 #include <aws/macie2/model/LastRunErrorStatus.h>
+#include <aws/macie2/model/ManagedDataIdentifierSelector.h>
 #include <aws/macie2/model/S3JobDefinition.h>
 #include <aws/macie2/model/JobScheduleFrequency.h>
 #include <aws/macie2/model/Statistics.h>
@@ -118,42 +119,58 @@ namespace Model
 
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const{ return m_customDataIdentifierIds; }
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline void SetCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_customDataIdentifierIds = value; }
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline void SetCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_customDataIdentifierIds = std::move(value); }
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& WithCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetCustomDataIdentifierIds(value); return *this;}
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& WithCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetCustomDataIdentifierIds(std::move(value)); return *this;}
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(const Aws::String& value) { m_customDataIdentifierIds.push_back(value); return *this; }
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(Aws::String&& value) { m_customDataIdentifierIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The custom data identifiers that the job uses to analyze data.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier that the
+     * job uses to analyze data. This value is null if the job uses only managed data
+     * identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(const char* value) { m_customDataIdentifierIds.push_back(value); return *this; }
 
@@ -195,20 +212,29 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the job is configured to analyze all existing, eligible
-     * objects immediately after it's created.</p>
+     * <p>For a recurring job, specifies whether you configured the job to analyze all
+     * existing, eligible objects immediately after the job was created (true). If you
+     * configured the job to analyze only those objects that were created or changed
+     * after the job was created and before the job's first scheduled run, this value
+     * is false. This value is also false for a one-time job.</p>
      */
     inline bool GetInitialRun() const{ return m_initialRun; }
 
     /**
-     * <p>Specifies whether the job is configured to analyze all existing, eligible
-     * objects immediately after it's created.</p>
+     * <p>For a recurring job, specifies whether you configured the job to analyze all
+     * existing, eligible objects immediately after the job was created (true). If you
+     * configured the job to analyze only those objects that were created or changed
+     * after the job was created and before the job's first scheduled run, this value
+     * is false. This value is also false for a one-time job.</p>
      */
     inline void SetInitialRun(bool value) { m_initialRun = value; }
 
     /**
-     * <p>Specifies whether the job is configured to analyze all existing, eligible
-     * objects immediately after it's created.</p>
+     * <p>For a recurring job, specifies whether you configured the job to analyze all
+     * existing, eligible objects immediately after the job was created (true). If you
+     * configured the job to analyze only those objects that were created or changed
+     * after the job was created and before the job's first scheduled run, this value
+     * is false. This value is also false for a one-time job.</p>
      */
     inline DescribeClassificationJobResult& WithInitialRun(bool value) { SetInitialRun(value); return *this;}
 
@@ -287,100 +313,100 @@ namespace Model
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job, or you paused the job while it had a status of RUNNING
-     * and you didn't resume it within 30 days of pausing it.</p></li> <li><p>COMPLETE
-     * - For a one-time job, Amazon Macie finished processing the data specified for
-     * the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For
-     * a recurring job, the previous scheduled run is complete and the next scheduled
-     * run is pending. This value doesn't apply to one-time jobs.</p></li>
-     * <li><p>PAUSED - Amazon Macie started running the job but additional processing
-     * would exceed the monthly sensitive data discovery quota for your account or one
-     * or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING
-     * - For a one-time job, the job is in progress. For a recurring job, a scheduled
-     * run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you
-     * paused the job while it had a status of RUNNING and you don't resume the job
-     * within 30 days of pausing it, the job expires and is cancelled. To check the
-     * job's expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * - You cancelled the job or, if it's a one-time job, you paused the job and
+     * didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job,
+     * Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
+     * previous scheduled run is complete and the next scheduled run is pending. This
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
      * property.</p></li></ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job, or you paused the job while it had a status of RUNNING
-     * and you didn't resume it within 30 days of pausing it.</p></li> <li><p>COMPLETE
-     * - For a one-time job, Amazon Macie finished processing the data specified for
-     * the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For
-     * a recurring job, the previous scheduled run is complete and the next scheduled
-     * run is pending. This value doesn't apply to one-time jobs.</p></li>
-     * <li><p>PAUSED - Amazon Macie started running the job but additional processing
-     * would exceed the monthly sensitive data discovery quota for your account or one
-     * or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING
-     * - For a one-time job, the job is in progress. For a recurring job, a scheduled
-     * run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you
-     * paused the job while it had a status of RUNNING and you don't resume the job
-     * within 30 days of pausing it, the job expires and is cancelled. To check the
-     * job's expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * - You cancelled the job or, if it's a one-time job, you paused the job and
+     * didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job,
+     * Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
+     * previous scheduled run is complete and the next scheduled run is pending. This
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
      * property.</p></li></ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job, or you paused the job while it had a status of RUNNING
-     * and you didn't resume it within 30 days of pausing it.</p></li> <li><p>COMPLETE
-     * - For a one-time job, Amazon Macie finished processing the data specified for
-     * the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For
-     * a recurring job, the previous scheduled run is complete and the next scheduled
-     * run is pending. This value doesn't apply to one-time jobs.</p></li>
-     * <li><p>PAUSED - Amazon Macie started running the job but additional processing
-     * would exceed the monthly sensitive data discovery quota for your account or one
-     * or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING
-     * - For a one-time job, the job is in progress. For a recurring job, a scheduled
-     * run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you
-     * paused the job while it had a status of RUNNING and you don't resume the job
-     * within 30 days of pausing it, the job expires and is cancelled. To check the
-     * job's expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * - You cancelled the job or, if it's a one-time job, you paused the job and
+     * didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job,
+     * Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
+     * previous scheduled run is complete and the next scheduled run is pending. This
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
      * property.</p></li></ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job, or you paused the job while it had a status of RUNNING
-     * and you didn't resume it within 30 days of pausing it.</p></li> <li><p>COMPLETE
-     * - For a one-time job, Amazon Macie finished processing the data specified for
-     * the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For
-     * a recurring job, the previous scheduled run is complete and the next scheduled
-     * run is pending. This value doesn't apply to one-time jobs.</p></li>
-     * <li><p>PAUSED - Amazon Macie started running the job but additional processing
-     * would exceed the monthly sensitive data discovery quota for your account or one
-     * or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING
-     * - For a one-time job, the job is in progress. For a recurring job, a scheduled
-     * run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you
-     * paused the job while it had a status of RUNNING and you don't resume the job
-     * within 30 days of pausing it, the job expires and is cancelled. To check the
-     * job's expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * - You cancelled the job or, if it's a one-time job, you paused the job and
+     * didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job,
+     * Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
+     * previous scheduled run is complete and the next scheduled run is pending. This
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
      * property.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
      * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
-     * - You cancelled the job, or you paused the job while it had a status of RUNNING
-     * and you didn't resume it within 30 days of pausing it.</p></li> <li><p>COMPLETE
-     * - For a one-time job, Amazon Macie finished processing the data specified for
-     * the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For
-     * a recurring job, the previous scheduled run is complete and the next scheduled
-     * run is pending. This value doesn't apply to one-time jobs.</p></li>
-     * <li><p>PAUSED - Amazon Macie started running the job but additional processing
-     * would exceed the monthly sensitive data discovery quota for your account or one
-     * or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING
-     * - For a one-time job, the job is in progress. For a recurring job, a scheduled
-     * run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you
-     * paused the job while it had a status of RUNNING and you don't resume the job
-     * within 30 days of pausing it, the job expires and is cancelled. To check the
-     * job's expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * - You cancelled the job or, if it's a one-time job, you paused the job and
+     * didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job,
+     * Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
+     * previous scheduled run is complete and the next scheduled run is pending. This
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
      * property.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
@@ -500,6 +526,158 @@ namespace Model
 
 
     /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIds = value; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIds = std::move(value); }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline DescribeClassificationJobResult& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline DescribeClassificationJobResult& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIds.push_back(value); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier that the
+     * job is explicitly configured to include (use) or exclude (not use) when it
+     * analyzes data. Inclusion or exclusion depends on the managed data identifier
+     * selection type specified for the job (managedDataIdentifierSelector). This value
+     * is null if the job's managed data identifier selection type is ALL or the job
+     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     */
+    inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The selection type that determines which managed data identifiers the job
+     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
+     * Use all the managed data identifiers that Macie provides except the managed data
+     * identifiers specified by the managedDataIdentifierIds property.</p></li>
+     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
+     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
+     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
+     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
+     * job, the job also uses new managed data identifiers as they are released.</p>
+     */
+    inline const ManagedDataIdentifierSelector& GetManagedDataIdentifierSelector() const{ return m_managedDataIdentifierSelector; }
+
+    /**
+     * <p>The selection type that determines which managed data identifiers the job
+     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
+     * Use all the managed data identifiers that Macie provides except the managed data
+     * identifiers specified by the managedDataIdentifierIds property.</p></li>
+     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
+     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
+     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
+     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
+     * job, the job also uses new managed data identifiers as they are released.</p>
+     */
+    inline void SetManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { m_managedDataIdentifierSelector = value; }
+
+    /**
+     * <p>The selection type that determines which managed data identifiers the job
+     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
+     * Use all the managed data identifiers that Macie provides except the managed data
+     * identifiers specified by the managedDataIdentifierIds property.</p></li>
+     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
+     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
+     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
+     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
+     * job, the job also uses new managed data identifiers as they are released.</p>
+     */
+    inline void SetManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { m_managedDataIdentifierSelector = std::move(value); }
+
+    /**
+     * <p>The selection type that determines which managed data identifiers the job
+     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
+     * Use all the managed data identifiers that Macie provides except the managed data
+     * identifiers specified by the managedDataIdentifierIds property.</p></li>
+     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
+     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
+     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
+     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
+     * job, the job also uses new managed data identifiers as they are released.</p>
+     */
+    inline DescribeClassificationJobResult& WithManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { SetManagedDataIdentifierSelector(value); return *this;}
+
+    /**
+     * <p>The selection type that determines which managed data identifiers the job
+     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
+     * Use all the managed data identifiers that Macie provides except the managed data
+     * identifiers specified by the managedDataIdentifierIds property.</p></li>
+     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
+     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
+     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
+     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
+     * job, the job also uses new managed data identifiers as they are released.</p>
+     */
+    inline DescribeClassificationJobResult& WithManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { SetManagedDataIdentifierSelector(std::move(value)); return *this;}
+
+
+    /**
      * <p>The custom name of the job.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -536,31 +714,31 @@ namespace Model
 
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline const S3JobDefinition& GetS3JobDefinition() const{ return m_s3JobDefinition; }
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline void SetS3JobDefinition(const S3JobDefinition& value) { m_s3JobDefinition = value; }
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline void SetS3JobDefinition(S3JobDefinition&& value) { m_s3JobDefinition = std::move(value); }
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline DescribeClassificationJobResult& WithS3JobDefinition(const S3JobDefinition& value) { SetS3JobDefinition(value); return *this;}
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline DescribeClassificationJobResult& WithS3JobDefinition(S3JobDefinition&& value) { SetS3JobDefinition(std::move(value)); return *this;}
@@ -586,32 +764,32 @@ namespace Model
 
 
     /**
-     * <p>The recurrence pattern for running the job. If the job is configured to run
-     * only once, this value is null.</p>
+     * <p>The recurrence pattern for running the job. This value is null if the job is
+     * configured to run only once.</p>
      */
     inline const JobScheduleFrequency& GetScheduleFrequency() const{ return m_scheduleFrequency; }
 
     /**
-     * <p>The recurrence pattern for running the job. If the job is configured to run
-     * only once, this value is null.</p>
+     * <p>The recurrence pattern for running the job. This value is null if the job is
+     * configured to run only once.</p>
      */
     inline void SetScheduleFrequency(const JobScheduleFrequency& value) { m_scheduleFrequency = value; }
 
     /**
-     * <p>The recurrence pattern for running the job. If the job is configured to run
-     * only once, this value is null.</p>
+     * <p>The recurrence pattern for running the job. This value is null if the job is
+     * configured to run only once.</p>
      */
     inline void SetScheduleFrequency(JobScheduleFrequency&& value) { m_scheduleFrequency = std::move(value); }
 
     /**
-     * <p>The recurrence pattern for running the job. If the job is configured to run
-     * only once, this value is null.</p>
+     * <p>The recurrence pattern for running the job. This value is null if the job is
+     * configured to run only once.</p>
      */
     inline DescribeClassificationJobResult& WithScheduleFrequency(const JobScheduleFrequency& value) { SetScheduleFrequency(value); return *this;}
 
     /**
-     * <p>The recurrence pattern for running the job. If the job is configured to run
-     * only once, this value is null.</p>
+     * <p>The recurrence pattern for running the job. This value is null if the job is
+     * configured to run only once.</p>
      */
     inline DescribeClassificationJobResult& WithScheduleFrequency(JobScheduleFrequency&& value) { SetScheduleFrequency(std::move(value)); return *this;}
 
@@ -722,36 +900,41 @@ namespace Model
 
     /**
      * <p>If the current status of the job is USER_PAUSED, specifies when the job was
-     * paused and when the job will expire and be cancelled if it isn't resumed. This
-     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     * paused and when the job or job run will expire and be cancelled if it isn't
+     * resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.</p>
      */
     inline const UserPausedDetails& GetUserPausedDetails() const{ return m_userPausedDetails; }
 
     /**
      * <p>If the current status of the job is USER_PAUSED, specifies when the job was
-     * paused and when the job will expire and be cancelled if it isn't resumed. This
-     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     * paused and when the job or job run will expire and be cancelled if it isn't
+     * resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.</p>
      */
     inline void SetUserPausedDetails(const UserPausedDetails& value) { m_userPausedDetails = value; }
 
     /**
      * <p>If the current status of the job is USER_PAUSED, specifies when the job was
-     * paused and when the job will expire and be cancelled if it isn't resumed. This
-     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     * paused and when the job or job run will expire and be cancelled if it isn't
+     * resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.</p>
      */
     inline void SetUserPausedDetails(UserPausedDetails&& value) { m_userPausedDetails = std::move(value); }
 
     /**
      * <p>If the current status of the job is USER_PAUSED, specifies when the job was
-     * paused and when the job will expire and be cancelled if it isn't resumed. This
-     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     * paused and when the job or job run will expire and be cancelled if it isn't
+     * resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.</p>
      */
     inline DescribeClassificationJobResult& WithUserPausedDetails(const UserPausedDetails& value) { SetUserPausedDetails(value); return *this;}
 
     /**
      * <p>If the current status of the job is USER_PAUSED, specifies when the job was
-     * paused and when the job will expire and be cancelled if it isn't resumed. This
-     * value is present only if the value for jobStatus is USER_PAUSED.</p>
+     * paused and when the job or job run will expire and be cancelled if it isn't
+     * resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.</p>
      */
     inline DescribeClassificationJobResult& WithUserPausedDetails(UserPausedDetails&& value) { SetUserPausedDetails(std::move(value)); return *this;}
 
@@ -778,6 +961,10 @@ namespace Model
     LastRunErrorStatus m_lastRunErrorStatus;
 
     Aws::Utils::DateTime m_lastRunTime;
+
+    Aws::Vector<Aws::String> m_managedDataIdentifierIds;
+
+    ManagedDataIdentifierSelector m_managedDataIdentifierSelector;
 
     Aws::String m_name;
 

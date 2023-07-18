@@ -75,64 +75,73 @@ namespace Model
 
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline GetMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline GetMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline GetMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline GetMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of AWS account identifiers for the member account for which to
-     * return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve
+     * <p>The list of Amazon Web Services account identifiers for the member account
+     * for which to return member details. You can request details for up to 50 member
+     * accounts at a time.</p> <p>You cannot use <code>GetMembers</code> to retrieve
      * information about member accounts that were removed from the behavior graph.</p>
      */
     inline GetMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }

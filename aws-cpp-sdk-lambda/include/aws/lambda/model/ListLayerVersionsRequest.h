@@ -8,6 +8,7 @@
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -172,6 +173,49 @@ namespace Model
      */
     inline ListLayerVersionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
+
+    /**
+     * <p>The compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architecture</a>.</p>
+     */
+    inline const Architecture& GetCompatibleArchitecture() const{ return m_compatibleArchitecture; }
+
+    /**
+     * <p>The compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architecture</a>.</p>
+     */
+    inline bool CompatibleArchitectureHasBeenSet() const { return m_compatibleArchitectureHasBeenSet; }
+
+    /**
+     * <p>The compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architecture</a>.</p>
+     */
+    inline void SetCompatibleArchitecture(const Architecture& value) { m_compatibleArchitectureHasBeenSet = true; m_compatibleArchitecture = value; }
+
+    /**
+     * <p>The compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architecture</a>.</p>
+     */
+    inline void SetCompatibleArchitecture(Architecture&& value) { m_compatibleArchitectureHasBeenSet = true; m_compatibleArchitecture = std::move(value); }
+
+    /**
+     * <p>The compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architecture</a>.</p>
+     */
+    inline ListLayerVersionsRequest& WithCompatibleArchitecture(const Architecture& value) { SetCompatibleArchitecture(value); return *this;}
+
+    /**
+     * <p>The compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architecture</a>.</p>
+     */
+    inline ListLayerVersionsRequest& WithCompatibleArchitecture(Architecture&& value) { SetCompatibleArchitecture(std::move(value)); return *this;}
+
   private:
 
     Runtime m_compatibleRuntime;
@@ -185,6 +229,9 @@ namespace Model
 
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
+    Architecture m_compatibleArchitecture;
+    bool m_compatibleArchitectureHasBeenSet;
   };
 
 } // namespace Model

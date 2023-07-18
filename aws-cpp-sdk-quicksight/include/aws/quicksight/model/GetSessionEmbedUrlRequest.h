@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline GetSessionEmbedUrlRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline GetSessionEmbedUrlRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account associated with your QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline GetSessionEmbedUrlRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -85,10 +93,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline const Aws::String& GetEntryPoint() const{ return m_entryPoint; }
 
@@ -98,10 +106,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
 
@@ -111,10 +119,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline void SetEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
 
@@ -124,10 +132,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline void SetEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
 
@@ -137,10 +145,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline void SetEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.assign(value); }
 
@@ -150,10 +158,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline GetSessionEmbedUrlRequest& WithEntryPoint(const Aws::String& value) { SetEntryPoint(value); return *this;}
 
@@ -163,10 +171,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline GetSessionEmbedUrlRequest& WithEntryPoint(Aws::String&& value) { SetEntryPoint(std::move(value)); return *this;}
 
@@ -176,10 +184,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline GetSessionEmbedUrlRequest& WithEntryPoint(const char* value) { SetEntryPoint(value); return *this;}
 
@@ -215,10 +223,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
@@ -228,10 +236,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
@@ -241,10 +249,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
@@ -254,10 +262,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
 
@@ -267,10 +275,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
 
@@ -280,10 +288,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline GetSessionEmbedUrlRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
@@ -293,10 +301,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline GetSessionEmbedUrlRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
@@ -306,10 +314,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
-     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
-     * the third group, IAM users and IAM role-based sessions.</p>
+     * <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions
+     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
+     * IAM federation</p> </li> </ol> <p>Omit this parameter for users in the third
+     * group, IAM users and IAM role-based sessions.</p>
      */
     inline GetSessionEmbedUrlRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 

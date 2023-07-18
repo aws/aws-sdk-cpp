@@ -35,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline const Aws::Vector<ResourceDataSyncItem>& GetResourceDataSyncItems() const{ return m_resourceDataSyncItems; }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline void SetResourceDataSyncItems(const Aws::Vector<ResourceDataSyncItem>& value) { m_resourceDataSyncItems = value; }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline void SetResourceDataSyncItems(Aws::Vector<ResourceDataSyncItem>&& value) { m_resourceDataSyncItems = std::move(value); }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& WithResourceDataSyncItems(const Aws::Vector<ResourceDataSyncItem>& value) { SetResourceDataSyncItems(value); return *this;}
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& WithResourceDataSyncItems(Aws::Vector<ResourceDataSyncItem>&& value) { SetResourceDataSyncItems(std::move(value)); return *this;}
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& AddResourceDataSyncItems(const ResourceDataSyncItem& value) { m_resourceDataSyncItems.push_back(value); return *this; }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& AddResourceDataSyncItems(ResourceDataSyncItem&& value) { m_resourceDataSyncItems.push_back(std::move(value)); return *this; }

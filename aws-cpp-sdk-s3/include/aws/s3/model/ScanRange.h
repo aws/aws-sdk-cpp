@@ -41,8 +41,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */
@@ -50,8 +51,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */
@@ -59,8 +61,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */
@@ -68,8 +71,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */

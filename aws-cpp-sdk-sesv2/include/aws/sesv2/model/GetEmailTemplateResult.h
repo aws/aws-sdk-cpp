@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the template you want to retrieve.</p>
+     * <p>The name of the template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the template you want to retrieve.</p>
+     * <p>The name of the template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateName = value; }
 
     /**
-     * <p>The name of the template you want to retrieve.</p>
+     * <p>The name of the template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the template you want to retrieve.</p>
+     * <p>The name of the template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateName.assign(value); }
 
     /**
-     * <p>The name of the template you want to retrieve.</p>
+     * <p>The name of the template.</p>
      */
     inline GetEmailTemplateResult& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the template you want to retrieve.</p>
+     * <p>The name of the template.</p>
      */
     inline GetEmailTemplateResult& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the template you want to retrieve.</p>
+     * <p>The name of the template.</p>
      */
     inline GetEmailTemplateResult& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 

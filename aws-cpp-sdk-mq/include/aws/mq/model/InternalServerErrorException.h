@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Returns information about an error.<p><h3>See Also:</h3>   <a
+   * <p>Returns information about an error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/InternalServerErrorException">AWS
    * API Reference</a></p>
    */
@@ -38,83 +38,83 @@ namespace Model
 
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline const Aws::String& GetErrorAttribute() const{ return m_errorAttribute; }
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline bool ErrorAttributeHasBeenSet() const { return m_errorAttributeHasBeenSet; }
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline void SetErrorAttribute(const Aws::String& value) { m_errorAttributeHasBeenSet = true; m_errorAttribute = value; }
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline void SetErrorAttribute(Aws::String&& value) { m_errorAttributeHasBeenSet = true; m_errorAttribute = std::move(value); }
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline void SetErrorAttribute(const char* value) { m_errorAttributeHasBeenSet = true; m_errorAttribute.assign(value); }
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline InternalServerErrorException& WithErrorAttribute(const Aws::String& value) { SetErrorAttribute(value); return *this;}
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline InternalServerErrorException& WithErrorAttribute(Aws::String&& value) { SetErrorAttribute(std::move(value)); return *this;}
 
     /**
-     * The attribute which caused the error.
+     * <p>The attribute which caused the error.</p>
      */
     inline InternalServerErrorException& WithErrorAttribute(const char* value) { SetErrorAttribute(value); return *this;}
 
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline InternalServerErrorException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline InternalServerErrorException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * The explanation of the error.
+     * <p>The explanation of the error.</p>
      */
     inline InternalServerErrorException& WithMessage(const char* value) { SetMessage(value); return *this;}
 

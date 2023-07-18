@@ -26,10 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The 5-tuple criteria for AWS Network Firewall to use to inspect packet
-   * headers in stateful traffic flow inspection. Traffic flows that match the
-   * criteria are a match for the corresponding <a>StatefulRule</a>. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The basic rule criteria for Network Firewall to use to inspect packet headers
+   * in stateful traffic flow inspection. Traffic flows that match the criteria are a
+   * match for the corresponding <a>StatefulRule</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Header">AWS
    * API Reference</a></p>
    */
@@ -43,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. To specify all, you can use <code>IP</code>,
+     * because all traffic on Amazon Web Services and on the internet is IP.</p>
      */
     inline const StatefulRuleProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. To specify all, you can use <code>IP</code>,
+     * because all traffic on Amazon Web Services and on the internet is IP.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. To specify all, you can use <code>IP</code>,
+     * because all traffic on Amazon Web Services and on the internet is IP.</p>
      */
     inline void SetProtocol(const StatefulRuleProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. To specify all, you can use <code>IP</code>,
+     * because all traffic on Amazon Web Services and on the internet is IP.</p>
      */
     inline void SetProtocol(StatefulRuleProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. To specify all, you can use <code>IP</code>,
+     * because all traffic on Amazon Web Services and on the internet is IP.</p>
      */
     inline Header& WithProtocol(const StatefulRuleProtocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. To specify all, you can use <code>IP</code>,
+     * because all traffic on Amazon Web Services and on the internet is IP.</p>
      */
     inline Header& WithProtocol(StatefulRuleProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
@@ -203,56 +202,56 @@ namespace Model
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline const Aws::String& GetSourcePort() const{ return m_sourcePort; }
 
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline bool SourcePortHasBeenSet() const { return m_sourcePortHasBeenSet; }
 
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline void SetSourcePort(const Aws::String& value) { m_sourcePortHasBeenSet = true; m_sourcePort = value; }
 
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline void SetSourcePort(Aws::String&& value) { m_sourcePortHasBeenSet = true; m_sourcePort = std::move(value); }
 
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline void SetSourcePort(const char* value) { m_sourcePortHasBeenSet = true; m_sourcePort.assign(value); }
 
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline Header& WithSourcePort(const Aws::String& value) { SetSourcePort(value); return *this;}
 
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline Header& WithSourcePort(Aws::String&& value) { SetSourcePort(std::move(value)); return *this;}
 
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline Header& WithSourcePort(const char* value) { SetSourcePort(value); return *this;}
 
@@ -436,56 +435,56 @@ namespace Model
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline const Aws::String& GetDestinationPort() const{ return m_destinationPort; }
 
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
 
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline void SetDestinationPort(const Aws::String& value) { m_destinationPortHasBeenSet = true; m_destinationPort = value; }
 
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline void SetDestinationPort(Aws::String&& value) { m_destinationPortHasBeenSet = true; m_destinationPort = std::move(value); }
 
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline void SetDestinationPort(const char* value) { m_destinationPortHasBeenSet = true; m_destinationPort.assign(value); }
 
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline Header& WithDestinationPort(const Aws::String& value) { SetDestinationPort(value); return *this;}
 
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline Header& WithDestinationPort(Aws::String&& value) { SetDestinationPort(std::move(value)); return *this;}
 
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990-1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
     inline Header& WithDestinationPort(const char* value) { SetDestinationPort(value); return *this;}
 

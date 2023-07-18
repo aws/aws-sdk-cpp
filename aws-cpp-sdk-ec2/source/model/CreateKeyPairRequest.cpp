@@ -14,7 +14,11 @@ CreateKeyPairRequest::CreateKeyPairRequest() :
     m_keyNameHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_keyType(KeyType::NOT_SET),
+    m_keyTypeHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false),
+    m_keyFormat(KeyFormat::NOT_SET),
+    m_keyFormatHasBeenSet(false)
 {
 }
 
@@ -32,6 +36,11 @@ Aws::String CreateKeyPairRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if(m_keyTypeHasBeenSet)
+  {
+    ss << "KeyType=" << KeyTypeMapper::GetNameForKeyType(m_keyType) << "&";
+  }
+
   if(m_tagSpecificationsHasBeenSet)
   {
     unsigned tagSpecificationsCount = 1;
@@ -40,6 +49,11 @@ Aws::String CreateKeyPairRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_keyFormatHasBeenSet)
+  {
+    ss << "KeyFormat=" << KeyFormatMapper::GetNameForKeyFormat(m_keyFormat) << "&";
   }
 
   ss << "Version=2016-11-15";

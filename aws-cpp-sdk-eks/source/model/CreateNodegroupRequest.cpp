@@ -25,10 +25,12 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_remoteAccessHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_launchTemplateHasBeenSet(false),
+    m_updateConfigHasBeenSet(false),
     m_capacityType(CapacityTypes::NOT_SET),
     m_capacityTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
@@ -108,6 +110,17 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
 
   }
 
+  if(m_taintsHasBeenSet)
+  {
+   Array<JsonValue> taintsJsonList(m_taints.size());
+   for(unsigned taintsIndex = 0; taintsIndex < taintsJsonList.GetLength(); ++taintsIndex)
+   {
+     taintsJsonList[taintsIndex].AsObject(m_taints[taintsIndex].Jsonize());
+   }
+   payload.WithArray("taints", std::move(taintsJsonList));
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -128,6 +141,12 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
   if(m_launchTemplateHasBeenSet)
   {
    payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
+
+  }
+
+  if(m_updateConfigHasBeenSet)
+  {
+   payload.WithObject("updateConfig", m_updateConfig.Jsonize());
 
   }
 

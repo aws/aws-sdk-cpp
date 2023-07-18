@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 CreateDiscovererRequest::CreateDiscovererRequest() : 
     m_descriptionHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
+    m_crossAccount(false),
+    m_crossAccountHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +34,12 @@ Aws::String CreateDiscovererRequest::SerializePayload() const
   if(m_sourceArnHasBeenSet)
   {
    payload.WithString("SourceArn", m_sourceArn);
+
+  }
+
+  if(m_crossAccountHasBeenSet)
+  {
+   payload.WithBool("CrossAccount", m_crossAccount);
 
   }
 

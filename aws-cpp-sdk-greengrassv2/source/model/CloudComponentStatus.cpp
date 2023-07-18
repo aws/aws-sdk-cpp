@@ -22,7 +22,10 @@ CloudComponentStatus::CloudComponentStatus() :
     m_componentState(CloudComponentState::NOT_SET),
     m_componentStateHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+    m_errorsHasBeenSet(false),
+    m_vendorGuidance(VendorGuidance::NOT_SET),
+    m_vendorGuidanceHasBeenSet(false),
+    m_vendorGuidanceMessageHasBeenSet(false)
 {
 }
 
@@ -30,7 +33,10 @@ CloudComponentStatus::CloudComponentStatus(JsonView jsonValue) :
     m_componentState(CloudComponentState::NOT_SET),
     m_componentStateHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+    m_errorsHasBeenSet(false),
+    m_vendorGuidance(VendorGuidance::NOT_SET),
+    m_vendorGuidanceHasBeenSet(false),
+    m_vendorGuidanceMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +67,20 @@ CloudComponentStatus& CloudComponentStatus::operator =(JsonView jsonValue)
     m_errorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vendorGuidance"))
+  {
+    m_vendorGuidance = VendorGuidanceMapper::GetVendorGuidanceForName(jsonValue.GetString("vendorGuidance"));
+
+    m_vendorGuidanceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vendorGuidanceMessage"))
+  {
+    m_vendorGuidanceMessage = jsonValue.GetString("vendorGuidanceMessage");
+
+    m_vendorGuidanceMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,6 +107,17 @@ JsonValue CloudComponentStatus::Jsonize() const
      errorsJsonMap.WithString(errorsItem.first, errorsItem.second);
    }
    payload.WithObject("errors", std::move(errorsJsonMap));
+
+  }
+
+  if(m_vendorGuidanceHasBeenSet)
+  {
+   payload.WithString("vendorGuidance", VendorGuidanceMapper::GetNameForVendorGuidance(m_vendorGuidance));
+  }
+
+  if(m_vendorGuidanceMessageHasBeenSet)
+  {
+   payload.WithString("vendorGuidanceMessage", m_vendorGuidanceMessage);
 
   }
 

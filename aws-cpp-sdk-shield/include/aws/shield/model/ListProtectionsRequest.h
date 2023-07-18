@@ -35,95 +35,167 @@ namespace Model
 
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline ListProtectionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline ListProtectionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
-     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     * <p>When you request a list of objects from Shield Advanced, if the response does
+     * not include all of the remaining available objects, Shield Advanced includes a
+     * <code>NextToken</code> value in the response. You can retrieve the next batch of
+     * objects by requesting the list again and providing the token that was returned
+     * by the prior call in your request. </p> <p>You can indicate the maximum number
+     * of objects that you want Shield Advanced to return for a single call with the
+     * <code>MaxResults</code> setting. Shield Advanced will not return more than
+     * <code>MaxResults</code> objects, but may return fewer, even if more objects are
+     * still available.</p> <p>Whenever more objects remain that Shield Advanced has
+     * not yet returned to you, the response will include a <code>NextToken</code>
+     * value.</p> <p>On your first call to a list operation, leave this setting
+     * empty.</p>
      */
     inline ListProtectionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of <a>Protection</a> objects to return. If you leave this
-     * blank, Shield Advanced returns the first 20 results.</p> <p>This is a maximum
-     * value. Shield Advanced might return the results in smaller batches. That is, the
-     * number of objects returned could be less than <code>MaxResults</code>, even if
-     * there are still more objects yet to return. If there are more objects to return,
-     * Shield Advanced returns a value in <code>NextToken</code> that you can use in
-     * your next request, to get the next batch of objects.</p>
+     * <p>The greatest number of objects that you want Shield Advanced to return to the
+     * list request. Shield Advanced might return fewer objects than you indicate in
+     * this setting, even if more objects are available. If there are more objects
+     * remaining, Shield Advanced will always also return a <code>NextToken</code>
+     * value in the response.</p> <p>The default setting is 20.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of <a>Protection</a> objects to return. If you leave this
-     * blank, Shield Advanced returns the first 20 results.</p> <p>This is a maximum
-     * value. Shield Advanced might return the results in smaller batches. That is, the
-     * number of objects returned could be less than <code>MaxResults</code>, even if
-     * there are still more objects yet to return. If there are more objects to return,
-     * Shield Advanced returns a value in <code>NextToken</code> that you can use in
-     * your next request, to get the next batch of objects.</p>
+     * <p>The greatest number of objects that you want Shield Advanced to return to the
+     * list request. Shield Advanced might return fewer objects than you indicate in
+     * this setting, even if more objects are available. If there are more objects
+     * remaining, Shield Advanced will always also return a <code>NextToken</code>
+     * value in the response.</p> <p>The default setting is 20.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of <a>Protection</a> objects to return. If you leave this
-     * blank, Shield Advanced returns the first 20 results.</p> <p>This is a maximum
-     * value. Shield Advanced might return the results in smaller batches. That is, the
-     * number of objects returned could be less than <code>MaxResults</code>, even if
-     * there are still more objects yet to return. If there are more objects to return,
-     * Shield Advanced returns a value in <code>NextToken</code> that you can use in
-     * your next request, to get the next batch of objects.</p>
+     * <p>The greatest number of objects that you want Shield Advanced to return to the
+     * list request. Shield Advanced might return fewer objects than you indicate in
+     * this setting, even if more objects are available. If there are more objects
+     * remaining, Shield Advanced will always also return a <code>NextToken</code>
+     * value in the response.</p> <p>The default setting is 20.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of <a>Protection</a> objects to return. If you leave this
-     * blank, Shield Advanced returns the first 20 results.</p> <p>This is a maximum
-     * value. Shield Advanced might return the results in smaller batches. That is, the
-     * number of objects returned could be less than <code>MaxResults</code>, even if
-     * there are still more objects yet to return. If there are more objects to return,
-     * Shield Advanced returns a value in <code>NextToken</code> that you can use in
-     * your next request, to get the next batch of objects.</p>
+     * <p>The greatest number of objects that you want Shield Advanced to return to the
+     * list request. Shield Advanced might return fewer objects than you indicate in
+     * this setting, even if more objects are available. If there are more objects
+     * remaining, Shield Advanced will always also return a <code>NextToken</code>
+     * value in the response.</p> <p>The default setting is 20.</p>
      */
     inline ListProtectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

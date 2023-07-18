@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the error that is returned when a user can���t be associated with
-   * or disassociated from a stack. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes the error that is returned when a user can’t be associated with or
+   * disassociated from a stack. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UserStackAssociationError">AWS
    * API Reference</a></p>
    */

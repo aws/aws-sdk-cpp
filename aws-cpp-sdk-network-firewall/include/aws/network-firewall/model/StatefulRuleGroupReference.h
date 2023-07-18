@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/model/StatefulRuleGroupOverride.h>
 #include <utility>
 
 namespace Aws
@@ -78,10 +79,106 @@ namespace Model
      */
     inline StatefulRuleGroupReference& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single <a>FirewallPolicy</a>. This setting only applies to firewall
+     * policies that specify the <code>STRICT_ORDER</code> rule order in the stateful
+     * engine options settings.</p> <p>Network Firewall evalutes each stateful rule
+     * group against a packet starting with the group that has the lowest priority
+     * setting. You must ensure that the priority settings are unique within each
+     * policy.</p> <p>You can change the priority settings of your rule groups at any
+     * time. To make it easier to insert rule groups later, number them so there's a
+     * wide range in between, for example use 100, 200, and so on. </p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single <a>FirewallPolicy</a>. This setting only applies to firewall
+     * policies that specify the <code>STRICT_ORDER</code> rule order in the stateful
+     * engine options settings.</p> <p>Network Firewall evalutes each stateful rule
+     * group against a packet starting with the group that has the lowest priority
+     * setting. You must ensure that the priority settings are unique within each
+     * policy.</p> <p>You can change the priority settings of your rule groups at any
+     * time. To make it easier to insert rule groups later, number them so there's a
+     * wide range in between, for example use 100, 200, and so on. </p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single <a>FirewallPolicy</a>. This setting only applies to firewall
+     * policies that specify the <code>STRICT_ORDER</code> rule order in the stateful
+     * engine options settings.</p> <p>Network Firewall evalutes each stateful rule
+     * group against a packet starting with the group that has the lowest priority
+     * setting. You must ensure that the priority settings are unique within each
+     * policy.</p> <p>You can change the priority settings of your rule groups at any
+     * time. To make it easier to insert rule groups later, number them so there's a
+     * wide range in between, for example use 100, 200, and so on. </p>
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single <a>FirewallPolicy</a>. This setting only applies to firewall
+     * policies that specify the <code>STRICT_ORDER</code> rule order in the stateful
+     * engine options settings.</p> <p>Network Firewall evalutes each stateful rule
+     * group against a packet starting with the group that has the lowest priority
+     * setting. You must ensure that the priority settings are unique within each
+     * policy.</p> <p>You can change the priority settings of your rule groups at any
+     * time. To make it easier to insert rule groups later, number them so there's a
+     * wide range in between, for example use 100, 200, and so on. </p>
+     */
+    inline StatefulRuleGroupReference& WithPriority(int value) { SetPriority(value); return *this;}
+
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline const StatefulRuleGroupOverride& GetOverride() const{ return m_override; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(const StatefulRuleGroupOverride& value) { m_overrideHasBeenSet = true; m_override = value; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(StatefulRuleGroupOverride&& value) { m_overrideHasBeenSet = true; m_override = std::move(value); }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroupReference& WithOverride(const StatefulRuleGroupOverride& value) { SetOverride(value); return *this;}
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroupReference& WithOverride(StatefulRuleGroupOverride&& value) { SetOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
+
+    StatefulRuleGroupOverride m_override;
+    bool m_overrideHasBeenSet;
   };
 
 } // namespace Model

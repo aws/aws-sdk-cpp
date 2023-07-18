@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime/model/License.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime/model/AccountStatus.h>
 #include <aws/chime/model/SigninDelegateGroup.h>
 #include <utility>
 
@@ -325,6 +326,37 @@ namespace Model
 
 
     /**
+     * <p>The status of the account.</p>
+     */
+    inline const AccountStatus& GetAccountStatus() const{ return m_accountStatus; }
+
+    /**
+     * <p>The status of the account.</p>
+     */
+    inline bool AccountStatusHasBeenSet() const { return m_accountStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the account.</p>
+     */
+    inline void SetAccountStatus(const AccountStatus& value) { m_accountStatusHasBeenSet = true; m_accountStatus = value; }
+
+    /**
+     * <p>The status of the account.</p>
+     */
+    inline void SetAccountStatus(AccountStatus&& value) { m_accountStatusHasBeenSet = true; m_accountStatus = std::move(value); }
+
+    /**
+     * <p>The status of the account.</p>
+     */
+    inline Account& WithAccountStatus(const AccountStatus& value) { SetAccountStatus(value); return *this;}
+
+    /**
+     * <p>The status of the account.</p>
+     */
+    inline Account& WithAccountStatus(AccountStatus&& value) { SetAccountStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The sign-in delegate groups associated with the account.</p>
      */
     inline const Aws::Vector<SigninDelegateGroup>& GetSigninDelegateGroups() const{ return m_signinDelegateGroups; }
@@ -386,6 +418,9 @@ namespace Model
 
     Aws::Vector<License> m_supportedLicenses;
     bool m_supportedLicensesHasBeenSet;
+
+    AccountStatus m_accountStatus;
+    bool m_accountStatusHasBeenSet;
 
     Aws::Vector<SigninDelegateGroup> m_signinDelegateGroups;
     bool m_signinDelegateGroupsHasBeenSet;

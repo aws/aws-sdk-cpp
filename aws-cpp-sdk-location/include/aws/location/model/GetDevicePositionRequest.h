@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline GetDevicePositionRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline GetDevicePositionRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
 
     /**
-     * <p>The device whose position you want to retreieve.</p>
+     * <p>The device whose position you want to retrieve.</p>
      */
     inline GetDevicePositionRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 

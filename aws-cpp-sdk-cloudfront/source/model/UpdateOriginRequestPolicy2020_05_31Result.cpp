@@ -20,12 +20,12 @@ UpdateOriginRequestPolicy2020_05_31Result::UpdateOriginRequestPolicy2020_05_31Re
 {
 }
 
-UpdateOriginRequestPolicy2020_05_31Result::UpdateOriginRequestPolicy2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateOriginRequestPolicy2020_05_31Result::UpdateOriginRequestPolicy2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateOriginRequestPolicy2020_05_31Result& UpdateOriginRequestPolicy2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateOriginRequestPolicy2020_05_31Result& UpdateOriginRequestPolicy2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

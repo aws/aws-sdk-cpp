@@ -72,7 +72,7 @@ SSOClient::~SSOClient()
 {
 }
 
-void SSOClient::init(const ClientConfiguration& config)
+void SSOClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SSO");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -116,9 +116,7 @@ GetRoleCredentialsOutcome SSOClient::GetRoleCredentials(const GetRoleCredentials
     return GetRoleCredentialsOutcome(Aws::Client::AWSError<SSOErrors>(SSOErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/federation/credentials";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/federation/credentials");
   return GetRoleCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
@@ -153,9 +151,7 @@ ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesReques
     return ListAccountRolesOutcome(Aws::Client::AWSError<SSOErrors>(SSOErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assignment/roles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assignment/roles");
   return ListAccountRolesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
@@ -185,9 +181,7 @@ ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) 
     return ListAccountsOutcome(Aws::Client::AWSError<SSOErrors>(SSOErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assignment/accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assignment/accounts");
   return ListAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
@@ -217,9 +211,7 @@ LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const
     return LogoutOutcome(Aws::Client::AWSError<SSOErrors>(SSOErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/logout";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/logout");
   return LogoutOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 

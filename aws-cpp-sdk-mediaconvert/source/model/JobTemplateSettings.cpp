@@ -23,7 +23,9 @@ JobTemplateSettings::JobTemplateSettings() :
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
+    m_extendedDataServicesHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_nielsenNonLinearWatermarkHasBeenSet(false),
@@ -38,7 +40,9 @@ JobTemplateSettings::JobTemplateSettings(JsonView jsonValue) :
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
+    m_extendedDataServicesHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_nielsenNonLinearWatermarkHasBeenSet(false),
@@ -72,6 +76,13 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
     m_esamHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("extendedDataServices"))
+  {
+    m_extendedDataServices = jsonValue.GetObject("extendedDataServices");
+
+    m_extendedDataServicesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputs"))
   {
     Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -80,6 +91,13 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
     }
     m_inputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kantarWatermark"))
+  {
+    m_kantarWatermark = jsonValue.GetObject("kantarWatermark");
+
+    m_kantarWatermarkHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("motionImageInserter"))
@@ -152,6 +170,12 @@ JsonValue JobTemplateSettings::Jsonize() const
 
   }
 
+  if(m_extendedDataServicesHasBeenSet)
+  {
+   payload.WithObject("extendedDataServices", m_extendedDataServices.Jsonize());
+
+  }
+
   if(m_inputsHasBeenSet)
   {
    Array<JsonValue> inputsJsonList(m_inputs.size());
@@ -160,6 +184,12 @@ JsonValue JobTemplateSettings::Jsonize() const
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
    }
    payload.WithArray("inputs", std::move(inputsJsonList));
+
+  }
+
+  if(m_kantarWatermarkHasBeenSet)
+  {
+   payload.WithObject("kantarWatermark", m_kantarWatermark.Jsonize());
 
   }
 

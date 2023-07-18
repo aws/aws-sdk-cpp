@@ -8,6 +8,7 @@
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/model/EventIngestion.h>
 #include <aws/frauddetector/model/Tag.h>
 #include <utility>
 
@@ -266,6 +267,37 @@ namespace Model
 
 
     /**
+     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     */
+    inline const EventIngestion& GetEventIngestion() const{ return m_eventIngestion; }
+
+    /**
+     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     */
+    inline bool EventIngestionHasBeenSet() const { return m_eventIngestionHasBeenSet; }
+
+    /**
+     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     */
+    inline void SetEventIngestion(const EventIngestion& value) { m_eventIngestionHasBeenSet = true; m_eventIngestion = value; }
+
+    /**
+     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     */
+    inline void SetEventIngestion(EventIngestion&& value) { m_eventIngestionHasBeenSet = true; m_eventIngestion = std::move(value); }
+
+    /**
+     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     */
+    inline PutEventTypeRequest& WithEventIngestion(const EventIngestion& value) { SetEventIngestion(value); return *this;}
+
+    /**
+     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     */
+    inline PutEventTypeRequest& WithEventIngestion(EventIngestion&& value) { SetEventIngestion(std::move(value)); return *this;}
+
+
+    /**
      * <p>A collection of key and value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -321,6 +353,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_entityTypes;
     bool m_entityTypesHasBeenSet;
+
+    EventIngestion m_eventIngestion;
+    bool m_eventIngestionHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

@@ -152,7 +152,7 @@ namespace Model
 
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
@@ -164,7 +164,7 @@ namespace Model
     inline const Aws::String& GetMediaRegion() const{ return m_mediaRegion; }
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
@@ -176,7 +176,7 @@ namespace Model
     inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
@@ -188,7 +188,7 @@ namespace Model
     inline void SetMediaRegion(const Aws::String& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = value; }
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
@@ -200,7 +200,7 @@ namespace Model
     inline void SetMediaRegion(Aws::String&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::move(value); }
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
@@ -212,7 +212,7 @@ namespace Model
     inline void SetMediaRegion(const char* value) { m_mediaRegionHasBeenSet = true; m_mediaRegion.assign(value); }
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
@@ -224,7 +224,7 @@ namespace Model
     inline Meeting& WithMediaRegion(const Aws::String& value) { SetMediaRegion(value); return *this;}
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
@@ -236,7 +236,7 @@ namespace Model
     inline Meeting& WithMediaRegion(Aws::String&& value) { SetMediaRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region in which to create the meeting. Available values:
+     * <p>The Region in which you create the meeting. Available values:
      * <code>af-south-1</code>, <code>ap-northeast-1</code>,
      * <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,

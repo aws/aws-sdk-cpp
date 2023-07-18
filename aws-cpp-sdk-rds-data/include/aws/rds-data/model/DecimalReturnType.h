@@ -16,8 +16,8 @@ namespace Model
   enum class DecimalReturnType
   {
     NOT_SET,
-    DOUBLE_OR_LONG,
-    STRING
+    STRING,
+    DOUBLE_OR_LONG
   };
 
 namespace DecimalReturnTypeMapper

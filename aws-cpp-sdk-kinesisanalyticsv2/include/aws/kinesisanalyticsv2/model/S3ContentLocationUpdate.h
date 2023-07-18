@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an update for the Amazon S3 code content location for a Flink-based
-   * Kinesis Data Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an update for the Amazon S3 code content location for an
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ContentLocationUpdate">AWS
    * API Reference</a></p>
    */

@@ -16,7 +16,8 @@ DescribeManagedRuleGroupRequest::DescribeManagedRuleGroupRequest() :
     m_vendorNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String DescribeManagedRuleGroupRequest::SerializePayload() const
   if(m_scopeHasBeenSet)
   {
    payload.WithString("Scope", ScopeMapper::GetNameForScope(m_scope));
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
+
   }
 
   return payload.View().WriteReadable();

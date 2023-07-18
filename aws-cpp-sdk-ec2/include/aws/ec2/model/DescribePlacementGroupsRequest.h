@@ -40,12 +40,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -58,12 +59,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -76,12 +78,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -94,12 +97,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -112,12 +116,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -130,12 +135,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -148,12 +154,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -166,12 +173,13 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify

@@ -21,8 +21,8 @@ namespace Model
 {
 
   /**
-   * <p>The request to list distributions that are associated with a specified AWS
-   * WAF web ACL. </p><p><h3>See Also:</h3>   <a
+   * <p>The request to list distributions that are associated with a specified WAF
+   * web ACL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLIdRequest">AWS
    * API Reference</a></p>
    */
@@ -173,58 +173,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS WAF web ACL that you want to list the associated
-     * distributions. If you specify "null" for the ID, the request returns a list of
-     * the distributions that aren't associated with a web ACL. </p>
+     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
+     * If you specify "null" for the ID, the request returns a list of the
+     * distributions that aren't associated with a web ACL.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     lowestPrice,
     diversified,
-    capacityOptimized
+    capacityOptimized,
+    capacityOptimizedPrioritized
   };
 
 namespace AllocationStrategyMapper

@@ -32,19 +32,29 @@ namespace Model
     DeleteTaskSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Details about the task set.</p>
+     */
     inline const TaskSet& GetTaskSet() const{ return m_taskSet; }
 
-    
+    /**
+     * <p>Details about the task set.</p>
+     */
     inline void SetTaskSet(const TaskSet& value) { m_taskSet = value; }
 
-    
+    /**
+     * <p>Details about the task set.</p>
+     */
     inline void SetTaskSet(TaskSet&& value) { m_taskSet = std::move(value); }
 
-    
+    /**
+     * <p>Details about the task set.</p>
+     */
     inline DeleteTaskSetResult& WithTaskSet(const TaskSet& value) { SetTaskSet(value); return *this;}
 
-    
+    /**
+     * <p>Details about the task set.</p>
+     */
     inline DeleteTaskSetResult& WithTaskSet(TaskSet&& value) { SetTaskSet(std::move(value)); return *this;}
 
   private:

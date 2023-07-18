@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationEfsResult::DescribeLocationEfsResult()
+DescribeLocationEfsResult::DescribeLocationEfsResult() : 
+    m_inTransitEncryption(EfsInTransitEncryption::NOT_SET)
 {
 }
 
-DescribeLocationEfsResult::DescribeLocationEfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeLocationEfsResult::DescribeLocationEfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_inTransitEncryption(EfsInTransitEncryption::NOT_SET)
 {
   *this = result;
 }
@@ -49,6 +51,24 @@ DescribeLocationEfsResult& DescribeLocationEfsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
+
+  }
+
+  if(jsonValue.ValueExists("AccessPointArn"))
+  {
+    m_accessPointArn = jsonValue.GetString("AccessPointArn");
+
+  }
+
+  if(jsonValue.ValueExists("FileSystemAccessRoleArn"))
+  {
+    m_fileSystemAccessRoleArn = jsonValue.GetString("FileSystemAccessRoleArn");
+
+  }
+
+  if(jsonValue.ValueExists("InTransitEncryption"))
+  {
+    m_inTransitEncryption = EfsInTransitEncryptionMapper::GetEfsInTransitEncryptionForName(jsonValue.GetString("InTransitEncryption"));
 
   }
 

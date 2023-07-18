@@ -125,34 +125,46 @@ namespace Model
 
 
     /**
-     * <p>Specifies the minimum confidence level for the labels to return. Amazon
-     * Rekognition doesn't return any labels with a confidence lower than this
-     * specified value. If you specify a value of 0, all labels are return, regardless
-     * of the default thresholds that the model version applies.</p>
+     * <p>Specifies the minimum confidence level for the labels to return.
+     * <code>DetectCustomLabels</code> doesn't return any labels with a confidence
+     * value that's lower than this specified value. If you specify a value of 0,
+     * <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
+     * threshold applied to each label. If you don't specify a value for
+     * <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based
+     * on the assumed threshold of each label.</p>
      */
     inline double GetMinConfidence() const{ return m_minConfidence; }
 
     /**
-     * <p>Specifies the minimum confidence level for the labels to return. Amazon
-     * Rekognition doesn't return any labels with a confidence lower than this
-     * specified value. If you specify a value of 0, all labels are return, regardless
-     * of the default thresholds that the model version applies.</p>
+     * <p>Specifies the minimum confidence level for the labels to return.
+     * <code>DetectCustomLabels</code> doesn't return any labels with a confidence
+     * value that's lower than this specified value. If you specify a value of 0,
+     * <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
+     * threshold applied to each label. If you don't specify a value for
+     * <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based
+     * on the assumed threshold of each label.</p>
      */
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
 
     /**
-     * <p>Specifies the minimum confidence level for the labels to return. Amazon
-     * Rekognition doesn't return any labels with a confidence lower than this
-     * specified value. If you specify a value of 0, all labels are return, regardless
-     * of the default thresholds that the model version applies.</p>
+     * <p>Specifies the minimum confidence level for the labels to return.
+     * <code>DetectCustomLabels</code> doesn't return any labels with a confidence
+     * value that's lower than this specified value. If you specify a value of 0,
+     * <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
+     * threshold applied to each label. If you don't specify a value for
+     * <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based
+     * on the assumed threshold of each label.</p>
      */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
 
     /**
-     * <p>Specifies the minimum confidence level for the labels to return. Amazon
-     * Rekognition doesn't return any labels with a confidence lower than this
-     * specified value. If you specify a value of 0, all labels are return, regardless
-     * of the default thresholds that the model version applies.</p>
+     * <p>Specifies the minimum confidence level for the labels to return.
+     * <code>DetectCustomLabels</code> doesn't return any labels with a confidence
+     * value that's lower than this specified value. If you specify a value of 0,
+     * <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
+     * threshold applied to each label. If you don't specify a value for
+     * <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based
+     * on the assumed threshold of each label.</p>
      */
     inline DetectCustomLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 

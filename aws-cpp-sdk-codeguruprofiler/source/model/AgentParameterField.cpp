@@ -20,35 +20,35 @@ namespace Aws
       namespace AgentParameterFieldMapper
       {
 
-        static const int MaxStackDepth_HASH = HashingUtils::HashString("MaxStackDepth");
-        static const int MemoryUsageLimitPercent_HASH = HashingUtils::HashString("MemoryUsageLimitPercent");
-        static const int MinimumTimeForReportingInMilliseconds_HASH = HashingUtils::HashString("MinimumTimeForReportingInMilliseconds");
-        static const int ReportingIntervalInMilliseconds_HASH = HashingUtils::HashString("ReportingIntervalInMilliseconds");
         static const int SamplingIntervalInMilliseconds_HASH = HashingUtils::HashString("SamplingIntervalInMilliseconds");
+        static const int ReportingIntervalInMilliseconds_HASH = HashingUtils::HashString("ReportingIntervalInMilliseconds");
+        static const int MinimumTimeForReportingInMilliseconds_HASH = HashingUtils::HashString("MinimumTimeForReportingInMilliseconds");
+        static const int MemoryUsageLimitPercent_HASH = HashingUtils::HashString("MemoryUsageLimitPercent");
+        static const int MaxStackDepth_HASH = HashingUtils::HashString("MaxStackDepth");
 
 
         AgentParameterField GetAgentParameterFieldForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == MaxStackDepth_HASH)
+          if (hashCode == SamplingIntervalInMilliseconds_HASH)
           {
-            return AgentParameterField::MaxStackDepth;
-          }
-          else if (hashCode == MemoryUsageLimitPercent_HASH)
-          {
-            return AgentParameterField::MemoryUsageLimitPercent;
-          }
-          else if (hashCode == MinimumTimeForReportingInMilliseconds_HASH)
-          {
-            return AgentParameterField::MinimumTimeForReportingInMilliseconds;
+            return AgentParameterField::SamplingIntervalInMilliseconds;
           }
           else if (hashCode == ReportingIntervalInMilliseconds_HASH)
           {
             return AgentParameterField::ReportingIntervalInMilliseconds;
           }
-          else if (hashCode == SamplingIntervalInMilliseconds_HASH)
+          else if (hashCode == MinimumTimeForReportingInMilliseconds_HASH)
           {
-            return AgentParameterField::SamplingIntervalInMilliseconds;
+            return AgentParameterField::MinimumTimeForReportingInMilliseconds;
+          }
+          else if (hashCode == MemoryUsageLimitPercent_HASH)
+          {
+            return AgentParameterField::MemoryUsageLimitPercent;
+          }
+          else if (hashCode == MaxStackDepth_HASH)
+          {
+            return AgentParameterField::MaxStackDepth;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,16 +64,16 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case AgentParameterField::MaxStackDepth:
-            return "MaxStackDepth";
-          case AgentParameterField::MemoryUsageLimitPercent:
-            return "MemoryUsageLimitPercent";
-          case AgentParameterField::MinimumTimeForReportingInMilliseconds:
-            return "MinimumTimeForReportingInMilliseconds";
-          case AgentParameterField::ReportingIntervalInMilliseconds:
-            return "ReportingIntervalInMilliseconds";
           case AgentParameterField::SamplingIntervalInMilliseconds:
             return "SamplingIntervalInMilliseconds";
+          case AgentParameterField::ReportingIntervalInMilliseconds:
+            return "ReportingIntervalInMilliseconds";
+          case AgentParameterField::MinimumTimeForReportingInMilliseconds:
+            return "MinimumTimeForReportingInMilliseconds";
+          case AgentParameterField::MemoryUsageLimitPercent:
+            return "MemoryUsageLimitPercent";
+          case AgentParameterField::MaxStackDepth:
+            return "MaxStackDepth";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -16,7 +16,7 @@ namespace Model
 
   /**
    * <p>A request to retrieve a count of all the hosted zones that are associated
-   * with the current AWS account.</p><p><h3>See Also:</h3>   <a
+   * with the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCountRequest">AWS
    * API Reference</a></p>
    */

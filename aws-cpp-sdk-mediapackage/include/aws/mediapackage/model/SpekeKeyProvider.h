@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/model/EncryptionContractConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -119,6 +120,25 @@ transfer with the key
 
      */
     inline SpekeKeyProvider& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+
+    
+    inline const EncryptionContractConfiguration& GetEncryptionContractConfiguration() const{ return m_encryptionContractConfiguration; }
+
+    
+    inline bool EncryptionContractConfigurationHasBeenSet() const { return m_encryptionContractConfigurationHasBeenSet; }
+
+    
+    inline void SetEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = value; }
+
+    
+    inline void SetEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = std::move(value); }
+
+    
+    inline SpekeKeyProvider& WithEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { SetEncryptionContractConfiguration(value); return *this;}
+
+    
+    inline SpekeKeyProvider& WithEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { SetEncryptionContractConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -317,6 +337,9 @@ MediaPackage
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
+    EncryptionContractConfiguration m_encryptionContractConfiguration;
+    bool m_encryptionContractConfigurationHasBeenSet;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;

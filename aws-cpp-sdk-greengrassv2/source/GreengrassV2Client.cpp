@@ -20,16 +20,24 @@
 #include <aws/greengrassv2/GreengrassV2Client.h>
 #include <aws/greengrassv2/GreengrassV2Endpoint.h>
 #include <aws/greengrassv2/GreengrassV2ErrorMarshaller.h>
+#include <aws/greengrassv2/model/AssociateServiceRoleToAccountRequest.h>
+#include <aws/greengrassv2/model/BatchAssociateClientDeviceWithCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/BatchDisassociateClientDeviceFromCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/CancelDeploymentRequest.h>
 #include <aws/greengrassv2/model/CreateComponentVersionRequest.h>
 #include <aws/greengrassv2/model/CreateDeploymentRequest.h>
 #include <aws/greengrassv2/model/DeleteComponentRequest.h>
 #include <aws/greengrassv2/model/DeleteCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/DeleteDeploymentRequest.h>
 #include <aws/greengrassv2/model/DescribeComponentRequest.h>
+#include <aws/greengrassv2/model/DisassociateServiceRoleFromAccountRequest.h>
 #include <aws/greengrassv2/model/GetComponentRequest.h>
 #include <aws/greengrassv2/model/GetComponentVersionArtifactRequest.h>
+#include <aws/greengrassv2/model/GetConnectivityInfoRequest.h>
 #include <aws/greengrassv2/model/GetCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/GetDeploymentRequest.h>
+#include <aws/greengrassv2/model/GetServiceRoleForAccountRequest.h>
+#include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/ListComponentVersionsRequest.h>
 #include <aws/greengrassv2/model/ListComponentsRequest.h>
 #include <aws/greengrassv2/model/ListCoreDevicesRequest.h>
@@ -40,6 +48,7 @@
 #include <aws/greengrassv2/model/ResolveComponentCandidatesRequest.h>
 #include <aws/greengrassv2/model/TagResourceRequest.h>
 #include <aws/greengrassv2/model/UntagResourceRequest.h>
+#include <aws/greengrassv2/model/UpdateConnectivityInfoRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -88,7 +97,7 @@ GreengrassV2Client::~GreengrassV2Client()
 {
 }
 
-void GreengrassV2Client::init(const ClientConfiguration& config)
+void GreengrassV2Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("GreengrassV2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -114,6 +123,95 @@ void GreengrassV2Client::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateServiceRoleToAccountOutcome GreengrassV2Client::AssociateServiceRoleToAccount(const AssociateServiceRoleToAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/servicerole");
+  return AssociateServiceRoleToAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateServiceRoleToAccountOutcomeCallable GreengrassV2Client::AssociateServiceRoleToAccountCallable(const AssociateServiceRoleToAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateServiceRoleToAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateServiceRoleToAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::AssociateServiceRoleToAccountAsync(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateServiceRoleToAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::AssociateServiceRoleToAccountAsyncHelper(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateServiceRoleToAccount(request), context);
+}
+
+BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssociateClientDeviceWithCoreDevice(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
+{
+  if (!request.CoreDeviceThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchAssociateClientDeviceWithCoreDevice", "Required field: CoreDeviceThingName, is not set");
+    return BatchAssociateClientDeviceWithCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/associateClientDevices");
+  return BatchAssociateClientDeviceWithCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceCallable(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateClientDeviceWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchAssociateClientDeviceWithCoreDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceAsync(const BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateClientDeviceWithCoreDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceAsyncHelper(const BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchAssociateClientDeviceWithCoreDevice(request), context);
+}
+
+BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDevice(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const
+{
+  if (!request.CoreDeviceThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDisassociateClientDeviceFromCoreDevice", "Required field: CoreDeviceThingName, is not set");
+    return BatchDisassociateClientDeviceFromCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/disassociateClientDevices");
+  return BatchDisassociateClientDeviceFromCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceCallable(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateClientDeviceFromCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisassociateClientDeviceFromCoreDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceAsync(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDisassociateClientDeviceFromCoreDevice(request), context);
+}
+
 CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploymentRequest& request) const
 {
   if (!request.DeploymentIdHasBeenSet())
@@ -122,11 +220,9 @@ CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploym
     return CancelDeploymentOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/deployments/";
-  ss << request.GetDeploymentId();
-  ss << "/cancel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
+  uri.AddPathSegments("/cancel");
   return CancelDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -151,9 +247,7 @@ void GreengrassV2Client::CancelDeploymentAsyncHelper(const CancelDeploymentReque
 CreateComponentVersionOutcome GreengrassV2Client::CreateComponentVersion(const CreateComponentVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/createComponentVersion";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/createComponentVersion");
   return CreateComponentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -178,9 +272,7 @@ void GreengrassV2Client::CreateComponentVersionAsyncHelper(const CreateComponent
 CreateDeploymentOutcome GreengrassV2Client::CreateDeployment(const CreateDeploymentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/deployments");
   return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -210,10 +302,8 @@ DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponent
     return DeleteComponentOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/components/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/components/");
+  uri.AddPathSegment(request.GetArn());
   return DeleteComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -243,10 +333,8 @@ DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDev
     return DeleteCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/coreDevices/";
-  ss << request.GetCoreDeviceThingName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
   return DeleteCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -268,6 +356,37 @@ void GreengrassV2Client::DeleteCoreDeviceAsyncHelper(const DeleteCoreDeviceReque
   handler(this, request, DeleteCoreDevice(request), context);
 }
 
+DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const
+{
+  if (!request.DeploymentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDeployment", "Required field: DeploymentId, is not set");
+    return DeleteDeploymentOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
+  return DeleteDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDeploymentOutcomeCallable GreengrassV2Client::DeleteDeploymentCallable(const DeleteDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::DeleteDeploymentAsyncHelper(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDeployment(request), context);
+}
+
 DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeComponentRequest& request) const
 {
   if (!request.ArnHasBeenSet())
@@ -276,11 +395,9 @@ DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeCom
     return DescribeComponentOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/components/";
-  ss << request.GetArn();
-  ss << "/metadata";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/components/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/metadata");
   return DescribeComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -302,6 +419,31 @@ void GreengrassV2Client::DescribeComponentAsyncHelper(const DescribeComponentReq
   handler(this, request, DescribeComponent(request), context);
 }
 
+DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/servicerole");
+  return DisassociateServiceRoleFromAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateServiceRoleFromAccountOutcomeCallable GreengrassV2Client::DisassociateServiceRoleFromAccountCallable(const DisassociateServiceRoleFromAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateServiceRoleFromAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateServiceRoleFromAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::DisassociateServiceRoleFromAccountAsync(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateServiceRoleFromAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::DisassociateServiceRoleFromAccountAsyncHelper(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateServiceRoleFromAccount(request), context);
+}
+
 GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& request) const
 {
   if (!request.ArnHasBeenSet())
@@ -310,10 +452,8 @@ GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& 
     return GetComponentOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/components/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/components/");
+  uri.AddPathSegment(request.GetArn());
   return GetComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -348,12 +488,10 @@ GetComponentVersionArtifactOutcome GreengrassV2Client::GetComponentVersionArtifa
     return GetComponentVersionArtifactOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ArtifactName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/components/";
-  ss << request.GetArn();
-  ss << "/artifacts/";
-  ss << request.GetArtifactName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/components/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/artifacts/");
+  uri.AddPathSegments(request.GetArtifactName());
   return GetComponentVersionArtifactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -375,6 +513,38 @@ void GreengrassV2Client::GetComponentVersionArtifactAsyncHelper(const GetCompone
   handler(this, request, GetComponentVersionArtifact(request), context);
 }
 
+GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnectivityInfo", "Required field: ThingName, is not set");
+    return GetConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/connectivityInfo");
+  return GetConnectivityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetConnectivityInfoOutcomeCallable GreengrassV2Client::GetConnectivityInfoCallable(const GetConnectivityInfoRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectivityInfo(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::GetConnectivityInfoAsync(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectivityInfoAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::GetConnectivityInfoAsyncHelper(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnectivityInfo(request), context);
+}
+
 GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceRequest& request) const
 {
   if (!request.CoreDeviceThingNameHasBeenSet())
@@ -383,10 +553,8 @@ GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceReques
     return GetCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/coreDevices/";
-  ss << request.GetCoreDeviceThingName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
   return GetCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -416,10 +584,8 @@ GetDeploymentOutcome GreengrassV2Client::GetDeployment(const GetDeploymentReques
     return GetDeploymentOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/deployments/";
-  ss << request.GetDeploymentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
   return GetDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -441,6 +607,63 @@ void GreengrassV2Client::GetDeploymentAsyncHelper(const GetDeploymentRequest& re
   handler(this, request, GetDeployment(request), context);
 }
 
+GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/servicerole");
+  return GetServiceRoleForAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetServiceRoleForAccountOutcomeCallable GreengrassV2Client::GetServiceRoleForAccountCallable(const GetServiceRoleForAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetServiceRoleForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceRoleForAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::GetServiceRoleForAccountAsync(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetServiceRoleForAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::GetServiceRoleForAccountAsyncHelper(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetServiceRoleForAccount(request), context);
+}
+
+ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientDevicesAssociatedWithCoreDevice(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
+{
+  if (!request.CoreDeviceThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListClientDevicesAssociatedWithCoreDevice", "Required field: CoreDeviceThingName, is not set");
+    return ListClientDevicesAssociatedWithCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/associatedClientDevices");
+  return ListClientDevicesAssociatedWithCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceCallable(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListClientDevicesAssociatedWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClientDevicesAssociatedWithCoreDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceAsync(const ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListClientDevicesAssociatedWithCoreDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceAsyncHelper(const ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListClientDevicesAssociatedWithCoreDevice(request), context);
+}
+
 ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const ListComponentVersionsRequest& request) const
 {
   if (!request.ArnHasBeenSet())
@@ -449,11 +672,9 @@ ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const Lis
     return ListComponentVersionsOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/components/";
-  ss << request.GetArn();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/components/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/versions");
   return ListComponentVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -478,9 +699,7 @@ void GreengrassV2Client::ListComponentVersionsAsyncHelper(const ListComponentVer
 ListComponentsOutcome GreengrassV2Client::ListComponents(const ListComponentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/components";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/components");
   return ListComponentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -505,9 +724,7 @@ void GreengrassV2Client::ListComponentsAsyncHelper(const ListComponentsRequest& 
 ListCoreDevicesOutcome GreengrassV2Client::ListCoreDevices(const ListCoreDevicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/coreDevices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/coreDevices");
   return ListCoreDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -532,9 +749,7 @@ void GreengrassV2Client::ListCoreDevicesAsyncHelper(const ListCoreDevicesRequest
 ListDeploymentsOutcome GreengrassV2Client::ListDeployments(const ListDeploymentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/deployments");
   return ListDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -564,11 +779,9 @@ ListEffectiveDeploymentsOutcome GreengrassV2Client::ListEffectiveDeployments(con
     return ListEffectiveDeploymentsOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/coreDevices/";
-  ss << request.GetCoreDeviceThingName();
-  ss << "/effectiveDeployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/effectiveDeployments");
   return ListEffectiveDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -598,11 +811,9 @@ ListInstalledComponentsOutcome GreengrassV2Client::ListInstalledComponents(const
     return ListInstalledComponentsOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/coreDevices/";
-  ss << request.GetCoreDeviceThingName();
-  ss << "/installedComponents";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/installedComponents");
   return ListInstalledComponentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -632,10 +843,8 @@ ListTagsForResourceOutcome GreengrassV2Client::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -660,9 +869,7 @@ void GreengrassV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 ResolveComponentCandidatesOutcome GreengrassV2Client::ResolveComponentCandidates(const ResolveComponentCandidatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/v2/resolveComponentCandidates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/v2/resolveComponentCandidates");
   return ResolveComponentCandidatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -692,10 +899,8 @@ TagResourceOutcome GreengrassV2Client::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -730,10 +935,8 @@ UntagResourceOutcome GreengrassV2Client::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -753,5 +956,37 @@ void GreengrassV2Client::UntagResourceAsync(const UntagResourceRequest& request,
 void GreengrassV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateConnectivityInfoOutcome GreengrassV2Client::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnectivityInfo", "Required field: ThingName, is not set");
+    return UpdateConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/connectivityInfo");
+  return UpdateConnectivityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectivityInfoOutcomeCallable GreengrassV2Client::UpdateConnectivityInfoCallable(const UpdateConnectivityInfoRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectivityInfo(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::UpdateConnectivityInfoAsync(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectivityInfoAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::UpdateConnectivityInfoAsyncHelper(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnectivityInfo(request), context);
 }
 

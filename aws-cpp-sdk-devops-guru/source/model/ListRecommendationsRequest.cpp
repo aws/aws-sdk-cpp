@@ -14,7 +14,10 @@ using namespace Aws::Utils;
 
 ListRecommendationsRequest::ListRecommendationsRequest() : 
     m_insightIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_locale(Locale::NOT_SET),
+    m_localeHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -31,6 +34,17 @@ Aws::String ListRecommendationsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_localeHasBeenSet)
+  {
+   payload.WithString("Locale", LocaleMapper::GetNameForLocale(m_locale));
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

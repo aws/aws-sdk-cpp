@@ -21,7 +21,8 @@ namespace Model
     FAILED,
     DELETING,
     MISCONFIGURED,
-    UPDATING
+    UPDATING,
+    MISCONFIGURED_UNAVAILABLE
   };
 
 namespace FileSystemLifecycleMapper

@@ -83,7 +83,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
 
@@ -93,7 +96,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
@@ -103,7 +109,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
@@ -113,7 +122,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
 
@@ -123,7 +135,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline ListJobsRequest& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
 
@@ -133,7 +148,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline ListJobsRequest& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
 
@@ -284,9 +302,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -295,9 +313,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -306,9 +324,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -317,9 +335,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -328,9 +346,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -339,9 +357,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -350,9 +368,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -361,9 +379,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 

@@ -80,42 +80,82 @@ namespace Model
 
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline const Aws::String& GetDataSourceSyncJobId() const{ return m_dataSourceSyncJobId; }
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline bool DataSourceSyncJobIdHasBeenSet() const { return m_dataSourceSyncJobIdHasBeenSet; }
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline void SetDataSourceSyncJobId(const Aws::String& value) { m_dataSourceSyncJobIdHasBeenSet = true; m_dataSourceSyncJobId = value; }
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline void SetDataSourceSyncJobId(Aws::String&& value) { m_dataSourceSyncJobIdHasBeenSet = true; m_dataSourceSyncJobId = std::move(value); }
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline void SetDataSourceSyncJobId(const char* value) { m_dataSourceSyncJobIdHasBeenSet = true; m_dataSourceSyncJobId.assign(value); }
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline DataSourceSyncJobMetricTarget& WithDataSourceSyncJobId(const Aws::String& value) { SetDataSourceSyncJobId(value); return *this;}
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline DataSourceSyncJobMetricTarget& WithDataSourceSyncJobId(Aws::String&& value) { SetDataSourceSyncJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the sync job that is running on the data source.</p>
+     * <p>The ID of the sync job that is running on the data source.</p> <p>If the ID
+     * of a sync job is not provided and there is a sync job running, then the ID of
+     * this sync job is used and metrics are generated for this sync job.</p> <p>If the
+     * ID of a sync job is not provided and there is no sync job running, then no
+     * metrics are generated and documents are indexed/deleted at the index level
+     * without sync job metrics included.</p>
      */
     inline DataSourceSyncJobMetricTarget& WithDataSourceSyncJobId(const char* value) { SetDataSourceSyncJobId(value); return *this;}
 

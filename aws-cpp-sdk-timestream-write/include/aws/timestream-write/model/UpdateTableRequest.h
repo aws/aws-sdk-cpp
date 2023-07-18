@@ -8,6 +8,7 @@
 #include <aws/timestream-write/TimestreamWriteRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/timestream-write/model/RetentionProperties.h>
+#include <aws/timestream-write/model/MagneticStoreWriteProperties.h>
 #include <utility>
 
 namespace Aws
@@ -77,42 +78,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline UpdateTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline UpdateTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Timesream table.</p>
+     * <p>The name of the Timestream table.</p>
      */
     inline UpdateTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
@@ -147,6 +148,43 @@ namespace Model
      */
     inline UpdateTableRequest& WithRetentionProperties(RetentionProperties&& value) { SetRetentionProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline const MagneticStoreWriteProperties& GetMagneticStoreWriteProperties() const{ return m_magneticStoreWriteProperties; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline bool MagneticStoreWritePropertiesHasBeenSet() const { return m_magneticStoreWritePropertiesHasBeenSet; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline void SetMagneticStoreWriteProperties(const MagneticStoreWriteProperties& value) { m_magneticStoreWritePropertiesHasBeenSet = true; m_magneticStoreWriteProperties = value; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline void SetMagneticStoreWriteProperties(MagneticStoreWriteProperties&& value) { m_magneticStoreWritePropertiesHasBeenSet = true; m_magneticStoreWriteProperties = std::move(value); }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline UpdateTableRequest& WithMagneticStoreWriteProperties(const MagneticStoreWriteProperties& value) { SetMagneticStoreWriteProperties(value); return *this;}
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline UpdateTableRequest& WithMagneticStoreWriteProperties(MagneticStoreWriteProperties&& value) { SetMagneticStoreWriteProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_databaseName;
@@ -157,6 +195,9 @@ namespace Model
 
     RetentionProperties m_retentionProperties;
     bool m_retentionPropertiesHasBeenSet;
+
+    MagneticStoreWriteProperties m_magneticStoreWriteProperties;
+    bool m_magneticStoreWritePropertiesHasBeenSet;
   };
 
 } // namespace Model

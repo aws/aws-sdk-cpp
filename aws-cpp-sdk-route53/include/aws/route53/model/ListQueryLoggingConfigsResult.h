@@ -38,7 +38,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
      * element for each configuration for DNS query logging that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline const Aws::Vector<QueryLoggingConfig>& GetQueryLoggingConfigs() const{ return m_queryLoggingConfigs; }
 
@@ -46,7 +46,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
      * element for each configuration for DNS query logging that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline void SetQueryLoggingConfigs(const Aws::Vector<QueryLoggingConfig>& value) { m_queryLoggingConfigs = value; }
 
@@ -54,7 +54,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
      * element for each configuration for DNS query logging that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline void SetQueryLoggingConfigs(Aws::Vector<QueryLoggingConfig>&& value) { m_queryLoggingConfigs = std::move(value); }
 
@@ -62,7 +62,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
      * element for each configuration for DNS query logging that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListQueryLoggingConfigsResult& WithQueryLoggingConfigs(const Aws::Vector<QueryLoggingConfig>& value) { SetQueryLoggingConfigs(value); return *this;}
 
@@ -70,7 +70,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
      * element for each configuration for DNS query logging that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListQueryLoggingConfigsResult& WithQueryLoggingConfigs(Aws::Vector<QueryLoggingConfig>&& value) { SetQueryLoggingConfigs(std::move(value)); return *this;}
 
@@ -78,7 +78,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
      * element for each configuration for DNS query logging that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListQueryLoggingConfigsResult& AddQueryLoggingConfigs(const QueryLoggingConfig& value) { m_queryLoggingConfigs.push_back(value); return *this; }
 
@@ -86,16 +86,16 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
      * element for each configuration for DNS query logging that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListQueryLoggingConfigsResult& AddQueryLoggingConfigs(QueryLoggingConfig&& value) { m_queryLoggingConfigs.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>If a response includes the last of the query logging configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -105,9 +105,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the query logging configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -117,9 +117,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the query logging configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -129,9 +129,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the query logging configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -141,9 +141,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the query logging configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -153,9 +153,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the query logging configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -165,9 +165,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the query logging configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next

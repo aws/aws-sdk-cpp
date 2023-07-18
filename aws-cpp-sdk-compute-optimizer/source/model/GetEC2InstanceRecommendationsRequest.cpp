@@ -18,7 +18,8 @@ GetEC2InstanceRecommendationsRequest::GetEC2InstanceRecommendationsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
+    m_accountIdsHasBeenSet(false),
+    m_recommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,12 @@ Aws::String GetEC2InstanceRecommendationsRequest::SerializePayload() const
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
    }
    payload.WithArray("accountIds", std::move(accountIdsJsonList));
+
+  }
+
+  if(m_recommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
 
   }
 

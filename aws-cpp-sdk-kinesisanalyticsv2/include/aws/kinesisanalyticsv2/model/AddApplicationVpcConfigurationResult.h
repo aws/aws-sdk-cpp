@@ -71,19 +71,19 @@ namespace Model
 
     /**
      * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * ApplicationVersionId each time you update the application. </p>
+     * ApplicationVersionId each time you update the application.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
 
     /**
      * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * ApplicationVersionId each time you update the application. </p>
+     * ApplicationVersionId each time you update the application.</p>
      */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
 
     /**
      * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * ApplicationVersionId each time you update the application. </p>
+     * ApplicationVersionId each time you update the application.</p>
      */
     inline AddApplicationVpcConfigurationResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
 

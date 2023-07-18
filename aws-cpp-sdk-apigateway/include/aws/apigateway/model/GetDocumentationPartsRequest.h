@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDocumentationPartsRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDocumentationPartsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDocumentationPartsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
@@ -266,49 +266,49 @@ namespace Model
 
     /**
      * <p>The status of the API documentation parts to retrieve. Valid values are
-     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
-     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
-     * without content.</p>
+     * <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content
+     * and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.</p>
      */
     inline const LocationStatusType& GetLocationStatus() const{ return m_locationStatus; }
 
     /**
      * <p>The status of the API documentation parts to retrieve. Valid values are
-     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
-     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
-     * without content.</p>
+     * <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content
+     * and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.</p>
      */
     inline bool LocationStatusHasBeenSet() const { return m_locationStatusHasBeenSet; }
 
     /**
      * <p>The status of the API documentation parts to retrieve. Valid values are
-     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
-     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
-     * without content.</p>
+     * <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content
+     * and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.</p>
      */
     inline void SetLocationStatus(const LocationStatusType& value) { m_locationStatusHasBeenSet = true; m_locationStatus = value; }
 
     /**
      * <p>The status of the API documentation parts to retrieve. Valid values are
-     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
-     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
-     * without content.</p>
+     * <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content
+     * and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.</p>
      */
     inline void SetLocationStatus(LocationStatusType&& value) { m_locationStatusHasBeenSet = true; m_locationStatus = std::move(value); }
 
     /**
      * <p>The status of the API documentation parts to retrieve. Valid values are
-     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
-     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
-     * without content.</p>
+     * <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content
+     * and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.</p>
      */
     inline GetDocumentationPartsRequest& WithLocationStatus(const LocationStatusType& value) { SetLocationStatus(value); return *this;}
 
     /**
      * <p>The status of the API documentation parts to retrieve. Valid values are
-     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
-     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
-     * without content.</p>
+     * <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content
+     * and <code>UNDOCUMENTED</code> for DocumentationPart resources without
+     * content.</p>
      */
     inline GetDocumentationPartsRequest& WithLocationStatus(LocationStatusType&& value) { SetLocationStatus(std::move(value)); return *this;}
 

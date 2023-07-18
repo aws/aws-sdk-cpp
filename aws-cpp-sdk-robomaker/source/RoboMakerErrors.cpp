@@ -23,7 +23,6 @@ static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParam
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int CONCURRENT_DEPLOYMENT_HASH = HashingUtils::HashString("ConcurrentDeploymentException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -49,10 +48,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::LIMIT_EXCEEDED), true);
-  }
-  else if (hashCode == CONCURRENT_DEPLOYMENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::CONCURRENT_DEPLOYMENT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

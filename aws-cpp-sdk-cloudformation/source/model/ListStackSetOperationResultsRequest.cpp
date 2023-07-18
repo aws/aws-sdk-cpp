@@ -15,7 +15,9 @@ ListStackSetOperationResultsRequest::ListStackSetOperationResultsRequest() :
     m_operationIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,11 @@ Aws::String ListStackSetOperationResultsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
+  }
+
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
   }
 
   ss << "Version=2010-05-15";

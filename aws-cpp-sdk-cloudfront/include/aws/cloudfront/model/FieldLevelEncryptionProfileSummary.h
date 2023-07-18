@@ -202,42 +202,50 @@ namespace Model
 
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline FieldLevelEncryptionProfileSummary& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline FieldLevelEncryptionProfileSummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>An optional comment for the field-level encryption profile summary.</p>
+     * <p>An optional comment for the field-level encryption profile summary. The
+     * comment cannot be longer than 128 characters.</p>
      */
     inline FieldLevelEncryptionProfileSummary& WithComment(const char* value) { SetComment(value); return *this;}
 

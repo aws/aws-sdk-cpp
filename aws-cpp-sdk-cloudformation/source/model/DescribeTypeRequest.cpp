@@ -15,7 +15,9 @@ DescribeTypeRequest::DescribeTypeRequest() :
     m_typeHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_publisherIdHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,16 @@ Aws::String DescribeTypeRequest::SerializePayload() const
   if(m_versionIdHasBeenSet)
   {
     ss << "VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
+  }
+
+  if(m_publisherIdHasBeenSet)
+  {
+    ss << "PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
+  }
+
+  if(m_publicVersionNumberHasBeenSet)
+  {
+    ss << "PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

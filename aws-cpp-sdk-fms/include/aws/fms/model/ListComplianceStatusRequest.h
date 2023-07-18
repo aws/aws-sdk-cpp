@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline ListComplianceStatusRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline ListComplianceStatusRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     * <p>The ID of the Firewall Manager policy that you want the details for.</p>
      */
     inline ListComplianceStatusRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
@@ -78,8 +78,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -90,8 +90,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -102,8 +102,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -114,8 +114,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -126,8 +126,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -138,8 +138,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -150,8 +150,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -162,8 +162,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
      * <code>ListComplianceStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
@@ -174,7 +174,7 @@ namespace Model
 
     /**
      * <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you
-     * want AWS Firewall Manager to return for this request. If you have more
+     * want Firewall Manager to return for this request. If you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of <code>PolicyComplianceStatus</code>
@@ -184,7 +184,7 @@ namespace Model
 
     /**
      * <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you
-     * want AWS Firewall Manager to return for this request. If you have more
+     * want Firewall Manager to return for this request. If you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of <code>PolicyComplianceStatus</code>
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you
-     * want AWS Firewall Manager to return for this request. If you have more
+     * want Firewall Manager to return for this request. If you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of <code>PolicyComplianceStatus</code>
@@ -204,7 +204,7 @@ namespace Model
 
     /**
      * <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you
-     * want AWS Firewall Manager to return for this request. If you have more
+     * want Firewall Manager to return for this request. If you have more
      * <code>PolicyComplianceStatus</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of <code>PolicyComplianceStatus</code>

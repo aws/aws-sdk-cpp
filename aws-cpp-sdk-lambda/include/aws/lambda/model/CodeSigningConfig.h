@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Details about a Code signing configuration. </p><p><h3>See Also:</h3>   <a
+   * <p>Details about a <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Code
+   * signing configuration</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CodeSigningConfig">AWS
    * API Reference</a></p>
    */

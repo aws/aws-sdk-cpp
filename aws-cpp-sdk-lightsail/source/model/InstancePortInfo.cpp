@@ -32,6 +32,7 @@ InstancePortInfo::InstancePortInfo() :
     m_accessDirection(AccessDirection::NOT_SET),
     m_accessDirectionHasBeenSet(false),
     m_cidrsHasBeenSet(false),
+    m_ipv6CidrsHasBeenSet(false),
     m_cidrListAliasesHasBeenSet(false)
 {
 }
@@ -50,6 +51,7 @@ InstancePortInfo::InstancePortInfo(JsonView jsonValue) :
     m_accessDirection(AccessDirection::NOT_SET),
     m_accessDirectionHasBeenSet(false),
     m_cidrsHasBeenSet(false),
+    m_ipv6CidrsHasBeenSet(false),
     m_cidrListAliasesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -116,6 +118,16 @@ InstancePortInfo& InstancePortInfo::operator =(JsonView jsonValue)
     m_cidrsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ipv6Cidrs"))
+  {
+    Array<JsonView> ipv6CidrsJsonList = jsonValue.GetArray("ipv6Cidrs");
+    for(unsigned ipv6CidrsIndex = 0; ipv6CidrsIndex < ipv6CidrsJsonList.GetLength(); ++ipv6CidrsIndex)
+    {
+      m_ipv6Cidrs.push_back(ipv6CidrsJsonList[ipv6CidrsIndex].AsString());
+    }
+    m_ipv6CidrsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("cidrListAliases"))
   {
     Array<JsonView> cidrListAliasesJsonList = jsonValue.GetArray("cidrListAliases");
@@ -180,6 +192,17 @@ JsonValue InstancePortInfo::Jsonize() const
      cidrsJsonList[cidrsIndex].AsString(m_cidrs[cidrsIndex]);
    }
    payload.WithArray("cidrs", std::move(cidrsJsonList));
+
+  }
+
+  if(m_ipv6CidrsHasBeenSet)
+  {
+   Array<JsonValue> ipv6CidrsJsonList(m_ipv6Cidrs.size());
+   for(unsigned ipv6CidrsIndex = 0; ipv6CidrsIndex < ipv6CidrsJsonList.GetLength(); ++ipv6CidrsIndex)
+   {
+     ipv6CidrsJsonList[ipv6CidrsIndex].AsString(m_ipv6Cidrs[ipv6CidrsIndex]);
+   }
+   payload.WithArray("ipv6Cidrs", std::move(ipv6CidrsJsonList));
 
   }
 

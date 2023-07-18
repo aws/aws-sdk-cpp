@@ -16,7 +16,9 @@ CreatePresignedDomainUrlRequest::CreatePresignedDomainUrlRequest() :
     m_domainIdHasBeenSet(false),
     m_userProfileNameHasBeenSet(false),
     m_sessionExpirationDurationInSeconds(0),
-    m_sessionExpirationDurationInSecondsHasBeenSet(false)
+    m_sessionExpirationDurationInSecondsHasBeenSet(false),
+    m_expiresInSeconds(0),
+    m_expiresInSecondsHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,12 @@ Aws::String CreatePresignedDomainUrlRequest::SerializePayload() const
   if(m_sessionExpirationDurationInSecondsHasBeenSet)
   {
    payload.WithInteger("SessionExpirationDurationInSeconds", m_sessionExpirationDurationInSeconds);
+
+  }
+
+  if(m_expiresInSecondsHasBeenSet)
+  {
+   payload.WithInteger("ExpiresInSeconds", m_expiresInSeconds);
 
   }
 

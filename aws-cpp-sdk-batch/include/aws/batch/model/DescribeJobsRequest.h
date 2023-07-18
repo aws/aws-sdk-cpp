@@ -18,6 +18,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>DescribeJobs</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API DescribeJobsRequest : public BatchRequest
   {

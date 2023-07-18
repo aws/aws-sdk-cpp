@@ -24,6 +24,8 @@ ListViolationEventsRequest::ListViolationEventsRequest() :
     m_behaviorCriteriaTypeHasBeenSet(false),
     m_listSuppressedAlerts(false),
     m_listSuppressedAlertsHasBeenSet(false),
+    m_verificationState(VerificationState::NOT_SET),
+    m_verificationStateHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -40,14 +42,14 @@ void ListViolationEventsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_startTimeHasBeenSet)
     {
-      ss << m_startTime.ToGmtString(DateFormat::RFC822);
+      ss << m_startTime.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startTime", ss.str());
       ss.str("");
     }
 
     if(m_endTimeHasBeenSet)
     {
-      ss << m_endTime.ToGmtString(DateFormat::RFC822);
+      ss << m_endTime.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("endTime", ss.str());
       ss.str("");
     }
@@ -77,6 +79,13 @@ void ListViolationEventsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_listSuppressedAlerts;
       uri.AddQueryStringParameter("listSuppressedAlerts", ss.str());
+      ss.str("");
+    }
+
+    if(m_verificationStateHasBeenSet)
+    {
+      ss << VerificationStateMapper::GetNameForVerificationState(m_verificationState);
+      uri.AddQueryStringParameter("verificationState", ss.str());
       ss.str("");
     }
 

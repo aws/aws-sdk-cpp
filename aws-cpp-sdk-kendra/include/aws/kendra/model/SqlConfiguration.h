@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information that configures Amazon Kendra to use a SQL
-   * database.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information to use a SQL database.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SqlConfiguration">AWS
    * API Reference</a></p>
    */

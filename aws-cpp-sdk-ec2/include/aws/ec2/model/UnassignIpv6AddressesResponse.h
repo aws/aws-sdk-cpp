@@ -111,6 +111,47 @@ namespace Model
     inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Addresses(const char* value) { m_unassignedIpv6Addresses.push_back(value); return *this; }
 
 
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUnassignedIpv6Prefixes() const{ return m_unassignedIpv6Prefixes; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline void SetUnassignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_unassignedIpv6Prefixes = value; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline void SetUnassignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { m_unassignedIpv6Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& WithUnassignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { SetUnassignedIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& WithUnassignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { SetUnassignedIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Prefixes(const Aws::String& value) { m_unassignedIpv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Prefixes(Aws::String&& value) { m_unassignedIpv6Prefixes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Prefixes(const char* value) { m_unassignedIpv6Prefixes.push_back(value); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -131,6 +172,8 @@ namespace Model
     Aws::String m_networkInterfaceId;
 
     Aws::Vector<Aws::String> m_unassignedIpv6Addresses;
+
+    Aws::Vector<Aws::String> m_unassignedIpv6Prefixes;
 
     ResponseMetadata m_responseMetadata;
   };

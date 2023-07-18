@@ -81,11 +81,11 @@ namespace Model
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> services and
-     * then filters them based on the specified criteria. It's possible that no
-     * services in the first <code>MaxResults</code> services matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> services do
-     * contain services that match the criteria.</p> 
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -93,11 +93,11 @@ namespace Model
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> services and
-     * then filters them based on the specified criteria. It's possible that no
-     * services in the first <code>MaxResults</code> services matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> services do
-     * contain services that match the criteria.</p> 
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -105,11 +105,11 @@ namespace Model
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> services and
-     * then filters them based on the specified criteria. It's possible that no
-     * services in the first <code>MaxResults</code> services matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> services do
-     * contain services that match the criteria.</p> 
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -117,11 +117,11 @@ namespace Model
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> services and
-     * then filters them based on the specified criteria. It's possible that no
-     * services in the first <code>MaxResults</code> services matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> services do
-     * contain services that match the criteria.</p> 
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -129,11 +129,11 @@ namespace Model
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> services and
-     * then filters them based on the specified criteria. It's possible that no
-     * services in the first <code>MaxResults</code> services matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> services do
-     * contain services that match the criteria.</p> 
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> 
      */
     inline ListServicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -141,11 +141,11 @@ namespace Model
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> services and
-     * then filters them based on the specified criteria. It's possible that no
-     * services in the first <code>MaxResults</code> services matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> services do
-     * contain services that match the criteria.</p> 
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> 
      */
     inline ListServicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -153,11 +153,11 @@ namespace Model
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> services and
-     * then filters them based on the specified criteria. It's possible that no
-     * services in the first <code>MaxResults</code> services matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> services do
-     * contain services that match the criteria.</p> 
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> 
      */
     inline ListServicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

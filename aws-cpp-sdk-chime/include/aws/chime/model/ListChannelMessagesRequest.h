@@ -39,6 +39,8 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
      * <p>The ARN of the channel.</p>
@@ -119,32 +121,32 @@ namespace Model
 
 
     /**
-     * <p>The initial or starting time stamp for your requested messages. </p>
+     * <p>The initial or starting time stamp for your requested messages.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
 
     /**
-     * <p>The initial or starting time stamp for your requested messages. </p>
+     * <p>The initial or starting time stamp for your requested messages.</p>
      */
     inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
 
     /**
-     * <p>The initial or starting time stamp for your requested messages. </p>
+     * <p>The initial or starting time stamp for your requested messages.</p>
      */
     inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
     /**
-     * <p>The initial or starting time stamp for your requested messages. </p>
+     * <p>The initial or starting time stamp for your requested messages.</p>
      */
     inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
 
     /**
-     * <p>The initial or starting time stamp for your requested messages. </p>
+     * <p>The initial or starting time stamp for your requested messages.</p>
      */
     inline ListChannelMessagesRequest& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
 
     /**
-     * <p>The initial or starting time stamp for your requested messages. </p>
+     * <p>The initial or starting time stamp for your requested messages.</p>
      */
     inline ListChannelMessagesRequest& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
 
@@ -249,6 +251,47 @@ namespace Model
      */
     inline ListChannelMessagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline ListChannelMessagesRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline ListChannelMessagesRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline ListChannelMessagesRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -268,6 +311,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_chimeBearer;
+    bool m_chimeBearerHasBeenSet;
   };
 
 } // namespace Model

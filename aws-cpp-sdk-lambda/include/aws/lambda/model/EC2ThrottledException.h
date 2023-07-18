@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Lambda was throttled by Amazon EC2 during Lambda function initialization
+   * <p>Lambda was throttled by Amazon EC2 during Lambda function initialization
    * using the execution role provided for the Lambda function.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EC2ThrottledException">AWS

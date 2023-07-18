@@ -129,21 +129,25 @@ namespace Model
 
     /**
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
+     * <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
      */
     inline bool GetSetAsActive() const{ return m_setAsActive; }
 
     /**
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
+     * <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
      */
     inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
 
     /**
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
+     * <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
      */
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
 
     /**
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
+     * <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
      */
     inline RegisterCACertificateRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
 

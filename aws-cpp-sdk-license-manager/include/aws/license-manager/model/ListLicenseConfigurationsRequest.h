@@ -146,8 +146,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
@@ -161,8 +161,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
@@ -176,8 +176,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
@@ -191,8 +191,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
@@ -206,8 +206,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
@@ -221,8 +221,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
@@ -236,8 +236,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
@@ -251,8 +251,8 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted. Possible values are <code>vCPU</code> |
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
      * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
      * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard

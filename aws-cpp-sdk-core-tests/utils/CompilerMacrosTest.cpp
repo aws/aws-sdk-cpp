@@ -24,7 +24,7 @@ TEST(CompilerMacrosTest, TestCompilerMacro)
 #else
     AWS_SUPPRESS_WARNING_PUSH("-Wpedantic")
 #endif
-    struct Test
+    struct TestStruct
     {
         union {
             struct //compiler will give anonymous struct warning if warning is not suppressed

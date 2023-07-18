@@ -30,7 +30,8 @@ FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides() :
     m_weightedCapacityHasBeenSet(false),
     m_priority(0.0),
     m_priorityHasBeenSet(false),
-    m_placementHasBeenSet(false)
+    m_placementHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides(const XmlNode& xmlNod
     m_weightedCapacityHasBeenSet(false),
     m_priority(0.0),
     m_priorityHasBeenSet(false),
-    m_placementHasBeenSet(false)
+    m_placementHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -97,6 +99,12 @@ FleetLaunchTemplateOverrides& FleetLaunchTemplateOverrides::operator =(const Xml
       m_placement = placementNode;
       m_placementHasBeenSet = true;
     }
+    XmlNode instanceRequirementsNode = resultNode.FirstChild("instanceRequirements");
+    if(!instanceRequirementsNode.IsNull())
+    {
+      m_instanceRequirements = instanceRequirementsNode;
+      m_instanceRequirementsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -141,6 +149,13 @@ void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const c
       m_placement.OutputToStream(oStream, placementLocationAndMemberSs.str().c_str());
   }
 
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::StringStream instanceRequirementsLocationAndMemberSs;
+      instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -174,6 +189,12 @@ void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const c
       Aws::String placementLocationAndMember(location);
       placementLocationAndMember += ".Placement";
       m_placement.OutputToStream(oStream, placementLocationAndMember.c_str());
+  }
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::String instanceRequirementsLocationAndMember(location);
+      instanceRequirementsLocationAndMember += ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
   }
 }
 

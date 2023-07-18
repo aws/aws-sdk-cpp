@@ -185,32 +185,32 @@ namespace Model
 
 
     /**
-     * <p>The date in which the device was last authenticated.</p>
+     * <p>The date when the device was last authenticated.</p>
      */
     inline const Aws::Utils::DateTime& GetDeviceLastAuthenticatedDate() const{ return m_deviceLastAuthenticatedDate; }
 
     /**
-     * <p>The date in which the device was last authenticated.</p>
+     * <p>The date when the device was last authenticated.</p>
      */
     inline bool DeviceLastAuthenticatedDateHasBeenSet() const { return m_deviceLastAuthenticatedDateHasBeenSet; }
 
     /**
-     * <p>The date in which the device was last authenticated.</p>
+     * <p>The date when the device was last authenticated.</p>
      */
     inline void SetDeviceLastAuthenticatedDate(const Aws::Utils::DateTime& value) { m_deviceLastAuthenticatedDateHasBeenSet = true; m_deviceLastAuthenticatedDate = value; }
 
     /**
-     * <p>The date in which the device was last authenticated.</p>
+     * <p>The date when the device was last authenticated.</p>
      */
     inline void SetDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { m_deviceLastAuthenticatedDateHasBeenSet = true; m_deviceLastAuthenticatedDate = std::move(value); }
 
     /**
-     * <p>The date in which the device was last authenticated.</p>
+     * <p>The date when the device was last authenticated.</p>
      */
     inline DeviceType& WithDeviceLastAuthenticatedDate(const Aws::Utils::DateTime& value) { SetDeviceLastAuthenticatedDate(value); return *this;}
 
     /**
-     * <p>The date in which the device was last authenticated.</p>
+     * <p>The date when the device was last authenticated.</p>
      */
     inline DeviceType& WithDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { SetDeviceLastAuthenticatedDate(std::move(value)); return *this;}
 

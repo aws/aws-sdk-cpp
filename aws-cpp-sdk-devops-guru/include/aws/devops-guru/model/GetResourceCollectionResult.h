@@ -34,37 +34,57 @@ namespace Model
 
 
     /**
-     * <p> The requested list of AWS resource collections. The one type of AWS resource
-     * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * <p> The requested list of Amazon Web Services resource collections. The two
+     * types of Amazon Web Services resource collections supported are Amazon Web
+     * Services CloudFormation stacks and Amazon Web Services resources that contain
+     * the same Amazon Web Services tag. DevOps Guru can be configured to analyze the
+     * Amazon Web Services resources that are defined in the stacks or that are tagged
+     * using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline const ResourceCollectionFilter& GetResourceCollection() const{ return m_resourceCollection; }
 
     /**
-     * <p> The requested list of AWS resource collections. The one type of AWS resource
-     * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * <p> The requested list of Amazon Web Services resource collections. The two
+     * types of Amazon Web Services resource collections supported are Amazon Web
+     * Services CloudFormation stacks and Amazon Web Services resources that contain
+     * the same Amazon Web Services tag. DevOps Guru can be configured to analyze the
+     * Amazon Web Services resources that are defined in the stacks or that are tagged
+     * using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline void SetResourceCollection(const ResourceCollectionFilter& value) { m_resourceCollection = value; }
 
     /**
-     * <p> The requested list of AWS resource collections. The one type of AWS resource
-     * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * <p> The requested list of Amazon Web Services resource collections. The two
+     * types of Amazon Web Services resource collections supported are Amazon Web
+     * Services CloudFormation stacks and Amazon Web Services resources that contain
+     * the same Amazon Web Services tag. DevOps Guru can be configured to analyze the
+     * Amazon Web Services resources that are defined in the stacks or that are tagged
+     * using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline void SetResourceCollection(ResourceCollectionFilter&& value) { m_resourceCollection = std::move(value); }
 
     /**
-     * <p> The requested list of AWS resource collections. The one type of AWS resource
-     * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * <p> The requested list of Amazon Web Services resource collections. The two
+     * types of Amazon Web Services resource collections supported are Amazon Web
+     * Services CloudFormation stacks and Amazon Web Services resources that contain
+     * the same Amazon Web Services tag. DevOps Guru can be configured to analyze the
+     * Amazon Web Services resources that are defined in the stacks or that are tagged
+     * using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline GetResourceCollectionResult& WithResourceCollection(const ResourceCollectionFilter& value) { SetResourceCollection(value); return *this;}
 
     /**
-     * <p> The requested list of AWS resource collections. The one type of AWS resource
-     * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * <p> The requested list of Amazon Web Services resource collections. The two
+     * types of Amazon Web Services resource collections supported are Amazon Web
+     * Services CloudFormation stacks and Amazon Web Services resources that contain
+     * the same Amazon Web Services tag. DevOps Guru can be configured to analyze the
+     * Amazon Web Services resources that are defined in the stacks or that are tagged
+     * using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline GetResourceCollectionResult& WithResourceCollection(ResourceCollectionFilter&& value) { SetResourceCollection(std::move(value)); return *this;}
 

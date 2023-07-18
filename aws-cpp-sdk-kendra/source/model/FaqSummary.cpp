@@ -26,7 +26,8 @@ FaqSummary::FaqSummary() :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_fileFormat(FaqFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false)
+    m_fileFormatHasBeenSet(false),
+    m_languageCodeHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ FaqSummary::FaqSummary(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_fileFormat(FaqFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false)
+    m_fileFormatHasBeenSet(false),
+    m_languageCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ FaqSummary& FaqSummary::operator =(JsonView jsonValue)
     m_fileFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = jsonValue.GetString("LanguageCode");
+
+    m_languageCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue FaqSummary::Jsonize() const
   if(m_fileFormatHasBeenSet)
   {
    payload.WithString("FileFormat", FaqFileFormatMapper::GetNameForFaqFileFormat(m_fileFormat));
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", m_languageCode);
+
   }
 
   return payload;

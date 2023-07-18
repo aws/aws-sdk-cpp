@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-   * change.</p> <p>The event filter.</p><p><h3>See Also:</h3>   <a
+   * <p>The event filter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/EventFilter">AWS
    * API Reference</a></p>
    */

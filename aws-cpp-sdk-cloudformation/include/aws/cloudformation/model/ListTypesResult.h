@@ -37,49 +37,49 @@ namespace Model
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline const Aws::Vector<TypeSummary>& GetTypeSummaries() const{ return m_typeSummaries; }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline void SetTypeSummaries(const Aws::Vector<TypeSummary>& value) { m_typeSummaries = value; }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline void SetTypeSummaries(Aws::Vector<TypeSummary>&& value) { m_typeSummaries = std::move(value); }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& WithTypeSummaries(const Aws::Vector<TypeSummary>& value) { SetTypeSummaries(value); return *this;}
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& WithTypeSummaries(Aws::Vector<TypeSummary>&& value) { SetTypeSummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& AddTypeSummaries(const TypeSummary& value) { m_typeSummaries.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& AddTypeSummaries(TypeSummary&& value) { m_typeSummaries.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call this action again and assign that token to the request object's
      * <code>NextToken</code> parameter. If the request returns all results,
@@ -88,7 +88,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call this action again and assign that token to the request object's
      * <code>NextToken</code> parameter. If the request returns all results,
@@ -97,7 +97,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call this action again and assign that token to the request object's
      * <code>NextToken</code> parameter. If the request returns all results,
@@ -106,7 +106,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call this action again and assign that token to the request object's
      * <code>NextToken</code> parameter. If the request returns all results,
@@ -115,7 +115,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call this action again and assign that token to the request object's
      * <code>NextToken</code> parameter. If the request returns all results,
@@ -124,7 +124,7 @@ namespace Model
     inline ListTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call this action again and assign that token to the request object's
      * <code>NextToken</code> parameter. If the request returns all results,
@@ -133,7 +133,7 @@ namespace Model
     inline ListTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call this action again and assign that token to the request object's
      * <code>NextToken</code> parameter. If the request returns all results,

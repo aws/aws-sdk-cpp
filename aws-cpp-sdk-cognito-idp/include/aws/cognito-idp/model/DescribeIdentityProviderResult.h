@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The identity provider that was deleted.</p>
+     * <p>The IdP that was deleted.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
 
     /**
-     * <p>The identity provider that was deleted.</p>
+     * <p>The IdP that was deleted.</p>
      */
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }
 
     /**
-     * <p>The identity provider that was deleted.</p>
+     * <p>The IdP that was deleted.</p>
      */
     inline void SetIdentityProvider(IdentityProviderType&& value) { m_identityProvider = std::move(value); }
 
     /**
-     * <p>The identity provider that was deleted.</p>
+     * <p>The IdP that was deleted.</p>
      */
     inline DescribeIdentityProviderResult& WithIdentityProvider(const IdentityProviderType& value) { SetIdentityProvider(value); return *this;}
 
     /**
-     * <p>The identity provider that was deleted.</p>
+     * <p>The IdP that was deleted.</p>
      */
     inline DescribeIdentityProviderResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
 

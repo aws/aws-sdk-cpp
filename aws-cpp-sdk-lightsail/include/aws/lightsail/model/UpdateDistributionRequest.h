@@ -98,43 +98,43 @@ namespace Model
 
     /**
      * <p>An object that describes the origin resource for the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline const InputOrigin& GetOrigin() const{ return m_origin; }
 
     /**
      * <p>An object that describes the origin resource for the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
      * <p>An object that describes the origin resource for the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline void SetOrigin(const InputOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
      * <p>An object that describes the origin resource for the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline void SetOrigin(InputOrigin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
      * <p>An object that describes the origin resource for the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline UpdateDistributionRequest& WithOrigin(const InputOrigin& value) { SetOrigin(value); return *this;}
 
     /**
      * <p>An object that describes the origin resource for the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline UpdateDistributionRequest& WithOrigin(InputOrigin&& value) { SetOrigin(std::move(value)); return *this;}
 

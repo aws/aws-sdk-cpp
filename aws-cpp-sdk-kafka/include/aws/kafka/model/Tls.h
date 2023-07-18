@@ -104,10 +104,46 @@ namespace Model
      */
     inline Tls& AddCertificateAuthorityArnList(const char* value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList.push_back(value); return *this; }
 
+
+    /**
+     * 
+            <p>Specifies whether you want to turn on or turn off TLS
+     * authentication.</p>
+         
+     */
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * 
+            <p>Specifies whether you want to turn on or turn off TLS
+     * authentication.</p>
+         
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * 
+            <p>Specifies whether you want to turn on or turn off TLS
+     * authentication.</p>
+         
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * 
+            <p>Specifies whether you want to turn on or turn off TLS
+     * authentication.</p>
+         
+     */
+    inline Tls& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_certificateAuthorityArnList;
     bool m_certificateAuthorityArnListHasBeenSet;
+
+    bool m_enabled;
+    bool m_enabledHasBeenSet;
   };
 
 } // namespace Model

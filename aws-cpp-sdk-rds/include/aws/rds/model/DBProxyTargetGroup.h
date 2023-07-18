@@ -88,49 +88,57 @@ namespace Model
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline void SetTargetGroupName(const Aws::String& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = value; }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline void SetTargetGroupName(Aws::String&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::move(value); }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline void SetTargetGroupName(const char* value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName.assign(value); }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline DBProxyTargetGroup& WithTargetGroupName(const Aws::String& value) { SetTargetGroupName(value); return *this;}
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline DBProxyTargetGroup& WithTargetGroupName(Aws::String&& value) { SetTargetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline DBProxyTargetGroup& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
 

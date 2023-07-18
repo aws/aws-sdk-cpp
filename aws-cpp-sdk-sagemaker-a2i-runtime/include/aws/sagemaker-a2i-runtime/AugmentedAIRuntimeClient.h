@@ -83,15 +83,13 @@ namespace Model
     typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::StopHumanLoopRequest&, const Model::StopHumanLoopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHumanLoopResponseReceivedHandler;
 
   /**
-   *  <p>Amazon Augmented AI is in preview release and is subject to
-   * change. We do not recommend using this product in production environments.</p>
-   *  <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human
-   * judgment to any machine learning application. When an AI application can't
-   * evaluate data with a high degree of confidence, human reviewers can take over.
-   * This human review is called a human review workflow. To create and start a human
-   * review workflow, you need three resources: a <i>worker task template</i>, a
-   * <i>flow definition</i>, and a <i>human loop</i>.</p> <p>For information about
-   * these resources and prerequisites for using Amazon A2I, see <a
+   * <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any
+   * machine learning application. When an AI application can't evaluate data with a
+   * high degree of confidence, human reviewers can take over. This human review is
+   * called a human review workflow. To create and start a human review workflow, you
+   * need three resources: a <i>worker task template</i>, a <i>flow definition</i>,
+   * and a <i>human loop</i>.</p> <p>For information about these resources and
+   * prerequisites for using Amazon A2I, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html">Get
    * Started with Amazon Augmented AI</a> in the Amazon SageMaker Developer
    * Guide.</p> <p>This API reference includes information about API actions and data
@@ -143,58 +141,40 @@ namespace Model
 
 
         /**
-         * <p>Deletes the specified human loop for a flow definition.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified human loop for a flow definition.</p> <p>If the human
+         * loop was deleted, this operation will return a
+         * <code>ResourceNotFoundException</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteHumanLoopOutcome DeleteHumanLoop(const Model::DeleteHumanLoopRequest& request) const;
 
         /**
-         * <p>Deletes the specified human loop for a flow definition.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteHumanLoop that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteHumanLoopOutcomeCallable DeleteHumanLoopCallable(const Model::DeleteHumanLoopRequest& request) const;
 
         /**
-         * <p>Deletes the specified human loop for a flow definition.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteHumanLoop that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHumanLoopAsync(const Model::DeleteHumanLoopRequest& request, const DeleteHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified human loop.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns information about the specified human loop. If the human loop was
+         * deleted, this operation will return a <code>ResourceNotFoundException</code>
+         * error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeHumanLoopOutcome DescribeHumanLoop(const Model::DescribeHumanLoopRequest& request) const;
 
         /**
-         * <p>Returns information about the specified human loop.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeHumanLoop that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeHumanLoopOutcomeCallable DescribeHumanLoopCallable(const Model::DescribeHumanLoopRequest& request) const;
 
         /**
-         * <p>Returns information about the specified human loop.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeHumanLoop that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeHumanLoopAsync(const Model::DescribeHumanLoopRequest& request, const DescribeHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -207,22 +187,12 @@ namespace Model
         virtual Model::ListHumanLoopsOutcome ListHumanLoops(const Model::ListHumanLoopsRequest& request) const;
 
         /**
-         * <p>Returns information about human loops, given the specified parameters. If a
-         * human loop was deleted, it will not be included.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListHumanLoops that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListHumanLoopsOutcomeCallable ListHumanLoopsCallable(const Model::ListHumanLoopsRequest& request) const;
 
         /**
-         * <p>Returns information about human loops, given the specified parameters. If a
-         * human loop was deleted, it will not be included.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListHumanLoops that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListHumanLoopsAsync(const Model::ListHumanLoopsRequest& request, const ListHumanLoopsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -235,22 +205,12 @@ namespace Model
         virtual Model::StartHumanLoopOutcome StartHumanLoop(const Model::StartHumanLoopRequest& request) const;
 
         /**
-         * <p>Starts a human loop, provided that at least one activation condition is
-         * met.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StartHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartHumanLoop that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartHumanLoopOutcomeCallable StartHumanLoopCallable(const Model::StartHumanLoopRequest& request) const;
 
         /**
-         * <p>Starts a human loop, provided that at least one activation condition is
-         * met.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StartHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartHumanLoop that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartHumanLoopAsync(const Model::StartHumanLoopRequest& request, const StartHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -262,20 +222,12 @@ namespace Model
         virtual Model::StopHumanLoopOutcome StopHumanLoop(const Model::StopHumanLoopRequest& request) const;
 
         /**
-         * <p>Stops the specified human loop.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StopHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StopHumanLoop that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopHumanLoopOutcomeCallable StopHumanLoopCallable(const Model::StopHumanLoopRequest& request) const;
 
         /**
-         * <p>Stops the specified human loop.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StopHumanLoop">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StopHumanLoop that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopHumanLoopAsync(const Model::StopHumanLoopRequest& request, const StopHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

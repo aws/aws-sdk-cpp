@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An IAM role that the cluster can use to access other AWS
+   * <p>An IAM role that the cluster can use to access other Amazon Web Services
    * services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterIamRole">AWS
    * API Reference</a></p>

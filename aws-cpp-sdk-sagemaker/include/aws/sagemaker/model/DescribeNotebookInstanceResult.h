@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/DirectInternetAccess.h>
 #include <aws/sagemaker/model/RootAccess.h>
+#include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <utility>
 
@@ -76,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon SageMaker notebook instance. </p>
+     * <p>The name of the SageMaker notebook instance. </p>
      */
     inline const Aws::String& GetNotebookInstanceName() const{ return m_notebookInstanceName; }
 
     /**
-     * <p>The name of the Amazon SageMaker notebook instance. </p>
+     * <p>The name of the SageMaker notebook instance. </p>
      */
     inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceName = value; }
 
     /**
-     * <p>The name of the Amazon SageMaker notebook instance. </p>
+     * <p>The name of the SageMaker notebook instance. </p>
      */
     inline void SetNotebookInstanceName(Aws::String&& value) { m_notebookInstanceName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon SageMaker notebook instance. </p>
+     * <p>The name of the SageMaker notebook instance. </p>
      */
     inline void SetNotebookInstanceName(const char* value) { m_notebookInstanceName.assign(value); }
 
     /**
-     * <p>The name of the Amazon SageMaker notebook instance. </p>
+     * <p>The name of the SageMaker notebook instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithNotebookInstanceName(const Aws::String& value) { SetNotebookInstanceName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon SageMaker notebook instance. </p>
+     * <p>The name of the SageMaker notebook instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithNotebookInstanceName(Aws::String&& value) { SetNotebookInstanceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon SageMaker notebook instance. </p>
+     * <p>The name of the SageMaker notebook instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithNotebookInstanceName(const char* value) { SetNotebookInstanceName(value); return *this;}
 
@@ -363,87 +364,87 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on
-     * the ML storage volume attached to the instance. </p>
+     * <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on
-     * the ML storage volume attached to the instance. </p>
+     * <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on
-     * the ML storage volume attached to the instance. </p>
+     * <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on
-     * the ML storage volume attached to the instance. </p>
+     * <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on
-     * the ML storage volume attached to the instance. </p>
+     * <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on
-     * the ML storage volume attached to the instance. </p>
+     * <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on
-     * the ML storage volume attached to the instance. </p>
+     * <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The network interface IDs that Amazon SageMaker created at the time of
-     * creating the instance. </p>
+     * <p>The network interface IDs that SageMaker created at the time of creating the
+     * instance. </p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
-     * <p>The network interface IDs that Amazon SageMaker created at the time of
-     * creating the instance. </p>
+     * <p>The network interface IDs that SageMaker created at the time of creating the
+     * instance. </p>
      */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceId = value; }
 
     /**
-     * <p>The network interface IDs that Amazon SageMaker created at the time of
-     * creating the instance. </p>
+     * <p>The network interface IDs that SageMaker created at the time of creating the
+     * instance. </p>
      */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = std::move(value); }
 
     /**
-     * <p>The network interface IDs that Amazon SageMaker created at the time of
-     * creating the instance. </p>
+     * <p>The network interface IDs that SageMaker created at the time of creating the
+     * instance. </p>
      */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceId.assign(value); }
 
     /**
-     * <p>The network interface IDs that Amazon SageMaker created at the time of
-     * creating the instance. </p>
+     * <p>The network interface IDs that SageMaker created at the time of creating the
+     * instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
-     * <p>The network interface IDs that Amazon SageMaker created at the time of
-     * creating the instance. </p>
+     * <p>The network interface IDs that SageMaker created at the time of creating the
+     * instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The network interface IDs that Amazon SageMaker created at the time of
-     * creating the instance. </p>
+     * <p>The network interface IDs that SageMaker created at the time of creating the
+     * instance. </p>
      */
     inline DescribeNotebookInstanceResult& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
@@ -568,50 +569,50 @@ namespace Model
 
 
     /**
-     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * <p>Describes whether SageMaker provides internet access to the notebook
      * instance. If this value is set to <i>Disabled</i>, the notebook instance does
-     * not have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services.</p> <p>For more information, see <a
+     * not have internet access, and cannot connect to SageMaker training and endpoint
+     * services.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline const DirectInternetAccess& GetDirectInternetAccess() const{ return m_directInternetAccess; }
 
     /**
-     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * <p>Describes whether SageMaker provides internet access to the notebook
      * instance. If this value is set to <i>Disabled</i>, the notebook instance does
-     * not have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services.</p> <p>For more information, see <a
+     * not have internet access, and cannot connect to SageMaker training and endpoint
+     * services.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline void SetDirectInternetAccess(const DirectInternetAccess& value) { m_directInternetAccess = value; }
 
     /**
-     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * <p>Describes whether SageMaker provides internet access to the notebook
      * instance. If this value is set to <i>Disabled</i>, the notebook instance does
-     * not have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services.</p> <p>For more information, see <a
+     * not have internet access, and cannot connect to SageMaker training and endpoint
+     * services.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline void SetDirectInternetAccess(DirectInternetAccess&& value) { m_directInternetAccess = std::move(value); }
 
     /**
-     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * <p>Describes whether SageMaker provides internet access to the notebook
      * instance. If this value is set to <i>Disabled</i>, the notebook instance does
-     * not have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services.</p> <p>For more information, see <a
+     * not have internet access, and cannot connect to SageMaker training and endpoint
+     * services.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDirectInternetAccess(const DirectInternetAccess& value) { SetDirectInternetAccess(value); return *this;}
 
     /**
-     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * <p>Describes whether SageMaker provides internet access to the notebook
      * instance. If this value is set to <i>Disabled</i>, the notebook instance does
-     * not have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services.</p> <p>For more information, see <a
+     * not have internet access, and cannot connect to SageMaker training and endpoint
+     * services.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
@@ -705,12 +706,12 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
 
@@ -718,12 +719,12 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const Aws::String& value) { m_defaultCodeRepository = value; }
 
@@ -731,12 +732,12 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(Aws::String&& value) { m_defaultCodeRepository = std::move(value); }
 
@@ -744,12 +745,12 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const char* value) { m_defaultCodeRepository.assign(value); }
 
@@ -757,12 +758,12 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDefaultCodeRepository(const Aws::String& value) { SetDefaultCodeRepository(value); return *this;}
 
@@ -770,12 +771,12 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDefaultCodeRepository(Aws::String&& value) { SetDefaultCodeRepository(std::move(value)); return *this;}
 
@@ -783,12 +784,12 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDefaultCodeRepository(const char* value) { SetDefaultCodeRepository(value); return *this;}
 
@@ -797,12 +798,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
 
@@ -810,12 +811,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { m_additionalCodeRepositories = value; }
 
@@ -823,12 +824,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { m_additionalCodeRepositories = std::move(value); }
 
@@ -836,12 +837,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { SetAdditionalCodeRepositories(value); return *this;}
 
@@ -849,12 +850,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { SetAdditionalCodeRepositories(std::move(value)); return *this;}
 
@@ -862,12 +863,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& AddAdditionalCodeRepositories(const Aws::String& value) { m_additionalCodeRepositories.push_back(value); return *this; }
 
@@ -875,12 +876,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& AddAdditionalCodeRepositories(Aws::String&& value) { m_additionalCodeRepositories.push_back(std::move(value)); return *this; }
 
@@ -888,12 +889,12 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline DescribeNotebookInstanceResult& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositories.push_back(value); return *this; }
 
@@ -943,6 +944,68 @@ namespace Model
      */
     inline DescribeNotebookInstanceResult& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline const Aws::String& GetPlatformIdentifier() const{ return m_platformIdentifier; }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(const Aws::String& value) { m_platformIdentifier = value; }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(Aws::String&& value) { m_platformIdentifier = std::move(value); }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(const char* value) { m_platformIdentifier.assign(value); }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithPlatformIdentifier(const Aws::String& value) { SetPlatformIdentifier(value); return *this;}
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithPlatformIdentifier(Aws::String&& value) { SetPlatformIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithPlatformIdentifier(const char* value) { SetPlatformIdentifier(value); return *this;}
+
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline const InstanceMetadataServiceConfiguration& GetInstanceMetadataServiceConfiguration() const{ return m_instanceMetadataServiceConfiguration; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { m_instanceMetadataServiceConfiguration = value; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { m_instanceMetadataServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline DescribeNotebookInstanceResult& WithInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { SetInstanceMetadataServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline DescribeNotebookInstanceResult& WithInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { SetInstanceMetadataServiceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceArn;
@@ -984,6 +1047,10 @@ namespace Model
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
 
     RootAccess m_rootAccess;
+
+    Aws::String m_platformIdentifier;
+
+    InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
   };
 
 } // namespace Model

@@ -72,6 +72,12 @@ GetDiscoverySummaryResult& GetDiscoverySummaryResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("meCollectorSummary"))
+  {
+    m_meCollectorSummary = jsonValue.GetObject("meCollectorSummary");
+
+  }
+
 
 
   return *this;

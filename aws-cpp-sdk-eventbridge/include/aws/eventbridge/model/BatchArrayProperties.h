@@ -25,7 +25,7 @@ namespace Model
    * <p>The array properties for the submitted job, such as the size of the array.
    * The array size can be between 2 and 10,000. If you specify array properties for
    * a job, it becomes an array job. This parameter is used only if the target is an
-   * AWS Batch job.</p><p><h3>See Also:</h3>   <a
+   * Batch job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/BatchArrayProperties">AWS
    * API Reference</a></p>
    */

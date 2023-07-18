@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a data catalog in an AWS account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about a data catalog in an Amazon Web Services
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DataCatalog">AWS
    * API Reference</a></p>
    */
@@ -41,58 +41,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline DataCatalog& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline DataCatalog& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data catalog. The catalog name must be unique for the AWS
-     * account and can use a maximum of 128 alphanumeric, underscore, at sign, or
-     * hyphen characters.</p>
+     * <p>The name of the data catalog. The catalog name must be unique for the Amazon
+     * Web Services account and can use a maximum of 127 alphanumeric, underscore, at
+     * sign, or hyphen characters. The remainder of the length constraint of 256 is
+     * reserved for use by Athena.</p>
      */
     inline DataCatalog& WithName(const char* value) { SetName(value); return *this;}
 
@@ -139,44 +147,44 @@ namespace Model
 
 
     /**
-     * <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external
-     * hive metastore.</p>
+     * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
+     * catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code>
+     * for an Glue Data Catalog.</p>
      */
     inline const DataCatalogType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external
-     * hive metastore.</p>
+     * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
+     * catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code>
+     * for an Glue Data Catalog.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external
-     * hive metastore.</p>
+     * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
+     * catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code>
+     * for an Glue Data Catalog.</p>
      */
     inline void SetType(const DataCatalogType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external
-     * hive metastore.</p>
+     * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
+     * catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code>
+     * for an Glue Data Catalog.</p>
      */
     inline void SetType(DataCatalogType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external
-     * hive metastore.</p>
+     * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
+     * catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code>
+     * for an Glue Data Catalog.</p>
      */
     inline DataCatalog& WithType(const DataCatalogType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog,
-     * <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external
-     * hive metastore.</p>
+     * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
+     * catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code>
+     * for an Glue Data Catalog.</p>
      */
     inline DataCatalog& WithType(DataCatalogType&& value) { SetType(std::move(value)); return *this;}
 
@@ -197,8 +205,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -218,8 +233,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -239,8 +261,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -260,8 +289,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -281,8 +317,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -302,8 +345,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -323,8 +373,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -344,8 +401,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -365,8 +429,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -386,8 +457,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -407,8 +485,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -428,8 +513,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -449,8 +541,15 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and
+     * is required. The <code> <i>catalog_id</i> </code> is the account ID of the
+     * Amazon Web Services account to which the Glue catalog belongs.</p> <p>
+     * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
+     * <code>GLUE</code> data catalog type also applies to the default
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
+     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
+     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

@@ -39,11 +39,11 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>
@@ -61,11 +61,11 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>
@@ -83,11 +83,11 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>
@@ -105,11 +105,11 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>
@@ -127,11 +127,11 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>
@@ -149,11 +149,11 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>
@@ -171,11 +171,11 @@ namespace Model
     inline OnlineStoreSecurityConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>
@@ -193,11 +193,11 @@ namespace Model
     inline OnlineStoreSecurityConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side
-     * encryption.</p> <p>The caller (either IAM user or IAM role) of
-     * <code>CreateFeatureGroup</code> must have below permissions to the
-     * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
+     * <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services
+     * KMS) key that SageMaker Feature Store uses to encrypt the Amazon S3 objects at
+     * rest using Amazon S3 server-side encryption.</p> <p>The caller (either IAM user
+     * or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     * the <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
      * </li> <li> <p> <code>"kms:DescribeKey"</code> </p> </li> <li> <p>
      * <code>"kms:CreateGrant"</code> </p> </li> <li> <p>

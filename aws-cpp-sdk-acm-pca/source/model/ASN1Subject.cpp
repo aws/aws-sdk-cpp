@@ -32,7 +32,8 @@ ASN1Subject::ASN1Subject() :
     m_givenNameHasBeenSet(false),
     m_initialsHasBeenSet(false),
     m_pseudonymHasBeenSet(false),
-    m_generationQualifierHasBeenSet(false)
+    m_generationQualifierHasBeenSet(false),
+    m_customAttributesHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ASN1Subject::ASN1Subject(JsonView jsonValue) :
     m_givenNameHasBeenSet(false),
     m_initialsHasBeenSet(false),
     m_pseudonymHasBeenSet(false),
-    m_generationQualifierHasBeenSet(false)
+    m_generationQualifierHasBeenSet(false),
+    m_customAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +157,16 @@ ASN1Subject& ASN1Subject::operator =(JsonView jsonValue)
     m_generationQualifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomAttributes"))
+  {
+    Array<JsonView> customAttributesJsonList = jsonValue.GetArray("CustomAttributes");
+    for(unsigned customAttributesIndex = 0; customAttributesIndex < customAttributesJsonList.GetLength(); ++customAttributesIndex)
+    {
+      m_customAttributes.push_back(customAttributesJsonList[customAttributesIndex].AsObject());
+    }
+    m_customAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +255,17 @@ JsonValue ASN1Subject::Jsonize() const
   if(m_generationQualifierHasBeenSet)
   {
    payload.WithString("GenerationQualifier", m_generationQualifier);
+
+  }
+
+  if(m_customAttributesHasBeenSet)
+  {
+   Array<JsonValue> customAttributesJsonList(m_customAttributes.size());
+   for(unsigned customAttributesIndex = 0; customAttributesIndex < customAttributesJsonList.GetLength(); ++customAttributesIndex)
+   {
+     customAttributesJsonList[customAttributesIndex].AsObject(m_customAttributes[customAttributesIndex].Jsonize());
+   }
+   payload.WithArray("CustomAttributes", std::move(customAttributesJsonList));
 
   }
 

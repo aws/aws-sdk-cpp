@@ -24,10 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure that contains the <code>ServiceName</code> and
-   * <code>ServiceCode</code>. It does not include all details of the service quota.
-   * To get those values, use the <a>ListServiceQuotas</a> operation. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceInfo">AWS
    * API Reference</a></p>
    */
@@ -41,83 +38,83 @@ namespace Model
 
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline ServiceInfo& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline ServiceInfo& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline ServiceInfo& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline ServiceInfo& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline ServiceInfo& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS service specified in the increase request. </p>
+     * <p>The service name.</p>
      */
     inline ServiceInfo& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

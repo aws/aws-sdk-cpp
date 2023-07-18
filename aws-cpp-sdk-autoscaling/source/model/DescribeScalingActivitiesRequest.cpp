@@ -13,6 +13,8 @@ using namespace Aws::Utils;
 DescribeScalingActivitiesRequest::DescribeScalingActivitiesRequest() : 
     m_activityIdsHasBeenSet(false),
     m_autoScalingGroupNameHasBeenSet(false),
+    m_includeDeletedGroups(false),
+    m_includeDeletedGroupsHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -37,6 +39,11 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
   if(m_autoScalingGroupNameHasBeenSet)
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+
+  if(m_includeDeletedGroupsHasBeenSet)
+  {
+    ss << "IncludeDeletedGroups=" << std::boolalpha << m_includeDeletedGroups << "&";
   }
 
   if(m_maxRecordsHasBeenSet)

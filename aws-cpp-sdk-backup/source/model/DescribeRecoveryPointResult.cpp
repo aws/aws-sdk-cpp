@@ -90,6 +90,12 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+
+  }
+
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");

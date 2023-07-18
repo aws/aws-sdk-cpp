@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for the JSON token type.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Provides the configuration information for the JSON token type.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JsonTokenTypeConfiguration">AWS
    * API Reference</a></p>
    */

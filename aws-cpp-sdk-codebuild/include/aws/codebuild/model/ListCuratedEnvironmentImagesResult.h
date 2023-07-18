@@ -35,43 +35,43 @@ namespace Model
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline const Aws::Vector<EnvironmentPlatform>& GetPlatforms() const{ return m_platforms; }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline void SetPlatforms(const Aws::Vector<EnvironmentPlatform>& value) { m_platforms = value; }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline void SetPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { m_platforms = std::move(value); }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& WithPlatforms(const Aws::Vector<EnvironmentPlatform>& value) { SetPlatforms(value); return *this;}
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& WithPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { SetPlatforms(std::move(value)); return *this;}
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& AddPlatforms(const EnvironmentPlatform& value) { m_platforms.push_back(value); return *this; }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& AddPlatforms(EnvironmentPlatform&& value) { m_platforms.push_back(std::move(value)); return *this; }
 

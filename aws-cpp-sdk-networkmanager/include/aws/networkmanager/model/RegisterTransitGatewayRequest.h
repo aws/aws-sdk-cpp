@@ -74,66 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayArn() const{ return m_transitGatewayArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline bool TransitGatewayArnHasBeenSet() const { return m_transitGatewayArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline void SetTransitGatewayArn(const Aws::String& value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline void SetTransitGatewayArn(Aws::String&& value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline void SetTransitGatewayArn(const char* value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline RegisterTransitGatewayRequest& WithTransitGatewayArn(const Aws::String& value) { SetTransitGatewayArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline RegisterTransitGatewayRequest& WithTransitGatewayArn(Aws::String&& value) { SetTransitGatewayArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline RegisterTransitGatewayRequest& WithTransitGatewayArn(const char* value) { SetTransitGatewayArn(value); return *this;}
 

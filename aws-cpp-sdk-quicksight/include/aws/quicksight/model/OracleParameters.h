@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Oracle parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for Oracle.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/OracleParameters">AWS
    * API Reference</a></p>
    */

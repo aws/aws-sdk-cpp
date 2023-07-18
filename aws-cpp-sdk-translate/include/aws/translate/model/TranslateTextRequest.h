@@ -8,6 +8,7 @@
 #include <aws/translate/TranslateRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/translate/model/TranslationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +294,43 @@ namespace Model
      */
     inline TranslateTextRequest& WithTargetLanguageCode(const char* value) { SetTargetLanguageCode(value); return *this;}
 
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline const TranslationSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline TranslateTextRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline TranslateTextRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_text;
@@ -306,6 +344,9 @@ namespace Model
 
     Aws::String m_targetLanguageCode;
     bool m_targetLanguageCodeHasBeenSet;
+
+    TranslationSettings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

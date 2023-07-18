@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     BusinessCalling,
-    VoiceConnector
+    VoiceConnector,
+    SipMediaApplicationDialIn
   };
 
 namespace PhoneNumberProductTypeMapper

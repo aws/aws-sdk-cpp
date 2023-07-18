@@ -23,7 +23,9 @@ UpdateResolverRequest::UpdateResolverRequest() :
     m_kindHasBeenSet(false),
     m_pipelineConfigHasBeenSet(false),
     m_syncConfigHasBeenSet(false),
-    m_cachingConfigHasBeenSet(false)
+    m_cachingConfigHasBeenSet(false),
+    m_maxBatchSize(0),
+    m_maxBatchSizeHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,12 @@ Aws::String UpdateResolverRequest::SerializePayload() const
   if(m_cachingConfigHasBeenSet)
   {
    payload.WithObject("cachingConfig", m_cachingConfig.Jsonize());
+
+  }
+
+  if(m_maxBatchSizeHasBeenSet)
+  {
+   payload.WithInteger("maxBatchSize", m_maxBatchSize);
 
   }
 

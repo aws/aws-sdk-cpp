@@ -20,13 +20,15 @@ namespace Model
 
 ImageConfig::ImageConfig() : 
     m_repositoryAccessMode(RepositoryAccessMode::NOT_SET),
-    m_repositoryAccessModeHasBeenSet(false)
+    m_repositoryAccessModeHasBeenSet(false),
+    m_repositoryAuthConfigHasBeenSet(false)
 {
 }
 
 ImageConfig::ImageConfig(JsonView jsonValue) : 
     m_repositoryAccessMode(RepositoryAccessMode::NOT_SET),
-    m_repositoryAccessModeHasBeenSet(false)
+    m_repositoryAccessModeHasBeenSet(false),
+    m_repositoryAuthConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ ImageConfig& ImageConfig::operator =(JsonView jsonValue)
     m_repositoryAccessModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RepositoryAuthConfig"))
+  {
+    m_repositoryAuthConfig = jsonValue.GetObject("RepositoryAuthConfig");
+
+    m_repositoryAuthConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue ImageConfig::Jsonize() const
   if(m_repositoryAccessModeHasBeenSet)
   {
    payload.WithString("RepositoryAccessMode", RepositoryAccessModeMapper::GetNameForRepositoryAccessMode(m_repositoryAccessMode));
+  }
+
+  if(m_repositoryAuthConfigHasBeenSet)
+  {
+   payload.WithObject("RepositoryAuthConfig", m_repositoryAuthConfig.Jsonize());
+
   }
 
   return payload;

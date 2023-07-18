@@ -27,8 +27,8 @@ namespace Model
    * <p>A data type that represents an Outpost.</p> <p>For more information about RDS
    * on Outposts, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-   * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See
-   * Also:</h3>   <a
+   * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Outpost">AWS API
    * Reference</a></p>
    */

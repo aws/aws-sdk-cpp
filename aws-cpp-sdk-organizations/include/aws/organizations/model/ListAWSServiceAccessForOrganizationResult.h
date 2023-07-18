@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>A list of the service principals for the services that are enabled to
      * integrate with your organization. Each principal is a structure that includes
-     * the name and the date that it was enabled for integration with AWS
+     * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
     inline const Aws::Vector<EnabledServicePrincipal>& GetEnabledServicePrincipals() const{ return m_enabledServicePrincipals; }
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>A list of the service principals for the services that are enabled to
      * integrate with your organization. Each principal is a structure that includes
-     * the name and the date that it was enabled for integration with AWS
+     * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
     inline void SetEnabledServicePrincipals(const Aws::Vector<EnabledServicePrincipal>& value) { m_enabledServicePrincipals = value; }
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>A list of the service principals for the services that are enabled to
      * integrate with your organization. Each principal is a structure that includes
-     * the name and the date that it was enabled for integration with AWS
+     * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
     inline void SetEnabledServicePrincipals(Aws::Vector<EnabledServicePrincipal>&& value) { m_enabledServicePrincipals = std::move(value); }
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>A list of the service principals for the services that are enabled to
      * integrate with your organization. Each principal is a structure that includes
-     * the name and the date that it was enabled for integration with AWS
+     * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
     inline ListAWSServiceAccessForOrganizationResult& WithEnabledServicePrincipals(const Aws::Vector<EnabledServicePrincipal>& value) { SetEnabledServicePrincipals(value); return *this;}
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>A list of the service principals for the services that are enabled to
      * integrate with your organization. Each principal is a structure that includes
-     * the name and the date that it was enabled for integration with AWS
+     * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
     inline ListAWSServiceAccessForOrganizationResult& WithEnabledServicePrincipals(Aws::Vector<EnabledServicePrincipal>&& value) { SetEnabledServicePrincipals(std::move(value)); return *this;}
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>A list of the service principals for the services that are enabled to
      * integrate with your organization. Each principal is a structure that includes
-     * the name and the date that it was enabled for integration with AWS
+     * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
     inline ListAWSServiceAccessForOrganizationResult& AddEnabledServicePrincipals(const EnabledServicePrincipal& value) { m_enabledServicePrincipals.push_back(value); return *this; }
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>A list of the service principals for the services that are enabled to
      * integrate with your organization. Each principal is a structure that includes
-     * the name and the date that it was enabled for integration with AWS
+     * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
     inline ListAWSServiceAccessForOrganizationResult& AddEnabledServicePrincipals(EnabledServicePrincipal&& value) { m_enabledServicePrincipals.push_back(std::move(value)); return *this; }

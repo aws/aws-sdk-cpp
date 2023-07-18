@@ -27,6 +27,9 @@ ViolationEvent::ViolationEvent() :
     m_violationEventAdditionalInfoHasBeenSet(false),
     m_violationEventType(ViolationEventType::NOT_SET),
     m_violationEventTypeHasBeenSet(false),
+    m_verificationState(VerificationState::NOT_SET),
+    m_verificationStateHasBeenSet(false),
+    m_verificationStateDescriptionHasBeenSet(false),
     m_violationEventTimeHasBeenSet(false)
 {
 }
@@ -40,6 +43,9 @@ ViolationEvent::ViolationEvent(JsonView jsonValue) :
     m_violationEventAdditionalInfoHasBeenSet(false),
     m_violationEventType(ViolationEventType::NOT_SET),
     m_violationEventTypeHasBeenSet(false),
+    m_verificationState(VerificationState::NOT_SET),
+    m_verificationStateHasBeenSet(false),
+    m_verificationStateDescriptionHasBeenSet(false),
     m_violationEventTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,6 +102,20 @@ ViolationEvent& ViolationEvent::operator =(JsonView jsonValue)
     m_violationEventTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("verificationState"))
+  {
+    m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("verificationState"));
+
+    m_verificationStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("verificationStateDescription"))
+  {
+    m_verificationStateDescription = jsonValue.GetString("verificationStateDescription");
+
+    m_verificationStateDescriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("violationEventTime"))
   {
     m_violationEventTime = jsonValue.GetDouble("violationEventTime");
@@ -149,6 +169,17 @@ JsonValue ViolationEvent::Jsonize() const
   if(m_violationEventTypeHasBeenSet)
   {
    payload.WithString("violationEventType", ViolationEventTypeMapper::GetNameForViolationEventType(m_violationEventType));
+  }
+
+  if(m_verificationStateHasBeenSet)
+  {
+   payload.WithString("verificationState", VerificationStateMapper::GetNameForVerificationState(m_verificationState));
+  }
+
+  if(m_verificationStateDescriptionHasBeenSet)
+  {
+   payload.WithString("verificationStateDescription", m_verificationStateDescription);
+
   }
 
   if(m_violationEventTimeHasBeenSet)

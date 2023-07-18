@@ -197,38 +197,128 @@ namespace Model
 
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline GetCostForecastRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline GetCostForecastRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

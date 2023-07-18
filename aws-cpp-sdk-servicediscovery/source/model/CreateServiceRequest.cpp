@@ -21,7 +21,9 @@ CreateServiceRequest::CreateServiceRequest() :
     m_dnsConfigHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_healthCheckCustomConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_type(ServiceTypeOption::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,11 @@ Aws::String CreateServiceRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", ServiceTypeOptionMapper::GetNameForServiceTypeOption(m_type));
   }
 
   return payload.View().WriteReadable();

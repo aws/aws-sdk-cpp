@@ -20,13 +20,15 @@ namespace Model
 
 S3SourceProperties::S3SourceProperties() : 
     m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false)
+    m_bucketPrefixHasBeenSet(false),
+    m_s3InputFormatConfigHasBeenSet(false)
 {
 }
 
 S3SourceProperties::S3SourceProperties(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false)
+    m_bucketPrefixHasBeenSet(false),
+    m_s3InputFormatConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ S3SourceProperties& S3SourceProperties::operator =(JsonView jsonValue)
     m_bucketPrefixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3InputFormatConfig"))
+  {
+    m_s3InputFormatConfig = jsonValue.GetObject("s3InputFormatConfig");
+
+    m_s3InputFormatConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue S3SourceProperties::Jsonize() const
   if(m_bucketPrefixHasBeenSet)
   {
    payload.WithString("bucketPrefix", m_bucketPrefix);
+
+  }
+
+  if(m_s3InputFormatConfigHasBeenSet)
+  {
+   payload.WithObject("s3InputFormatConfig", m_s3InputFormatConfig.Jsonize());
 
   }
 

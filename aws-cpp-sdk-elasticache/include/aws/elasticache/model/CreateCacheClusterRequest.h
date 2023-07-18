@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/OutpostMode.h>
 #include <aws/elasticache/model/Tag.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -472,7 +473,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -482,7 +483,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -492,7 +493,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -502,7 +503,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -517,19 +518,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -547,10 +551,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -579,19 +583,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -609,10 +616,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -641,19 +648,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -671,10 +681,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -703,19 +713,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -733,10 +746,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -765,19 +778,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -795,10 +811,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -827,19 +843,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -857,10 +876,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -889,19 +908,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -919,10 +941,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -951,19 +973,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -981,10 +1006,10 @@ namespace Model
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -1444,42 +1469,42 @@ namespace Model
 
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -1643,128 +1668,56 @@ namespace Model
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1848,22 +1801,30 @@ namespace Model
 
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline CreateCacheClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -2202,6 +2163,88 @@ namespace Model
      */
     inline CreateCacheClusterRequest& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
+     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
+     * To enable in-transit encryption on a cluster you must set
+     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     * <p> <b>Required:</b> Only available when creating a cache cluster in an Amazon
+     * VPC using Memcached version <code>1.6.12</code> or later.</p>
+     */
+    inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
+     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
+     * To enable in-transit encryption on a cluster you must set
+     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     * <p> <b>Required:</b> Only available when creating a cache cluster in an Amazon
+     * VPC using Memcached version <code>1.6.12</code> or later.</p>
+     */
+    inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
+     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
+     * To enable in-transit encryption on a cluster you must set
+     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     * <p> <b>Required:</b> Only available when creating a cache cluster in an Amazon
+     * VPC using Memcached version <code>1.6.12</code> or later.</p>
+     */
+    inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
+     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
+     * To enable in-transit encryption on a cluster you must set
+     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     * <p> <b>Required:</b> Only available when creating a cache cluster in an Amazon
+     * VPC using Memcached version <code>1.6.12</code> or later.</p>
+     */
+    inline CreateCacheClusterRequest& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -2281,6 +2324,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_preferredOutpostArns;
     bool m_preferredOutpostArnsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
+
+    bool m_transitEncryptionEnabled;
+    bool m_transitEncryptionEnabledHasBeenSet;
   };
 
 } // namespace Model

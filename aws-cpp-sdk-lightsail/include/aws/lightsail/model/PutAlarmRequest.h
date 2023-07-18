@@ -534,10 +534,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline const Aws::Vector<ContactProtocol>& GetContactProtocols() const{ return m_contactProtocols; }
 
@@ -547,10 +547,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline bool ContactProtocolsHasBeenSet() const { return m_contactProtocolsHasBeenSet; }
 
@@ -560,10 +560,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline void SetContactProtocols(const Aws::Vector<ContactProtocol>& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols = value; }
 
@@ -573,10 +573,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline void SetContactProtocols(Aws::Vector<ContactProtocol>&& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols = std::move(value); }
 
@@ -586,10 +586,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& WithContactProtocols(const Aws::Vector<ContactProtocol>& value) { SetContactProtocols(value); return *this;}
 
@@ -599,10 +599,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& WithContactProtocols(Aws::Vector<ContactProtocol>&& value) { SetContactProtocols(std::move(value)); return *this;}
 
@@ -612,10 +612,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& AddContactProtocols(const ContactProtocol& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols.push_back(value); return *this; }
 
@@ -625,10 +625,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& AddContactProtocols(ContactProtocol&& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols.push_back(std::move(value)); return *this; }
 

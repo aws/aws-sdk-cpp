@@ -22,16 +22,18 @@ MemberDetail::MemberDetail() :
     m_accountIdHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_graphArnHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
+    m_administratorIdHasBeenSet(false),
     m_status(MemberStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_disabledReason(MemberDisabledReason::NOT_SET),
     m_disabledReasonHasBeenSet(false),
     m_invitedTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_percentOfGraphUtilization(0.0),
-    m_percentOfGraphUtilizationHasBeenSet(false),
-    m_percentOfGraphUtilizationUpdatedTimeHasBeenSet(false)
+    m_volumeUsageInBytes(0),
+    m_volumeUsageInBytesHasBeenSet(false),
+    m_volumeUsageUpdatedTimeHasBeenSet(false),
+    m_invitationType(InvitationType::NOT_SET),
+    m_invitationTypeHasBeenSet(false)
 {
 }
 
@@ -39,16 +41,18 @@ MemberDetail::MemberDetail(JsonView jsonValue) :
     m_accountIdHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_graphArnHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
+    m_administratorIdHasBeenSet(false),
     m_status(MemberStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_disabledReason(MemberDisabledReason::NOT_SET),
     m_disabledReasonHasBeenSet(false),
     m_invitedTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_percentOfGraphUtilization(0.0),
-    m_percentOfGraphUtilizationHasBeenSet(false),
-    m_percentOfGraphUtilizationUpdatedTimeHasBeenSet(false)
+    m_volumeUsageInBytes(0),
+    m_volumeUsageInBytesHasBeenSet(false),
+    m_volumeUsageUpdatedTimeHasBeenSet(false),
+    m_invitationType(InvitationType::NOT_SET),
+    m_invitationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,11 +80,11 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
     m_graphArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("MasterId"))
+  if(jsonValue.ValueExists("AdministratorId"))
   {
-    m_masterId = jsonValue.GetString("MasterId");
+    m_administratorId = jsonValue.GetString("AdministratorId");
 
-    m_masterIdHasBeenSet = true;
+    m_administratorIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -99,30 +103,37 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InvitedTime"))
   {
-    m_invitedTime = jsonValue.GetDouble("InvitedTime");
+    m_invitedTime = jsonValue.GetString("InvitedTime");
 
     m_invitedTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdatedTime"))
   {
-    m_updatedTime = jsonValue.GetDouble("UpdatedTime");
+    m_updatedTime = jsonValue.GetString("UpdatedTime");
 
     m_updatedTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PercentOfGraphUtilization"))
+  if(jsonValue.ValueExists("VolumeUsageInBytes"))
   {
-    m_percentOfGraphUtilization = jsonValue.GetDouble("PercentOfGraphUtilization");
+    m_volumeUsageInBytes = jsonValue.GetInt64("VolumeUsageInBytes");
 
-    m_percentOfGraphUtilizationHasBeenSet = true;
+    m_volumeUsageInBytesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PercentOfGraphUtilizationUpdatedTime"))
+  if(jsonValue.ValueExists("VolumeUsageUpdatedTime"))
   {
-    m_percentOfGraphUtilizationUpdatedTime = jsonValue.GetDouble("PercentOfGraphUtilizationUpdatedTime");
+    m_volumeUsageUpdatedTime = jsonValue.GetString("VolumeUsageUpdatedTime");
 
-    m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true;
+    m_volumeUsageUpdatedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InvitationType"))
+  {
+    m_invitationType = InvitationTypeMapper::GetInvitationTypeForName(jsonValue.GetString("InvitationType"));
+
+    m_invitationTypeHasBeenSet = true;
   }
 
   return *this;
@@ -150,9 +161,9 @@ JsonValue MemberDetail::Jsonize() const
 
   }
 
-  if(m_masterIdHasBeenSet)
+  if(m_administratorIdHasBeenSet)
   {
-   payload.WithString("MasterId", m_masterId);
+   payload.WithString("AdministratorId", m_administratorId);
 
   }
 
@@ -168,23 +179,28 @@ JsonValue MemberDetail::Jsonize() const
 
   if(m_invitedTimeHasBeenSet)
   {
-   payload.WithDouble("InvitedTime", m_invitedTime.SecondsWithMSPrecision());
+   payload.WithString("InvitedTime", m_invitedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_updatedTimeHasBeenSet)
   {
-   payload.WithDouble("UpdatedTime", m_updatedTime.SecondsWithMSPrecision());
+   payload.WithString("UpdatedTime", m_updatedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
-  if(m_percentOfGraphUtilizationHasBeenSet)
+  if(m_volumeUsageInBytesHasBeenSet)
   {
-   payload.WithDouble("PercentOfGraphUtilization", m_percentOfGraphUtilization);
+   payload.WithInt64("VolumeUsageInBytes", m_volumeUsageInBytes);
 
   }
 
-  if(m_percentOfGraphUtilizationUpdatedTimeHasBeenSet)
+  if(m_volumeUsageUpdatedTimeHasBeenSet)
   {
-   payload.WithDouble("PercentOfGraphUtilizationUpdatedTime", m_percentOfGraphUtilizationUpdatedTime.SecondsWithMSPrecision());
+   payload.WithString("VolumeUsageUpdatedTime", m_volumeUsageUpdatedTime.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_invitationTypeHasBeenSet)
+  {
+   payload.WithString("InvitationType", InvitationTypeMapper::GetNameForInvitationType(m_invitationType));
   }
 
   return payload;

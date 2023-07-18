@@ -39,116 +39,116 @@ namespace Model
 
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline const Aws::String& GetApiId() const{ return m_apiId; }
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline CreateApiCacheRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline CreateApiCacheRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The GraphQL API Id.</p>
+     * <p>The GraphQL API ID.</p>
      */
     inline CreateApiCacheRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
 
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline long long GetTtl() const{ return m_ttl; }
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline void SetTtl(long long value) { m_ttlHasBeenSet = true; m_ttl = value; }
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline CreateApiCacheRequest& WithTtl(long long value) { SetTtl(value); return *this;}
 
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline CreateApiCacheRequest& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline CreateApiCacheRequest& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}

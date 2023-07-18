@@ -134,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline bool OrganizationConfigurationHasBeenSet() const { return m_organizationConfigurationHasBeenSet; }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = value; }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = std::move(value); }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
 

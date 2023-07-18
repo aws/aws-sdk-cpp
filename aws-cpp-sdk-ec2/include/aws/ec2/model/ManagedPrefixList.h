@@ -125,32 +125,32 @@ namespace Model
 
 
     /**
-     * <p>The state of the prefix list.</p>
+     * <p>The current state of the prefix list.</p>
      */
     inline const PrefixListState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the prefix list.</p>
+     * <p>The current state of the prefix list.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the prefix list.</p>
+     * <p>The current state of the prefix list.</p>
      */
     inline void SetState(const PrefixListState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the prefix list.</p>
+     * <p>The current state of the prefix list.</p>
      */
     inline void SetState(PrefixListState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the prefix list.</p>
+     * <p>The current state of the prefix list.</p>
      */
     inline ManagedPrefixList& WithState(const PrefixListState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the prefix list.</p>
+     * <p>The current state of the prefix list.</p>
      */
     inline ManagedPrefixList& WithState(PrefixListState&& value) { SetState(std::move(value)); return *this;}
 

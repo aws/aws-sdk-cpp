@@ -10,6 +10,7 @@
 #include <aws/frauddetector/model/TrainingDataSourceEnum.h>
 #include <aws/frauddetector/model/TrainingDataSchema.h>
 #include <aws/frauddetector/model/ExternalEventsDetail.h>
+#include <aws/frauddetector/model/IngestedEventsDetail.h>
 #include <aws/frauddetector/model/TrainingResult.h>
 #include <utility>
 
@@ -259,34 +260,89 @@ namespace Model
 
 
     /**
-     * <p>The event details.</p>
+     * <p>The external events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline const ExternalEventsDetail& GetExternalEventsDetail() const{ return m_externalEventsDetail; }
 
     /**
-     * <p>The event details.</p>
+     * <p>The external events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline bool ExternalEventsDetailHasBeenSet() const { return m_externalEventsDetailHasBeenSet; }
 
     /**
-     * <p>The event details.</p>
+     * <p>The external events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline void SetExternalEventsDetail(const ExternalEventsDetail& value) { m_externalEventsDetailHasBeenSet = true; m_externalEventsDetail = value; }
 
     /**
-     * <p>The event details.</p>
+     * <p>The external events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline void SetExternalEventsDetail(ExternalEventsDetail&& value) { m_externalEventsDetailHasBeenSet = true; m_externalEventsDetail = std::move(value); }
 
     /**
-     * <p>The event details.</p>
+     * <p>The external events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline ModelVersionDetail& WithExternalEventsDetail(const ExternalEventsDetail& value) { SetExternalEventsDetail(value); return *this;}
 
     /**
-     * <p>The event details.</p>
+     * <p>The external events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline ModelVersionDetail& WithExternalEventsDetail(ExternalEventsDetail&& value) { SetExternalEventsDetail(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ingested events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline const IngestedEventsDetail& GetIngestedEventsDetail() const{ return m_ingestedEventsDetail; }
+
+    /**
+     * <p>The ingested events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline bool IngestedEventsDetailHasBeenSet() const { return m_ingestedEventsDetailHasBeenSet; }
+
+    /**
+     * <p>The ingested events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(const IngestedEventsDetail& value) { m_ingestedEventsDetailHasBeenSet = true; m_ingestedEventsDetail = value; }
+
+    /**
+     * <p>The ingested events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(IngestedEventsDetail&& value) { m_ingestedEventsDetailHasBeenSet = true; m_ingestedEventsDetail = std::move(value); }
+
+    /**
+     * <p>The ingested events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline ModelVersionDetail& WithIngestedEventsDetail(const IngestedEventsDetail& value) { SetIngestedEventsDetail(value); return *this;}
+
+    /**
+     * <p>The ingested events data details. This will be populated if the
+     * <code>trainingDataSource</code> for the model version is specified as
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline ModelVersionDetail& WithIngestedEventsDetail(IngestedEventsDetail&& value) { SetIngestedEventsDetail(std::move(value)); return *this;}
 
 
     /**
@@ -464,6 +520,9 @@ namespace Model
 
     ExternalEventsDetail m_externalEventsDetail;
     bool m_externalEventsDetailHasBeenSet;
+
+    IngestedEventsDetail m_ingestedEventsDetail;
+    bool m_ingestedEventsDetailHasBeenSet;
 
     TrainingResult m_trainingResult;
     bool m_trainingResultHasBeenSet;

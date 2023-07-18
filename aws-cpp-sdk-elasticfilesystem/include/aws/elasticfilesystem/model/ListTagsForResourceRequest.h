@@ -113,50 +113,58 @@ namespace Model
 
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>You can use <code>NextToken</code> in a subsequent request to fetch the next
-     * page of access point descriptions if the response payload was paginated.</p>
+     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
+     * fetch the next page of access point descriptions if the response payload was
+     * paginated.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

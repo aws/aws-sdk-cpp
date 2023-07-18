@@ -10,6 +10,7 @@
 #include <aws/robomaker/model/RobotSoftwareSuite.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/robomaker/model/Environment.h>
 #include <aws/robomaker/model/Source.h>
 #include <utility>
 
@@ -339,6 +340,37 @@ namespace Model
      */
     inline CreateRobotApplicationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>An object that contains the Docker image URI used to a create your robot
+     * application.</p>
+     */
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>An object that contains the Docker image URI used to a create your robot
+     * application.</p>
+     */
+    inline void SetEnvironment(const Environment& value) { m_environment = value; }
+
+    /**
+     * <p>An object that contains the Docker image URI used to a create your robot
+     * application.</p>
+     */
+    inline void SetEnvironment(Environment&& value) { m_environment = std::move(value); }
+
+    /**
+     * <p>An object that contains the Docker image URI used to a create your robot
+     * application.</p>
+     */
+    inline CreateRobotApplicationResult& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>An object that contains the Docker image URI used to a create your robot
+     * application.</p>
+     */
+    inline CreateRobotApplicationResult& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -356,6 +388,8 @@ namespace Model
     Aws::String m_revisionId;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Environment m_environment;
   };
 
 } // namespace Model

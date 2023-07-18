@@ -20,7 +20,8 @@ ExportEC2InstanceRecommendationsRequest::ExportEC2InstanceRecommendationsRequest
     m_fileFormat(FileFormat::NOT_SET),
     m_fileFormatHasBeenSet(false),
     m_includeMemberAccounts(false),
-    m_includeMemberAccountsHasBeenSet(false)
+    m_includeMemberAccountsHasBeenSet(false),
+    m_recommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,12 @@ Aws::String ExportEC2InstanceRecommendationsRequest::SerializePayload() const
   if(m_includeMemberAccountsHasBeenSet)
   {
    payload.WithBool("includeMemberAccounts", m_includeMemberAccounts);
+
+  }
+
+  if(m_recommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
 
   }
 

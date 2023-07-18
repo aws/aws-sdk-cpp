@@ -43,203 +43,195 @@ namespace Model
 
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline GetObjectLegalHoldRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline GetObjectLegalHoldRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The bucket name containing the object whose Legal Hold status you want to
-     * retrieve. </p> <p>When using this API with an access point, you must direct
+     * <p>The bucket name containing the object whose legal hold status you want to
+     * retrieve. </p> <p>When using this action with an access point, you must direct
      * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline GetObjectLegalHoldRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline GetObjectLegalHoldRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline GetObjectLegalHoldRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+     * <p>The key name for the object whose legal hold status you want to retrieve.</p>
      */
     inline GetObjectLegalHoldRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline GetObjectLegalHoldRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline GetObjectLegalHoldRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The version ID of the object whose Legal Hold status you want to
+     * <p>The version ID of the object whose legal hold status you want to
      * retrieve.</p>
      */
     inline GetObjectLegalHoldRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
@@ -265,58 +257,58 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline GetObjectLegalHoldRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline GetObjectLegalHoldRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline GetObjectLegalHoldRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 

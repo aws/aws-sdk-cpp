@@ -22,13 +22,17 @@ namespace Model
 
 FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest() : 
     m_replacementStrategy(FleetReplacementStrategy::NOT_SET),
-    m_replacementStrategyHasBeenSet(false)
+    m_replacementStrategyHasBeenSet(false),
+    m_terminationDelay(0),
+    m_terminationDelayHasBeenSet(false)
 {
 }
 
 FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest(const XmlNode& xmlNode) : 
     m_replacementStrategy(FleetReplacementStrategy::NOT_SET),
-    m_replacementStrategyHasBeenSet(false)
+    m_replacementStrategyHasBeenSet(false),
+    m_terminationDelay(0),
+    m_terminationDelayHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -45,6 +49,12 @@ FleetSpotCapacityRebalanceRequest& FleetSpotCapacityRebalanceRequest::operator =
       m_replacementStrategy = FleetReplacementStrategyMapper::GetFleetReplacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementStrategyNode.GetText()).c_str()).c_str());
       m_replacementStrategyHasBeenSet = true;
     }
+    XmlNode terminationDelayNode = resultNode.FirstChild("TerminationDelay");
+    if(!terminationDelayNode.IsNull())
+    {
+      m_terminationDelay = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDelayNode.GetText()).c_str()).c_str());
+      m_terminationDelayHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +67,11 @@ void FleetSpotCapacityRebalanceRequest::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".ReplacementStrategy=" << FleetReplacementStrategyMapper::GetNameForFleetReplacementStrategy(m_replacementStrategy) << "&";
   }
 
+  if(m_terminationDelayHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TerminationDelay=" << m_terminationDelay << "&";
+  }
+
 }
 
 void FleetSpotCapacityRebalanceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -64,6 +79,10 @@ void FleetSpotCapacityRebalanceRequest::OutputToStream(Aws::OStream& oStream, co
   if(m_replacementStrategyHasBeenSet)
   {
       oStream << location << ".ReplacementStrategy=" << FleetReplacementStrategyMapper::GetNameForFleetReplacementStrategy(m_replacementStrategy) << "&";
+  }
+  if(m_terminationDelayHasBeenSet)
+  {
+      oStream << location << ".TerminationDelay=" << m_terminationDelay << "&";
   }
 }
 

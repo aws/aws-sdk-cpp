@@ -46,42 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline OrganizationEventDetails& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline OrganizationEventDetails& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+     * <p>The 12-digit Amazon Web Services account numbers that contains the affected
+     * entities.</p>
      */
     inline OrganizationEventDetails& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

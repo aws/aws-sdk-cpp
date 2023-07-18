@@ -7,6 +7,8 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/model/Risk.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wellarchitected/model/ChoiceImprovementPlan.h>
 #include <utility>
 
 namespace Aws
@@ -157,6 +159,47 @@ namespace Model
     
     inline ImprovementSummary& WithImprovementPlanUrl(const char* value) { SetImprovementPlanUrl(value); return *this;}
 
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline const Aws::Vector<ChoiceImprovementPlan>& GetImprovementPlans() const{ return m_improvementPlans; }
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline bool ImprovementPlansHasBeenSet() const { return m_improvementPlansHasBeenSet; }
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline void SetImprovementPlans(const Aws::Vector<ChoiceImprovementPlan>& value) { m_improvementPlansHasBeenSet = true; m_improvementPlans = value; }
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline void SetImprovementPlans(Aws::Vector<ChoiceImprovementPlan>&& value) { m_improvementPlansHasBeenSet = true; m_improvementPlans = std::move(value); }
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline ImprovementSummary& WithImprovementPlans(const Aws::Vector<ChoiceImprovementPlan>& value) { SetImprovementPlans(value); return *this;}
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline ImprovementSummary& WithImprovementPlans(Aws::Vector<ChoiceImprovementPlan>&& value) { SetImprovementPlans(std::move(value)); return *this;}
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline ImprovementSummary& AddImprovementPlans(const ChoiceImprovementPlan& value) { m_improvementPlansHasBeenSet = true; m_improvementPlans.push_back(value); return *this; }
+
+    /**
+     * <p>The improvement plan details.</p>
+     */
+    inline ImprovementSummary& AddImprovementPlans(ChoiceImprovementPlan&& value) { m_improvementPlansHasBeenSet = true; m_improvementPlans.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_questionId;
@@ -173,6 +216,9 @@ namespace Model
 
     Aws::String m_improvementPlanUrl;
     bool m_improvementPlanUrlHasBeenSet;
+
+    Aws::Vector<ChoiceImprovementPlan> m_improvementPlans;
+    bool m_improvementPlansHasBeenSet;
   };
 
 } // namespace Model

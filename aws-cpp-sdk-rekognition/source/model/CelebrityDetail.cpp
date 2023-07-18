@@ -25,7 +25,8 @@ CelebrityDetail::CelebrityDetail() :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false)
+    m_faceHasBeenSet(false),
+    m_knownGenderHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ CelebrityDetail::CelebrityDetail(JsonView jsonValue) :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false)
+    m_faceHasBeenSet(false),
+    m_knownGenderHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,13 @@ CelebrityDetail& CelebrityDetail::operator =(JsonView jsonValue)
     m_faceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KnownGender"))
+  {
+    m_knownGender = jsonValue.GetObject("KnownGender");
+
+    m_knownGenderHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +142,12 @@ JsonValue CelebrityDetail::Jsonize() const
   if(m_faceHasBeenSet)
   {
    payload.WithObject("Face", m_face.Jsonize());
+
+  }
+
+  if(m_knownGenderHasBeenSet)
+  {
+   payload.WithObject("KnownGender", m_knownGender.Jsonize());
 
   }
 

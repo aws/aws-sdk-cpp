@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The amount of Savings Plans eligible usage that is covered by Savings Plans.
+   * <p>The amount of Savings Plans eligible usage that's covered by Savings Plans.
    * All calculations consider the On-Demand equivalent of your Savings Plans
    * usage.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansCoverage">AWS

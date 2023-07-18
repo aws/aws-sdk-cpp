@@ -53,7 +53,8 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_dedicatedHostsSupported(false),
     m_dedicatedHostsSupportedHasBeenSet(false),
     m_autoRecoverySupported(false),
-    m_autoRecoverySupportedHasBeenSet(false)
+    m_autoRecoverySupportedHasBeenSet(false),
+    m_supportedBootModesHasBeenSet(false)
 {
 }
 
@@ -90,7 +91,8 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_dedicatedHostsSupported(false),
     m_dedicatedHostsSupportedHasBeenSet(false),
     m_autoRecoverySupported(false),
-    m_autoRecoverySupportedHasBeenSet(false)
+    m_autoRecoverySupportedHasBeenSet(false),
+    m_supportedBootModesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -257,6 +259,18 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       m_autoRecoverySupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoverySupportedNode.GetText()).c_str()).c_str());
       m_autoRecoverySupportedHasBeenSet = true;
     }
+    XmlNode supportedBootModesNode = resultNode.FirstChild("supportedBootModes");
+    if(!supportedBootModesNode.IsNull())
+    {
+      XmlNode supportedBootModesMember = supportedBootModesNode.FirstChild("item");
+      while(!supportedBootModesMember.IsNull())
+      {
+        m_supportedBootModes.push_back(BootModeTypeMapper::GetBootModeTypeForName(StringUtils::Trim(supportedBootModesMember.GetText().c_str())));
+        supportedBootModesMember = supportedBootModesMember.NextNode("item");
+      }
+
+      m_supportedBootModesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -411,6 +425,15 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AutoRecoverySupported=" << std::boolalpha << m_autoRecoverySupported << "&";
   }
 
+  if(m_supportedBootModesHasBeenSet)
+  {
+      unsigned supportedBootModesIdx = 1;
+      for(auto& item : m_supportedBootModes)
+      {
+        oStream << location << index << locationValue << ".SupportedBootModes." << supportedBootModesIdx++ << "=" << BootModeTypeMapper::GetNameForBootModeType(item) << "&";
+      }
+  }
+
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -538,6 +561,14 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_autoRecoverySupportedHasBeenSet)
   {
       oStream << location << ".AutoRecoverySupported=" << std::boolalpha << m_autoRecoverySupported << "&";
+  }
+  if(m_supportedBootModesHasBeenSet)
+  {
+      unsigned supportedBootModesIdx = 1;
+      for(auto& item : m_supportedBootModes)
+      {
+        oStream << location << ".SupportedBootModes." << supportedBootModesIdx++ << "=" << BootModeTypeMapper::GetNameForBootModeType(item) << "&";
+      }
   }
 }
 

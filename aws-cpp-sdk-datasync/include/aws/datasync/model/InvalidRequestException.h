@@ -87,6 +87,31 @@ namespace Model
     
     inline InvalidRequestException& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
+
+    
+    inline const Aws::String& GetDatasyncErrorCode() const{ return m_datasyncErrorCode; }
+
+    
+    inline bool DatasyncErrorCodeHasBeenSet() const { return m_datasyncErrorCodeHasBeenSet; }
+
+    
+    inline void SetDatasyncErrorCode(const Aws::String& value) { m_datasyncErrorCodeHasBeenSet = true; m_datasyncErrorCode = value; }
+
+    
+    inline void SetDatasyncErrorCode(Aws::String&& value) { m_datasyncErrorCodeHasBeenSet = true; m_datasyncErrorCode = std::move(value); }
+
+    
+    inline void SetDatasyncErrorCode(const char* value) { m_datasyncErrorCodeHasBeenSet = true; m_datasyncErrorCode.assign(value); }
+
+    
+    inline InvalidRequestException& WithDatasyncErrorCode(const Aws::String& value) { SetDatasyncErrorCode(value); return *this;}
+
+    
+    inline InvalidRequestException& WithDatasyncErrorCode(Aws::String&& value) { SetDatasyncErrorCode(std::move(value)); return *this;}
+
+    
+    inline InvalidRequestException& WithDatasyncErrorCode(const char* value) { SetDatasyncErrorCode(value); return *this;}
+
   private:
 
     Aws::String m_message;
@@ -94,6 +119,9 @@ namespace Model
 
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
+    Aws::String m_datasyncErrorCode;
+    bool m_datasyncErrorCodeHasBeenSet;
   };
 
 } // namespace Model

@@ -40,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline VpcConfigRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline VpcConfigRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline VpcConfigRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline VpcConfigRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
-     * cross-account elastic network interfaces in these subnets to allow communication
-     * between your worker nodes and the Kubernetes control plane.</p>
+     * <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account
+     * elastic network interfaces in these subnets to allow communication between your
+     * nodes and the Kubernetes control plane.</p>
      */
     inline VpcConfigRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -120,8 +120,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -135,8 +135,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -150,8 +150,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -165,8 +165,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -180,8 +180,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -195,8 +195,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -210,8 +210,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -225,8 +225,8 @@ namespace Model
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
-     * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane. If you don't specify any security
+     * interfaces that Amazon EKS creates to use that allow communication between your
+     * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
      * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
      * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
@@ -247,7 +247,7 @@ namespace Model
      * enables public access for your Kubernetes API server. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline bool GetEndpointPublicAccess() const{ return m_endpointPublicAccess; }
@@ -260,7 +260,7 @@ namespace Model
      * enables public access for your Kubernetes API server. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline bool EndpointPublicAccessHasBeenSet() const { return m_endpointPublicAccessHasBeenSet; }
@@ -273,7 +273,7 @@ namespace Model
      * enables public access for your Kubernetes API server. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline void SetEndpointPublicAccess(bool value) { m_endpointPublicAccessHasBeenSet = true; m_endpointPublicAccess = value; }
@@ -286,7 +286,7 @@ namespace Model
      * enables public access for your Kubernetes API server. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline VpcConfigRequest& WithEndpointPublicAccess(bool value) { SetEndpointPublicAccess(value); return *this;}
@@ -298,12 +298,11 @@ namespace Model
      * Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which
      * disables private access for your Kubernetes API server. If you disable private
-     * access and you have worker nodes or AWS Fargate pods in the cluster, then ensure
-     * that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-     * communication with the worker nodes or Fargate pods. For more information, see
-     * <a
+     * access and you have nodes or Fargate pods in the cluster, then ensure that
+     * <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline bool GetEndpointPrivateAccess() const{ return m_endpointPrivateAccess; }
@@ -314,12 +313,11 @@ namespace Model
      * Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which
      * disables private access for your Kubernetes API server. If you disable private
-     * access and you have worker nodes or AWS Fargate pods in the cluster, then ensure
-     * that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-     * communication with the worker nodes or Fargate pods. For more information, see
-     * <a
+     * access and you have nodes or Fargate pods in the cluster, then ensure that
+     * <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline bool EndpointPrivateAccessHasBeenSet() const { return m_endpointPrivateAccessHasBeenSet; }
@@ -330,12 +328,11 @@ namespace Model
      * Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which
      * disables private access for your Kubernetes API server. If you disable private
-     * access and you have worker nodes or AWS Fargate pods in the cluster, then ensure
-     * that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-     * communication with the worker nodes or Fargate pods. For more information, see
-     * <a
+     * access and you have nodes or Fargate pods in the cluster, then ensure that
+     * <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline void SetEndpointPrivateAccess(bool value) { m_endpointPrivateAccessHasBeenSet = true; m_endpointPrivateAccess = value; }
@@ -346,12 +343,11 @@ namespace Model
      * Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which
      * disables private access for your Kubernetes API server. If you disable private
-     * access and you have worker nodes or AWS Fargate pods in the cluster, then ensure
-     * that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-     * communication with the worker nodes or Fargate pods. For more information, see
-     * <a
+     * access and you have nodes or Fargate pods in the cluster, then ensure that
+     * <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline VpcConfigRequest& WithEndpointPrivateAccess(bool value) { SetEndpointPrivateAccess(value); return *this;}
@@ -362,10 +358,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPublicAccessCidrs() const{ return m_publicAccessCidrs; }
@@ -375,10 +371,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline bool PublicAccessCidrsHasBeenSet() const { return m_publicAccessCidrsHasBeenSet; }
@@ -388,10 +384,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline void SetPublicAccessCidrs(const Aws::Vector<Aws::String>& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs = value; }
@@ -401,10 +397,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline void SetPublicAccessCidrs(Aws::Vector<Aws::String>&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs = std::move(value); }
@@ -414,10 +410,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline VpcConfigRequest& WithPublicAccessCidrs(const Aws::Vector<Aws::String>& value) { SetPublicAccessCidrs(value); return *this;}
@@ -427,10 +423,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline VpcConfigRequest& WithPublicAccessCidrs(Aws::Vector<Aws::String>&& value) { SetPublicAccessCidrs(std::move(value)); return *this;}
@@ -440,10 +436,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline VpcConfigRequest& AddPublicAccessCidrs(const Aws::String& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(value); return *this; }
@@ -453,10 +449,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline VpcConfigRequest& AddPublicAccessCidrs(Aws::String&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(std::move(value)); return *this; }
@@ -466,10 +462,10 @@ namespace Model
      * API server endpoint. Communication to the endpoint from addresses outside of the
      * CIDR blocks that you specify is denied. The default value is
      * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have
-     * worker nodes or AWS Fargate pods in the cluster, then ensure that you specify
-     * the necessary CIDR blocks. For more information, see <a
+     * nodes or Fargate pods in the cluster, then ensure that you specify the necessary
+     * CIDR blocks. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
     inline VpcConfigRequest& AddPublicAccessCidrs(const char* value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(value); return *this; }

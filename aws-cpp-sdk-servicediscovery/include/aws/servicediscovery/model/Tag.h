@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A custom key-value pair associated with a resource.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>A custom key-value pair that's associated with a resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/Tag">AWS
    * API Reference</a></p>
    */
@@ -80,50 +80,58 @@ namespace Model
 
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The string value associated with the key of the tag. You can set the value of
-     * a tag to an empty string, but you can't set the value of a tag to null.</p>
+     * <p>The string value that's associated with the key of the tag. You can set the
+     * value of a tag to an empty string, but you can't set the value of a tag to
+     * null.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

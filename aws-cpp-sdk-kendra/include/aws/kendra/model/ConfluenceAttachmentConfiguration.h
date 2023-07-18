@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the attachment settings for the Confluence data source. Attachment
-   * settings are optional, if you don't specify settings attachments, Amazon Kendra
-   * won't index them.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration of attachment settings for the Confluence data source.
+   * Attachment settings are optional, if you don't specify settings attachments,
+   * Amazon Kendra won't index them.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluenceAttachmentConfiguration">AWS
    * API Reference</a></p>
    */
@@ -66,74 +66,98 @@ namespace Model
 
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline const Aws::Vector<ConfluenceAttachmentToIndexFieldMapping>& GetAttachmentFieldMappings() const{ return m_attachmentFieldMappings; }
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline bool AttachmentFieldMappingsHasBeenSet() const { return m_attachmentFieldMappingsHasBeenSet; }
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline void SetAttachmentFieldMappings(const Aws::Vector<ConfluenceAttachmentToIndexFieldMapping>& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings = value; }
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline void SetAttachmentFieldMappings(Aws::Vector<ConfluenceAttachmentToIndexFieldMapping>&& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings = std::move(value); }
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline ConfluenceAttachmentConfiguration& WithAttachmentFieldMappings(const Aws::Vector<ConfluenceAttachmentToIndexFieldMapping>& value) { SetAttachmentFieldMappings(value); return *this;}
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline ConfluenceAttachmentConfiguration& WithAttachmentFieldMappings(Aws::Vector<ConfluenceAttachmentToIndexFieldMapping>&& value) { SetAttachmentFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline ConfluenceAttachmentConfiguration& AddAttachmentFieldMappings(const ConfluenceAttachmentToIndexFieldMapping& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>Defines how attachment metadata fields should be mapped to index fields.
-     * Before you can map a field, you must first create an index field with a matching
-     * type using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>AttachentFieldMappings</code> parameter, you must specify at
-     * least one field mapping.</p>
+     * <p>Maps attributes or field names of Confluence attachments to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Confluence fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Confluence data source field names must exist in
+     * your Confluence custom metadata.</p> <p>If you specify the
+     * <code>AttachentFieldMappings</code> parameter, you must specify at least one
+     * field mapping.</p>
      */
     inline ConfluenceAttachmentConfiguration& AddAttachmentFieldMappings(ConfluenceAttachmentToIndexFieldMapping&& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings.push_back(std::move(value)); return *this; }
 

@@ -32,6 +32,8 @@ namespace Aws
         static const int lambda_HASH = HashingUtils::HashString("lambda");
         static const int cassandra_HASH = HashingUtils::HashString("cassandra");
         static const int kafka_HASH = HashingUtils::HashString("kafka");
+        static const int elasticache_HASH = HashingUtils::HashString("elasticache");
+        static const int neptune_HASH = HashingUtils::HashString("neptune");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return ServiceNamespace::kafka;
           }
+          else if (hashCode == elasticache_HASH)
+          {
+            return ServiceNamespace::elasticache;
+          }
+          else if (hashCode == neptune_HASH)
+          {
+            return ServiceNamespace::neptune;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +133,10 @@ namespace Aws
             return "cassandra";
           case ServiceNamespace::kafka:
             return "kafka";
+          case ServiceNamespace::elasticache:
+            return "elasticache";
+          case ServiceNamespace::neptune:
+            return "neptune";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

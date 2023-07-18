@@ -19,7 +19,9 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_configurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_languageCodeHasBeenSet(false),
+    m_customDocumentEnrichmentConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,18 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", m_languageCode);
+
+  }
+
+  if(m_customDocumentEnrichmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDocumentEnrichmentConfiguration", m_customDocumentEnrichmentConfiguration.Jsonize());
 
   }
 

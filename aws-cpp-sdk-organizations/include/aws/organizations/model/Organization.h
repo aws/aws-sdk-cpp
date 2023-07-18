@@ -103,72 +103,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Organization& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Organization& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Organization& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -179,7 +179,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>AWS Organizations User
+     * All Features in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline const OrganizationFeatureSet& GetFeatureSet() const{ return m_featureSet; }
@@ -190,7 +190,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>AWS Organizations User
+     * All Features in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
@@ -201,7 +201,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>AWS Organizations User
+     * All Features in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline void SetFeatureSet(const OrganizationFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
@@ -212,7 +212,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>AWS Organizations User
+     * All Features in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
@@ -223,7 +223,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>AWS Organizations User
+     * All Features in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline Organization& WithFeatureSet(const OrganizationFeatureSet& value) { SetFeatureSet(value); return *this;}
@@ -234,7 +234,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>AWS Organizations User
+     * All Features in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline Organization& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
@@ -244,9 +244,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline const Aws::String& GetMasterAccountArn() const{ return m_masterAccountArn; }
 
@@ -254,9 +254,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline bool MasterAccountArnHasBeenSet() const { return m_masterAccountArnHasBeenSet; }
 
@@ -264,9 +264,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetMasterAccountArn(const Aws::String& value) { m_masterAccountArnHasBeenSet = true; m_masterAccountArn = value; }
 
@@ -274,9 +274,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetMasterAccountArn(Aws::String&& value) { m_masterAccountArnHasBeenSet = true; m_masterAccountArn = std::move(value); }
 
@@ -284,9 +284,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetMasterAccountArn(const char* value) { m_masterAccountArnHasBeenSet = true; m_masterAccountArn.assign(value); }
 
@@ -294,9 +294,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Organization& WithMasterAccountArn(const Aws::String& value) { SetMasterAccountArn(value); return *this;}
 
@@ -304,9 +304,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Organization& WithMasterAccountArn(Aws::String&& value) { SetMasterAccountArn(std::move(value)); return *this;}
 
@@ -314,9 +314,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * management account for the organization.</p> <p>For more information about ARNs
      * in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Organization& WithMasterAccountArn(const char* value) { SetMasterAccountArn(value); return *this;}
 
@@ -379,50 +379,50 @@ namespace Model
 
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline const Aws::String& GetMasterAccountEmail() const{ return m_masterAccountEmail; }
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline bool MasterAccountEmailHasBeenSet() const { return m_masterAccountEmailHasBeenSet; }
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline void SetMasterAccountEmail(const Aws::String& value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail = value; }
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline void SetMasterAccountEmail(Aws::String&& value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail = std::move(value); }
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline void SetMasterAccountEmail(const char* value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail.assign(value); }
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline Organization& WithMasterAccountEmail(const Aws::String& value) { SetMasterAccountEmail(value); return *this;}
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline Organization& WithMasterAccountEmail(Aws::String&& value) { SetMasterAccountEmail(std::move(value)); return *this;}
 
     /**
-     * <p>The email address that is associated with the AWS account that is designated
-     * as the management account for the organization.</p>
+     * <p>The email address that is associated with the Amazon Web Services account
+     * that is designated as the management account for the organization.</p>
      */
     inline Organization& WithMasterAccountEmail(const char* value) { SetMasterAccountEmail(value); return *this;}
 

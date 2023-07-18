@@ -136,7 +136,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
@@ -147,7 +147,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
@@ -158,7 +158,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
@@ -169,7 +169,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
@@ -180,7 +180,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
@@ -191,7 +191,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -202,7 +202,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
@@ -213,7 +213,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -505,48 +505,48 @@ namespace Model
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline ModifyReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 

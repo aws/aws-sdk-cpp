@@ -293,12 +293,13 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
-     * status of the dataset import job. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
-     * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * 
+     * from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation and reflect the status of the dataset import job. For example, when
+     * the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
+     * dataset is <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The
+     * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
+     * import training data.</p> 
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -310,12 +311,13 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
-     * status of the dataset import job. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
-     * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * 
+     * from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation and reflect the status of the dataset import job. For example, when
+     * the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
+     * dataset is <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The
+     * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
+     * import training data.</p> 
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
@@ -327,12 +329,13 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
-     * status of the dataset import job. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
-     * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * 
+     * from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation and reflect the status of the dataset import job. For example, when
+     * the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
+     * dataset is <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The
+     * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
+     * import training data.</p> 
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
@@ -344,12 +347,13 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
-     * status of the dataset import job. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
-     * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * 
+     * from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation and reflect the status of the dataset import job. For example, when
+     * the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
+     * dataset is <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The
+     * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
+     * import training data.</p> 
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
@@ -361,12 +365,13 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
-     * status of the dataset import job. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
-     * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * 
+     * from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation and reflect the status of the dataset import job. For example, when
+     * the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
+     * dataset is <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The
+     * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
+     * import training data.</p> 
      */
     inline DescribeDatasetResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -378,12 +383,13 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
-     * status of the dataset import job. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
-     * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * 
+     * from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation and reflect the status of the dataset import job. For example, when
+     * the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
+     * dataset is <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The
+     * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
+     * import training data.</p> 
      */
     inline DescribeDatasetResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -395,12 +401,13 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
-     * status of the dataset import job. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
-     * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * 
+     * from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+     * operation and reflect the status of the dataset import job. For example, when
+     * the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
+     * dataset is <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The
+     * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
+     * import training data.</p> 
      */
     inline DescribeDatasetResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -435,7 +442,8 @@ namespace Model
      * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
      * <code>CreationTime</code>. While data is being imported to the dataset,
      * <code>LastModificationTime</code> is the current time of the
-     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * <code>DescribeDataset</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
      * operation has finished, <code>LastModificationTime</code> is when the import job
      * completed or failed.</p>
      */
@@ -445,7 +453,8 @@ namespace Model
      * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
      * <code>CreationTime</code>. While data is being imported to the dataset,
      * <code>LastModificationTime</code> is the current time of the
-     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * <code>DescribeDataset</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
      * operation has finished, <code>LastModificationTime</code> is when the import job
      * completed or failed.</p>
      */
@@ -455,7 +464,8 @@ namespace Model
      * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
      * <code>CreationTime</code>. While data is being imported to the dataset,
      * <code>LastModificationTime</code> is the current time of the
-     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * <code>DescribeDataset</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
      * operation has finished, <code>LastModificationTime</code> is when the import job
      * completed or failed.</p>
      */
@@ -465,7 +475,8 @@ namespace Model
      * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
      * <code>CreationTime</code>. While data is being imported to the dataset,
      * <code>LastModificationTime</code> is the current time of the
-     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * <code>DescribeDataset</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
      * operation has finished, <code>LastModificationTime</code> is when the import job
      * completed or failed.</p>
      */
@@ -475,7 +486,8 @@ namespace Model
      * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
      * <code>CreationTime</code>. While data is being imported to the dataset,
      * <code>LastModificationTime</code> is the current time of the
-     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * <code>DescribeDataset</code> call. After a <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
      * operation has finished, <code>LastModificationTime</code> is when the import job
      * completed or failed.</p>
      */

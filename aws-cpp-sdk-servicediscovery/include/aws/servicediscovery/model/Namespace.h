@@ -83,50 +83,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline Namespace& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline Namespace& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline Namespace& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -174,73 +174,73 @@ namespace Model
 
     /**
      * <p>The type of the namespace. The methods for discovering instances depends on
-     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
-     * be discovered only programmatically, using the AWS Cloud Map
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
-     * Instances can be discovered using public DNS queries and using the
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
-     * Instances can be discovered using DNS queries in VPCs and using the
-     * <code>DiscoverInstances</code> API.</p> </li> </ul>
+     * the value that you specify:</p> <dl> <dt>HTTP</dt> <dd> <p>Instances can be
+     * discovered only programmatically, using the Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PUBLIC</dt> <dd>
+     * <p>Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PRIVATE</dt> <dd>
+     * <p>Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> </dl>
      */
     inline const NamespaceType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of the namespace. The methods for discovering instances depends on
-     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
-     * be discovered only programmatically, using the AWS Cloud Map
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
-     * Instances can be discovered using public DNS queries and using the
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
-     * Instances can be discovered using DNS queries in VPCs and using the
-     * <code>DiscoverInstances</code> API.</p> </li> </ul>
+     * the value that you specify:</p> <dl> <dt>HTTP</dt> <dd> <p>Instances can be
+     * discovered only programmatically, using the Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PUBLIC</dt> <dd>
+     * <p>Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PRIVATE</dt> <dd>
+     * <p>Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> </dl>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the namespace. The methods for discovering instances depends on
-     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
-     * be discovered only programmatically, using the AWS Cloud Map
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
-     * Instances can be discovered using public DNS queries and using the
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
-     * Instances can be discovered using DNS queries in VPCs and using the
-     * <code>DiscoverInstances</code> API.</p> </li> </ul>
+     * the value that you specify:</p> <dl> <dt>HTTP</dt> <dd> <p>Instances can be
+     * discovered only programmatically, using the Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PUBLIC</dt> <dd>
+     * <p>Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PRIVATE</dt> <dd>
+     * <p>Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> </dl>
      */
     inline void SetType(const NamespaceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of the namespace. The methods for discovering instances depends on
-     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
-     * be discovered only programmatically, using the AWS Cloud Map
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
-     * Instances can be discovered using public DNS queries and using the
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
-     * Instances can be discovered using DNS queries in VPCs and using the
-     * <code>DiscoverInstances</code> API.</p> </li> </ul>
+     * the value that you specify:</p> <dl> <dt>HTTP</dt> <dd> <p>Instances can be
+     * discovered only programmatically, using the Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PUBLIC</dt> <dd>
+     * <p>Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PRIVATE</dt> <dd>
+     * <p>Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> </dl>
      */
     inline void SetType(NamespaceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the namespace. The methods for discovering instances depends on
-     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
-     * be discovered only programmatically, using the AWS Cloud Map
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
-     * Instances can be discovered using public DNS queries and using the
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
-     * Instances can be discovered using DNS queries in VPCs and using the
-     * <code>DiscoverInstances</code> API.</p> </li> </ul>
+     * the value that you specify:</p> <dl> <dt>HTTP</dt> <dd> <p>Instances can be
+     * discovered only programmatically, using the Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PUBLIC</dt> <dd>
+     * <p>Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PRIVATE</dt> <dd>
+     * <p>Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> </dl>
      */
     inline Namespace& WithType(const NamespaceType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of the namespace. The methods for discovering instances depends on
-     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
-     * be discovered only programmatically, using the AWS Cloud Map
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
-     * Instances can be discovered using public DNS queries and using the
-     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
-     * Instances can be discovered using DNS queries in VPCs and using the
-     * <code>DiscoverInstances</code> API.</p> </li> </ul>
+     * the value that you specify:</p> <dl> <dt>HTTP</dt> <dd> <p>Instances can be
+     * discovered only programmatically, using the Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PUBLIC</dt> <dd>
+     * <p>Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> <dt>DNS_PRIVATE</dt> <dd>
+     * <p>Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </dd> </dl>
      */
     inline Namespace& WithType(NamespaceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -395,49 +395,49 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline Namespace& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline Namespace& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing an operation twice. </p>
+     * to be retried without the risk of running an operation twice. </p>
      */
     inline Namespace& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

@@ -166,6 +166,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
@@ -186,6 +188,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline bool OKActionsHasBeenSet() const { return m_oKActionsHasBeenSet; }
@@ -206,6 +210,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
@@ -226,6 +232,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::move(value); }
@@ -246,6 +254,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
@@ -266,6 +276,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(std::move(value)); return *this;}
@@ -286,6 +298,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
@@ -306,6 +320,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(std::move(value)); return *this; }
@@ -326,6 +342,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
@@ -343,12 +361,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
@@ -365,12 +387,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
@@ -387,12 +413,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
@@ -409,12 +439,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
@@ -431,12 +465,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
@@ -453,12 +491,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(std::move(value)); return *this;}
@@ -475,12 +517,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
@@ -497,12 +543,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
@@ -519,12 +569,16 @@ namespace Model
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> |
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
@@ -1393,7 +1447,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
 
@@ -1403,7 +1462,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
 
@@ -1413,7 +1477,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
 
@@ -1423,7 +1492,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
 
@@ -1433,7 +1507,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
 
@@ -1443,7 +1522,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
 
@@ -1453,7 +1537,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(std::move(value)); return *this;}
 
@@ -1463,7 +1552,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
 

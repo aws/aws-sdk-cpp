@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -110,6 +112,55 @@ namespace Model
      */
     inline JourneyLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
 
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline const Aws::String& GetEndpointReentryInterval() const{ return m_endpointReentryInterval; }
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline bool EndpointReentryIntervalHasBeenSet() const { return m_endpointReentryIntervalHasBeenSet; }
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline void SetEndpointReentryInterval(const Aws::String& value) { m_endpointReentryIntervalHasBeenSet = true; m_endpointReentryInterval = value; }
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline void SetEndpointReentryInterval(Aws::String&& value) { m_endpointReentryIntervalHasBeenSet = true; m_endpointReentryInterval = std::move(value); }
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline void SetEndpointReentryInterval(const char* value) { m_endpointReentryIntervalHasBeenSet = true; m_endpointReentryInterval.assign(value); }
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline JourneyLimits& WithEndpointReentryInterval(const Aws::String& value) { SetEndpointReentryInterval(value); return *this;}
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline JourneyLimits& WithEndpointReentryInterval(Aws::String&& value) { SetEndpointReentryInterval(std::move(value)); return *this;}
+
+    /**
+     * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
+     * The duration should use an ISO 8601 format, such as PT1H. </p>
+     */
+    inline JourneyLimits& WithEndpointReentryInterval(const char* value) { SetEndpointReentryInterval(value); return *this;}
+
   private:
 
     int m_dailyCap;
@@ -120,6 +171,9 @@ namespace Model
 
     int m_messagesPerSecond;
     bool m_messagesPerSecondHasBeenSet;
+
+    Aws::String m_endpointReentryInterval;
+    bool m_endpointReentryIntervalHasBeenSet;
   };
 
 } // namespace Model

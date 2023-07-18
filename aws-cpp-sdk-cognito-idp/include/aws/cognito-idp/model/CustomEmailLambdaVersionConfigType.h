@@ -40,93 +40,93 @@ namespace Model
 
 
     /**
-     * <p>The Lambda version represents the signature of the "request" attribute in the
-     * "event" information Amazon Cognito passes to your custom email Lambda function.
-     * The only supported value is <code>V1_0</code>.</p>
+     * <p>Signature of the "request" attribute in the "event" information Amazon
+     * Cognito passes to your custom email Lambda function. The only supported value is
+     * <code>V1_0</code>.</p>
      */
     inline const CustomEmailSenderLambdaVersionType& GetLambdaVersion() const{ return m_lambdaVersion; }
 
     /**
-     * <p>The Lambda version represents the signature of the "request" attribute in the
-     * "event" information Amazon Cognito passes to your custom email Lambda function.
-     * The only supported value is <code>V1_0</code>.</p>
+     * <p>Signature of the "request" attribute in the "event" information Amazon
+     * Cognito passes to your custom email Lambda function. The only supported value is
+     * <code>V1_0</code>.</p>
      */
     inline bool LambdaVersionHasBeenSet() const { return m_lambdaVersionHasBeenSet; }
 
     /**
-     * <p>The Lambda version represents the signature of the "request" attribute in the
-     * "event" information Amazon Cognito passes to your custom email Lambda function.
-     * The only supported value is <code>V1_0</code>.</p>
+     * <p>Signature of the "request" attribute in the "event" information Amazon
+     * Cognito passes to your custom email Lambda function. The only supported value is
+     * <code>V1_0</code>.</p>
      */
     inline void SetLambdaVersion(const CustomEmailSenderLambdaVersionType& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
 
     /**
-     * <p>The Lambda version represents the signature of the "request" attribute in the
-     * "event" information Amazon Cognito passes to your custom email Lambda function.
-     * The only supported value is <code>V1_0</code>.</p>
+     * <p>Signature of the "request" attribute in the "event" information Amazon
+     * Cognito passes to your custom email Lambda function. The only supported value is
+     * <code>V1_0</code>.</p>
      */
     inline void SetLambdaVersion(CustomEmailSenderLambdaVersionType&& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = std::move(value); }
 
     /**
-     * <p>The Lambda version represents the signature of the "request" attribute in the
-     * "event" information Amazon Cognito passes to your custom email Lambda function.
-     * The only supported value is <code>V1_0</code>.</p>
+     * <p>Signature of the "request" attribute in the "event" information Amazon
+     * Cognito passes to your custom email Lambda function. The only supported value is
+     * <code>V1_0</code>.</p>
      */
     inline CustomEmailLambdaVersionConfigType& WithLambdaVersion(const CustomEmailSenderLambdaVersionType& value) { SetLambdaVersion(value); return *this;}
 
     /**
-     * <p>The Lambda version represents the signature of the "request" attribute in the
-     * "event" information Amazon Cognito passes to your custom email Lambda function.
-     * The only supported value is <code>V1_0</code>.</p>
+     * <p>Signature of the "request" attribute in the "event" information Amazon
+     * Cognito passes to your custom email Lambda function. The only supported value is
+     * <code>V1_0</code>.</p>
      */
     inline CustomEmailLambdaVersionConfigType& WithLambdaVersion(CustomEmailSenderLambdaVersionType&& value) { SetLambdaVersion(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline CustomEmailLambdaVersionConfigType& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline CustomEmailLambdaVersionConfigType& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito
-     * triggers to send email notifications to users.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito
+     * activates to send email notifications to users.</p>
      */
     inline CustomEmailLambdaVersionConfigType& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The request was rejected because an invalid or out-of-range value was
-   * supplied for an input parameter. </p><p><h3>See Also:</h3>   <a
+   * <p>(Discontinued) The request was rejected because an invalid or out-of-range
+   * value was supplied for an input parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/InvalidInputException">AWS
    * API Reference</a></p>
    */

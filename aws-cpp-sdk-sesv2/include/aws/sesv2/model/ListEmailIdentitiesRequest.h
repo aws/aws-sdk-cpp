@@ -21,10 +21,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to list all of the email identities associated with your AWS
-   * account. This list includes identities that you've already verified, identities
-   * that are unverified, and identities that were verified in the past, but are no
-   * longer verified.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to list all of the email identities associated with your Amazon Web
+   * Services account. This list includes identities that you've already verified,
+   * identities that are unverified, and identities that were verified in the past,
+   * but are no longer verified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentitiesRequest">AWS
    * API Reference</a></p>
    */

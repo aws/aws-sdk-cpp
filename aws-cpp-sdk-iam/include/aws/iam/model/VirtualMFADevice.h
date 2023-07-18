@@ -10,6 +10,8 @@
 #include <aws/core/utils/Array.h>
 #include <aws/iam/model/User.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -249,6 +251,71 @@ namespace Model
      */
     inline VirtualMFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline VirtualMFADevice& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline VirtualMFADevice& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline VirtualMFADevice& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that are attached to the virtual MFA device. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline VirtualMFADevice& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_serialNumber;
@@ -265,6 +332,9 @@ namespace Model
 
     Aws::Utils::DateTime m_enableDate;
     bool m_enableDateHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

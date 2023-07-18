@@ -26,7 +26,8 @@ ListedFlow::ListedFlow() :
     m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ListedFlow::ListedFlow(JsonView jsonValue) :
     m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ ListedFlow& ListedFlow::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maintenance"))
+  {
+    m_maintenance = jsonValue.GetObject("maintenance");
+
+    m_maintenanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +135,12 @@ JsonValue ListedFlow::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
+
   }
 
   return payload;

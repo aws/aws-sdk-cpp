@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of a container that is part of a job
+   * <p>An object representing the details of a container that's part of a job
    * attempt.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/AttemptContainerDetail">AWS
    * API Reference</a></p>
@@ -90,56 +90,56 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
     inline AttemptContainerDetail& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
     inline AttemptContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the job attempt. Each container attempt receives a task ARN when they reach the
      * <code>STARTING</code> status.</p>
      */
@@ -222,65 +222,57 @@ namespace Model
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline AttemptContainerDetail& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline AttemptContainerDetail& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
-     * attempt receives a log stream name when they reach the <code>RUNNING</code>
-     * status.</p>
+     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
      */
     inline AttemptContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 

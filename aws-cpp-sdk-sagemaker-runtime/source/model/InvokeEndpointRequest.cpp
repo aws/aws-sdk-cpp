@@ -21,6 +21,7 @@ InvokeEndpointRequest::InvokeEndpointRequest() :
     m_customAttributesHasBeenSet(false),
     m_targetModelHasBeenSet(false),
     m_targetVariantHasBeenSet(false),
+    m_targetContainerHostnameHasBeenSet(false),
     m_inferenceIdHasBeenSet(false)
 {
 }
@@ -56,6 +57,13 @@ Aws::Http::HeaderValueCollection InvokeEndpointRequest::GetRequestSpecificHeader
   {
     ss << m_targetVariant;
     headers.emplace("x-amzn-sagemaker-target-variant",  ss.str());
+    ss.str("");
+  }
+
+  if(m_targetContainerHostnameHasBeenSet)
+  {
+    ss << m_targetContainerHostname;
+    headers.emplace("x-amzn-sagemaker-target-container-hostname",  ss.str());
     ss.str("");
   }
 

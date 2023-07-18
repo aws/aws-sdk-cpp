@@ -26,7 +26,7 @@ namespace Model
   class Type;
 
   /**
-   * <p> Contains the meta data for query results such as the column names, data
+   * <p> Contains the metadata for query results such as the column names, data
    * types, and other attributes. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ColumnInfo">AWS
    * API Reference</a></p>
@@ -90,43 +90,43 @@ namespace Model
 
 
     /**
-     * <p> The data type of the result set column. The data type can be a scalar or
-     * complex. Scalar data types are integers, strings, doubles, booleans, and others.
+     * <p>The data type of the result set column. The data type can be a scalar or
+     * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
     const Type& GetType() const;
 
     /**
-     * <p> The data type of the result set column. The data type can be a scalar or
-     * complex. Scalar data types are integers, strings, doubles, booleans, and others.
+     * <p>The data type of the result set column. The data type can be a scalar or
+     * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
     bool TypeHasBeenSet() const;
 
     /**
-     * <p> The data type of the result set column. The data type can be a scalar or
-     * complex. Scalar data types are integers, strings, doubles, booleans, and others.
+     * <p>The data type of the result set column. The data type can be a scalar or
+     * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
     void SetType(const Type& value);
 
     /**
-     * <p> The data type of the result set column. The data type can be a scalar or
-     * complex. Scalar data types are integers, strings, doubles, booleans, and others.
+     * <p>The data type of the result set column. The data type can be a scalar or
+     * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
     void SetType(Type&& value);
 
     /**
-     * <p> The data type of the result set column. The data type can be a scalar or
-     * complex. Scalar data types are integers, strings, doubles, booleans, and others.
+     * <p>The data type of the result set column. The data type can be a scalar or
+     * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
     ColumnInfo& WithType(const Type& value);
 
     /**
-     * <p> The data type of the result set column. The data type can be a scalar or
-     * complex. Scalar data types are integers, strings, doubles, booleans, and others.
+     * <p>The data type of the result set column. The data type can be a scalar or
+     * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
     ColumnInfo& WithType(Type&& value);

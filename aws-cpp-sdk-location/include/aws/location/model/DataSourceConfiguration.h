@@ -24,13 +24,15 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the data storage option chosen for requesting Places.</p> 
-   * <p>By using Places, you agree that AWS may transmit your API queries to your
-   * selected third party provider for processing, which may be outside the AWS
-   * region you are currently using. </p> <p>Also, when using HERE as your data
-   * provider, you may not (a) use HERE Places for Asset Management, or (b) select
-   * the <code>Storage</code> option for the <code>IntendedUse</code> parameter when
-   * requesting Places in Japan. For more information, see the <a
+   * <p>Specifies the data storage option chosen for requesting Places.</p>
+   *  <p>When using Amazon Location Places:</p> <ul> <li> <p>If using HERE
+   * Technologies as a data provider, you can't store results for locations in Japan
+   * by setting <code>IntendedUse</code> to <code>Storage</code>. parameter.</p>
+   * </li> <li> <p>Under the <code>MobileAssetTracking</code> or
+   * <code>MobilAssetManagement</code> pricing plan, you can't store results from
+   * your place index resources by setting <code>IntendedUse</code> to
+   * <code>Storage</code>. This returns a validation exception error.</p> </li> </ul>
+   * <p>For more information, see the <a
    * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
    * Location Service.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DataSourceConfiguration">AWS

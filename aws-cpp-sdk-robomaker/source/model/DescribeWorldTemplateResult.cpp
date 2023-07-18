@@ -67,6 +67,12 @@ DescribeWorldTemplateResult& DescribeWorldTemplateResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+
+  }
+
 
 
   return *this;

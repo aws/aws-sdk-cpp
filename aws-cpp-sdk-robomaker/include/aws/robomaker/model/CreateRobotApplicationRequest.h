@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/robomaker/model/RobotSoftwareSuite.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/robomaker/model/Environment.h>
 #include <aws/robomaker/model/SourceConfig.h>
 #include <utility>
 
@@ -233,6 +234,43 @@ namespace Model
      */
     inline CreateRobotApplicationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The object that contains that URI of the Docker image that you use for your
+     * robot application.</p>
+     */
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The object that contains that URI of the Docker image that you use for your
+     * robot application.</p>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>The object that contains that URI of the Docker image that you use for your
+     * robot application.</p>
+     */
+    inline void SetEnvironment(const Environment& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The object that contains that URI of the Docker image that you use for your
+     * robot application.</p>
+     */
+    inline void SetEnvironment(Environment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
+
+    /**
+     * <p>The object that contains that URI of the Docker image that you use for your
+     * robot application.</p>
+     */
+    inline CreateRobotApplicationRequest& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The object that contains that URI of the Docker image that you use for your
+     * robot application.</p>
+     */
+    inline CreateRobotApplicationRequest& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -246,6 +284,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Environment m_environment;
+    bool m_environmentHasBeenSet;
   };
 
 } // namespace Model

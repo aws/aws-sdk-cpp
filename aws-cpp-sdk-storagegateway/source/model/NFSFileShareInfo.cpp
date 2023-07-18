@@ -44,7 +44,10 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false)
+    m_notificationPolicyHasBeenSet(false),
+    m_vPCEndpointDNSNameHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
+    m_auditDestinationARNHasBeenSet(false)
 {
 }
 
@@ -74,7 +77,10 @@ NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false)
+    m_notificationPolicyHasBeenSet(false),
+    m_vPCEndpointDNSNameHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
+    m_auditDestinationARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -234,6 +240,27 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
     m_notificationPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VPCEndpointDNSName"))
+  {
+    m_vPCEndpointDNSName = jsonValue.GetString("VPCEndpointDNSName");
+
+    m_vPCEndpointDNSNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BucketRegion"))
+  {
+    m_bucketRegion = jsonValue.GetString("BucketRegion");
+
+    m_bucketRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuditDestinationARN"))
+  {
+    m_auditDestinationARN = jsonValue.GetString("AuditDestinationARN");
+
+    m_auditDestinationARNHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -373,6 +400,24 @@ JsonValue NFSFileShareInfo::Jsonize() const
   if(m_notificationPolicyHasBeenSet)
   {
    payload.WithString("NotificationPolicy", m_notificationPolicy);
+
+  }
+
+  if(m_vPCEndpointDNSNameHasBeenSet)
+  {
+   payload.WithString("VPCEndpointDNSName", m_vPCEndpointDNSName);
+
+  }
+
+  if(m_bucketRegionHasBeenSet)
+  {
+   payload.WithString("BucketRegion", m_bucketRegion);
+
+  }
+
+  if(m_auditDestinationARNHasBeenSet)
+  {
+   payload.WithString("AuditDestinationARN", m_auditDestinationARN);
 
   }
 

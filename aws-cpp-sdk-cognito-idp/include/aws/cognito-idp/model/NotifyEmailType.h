@@ -38,124 +38,124 @@ namespace Model
 
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline NotifyEmailType& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline NotifyEmailType& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
 
     /**
-     * <p>The subject.</p>
+     * <p>The email subject.</p>
      */
     inline NotifyEmailType& WithSubject(const char* value) { SetSubject(value); return *this;}
 
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline const Aws::String& GetHtmlBody() const{ return m_htmlBody; }
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline bool HtmlBodyHasBeenSet() const { return m_htmlBodyHasBeenSet; }
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline void SetHtmlBody(const Aws::String& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = value; }
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline void SetHtmlBody(Aws::String&& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = std::move(value); }
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline void SetHtmlBody(const char* value) { m_htmlBodyHasBeenSet = true; m_htmlBody.assign(value); }
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline NotifyEmailType& WithHtmlBody(const Aws::String& value) { SetHtmlBody(value); return *this;}
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline NotifyEmailType& WithHtmlBody(Aws::String&& value) { SetHtmlBody(std::move(value)); return *this;}
 
     /**
-     * <p>The HTML body.</p>
+     * <p>The email HTML body.</p>
      */
     inline NotifyEmailType& WithHtmlBody(const char* value) { SetHtmlBody(value); return *this;}
 
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline const Aws::String& GetTextBody() const{ return m_textBody; }
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline bool TextBodyHasBeenSet() const { return m_textBodyHasBeenSet; }
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline void SetTextBody(const Aws::String& value) { m_textBodyHasBeenSet = true; m_textBody = value; }
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline void SetTextBody(Aws::String&& value) { m_textBodyHasBeenSet = true; m_textBody = std::move(value); }
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline void SetTextBody(const char* value) { m_textBodyHasBeenSet = true; m_textBody.assign(value); }
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline NotifyEmailType& WithTextBody(const Aws::String& value) { SetTextBody(value); return *this;}
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline NotifyEmailType& WithTextBody(Aws::String&& value) { SetTextBody(std::move(value)); return *this;}
 
     /**
-     * <p>The text body.</p>
+     * <p>The email text body.</p>
      */
     inline NotifyEmailType& WithTextBody(const char* value) { SetTextBody(value); return *this;}
 

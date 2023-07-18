@@ -11,6 +11,7 @@
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Tag.h>
+#include <aws/directconnect/model/MacSecKey.h>
 #include <utility>
 
 namespace Aws
@@ -30,8 +31,7 @@ namespace DirectConnect
 namespace Model
 {
   /**
-   * <p>Information about an AWS Direct Connect connection.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Information about an Direct Connect connection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connection">AWS
    * API Reference</a></p>
    */
@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the connection.</p>
+     * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the connection.</p>
+     * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the connection.</p>
+     * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the connection.</p>
+     * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the connection.</p>
+     * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
     inline DeleteConnectionResult& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the connection.</p>
+     * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
     inline DeleteConnectionResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the connection.</p>
+     * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
     inline DeleteConnectionResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -253,37 +253,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_region = value; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const char* value) { m_region.assign(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline DeleteConnectionResult& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline DeleteConnectionResult& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline DeleteConnectionResult& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -377,43 +377,43 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Direct Connect service provider associated with the
+     * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
     inline const Aws::String& GetPartnerName() const{ return m_partnerName; }
 
     /**
-     * <p>The name of the AWS Direct Connect service provider associated with the
+     * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
     inline void SetPartnerName(const Aws::String& value) { m_partnerName = value; }
 
     /**
-     * <p>The name of the AWS Direct Connect service provider associated with the
+     * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
     inline void SetPartnerName(Aws::String&& value) { m_partnerName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Direct Connect service provider associated with the
+     * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
     inline void SetPartnerName(const char* value) { m_partnerName.assign(value); }
 
     /**
-     * <p>The name of the AWS Direct Connect service provider associated with the
+     * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
     inline DeleteConnectionResult& WithPartnerName(const Aws::String& value) { SetPartnerName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Direct Connect service provider associated with the
+     * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
     inline DeleteConnectionResult& WithPartnerName(Aws::String&& value) { SetPartnerName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Direct Connect service provider associated with the
+     * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
     inline DeleteConnectionResult& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
@@ -539,39 +539,89 @@ namespace Model
 
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2 = value; }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2 = std::move(value); }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2.assign(value); }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline DeleteConnectionResult& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline DeleteConnectionResult& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline DeleteConnectionResult& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
+
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceId = value; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceId = std::move(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceId.assign(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline DeleteConnectionResult& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline DeleteConnectionResult& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline DeleteConnectionResult& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
 
 
     /**
@@ -676,6 +726,158 @@ namespace Model
      */
     inline DeleteConnectionResult& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+     */
+    inline bool GetMacSecCapable() const{ return m_macSecCapable; }
+
+    /**
+     * <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+     */
+    inline void SetMacSecCapable(bool value) { m_macSecCapable = value; }
+
+    /**
+     * <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+     */
+    inline DeleteConnectionResult& WithMacSecCapable(bool value) { SetMacSecCapable(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline const Aws::String& GetPortEncryptionStatus() const{ return m_portEncryptionStatus; }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline void SetPortEncryptionStatus(const Aws::String& value) { m_portEncryptionStatus = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline void SetPortEncryptionStatus(Aws::String&& value) { m_portEncryptionStatus = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline void SetPortEncryptionStatus(const char* value) { m_portEncryptionStatus.assign(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline DeleteConnectionResult& WithPortEncryptionStatus(const Aws::String& value) { SetPortEncryptionStatus(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline DeleteConnectionResult& WithPortEncryptionStatus(Aws::String&& value) { SetPortEncryptionStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline DeleteConnectionResult& WithPortEncryptionStatus(const char* value) { SetPortEncryptionStatus(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline const Aws::String& GetEncryptionMode() const{ return m_encryptionMode; }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const Aws::String& value) { m_encryptionMode = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(Aws::String&& value) { m_encryptionMode = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const char* value) { m_encryptionMode.assign(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline DeleteConnectionResult& WithEncryptionMode(const Aws::String& value) { SetEncryptionMode(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline DeleteConnectionResult& WithEncryptionMode(Aws::String&& value) { SetEncryptionMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline DeleteConnectionResult& WithEncryptionMode(const char* value) { SetEncryptionMode(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const{ return m_macSecKeys; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline void SetMacSecKeys(const Aws::Vector<MacSecKey>& value) { m_macSecKeys = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline void SetMacSecKeys(Aws::Vector<MacSecKey>&& value) { m_macSecKeys = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline DeleteConnectionResult& WithMacSecKeys(const Aws::Vector<MacSecKey>& value) { SetMacSecKeys(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline DeleteConnectionResult& WithMacSecKeys(Aws::Vector<MacSecKey>&& value) { SetMacSecKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline DeleteConnectionResult& AddMacSecKeys(const MacSecKey& value) { m_macSecKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline DeleteConnectionResult& AddMacSecKeys(MacSecKey&& value) { m_macSecKeys.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ownerAccount;
@@ -706,11 +908,21 @@ namespace Model
 
     Aws::String m_awsDeviceV2;
 
+    Aws::String m_awsLogicalDeviceId;
+
     HasLogicalRedundancy m_hasLogicalRedundancy;
 
     Aws::Vector<Tag> m_tags;
 
     Aws::String m_providerName;
+
+    bool m_macSecCapable;
+
+    Aws::String m_portEncryptionStatus;
+
+    Aws::String m_encryptionMode;
+
+    Aws::Vector<MacSecKey> m_macSecKeys;
   };
 
 } // namespace Model

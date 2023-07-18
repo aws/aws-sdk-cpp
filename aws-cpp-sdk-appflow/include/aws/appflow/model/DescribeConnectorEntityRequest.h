@@ -113,51 +113,92 @@ namespace Model
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline const Aws::String& GetConnectorProfileName() const{ return m_connectorProfileName; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline bool ConnectorProfileNameHasBeenSet() const { return m_connectorProfileNameHasBeenSet; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const Aws::String& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = value; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(Aws::String&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::move(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const char* value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName.assign(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorEntityRequest& WithConnectorProfileName(const Aws::String& value) { SetConnectorProfileName(value); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorEntityRequest& WithConnectorProfileName(Aws::String&& value) { SetConnectorProfileName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorEntityRequest& WithConnectorProfileName(const char* value) { SetConnectorProfileName(value); return *this;}
+
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline const Aws::String& GetApiVersion() const{ return m_apiVersion; }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline bool ApiVersionHasBeenSet() const { return m_apiVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline void SetApiVersion(const Aws::String& value) { m_apiVersionHasBeenSet = true; m_apiVersion = value; }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline void SetApiVersion(Aws::String&& value) { m_apiVersionHasBeenSet = true; m_apiVersion = std::move(value); }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline void SetApiVersion(const char* value) { m_apiVersionHasBeenSet = true; m_apiVersion.assign(value); }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline DescribeConnectorEntityRequest& WithApiVersion(const Aws::String& value) { SetApiVersion(value); return *this;}
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline DescribeConnectorEntityRequest& WithApiVersion(Aws::String&& value) { SetApiVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline DescribeConnectorEntityRequest& WithApiVersion(const char* value) { SetApiVersion(value); return *this;}
 
   private:
 
@@ -169,6 +210,9 @@ namespace Model
 
     Aws::String m_connectorProfileName;
     bool m_connectorProfileNameHasBeenSet;
+
+    Aws::String m_apiVersion;
+    bool m_apiVersionHasBeenSet;
   };
 
 } // namespace Model

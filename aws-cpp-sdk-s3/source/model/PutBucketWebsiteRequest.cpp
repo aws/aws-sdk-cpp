@@ -19,6 +19,8 @@ using namespace Aws::Http;
 PutBucketWebsiteRequest::PutBucketWebsiteRequest() : 
     m_bucketHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_websiteConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
@@ -74,6 +76,11 @@ Aws::Http::HeaderValueCollection PutBucketWebsiteRequest::GetRequestSpecificHead
     ss.str("");
   }
 
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
   if(m_expectedBucketOwnerHasBeenSet)
   {
     ss << m_expectedBucketOwner;
@@ -83,3 +90,16 @@ Aws::Http::HeaderValueCollection PutBucketWebsiteRequest::GetRequestSpecificHead
 
   return headers;
 }
+
+Aws::String PutBucketWebsiteRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

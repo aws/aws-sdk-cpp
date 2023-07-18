@@ -298,7 +298,13 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     if (m_verifySSL)
     {
         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
+#if defined(WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3)
+        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 |
+                WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3;
+#else
         DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
+#endif
+
         if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
         {
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting secure crypto protocols with error code: " << GetLastError());
@@ -385,7 +391,7 @@ void WinHttpSyncHttpClient::DoAddHeaders(void* hHttpRequest, Aws::String& header
     Aws::WString wHeaderString = StringUtils::ToWString(headerStr.c_str());
 
     if (!WinHttpAddRequestHeaders(hHttpRequest, wHeaderString.c_str(), (DWORD)wHeaderString.length(), WINHTTP_ADDREQ_FLAG_REPLACE | WINHTTP_ADDREQ_FLAG_ADD))
-        AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers with error code: " << GetLastError());
+        AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers: " << headerStr << ", with error code: " << GetLastError());
 }
 
 uint64_t WinHttpSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const

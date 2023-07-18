@@ -18,18 +18,18 @@ namespace CognitoSync
 namespace CognitoSyncErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
-static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
-static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStreamed");
-static const int INVALID_LAMBDA_FUNCTION_OUTPUT_HASH = HashingUtils::HashString("InvalidLambdaFunctionOutput");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
-static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfiguration");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedError");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflict");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequests");
-static const int LAMBDA_THROTTLED_HASH = HashingUtils::HashString("LambdaThrottled");
+static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
+static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequestException");
+static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStreamedException");
+static const int INVALID_LAMBDA_FUNCTION_OUTPUT_HASH = HashingUtils::HashString("InvalidLambdaFunctionOutputException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfigurationException");
+static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int LAMBDA_THROTTLED_HASH = HashingUtils::HashString("LambdaThrottledException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -38,7 +38,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INTERNAL_ERROR), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INTERNAL_ERROR), false);
   }
   else if (hashCode == DUPLICATE_REQUEST_HASH)
   {

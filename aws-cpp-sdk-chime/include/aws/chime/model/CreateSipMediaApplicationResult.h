@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The Sip media application details.</p>
+     * <p>The SIP media application details.</p>
      */
     inline const SipMediaApplication& GetSipMediaApplication() const{ return m_sipMediaApplication; }
 
     /**
-     * <p>The Sip media application details.</p>
+     * <p>The SIP media application details.</p>
      */
     inline void SetSipMediaApplication(const SipMediaApplication& value) { m_sipMediaApplication = value; }
 
     /**
-     * <p>The Sip media application details.</p>
+     * <p>The SIP media application details.</p>
      */
     inline void SetSipMediaApplication(SipMediaApplication&& value) { m_sipMediaApplication = std::move(value); }
 
     /**
-     * <p>The Sip media application details.</p>
+     * <p>The SIP media application details.</p>
      */
     inline CreateSipMediaApplicationResult& WithSipMediaApplication(const SipMediaApplication& value) { SetSipMediaApplication(value); return *this;}
 
     /**
-     * <p>The Sip media application details.</p>
+     * <p>The SIP media application details.</p>
      */
     inline CreateSipMediaApplicationResult& WithSipMediaApplication(SipMediaApplication&& value) { SetSipMediaApplication(std::move(value)); return *this;}
 

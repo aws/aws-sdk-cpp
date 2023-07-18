@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/servicecatalog-appregistry/model/Integrations.h>
 #include <utility>
 
 namespace Aws
@@ -333,6 +334,37 @@ namespace Model
      */
     inline GetApplicationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The information about the integration of the application with other services,
+     * such as Resource Groups.</p>
+     */
+    inline const Integrations& GetIntegrations() const{ return m_integrations; }
+
+    /**
+     * <p>The information about the integration of the application with other services,
+     * such as Resource Groups.</p>
+     */
+    inline void SetIntegrations(const Integrations& value) { m_integrations = value; }
+
+    /**
+     * <p>The information about the integration of the application with other services,
+     * such as Resource Groups.</p>
+     */
+    inline void SetIntegrations(Integrations&& value) { m_integrations = std::move(value); }
+
+    /**
+     * <p>The information about the integration of the application with other services,
+     * such as Resource Groups.</p>
+     */
+    inline GetApplicationResult& WithIntegrations(const Integrations& value) { SetIntegrations(value); return *this;}
+
+    /**
+     * <p>The information about the integration of the application with other services,
+     * such as Resource Groups.</p>
+     */
+    inline GetApplicationResult& WithIntegrations(Integrations&& value) { SetIntegrations(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -350,6 +382,8 @@ namespace Model
     int m_associatedResourceCount;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Integrations m_integrations;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/frauddetector/model/TrainingDataSourceEnum.h>
 #include <aws/frauddetector/model/TrainingDataSchema.h>
 #include <aws/frauddetector/model/ExternalEventsDetail.h>
+#include <aws/frauddetector/model/IngestedEventsDetail.h>
 #include <utility>
 
 namespace Aws
@@ -187,29 +188,75 @@ namespace Model
 
 
     /**
-     * <p>The event details.</p>
+     * <p>The details of the external events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>EXTERNAL_EVENTS</code> </p>
      */
     inline const ExternalEventsDetail& GetExternalEventsDetail() const{ return m_externalEventsDetail; }
 
     /**
-     * <p>The event details.</p>
+     * <p>The details of the external events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>EXTERNAL_EVENTS</code> </p>
      */
     inline void SetExternalEventsDetail(const ExternalEventsDetail& value) { m_externalEventsDetail = value; }
 
     /**
-     * <p>The event details.</p>
+     * <p>The details of the external events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>EXTERNAL_EVENTS</code> </p>
      */
     inline void SetExternalEventsDetail(ExternalEventsDetail&& value) { m_externalEventsDetail = std::move(value); }
 
     /**
-     * <p>The event details.</p>
+     * <p>The details of the external events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>EXTERNAL_EVENTS</code> </p>
      */
     inline GetModelVersionResult& WithExternalEventsDetail(const ExternalEventsDetail& value) { SetExternalEventsDetail(value); return *this;}
 
     /**
-     * <p>The event details.</p>
+     * <p>The details of the external events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>EXTERNAL_EVENTS</code> </p>
      */
     inline GetModelVersionResult& WithExternalEventsDetail(ExternalEventsDetail&& value) { SetExternalEventsDetail(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The details of the ingested events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline const IngestedEventsDetail& GetIngestedEventsDetail() const{ return m_ingestedEventsDetail; }
+
+    /**
+     * <p>The details of the ingested events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(const IngestedEventsDetail& value) { m_ingestedEventsDetail = value; }
+
+    /**
+     * <p>The details of the ingested events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(IngestedEventsDetail&& value) { m_ingestedEventsDetail = std::move(value); }
+
+    /**
+     * <p>The details of the ingested events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline GetModelVersionResult& WithIngestedEventsDetail(const IngestedEventsDetail& value) { SetIngestedEventsDetail(value); return *this;}
+
+    /**
+     * <p>The details of the ingested events data used for training the model version.
+     * This will be populated if the <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline GetModelVersionResult& WithIngestedEventsDetail(IngestedEventsDetail&& value) { SetIngestedEventsDetail(std::move(value)); return *this;}
 
 
     /**
@@ -345,6 +392,8 @@ namespace Model
     TrainingDataSchema m_trainingDataSchema;
 
     ExternalEventsDetail m_externalEventsDetail;
+
+    IngestedEventsDetail m_ingestedEventsDetail;
 
     Aws::String m_status;
 

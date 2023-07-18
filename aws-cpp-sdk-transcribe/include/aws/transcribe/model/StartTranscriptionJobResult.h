@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>An object containing details of the asynchronous transcription job.</p>
+     * <p>Provides detailed information about the current transcription job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline const TranscriptionJob& GetTranscriptionJob() const{ return m_transcriptionJob; }
 
     /**
-     * <p>An object containing details of the asynchronous transcription job.</p>
+     * <p>Provides detailed information about the current transcription job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline void SetTranscriptionJob(const TranscriptionJob& value) { m_transcriptionJob = value; }
 
     /**
-     * <p>An object containing details of the asynchronous transcription job.</p>
+     * <p>Provides detailed information about the current transcription job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline void SetTranscriptionJob(TranscriptionJob&& value) { m_transcriptionJob = std::move(value); }
 
     /**
-     * <p>An object containing details of the asynchronous transcription job.</p>
+     * <p>Provides detailed information about the current transcription job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline StartTranscriptionJobResult& WithTranscriptionJob(const TranscriptionJob& value) { SetTranscriptionJob(value); return *this;}
 
     /**
-     * <p>An object containing details of the asynchronous transcription job.</p>
+     * <p>Provides detailed information about the current transcription job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline StartTranscriptionJobResult& WithTranscriptionJob(TranscriptionJob&& value) { SetTranscriptionJob(std::move(value)); return *this;}
 

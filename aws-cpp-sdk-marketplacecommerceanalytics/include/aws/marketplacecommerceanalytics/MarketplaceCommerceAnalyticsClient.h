@@ -115,40 +115,12 @@ namespace Model
         virtual Model::GenerateDataSetOutcome GenerateDataSet(const Model::GenerateDataSetRequest& request) const;
 
         /**
-         * Given a data set type and data set publication date, asynchronously publishes
-         * the requested data set to the specified S3 bucket and notifies the specified SNS
-         * topic once the data is available. Returns a unique request identifier that can
-         * be used to correlate requests with notifications from the SNS topic. Data sets
-         * will be published in comma-separated values (CSV) format with the file name
-         * {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists
-         * (e.g. if the same data set is requested twice), the original file will be
-         * overwritten by the new file. Requires a Role with an attached permissions policy
-         * providing Allow permissions for the following actions: s3:PutObject,
-         * s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
-         * iam:GetRolePolicy.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GenerateDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GenerateDataSetOutcomeCallable GenerateDataSetCallable(const Model::GenerateDataSetRequest& request) const;
 
         /**
-         * Given a data set type and data set publication date, asynchronously publishes
-         * the requested data set to the specified S3 bucket and notifies the specified SNS
-         * topic once the data is available. Returns a unique request identifier that can
-         * be used to correlate requests with notifications from the SNS topic. Data sets
-         * will be published in comma-separated values (CSV) format with the file name
-         * {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists
-         * (e.g. if the same data set is requested twice), the original file will be
-         * overwritten by the new file. Requires a Role with an attached permissions policy
-         * providing Allow permissions for the following actions: s3:PutObject,
-         * s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
-         * iam:GetRolePolicy.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GenerateDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GenerateDataSetAsync(const Model::GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -170,40 +142,12 @@ namespace Model
         virtual Model::StartSupportDataExportOutcome StartSupportDataExport(const Model::StartSupportDataExportRequest& request) const;
 
         /**
-         * Given a data set type and a from date, asynchronously publishes the requested
-         * customer support data to the specified S3 bucket and notifies the specified SNS
-         * topic once the data is available. Returns a unique request identifier that can
-         * be used to correlate requests with notifications from the SNS topic. Data sets
-         * will be published in comma-separated values (CSV) format with the file name
-         * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name
-         * already exists (e.g. if the same data set is requested twice), the original file
-         * will be overwritten by the new file. Requires a Role with an attached
-         * permissions policy providing Allow permissions for the following actions:
-         * s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
-         * iam:GetRolePolicy.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartSupportDataExport that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartSupportDataExportOutcomeCallable StartSupportDataExportCallable(const Model::StartSupportDataExportRequest& request) const;
 
         /**
-         * Given a data set type and a from date, asynchronously publishes the requested
-         * customer support data to the specified S3 bucket and notifies the specified SNS
-         * topic once the data is available. Returns a unique request identifier that can
-         * be used to correlate requests with notifications from the SNS topic. Data sets
-         * will be published in comma-separated values (CSV) format with the file name
-         * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name
-         * already exists (e.g. if the same data set is requested twice), the original file
-         * will be overwritten by the new file. Requires a Role with an attached
-         * permissions policy providing Allow permissions for the following actions:
-         * s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
-         * iam:GetRolePolicy.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartSupportDataExport that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartSupportDataExportAsync(const Model::StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -35,42 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline DeleteUserPoolDomainRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline DeleteUserPoolDomainRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline DeleteUserPoolDomainRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

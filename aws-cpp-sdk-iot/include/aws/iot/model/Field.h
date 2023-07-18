@@ -80,32 +80,32 @@ namespace Model
 
 
     /**
-     * <p>The datatype of the field.</p>
+     * <p>The data type of the field.</p>
      */
     inline const FieldType& GetType() const{ return m_type; }
 
     /**
-     * <p>The datatype of the field.</p>
+     * <p>The data type of the field.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The datatype of the field.</p>
+     * <p>The data type of the field.</p>
      */
     inline void SetType(const FieldType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The datatype of the field.</p>
+     * <p>The data type of the field.</p>
      */
     inline void SetType(FieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The datatype of the field.</p>
+     * <p>The data type of the field.</p>
      */
     inline Field& WithType(const FieldType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The datatype of the field.</p>
+     * <p>The data type of the field.</p>
      */
     inline Field& WithType(FieldType&& value) { SetType(std::move(value)); return *this;}
 

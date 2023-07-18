@@ -72,7 +72,7 @@ CostandUsageReportServiceClient::~CostandUsageReportServiceClient()
 {
 }
 
-void CostandUsageReportServiceClient::init(const ClientConfiguration& config)
+void CostandUsageReportServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Cost and Usage Report Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -101,9 +101,6 @@ void CostandUsageReportServiceClient::OverrideEndpoint(const Aws::String& endpoi
 DeleteReportDefinitionOutcome CostandUsageReportServiceClient::DeleteReportDefinition(const DeleteReportDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteReportDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -128,9 +125,6 @@ void CostandUsageReportServiceClient::DeleteReportDefinitionAsyncHelper(const De
 DescribeReportDefinitionsOutcome CostandUsageReportServiceClient::DescribeReportDefinitions(const DescribeReportDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeReportDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -155,9 +149,6 @@ void CostandUsageReportServiceClient::DescribeReportDefinitionsAsyncHelper(const
 ModifyReportDefinitionOutcome CostandUsageReportServiceClient::ModifyReportDefinition(const ModifyReportDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyReportDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -182,9 +173,6 @@ void CostandUsageReportServiceClient::ModifyReportDefinitionAsyncHelper(const Mo
 PutReportDefinitionOutcome CostandUsageReportServiceClient::PutReportDefinition(const PutReportDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutReportDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

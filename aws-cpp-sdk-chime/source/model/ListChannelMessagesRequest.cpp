@@ -23,13 +23,29 @@ ListChannelMessagesRequest::ListChannelMessagesRequest() :
     m_notAfterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
 Aws::String ListChannelMessagesRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection ListChannelMessagesRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 void ListChannelMessagesRequest::AddQueryStringParameters(URI& uri) const
@@ -44,14 +60,14 @@ void ListChannelMessagesRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_notBeforeHasBeenSet)
     {
-      ss << m_notBefore.ToGmtString(DateFormat::RFC822);
+      ss << m_notBefore.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("not-before", ss.str());
       ss.str("");
     }
 
     if(m_notAfterHasBeenSet)
     {
-      ss << m_notAfter.ToGmtString(DateFormat::RFC822);
+      ss << m_notAfter.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("not-after", ss.str());
       ss.str("");
     }

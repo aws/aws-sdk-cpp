@@ -35,80 +35,115 @@ namespace Model
 
 
     /**
-     * <p>The permissions associated with the resource share.</p>
+     * <p>An array of objects that describe the permissions associated with the
+     * resource share.</p>
      */
     inline const Aws::Vector<ResourceSharePermissionSummary>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>The permissions associated with the resource share.</p>
+     * <p>An array of objects that describe the permissions associated with the
+     * resource share.</p>
      */
     inline void SetPermissions(const Aws::Vector<ResourceSharePermissionSummary>& value) { m_permissions = value; }
 
     /**
-     * <p>The permissions associated with the resource share.</p>
+     * <p>An array of objects that describe the permissions associated with the
+     * resource share.</p>
      */
     inline void SetPermissions(Aws::Vector<ResourceSharePermissionSummary>&& value) { m_permissions = std::move(value); }
 
     /**
-     * <p>The permissions associated with the resource share.</p>
+     * <p>An array of objects that describe the permissions associated with the
+     * resource share.</p>
      */
     inline ListResourceSharePermissionsResult& WithPermissions(const Aws::Vector<ResourceSharePermissionSummary>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>The permissions associated with the resource share.</p>
+     * <p>An array of objects that describe the permissions associated with the
+     * resource share.</p>
      */
     inline ListResourceSharePermissionsResult& WithPermissions(Aws::Vector<ResourceSharePermissionSummary>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The permissions associated with the resource share.</p>
+     * <p>An array of objects that describe the permissions associated with the
+     * resource share.</p>
      */
     inline ListResourceSharePermissionsResult& AddPermissions(const ResourceSharePermissionSummary& value) { m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>The permissions associated with the resource share.</p>
+     * <p>An array of objects that describe the permissions associated with the
+     * resource share.</p>
      */
     inline ListResourceSharePermissionsResult& AddPermissions(ResourceSharePermissionSummary&& value) { m_permissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline ListResourceSharePermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline ListResourceSharePermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline ListResourceSharePermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -20,6 +20,8 @@ namespace Model
 
 DocumentIdentifier::DocumentIdentifier() : 
     m_nameHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_platformTypesHasBeenSet(false),
@@ -40,6 +42,8 @@ DocumentIdentifier::DocumentIdentifier() :
 
 DocumentIdentifier::DocumentIdentifier(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_platformTypesHasBeenSet(false),
@@ -66,6 +70,20 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Owner"))
@@ -171,6 +189,17 @@ JsonValue DocumentIdentifier::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 

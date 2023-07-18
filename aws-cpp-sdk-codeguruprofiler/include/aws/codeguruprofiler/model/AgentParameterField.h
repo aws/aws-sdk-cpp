@@ -16,11 +16,11 @@ namespace Model
   enum class AgentParameterField
   {
     NOT_SET,
-    MaxStackDepth,
-    MemoryUsageLimitPercent,
-    MinimumTimeForReportingInMilliseconds,
+    SamplingIntervalInMilliseconds,
     ReportingIntervalInMilliseconds,
-    SamplingIntervalInMilliseconds
+    MinimumTimeForReportingInMilliseconds,
+    MemoryUsageLimitPercent,
+    MaxStackDepth
   };
 
 namespace AgentParameterFieldMapper

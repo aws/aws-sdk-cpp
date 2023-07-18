@@ -18,13 +18,15 @@ using namespace Aws;
 
 GetMaintenanceWindowTaskResult::GetMaintenanceWindowTaskResult() : 
     m_taskType(MaintenanceWindowTaskType::NOT_SET),
-    m_priority(0)
+    m_priority(0),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET)
 {
 }
 
 GetMaintenanceWindowTaskResult::GetMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_taskType(MaintenanceWindowTaskType::NOT_SET),
-    m_priority(0)
+    m_priority(0),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET)
 {
   *this = result;
 }
@@ -119,6 +121,12 @@ GetMaintenanceWindowTaskResult& GetMaintenanceWindowTaskResult::operator =(const
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("CutoffBehavior"))
+  {
+    m_cutoffBehavior = MaintenanceWindowTaskCutoffBehaviorMapper::GetMaintenanceWindowTaskCutoffBehaviorForName(jsonValue.GetString("CutoffBehavior"));
 
   }
 

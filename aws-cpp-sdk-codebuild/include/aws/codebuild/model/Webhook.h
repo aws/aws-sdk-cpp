@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p>Information about a webhook that connects repository events to a build
-   * project in AWS CodeBuild.</p><p><h3>See Also:</h3>   <a
+   * project in CodeBuild.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Webhook">AWS
    * API Reference</a></p>
    */
@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline const Aws::String& GetPayloadUrl() const{ return m_payloadUrl; }
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline bool PayloadUrlHasBeenSet() const { return m_payloadUrlHasBeenSet; }
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline void SetPayloadUrl(const Aws::String& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = value; }
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline void SetPayloadUrl(Aws::String&& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = std::move(value); }
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline void SetPayloadUrl(const char* value) { m_payloadUrlHasBeenSet = true; m_payloadUrl.assign(value); }
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline Webhook& WithPayloadUrl(const Aws::String& value) { SetPayloadUrl(value); return *this;}
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline Webhook& WithPayloadUrl(Aws::String&& value) { SetPayloadUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS CodeBuild endpoint where webhook events are sent.</p>
+     * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
     inline Webhook& WithPayloadUrl(const char* value) { SetPayloadUrl(value); return *this;}
 

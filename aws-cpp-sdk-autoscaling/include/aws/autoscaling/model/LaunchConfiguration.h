@@ -331,263 +331,227 @@ namespace Model
 
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline LaunchConfiguration& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline LaunchConfiguration& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline LaunchConfiguration& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -596,7 +560,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
@@ -604,7 +568,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
@@ -612,7 +576,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -620,7 +584,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
@@ -628,7 +592,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
@@ -636,7 +600,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
@@ -644,7 +608,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -652,7 +616,7 @@ namespace Model
      * <p>The instance type for the instances.</p> <p>For information about available
      * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

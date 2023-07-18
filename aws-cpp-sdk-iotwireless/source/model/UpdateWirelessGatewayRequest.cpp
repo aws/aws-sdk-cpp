@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 UpdateWirelessGatewayRequest::UpdateWirelessGatewayRequest() : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_joinEuiFiltersHasBeenSet(false),
+    m_netIdFiltersHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,33 @@ Aws::String UpdateWirelessGatewayRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_joinEuiFiltersHasBeenSet)
+  {
+   Array<JsonValue> joinEuiFiltersJsonList(m_joinEuiFilters.size());
+   for(unsigned joinEuiFiltersIndex = 0; joinEuiFiltersIndex < joinEuiFiltersJsonList.GetLength(); ++joinEuiFiltersIndex)
+   {
+     Array<JsonValue> joinEuiRangeJsonList(m_joinEuiFilters[joinEuiFiltersIndex].size());
+     for(unsigned joinEuiRangeIndex = 0; joinEuiRangeIndex < joinEuiRangeJsonList.GetLength(); ++joinEuiRangeIndex)
+     {
+       joinEuiRangeJsonList[joinEuiRangeIndex].AsString(m_joinEuiFilters[joinEuiFiltersIndex][joinEuiRangeIndex]);
+     }
+     joinEuiFiltersJsonList[joinEuiFiltersIndex].AsArray(std::move(joinEuiRangeJsonList));
+   }
+   payload.WithArray("JoinEuiFilters", std::move(joinEuiFiltersJsonList));
+
+  }
+
+  if(m_netIdFiltersHasBeenSet)
+  {
+   Array<JsonValue> netIdFiltersJsonList(m_netIdFilters.size());
+   for(unsigned netIdFiltersIndex = 0; netIdFiltersIndex < netIdFiltersJsonList.GetLength(); ++netIdFiltersIndex)
+   {
+     netIdFiltersJsonList[netIdFiltersIndex].AsString(m_netIdFilters[netIdFiltersIndex]);
+   }
+   payload.WithArray("NetIdFilters", std::move(netIdFiltersJsonList));
 
   }
 

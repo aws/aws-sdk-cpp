@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/model/Dimension.h>
+#include <aws/monitoring/model/AnomalyDetectorType.h>
 #include <utility>
 
 namespace Aws
@@ -294,6 +295,63 @@ namespace Model
      */
     inline DescribeAnomalyDetectorsRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline const Aws::Vector<AnomalyDetectorType>& GetAnomalyDetectorTypes() const{ return m_anomalyDetectorTypes; }
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline bool AnomalyDetectorTypesHasBeenSet() const { return m_anomalyDetectorTypesHasBeenSet; }
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline void SetAnomalyDetectorTypes(const Aws::Vector<AnomalyDetectorType>& value) { m_anomalyDetectorTypesHasBeenSet = true; m_anomalyDetectorTypes = value; }
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline void SetAnomalyDetectorTypes(Aws::Vector<AnomalyDetectorType>&& value) { m_anomalyDetectorTypesHasBeenSet = true; m_anomalyDetectorTypes = std::move(value); }
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline DescribeAnomalyDetectorsRequest& WithAnomalyDetectorTypes(const Aws::Vector<AnomalyDetectorType>& value) { SetAnomalyDetectorTypes(value); return *this;}
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline DescribeAnomalyDetectorsRequest& WithAnomalyDetectorTypes(Aws::Vector<AnomalyDetectorType>&& value) { SetAnomalyDetectorTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline DescribeAnomalyDetectorsRequest& AddAnomalyDetectorTypes(const AnomalyDetectorType& value) { m_anomalyDetectorTypesHasBeenSet = true; m_anomalyDetectorTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The anomaly detector types to request when using
+     * <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to
+     * <code>SINGLE_METRIC</code>.</p>
+     */
+    inline DescribeAnomalyDetectorsRequest& AddAnomalyDetectorTypes(AnomalyDetectorType&& value) { m_anomalyDetectorTypesHasBeenSet = true; m_anomalyDetectorTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_nextToken;
@@ -310,6 +368,9 @@ namespace Model
 
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
+    Aws::Vector<AnomalyDetectorType> m_anomalyDetectorTypes;
+    bool m_anomalyDetectorTypesHasBeenSet;
   };
 
 } // namespace Model

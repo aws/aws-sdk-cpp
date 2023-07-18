@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/Scte27OcrLanguage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -33,6 +35,55 @@ namespace Model
     Scte27SourceSettings(Aws::Utils::Json::JsonView jsonValue);
     Scte27SourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline const Scte27OcrLanguage& GetOcrLanguage() const{ return m_ocrLanguage; }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline bool OcrLanguageHasBeenSet() const { return m_ocrLanguageHasBeenSet; }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline void SetOcrLanguage(const Scte27OcrLanguage& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = value; }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline void SetOcrLanguage(Scte27OcrLanguage&& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = std::move(value); }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline Scte27SourceSettings& WithOcrLanguage(const Scte27OcrLanguage& value) { SetOcrLanguage(value); return *this;}
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline Scte27SourceSettings& WithOcrLanguage(Scte27OcrLanguage&& value) { SetOcrLanguage(std::move(value)); return *this;}
 
 
     /**
@@ -96,6 +147,9 @@ namespace Model
     inline Scte27SourceSettings& WithPid(int value) { SetPid(value); return *this;}
 
   private:
+
+    Scte27OcrLanguage m_ocrLanguage;
+    bool m_ocrLanguageHasBeenSet;
 
     int m_pid;
     bool m_pidHasBeenSet;

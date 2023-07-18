@@ -22,10 +22,18 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false),
+    m_ipv4PrefixCount(0),
+    m_ipv4PrefixCountHasBeenSet(false),
+    m_ipv6PrefixesHasBeenSet(false),
+    m_ipv6PrefixCount(0),
+    m_ipv6PrefixCountHasBeenSet(false),
     m_interfaceType(NetworkInterfaceCreationType::NOT_SET),
     m_interfaceTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -89,6 +97,36 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
   }
 
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+    unsigned ipv4PrefixesCount = 1;
+    for(auto& item : m_ipv4Prefixes)
+    {
+      item.OutputToStream(ss, "Ipv4Prefix.", ipv4PrefixesCount, "");
+      ipv4PrefixesCount++;
+    }
+  }
+
+  if(m_ipv4PrefixCountHasBeenSet)
+  {
+    ss << "Ipv4PrefixCount=" << m_ipv4PrefixCount << "&";
+  }
+
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+    unsigned ipv6PrefixesCount = 1;
+    for(auto& item : m_ipv6Prefixes)
+    {
+      item.OutputToStream(ss, "Ipv6Prefix.", ipv6PrefixesCount, "");
+      ipv6PrefixesCount++;
+    }
+  }
+
+  if(m_ipv6PrefixCountHasBeenSet)
+  {
+    ss << "Ipv6PrefixCount=" << m_ipv6PrefixCount << "&";
+  }
+
   if(m_interfaceTypeHasBeenSet)
   {
     ss << "InterfaceType=" << NetworkInterfaceCreationTypeMapper::GetNameForNetworkInterfaceCreationType(m_interfaceType) << "&";
@@ -107,6 +145,11 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

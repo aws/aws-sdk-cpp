@@ -181,8 +181,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -199,8 +199,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -217,8 +217,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -235,8 +235,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -253,8 +253,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -271,8 +271,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the

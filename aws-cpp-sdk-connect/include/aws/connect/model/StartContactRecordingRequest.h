@@ -34,42 +34,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartContactRecordingRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartContactRecordingRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartContactRecordingRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -165,32 +173,32 @@ namespace Model
 
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline const VoiceRecordingConfiguration& GetVoiceRecordingConfiguration() const{ return m_voiceRecordingConfiguration; }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline bool VoiceRecordingConfigurationHasBeenSet() const { return m_voiceRecordingConfigurationHasBeenSet; }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline void SetVoiceRecordingConfiguration(const VoiceRecordingConfiguration& value) { m_voiceRecordingConfigurationHasBeenSet = true; m_voiceRecordingConfiguration = value; }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline void SetVoiceRecordingConfiguration(VoiceRecordingConfiguration&& value) { m_voiceRecordingConfigurationHasBeenSet = true; m_voiceRecordingConfiguration = std::move(value); }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline StartContactRecordingRequest& WithVoiceRecordingConfiguration(const VoiceRecordingConfiguration& value) { SetVoiceRecordingConfiguration(value); return *this;}
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline StartContactRecordingRequest& WithVoiceRecordingConfiguration(VoiceRecordingConfiguration&& value) { SetVoiceRecordingConfiguration(std::move(value)); return *this;}
 

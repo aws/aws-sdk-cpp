@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/NodeGroupConfiguration.h>
 #include <aws/elasticache/model/Tag.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -158,42 +159,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
 
@@ -679,19 +680,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -703,16 +707,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -741,19 +751,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -765,16 +778,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -803,19 +822,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -827,16 +849,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -865,19 +893,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -889,16 +920,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -927,19 +964,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -951,16 +991,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -989,19 +1035,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -1013,16 +1062,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -1051,19 +1106,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -1075,16 +1133,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -1113,19 +1177,22 @@ namespace Model
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
      * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
-     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
-     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
      * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -1137,16 +1204,22 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
-     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
-     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
-     * available in the following regions: us-east-1, us-west-2, us-east-2,
-     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
-     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
      * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
@@ -1171,49 +1244,49 @@ namespace Model
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1326,12 +1399,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1343,12 +1413,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1360,12 +1427,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1377,12 +1441,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1394,12 +1455,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1411,12 +1469,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1428,12 +1483,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1445,12 +1497,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1661,74 +1710,82 @@ namespace Model
 
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -2111,22 +2168,30 @@ namespace Model
 
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline CreateReplicationGroupRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -2530,49 +2595,127 @@ namespace Model
 
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool GetDataTieringEnabled() const{ return m_dataTieringEnabled; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringEnabledHasBeenSet() const { return m_dataTieringEnabledHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTieringEnabled(bool value) { m_dataTieringEnabledHasBeenSet = true; m_dataTieringEnabled = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline CreateReplicationGroupRequest& WithDataTieringEnabled(bool value) { SetDataTieringEnabled(value); return *this;}
 
   private:
 
@@ -2671,6 +2814,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userGroupIds;
     bool m_userGroupIdsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
+
+    bool m_dataTieringEnabled;
+    bool m_dataTieringEnabledHasBeenSet;
   };
 
 } // namespace Model

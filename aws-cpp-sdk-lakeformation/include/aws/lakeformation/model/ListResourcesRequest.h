@@ -33,8 +33,6 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>Any applicable row-level and/or column-level filtering conditions for the

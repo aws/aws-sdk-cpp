@@ -25,6 +25,8 @@ namespace Aws
         static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
         static const int PASS_WITH_WARNINGS_HASH = HashingUtils::HashString("PASS_WITH_WARNINGS");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
@@ -51,6 +53,14 @@ namespace Aws
           else if (hashCode == RUNNING_HASH)
           {
             return SuiteRunStatus::RUNNING;
+          }
+          else if (hashCode == STOPPING_HASH)
+          {
+            return SuiteRunStatus::STOPPING;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return SuiteRunStatus::STOPPED;
           }
           else if (hashCode == PASS_WITH_WARNINGS_HASH)
           {
@@ -84,6 +94,10 @@ namespace Aws
             return "PENDING";
           case SuiteRunStatus::RUNNING:
             return "RUNNING";
+          case SuiteRunStatus::STOPPING:
+            return "STOPPING";
+          case SuiteRunStatus::STOPPED:
+            return "STOPPED";
           case SuiteRunStatus::PASS_WITH_WARNINGS:
             return "PASS_WITH_WARNINGS";
           case SuiteRunStatus::ERROR_:

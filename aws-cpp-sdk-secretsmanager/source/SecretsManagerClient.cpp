@@ -32,8 +32,11 @@
 #include <aws/secretsmanager/model/ListSecretsRequest.h>
 #include <aws/secretsmanager/model/PutResourcePolicyRequest.h>
 #include <aws/secretsmanager/model/PutSecretValueRequest.h>
+#include <aws/secretsmanager/model/RemoveRegionsFromReplicationRequest.h>
+#include <aws/secretsmanager/model/ReplicateSecretToRegionsRequest.h>
 #include <aws/secretsmanager/model/RestoreSecretRequest.h>
 #include <aws/secretsmanager/model/RotateSecretRequest.h>
+#include <aws/secretsmanager/model/StopReplicationToReplicaRequest.h>
 #include <aws/secretsmanager/model/TagResourceRequest.h>
 #include <aws/secretsmanager/model/UntagResourceRequest.h>
 #include <aws/secretsmanager/model/UpdateSecretRequest.h>
@@ -87,7 +90,7 @@ SecretsManagerClient::~SecretsManagerClient()
 {
 }
 
-void SecretsManagerClient::init(const ClientConfiguration& config)
+void SecretsManagerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Secrets Manager");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -116,9 +119,6 @@ void SecretsManagerClient::OverrideEndpoint(const Aws::String& endpoint)
 CancelRotateSecretOutcome SecretsManagerClient::CancelRotateSecret(const CancelRotateSecretRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CancelRotateSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -143,9 +143,6 @@ void SecretsManagerClient::CancelRotateSecretAsyncHelper(const CancelRotateSecre
 CreateSecretOutcome SecretsManagerClient::CreateSecret(const CreateSecretRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,9 +167,6 @@ void SecretsManagerClient::CreateSecretAsyncHelper(const CreateSecretRequest& re
 DeleteResourcePolicyOutcome SecretsManagerClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -197,9 +191,6 @@ void SecretsManagerClient::DeleteResourcePolicyAsyncHelper(const DeleteResourceP
 DeleteSecretOutcome SecretsManagerClient::DeleteSecret(const DeleteSecretRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -224,9 +215,6 @@ void SecretsManagerClient::DeleteSecretAsyncHelper(const DeleteSecretRequest& re
 DescribeSecretOutcome SecretsManagerClient::DescribeSecret(const DescribeSecretRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -251,9 +239,6 @@ void SecretsManagerClient::DescribeSecretAsyncHelper(const DescribeSecretRequest
 GetRandomPasswordOutcome SecretsManagerClient::GetRandomPassword(const GetRandomPasswordRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRandomPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -278,9 +263,6 @@ void SecretsManagerClient::GetRandomPasswordAsyncHelper(const GetRandomPasswordR
 GetResourcePolicyOutcome SecretsManagerClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -305,9 +287,6 @@ void SecretsManagerClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyR
 GetSecretValueOutcome SecretsManagerClient::GetSecretValue(const GetSecretValueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSecretValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -332,9 +311,6 @@ void SecretsManagerClient::GetSecretValueAsyncHelper(const GetSecretValueRequest
 ListSecretVersionIdsOutcome SecretsManagerClient::ListSecretVersionIds(const ListSecretVersionIdsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListSecretVersionIdsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -359,9 +335,6 @@ void SecretsManagerClient::ListSecretVersionIdsAsyncHelper(const ListSecretVersi
 ListSecretsOutcome SecretsManagerClient::ListSecrets(const ListSecretsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListSecretsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -386,9 +359,6 @@ void SecretsManagerClient::ListSecretsAsyncHelper(const ListSecretsRequest& requ
 PutResourcePolicyOutcome SecretsManagerClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -413,9 +383,6 @@ void SecretsManagerClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyR
 PutSecretValueOutcome SecretsManagerClient::PutSecretValue(const PutSecretValueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutSecretValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -437,12 +404,57 @@ void SecretsManagerClient::PutSecretValueAsyncHelper(const PutSecretValueRequest
   handler(this, request, PutSecretValue(request), context);
 }
 
+RemoveRegionsFromReplicationOutcome SecretsManagerClient::RemoveRegionsFromReplication(const RemoveRegionsFromReplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RemoveRegionsFromReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RemoveRegionsFromReplicationOutcomeCallable SecretsManagerClient::RemoveRegionsFromReplicationCallable(const RemoveRegionsFromReplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveRegionsFromReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveRegionsFromReplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecretsManagerClient::RemoveRegionsFromReplicationAsync(const RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveRegionsFromReplicationAsyncHelper( request, handler, context ); } );
+}
+
+void SecretsManagerClient::RemoveRegionsFromReplicationAsyncHelper(const RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveRegionsFromReplication(request), context);
+}
+
+ReplicateSecretToRegionsOutcome SecretsManagerClient::ReplicateSecretToRegions(const ReplicateSecretToRegionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ReplicateSecretToRegionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ReplicateSecretToRegionsOutcomeCallable SecretsManagerClient::ReplicateSecretToRegionsCallable(const ReplicateSecretToRegionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ReplicateSecretToRegionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReplicateSecretToRegions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecretsManagerClient::ReplicateSecretToRegionsAsync(const ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ReplicateSecretToRegionsAsyncHelper( request, handler, context ); } );
+}
+
+void SecretsManagerClient::ReplicateSecretToRegionsAsyncHelper(const ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ReplicateSecretToRegions(request), context);
+}
+
 RestoreSecretOutcome SecretsManagerClient::RestoreSecret(const RestoreSecretRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RestoreSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -467,9 +479,6 @@ void SecretsManagerClient::RestoreSecretAsyncHelper(const RestoreSecretRequest& 
 RotateSecretOutcome SecretsManagerClient::RotateSecret(const RotateSecretRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RotateSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -491,12 +500,33 @@ void SecretsManagerClient::RotateSecretAsyncHelper(const RotateSecretRequest& re
   handler(this, request, RotateSecret(request), context);
 }
 
+StopReplicationToReplicaOutcome SecretsManagerClient::StopReplicationToReplica(const StopReplicationToReplicaRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopReplicationToReplicaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopReplicationToReplicaOutcomeCallable SecretsManagerClient::StopReplicationToReplicaCallable(const StopReplicationToReplicaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopReplicationToReplicaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopReplicationToReplica(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecretsManagerClient::StopReplicationToReplicaAsync(const StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopReplicationToReplicaAsyncHelper( request, handler, context ); } );
+}
+
+void SecretsManagerClient::StopReplicationToReplicaAsyncHelper(const StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopReplicationToReplica(request), context);
+}
+
 TagResourceOutcome SecretsManagerClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -521,9 +551,6 @@ void SecretsManagerClient::TagResourceAsyncHelper(const TagResourceRequest& requ
 UntagResourceOutcome SecretsManagerClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -548,9 +575,6 @@ void SecretsManagerClient::UntagResourceAsyncHelper(const UntagResourceRequest& 
 UpdateSecretOutcome SecretsManagerClient::UpdateSecret(const UpdateSecretRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -575,9 +599,6 @@ void SecretsManagerClient::UpdateSecretAsyncHelper(const UpdateSecretRequest& re
 UpdateSecretVersionStageOutcome SecretsManagerClient::UpdateSecretVersionStage(const UpdateSecretVersionStageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateSecretVersionStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -602,9 +623,6 @@ void SecretsManagerClient::UpdateSecretVersionStageAsyncHelper(const UpdateSecre
 ValidateResourcePolicyOutcome SecretsManagerClient::ValidateResourcePolicy(const ValidateResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ValidateResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -25,7 +25,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration() :
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
-    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false)
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
+    m_auditLogConfigurationHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration(JsonV
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
-    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false)
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
+    m_auditLogConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +80,13 @@ UpdateFileSystemWindowsConfiguration& UpdateFileSystemWindowsConfiguration::oper
     m_selfManagedActiveDirectoryConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuditLogConfiguration"))
+  {
+    m_auditLogConfiguration = jsonValue.GetObject("AuditLogConfiguration");
+
+    m_auditLogConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +121,12 @@ JsonValue UpdateFileSystemWindowsConfiguration::Jsonize() const
   if(m_selfManagedActiveDirectoryConfigurationHasBeenSet)
   {
    payload.WithObject("SelfManagedActiveDirectoryConfiguration", m_selfManagedActiveDirectoryConfiguration.Jsonize());
+
+  }
+
+  if(m_auditLogConfigurationHasBeenSet)
+  {
+   payload.WithObject("AuditLogConfiguration", m_auditLogConfiguration.Jsonize());
 
   }
 

@@ -67,9 +67,47 @@ namespace Model
      */
     inline CreateWirelessGatewayTaskDefinitionResult& WithId(const char* value) { SetId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline CreateWirelessGatewayTaskDefinitionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline CreateWirelessGatewayTaskDefinitionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline CreateWirelessGatewayTaskDefinitionResult& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
+
+    Aws::String m_arn;
   };
 
 } // namespace Model

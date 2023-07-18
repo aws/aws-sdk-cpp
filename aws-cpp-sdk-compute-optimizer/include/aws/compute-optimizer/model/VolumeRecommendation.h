@@ -10,6 +10,7 @@
 #include <aws/compute-optimizer/model/EBSFinding.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/EBSUtilizationMetric.h>
 #include <aws/compute-optimizer/model/VolumeRecommendationOption.h>
 #include <utility>
@@ -86,42 +87,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline VolumeRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline VolumeRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline VolumeRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -164,10 +165,10 @@ namespace Model
 
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -176,10 +177,10 @@ namespace Model
     inline const EBSFinding& GetFinding() const{ return m_finding; }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -188,10 +189,10 @@ namespace Model
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -200,10 +201,10 @@ namespace Model
     inline void SetFinding(const EBSFinding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -212,10 +213,10 @@ namespace Model
     inline void SetFinding(EBSFinding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -224,10 +225,10 @@ namespace Model
     inline VolumeRecommendation& WithFinding(const EBSFinding& value) { SetFinding(value); return *this;}
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -352,34 +353,77 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline VolumeRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline VolumeRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline VolumeRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline VolumeRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
 
   private:
 
@@ -406,6 +450,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
     bool m_lastRefreshTimestampHasBeenSet;
+
+    CurrentPerformanceRisk m_currentPerformanceRisk;
+    bool m_currentPerformanceRiskHasBeenSet;
   };
 
 } // namespace Model

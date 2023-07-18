@@ -124,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline const Aws::String& GetAdditionalInformation() const{ return m_additionalInformation; }
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline bool AdditionalInformationHasBeenSet() const { return m_additionalInformationHasBeenSet; }
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline void SetAdditionalInformation(const Aws::String& value) { m_additionalInformationHasBeenSet = true; m_additionalInformation = value; }
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline void SetAdditionalInformation(Aws::String&& value) { m_additionalInformationHasBeenSet = true; m_additionalInformation = std::move(value); }
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline void SetAdditionalInformation(const char* value) { m_additionalInformationHasBeenSet = true; m_additionalInformation.assign(value); }
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline Profile& WithAdditionalInformation(const Aws::String& value) { SetAdditionalInformation(value); return *this;}
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline Profile& WithAdditionalInformation(Aws::String&& value) { SetAdditionalInformation(std::move(value)); return *this;}
 
     /**
-     * <p>Any additional information relevant to the customer's profile.</p>
+     * <p>Any additional information relevant to the customer’s profile.</p>
      */
     inline Profile& WithAdditionalInformation(const char* value) { SetAdditionalInformation(value); return *this;}
 
@@ -360,73 +360,73 @@ namespace Model
 
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline const Aws::String& GetBirthDate() const{ return m_birthDate; }
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline bool BirthDateHasBeenSet() const { return m_birthDateHasBeenSet; }
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline void SetBirthDate(const Aws::String& value) { m_birthDateHasBeenSet = true; m_birthDate = value; }
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline void SetBirthDate(Aws::String&& value) { m_birthDateHasBeenSet = true; m_birthDate = std::move(value); }
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline void SetBirthDate(const char* value) { m_birthDateHasBeenSet = true; m_birthDate.assign(value); }
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline Profile& WithBirthDate(const Aws::String& value) { SetBirthDate(value); return *this;}
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline Profile& WithBirthDate(Aws::String&& value) { SetBirthDate(std::move(value)); return *this;}
 
     /**
-     * <p>The customer’s birth date.</p>
+     * <p>The customer’s birth date. </p>
      */
     inline Profile& WithBirthDate(const char* value) { SetBirthDate(value); return *this;}
 
 
     /**
-     * <p>The gender with which the customer identifies.</p>
+     * <p>The gender with which the customer identifies. </p>
      */
     inline const Gender& GetGender() const{ return m_gender; }
 
     /**
-     * <p>The gender with which the customer identifies.</p>
+     * <p>The gender with which the customer identifies. </p>
      */
     inline bool GenderHasBeenSet() const { return m_genderHasBeenSet; }
 
     /**
-     * <p>The gender with which the customer identifies.</p>
+     * <p>The gender with which the customer identifies. </p>
      */
     inline void SetGender(const Gender& value) { m_genderHasBeenSet = true; m_gender = value; }
 
     /**
-     * <p>The gender with which the customer identifies.</p>
+     * <p>The gender with which the customer identifies. </p>
      */
     inline void SetGender(Gender&& value) { m_genderHasBeenSet = true; m_gender = std::move(value); }
 
     /**
-     * <p>The gender with which the customer identifies.</p>
+     * <p>The gender with which the customer identifies. </p>
      */
     inline Profile& WithGender(const Gender& value) { SetGender(value); return *this;}
 
     /**
-     * <p>The gender with which the customer identifies.</p>
+     * <p>The gender with which the customer identifies. </p>
      */
     inline Profile& WithGender(Gender&& value) { SetGender(std::move(value)); return *this;}
 
@@ -604,50 +604,50 @@ namespace Model
 
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline Profile& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline Profile& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The customer's email address, which has not been specified as a personal or
-     * business address.</p>
+     * <p>The customer’s email address, which has not been specified as a personal or
+     * business address. </p>
      */
     inline Profile& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int launch_HASH = HashingUtils::HashString("launch");
+        static const int launch_before_terminate_HASH = HashingUtils::HashString("launch-before-terminate");
 
 
         ReplacementStrategy GetReplacementStrategyForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == launch_HASH)
           {
             return ReplacementStrategy::launch;
+          }
+          else if (hashCode == launch_before_terminate_HASH)
+          {
+            return ReplacementStrategy::launch_before_terminate;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ReplacementStrategy::launch:
             return "launch";
+          case ReplacementStrategy::launch_before_terminate:
+            return "launch-before-terminate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

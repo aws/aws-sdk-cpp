@@ -131,42 +131,42 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline const Aws::Vector<GlueTable>& GetInputRecordTables() const{ return m_inputRecordTables; }
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline bool InputRecordTablesHasBeenSet() const { return m_inputRecordTablesHasBeenSet; }
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline void SetInputRecordTables(const Aws::Vector<GlueTable>& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables = value; }
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline void SetInputRecordTables(Aws::Vector<GlueTable>&& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables = std::move(value); }
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline CreateMLTransformRequest& WithInputRecordTables(const Aws::Vector<GlueTable>& value) { SetInputRecordTables(value); return *this;}
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline CreateMLTransformRequest& WithInputRecordTables(Aws::Vector<GlueTable>&& value) { SetInputRecordTables(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline CreateMLTransformRequest& AddInputRecordTables(const GlueTable& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS Glue table definitions used by the transform.</p>
+     * <p>A list of Glue table definitions used by the transform.</p>
      */
     inline CreateMLTransformRequest& AddInputRecordTables(GlueTable&& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables.push_back(std::move(value)); return *this; }
 
@@ -210,204 +210,204 @@ namespace Model
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline CreateMLTransformRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline CreateMLTransformRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. The required permissions include both AWS Glue service role
-     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
-     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
-     * to allow access to resources in AWS Glue. See <a
+     * permissions. The required permissions include both Glue service role permissions
+     * to Glue resources, and Amazon S3 permissions required by the transform. </p>
+     * <ul> <li> <p>This role needs Glue service role permissions to allow access to
+     * resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
-     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
-     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
-     * targets, temporary directory, scripts, and any libraries used by the task run
-     * for this transform.</p> </li> </ul>
+     * a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs
+     * permission to your Amazon Simple Storage Service (Amazon S3) sources, targets,
+     * temporary directory, scripts, and any libraries used by the task run for this
+     * transform.</p> </li> </ul>
      */
     inline CreateMLTransformRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>This value determines which version of AWS Glue this machine learning
-     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
-     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-     * Glue Versions</a> in the developer guide.</p>
+     * <p>This value determines which version of Glue this machine learning transform
+     * is compatible with. Glue 1.0 is recommended for most customers. If the value is
+     * not set, the Glue compatibility defaults to Glue 0.9. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+     * Versions</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with
      * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
      * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
@@ -426,11 +426,11 @@ namespace Model
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with
      * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
      * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
@@ -449,11 +449,11 @@ namespace Model
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with
      * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
      * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
@@ -472,11 +472,11 @@ namespace Model
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that are allocated to
-     * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
-     * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <p>The number of Glue data processing units (DPUs) that are allocated to task
+     * runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10.
+     * A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     * compute capacity and 16 GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with
      * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
      * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
@@ -712,117 +712,117 @@ namespace Model
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this machine learning transform. You may use tags to
      * limit access to the machine learning transform. For more information about tags
-     * in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateMLTransformRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

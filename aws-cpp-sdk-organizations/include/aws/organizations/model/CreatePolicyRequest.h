@@ -291,10 +291,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -304,10 +303,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -317,10 +315,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -330,10 +327,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -343,10 +339,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline CreatePolicyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -356,10 +351,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline CreatePolicyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -369,10 +363,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline CreatePolicyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -382,10 +375,9 @@ namespace Model
      * value to an empty string, but you can't set it to <code>null</code>. For more
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p> 
-     * <p>If any one of the tags is invalid or if you exceed the allowed number of tags
-     * for a policy, then the entire request fails and the policy is not created.</p>
-     * 
+     * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
+     * any one of the tags is invalid or if you exceed the allowed number of tags for a
+     * policy, then the entire request fails and the policy is not created.</p> 
      */
     inline CreatePolicyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

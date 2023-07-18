@@ -27,9 +27,9 @@ namespace Model
   /**
    * <p> Details about a package version, including its status, version, and
    * revision. The <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-   * <code>ListPackageVersions</code> </a> operation returns a list of
-   * <code>PackageVersionSummary</code> objects. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+   * operation returns a list of <code>PackageVersionSummary</code> objects.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageVersionSummary">AWS
    * API Reference</a></p>
    */
@@ -126,55 +126,37 @@ namespace Model
 
     /**
      * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * the following: </p>
      */
     inline const PackageVersionStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * the following: </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * the following: </p>
      */
     inline void SetStatus(const PackageVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * the following: </p>
      */
     inline void SetStatus(PackageVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * the following: </p>
      */
     inline PackageVersionSummary& WithStatus(const PackageVersionStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * the following: </p>
      */
     inline PackageVersionSummary& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

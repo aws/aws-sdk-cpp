@@ -7,6 +7,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/VirtualGatewayListenerTlsCertificate.h>
 #include <aws/appmesh/model/VirtualGatewayListenerTlsMode.h>
+#include <aws/appmesh/model/VirtualGatewayListenerTlsValidationContext.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,43 @@ namespace Model
      */
     inline VirtualGatewayListenerTls& WithMode(VirtualGatewayListenerTlsMode&& value) { SetMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A reference to an object that represents a virtual gateway's listener's
+     * Transport Layer Security (TLS) validation context.</p>
+     */
+    inline const VirtualGatewayListenerTlsValidationContext& GetValidation() const{ return m_validation; }
+
+    /**
+     * <p>A reference to an object that represents a virtual gateway's listener's
+     * Transport Layer Security (TLS) validation context.</p>
+     */
+    inline bool ValidationHasBeenSet() const { return m_validationHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents a virtual gateway's listener's
+     * Transport Layer Security (TLS) validation context.</p>
+     */
+    inline void SetValidation(const VirtualGatewayListenerTlsValidationContext& value) { m_validationHasBeenSet = true; m_validation = value; }
+
+    /**
+     * <p>A reference to an object that represents a virtual gateway's listener's
+     * Transport Layer Security (TLS) validation context.</p>
+     */
+    inline void SetValidation(VirtualGatewayListenerTlsValidationContext&& value) { m_validationHasBeenSet = true; m_validation = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents a virtual gateway's listener's
+     * Transport Layer Security (TLS) validation context.</p>
+     */
+    inline VirtualGatewayListenerTls& WithValidation(const VirtualGatewayListenerTlsValidationContext& value) { SetValidation(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents a virtual gateway's listener's
+     * Transport Layer Security (TLS) validation context.</p>
+     */
+    inline VirtualGatewayListenerTls& WithValidation(VirtualGatewayListenerTlsValidationContext&& value) { SetValidation(std::move(value)); return *this;}
+
   private:
 
     VirtualGatewayListenerTlsCertificate m_certificate;
@@ -125,6 +163,9 @@ namespace Model
 
     VirtualGatewayListenerTlsMode m_mode;
     bool m_modeHasBeenSet;
+
+    VirtualGatewayListenerTlsValidationContext m_validation;
+    bool m_validationHasBeenSet;
   };
 
 } // namespace Model

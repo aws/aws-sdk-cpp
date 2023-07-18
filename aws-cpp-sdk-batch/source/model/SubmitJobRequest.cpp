@@ -15,6 +15,9 @@ using namespace Aws::Utils;
 SubmitJobRequest::SubmitJobRequest() : 
     m_jobNameHasBeenSet(false),
     m_jobQueueHasBeenSet(false),
+    m_shareIdentifierHasBeenSet(false),
+    m_schedulingPriorityOverride(0),
+    m_schedulingPriorityOverrideHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
     m_dependsOnHasBeenSet(false),
     m_jobDefinitionHasBeenSet(false),
@@ -42,6 +45,18 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_jobQueueHasBeenSet)
   {
    payload.WithString("jobQueue", m_jobQueue);
+
+  }
+
+  if(m_shareIdentifierHasBeenSet)
+  {
+   payload.WithString("shareIdentifier", m_shareIdentifier);
+
+  }
+
+  if(m_schedulingPriorityOverrideHasBeenSet)
+  {
+   payload.WithInteger("schedulingPriorityOverride", m_schedulingPriorityOverride);
 
   }
 

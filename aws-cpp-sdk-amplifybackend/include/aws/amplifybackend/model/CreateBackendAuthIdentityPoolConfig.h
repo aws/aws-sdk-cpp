@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline const Aws::String& GetIdentityPoolName() const{ return m_identityPoolName; }
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline bool IdentityPoolNameHasBeenSet() const { return m_identityPoolNameHasBeenSet; }
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = std::move(value); }
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline void SetIdentityPoolName(const char* value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName.assign(value); }
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the identity pool used for authorization.</p>
+     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
 

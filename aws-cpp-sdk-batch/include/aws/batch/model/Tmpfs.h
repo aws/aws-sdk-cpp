@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>The container path, mount options, and size of the tmpfs mount.</p> 
-   * <p>This object isn't applicable to jobs running on Fargate resources.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>This object isn't applicable to jobs that are running on Fargate
+   * resources.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Tmpfs">AWS API
    * Reference</a></p>
    */

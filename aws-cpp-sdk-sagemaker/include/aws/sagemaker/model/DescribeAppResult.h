@@ -259,27 +259,42 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUserActivityTimestamp() const{ return m_lastUserActivityTimestamp; }
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline void SetLastUserActivityTimestamp(const Aws::Utils::DateTime& value) { m_lastUserActivityTimestamp = value; }
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline void SetLastUserActivityTimestamp(Aws::Utils::DateTime&& value) { m_lastUserActivityTimestamp = std::move(value); }
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline DescribeAppResult& WithLastUserActivityTimestamp(const Aws::Utils::DateTime& value) { SetLastUserActivityTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline DescribeAppResult& WithLastUserActivityTimestamp(Aws::Utils::DateTime&& value) { SetLastUserActivityTimestamp(std::move(value)); return *this;}
 

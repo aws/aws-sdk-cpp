@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p> The wrapper that contains AWS Audit Manager role information, such as the
-   * role type and IAM Amazon Resource Name (ARN). </p><p><h3>See Also:</h3>   <a
+   * <p> The wrapper that contains the Audit Manager role information of the current
+   * user. This includes the role type and IAM Amazon Resource Name (ARN).
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Role">AWS
    * API Reference</a></p>
    */

@@ -39,63 +39,67 @@ namespace Model
 
 
     /**
-     * <p>The maximum results when listing MWAA environments.</p>
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum results when listing MWAA environments.</p>
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum results when listing MWAA environments.</p>
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum results when listing MWAA environments.</p>
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
      */
     inline ListEnvironmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline ListEnvironmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline ListEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The Next Token when listing MWAA environments.</p>
+     * <p>Retrieves the next page of the results.</p>
      */
     inline ListEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -46,7 +46,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
@@ -56,7 +56,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline bool ClusterSubnetGroupNameHasBeenSet() const { return m_clusterSubnetGroupNameHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
@@ -76,7 +76,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
@@ -96,7 +96,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline CreateClusterSubnetGroupRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
@@ -106,7 +106,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline CreateClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
@@ -116,7 +116,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
     inline CreateClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}

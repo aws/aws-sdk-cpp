@@ -42,7 +42,8 @@ Job::Job() :
     m_numberOfWorkersHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_codeGenConfigurationNodesHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Job::Job(JsonView jsonValue) :
     m_numberOfWorkersHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_codeGenConfigurationNodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -216,6 +218,16 @@ Job& Job::operator =(JsonView jsonValue)
     m_glueVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CodeGenConfigurationNodes"))
+  {
+    Aws::Map<Aws::String, JsonView> codeGenConfigurationNodesJsonMap = jsonValue.GetObject("CodeGenConfigurationNodes").GetAllObjects();
+    for(auto& codeGenConfigurationNodesItem : codeGenConfigurationNodesJsonMap)
+    {
+      m_codeGenConfigurationNodes[codeGenConfigurationNodesItem.first] = codeGenConfigurationNodesItem.second.AsObject();
+    }
+    m_codeGenConfigurationNodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -341,6 +353,17 @@ JsonValue Job::Jsonize() const
   if(m_glueVersionHasBeenSet)
   {
    payload.WithString("GlueVersion", m_glueVersion);
+
+  }
+
+  if(m_codeGenConfigurationNodesHasBeenSet)
+  {
+   JsonValue codeGenConfigurationNodesJsonMap;
+   for(auto& codeGenConfigurationNodesItem : m_codeGenConfigurationNodes)
+   {
+     codeGenConfigurationNodesJsonMap.WithObject(codeGenConfigurationNodesItem.first, codeGenConfigurationNodesItem.second.Jsonize());
+   }
+   payload.WithObject("CodeGenConfigurationNodes", std::move(codeGenConfigurationNodesJsonMap));
 
   }
 

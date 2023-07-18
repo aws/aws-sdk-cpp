@@ -34,119 +34,119 @@ namespace Model
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline const Aws::String& GetComponentVersionArn() const{ return m_componentVersionArn; }
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline bool ComponentVersionArnHasBeenSet() const { return m_componentVersionArnHasBeenSet; }
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline void SetComponentVersionArn(const Aws::String& value) { m_componentVersionArnHasBeenSet = true; m_componentVersionArn = value; }
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline void SetComponentVersionArn(Aws::String&& value) { m_componentVersionArnHasBeenSet = true; m_componentVersionArn = std::move(value); }
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline void SetComponentVersionArn(const char* value) { m_componentVersionArnHasBeenSet = true; m_componentVersionArn.assign(value); }
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline ListComponentBuildVersionsRequest& WithComponentVersionArn(const Aws::String& value) { SetComponentVersionArn(value); return *this;}
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline ListComponentBuildVersionsRequest& WithComponentVersionArn(Aws::String&& value) { SetComponentVersionArn(std::move(value)); return *this;}
 
     /**
      * <p>The component version Amazon Resource Name (ARN) whose versions you want to
-     * list. </p>
+     * list.</p>
      */
     inline ListComponentBuildVersionsRequest& WithComponentVersionArn(const char* value) { SetComponentVersionArn(value); return *this;}
 
 
     /**
-     * <p>The maximum items to return in a request. </p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum items to return in a request. </p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum items to return in a request. </p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum items to return in a request. </p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline ListComponentBuildVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline ListComponentBuildVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline ListComponentBuildVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response. </p>
+     * previously truncated response.</p>
      */
     inline ListComponentBuildVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

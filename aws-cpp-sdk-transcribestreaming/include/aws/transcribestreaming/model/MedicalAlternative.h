@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribestreaming/model/MedicalItem.h>
+#include <aws/transcribestreaming/model/MedicalEntity.h>
 #include <utility>
 
 namespace Aws
@@ -129,6 +130,55 @@ namespace Model
      */
     inline MedicalAlternative& AddItems(MedicalItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline const Aws::Vector<MedicalEntity>& GetEntities() const{ return m_entities; }
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline void SetEntities(const Aws::Vector<MedicalEntity>& value) { m_entitiesHasBeenSet = true; m_entities = value; }
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline void SetEntities(Aws::Vector<MedicalEntity>&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline MedicalAlternative& WithEntities(const Aws::Vector<MedicalEntity>& value) { SetEntities(value); return *this;}
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline MedicalAlternative& WithEntities(Aws::Vector<MedicalEntity>&& value) { SetEntities(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline MedicalAlternative& AddEntities(const MedicalEntity& value) { m_entitiesHasBeenSet = true; m_entities.push_back(value); return *this; }
+
+    /**
+     * <p>Contains the medical entities identified as personal health information in
+     * the transcription output.</p>
+     */
+    inline MedicalAlternative& AddEntities(MedicalEntity&& value) { m_entitiesHasBeenSet = true; m_entities.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcript;
@@ -136,6 +186,9 @@ namespace Model
 
     Aws::Vector<MedicalItem> m_items;
     bool m_itemsHasBeenSet;
+
+    Aws::Vector<MedicalEntity> m_entities;
+    bool m_entitiesHasBeenSet;
   };
 
 } // namespace Model

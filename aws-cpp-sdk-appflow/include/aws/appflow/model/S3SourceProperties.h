@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appflow/model/S3InputFormatConfig.h>
 #include <utility>
 
 namespace Aws
@@ -127,6 +128,25 @@ namespace Model
      */
     inline S3SourceProperties& WithBucketPrefix(const char* value) { SetBucketPrefix(value); return *this;}
 
+
+    
+    inline const S3InputFormatConfig& GetS3InputFormatConfig() const{ return m_s3InputFormatConfig; }
+
+    
+    inline bool S3InputFormatConfigHasBeenSet() const { return m_s3InputFormatConfigHasBeenSet; }
+
+    
+    inline void SetS3InputFormatConfig(const S3InputFormatConfig& value) { m_s3InputFormatConfigHasBeenSet = true; m_s3InputFormatConfig = value; }
+
+    
+    inline void SetS3InputFormatConfig(S3InputFormatConfig&& value) { m_s3InputFormatConfigHasBeenSet = true; m_s3InputFormatConfig = std::move(value); }
+
+    
+    inline S3SourceProperties& WithS3InputFormatConfig(const S3InputFormatConfig& value) { SetS3InputFormatConfig(value); return *this;}
+
+    
+    inline S3SourceProperties& WithS3InputFormatConfig(S3InputFormatConfig&& value) { SetS3InputFormatConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_bucketName;
@@ -134,6 +154,9 @@ namespace Model
 
     Aws::String m_bucketPrefix;
     bool m_bucketPrefixHasBeenSet;
+
+    S3InputFormatConfig m_s3InputFormatConfig;
+    bool m_s3InputFormatConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -21,14 +21,16 @@ namespace Model
 VirtualGatewayListenerTls::VirtualGatewayListenerTls() : 
     m_certificateHasBeenSet(false),
     m_mode(VirtualGatewayListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
 }
 
 VirtualGatewayListenerTls::VirtualGatewayListenerTls(JsonView jsonValue) : 
     m_certificateHasBeenSet(false),
     m_mode(VirtualGatewayListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ VirtualGatewayListenerTls& VirtualGatewayListenerTls::operator =(JsonView jsonVa
     m_modeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("validation"))
+  {
+    m_validation = jsonValue.GetObject("validation");
+
+    m_validationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue VirtualGatewayListenerTls::Jsonize() const
   if(m_modeHasBeenSet)
   {
    payload.WithString("mode", VirtualGatewayListenerTlsModeMapper::GetNameForVirtualGatewayListenerTlsMode(m_mode));
+  }
+
+  if(m_validationHasBeenSet)
+  {
+   payload.WithObject("validation", m_validation.Jsonize());
+
   }
 
   return payload;

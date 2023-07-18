@@ -70,12 +70,12 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   }
 
-  if(jsonValue.ValueExists("ProvisioningArtifactOutputs"))
+  if(jsonValue.ValueExists("ProvisioningArtifactOutputKeys"))
   {
-    Array<JsonView> provisioningArtifactOutputsJsonList = jsonValue.GetArray("ProvisioningArtifactOutputs");
-    for(unsigned provisioningArtifactOutputsIndex = 0; provisioningArtifactOutputsIndex < provisioningArtifactOutputsJsonList.GetLength(); ++provisioningArtifactOutputsIndex)
+    Array<JsonView> provisioningArtifactOutputKeysJsonList = jsonValue.GetArray("ProvisioningArtifactOutputKeys");
+    for(unsigned provisioningArtifactOutputKeysIndex = 0; provisioningArtifactOutputKeysIndex < provisioningArtifactOutputKeysJsonList.GetLength(); ++provisioningArtifactOutputKeysIndex)
     {
-      m_provisioningArtifactOutputs.push_back(provisioningArtifactOutputsJsonList[provisioningArtifactOutputsIndex].AsObject());
+      m_provisioningArtifactOutputKeys.push_back(provisioningArtifactOutputKeysJsonList[provisioningArtifactOutputKeysIndex].AsObject());
     }
   }
 

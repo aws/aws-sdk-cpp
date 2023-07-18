@@ -34,58 +34,58 @@ namespace Model
 
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline const Aws::Vector<FindingType>& GetFindingTypes() const{ return m_findingTypes; }
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline bool FindingTypesHasBeenSet() const { return m_findingTypesHasBeenSet; }
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline void SetFindingTypes(const Aws::Vector<FindingType>& value) { m_findingTypesHasBeenSet = true; m_findingTypes = value; }
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline void SetFindingTypes(Aws::Vector<FindingType>&& value) { m_findingTypesHasBeenSet = true; m_findingTypes = std::move(value); }
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline CreateSampleFindingsRequest& WithFindingTypes(const Aws::Vector<FindingType>& value) { SetFindingTypes(value); return *this;}
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline CreateSampleFindingsRequest& WithFindingTypes(Aws::Vector<FindingType>&& value) { SetFindingTypes(std::move(value)); return *this;}
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(const FindingType& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(value); return *this; }
 
     /**
-     * <p>An array that lists one or more types of findings to include in the set of
-     * sample findings. Currently, the only supported value is
-     * Policy:IAMUser/S3BucketEncryptionDisabled.</p> 
+     * <p>An array of finding types, one for each type of sample finding to create. To
+     * create a sample of every type of finding that Amazon Macie supports, don't
+     * include this array in your request.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(FindingType&& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(std::move(value)); return *this; }
 

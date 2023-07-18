@@ -24,17 +24,23 @@ namespace Aws
             // Take pseudo region into consideration here.
             Aws::String region = clientRegion ? clientRegion : "";
             Aws::StringStream ss;
-            if (this->GetResourceType() == ARNResourceType::OUTPOST && region.find("fips") != Aws::String::npos)
+            if ((this->GetResourceType() == ARNResourceType::OUTPOST || this->GetRegion().empty()) && Aws::Region::IsFipsRegion(region))
             {
                 ss.str("");
-                ss << "Outposts ARN do not support fips regions right now.";
+                ss << "Outposts ARN or Multi Region Access Point ARN do not support fips regions right now.";
                 return S3ARNOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION", ss.str(), false));
             }
-            else if (this->GetRegion() != Aws::Region::ComputeSignerRegion(clientRegion))
+            else if (!this->GetRegion().empty() && (region == Aws::Region::AWS_GLOBAL || region == "s3-external-1"))
+            {
+                ss.str("");
+                ss << "Region: \"" << region << "\" is not a regional endpoint.";
+                return S3ARNOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION", ss.str(), false));
+            }
+            else if (!this->GetRegion().empty() && this->GetRegion() != Aws::Region::ComputeSignerRegion(region))
             {
                 ss.str("");
                 ss << "Region mismatch between \"" << this->GetRegion() << "\" defined in ARN and \""
-                    << clientRegion << "\" defined in client configuration. "
+                    << region << "\" defined in client configuration. "
                     << "You can specify AWS_S3_USE_ARN_REGION to ignore region defined in client configuration.";
                 return S3ARNOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION", ss.str(), false));
             }
@@ -61,22 +67,24 @@ namespace Aws
                 ss << "Invalid partition in ARN: " << this->GetPartition() << ". Valid options: aws, aws-cn, and etc.";
             }
             // Validation on service.
-            else if (this->GetService() != "s3"  && this->GetService() != "s3-outposts")
+            else if (this->GetService() != ARNService::S3 && this->GetService() != ARNService::S3_OUTPOSTS && this->GetService() != ARNService::S3_OBJECT_LAMBDA)
             {
                 ss.str("");
-                ss << "Invalid service in ARN: " << this->GetService() << ". Valid options: s3, s3-outposts";
+                ss << "Invalid service in ARN: " << this->GetService() << ". Valid options: " << ARNService::S3 << ", " << ARNService::S3_OUTPOSTS << ", " << ARNService::S3_OBJECT_LAMBDA << ".";
                 errorMessage = ss.str();
             }
             // Validation on region.
             // TODO: Failure on different partitions.
-            else if (this->GetRegion().empty())
-            {
-                errorMessage = "Invalid ARN with empty region.";
-            }
-            else if (!Utils::IsValidDnsLabel(this->GetRegion()))
+            else if (!this->GetRegion().empty() && !Utils::IsValidDnsLabel(this->GetRegion()))
             {
                 ss.str("");
                 ss << "Invalid region in ARN: " << this->GetRegion() << ". Region should be a RFC 3986 Host label.";
+                errorMessage = ss.str();
+            }
+            else if (Aws::Region::IsFipsRegion(this->GetRegion()))
+            {
+                ss.str("");
+                ss << "Invalid region in ARN: " << this->GetRegion() << ". FIPS region is not allowed in ARN.";
                 errorMessage = ss.str();
             }
             // Validation on account ID
@@ -86,13 +94,23 @@ namespace Aws
                 ss << "Invalid account ID in ARN: " << this->GetAccountId() << ". Account ID should be a RFC 3986 Host label.";
                 errorMessage = ss.str();
             }
-            // Validation on Access Point ARN:
+            // Validation on Access Point ARN and Object Lambda Access Point ARN:
             else if (this->GetResourceType() == ARNResourceType::ACCESSPOINT)
             {
-                if (!Utils::IsValidDnsLabel(this->GetResourceId()))
+                Aws::Vector<Aws::String> segments = Aws::Utils::StringUtils::Split(this->GetResourceId(), '.');
+                // Validation on S3 Object Lambda and regular S3 Access Point alias is a valid [RFC 3986 Host] label.
+                // And validation on Multi Region Access Point alias segments separated by a dot (.) are valid [RFC 3986 Host] labels.
+                if (segments.size() == 0 || (!this->GetRegion().empty() && segments.size() > 1) ||
+                    std::any_of(segments.begin(), segments.end(), [](Aws::String segment){return !Utils::IsValidDnsLabel(segment);}))
                 {
                     ss.str("");
                     ss << "Invalid resource ID in accesspoint ARN: " << this->GetResourceId() << ". Resource ID should be a RFC 3986 Host label.";
+                    errorMessage = ss.str();
+                }
+                else if (this->GetService() == ARNService::S3_OBJECT_LAMBDA && this->GetRegion().empty())
+                {
+                    ss.str("");
+                    ss << "Invalid S3 Object Lambda Access Point ARN with empty region.";
                     errorMessage = ss.str();
                 }
                 else if (!this->GetResourceQualifier().empty())
@@ -115,10 +133,16 @@ namespace Aws
             // Validation on Outposts ARN:
             else if (this->GetResourceType() == ARNResourceType::OUTPOST)
             {
-                if (this->GetRegion().find("fips") != Aws::String::npos)
+                if (this->GetService() != ARNService::S3_OUTPOSTS)
                 {
                     ss.str("");
-                    ss << "Outposts ARN do not support fips regions right now.";
+                    ss << "Invalid combination of service name: \"" << this->GetService() << "\" and resource type: \"" << this->GetResourceType() << "\".";
+                    errorMessage = ss.str();
+                }
+                else if (this->GetRegion().empty())
+                {
+                    ss.str("");
+                    ss << "Invalid Outposts ARN with empty region.";
                     errorMessage = ss.str();
                 }
                 else if (!Utils::IsValidDnsLabel(this->GetResourceId()))
@@ -144,11 +168,11 @@ namespace Aws
                     success = true;
                 }
             }
-            // Neither Access Point ARN nor Outposts ARN.
+            // ARN with unknown resource type.
             else
             {
                 ss.str("");
-                ss << "Invalid resource type in ARN: " << this->GetResourceType() << ". Valid options: " << ARNResourceType::ACCESSPOINT << ", " << ARNResourceType::OUTPOST;
+                ss << "Invalid resource type in ARN: " << this->GetResourceType() << ". Valid options: " << ARNResourceType::ACCESSPOINT << ", " << ARNResourceType::OUTPOST << ".";
                 errorMessage = ss.str();
             }
 

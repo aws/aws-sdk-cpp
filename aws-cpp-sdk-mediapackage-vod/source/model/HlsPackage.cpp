@@ -21,6 +21,8 @@ namespace Model
 HlsPackage::HlsPackage() : 
     m_encryptionHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
+    m_includeDvbSubtitles(false),
+    m_includeDvbSubtitlesHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
     m_useAudioRenditionGroup(false),
@@ -31,6 +33,8 @@ HlsPackage::HlsPackage() :
 HlsPackage::HlsPackage(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
+    m_includeDvbSubtitles(false),
+    m_includeDvbSubtitlesHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
     m_useAudioRenditionGroup(false),
@@ -56,6 +60,13 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
       m_hlsManifests.push_back(hlsManifestsJsonList[hlsManifestsIndex].AsObject());
     }
     m_hlsManifestsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("includeDvbSubtitles"))
+  {
+    m_includeDvbSubtitles = jsonValue.GetBool("includeDvbSubtitles");
+
+    m_includeDvbSubtitlesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentDurationSeconds"))
@@ -93,6 +104,12 @@ JsonValue HlsPackage::Jsonize() const
      hlsManifestsJsonList[hlsManifestsIndex].AsObject(m_hlsManifests[hlsManifestsIndex].Jsonize());
    }
    payload.WithArray("hlsManifests", std::move(hlsManifestsJsonList));
+
+  }
+
+  if(m_includeDvbSubtitlesHasBeenSet)
+  {
+   payload.WithBool("includeDvbSubtitles", m_includeDvbSubtitles);
 
   }
 

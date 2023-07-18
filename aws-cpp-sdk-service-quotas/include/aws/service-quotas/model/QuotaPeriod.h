@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure that contains information about the quota period.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about the quota period.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/QuotaPeriod">AWS
    * API Reference</a></p>
    */
@@ -39,53 +38,53 @@ namespace Model
 
 
     /**
-     * <p>The value of a period.</p>
+     * <p>The value.</p>
      */
     inline int GetPeriodValue() const{ return m_periodValue; }
 
     /**
-     * <p>The value of a period.</p>
+     * <p>The value.</p>
      */
     inline bool PeriodValueHasBeenSet() const { return m_periodValueHasBeenSet; }
 
     /**
-     * <p>The value of a period.</p>
+     * <p>The value.</p>
      */
     inline void SetPeriodValue(int value) { m_periodValueHasBeenSet = true; m_periodValue = value; }
 
     /**
-     * <p>The value of a period.</p>
+     * <p>The value.</p>
      */
     inline QuotaPeriod& WithPeriodValue(int value) { SetPeriodValue(value); return *this;}
 
 
     /**
-     * <p>The time unit of a period.</p>
+     * <p>The time unit.</p>
      */
     inline const PeriodUnit& GetPeriodUnit() const{ return m_periodUnit; }
 
     /**
-     * <p>The time unit of a period.</p>
+     * <p>The time unit.</p>
      */
     inline bool PeriodUnitHasBeenSet() const { return m_periodUnitHasBeenSet; }
 
     /**
-     * <p>The time unit of a period.</p>
+     * <p>The time unit.</p>
      */
     inline void SetPeriodUnit(const PeriodUnit& value) { m_periodUnitHasBeenSet = true; m_periodUnit = value; }
 
     /**
-     * <p>The time unit of a period.</p>
+     * <p>The time unit.</p>
      */
     inline void SetPeriodUnit(PeriodUnit&& value) { m_periodUnitHasBeenSet = true; m_periodUnit = std::move(value); }
 
     /**
-     * <p>The time unit of a period.</p>
+     * <p>The time unit.</p>
      */
     inline QuotaPeriod& WithPeriodUnit(const PeriodUnit& value) { SetPeriodUnit(value); return *this;}
 
     /**
-     * <p>The time unit of a period.</p>
+     * <p>The time unit.</p>
      */
     inline QuotaPeriod& WithPeriodUnit(PeriodUnit&& value) { SetPeriodUnit(std::move(value)); return *this;}
 

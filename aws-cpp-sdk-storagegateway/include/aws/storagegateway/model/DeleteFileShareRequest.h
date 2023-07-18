@@ -80,37 +80,41 @@ namespace Model
 
     /**
      * <p>If this value is set to <code>true</code>, the operation deletes a file share
-     * immediately and aborts all data uploads to AWS. Otherwise, the file share is not
-     * deleted until all data is uploaded to AWS. This process aborts the data upload
-     * process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * immediately and aborts all data uploads to Amazon Web Services. Otherwise, the
+     * file share is not deleted until all data is uploaded to Amazon Web Services.
+     * This process aborts the data upload process, and the file share enters the
+     * <code>FORCE_DELETING</code> status.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
      * <p>If this value is set to <code>true</code>, the operation deletes a file share
-     * immediately and aborts all data uploads to AWS. Otherwise, the file share is not
-     * deleted until all data is uploaded to AWS. This process aborts the data upload
-     * process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * immediately and aborts all data uploads to Amazon Web Services. Otherwise, the
+     * file share is not deleted until all data is uploaded to Amazon Web Services.
+     * This process aborts the data upload process, and the file share enters the
+     * <code>FORCE_DELETING</code> status.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
      * <p>If this value is set to <code>true</code>, the operation deletes a file share
-     * immediately and aborts all data uploads to AWS. Otherwise, the file share is not
-     * deleted until all data is uploaded to AWS. This process aborts the data upload
-     * process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * immediately and aborts all data uploads to Amazon Web Services. Otherwise, the
+     * file share is not deleted until all data is uploaded to Amazon Web Services.
+     * This process aborts the data upload process, and the file share enters the
+     * <code>FORCE_DELETING</code> status.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
      * <p>If this value is set to <code>true</code>, the operation deletes a file share
-     * immediately and aborts all data uploads to AWS. Otherwise, the file share is not
-     * deleted until all data is uploaded to AWS. This process aborts the data upload
-     * process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * immediately and aborts all data uploads to Amazon Web Services. Otherwise, the
+     * file share is not deleted until all data is uploaded to Amazon Web Services.
+     * This process aborts the data upload process, and the file share enters the
+     * <code>FORCE_DELETING</code> status.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline DeleteFileShareRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 

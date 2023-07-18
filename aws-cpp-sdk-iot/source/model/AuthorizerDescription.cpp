@@ -29,7 +29,9 @@ AuthorizerDescription::AuthorizerDescription() :
     m_creationDateHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_signingDisabled(false),
-    m_signingDisabledHasBeenSet(false)
+    m_signingDisabledHasBeenSet(false),
+    m_enableCachingForHttp(false),
+    m_enableCachingForHttpHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ AuthorizerDescription::AuthorizerDescription(JsonView jsonValue) :
     m_creationDateHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_signingDisabled(false),
-    m_signingDisabledHasBeenSet(false)
+    m_signingDisabledHasBeenSet(false),
+    m_enableCachingForHttp(false),
+    m_enableCachingForHttpHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +121,13 @@ AuthorizerDescription& AuthorizerDescription::operator =(JsonView jsonValue)
     m_signingDisabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableCachingForHttp"))
+  {
+    m_enableCachingForHttp = jsonValue.GetBool("enableCachingForHttp");
+
+    m_enableCachingForHttpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +188,12 @@ JsonValue AuthorizerDescription::Jsonize() const
   if(m_signingDisabledHasBeenSet)
   {
    payload.WithBool("signingDisabled", m_signingDisabled);
+
+  }
+
+  if(m_enableCachingForHttpHasBeenSet)
+  {
+   payload.WithBool("enableCachingForHttp", m_enableCachingForHttp);
 
   }
 

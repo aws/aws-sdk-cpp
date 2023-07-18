@@ -28,6 +28,7 @@ DatastoreProperties::DatastoreProperties() :
     m_datastoreTypeVersion(FHIRVersion::NOT_SET),
     m_datastoreTypeVersionHasBeenSet(false),
     m_datastoreEndpointHasBeenSet(false),
+    m_sseConfigurationHasBeenSet(false),
     m_preloadDataConfigHasBeenSet(false)
 {
 }
@@ -42,6 +43,7 @@ DatastoreProperties::DatastoreProperties(JsonView jsonValue) :
     m_datastoreTypeVersion(FHIRVersion::NOT_SET),
     m_datastoreTypeVersionHasBeenSet(false),
     m_datastoreEndpointHasBeenSet(false),
+    m_sseConfigurationHasBeenSet(false),
     m_preloadDataConfigHasBeenSet(false)
 {
   *this = jsonValue;
@@ -98,6 +100,13 @@ DatastoreProperties& DatastoreProperties::operator =(JsonView jsonValue)
     m_datastoreEndpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SseConfiguration"))
+  {
+    m_sseConfiguration = jsonValue.GetObject("SseConfiguration");
+
+    m_sseConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PreloadDataConfig"))
   {
     m_preloadDataConfig = jsonValue.GetObject("PreloadDataConfig");
@@ -148,6 +157,12 @@ JsonValue DatastoreProperties::Jsonize() const
   if(m_datastoreEndpointHasBeenSet)
   {
    payload.WithString("DatastoreEndpoint", m_datastoreEndpoint);
+
+  }
+
+  if(m_sseConfigurationHasBeenSet)
+  {
+   payload.WithObject("SseConfiguration", m_sseConfiguration.Jsonize());
 
   }
 

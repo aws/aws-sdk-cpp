@@ -35,7 +35,12 @@ JourneyResponse::JourneyResponse() :
     m_startConditionHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_waitForQuietTime(false),
+    m_waitForQuietTimeHasBeenSet(false),
+    m_refreshOnSegmentUpdate(false),
+    m_refreshOnSegmentUpdateHasBeenSet(false),
+    m_journeyChannelSettingsHasBeenSet(false)
 {
 }
 
@@ -56,7 +61,12 @@ JourneyResponse::JourneyResponse(JsonView jsonValue) :
     m_startConditionHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_waitForQuietTime(false),
+    m_waitForQuietTimeHasBeenSet(false),
+    m_refreshOnSegmentUpdate(false),
+    m_refreshOnSegmentUpdateHasBeenSet(false),
+    m_journeyChannelSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -174,6 +184,27 @@ JourneyResponse& JourneyResponse::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WaitForQuietTime"))
+  {
+    m_waitForQuietTime = jsonValue.GetBool("WaitForQuietTime");
+
+    m_waitForQuietTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RefreshOnSegmentUpdate"))
+  {
+    m_refreshOnSegmentUpdate = jsonValue.GetBool("RefreshOnSegmentUpdate");
+
+    m_refreshOnSegmentUpdateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JourneyChannelSettings"))
+  {
+    m_journeyChannelSettings = jsonValue.GetObject("JourneyChannelSettings");
+
+    m_journeyChannelSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -277,6 +308,24 @@ JsonValue JourneyResponse::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_waitForQuietTimeHasBeenSet)
+  {
+   payload.WithBool("WaitForQuietTime", m_waitForQuietTime);
+
+  }
+
+  if(m_refreshOnSegmentUpdateHasBeenSet)
+  {
+   payload.WithBool("RefreshOnSegmentUpdate", m_refreshOnSegmentUpdate);
+
+  }
+
+  if(m_journeyChannelSettingsHasBeenSet)
+  {
+   payload.WithObject("JourneyChannelSettings", m_journeyChannelSettings.Jsonize());
 
   }
 

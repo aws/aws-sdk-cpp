@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Currently, the <code>CapacitySize</code> API is not supported.</p><p><h3>See
+   * <p>Specifies the endpoint capacity to activate for production.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CapacitySize">AWS
    * API Reference</a></p>
@@ -39,53 +39,75 @@ namespace Model
 
 
     /**
-     * <p>This API is not supported.</p>
+     * <p>Specifies the endpoint capacity type.</p> <ul> <li> <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of
+     * instances.</p> </li> <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint
+     * activates based on the specified percentage of capacity.</p> </li> </ul>
      */
     inline const CapacitySizeType& GetType() const{ return m_type; }
 
     /**
-     * <p>This API is not supported.</p>
+     * <p>Specifies the endpoint capacity type.</p> <ul> <li> <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of
+     * instances.</p> </li> <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint
+     * activates based on the specified percentage of capacity.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>This API is not supported.</p>
+     * <p>Specifies the endpoint capacity type.</p> <ul> <li> <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of
+     * instances.</p> </li> <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint
+     * activates based on the specified percentage of capacity.</p> </li> </ul>
      */
     inline void SetType(const CapacitySizeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>This API is not supported.</p>
+     * <p>Specifies the endpoint capacity type.</p> <ul> <li> <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of
+     * instances.</p> </li> <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint
+     * activates based on the specified percentage of capacity.</p> </li> </ul>
      */
     inline void SetType(CapacitySizeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>This API is not supported.</p>
+     * <p>Specifies the endpoint capacity type.</p> <ul> <li> <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of
+     * instances.</p> </li> <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint
+     * activates based on the specified percentage of capacity.</p> </li> </ul>
      */
     inline CapacitySize& WithType(const CapacitySizeType& value) { SetType(value); return *this;}
 
     /**
-     * <p>This API is not supported.</p>
+     * <p>Specifies the endpoint capacity type.</p> <ul> <li> <p>
+     * <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of
+     * instances.</p> </li> <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint
+     * activates based on the specified percentage of capacity.</p> </li> </ul>
      */
     inline CapacitySize& WithType(CapacitySizeType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Defines the capacity size, either as a number of instances or a capacity
+     * percentage.</p>
      */
     inline int GetValue() const{ return m_value; }
 
     /**
-     * <p/>
+     * <p>Defines the capacity size, either as a number of instances or a capacity
+     * percentage.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Defines the capacity size, either as a number of instances or a capacity
+     * percentage.</p>
      */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p/>
+     * <p>Defines the capacity size, either as a number of instances or a capacity
+     * percentage.</p>
      */
     inline CapacitySize& WithValue(int value) { SetValue(value); return *this;}
 

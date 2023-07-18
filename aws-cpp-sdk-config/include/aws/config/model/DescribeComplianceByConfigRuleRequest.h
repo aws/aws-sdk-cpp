@@ -40,47 +40,47 @@ namespace Model
 
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const{ return m_configRuleNames; }
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline DescribeComplianceByConfigRuleRequest& WithConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetConfigRuleNames(value); return *this;}
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline DescribeComplianceByConfigRuleRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline DescribeComplianceByConfigRuleRequest& AddConfigRuleNames(const Aws::String& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline DescribeComplianceByConfigRuleRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     * <p>Specify one or more Config rule names to filter the results by rule.</p>
      */
     inline DescribeComplianceByConfigRuleRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 

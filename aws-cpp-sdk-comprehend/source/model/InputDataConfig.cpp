@@ -21,14 +21,16 @@ namespace Model
 InputDataConfig::InputDataConfig() : 
     m_s3UriHasBeenSet(false),
     m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false)
+    m_inputFormatHasBeenSet(false),
+    m_documentReaderConfigHasBeenSet(false)
 {
 }
 
 InputDataConfig::InputDataConfig(JsonView jsonValue) : 
     m_s3UriHasBeenSet(false),
     m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false)
+    m_inputFormatHasBeenSet(false),
+    m_documentReaderConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
     m_inputFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentReaderConfig"))
+  {
+    m_documentReaderConfig = jsonValue.GetObject("DocumentReaderConfig");
+
+    m_documentReaderConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue InputDataConfig::Jsonize() const
   if(m_inputFormatHasBeenSet)
   {
    payload.WithString("InputFormat", InputFormatMapper::GetNameForInputFormat(m_inputFormat));
+  }
+
+  if(m_documentReaderConfigHasBeenSet)
+  {
+   payload.WithObject("DocumentReaderConfig", m_documentReaderConfig.Jsonize());
+
   }
 
   return payload;

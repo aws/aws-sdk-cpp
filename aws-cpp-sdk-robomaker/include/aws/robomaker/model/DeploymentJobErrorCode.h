@@ -35,7 +35,11 @@ namespace Model
     PostLaunchFileFailure,
     BadPermissionError,
     DownloadConditionFailed,
-    InternalServerError
+    BadLambdaAssociated,
+    InternalServerError,
+    RobotApplicationDoesNotExist,
+    DeploymentFleetDoesNotExist,
+    FleetDeploymentTimeout
   };
 
 namespace DeploymentJobErrorCodeMapper

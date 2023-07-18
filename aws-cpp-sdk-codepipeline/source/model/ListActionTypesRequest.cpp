@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 ListActionTypesRequest::ListActionTypesRequest() : 
     m_actionOwnerFilter(ActionOwner::NOT_SET),
     m_actionOwnerFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_regionFilterHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String ListActionTypesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_regionFilterHasBeenSet)
+  {
+   payload.WithString("regionFilter", m_regionFilter);
 
   }
 

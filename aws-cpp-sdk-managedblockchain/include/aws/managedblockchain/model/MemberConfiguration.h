@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/model/MemberFrameworkConfiguration.h>
 #include <aws/managedblockchain/model/MemberLogPublishingConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration properties of the member.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration properties of the member.</p> <p>Applies only to Hyperledger
+   * Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberConfiguration">AWS
    * API Reference</a></p>
    */
@@ -194,6 +196,287 @@ namespace Model
      */
     inline MemberConfiguration& WithLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
+     * more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
+     */
+    inline MemberConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline MemberConfiguration& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline MemberConfiguration& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
+     * Management Service (AWS KMS) to use for encryption at rest in the member. This
+     * parameter is inherited by any nodes that this member creates.</p> <p>Use one of
+     * the following options to specify this parameter:</p> <ul> <li> <p> <b>Undefined
+     * or empty string</b> - The member uses an AWS owned KMS key for encryption by
+     * default.</p> </li> <li> <p> <b>A valid symmetric customer managed KMS key</b> -
+     * The member uses the specified key for encryption.</p> <p>Amazon Managed
+     * Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul>
+     */
+    inline MemberConfiguration& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -207,6 +490,12 @@ namespace Model
 
     MemberLogPublishingConfiguration m_logPublishingConfiguration;
     bool m_logPublishingConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet;
   };
 
 } // namespace Model

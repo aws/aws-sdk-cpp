@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Details of the AWS Firewall Manager protocols list.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Details of the Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ProtocolsListDataSummary">AWS
    * API Reference</a></p>
    */
@@ -163,47 +162,47 @@ namespace Model
 
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProtocolsList() const{ return m_protocolsList; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline bool ProtocolsListHasBeenSet() const { return m_protocolsListHasBeenSet; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline void SetProtocolsList(const Aws::Vector<Aws::String>& value) { m_protocolsListHasBeenSet = true; m_protocolsList = value; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline void SetProtocolsList(Aws::Vector<Aws::String>&& value) { m_protocolsListHasBeenSet = true; m_protocolsList = std::move(value); }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListDataSummary& WithProtocolsList(const Aws::Vector<Aws::String>& value) { SetProtocolsList(value); return *this;}
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListDataSummary& WithProtocolsList(Aws::Vector<Aws::String>&& value) { SetProtocolsList(std::move(value)); return *this;}
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListDataSummary& AddProtocolsList(const Aws::String& value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(value); return *this; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListDataSummary& AddProtocolsList(Aws::String&& value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListDataSummary& AddProtocolsList(const char* value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(value); return *this; }
 

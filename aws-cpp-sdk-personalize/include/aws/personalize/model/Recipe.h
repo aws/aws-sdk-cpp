@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Provides information about a recipe. Each recipe provides an algorithm that
-   * Amazon Personalize uses in model training when you use the <a>CreateSolution</a>
+   * Amazon Personalize uses in model training when you use the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
    * operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Recipe">AWS
    * API Reference</a></p>

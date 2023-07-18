@@ -47,7 +47,13 @@ InstancePatchState::InstancePatchState() :
     m_operationHasBeenSet(false),
     m_lastNoRebootInstallOperationTimeHasBeenSet(false),
     m_rebootOption(RebootOption::NOT_SET),
-    m_rebootOptionHasBeenSet(false)
+    m_rebootOptionHasBeenSet(false),
+    m_criticalNonCompliantCount(0),
+    m_criticalNonCompliantCountHasBeenSet(false),
+    m_securityNonCompliantCount(0),
+    m_securityNonCompliantCountHasBeenSet(false),
+    m_otherNonCompliantCount(0),
+    m_otherNonCompliantCountHasBeenSet(false)
 {
 }
 
@@ -80,7 +86,13 @@ InstancePatchState::InstancePatchState(JsonView jsonValue) :
     m_operationHasBeenSet(false),
     m_lastNoRebootInstallOperationTimeHasBeenSet(false),
     m_rebootOption(RebootOption::NOT_SET),
-    m_rebootOptionHasBeenSet(false)
+    m_rebootOptionHasBeenSet(false),
+    m_criticalNonCompliantCount(0),
+    m_criticalNonCompliantCountHasBeenSet(false),
+    m_securityNonCompliantCount(0),
+    m_securityNonCompliantCountHasBeenSet(false),
+    m_otherNonCompliantCount(0),
+    m_otherNonCompliantCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -220,6 +232,27 @@ InstancePatchState& InstancePatchState::operator =(JsonView jsonValue)
     m_rebootOptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CriticalNonCompliantCount"))
+  {
+    m_criticalNonCompliantCount = jsonValue.GetInteger("CriticalNonCompliantCount");
+
+    m_criticalNonCompliantCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecurityNonCompliantCount"))
+  {
+    m_securityNonCompliantCount = jsonValue.GetInteger("SecurityNonCompliantCount");
+
+    m_securityNonCompliantCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OtherNonCompliantCount"))
+  {
+    m_otherNonCompliantCount = jsonValue.GetInteger("OtherNonCompliantCount");
+
+    m_otherNonCompliantCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -334,6 +367,24 @@ JsonValue InstancePatchState::Jsonize() const
   if(m_rebootOptionHasBeenSet)
   {
    payload.WithString("RebootOption", RebootOptionMapper::GetNameForRebootOption(m_rebootOption));
+  }
+
+  if(m_criticalNonCompliantCountHasBeenSet)
+  {
+   payload.WithInteger("CriticalNonCompliantCount", m_criticalNonCompliantCount);
+
+  }
+
+  if(m_securityNonCompliantCountHasBeenSet)
+  {
+   payload.WithInteger("SecurityNonCompliantCount", m_securityNonCompliantCount);
+
+  }
+
+  if(m_otherNonCompliantCountHasBeenSet)
+  {
+   payload.WithInteger("OtherNonCompliantCount", m_otherNonCompliantCount);
+
   }
 
   return payload;

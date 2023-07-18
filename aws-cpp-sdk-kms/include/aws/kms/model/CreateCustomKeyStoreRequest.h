@@ -36,120 +36,120 @@ namespace Model
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetCustomKeyStoreName() const{ return m_customKeyStoreName; }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline bool CustomKeyStoreNameHasBeenSet() const { return m_customKeyStoreNameHasBeenSet; }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline void SetCustomKeyStoreName(const Aws::String& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = value; }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline void SetCustomKeyStoreName(Aws::String&& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = std::move(value); }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline void SetCustomKeyStoreName(const char* value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName.assign(value); }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(const Aws::String& value) { SetCustomKeyStoreName(value); return *this;}
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(Aws::String&& value) { SetCustomKeyStoreName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
-     * in your AWS account.</p>
+     * in your Amazon Web Services account.</p>
      */
     inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(const char* value) { SetCustomKeyStoreName(value); return *this;}
 
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
     inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
     inline bool CloudHsmClusterIdHasBeenSet() const { return m_cloudHsmClusterIdHasBeenSet; }
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
     inline void SetCloudHsmClusterId(const Aws::String& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = value; }
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
     inline void SetCloudHsmClusterId(Aws::String&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::move(value); }
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
     inline void SetCloudHsmClusterId(const char* value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId.assign(value); }
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
     inline CreateCustomKeyStoreRequest& WithCloudHsmClusterId(const Aws::String& value) { SetCloudHsmClusterId(value); return *this;}
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
     inline CreateCustomKeyStoreRequest& WithCloudHsmClusterId(Aws::String&& value) { SetCloudHsmClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
-     * cluster ID of any active AWS CloudHSM cluster that is not already associated
-     * with a custom key store. To find the cluster ID, use the <a
+     * <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster
+     * ID of any active CloudHSM cluster that is not already associated with a custom
+     * key store. To find the cluster ID, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
@@ -224,96 +224,88 @@ namespace Model
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline const Aws::String& GetKeyStorePassword() const{ return m_keyStorePassword; }
 
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline bool KeyStorePasswordHasBeenSet() const { return m_keyStorePasswordHasBeenSet; }
 
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline void SetKeyStorePassword(const Aws::String& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = value; }
 
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline void SetKeyStorePassword(Aws::String&& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = std::move(value); }
 
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline void SetKeyStorePassword(const char* value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword.assign(value); }
 
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline CreateCustomKeyStoreRequest& WithKeyStorePassword(const Aws::String& value) { SetKeyStorePassword(value); return *this;}
 
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline CreateCustomKeyStoreRequest& WithKeyStorePassword(Aws::String&& value) { SetKeyStorePassword(std::move(value)); return *this;}
 
     /**
      * <p>Enter the password of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
-     * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
-     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
-     * <code>kmsuser</code> account password; it does not change the password in the
-     * AWS CloudHSM cluster.</p>
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
+     * cluster. KMS logs into the cluster as this user to manage key material on your
+     * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
+     * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
+     * password; it does not change the password in the CloudHSM cluster.</p>
      */
     inline CreateCustomKeyStoreRequest& WithKeyStorePassword(const char* value) { SetKeyStorePassword(value); return *this;}
 

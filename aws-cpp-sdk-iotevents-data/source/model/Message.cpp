@@ -22,14 +22,16 @@ namespace Model
 Message::Message() : 
     m_messageIdHasBeenSet(false),
     m_inputNameHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+    m_payloadHasBeenSet(false),
+    m_timestampHasBeenSet(false)
 {
 }
 
 Message::Message(JsonView jsonValue) : 
     m_messageIdHasBeenSet(false),
     m_inputNameHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+    m_payloadHasBeenSet(false),
+    m_timestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ Message& Message::operator =(JsonView jsonValue)
     m_payloadHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timestamp"))
+  {
+    m_timestamp = jsonValue.GetObject("timestamp");
+
+    m_timestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue Message::Jsonize() const
   if(m_payloadHasBeenSet)
   {
    payload.WithString("payload", HashingUtils::Base64Encode(m_payload));
+  }
+
+  if(m_timestampHasBeenSet)
+  {
+   payload.WithObject("timestamp", m_timestamp.Jsonize());
+
   }
 
   return payload;

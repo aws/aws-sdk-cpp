@@ -112,50 +112,50 @@ namespace Model
 
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline const Aws::Vector<Aws::String>& GetReportGroups() const{ return m_reportGroups; }
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline void SetReportGroups(const Aws::Vector<Aws::String>& value) { m_reportGroups = value; }
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline void SetReportGroups(Aws::Vector<Aws::String>&& value) { m_reportGroups = std::move(value); }
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedReportGroupsResult& WithReportGroups(const Aws::Vector<Aws::String>& value) { SetReportGroups(value); return *this;}
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedReportGroupsResult& WithReportGroups(Aws::Vector<Aws::String>&& value) { SetReportGroups(std::move(value)); return *this;}
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedReportGroupsResult& AddReportGroups(const Aws::String& value) { m_reportGroups.push_back(value); return *this; }
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedReportGroupsResult& AddReportGroups(Aws::String&& value) { m_reportGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The list of ARNs for the report groups shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the report groups shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedReportGroupsResult& AddReportGroups(const char* value) { m_reportGroups.push_back(value); return *this; }
 

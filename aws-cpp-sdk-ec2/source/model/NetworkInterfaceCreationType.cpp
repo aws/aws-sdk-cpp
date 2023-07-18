@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int efa_HASH = HashingUtils::HashString("efa");
+        static const int branch_HASH = HashingUtils::HashString("branch");
+        static const int trunk_HASH = HashingUtils::HashString("trunk");
 
 
         NetworkInterfaceCreationType GetNetworkInterfaceCreationTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == efa_HASH)
           {
             return NetworkInterfaceCreationType::efa;
+          }
+          else if (hashCode == branch_HASH)
+          {
+            return NetworkInterfaceCreationType::branch;
+          }
+          else if (hashCode == trunk_HASH)
+          {
+            return NetworkInterfaceCreationType::trunk;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +56,10 @@ namespace Aws
           {
           case NetworkInterfaceCreationType::efa:
             return "efa";
+          case NetworkInterfaceCreationType::branch:
+            return "branch";
+          case NetworkInterfaceCreationType::trunk:
+            return "trunk";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

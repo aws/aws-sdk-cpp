@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The retention settings for a channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of the retention settings for a channel.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelRetentionSettings">AWS
    * API Reference</a></p>
    */
@@ -36,22 +37,22 @@ namespace Model
 
 
     /**
-     * <p>The time in days to retain a channel.</p>
+     * <p>The time in days to retain the messages in a channel.</p>
      */
     inline int GetRetentionDays() const{ return m_retentionDays; }
 
     /**
-     * <p>The time in days to retain a channel.</p>
+     * <p>The time in days to retain the messages in a channel.</p>
      */
     inline bool RetentionDaysHasBeenSet() const { return m_retentionDaysHasBeenSet; }
 
     /**
-     * <p>The time in days to retain a channel.</p>
+     * <p>The time in days to retain the messages in a channel.</p>
      */
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
 
     /**
-     * <p>The time in days to retain a channel.</p>
+     * <p>The time in days to retain the messages in a channel.</p>
      */
     inline ChannelRetentionSettings& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
 

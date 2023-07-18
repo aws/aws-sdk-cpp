@@ -206,42 +206,146 @@ namespace Model
 
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline const Aws::String& GetLifecycleState() const{ return m_lifecycleState; }
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline void SetLifecycleState(const char* value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState.assign(value); }
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(std::move(value)); return *this;}
 
     /**
-     * <p>The lifecycle state for the instance.</p>
+     * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
+     * not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
+     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
+     * | <code>Terminating</code> | <code>Terminating:Wait</code> |
+     * <code>Terminating:Proceed</code> | <code>Terminated</code> |
+     * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const char* value) { SetLifecycleState(value); return *this;}
 

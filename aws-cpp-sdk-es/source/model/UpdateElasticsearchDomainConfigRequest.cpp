@@ -23,7 +23,12 @@ UpdateElasticsearchDomainConfigRequest::UpdateElasticsearchDomainConfigRequest()
     m_accessPoliciesHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -98,6 +103,30 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_nodeToNodeEncryptionOptionsHasBeenSet)
+  {
+   payload.WithObject("NodeToNodeEncryptionOptions", m_nodeToNodeEncryptionOptions.Jsonize());
+
+  }
+
+  if(m_encryptionAtRestOptionsHasBeenSet)
+  {
+   payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
+
+  }
+
+  if(m_autoTuneOptionsHasBeenSet)
+  {
+   payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

@@ -142,8 +142,8 @@ namespace Model
 
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
@@ -153,8 +153,8 @@ namespace Model
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
@@ -164,8 +164,8 @@ namespace Model
     inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
@@ -175,8 +175,8 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
@@ -186,8 +186,8 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
@@ -197,8 +197,8 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
@@ -208,8 +208,8 @@ namespace Model
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
@@ -219,8 +219,8 @@ namespace Model
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p>  <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
      * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or

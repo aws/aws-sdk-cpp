@@ -38,10 +38,12 @@ Nodegroup::Nodegroup() :
     m_amiTypeHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_updateConfigHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -67,10 +69,12 @@ Nodegroup::Nodegroup(JsonView jsonValue) :
     m_amiTypeHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_updateConfigHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -200,6 +204,16 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     m_labelsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taints"))
+  {
+    Array<JsonView> taintsJsonList = jsonValue.GetArray("taints");
+    for(unsigned taintsIndex = 0; taintsIndex < taintsJsonList.GetLength(); ++taintsIndex)
+    {
+      m_taints.push_back(taintsJsonList[taintsIndex].AsObject());
+    }
+    m_taintsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("resources"))
   {
     m_resources = jsonValue.GetObject("resources");
@@ -219,6 +233,13 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     m_health = jsonValue.GetObject("health");
 
     m_healthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateConfig"))
+  {
+    m_updateConfig = jsonValue.GetObject("updateConfig");
+
+    m_updateConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("launchTemplate"))
@@ -351,6 +372,17 @@ JsonValue Nodegroup::Jsonize() const
 
   }
 
+  if(m_taintsHasBeenSet)
+  {
+   Array<JsonValue> taintsJsonList(m_taints.size());
+   for(unsigned taintsIndex = 0; taintsIndex < taintsJsonList.GetLength(); ++taintsIndex)
+   {
+     taintsJsonList[taintsIndex].AsObject(m_taints[taintsIndex].Jsonize());
+   }
+   payload.WithArray("taints", std::move(taintsJsonList));
+
+  }
+
   if(m_resourcesHasBeenSet)
   {
    payload.WithObject("resources", m_resources.Jsonize());
@@ -366,6 +398,12 @@ JsonValue Nodegroup::Jsonize() const
   if(m_healthHasBeenSet)
   {
    payload.WithObject("health", m_health.Jsonize());
+
+  }
+
+  if(m_updateConfigHasBeenSet)
+  {
+   payload.WithObject("updateConfig", m_updateConfig.Jsonize());
 
   }
 

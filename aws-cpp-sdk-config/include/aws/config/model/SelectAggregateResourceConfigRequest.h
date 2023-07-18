@@ -138,26 +138,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of query results returned on each page. AWS Config also
-     * allows the Limit request parameter.</p>
+     * <p>The maximum number of query results returned on each page. Config also allows
+     * the Limit request parameter.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of query results returned on each page. AWS Config also
-     * allows the Limit request parameter.</p>
+     * <p>The maximum number of query results returned on each page. Config also allows
+     * the Limit request parameter.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of query results returned on each page. AWS Config also
-     * allows the Limit request parameter.</p>
+     * <p>The maximum number of query results returned on each page. Config also allows
+     * the Limit request parameter.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of query results returned on each page. AWS Config also
-     * allows the Limit request parameter.</p>
+     * <p>The maximum number of query results returned on each page. Config also allows
+     * the Limit request parameter.</p>
      */
     inline SelectAggregateResourceConfigRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

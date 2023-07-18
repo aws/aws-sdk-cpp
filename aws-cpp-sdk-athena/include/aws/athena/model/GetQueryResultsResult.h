@@ -34,17 +34,20 @@ namespace Model
 
 
     /**
-     * <p>The number of rows inserted with a CREATE TABLE AS SELECT statement. </p>
+     * <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code>
+     * statement. </p>
      */
     inline long long GetUpdateCount() const{ return m_updateCount; }
 
     /**
-     * <p>The number of rows inserted with a CREATE TABLE AS SELECT statement. </p>
+     * <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code>
+     * statement. </p>
      */
     inline void SetUpdateCount(long long value) { m_updateCount = value; }
 
     /**
-     * <p>The number of rows inserted with a CREATE TABLE AS SELECT statement. </p>
+     * <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code>
+     * statement. </p>
      */
     inline GetQueryResultsResult& WithUpdateCount(long long value) { SetUpdateCount(value); return *this;}
 

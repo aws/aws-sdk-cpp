@@ -227,42 +227,42 @@ namespace Model
 
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline OpsItemSummary& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline OpsItemSummary& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The impacted AWS resource.</p>
+     * <p>The impacted Amazon Web Services resource.</p>
      */
     inline OpsItemSummary& WithSource(const char* value) { SetSource(value); return *this;}
 

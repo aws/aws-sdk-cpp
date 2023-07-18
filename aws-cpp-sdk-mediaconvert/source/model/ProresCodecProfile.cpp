@@ -24,6 +24,8 @@ namespace Aws
         static const int APPLE_PRORES_422_HQ_HASH = HashingUtils::HashString("APPLE_PRORES_422_HQ");
         static const int APPLE_PRORES_422_LT_HASH = HashingUtils::HashString("APPLE_PRORES_422_LT");
         static const int APPLE_PRORES_422_PROXY_HASH = HashingUtils::HashString("APPLE_PRORES_422_PROXY");
+        static const int APPLE_PRORES_4444_HASH = HashingUtils::HashString("APPLE_PRORES_4444");
+        static const int APPLE_PRORES_4444_XQ_HASH = HashingUtils::HashString("APPLE_PRORES_4444_XQ");
 
 
         ProresCodecProfile GetProresCodecProfileForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == APPLE_PRORES_422_PROXY_HASH)
           {
             return ProresCodecProfile::APPLE_PRORES_422_PROXY;
+          }
+          else if (hashCode == APPLE_PRORES_4444_HASH)
+          {
+            return ProresCodecProfile::APPLE_PRORES_4444;
+          }
+          else if (hashCode == APPLE_PRORES_4444_XQ_HASH)
+          {
+            return ProresCodecProfile::APPLE_PRORES_4444_XQ;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +77,10 @@ namespace Aws
             return "APPLE_PRORES_422_LT";
           case ProresCodecProfile::APPLE_PRORES_422_PROXY:
             return "APPLE_PRORES_422_PROXY";
+          case ProresCodecProfile::APPLE_PRORES_4444:
+            return "APPLE_PRORES_4444";
+          case ProresCodecProfile::APPLE_PRORES_4444_XQ:
+            return "APPLE_PRORES_4444_XQ";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

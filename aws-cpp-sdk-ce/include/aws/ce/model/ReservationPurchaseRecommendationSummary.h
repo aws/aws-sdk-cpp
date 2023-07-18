@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>A summary about this recommendation, such as the currency code, the amount
-   * that AWS estimates that you could save, and the total amount of reservation to
-   * purchase.</p><p><h3>See Also:</h3>   <a
+   * that Amazon Web Services estimates that you could save, and the total amount of
+   * reservation to purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendationSummary">AWS
    * API Reference</a></p>
    */
@@ -40,99 +40,99 @@ namespace Model
 
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline const Aws::String& GetTotalEstimatedMonthlySavingsAmount() const{ return m_totalEstimatedMonthlySavingsAmount; }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline bool TotalEstimatedMonthlySavingsAmountHasBeenSet() const { return m_totalEstimatedMonthlySavingsAmountHasBeenSet; }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline void SetTotalEstimatedMonthlySavingsAmount(const Aws::String& value) { m_totalEstimatedMonthlySavingsAmountHasBeenSet = true; m_totalEstimatedMonthlySavingsAmount = value; }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline void SetTotalEstimatedMonthlySavingsAmount(Aws::String&& value) { m_totalEstimatedMonthlySavingsAmountHasBeenSet = true; m_totalEstimatedMonthlySavingsAmount = std::move(value); }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline void SetTotalEstimatedMonthlySavingsAmount(const char* value) { m_totalEstimatedMonthlySavingsAmountHasBeenSet = true; m_totalEstimatedMonthlySavingsAmount.assign(value); }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline ReservationPurchaseRecommendationSummary& WithTotalEstimatedMonthlySavingsAmount(const Aws::String& value) { SetTotalEstimatedMonthlySavingsAmount(value); return *this;}
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline ReservationPurchaseRecommendationSummary& WithTotalEstimatedMonthlySavingsAmount(Aws::String&& value) { SetTotalEstimatedMonthlySavingsAmount(std::move(value)); return *this;}
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month.</p>
      */
     inline ReservationPurchaseRecommendationSummary& WithTotalEstimatedMonthlySavingsAmount(const char* value) { SetTotalEstimatedMonthlySavingsAmount(value); return *this;}
 
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline const Aws::String& GetTotalEstimatedMonthlySavingsPercentage() const{ return m_totalEstimatedMonthlySavingsPercentage; }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline bool TotalEstimatedMonthlySavingsPercentageHasBeenSet() const { return m_totalEstimatedMonthlySavingsPercentageHasBeenSet; }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline void SetTotalEstimatedMonthlySavingsPercentage(const Aws::String& value) { m_totalEstimatedMonthlySavingsPercentageHasBeenSet = true; m_totalEstimatedMonthlySavingsPercentage = value; }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline void SetTotalEstimatedMonthlySavingsPercentage(Aws::String&& value) { m_totalEstimatedMonthlySavingsPercentageHasBeenSet = true; m_totalEstimatedMonthlySavingsPercentage = std::move(value); }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline void SetTotalEstimatedMonthlySavingsPercentage(const char* value) { m_totalEstimatedMonthlySavingsPercentageHasBeenSet = true; m_totalEstimatedMonthlySavingsPercentage.assign(value); }
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline ReservationPurchaseRecommendationSummary& WithTotalEstimatedMonthlySavingsPercentage(const Aws::String& value) { SetTotalEstimatedMonthlySavingsPercentage(value); return *this;}
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline ReservationPurchaseRecommendationSummary& WithTotalEstimatedMonthlySavingsPercentage(Aws::String&& value) { SetTotalEstimatedMonthlySavingsPercentage(std::move(value)); return *this;}
 
     /**
-     * <p>The total amount that AWS estimates that this recommendation could save you
-     * in a month, as a percentage of your costs.</p>
+     * <p>The total amount that Amazon Web Services estimates that this recommendation
+     * could save you in a month, as a percentage of your costs.</p>
      */
     inline ReservationPurchaseRecommendationSummary& WithTotalEstimatedMonthlySavingsPercentage(const char* value) { SetTotalEstimatedMonthlySavingsPercentage(value); return *this;}
 

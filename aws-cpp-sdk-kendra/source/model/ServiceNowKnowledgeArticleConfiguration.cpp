@@ -25,7 +25,8 @@ ServiceNowKnowledgeArticleConfiguration::ServiceNowKnowledgeArticleConfiguration
     m_excludeAttachmentFilePatternsHasBeenSet(false),
     m_documentDataFieldNameHasBeenSet(false),
     m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+    m_fieldMappingsHasBeenSet(false),
+    m_filterQueryHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ServiceNowKnowledgeArticleConfiguration::ServiceNowKnowledgeArticleConfiguration
     m_excludeAttachmentFilePatternsHasBeenSet(false),
     m_documentDataFieldNameHasBeenSet(false),
     m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+    m_fieldMappingsHasBeenSet(false),
+    m_filterQueryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,13 @@ ServiceNowKnowledgeArticleConfiguration& ServiceNowKnowledgeArticleConfiguration
     m_fieldMappingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FilterQuery"))
+  {
+    m_filterQuery = jsonValue.GetString("FilterQuery");
+
+    m_filterQueryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +158,12 @@ JsonValue ServiceNowKnowledgeArticleConfiguration::Jsonize() const
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());
    }
    payload.WithArray("FieldMappings", std::move(fieldMappingsJsonList));
+
+  }
+
+  if(m_filterQueryHasBeenSet)
+  {
+   payload.WithString("FilterQuery", m_filterQuery);
 
   }
 

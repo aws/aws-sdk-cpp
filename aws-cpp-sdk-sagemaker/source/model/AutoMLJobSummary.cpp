@@ -28,7 +28,8 @@ AutoMLJobSummary::AutoMLJobSummary() :
     m_creationTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_partialFailureReasonsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ AutoMLJobSummary::AutoMLJobSummary(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_partialFailureReasonsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +107,16 @@ AutoMLJobSummary& AutoMLJobSummary::operator =(JsonView jsonValue)
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PartialFailureReasons"))
+  {
+    Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
+    for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
+    {
+      m_partialFailureReasons.push_back(partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject());
+    }
+    m_partialFailureReasonsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +164,17 @@ JsonValue AutoMLJobSummary::Jsonize() const
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("FailureReason", m_failureReason);
+
+  }
+
+  if(m_partialFailureReasonsHasBeenSet)
+  {
+   Array<JsonValue> partialFailureReasonsJsonList(m_partialFailureReasons.size());
+   for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
+   {
+     partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject(m_partialFailureReasons[partialFailureReasonsIndex].Jsonize());
+   }
+   payload.WithArray("PartialFailureReasons", std::move(partialFailureReasonsJsonList));
 
   }
 

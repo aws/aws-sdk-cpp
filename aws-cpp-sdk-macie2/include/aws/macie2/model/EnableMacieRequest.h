@@ -85,81 +85,81 @@ namespace Model
 
 
     /**
-     * Specifies how often to publish updates to policy findings for the account. This
-     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
-     * called Amazon CloudWatch Events).
+     * <p>Specifies how often to publish updates to policy findings for the account.
+     * This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * Specifies how often to publish updates to policy findings for the account. This
-     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
-     * called Amazon CloudWatch Events).
+     * <p>Specifies how often to publish updates to policy findings for the account.
+     * This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
-     * Specifies how often to publish updates to policy findings for the account. This
-     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
-     * called Amazon CloudWatch Events).
+     * <p>Specifies how often to publish updates to policy findings for the account.
+     * This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
 
     /**
-     * Specifies how often to publish updates to policy findings for the account. This
-     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
-     * called Amazon CloudWatch Events).
+     * <p>Specifies how often to publish updates to policy findings for the account.
+     * This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * Specifies how often to publish updates to policy findings for the account. This
-     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
-     * called Amazon CloudWatch Events).
+     * <p>Specifies how often to publish updates to policy findings for the account.
+     * This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline EnableMacieRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * Specifies how often to publish updates to policy findings for the account. This
-     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
-     * called Amazon CloudWatch Events).
+     * <p>Specifies how often to publish updates to policy findings for the account.
+     * This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline EnableMacieRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Amazon Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline const MacieStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Amazon Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Amazon Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline void SetStatus(const MacieStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Amazon Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline void SetStatus(MacieStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Amazon Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline EnableMacieRequest& WithStatus(const MacieStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Amazon Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline EnableMacieRequest& WithStatus(MacieStatus&& value) { SetStatus(std::move(value)); return *this;}
 

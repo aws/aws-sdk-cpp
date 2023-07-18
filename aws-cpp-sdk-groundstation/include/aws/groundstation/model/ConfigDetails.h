@@ -7,6 +7,7 @@
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/groundstation/model/AntennaDemodDecodeDetails.h>
 #include <aws/groundstation/model/EndpointDetails.h>
+#include <aws/groundstation/model/S3RecordingDetails.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,37 @@ namespace Model
     
     inline ConfigDetails& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details for an S3 recording <code>Config</code> in a contact.</p>
+     */
+    inline const S3RecordingDetails& GetS3RecordingDetails() const{ return m_s3RecordingDetails; }
+
+    /**
+     * <p>Details for an S3 recording <code>Config</code> in a contact.</p>
+     */
+    inline bool S3RecordingDetailsHasBeenSet() const { return m_s3RecordingDetailsHasBeenSet; }
+
+    /**
+     * <p>Details for an S3 recording <code>Config</code> in a contact.</p>
+     */
+    inline void SetS3RecordingDetails(const S3RecordingDetails& value) { m_s3RecordingDetailsHasBeenSet = true; m_s3RecordingDetails = value; }
+
+    /**
+     * <p>Details for an S3 recording <code>Config</code> in a contact.</p>
+     */
+    inline void SetS3RecordingDetails(S3RecordingDetails&& value) { m_s3RecordingDetailsHasBeenSet = true; m_s3RecordingDetails = std::move(value); }
+
+    /**
+     * <p>Details for an S3 recording <code>Config</code> in a contact.</p>
+     */
+    inline ConfigDetails& WithS3RecordingDetails(const S3RecordingDetails& value) { SetS3RecordingDetails(value); return *this;}
+
+    /**
+     * <p>Details for an S3 recording <code>Config</code> in a contact.</p>
+     */
+    inline ConfigDetails& WithS3RecordingDetails(S3RecordingDetails&& value) { SetS3RecordingDetails(std::move(value)); return *this;}
+
   private:
 
     AntennaDemodDecodeDetails m_antennaDemodDecodeDetails;
@@ -95,6 +127,9 @@ namespace Model
 
     EndpointDetails m_endpointDetails;
     bool m_endpointDetailsHasBeenSet;
+
+    S3RecordingDetails m_s3RecordingDetails;
+    bool m_s3RecordingDetailsHasBeenSet;
   };
 
 } // namespace Model

@@ -24,7 +24,8 @@ namespace Model
     MP4_FILE,
     MEDIACONNECT,
     INPUT_DEVICE,
-    AWS_CDI
+    AWS_CDI,
+    TS_FILE
   };
 
 namespace InputTypeMapper

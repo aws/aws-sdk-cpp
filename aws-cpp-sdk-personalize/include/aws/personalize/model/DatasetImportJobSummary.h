@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a dataset import job. For a complete
-   * listing, call the <a>DescribeDatasetImportJob</a> API.</p><p><h3>See Also:</h3> 
-   * <a
+   * listing, call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetImportJobSummary">AWS
    * API Reference</a></p>
    */
@@ -211,32 +212,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline DatasetImportJobSummary& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline DatasetImportJobSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 

@@ -118,6 +118,47 @@ namespace Model
      */
     inline OtaaV1_0_x& WithAppEui(const char* value) { SetAppEui(value); return *this;}
 
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline const Aws::String& GetGenAppKey() const{ return m_genAppKey; }
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline bool GenAppKeyHasBeenSet() const { return m_genAppKeyHasBeenSet; }
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline void SetGenAppKey(const Aws::String& value) { m_genAppKeyHasBeenSet = true; m_genAppKey = value; }
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline void SetGenAppKey(Aws::String&& value) { m_genAppKeyHasBeenSet = true; m_genAppKey = std::move(value); }
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline void SetGenAppKey(const char* value) { m_genAppKeyHasBeenSet = true; m_genAppKey.assign(value); }
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline OtaaV1_0_x& WithGenAppKey(const Aws::String& value) { SetGenAppKey(value); return *this;}
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline OtaaV1_0_x& WithGenAppKey(Aws::String&& value) { SetGenAppKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The GenAppKey value.</p>
+     */
+    inline OtaaV1_0_x& WithGenAppKey(const char* value) { SetGenAppKey(value); return *this;}
+
   private:
 
     Aws::String m_appKey;
@@ -125,6 +166,9 @@ namespace Model
 
     Aws::String m_appEui;
     bool m_appEuiHasBeenSet;
+
+    Aws::String m_genAppKey;
+    bool m_genAppKeyHasBeenSet;
   };
 
 } // namespace Model

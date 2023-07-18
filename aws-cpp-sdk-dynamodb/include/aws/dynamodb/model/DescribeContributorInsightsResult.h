@@ -109,68 +109,68 @@ namespace Model
 
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContributorInsightsRuleList() const{ return m_contributorInsightsRuleList; }
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline void SetContributorInsightsRuleList(const Aws::Vector<Aws::String>& value) { m_contributorInsightsRuleList = value; }
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline void SetContributorInsightsRuleList(Aws::Vector<Aws::String>&& value) { m_contributorInsightsRuleList = std::move(value); }
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline DescribeContributorInsightsResult& WithContributorInsightsRuleList(const Aws::Vector<Aws::String>& value) { SetContributorInsightsRuleList(value); return *this;}
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline DescribeContributorInsightsResult& WithContributorInsightsRuleList(Aws::Vector<Aws::String>&& value) { SetContributorInsightsRuleList(std::move(value)); return *this;}
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline DescribeContributorInsightsResult& AddContributorInsightsRuleList(const Aws::String& value) { m_contributorInsightsRuleList.push_back(value); return *this; }
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline DescribeContributorInsightsResult& AddContributorInsightsRuleList(Aws::String&& value) { m_contributorInsightsRuleList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of names of the associated Alpine rules.</p>
+     * <p>List of names of the associated contributor insights rules.</p>
      */
     inline DescribeContributorInsightsResult& AddContributorInsightsRuleList(const char* value) { m_contributorInsightsRuleList.push_back(value); return *this; }
 
 
     /**
-     * <p>Current Status contributor insights.</p>
+     * <p>Current status of contributor insights.</p>
      */
     inline const ContributorInsightsStatus& GetContributorInsightsStatus() const{ return m_contributorInsightsStatus; }
 
     /**
-     * <p>Current Status contributor insights.</p>
+     * <p>Current status of contributor insights.</p>
      */
     inline void SetContributorInsightsStatus(const ContributorInsightsStatus& value) { m_contributorInsightsStatus = value; }
 
     /**
-     * <p>Current Status contributor insights.</p>
+     * <p>Current status of contributor insights.</p>
      */
     inline void SetContributorInsightsStatus(ContributorInsightsStatus&& value) { m_contributorInsightsStatus = std::move(value); }
 
     /**
-     * <p>Current Status contributor insights.</p>
+     * <p>Current status of contributor insights.</p>
      */
     inline DescribeContributorInsightsResult& WithContributorInsightsStatus(const ContributorInsightsStatus& value) { SetContributorInsightsStatus(value); return *this;}
 
     /**
-     * <p>Current Status contributor insights.</p>
+     * <p>Current status of contributor insights.</p>
      */
     inline DescribeContributorInsightsResult& WithContributorInsightsStatus(ContributorInsightsStatus&& value) { SetContributorInsightsStatus(std::move(value)); return *this;}
 
@@ -202,8 +202,8 @@ namespace Model
 
 
     /**
-     * <p>Returns information about the last failure that encountered.</p> <p>The most
-     * common exceptions for a FAILED status are:</p> <ul> <li>
+     * <p>Returns information about the last failure that was encountered.</p> <p>The
+     * most common exceptions for a FAILED status are:</p> <ul> <li>
      * <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
      * rule limit reached. Please disable Contributor Insights for other tables/indexes
      * OR disable Contributor Insights rules before retrying.</p> </li> <li>
@@ -217,8 +217,8 @@ namespace Model
     inline const FailureException& GetFailureException() const{ return m_failureException; }
 
     /**
-     * <p>Returns information about the last failure that encountered.</p> <p>The most
-     * common exceptions for a FAILED status are:</p> <ul> <li>
+     * <p>Returns information about the last failure that was encountered.</p> <p>The
+     * most common exceptions for a FAILED status are:</p> <ul> <li>
      * <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
      * rule limit reached. Please disable Contributor Insights for other tables/indexes
      * OR disable Contributor Insights rules before retrying.</p> </li> <li>
@@ -232,8 +232,8 @@ namespace Model
     inline void SetFailureException(const FailureException& value) { m_failureException = value; }
 
     /**
-     * <p>Returns information about the last failure that encountered.</p> <p>The most
-     * common exceptions for a FAILED status are:</p> <ul> <li>
+     * <p>Returns information about the last failure that was encountered.</p> <p>The
+     * most common exceptions for a FAILED status are:</p> <ul> <li>
      * <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
      * rule limit reached. Please disable Contributor Insights for other tables/indexes
      * OR disable Contributor Insights rules before retrying.</p> </li> <li>
@@ -247,8 +247,8 @@ namespace Model
     inline void SetFailureException(FailureException&& value) { m_failureException = std::move(value); }
 
     /**
-     * <p>Returns information about the last failure that encountered.</p> <p>The most
-     * common exceptions for a FAILED status are:</p> <ul> <li>
+     * <p>Returns information about the last failure that was encountered.</p> <p>The
+     * most common exceptions for a FAILED status are:</p> <ul> <li>
      * <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
      * rule limit reached. Please disable Contributor Insights for other tables/indexes
      * OR disable Contributor Insights rules before retrying.</p> </li> <li>
@@ -262,8 +262,8 @@ namespace Model
     inline DescribeContributorInsightsResult& WithFailureException(const FailureException& value) { SetFailureException(value); return *this;}
 
     /**
-     * <p>Returns information about the last failure that encountered.</p> <p>The most
-     * common exceptions for a FAILED status are:</p> <ul> <li>
+     * <p>Returns information about the last failure that was encountered.</p> <p>The
+     * most common exceptions for a FAILED status are:</p> <ul> <li>
      * <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights
      * rule limit reached. Please disable Contributor Insights for other tables/indexes
      * OR disable Contributor Insights rules before retrying.</p> </li> <li>

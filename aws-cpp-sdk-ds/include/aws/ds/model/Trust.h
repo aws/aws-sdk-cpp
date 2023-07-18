@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a trust relationship between an AWS Managed Microsoft AD directory
-   * and an external domain.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a trust relationship between an Managed Microsoft AD directory and
+   * an external domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Trust">AWS API
    * Reference</a></p>
    */
@@ -44,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline Trust& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline Trust& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
+     * <p>The Directory ID of the Amazon Web Services directory involved in the trust
+     * relationship.</p>
      */
     inline Trust& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

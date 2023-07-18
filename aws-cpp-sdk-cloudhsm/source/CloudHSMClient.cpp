@@ -88,7 +88,7 @@ CloudHSMClient::~CloudHSMClient()
 {
 }
 
-void CloudHSMClient::init(const ClientConfiguration& config)
+void CloudHSMClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudHSM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -117,9 +117,6 @@ void CloudHSMClient::OverrideEndpoint(const Aws::String& endpoint)
 AddTagsToResourceOutcome CloudHSMClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AddTagsToResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -144,9 +141,6 @@ void CloudHSMClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest
 CreateHapgOutcome CloudHSMClient::CreateHapg(const CreateHapgRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateHapgOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,9 +165,6 @@ void CloudHSMClient::CreateHapgAsyncHelper(const CreateHapgRequest& request, con
 CreateHsmOutcome CloudHSMClient::CreateHsm(const CreateHsmRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateHsmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,9 +189,6 @@ void CloudHSMClient::CreateHsmAsyncHelper(const CreateHsmRequest& request, const
 CreateLunaClientOutcome CloudHSMClient::CreateLunaClient(const CreateLunaClientRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLunaClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -225,9 +213,6 @@ void CloudHSMClient::CreateLunaClientAsyncHelper(const CreateLunaClientRequest& 
 DeleteHapgOutcome CloudHSMClient::DeleteHapg(const DeleteHapgRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteHapgOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -252,9 +237,6 @@ void CloudHSMClient::DeleteHapgAsyncHelper(const DeleteHapgRequest& request, con
 DeleteHsmOutcome CloudHSMClient::DeleteHsm(const DeleteHsmRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteHsmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -279,9 +261,6 @@ void CloudHSMClient::DeleteHsmAsyncHelper(const DeleteHsmRequest& request, const
 DeleteLunaClientOutcome CloudHSMClient::DeleteLunaClient(const DeleteLunaClientRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteLunaClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -306,9 +285,6 @@ void CloudHSMClient::DeleteLunaClientAsyncHelper(const DeleteLunaClientRequest& 
 DescribeHapgOutcome CloudHSMClient::DescribeHapg(const DescribeHapgRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeHapgOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -333,9 +309,6 @@ void CloudHSMClient::DescribeHapgAsyncHelper(const DescribeHapgRequest& request,
 DescribeHsmOutcome CloudHSMClient::DescribeHsm(const DescribeHsmRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeHsmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -360,9 +333,6 @@ void CloudHSMClient::DescribeHsmAsyncHelper(const DescribeHsmRequest& request, c
 DescribeLunaClientOutcome CloudHSMClient::DescribeLunaClient(const DescribeLunaClientRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLunaClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -387,9 +357,6 @@ void CloudHSMClient::DescribeLunaClientAsyncHelper(const DescribeLunaClientReque
 GetConfigOutcome CloudHSMClient::GetConfig(const GetConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -414,9 +381,6 @@ void CloudHSMClient::GetConfigAsyncHelper(const GetConfigRequest& request, const
 ListAvailableZonesOutcome CloudHSMClient::ListAvailableZones(const ListAvailableZonesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListAvailableZonesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -441,9 +405,6 @@ void CloudHSMClient::ListAvailableZonesAsyncHelper(const ListAvailableZonesReque
 ListHapgsOutcome CloudHSMClient::ListHapgs(const ListHapgsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListHapgsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -468,9 +429,6 @@ void CloudHSMClient::ListHapgsAsyncHelper(const ListHapgsRequest& request, const
 ListHsmsOutcome CloudHSMClient::ListHsms(const ListHsmsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListHsmsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -495,9 +453,6 @@ void CloudHSMClient::ListHsmsAsyncHelper(const ListHsmsRequest& request, const L
 ListLunaClientsOutcome CloudHSMClient::ListLunaClients(const ListLunaClientsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListLunaClientsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -522,9 +477,6 @@ void CloudHSMClient::ListLunaClientsAsyncHelper(const ListLunaClientsRequest& re
 ListTagsForResourceOutcome CloudHSMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -549,9 +501,6 @@ void CloudHSMClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceReq
 ModifyHapgOutcome CloudHSMClient::ModifyHapg(const ModifyHapgRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyHapgOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -576,9 +525,6 @@ void CloudHSMClient::ModifyHapgAsyncHelper(const ModifyHapgRequest& request, con
 ModifyHsmOutcome CloudHSMClient::ModifyHsm(const ModifyHsmRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyHsmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -603,9 +549,6 @@ void CloudHSMClient::ModifyHsmAsyncHelper(const ModifyHsmRequest& request, const
 ModifyLunaClientOutcome CloudHSMClient::ModifyLunaClient(const ModifyLunaClientRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyLunaClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -630,9 +573,6 @@ void CloudHSMClient::ModifyLunaClientAsyncHelper(const ModifyLunaClientRequest& 
 RemoveTagsFromResourceOutcome CloudHSMClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RemoveTagsFromResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

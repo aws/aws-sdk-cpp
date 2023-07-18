@@ -92,26 +92,30 @@ namespace Model
 
 
     /**
-     * <p>The version number of the scaling plan. If you specify a scaling plan
-     * version, you must also specify a scaling plan name.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>  <p>If you specify a scaling plan version, you must
+     * also specify a scaling plan name.</p> 
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
 
     /**
-     * <p>The version number of the scaling plan. If you specify a scaling plan
-     * version, you must also specify a scaling plan name.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>  <p>If you specify a scaling plan version, you must
+     * also specify a scaling plan name.</p> 
      */
     inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the scaling plan. If you specify a scaling plan
-     * version, you must also specify a scaling plan name.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>  <p>If you specify a scaling plan version, you must
+     * also specify a scaling plan name.</p> 
      */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
 
     /**
-     * <p>The version number of the scaling plan. If you specify a scaling plan
-     * version, you must also specify a scaling plan name.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>  <p>If you specify a scaling plan version, you must
+     * also specify a scaling plan name.</p> 
      */
     inline DescribeScalingPlansRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
 

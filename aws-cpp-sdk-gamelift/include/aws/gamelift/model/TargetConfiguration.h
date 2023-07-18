@@ -27,14 +27,13 @@ namespace Model
    * for the metric. As player usage changes, the policy triggers Amazon GameLift to
    * adjust capacity so that the metric returns to the target value. The target
    * configuration specifies settings as needed for the target based policy,
-   * including the target value. </p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p>
-   * </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
-   * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
-   * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
-   * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
-   * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+   * including the target value. </p> <p> <b>Related actions</b> </p> <p>
+   * <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> |
+   * <a>DescribeEC2InstanceLimits</a> | <a>PutScalingPolicy</a> |
+   * <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> |
+   * <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TargetConfiguration">AWS
    * API Reference</a></p>
    */

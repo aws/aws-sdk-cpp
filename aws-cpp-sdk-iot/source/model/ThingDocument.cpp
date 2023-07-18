@@ -25,6 +25,7 @@ ThingDocument::ThingDocument() :
     m_thingGroupNamesHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_shadowHasBeenSet(false),
+    m_deviceDefenderHasBeenSet(false),
     m_connectivityHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ ThingDocument::ThingDocument(JsonView jsonValue) :
     m_thingGroupNamesHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_shadowHasBeenSet(false),
+    m_deviceDefenderHasBeenSet(false),
     m_connectivityHasBeenSet(false)
 {
   *this = jsonValue;
@@ -89,6 +91,13 @@ ThingDocument& ThingDocument::operator =(JsonView jsonValue)
     m_shadow = jsonValue.GetString("shadow");
 
     m_shadowHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceDefender"))
+  {
+    m_deviceDefender = jsonValue.GetString("deviceDefender");
+
+    m_deviceDefenderHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("connectivity"))
@@ -148,6 +157,12 @@ JsonValue ThingDocument::Jsonize() const
   if(m_shadowHasBeenSet)
   {
    payload.WithString("shadow", m_shadow);
+
+  }
+
+  if(m_deviceDefenderHasBeenSet)
+  {
+   payload.WithString("deviceDefender", m_deviceDefender);
 
   }
 

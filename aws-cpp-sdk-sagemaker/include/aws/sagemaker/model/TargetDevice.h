@@ -25,6 +25,7 @@ namespace Model
     ml_p3,
     ml_g4dn,
     ml_inf1,
+    ml_eia2,
     jetson_tx1,
     jetson_tx2,
     jetson_nano,
@@ -39,11 +40,14 @@ namespace Model
     qcs605,
     qcs603,
     sitara_am57x,
+    amba_cv2,
     amba_cv22,
+    amba_cv25,
     x86_win32,
     x86_win64,
     coreml,
-    jacinto_tda4vm
+    jacinto_tda4vm,
+    imx8mplus
   };
 
 namespace TargetDeviceMapper

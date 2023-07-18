@@ -37,6 +37,8 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
      * <p>The ARN of the moderated channel.</p>
@@ -80,44 +82,85 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline const Aws::String& GetAppInstanceUserArn() const{ return m_appInstanceUserArn; }
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline bool AppInstanceUserArnHasBeenSet() const { return m_appInstanceUserArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline void SetAppInstanceUserArn(const Aws::String& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = value; }
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline void SetAppInstanceUserArn(Aws::String&& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = std::move(value); }
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline void SetAppInstanceUserArn(const char* value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn.assign(value); }
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline DescribeChannelModeratedByAppInstanceUserRequest& WithAppInstanceUserArn(const Aws::String& value) { SetAppInstanceUserArn(value); return *this;}
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline DescribeChannelModeratedByAppInstanceUserRequest& WithAppInstanceUserArn(Aws::String&& value) { SetAppInstanceUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the app instance user in the moderated channel.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
      */
     inline DescribeChannelModeratedByAppInstanceUserRequest& WithAppInstanceUserArn(const char* value) { SetAppInstanceUserArn(value); return *this;}
+
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline DescribeChannelModeratedByAppInstanceUserRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline DescribeChannelModeratedByAppInstanceUserRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline DescribeChannelModeratedByAppInstanceUserRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
   private:
 
@@ -126,6 +169,9 @@ namespace Model
 
     Aws::String m_appInstanceUserArn;
     bool m_appInstanceUserArnHasBeenSet;
+
+    Aws::String m_chimeBearer;
+    bool m_chimeBearerHasBeenSet;
   };
 
 } // namespace Model

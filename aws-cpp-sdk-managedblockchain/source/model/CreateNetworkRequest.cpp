@@ -22,7 +22,8 @@ CreateNetworkRequest::CreateNetworkRequest() :
     m_frameworkVersionHasBeenSet(false),
     m_frameworkConfigurationHasBeenSet(false),
     m_votingPolicyHasBeenSet(false),
-    m_memberConfigurationHasBeenSet(false)
+    m_memberConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,17 @@ Aws::String CreateNetworkRequest::SerializePayload() const
   if(m_memberConfigurationHasBeenSet)
   {
    payload.WithObject("MemberConfiguration", m_memberConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

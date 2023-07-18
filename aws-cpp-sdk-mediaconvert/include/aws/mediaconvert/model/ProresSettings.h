@@ -5,11 +5,13 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/ProresChromaSampling.h>
 #include <aws/mediaconvert/model/ProresCodecProfile.h>
 #include <aws/mediaconvert/model/ProresFramerateControl.h>
 #include <aws/mediaconvert/model/ProresFramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/ProresInterlaceMode.h>
 #include <aws/mediaconvert/model/ProresParControl.h>
+#include <aws/mediaconvert/model/ProresScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/ProresSlowPal.h>
 #include <aws/mediaconvert/model/ProresTelecine.h>
 #include <utility>
@@ -45,37 +47,146 @@ namespace Model
 
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
+     * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
+     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
+     * must specify a value for this setting when your output codec profile supports
+     * 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to
+     * Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec
+     * profile that supports 4:4:4 chroma sampling. These values for Profile
+     * (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     * (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set
+     * Chroma sampling to Preserve 4:4:4 sampling, you must disable all video
+     * preprocessors except for Nexguard file marker (PartnerWatermarking). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you
+     * must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+     * duplicate (DUPLICATE_DROP).
+     */
+    inline const ProresChromaSampling& GetChromaSampling() const{ return m_chromaSampling; }
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
+     * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
+     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
+     * must specify a value for this setting when your output codec profile supports
+     * 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to
+     * Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec
+     * profile that supports 4:4:4 chroma sampling. These values for Profile
+     * (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     * (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set
+     * Chroma sampling to Preserve 4:4:4 sampling, you must disable all video
+     * preprocessors except for Nexguard file marker (PartnerWatermarking). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you
+     * must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+     * duplicate (DUPLICATE_DROP).
+     */
+    inline bool ChromaSamplingHasBeenSet() const { return m_chromaSamplingHasBeenSet; }
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
+     * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
+     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
+     * must specify a value for this setting when your output codec profile supports
+     * 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to
+     * Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec
+     * profile that supports 4:4:4 chroma sampling. These values for Profile
+     * (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     * (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set
+     * Chroma sampling to Preserve 4:4:4 sampling, you must disable all video
+     * preprocessors except for Nexguard file marker (PartnerWatermarking). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you
+     * must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+     * duplicate (DUPLICATE_DROP).
+     */
+    inline void SetChromaSampling(const ProresChromaSampling& value) { m_chromaSamplingHasBeenSet = true; m_chromaSampling = value; }
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
+     * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
+     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
+     * must specify a value for this setting when your output codec profile supports
+     * 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to
+     * Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec
+     * profile that supports 4:4:4 chroma sampling. These values for Profile
+     * (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     * (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set
+     * Chroma sampling to Preserve 4:4:4 sampling, you must disable all video
+     * preprocessors except for Nexguard file marker (PartnerWatermarking). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you
+     * must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+     * duplicate (DUPLICATE_DROP).
+     */
+    inline void SetChromaSampling(ProresChromaSampling&& value) { m_chromaSamplingHasBeenSet = true; m_chromaSampling = std::move(value); }
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
+     * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
+     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
+     * must specify a value for this setting when your output codec profile supports
+     * 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to
+     * Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec
+     * profile that supports 4:4:4 chroma sampling. These values for Profile
+     * (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     * (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set
+     * Chroma sampling to Preserve 4:4:4 sampling, you must disable all video
+     * preprocessors except for Nexguard file marker (PartnerWatermarking). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you
+     * must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+     * duplicate (DUPLICATE_DROP).
+     */
+    inline ProresSettings& WithChromaSampling(const ProresChromaSampling& value) { SetChromaSampling(value); return *this;}
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
+     * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
+     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
+     * must specify a value for this setting when your output codec profile supports
+     * 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to
+     * Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec
+     * profile that supports 4:4:4 chroma sampling. These values for Profile
+     * (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     * (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set
+     * Chroma sampling to Preserve 4:4:4 sampling, you must disable all video
+     * preprocessors except for Nexguard file marker (PartnerWatermarking). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you
+     * must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+     * duplicate (DUPLICATE_DROP).
+     */
+    inline ProresSettings& WithChromaSampling(ProresChromaSampling&& value) { SetChromaSampling(std::move(value)); return *this;}
+
+
+    /**
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline const ProresCodecProfile& GetCodecProfile() const{ return m_codecProfile; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline void SetCodecProfile(const ProresCodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline void SetCodecProfile(ProresCodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline ProresSettings& WithCodecProfile(const ProresCodecProfile& value) { SetCodecProfile(value); return *this;}
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline ProresSettings& WithCodecProfile(ProresCodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
@@ -586,6 +697,109 @@ namespace Model
 
 
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const ProresScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const ProresScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(ProresScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline ProresSettings& WithScanTypeConversionMode(const ProresScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline ProresSettings& WithScanTypeConversionMode(ProresScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+
+
+    /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
      * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
@@ -708,6 +922,9 @@ namespace Model
 
   private:
 
+    ProresChromaSampling m_chromaSampling;
+    bool m_chromaSamplingHasBeenSet;
+
     ProresCodecProfile m_codecProfile;
     bool m_codecProfileHasBeenSet;
 
@@ -734,6 +951,9 @@ namespace Model
 
     int m_parNumerator;
     bool m_parNumeratorHasBeenSet;
+
+    ProresScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     ProresSlowPal m_slowPal;
     bool m_slowPalHasBeenSet;

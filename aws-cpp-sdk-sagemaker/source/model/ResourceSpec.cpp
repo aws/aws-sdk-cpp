@@ -22,7 +22,8 @@ ResourceSpec::ResourceSpec() :
     m_sageMakerImageArnHasBeenSet(false),
     m_sageMakerImageVersionArnHasBeenSet(false),
     m_instanceType(AppInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_lifecycleConfigArnHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ResourceSpec::ResourceSpec(JsonView jsonValue) :
     m_sageMakerImageArnHasBeenSet(false),
     m_sageMakerImageVersionArnHasBeenSet(false),
     m_instanceType(AppInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_lifecycleConfigArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ ResourceSpec& ResourceSpec::operator =(JsonView jsonValue)
     m_instanceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LifecycleConfigArn"))
+  {
+    m_lifecycleConfigArn = jsonValue.GetString("LifecycleConfigArn");
+
+    m_lifecycleConfigArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue ResourceSpec::Jsonize() const
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("InstanceType", AppInstanceTypeMapper::GetNameForAppInstanceType(m_instanceType));
+  }
+
+  if(m_lifecycleConfigArnHasBeenSet)
+  {
+   payload.WithString("LifecycleConfigArn", m_lifecycleConfigArn);
+
   }
 
   return payload;

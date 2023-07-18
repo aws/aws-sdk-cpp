@@ -34,6 +34,7 @@ InfrastructureConfiguration::InfrastructureConfiguration() :
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
+    m_instanceMetadataOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -54,6 +55,7 @@ InfrastructureConfiguration::InfrastructureConfiguration(JsonView jsonValue) :
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
+    m_instanceMetadataOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -166,6 +168,13 @@ InfrastructureConfiguration& InfrastructureConfiguration::operator =(JsonView js
       m_resourceTags[resourceTagsItem.first] = resourceTagsItem.second.AsString();
     }
     m_resourceTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceMetadataOptions"))
+  {
+    m_instanceMetadataOptions = jsonValue.GetObject("instanceMetadataOptions");
+
+    m_instanceMetadataOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -281,6 +290,12 @@ JsonValue InfrastructureConfiguration::Jsonize() const
      resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
    }
    payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
+
+  }
+
+  if(m_instanceMetadataOptionsHasBeenSet)
+  {
+   payload.WithObject("instanceMetadataOptions", m_instanceMetadataOptions.Jsonize());
 
   }
 

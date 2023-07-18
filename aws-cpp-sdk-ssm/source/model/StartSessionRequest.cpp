@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 StartSessionRequest::StartSessionRequest() : 
     m_targetHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_reasonHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
 }
@@ -32,6 +33,12 @@ Aws::String StartSessionRequest::SerializePayload() const
   if(m_documentNameHasBeenSet)
   {
    payload.WithString("DocumentName", m_documentName);
+
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", m_reason);
 
   }
 

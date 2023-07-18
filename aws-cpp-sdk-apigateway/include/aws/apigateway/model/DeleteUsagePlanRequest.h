@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline DeleteUsagePlanRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline DeleteUsagePlanRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     * <p>The Id of the to-be-deleted usage plan.</p>
      */
     inline DeleteUsagePlanRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 

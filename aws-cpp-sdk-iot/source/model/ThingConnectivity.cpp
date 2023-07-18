@@ -22,7 +22,8 @@ ThingConnectivity::ThingConnectivity() :
     m_connected(false),
     m_connectedHasBeenSet(false),
     m_timestamp(0),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_disconnectReasonHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ThingConnectivity::ThingConnectivity(JsonView jsonValue) :
     m_connected(false),
     m_connectedHasBeenSet(false),
     m_timestamp(0),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_disconnectReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ ThingConnectivity& ThingConnectivity::operator =(JsonView jsonValue)
     m_timestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("disconnectReason"))
+  {
+    m_disconnectReason = jsonValue.GetString("disconnectReason");
+
+    m_disconnectReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +76,12 @@ JsonValue ThingConnectivity::Jsonize() const
   if(m_timestampHasBeenSet)
   {
    payload.WithInt64("timestamp", m_timestamp);
+
+  }
+
+  if(m_disconnectReasonHasBeenSet)
+  {
+   payload.WithString("disconnectReason", m_disconnectReason);
 
   }
 

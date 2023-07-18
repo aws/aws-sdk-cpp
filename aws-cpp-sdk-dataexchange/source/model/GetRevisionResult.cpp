@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetRevisionResult::GetRevisionResult() : 
-    m_finalized(false)
+    m_finalized(false),
+    m_revoked(false)
 {
 }
 
 GetRevisionResult::GetRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_finalized(false)
+    m_finalized(false),
+    m_revoked(false)
 {
   *this = result;
 }
@@ -84,6 +86,24 @@ GetRevisionResult& GetRevisionResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("RevocationComment"))
+  {
+    m_revocationComment = jsonValue.GetString("RevocationComment");
+
+  }
+
+  if(jsonValue.ValueExists("Revoked"))
+  {
+    m_revoked = jsonValue.GetBool("Revoked");
+
+  }
+
+  if(jsonValue.ValueExists("RevokedAt"))
+  {
+    m_revokedAt = jsonValue.GetString("RevokedAt");
 
   }
 

@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The current settings of the AWS IoT Analytics logging options.</p>
+     * <p>The current settings of the IoT Analytics logging options.</p>
      */
     inline const LoggingOptions& GetLoggingOptions() const{ return m_loggingOptions; }
 
     /**
-     * <p>The current settings of the AWS IoT Analytics logging options.</p>
+     * <p>The current settings of the IoT Analytics logging options.</p>
      */
     inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptions = value; }
 
     /**
-     * <p>The current settings of the AWS IoT Analytics logging options.</p>
+     * <p>The current settings of the IoT Analytics logging options.</p>
      */
     inline void SetLoggingOptions(LoggingOptions&& value) { m_loggingOptions = std::move(value); }
 
     /**
-     * <p>The current settings of the AWS IoT Analytics logging options.</p>
+     * <p>The current settings of the IoT Analytics logging options.</p>
      */
     inline DescribeLoggingOptionsResult& WithLoggingOptions(const LoggingOptions& value) { SetLoggingOptions(value); return *this;}
 
     /**
-     * <p>The current settings of the AWS IoT Analytics logging options.</p>
+     * <p>The current settings of the IoT Analytics logging options.</p>
      */
     inline DescribeLoggingOptionsResult& WithLoggingOptions(LoggingOptions&& value) { SetLoggingOptions(std::move(value)); return *this;}
 

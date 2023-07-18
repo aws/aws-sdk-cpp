@@ -285,10 +285,11 @@ namespace Model
 
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -296,10 +297,11 @@ namespace Model
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -307,10 +309,11 @@ namespace Model
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -318,10 +321,11 @@ namespace Model
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -329,10 +333,11 @@ namespace Model
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -340,10 +345,11 @@ namespace Model
     inline StreamingDistributionConfig& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>

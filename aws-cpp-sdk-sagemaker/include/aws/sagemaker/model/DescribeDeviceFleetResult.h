@@ -221,87 +221,87 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline DescribeDeviceFleetResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline DescribeDeviceFleetResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline DescribeDeviceFleetResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
+     * of Things (IoT).</p>
      */
     inline const Aws::String& GetIotRoleAlias() const{ return m_iotRoleAlias; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
+     * of Things (IoT).</p>
      */
     inline void SetIotRoleAlias(const Aws::String& value) { m_iotRoleAlias = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
+     * of Things (IoT).</p>
      */
     inline void SetIotRoleAlias(Aws::String&& value) { m_iotRoleAlias = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
+     * of Things (IoT).</p>
      */
     inline void SetIotRoleAlias(const char* value) { m_iotRoleAlias.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
+     * of Things (IoT).</p>
      */
     inline DescribeDeviceFleetResult& WithIotRoleAlias(const Aws::String& value) { SetIotRoleAlias(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
+     * of Things (IoT).</p>
      */
     inline DescribeDeviceFleetResult& WithIotRoleAlias(Aws::String&& value) { SetIotRoleAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
+     * of Things (IoT).</p>
      */
     inline DescribeDeviceFleetResult& WithIotRoleAlias(const char* value) { SetIotRoleAlias(value); return *this;}
 

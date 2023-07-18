@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Describes the level of access on an AWS account.</p>
+     * <p>Describes the level of access on an Amazon Web Services account.</p>
      */
     inline const PermissionSet& GetPermissionSet() const{ return m_permissionSet; }
 
     /**
-     * <p>Describes the level of access on an AWS account.</p>
+     * <p>Describes the level of access on an Amazon Web Services account.</p>
      */
     inline void SetPermissionSet(const PermissionSet& value) { m_permissionSet = value; }
 
     /**
-     * <p>Describes the level of access on an AWS account.</p>
+     * <p>Describes the level of access on an Amazon Web Services account.</p>
      */
     inline void SetPermissionSet(PermissionSet&& value) { m_permissionSet = std::move(value); }
 
     /**
-     * <p>Describes the level of access on an AWS account.</p>
+     * <p>Describes the level of access on an Amazon Web Services account.</p>
      */
     inline DescribePermissionSetResult& WithPermissionSet(const PermissionSet& value) { SetPermissionSet(value); return *this;}
 
     /**
-     * <p>Describes the level of access on an AWS account.</p>
+     * <p>Describes the level of access on an Amazon Web Services account.</p>
      */
     inline DescribePermissionSetResult& WithPermissionSet(PermissionSet&& value) { SetPermissionSet(std::move(value)); return *this;}
 

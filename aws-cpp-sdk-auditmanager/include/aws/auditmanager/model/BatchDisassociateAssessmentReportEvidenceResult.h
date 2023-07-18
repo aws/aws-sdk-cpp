@@ -76,44 +76,44 @@ namespace Model
 
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDisassociateAssessmentReportEvidence</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
      */
     inline const Aws::Vector<AssessmentReportEvidenceError>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDisassociateAssessmentReportEvidence</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
      */
     inline void SetErrors(const Aws::Vector<AssessmentReportEvidenceError>& value) { m_errors = value; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDisassociateAssessmentReportEvidence</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
      */
     inline void SetErrors(Aws::Vector<AssessmentReportEvidenceError>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDisassociateAssessmentReportEvidence</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
      */
     inline BatchDisassociateAssessmentReportEvidenceResult& WithErrors(const Aws::Vector<AssessmentReportEvidenceError>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDisassociateAssessmentReportEvidence</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
      */
     inline BatchDisassociateAssessmentReportEvidenceResult& WithErrors(Aws::Vector<AssessmentReportEvidenceError>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDisassociateAssessmentReportEvidence</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
      */
     inline BatchDisassociateAssessmentReportEvidenceResult& AddErrors(const AssessmentReportEvidenceError& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDisassociateAssessmentReportEvidence</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
      */
     inline BatchDisassociateAssessmentReportEvidenceResult& AddErrors(AssessmentReportEvidenceError&& value) { m_errors.push_back(std::move(value)); return *this; }
 

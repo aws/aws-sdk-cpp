@@ -35,91 +35,107 @@ namespace Model
 
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline PublishMetricsRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline PublishMetricsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
-     * <p>Publishes environment metric data to Amazon CloudWatch.</p>
+     * <p> <b>Internal only</b>. The name of the environment.</p>
      */
     inline PublishMetricsRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = std::move(value); }
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline PublishMetricsRequest& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline PublishMetricsRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(std::move(value)); return *this;}
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline PublishMetricsRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
 
     /**
-     * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-     * data points with the specified metrica.</p>
+     * <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more
+     * about the metrics published to Amazon CloudWatch, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+     * MWAA performance metrics in Amazon CloudWatch</a>.</p>
      */
     inline PublishMetricsRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
 

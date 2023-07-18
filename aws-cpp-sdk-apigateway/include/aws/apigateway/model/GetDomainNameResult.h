@@ -32,18 +32,7 @@ namespace Model
 {
   /**
    * <p>Represents a custom domain name as a user-friendly host name of an API
-   * (<a>RestApi</a>).</p> <div class="Remarks"> <p>When you deploy an API, API
-   * Gateway creates a default host name for the API. This default API host name is
-   * of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With
-   * the default host name, you can access the API's root resource with the URL of
-   * <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
-   * When you set up a custom domain name of <code>apis.example.com</code> for this
-   * API, you can then access the same resource using the URL of the
-   * <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the
-   * base path mapping (<a>BasePathMapping</a>) of your API under the custom domain
-   * name. </p> </div> <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set
-   * a Custom Host Name for an API</a> </div><p><h3>See Also:</h3>   <a
+   * (RestApi).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DomainName">AWS
    * API Reference</a></p>
    */
@@ -281,71 +270,50 @@ namespace Model
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline const Aws::String& GetRegionalHostedZoneId() const{ return m_regionalHostedZoneId; }
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline void SetRegionalHostedZoneId(const Aws::String& value) { m_regionalHostedZoneId = value; }
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline void SetRegionalHostedZoneId(Aws::String&& value) { m_regionalHostedZoneId = std::move(value); }
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline void SetRegionalHostedZoneId(const char* value) { m_regionalHostedZoneId.assign(value); }
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline GetDomainNameResult& WithRegionalHostedZoneId(const Aws::String& value) { SetRegionalHostedZoneId(value); return *this;}
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline GetDomainNameResult& WithRegionalHostedZoneId(Aws::String&& value) { SetRegionalHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline GetDomainNameResult& WithRegionalHostedZoneId(const char* value) { SetRegionalHostedZoneId(value); return *this;}
 
@@ -447,9 +415,8 @@ namespace Model
      * <p>The domain name of the Amazon CloudFront distribution associated with this
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
-     * name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
-     * CloudFront documentation</a>.</p>
+     * name. For more information about CloudFront distributions, see the Amazon
+     * CloudFront documentation.</p>
      */
     inline const Aws::String& GetDistributionDomainName() const{ return m_distributionDomainName; }
 
@@ -457,9 +424,8 @@ namespace Model
      * <p>The domain name of the Amazon CloudFront distribution associated with this
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
-     * name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
-     * CloudFront documentation</a>.</p>
+     * name. For more information about CloudFront distributions, see the Amazon
+     * CloudFront documentation.</p>
      */
     inline void SetDistributionDomainName(const Aws::String& value) { m_distributionDomainName = value; }
 
@@ -467,9 +433,8 @@ namespace Model
      * <p>The domain name of the Amazon CloudFront distribution associated with this
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
-     * name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
-     * CloudFront documentation</a>.</p>
+     * name. For more information about CloudFront distributions, see the Amazon
+     * CloudFront documentation.</p>
      */
     inline void SetDistributionDomainName(Aws::String&& value) { m_distributionDomainName = std::move(value); }
 
@@ -477,9 +442,8 @@ namespace Model
      * <p>The domain name of the Amazon CloudFront distribution associated with this
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
-     * name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
-     * CloudFront documentation</a>.</p>
+     * name. For more information about CloudFront distributions, see the Amazon
+     * CloudFront documentation.</p>
      */
     inline void SetDistributionDomainName(const char* value) { m_distributionDomainName.assign(value); }
 
@@ -487,9 +451,8 @@ namespace Model
      * <p>The domain name of the Amazon CloudFront distribution associated with this
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
-     * name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
-     * CloudFront documentation</a>.</p>
+     * name. For more information about CloudFront distributions, see the Amazon
+     * CloudFront documentation.</p>
      */
     inline GetDomainNameResult& WithDistributionDomainName(const Aws::String& value) { SetDistributionDomainName(value); return *this;}
 
@@ -497,9 +460,8 @@ namespace Model
      * <p>The domain name of the Amazon CloudFront distribution associated with this
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
-     * name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
-     * CloudFront documentation</a>.</p>
+     * name. For more information about CloudFront distributions, see the Amazon
+     * CloudFront documentation.</p>
      */
     inline GetDomainNameResult& WithDistributionDomainName(Aws::String&& value) { SetDistributionDomainName(std::move(value)); return *this;}
 
@@ -507,9 +469,8 @@ namespace Model
      * <p>The domain name of the Amazon CloudFront distribution associated with this
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
-     * name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
-     * CloudFront documentation</a>.</p>
+     * name. For more information about CloudFront distributions, see the Amazon
+     * CloudFront documentation.</p>
      */
     inline GetDomainNameResult& WithDistributionDomainName(const char* value) { SetDistributionDomainName(value); return *this;}
 
@@ -517,114 +478,93 @@ namespace Model
     /**
      * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
      * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline const Aws::String& GetDistributionHostedZoneId() const{ return m_distributionHostedZoneId; }
 
     /**
      * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
      * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline void SetDistributionHostedZoneId(const Aws::String& value) { m_distributionHostedZoneId = value; }
 
     /**
      * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
      * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline void SetDistributionHostedZoneId(Aws::String&& value) { m_distributionHostedZoneId = std::move(value); }
 
     /**
      * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
      * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline void SetDistributionHostedZoneId(const char* value) { m_distributionHostedZoneId.assign(value); }
 
     /**
      * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
      * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline GetDomainNameResult& WithDistributionHostedZoneId(const Aws::String& value) { SetDistributionHostedZoneId(value); return *this;}
 
     /**
      * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
      * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline GetDomainNameResult& WithDistributionHostedZoneId(Aws::String&& value) { SetDistributionHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
      * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-     * up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * For more information, see Set up a Regional Custom Domain Name and AWS Regions
+     * and Endpoints for API Gateway. </p>
      */
     inline GetDomainNameResult& WithDistributionHostedZoneId(const char* value) { SetDistributionHostedZoneId(value); return *this;}
 
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfiguration = value; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfiguration = std::move(value); }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline GetDomainNameResult& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline GetDomainNameResult& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <p>The status of the DomainName migration. The valid values are
      * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
@@ -633,7 +573,7 @@ namespace Model
     inline const DomainNameStatus& GetDomainNameStatus() const{ return m_domainNameStatus; }
 
     /**
-     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <p>The status of the DomainName migration. The valid values are
      * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
@@ -642,7 +582,7 @@ namespace Model
     inline void SetDomainNameStatus(const DomainNameStatus& value) { m_domainNameStatus = value; }
 
     /**
-     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <p>The status of the DomainName migration. The valid values are
      * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
@@ -651,7 +591,7 @@ namespace Model
     inline void SetDomainNameStatus(DomainNameStatus&& value) { m_domainNameStatus = std::move(value); }
 
     /**
-     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <p>The status of the DomainName migration. The valid values are
      * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
@@ -660,7 +600,7 @@ namespace Model
     inline GetDomainNameResult& WithDomainNameStatus(const DomainNameStatus& value) { SetDomainNameStatus(value); return *this;}
 
     /**
-     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <p>The status of the DomainName migration. The valid values are
      * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
@@ -671,78 +611,78 @@ namespace Model
 
     /**
      * <p>An optional text message containing detailed information about status of the
-     * <a>DomainName</a> migration.</p>
+     * DomainName migration.</p>
      */
     inline const Aws::String& GetDomainNameStatusMessage() const{ return m_domainNameStatusMessage; }
 
     /**
      * <p>An optional text message containing detailed information about status of the
-     * <a>DomainName</a> migration.</p>
+     * DomainName migration.</p>
      */
     inline void SetDomainNameStatusMessage(const Aws::String& value) { m_domainNameStatusMessage = value; }
 
     /**
      * <p>An optional text message containing detailed information about status of the
-     * <a>DomainName</a> migration.</p>
+     * DomainName migration.</p>
      */
     inline void SetDomainNameStatusMessage(Aws::String&& value) { m_domainNameStatusMessage = std::move(value); }
 
     /**
      * <p>An optional text message containing detailed information about status of the
-     * <a>DomainName</a> migration.</p>
+     * DomainName migration.</p>
      */
     inline void SetDomainNameStatusMessage(const char* value) { m_domainNameStatusMessage.assign(value); }
 
     /**
      * <p>An optional text message containing detailed information about status of the
-     * <a>DomainName</a> migration.</p>
+     * DomainName migration.</p>
      */
     inline GetDomainNameResult& WithDomainNameStatusMessage(const Aws::String& value) { SetDomainNameStatusMessage(value); return *this;}
 
     /**
      * <p>An optional text message containing detailed information about status of the
-     * <a>DomainName</a> migration.</p>
+     * DomainName migration.</p>
      */
     inline GetDomainNameResult& WithDomainNameStatusMessage(Aws::String&& value) { SetDomainNameStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>An optional text message containing detailed information about status of the
-     * <a>DomainName</a> migration.</p>
+     * DomainName migration.</p>
      */
     inline GetDomainNameResult& WithDomainNameStatusMessage(const char* value) { SetDomainNameStatusMessage(value); return *this;}
 
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline const SecurityPolicy& GetSecurityPolicy() const{ return m_securityPolicy; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(const SecurityPolicy& value) { m_securityPolicy = value; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(SecurityPolicy&& value) { m_securityPolicy = std::move(value); }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline GetDomainNameResult& WithSecurityPolicy(const SecurityPolicy& value) { SetSecurityPolicy(value); return *this;}
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline GetDomainNameResult& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
@@ -856,6 +796,56 @@ namespace Model
      */
     inline GetDomainNameResult& WithMutualTlsAuthentication(MutualTlsAuthentication&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline const Aws::String& GetOwnershipVerificationCertificateArn() const{ return m_ownershipVerificationCertificateArn; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const Aws::String& value) { m_ownershipVerificationCertificateArn = value; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(Aws::String&& value) { m_ownershipVerificationCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const char* value) { m_ownershipVerificationCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline GetDomainNameResult& WithOwnershipVerificationCertificateArn(const Aws::String& value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline GetDomainNameResult& WithOwnershipVerificationCertificateArn(Aws::String&& value) { SetOwnershipVerificationCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline GetDomainNameResult& WithOwnershipVerificationCertificateArn(const char* value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -889,6 +879,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     MutualTlsAuthentication m_mutualTlsAuthentication;
+
+    Aws::String m_ownershipVerificationCertificateArn;
   };
 
 } // namespace Model

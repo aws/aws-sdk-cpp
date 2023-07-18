@@ -394,6 +394,42 @@ namespace Model
     
     inline DescribeActionResult& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline const Aws::String& GetLineageGroupArn() const{ return m_lineageGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline void SetLineageGroupArn(const Aws::String& value) { m_lineageGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline void SetLineageGroupArn(Aws::String&& value) { m_lineageGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline void SetLineageGroupArn(const char* value) { m_lineageGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline DescribeActionResult& WithLineageGroupArn(const Aws::String& value) { SetLineageGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline DescribeActionResult& WithLineageGroupArn(Aws::String&& value) { SetLineageGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline DescribeActionResult& WithLineageGroupArn(const char* value) { SetLineageGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_actionName;
@@ -419,6 +455,8 @@ namespace Model
     UserContext m_lastModifiedBy;
 
     MetadataProperties m_metadataProperties;
+
+    Aws::String m_lineageGroupArn;
   };
 
 } // namespace Model

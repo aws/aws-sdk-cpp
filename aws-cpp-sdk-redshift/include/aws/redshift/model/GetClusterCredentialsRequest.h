@@ -340,50 +340,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline GetClusterCredentialsRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline GetClusterCredentialsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the cluster that contains the database for which
-     * your are requesting credentials. This parameter is case sensitive.</p>
+     * <p>The unique identifier of the cluster that contains the database for which you
+     * are requesting credentials. This parameter is case sensitive.</p>
      */
     inline GetClusterCredentialsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 

@@ -22,6 +22,7 @@ LensUpgradeSummary::LensUpgradeSummary() :
     m_workloadIdHasBeenSet(false),
     m_workloadNameHasBeenSet(false),
     m_lensAliasHasBeenSet(false),
+    m_lensArnHasBeenSet(false),
     m_currentLensVersionHasBeenSet(false),
     m_latestLensVersionHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ LensUpgradeSummary::LensUpgradeSummary(JsonView jsonValue) :
     m_workloadIdHasBeenSet(false),
     m_workloadNameHasBeenSet(false),
     m_lensAliasHasBeenSet(false),
+    m_lensArnHasBeenSet(false),
     m_currentLensVersionHasBeenSet(false),
     m_latestLensVersionHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ LensUpgradeSummary& LensUpgradeSummary::operator =(JsonView jsonValue)
     m_lensAlias = jsonValue.GetString("LensAlias");
 
     m_lensAliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LensArn"))
+  {
+    m_lensArn = jsonValue.GetString("LensArn");
+
+    m_lensArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CurrentLensVersion"))
@@ -96,6 +105,12 @@ JsonValue LensUpgradeSummary::Jsonize() const
   if(m_lensAliasHasBeenSet)
   {
    payload.WithString("LensAlias", m_lensAlias);
+
+  }
+
+  if(m_lensArnHasBeenSet)
+  {
+   payload.WithString("LensArn", m_lensArn);
 
   }
 

@@ -29,8 +29,8 @@ namespace Model
    * <p>Contains information about one of the following:</p> <ul> <li> <p>The initial
    * validation of each domain name that occurs as a result of the
    * <code>RequestCertificate</code> request</p> </li> <li> <p>The validation of each
-   * domain name in the certificate, as it pertains to AWS Certificate Manager
-   * managed renewal</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * domain name in the certificate, as it pertains to Certificate Manager managed
+   * renewal</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateDomainValidationOption">AWS
    * API Reference</a></p>
    */
@@ -116,104 +116,104 @@ namespace Model
 
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline const Aws::String& GetValidationDomain() const{ return m_validationDomain; }
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline bool ValidationDomainHasBeenSet() const { return m_validationDomainHasBeenSet; }
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline void SetValidationDomain(const Aws::String& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::move(value); }
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline void SetValidationDomain(const char* value) { m_validationDomainHasBeenSet = true; m_validationDomain.assign(value); }
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& WithValidationDomain(const Aws::String& value) { SetValidationDomain(value); return *this;}
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& WithValidationDomain(Aws::String&& value) { SetValidationDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name that AWS Certificate Manager uses to send domain validation
+     * <p>The domain name that Certificate Manager uses to send domain validation
      * emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& WithValidationDomain(const char* value) { SetValidationDomain(value); return *this;}
 
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValidationEmails() const{ return m_validationEmails; }
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline bool ValidationEmailsHasBeenSet() const { return m_validationEmailsHasBeenSet; }
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline void SetValidationEmails(const Aws::Vector<Aws::String>& value) { m_validationEmailsHasBeenSet = true; m_validationEmails = value; }
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline void SetValidationEmails(Aws::Vector<Aws::String>&& value) { m_validationEmailsHasBeenSet = true; m_validationEmails = std::move(value); }
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& WithValidationEmails(const Aws::Vector<Aws::String>& value) { SetValidationEmails(value); return *this;}
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& WithValidationEmails(Aws::Vector<Aws::String>&& value) { SetValidationEmails(std::move(value)); return *this;}
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& AddValidationEmails(const Aws::String& value) { m_validationEmailsHasBeenSet = true; m_validationEmails.push_back(value); return *this; }
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& AddValidationEmails(Aws::String&& value) { m_validationEmailsHasBeenSet = true; m_validationEmails.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of email addresses that AWS Certificate Manager uses to send domain
+     * <p>A list of email addresses that Certificate Manager uses to send domain
      * validation emails.</p>
      */
     inline AwsCertificateManagerCertificateDomainValidationOption& AddValidationEmails(const char* value) { m_validationEmailsHasBeenSet = true; m_validationEmails.push_back(value); return *this; }

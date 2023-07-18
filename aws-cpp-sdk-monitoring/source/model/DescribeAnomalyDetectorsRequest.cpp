@@ -16,7 +16,8 @@ DescribeAnomalyDetectorsRequest::DescribeAnomalyDetectorsRequest() :
     m_maxResultsHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+    m_dimensionsHasBeenSet(false),
+    m_anomalyDetectorTypesHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,17 @@ Aws::String DescribeAnomalyDetectorsRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
       dimensionsCount++;
+    }
+  }
+
+  if(m_anomalyDetectorTypesHasBeenSet)
+  {
+    unsigned anomalyDetectorTypesCount = 1;
+    for(auto& item : m_anomalyDetectorTypes)
+    {
+      ss << "AnomalyDetectorTypes.member." << anomalyDetectorTypesCount << "="
+          << StringUtils::URLEncode(AnomalyDetectorTypeMapper::GetNameForAnomalyDetectorType(item).c_str()) << "&";
+      anomalyDetectorTypesCount++;
     }
   }
 

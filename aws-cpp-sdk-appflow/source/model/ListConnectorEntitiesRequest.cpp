@@ -16,7 +16,8 @@ ListConnectorEntitiesRequest::ListConnectorEntitiesRequest() :
     m_connectorProfileNameHasBeenSet(false),
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
-    m_entitiesPathHasBeenSet(false)
+    m_entitiesPathHasBeenSet(false),
+    m_apiVersionHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String ListConnectorEntitiesRequest::SerializePayload() const
   if(m_entitiesPathHasBeenSet)
   {
    payload.WithString("entitiesPath", m_entitiesPath);
+
+  }
+
+  if(m_apiVersionHasBeenSet)
+  {
+   payload.WithString("apiVersion", m_apiVersion);
 
   }
 

@@ -7,6 +7,8 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/PipelineDefinitionS3Location.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +160,43 @@ namespace Model
 
 
     /**
+     * <p>The location of the pipeline definition stored in Amazon S3. If specified,
+     * SageMaker will retrieve the pipeline definition from this location.</p>
+     */
+    inline const PipelineDefinitionS3Location& GetPipelineDefinitionS3Location() const{ return m_pipelineDefinitionS3Location; }
+
+    /**
+     * <p>The location of the pipeline definition stored in Amazon S3. If specified,
+     * SageMaker will retrieve the pipeline definition from this location.</p>
+     */
+    inline bool PipelineDefinitionS3LocationHasBeenSet() const { return m_pipelineDefinitionS3LocationHasBeenSet; }
+
+    /**
+     * <p>The location of the pipeline definition stored in Amazon S3. If specified,
+     * SageMaker will retrieve the pipeline definition from this location.</p>
+     */
+    inline void SetPipelineDefinitionS3Location(const PipelineDefinitionS3Location& value) { m_pipelineDefinitionS3LocationHasBeenSet = true; m_pipelineDefinitionS3Location = value; }
+
+    /**
+     * <p>The location of the pipeline definition stored in Amazon S3. If specified,
+     * SageMaker will retrieve the pipeline definition from this location.</p>
+     */
+    inline void SetPipelineDefinitionS3Location(PipelineDefinitionS3Location&& value) { m_pipelineDefinitionS3LocationHasBeenSet = true; m_pipelineDefinitionS3Location = std::move(value); }
+
+    /**
+     * <p>The location of the pipeline definition stored in Amazon S3. If specified,
+     * SageMaker will retrieve the pipeline definition from this location.</p>
+     */
+    inline UpdatePipelineRequest& WithPipelineDefinitionS3Location(const PipelineDefinitionS3Location& value) { SetPipelineDefinitionS3Location(value); return *this;}
+
+    /**
+     * <p>The location of the pipeline definition stored in Amazon S3. If specified,
+     * SageMaker will retrieve the pipeline definition from this location.</p>
+     */
+    inline UpdatePipelineRequest& WithPipelineDefinitionS3Location(PipelineDefinitionS3Location&& value) { SetPipelineDefinitionS3Location(std::move(value)); return *this;}
+
+
+    /**
      * <p>The description of the pipeline.</p>
      */
     inline const Aws::String& GetPipelineDescription() const{ return m_pipelineDescription; }
@@ -238,6 +277,37 @@ namespace Model
      */
     inline UpdatePipelineRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>If specified, it applies to all executions of this pipeline by default.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>If specified, it applies to all executions of this pipeline by default.</p>
+     */
+    inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
+
+    /**
+     * <p>If specified, it applies to all executions of this pipeline by default.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
+
+    /**
+     * <p>If specified, it applies to all executions of this pipeline by default.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>If specified, it applies to all executions of this pipeline by default.</p>
+     */
+    inline UpdatePipelineRequest& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>If specified, it applies to all executions of this pipeline by default.</p>
+     */
+    inline UpdatePipelineRequest& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineName;
@@ -249,11 +319,17 @@ namespace Model
     Aws::String m_pipelineDefinition;
     bool m_pipelineDefinitionHasBeenSet;
 
+    PipelineDefinitionS3Location m_pipelineDefinitionS3Location;
+    bool m_pipelineDefinitionS3LocationHasBeenSet;
+
     Aws::String m_pipelineDescription;
     bool m_pipelineDescriptionHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    ParallelismConfiguration m_parallelismConfiguration;
+    bool m_parallelismConfigurationHasBeenSet;
   };
 
 } // namespace Model

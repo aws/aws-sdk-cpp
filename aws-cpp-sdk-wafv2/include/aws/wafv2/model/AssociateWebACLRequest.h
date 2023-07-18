@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline const Aws::String& GetWebACLArn() const{ return m_webACLArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline bool WebACLArnHasBeenSet() const { return m_webACLArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline void SetWebACLArn(const Aws::String& value) { m_webACLArnHasBeenSet = true; m_webACLArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline void SetWebACLArn(Aws::String&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline void SetWebACLArn(const char* value) { m_webACLArnHasBeenSet = true; m_webACLArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline AssociateWebACLRequest& WithWebACLArn(const Aws::String& value) { SetWebACLArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline AssociateWebACLRequest& WithWebACLArn(Aws::String&& value) { SetWebACLArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Web ACL that you want to associate with
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
     inline AssociateWebACLRequest& WithWebACLArn(const char* value) { SetWebACLArn(value); return *this;}
@@ -88,7 +88,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
@@ -101,7 +101,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
@@ -114,7 +114,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
@@ -127,7 +127,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
@@ -140,7 +140,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
@@ -153,7 +153,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
@@ -166,7 +166,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
@@ -179,7 +179,7 @@ namespace Model
      * </p> <p>The ARN must be in one of the following formats:</p> <ul> <li> <p>For an
      * Application Load Balancer:
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-     * </code> </p> </li> <li> <p>For an API Gateway REST API:
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
      * </code> </p> </li> <li> <p>For an AppSync GraphQL API:
      * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>

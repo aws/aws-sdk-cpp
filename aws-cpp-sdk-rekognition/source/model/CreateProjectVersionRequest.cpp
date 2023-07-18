@@ -17,7 +17,9 @@ CreateProjectVersionRequest::CreateProjectVersionRequest() :
     m_versionNameHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_trainingDataHasBeenSet(false),
-    m_testingDataHasBeenSet(false)
+    m_testingDataHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,23 @@ Aws::String CreateProjectVersionRequest::SerializePayload() const
   if(m_testingDataHasBeenSet)
   {
    payload.WithObject("TestingData", m_testingData.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

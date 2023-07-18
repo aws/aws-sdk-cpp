@@ -39,42 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline PromoteResourceShareCreatedFromPolicyRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline PromoteResourceShareCreatedFromPolicyRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource share to promote.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share to promote.</p>
      */
     inline PromoteResourceShareCreatedFromPolicyRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 

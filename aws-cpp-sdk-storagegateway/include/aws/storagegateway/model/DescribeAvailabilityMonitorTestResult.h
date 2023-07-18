@@ -57,62 +57,62 @@ namespace Model
 
 
     /**
-     * <p>The status of the High Availability monitoring test. If a test hasn't been
+     * <p>The status of the high availability monitoring test. If a test hasn't been
      * performed, the value of this field is null.</p>
      */
     inline const AvailabilityMonitorTestStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the High Availability monitoring test. If a test hasn't been
+     * <p>The status of the high availability monitoring test. If a test hasn't been
      * performed, the value of this field is null.</p>
      */
     inline void SetStatus(const AvailabilityMonitorTestStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the High Availability monitoring test. If a test hasn't been
+     * <p>The status of the high availability monitoring test. If a test hasn't been
      * performed, the value of this field is null.</p>
      */
     inline void SetStatus(AvailabilityMonitorTestStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the High Availability monitoring test. If a test hasn't been
+     * <p>The status of the high availability monitoring test. If a test hasn't been
      * performed, the value of this field is null.</p>
      */
     inline DescribeAvailabilityMonitorTestResult& WithStatus(const AvailabilityMonitorTestStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the High Availability monitoring test. If a test hasn't been
+     * <p>The status of the high availability monitoring test. If a test hasn't been
      * performed, the value of this field is null.</p>
      */
     inline DescribeAvailabilityMonitorTestResult& WithStatus(AvailabilityMonitorTestStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the High Availability monitoring test was started. If a test hasn't
+     * <p>The time the high availability monitoring test was started. If a test hasn't
      * been performed, the value of this field is null.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time the High Availability monitoring test was started. If a test hasn't
+     * <p>The time the high availability monitoring test was started. If a test hasn't
      * been performed, the value of this field is null.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
-     * <p>The time the High Availability monitoring test was started. If a test hasn't
+     * <p>The time the high availability monitoring test was started. If a test hasn't
      * been performed, the value of this field is null.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
-     * <p>The time the High Availability monitoring test was started. If a test hasn't
+     * <p>The time the high availability monitoring test was started. If a test hasn't
      * been performed, the value of this field is null.</p>
      */
     inline DescribeAvailabilityMonitorTestResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time the High Availability monitoring test was started. If a test hasn't
+     * <p>The time the high availability monitoring test was started. If a test hasn't
      * been performed, the value of this field is null.</p>
      */
     inline DescribeAvailabilityMonitorTestResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}

@@ -38,42 +38,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
 
@@ -106,81 +106,81 @@ namespace Model
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline const Aws::Vector<Aws::String>& GetGlobalNodeGroupsToRemove() const{ return m_globalNodeGroupsToRemove; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline bool GlobalNodeGroupsToRemoveHasBeenSet() const { return m_globalNodeGroupsToRemoveHasBeenSet; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline void SetGlobalNodeGroupsToRemove(const Aws::Vector<Aws::String>& value) { m_globalNodeGroupsToRemoveHasBeenSet = true; m_globalNodeGroupsToRemove = value; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline void SetGlobalNodeGroupsToRemove(Aws::Vector<Aws::String>&& value) { m_globalNodeGroupsToRemoveHasBeenSet = true; m_globalNodeGroupsToRemove = std::move(value); }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& WithGlobalNodeGroupsToRemove(const Aws::Vector<Aws::String>& value) { SetGlobalNodeGroupsToRemove(value); return *this;}
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& WithGlobalNodeGroupsToRemove(Aws::Vector<Aws::String>&& value) { SetGlobalNodeGroupsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& AddGlobalNodeGroupsToRemove(const Aws::String& value) { m_globalNodeGroupsToRemoveHasBeenSet = true; m_globalNodeGroupsToRemove.push_back(value); return *this; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& AddGlobalNodeGroupsToRemove(Aws::String&& value) { m_globalNodeGroupsToRemoveHasBeenSet = true; m_globalNodeGroupsToRemove.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+     * GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
      * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRemove from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& AddGlobalNodeGroupsToRemove(const char* value) { m_globalNodeGroupsToRemoveHasBeenSet = true; m_globalNodeGroupsToRemove.push_back(value); return *this; }
 
@@ -188,81 +188,81 @@ namespace Model
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline const Aws::Vector<Aws::String>& GetGlobalNodeGroupsToRetain() const{ return m_globalNodeGroupsToRetain; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline bool GlobalNodeGroupsToRetainHasBeenSet() const { return m_globalNodeGroupsToRetainHasBeenSet; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline void SetGlobalNodeGroupsToRetain(const Aws::Vector<Aws::String>& value) { m_globalNodeGroupsToRetainHasBeenSet = true; m_globalNodeGroupsToRetain = value; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline void SetGlobalNodeGroupsToRetain(Aws::Vector<Aws::String>&& value) { m_globalNodeGroupsToRetainHasBeenSet = true; m_globalNodeGroupsToRetain = std::move(value); }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& WithGlobalNodeGroupsToRetain(const Aws::Vector<Aws::String>& value) { SetGlobalNodeGroupsToRetain(value); return *this;}
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& WithGlobalNodeGroupsToRetain(Aws::Vector<Aws::String>&& value) { SetGlobalNodeGroupsToRetain(std::move(value)); return *this;}
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& AddGlobalNodeGroupsToRetain(const Aws::String& value) { m_globalNodeGroupsToRetainHasBeenSet = true; m_globalNodeGroupsToRetain.push_back(value); return *this; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& AddGlobalNodeGroupsToRetain(Aws::String&& value) { m_globalNodeGroupsToRetainHasBeenSet = true; m_globalNodeGroupsToRetain.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the value of NodeGroupCount is less than the current number of node groups
      * (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required.
-     * NodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
-     * ElastiCache for Redis will attempt to remove all node groups listed by
-     * NodeGroupsToRemove from the cluster. </p>
+     * GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster.
+     * ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster. </p>
      */
     inline DecreaseNodeGroupsInGlobalReplicationGroupRequest& AddGlobalNodeGroupsToRetain(const char* value) { m_globalNodeGroupsToRetainHasBeenSet = true; m_globalNodeGroupsToRetain.push_back(value); return *this; }
 

@@ -270,89 +270,129 @@ namespace Model
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
@@ -462,6 +502,80 @@ namespace Model
      */
     inline ListCopyJobsRequest& WithByAccountId(const char* value) { SetByAccountId(value); return *this;}
 
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteBefore() const{ return m_byCompleteBefore; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteBeforeHasBeenSet() const { return m_byCompleteBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(const Aws::Utils::DateTime& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = value; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(Aws::Utils::DateTime&& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = std::move(value); }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListCopyJobsRequest& WithByCompleteBefore(const Aws::Utils::DateTime& value) { SetByCompleteBefore(value); return *this;}
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListCopyJobsRequest& WithByCompleteBefore(Aws::Utils::DateTime&& value) { SetByCompleteBefore(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteAfter() const{ return m_byCompleteAfter; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteAfterHasBeenSet() const { return m_byCompleteAfterHasBeenSet; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(const Aws::Utils::DateTime& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = value; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(Aws::Utils::DateTime&& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = std::move(value); }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListCopyJobsRequest& WithByCompleteAfter(const Aws::Utils::DateTime& value) { SetByCompleteAfter(value); return *this;}
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListCopyJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -490,6 +604,12 @@ namespace Model
 
     Aws::String m_byAccountId;
     bool m_byAccountIdHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteBefore;
+    bool m_byCompleteBeforeHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteAfter;
+    bool m_byCompleteAfterHasBeenSet;
   };
 
 } // namespace Model

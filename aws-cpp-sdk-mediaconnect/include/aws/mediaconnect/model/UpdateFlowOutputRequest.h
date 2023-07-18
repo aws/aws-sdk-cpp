@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
+#include <aws/mediaconnect/model/MediaStreamOutputConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -272,24 +273,114 @@ namespace Model
 
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline int GetMaxLatency() const{ return m_maxLatency; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline UpdateFlowOutputRequest& WithMaxLatency(int value) { SetMaxLatency(value); return *this;}
+
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline const Aws::Vector<MediaStreamOutputConfigurationRequest>& GetMediaStreamOutputConfigurations() const{ return m_mediaStreamOutputConfigurations; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfigurationRequest>& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = value; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfigurationRequest>&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = std::move(value); }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& WithMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfigurationRequest>& value) { SetMediaStreamOutputConfigurations(value); return *this;}
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& WithMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfigurationRequest>&& value) { SetMediaStreamOutputConfigurations(std::move(value)); return *this;}
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& AddMediaStreamOutputConfigurations(const MediaStreamOutputConfigurationRequest& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(value); return *this; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& AddMediaStreamOutputConfigurations(MediaStreamOutputConfigurationRequest&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline int GetMinLatency() const{ return m_minLatency; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline bool MinLatencyHasBeenSet() const { return m_minLatencyHasBeenSet; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline void SetMinLatency(int value) { m_minLatencyHasBeenSet = true; m_minLatency = value; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline UpdateFlowOutputRequest& WithMinLatency(int value) { SetMinLatency(value); return *this;}
 
 
     /**
@@ -427,6 +518,80 @@ namespace Model
 
 
     /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline int GetSenderControlPort() const{ return m_senderControlPort; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline void SetSenderControlPort(int value) { m_senderControlPortHasBeenSet = true; m_senderControlPort = value; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderControlPort(int value) { SetSenderControlPort(value); return *this;}
+
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline const Aws::String& GetSenderIpAddress() const{ return m_senderIpAddress; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const Aws::String& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = value; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(Aws::String&& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = std::move(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const char* value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress.assign(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderIpAddress(const Aws::String& value) { SetSenderIpAddress(value); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderIpAddress(Aws::String&& value) { SetSenderIpAddress(std::move(value)); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderIpAddress(const char* value) { SetSenderIpAddress(value); return *this;}
+
+
+    /**
      * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetSmoothingLatency() const{ return m_smoothingLatency; }
@@ -546,6 +711,12 @@ namespace Model
     int m_maxLatency;
     bool m_maxLatencyHasBeenSet;
 
+    Aws::Vector<MediaStreamOutputConfigurationRequest> m_mediaStreamOutputConfigurations;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet;
+
+    int m_minLatency;
+    bool m_minLatencyHasBeenSet;
+
     Aws::String m_outputArn;
     bool m_outputArnHasBeenSet;
 
@@ -557,6 +728,12 @@ namespace Model
 
     Aws::String m_remoteId;
     bool m_remoteIdHasBeenSet;
+
+    int m_senderControlPort;
+    bool m_senderControlPortHasBeenSet;
+
+    Aws::String m_senderIpAddress;
+    bool m_senderIpAddressHasBeenSet;
 
     int m_smoothingLatency;
     bool m_smoothingLatencyHasBeenSet;

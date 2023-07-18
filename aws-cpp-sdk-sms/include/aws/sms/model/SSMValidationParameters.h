@@ -151,42 +151,42 @@ namespace Model
 
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline const Aws::String& GetCommand() const{ return m_command; }
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline void SetCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command = value; }
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline void SetCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline void SetCommand(const char* value) { m_commandHasBeenSet = true; m_command.assign(value); }
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline SSMValidationParameters& WithCommand(const Aws::String& value) { SetCommand(value); return *this;}
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline SSMValidationParameters& WithCommand(Aws::String&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
-     * <p>The command to run the validation script</p>
+     * <p>The command to run the validation script.</p>
      */
     inline SSMValidationParameters& WithCommand(const char* value) { SetCommand(value); return *this;}
 

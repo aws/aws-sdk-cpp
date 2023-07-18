@@ -35,26 +35,26 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that indicates whether to include inactive bundle results in
-     * your request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * bundles in the response of your request.</p>
      */
     inline bool GetIncludeInactive() const{ return m_includeInactive; }
 
     /**
-     * <p>A Boolean value that indicates whether to include inactive bundle results in
-     * your request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * bundles in the response of your request.</p>
      */
     inline bool IncludeInactiveHasBeenSet() const { return m_includeInactiveHasBeenSet; }
 
     /**
-     * <p>A Boolean value that indicates whether to include inactive bundle results in
-     * your request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * bundles in the response of your request.</p>
      */
     inline void SetIncludeInactive(bool value) { m_includeInactiveHasBeenSet = true; m_includeInactive = value; }
 
     /**
-     * <p>A Boolean value that indicates whether to include inactive bundle results in
-     * your request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * bundles in the response of your request.</p>
      */
     inline GetBundlesRequest& WithIncludeInactive(bool value) { SetIncludeInactive(value); return *this;}
 

@@ -31,8 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an AWS Batch job definition.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>An object representing an Batch job definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDefinition">AWS
    * API Reference</a></p>
    */
@@ -190,76 +189,113 @@ namespace Model
 
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithType(const char* value) { SetType(value); return *this;}
+
+
+    /**
+     * <p>The scheduling priority of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
+
+    /**
+     * <p>The scheduling priority of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline bool SchedulingPriorityHasBeenSet() const { return m_schedulingPriorityHasBeenSet; }
+
+    /**
+     * <p>The scheduling priority of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline void SetSchedulingPriority(int value) { m_schedulingPriorityHasBeenSet = true; m_schedulingPriority = value; }
+
+    /**
+     * <p>The scheduling priority of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline JobDefinition& WithSchedulingPriority(int value) { SetSchedulingPriority(value); return *this;}
 
 
     /**
@@ -269,7 +305,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -280,7 +316,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -291,7 +327,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -302,7 +338,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -313,7 +349,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -324,7 +360,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -335,7 +371,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -346,7 +382,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -357,7 +393,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -368,7 +404,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -379,7 +415,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -390,7 +426,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -401,7 +437,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>AWS Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -476,43 +512,43 @@ namespace Model
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they haven't finished.</p>
+     * definition. You can specify a timeout duration after which Batch terminates your
+     * jobs if they haven't finished.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they haven't finished.</p>
+     * definition. You can specify a timeout duration after which Batch terminates your
+     * jobs if they haven't finished.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they haven't finished.</p>
+     * definition. You can specify a timeout duration after which Batch terminates your
+     * jobs if they haven't finished.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they haven't finished.</p>
+     * definition. You can specify a timeout duration after which Batch terminates your
+     * jobs if they haven't finished.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they haven't finished.</p>
+     * definition. You can specify a timeout duration after which Batch terminates your
+     * jobs if they haven't finished.</p>
      */
     inline JobDefinition& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they haven't finished.</p>
+     * definition. You can specify a timeout duration after which Batch terminates your
+     * jobs if they haven't finished.</p>
      */
     inline JobDefinition& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
@@ -745,6 +781,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    int m_schedulingPriority;
+    bool m_schedulingPriorityHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;

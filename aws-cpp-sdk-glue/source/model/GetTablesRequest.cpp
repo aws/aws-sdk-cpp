@@ -18,7 +18,9 @@ GetTablesRequest::GetTablesRequest() :
     m_expressionHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_transactionIdHasBeenSet(false),
+    m_queryAsOfTimeHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,17 @@ Aws::String GetTablesRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
+
+  }
+
+  if(m_queryAsOfTimeHasBeenSet)
+  {
+   payload.WithDouble("QueryAsOfTime", m_queryAsOfTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

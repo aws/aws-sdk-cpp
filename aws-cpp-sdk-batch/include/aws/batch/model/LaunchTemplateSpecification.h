@@ -30,8 +30,8 @@ namespace Model
    * <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code>
    * and the launch template, the values in the <code>securityGroupIds</code>
    * parameter of <code>CreateComputeEnvironment</code> will be used.</p> 
-   * <p>This object isn't applicable to jobs running on Fargate resources.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>This object isn't applicable to jobs that are running on Fargate
+   * resources.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
@@ -130,8 +130,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -139,8 +151,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -148,8 +172,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -157,8 +193,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -166,8 +214,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -175,8 +235,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -184,8 +256,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -193,8 +277,20 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>If the
+     * AMI ID that's used in a compute environment is from the launch template, the AMI
+     * isn't changed when the compute environment is updated. It's only changed if the
+     * <code>updateToLatestImageVersion</code> parameter for the compute environment is
+     * set to <code>true</code>. During an infrastructure update, if either
+     * <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates
+     * the launch template version, and it might use a different version of the launch
+     * template. This is the case even if the launch template isn't specified in the
+     * update. When updating a compute environment, changing the launch template
+     * requires an infrastructure update of the compute environment. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p> 
+     * <p>Default: <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
 

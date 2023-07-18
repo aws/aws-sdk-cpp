@@ -9,17 +9,22 @@
 #include <aws/mediaconvert/model/HlsAudioOnlyHeader.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/HlsCaptionLanguageSetting.h>
+#include <aws/mediaconvert/model/HlsCaptionSegmentLengthControl.h>
 #include <aws/mediaconvert/model/HlsClientCache.h>
 #include <aws/mediaconvert/model/HlsCodecSpecification.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/HlsDirectoryStructure.h>
 #include <aws/mediaconvert/model/HlsEncryptionSettings.h>
+#include <aws/mediaconvert/model/HlsImageBasedTrickPlay.h>
+#include <aws/mediaconvert/model/HlsImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/HlsManifestCompression.h>
 #include <aws/mediaconvert/model/HlsManifestDurationFormat.h>
 #include <aws/mediaconvert/model/HlsOutputSelection.h>
 #include <aws/mediaconvert/model/HlsProgramDateTime.h>
 #include <aws/mediaconvert/model/HlsSegmentControl.h>
+#include <aws/mediaconvert/model/HlsSegmentLengthControl.h>
 #include <aws/mediaconvert/model/HlsStreamInfResolution.h>
+#include <aws/mediaconvert/model/HlsTargetDurationCompatibilityMode.h>
 #include <aws/mediaconvert/model/HlsTimedMetadataId3Frame.h>
 #include <aws/mediaconvert/model/HlsAdMarkers.h>
 #include <aws/mediaconvert/model/HlsAdditionalManifest.h>
@@ -42,7 +47,10 @@ namespace Model
 {
 
   /**
-   * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+   * Settings related to your HLS output package. For more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+   * you work directly in your JSON job specification, include this object and any
+   * required children when you set Type, under OutputGroupSettings, to
    * HLS_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsGroupSettings">AWS
    * API Reference</a></p>
@@ -405,6 +413,67 @@ namespace Model
 
 
     /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline const HlsCaptionSegmentLengthControl& GetCaptionSegmentLengthControl() const{ return m_captionSegmentLengthControl; }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline bool CaptionSegmentLengthControlHasBeenSet() const { return m_captionSegmentLengthControlHasBeenSet; }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline void SetCaptionSegmentLengthControl(const HlsCaptionSegmentLengthControl& value) { m_captionSegmentLengthControlHasBeenSet = true; m_captionSegmentLengthControl = value; }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline void SetCaptionSegmentLengthControl(HlsCaptionSegmentLengthControl&& value) { m_captionSegmentLengthControlHasBeenSet = true; m_captionSegmentLengthControl = std::move(value); }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline HlsGroupSettings& WithCaptionSegmentLengthControl(const HlsCaptionSegmentLengthControl& value) { SetCaptionSegmentLengthControl(value); return *this;}
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline HlsGroupSettings& WithCaptionSegmentLengthControl(HlsCaptionSegmentLengthControl&& value) { SetCaptionSegmentLengthControl(std::move(value)); return *this;}
+
+
+    /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
      * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
      * your video distribution set up. For example, use the Cache-Control http header.
@@ -654,6 +723,122 @@ namespace Model
      * DRM settings.
      */
     inline HlsGroupSettings& WithEncryption(HlsEncryptionSettings&& value) { SetEncryption(std::move(value)); return *this;}
+
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline const HlsImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(const HlsImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(HlsImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlay(const HlsImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlay(HlsImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
+
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline const HlsImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(const HlsImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(HlsImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlaySettings(const HlsImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlaySettings(HlsImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
 
 
     /**
@@ -955,32 +1140,99 @@ namespace Model
 
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline HlsGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
+
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline const HlsSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(const HlsSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(HlsSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline HlsGroupSettings& WithSegmentLengthControl(const HlsSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline HlsGroupSettings& WithSegmentLengthControl(HlsSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
@@ -1046,53 +1298,176 @@ namespace Model
 
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline const HlsTargetDurationCompatibilityMode& GetTargetDurationCompatibilityMode() const{ return m_targetDurationCompatibilityMode; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline bool TargetDurationCompatibilityModeHasBeenSet() const { return m_targetDurationCompatibilityModeHasBeenSet; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(const HlsTargetDurationCompatibilityMode& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = value; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode&& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = std::move(value); }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline HlsGroupSettings& WithTargetDurationCompatibilityMode(const HlsTargetDurationCompatibilityMode& value) { SetTargetDurationCompatibilityMode(value); return *this;}
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline HlsGroupSettings& WithTargetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode&& value) { SetTargetDurationCompatibilityMode(std::move(value)); return *this;}
+
+
+    /**
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline const HlsTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline void SetTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline void SetTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = std::move(value); }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { SetTimedMetadataId3Frame(value); return *this;}
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { SetTimedMetadataId3Frame(std::move(value)); return *this;}
 
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline int GetTimedMetadataId3Period() const{ return m_timedMetadataId3Period; }
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline void SetTimedMetadataId3Period(int value) { m_timedMetadataId3PeriodHasBeenSet = true; m_timedMetadataId3Period = value; }
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline HlsGroupSettings& WithTimedMetadataId3Period(int value) { SetTimedMetadataId3Period(value); return *this;}
 
@@ -1137,6 +1512,9 @@ namespace Model
     HlsCaptionLanguageSetting m_captionLanguageSetting;
     bool m_captionLanguageSettingHasBeenSet;
 
+    HlsCaptionSegmentLengthControl m_captionSegmentLengthControl;
+    bool m_captionSegmentLengthControlHasBeenSet;
+
     HlsClientCache m_clientCache;
     bool m_clientCacheHasBeenSet;
 
@@ -1154,6 +1532,12 @@ namespace Model
 
     HlsEncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet;
+
+    HlsImageBasedTrickPlay m_imageBasedTrickPlay;
+    bool m_imageBasedTrickPlayHasBeenSet;
+
+    HlsImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet;
 
     HlsManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;
@@ -1182,11 +1566,17 @@ namespace Model
     int m_segmentLength;
     bool m_segmentLengthHasBeenSet;
 
+    HlsSegmentLengthControl m_segmentLengthControl;
+    bool m_segmentLengthControlHasBeenSet;
+
     int m_segmentsPerSubdirectory;
     bool m_segmentsPerSubdirectoryHasBeenSet;
 
     HlsStreamInfResolution m_streamInfResolution;
     bool m_streamInfResolutionHasBeenSet;
+
+    HlsTargetDurationCompatibilityMode m_targetDurationCompatibilityMode;
+    bool m_targetDurationCompatibilityModeHasBeenSet;
 
     HlsTimedMetadataId3Frame m_timedMetadataId3Frame;
     bool m_timedMetadataId3FrameHasBeenSet;

@@ -158,7 +158,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
@@ -170,7 +171,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
@@ -182,7 +184,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
@@ -194,7 +197,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
@@ -206,7 +210,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline CreateDatasetImportJobRequest& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
@@ -218,7 +223,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline CreateDatasetImportJobRequest& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
@@ -672,6 +678,55 @@ namespace Model
      */
     inline CreateDatasetImportJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the imported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
+
   private:
 
     Aws::String m_datasetImportJobName;
@@ -697,6 +752,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_format;
+    bool m_formatHasBeenSet;
   };
 
 } // namespace Model

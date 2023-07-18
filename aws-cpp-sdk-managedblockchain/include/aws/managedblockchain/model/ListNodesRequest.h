@@ -82,41 +82,57 @@ namespace Model
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline const Aws::String& GetMemberId() const{ return m_memberId; }
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline ListNodesRequest& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline ListNodesRequest& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the member who owns the nodes to list.</p>
+     * <p>Applies only to Hyperledger Fabric and is required for Hyperledger
+     * Fabric.</p>
      */
     inline ListNodesRequest& WithMemberId(const char* value) { SetMemberId(value); return *this;}
 

@@ -20,6 +20,8 @@ PutBucketNotificationConfigurationRequest::PutBucketNotificationConfigurationReq
     m_bucketHasBeenSet(false),
     m_notificationConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_skipDestinationValidation(false),
+    m_skipDestinationValidationHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -66,6 +68,13 @@ Aws::Http::HeaderValueCollection PutBucketNotificationConfigurationRequest::GetR
   {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  if(m_skipDestinationValidationHasBeenSet)
+  {
+    ss << std::boolalpha << m_skipDestinationValidation;
+    headers.emplace("x-amz-skip-destination-validation", ss.str());
     ss.str("");
   }
 

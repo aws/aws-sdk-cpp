@@ -18,7 +18,10 @@ GetReservationUtilizationRequest::GetReservationUtilizationRequest() :
     m_granularity(Granularity::NOT_SET),
     m_granularityHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
+    m_sortByHasBeenSet(false),
+    m_nextPageTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -54,9 +57,21 @@ Aws::String GetReservationUtilizationRequest::SerializePayload() const
 
   }
 
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithObject("SortBy", m_sortBy.Jsonize());
+
+  }
+
   if(m_nextPageTokenHasBeenSet)
   {
    payload.WithString("NextPageToken", m_nextPageToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

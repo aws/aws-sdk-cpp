@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-   * change.</p> <p>The event integration association.</p><p><h3>See Also:</h3>   <a
+   * <p>The event integration association.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/EventIntegrationAssociation">AWS
    * API Reference</a></p>
    */
@@ -212,42 +211,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline const Aws::String& GetEventBridgeRuleName() const{ return m_eventBridgeRuleName; }
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline bool EventBridgeRuleNameHasBeenSet() const { return m_eventBridgeRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline void SetEventBridgeRuleName(const Aws::String& value) { m_eventBridgeRuleNameHasBeenSet = true; m_eventBridgeRuleName = value; }
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline void SetEventBridgeRuleName(Aws::String&& value) { m_eventBridgeRuleNameHasBeenSet = true; m_eventBridgeRuleName = std::move(value); }
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline void SetEventBridgeRuleName(const char* value) { m_eventBridgeRuleNameHasBeenSet = true; m_eventBridgeRuleName.assign(value); }
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline EventIntegrationAssociation& WithEventBridgeRuleName(const Aws::String& value) { SetEventBridgeRuleName(value); return *this;}
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline EventIntegrationAssociation& WithEventBridgeRuleName(Aws::String&& value) { SetEventBridgeRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Eventbridge rule.</p>
+     * <p>The name of the EventBridge rule.</p>
      */
     inline EventIntegrationAssociation& WithEventBridgeRuleName(const char* value) { SetEventBridgeRuleName(value); return *this;}
 

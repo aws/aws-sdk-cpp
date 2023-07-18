@@ -104,9 +104,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>
@@ -133,9 +133,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>
@@ -162,9 +162,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>
@@ -191,9 +191,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>
@@ -220,9 +220,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>
@@ -249,9 +249,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>
@@ -278,9 +278,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>
@@ -307,9 +307,9 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+     * that owns the transit gateway.</p> </li> <li> <p> <code>state</code> - The state
+     * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
      * gateway.</p> </li> </ul>

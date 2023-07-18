@@ -36,185 +36,201 @@ namespace Model
 
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline ListMedicalVocabulariesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline ListMedicalVocabulariesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the result of your previous request to
-     * <code>ListMedicalVocabularies</code> was truncated, include the
-     * <code>NextToken</code> to fetch the next set of vocabularies.</p>
+     * <p>If your <code>ListMedicalVocabularies</code> request returns more results
+     * than can be displayed, <code>NextToken</code> is displayed in the response with
+     * an associated string. To get the next page of results, copy this string and
+     * repeat your request, including <code>NextToken</code> with the value of the
+     * copied string. Repeat as needed to view all your results.</p>
      */
     inline ListMedicalVocabulariesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of vocabularies to return in the response.</p>
+     * <p>The maximum number of custom medical vocabularies to return in each page of
+     * results. If there are fewer results than the value you specify, only the actual
+     * results are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of vocabularies to return in the response.</p>
+     * <p>The maximum number of custom medical vocabularies to return in each page of
+     * results. If there are fewer results than the value you specify, only the actual
+     * results are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of vocabularies to return in the response.</p>
+     * <p>The maximum number of custom medical vocabularies to return in each page of
+     * results. If there are fewer results than the value you specify, only the actual
+     * results are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of vocabularies to return in the response.</p>
+     * <p>The maximum number of custom medical vocabularies to return in each page of
+     * results. If there are fewer results than the value you specify, only the actual
+     * results are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline ListMedicalVocabulariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>When specified, returns only vocabularies with the
-     * <code>VocabularyState</code> equal to the specified vocabulary state. Use this
-     * field to see which vocabularies are ready for your medical transcription
-     * jobs.</p>
+     * <p>Returns only custom medical vocabularies with the specified state.
+     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline const VocabularyState& GetStateEquals() const{ return m_stateEquals; }
 
     /**
-     * <p>When specified, returns only vocabularies with the
-     * <code>VocabularyState</code> equal to the specified vocabulary state. Use this
-     * field to see which vocabularies are ready for your medical transcription
-     * jobs.</p>
+     * <p>Returns only custom medical vocabularies with the specified state.
+     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline bool StateEqualsHasBeenSet() const { return m_stateEqualsHasBeenSet; }
 
     /**
-     * <p>When specified, returns only vocabularies with the
-     * <code>VocabularyState</code> equal to the specified vocabulary state. Use this
-     * field to see which vocabularies are ready for your medical transcription
-     * jobs.</p>
+     * <p>Returns only custom medical vocabularies with the specified state.
+     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline void SetStateEquals(const VocabularyState& value) { m_stateEqualsHasBeenSet = true; m_stateEquals = value; }
 
     /**
-     * <p>When specified, returns only vocabularies with the
-     * <code>VocabularyState</code> equal to the specified vocabulary state. Use this
-     * field to see which vocabularies are ready for your medical transcription
-     * jobs.</p>
+     * <p>Returns only custom medical vocabularies with the specified state.
+     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline void SetStateEquals(VocabularyState&& value) { m_stateEqualsHasBeenSet = true; m_stateEquals = std::move(value); }
 
     /**
-     * <p>When specified, returns only vocabularies with the
-     * <code>VocabularyState</code> equal to the specified vocabulary state. Use this
-     * field to see which vocabularies are ready for your medical transcription
-     * jobs.</p>
+     * <p>Returns only custom medical vocabularies with the specified state.
+     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline ListMedicalVocabulariesRequest& WithStateEquals(const VocabularyState& value) { SetStateEquals(value); return *this;}
 
     /**
-     * <p>When specified, returns only vocabularies with the
-     * <code>VocabularyState</code> equal to the specified vocabulary state. Use this
-     * field to see which vocabularies are ready for your medical transcription
-     * jobs.</p>
+     * <p>Returns only custom medical vocabularies with the specified state.
+     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * returned.</p>
      */
     inline ListMedicalVocabulariesRequest& WithStateEquals(VocabularyState&& value) { SetStateEquals(std::move(value)); return *this;}
 
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline ListMedicalVocabulariesRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline ListMedicalVocabulariesRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
 
     /**
-     * <p>Returns vocabularies whose names contain the specified string. The search is
-     * not case sensitive. <code>ListMedicalVocabularies</code> returns both
-     * "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+     * <p>Returns only the custom medical vocabularies that contain the specified
+     * string. The search is not case sensitive.</p>
      */
     inline ListMedicalVocabulariesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 

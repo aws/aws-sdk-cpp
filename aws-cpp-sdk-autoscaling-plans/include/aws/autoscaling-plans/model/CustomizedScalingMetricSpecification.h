@@ -38,9 +38,11 @@ namespace Model
    * <p>Choose a metric that changes proportionally with capacity. The value of the
    * metric should increase or decrease in inverse proportion to the number of
    * capacity units. That is, the value of the metric should decrease when capacity
-   * increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a
+   * increases. </p> </li> </ul> <p>For information about terminology, available
+   * metrics, or how to publish new metrics, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-   * CloudWatch Concepts</a>. </p><p><h3>See Also:</h3>   <a
+   * CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedScalingMetricSpecification">AWS
    * API Reference</a></p>
    */

@@ -25,6 +25,9 @@ namespace Aws
         static const int VPC_SECURITY_GROUP_HASH = HashingUtils::HashString("VPC_SECURITY_GROUP");
         static const int SASL_SCRAM_512_AUTH_HASH = HashingUtils::HashString("SASL_SCRAM_512_AUTH");
         static const int SASL_SCRAM_256_AUTH_HASH = HashingUtils::HashString("SASL_SCRAM_256_AUTH");
+        static const int VIRTUAL_HOST_HASH = HashingUtils::HashString("VIRTUAL_HOST");
+        static const int CLIENT_CERTIFICATE_TLS_AUTH_HASH = HashingUtils::HashString("CLIENT_CERTIFICATE_TLS_AUTH");
+        static const int SERVER_ROOT_CA_CERTIFICATE_HASH = HashingUtils::HashString("SERVER_ROOT_CA_CERTIFICATE");
 
 
         SourceAccessType GetSourceAccessTypeForName(const Aws::String& name)
@@ -50,6 +53,18 @@ namespace Aws
           {
             return SourceAccessType::SASL_SCRAM_256_AUTH;
           }
+          else if (hashCode == VIRTUAL_HOST_HASH)
+          {
+            return SourceAccessType::VIRTUAL_HOST;
+          }
+          else if (hashCode == CLIENT_CERTIFICATE_TLS_AUTH_HASH)
+          {
+            return SourceAccessType::CLIENT_CERTIFICATE_TLS_AUTH;
+          }
+          else if (hashCode == SERVER_ROOT_CA_CERTIFICATE_HASH)
+          {
+            return SourceAccessType::SERVER_ROOT_CA_CERTIFICATE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +89,12 @@ namespace Aws
             return "SASL_SCRAM_512_AUTH";
           case SourceAccessType::SASL_SCRAM_256_AUTH:
             return "SASL_SCRAM_256_AUTH";
+          case SourceAccessType::VIRTUAL_HOST:
+            return "VIRTUAL_HOST";
+          case SourceAccessType::CLIENT_CERTIFICATE_TLS_AUTH:
+            return "CLIENT_CERTIFICATE_TLS_AUTH";
+          case SourceAccessType::SERVER_ROOT_CA_CERTIFICATE:
+            return "SERVER_ROOT_CA_CERTIFICATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

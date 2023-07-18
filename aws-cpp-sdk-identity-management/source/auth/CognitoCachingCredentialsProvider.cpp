@@ -110,7 +110,10 @@ GetCredentialsForIdentityOutcome FetchCredentialsFromCognito(const CognitoIdenti
                                          " with logins.");
 
         GetIdRequest getIdRequest;
-        getIdRequest.SetAccountId(accountId);
+        if(!accountId.empty())
+        {
+            getIdRequest.SetAccountId(accountId);
+        }
         getIdRequest.SetIdentityPoolId(identityPoolId);
         if(includeLogins)
         {
@@ -154,6 +157,10 @@ CognitoCachingAnonymousCredentialsProvider::CognitoCachingAnonymousCredentialsPr
 CognitoCachingAnonymousCredentialsProvider::CognitoCachingAnonymousCredentialsProvider(const Aws::String& accountId, const Aws::String& identityPoolId,
                                                                                        const std::shared_ptr<CognitoIdentityClient>& cognitoIdentityClient) :
         CognitoCachingCredentialsProvider(Aws::MakeShared<DefaultPersistentCognitoIdentityProvider>(MEM_TAG, identityPoolId, accountId), cognitoIdentityClient)
+{ }
+CognitoCachingAnonymousCredentialsProvider::CognitoCachingAnonymousCredentialsProvider(const Aws::String& identityPoolId,
+                                                                                       const std::shared_ptr<CognitoIdentityClient>& cognitoIdentityClient) :
+        CognitoCachingCredentialsProvider(Aws::MakeShared<DefaultPersistentCognitoIdentityProvider>(MEM_TAG, identityPoolId), cognitoIdentityClient)
 { }
 
 

@@ -56,8 +56,8 @@ static const int CACHE_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashS
 static const int SUBNET_IN_USE_HASH = HashingUtils::HashString("SubnetInUse");
 static const int AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthorizationAlreadyExists");
 static const int CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaForCustomerExceeded");
-static const int CACHE_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("QuotaExceeded.CacheSecurityGroup");
 static const int RESERVED_CACHE_NODE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedCacheNodeNotFound");
+static const int CACHE_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("QuotaExceeded.CacheSecurityGroup");
 static const int CACHE_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("CacheParameterGroupQuotaExceeded");
 static const int CACHE_SUBNET_GROUP_IN_USE_HASH = HashingUtils::HashString("CacheSubnetGroupInUse");
 static const int CACHE_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("CacheSecurityGroupAlreadyExists");
@@ -241,13 +241,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT), false);
   }
-  else if (hashCode == CACHE_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::CACHE_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT), false);
-  }
   else if (hashCode == RESERVED_CACHE_NODE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::RESERVED_CACHE_NODE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == CACHE_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::CACHE_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT), false);
   }
   else if (hashCode == CACHE_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {

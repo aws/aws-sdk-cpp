@@ -160,107 +160,107 @@ namespace Model
 
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline const Aws::String& GetEstimatedROI() const{ return m_estimatedROI; }
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline bool EstimatedROIHasBeenSet() const { return m_estimatedROIHasBeenSet; }
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline void SetEstimatedROI(const Aws::String& value) { m_estimatedROIHasBeenSet = true; m_estimatedROI = value; }
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline void SetEstimatedROI(Aws::String&& value) { m_estimatedROIHasBeenSet = true; m_estimatedROI = std::move(value); }
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline void SetEstimatedROI(const char* value) { m_estimatedROIHasBeenSet = true; m_estimatedROI.assign(value); }
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedROI(const Aws::String& value) { SetEstimatedROI(value); return *this;}
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedROI(Aws::String&& value) { SetEstimatedROI(std::move(value)); return *this;}
 
     /**
-     * <p>The estimated return on investment based on the recommended Savings Plans
-     * purchased. This is calculated as <code>estimatedSavingsAmount</code>/
-     * <code>estimatedSPCost</code>*100.</p>
+     * <p>The estimated return on investment that's based on the recommended Savings
+     * Plans that you purchased. This is calculated as
+     * <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedROI(const char* value) { SetEstimatedROI(value); return *this;}
 
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p>The currency code AWS used to generate the recommendations and present
-     * potential savings.</p>
+     * <p>The currency code that Amazon Web Services used to generate the
+     * recommendations and present potential savings.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 
@@ -364,107 +364,107 @@ namespace Model
 
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline const Aws::String& GetEstimatedOnDemandCostWithCurrentCommitment() const{ return m_estimatedOnDemandCostWithCurrentCommitment; }
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline bool EstimatedOnDemandCostWithCurrentCommitmentHasBeenSet() const { return m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet; }
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline void SetEstimatedOnDemandCostWithCurrentCommitment(const Aws::String& value) { m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true; m_estimatedOnDemandCostWithCurrentCommitment = value; }
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline void SetEstimatedOnDemandCostWithCurrentCommitment(Aws::String&& value) { m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true; m_estimatedOnDemandCostWithCurrentCommitment = std::move(value); }
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline void SetEstimatedOnDemandCostWithCurrentCommitment(const char* value) { m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true; m_estimatedOnDemandCostWithCurrentCommitment.assign(value); }
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedOnDemandCostWithCurrentCommitment(const Aws::String& value) { SetEstimatedOnDemandCostWithCurrentCommitment(value); return *this;}
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedOnDemandCostWithCurrentCommitment(Aws::String&& value) { SetEstimatedOnDemandCostWithCurrentCommitment(std::move(value)); return *this;}
 
     /**
-     * <p> The estimated On-Demand costs you would expect with no additional
-     * commitment, based on your usage of the selected time period and the Savings
-     * Plans you own. </p>
+     * <p> The estimated On-Demand costs you expect with no additional commitment,
+     * based on your usage of the selected time period and the Savings Plans you own.
+     * </p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedOnDemandCostWithCurrentCommitment(const char* value) { SetEstimatedOnDemandCostWithCurrentCommitment(value); return *this;}
 
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline const Aws::String& GetEstimatedSavingsAmount() const{ return m_estimatedSavingsAmount; }
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline bool EstimatedSavingsAmountHasBeenSet() const { return m_estimatedSavingsAmountHasBeenSet; }
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline void SetEstimatedSavingsAmount(const Aws::String& value) { m_estimatedSavingsAmountHasBeenSet = true; m_estimatedSavingsAmount = value; }
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline void SetEstimatedSavingsAmount(Aws::String&& value) { m_estimatedSavingsAmountHasBeenSet = true; m_estimatedSavingsAmount = std::move(value); }
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline void SetEstimatedSavingsAmount(const char* value) { m_estimatedSavingsAmountHasBeenSet = true; m_estimatedSavingsAmount.assign(value); }
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedSavingsAmount(const Aws::String& value) { SetEstimatedSavingsAmount(value); return *this;}
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedSavingsAmount(Aws::String&& value) { SetEstimatedSavingsAmount(std::move(value)); return *this;}
 
     /**
-     * <p>The estimated savings amount based on the recommended Savings Plans over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the recommended Savings Plans
+     * over the length of the lookback period.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedSavingsAmount(const char* value) { SetEstimatedSavingsAmount(value); return *this;}
 
@@ -519,50 +519,50 @@ namespace Model
 
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline const Aws::String& GetHourlyCommitmentToPurchase() const{ return m_hourlyCommitmentToPurchase; }
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline bool HourlyCommitmentToPurchaseHasBeenSet() const { return m_hourlyCommitmentToPurchaseHasBeenSet; }
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline void SetHourlyCommitmentToPurchase(const Aws::String& value) { m_hourlyCommitmentToPurchaseHasBeenSet = true; m_hourlyCommitmentToPurchase = value; }
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline void SetHourlyCommitmentToPurchase(Aws::String&& value) { m_hourlyCommitmentToPurchaseHasBeenSet = true; m_hourlyCommitmentToPurchase = std::move(value); }
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline void SetHourlyCommitmentToPurchase(const char* value) { m_hourlyCommitmentToPurchaseHasBeenSet = true; m_hourlyCommitmentToPurchase.assign(value); }
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithHourlyCommitmentToPurchase(const Aws::String& value) { SetHourlyCommitmentToPurchase(value); return *this;}
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithHourlyCommitmentToPurchase(Aws::String&& value) { SetHourlyCommitmentToPurchase(std::move(value)); return *this;}
 
     /**
-     * <p>The recommended hourly commitment level for the Savings Plans type, and
-     * configuration based on the usage during the lookback period.</p>
+     * <p>The recommended hourly commitment level for the Savings Plans type and the
+     * configuration that's based on the usage during the lookback period.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithHourlyCommitmentToPurchase(const char* value) { SetHourlyCommitmentToPurchase(value); return *this;}
 
@@ -609,49 +609,49 @@ namespace Model
 
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline const Aws::String& GetEstimatedMonthlySavingsAmount() const{ return m_estimatedMonthlySavingsAmount; }
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline bool EstimatedMonthlySavingsAmountHasBeenSet() const { return m_estimatedMonthlySavingsAmountHasBeenSet; }
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline void SetEstimatedMonthlySavingsAmount(const Aws::String& value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount = value; }
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline void SetEstimatedMonthlySavingsAmount(Aws::String&& value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount = std::move(value); }
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline void SetEstimatedMonthlySavingsAmount(const char* value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount.assign(value); }
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(const Aws::String& value) { SetEstimatedMonthlySavingsAmount(value); return *this;}
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(Aws::String&& value) { SetEstimatedMonthlySavingsAmount(std::move(value)); return *this;}
 
     /**
-     * <p>The estimated monthly savings amount, based on the recommended Savings
+     * <p>The estimated monthly savings amount based on the recommended Savings
      * Plans.</p>
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(const char* value) { SetEstimatedMonthlySavingsAmount(value); return *this;}

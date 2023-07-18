@@ -37,7 +37,11 @@ Snapshot::Snapshot() :
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_ownerAliasHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_storageTier(StorageTier::NOT_SET),
+    m_storageTierHasBeenSet(false),
+    m_restoreExpiryTimeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -59,7 +63,11 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_ownerAliasHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_storageTier(StorageTier::NOT_SET),
+    m_storageTierHasBeenSet(false),
+    m_restoreExpiryTimeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -149,6 +157,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_ownerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAliasNode.GetText());
       m_ownerAliasHasBeenSet = true;
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -160,6 +174,18 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       }
 
       m_tagsHasBeenSet = true;
+    }
+    XmlNode storageTierNode = resultNode.FirstChild("storageTier");
+    if(!storageTierNode.IsNull())
+    {
+      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()).c_str());
+      m_storageTierHasBeenSet = true;
+    }
+    XmlNode restoreExpiryTimeNode = resultNode.FirstChild("restoreExpiryTime");
+    if(!restoreExpiryTimeNode.IsNull())
+    {
+      m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_restoreExpiryTimeHasBeenSet = true;
     }
   }
 
@@ -233,6 +259,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".OwnerAlias=" << StringUtils::URLEncode(m_ownerAlias.c_str()) << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -242,6 +273,16 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
         tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+
+  if(m_storageTierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageTier=" << StorageTierMapper::GetNameForStorageTier(m_storageTier) << "&";
+  }
+
+  if(m_restoreExpiryTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_responseMetadataHasBeenSet)
@@ -307,6 +348,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".OwnerAlias=" << StringUtils::URLEncode(m_ownerAlias.c_str()) << "&";
   }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -316,6 +361,14 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_storageTierHasBeenSet)
+  {
+      oStream << location << ".StorageTier=" << StorageTierMapper::GetNameForStorageTier(m_storageTier) << "&";
+  }
+  if(m_restoreExpiryTimeHasBeenSet)
+  {
+      oStream << location << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

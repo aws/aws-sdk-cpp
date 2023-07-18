@@ -12,6 +12,7 @@
 #include <aws/greengrassv2/model/DeploymentPolicies.h>
 #include <aws/greengrassv2/model/ComponentDeploymentSpecification.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -39,129 +40,97 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline CreateDeploymentRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline CreateDeploymentRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline CreateDeploymentRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline const Aws::String& GetDeploymentName() const{ return m_deploymentName; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline bool DeploymentNameHasBeenSet() const { return m_deploymentNameHasBeenSet; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const Aws::String& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = value; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(Aws::String&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::move(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const char* value) { m_deploymentNameHasBeenSet = true; m_deploymentName.assign(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentName(const Aws::String& value) { SetDeploymentName(value); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentName(Aws::String&& value) { SetDeploymentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentName(const char* value) { SetDeploymentName(value); return *this;}
 
@@ -334,106 +303,195 @@ namespace Model
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline CreateDeploymentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline CreateDeploymentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline CreateDeploymentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive identifier that you can provide to ensure that the
+     * request is idempotent. Idempotency means that the request is successfully
+     * processed only once, even if you send the request multiple times. When a request
+     * succeeds, and you specify the same client token for subsequent successful
+     * requests, the IoT Greengrass V2 service returns the successful response that it
+     * caches from the previous request. IoT Greengrass V2 caches successful responses
+     * for idempotent requests for up to 8 hours.</p>
+     */
+    inline CreateDeploymentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
@@ -454,6 +512,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

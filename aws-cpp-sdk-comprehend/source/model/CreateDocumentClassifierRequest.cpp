@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() : 
     m_documentClassifierNameHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
@@ -25,7 +26,9 @@ CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() :
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_mode(DocumentClassifierMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_modelPolicyHasBeenSet(false)
 {
 }
 
@@ -36,6 +39,12 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_documentClassifierNameHasBeenSet)
   {
    payload.WithString("DocumentClassifierName", m_documentClassifierName);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 
@@ -94,6 +103,18 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_modeHasBeenSet)
   {
    payload.WithString("Mode", DocumentClassifierModeMapper::GetNameForDocumentClassifierMode(m_mode));
+  }
+
+  if(m_modelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
+  }
+
+  if(m_modelPolicyHasBeenSet)
+  {
+   payload.WithString("ModelPolicy", m_modelPolicy);
+
   }
 
   return payload.View().WriteReadable();

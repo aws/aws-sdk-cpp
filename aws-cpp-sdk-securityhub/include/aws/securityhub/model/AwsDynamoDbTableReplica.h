@@ -83,50 +83,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline AwsDynamoDbTableReplica& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline AwsDynamoDbTableReplica& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) that will be used for
-     * AWS KMS encryption for the replica.</p>
+     * <p>The identifier of the KMS key that will be used for KMS encryption for the
+     * replica.</p>
      */
     inline AwsDynamoDbTableReplica& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
 

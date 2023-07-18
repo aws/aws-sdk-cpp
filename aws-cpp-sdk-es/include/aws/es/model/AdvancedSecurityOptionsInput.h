@@ -144,6 +144,31 @@ namespace Model
      */
     inline AdvancedSecurityOptionsInput& WithSAMLOptions(SAMLOptionsInput&& value) { SetSAMLOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline bool GetAnonymousAuthEnabled() const{ return m_anonymousAuthEnabled; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline bool AnonymousAuthEnabledHasBeenSet() const { return m_anonymousAuthEnabledHasBeenSet; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline void SetAnonymousAuthEnabled(bool value) { m_anonymousAuthEnabledHasBeenSet = true; m_anonymousAuthEnabled = value; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline AdvancedSecurityOptionsInput& WithAnonymousAuthEnabled(bool value) { SetAnonymousAuthEnabled(value); return *this;}
+
   private:
 
     bool m_enabled;
@@ -157,6 +182,9 @@ namespace Model
 
     SAMLOptionsInput m_sAMLOptions;
     bool m_sAMLOptionsHasBeenSet;
+
+    bool m_anonymousAuthEnabled;
+    bool m_anonymousAuthEnabledHasBeenSet;
   };
 
 } // namespace Model

@@ -200,49 +200,49 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline const Aws::String& GetRetrievalRoleArn() const{ return m_retrievalRoleArn; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline bool RetrievalRoleArnHasBeenSet() const { return m_retrievalRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(const Aws::String& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = value; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(Aws::String&& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(const char* value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn.assign(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline UpdateConfigurationProfileRequest& WithRetrievalRoleArn(const Aws::String& value) { SetRetrievalRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline UpdateConfigurationProfileRequest& WithRetrievalRoleArn(Aws::String&& value) { SetRetrievalRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline UpdateConfigurationProfileRequest& WithRetrievalRoleArn(const char* value) { SetRetrievalRoleArn(value); return *this;}
 

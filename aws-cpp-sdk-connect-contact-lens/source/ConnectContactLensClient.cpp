@@ -69,7 +69,7 @@ ConnectContactLensClient::~ConnectContactLensClient()
 {
 }
 
-void ConnectContactLensClient::init(const ClientConfiguration& config)
+void ConnectContactLensClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Connect Contact Lens");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -98,9 +98,7 @@ void ConnectContactLensClient::OverrideEndpoint(const Aws::String& endpoint)
 ListRealtimeContactAnalysisSegmentsOutcome ConnectContactLensClient::ListRealtimeContactAnalysisSegments(const ListRealtimeContactAnalysisSegmentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/realtime-contact-analysis/analysis-segments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/realtime-contact-analysis/analysis-segments");
   return ListRealtimeContactAnalysisSegmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

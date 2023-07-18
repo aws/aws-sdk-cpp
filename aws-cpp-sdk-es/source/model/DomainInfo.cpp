@@ -19,12 +19,16 @@ namespace Model
 {
 
 DomainInfo::DomainInfo() : 
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_engineType(EngineType::NOT_SET),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
 DomainInfo::DomainInfo(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_engineType(EngineType::NOT_SET),
+    m_engineTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ DomainInfo& DomainInfo::operator =(JsonView jsonValue)
     m_domainNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineType"))
+  {
+    m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("EngineType"));
+
+    m_engineTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue DomainInfo::Jsonize() const
   {
    payload.WithString("DomainName", m_domainName);
 
+  }
+
+  if(m_engineTypeHasBeenSet)
+  {
+   payload.WithString("EngineType", EngineTypeMapper::GetNameForEngineType(m_engineType));
   }
 
   return payload;

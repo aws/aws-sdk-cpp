@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/auditmanager/model/Assessment.h>
+#include <aws/auditmanager/model/Role.h>
 #include <utility>
 
 namespace Aws
@@ -47,9 +48,27 @@ namespace Model
     
     inline GetAssessmentResult& WithAssessment(Assessment&& value) { SetAssessment(std::move(value)); return *this;}
 
+
+    
+    inline const Role& GetUserRole() const{ return m_userRole; }
+
+    
+    inline void SetUserRole(const Role& value) { m_userRole = value; }
+
+    
+    inline void SetUserRole(Role&& value) { m_userRole = std::move(value); }
+
+    
+    inline GetAssessmentResult& WithUserRole(const Role& value) { SetUserRole(value); return *this;}
+
+    
+    inline GetAssessmentResult& WithUserRole(Role&& value) { SetUserRole(std::move(value)); return *this;}
+
   private:
 
     Assessment m_assessment;
+
+    Role m_userRole;
   };
 
 } // namespace Model

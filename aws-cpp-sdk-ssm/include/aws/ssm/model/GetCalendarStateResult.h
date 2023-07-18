@@ -36,84 +36,84 @@ namespace Model
     /**
      * <p>The state of the calendar. An <code>OPEN</code> calendar indicates that
      * actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates
-     * that actions are not allowed to proceed.</p>
+     * that actions aren't allowed to proceed.</p>
      */
     inline const CalendarState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the calendar. An <code>OPEN</code> calendar indicates that
      * actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates
-     * that actions are not allowed to proceed.</p>
+     * that actions aren't allowed to proceed.</p>
      */
     inline void SetState(const CalendarState& value) { m_state = value; }
 
     /**
      * <p>The state of the calendar. An <code>OPEN</code> calendar indicates that
      * actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates
-     * that actions are not allowed to proceed.</p>
+     * that actions aren't allowed to proceed.</p>
      */
     inline void SetState(CalendarState&& value) { m_state = std::move(value); }
 
     /**
      * <p>The state of the calendar. An <code>OPEN</code> calendar indicates that
      * actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates
-     * that actions are not allowed to proceed.</p>
+     * that actions aren't allowed to proceed.</p>
      */
     inline GetCalendarStateResult& WithState(const CalendarState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the calendar. An <code>OPEN</code> calendar indicates that
      * actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates
-     * that actions are not allowed to proceed.</p>
+     * that actions aren't allowed to proceed.</p>
      */
     inline GetCalendarStateResult& WithState(CalendarState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
      * <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * string, that you specified in your command. If you did not specify a time,
+     * string, that you specified in your command. If you don't specify a time,
      * <code>GetCalendarState</code> uses the current time.</p>
      */
     inline const Aws::String& GetAtTime() const{ return m_atTime; }
 
     /**
      * <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * string, that you specified in your command. If you did not specify a time,
+     * string, that you specified in your command. If you don't specify a time,
      * <code>GetCalendarState</code> uses the current time.</p>
      */
     inline void SetAtTime(const Aws::String& value) { m_atTime = value; }
 
     /**
      * <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * string, that you specified in your command. If you did not specify a time,
+     * string, that you specified in your command. If you don't specify a time,
      * <code>GetCalendarState</code> uses the current time.</p>
      */
     inline void SetAtTime(Aws::String&& value) { m_atTime = std::move(value); }
 
     /**
      * <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * string, that you specified in your command. If you did not specify a time,
+     * string, that you specified in your command. If you don't specify a time,
      * <code>GetCalendarState</code> uses the current time.</p>
      */
     inline void SetAtTime(const char* value) { m_atTime.assign(value); }
 
     /**
      * <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * string, that you specified in your command. If you did not specify a time,
+     * string, that you specified in your command. If you don't specify a time,
      * <code>GetCalendarState</code> uses the current time.</p>
      */
     inline GetCalendarStateResult& WithAtTime(const Aws::String& value) { SetAtTime(value); return *this;}
 
     /**
      * <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * string, that you specified in your command. If you did not specify a time,
+     * string, that you specified in your command. If you don't specify a time,
      * <code>GetCalendarState</code> uses the current time.</p>
      */
     inline GetCalendarStateResult& WithAtTime(Aws::String&& value) { SetAtTime(std::move(value)); return *this;}
 
     /**
      * <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * string, that you specified in your command. If you did not specify a time,
+     * string, that you specified in your command. If you don't specify a time,
      * <code>GetCalendarState</code> uses the current time.</p>
      */
     inline GetCalendarStateResult& WithAtTime(const char* value) { SetAtTime(value); return *this;}

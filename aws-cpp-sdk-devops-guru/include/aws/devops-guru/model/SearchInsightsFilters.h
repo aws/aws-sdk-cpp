@@ -7,6 +7,7 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-guru/model/ResourceCollection.h>
+#include <aws/devops-guru/model/ServiceCollection.h>
 #include <aws/devops-guru/model/InsightSeverity.h>
 #include <aws/devops-guru/model/InsightStatus.h>
 #include <utility>
@@ -141,6 +142,37 @@ namespace Model
     
     inline SearchInsightsFilters& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline const ServiceCollection& GetServiceCollection() const{ return m_serviceCollection; }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline bool ServiceCollectionHasBeenSet() const { return m_serviceCollectionHasBeenSet; }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline void SetServiceCollection(const ServiceCollection& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = value; }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline void SetServiceCollection(ServiceCollection&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::move(value); }
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline SearchInsightsFilters& WithServiceCollection(const ServiceCollection& value) { SetServiceCollection(value); return *this;}
+
+    /**
+     * <p>A collection of the names of Amazon Web Services services.</p>
+     */
+    inline SearchInsightsFilters& WithServiceCollection(ServiceCollection&& value) { SetServiceCollection(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<InsightSeverity> m_severities;
@@ -151,6 +183,9 @@ namespace Model
 
     ResourceCollection m_resourceCollection;
     bool m_resourceCollectionHasBeenSet;
+
+    ServiceCollection m_serviceCollection;
+    bool m_serviceCollectionHasBeenSet;
   };
 
 } // namespace Model

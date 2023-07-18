@@ -24,7 +24,8 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_publishHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_architecturesHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,17 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
   if(m_revisionIdHasBeenSet)
   {
    payload.WithString("RevisionId", m_revisionId);
+
+  }
+
+  if(m_architecturesHasBeenSet)
+  {
+   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+   {
+     architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
+   }
+   payload.WithArray("Architectures", std::move(architecturesJsonList));
 
   }
 

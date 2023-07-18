@@ -42,7 +42,8 @@ GameSession::GameSession() :
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_gameSessionDataHasBeenSet(false),
-    m_matchmakerDataHasBeenSet(false)
+    m_matchmakerDataHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ GameSession::GameSession(JsonView jsonValue) :
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_gameSessionDataHasBeenSet(false),
-    m_matchmakerDataHasBeenSet(false)
+    m_matchmakerDataHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -206,6 +208,13 @@ GameSession& GameSession::operator =(JsonView jsonValue)
     m_matchmakerDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -318,6 +327,12 @@ JsonValue GameSession::Jsonize() const
   if(m_matchmakerDataHasBeenSet)
   {
    payload.WithString("MatchmakerData", m_matchmakerData);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

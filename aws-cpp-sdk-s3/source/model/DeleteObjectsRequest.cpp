@@ -25,6 +25,8 @@ DeleteObjectsRequest::DeleteObjectsRequest() :
     m_bypassGovernanceRetention(false),
     m_bypassGovernanceRetentionHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -85,8 +87,8 @@ Aws::Http::HeaderValueCollection DeleteObjectsRequest::GetRequestSpecificHeaders
 
   if(m_bypassGovernanceRetentionHasBeenSet)
   {
-    ss << m_bypassGovernanceRetention;
-    headers.emplace("x-amz-bypass-governance-retention",  ss.str());
+    ss << std::boolalpha << m_bypassGovernanceRetention;
+    headers.emplace("x-amz-bypass-governance-retention", ss.str());
     ss.str("");
   }
 
@@ -97,5 +99,23 @@ Aws::Http::HeaderValueCollection DeleteObjectsRequest::GetRequestSpecificHeaders
     ss.str("");
   }
 
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
   return headers;
 }
+
+Aws::String DeleteObjectsRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

@@ -49,6 +49,7 @@ enum class GreengrassV2Errors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
+  REQUEST_ALREADY_IN_PROGRESS,
   SERVICE_QUOTA_EXCEEDED
 };
 

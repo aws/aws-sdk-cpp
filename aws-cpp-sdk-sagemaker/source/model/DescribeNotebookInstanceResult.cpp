@@ -167,6 +167,18 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("PlatformIdentifier"))
+  {
+    m_platformIdentifier = jsonValue.GetString("PlatformIdentifier");
+
+  }
+
+  if(jsonValue.ValueExists("InstanceMetadataServiceConfiguration"))
+  {
+    m_instanceMetadataServiceConfiguration = jsonValue.GetObject("InstanceMetadataServiceConfiguration");
+
+  }
+
 
 
   return *this;

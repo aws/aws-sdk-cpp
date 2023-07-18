@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the Systems Manager document.</p>
+     * <p>Information about the SSM document.</p>
      */
     inline const DocumentDescription& GetDocument() const{ return m_document; }
 
     /**
-     * <p>Information about the Systems Manager document.</p>
+     * <p>Information about the SSM document.</p>
      */
     inline void SetDocument(const DocumentDescription& value) { m_document = value; }
 
     /**
-     * <p>Information about the Systems Manager document.</p>
+     * <p>Information about the SSM document.</p>
      */
     inline void SetDocument(DocumentDescription&& value) { m_document = std::move(value); }
 
     /**
-     * <p>Information about the Systems Manager document.</p>
+     * <p>Information about the SSM document.</p>
      */
     inline DescribeDocumentResult& WithDocument(const DocumentDescription& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>Information about the Systems Manager document.</p>
+     * <p>Information about the SSM document.</p>
      */
     inline DescribeDocumentResult& WithDocument(DocumentDescription&& value) { SetDocument(std::move(value)); return *this;}
 

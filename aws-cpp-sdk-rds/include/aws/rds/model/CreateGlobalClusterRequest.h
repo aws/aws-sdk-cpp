@@ -78,50 +78,50 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline const Aws::String& GetSourceDBClusterIdentifier() const{ return m_sourceDBClusterIdentifier; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline bool SourceDBClusterIdentifierHasBeenSet() const { return m_sourceDBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline void SetSourceDBClusterIdentifier(const Aws::String& value) { m_sourceDBClusterIdentifierHasBeenSet = true; m_sourceDBClusterIdentifier = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline void SetSourceDBClusterIdentifier(Aws::String&& value) { m_sourceDBClusterIdentifierHasBeenSet = true; m_sourceDBClusterIdentifier = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline void SetSourceDBClusterIdentifier(const char* value) { m_sourceDBClusterIdentifierHasBeenSet = true; m_sourceDBClusterIdentifier.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline CreateGlobalClusterRequest& WithSourceDBClusterIdentifier(const Aws::String& value) { SetSourceDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline CreateGlobalClusterRequest& WithSourceDBClusterIdentifier(Aws::String&& value) { SetSourceDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
-     * database. This parameter is optional. </p>
+     * <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional.</p>
      */
     inline CreateGlobalClusterRequest& WithSourceDBClusterIdentifier(const char* value) { SetSourceDBClusterIdentifier(value); return *this;}
 
@@ -209,104 +209,104 @@ namespace Model
 
 
     /**
-     * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when deletion protection is enabled. </p>
+     * <p>The deletion protection setting for the new global database. The global
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when deletion protection is enabled. </p>
+     * <p>The deletion protection setting for the new global database. The global
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when deletion protection is enabled. </p>
+     * <p>The deletion protection setting for the new global database. The global
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when deletion protection is enabled. </p>
+     * <p>The deletion protection setting for the new global database. The global
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline CreateGlobalClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline CreateGlobalClusterRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline CreateGlobalClusterRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
      * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating. </p>
+     * database cluster you are creating.</p>
      */
     inline CreateGlobalClusterRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
 
     /**
-     * <p> The storage encryption setting for the new global database cluster. </p>
+     * <p>The storage encryption setting for the new global database cluster.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p> The storage encryption setting for the new global database cluster. </p>
+     * <p>The storage encryption setting for the new global database cluster.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p> The storage encryption setting for the new global database cluster. </p>
+     * <p>The storage encryption setting for the new global database cluster.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p> The storage encryption setting for the new global database cluster. </p>
+     * <p>The storage encryption setting for the new global database cluster.</p>
      */
     inline CreateGlobalClusterRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 

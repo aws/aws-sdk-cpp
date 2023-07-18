@@ -33,37 +33,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN to update of your Amazon MWAA environment.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN to update of your Amazon MWAA environment.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN to update of your Amazon MWAA environment.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN to update of your Amazon MWAA environment.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN to update of your Amazon MWAA environment.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
      */
     inline UpdateEnvironmentResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN to update of your Amazon MWAA environment.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
      */
     inline UpdateEnvironmentResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN to update of your Amazon MWAA environment.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
      */
     inline UpdateEnvironmentResult& WithArn(const char* value) { SetArn(value); return *this;}
 

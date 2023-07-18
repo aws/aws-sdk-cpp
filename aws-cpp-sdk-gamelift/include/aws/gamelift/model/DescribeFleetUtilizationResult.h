@@ -42,91 +42,98 @@ namespace Model
 
     /**
      * <p>A collection of objects containing utilization information for each requested
-     * fleet ID.</p>
+     * fleet ID. Utilization objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline const Aws::Vector<FleetUtilization>& GetFleetUtilization() const{ return m_fleetUtilization; }
 
     /**
      * <p>A collection of objects containing utilization information for each requested
-     * fleet ID.</p>
+     * fleet ID. Utilization objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline void SetFleetUtilization(const Aws::Vector<FleetUtilization>& value) { m_fleetUtilization = value; }
 
     /**
      * <p>A collection of objects containing utilization information for each requested
-     * fleet ID.</p>
+     * fleet ID. Utilization objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline void SetFleetUtilization(Aws::Vector<FleetUtilization>&& value) { m_fleetUtilization = std::move(value); }
 
     /**
      * <p>A collection of objects containing utilization information for each requested
-     * fleet ID.</p>
+     * fleet ID. Utilization objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetUtilizationResult& WithFleetUtilization(const Aws::Vector<FleetUtilization>& value) { SetFleetUtilization(value); return *this;}
 
     /**
      * <p>A collection of objects containing utilization information for each requested
-     * fleet ID.</p>
+     * fleet ID. Utilization objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetUtilizationResult& WithFleetUtilization(Aws::Vector<FleetUtilization>&& value) { SetFleetUtilization(std::move(value)); return *this;}
 
     /**
      * <p>A collection of objects containing utilization information for each requested
-     * fleet ID.</p>
+     * fleet ID. Utilization objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetUtilizationResult& AddFleetUtilization(const FleetUtilization& value) { m_fleetUtilization.push_back(value); return *this; }
 
     /**
      * <p>A collection of objects containing utilization information for each requested
-     * fleet ID.</p>
+     * fleet ID. Utilization objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetUtilizationResult& AddFleetUtilization(FleetUtilization&& value) { m_fleetUtilization.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeFleetUtilizationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeFleetUtilizationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */

@@ -133,37 +133,37 @@ namespace Model
 
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline const OperationName& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline void SetOperation(const OperationName& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline void SetOperation(OperationName&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline JobListDescriptor& WithOperation(const OperationName& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline JobListDescriptor& WithOperation(OperationName&& value) { SetOperation(std::move(value)); return *this;}

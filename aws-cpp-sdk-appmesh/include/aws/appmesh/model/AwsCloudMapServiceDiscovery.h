@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appmesh/model/IpPreference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appmesh/model/AwsCloudMapInstanceAttribute.h>
 #include <utility>
@@ -26,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents the AWS Cloud Map service discovery information for
-   * your virtual node.</p>  <p>AWS Cloud Map is not available in the
-   * eu-south-1 Region.</p> <p><h3>See Also:</h3>   <a
+   * <p>An object that represents the Cloud Map service discovery information for
+   * your virtual node.</p>  <p>Cloud Map is not available in the eu-south-1
+   * Region.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AwsCloudMapServiceDiscovery">AWS
    * API Reference</a></p>
    */
@@ -107,83 +108,114 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline const IpPreference& GetIpPreference() const{ return m_ipPreference; }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline bool IpPreferenceHasBeenSet() const { return m_ipPreferenceHasBeenSet; }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline void SetIpPreference(const IpPreference& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline void SetIpPreference(IpPreference&& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = std::move(value); }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline AwsCloudMapServiceDiscovery& WithIpPreference(const IpPreference& value) { SetIpPreference(value); return *this;}
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline AwsCloudMapServiceDiscovery& WithIpPreference(IpPreference&& value) { SetIpPreference(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Cloud Map namespace to use.</p>
+     * <p>The name of the Cloud Map namespace to use.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
 
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Cloud Map service to use.</p>
+     * <p>The name of the Cloud Map service to use.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -191,6 +223,9 @@ namespace Model
 
     Aws::Vector<AwsCloudMapInstanceAttribute> m_attributes;
     bool m_attributesHasBeenSet;
+
+    IpPreference m_ipPreference;
+    bool m_ipPreferenceHasBeenSet;
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet;

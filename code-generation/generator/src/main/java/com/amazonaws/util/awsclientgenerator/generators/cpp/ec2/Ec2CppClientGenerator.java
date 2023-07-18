@@ -9,7 +9,10 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.*;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Error;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenerator;
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -742,4 +745,19 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator{
         return super.generateSourceFiles(serviceModel);
     }
 
+    @Override
+    protected SdkFileEntry generateRegionSourceFile(ServiceModel serviceModel) throws Exception {
+
+        // Customized template for EC2 endpoints
+        // TODO: cleanup with a proper dualstack endpoints support
+        Template template = velocityEngine.getTemplate(
+                "/com/amazonaws/util/awsclientgenerator/velocity/cpp/ec2/EC2EndpointEnumSource.vm",
+                StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("endpointMapping", computeEndpointMappingForService(serviceModel));
+
+        String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return makeFile(template, context, fileName, true);
+    }
 }

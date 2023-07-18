@@ -73,7 +73,7 @@ namespace
     {
 
     public:
-        RDSClient m_nonRetryClient;
+        RDSClient m_rdsClient;
         MockAWSClient m_staticAwsClient;
 
         RDSTest()
@@ -81,8 +81,7 @@ namespace
             ClientConfiguration config;
             config.region = Aws::Region::US_WEST_2;
             config.scheme = Scheme::HTTPS;
-            config.retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
-            m_nonRetryClient = RDSClient(config);
+            m_rdsClient = RDSClient(config);
 
             auto credProvider = Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, "akid", "secret");
             auto signer = Aws::MakeShared<TestableAuthv4Signer>(ALLOCATION_TAG, credProvider, "rds", config.region);
@@ -137,7 +136,7 @@ namespace
         copyDBSnapshotRequest.SetKmsKeyId(TESTING_KMS_KEY_ID);
         copyDBSnapshotRequest.SetSourceRegion(Aws::Region::US_EAST_1);
 
-        auto copyDBSnapshotOutcome = m_nonRetryClient.CopyDBSnapshot(copyDBSnapshotRequest);
+        auto copyDBSnapshotOutcome = m_rdsClient.CopyDBSnapshot(copyDBSnapshotRequest);
         ASSERT_FALSE(copyDBSnapshotOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::D_B_SNAPSHOT_NOT_FOUND_FAULT, copyDBSnapshotOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
@@ -162,7 +161,7 @@ namespace
 
         // Ignore SourceRegion if preSignedUrl is specified.
         copyDBSnapshotRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
-        copyDBSnapshotOutcome = m_nonRetryClient.CopyDBSnapshot(copyDBSnapshotRequest);
+        copyDBSnapshotOutcome = m_rdsClient.CopyDBSnapshot(copyDBSnapshotRequest);
         ASSERT_FALSE(copyDBSnapshotOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::D_B_SNAPSHOT_NOT_FOUND_FAULT, copyDBSnapshotOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
@@ -180,7 +179,7 @@ namespace
         createDBInstanceReadReplicaRequest.SetKmsKeyId(TESTING_KMS_KEY_ID);
         createDBInstanceReadReplicaRequest.SetSourceRegion(Aws::Region::US_EAST_1);
 
-        auto createDBInstanceReadReplicaOutcome = m_nonRetryClient.CreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
+        auto createDBInstanceReadReplicaOutcome = m_rdsClient.CreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
         ASSERT_FALSE(createDBInstanceReadReplicaOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::D_B_INSTANCE_NOT_FOUND_FAULT, createDBInstanceReadReplicaOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
@@ -205,7 +204,7 @@ namespace
 
         // Ignore SourceRegion if preSignedUrl is specified.
         createDBInstanceReadReplicaRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
-        createDBInstanceReadReplicaOutcome = m_nonRetryClient.CreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
+        createDBInstanceReadReplicaOutcome = m_rdsClient.CreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
         ASSERT_FALSE(createDBInstanceReadReplicaOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::D_B_INSTANCE_NOT_FOUND_FAULT, createDBInstanceReadReplicaOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
@@ -223,7 +222,7 @@ namespace
         copyDBClusterSnapshotRequest.SetKmsKeyId(TESTING_KMS_KEY_ID);
         copyDBClusterSnapshotRequest.SetSourceRegion(Aws::Region::US_EAST_1);
 
-        auto copyDBClusterSnapshotOutcome = m_nonRetryClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
+        auto copyDBClusterSnapshotOutcome = m_rdsClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
         ASSERT_FALSE(copyDBClusterSnapshotOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
@@ -248,7 +247,7 @@ namespace
 
         // Ignore SourceRegion if preSignedUrl is specified.
         copyDBClusterSnapshotRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
-        copyDBClusterSnapshotOutcome = m_nonRetryClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
+        copyDBClusterSnapshotOutcome = m_rdsClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
         ASSERT_FALSE(copyDBClusterSnapshotOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
@@ -268,7 +267,7 @@ namespace
         createDBClusterRequest.SetKmsKeyId(TESTING_KMS_KEY_ID);
         createDBClusterRequest.SetSourceRegion(Aws::Region::US_EAST_1);
 
-        auto createDBClusterOutcome = m_nonRetryClient.CreateDBCluster(createDBClusterRequest);
+        auto createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::INVALID_PARAMETER_VALUE, createDBClusterOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
@@ -297,7 +296,7 @@ namespace
 
         // Ignore SourceRegion if preSignedUrl is specified.
         createDBClusterRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
-        createDBClusterOutcome = m_nonRetryClient.CreateDBCluster(createDBClusterRequest);
+        createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
         ASSERT_EQ(RDSErrors::INVALID_PARAMETER_VALUE, createDBClusterOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());

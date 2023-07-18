@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Defines the real-time status of a Snow device's data transfer while the
-   * device is at AWS. This data is only available while a job has a
+   * device is at Amazon Web Services. This data is only available while a job has a
    * <code>JobState</code> value of <code>InProgress</code>, for both import and
    * export jobs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DataTransfer">AWS

@@ -34,51 +34,51 @@ namespace Model
 
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetTagsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetTagsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetTagsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
@@ -125,17 +125,17 @@ namespace Model
 
 
     /**
-     * <p>The number of query results that AWS returns at a time.</p>
+     * <p>The number of query results that Amazon Web Services returns at a time.</p>
      */
     inline int GetReturnSize() const{ return m_returnSize; }
 
     /**
-     * <p>The number of query results that AWS returns at a time.</p>
+     * <p>The number of query results that Amazon Web Services returns at a time.</p>
      */
     inline void SetReturnSize(int value) { m_returnSize = value; }
 
     /**
-     * <p>The number of query results that AWS returns at a time.</p>
+     * <p>The number of query results that Amazon Web Services returns at a time.</p>
      */
     inline GetTagsResult& WithReturnSize(int value) { SetReturnSize(value); return *this;}
 

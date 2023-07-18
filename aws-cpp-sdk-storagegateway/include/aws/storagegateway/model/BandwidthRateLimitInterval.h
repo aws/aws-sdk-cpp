@@ -148,49 +148,49 @@ namespace Model
     /**
      * <p> The days of the week component of the bandwidth rate limit interval,
      * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
-     * Saturday. </p>
+     * represents Saturday. </p>
      */
     inline const Aws::Vector<int>& GetDaysOfWeek() const{ return m_daysOfWeek; }
 
     /**
      * <p> The days of the week component of the bandwidth rate limit interval,
      * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
-     * Saturday. </p>
+     * represents Saturday. </p>
      */
     inline bool DaysOfWeekHasBeenSet() const { return m_daysOfWeekHasBeenSet; }
 
     /**
      * <p> The days of the week component of the bandwidth rate limit interval,
      * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
-     * Saturday. </p>
+     * represents Saturday. </p>
      */
     inline void SetDaysOfWeek(const Aws::Vector<int>& value) { m_daysOfWeekHasBeenSet = true; m_daysOfWeek = value; }
 
     /**
      * <p> The days of the week component of the bandwidth rate limit interval,
      * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
-     * Saturday. </p>
+     * represents Saturday. </p>
      */
     inline void SetDaysOfWeek(Aws::Vector<int>&& value) { m_daysOfWeekHasBeenSet = true; m_daysOfWeek = std::move(value); }
 
     /**
      * <p> The days of the week component of the bandwidth rate limit interval,
      * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
-     * Saturday. </p>
+     * represents Saturday. </p>
      */
     inline BandwidthRateLimitInterval& WithDaysOfWeek(const Aws::Vector<int>& value) { SetDaysOfWeek(value); return *this;}
 
     /**
      * <p> The days of the week component of the bandwidth rate limit interval,
      * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
-     * Saturday. </p>
+     * represents Saturday. </p>
      */
     inline BandwidthRateLimitInterval& WithDaysOfWeek(Aws::Vector<int>&& value) { SetDaysOfWeek(std::move(value)); return *this;}
 
     /**
      * <p> The days of the week component of the bandwidth rate limit interval,
      * represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6
-     * Saturday. </p>
+     * represents Saturday. </p>
      */
     inline BandwidthRateLimitInterval& AddDaysOfWeek(int value) { m_daysOfWeekHasBeenSet = true; m_daysOfWeek.push_back(value); return *this; }
 

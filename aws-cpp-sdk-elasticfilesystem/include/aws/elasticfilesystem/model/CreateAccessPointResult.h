@@ -341,37 +341,44 @@ namespace Model
 
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline CreateAccessPointResult& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline CreateAccessPointResult& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline CreateAccessPointResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

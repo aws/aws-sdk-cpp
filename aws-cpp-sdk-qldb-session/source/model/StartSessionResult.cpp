@@ -19,12 +19,14 @@ namespace Model
 {
 
 StartSessionResult::StartSessionResult() : 
-    m_sessionTokenHasBeenSet(false)
+    m_sessionTokenHasBeenSet(false),
+    m_timingInformationHasBeenSet(false)
 {
 }
 
 StartSessionResult::StartSessionResult(JsonView jsonValue) : 
-    m_sessionTokenHasBeenSet(false)
+    m_sessionTokenHasBeenSet(false),
+    m_timingInformationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ StartSessionResult& StartSessionResult::operator =(JsonView jsonValue)
     m_sessionTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimingInformation"))
+  {
+    m_timingInformation = jsonValue.GetObject("TimingInformation");
+
+    m_timingInformationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue StartSessionResult::Jsonize() const
   if(m_sessionTokenHasBeenSet)
   {
    payload.WithString("SessionToken", m_sessionToken);
+
+  }
+
+  if(m_timingInformationHasBeenSet)
+  {
+   payload.WithObject("TimingInformation", m_timingInformation.Jsonize());
 
   }
 

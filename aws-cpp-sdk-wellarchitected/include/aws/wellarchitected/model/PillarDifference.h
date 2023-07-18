@@ -65,6 +65,31 @@ namespace Model
     inline PillarDifference& WithPillarId(const char* value) { SetPillarId(value); return *this;}
 
 
+    
+    inline const Aws::String& GetPillarName() const{ return m_pillarName; }
+
+    
+    inline bool PillarNameHasBeenSet() const { return m_pillarNameHasBeenSet; }
+
+    
+    inline void SetPillarName(const Aws::String& value) { m_pillarNameHasBeenSet = true; m_pillarName = value; }
+
+    
+    inline void SetPillarName(Aws::String&& value) { m_pillarNameHasBeenSet = true; m_pillarName = std::move(value); }
+
+    
+    inline void SetPillarName(const char* value) { m_pillarNameHasBeenSet = true; m_pillarName.assign(value); }
+
+    
+    inline PillarDifference& WithPillarName(const Aws::String& value) { SetPillarName(value); return *this;}
+
+    
+    inline PillarDifference& WithPillarName(Aws::String&& value) { SetPillarName(std::move(value)); return *this;}
+
+    
+    inline PillarDifference& WithPillarName(const char* value) { SetPillarName(value); return *this;}
+
+
     /**
      * <p>Indicates the type of change to the pillar.</p>
      */
@@ -140,6 +165,9 @@ namespace Model
 
     Aws::String m_pillarId;
     bool m_pillarIdHasBeenSet;
+
+    Aws::String m_pillarName;
+    bool m_pillarNameHasBeenSet;
 
     DifferenceStatus m_differenceStatus;
     bool m_differenceStatusHasBeenSet;

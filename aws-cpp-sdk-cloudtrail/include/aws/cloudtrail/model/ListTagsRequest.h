@@ -18,7 +18,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a list of trail tags to return.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a list of tags to return.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTagsRequest">AWS
    * API Reference</a></p>
    */
@@ -39,65 +39,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIdList() const{ return m_resourceIdList; }
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline bool ResourceIdListHasBeenSet() const { return m_resourceIdListHasBeenSet; }
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline void SetResourceIdList(const Aws::Vector<Aws::String>& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = value; }
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline void SetResourceIdList(Aws::Vector<Aws::String>&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = std::move(value); }
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline ListTagsRequest& WithResourceIdList(const Aws::Vector<Aws::String>& value) { SetResourceIdList(value); return *this;}
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline ListTagsRequest& WithResourceIdList(Aws::Vector<Aws::String>&& value) { SetResourceIdList(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline ListTagsRequest& AddResourceIdList(const Aws::String& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline ListTagsRequest& AddResourceIdList(Aws::String&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies a list of trail and event data store ARNs whose tags will be
+     * listed. The list has a limit of 20 ARNs.</p>
      */
     inline ListTagsRequest& AddResourceIdList(const char* value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
 

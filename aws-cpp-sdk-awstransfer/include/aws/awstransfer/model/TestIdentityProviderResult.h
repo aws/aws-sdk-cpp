@@ -85,37 +85,51 @@ namespace Model
 
 
     /**
-     * <p>A message that indicates whether the test was successful or not.</p>
+     * <p>A message that indicates whether the test was successful or not.</p> 
+     * <p>If an empty string is returned, the most likely cause is that the
+     * authentication failed due to an incorrect username or password.</p> 
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>A message that indicates whether the test was successful or not.</p>
+     * <p>A message that indicates whether the test was successful or not.</p> 
+     * <p>If an empty string is returned, the most likely cause is that the
+     * authentication failed due to an incorrect username or password.</p> 
      */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
 
     /**
-     * <p>A message that indicates whether the test was successful or not.</p>
+     * <p>A message that indicates whether the test was successful or not.</p> 
+     * <p>If an empty string is returned, the most likely cause is that the
+     * authentication failed due to an incorrect username or password.</p> 
      */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
-     * <p>A message that indicates whether the test was successful or not.</p>
+     * <p>A message that indicates whether the test was successful or not.</p> 
+     * <p>If an empty string is returned, the most likely cause is that the
+     * authentication failed due to an incorrect username or password.</p> 
      */
     inline void SetMessage(const char* value) { m_message.assign(value); }
 
     /**
-     * <p>A message that indicates whether the test was successful or not.</p>
+     * <p>A message that indicates whether the test was successful or not.</p> 
+     * <p>If an empty string is returned, the most likely cause is that the
+     * authentication failed due to an incorrect username or password.</p> 
      */
     inline TestIdentityProviderResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>A message that indicates whether the test was successful or not.</p>
+     * <p>A message that indicates whether the test was successful or not.</p> 
+     * <p>If an empty string is returned, the most likely cause is that the
+     * authentication failed due to an incorrect username or password.</p> 
      */
     inline TestIdentityProviderResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A message that indicates whether the test was successful or not.</p>
+     * <p>A message that indicates whether the test was successful or not.</p> 
+     * <p>If an empty string is returned, the most likely cause is that the
+     * authentication failed due to an incorrect username or password.</p> 
      */
     inline TestIdentityProviderResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 

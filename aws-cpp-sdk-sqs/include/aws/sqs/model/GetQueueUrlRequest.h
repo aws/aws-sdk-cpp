@@ -97,42 +97,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline const Aws::String& GetQueueOwnerAWSAccountId() const{ return m_queueOwnerAWSAccountId; }
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline bool QueueOwnerAWSAccountIdHasBeenSet() const { return m_queueOwnerAWSAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline void SetQueueOwnerAWSAccountId(const Aws::String& value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId = value; }
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline void SetQueueOwnerAWSAccountId(Aws::String&& value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline void SetQueueOwnerAWSAccountId(const char* value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(const Aws::String& value) { SetQueueOwnerAWSAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(Aws::String&& value) { SetQueueOwnerAWSAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the account that created the queue.</p>
+     * <p>The Amazon Web Services account ID of the account that created the queue.</p>
      */
     inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(const char* value) { SetQueueOwnerAWSAccountId(value); return *this;}
 

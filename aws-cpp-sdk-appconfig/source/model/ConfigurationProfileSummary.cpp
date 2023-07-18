@@ -23,7 +23,8 @@ ConfigurationProfileSummary::ConfigurationProfileSummary() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_locationUriHasBeenSet(false),
-    m_validatorTypesHasBeenSet(false)
+    m_validatorTypesHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ConfigurationProfileSummary::ConfigurationProfileSummary(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_locationUriHasBeenSet(false),
-    m_validatorTypesHasBeenSet(false)
+    m_validatorTypesHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ ConfigurationProfileSummary& ConfigurationProfileSummary::operator =(JsonView js
     m_validatorTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = jsonValue.GetString("Type");
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +125,12 @@ JsonValue ConfigurationProfileSummary::Jsonize() const
      validatorTypesJsonList[validatorTypesIndex].AsString(ValidatorTypeMapper::GetNameForValidatorType(m_validatorTypes[validatorTypesIndex]));
    }
    payload.WithArray("ValidatorTypes", std::move(validatorTypesJsonList));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", m_type);
 
   }
 

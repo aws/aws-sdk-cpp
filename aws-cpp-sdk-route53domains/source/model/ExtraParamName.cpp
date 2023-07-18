@@ -49,6 +49,7 @@ namespace Aws
         static const int VAT_NUMBER_HASH = HashingUtils::HashString("VAT_NUMBER");
         static const int UK_CONTACT_TYPE_HASH = HashingUtils::HashString("UK_CONTACT_TYPE");
         static const int UK_COMPANY_NUMBER_HASH = HashingUtils::HashString("UK_COMPANY_NUMBER");
+        static const int EU_COUNTRY_OF_CITIZENSHIP_HASH = HashingUtils::HashString("EU_COUNTRY_OF_CITIZENSHIP");
 
 
         ExtraParamName GetExtraParamNameForName(const Aws::String& name)
@@ -170,6 +171,10 @@ namespace Aws
           {
             return ExtraParamName::UK_COMPANY_NUMBER;
           }
+          else if (hashCode == EU_COUNTRY_OF_CITIZENSHIP_HASH)
+          {
+            return ExtraParamName::EU_COUNTRY_OF_CITIZENSHIP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -242,6 +247,8 @@ namespace Aws
             return "UK_CONTACT_TYPE";
           case ExtraParamName::UK_COMPANY_NUMBER:
             return "UK_COMPANY_NUMBER";
+          case ExtraParamName::EU_COUNTRY_OF_CITIZENSHIP:
+            return "EU_COUNTRY_OF_CITIZENSHIP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

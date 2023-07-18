@@ -21,14 +21,16 @@ namespace Model
 DocumentAttributeValueCountPair::DocumentAttributeValueCountPair() : 
     m_documentAttributeValueHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_facetResultsHasBeenSet(false)
 {
 }
 
 DocumentAttributeValueCountPair::DocumentAttributeValueCountPair(JsonView jsonValue) : 
     m_documentAttributeValueHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_facetResultsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ DocumentAttributeValueCountPair& DocumentAttributeValueCountPair::operator =(Jso
     m_countHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FacetResults"))
+  {
+    Array<JsonView> facetResultsJsonList = jsonValue.GetArray("FacetResults");
+    for(unsigned facetResultsIndex = 0; facetResultsIndex < facetResultsJsonList.GetLength(); ++facetResultsIndex)
+    {
+      m_facetResults.push_back(facetResultsJsonList[facetResultsIndex].AsObject());
+    }
+    m_facetResultsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +77,17 @@ JsonValue DocumentAttributeValueCountPair::Jsonize() const
   if(m_countHasBeenSet)
   {
    payload.WithInteger("Count", m_count);
+
+  }
+
+  if(m_facetResultsHasBeenSet)
+  {
+   Array<JsonValue> facetResultsJsonList(m_facetResults.size());
+   for(unsigned facetResultsIndex = 0; facetResultsIndex < facetResultsJsonList.GetLength(); ++facetResultsIndex)
+   {
+     facetResultsJsonList[facetResultsIndex].AsObject(m_facetResults[facetResultsIndex].Jsonize());
+   }
+   payload.WithArray("FacetResults", std::move(facetResultsJsonList));
 
   }
 

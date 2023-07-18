@@ -31,6 +31,7 @@ namespace Aws
         static const int ACCOUNTING_HASH = HashingUtils::HashString("ACCOUNTING");
         static const int CONTACT_HASH = HashingUtils::HashString("CONTACT");
         static const int ROWLINK_HASH = HashingUtils::HashString("ROWLINK");
+        static const int ROWSET_HASH = HashingUtils::HashString("ROWSET");
 
 
         Format GetFormatForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return Format::ROWLINK;
           }
+          else if (hashCode == ROWSET_HASH)
+          {
+            return Format::ROWSET;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +121,8 @@ namespace Aws
             return "CONTACT";
           case Format::ROWLINK:
             return "ROWLINK";
+          case Format::ROWSET:
+            return "ROWSET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

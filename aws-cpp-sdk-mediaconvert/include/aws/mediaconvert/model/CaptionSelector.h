@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * Set up captions in your outputs by first selecting them from your input
-   * here.<p><h3>See Also:</h3>   <a
+   * Use captions selectors to specify the captions data from your input that you use
+   * in your outputs. You can use up to 20 captions selectors per input.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSelector">AWS
    * API Reference</a></p>
    */

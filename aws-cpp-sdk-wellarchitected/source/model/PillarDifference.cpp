@@ -20,6 +20,7 @@ namespace Model
 
 PillarDifference::PillarDifference() : 
     m_pillarIdHasBeenSet(false),
+    m_pillarNameHasBeenSet(false),
     m_differenceStatus(DifferenceStatus::NOT_SET),
     m_differenceStatusHasBeenSet(false),
     m_questionDifferencesHasBeenSet(false)
@@ -28,6 +29,7 @@ PillarDifference::PillarDifference() :
 
 PillarDifference::PillarDifference(JsonView jsonValue) : 
     m_pillarIdHasBeenSet(false),
+    m_pillarNameHasBeenSet(false),
     m_differenceStatus(DifferenceStatus::NOT_SET),
     m_differenceStatusHasBeenSet(false),
     m_questionDifferencesHasBeenSet(false)
@@ -42,6 +44,13 @@ PillarDifference& PillarDifference::operator =(JsonView jsonValue)
     m_pillarId = jsonValue.GetString("PillarId");
 
     m_pillarIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PillarName"))
+  {
+    m_pillarName = jsonValue.GetString("PillarName");
+
+    m_pillarNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DifferenceStatus"))
@@ -71,6 +80,12 @@ JsonValue PillarDifference::Jsonize() const
   if(m_pillarIdHasBeenSet)
   {
    payload.WithString("PillarId", m_pillarId);
+
+  }
+
+  if(m_pillarNameHasBeenSet)
+  {
+   payload.WithString("PillarName", m_pillarName);
 
   }
 

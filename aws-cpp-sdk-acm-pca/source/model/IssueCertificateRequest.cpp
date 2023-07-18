@@ -14,12 +14,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 IssueCertificateRequest::IssueCertificateRequest() : 
+    m_apiPassthroughHasBeenSet(false),
     m_certificateAuthorityArnHasBeenSet(false),
     m_csrHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithm::NOT_SET),
     m_signingAlgorithmHasBeenSet(false),
     m_templateArnHasBeenSet(false),
     m_validityHasBeenSet(false),
+    m_validityNotBeforeHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false)
 {
 }
@@ -27,6 +29,12 @@ IssueCertificateRequest::IssueCertificateRequest() :
 Aws::String IssueCertificateRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_apiPassthroughHasBeenSet)
+  {
+   payload.WithObject("ApiPassthrough", m_apiPassthrough.Jsonize());
+
+  }
 
   if(m_certificateAuthorityArnHasBeenSet)
   {
@@ -53,6 +61,12 @@ Aws::String IssueCertificateRequest::SerializePayload() const
   if(m_validityHasBeenSet)
   {
    payload.WithObject("Validity", m_validity.Jsonize());
+
+  }
+
+  if(m_validityNotBeforeHasBeenSet)
+  {
+   payload.WithObject("ValidityNotBefore", m_validityNotBefore.Jsonize());
 
   }
 

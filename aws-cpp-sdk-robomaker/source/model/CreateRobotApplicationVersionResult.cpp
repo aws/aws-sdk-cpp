@@ -73,6 +73,12 @@ CreateRobotApplicationVersionResult& CreateRobotApplicationVersionResult::operat
 
   }
 
+  if(jsonValue.ValueExists("environment"))
+  {
+    m_environment = jsonValue.GetObject("environment");
+
+  }
+
 
 
   return *this;

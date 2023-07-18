@@ -40,50 +40,42 @@ namespace Model
 
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline ScriptBootstrapActionConfig& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline ScriptBootstrapActionConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>Location of the script to run during a bootstrap action. Can be either a
-     * location in Amazon S3 or on a local file system.</p>
+     * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
     inline ScriptBootstrapActionConfig& WithPath(const char* value) { SetPath(value); return *this;}
 

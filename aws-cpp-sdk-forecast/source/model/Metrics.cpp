@@ -20,13 +20,17 @@ namespace Model
 
 Metrics::Metrics() : 
     m_weightedQuantileLossesHasBeenSet(false),
-    m_errorMetricsHasBeenSet(false)
+    m_errorMetricsHasBeenSet(false),
+    m_averageWeightedQuantileLoss(0.0),
+    m_averageWeightedQuantileLossHasBeenSet(false)
 {
 }
 
 Metrics::Metrics(JsonView jsonValue) : 
     m_weightedQuantileLossesHasBeenSet(false),
-    m_errorMetricsHasBeenSet(false)
+    m_errorMetricsHasBeenSet(false),
+    m_averageWeightedQuantileLoss(0.0),
+    m_averageWeightedQuantileLossHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ Metrics& Metrics::operator =(JsonView jsonValue)
       m_errorMetrics.push_back(errorMetricsJsonList[errorMetricsIndex].AsObject());
     }
     m_errorMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AverageWeightedQuantileLoss"))
+  {
+    m_averageWeightedQuantileLoss = jsonValue.GetDouble("AverageWeightedQuantileLoss");
+
+    m_averageWeightedQuantileLossHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +90,12 @@ JsonValue Metrics::Jsonize() const
      errorMetricsJsonList[errorMetricsIndex].AsObject(m_errorMetrics[errorMetricsIndex].Jsonize());
    }
    payload.WithArray("ErrorMetrics", std::move(errorMetricsJsonList));
+
+  }
+
+  if(m_averageWeightedQuantileLossHasBeenSet)
+  {
+   payload.WithDouble("AverageWeightedQuantileLoss", m_averageWeightedQuantileLoss);
 
   }
 

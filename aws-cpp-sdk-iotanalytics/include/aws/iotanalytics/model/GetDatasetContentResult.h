@@ -98,27 +98,27 @@ namespace Model
 
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline const DatasetContentStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline void SetStatus(const DatasetContentStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline void SetStatus(DatasetContentStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline GetDatasetContentResult& WithStatus(const DatasetContentStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline GetDatasetContentResult& WithStatus(DatasetContentStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -5,7 +5,13 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appmesh/model/GatewayRouteHostnameMatch.h>
+#include <aws/appmesh/model/HttpMethod.h>
+#include <aws/appmesh/model/HttpPathMatch.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appmesh/model/HttpGatewayRouteHeader.h>
+#include <aws/appmesh/model/HttpQueryParameter.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +42,140 @@ namespace Model
     HttpGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
     HttpGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline const Aws::Vector<HttpGatewayRouteHeader>& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline void SetHeaders(const Aws::Vector<HttpGatewayRouteHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline void SetHeaders(Aws::Vector<HttpGatewayRouteHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithHeaders(const Aws::Vector<HttpGatewayRouteHeader>& value) { SetHeaders(value); return *this;}
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithHeaders(Aws::Vector<HttpGatewayRouteHeader>&& value) { SetHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& AddHeaders(const HttpGatewayRouteHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
+
+    /**
+     * <p>The client request headers to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& AddHeaders(HttpGatewayRouteHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The host name to match on.</p>
+     */
+    inline const GatewayRouteHostnameMatch& GetHostname() const{ return m_hostname; }
+
+    /**
+     * <p>The host name to match on.</p>
+     */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p>The host name to match on.</p>
+     */
+    inline void SetHostname(const GatewayRouteHostnameMatch& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+
+    /**
+     * <p>The host name to match on.</p>
+     */
+    inline void SetHostname(GatewayRouteHostnameMatch&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
+
+    /**
+     * <p>The host name to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithHostname(const GatewayRouteHostnameMatch& value) { SetHostname(value); return *this;}
+
+    /**
+     * <p>The host name to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithHostname(GatewayRouteHostnameMatch&& value) { SetHostname(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The method to match on.</p>
+     */
+    inline const HttpMethod& GetMethod() const{ return m_method; }
+
+    /**
+     * <p>The method to match on.</p>
+     */
+    inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
+
+    /**
+     * <p>The method to match on.</p>
+     */
+    inline void SetMethod(const HttpMethod& value) { m_methodHasBeenSet = true; m_method = value; }
+
+    /**
+     * <p>The method to match on.</p>
+     */
+    inline void SetMethod(HttpMethod&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
+
+    /**
+     * <p>The method to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithMethod(const HttpMethod& value) { SetMethod(value); return *this;}
+
+    /**
+     * <p>The method to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithMethod(HttpMethod&& value) { SetMethod(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The path to match on.</p>
+     */
+    inline const HttpPathMatch& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path to match on.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path to match on.</p>
+     */
+    inline void SetPath(const HttpPathMatch& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /**
+     * <p>The path to match on.</p>
+     */
+    inline void SetPath(HttpPathMatch&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
+
+    /**
+     * <p>The path to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithPath(const HttpPathMatch& value) { SetPath(value); return *this;}
+
+    /**
+     * <p>The path to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithPath(HttpPathMatch&& value) { SetPath(std::move(value)); return *this;}
 
 
     /**
@@ -118,10 +258,66 @@ namespace Model
      */
     inline HttpGatewayRouteMatch& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline const Aws::Vector<HttpQueryParameter>& GetQueryParameters() const{ return m_queryParameters; }
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline void SetQueryParameters(const Aws::Vector<HttpQueryParameter>& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline void SetQueryParameters(Aws::Vector<HttpQueryParameter>&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithQueryParameters(const Aws::Vector<HttpQueryParameter>& value) { SetQueryParameters(value); return *this;}
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithQueryParameters(Aws::Vector<HttpQueryParameter>&& value) { SetQueryParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& AddQueryParameters(const HttpQueryParameter& value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(value); return *this; }
+
+    /**
+     * <p>The query parameter to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& AddQueryParameters(HttpQueryParameter&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(std::move(value)); return *this; }
+
   private:
+
+    Aws::Vector<HttpGatewayRouteHeader> m_headers;
+    bool m_headersHasBeenSet;
+
+    GatewayRouteHostnameMatch m_hostname;
+    bool m_hostnameHasBeenSet;
+
+    HttpMethod m_method;
+    bool m_methodHasBeenSet;
+
+    HttpPathMatch m_path;
+    bool m_pathHasBeenSet;
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
+    Aws::Vector<HttpQueryParameter> m_queryParameters;
+    bool m_queryParametersHasBeenSet;
   };
 
 } // namespace Model

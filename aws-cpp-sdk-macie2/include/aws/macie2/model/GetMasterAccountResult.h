@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the master account. If the accounts are associated by
-     * a Macie membership invitation, this object also provides details about the
-     * invitation that was sent and accepted to establish the relationship between the
-     * accounts.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. If the accounts are associated by a Macie membership invitation, this
+     * object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.</p>
      */
     inline const Invitation& GetMaster() const{ return m_master; }
 
     /**
-     * <p>The AWS account ID for the master account. If the accounts are associated by
-     * a Macie membership invitation, this object also provides details about the
-     * invitation that was sent and accepted to establish the relationship between the
-     * accounts.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. If the accounts are associated by a Macie membership invitation, this
+     * object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.</p>
      */
     inline void SetMaster(const Invitation& value) { m_master = value; }
 
     /**
-     * <p>The AWS account ID for the master account. If the accounts are associated by
-     * a Macie membership invitation, this object also provides details about the
-     * invitation that was sent and accepted to establish the relationship between the
-     * accounts.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. If the accounts are associated by a Macie membership invitation, this
+     * object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.</p>
      */
     inline void SetMaster(Invitation&& value) { m_master = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the master account. If the accounts are associated by
-     * a Macie membership invitation, this object also provides details about the
-     * invitation that was sent and accepted to establish the relationship between the
-     * accounts.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. If the accounts are associated by a Macie membership invitation, this
+     * object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.</p>
      */
     inline GetMasterAccountResult& WithMaster(const Invitation& value) { SetMaster(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the master account. If the accounts are associated by
-     * a Macie membership invitation, this object also provides details about the
-     * invitation that was sent and accepted to establish the relationship between the
-     * accounts.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. If the accounts are associated by a Macie membership invitation, this
+     * object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.</p>
      */
     inline GetMasterAccountResult& WithMaster(Invitation&& value) { SetMaster(std::move(value)); return *this;}
 

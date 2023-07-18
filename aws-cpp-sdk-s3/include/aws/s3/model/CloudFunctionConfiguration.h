@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for specifying the AWS Lambda notification
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Container for specifying the Lambda notification configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CloudFunctionConfiguration">AWS
    * API Reference</a></p>
    */

@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline const Aws::Vector<LogSubscription>& GetLogSubscriptions() const{ return m_logSubscriptions; }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline void SetLogSubscriptions(const Aws::Vector<LogSubscription>& value) { m_logSubscriptions = value; }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline void SetLogSubscriptions(Aws::Vector<LogSubscription>&& value) { m_logSubscriptions = std::move(value); }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& WithLogSubscriptions(const Aws::Vector<LogSubscription>& value) { SetLogSubscriptions(value); return *this;}
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& WithLogSubscriptions(Aws::Vector<LogSubscription>&& value) { SetLogSubscriptions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& AddLogSubscriptions(const LogSubscription& value) { m_logSubscriptions.push_back(value); return *this; }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& AddLogSubscriptions(LogSubscription&& value) { m_logSubscriptions.push_back(std::move(value)); return *this; }
 

@@ -36,6 +36,11 @@ CreateAccessPointResult& CreateAccessPointResult::operator =(const Aws::AmazonWe
     {
       m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
     }
+    XmlNode aliasNode = resultNode.FirstChild("Alias");
+    if(!aliasNode.IsNull())
+    {
+      m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
+    }
   }
 
   return *this;

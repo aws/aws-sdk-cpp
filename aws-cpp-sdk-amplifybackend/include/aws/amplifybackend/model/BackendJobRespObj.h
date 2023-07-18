@@ -161,42 +161,42 @@ namespace Model
 
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline const Aws::String& GetError() const{ return m_error; }
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline BackendJobRespObj& WithError(const Aws::String& value) { SetError(value); return *this;}
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline BackendJobRespObj& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
 
     /**
-     * <p>If the request failed, this is the returned error.</p>
+     * <p>If the request fails, this error is returned.</p>
      */
     inline BackendJobRespObj& WithError(const char* value) { SetError(value); return *this;}
 

@@ -119,10 +119,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
@@ -131,10 +145,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
@@ -143,10 +171,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
@@ -155,10 +197,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
@@ -167,10 +223,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
@@ -179,10 +249,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
@@ -191,10 +275,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
@@ -203,10 +301,24 @@ namespace Model
      * with one and only one DB parameter group family, and can be applied only to a DB
      * instance running a database engine and engine version compatible with that DB
      * parameter group family.</p> <p>To list all of the available parameter group
-     * families, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --query
-     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p>  <p>The output
-     * contains duplicates.</p> 
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the MySQL DB engine, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
+     * <p>The output contains duplicates.</p>  <p>The following are the valid DB
+     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

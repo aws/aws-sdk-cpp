@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> The metadata objects associated with the specified assessment report.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> The metadata objects that are associated with the specified assessment
+   * report. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentReportMetadata">AWS
    * API Reference</a></p>
    */
@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline AssessmentReportMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline AssessmentReportMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the specified assessment report. </p>
+     * <p> The description of the assessment report. </p>
      */
     inline AssessmentReportMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
 

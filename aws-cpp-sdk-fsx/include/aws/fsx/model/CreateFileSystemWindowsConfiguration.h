@@ -9,6 +9,7 @@
 #include <aws/fsx/model/SelfManagedActiveDirectoryConfiguration.h>
 #include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/WindowsAuditLogCreateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -43,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline const Aws::String& GetActiveDirectoryId() const{ return m_activeDirectoryId; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline void SetActiveDirectoryId(const Aws::String& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = value; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline void SetActiveDirectoryId(Aws::String&& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = std::move(value); }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline void SetActiveDirectoryId(const char* value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId.assign(value); }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithActiveDirectoryId(const Aws::String& value) { SetActiveDirectoryId(value); return *this;}
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithActiveDirectoryId(Aws::String&& value) { SetActiveDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithActiveDirectoryId(const char* value) { SetActiveDirectoryId(value); return *this;}
 
@@ -115,13 +116,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -132,13 +133,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -149,13 +150,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -166,13 +167,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -183,13 +184,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -200,13 +201,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -216,97 +217,101 @@ namespace Model
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline const Aws::String& GetPreferredSubnetId() const{ return m_preferredSubnetId; }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline bool PreferredSubnetIdHasBeenSet() const { return m_preferredSubnetIdHasBeenSet; }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline void SetPreferredSubnetId(const Aws::String& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = value; }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline void SetPreferredSubnetId(Aws::String&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::move(value); }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline void SetPreferredSubnetId(const char* value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId.assign(value); }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline CreateFileSystemWindowsConfiguration& WithPreferredSubnetId(const Aws::String& value) { SetPreferredSubnetId(value); return *this;}
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline CreateFileSystemWindowsConfiguration& WithPreferredSubnetId(Aws::String&& value) { SetPreferredSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline CreateFileSystemWindowsConfiguration& WithPreferredSubnetId(const char* value) { SetPreferredSubnetId(value); return *this;}
 
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
@@ -508,11 +513,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAliases() const{ return m_aliases; }
 
@@ -533,11 +538,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
 
@@ -558,11 +563,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetAliases(const Aws::Vector<Aws::String>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
@@ -583,11 +588,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetAliases(Aws::Vector<Aws::String>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
@@ -608,11 +613,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithAliases(const Aws::Vector<Aws::String>& value) { SetAliases(value); return *this;}
 
@@ -633,11 +638,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithAliases(Aws::Vector<Aws::String>&& value) { SetAliases(std::move(value)); return *this;}
 
@@ -658,11 +663,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& AddAliases(const Aws::String& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
 
@@ -683,11 +688,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& AddAliases(Aws::String&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
 
@@ -708,13 +713,56 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& AddAliases(const char* value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline const WindowsAuditLogCreateConfiguration& GetAuditLogConfiguration() const{ return m_auditLogConfiguration; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline bool AuditLogConfigurationHasBeenSet() const { return m_auditLogConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline void SetAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = value; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline void SetAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { SetAuditLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { SetAuditLogConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -747,6 +795,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_aliases;
     bool m_aliasesHasBeenSet;
+
+    WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
+    bool m_auditLogConfigurationHasBeenSet;
   };
 
 } // namespace Model

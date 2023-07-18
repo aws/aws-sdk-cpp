@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
+        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
 
 
         Compatibility GetCompatibilityForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == FARGATE_HASH)
           {
             return Compatibility::FARGATE;
+          }
+          else if (hashCode == EXTERNAL_HASH)
+          {
+            return Compatibility::EXTERNAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "EC2";
           case Compatibility::FARGATE:
             return "FARGATE";
+          case Compatibility::EXTERNAL:
+            return "EXTERNAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

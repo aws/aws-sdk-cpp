@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The summary data for the channel ban.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary of the details of a <code>ChannelBan</code>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelBanSummary">AWS
    * API Reference</a></p>
    */

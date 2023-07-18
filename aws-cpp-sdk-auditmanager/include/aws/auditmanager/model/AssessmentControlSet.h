@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p> Represents a set of controls in an AWS Audit Manager assessment.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Represents a set of controls in an Audit Manager assessment. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentControlSet">AWS
    * API Reference</a></p>
    */
@@ -165,174 +165,174 @@ namespace Model
 
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline void SetRoles(const Aws::Vector<Role>& value) { m_rolesHasBeenSet = true; m_roles = value; }
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline void SetRoles(Aws::Vector<Role>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline AssessmentControlSet& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline AssessmentControlSet& WithRoles(Aws::Vector<Role>&& value) { SetRoles(std::move(value)); return *this;}
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline AssessmentControlSet& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
 
     /**
-     * <p> The roles associated with the control set. </p>
+     * <p> The roles that are associated with the control set. </p>
      */
     inline AssessmentControlSet& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline const Aws::Vector<AssessmentControl>& GetControls() const{ return m_controls; }
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline bool ControlsHasBeenSet() const { return m_controlsHasBeenSet; }
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline void SetControls(const Aws::Vector<AssessmentControl>& value) { m_controlsHasBeenSet = true; m_controls = value; }
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline void SetControls(Aws::Vector<AssessmentControl>&& value) { m_controlsHasBeenSet = true; m_controls = std::move(value); }
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline AssessmentControlSet& WithControls(const Aws::Vector<AssessmentControl>& value) { SetControls(value); return *this;}
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline AssessmentControlSet& WithControls(Aws::Vector<AssessmentControl>&& value) { SetControls(std::move(value)); return *this;}
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline AssessmentControlSet& AddControls(const AssessmentControl& value) { m_controlsHasBeenSet = true; m_controls.push_back(value); return *this; }
 
     /**
-     * <p> The list of controls contained with the control set. </p>
+     * <p> The list of controls that's contained with the control set. </p>
      */
     inline AssessmentControlSet& AddControls(AssessmentControl&& value) { m_controlsHasBeenSet = true; m_controls.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline const Aws::Vector<Delegation>& GetDelegations() const{ return m_delegations; }
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline bool DelegationsHasBeenSet() const { return m_delegationsHasBeenSet; }
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline void SetDelegations(const Aws::Vector<Delegation>& value) { m_delegationsHasBeenSet = true; m_delegations = value; }
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline void SetDelegations(Aws::Vector<Delegation>&& value) { m_delegationsHasBeenSet = true; m_delegations = std::move(value); }
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline AssessmentControlSet& WithDelegations(const Aws::Vector<Delegation>& value) { SetDelegations(value); return *this;}
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline AssessmentControlSet& WithDelegations(Aws::Vector<Delegation>&& value) { SetDelegations(std::move(value)); return *this;}
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline AssessmentControlSet& AddDelegations(const Delegation& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(value); return *this; }
 
     /**
-     * <p> The delegations associated with the control set. </p>
+     * <p> The delegations that are associated with the control set. </p>
      */
     inline AssessmentControlSet& AddDelegations(Delegation&& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The total number of evidence objects retrieved automatically for the control
-     * set. </p>
+     * <p> The total number of evidence objects that are retrieved automatically for
+     * the control set. </p>
      */
     inline int GetSystemEvidenceCount() const{ return m_systemEvidenceCount; }
 
     /**
-     * <p> The total number of evidence objects retrieved automatically for the control
-     * set. </p>
+     * <p> The total number of evidence objects that are retrieved automatically for
+     * the control set. </p>
      */
     inline bool SystemEvidenceCountHasBeenSet() const { return m_systemEvidenceCountHasBeenSet; }
 
     /**
-     * <p> The total number of evidence objects retrieved automatically for the control
-     * set. </p>
+     * <p> The total number of evidence objects that are retrieved automatically for
+     * the control set. </p>
      */
     inline void SetSystemEvidenceCount(int value) { m_systemEvidenceCountHasBeenSet = true; m_systemEvidenceCount = value; }
 
     /**
-     * <p> The total number of evidence objects retrieved automatically for the control
-     * set. </p>
+     * <p> The total number of evidence objects that are retrieved automatically for
+     * the control set. </p>
      */
     inline AssessmentControlSet& WithSystemEvidenceCount(int value) { SetSystemEvidenceCount(value); return *this;}
 
 
     /**
-     * <p> The total number of evidence objects uploaded manually to the control set.
-     * </p>
+     * <p> The total number of evidence objects that are uploaded manually to the
+     * control set. </p>
      */
     inline int GetManualEvidenceCount() const{ return m_manualEvidenceCount; }
 
     /**
-     * <p> The total number of evidence objects uploaded manually to the control set.
-     * </p>
+     * <p> The total number of evidence objects that are uploaded manually to the
+     * control set. </p>
      */
     inline bool ManualEvidenceCountHasBeenSet() const { return m_manualEvidenceCountHasBeenSet; }
 
     /**
-     * <p> The total number of evidence objects uploaded manually to the control set.
-     * </p>
+     * <p> The total number of evidence objects that are uploaded manually to the
+     * control set. </p>
      */
     inline void SetManualEvidenceCount(int value) { m_manualEvidenceCountHasBeenSet = true; m_manualEvidenceCount = value; }
 
     /**
-     * <p> The total number of evidence objects uploaded manually to the control set.
-     * </p>
+     * <p> The total number of evidence objects that are uploaded manually to the
+     * control set. </p>
      */
     inline AssessmentControlSet& WithManualEvidenceCount(int value) { SetManualEvidenceCount(value); return *this;}
 

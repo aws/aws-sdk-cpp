@@ -40,7 +40,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */

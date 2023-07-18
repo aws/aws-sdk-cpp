@@ -25,6 +25,8 @@ HlsSettings::HlsSettings() :
     m_audioRenditionSetsHasBeenSet(false),
     m_audioTrackType(HlsAudioTrackType::NOT_SET),
     m_audioTrackTypeHasBeenSet(false),
+    m_descriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag::NOT_SET),
+    m_descriptiveVideoServiceFlagHasBeenSet(false),
     m_iFrameOnlyManifest(HlsIFrameOnlyManifest::NOT_SET),
     m_iFrameOnlyManifestHasBeenSet(false),
     m_segmentModifierHasBeenSet(false)
@@ -38,6 +40,8 @@ HlsSettings::HlsSettings(JsonView jsonValue) :
     m_audioRenditionSetsHasBeenSet(false),
     m_audioTrackType(HlsAudioTrackType::NOT_SET),
     m_audioTrackTypeHasBeenSet(false),
+    m_descriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag::NOT_SET),
+    m_descriptiveVideoServiceFlagHasBeenSet(false),
     m_iFrameOnlyManifest(HlsIFrameOnlyManifest::NOT_SET),
     m_iFrameOnlyManifestHasBeenSet(false),
     m_segmentModifierHasBeenSet(false)
@@ -73,6 +77,13 @@ HlsSettings& HlsSettings::operator =(JsonView jsonValue)
     m_audioTrackType = HlsAudioTrackTypeMapper::GetHlsAudioTrackTypeForName(jsonValue.GetString("audioTrackType"));
 
     m_audioTrackTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("descriptiveVideoServiceFlag"))
+  {
+    m_descriptiveVideoServiceFlag = HlsDescriptiveVideoServiceFlagMapper::GetHlsDescriptiveVideoServiceFlagForName(jsonValue.GetString("descriptiveVideoServiceFlag"));
+
+    m_descriptiveVideoServiceFlagHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("iFrameOnlyManifest"))
@@ -116,6 +127,11 @@ JsonValue HlsSettings::Jsonize() const
   if(m_audioTrackTypeHasBeenSet)
   {
    payload.WithString("audioTrackType", HlsAudioTrackTypeMapper::GetNameForHlsAudioTrackType(m_audioTrackType));
+  }
+
+  if(m_descriptiveVideoServiceFlagHasBeenSet)
+  {
+   payload.WithString("descriptiveVideoServiceFlag", HlsDescriptiveVideoServiceFlagMapper::GetNameForHlsDescriptiveVideoServiceFlag(m_descriptiveVideoServiceFlag));
   }
 
   if(m_iFrameOnlyManifestHasBeenSet)

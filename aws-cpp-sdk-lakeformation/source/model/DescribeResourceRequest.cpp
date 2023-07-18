@@ -30,14 +30,6 @@ Aws::String DescribeResourceRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeResourceRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.DescribeResource"));
-  return headers;
-
-}
-
 
 
 

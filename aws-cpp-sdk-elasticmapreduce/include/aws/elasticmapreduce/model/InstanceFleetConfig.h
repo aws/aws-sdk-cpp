@@ -85,38 +85,38 @@ namespace Model
 
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline const InstanceFleetType& GetInstanceFleetType() const{ return m_instanceFleetType; }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline bool InstanceFleetTypeHasBeenSet() const { return m_instanceFleetTypeHasBeenSet; }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline void SetInstanceFleetType(const InstanceFleetType& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = std::move(value); }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline InstanceFleetConfig& WithInstanceFleetType(const InstanceFleetType& value) { SetInstanceFleetType(value); return *this;}
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline InstanceFleetConfig& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
 

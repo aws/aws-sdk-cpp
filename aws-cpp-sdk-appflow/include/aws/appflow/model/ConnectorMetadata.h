@@ -23,6 +23,9 @@
 #include <aws/appflow/model/ZendeskMetadata.h>
 #include <aws/appflow/model/EventBridgeMetadata.h>
 #include <aws/appflow/model/UpsolverMetadata.h>
+#include <aws/appflow/model/CustomerProfilesMetadata.h>
+#include <aws/appflow/model/HoneycodeMetadata.h>
+#include <aws/appflow/model/SAPODataMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -613,6 +616,87 @@ namespace Model
      */
     inline ConnectorMetadata& WithUpsolver(UpsolverMetadata&& value) { SetUpsolver(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+     */
+    inline const CustomerProfilesMetadata& GetCustomerProfiles() const{ return m_customerProfiles; }
+
+    /**
+     * <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+     */
+    inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }
+
+    /**
+     * <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+     */
+    inline void SetCustomerProfiles(const CustomerProfilesMetadata& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = value; }
+
+    /**
+     * <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+     */
+    inline void SetCustomerProfiles(CustomerProfilesMetadata&& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = std::move(value); }
+
+    /**
+     * <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+     */
+    inline ConnectorMetadata& WithCustomerProfiles(const CustomerProfilesMetadata& value) { SetCustomerProfiles(value); return *this;}
+
+    /**
+     * <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+     */
+    inline ConnectorMetadata& WithCustomerProfiles(CustomerProfilesMetadata&& value) { SetCustomerProfiles(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The connector metadata specific to Amazon Honeycode. </p>
+     */
+    inline const HoneycodeMetadata& GetHoneycode() const{ return m_honeycode; }
+
+    /**
+     * <p> The connector metadata specific to Amazon Honeycode. </p>
+     */
+    inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
+
+    /**
+     * <p> The connector metadata specific to Amazon Honeycode. </p>
+     */
+    inline void SetHoneycode(const HoneycodeMetadata& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
+
+    /**
+     * <p> The connector metadata specific to Amazon Honeycode. </p>
+     */
+    inline void SetHoneycode(HoneycodeMetadata&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
+
+    /**
+     * <p> The connector metadata specific to Amazon Honeycode. </p>
+     */
+    inline ConnectorMetadata& WithHoneycode(const HoneycodeMetadata& value) { SetHoneycode(value); return *this;}
+
+    /**
+     * <p> The connector metadata specific to Amazon Honeycode. </p>
+     */
+    inline ConnectorMetadata& WithHoneycode(HoneycodeMetadata&& value) { SetHoneycode(std::move(value)); return *this;}
+
+
+    
+    inline const SAPODataMetadata& GetSAPOData() const{ return m_sAPOData; }
+
+    
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    
+    inline void SetSAPOData(const SAPODataMetadata& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    
+    inline void SetSAPOData(SAPODataMetadata&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    
+    inline ConnectorMetadata& WithSAPOData(const SAPODataMetadata& value) { SetSAPOData(value); return *this;}
+
+    
+    inline ConnectorMetadata& WithSAPOData(SAPODataMetadata&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     AmplitudeMetadata m_amplitude;
@@ -668,6 +752,15 @@ namespace Model
 
     UpsolverMetadata m_upsolver;
     bool m_upsolverHasBeenSet;
+
+    CustomerProfilesMetadata m_customerProfiles;
+    bool m_customerProfilesHasBeenSet;
+
+    HoneycodeMetadata m_honeycode;
+    bool m_honeycodeHasBeenSet;
+
+    SAPODataMetadata m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model

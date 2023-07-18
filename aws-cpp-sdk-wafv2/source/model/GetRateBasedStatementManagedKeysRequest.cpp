@@ -17,6 +17,7 @@ GetRateBasedStatementManagedKeysRequest::GetRateBasedStatementManagedKeysRequest
     m_scopeHasBeenSet(false),
     m_webACLNameHasBeenSet(false),
     m_webACLIdHasBeenSet(false),
+    m_ruleGroupRuleNameHasBeenSet(false),
     m_ruleNameHasBeenSet(false)
 {
 }
@@ -39,6 +40,12 @@ Aws::String GetRateBasedStatementManagedKeysRequest::SerializePayload() const
   if(m_webACLIdHasBeenSet)
   {
    payload.WithString("WebACLId", m_webACLId);
+
+  }
+
+  if(m_ruleGroupRuleNameHasBeenSet)
+  {
+   payload.WithString("RuleGroupRuleName", m_ruleGroupRuleName);
 
   }
 

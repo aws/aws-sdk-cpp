@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/ConfusionMatrix.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/ColumnImportance.h>
 #include <utility>
 
 namespace Aws
@@ -237,6 +239,55 @@ namespace Model
      */
     inline FindMatchesMetrics& WithConfusionMatrix(ConfusionMatrix&& value) { SetConfusionMatrix(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline const Aws::Vector<ColumnImportance>& GetColumnImportances() const{ return m_columnImportances; }
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline bool ColumnImportancesHasBeenSet() const { return m_columnImportancesHasBeenSet; }
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline void SetColumnImportances(const Aws::Vector<ColumnImportance>& value) { m_columnImportancesHasBeenSet = true; m_columnImportances = value; }
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline void SetColumnImportances(Aws::Vector<ColumnImportance>&& value) { m_columnImportancesHasBeenSet = true; m_columnImportances = std::move(value); }
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline FindMatchesMetrics& WithColumnImportances(const Aws::Vector<ColumnImportance>& value) { SetColumnImportances(value); return *this;}
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline FindMatchesMetrics& WithColumnImportances(Aws::Vector<ColumnImportance>&& value) { SetColumnImportances(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline FindMatchesMetrics& AddColumnImportances(const ColumnImportance& value) { m_columnImportancesHasBeenSet = true; m_columnImportances.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>ColumnImportance</code> structures containing column
+     * importance metrics, sorted in order of descending importance.</p>
+     */
+    inline FindMatchesMetrics& AddColumnImportances(ColumnImportance&& value) { m_columnImportancesHasBeenSet = true; m_columnImportances.push_back(std::move(value)); return *this; }
+
   private:
 
     double m_areaUnderPRCurve;
@@ -253,6 +304,9 @@ namespace Model
 
     ConfusionMatrix m_confusionMatrix;
     bool m_confusionMatrixHasBeenSet;
+
+    Aws::Vector<ColumnImportance> m_columnImportances;
+    bool m_columnImportancesHasBeenSet;
   };
 
 } // namespace Model

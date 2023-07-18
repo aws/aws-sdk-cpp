@@ -38,50 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline PutEmailIdentityMailFromAttributesRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline PutEmailIdentityMailFromAttributesRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The verified email identity that you want to set up the custom MAIL FROM
-     * domain for.</p>
+     * <p>The verified email identity.</p>
      */
     inline PutEmailIdentityMailFromAttributesRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
 
@@ -168,10 +160,10 @@ namespace Model
 
 
     /**
-     * <p>The action that you want to take if the required MX record isn't found when
-     * you send an email. When you set this value to <code>UseDefaultValue</code>, the
-     * mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
-     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * <p>The action to take if the required MX record isn't found when you send an
+     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
+     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
+     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -180,10 +172,10 @@ namespace Model
     inline const BehaviorOnMxFailure& GetBehaviorOnMxFailure() const{ return m_behaviorOnMxFailure; }
 
     /**
-     * <p>The action that you want to take if the required MX record isn't found when
-     * you send an email. When you set this value to <code>UseDefaultValue</code>, the
-     * mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
-     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * <p>The action to take if the required MX record isn't found when you send an
+     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
+     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
+     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -192,10 +184,10 @@ namespace Model
     inline bool BehaviorOnMxFailureHasBeenSet() const { return m_behaviorOnMxFailureHasBeenSet; }
 
     /**
-     * <p>The action that you want to take if the required MX record isn't found when
-     * you send an email. When you set this value to <code>UseDefaultValue</code>, the
-     * mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
-     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * <p>The action to take if the required MX record isn't found when you send an
+     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
+     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
+     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -204,10 +196,10 @@ namespace Model
     inline void SetBehaviorOnMxFailure(const BehaviorOnMxFailure& value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = value; }
 
     /**
-     * <p>The action that you want to take if the required MX record isn't found when
-     * you send an email. When you set this value to <code>UseDefaultValue</code>, the
-     * mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
-     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * <p>The action to take if the required MX record isn't found when you send an
+     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
+     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
+     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -216,10 +208,10 @@ namespace Model
     inline void SetBehaviorOnMxFailure(BehaviorOnMxFailure&& value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = std::move(value); }
 
     /**
-     * <p>The action that you want to take if the required MX record isn't found when
-     * you send an email. When you set this value to <code>UseDefaultValue</code>, the
-     * mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
-     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * <p>The action to take if the required MX record isn't found when you send an
+     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
+     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
+     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -228,10 +220,10 @@ namespace Model
     inline PutEmailIdentityMailFromAttributesRequest& WithBehaviorOnMxFailure(const BehaviorOnMxFailure& value) { SetBehaviorOnMxFailure(value); return *this;}
 
     /**
-     * <p>The action that you want to take if the required MX record isn't found when
-     * you send an email. When you set this value to <code>UseDefaultValue</code>, the
-     * mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set
-     * this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * <p>The action to take if the required MX record isn't found when you send an
+     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
+     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
+     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and

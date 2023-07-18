@@ -19,11 +19,13 @@ namespace Model
 {
 
 TeletextSourceSettings::TeletextSourceSettings() : 
+    m_outputRectangleHasBeenSet(false),
     m_pageNumberHasBeenSet(false)
 {
 }
 
 TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue) : 
+    m_outputRectangleHasBeenSet(false),
     m_pageNumberHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue) :
 
 TeletextSourceSettings& TeletextSourceSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("outputRectangle"))
+  {
+    m_outputRectangle = jsonValue.GetObject("outputRectangle");
+
+    m_outputRectangleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("pageNumber"))
   {
     m_pageNumber = jsonValue.GetString("pageNumber");
@@ -44,6 +53,12 @@ TeletextSourceSettings& TeletextSourceSettings::operator =(JsonView jsonValue)
 JsonValue TeletextSourceSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_outputRectangleHasBeenSet)
+  {
+   payload.WithObject("outputRectangle", m_outputRectangle.Jsonize());
+
+  }
 
   if(m_pageNumberHasBeenSet)
   {

@@ -42,49 +42,49 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking configuration to update. You can use
+     * <p>A unique identifier for the matchmaking configuration to update. You can use
      * either the configuration name or ARN value. </p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
@@ -132,110 +132,119 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGameSessionQueueArns() const{ return m_gameSessionQueueArns; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline bool GameSessionQueueArnsHasBeenSet() const { return m_gameSessionQueueArnsHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline void SetGameSessionQueueArns(const Aws::Vector<Aws::String>& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns = value; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline void SetGameSessionQueueArns(Aws::Vector<Aws::String>&& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithGameSessionQueueArns(const Aws::Vector<Aws::String>& value) { SetGameSessionQueueArns(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithGameSessionQueueArns(Aws::Vector<Aws::String>&& value) { SetGameSessionQueueArns(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameSessionQueueArns(const Aws::String& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(value); return *this; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameSessionQueueArns(Aws::String&& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Queues can be located in any
-     * Region. Queues are used to start new GameLift-hosted game sessions for matches
-     * that are created with this matchmaking configuration. If
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this
-     * parameter.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+     * name&gt;</code>. Queues can be located in any Region. Queues are used to start
+     * new GameLift-hosted game sessions for matches that are created with this
+     * matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>, do not set this parameter.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameSessionQueueArns(const char* value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(value); return *this; }
 
@@ -271,33 +280,25 @@ namespace Model
 
     /**
      * <p>The length of time (in seconds) to wait for players to accept a proposed
-     * match, if acceptance is required. If any player rejects the match or fails to
-     * accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.</p>
+     * match, if acceptance is required.</p>
      */
     inline int GetAcceptanceTimeoutSeconds() const{ return m_acceptanceTimeoutSeconds; }
 
     /**
      * <p>The length of time (in seconds) to wait for players to accept a proposed
-     * match, if acceptance is required. If any player rejects the match or fails to
-     * accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.</p>
+     * match, if acceptance is required.</p>
      */
     inline bool AcceptanceTimeoutSecondsHasBeenSet() const { return m_acceptanceTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>The length of time (in seconds) to wait for players to accept a proposed
-     * match, if acceptance is required. If any player rejects the match or fails to
-     * accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.</p>
+     * match, if acceptance is required.</p>
      */
     inline void SetAcceptanceTimeoutSeconds(int value) { m_acceptanceTimeoutSecondsHasBeenSet = true; m_acceptanceTimeoutSeconds = value; }
 
     /**
      * <p>The length of time (in seconds) to wait for players to accept a proposed
-     * match, if acceptance is required. If any player rejects the match or fails to
-     * accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.</p>
+     * match, if acceptance is required.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithAcceptanceTimeoutSeconds(int value) { SetAcceptanceTimeoutSeconds(value); return *this;}
 
@@ -340,56 +341,56 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking rule set to use with this
+     * <p>A unique identifier for the matchmaking rule set to use with this
      * configuration. You can use either the rule set name or ARN value. A matchmaking
      * configuration can only use rule sets that are defined in the same Region.</p>
      */
@@ -399,93 +400,93 @@ namespace Model
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline const Aws::String& GetNotificationTarget() const{ return m_notificationTarget; }
 
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline bool NotificationTargetHasBeenSet() const { return m_notificationTargetHasBeenSet; }
 
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline void SetNotificationTarget(const Aws::String& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
 
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline void SetNotificationTarget(Aws::String&& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = std::move(value); }
 
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline void SetNotificationTarget(const char* value) { m_notificationTargetHasBeenSet = true; m_notificationTarget.assign(value); }
 
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithNotificationTarget(const Aws::String& value) { SetNotificationTarget(value); return *this;}
 
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithNotificationTarget(Aws::String&& value) { SetNotificationTarget(std::move(value)); return *this;}
 
     /**
      * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-     * Setting up Notifications for Matchmaking</a> for more information.</p>
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithNotificationTarget(const char* value) { SetNotificationTarget(value); return *this;}
 
 
     /**
      * <p>The number of player slots in a match to keep open for future players. For
-     * example, assume that the configuration's rule set specifies a match for a single
-     * 12-person team. If the additional player count is set to 2, only 10 players are
-     * initially selected for the match. This parameter is not used if
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * example, if the configuration's rule set specifies a match for a single
+     * 12-person team, and the additional player count is set to 2, only 10 players are
+     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
+     * is set to <code>STANDALONE</code>.</p>
      */
     inline int GetAdditionalPlayerCount() const{ return m_additionalPlayerCount; }
 
     /**
      * <p>The number of player slots in a match to keep open for future players. For
-     * example, assume that the configuration's rule set specifies a match for a single
-     * 12-person team. If the additional player count is set to 2, only 10 players are
-     * initially selected for the match. This parameter is not used if
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * example, if the configuration's rule set specifies a match for a single
+     * 12-person team, and the additional player count is set to 2, only 10 players are
+     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
+     * is set to <code>STANDALONE</code>.</p>
      */
     inline bool AdditionalPlayerCountHasBeenSet() const { return m_additionalPlayerCountHasBeenSet; }
 
     /**
      * <p>The number of player slots in a match to keep open for future players. For
-     * example, assume that the configuration's rule set specifies a match for a single
-     * 12-person team. If the additional player count is set to 2, only 10 players are
-     * initially selected for the match. This parameter is not used if
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * example, if the configuration's rule set specifies a match for a single
+     * 12-person team, and the additional player count is set to 2, only 10 players are
+     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
+     * is set to <code>STANDALONE</code>.</p>
      */
     inline void SetAdditionalPlayerCount(int value) { m_additionalPlayerCountHasBeenSet = true; m_additionalPlayerCount = value; }
 
     /**
      * <p>The number of player slots in a match to keep open for future players. For
-     * example, assume that the configuration's rule set specifies a match for a single
-     * 12-person team. If the additional player count is set to 2, only 10 players are
-     * initially selected for the match. This parameter is not used if
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * example, if the configuration's rule set specifies a match for a single
+     * 12-person team, and the additional player count is set to 2, only 10 players are
+     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
+     * is set to <code>STANDALONE</code>.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithAdditionalPlayerCount(int value) { SetAdditionalPlayerCount(value); return *this;}
 
@@ -540,7 +541,7 @@ namespace Model
 
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -551,7 +552,7 @@ namespace Model
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -562,7 +563,7 @@ namespace Model
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -573,7 +574,7 @@ namespace Model
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -584,7 +585,7 @@ namespace Model
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -595,7 +596,7 @@ namespace Model
     inline UpdateMatchmakingConfigurationRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -606,7 +607,7 @@ namespace Model
     inline UpdateMatchmakingConfigurationRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -617,7 +618,7 @@ namespace Model
     inline UpdateMatchmakingConfigurationRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key-value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start

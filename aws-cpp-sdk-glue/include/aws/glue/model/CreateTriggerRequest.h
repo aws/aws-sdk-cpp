@@ -11,6 +11,7 @@
 #include <aws/glue/model/Predicate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/glue/model/EventBatchingCondition.h>
 #include <aws/glue/model/Action.h>
 #include <utility>
 
@@ -375,107 +376,144 @@ namespace Model
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
-     * trigger. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide. </p>
+     * trigger. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline const EventBatchingCondition& GetEventBatchingCondition() const{ return m_eventBatchingCondition; }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline bool EventBatchingConditionHasBeenSet() const { return m_eventBatchingConditionHasBeenSet; }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline void SetEventBatchingCondition(const EventBatchingCondition& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = value; }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline void SetEventBatchingCondition(EventBatchingCondition&& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = std::move(value); }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline CreateTriggerRequest& WithEventBatchingCondition(const EventBatchingCondition& value) { SetEventBatchingCondition(value); return *this;}
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline CreateTriggerRequest& WithEventBatchingCondition(EventBatchingCondition&& value) { SetEventBatchingCondition(std::move(value)); return *this;}
 
   private:
 
@@ -505,6 +543,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    EventBatchingCondition m_eventBatchingCondition;
+    bool m_eventBatchingConditionHasBeenSet;
   };
 
 } // namespace Model

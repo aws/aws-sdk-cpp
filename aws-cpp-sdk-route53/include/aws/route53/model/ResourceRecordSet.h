@@ -12,6 +12,7 @@
 #include <aws/route53/model/ResourceRecordSetFailover.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/AliasTarget.h>
+#include <aws/route53/model/CidrRoutingConfig.h>
 #include <aws/route53/model/ResourceRecord.h>
 #include <utility>
 
@@ -316,10 +317,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>Valid values for basic resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code>
+     * |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <p>Values for weighted, latency, geolocation, and failover resource record sets:
      * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
      * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
@@ -364,10 +365,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>Valid values for basic resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code>
+     * |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <p>Values for weighted, latency, geolocation, and failover resource record sets:
      * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
      * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
@@ -412,10 +413,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>Valid values for basic resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code>
+     * |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <p>Values for weighted, latency, geolocation, and failover resource record sets:
      * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
      * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
@@ -460,10 +461,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>Valid values for basic resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code>
+     * |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <p>Values for weighted, latency, geolocation, and failover resource record sets:
      * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
      * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
@@ -508,10 +509,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>Valid values for basic resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code>
+     * |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <p>Values for weighted, latency, geolocation, and failover resource record sets:
      * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
      * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
@@ -556,10 +557,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>Valid values for basic resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code>
+     * |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <p>Values for weighted, latency, geolocation, and failover resource record sets:
      * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
      * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
@@ -828,138 +829,144 @@ namespace Model
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * you created the resource that this resource record set refers to. The resource
-     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
-     * and is referred to by an IP address or a DNS domain name, depending on the
-     * record type.</p>  <p>Although creating latency and latency alias resource
-     * record sets in a private hosted zone is allowed, it's not supported.</p> 
-     * <p>When Amazon Route 53 receives a DNS query for a domain name and type for
-     * which you have created latency resource record sets, Route 53 selects the
-     * latency resource record set that has the lowest latency between the end user and
-     * the associated Amazon EC2 Region. Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to
-     * create latency resource record sets for all Amazon EC2 Regions. Route 53 will
-     * choose the region with the best latency from among the regions that you create
-     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
-     * resource record sets that have the same values for the <code>Name</code> and
-     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
+     * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
+     * load balancer, and is referred to by an IP address or a DNS domain name,
+     * depending on the record type.</p>  <p>Although creating latency and
+     * latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
+     * name and type for which you have created latency resource record sets, Route 53
+     * selects the latency resource record set that has the lowest latency between the
+     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
+     * that is associated with the selected resource record set.</p> <p>Note the
+     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
+     * per latency resource record set.</p> </li> <li> <p>You can only create one
+     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
+     * aren't required to create latency resource record sets for all Amazon EC2
+     * Regions. Route 53 will choose the region with the best latency from among the
+     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
+     * can't create non-latency resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as latency resource record
+     * sets.</p> </li> </ul>
      */
     inline const ResourceRecordSetRegion& GetRegion() const{ return m_region; }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * you created the resource that this resource record set refers to. The resource
-     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
-     * and is referred to by an IP address or a DNS domain name, depending on the
-     * record type.</p>  <p>Although creating latency and latency alias resource
-     * record sets in a private hosted zone is allowed, it's not supported.</p> 
-     * <p>When Amazon Route 53 receives a DNS query for a domain name and type for
-     * which you have created latency resource record sets, Route 53 selects the
-     * latency resource record set that has the lowest latency between the end user and
-     * the associated Amazon EC2 Region. Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to
-     * create latency resource record sets for all Amazon EC2 Regions. Route 53 will
-     * choose the region with the best latency from among the regions that you create
-     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
-     * resource record sets that have the same values for the <code>Name</code> and
-     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
+     * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
+     * load balancer, and is referred to by an IP address or a DNS domain name,
+     * depending on the record type.</p>  <p>Although creating latency and
+     * latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
+     * name and type for which you have created latency resource record sets, Route 53
+     * selects the latency resource record set that has the lowest latency between the
+     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
+     * that is associated with the selected resource record set.</p> <p>Note the
+     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
+     * per latency resource record set.</p> </li> <li> <p>You can only create one
+     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
+     * aren't required to create latency resource record sets for all Amazon EC2
+     * Regions. Route 53 will choose the region with the best latency from among the
+     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
+     * can't create non-latency resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as latency resource record
+     * sets.</p> </li> </ul>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * you created the resource that this resource record set refers to. The resource
-     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
-     * and is referred to by an IP address or a DNS domain name, depending on the
-     * record type.</p>  <p>Although creating latency and latency alias resource
-     * record sets in a private hosted zone is allowed, it's not supported.</p> 
-     * <p>When Amazon Route 53 receives a DNS query for a domain name and type for
-     * which you have created latency resource record sets, Route 53 selects the
-     * latency resource record set that has the lowest latency between the end user and
-     * the associated Amazon EC2 Region. Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to
-     * create latency resource record sets for all Amazon EC2 Regions. Route 53 will
-     * choose the region with the best latency from among the regions that you create
-     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
-     * resource record sets that have the same values for the <code>Name</code> and
-     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
+     * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
+     * load balancer, and is referred to by an IP address or a DNS domain name,
+     * depending on the record type.</p>  <p>Although creating latency and
+     * latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
+     * name and type for which you have created latency resource record sets, Route 53
+     * selects the latency resource record set that has the lowest latency between the
+     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
+     * that is associated with the selected resource record set.</p> <p>Note the
+     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
+     * per latency resource record set.</p> </li> <li> <p>You can only create one
+     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
+     * aren't required to create latency resource record sets for all Amazon EC2
+     * Regions. Route 53 will choose the region with the best latency from among the
+     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
+     * can't create non-latency resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as latency resource record
+     * sets.</p> </li> </ul>
      */
     inline void SetRegion(const ResourceRecordSetRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * you created the resource that this resource record set refers to. The resource
-     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
-     * and is referred to by an IP address or a DNS domain name, depending on the
-     * record type.</p>  <p>Although creating latency and latency alias resource
-     * record sets in a private hosted zone is allowed, it's not supported.</p> 
-     * <p>When Amazon Route 53 receives a DNS query for a domain name and type for
-     * which you have created latency resource record sets, Route 53 selects the
-     * latency resource record set that has the lowest latency between the end user and
-     * the associated Amazon EC2 Region. Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to
-     * create latency resource record sets for all Amazon EC2 Regions. Route 53 will
-     * choose the region with the best latency from among the regions that you create
-     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
-     * resource record sets that have the same values for the <code>Name</code> and
-     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
+     * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
+     * load balancer, and is referred to by an IP address or a DNS domain name,
+     * depending on the record type.</p>  <p>Although creating latency and
+     * latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
+     * name and type for which you have created latency resource record sets, Route 53
+     * selects the latency resource record set that has the lowest latency between the
+     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
+     * that is associated with the selected resource record set.</p> <p>Note the
+     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
+     * per latency resource record set.</p> </li> <li> <p>You can only create one
+     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
+     * aren't required to create latency resource record sets for all Amazon EC2
+     * Regions. Route 53 will choose the region with the best latency from among the
+     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
+     * can't create non-latency resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as latency resource record
+     * sets.</p> </li> </ul>
      */
     inline void SetRegion(ResourceRecordSetRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * you created the resource that this resource record set refers to. The resource
-     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
-     * and is referred to by an IP address or a DNS domain name, depending on the
-     * record type.</p>  <p>Although creating latency and latency alias resource
-     * record sets in a private hosted zone is allowed, it's not supported.</p> 
-     * <p>When Amazon Route 53 receives a DNS query for a domain name and type for
-     * which you have created latency resource record sets, Route 53 selects the
-     * latency resource record set that has the lowest latency between the end user and
-     * the associated Amazon EC2 Region. Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to
-     * create latency resource record sets for all Amazon EC2 Regions. Route 53 will
-     * choose the region with the best latency from among the regions that you create
-     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
-     * resource record sets that have the same values for the <code>Name</code> and
-     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
+     * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
+     * load balancer, and is referred to by an IP address or a DNS domain name,
+     * depending on the record type.</p>  <p>Although creating latency and
+     * latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
+     * name and type for which you have created latency resource record sets, Route 53
+     * selects the latency resource record set that has the lowest latency between the
+     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
+     * that is associated with the selected resource record set.</p> <p>Note the
+     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
+     * per latency resource record set.</p> </li> <li> <p>You can only create one
+     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
+     * aren't required to create latency resource record sets for all Amazon EC2
+     * Regions. Route 53 will choose the region with the best latency from among the
+     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
+     * can't create non-latency resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as latency resource record
+     * sets.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithRegion(const ResourceRecordSetRegion& value) { SetRegion(value); return *this;}
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * you created the resource that this resource record set refers to. The resource
-     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
-     * and is referred to by an IP address or a DNS domain name, depending on the
-     * record type.</p>  <p>Although creating latency and latency alias resource
-     * record sets in a private hosted zone is allowed, it's not supported.</p> 
-     * <p>When Amazon Route 53 receives a DNS query for a domain name and type for
-     * which you have created latency resource record sets, Route 53 selects the
-     * latency resource record set that has the lowest latency between the end user and
-     * the associated Amazon EC2 Region. Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to
-     * create latency resource record sets for all Amazon EC2 Regions. Route 53 will
-     * choose the region with the best latency from among the regions that you create
-     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
-     * resource record sets that have the same values for the <code>Name</code> and
-     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
+     * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
+     * load balancer, and is referred to by an IP address or a DNS domain name,
+     * depending on the record type.</p>  <p>Although creating latency and
+     * latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
+     * name and type for which you have created latency resource record sets, Route 53
+     * selects the latency resource record set that has the lowest latency between the
+     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
+     * that is associated with the selected resource record set.</p> <p>Note the
+     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
+     * per latency resource record set.</p> </li> <li> <p>You can only create one
+     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
+     * aren't required to create latency resource record sets for all Amazon EC2
+     * Regions. Route 53 will choose the region with the best latency from among the
+     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
+     * can't create non-latency resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as latency resource record
+     * sets.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion&& value) { SetRegion(std::move(value)); return *this;}
 
@@ -1616,13 +1623,13 @@ namespace Model
 
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
-     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
-     * traffic to. </p> <p>If you're creating resource records sets for a private
-     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
-     * resource record set in a private hosted zone to route traffic to a CloudFront
-     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
-     * or latency alias resource record sets in a private hosted zone is
+     * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
+     * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
+     * that you want to route traffic to. </p> <p>If you're creating resource records
+     * sets for a private hosted zone, note the following:</p> <ul> <li> <p>You can't
+     * create an alias resource record set in a private hosted zone to route traffic to
+     * a CloudFront distribution.</p> </li> <li> <p>Creating geolocation alias resource
+     * record sets or latency alias resource record sets in a private hosted zone is
      * unsupported.</p> </li> <li> <p>For information about creating failover resource
      * record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1632,13 +1639,13 @@ namespace Model
     inline const AliasTarget& GetAliasTarget() const{ return m_aliasTarget; }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
-     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
-     * traffic to. </p> <p>If you're creating resource records sets for a private
-     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
-     * resource record set in a private hosted zone to route traffic to a CloudFront
-     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
-     * or latency alias resource record sets in a private hosted zone is
+     * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
+     * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
+     * that you want to route traffic to. </p> <p>If you're creating resource records
+     * sets for a private hosted zone, note the following:</p> <ul> <li> <p>You can't
+     * create an alias resource record set in a private hosted zone to route traffic to
+     * a CloudFront distribution.</p> </li> <li> <p>Creating geolocation alias resource
+     * record sets or latency alias resource record sets in a private hosted zone is
      * unsupported.</p> </li> <li> <p>For information about creating failover resource
      * record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1648,13 +1655,13 @@ namespace Model
     inline bool AliasTargetHasBeenSet() const { return m_aliasTargetHasBeenSet; }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
-     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
-     * traffic to. </p> <p>If you're creating resource records sets for a private
-     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
-     * resource record set in a private hosted zone to route traffic to a CloudFront
-     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
-     * or latency alias resource record sets in a private hosted zone is
+     * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
+     * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
+     * that you want to route traffic to. </p> <p>If you're creating resource records
+     * sets for a private hosted zone, note the following:</p> <ul> <li> <p>You can't
+     * create an alias resource record set in a private hosted zone to route traffic to
+     * a CloudFront distribution.</p> </li> <li> <p>Creating geolocation alias resource
+     * record sets or latency alias resource record sets in a private hosted zone is
      * unsupported.</p> </li> <li> <p>For information about creating failover resource
      * record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1664,13 +1671,13 @@ namespace Model
     inline void SetAliasTarget(const AliasTarget& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = value; }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
-     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
-     * traffic to. </p> <p>If you're creating resource records sets for a private
-     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
-     * resource record set in a private hosted zone to route traffic to a CloudFront
-     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
-     * or latency alias resource record sets in a private hosted zone is
+     * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
+     * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
+     * that you want to route traffic to. </p> <p>If you're creating resource records
+     * sets for a private hosted zone, note the following:</p> <ul> <li> <p>You can't
+     * create an alias resource record set in a private hosted zone to route traffic to
+     * a CloudFront distribution.</p> </li> <li> <p>Creating geolocation alias resource
+     * record sets or latency alias resource record sets in a private hosted zone is
      * unsupported.</p> </li> <li> <p>For information about creating failover resource
      * record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1680,13 +1687,13 @@ namespace Model
     inline void SetAliasTarget(AliasTarget&& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = std::move(value); }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
-     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
-     * traffic to. </p> <p>If you're creating resource records sets for a private
-     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
-     * resource record set in a private hosted zone to route traffic to a CloudFront
-     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
-     * or latency alias resource record sets in a private hosted zone is
+     * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
+     * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
+     * that you want to route traffic to. </p> <p>If you're creating resource records
+     * sets for a private hosted zone, note the following:</p> <ul> <li> <p>You can't
+     * create an alias resource record set in a private hosted zone to route traffic to
+     * a CloudFront distribution.</p> </li> <li> <p>Creating geolocation alias resource
+     * record sets or latency alias resource record sets in a private hosted zone is
      * unsupported.</p> </li> <li> <p>For information about creating failover resource
      * record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1696,13 +1703,13 @@ namespace Model
     inline ResourceRecordSet& WithAliasTarget(const AliasTarget& value) { SetAliasTarget(value); return *this;}
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
-     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
-     * traffic to. </p> <p>If you're creating resource records sets for a private
-     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
-     * resource record set in a private hosted zone to route traffic to a CloudFront
-     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
-     * or latency alias resource record sets in a private hosted zone is
+     * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
+     * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
+     * that you want to route traffic to. </p> <p>If you're creating resource records
+     * sets for a private hosted zone, note the following:</p> <ul> <li> <p>You can't
+     * create an alias resource record set in a private hosted zone to route traffic to
+     * a CloudFront distribution.</p> </li> <li> <p>Creating geolocation alias resource
+     * record sets or latency alias resource record sets in a private hosted zone is
      * unsupported.</p> </li> <li> <p>For information about creating failover resource
      * record sets in a private hosted zone, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -2457,6 +2464,25 @@ namespace Model
      */
     inline ResourceRecordSet& WithTrafficPolicyInstanceId(const char* value) { SetTrafficPolicyInstanceId(value); return *this;}
 
+
+    
+    inline const CidrRoutingConfig& GetCidrRoutingConfig() const{ return m_cidrRoutingConfig; }
+
+    
+    inline bool CidrRoutingConfigHasBeenSet() const { return m_cidrRoutingConfigHasBeenSet; }
+
+    
+    inline void SetCidrRoutingConfig(const CidrRoutingConfig& value) { m_cidrRoutingConfigHasBeenSet = true; m_cidrRoutingConfig = value; }
+
+    
+    inline void SetCidrRoutingConfig(CidrRoutingConfig&& value) { m_cidrRoutingConfigHasBeenSet = true; m_cidrRoutingConfig = std::move(value); }
+
+    
+    inline ResourceRecordSet& WithCidrRoutingConfig(const CidrRoutingConfig& value) { SetCidrRoutingConfig(value); return *this;}
+
+    
+    inline ResourceRecordSet& WithCidrRoutingConfig(CidrRoutingConfig&& value) { SetCidrRoutingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -2497,6 +2523,9 @@ namespace Model
 
     Aws::String m_trafficPolicyInstanceId;
     bool m_trafficPolicyInstanceIdHasBeenSet;
+
+    CidrRoutingConfig m_cidrRoutingConfig;
+    bool m_cidrRoutingConfigHasBeenSet;
   };
 
 } // namespace Model

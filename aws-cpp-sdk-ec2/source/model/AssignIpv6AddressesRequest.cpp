@@ -14,6 +14,9 @@ AssignIpv6AddressesRequest::AssignIpv6AddressesRequest() :
     m_ipv6AddressCount(0),
     m_ipv6AddressCountHasBeenSet(false),
     m_ipv6AddressesHasBeenSet(false),
+    m_ipv6PrefixCount(0),
+    m_ipv6PrefixCountHasBeenSet(false),
+    m_ipv6PrefixesHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false)
 {
 }
@@ -35,6 +38,22 @@ Aws::String AssignIpv6AddressesRequest::SerializePayload() const
       ss << "Ipv6Addresses." << ipv6AddressesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       ipv6AddressesCount++;
+    }
+  }
+
+  if(m_ipv6PrefixCountHasBeenSet)
+  {
+    ss << "Ipv6PrefixCount=" << m_ipv6PrefixCount << "&";
+  }
+
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+    unsigned ipv6PrefixesCount = 1;
+    for(auto& item : m_ipv6Prefixes)
+    {
+      ss << "Ipv6Prefix." << ipv6PrefixesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      ipv6PrefixesCount++;
     }
   }
 

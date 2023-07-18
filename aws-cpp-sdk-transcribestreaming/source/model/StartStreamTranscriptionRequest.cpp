@@ -32,6 +32,23 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_enableChannelIdentificationHasBeenSet(false),
     m_numberOfChannels(0),
     m_numberOfChannelsHasBeenSet(false),
+    m_enablePartialResultsStabilization(false),
+    m_enablePartialResultsStabilizationHasBeenSet(false),
+    m_partialResultsStability(PartialResultsStability::NOT_SET),
+    m_partialResultsStabilityHasBeenSet(false),
+    m_contentIdentificationType(ContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
+    m_contentRedactionType(ContentRedactionType::NOT_SET),
+    m_contentRedactionTypeHasBeenSet(false),
+    m_piiEntityTypesHasBeenSet(false),
+    m_languageModelNameHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_languageOptionsHasBeenSet(false),
+    m_preferredLanguage(LanguageCode::NOT_SET),
+    m_preferredLanguageHasBeenSet(false),
+    m_vocabularyNamesHasBeenSet(false),
+    m_vocabularyFilterNamesHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -92,15 +109,15 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
 
   if(m_showSpeakerLabelHasBeenSet)
   {
-    ss << m_showSpeakerLabel;
-    headers.emplace("x-amzn-transcribe-show-speaker-label",  ss.str());
+    ss << std::boolalpha << m_showSpeakerLabel;
+    headers.emplace("x-amzn-transcribe-show-speaker-label", ss.str());
     ss.str("");
   }
 
   if(m_enableChannelIdentificationHasBeenSet)
   {
-    ss << m_enableChannelIdentification;
-    headers.emplace("x-amzn-transcribe-enable-channel-identification",  ss.str());
+    ss << std::boolalpha << m_enableChannelIdentification;
+    headers.emplace("x-amzn-transcribe-enable-channel-identification", ss.str());
     ss.str("");
   }
 
@@ -108,6 +125,75 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
   {
     ss << m_numberOfChannels;
     headers.emplace("x-amzn-transcribe-number-of-channels",  ss.str());
+    ss.str("");
+  }
+
+  if(m_enablePartialResultsStabilizationHasBeenSet)
+  {
+    ss << std::boolalpha << m_enablePartialResultsStabilization;
+    headers.emplace("x-amzn-transcribe-enable-partial-results-stabilization", ss.str());
+    ss.str("");
+  }
+
+  if(m_partialResultsStabilityHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-partial-results-stability", PartialResultsStabilityMapper::GetNameForPartialResultsStability(m_partialResultsStability));
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-content-identification-type", ContentIdentificationTypeMapper::GetNameForContentIdentificationType(m_contentIdentificationType));
+  }
+
+  if(m_contentRedactionTypeHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-content-redaction-type", ContentRedactionTypeMapper::GetNameForContentRedactionType(m_contentRedactionType));
+  }
+
+  if(m_piiEntityTypesHasBeenSet)
+  {
+    ss << m_piiEntityTypes;
+    headers.emplace("x-amzn-transcribe-pii-entity-types",  ss.str());
+    ss.str("");
+  }
+
+  if(m_languageModelNameHasBeenSet)
+  {
+    ss << m_languageModelName;
+    headers.emplace("x-amzn-transcribe-language-model-name",  ss.str());
+    ss.str("");
+  }
+
+  if(m_identifyLanguageHasBeenSet)
+  {
+    ss << std::boolalpha << m_identifyLanguage;
+    headers.emplace("x-amzn-transcribe-identify-language", ss.str());
+    ss.str("");
+  }
+
+  if(m_languageOptionsHasBeenSet)
+  {
+    ss << m_languageOptions;
+    headers.emplace("x-amzn-transcribe-language-options",  ss.str());
+    ss.str("");
+  }
+
+  if(m_preferredLanguageHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-preferred-language", LanguageCodeMapper::GetNameForLanguageCode(m_preferredLanguage));
+  }
+
+  if(m_vocabularyNamesHasBeenSet)
+  {
+    ss << m_vocabularyNames;
+    headers.emplace("x-amzn-transcribe-vocabulary-names",  ss.str());
+    ss.str("");
+  }
+
+  if(m_vocabularyFilterNamesHasBeenSet)
+  {
+    ss << m_vocabularyFilterNames;
+    headers.emplace("x-amzn-transcribe-vocabulary-filter-names",  ss.str());
     ss.str("");
   }
 

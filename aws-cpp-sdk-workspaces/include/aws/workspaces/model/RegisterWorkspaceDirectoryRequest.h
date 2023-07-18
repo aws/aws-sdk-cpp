@@ -248,8 +248,8 @@ namespace Model
     /**
      * <p>Indicates whether your WorkSpace directory is dedicated or shared. To use
      * Bring Your Own License (BYOL) images, this value must be set to
-     * <code>DEDICATED</code> and your AWS account must be enabled for BYOL. If your
-     * account has not been enabled for BYOL, you will receive an
+     * <code>DEDICATED</code> and your Amazon Web Services account must be enabled for
+     * BYOL. If your account has not been enabled for BYOL, you will receive an
      * InvalidParameterValuesException error. For more information about BYOL images,
      * see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
@@ -260,8 +260,8 @@ namespace Model
     /**
      * <p>Indicates whether your WorkSpace directory is dedicated or shared. To use
      * Bring Your Own License (BYOL) images, this value must be set to
-     * <code>DEDICATED</code> and your AWS account must be enabled for BYOL. If your
-     * account has not been enabled for BYOL, you will receive an
+     * <code>DEDICATED</code> and your Amazon Web Services account must be enabled for
+     * BYOL. If your account has not been enabled for BYOL, you will receive an
      * InvalidParameterValuesException error. For more information about BYOL images,
      * see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
@@ -272,8 +272,8 @@ namespace Model
     /**
      * <p>Indicates whether your WorkSpace directory is dedicated or shared. To use
      * Bring Your Own License (BYOL) images, this value must be set to
-     * <code>DEDICATED</code> and your AWS account must be enabled for BYOL. If your
-     * account has not been enabled for BYOL, you will receive an
+     * <code>DEDICATED</code> and your Amazon Web Services account must be enabled for
+     * BYOL. If your account has not been enabled for BYOL, you will receive an
      * InvalidParameterValuesException error. For more information about BYOL images,
      * see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
@@ -284,8 +284,8 @@ namespace Model
     /**
      * <p>Indicates whether your WorkSpace directory is dedicated or shared. To use
      * Bring Your Own License (BYOL) images, this value must be set to
-     * <code>DEDICATED</code> and your AWS account must be enabled for BYOL. If your
-     * account has not been enabled for BYOL, you will receive an
+     * <code>DEDICATED</code> and your Amazon Web Services account must be enabled for
+     * BYOL. If your account has not been enabled for BYOL, you will receive an
      * InvalidParameterValuesException error. For more information about BYOL images,
      * see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
@@ -296,8 +296,8 @@ namespace Model
     /**
      * <p>Indicates whether your WorkSpace directory is dedicated or shared. To use
      * Bring Your Own License (BYOL) images, this value must be set to
-     * <code>DEDICATED</code> and your AWS account must be enabled for BYOL. If your
-     * account has not been enabled for BYOL, you will receive an
+     * <code>DEDICATED</code> and your Amazon Web Services account must be enabled for
+     * BYOL. If your account has not been enabled for BYOL, you will receive an
      * InvalidParameterValuesException error. For more information about BYOL images,
      * see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
@@ -308,8 +308,8 @@ namespace Model
     /**
      * <p>Indicates whether your WorkSpace directory is dedicated or shared. To use
      * Bring Your Own License (BYOL) images, this value must be set to
-     * <code>DEDICATED</code> and your AWS account must be enabled for BYOL. If your
-     * account has not been enabled for BYOL, you will receive an
+     * <code>DEDICATED</code> and your Amazon Web Services account must be enabled for
+     * BYOL. If your account has not been enabled for BYOL, you will receive an
      * InvalidParameterValuesException error. For more information about BYOL images,
      * see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring

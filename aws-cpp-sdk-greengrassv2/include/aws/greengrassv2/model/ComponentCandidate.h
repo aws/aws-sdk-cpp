@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a component that is a candidate to deploy to a AWS
-   * IoT Greengrass core device.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a component that is a candidate to deploy to a
+   * Greengrass core device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentCandidate">AWS
    * API Reference</a></p>
    */
@@ -122,104 +122,104 @@ namespace Model
 
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVersionRequirements() const{ return m_versionRequirements; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline bool VersionRequirementsHasBeenSet() const { return m_versionRequirementsHasBeenSet; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline void SetVersionRequirements(const Aws::Map<Aws::String, Aws::String>& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements = value; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline void SetVersionRequirements(Aws::Map<Aws::String, Aws::String>&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements = std::move(value); }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& WithVersionRequirements(const Aws::Map<Aws::String, Aws::String>& value) { SetVersionRequirements(value); return *this;}
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& WithVersionRequirements(Aws::Map<Aws::String, Aws::String>&& value) { SetVersionRequirements(std::move(value)); return *this;}
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& AddVersionRequirements(const Aws::String& key, const Aws::String& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(key, value); return *this; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& AddVersionRequirements(Aws::String&& key, const Aws::String& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& AddVersionRequirements(const Aws::String& key, Aws::String&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& AddVersionRequirements(Aws::String&& key, Aws::String&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& AddVersionRequirements(const char* key, Aws::String&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentCandidate& AddVersionRequirements(Aws::String&& key, const char* value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The version requirements for the component's dependencies. AWS IoT Greengrass
-     * core devices get the version requirements from component recipes.</p> <p>AWS IoT
+     * <p>The version requirements for the component's dependencies. Greengrass core
+     * devices get the version requirements from component recipes.</p> <p>IoT
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */

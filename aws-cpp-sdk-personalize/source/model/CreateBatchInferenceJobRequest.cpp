@@ -21,7 +21,8 @@ CreateBatchInferenceJobRequest::CreateBatchInferenceJobRequest() :
     m_jobInputHasBeenSet(false),
     m_jobOutputHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_batchInferenceJobConfigHasBeenSet(false)
+    m_batchInferenceJobConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,17 @@ Aws::String CreateBatchInferenceJobRequest::SerializePayload() const
   if(m_batchInferenceJobConfigHasBeenSet)
   {
    payload.WithObject("batchInferenceJobConfig", m_batchInferenceJobConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

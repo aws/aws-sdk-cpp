@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
-   * your Amazon QLDB journal stream.</p><p><h3>See Also:</h3>   <a
+   * an Amazon QLDB journal stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/KinesisConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,75 +39,99 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline KinesisConfiguration& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline KinesisConfiguration& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
      */
     inline KinesisConfiguration& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
 
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p> <p>
+     * <i>This option is enabled by default.</i> Record aggregation has important
+     * implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
-     * Key Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+     * Key Concepts</a> and <a
+     * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
+     * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.</p>
      */
     inline bool GetAggregationEnabled() const{ return m_aggregationEnabled; }
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p> <p>
+     * <i>This option is enabled by default.</i> Record aggregation has important
+     * implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
-     * Key Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+     * Key Concepts</a> and <a
+     * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
+     * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.</p>
      */
     inline bool AggregationEnabledHasBeenSet() const { return m_aggregationEnabledHasBeenSet; }
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p> <p>
+     * <i>This option is enabled by default.</i> Record aggregation has important
+     * implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
-     * Key Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+     * Key Concepts</a> and <a
+     * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
+     * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.</p>
      */
     inline void SetAggregationEnabled(bool value) { m_aggregationEnabledHasBeenSet = true; m_aggregationEnabled = value; }
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p> <p>
+     * <i>This option is enabled by default.</i> Record aggregation has important
+     * implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
-     * Key Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+     * Key Concepts</a> and <a
+     * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
+     * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.</p>
      */
     inline KinesisConfiguration& WithAggregationEnabled(bool value) { SetAggregationEnabled(value); return *this;}
 

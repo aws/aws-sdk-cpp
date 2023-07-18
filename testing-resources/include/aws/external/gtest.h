@@ -2100,6 +2100,10 @@ template <bool>
       msg[static_cast<bool>(expr) ? 1 : -1] GTEST_ATTRIBUTE_UNUSED_
 #endif  // !GTEST_LANG_CXX11
 
+#if GTEST_LANG_CXX11
+        inline void PrintTo(std::nullptr_t, ::std::ostream* os) { *os << "(nullptr)"; }
+#endif // GTEST_LANG_CXX11
+
 // Implementation details of GTEST_COMPILE_ASSERT_:
 //
 // (In C++11, we simply use static_assert instead of the following)
@@ -11864,8 +11868,6 @@ class ValueArray1 {
   }
 
  private:
-  // No implementation - assignment is unsupported.
-  void operator=(const ValueArray1& other);
 
   const T1 v1_;
 };
@@ -11882,9 +11884,6 @@ class ValueArray2 {
   }
 
  private:
-  // No implementation - assignment is unsupported.
-  void operator=(const ValueArray2& other);
-
   const T1 v1_;
   const T2 v2_;
 };

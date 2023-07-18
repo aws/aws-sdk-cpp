@@ -11,6 +11,7 @@
 #include <aws/dax/model/NotificationConfiguration.h>
 #include <aws/dax/model/ParameterGroupStatus.h>
 #include <aws/dax/model/SSEDescription.h>
+#include <aws/dax/model/ClusterEndpointEncryptionType.h>
 #include <aws/dax/model/Node.h>
 #include <aws/dax/model/SecurityGroupMembership.h>
 #include <utility>
@@ -305,50 +306,44 @@ namespace Model
 
 
     /**
-     * <p>The configuration endpoint for this DAX cluster, consisting of a DNS name and
-     * a port number. Client applications can specify this endpoint, rather than an
-     * individual node endpoint, and allow the DAX client software to intelligently
-     * route requests and responses to nodes in the DAX cluster.</p>
+     * <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+     * and a URL. Applications should use the URL to configure the DAX client to find
+     * their cluster.</p>
      */
     inline const Endpoint& GetClusterDiscoveryEndpoint() const{ return m_clusterDiscoveryEndpoint; }
 
     /**
-     * <p>The configuration endpoint for this DAX cluster, consisting of a DNS name and
-     * a port number. Client applications can specify this endpoint, rather than an
-     * individual node endpoint, and allow the DAX client software to intelligently
-     * route requests and responses to nodes in the DAX cluster.</p>
+     * <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+     * and a URL. Applications should use the URL to configure the DAX client to find
+     * their cluster.</p>
      */
     inline bool ClusterDiscoveryEndpointHasBeenSet() const { return m_clusterDiscoveryEndpointHasBeenSet; }
 
     /**
-     * <p>The configuration endpoint for this DAX cluster, consisting of a DNS name and
-     * a port number. Client applications can specify this endpoint, rather than an
-     * individual node endpoint, and allow the DAX client software to intelligently
-     * route requests and responses to nodes in the DAX cluster.</p>
+     * <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+     * and a URL. Applications should use the URL to configure the DAX client to find
+     * their cluster.</p>
      */
     inline void SetClusterDiscoveryEndpoint(const Endpoint& value) { m_clusterDiscoveryEndpointHasBeenSet = true; m_clusterDiscoveryEndpoint = value; }
 
     /**
-     * <p>The configuration endpoint for this DAX cluster, consisting of a DNS name and
-     * a port number. Client applications can specify this endpoint, rather than an
-     * individual node endpoint, and allow the DAX client software to intelligently
-     * route requests and responses to nodes in the DAX cluster.</p>
+     * <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+     * and a URL. Applications should use the URL to configure the DAX client to find
+     * their cluster.</p>
      */
     inline void SetClusterDiscoveryEndpoint(Endpoint&& value) { m_clusterDiscoveryEndpointHasBeenSet = true; m_clusterDiscoveryEndpoint = std::move(value); }
 
     /**
-     * <p>The configuration endpoint for this DAX cluster, consisting of a DNS name and
-     * a port number. Client applications can specify this endpoint, rather than an
-     * individual node endpoint, and allow the DAX client software to intelligently
-     * route requests and responses to nodes in the DAX cluster.</p>
+     * <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+     * and a URL. Applications should use the URL to configure the DAX client to find
+     * their cluster.</p>
      */
     inline Cluster& WithClusterDiscoveryEndpoint(const Endpoint& value) { SetClusterDiscoveryEndpoint(value); return *this;}
 
     /**
-     * <p>The configuration endpoint for this DAX cluster, consisting of a DNS name and
-     * a port number. Client applications can specify this endpoint, rather than an
-     * individual node endpoint, and allow the DAX client software to intelligently
-     * route requests and responses to nodes in the DAX cluster.</p>
+     * <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+     * and a URL. Applications should use the URL to configure the DAX client to find
+     * their cluster.</p>
      */
     inline Cluster& WithClusterDiscoveryEndpoint(Endpoint&& value) { SetClusterDiscoveryEndpoint(std::move(value)); return *this;}
 
@@ -762,6 +757,49 @@ namespace Model
      */
     inline Cluster& WithSSEDescription(SSEDescription&& value) { SetSSEDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for
+     * Transport Layer Security</p> </li> </ul>
+     */
+    inline const ClusterEndpointEncryptionType& GetClusterEndpointEncryptionType() const{ return m_clusterEndpointEncryptionType; }
+
+    /**
+     * <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for
+     * Transport Layer Security</p> </li> </ul>
+     */
+    inline bool ClusterEndpointEncryptionTypeHasBeenSet() const { return m_clusterEndpointEncryptionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for
+     * Transport Layer Security</p> </li> </ul>
+     */
+    inline void SetClusterEndpointEncryptionType(const ClusterEndpointEncryptionType& value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = value; }
+
+    /**
+     * <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for
+     * Transport Layer Security</p> </li> </ul>
+     */
+    inline void SetClusterEndpointEncryptionType(ClusterEndpointEncryptionType&& value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = std::move(value); }
+
+    /**
+     * <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for
+     * Transport Layer Security</p> </li> </ul>
+     */
+    inline Cluster& WithClusterEndpointEncryptionType(const ClusterEndpointEncryptionType& value) { SetClusterEndpointEncryptionType(value); return *this;}
+
+    /**
+     * <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for
+     * Transport Layer Security</p> </li> </ul>
+     */
+    inline Cluster& WithClusterEndpointEncryptionType(ClusterEndpointEncryptionType&& value) { SetClusterEndpointEncryptionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -814,6 +852,9 @@ namespace Model
 
     SSEDescription m_sSEDescription;
     bool m_sSEDescriptionHasBeenSet;
+
+    ClusterEndpointEncryptionType m_clusterEndpointEncryptionType;
+    bool m_clusterEndpointEncryptionTypeHasBeenSet;
   };
 
 } // namespace Model

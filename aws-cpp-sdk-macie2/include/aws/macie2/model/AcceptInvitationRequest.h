@@ -33,6 +33,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline const Aws::String& GetAdministratorAccountId() const{ return m_administratorAccountId; }
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline bool AdministratorAccountIdHasBeenSet() const { return m_administratorAccountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline void SetAdministratorAccountId(const Aws::String& value) { m_administratorAccountIdHasBeenSet = true; m_administratorAccountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline void SetAdministratorAccountId(Aws::String&& value) { m_administratorAccountIdHasBeenSet = true; m_administratorAccountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline void SetAdministratorAccountId(const char* value) { m_administratorAccountIdHasBeenSet = true; m_administratorAccountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline AcceptInvitationRequest& WithAdministratorAccountId(const Aws::String& value) { SetAdministratorAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline AcceptInvitationRequest& WithAdministratorAccountId(Aws::String&& value) { SetAdministratorAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
+     */
+    inline AcceptInvitationRequest& WithAdministratorAccountId(const char* value) { SetAdministratorAccountId(value); return *this;}
+
+
+    /**
      * <p>The unique identifier for the invitation to accept.</p>
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
@@ -74,46 +123,65 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline const Aws::String& GetMasterAccount() const{ return m_masterAccount; }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline bool MasterAccountHasBeenSet() const { return m_masterAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline void SetMasterAccount(const Aws::String& value) { m_masterAccountHasBeenSet = true; m_masterAccount = value; }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline void SetMasterAccount(Aws::String&& value) { m_masterAccountHasBeenSet = true; m_masterAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline void SetMasterAccount(const char* value) { m_masterAccountHasBeenSet = true; m_masterAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline AcceptInvitationRequest& WithMasterAccount(const Aws::String& value) { SetMasterAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline AcceptInvitationRequest& WithMasterAccount(Aws::String&& value) { SetMasterAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the account that sent the
+     * invitation. This property has been replaced by the administratorAccountId
+     * property and is retained only for backward compatibility.</p>
      */
     inline AcceptInvitationRequest& WithMasterAccount(const char* value) { SetMasterAccount(value); return *this;}
 
   private:
+
+    Aws::String m_administratorAccountId;
+    bool m_administratorAccountIdHasBeenSet;
 
     Aws::String m_invitationId;
     bool m_invitationIdHasBeenSet;

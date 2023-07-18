@@ -48,12 +48,12 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p>  <p>Jobs running on Fargate resources are
-     * restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
-     *  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon CloudWatch Logs
-     * logging driver. For more information, see <a
+     * <code>splunk</code>.</p>  <p>Jobs that are running on Fargate resources
+     * are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -80,8 +80,8 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
+     * custom driver that's not listed earlier that you want to work with the Amazon
+     * ECS container agent, you can fork the Amazon ECS container agent project that's
      * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
@@ -99,12 +99,12 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p>  <p>Jobs running on Fargate resources are
-     * restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
-     *  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon CloudWatch Logs
-     * logging driver. For more information, see <a
+     * <code>splunk</code>.</p>  <p>Jobs that are running on Fargate resources
+     * are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -131,8 +131,8 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
+     * custom driver that's not listed earlier that you want to work with the Amazon
+     * ECS container agent, you can fork the Amazon ECS container agent project that's
      * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
@@ -150,12 +150,12 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p>  <p>Jobs running on Fargate resources are
-     * restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
-     *  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon CloudWatch Logs
-     * logging driver. For more information, see <a
+     * <code>splunk</code>.</p>  <p>Jobs that are running on Fargate resources
+     * are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -182,8 +182,8 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
+     * custom driver that's not listed earlier that you want to work with the Amazon
+     * ECS container agent, you can fork the Amazon ECS container agent project that's
      * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
@@ -201,12 +201,12 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p>  <p>Jobs running on Fargate resources are
-     * restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
-     *  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon CloudWatch Logs
-     * logging driver. For more information, see <a
+     * <code>splunk</code>.</p>  <p>Jobs that are running on Fargate resources
+     * are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -233,8 +233,8 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
+     * custom driver that's not listed earlier that you want to work with the Amazon
+     * ECS container agent, you can fork the Amazon ECS container agent project that's
      * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
@@ -252,12 +252,12 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p>  <p>Jobs running on Fargate resources are
-     * restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
-     *  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon CloudWatch Logs
-     * logging driver. For more information, see <a
+     * <code>splunk</code>.</p>  <p>Jobs that are running on Fargate resources
+     * are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -284,8 +284,8 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
+     * custom driver that's not listed earlier that you want to work with the Amazon
+     * ECS container agent, you can fork the Amazon ECS container agent project that's
      * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
@@ -303,12 +303,12 @@ namespace Model
      * with by default.</p> <p>The supported log drivers are <code>awslogs</code>,
      * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>,
      * <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
-     * <code>splunk</code>.</p>  <p>Jobs running on Fargate resources are
-     * restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
-     *  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon CloudWatch Logs
-     * logging driver. For more information, see <a
+     * <code>splunk</code>.</p>  <p>Jobs that are running on Fargate resources
+     * are restricted to the <code>awslogs</code> and <code>splunk</code> log
+     * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
+     * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -335,8 +335,8 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
+     * custom driver that's not listed earlier that you want to work with the Amazon
+     * ECS container agent, you can fork the Amazon ECS container agent project that's
      * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
@@ -470,56 +470,56 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>AWS Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
 

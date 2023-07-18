@@ -41,7 +41,7 @@ namespace Model
    * <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more
    * information about using launch templates with Amazon EKS, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-   * template support</a> in the Amazon EKS User Guide.</p> <p>Specify either
+   * template support</a> in the <i>Amazon EKS User Guide</i>.</p> <p>Specify either
    * <code>name</code> or <code>id</code>, but not both.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/LaunchTemplateSpecification">AWS

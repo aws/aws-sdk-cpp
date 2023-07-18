@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     HEALTHY,
     UNHEALTHY,
-    ALL
+    ALL,
+    HEALTHY_OR_ELSE_ALL
   };
 
 namespace HealthStatusFilterMapper

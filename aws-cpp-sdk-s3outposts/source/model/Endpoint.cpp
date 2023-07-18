@@ -25,7 +25,13 @@ Endpoint::Endpoint() :
     m_status(EndpointStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_securityGroupIdHasBeenSet(false),
+    m_accessType(EndpointAccessType::NOT_SET),
+    m_accessTypeHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false)
 {
 }
 
@@ -36,7 +42,13 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_status(EndpointStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_securityGroupIdHasBeenSet(false),
+    m_accessType(EndpointAccessType::NOT_SET),
+    m_accessTypeHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +100,41 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_networkInterfacesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcId"))
+  {
+    m_vpcId = jsonValue.GetString("VpcId");
+
+    m_vpcIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SubnetId"))
+  {
+    m_subnetId = jsonValue.GetString("SubnetId");
+
+    m_subnetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecurityGroupId"))
+  {
+    m_securityGroupId = jsonValue.GetString("SecurityGroupId");
+
+    m_securityGroupIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AccessType"))
+  {
+    m_accessType = EndpointAccessTypeMapper::GetEndpointAccessTypeForName(jsonValue.GetString("AccessType"));
+
+    m_accessTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomerOwnedIpv4Pool"))
+  {
+    m_customerOwnedIpv4Pool = jsonValue.GetString("CustomerOwnedIpv4Pool");
+
+    m_customerOwnedIpv4PoolHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +178,35 @@ JsonValue Endpoint::Jsonize() const
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
    }
    payload.WithArray("NetworkInterfaces", std::move(networkInterfacesJsonList));
+
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+   payload.WithString("VpcId", m_vpcId);
+
+  }
+
+  if(m_subnetIdHasBeenSet)
+  {
+   payload.WithString("SubnetId", m_subnetId);
+
+  }
+
+  if(m_securityGroupIdHasBeenSet)
+  {
+   payload.WithString("SecurityGroupId", m_securityGroupId);
+
+  }
+
+  if(m_accessTypeHasBeenSet)
+  {
+   payload.WithString("AccessType", EndpointAccessTypeMapper::GetNameForEndpointAccessType(m_accessType));
+  }
+
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+   payload.WithString("CustomerOwnedIpv4Pool", m_customerOwnedIpv4Pool);
 
   }
 

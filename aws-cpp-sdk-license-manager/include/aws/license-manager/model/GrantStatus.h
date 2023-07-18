@@ -23,7 +23,8 @@ namespace Model
     FAILED_WORKFLOW,
     DELETED,
     PENDING_DELETE,
-    DISABLED
+    DISABLED,
+    WORKFLOW_COMPLETED
   };
 
 namespace GrantStatusMapper

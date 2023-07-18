@@ -22,7 +22,9 @@ MemberConfiguration::MemberConfiguration() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_frameworkConfigurationHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false)
+    m_logPublishingConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ MemberConfiguration::MemberConfiguration(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_frameworkConfigurationHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false)
+    m_logPublishingConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,23 @@ MemberConfiguration& MemberConfiguration::operator =(JsonView jsonValue)
     m_logPublishingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +114,23 @@ JsonValue MemberConfiguration::Jsonize() const
   if(m_logPublishingConfigurationHasBeenSet)
   {
    payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
 
   }
 

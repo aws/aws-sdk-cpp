@@ -16,7 +16,8 @@ UpdateRobotApplicationRequest::UpdateRobotApplicationRequest() :
     m_applicationHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_robotSoftwareSuiteHasBeenSet(false),
-    m_currentRevisionIdHasBeenSet(false)
+    m_currentRevisionIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String UpdateRobotApplicationRequest::SerializePayload() const
   if(m_currentRevisionIdHasBeenSet)
   {
    payload.WithString("currentRevisionId", m_currentRevisionId);
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   payload.WithObject("environment", m_environment.Jsonize());
 
   }
 

@@ -18,7 +18,8 @@ ListProblemsRequest::ListProblemsRequest() :
     m_endTimeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_componentNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,12 @@ Aws::String ListProblemsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_componentNameHasBeenSet)
+  {
+   payload.WithString("ComponentName", m_componentName);
 
   }
 

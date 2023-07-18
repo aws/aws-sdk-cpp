@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdatePipelineExecutionRequest::UpdatePipelineExecutionRequest() : 
     m_pipelineExecutionArnHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false)
+    m_pipelineExecutionDisplayNameHasBeenSet(false),
+    m_parallelismConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String UpdatePipelineExecutionRequest::SerializePayload() const
   if(m_pipelineExecutionDisplayNameHasBeenSet)
   {
    payload.WithString("PipelineExecutionDisplayName", m_pipelineExecutionDisplayName);
+
+  }
+
+  if(m_parallelismConfigurationHasBeenSet)
+  {
+   payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
 
   }
 

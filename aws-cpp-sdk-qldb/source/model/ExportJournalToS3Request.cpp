@@ -17,7 +17,9 @@ ExportJournalToS3Request::ExportJournalToS3Request() :
     m_inclusiveStartTimeHasBeenSet(false),
     m_exclusiveEndTimeHasBeenSet(false),
     m_s3ExportConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_outputFormat(OutputFormat::NOT_SET),
+    m_outputFormatHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,11 @@ Aws::String ExportJournalToS3Request::SerializePayload() const
   {
    payload.WithString("RoleArn", m_roleArn);
 
+  }
+
+  if(m_outputFormatHasBeenSet)
+  {
+   payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
   }
 
   return payload.View().WriteReadable();

@@ -24,7 +24,8 @@ ApplicationConfiguration::ApplicationConfiguration() :
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
     m_applicationSnapshotConfigurationHasBeenSet(false),
-    m_vpcConfigurationsHasBeenSet(false)
+    m_vpcConfigurationsHasBeenSet(false),
+    m_zeppelinApplicationConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ApplicationConfiguration::ApplicationConfiguration(JsonView jsonValue) :
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
     m_applicationSnapshotConfigurationHasBeenSet(false),
-    m_vpcConfigurationsHasBeenSet(false)
+    m_vpcConfigurationsHasBeenSet(false),
+    m_zeppelinApplicationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ ApplicationConfiguration& ApplicationConfiguration::operator =(JsonView jsonValu
     m_vpcConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ZeppelinApplicationConfiguration"))
+  {
+    m_zeppelinApplicationConfiguration = jsonValue.GetObject("ZeppelinApplicationConfiguration");
+
+    m_zeppelinApplicationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +140,12 @@ JsonValue ApplicationConfiguration::Jsonize() const
      vpcConfigurationsJsonList[vpcConfigurationsIndex].AsObject(m_vpcConfigurations[vpcConfigurationsIndex].Jsonize());
    }
    payload.WithArray("VpcConfigurations", std::move(vpcConfigurationsJsonList));
+
+  }
+
+  if(m_zeppelinApplicationConfigurationHasBeenSet)
+  {
+   payload.WithObject("ZeppelinApplicationConfiguration", m_zeppelinApplicationConfiguration.Jsonize());
 
   }
 

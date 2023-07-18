@@ -69,7 +69,7 @@ MobileAnalyticsClient::~MobileAnalyticsClient()
 {
 }
 
-void MobileAnalyticsClient::init(const ClientConfiguration& config)
+void MobileAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("mobileanalytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -103,9 +103,7 @@ PutEventsOutcome MobileAnalyticsClient::PutEvents(const PutEventsRequest& reques
     return PutEventsOutcome(Aws::Client::AWSError<MobileAnalyticsErrors>(MobileAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientContext]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2014-06-05/events";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2014-06-05/events");
   return PutEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

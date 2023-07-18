@@ -26,7 +26,11 @@ ApplicationInfo::ApplicationInfo() :
     m_opsCenterEnabledHasBeenSet(false),
     m_cWEMonitorEnabled(false),
     m_cWEMonitorEnabledHasBeenSet(false),
-    m_remarksHasBeenSet(false)
+    m_remarksHasBeenSet(false),
+    m_autoConfigEnabled(false),
+    m_autoConfigEnabledHasBeenSet(false),
+    m_discoveryType(DiscoveryType::NOT_SET),
+    m_discoveryTypeHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ ApplicationInfo::ApplicationInfo(JsonView jsonValue) :
     m_opsCenterEnabledHasBeenSet(false),
     m_cWEMonitorEnabled(false),
     m_cWEMonitorEnabledHasBeenSet(false),
-    m_remarksHasBeenSet(false)
+    m_remarksHasBeenSet(false),
+    m_autoConfigEnabled(false),
+    m_autoConfigEnabledHasBeenSet(false),
+    m_discoveryType(DiscoveryType::NOT_SET),
+    m_discoveryTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +95,20 @@ ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
     m_remarksHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoConfigEnabled"))
+  {
+    m_autoConfigEnabled = jsonValue.GetBool("AutoConfigEnabled");
+
+    m_autoConfigEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DiscoveryType"))
+  {
+    m_discoveryType = DiscoveryTypeMapper::GetDiscoveryTypeForName(jsonValue.GetString("DiscoveryType"));
+
+    m_discoveryTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +150,17 @@ JsonValue ApplicationInfo::Jsonize() const
   {
    payload.WithString("Remarks", m_remarks);
 
+  }
+
+  if(m_autoConfigEnabledHasBeenSet)
+  {
+   payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
+
+  }
+
+  if(m_discoveryTypeHasBeenSet)
+  {
+   payload.WithString("DiscoveryType", DiscoveryTypeMapper::GetNameForDiscoveryType(m_discoveryType));
   }
 
   return payload;

@@ -41,6 +41,15 @@ namespace Aws
         static const int KAFKA_SSL_ENABLED_HASH = HashingUtils::HashString("KAFKA_SSL_ENABLED");
         static const int KAFKA_CUSTOM_CERT_HASH = HashingUtils::HashString("KAFKA_CUSTOM_CERT");
         static const int KAFKA_SKIP_CUSTOM_CERT_VALIDATION_HASH = HashingUtils::HashString("KAFKA_SKIP_CUSTOM_CERT_VALIDATION");
+        static const int KAFKA_CLIENT_KEYSTORE_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEYSTORE");
+        static const int KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEYSTORE_PASSWORD");
+        static const int KAFKA_CLIENT_KEY_PASSWORD_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEY_PASSWORD");
+        static const int ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
+        static const int ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD");
+        static const int SECRET_ID_HASH = HashingUtils::HashString("SECRET_ID");
+        static const int CONNECTOR_URL_HASH = HashingUtils::HashString("CONNECTOR_URL");
+        static const int CONNECTOR_TYPE_HASH = HashingUtils::HashString("CONNECTOR_TYPE");
+        static const int CONNECTOR_CLASS_NAME_HASH = HashingUtils::HashString("CONNECTOR_CLASS_NAME");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -130,6 +139,42 @@ namespace Aws
           {
             return ConnectionPropertyKey::KAFKA_SKIP_CUSTOM_CERT_VALIDATION;
           }
+          else if (hashCode == KAFKA_CLIENT_KEYSTORE_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE;
+          }
+          else if (hashCode == KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE_PASSWORD;
+          }
+          else if (hashCode == KAFKA_CLIENT_KEY_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CLIENT_KEY_PASSWORD;
+          }
+          else if (hashCode == ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD;
+          }
+          else if (hashCode == ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD;
+          }
+          else if (hashCode == SECRET_ID_HASH)
+          {
+            return ConnectionPropertyKey::SECRET_ID;
+          }
+          else if (hashCode == CONNECTOR_URL_HASH)
+          {
+            return ConnectionPropertyKey::CONNECTOR_URL;
+          }
+          else if (hashCode == CONNECTOR_TYPE_HASH)
+          {
+            return ConnectionPropertyKey::CONNECTOR_TYPE;
+          }
+          else if (hashCode == CONNECTOR_CLASS_NAME_HASH)
+          {
+            return ConnectionPropertyKey::CONNECTOR_CLASS_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -186,6 +231,24 @@ namespace Aws
             return "KAFKA_CUSTOM_CERT";
           case ConnectionPropertyKey::KAFKA_SKIP_CUSTOM_CERT_VALIDATION:
             return "KAFKA_SKIP_CUSTOM_CERT_VALIDATION";
+          case ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE:
+            return "KAFKA_CLIENT_KEYSTORE";
+          case ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE_PASSWORD:
+            return "KAFKA_CLIENT_KEYSTORE_PASSWORD";
+          case ConnectionPropertyKey::KAFKA_CLIENT_KEY_PASSWORD:
+            return "KAFKA_CLIENT_KEY_PASSWORD";
+          case ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD:
+            return "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD";
+          case ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD:
+            return "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD";
+          case ConnectionPropertyKey::SECRET_ID:
+            return "SECRET_ID";
+          case ConnectionPropertyKey::CONNECTOR_URL:
+            return "CONNECTOR_URL";
+          case ConnectionPropertyKey::CONNECTOR_TYPE:
+            return "CONNECTOR_TYPE";
+          case ConnectionPropertyKey::CONNECTOR_CLASS_NAME:
+            return "CONNECTOR_CLASS_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

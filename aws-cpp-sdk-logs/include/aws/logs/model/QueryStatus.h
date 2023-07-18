@@ -20,7 +20,9 @@ namespace Model
     Running,
     Complete,
     Failed,
-    Cancelled
+    Cancelled,
+    Timeout,
+    Unknown
   };
 
 namespace QueryStatusMapper

@@ -117,24 +117,49 @@ namespace Model
 
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline int GetSessionExpirationDurationInSeconds() const{ return m_sessionExpirationDurationInSeconds; }
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline bool SessionExpirationDurationInSecondsHasBeenSet() const { return m_sessionExpirationDurationInSecondsHasBeenSet; }
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline void SetSessionExpirationDurationInSeconds(int value) { m_sessionExpirationDurationInSecondsHasBeenSet = true; m_sessionExpirationDurationInSeconds = value; }
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline CreatePresignedDomainUrlRequest& WithSessionExpirationDurationInSeconds(int value) { SetSessionExpirationDurationInSeconds(value); return *this;}
+
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline int GetExpiresInSeconds() const{ return m_expiresInSeconds; }
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline bool ExpiresInSecondsHasBeenSet() const { return m_expiresInSecondsHasBeenSet; }
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline void SetExpiresInSeconds(int value) { m_expiresInSecondsHasBeenSet = true; m_expiresInSeconds = value; }
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
 
   private:
 
@@ -146,6 +171,9 @@ namespace Model
 
     int m_sessionExpirationDurationInSeconds;
     bool m_sessionExpirationDurationInSecondsHasBeenSet;
+
+    int m_expiresInSeconds;
+    bool m_expiresInSecondsHasBeenSet;
   };
 
 } // namespace Model

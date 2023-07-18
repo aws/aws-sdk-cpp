@@ -30,7 +30,11 @@ namespace Model
    * <p>A service configuration associated with a resource group. The configuration
    * options are determined by the AWS service that defines the <code>Type</code>,
    * and specifies which resources can be included in the group. You can add a
-   * service configuration when you create the group.</p><p><h3>See Also:</h3>   <a
+   * service configuration when you create the group by using <a>CreateGroup</a>, or
+   * later by using the <a>PutGroupConfiguration</a> operation. For details about
+   * group service configuration syntax, see <a
+   * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+   * configurations for resource groups</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupConfiguration">AWS
    * API Reference</a></p>
    */

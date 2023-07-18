@@ -206,7 +206,8 @@ namespace Model
     ZUL,
     ORJ,
     QPC,
-    TNG
+    TNG,
+    SRP
   };
 
 namespace LanguageCodeMapper

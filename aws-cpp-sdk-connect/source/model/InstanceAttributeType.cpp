@@ -27,6 +27,7 @@ namespace Aws
         static const int AUTO_RESOLVE_BEST_VOICES_HASH = HashingUtils::HashString("AUTO_RESOLVE_BEST_VOICES");
         static const int USE_CUSTOM_TTS_VOICES_HASH = HashingUtils::HashString("USE_CUSTOM_TTS_VOICES");
         static const int EARLY_MEDIA_HASH = HashingUtils::HashString("EARLY_MEDIA");
+        static const int MULTI_PARTY_CONFERENCE_HASH = HashingUtils::HashString("MULTI_PARTY_CONFERENCE");
 
 
         InstanceAttributeType GetInstanceAttributeTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return InstanceAttributeType::EARLY_MEDIA;
           }
+          else if (hashCode == MULTI_PARTY_CONFERENCE_HASH)
+          {
+            return InstanceAttributeType::MULTI_PARTY_CONFERENCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "USE_CUSTOM_TTS_VOICES";
           case InstanceAttributeType::EARLY_MEDIA:
             return "EARLY_MEDIA";
+          case InstanceAttributeType::MULTI_PARTY_CONFERENCE:
+            return "MULTI_PARTY_CONFERENCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

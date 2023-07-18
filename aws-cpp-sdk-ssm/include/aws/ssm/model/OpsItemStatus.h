@@ -33,7 +33,8 @@ namespace Model
     ChangeCalendarOverrideRejected,
     PendingApproval,
     Approved,
-    Rejected
+    Rejected,
+    Closed
   };
 
 namespace OpsItemStatusMapper

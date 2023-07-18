@@ -19,6 +19,7 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_enabledHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
+    m_filterCriteriaHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
     m_parallelizationFactor(0),
@@ -68,6 +69,12 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_batchSizeHasBeenSet)
   {
    payload.WithInteger("BatchSize", m_batchSize);
+
+  }
+
+  if(m_filterCriteriaHasBeenSet)
+  {
+   payload.WithObject("FilterCriteria", m_filterCriteria.Jsonize());
 
   }
 

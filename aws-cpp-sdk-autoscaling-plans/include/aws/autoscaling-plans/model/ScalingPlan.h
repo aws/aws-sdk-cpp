@@ -105,32 +105,38 @@ namespace Model
 
 
     /**
-     * <p>The application source.</p>
+     * <p>A CloudFormation stack or a set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline const ApplicationSource& GetApplicationSource() const{ return m_applicationSource; }
 
     /**
-     * <p>The application source.</p>
+     * <p>A CloudFormation stack or a set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline bool ApplicationSourceHasBeenSet() const { return m_applicationSourceHasBeenSet; }
 
     /**
-     * <p>The application source.</p>
+     * <p>A CloudFormation stack or a set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline void SetApplicationSource(const ApplicationSource& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = value; }
 
     /**
-     * <p>The application source.</p>
+     * <p>A CloudFormation stack or a set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline void SetApplicationSource(ApplicationSource&& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = std::move(value); }
 
     /**
-     * <p>The application source.</p>
+     * <p>A CloudFormation stack or a set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline ScalingPlan& WithApplicationSource(const ApplicationSource& value) { SetApplicationSource(value); return *this;}
 
     /**
-     * <p>The application source.</p>
+     * <p>A CloudFormation stack or a set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline ScalingPlan& WithApplicationSource(ApplicationSource&& value) { SetApplicationSource(std::move(value)); return *this;}
 

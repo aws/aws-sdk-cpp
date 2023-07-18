@@ -18,7 +18,8 @@ StartPipelineExecutionRequest::StartPipelineExecutionRequest() :
     m_pipelineParametersHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_parallelismConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,12 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_parallelismConfigurationHasBeenSet)
+  {
+   payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
 
   }
 

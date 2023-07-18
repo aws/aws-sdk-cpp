@@ -8,6 +8,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -295,65 +296,65 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -415,57 +416,57 @@ namespace Model
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
-     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -473,64 +474,64 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
-     * <code>aurora-postgresql</code> </p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora), and <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -541,16 +542,18 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -560,16 +563,18 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -579,16 +584,18 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -598,16 +605,18 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -617,16 +626,18 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -636,16 +647,18 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -655,16 +668,18 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -674,41 +689,43 @@ namespace Model
      * Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora),
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-     * <p>To list all of the available engine versions for
-     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
+     * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for <code>aurora-postgresql</code>, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
+     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
+     * <code>10.7</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithPort(int value) { SetPort(value); return *this;}
 
@@ -902,12 +919,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -916,12 +934,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -930,12 +949,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -944,12 +964,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -958,12 +979,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -972,12 +994,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -986,12 +1009,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1000,12 +1024,13 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * time for each Amazon Web Services Region. To view the time blocks available, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1017,11 +1042,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
@@ -1030,11 +1055,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
@@ -1043,11 +1068,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
@@ -1056,11 +1081,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
@@ -1069,11 +1094,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
@@ -1082,11 +1107,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -1095,11 +1120,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
@@ -1108,11 +1133,11 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Web Services Region, occurring on a random day of the week.
+     * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -1165,232 +1190,248 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
-     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
-     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     * AWS account has a different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline const Aws::String& GetSourceEngine() const{ return m_sourceEngine; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline bool SourceEngineHasBeenSet() const { return m_sourceEngineHasBeenSet; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(const Aws::String& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = value; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(Aws::String&& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = std::move(value); }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(const char* value) { m_sourceEngineHasBeenSet = true; m_sourceEngine.assign(value); }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(const Aws::String& value) { SetSourceEngine(value); return *this;}
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(Aws::String&& value) { SetSourceEngine(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(const char* value) { SetSourceEngine(value); return *this;}
 
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
@@ -1511,58 +1552,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline const Aws::String& GetS3IngestionRoleArn() const{ return m_s3IngestionRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline bool S3IngestionRoleArnHasBeenSet() const { return m_s3IngestionRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline void SetS3IngestionRoleArn(const Aws::String& value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline void SetS3IngestionRoleArn(Aws::String&& value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline void SetS3IngestionRoleArn(const char* value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline RestoreDBClusterFromS3Request& WithS3IngestionRoleArn(const Aws::String& value) { SetS3IngestionRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline RestoreDBClusterFromS3Request& WithS3IngestionRoleArn(Aws::String&& value) { SetS3IngestionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
-     * behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket
+     * on your behalf.</p>
      */
     inline RestoreDBClusterFromS3Request& WithS3IngestionRoleArn(const char* value) { SetS3IngestionRoleArn(value); return *this;}
 
@@ -1606,8 +1647,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1616,8 +1661,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1626,8 +1675,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1636,8 +1689,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1646,8 +1703,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1656,8 +1717,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1666,8 +1731,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1676,8 +1745,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1686,8 +1759,12 @@ namespace Model
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine being used.</p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>Aurora PostgreSQL</b> </p> <p>Possible value is <code>postgresql</code>.</p>
+     * <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -1698,28 +1775,28 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -1751,81 +1828,81 @@ namespace Model
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -1877,6 +1954,25 @@ namespace Model
      * Directory Service.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
+
+    
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
+
+    
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
+
+    
+    inline RestoreDBClusterFromS3Request& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
+
+    
+    inline RestoreDBClusterFromS3Request& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -1972,6 +2068,9 @@ namespace Model
 
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

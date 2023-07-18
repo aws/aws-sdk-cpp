@@ -16,7 +16,8 @@ namespace Model
   enum class ChannelType
   {
     NOT_SET,
-    SINGLE_MASTER
+    SINGLE_MASTER,
+    FULL_MESH
   };
 
 namespace ChannelTypeMapper

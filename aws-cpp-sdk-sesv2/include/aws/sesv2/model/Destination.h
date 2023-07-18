@@ -25,8 +25,16 @@ namespace Model
 {
 
   /**
-   * <p>An object that describes the recipients for an email.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object that describes the recipients for an email.</p>  <p>Amazon
+   * SES does not support the SMTPUTF8 extension, as described in <a
+   * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+   * <i>local part</i> of a destination email address (the part of the email address
+   * that precedes the @ sign) may only contain <a
+   * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+   * characters</a>. If the <i>domain part</i> of an address (the part after the @
+   * sign) contains non-ASCII characters, they must be encoded using Punycode, as
+   * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Destination">AWS
    * API Reference</a></p>
    */

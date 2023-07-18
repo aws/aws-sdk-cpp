@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p> Control mapping fields that represent the source for evidence collection,
-   * along with related parameters and metadata. This does not contain
+   * <p> The control mapping fields that represent the source for evidence
+   * collection, along with related parameters and metadata. This doesn't contain
    * <code>mappingID</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateControlMappingSource">AWS
    * API Reference</a></p>
@@ -85,50 +85,50 @@ namespace Model
 
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline const Aws::String& GetSourceDescription() const{ return m_sourceDescription; }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline bool SourceDescriptionHasBeenSet() const { return m_sourceDescriptionHasBeenSet; }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline void SetSourceDescription(const Aws::String& value) { m_sourceDescriptionHasBeenSet = true; m_sourceDescription = value; }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline void SetSourceDescription(Aws::String&& value) { m_sourceDescriptionHasBeenSet = true; m_sourceDescription = std::move(value); }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline void SetSourceDescription(const char* value) { m_sourceDescriptionHasBeenSet = true; m_sourceDescription.assign(value); }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline CreateControlMappingSource& WithSourceDescription(const Aws::String& value) { SetSourceDescription(value); return *this;}
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline CreateControlMappingSource& WithSourceDescription(Aws::String&& value) { SetSourceDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines where Audit Manager
+     * collects evidence from for the control. </p>
      */
     inline CreateControlMappingSource& WithSourceDescription(const char* value) { SetSourceDescription(value); return *this;}
 
@@ -227,79 +227,73 @@ namespace Model
 
 
     /**
-     * <p> The frequency of evidence collection for the specified control mapping
-     * source. </p>
+     * <p> The frequency of evidence collection for the control mapping source. </p>
      */
     inline const SourceFrequency& GetSourceFrequency() const{ return m_sourceFrequency; }
 
     /**
-     * <p> The frequency of evidence collection for the specified control mapping
-     * source. </p>
+     * <p> The frequency of evidence collection for the control mapping source. </p>
      */
     inline bool SourceFrequencyHasBeenSet() const { return m_sourceFrequencyHasBeenSet; }
 
     /**
-     * <p> The frequency of evidence collection for the specified control mapping
-     * source. </p>
+     * <p> The frequency of evidence collection for the control mapping source. </p>
      */
     inline void SetSourceFrequency(const SourceFrequency& value) { m_sourceFrequencyHasBeenSet = true; m_sourceFrequency = value; }
 
     /**
-     * <p> The frequency of evidence collection for the specified control mapping
-     * source. </p>
+     * <p> The frequency of evidence collection for the control mapping source. </p>
      */
     inline void SetSourceFrequency(SourceFrequency&& value) { m_sourceFrequencyHasBeenSet = true; m_sourceFrequency = std::move(value); }
 
     /**
-     * <p> The frequency of evidence collection for the specified control mapping
-     * source. </p>
+     * <p> The frequency of evidence collection for the control mapping source. </p>
      */
     inline CreateControlMappingSource& WithSourceFrequency(const SourceFrequency& value) { SetSourceFrequency(value); return *this;}
 
     /**
-     * <p> The frequency of evidence collection for the specified control mapping
-     * source. </p>
+     * <p> The frequency of evidence collection for the control mapping source. </p>
      */
     inline CreateControlMappingSource& WithSourceFrequency(SourceFrequency&& value) { SetSourceFrequency(std::move(value)); return *this;}
 
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline const Aws::String& GetTroubleshootingText() const{ return m_troubleshootingText; }
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline bool TroubleshootingTextHasBeenSet() const { return m_troubleshootingTextHasBeenSet; }
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline void SetTroubleshootingText(const Aws::String& value) { m_troubleshootingTextHasBeenSet = true; m_troubleshootingText = value; }
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline void SetTroubleshootingText(Aws::String&& value) { m_troubleshootingTextHasBeenSet = true; m_troubleshootingText = std::move(value); }
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline void SetTroubleshootingText(const char* value) { m_troubleshootingTextHasBeenSet = true; m_troubleshootingText.assign(value); }
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline CreateControlMappingSource& WithTroubleshootingText(const Aws::String& value) { SetTroubleshootingText(value); return *this;}
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline CreateControlMappingSource& WithTroubleshootingText(Aws::String&& value) { SetTroubleshootingText(std::move(value)); return *this;}
 
     /**
-     * <p> The instructions for troubleshooting the specified control. </p>
+     * <p> The instructions for troubleshooting the control. </p>
      */
     inline CreateControlMappingSource& WithTroubleshootingText(const char* value) { SetTroubleshootingText(value); return *this;}
 

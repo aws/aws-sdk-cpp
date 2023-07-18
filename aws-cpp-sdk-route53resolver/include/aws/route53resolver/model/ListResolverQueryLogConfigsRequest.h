@@ -240,22 +240,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetSortBy() const{ return m_sortBy; }
 
@@ -275,22 +275,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
@@ -310,22 +310,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline void SetSortBy(const Aws::String& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
@@ -345,22 +345,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline void SetSortBy(Aws::String&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
@@ -380,22 +380,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline void SetSortBy(const char* value) { m_sortByHasBeenSet = true; m_sortBy.assign(value); }
 
@@ -415,22 +415,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline ListResolverQueryLogConfigsRequest& WithSortBy(const Aws::String& value) { SetSortBy(value); return *this;}
 
@@ -450,22 +450,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline ListResolverQueryLogConfigsRequest& WithSortBy(Aws::String&& value) { SetSortBy(std::move(value)); return *this;}
 
@@ -485,22 +485,22 @@ namespace Model
      * <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
      * <li> <p> <code>Id</code>: The ID of the configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the configuration</p> </li> <li> <p>
-     * <code>OwnerId</code>: The AWS account number of the account that created the
-     * configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether the
-     * configuration is shared with other AWS accounts or shared with the current
-     * account by another AWS account. Sharing is configured through AWS Resource
-     * Access Manager (AWS RAM).</p> </li> <li> <p> <code>Status</code>: The current
-     * status of the configuration. Valid values include the following:</p> <ul> <li>
-     * <p> <code>CREATING</code>: Resolver is creating the query logging
-     * configuration.</p> </li> <li> <p> <code>CREATED</code>: The query logging
-     * configuration was successfully created. Resolver is logging queries that
-     * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
-     * Resolver is deleting this query logging configuration.</p> </li> <li> <p>
-     * <code>FAILED</code>: Resolver either couldn't create or couldn't delete the
-     * query logging configuration. Here are two common causes:</p> <ul> <li> <p>The
-     * specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-     * <li> <p>Permissions don't allow sending logs to the destination.</p> </li> </ul>
-     * </li> </ul> </li> </ul>
+     * <code>OwnerId</code>: The Amazon Web Services account number of the account that
+     * created the configuration</p> </li> <li> <p> <code>ShareStatus</code>: Whether
+     * the configuration is shared with other Amazon Web Services accounts or shared
+     * with the current account by another Amazon Web Services account. Sharing is
+     * configured through Resource Access Manager (RAM).</p> </li> <li> <p>
+     * <code>Status</code>: The current status of the configuration. Valid values
+     * include the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is
+     * creating the query logging configuration.</p> </li> <li> <p>
+     * <code>CREATED</code>: The query logging configuration was successfully created.
+     * Resolver is logging queries that originate in the specified VPC.</p> </li> <li>
+     * <p> <code>DELETING</code>: Resolver is deleting this query logging
+     * configuration.</p> </li> <li> <p> <code>FAILED</code>: Resolver either couldn't
+     * create or couldn't delete the query logging configuration. Here are two common
+     * causes:</p> <ul> <li> <p>The specified destination (for example, an Amazon S3
+     * bucket) was deleted.</p> </li> <li> <p>Permissions don't allow sending logs to
+     * the destination.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline ListResolverQueryLogConfigsRequest& WithSortBy(const char* value) { SetSortBy(value); return *this;}
 

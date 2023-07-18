@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/SAMLOptionsOutput.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +112,62 @@ namespace Model
      */
     inline AdvancedSecurityOptions& WithSAMLOptions(SAMLOptionsOutput&& value) { SetSAMLOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAnonymousAuthDisableDate() const{ return m_anonymousAuthDisableDate; }
+
+    /**
+     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     */
+    inline bool AnonymousAuthDisableDateHasBeenSet() const { return m_anonymousAuthDisableDateHasBeenSet; }
+
+    /**
+     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     */
+    inline void SetAnonymousAuthDisableDate(const Aws::Utils::DateTime& value) { m_anonymousAuthDisableDateHasBeenSet = true; m_anonymousAuthDisableDate = value; }
+
+    /**
+     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     */
+    inline void SetAnonymousAuthDisableDate(Aws::Utils::DateTime&& value) { m_anonymousAuthDisableDateHasBeenSet = true; m_anonymousAuthDisableDate = std::move(value); }
+
+    /**
+     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     */
+    inline AdvancedSecurityOptions& WithAnonymousAuthDisableDate(const Aws::Utils::DateTime& value) { SetAnonymousAuthDisableDate(value); return *this;}
+
+    /**
+     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     */
+    inline AdvancedSecurityOptions& WithAnonymousAuthDisableDate(Aws::Utils::DateTime&& value) { SetAnonymousAuthDisableDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline bool GetAnonymousAuthEnabled() const{ return m_anonymousAuthEnabled; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline bool AnonymousAuthEnabledHasBeenSet() const { return m_anonymousAuthEnabledHasBeenSet; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline void SetAnonymousAuthEnabled(bool value) { m_anonymousAuthEnabledHasBeenSet = true; m_anonymousAuthEnabled = value; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline AdvancedSecurityOptions& WithAnonymousAuthEnabled(bool value) { SetAnonymousAuthEnabled(value); return *this;}
+
   private:
 
     bool m_enabled;
@@ -121,6 +178,12 @@ namespace Model
 
     SAMLOptionsOutput m_sAMLOptions;
     bool m_sAMLOptionsHasBeenSet;
+
+    Aws::Utils::DateTime m_anonymousAuthDisableDate;
+    bool m_anonymousAuthDisableDateHasBeenSet;
+
+    bool m_anonymousAuthEnabled;
+    bool m_anonymousAuthEnabledHasBeenSet;
   };
 
 } // namespace Model

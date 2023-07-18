@@ -39,7 +39,8 @@ Action::Action() :
     m_stepFunctionsHasBeenSet(false),
     m_timestreamHasBeenSet(false),
     m_httpHasBeenSet(false),
-    m_kafkaHasBeenSet(false)
+    m_kafkaHasBeenSet(false),
+    m_openSearchHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ Action::Action(JsonView jsonValue) :
     m_stepFunctionsHasBeenSet(false),
     m_timestreamHasBeenSet(false),
     m_httpHasBeenSet(false),
-    m_kafkaHasBeenSet(false)
+    m_kafkaHasBeenSet(false),
+    m_openSearchHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -218,6 +220,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_kafkaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("openSearch"))
+  {
+    m_openSearch = jsonValue.GetObject("openSearch");
+
+    m_openSearchHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -348,6 +357,12 @@ JsonValue Action::Jsonize() const
   if(m_kafkaHasBeenSet)
   {
    payload.WithObject("kafka", m_kafka.Jsonize());
+
+  }
+
+  if(m_openSearchHasBeenSet)
+  {
+   payload.WithObject("openSearch", m_openSearch.Jsonize());
 
   }
 

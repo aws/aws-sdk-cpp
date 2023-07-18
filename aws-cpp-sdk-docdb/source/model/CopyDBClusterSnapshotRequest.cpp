@@ -17,7 +17,8 @@ CopyDBClusterSnapshotRequest::CopyDBClusterSnapshotRequest() :
     m_preSignedUrlHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false)
 {
 }
 

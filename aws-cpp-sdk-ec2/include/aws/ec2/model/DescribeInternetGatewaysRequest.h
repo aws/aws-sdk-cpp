@@ -44,8 +44,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -63,8 +63,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -82,8 +82,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -101,8 +101,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -120,8 +120,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -139,8 +139,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -158,8 +158,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -177,8 +177,8 @@ namespace Model
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
-     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that
+     * owns the internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value

@@ -30,7 +30,8 @@ WorkspaceImage::WorkspaceImage() :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false)
+    m_ownerAccountIdHasBeenSet(false),
+    m_updatesHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ WorkspaceImage::WorkspaceImage(JsonView jsonValue) :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false)
+    m_ownerAccountIdHasBeenSet(false),
+    m_updatesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,13 @@ WorkspaceImage& WorkspaceImage::operator =(JsonView jsonValue)
     m_ownerAccountIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Updates"))
+  {
+    m_updates = jsonValue.GetObject("Updates");
+
+    m_updatesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +193,12 @@ JsonValue WorkspaceImage::Jsonize() const
   if(m_ownerAccountIdHasBeenSet)
   {
    payload.WithString("OwnerAccountId", m_ownerAccountId);
+
+  }
+
+  if(m_updatesHasBeenSet)
+  {
+   payload.WithObject("Updates", m_updates.Jsonize());
 
   }
 

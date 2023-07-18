@@ -296,6 +296,71 @@ namespace Model
      */
     inline NetworkSummary& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline NetworkSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline NetworkSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the network. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline NetworkSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -318,6 +383,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

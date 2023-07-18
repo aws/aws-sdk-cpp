@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -322,6 +324,145 @@ namespace Model
      */
     inline FirewallPolicyResponse& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline int GetConsumedStatelessRuleCapacity() const{ return m_consumedStatelessRuleCapacity; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline bool ConsumedStatelessRuleCapacityHasBeenSet() const { return m_consumedStatelessRuleCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline void SetConsumedStatelessRuleCapacity(int value) { m_consumedStatelessRuleCapacityHasBeenSet = true; m_consumedStatelessRuleCapacity = value; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline FirewallPolicyResponse& WithConsumedStatelessRuleCapacity(int value) { SetConsumedStatelessRuleCapacity(value); return *this;}
+
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline int GetConsumedStatefulRuleCapacity() const{ return m_consumedStatefulRuleCapacity; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline bool ConsumedStatefulRuleCapacityHasBeenSet() const { return m_consumedStatefulRuleCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline void SetConsumedStatefulRuleCapacity(int value) { m_consumedStatefulRuleCapacityHasBeenSet = true; m_consumedStatefulRuleCapacity = value; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline FirewallPolicyResponse& WithConsumedStatefulRuleCapacity(int value) { SetConsumedStatefulRuleCapacity(value); return *this;}
+
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline int GetNumberOfAssociations() const{ return m_numberOfAssociations; }
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline void SetNumberOfAssociations(int value) { m_numberOfAssociationsHasBeenSet = true; m_numberOfAssociations = value; }
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline FirewallPolicyResponse& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
+
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline FirewallPolicyResponse& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline FirewallPolicyResponse& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline FirewallPolicyResponse& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline FirewallPolicyResponse& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_firewallPolicyName;
@@ -341,6 +482,21 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    int m_consumedStatelessRuleCapacity;
+    bool m_consumedStatelessRuleCapacityHasBeenSet;
+
+    int m_consumedStatefulRuleCapacity;
+    bool m_consumedStatefulRuleCapacityHasBeenSet;
+
+    int m_numberOfAssociations;
+    bool m_numberOfAssociationsHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet;
   };
 
 } // namespace Model

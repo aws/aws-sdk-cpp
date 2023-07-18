@@ -16,7 +16,8 @@ AddApplicationVpcConfigurationRequest::AddApplicationVpcConfigurationRequest() :
     m_applicationNameHasBeenSet(false),
     m_currentApplicationVersionId(0),
     m_currentApplicationVersionIdHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+    m_vpcConfigurationHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String AddApplicationVpcConfigurationRequest::SerializePayload() const
   if(m_vpcConfigurationHasBeenSet)
   {
    payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
 
   }
 

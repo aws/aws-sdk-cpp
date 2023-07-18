@@ -35,8 +35,11 @@
 #include <aws/wafv2/model/DeleteWebACLRequest.h>
 #include <aws/wafv2/model/DescribeManagedRuleGroupRequest.h>
 #include <aws/wafv2/model/DisassociateWebACLRequest.h>
+#include <aws/wafv2/model/GenerateMobileSdkReleaseUrlRequest.h>
 #include <aws/wafv2/model/GetIPSetRequest.h>
 #include <aws/wafv2/model/GetLoggingConfigurationRequest.h>
+#include <aws/wafv2/model/GetManagedRuleSetRequest.h>
+#include <aws/wafv2/model/GetMobileSdkReleaseRequest.h>
 #include <aws/wafv2/model/GetPermissionPolicyRequest.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysRequest.h>
 #include <aws/wafv2/model/GetRegexPatternSetRequest.h>
@@ -44,19 +47,24 @@
 #include <aws/wafv2/model/GetSampledRequestsRequest.h>
 #include <aws/wafv2/model/GetWebACLRequest.h>
 #include <aws/wafv2/model/GetWebACLForResourceRequest.h>
+#include <aws/wafv2/model/ListAvailableManagedRuleGroupVersionsRequest.h>
 #include <aws/wafv2/model/ListAvailableManagedRuleGroupsRequest.h>
 #include <aws/wafv2/model/ListIPSetsRequest.h>
 #include <aws/wafv2/model/ListLoggingConfigurationsRequest.h>
+#include <aws/wafv2/model/ListManagedRuleSetsRequest.h>
+#include <aws/wafv2/model/ListMobileSdkReleasesRequest.h>
 #include <aws/wafv2/model/ListRegexPatternSetsRequest.h>
 #include <aws/wafv2/model/ListResourcesForWebACLRequest.h>
 #include <aws/wafv2/model/ListRuleGroupsRequest.h>
 #include <aws/wafv2/model/ListTagsForResourceRequest.h>
 #include <aws/wafv2/model/ListWebACLsRequest.h>
 #include <aws/wafv2/model/PutLoggingConfigurationRequest.h>
+#include <aws/wafv2/model/PutManagedRuleSetVersionsRequest.h>
 #include <aws/wafv2/model/PutPermissionPolicyRequest.h>
 #include <aws/wafv2/model/TagResourceRequest.h>
 #include <aws/wafv2/model/UntagResourceRequest.h>
 #include <aws/wafv2/model/UpdateIPSetRequest.h>
+#include <aws/wafv2/model/UpdateManagedRuleSetVersionExpiryDateRequest.h>
 #include <aws/wafv2/model/UpdateRegexPatternSetRequest.h>
 #include <aws/wafv2/model/UpdateRuleGroupRequest.h>
 #include <aws/wafv2/model/UpdateWebACLRequest.h>
@@ -108,7 +116,7 @@ WAFV2Client::~WAFV2Client()
 {
 }
 
-void WAFV2Client::init(const ClientConfiguration& config)
+void WAFV2Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WAFV2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -137,9 +145,6 @@ void WAFV2Client::OverrideEndpoint(const Aws::String& endpoint)
 AssociateWebACLOutcome WAFV2Client::AssociateWebACL(const AssociateWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AssociateWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -164,9 +169,6 @@ void WAFV2Client::AssociateWebACLAsyncHelper(const AssociateWebACLRequest& reque
 CheckCapacityOutcome WAFV2Client::CheckCapacity(const CheckCapacityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CheckCapacityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -191,9 +193,6 @@ void WAFV2Client::CheckCapacityAsyncHelper(const CheckCapacityRequest& request, 
 CreateIPSetOutcome WAFV2Client::CreateIPSet(const CreateIPSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -218,9 +217,6 @@ void WAFV2Client::CreateIPSetAsyncHelper(const CreateIPSetRequest& request, cons
 CreateRegexPatternSetOutcome WAFV2Client::CreateRegexPatternSet(const CreateRegexPatternSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -245,9 +241,6 @@ void WAFV2Client::CreateRegexPatternSetAsyncHelper(const CreateRegexPatternSetRe
 CreateRuleGroupOutcome WAFV2Client::CreateRuleGroup(const CreateRuleGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -272,9 +265,6 @@ void WAFV2Client::CreateRuleGroupAsyncHelper(const CreateRuleGroupRequest& reque
 CreateWebACLOutcome WAFV2Client::CreateWebACL(const CreateWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -299,9 +289,6 @@ void WAFV2Client::CreateWebACLAsyncHelper(const CreateWebACLRequest& request, co
 DeleteFirewallManagerRuleGroupsOutcome WAFV2Client::DeleteFirewallManagerRuleGroups(const DeleteFirewallManagerRuleGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteFirewallManagerRuleGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -326,9 +313,6 @@ void WAFV2Client::DeleteFirewallManagerRuleGroupsAsyncHelper(const DeleteFirewal
 DeleteIPSetOutcome WAFV2Client::DeleteIPSet(const DeleteIPSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -353,9 +337,6 @@ void WAFV2Client::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, cons
 DeleteLoggingConfigurationOutcome WAFV2Client::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -380,9 +361,6 @@ void WAFV2Client::DeleteLoggingConfigurationAsyncHelper(const DeleteLoggingConfi
 DeletePermissionPolicyOutcome WAFV2Client::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeletePermissionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -407,9 +385,6 @@ void WAFV2Client::DeletePermissionPolicyAsyncHelper(const DeletePermissionPolicy
 DeleteRegexPatternSetOutcome WAFV2Client::DeleteRegexPatternSet(const DeleteRegexPatternSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -434,9 +409,6 @@ void WAFV2Client::DeleteRegexPatternSetAsyncHelper(const DeleteRegexPatternSetRe
 DeleteRuleGroupOutcome WAFV2Client::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -461,9 +433,6 @@ void WAFV2Client::DeleteRuleGroupAsyncHelper(const DeleteRuleGroupRequest& reque
 DeleteWebACLOutcome WAFV2Client::DeleteWebACL(const DeleteWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -488,9 +457,6 @@ void WAFV2Client::DeleteWebACLAsyncHelper(const DeleteWebACLRequest& request, co
 DescribeManagedRuleGroupOutcome WAFV2Client::DescribeManagedRuleGroup(const DescribeManagedRuleGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeManagedRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -515,9 +481,6 @@ void WAFV2Client::DescribeManagedRuleGroupAsyncHelper(const DescribeManagedRuleG
 DisassociateWebACLOutcome WAFV2Client::DisassociateWebACL(const DisassociateWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisassociateWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -539,12 +502,33 @@ void WAFV2Client::DisassociateWebACLAsyncHelper(const DisassociateWebACLRequest&
   handler(this, request, DisassociateWebACL(request), context);
 }
 
+GenerateMobileSdkReleaseUrlOutcome WAFV2Client::GenerateMobileSdkReleaseUrl(const GenerateMobileSdkReleaseUrlRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GenerateMobileSdkReleaseUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GenerateMobileSdkReleaseUrlOutcomeCallable WAFV2Client::GenerateMobileSdkReleaseUrlCallable(const GenerateMobileSdkReleaseUrlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateMobileSdkReleaseUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateMobileSdkReleaseUrl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::GenerateMobileSdkReleaseUrlAsync(const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateMobileSdkReleaseUrlAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::GenerateMobileSdkReleaseUrlAsyncHelper(const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateMobileSdkReleaseUrl(request), context);
+}
+
 GetIPSetOutcome WAFV2Client::GetIPSet(const GetIPSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -569,9 +553,6 @@ void WAFV2Client::GetIPSetAsyncHelper(const GetIPSetRequest& request, const GetI
 GetLoggingConfigurationOutcome WAFV2Client::GetLoggingConfiguration(const GetLoggingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -593,12 +574,57 @@ void WAFV2Client::GetLoggingConfigurationAsyncHelper(const GetLoggingConfigurati
   handler(this, request, GetLoggingConfiguration(request), context);
 }
 
+GetManagedRuleSetOutcome WAFV2Client::GetManagedRuleSet(const GetManagedRuleSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetManagedRuleSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetManagedRuleSetOutcomeCallable WAFV2Client::GetManagedRuleSetCallable(const GetManagedRuleSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetManagedRuleSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetManagedRuleSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::GetManagedRuleSetAsync(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetManagedRuleSetAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::GetManagedRuleSetAsyncHelper(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetManagedRuleSet(request), context);
+}
+
+GetMobileSdkReleaseOutcome WAFV2Client::GetMobileSdkRelease(const GetMobileSdkReleaseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetMobileSdkReleaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMobileSdkReleaseOutcomeCallable WAFV2Client::GetMobileSdkReleaseCallable(const GetMobileSdkReleaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMobileSdkReleaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMobileSdkRelease(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::GetMobileSdkReleaseAsync(const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMobileSdkReleaseAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::GetMobileSdkReleaseAsyncHelper(const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMobileSdkRelease(request), context);
+}
+
 GetPermissionPolicyOutcome WAFV2Client::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetPermissionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -623,9 +649,6 @@ void WAFV2Client::GetPermissionPolicyAsyncHelper(const GetPermissionPolicyReques
 GetRateBasedStatementManagedKeysOutcome WAFV2Client::GetRateBasedStatementManagedKeys(const GetRateBasedStatementManagedKeysRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRateBasedStatementManagedKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -650,9 +673,6 @@ void WAFV2Client::GetRateBasedStatementManagedKeysAsyncHelper(const GetRateBased
 GetRegexPatternSetOutcome WAFV2Client::GetRegexPatternSet(const GetRegexPatternSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -677,9 +697,6 @@ void WAFV2Client::GetRegexPatternSetAsyncHelper(const GetRegexPatternSetRequest&
 GetRuleGroupOutcome WAFV2Client::GetRuleGroup(const GetRuleGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -704,9 +721,6 @@ void WAFV2Client::GetRuleGroupAsyncHelper(const GetRuleGroupRequest& request, co
 GetSampledRequestsOutcome WAFV2Client::GetSampledRequests(const GetSampledRequestsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSampledRequestsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -731,9 +745,6 @@ void WAFV2Client::GetSampledRequestsAsyncHelper(const GetSampledRequestsRequest&
 GetWebACLOutcome WAFV2Client::GetWebACL(const GetWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -758,9 +769,6 @@ void WAFV2Client::GetWebACLAsyncHelper(const GetWebACLRequest& request, const Ge
 GetWebACLForResourceOutcome WAFV2Client::GetWebACLForResource(const GetWebACLForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetWebACLForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -782,12 +790,33 @@ void WAFV2Client::GetWebACLForResourceAsyncHelper(const GetWebACLForResourceRequ
   handler(this, request, GetWebACLForResource(request), context);
 }
 
+ListAvailableManagedRuleGroupVersionsOutcome WAFV2Client::ListAvailableManagedRuleGroupVersions(const ListAvailableManagedRuleGroupVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListAvailableManagedRuleGroupVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAvailableManagedRuleGroupVersionsOutcomeCallable WAFV2Client::ListAvailableManagedRuleGroupVersionsCallable(const ListAvailableManagedRuleGroupVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAvailableManagedRuleGroupVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableManagedRuleGroupVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::ListAvailableManagedRuleGroupVersionsAsync(const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableManagedRuleGroupVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::ListAvailableManagedRuleGroupVersionsAsyncHelper(const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAvailableManagedRuleGroupVersions(request), context);
+}
+
 ListAvailableManagedRuleGroupsOutcome WAFV2Client::ListAvailableManagedRuleGroups(const ListAvailableManagedRuleGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListAvailableManagedRuleGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -812,9 +841,6 @@ void WAFV2Client::ListAvailableManagedRuleGroupsAsyncHelper(const ListAvailableM
 ListIPSetsOutcome WAFV2Client::ListIPSets(const ListIPSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListIPSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -839,9 +865,6 @@ void WAFV2Client::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, const 
 ListLoggingConfigurationsOutcome WAFV2Client::ListLoggingConfigurations(const ListLoggingConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListLoggingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -863,12 +886,57 @@ void WAFV2Client::ListLoggingConfigurationsAsyncHelper(const ListLoggingConfigur
   handler(this, request, ListLoggingConfigurations(request), context);
 }
 
+ListManagedRuleSetsOutcome WAFV2Client::ListManagedRuleSets(const ListManagedRuleSetsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListManagedRuleSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListManagedRuleSetsOutcomeCallable WAFV2Client::ListManagedRuleSetsCallable(const ListManagedRuleSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListManagedRuleSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListManagedRuleSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::ListManagedRuleSetsAsync(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListManagedRuleSetsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::ListManagedRuleSetsAsyncHelper(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListManagedRuleSets(request), context);
+}
+
+ListMobileSdkReleasesOutcome WAFV2Client::ListMobileSdkReleases(const ListMobileSdkReleasesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMobileSdkReleasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMobileSdkReleasesOutcomeCallable WAFV2Client::ListMobileSdkReleasesCallable(const ListMobileSdkReleasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMobileSdkReleasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMobileSdkReleases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::ListMobileSdkReleasesAsync(const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMobileSdkReleasesAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::ListMobileSdkReleasesAsyncHelper(const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMobileSdkReleases(request), context);
+}
+
 ListRegexPatternSetsOutcome WAFV2Client::ListRegexPatternSets(const ListRegexPatternSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListRegexPatternSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -893,9 +961,6 @@ void WAFV2Client::ListRegexPatternSetsAsyncHelper(const ListRegexPatternSetsRequ
 ListResourcesForWebACLOutcome WAFV2Client::ListResourcesForWebACL(const ListResourcesForWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResourcesForWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -920,9 +985,6 @@ void WAFV2Client::ListResourcesForWebACLAsyncHelper(const ListResourcesForWebACL
 ListRuleGroupsOutcome WAFV2Client::ListRuleGroups(const ListRuleGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListRuleGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -947,9 +1009,6 @@ void WAFV2Client::ListRuleGroupsAsyncHelper(const ListRuleGroupsRequest& request
 ListTagsForResourceOutcome WAFV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -974,9 +1033,6 @@ void WAFV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceReques
 ListWebACLsOutcome WAFV2Client::ListWebACLs(const ListWebACLsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListWebACLsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1001,9 +1057,6 @@ void WAFV2Client::ListWebACLsAsyncHelper(const ListWebACLsRequest& request, cons
 PutLoggingConfigurationOutcome WAFV2Client::PutLoggingConfiguration(const PutLoggingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1025,12 +1078,33 @@ void WAFV2Client::PutLoggingConfigurationAsyncHelper(const PutLoggingConfigurati
   handler(this, request, PutLoggingConfiguration(request), context);
 }
 
+PutManagedRuleSetVersionsOutcome WAFV2Client::PutManagedRuleSetVersions(const PutManagedRuleSetVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutManagedRuleSetVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutManagedRuleSetVersionsOutcomeCallable WAFV2Client::PutManagedRuleSetVersionsCallable(const PutManagedRuleSetVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutManagedRuleSetVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutManagedRuleSetVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::PutManagedRuleSetVersionsAsync(const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutManagedRuleSetVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::PutManagedRuleSetVersionsAsyncHelper(const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutManagedRuleSetVersions(request), context);
+}
+
 PutPermissionPolicyOutcome WAFV2Client::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutPermissionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1055,9 +1129,6 @@ void WAFV2Client::PutPermissionPolicyAsyncHelper(const PutPermissionPolicyReques
 TagResourceOutcome WAFV2Client::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1082,9 +1153,6 @@ void WAFV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, cons
 UntagResourceOutcome WAFV2Client::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1109,9 +1177,6 @@ void WAFV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, 
 UpdateIPSetOutcome WAFV2Client::UpdateIPSet(const UpdateIPSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1133,12 +1198,33 @@ void WAFV2Client::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, cons
   handler(this, request, UpdateIPSet(request), context);
 }
 
+UpdateManagedRuleSetVersionExpiryDateOutcome WAFV2Client::UpdateManagedRuleSetVersionExpiryDate(const UpdateManagedRuleSetVersionExpiryDateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateManagedRuleSetVersionExpiryDateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateManagedRuleSetVersionExpiryDateOutcomeCallable WAFV2Client::UpdateManagedRuleSetVersionExpiryDateCallable(const UpdateManagedRuleSetVersionExpiryDateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateManagedRuleSetVersionExpiryDateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateManagedRuleSetVersionExpiryDate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::UpdateManagedRuleSetVersionExpiryDateAsync(const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateManagedRuleSetVersionExpiryDateAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::UpdateManagedRuleSetVersionExpiryDateAsyncHelper(const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateManagedRuleSetVersionExpiryDate(request), context);
+}
+
 UpdateRegexPatternSetOutcome WAFV2Client::UpdateRegexPatternSet(const UpdateRegexPatternSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1163,9 +1249,6 @@ void WAFV2Client::UpdateRegexPatternSetAsyncHelper(const UpdateRegexPatternSetRe
 UpdateRuleGroupOutcome WAFV2Client::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1190,9 +1273,6 @@ void WAFV2Client::UpdateRuleGroupAsyncHelper(const UpdateRuleGroupRequest& reque
 UpdateWebACLOutcome WAFV2Client::UpdateWebACL(const UpdateWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

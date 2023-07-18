@@ -86,6 +86,95 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline EventsDetectionJobProperties& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline EventsDetectionJobProperties& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline EventsDetectionJobProperties& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+
+
+    /**
      * <p>The name you assigned the events detection job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
@@ -463,6 +552,9 @@ namespace Model
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
+    Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet;
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;

@@ -19,12 +19,12 @@ ListDistributionsByRealtimeLogConfig2020_05_31Result::ListDistributionsByRealtim
 {
 }
 
-ListDistributionsByRealtimeLogConfig2020_05_31Result::ListDistributionsByRealtimeLogConfig2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+ListDistributionsByRealtimeLogConfig2020_05_31Result::ListDistributionsByRealtimeLogConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListDistributionsByRealtimeLogConfig2020_05_31Result& ListDistributionsByRealtimeLogConfig2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListDistributionsByRealtimeLogConfig2020_05_31Result& ListDistributionsByRealtimeLogConfig2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

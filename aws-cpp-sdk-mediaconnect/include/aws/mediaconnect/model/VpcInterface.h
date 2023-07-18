@@ -7,6 +7,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconnect/model/NetworkInterfaceType.h>
 #include <utility>
 
 namespace Aws
@@ -39,42 +40,42 @@ namespace Model
 
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline VpcInterface& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline VpcInterface& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline VpcInterface& WithName(const char* value) { SetName(value); return *this;}
 
@@ -123,6 +124,37 @@ namespace Model
      * IDs of the network interfaces created in customer's account by MediaConnect.
      */
     inline VpcInterface& AddNetworkInterfaceIds(const char* value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
+
+
+    /**
+     * The type of network interface.
+     */
+    inline const NetworkInterfaceType& GetNetworkInterfaceType() const{ return m_networkInterfaceType; }
+
+    /**
+     * The type of network interface.
+     */
+    inline bool NetworkInterfaceTypeHasBeenSet() const { return m_networkInterfaceTypeHasBeenSet; }
+
+    /**
+     * The type of network interface.
+     */
+    inline void SetNetworkInterfaceType(const NetworkInterfaceType& value) { m_networkInterfaceTypeHasBeenSet = true; m_networkInterfaceType = value; }
+
+    /**
+     * The type of network interface.
+     */
+    inline void SetNetworkInterfaceType(NetworkInterfaceType&& value) { m_networkInterfaceTypeHasBeenSet = true; m_networkInterfaceType = std::move(value); }
+
+    /**
+     * The type of network interface.
+     */
+    inline VpcInterface& WithNetworkInterfaceType(const NetworkInterfaceType& value) { SetNetworkInterfaceType(value); return *this;}
+
+    /**
+     * The type of network interface.
+     */
+    inline VpcInterface& WithNetworkInterfaceType(NetworkInterfaceType&& value) { SetNetworkInterfaceType(std::move(value)); return *this;}
 
 
     /**
@@ -259,6 +291,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_networkInterfaceIds;
     bool m_networkInterfaceIdsHasBeenSet;
+
+    NetworkInterfaceType m_networkInterfaceType;
+    bool m_networkInterfaceTypeHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

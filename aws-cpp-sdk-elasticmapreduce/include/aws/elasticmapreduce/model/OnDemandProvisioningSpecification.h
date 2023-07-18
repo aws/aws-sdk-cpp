@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/OnDemandProvisioningAllocationStrategy.h>
+#include <aws/elasticmapreduce/model/OnDemandCapacityReservationOptions.h>
 #include <utility>
 
 namespace Aws
@@ -42,51 +43,91 @@ namespace Model
 
 
     /**
-     * <p> Specifies the strategy to use in launching On-Demand Instance fleets.
-     * Currently, the only option is lowest-price (the default), which launches the
-     * lowest price first. </p>
+     * <p>Specifies the strategy to use in launching On-Demand instance fleets.
+     * Currently, the only option is <code>lowest-price</code> (the default), which
+     * launches the lowest price first.</p>
      */
     inline const OnDemandProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
     /**
-     * <p> Specifies the strategy to use in launching On-Demand Instance fleets.
-     * Currently, the only option is lowest-price (the default), which launches the
-     * lowest price first. </p>
+     * <p>Specifies the strategy to use in launching On-Demand instance fleets.
+     * Currently, the only option is <code>lowest-price</code> (the default), which
+     * launches the lowest price first.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
     /**
-     * <p> Specifies the strategy to use in launching On-Demand Instance fleets.
-     * Currently, the only option is lowest-price (the default), which launches the
-     * lowest price first. </p>
+     * <p>Specifies the strategy to use in launching On-Demand instance fleets.
+     * Currently, the only option is <code>lowest-price</code> (the default), which
+     * launches the lowest price first.</p>
      */
     inline void SetAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
-     * <p> Specifies the strategy to use in launching On-Demand Instance fleets.
-     * Currently, the only option is lowest-price (the default), which launches the
-     * lowest price first. </p>
+     * <p>Specifies the strategy to use in launching On-Demand instance fleets.
+     * Currently, the only option is <code>lowest-price</code> (the default), which
+     * launches the lowest price first.</p>
      */
     inline void SetAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
     /**
-     * <p> Specifies the strategy to use in launching On-Demand Instance fleets.
-     * Currently, the only option is lowest-price (the default), which launches the
-     * lowest price first. </p>
+     * <p>Specifies the strategy to use in launching On-Demand instance fleets.
+     * Currently, the only option is <code>lowest-price</code> (the default), which
+     * launches the lowest price first.</p>
      */
     inline OnDemandProvisioningSpecification& WithAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
     /**
-     * <p> Specifies the strategy to use in launching On-Demand Instance fleets.
-     * Currently, the only option is lowest-price (the default), which launches the
-     * lowest price first. </p>
+     * <p>Specifies the strategy to use in launching On-Demand instance fleets.
+     * Currently, the only option is <code>lowest-price</code> (the default), which
+     * launches the lowest price first.</p>
      */
     inline OnDemandProvisioningSpecification& WithAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The launch specification for On-Demand instances in the instance fleet, which
+     * determines the allocation strategy.</p>
+     */
+    inline const OnDemandCapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
+
+    /**
+     * <p>The launch specification for On-Demand instances in the instance fleet, which
+     * determines the allocation strategy.</p>
+     */
+    inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
+
+    /**
+     * <p>The launch specification for On-Demand instances in the instance fleet, which
+     * determines the allocation strategy.</p>
+     */
+    inline void SetCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
+
+    /**
+     * <p>The launch specification for On-Demand instances in the instance fleet, which
+     * determines the allocation strategy.</p>
+     */
+    inline void SetCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
+
+    /**
+     * <p>The launch specification for On-Demand instances in the instance fleet, which
+     * determines the allocation strategy.</p>
+     */
+    inline OnDemandProvisioningSpecification& WithCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
+
+    /**
+     * <p>The launch specification for On-Demand instances in the instance fleet, which
+     * determines the allocation strategy.</p>
+     */
+    inline OnDemandProvisioningSpecification& WithCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
 
   private:
 
     OnDemandProvisioningAllocationStrategy m_allocationStrategy;
     bool m_allocationStrategyHasBeenSet;
+
+    OnDemandCapacityReservationOptions m_capacityReservationOptions;
+    bool m_capacityReservationOptionsHasBeenSet;
   };
 
 } // namespace Model

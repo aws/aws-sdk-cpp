@@ -9,6 +9,7 @@
 #include <aws/appflow/model/DatadogConnectorProfileProperties.h>
 #include <aws/appflow/model/DynatraceConnectorProfileProperties.h>
 #include <aws/appflow/model/GoogleAnalyticsConnectorProfileProperties.h>
+#include <aws/appflow/model/HoneycodeConnectorProfileProperties.h>
 #include <aws/appflow/model/InforNexusConnectorProfileProperties.h>
 #include <aws/appflow/model/MarketoConnectorProfileProperties.h>
 #include <aws/appflow/model/RedshiftConnectorProfileProperties.h>
@@ -20,6 +21,8 @@
 #include <aws/appflow/model/TrendmicroConnectorProfileProperties.h>
 #include <aws/appflow/model/VeevaConnectorProfileProperties.h>
 #include <aws/appflow/model/ZendeskConnectorProfileProperties.h>
+#include <aws/appflow/model/SAPODataConnectorProfileProperties.h>
+#include <aws/appflow/model/CustomConnectorProfileProperties.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +177,37 @@ namespace Model
      * <p> The connector-specific properties required Google Analytics. </p>
      */
     inline ConnectorProfileProperties& WithGoogleAnalytics(GoogleAnalyticsConnectorProfileProperties&& value) { SetGoogleAnalytics(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
+    inline const HoneycodeConnectorProfileProperties& GetHoneycode() const{ return m_honeycode; }
+
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
+    inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
+
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
+    inline void SetHoneycode(const HoneycodeConnectorProfileProperties& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
+
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
+    inline void SetHoneycode(HoneycodeConnectorProfileProperties&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
+
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
+    inline ConnectorProfileProperties& WithHoneycode(const HoneycodeConnectorProfileProperties& value) { SetHoneycode(value); return *this;}
+
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
+    inline ConnectorProfileProperties& WithHoneycode(HoneycodeConnectorProfileProperties&& value) { SetHoneycode(std::move(value)); return *this;}
 
 
     /**
@@ -516,6 +550,56 @@ namespace Model
      */
     inline ConnectorProfileProperties& WithZendesk(ZendeskConnectorProfileProperties&& value) { SetZendesk(std::move(value)); return *this;}
 
+
+    
+    inline const SAPODataConnectorProfileProperties& GetSAPOData() const{ return m_sAPOData; }
+
+    
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    
+    inline void SetSAPOData(const SAPODataConnectorProfileProperties& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    
+    inline void SetSAPOData(SAPODataConnectorProfileProperties&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    
+    inline ConnectorProfileProperties& WithSAPOData(const SAPODataConnectorProfileProperties& value) { SetSAPOData(value); return *this;}
+
+    
+    inline ConnectorProfileProperties& WithSAPOData(SAPODataConnectorProfileProperties&& value) { SetSAPOData(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline const CustomConnectorProfileProperties& GetCustomConnector() const{ return m_customConnector; }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline void SetCustomConnector(const CustomConnectorProfileProperties& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline void SetCustomConnector(CustomConnectorProfileProperties&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline ConnectorProfileProperties& WithCustomConnector(const CustomConnectorProfileProperties& value) { SetCustomConnector(value); return *this;}
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline ConnectorProfileProperties& WithCustomConnector(CustomConnectorProfileProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorProfileProperties m_amplitude;
@@ -529,6 +613,9 @@ namespace Model
 
     GoogleAnalyticsConnectorProfileProperties m_googleAnalytics;
     bool m_googleAnalyticsHasBeenSet;
+
+    HoneycodeConnectorProfileProperties m_honeycode;
+    bool m_honeycodeHasBeenSet;
 
     InforNexusConnectorProfileProperties m_inforNexus;
     bool m_inforNexusHasBeenSet;
@@ -562,6 +649,12 @@ namespace Model
 
     ZendeskConnectorProfileProperties m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    SAPODataConnectorProfileProperties m_sAPOData;
+    bool m_sAPODataHasBeenSet;
+
+    CustomConnectorProfileProperties m_customConnector;
+    bool m_customConnectorHasBeenSet;
   };
 
 } // namespace Model

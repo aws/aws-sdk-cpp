@@ -7,6 +7,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/BatchRestrictions.h>
+#include <aws/codebuild/model/BatchReportModeType.h>
 #include <utility>
 
 namespace Aws
@@ -166,6 +167,79 @@ namespace Model
      */
     inline ProjectBuildBatchConfig& WithTimeoutInMins(int value) { SetTimeoutInMins(value); return *this;}
 
+
+    /**
+     * <p>Specifies how build status reports are sent to the source provider for the
+     * batch build. This property is only used when the source provider for your
+     * project is Bitbucket, GitHub, or GitHub Enterprise, and your project is
+     * configured to report build statuses to the source provider.</p> <dl>
+     * <dt>REPORT_AGGREGATED_BATCH</dt> <dd> <p>(Default) Aggregate all of the build
+     * statuses into a single status report.</p> </dd>
+     * <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> <p>Send a separate status report for each
+     * individual build.</p> </dd> </dl>
+     */
+    inline const BatchReportModeType& GetBatchReportMode() const{ return m_batchReportMode; }
+
+    /**
+     * <p>Specifies how build status reports are sent to the source provider for the
+     * batch build. This property is only used when the source provider for your
+     * project is Bitbucket, GitHub, or GitHub Enterprise, and your project is
+     * configured to report build statuses to the source provider.</p> <dl>
+     * <dt>REPORT_AGGREGATED_BATCH</dt> <dd> <p>(Default) Aggregate all of the build
+     * statuses into a single status report.</p> </dd>
+     * <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> <p>Send a separate status report for each
+     * individual build.</p> </dd> </dl>
+     */
+    inline bool BatchReportModeHasBeenSet() const { return m_batchReportModeHasBeenSet; }
+
+    /**
+     * <p>Specifies how build status reports are sent to the source provider for the
+     * batch build. This property is only used when the source provider for your
+     * project is Bitbucket, GitHub, or GitHub Enterprise, and your project is
+     * configured to report build statuses to the source provider.</p> <dl>
+     * <dt>REPORT_AGGREGATED_BATCH</dt> <dd> <p>(Default) Aggregate all of the build
+     * statuses into a single status report.</p> </dd>
+     * <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> <p>Send a separate status report for each
+     * individual build.</p> </dd> </dl>
+     */
+    inline void SetBatchReportMode(const BatchReportModeType& value) { m_batchReportModeHasBeenSet = true; m_batchReportMode = value; }
+
+    /**
+     * <p>Specifies how build status reports are sent to the source provider for the
+     * batch build. This property is only used when the source provider for your
+     * project is Bitbucket, GitHub, or GitHub Enterprise, and your project is
+     * configured to report build statuses to the source provider.</p> <dl>
+     * <dt>REPORT_AGGREGATED_BATCH</dt> <dd> <p>(Default) Aggregate all of the build
+     * statuses into a single status report.</p> </dd>
+     * <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> <p>Send a separate status report for each
+     * individual build.</p> </dd> </dl>
+     */
+    inline void SetBatchReportMode(BatchReportModeType&& value) { m_batchReportModeHasBeenSet = true; m_batchReportMode = std::move(value); }
+
+    /**
+     * <p>Specifies how build status reports are sent to the source provider for the
+     * batch build. This property is only used when the source provider for your
+     * project is Bitbucket, GitHub, or GitHub Enterprise, and your project is
+     * configured to report build statuses to the source provider.</p> <dl>
+     * <dt>REPORT_AGGREGATED_BATCH</dt> <dd> <p>(Default) Aggregate all of the build
+     * statuses into a single status report.</p> </dd>
+     * <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> <p>Send a separate status report for each
+     * individual build.</p> </dd> </dl>
+     */
+    inline ProjectBuildBatchConfig& WithBatchReportMode(const BatchReportModeType& value) { SetBatchReportMode(value); return *this;}
+
+    /**
+     * <p>Specifies how build status reports are sent to the source provider for the
+     * batch build. This property is only used when the source provider for your
+     * project is Bitbucket, GitHub, or GitHub Enterprise, and your project is
+     * configured to report build statuses to the source provider.</p> <dl>
+     * <dt>REPORT_AGGREGATED_BATCH</dt> <dd> <p>(Default) Aggregate all of the build
+     * statuses into a single status report.</p> </dd>
+     * <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> <p>Send a separate status report for each
+     * individual build.</p> </dd> </dl>
+     */
+    inline ProjectBuildBatchConfig& WithBatchReportMode(BatchReportModeType&& value) { SetBatchReportMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceRole;
@@ -179,6 +253,9 @@ namespace Model
 
     int m_timeoutInMins;
     bool m_timeoutInMinsHasBeenSet;
+
+    BatchReportModeType m_batchReportMode;
+    bool m_batchReportModeHasBeenSet;
   };
 
 } // namespace Model

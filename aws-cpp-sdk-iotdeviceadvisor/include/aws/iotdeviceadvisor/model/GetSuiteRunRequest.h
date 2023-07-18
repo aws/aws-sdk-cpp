@@ -33,99 +33,83 @@ namespace Model
 
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline GetSuiteRunRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline GetSuiteRunRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * definition Id.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline GetSuiteRunRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline const Aws::String& GetSuiteRunId() const{ return m_suiteRunId; }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline bool SuiteRunIdHasBeenSet() const { return m_suiteRunIdHasBeenSet; }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline void SetSuiteRunId(const Aws::String& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = value; }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline void SetSuiteRunId(Aws::String&& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = std::move(value); }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline void SetSuiteRunId(const char* value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId.assign(value); }
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline GetSuiteRunRequest& WithSuiteRunId(const Aws::String& value) { SetSuiteRunId(value); return *this;}
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline GetSuiteRunRequest& WithSuiteRunId(Aws::String&& value) { SetSuiteRunId(std::move(value)); return *this;}
 
     /**
-     * <p>Requests the information about Device Advisor test suite run based on suite
-     * run Id.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline GetSuiteRunRequest& WithSuiteRunId(const char* value) { SetSuiteRunId(value); return *this;}
 

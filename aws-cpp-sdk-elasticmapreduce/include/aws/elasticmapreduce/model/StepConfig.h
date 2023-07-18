@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Specification of a cluster (job flow) step.</p><p><h3>See Also:</h3>   <a
+   * <p>Specification for a cluster (job flow) step.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepConfig">AWS
    * API Reference</a></p>
    */
@@ -81,44 +81,140 @@ namespace Model
 
 
     /**
-     * <p>The action to take when the cluster step fails. Possible values are
-     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
-     * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
+     * <p>The action to take when the step fails. Use one of the following values:</p>
+     * <ul> <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
+     * <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns
+     * the cluster to the <code>WAITING</code> state.</p> </li> <li> <p>
+     * <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> <li>
+     * <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster.
+     * <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We
+     * recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> </ul> <p>If a
+     * cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
+     * not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to
+     * <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not
+     * submitted and the action fails with a message that the
+     * <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a
+     * cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is
+     * running, the <code>ActionOnFailure</code> parameter may not behave as you
+     * expect. In this case, for a step that fails with this parameter set to
+     * <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not
+     * canceled; for a step that fails with this parameter set to
+     * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
     inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
 
     /**
-     * <p>The action to take when the cluster step fails. Possible values are
-     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
-     * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
+     * <p>The action to take when the step fails. Use one of the following values:</p>
+     * <ul> <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
+     * <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns
+     * the cluster to the <code>WAITING</code> state.</p> </li> <li> <p>
+     * <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> <li>
+     * <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster.
+     * <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We
+     * recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> </ul> <p>If a
+     * cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
+     * not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to
+     * <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not
+     * submitted and the action fails with a message that the
+     * <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a
+     * cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is
+     * running, the <code>ActionOnFailure</code> parameter may not behave as you
+     * expect. In this case, for a step that fails with this parameter set to
+     * <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not
+     * canceled; for a step that fails with this parameter set to
+     * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
     inline bool ActionOnFailureHasBeenSet() const { return m_actionOnFailureHasBeenSet; }
 
     /**
-     * <p>The action to take when the cluster step fails. Possible values are
-     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
-     * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
+     * <p>The action to take when the step fails. Use one of the following values:</p>
+     * <ul> <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
+     * <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns
+     * the cluster to the <code>WAITING</code> state.</p> </li> <li> <p>
+     * <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> <li>
+     * <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster.
+     * <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We
+     * recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> </ul> <p>If a
+     * cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
+     * not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to
+     * <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not
+     * submitted and the action fails with a message that the
+     * <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a
+     * cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is
+     * running, the <code>ActionOnFailure</code> parameter may not behave as you
+     * expect. In this case, for a step that fails with this parameter set to
+     * <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not
+     * canceled; for a step that fails with this parameter set to
+     * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
     inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
-     * <p>The action to take when the cluster step fails. Possible values are
-     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
-     * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
+     * <p>The action to take when the step fails. Use one of the following values:</p>
+     * <ul> <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
+     * <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns
+     * the cluster to the <code>WAITING</code> state.</p> </li> <li> <p>
+     * <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> <li>
+     * <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster.
+     * <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We
+     * recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> </ul> <p>If a
+     * cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
+     * not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to
+     * <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not
+     * submitted and the action fails with a message that the
+     * <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a
+     * cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is
+     * running, the <code>ActionOnFailure</code> parameter may not behave as you
+     * expect. In this case, for a step that fails with this parameter set to
+     * <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not
+     * canceled; for a step that fails with this parameter set to
+     * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
     inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = std::move(value); }
 
     /**
-     * <p>The action to take when the cluster step fails. Possible values are
-     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
-     * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
+     * <p>The action to take when the step fails. Use one of the following values:</p>
+     * <ul> <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
+     * <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns
+     * the cluster to the <code>WAITING</code> state.</p> </li> <li> <p>
+     * <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> <li>
+     * <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster.
+     * <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We
+     * recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> </ul> <p>If a
+     * cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
+     * not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to
+     * <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not
+     * submitted and the action fails with a message that the
+     * <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a
+     * cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is
+     * running, the <code>ActionOnFailure</code> parameter may not behave as you
+     * expect. In this case, for a step that fails with this parameter set to
+     * <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not
+     * canceled; for a step that fails with this parameter set to
+     * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
     inline StepConfig& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
 
     /**
-     * <p>The action to take when the cluster step fails. Possible values are
-     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
-     * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
+     * <p>The action to take when the step fails. Use one of the following values:</p>
+     * <ul> <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
+     * <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns
+     * the cluster to the <code>WAITING</code> state.</p> </li> <li> <p>
+     * <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> <li>
+     * <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster.
+     * <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We
+     * recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> </ul> <p>If a
+     * cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
+     * not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to
+     * <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not
+     * submitted and the action fails with a message that the
+     * <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a
+     * cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is
+     * running, the <code>ActionOnFailure</code> parameter may not behave as you
+     * expect. In this case, for a step that fails with this parameter set to
+     * <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not
+     * canceled; for a step that fails with this parameter set to
+     * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
     inline StepConfig& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
 

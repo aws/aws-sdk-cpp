@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/BoundingBox.h>
 #include <aws/rekognition/model/FaceDetail.h>
+#include <aws/rekognition/model/KnownGender.h>
 #include <utility>
 
 namespace Aws
@@ -254,6 +255,37 @@ namespace Model
      */
     inline CelebrityDetail& WithFace(FaceDetail&& value) { SetFace(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Retrieves the known gender for the celebrity.</p>
+     */
+    inline const KnownGender& GetKnownGender() const{ return m_knownGender; }
+
+    /**
+     * <p>Retrieves the known gender for the celebrity.</p>
+     */
+    inline bool KnownGenderHasBeenSet() const { return m_knownGenderHasBeenSet; }
+
+    /**
+     * <p>Retrieves the known gender for the celebrity.</p>
+     */
+    inline void SetKnownGender(const KnownGender& value) { m_knownGenderHasBeenSet = true; m_knownGender = value; }
+
+    /**
+     * <p>Retrieves the known gender for the celebrity.</p>
+     */
+    inline void SetKnownGender(KnownGender&& value) { m_knownGenderHasBeenSet = true; m_knownGender = std::move(value); }
+
+    /**
+     * <p>Retrieves the known gender for the celebrity.</p>
+     */
+    inline CelebrityDetail& WithKnownGender(const KnownGender& value) { SetKnownGender(value); return *this;}
+
+    /**
+     * <p>Retrieves the known gender for the celebrity.</p>
+     */
+    inline CelebrityDetail& WithKnownGender(KnownGender&& value) { SetKnownGender(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_urls;
@@ -273,6 +305,9 @@ namespace Model
 
     FaceDetail m_face;
     bool m_faceHasBeenSet;
+
+    KnownGender m_knownGender;
+    bool m_knownGenderHasBeenSet;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace IoTDataPlaneEndpoint
     auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
     Aws::StringStream ss;
-    ss << "data.iot" << ".";
+    ss << "data-ats.iot" << ".";
 
     if(useDualStack)
     {

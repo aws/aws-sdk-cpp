@@ -11,6 +11,7 @@
 #include <aws/kinesisanalyticsv2/model/EnvironmentPropertyUpdates.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationSnapshotConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalyticsv2/model/ZeppelinApplicationConfigurationUpdate.h>
 #include <aws/kinesisanalyticsv2/model/VpcConfigurationUpdate.h>
 #include <utility>
 
@@ -82,38 +83,32 @@ namespace Model
 
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's code
-     * configuration.</p>
+     * <p>Describes updates to an application's code configuration.</p>
      */
     inline const ApplicationCodeConfigurationUpdate& GetApplicationCodeConfigurationUpdate() const{ return m_applicationCodeConfigurationUpdate; }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's code
-     * configuration.</p>
+     * <p>Describes updates to an application's code configuration.</p>
      */
     inline bool ApplicationCodeConfigurationUpdateHasBeenSet() const { return m_applicationCodeConfigurationUpdateHasBeenSet; }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's code
-     * configuration.</p>
+     * <p>Describes updates to an application's code configuration.</p>
      */
     inline void SetApplicationCodeConfigurationUpdate(const ApplicationCodeConfigurationUpdate& value) { m_applicationCodeConfigurationUpdateHasBeenSet = true; m_applicationCodeConfigurationUpdate = value; }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's code
-     * configuration.</p>
+     * <p>Describes updates to an application's code configuration.</p>
      */
     inline void SetApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdate&& value) { m_applicationCodeConfigurationUpdateHasBeenSet = true; m_applicationCodeConfigurationUpdate = std::move(value); }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's code
-     * configuration.</p>
+     * <p>Describes updates to an application's code configuration.</p>
      */
     inline ApplicationConfigurationUpdate& WithApplicationCodeConfigurationUpdate(const ApplicationCodeConfigurationUpdate& value) { SetApplicationCodeConfigurationUpdate(value); return *this;}
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's code
-     * configuration.</p>
+     * <p>Describes updates to an application's code configuration.</p>
      */
     inline ApplicationConfigurationUpdate& WithApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdate&& value) { SetApplicationCodeConfigurationUpdate(std::move(value)); return *this;}
 
@@ -277,6 +272,37 @@ namespace Model
      */
     inline ApplicationConfigurationUpdate& AddVpcConfigurationUpdates(VpcConfigurationUpdate&& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     */
+    inline const ZeppelinApplicationConfigurationUpdate& GetZeppelinApplicationConfigurationUpdate() const{ return m_zeppelinApplicationConfigurationUpdate; }
+
+    /**
+     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     */
+    inline bool ZeppelinApplicationConfigurationUpdateHasBeenSet() const { return m_zeppelinApplicationConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     */
+    inline void SetZeppelinApplicationConfigurationUpdate(const ZeppelinApplicationConfigurationUpdate& value) { m_zeppelinApplicationConfigurationUpdateHasBeenSet = true; m_zeppelinApplicationConfigurationUpdate = value; }
+
+    /**
+     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     */
+    inline void SetZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate&& value) { m_zeppelinApplicationConfigurationUpdateHasBeenSet = true; m_zeppelinApplicationConfigurationUpdate = std::move(value); }
+
+    /**
+     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     */
+    inline ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(const ZeppelinApplicationConfigurationUpdate& value) { SetZeppelinApplicationConfigurationUpdate(value); return *this;}
+
+    /**
+     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     */
+    inline ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate&& value) { SetZeppelinApplicationConfigurationUpdate(std::move(value)); return *this;}
+
   private:
 
     SqlApplicationConfigurationUpdate m_sqlApplicationConfigurationUpdate;
@@ -296,6 +322,9 @@ namespace Model
 
     Aws::Vector<VpcConfigurationUpdate> m_vpcConfigurationUpdates;
     bool m_vpcConfigurationUpdatesHasBeenSet;
+
+    ZeppelinApplicationConfigurationUpdate m_zeppelinApplicationConfigurationUpdate;
+    bool m_zeppelinApplicationConfigurationUpdateHasBeenSet;
   };
 
 } // namespace Model

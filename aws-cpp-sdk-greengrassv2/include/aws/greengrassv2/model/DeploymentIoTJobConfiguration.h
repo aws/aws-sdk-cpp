@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS IoT job configuration.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about an IoT job configuration.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeploymentIoTJobConfiguration">AWS
    * API Reference</a></p>
    */

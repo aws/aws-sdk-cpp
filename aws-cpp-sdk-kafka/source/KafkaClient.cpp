@@ -22,10 +22,12 @@
 #include <aws/kafka/KafkaErrorMarshaller.h>
 #include <aws/kafka/model/BatchAssociateScramSecretRequest.h>
 #include <aws/kafka/model/CreateClusterRequest.h>
+#include <aws/kafka/model/CreateClusterV2Request.h>
 #include <aws/kafka/model/CreateConfigurationRequest.h>
 #include <aws/kafka/model/DeleteClusterRequest.h>
 #include <aws/kafka/model/DeleteConfigurationRequest.h>
 #include <aws/kafka/model/DescribeClusterRequest.h>
+#include <aws/kafka/model/DescribeClusterV2Request.h>
 #include <aws/kafka/model/DescribeClusterOperationRequest.h>
 #include <aws/kafka/model/DescribeConfigurationRequest.h>
 #include <aws/kafka/model/DescribeConfigurationRevisionRequest.h>
@@ -34,6 +36,7 @@
 #include <aws/kafka/model/GetCompatibleKafkaVersionsRequest.h>
 #include <aws/kafka/model/ListClusterOperationsRequest.h>
 #include <aws/kafka/model/ListClustersRequest.h>
+#include <aws/kafka/model/ListClustersV2Request.h>
 #include <aws/kafka/model/ListConfigurationRevisionsRequest.h>
 #include <aws/kafka/model/ListConfigurationsRequest.h>
 #include <aws/kafka/model/ListKafkaVersionsRequest.h>
@@ -44,11 +47,14 @@
 #include <aws/kafka/model/TagResourceRequest.h>
 #include <aws/kafka/model/UntagResourceRequest.h>
 #include <aws/kafka/model/UpdateBrokerCountRequest.h>
+#include <aws/kafka/model/UpdateBrokerTypeRequest.h>
 #include <aws/kafka/model/UpdateBrokerStorageRequest.h>
 #include <aws/kafka/model/UpdateConfigurationRequest.h>
+#include <aws/kafka/model/UpdateConnectivityRequest.h>
 #include <aws/kafka/model/UpdateClusterConfigurationRequest.h>
 #include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
 #include <aws/kafka/model/UpdateMonitoringRequest.h>
+#include <aws/kafka/model/UpdateSecurityRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -97,7 +103,7 @@ KafkaClient::~KafkaClient()
 {
 }
 
-void KafkaClient::init(const ClientConfiguration& config)
+void KafkaClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Kafka");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -131,11 +137,9 @@ BatchAssociateScramSecretOutcome KafkaClient::BatchAssociateScramSecret(const Ba
     return BatchAssociateScramSecretOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/scram-secrets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/scram-secrets");
   return BatchAssociateScramSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -160,9 +164,7 @@ void KafkaClient::BatchAssociateScramSecretAsyncHelper(const BatchAssociateScram
 CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters");
   return CreateClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -184,12 +186,35 @@ void KafkaClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, 
   handler(this, request, CreateCluster(request), context);
 }
 
+CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/api/v2/clusters");
+  return CreateClusterV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateClusterV2OutcomeCallable KafkaClient::CreateClusterV2Callable(const CreateClusterV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateClusterV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateClusterV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::CreateClusterV2Async(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterV2AsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::CreateClusterV2AsyncHelper(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateClusterV2(request), context);
+}
+
 CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations");
   return CreateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -219,10 +244,8 @@ DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& requ
     return DeleteClusterOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
   return DeleteClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -252,10 +275,8 @@ DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigur
     return DeleteConfigurationOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetArn());
   return DeleteConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -285,10 +306,8 @@ DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest
     return DescribeClusterOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
   return DescribeClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -310,6 +329,37 @@ void KafkaClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& reque
   handler(this, request, DescribeCluster(request), context);
 }
 
+DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2Request& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeClusterV2", "Required field: ClusterArn, is not set");
+    return DescribeClusterV2Outcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/api/v2/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  return DescribeClusterV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeClusterV2OutcomeCallable KafkaClient::DescribeClusterV2Callable(const DescribeClusterV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusterV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::DescribeClusterV2Async(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterV2AsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::DescribeClusterV2AsyncHelper(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeClusterV2(request), context);
+}
+
 DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const DescribeClusterOperationRequest& request) const
 {
   if (!request.ClusterOperationArnHasBeenSet())
@@ -318,10 +368,8 @@ DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const Desc
     return DescribeClusterOperationOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterOperationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/operations/";
-  ss << request.GetClusterOperationArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/operations/");
+  uri.AddPathSegment(request.GetClusterOperationArn());
   return DescribeClusterOperationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -351,10 +399,8 @@ DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeCo
     return DescribeConfigurationOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetArn());
   return DescribeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -389,12 +435,10 @@ DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(
     return DescribeConfigurationRevisionOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Revision]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetArn();
-  ss << "/revisions/";
-  ss << request.GetRevision();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevision());
   return DescribeConfigurationRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -424,11 +468,9 @@ BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(co
     return BatchDisassociateScramSecretOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/scram-secrets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/scram-secrets");
   return BatchDisassociateScramSecretOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -458,11 +500,9 @@ GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBr
     return GetBootstrapBrokersOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/bootstrap-brokers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/bootstrap-brokers");
   return GetBootstrapBrokersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -487,9 +527,7 @@ void KafkaClient::GetBootstrapBrokersAsyncHelper(const GetBootstrapBrokersReques
 GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const GetCompatibleKafkaVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/compatible-kafka-versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/compatible-kafka-versions");
   return GetCompatibleKafkaVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -519,11 +557,9 @@ ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListCluste
     return ListClusterOperationsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/operations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/operations");
   return ListClusterOperationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -548,9 +584,7 @@ void KafkaClient::ListClusterOperationsAsyncHelper(const ListClusterOperationsRe
 ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters");
   return ListClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -572,6 +606,31 @@ void KafkaClient::ListClustersAsyncHelper(const ListClustersRequest& request, co
   handler(this, request, ListClusters(request), context);
 }
 
+ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/api/v2/clusters");
+  return ListClustersV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListClustersV2OutcomeCallable KafkaClient::ListClustersV2Callable(const ListClustersV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListClustersV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClustersV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::ListClustersV2Async(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListClustersV2AsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::ListClustersV2AsyncHelper(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListClustersV2(request), context);
+}
+
 ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const
 {
   if (!request.ArnHasBeenSet())
@@ -580,11 +639,9 @@ ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const 
     return ListConfigurationRevisionsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetArn();
-  ss << "/revisions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/revisions");
   return ListConfigurationRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -609,9 +666,7 @@ void KafkaClient::ListConfigurationRevisionsAsyncHelper(const ListConfigurationR
 ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations");
   return ListConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -636,9 +691,7 @@ void KafkaClient::ListConfigurationsAsyncHelper(const ListConfigurationsRequest&
 ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/kafka-versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/kafka-versions");
   return ListKafkaVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -668,11 +721,9 @@ ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
     return ListNodesOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/nodes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/nodes");
   return ListNodesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -702,11 +753,9 @@ ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequ
     return ListScramSecretsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/scram-secrets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/scram-secrets");
   return ListScramSecretsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -736,10 +785,8 @@ ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForRes
     return ListTagsForResourceOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -769,11 +816,9 @@ RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request
     return RebootBrokerOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/reboot-broker";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/reboot-broker");
   return RebootBrokerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -803,10 +848,8 @@ TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) c
     return TagResourceOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -841,10 +884,8 @@ UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& requ
     return UntagResourceOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -874,11 +915,9 @@ UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountR
     return UpdateBrokerCountOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/nodes/count";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/nodes/count");
   return UpdateBrokerCountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -900,6 +939,38 @@ void KafkaClient::UpdateBrokerCountAsyncHelper(const UpdateBrokerCountRequest& r
   handler(this, request, UpdateBrokerCount(request), context);
 }
 
+UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBrokerType", "Required field: ClusterArn, is not set");
+    return UpdateBrokerTypeOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/nodes/type");
+  return UpdateBrokerTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBrokerTypeOutcomeCallable KafkaClient::UpdateBrokerTypeCallable(const UpdateBrokerTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBrokerTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBrokerType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::UpdateBrokerTypeAsync(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBrokerTypeAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::UpdateBrokerTypeAsyncHelper(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBrokerType(request), context);
+}
+
 UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerStorageRequest& request) const
 {
   if (!request.ClusterArnHasBeenSet())
@@ -908,11 +979,9 @@ UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerSt
     return UpdateBrokerStorageOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/nodes/storage";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/nodes/storage");
   return UpdateBrokerStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -942,10 +1011,8 @@ UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigur
     return UpdateConfigurationOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetArn());
   return UpdateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -967,6 +1034,38 @@ void KafkaClient::UpdateConfigurationAsyncHelper(const UpdateConfigurationReques
   handler(this, request, UpdateConfiguration(request), context);
 }
 
+UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivityRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnectivity", "Required field: ClusterArn, is not set");
+    return UpdateConnectivityOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/connectivity");
+  return UpdateConnectivityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectivityOutcomeCallable KafkaClient::UpdateConnectivityCallable(const UpdateConnectivityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectivity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::UpdateConnectivityAsync(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectivityAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::UpdateConnectivityAsyncHelper(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnectivity(request), context);
+}
+
 UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const UpdateClusterConfigurationRequest& request) const
 {
   if (!request.ClusterArnHasBeenSet())
@@ -975,11 +1074,9 @@ UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const 
     return UpdateClusterConfigurationOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/configuration");
   return UpdateClusterConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1009,11 +1106,9 @@ UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const Up
     return UpdateClusterKafkaVersionOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/version";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/version");
   return UpdateClusterKafkaVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1043,11 +1138,9 @@ UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequ
     return UpdateMonitoringOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/clusters/";
-  ss << request.GetClusterArn();
-  ss << "/monitoring";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/monitoring");
   return UpdateMonitoringOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1067,5 +1160,37 @@ void KafkaClient::UpdateMonitoringAsync(const UpdateMonitoringRequest& request, 
 void KafkaClient::UpdateMonitoringAsyncHelper(const UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateMonitoring(request), context);
+}
+
+UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSecurity", "Required field: ClusterArn, is not set");
+    return UpdateSecurityOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/security");
+  return UpdateSecurityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSecurityOutcomeCallable KafkaClient::UpdateSecurityCallable(const UpdateSecurityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSecurityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSecurity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::UpdateSecurityAsync(const UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::UpdateSecurityAsyncHelper(const UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSecurity(request), context);
 }
 

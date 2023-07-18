@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the compute type.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the compute type of the bundle.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ComputeType">AWS
    * API Reference</a></p>
    */

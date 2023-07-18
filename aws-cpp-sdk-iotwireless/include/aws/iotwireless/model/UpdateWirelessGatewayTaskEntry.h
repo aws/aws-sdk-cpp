@@ -109,6 +109,47 @@ namespace Model
      */
     inline UpdateWirelessGatewayTaskEntry& WithLoRaWAN(LoRaWANUpdateGatewayTaskEntry&& value) { SetLoRaWAN(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline UpdateWirelessGatewayTaskEntry& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline UpdateWirelessGatewayTaskEntry& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline UpdateWirelessGatewayTaskEntry& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -116,6 +157,9 @@ namespace Model
 
     LoRaWANUpdateGatewayTaskEntry m_loRaWAN;
     bool m_loRaWANHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

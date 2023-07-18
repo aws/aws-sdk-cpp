@@ -80,132 +80,132 @@ namespace Model
 
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline const Aws::Vector<OpsFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline void SetFilters(const Aws::Vector<OpsFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline void SetFilters(Aws::Vector<OpsFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline GetOpsSummaryRequest& WithFilters(const Aws::Vector<OpsFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline GetOpsSummaryRequest& WithFilters(Aws::Vector<OpsFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline GetOpsSummaryRequest& AddFilters(const OpsFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Optional filters used to scope down the returned OpsItems. </p>
+     * <p>Optional filters used to scope down the returned OpsData. </p>
      */
     inline GetOpsSummaryRequest& AddFilters(OpsFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline const Aws::Vector<OpsAggregator>& GetAggregators() const{ return m_aggregators; }
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline bool AggregatorsHasBeenSet() const { return m_aggregatorsHasBeenSet; }
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline void SetAggregators(const Aws::Vector<OpsAggregator>& value) { m_aggregatorsHasBeenSet = true; m_aggregators = value; }
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline void SetAggregators(Aws::Vector<OpsAggregator>&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::move(value); }
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline GetOpsSummaryRequest& WithAggregators(const Aws::Vector<OpsAggregator>& value) { SetAggregators(value); return *this;}
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline GetOpsSummaryRequest& WithAggregators(Aws::Vector<OpsAggregator>&& value) { SetAggregators(std::move(value)); return *this;}
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline GetOpsSummaryRequest& AddAggregators(const OpsAggregator& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(value); return *this; }
 
     /**
-     * <p>Optional aggregators that return counts of OpsItems based on one or more
+     * <p>Optional aggregators that return counts of OpsData based on one or more
      * expressions.</p>
      */
     inline GetOpsSummaryRequest& AddAggregators(OpsAggregator&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline const Aws::Vector<OpsResultAttribute>& GetResultAttributes() const{ return m_resultAttributes; }
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline bool ResultAttributesHasBeenSet() const { return m_resultAttributesHasBeenSet; }
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline void SetResultAttributes(const Aws::Vector<OpsResultAttribute>& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes = value; }
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline void SetResultAttributes(Aws::Vector<OpsResultAttribute>&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes = std::move(value); }
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline GetOpsSummaryRequest& WithResultAttributes(const Aws::Vector<OpsResultAttribute>& value) { SetResultAttributes(value); return *this;}
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline GetOpsSummaryRequest& WithResultAttributes(Aws::Vector<OpsResultAttribute>&& value) { SetResultAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline GetOpsSummaryRequest& AddResultAttributes(const OpsResultAttribute& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes.push_back(value); return *this; }
 
     /**
-     * <p>The OpsItem data type to return.</p>
+     * <p>The OpsData data type to return.</p>
      */
     inline GetOpsSummaryRequest& AddResultAttributes(OpsResultAttribute&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes.push_back(std::move(value)); return *this; }
 

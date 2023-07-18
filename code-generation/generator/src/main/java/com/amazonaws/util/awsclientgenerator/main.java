@@ -7,9 +7,14 @@ package com.amazonaws.util.awsclientgenerator;
 
 import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImplementedException;
 import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
-import com.amazonaws.util.awsclientgenerator.generators.MainClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.MainGenerator;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +25,7 @@ public class main {
     static final String ARBITRARY_OPTION = "arbitrary";
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
     static final String SERVICE_OPTION = "service";
+    static final String DEFAULTS_OPTION = "defaults";
     static final String NAMESPACE = "namespace";
     static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standalone";
@@ -33,7 +39,6 @@ public class main {
         }
 
         Map<String, String> argPairs = getArgOptionPairs(args);
-        MainClientGenerator generator = new MainClientGenerator();
 
         String arbitraryJson = null;
 
@@ -45,8 +50,9 @@ public class main {
                 System.out.println("Error: A language binding must be specified with the --arbitrary option.");
                 return;
             }
-            if (!argPairs.containsKey(SERVICE_OPTION) || argPairs.get(SERVICE_OPTION).isEmpty()) {
-                System.out.println("Error: A service name must be specified with the --arbitrary option.");
+            if ((!argPairs.containsKey(SERVICE_OPTION) || argPairs.get(SERVICE_OPTION).isEmpty()) &&
+                (!argPairs.containsKey(DEFAULTS_OPTION) || argPairs.get(DEFAULTS_OPTION).isEmpty())) {
+                System.out.println("Error: A service name or defaults must be specified with the --arbitrary option.");
                 return;
             }
             String namespace = "Aws";
@@ -76,16 +82,18 @@ public class main {
             }
 
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
-                DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
                 try {
-                    File outputLib = directFromC2jGenerator.generateSourceFromJson(arbitraryJson,
-                            languageBinding,
-                            serviceName,
-                            namespace,
-                            licenseText,
-                            generateStandalonePakckage,
-                            enableVirtualOperations);
-                    System.out.println(outputLib.getAbsolutePath());
+                    File generated;
+
+                    if (serviceName != null && !serviceName.isEmpty()) {
+                        generated = generateService(arbitraryJson, languageBinding, serviceName, namespace,
+                                licenseText, generateStandalonePakckage, enableVirtualOperations);
+                    } else {
+                        generated = generateDefaults(arbitraryJson, languageBinding, serviceName, namespace,
+                                licenseText, generateStandalonePakckage, enableVirtualOperations);
+                    }
+
+                    System.out.println(generated.getAbsolutePath());
                 } catch (GeneratorNotImplementedException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
@@ -93,13 +101,43 @@ public class main {
                 }
             } else {
                 System.out.println("You must supply standard input if you specify the --arbitrary option.");
-
             }
             return;
         }
 
         printHelp();
+    }
 
+    private static File generateService(String arbitraryJson, String languageBinding, String serviceName,
+                                        String namespace, String licenseText,
+                                        boolean generateStandalonePakckage, boolean enableVirtualOperations) throws Exception {
+        MainGenerator generator = new MainGenerator();
+        DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
+
+        File outputLib = directFromC2jGenerator.generateServiceSourceFromJson(arbitraryJson,
+                languageBinding,
+                serviceName,
+                namespace,
+                licenseText,
+                generateStandalonePakckage,
+                enableVirtualOperations);
+        return outputLib;
+    }
+
+    private static File generateDefaults(String arbitraryJson, String languageBinding, String serviceName,
+                                         String namespace, String licenseText,
+                                         boolean generateStandalonePakckage, boolean enableVirtualOperations) throws Exception {
+        MainGenerator generator = new MainGenerator();
+        DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
+
+        File outputLib = defaultsGenerator.generateDefaultsSourceFromJson(arbitraryJson,
+                languageBinding,
+                serviceName,
+                namespace,
+                licenseText,
+                generateStandalonePakckage,
+                enableVirtualOperations);
+        return outputLib;
     }
 
     private static InputStream getInputStreamReader(Map<String, String> argsMap) throws FileNotFoundException, UnsupportedEncodingException {

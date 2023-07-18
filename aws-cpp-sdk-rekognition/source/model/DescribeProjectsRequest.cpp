@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 DescribeProjectsRequest::DescribeProjectsRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_projectNamesHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String DescribeProjectsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_projectNamesHasBeenSet)
+  {
+   Array<JsonValue> projectNamesJsonList(m_projectNames.size());
+   for(unsigned projectNamesIndex = 0; projectNamesIndex < projectNamesJsonList.GetLength(); ++projectNamesIndex)
+   {
+     projectNamesJsonList[projectNamesIndex].AsString(m_projectNames[projectNamesIndex]);
+   }
+   payload.WithArray("ProjectNames", std::move(projectNamesJsonList));
 
   }
 

@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> Information about the integration of DevOps Guru with another AWS service,
-   * such as AWS Systems Manager. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about the integration of DevOps Guru with another Amazon Web
+   * Services service, such as Amazon Web Services Systems Manager. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ServiceIntegrationConfig">AWS
    * API Reference</a></p>
    */
@@ -40,37 +41,37 @@ namespace Model
 
     /**
      * <p> Information about whether DevOps Guru is configured to create an OpsItem in
-     * AWS Systems Manager OpsCenter for each created insight. </p>
+     * Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
      */
     inline const OpsCenterIntegration& GetOpsCenter() const{ return m_opsCenter; }
 
     /**
      * <p> Information about whether DevOps Guru is configured to create an OpsItem in
-     * AWS Systems Manager OpsCenter for each created insight. </p>
+     * Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
      */
     inline bool OpsCenterHasBeenSet() const { return m_opsCenterHasBeenSet; }
 
     /**
      * <p> Information about whether DevOps Guru is configured to create an OpsItem in
-     * AWS Systems Manager OpsCenter for each created insight. </p>
+     * Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
      */
     inline void SetOpsCenter(const OpsCenterIntegration& value) { m_opsCenterHasBeenSet = true; m_opsCenter = value; }
 
     /**
      * <p> Information about whether DevOps Guru is configured to create an OpsItem in
-     * AWS Systems Manager OpsCenter for each created insight. </p>
+     * Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
      */
     inline void SetOpsCenter(OpsCenterIntegration&& value) { m_opsCenterHasBeenSet = true; m_opsCenter = std::move(value); }
 
     /**
      * <p> Information about whether DevOps Guru is configured to create an OpsItem in
-     * AWS Systems Manager OpsCenter for each created insight. </p>
+     * Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
      */
     inline ServiceIntegrationConfig& WithOpsCenter(const OpsCenterIntegration& value) { SetOpsCenter(value); return *this;}
 
     /**
      * <p> Information about whether DevOps Guru is configured to create an OpsItem in
-     * AWS Systems Manager OpsCenter for each created insight. </p>
+     * Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
      */
     inline ServiceIntegrationConfig& WithOpsCenter(OpsCenterIntegration&& value) { SetOpsCenter(std::move(value)); return *this;}
 

@@ -91,49 +91,49 @@ namespace Model
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline DeleteChangeSetRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline DeleteChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
-     * or ID (ARN) that is associated with it.</p>
+     * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline DeleteChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

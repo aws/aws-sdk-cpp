@@ -41,49 +41,49 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline GetDeploymentResult& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline GetDeploymentResult& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline GetDeploymentResult& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
@@ -161,65 +161,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline const Aws::String& GetDeploymentName() const{ return m_deploymentName; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const Aws::String& value) { m_deploymentName = value; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(Aws::String&& value) { m_deploymentName = std::move(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const char* value) { m_deploymentName.assign(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline GetDeploymentResult& WithDeploymentName(const Aws::String& value) { SetDeploymentName(value); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline GetDeploymentResult& WithDeploymentName(Aws::String&& value) { SetDeploymentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline GetDeploymentResult& WithDeploymentName(const char* value) { SetDeploymentName(value); return *this;}
 
@@ -251,37 +223,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline const Aws::String& GetIotJobId() const{ return m_iotJobId; }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(const Aws::String& value) { m_iotJobId = value; }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(Aws::String&& value) { m_iotJobId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(const char* value) { m_iotJobId.assign(value); }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline GetDeploymentResult& WithIotJobId(const Aws::String& value) { SetIotJobId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline GetDeploymentResult& WithIotJobId(Aws::String&& value) { SetIotJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline GetDeploymentResult& WithIotJobId(const char* value) { SetIotJobId(value); return *this;}
 
@@ -289,49 +261,49 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline const Aws::String& GetIotJobArn() const{ return m_iotJobArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(const Aws::String& value) { m_iotJobArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(Aws::String&& value) { m_iotJobArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(const char* value) { m_iotJobArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline GetDeploymentResult& WithIotJobArn(const Aws::String& value) { SetIotJobArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline GetDeploymentResult& WithIotJobArn(Aws::String&& value) { SetIotJobArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline GetDeploymentResult& WithIotJobArn(const char* value) { SetIotJobArn(value); return *this;}
 
@@ -531,96 +503,96 @@ namespace Model
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-     * resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline GetDeploymentResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

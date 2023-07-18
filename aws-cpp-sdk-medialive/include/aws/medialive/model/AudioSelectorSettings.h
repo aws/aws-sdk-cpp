@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/AudioHlsRenditionSelection.h>
 #include <aws/medialive/model/AudioLanguageSelection.h>
 #include <aws/medialive/model/AudioPidSelection.h>
 #include <aws/medialive/model/AudioTrackSelection.h>
@@ -37,6 +38,25 @@ namespace Model
     AudioSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
     AudioSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const AudioHlsRenditionSelection& GetAudioHlsRenditionSelection() const{ return m_audioHlsRenditionSelection; }
+
+    
+    inline bool AudioHlsRenditionSelectionHasBeenSet() const { return m_audioHlsRenditionSelectionHasBeenSet; }
+
+    
+    inline void SetAudioHlsRenditionSelection(const AudioHlsRenditionSelection& value) { m_audioHlsRenditionSelectionHasBeenSet = true; m_audioHlsRenditionSelection = value; }
+
+    
+    inline void SetAudioHlsRenditionSelection(AudioHlsRenditionSelection&& value) { m_audioHlsRenditionSelectionHasBeenSet = true; m_audioHlsRenditionSelection = std::move(value); }
+
+    
+    inline AudioSelectorSettings& WithAudioHlsRenditionSelection(const AudioHlsRenditionSelection& value) { SetAudioHlsRenditionSelection(value); return *this;}
+
+    
+    inline AudioSelectorSettings& WithAudioHlsRenditionSelection(AudioHlsRenditionSelection&& value) { SetAudioHlsRenditionSelection(std::move(value)); return *this;}
 
 
     
@@ -96,6 +116,9 @@ namespace Model
     inline AudioSelectorSettings& WithAudioTrackSelection(AudioTrackSelection&& value) { SetAudioTrackSelection(std::move(value)); return *this;}
 
   private:
+
+    AudioHlsRenditionSelection m_audioHlsRenditionSelection;
+    bool m_audioHlsRenditionSelectionHasBeenSet;
 
     AudioLanguageSelection m_audioLanguageSelection;
     bool m_audioLanguageSelectionHasBeenSet;

@@ -42,6 +42,55 @@ namespace Model
 
 
     /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
+
+    /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
+
+    /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = std::move(value); }
+
+    /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
+
+    /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline AwsApiGatewayV2StageDetails& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
+
+    /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline AwsApiGatewayV2StageDetails& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a client certificate for a stage. Supported only for
+     * WebSocket API calls.</p>
+     */
+    inline AwsApiGatewayV2StageDetails& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+
+
+    /**
      * <p>Indicates when the stage was created.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
@@ -616,6 +665,9 @@ namespace Model
     inline AwsApiGatewayV2StageDetails& WithApiGatewayManaged(bool value) { SetApiGatewayManaged(value); return *this;}
 
   private:
+
+    Aws::String m_clientCertificateId;
+    bool m_clientCertificateIdHasBeenSet;
 
     Aws::String m_createdDate;
     bool m_createdDateHasBeenSet;

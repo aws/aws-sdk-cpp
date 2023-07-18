@@ -16,6 +16,7 @@ PutScheduledActionRequest::PutScheduledActionRequest() :
     m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_timezoneHasBeenSet(false),
     m_scheduledActionNameHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_scalableDimension(ScalableDimension::NOT_SET),
@@ -38,6 +39,12 @@ Aws::String PutScheduledActionRequest::SerializePayload() const
   if(m_scheduleHasBeenSet)
   {
    payload.WithString("Schedule", m_schedule);
+
+  }
+
+  if(m_timezoneHasBeenSet)
+  {
+   payload.WithString("Timezone", m_timezone);
 
   }
 

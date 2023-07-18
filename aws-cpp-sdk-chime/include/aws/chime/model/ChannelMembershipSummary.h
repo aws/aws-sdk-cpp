@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The summary data of a channel membership.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary of the details of a <code>ChannelMembership</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMembershipSummary">AWS
    * API Reference</a></p>
    */

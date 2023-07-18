@@ -20,18 +20,21 @@
 #include <aws/cloudfront/CloudFrontClient.h>
 #include <aws/cloudfront/CloudFrontEndpoint.h>
 #include <aws/cloudfront/CloudFrontErrorMarshaller.h>
+#include <aws/cloudfront/model/AssociateAlias2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateDistributionWithTags2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateInvalidation2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreatePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateStreamingDistributionWithTags2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteCachePolicy2020_05_31Request.h>
@@ -39,12 +42,15 @@
 #include <aws/cloudfront/model/DeleteDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2020_05_31Request.h>
+#include <aws/cloudfront/model/DescribeFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCachePolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Request.h>
@@ -55,6 +61,7 @@
 #include <aws/cloudfront/model/GetFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/GetFieldLevelEncryptionProfileConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/GetFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/GetInvalidation2020_05_31Request.h>
 #include <aws/cloudfront/model/GetKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/GetKeyGroupConfig2020_05_31Request.h>
@@ -64,36 +71,46 @@
 #include <aws/cloudfront/model/GetPublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/GetPublicKeyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/GetResponseHeadersPolicy2020_05_31Request.h>
+#include <aws/cloudfront/model/GetResponseHeadersPolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/GetStreamingDistributionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/ListCachePolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Request.h>
+#include <aws/cloudfront/model/ListConflictingAliases2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByResponseHeadersPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByWebACLId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionConfigs2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionProfiles2020_05_31Request.h>
+#include <aws/cloudfront/model/ListFunctions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListInvalidations2020_05_31Request.h>
 #include <aws/cloudfront/model/ListKeyGroups2020_05_31Request.h>
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListPublicKeys2020_05_31Request.h>
 #include <aws/cloudfront/model/ListRealtimeLogConfigs2020_05_31Request.h>
+#include <aws/cloudfront/model/ListResponseHeadersPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListStreamingDistributions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListTagsForResource2020_05_31Request.h>
+#include <aws/cloudfront/model/PublishFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/TagResource2020_05_31Request.h>
+#include <aws/cloudfront/model/TestFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/UntagResource2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdatePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateStreamingDistribution2020_05_31Request.h>
 
 using namespace Aws;
@@ -144,7 +161,7 @@ CloudFrontClient::~CloudFrontClient()
 {
 }
 
-void CloudFrontClient::init(const ClientConfiguration& config)
+void CloudFrontClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudFront");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -170,12 +187,47 @@ void CloudFrontClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateAlias2020_05_31Outcome CloudFrontClient::AssociateAlias2020_05_31(const AssociateAlias2020_05_31Request& request) const
+{
+  if (!request.TargetDistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateAlias2020_05_31", "Required field: TargetDistributionId, is not set");
+    return AssociateAlias2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TargetDistributionId]", false));
+  }
+  if (!request.AliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateAlias2020_05_31", "Required field: Alias, is not set");
+    return AssociateAlias2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Alias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetTargetDistributionId());
+  uri.AddPathSegments("/associate-alias");
+  return AssociateAlias2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+AssociateAlias2020_05_31OutcomeCallable CloudFrontClient::AssociateAlias2020_05_31Callable(const AssociateAlias2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateAlias2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateAlias2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::AssociateAlias2020_05_31Async(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateAlias2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::AssociateAlias2020_05_31AsyncHelper(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateAlias2020_05_31(request), context);
+}
+
 CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31(const CreateCachePolicy2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/cache-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/cache-policy");
   return CreateCachePolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -200,9 +252,7 @@ void CloudFrontClient::CreateCachePolicy2020_05_31AsyncHelper(const CreateCacheP
 CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-access-identity/cloudfront";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-access-identity/cloudfront");
   return CreateCloudFrontOriginAccessIdentity2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -227,9 +277,7 @@ void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper
 CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_31(const CreateDistribution2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution");
   return CreateDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -255,8 +303,7 @@ CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistribution
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2020-05-31/distribution";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution");
   ss.str("?WithTags");
   uri.SetQueryString(ss.str());
   return CreateDistributionWithTags2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -283,9 +330,7 @@ void CloudFrontClient::CreateDistributionWithTags2020_05_31AsyncHelper(const Cre
 CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31(const CreateFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption");
   return CreateFieldLevelEncryptionConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -310,9 +355,7 @@ void CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31AsyncHelper(con
 CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31(const CreateFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption-profile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption-profile");
   return CreateFieldLevelEncryptionProfile2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -334,6 +377,31 @@ void CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31AsyncHelper(co
   handler(this, request, CreateFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
+CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const CreateFunction2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function");
+  return CreateFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateFunction2020_05_31OutcomeCallable CloudFrontClient::CreateFunction2020_05_31Callable(const CreateFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CreateFunction2020_05_31Async(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::CreateFunction2020_05_31AsyncHelper(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFunction2020_05_31(request), context);
+}
+
 CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_31(const CreateInvalidation2020_05_31Request& request) const
 {
   if (!request.DistributionIdHasBeenSet())
@@ -342,11 +410,9 @@ CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_
     return CreateInvalidation2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution/";
-  ss << request.GetDistributionId();
-  ss << "/invalidation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetDistributionId());
+  uri.AddPathSegments("/invalidation");
   return CreateInvalidation2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -371,9 +437,7 @@ void CloudFrontClient::CreateInvalidation2020_05_31AsyncHelper(const CreateInval
 CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const CreateKeyGroup2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/key-group";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/key-group");
   return CreateKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -403,11 +467,9 @@ CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoring
     return CreateMonitoringSubscription2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributions/";
-  ss << request.GetDistributionId();
-  ss << "/monitoring-subscription";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributions/");
+  uri.AddPathSegment(request.GetDistributionId());
+  uri.AddPathSegments("/monitoring-subscription");
   return CreateMonitoringSubscription2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -432,9 +494,7 @@ void CloudFrontClient::CreateMonitoringSubscription2020_05_31AsyncHelper(const C
 CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequestPolicy2020_05_31(const CreateOriginRequestPolicy2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-request-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-request-policy");
   return CreateOriginRequestPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -459,9 +519,7 @@ void CloudFrontClient::CreateOriginRequestPolicy2020_05_31AsyncHelper(const Crea
 CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(const CreatePublicKey2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/public-key";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/public-key");
   return CreatePublicKey2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -486,9 +544,7 @@ void CloudFrontClient::CreatePublicKey2020_05_31AsyncHelper(const CreatePublicKe
 CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConfig2020_05_31(const CreateRealtimeLogConfig2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/realtime-log-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/realtime-log-config");
   return CreateRealtimeLogConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -510,12 +566,35 @@ void CloudFrontClient::CreateRealtimeLogConfig2020_05_31AsyncHelper(const Create
   handler(this, request, CreateRealtimeLogConfig2020_05_31(request), context);
 }
 
+CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHeadersPolicy2020_05_31(const CreateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy");
+  return CreateResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Callable(const CreateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Async(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31AsyncHelper(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResponseHeadersPolicy2020_05_31(request), context);
+}
+
 CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDistribution2020_05_31(const CreateStreamingDistribution2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/streaming-distribution";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/streaming-distribution");
   return CreateStreamingDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -541,8 +620,7 @@ CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStr
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2020-05-31/streaming-distribution";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/streaming-distribution");
   ss.str("?WithTags");
   uri.SetQueryString(ss.str());
   return CreateStreamingDistributionWithTags2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -574,10 +652,8 @@ DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31
     return DeleteCachePolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/cache-policy/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/cache-policy/");
+  uri.AddPathSegment(request.GetId());
   return DeleteCachePolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -607,10 +683,8 @@ DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCl
     return DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-access-identity/cloudfront/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
+  uri.AddPathSegment(request.GetId());
   return DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -640,10 +714,8 @@ DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_
     return DeleteDistribution2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetId());
   return DeleteDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -673,10 +745,8 @@ DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldL
     return DeleteFieldLevelEncryptionConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption/");
+  uri.AddPathSegment(request.GetId());
   return DeleteFieldLevelEncryptionConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -706,10 +776,8 @@ DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteField
     return DeleteFieldLevelEncryptionProfile2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption-profile/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption-profile/");
+  uri.AddPathSegment(request.GetId());
   return DeleteFieldLevelEncryptionProfile2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -731,6 +799,42 @@ void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper(co
   handler(this, request, DeleteFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
+DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const DeleteFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunction2020_05_31", "Required field: Name, is not set");
+    return DeleteFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunction2020_05_31", "Required field: IfMatch, is not set");
+    return DeleteFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function/");
+  uri.AddPathSegment(request.GetName());
+  return DeleteFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteFunction2020_05_31OutcomeCallable CloudFrontClient::DeleteFunction2020_05_31Callable(const DeleteFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteFunction2020_05_31Async(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DeleteFunction2020_05_31AsyncHelper(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFunction2020_05_31(request), context);
+}
+
 DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const DeleteKeyGroup2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -739,10 +843,8 @@ DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const
     return DeleteKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/key-group/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/key-group/");
+  uri.AddPathSegment(request.GetId());
   return DeleteKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -772,11 +874,9 @@ DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoring
     return DeleteMonitoringSubscription2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributions/";
-  ss << request.GetDistributionId();
-  ss << "/monitoring-subscription";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributions/");
+  uri.AddPathSegment(request.GetDistributionId());
+  uri.AddPathSegments("/monitoring-subscription");
   return DeleteMonitoringSubscription2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -806,10 +906,8 @@ DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequest
     return DeleteOriginRequestPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-request-policy/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-request-policy/");
+  uri.AddPathSegment(request.GetId());
   return DeleteOriginRequestPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -839,10 +937,8 @@ DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(con
     return DeletePublicKey2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/public-key/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/public-key/");
+  uri.AddPathSegment(request.GetId());
   return DeletePublicKey2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -867,9 +963,7 @@ void CloudFrontClient::DeletePublicKey2020_05_31AsyncHelper(const DeletePublicKe
 DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConfig2020_05_31(const DeleteRealtimeLogConfig2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/delete-realtime-log-config/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/delete-realtime-log-config/");
   return DeleteRealtimeLogConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -891,6 +985,37 @@ void CloudFrontClient::DeleteRealtimeLogConfig2020_05_31AsyncHelper(const Delete
   handler(this, request, DeleteRealtimeLogConfig2020_05_31(request), context);
 }
 
+DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteResponseHeadersPolicy2020_05_31", "Required field: Id, is not set");
+    return DeleteResponseHeadersPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Callable(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Async(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31AsyncHelper(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResponseHeadersPolicy2020_05_31(request), context);
+}
+
 DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDistribution2020_05_31(const DeleteStreamingDistribution2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -899,10 +1024,8 @@ DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDi
     return DeleteStreamingDistribution2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/streaming-distribution/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/streaming-distribution/");
+  uri.AddPathSegment(request.GetId());
   return DeleteStreamingDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -924,6 +1047,38 @@ void CloudFrontClient::DeleteStreamingDistribution2020_05_31AsyncHelper(const De
   handler(this, request, DeleteStreamingDistribution2020_05_31(request), context);
 }
 
+DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(const DescribeFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFunction2020_05_31", "Required field: Name, is not set");
+    return DescribeFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/describe");
+  return DescribeFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+DescribeFunction2020_05_31OutcomeCallable CloudFrontClient::DescribeFunction2020_05_31Callable(const DescribeFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DescribeFunction2020_05_31Async(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DescribeFunction2020_05_31AsyncHelper(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFunction2020_05_31(request), context);
+}
+
 GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const GetCachePolicy2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -932,10 +1087,8 @@ GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const
     return GetCachePolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/cache-policy/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/cache-policy/");
+  uri.AddPathSegment(request.GetId());
   return GetCachePolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -965,11 +1118,9 @@ GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020
     return GetCachePolicyConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/cache-policy/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/cache-policy/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetCachePolicyConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -999,10 +1150,8 @@ GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFro
     return GetCloudFrontOriginAccessIdentity2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-access-identity/cloudfront/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
+  uri.AddPathSegment(request.GetId());
   return GetCloudFrontOriginAccessIdentity2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1032,11 +1181,9 @@ GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCl
     return GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-access-identity/cloudfront/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1066,10 +1213,8 @@ GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(con
     return GetDistribution2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetId());
   return GetDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1099,11 +1244,9 @@ GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig20
     return GetDistributionConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetDistributionConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1133,10 +1276,8 @@ GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncrypti
     return GetFieldLevelEncryption2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption/");
+  uri.AddPathSegment(request.GetId());
   return GetFieldLevelEncryption2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1166,11 +1307,9 @@ GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEn
     return GetFieldLevelEncryptionConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetFieldLevelEncryptionConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1200,10 +1339,8 @@ GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelE
     return GetFieldLevelEncryptionProfile2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption-profile/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption-profile/");
+  uri.AddPathSegment(request.GetId());
   return GetFieldLevelEncryptionProfile2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1233,11 +1370,9 @@ GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetField
     return GetFieldLevelEncryptionProfileConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption-profile/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption-profile/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetFieldLevelEncryptionProfileConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1259,6 +1394,37 @@ void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31AsyncHelper
   handler(this, request, GetFieldLevelEncryptionProfileConfig2020_05_31(request), context);
 }
 
+GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunction2020_05_31", "Required field: Name, is not set");
+    return GetFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function/");
+  uri.AddPathSegment(request.GetName());
+  return GetFunction2020_05_31Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetFunction2020_05_31OutcomeCallable CloudFrontClient::GetFunction2020_05_31Callable(const GetFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetFunction2020_05_31Async(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetFunction2020_05_31AsyncHelper(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFunction2020_05_31(request), context);
+}
+
 GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(const GetInvalidation2020_05_31Request& request) const
 {
   if (!request.DistributionIdHasBeenSet())
@@ -1272,12 +1438,10 @@ GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(con
     return GetInvalidation2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution/";
-  ss << request.GetDistributionId();
-  ss << "/invalidation/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetDistributionId());
+  uri.AddPathSegments("/invalidation/");
+  uri.AddPathSegment(request.GetId());
   return GetInvalidation2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1307,10 +1471,8 @@ GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKe
     return GetKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/key-group/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/key-group/");
+  uri.AddPathSegment(request.GetId());
   return GetKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1340,11 +1502,9 @@ GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31
     return GetKeyGroupConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/key-group/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/key-group/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetKeyGroupConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1374,11 +1534,9 @@ GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscr
     return GetMonitoringSubscription2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributions/";
-  ss << request.GetDistributionId();
-  ss << "/monitoring-subscription";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributions/");
+  uri.AddPathSegment(request.GetDistributionId());
+  uri.AddPathSegments("/monitoring-subscription");
   return GetMonitoringSubscription2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1408,10 +1566,8 @@ GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy
     return GetOriginRequestPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-request-policy/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-request-policy/");
+  uri.AddPathSegment(request.GetId());
   return GetOriginRequestPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1441,11 +1597,9 @@ GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequest
     return GetOriginRequestPolicyConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-request-policy/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-request-policy/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetOriginRequestPolicyConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1475,10 +1629,8 @@ GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const Get
     return GetPublicKey2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/public-key/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/public-key/");
+  uri.AddPathSegment(request.GetId());
   return GetPublicKey2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1508,11 +1660,9 @@ GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_
     return GetPublicKeyConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/public-key/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/public-key/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetPublicKeyConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1537,9 +1687,7 @@ void CloudFrontClient::GetPublicKeyConfig2020_05_31AsyncHelper(const GetPublicKe
 GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020_05_31(const GetRealtimeLogConfig2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/get-realtime-log-config/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/get-realtime-log-config/");
   return GetRealtimeLogConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1561,6 +1709,69 @@ void CloudFrontClient::GetRealtimeLogConfig2020_05_31AsyncHelper(const GetRealti
   handler(this, request, GetRealtimeLogConfig2020_05_31(request), context);
 }
 
+GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicy2020_05_31(const GetResponseHeadersPolicy2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResponseHeadersPolicy2020_05_31", "Required field: Id, is not set");
+    return GetResponseHeadersPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  return GetResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::GetResponseHeadersPolicy2020_05_31Callable(const GetResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetResponseHeadersPolicy2020_05_31Async(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetResponseHeadersPolicy2020_05_31AsyncHelper(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResponseHeadersPolicy2020_05_31(request), context);
+}
+
+GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResponseHeadersPolicyConfig2020_05_31", "Required field: Id, is not set");
+    return GetResponseHeadersPolicyConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
+  return GetResponseHeadersPolicyConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetResponseHeadersPolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Callable(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResponseHeadersPolicyConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResponseHeadersPolicyConfig2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Async(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResponseHeadersPolicyConfig2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31AsyncHelper(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResponseHeadersPolicyConfig2020_05_31(request), context);
+}
+
 GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribution2020_05_31(const GetStreamingDistribution2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -1569,10 +1780,8 @@ GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribu
     return GetStreamingDistribution2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/streaming-distribution/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/streaming-distribution/");
+  uri.AddPathSegment(request.GetId());
   return GetStreamingDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1602,11 +1811,9 @@ GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDi
     return GetStreamingDistributionConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/streaming-distribution/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/streaming-distribution/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return GetStreamingDistributionConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1631,9 +1838,7 @@ void CloudFrontClient::GetStreamingDistributionConfig2020_05_31AsyncHelper(const
 ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31(const ListCachePolicies2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/cache-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/cache-policy");
   return ListCachePolicies2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1658,9 +1863,7 @@ void CloudFrontClient::ListCachePolicies2020_05_31AsyncHelper(const ListCachePol
 ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-access-identity/cloudfront";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-access-identity/cloudfront");
   return ListCloudFrontOriginAccessIdentities2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1682,12 +1885,45 @@ void CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper
   handler(this, request, ListCloudFrontOriginAccessIdentities2020_05_31(request), context);
 }
 
+ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases2020_05_31(const ListConflictingAliases2020_05_31Request& request) const
+{
+  if (!request.DistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListConflictingAliases2020_05_31", "Required field: DistributionId, is not set");
+    return ListConflictingAliases2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
+  }
+  if (!request.AliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListConflictingAliases2020_05_31", "Required field: Alias, is not set");
+    return ListConflictingAliases2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Alias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/conflicting-alias");
+  return ListConflictingAliases2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListConflictingAliases2020_05_31OutcomeCallable CloudFrontClient::ListConflictingAliases2020_05_31Callable(const ListConflictingAliases2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConflictingAliases2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConflictingAliases2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListConflictingAliases2020_05_31Async(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConflictingAliases2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListConflictingAliases2020_05_31AsyncHelper(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConflictingAliases2020_05_31(request), context);
+}
+
 ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31(const ListDistributions2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution");
   return ListDistributions2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1717,10 +1953,8 @@ ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistribu
     return ListDistributionsByCachePolicyId2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CachePolicyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributionsByCachePolicyId/";
-  ss << request.GetCachePolicyId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributionsByCachePolicyId/");
+  uri.AddPathSegment(request.GetCachePolicyId());
   return ListDistributionsByCachePolicyId2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1750,10 +1984,8 @@ ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributions
     return ListDistributionsByKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyGroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributionsByKeyGroupId/";
-  ss << request.GetKeyGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributionsByKeyGroupId/");
+  uri.AddPathSegment(request.GetKeyGroupId());
   return ListDistributionsByKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1783,10 +2015,8 @@ ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::List
     return ListDistributionsByOriginRequestPolicyId2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OriginRequestPolicyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributionsByOriginRequestPolicyId/";
-  ss << request.GetOriginRequestPolicyId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributionsByOriginRequestPolicyId/");
+  uri.AddPathSegment(request.GetOriginRequestPolicyId());
   return ListDistributionsByOriginRequestPolicyId2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1811,9 +2041,7 @@ void CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31AsyncHe
 ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributionsByRealtimeLogConfig/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributionsByRealtimeLogConfig/");
   return ListDistributionsByRealtimeLogConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1835,6 +2063,37 @@ void CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31AsyncHelper
   handler(this, request, ListDistributionsByRealtimeLogConfig2020_05_31(request), context);
 }
 
+ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
+{
+  if (!request.ResponseHeadersPolicyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDistributionsByResponseHeadersPolicyId2020_05_31", "Required field: ResponseHeadersPolicyId, is not set");
+    return ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseHeadersPolicyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/distributionsByResponseHeadersPolicyId/");
+  uri.AddPathSegment(request.GetResponseHeadersPolicyId());
+  return ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListDistributionsByResponseHeadersPolicyId2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Callable(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByResponseHeadersPolicyId2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Async(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDistributionsByResponseHeadersPolicyId2020_05_31(request), context);
+}
+
 ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributionsByWebACLId2020_05_31(const ListDistributionsByWebACLId2020_05_31Request& request) const
 {
   if (!request.WebACLIdHasBeenSet())
@@ -1843,10 +2102,8 @@ ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributions
     return ListDistributionsByWebACLId2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebACLId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distributionsByWebACLId/";
-  ss << request.GetWebACLId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distributionsByWebACLId/");
+  uri.AddPathSegment(request.GetWebACLId());
   return ListDistributionsByWebACLId2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1871,9 +2128,7 @@ void CloudFrontClient::ListDistributionsByWebACLId2020_05_31AsyncHelper(const Li
 ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31(const ListFieldLevelEncryptionConfigs2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption");
   return ListFieldLevelEncryptionConfigs2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1898,9 +2153,7 @@ void CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31AsyncHelper(cons
 ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31(const ListFieldLevelEncryptionProfiles2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption-profile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption-profile");
   return ListFieldLevelEncryptionProfiles2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1922,6 +2175,31 @@ void CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31AsyncHelper(con
   handler(this, request, ListFieldLevelEncryptionProfiles2020_05_31(request), context);
 }
 
+ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const ListFunctions2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function");
+  return ListFunctions2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListFunctions2020_05_31OutcomeCallable CloudFrontClient::ListFunctions2020_05_31Callable(const ListFunctions2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFunctions2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctions2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListFunctions2020_05_31Async(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFunctions2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListFunctions2020_05_31AsyncHelper(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFunctions2020_05_31(request), context);
+}
+
 ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31(const ListInvalidations2020_05_31Request& request) const
 {
   if (!request.DistributionIdHasBeenSet())
@@ -1930,11 +2208,9 @@ ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31
     return ListInvalidations2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution/";
-  ss << request.GetDistributionId();
-  ss << "/invalidation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetDistributionId());
+  uri.AddPathSegments("/invalidation");
   return ListInvalidations2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1959,9 +2235,7 @@ void CloudFrontClient::ListInvalidations2020_05_31AsyncHelper(const ListInvalida
 ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const ListKeyGroups2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/key-group";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/key-group");
   return ListKeyGroups2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1986,9 +2260,7 @@ void CloudFrontClient::ListKeyGroups2020_05_31AsyncHelper(const ListKeyGroups202
 ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPolicies2020_05_31(const ListOriginRequestPolicies2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-request-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-request-policy");
   return ListOriginRequestPolicies2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2013,9 +2285,7 @@ void CloudFrontClient::ListOriginRequestPolicies2020_05_31AsyncHelper(const List
 ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const ListPublicKeys2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/public-key";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/public-key");
   return ListPublicKeys2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2040,9 +2310,7 @@ void CloudFrontClient::ListPublicKeys2020_05_31AsyncHelper(const ListPublicKeys2
 ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs2020_05_31(const ListRealtimeLogConfigs2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/realtime-log-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/realtime-log-config");
   return ListRealtimeLogConfigs2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2064,12 +2332,35 @@ void CloudFrontClient::ListRealtimeLogConfigs2020_05_31AsyncHelper(const ListRea
   handler(this, request, ListRealtimeLogConfigs2020_05_31(request), context);
 }
 
+ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeadersPolicies2020_05_31(const ListResponseHeadersPolicies2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy");
+  return ListResponseHeadersPolicies2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListResponseHeadersPolicies2020_05_31OutcomeCallable CloudFrontClient::ListResponseHeadersPolicies2020_05_31Callable(const ListResponseHeadersPolicies2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResponseHeadersPolicies2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResponseHeadersPolicies2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListResponseHeadersPolicies2020_05_31Async(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResponseHeadersPolicies2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListResponseHeadersPolicies2020_05_31AsyncHelper(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResponseHeadersPolicies2020_05_31(request), context);
+}
+
 ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistributions2020_05_31(const ListStreamingDistributions2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/streaming-distribution";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/streaming-distribution");
   return ListStreamingDistributions2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2099,9 +2390,7 @@ ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_0
     return ListTagsForResource2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/tagging");
   return ListTagsForResource2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2123,6 +2412,43 @@ void CloudFrontClient::ListTagsForResource2020_05_31AsyncHelper(const ListTagsFo
   handler(this, request, ListTagsForResource2020_05_31(request), context);
 }
 
+PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(const PublishFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PublishFunction2020_05_31", "Required field: Name, is not set");
+    return PublishFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PublishFunction2020_05_31", "Required field: IfMatch, is not set");
+    return PublishFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/publish");
+  return PublishFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PublishFunction2020_05_31OutcomeCallable CloudFrontClient::PublishFunction2020_05_31Callable(const PublishFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PublishFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::PublishFunction2020_05_31Async(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PublishFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::PublishFunction2020_05_31AsyncHelper(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PublishFunction2020_05_31(request), context);
+}
+
 TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagResource2020_05_31Request& request) const
 {
   if (!request.ResourceHasBeenSet())
@@ -2132,8 +2458,7 @@ TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagRe
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2020-05-31/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/tagging");
   ss.str("?Operation=Tag");
   uri.SetQueryString(ss.str());
   return TagResource2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -2157,6 +2482,43 @@ void CloudFrontClient::TagResource2020_05_31AsyncHelper(const TagResource2020_05
   handler(this, request, TagResource2020_05_31(request), context);
 }
 
+TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const TestFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestFunction2020_05_31", "Required field: Name, is not set");
+    return TestFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestFunction2020_05_31", "Required field: IfMatch, is not set");
+    return TestFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/test");
+  return TestFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+TestFunction2020_05_31OutcomeCallable CloudFrontClient::TestFunction2020_05_31Callable(const TestFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::TestFunction2020_05_31Async(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::TestFunction2020_05_31AsyncHelper(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestFunction2020_05_31(request), context);
+}
+
 UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const UntagResource2020_05_31Request& request) const
 {
   if (!request.ResourceHasBeenSet())
@@ -2166,8 +2528,7 @@ UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const U
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2020-05-31/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/tagging");
   ss.str("?Operation=Untag");
   uri.SetQueryString(ss.str());
   return UntagResource2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -2199,10 +2560,8 @@ UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31
     return UpdateCachePolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/cache-policy/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/cache-policy/");
+  uri.AddPathSegment(request.GetId());
   return UpdateCachePolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2232,11 +2591,9 @@ UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCl
     return UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-access-identity/cloudfront/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2266,11 +2623,9 @@ UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_
     return UpdateDistribution2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/distribution/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return UpdateDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2300,11 +2655,9 @@ UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldL
     return UpdateFieldLevelEncryptionConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return UpdateFieldLevelEncryptionConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2334,11 +2687,9 @@ UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateField
     return UpdateFieldLevelEncryptionProfile2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/field-level-encryption-profile/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/field-level-encryption-profile/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return UpdateFieldLevelEncryptionProfile2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2360,6 +2711,42 @@ void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper(co
   handler(this, request, UpdateFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
+UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const UpdateFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunction2020_05_31", "Required field: Name, is not set");
+    return UpdateFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunction2020_05_31", "Required field: IfMatch, is not set");
+    return UpdateFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/function/");
+  uri.AddPathSegment(request.GetName());
+  return UpdateFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateFunction2020_05_31OutcomeCallable CloudFrontClient::UpdateFunction2020_05_31Callable(const UpdateFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateFunction2020_05_31Async(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::UpdateFunction2020_05_31AsyncHelper(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFunction2020_05_31(request), context);
+}
+
 UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const UpdateKeyGroup2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -2368,10 +2755,8 @@ UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const
     return UpdateKeyGroup2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/key-group/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/key-group/");
+  uri.AddPathSegment(request.GetId());
   return UpdateKeyGroup2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2401,10 +2786,8 @@ UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequest
     return UpdateOriginRequestPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/origin-request-policy/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/origin-request-policy/");
+  uri.AddPathSegment(request.GetId());
   return UpdateOriginRequestPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2434,11 +2817,9 @@ UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(con
     return UpdatePublicKey2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/public-key/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/public-key/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return UpdatePublicKey2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2463,9 +2844,7 @@ void CloudFrontClient::UpdatePublicKey2020_05_31AsyncHelper(const UpdatePublicKe
 UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConfig2020_05_31(const UpdateRealtimeLogConfig2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/realtime-log-config/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/realtime-log-config/");
   return UpdateRealtimeLogConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2487,6 +2866,37 @@ void CloudFrontClient::UpdateRealtimeLogConfig2020_05_31AsyncHelper(const Update
   handler(this, request, UpdateRealtimeLogConfig2020_05_31(request), context);
 }
 
+UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResponseHeadersPolicy2020_05_31", "Required field: Id, is not set");
+    return UpdateResponseHeadersPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Callable(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Async(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31AsyncHelper(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResponseHeadersPolicy2020_05_31(request), context);
+}
+
 UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDistribution2020_05_31(const UpdateStreamingDistribution2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -2495,11 +2905,9 @@ UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDi
     return UpdateStreamingDistribution2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-05-31/streaming-distribution/";
-  ss << request.GetId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-05-31/streaming-distribution/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
   return UpdateStreamingDistribution2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
@@ -2520,6 +2928,4 @@ void CloudFrontClient::UpdateStreamingDistribution2020_05_31AsyncHelper(const Up
 {
   handler(this, request, UpdateStreamingDistribution2020_05_31(request), context);
 }
-
-
 

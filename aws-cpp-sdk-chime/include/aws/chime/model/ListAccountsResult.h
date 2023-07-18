@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * <p>The list of accounts.</p>
+     * <p>List of Amazon Chime accounts and account details.</p>
      */
     inline const Aws::Vector<Account>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>The list of accounts.</p>
+     * <p>List of Amazon Chime accounts and account details.</p>
      */
     inline void SetAccounts(const Aws::Vector<Account>& value) { m_accounts = value; }
 
     /**
-     * <p>The list of accounts.</p>
+     * <p>List of Amazon Chime accounts and account details.</p>
      */
     inline void SetAccounts(Aws::Vector<Account>&& value) { m_accounts = std::move(value); }
 
     /**
-     * <p>The list of accounts.</p>
+     * <p>List of Amazon Chime accounts and account details.</p>
      */
     inline ListAccountsResult& WithAccounts(const Aws::Vector<Account>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>The list of accounts.</p>
+     * <p>List of Amazon Chime accounts and account details.</p>
      */
     inline ListAccountsResult& WithAccounts(Aws::Vector<Account>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>The list of accounts.</p>
+     * <p>List of Amazon Chime accounts and account details.</p>
      */
     inline ListAccountsResult& AddAccounts(const Account& value) { m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>The list of accounts.</p>
+     * <p>List of Amazon Chime accounts and account details.</p>
      */
     inline ListAccountsResult& AddAccounts(Account&& value) { m_accounts.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The account's user token.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The account's user token.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The account's user token.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The account's user token.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The account's user token.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline ListAccountsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The account's user token.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline ListAccountsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The account's user token.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline ListAccountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

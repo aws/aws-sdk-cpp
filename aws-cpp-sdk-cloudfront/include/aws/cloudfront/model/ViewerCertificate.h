@@ -42,18 +42,18 @@ namespace Model
    * recommended. Most browsers and clients support SNI. </p> </li> <li> <p>To accept
    * HTTPS connections from all viewers, including those that don’t support SNI, set
    * <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and
-   * results in additional monthly charges from CloudFront. </p> </li> </ul> </li>
+   * results in additional monthly charges from CloudFront.</p> </li> </ul> </li>
    * <li> <p>The minimum SSL/TLS protocol version that the distribution can use to
    * communicate with viewers. To specify a minimum version, choose a value for
    * <code>MinimumProtocolVersion</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security
    * Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li>
    * <p>The location of the SSL/TLS certificate, <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-   * Certificate Manager (ACM)</a> (recommended) or <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-   * Identity and Access Management (AWS IAM)</a>. You specify the location by
-   * setting a value in one of the following fields (not both):</p> <ul> <li> <p>
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+   * Manager (ACM)</a> (recommended) or <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+   * and Access Management (IAM)</a>. You specify the location by setting a value in
+   * one of the following fields (not both):</p> <ul> <li> <p>
    * <code>ACMCertificateArn</code> </p> </li> <li> <p> <code>IAMCertificateId</code>
    * </p> </li> </ul> </li> </ul> <p>All distributions support HTTPS connections from
    * viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to
@@ -131,88 +131,80 @@ namespace Model
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline bool IAMCertificateIdHasBeenSet() const { return m_iAMCertificateIdHasBeenSet; }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline void SetIAMCertificateId(const Aws::String& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline void SetIAMCertificateId(Aws::String&& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = std::move(value); }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline void SetIAMCertificateId(const char* value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId.assign(value); }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithIAMCertificateId(const Aws::String& value) { SetIAMCertificateId(value); return *this;}
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithIAMCertificateId(Aws::String&& value) { SetIAMCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
-     * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
-     * <code>SSLSupportMethod</code>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
+     * <p>If you specify an IAM certificate ID, you must also specify values for
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithIAMCertificateId(const char* value) { SetIAMCertificateId(value); return *this;}
 
@@ -220,96 +212,96 @@ namespace Model
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline const Aws::String& GetACMCertificateArn() const{ return m_aCMCertificateArn; }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline bool ACMCertificateArnHasBeenSet() const { return m_aCMCertificateArnHasBeenSet; }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline void SetACMCertificateArn(const Aws::String& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = value; }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline void SetACMCertificateArn(Aws::String&& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = std::move(value); }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline void SetACMCertificateArn(const char* value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn.assign(value); }
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline ViewerCertificate& WithACMCertificateArn(const Aws::String& value) { SetACMCertificateArn(value); return *this;}
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline ViewerCertificate& WithACMCertificateArn(Aws::String&& value) { SetACMCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
      * CNAMEs) and the SSL/TLS certificate is stored in <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     * Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+     * Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
     inline ViewerCertificate& WithACMCertificateArn(const char* value) { SetACMCertificateArn(value); return *this;}
 
@@ -327,10 +319,11 @@ namespace Model
      * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
      * distribution has been enabled for this feature by the CloudFront team. If you
      * have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
-     * value for this field.</p>
+     * CloudFront through the <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
+     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
+     * this field.</p>
      */
     inline const SSLSupportMethod& GetSSLSupportMethod() const{ return m_sSLSupportMethod; }
 
@@ -347,10 +340,11 @@ namespace Model
      * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
      * distribution has been enabled for this feature by the CloudFront team. If you
      * have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
-     * value for this field.</p>
+     * CloudFront through the <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
+     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
+     * this field.</p>
      */
     inline bool SSLSupportMethodHasBeenSet() const { return m_sSLSupportMethodHasBeenSet; }
 
@@ -367,10 +361,11 @@ namespace Model
      * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
      * distribution has been enabled for this feature by the CloudFront team. If you
      * have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
-     * value for this field.</p>
+     * CloudFront through the <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
+     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
+     * this field.</p>
      */
     inline void SetSSLSupportMethod(const SSLSupportMethod& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = value; }
 
@@ -387,10 +382,11 @@ namespace Model
      * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
      * distribution has been enabled for this feature by the CloudFront team. If you
      * have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
-     * value for this field.</p>
+     * CloudFront through the <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
+     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
+     * this field.</p>
      */
     inline void SetSSLSupportMethod(SSLSupportMethod&& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = std::move(value); }
 
@@ -407,10 +403,11 @@ namespace Model
      * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
      * distribution has been enabled for this feature by the CloudFront team. If you
      * have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
-     * value for this field.</p>
+     * CloudFront through the <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
+     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
+     * this field.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(const SSLSupportMethod& value) { SetSSLSupportMethod(value); return *this;}
 
@@ -427,10 +424,11 @@ namespace Model
      * </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your
      * distribution has been enabled for this feature by the CloudFront team. If you
      * have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     * Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a
-     * value for this field.</p>
+     * CloudFront through the <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
+     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
+     * this field.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(SSLSupportMethod&& value) { SetSSLSupportMethod(std::move(value)); return *this;}
 
@@ -450,7 +448,7 @@ namespace Model
      * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
      * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
-     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * specify <code>TLSv1</code> or higher.</p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
      * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
@@ -473,7 +471,7 @@ namespace Model
      * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
      * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
-     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * specify <code>TLSv1</code> or higher.</p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
      * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
@@ -496,7 +494,7 @@ namespace Model
      * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
      * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
-     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * specify <code>TLSv1</code> or higher.</p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
      * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
@@ -519,7 +517,7 @@ namespace Model
      * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
      * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
-     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * specify <code>TLSv1</code> or higher.</p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
      * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
@@ -542,7 +540,7 @@ namespace Model
      * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
      * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
-     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * specify <code>TLSv1</code> or higher.</p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
      * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
@@ -565,7 +563,7 @@ namespace Model
      * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
      * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
-     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * specify <code>TLSv1</code> or higher.</p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
      * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the

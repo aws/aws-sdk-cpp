@@ -16,6 +16,7 @@ namespace Model
   enum class H265AdaptiveQuantization
   {
     NOT_SET,
+    AUTO,
     HIGH,
     HIGHER,
     LOW,

@@ -77,107 +77,99 @@ namespace Model
 
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline CreateLinkRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline CreateLinkRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256
+     * <p>A description of the link.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
     inline CreateLinkRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline CreateLinkRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline CreateLinkRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.
+     * Cannot include the following characters: | \ ^</p>
      */
     inline CreateLinkRequest& WithType(const char* value) { SetType(value); return *this;}
 
@@ -214,58 +206,50 @@ namespace Model
 
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline CreateLinkRequest& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline CreateLinkRequest& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
 
     /**
-     * <p>The provider of the link.</p> <p>Constraints: Cannot include the following
-     * characters: | \ ^</p> <p>Length Constraints: Maximum length of 128
-     * characters.</p>
+     * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128
+     * characters. Cannot include the following characters: | \ ^</p>
      */
     inline CreateLinkRequest& WithProvider(const char* value) { SetProvider(value); return *this;}
 

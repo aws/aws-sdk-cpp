@@ -43,50 +43,62 @@ namespace Model
   public:
 
     /**
-     * <p>Specifies whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
     /**
-     * <p>Specifies whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
 
     /**
-     * <p>Specifies whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
-     * <p>Specifies whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
 
     /**
-     * <p>Specifies whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline ModifyInstanceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
 
     /**
-     * <p>Specifies whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline ModifyInstanceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
@@ -129,9 +141,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline const Aws::Vector<InstanceBlockDeviceMappingSpecification>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
@@ -142,9 +154,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
@@ -155,9 +167,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMappingSpecification>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
@@ -168,9 +180,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
@@ -181,9 +193,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMappingSpecification>& value) { SetBlockDeviceMappings(value); return *this;}
 
@@ -194,9 +206,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
@@ -207,9 +219,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(const InstanceBlockDeviceMappingSpecification& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
@@ -220,9 +232,9 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMappingSpecification&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -402,65 +414,74 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline ModifyInstanceAttributeRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline ModifyInstanceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline ModifyInstanceAttributeRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline ModifyInstanceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
-     * least one security group, even if it's just the default security group for the
-     * VPC. You must specify the security group ID, not the security group name.</p>
+     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
+     * security groups. You must specify at least one security group, even if it's just
+     * the default security group for the VPC. You must specify the security group ID,
+     * not the security group name.</p>
      */
     inline ModifyInstanceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
@@ -547,8 +568,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline const AttributeValue& GetInstanceType() const{ return m_instanceType; }
 
@@ -556,8 +577,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
@@ -565,8 +586,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline void SetInstanceType(const AttributeValue& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -574,8 +595,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline void SetInstanceType(AttributeValue&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
@@ -583,8 +604,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithInstanceType(const AttributeValue& value) { SetInstanceType(value); return *this;}
 
@@ -592,8 +613,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithInstanceType(AttributeValue&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -741,43 +762,49 @@ namespace Model
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline const BlobAttributeValue& GetUserData() const{ return m_userData; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline void SetUserData(const BlobAttributeValue& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(const BlobAttributeValue& value) { SetUserData(value); return *this;}
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 
@@ -838,6 +865,55 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p> <p/>
+     */
+    inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p> <p/>
+     */
+    inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p> <p/>
+     */
+    inline void SetDisableApiStop(const AttributeBooleanValue& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p> <p/>
+     */
+    inline void SetDisableApiStop(AttributeBooleanValue&& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = std::move(value); }
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p> <p/>
+     */
+    inline ModifyInstanceAttributeRequest& WithDisableApiStop(const AttributeBooleanValue& value) { SetDisableApiStop(value); return *this;}
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p> <p/>
+     */
+    inline ModifyInstanceAttributeRequest& WithDisableApiStop(AttributeBooleanValue&& value) { SetDisableApiStop(std::move(value)); return *this;}
+
   private:
 
     AttributeBooleanValue m_sourceDestCheck;
@@ -887,6 +963,9 @@ namespace Model
 
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
+    AttributeBooleanValue m_disableApiStop;
+    bool m_disableApiStopHasBeenSet;
   };
 
 } // namespace Model

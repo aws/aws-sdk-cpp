@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace DevOpsGuru
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAnomaly"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -72,10 +78,54 @@ namespace Model
      */
     inline DescribeAnomalyRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline DescribeAnomalyRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline DescribeAnomalyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the member account.</p>
+     */
+    inline DescribeAnomalyRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
   };
 
 } // namespace Model

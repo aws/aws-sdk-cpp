@@ -35,9 +35,9 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
@@ -46,9 +46,9 @@ namespace Model
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
@@ -57,9 +57,9 @@ namespace Model
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
@@ -68,9 +68,9 @@ namespace Model
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
@@ -79,9 +79,9 @@ namespace Model
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
@@ -90,9 +90,9 @@ namespace Model
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
@@ -101,9 +101,9 @@ namespace Model
     inline AssociateDRTRoleRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
@@ -112,9 +112,9 @@ namespace Model
     inline AssociateDRTRoleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
-     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
-     * you must attach the <a
+     * <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your
+     * Amazon Web Services account.</p> <p>Prior to making the
+     * <code>AssociateDRTRole</code> request, you must attach the <a
      * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
      * managed policy to this role. For more information see <a href="
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching

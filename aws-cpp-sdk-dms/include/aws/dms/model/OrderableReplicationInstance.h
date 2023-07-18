@@ -90,7 +90,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
@@ -101,7 +101,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
@@ -112,7 +112,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
@@ -123,7 +123,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
@@ -134,7 +134,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
@@ -145,7 +145,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline OrderableReplicationInstance& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -156,7 +156,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline OrderableReplicationInstance& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
@@ -167,7 +167,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline OrderableReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -362,48 +362,48 @@ namespace Model
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p>  <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> 
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline const ReleaseStatusValues& GetReleaseStatus() const{ return m_releaseStatus; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p>  <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> 
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline bool ReleaseStatusHasBeenSet() const { return m_releaseStatusHasBeenSet; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p>  <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> 
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline void SetReleaseStatus(const ReleaseStatusValues& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = value; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p>  <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> 
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline void SetReleaseStatus(ReleaseStatusValues&& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = std::move(value); }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p>  <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> 
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline OrderableReplicationInstance& WithReleaseStatus(const ReleaseStatusValues& value) { SetReleaseStatus(value); return *this;}
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p>  <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> 
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline OrderableReplicationInstance& WithReleaseStatus(ReleaseStatusValues&& value) { SetReleaseStatus(std::move(value)); return *this;}
 

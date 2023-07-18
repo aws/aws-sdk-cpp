@@ -18,7 +18,12 @@ using namespace Aws::Http;
 ListLensesRequest::ListLensesRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_lensType(LensType::NOT_SET),
+    m_lensTypeHasBeenSet(false),
+    m_lensStatus(LensStatusType::NOT_SET),
+    m_lensStatusHasBeenSet(false),
+    m_lensNameHasBeenSet(false)
 {
 }
 
@@ -41,6 +46,27 @@ void ListLensesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("MaxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_lensTypeHasBeenSet)
+    {
+      ss << LensTypeMapper::GetNameForLensType(m_lensType);
+      uri.AddQueryStringParameter("LensType", ss.str());
+      ss.str("");
+    }
+
+    if(m_lensStatusHasBeenSet)
+    {
+      ss << LensStatusTypeMapper::GetNameForLensStatusType(m_lensStatus);
+      uri.AddQueryStringParameter("LensStatus", ss.str());
+      ss.str("");
+    }
+
+    if(m_lensNameHasBeenSet)
+    {
+      ss << m_lensName;
+      uri.AddQueryStringParameter("LensName", ss.str());
       ss.str("");
     }
 

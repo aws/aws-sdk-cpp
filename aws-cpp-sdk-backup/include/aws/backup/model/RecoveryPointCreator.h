@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the backup plan and rule that AWS Backup used to
+   * <p>Contains information about the backup plan and rule that Backup used to
    * initiate the recovery point backup.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RecoveryPointCreator">AWS
    * API Reference</a></p>

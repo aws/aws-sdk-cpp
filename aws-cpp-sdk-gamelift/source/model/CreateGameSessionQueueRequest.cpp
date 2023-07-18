@@ -18,6 +18,10 @@ CreateGameSessionQueueRequest::CreateGameSessionQueueRequest() :
     m_timeoutInSecondsHasBeenSet(false),
     m_playerLatencyPoliciesHasBeenSet(false),
     m_destinationsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false),
+    m_priorityConfigurationHasBeenSet(false),
+    m_customEventDataHasBeenSet(false),
+    m_notificationTargetHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -57,6 +61,30 @@ Aws::String CreateGameSessionQueueRequest::SerializePayload() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("Destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_filterConfigurationHasBeenSet)
+  {
+   payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
+
+  }
+
+  if(m_priorityConfigurationHasBeenSet)
+  {
+   payload.WithObject("PriorityConfiguration", m_priorityConfiguration.Jsonize());
+
+  }
+
+  if(m_customEventDataHasBeenSet)
+  {
+   payload.WithString("CustomEventData", m_customEventData);
+
+  }
+
+  if(m_notificationTargetHasBeenSet)
+  {
+   payload.WithString("NotificationTarget", m_notificationTarget);
 
   }
 

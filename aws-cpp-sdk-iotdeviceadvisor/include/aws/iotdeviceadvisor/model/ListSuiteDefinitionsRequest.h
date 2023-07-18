@@ -39,63 +39,63 @@ namespace Model
 
 
     /**
-     * <p>Request the list of all the Device Advisor test suites.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Request the list of all the Device Advisor test suites.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Request the list of all the Device Advisor test suites.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Request the list of all the Device Advisor test suites.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline ListSuiteDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline ListSuiteDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline ListSuiteDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Requests the Device Advisor test suites next token.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline ListSuiteDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

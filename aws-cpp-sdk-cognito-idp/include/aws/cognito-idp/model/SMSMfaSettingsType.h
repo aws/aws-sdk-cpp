@@ -22,13 +22,13 @@ namespace Model
 {
 
   /**
-   * <p>The type used for enabling SMS MFA at the user level. Phone numbers don't
-   * need to be verified to be used for SMS MFA. If an MFA type is enabled for a
-   * user, the user will be prompted for MFA during all sign in attempts, unless
-   * device tracking is turned on and the device has been trusted. If you would like
-   * MFA to be applied selectively based on the assessed risk level of sign in
-   * attempts, disable MFA for users and turn on Adaptive Authentication for the user
-   * pool.</p><p><h3>See Also:</h3>   <a
+   * <p>The type used for enabling SMS multi-factor authentication (MFA) at the user
+   * level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA
+   * type is activated for a user, the user will be prompted for MFA during all
+   * sign-in attempts, unless device tracking is turned on and the device has been
+   * trusted. If you would like MFA to be applied selectively based on the assessed
+   * risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive
+   * Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SMSMfaSettingsType">AWS
    * API Reference</a></p>
    */
@@ -42,30 +42,34 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether SMS text message MFA is enabled. If an MFA type is enabled
-     * for a user, the user will be prompted for MFA during all sign in attempts,
-     * unless device tracking is turned on and the device has been trusted.</p>
+     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Specifies whether SMS text message MFA is enabled. If an MFA type is enabled
-     * for a user, the user will be prompted for MFA during all sign in attempts,
-     * unless device tracking is turned on and the device has been trusted.</p>
+     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether SMS text message MFA is enabled. If an MFA type is enabled
-     * for a user, the user will be prompted for MFA during all sign in attempts,
-     * unless device tracking is turned on and the device has been trusted.</p>
+     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Specifies whether SMS text message MFA is enabled. If an MFA type is enabled
-     * for a user, the user will be prompted for MFA during all sign in attempts,
-     * unless device tracking is turned on and the device has been trusted.</p>
+     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline SMSMfaSettingsType& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

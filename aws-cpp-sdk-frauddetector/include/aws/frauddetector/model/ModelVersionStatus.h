@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    INACTIVE
+    INACTIVE,
+    TRAINING_CANCELLED
   };
 
 namespace ModelVersionStatusMapper

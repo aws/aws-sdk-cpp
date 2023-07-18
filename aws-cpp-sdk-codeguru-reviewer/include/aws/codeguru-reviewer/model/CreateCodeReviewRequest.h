@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline CreateCodeReviewRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline CreateCodeReviewRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the code review. The name of each code review in your AWS
-     * account must be unique. </p>
+     * <p> The name of the code review. The name of each code review in your Amazon Web
+     * Services account must be unique. </p>
      */
     inline CreateCodeReviewRequest& WithName(const char* value) { SetName(value); return *this;}
 

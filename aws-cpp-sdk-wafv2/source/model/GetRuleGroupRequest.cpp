@@ -16,7 +16,8 @@ GetRuleGroupRequest::GetRuleGroupRequest() :
     m_nameHasBeenSet(false),
     m_scope(Scope::NOT_SET),
     m_scopeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String GetRuleGroupRequest::SerializePayload() const
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_aRNHasBeenSet)
+  {
+   payload.WithString("ARN", m_aRN);
 
   }
 

@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 BatchDeleteTableRequest::BatchDeleteTableRequest() : 
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_tablesToDeleteHasBeenSet(false)
+    m_tablesToDeleteHasBeenSet(false),
+    m_transactionIdHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String BatchDeleteTableRequest::SerializePayload() const
      tablesToDeleteJsonList[tablesToDeleteIndex].AsString(m_tablesToDelete[tablesToDeleteIndex]);
    }
    payload.WithArray("TablesToDelete", std::move(tablesToDeleteJsonList));
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
 
   }
 

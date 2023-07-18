@@ -80,51 +80,59 @@ namespace Model
 
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline bool GetDeleteStream() const{ return m_deleteStream; }
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline bool DeleteStreamHasBeenSet() const { return m_deleteStreamHasBeenSet; }
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline void SetDeleteStream(bool value) { m_deleteStreamHasBeenSet = true; m_deleteStream = value; }
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline DeleteOTAUpdateRequest& WithDeleteStream(bool value) { SetDeleteStream(value); return *this;}
 
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * when the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline bool GetForceDeleteAWSJob() const{ return m_forceDeleteAWSJob; }
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * when the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline bool ForceDeleteAWSJobHasBeenSet() const { return m_forceDeleteAWSJobHasBeenSet; }
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * when the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline void SetForceDeleteAWSJob(bool value) { m_forceDeleteAWSJobHasBeenSet = true; m_forceDeleteAWSJob = value; }
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * when the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline DeleteOTAUpdateRequest& WithForceDeleteAWSJob(bool value) { SetForceDeleteAWSJob(value); return *this;}
 

@@ -187,101 +187,110 @@ namespace Model
 
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline ListRecommendationFeedbackRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline ListRecommendationFeedbackRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline ListRecommendationFeedbackRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline ListRecommendationFeedbackRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query
-     * the recommendation feedback for a code review from that user. </p> <p> The
-     * <code>UserId</code> is an IAM principal that can be specified as an AWS account
-     * ID or an Amazon Resource Name (ARN). For more information, see <a
+     * <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use
+     * this ID to query the recommendation feedback for a code review from that user.
+     * </p> <p> The <code>UserId</code> is an IAM principal that can be specified as an
+     * Amazon Web Services account ID or an Amazon Resource Name (ARN). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>. </p>
+     * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>. </p>
      */
     inline ListRecommendationFeedbackRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 

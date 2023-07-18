@@ -22,7 +22,7 @@ namespace ChimeEndpoint
   {
     AWS_UNREFERENCED_PARAM(regionName);
     AWS_UNREFERENCED_PARAM(useDualStack);
-    return "service.chime.aws.amazon.com";
+    return "chime.us-east-1.amazonaws.com";
   }
 
 } // namespace ChimeEndpoint

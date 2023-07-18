@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>AWS credentials required when uploading a game build to the storage location.
-     * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for.</p>
+     * <p>Amazon Web Services credentials required when uploading a game build to the
+     * storage location. These credentials have a limited lifespan and are valid only
+     * for the build they were issued for.</p>
      */
     inline const AwsCredentials& GetUploadCredentials() const{ return m_uploadCredentials; }
 
     /**
-     * <p>AWS credentials required when uploading a game build to the storage location.
-     * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for.</p>
+     * <p>Amazon Web Services credentials required when uploading a game build to the
+     * storage location. These credentials have a limited lifespan and are valid only
+     * for the build they were issued for.</p>
      */
     inline void SetUploadCredentials(const AwsCredentials& value) { m_uploadCredentials = value; }
 
     /**
-     * <p>AWS credentials required when uploading a game build to the storage location.
-     * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for.</p>
+     * <p>Amazon Web Services credentials required when uploading a game build to the
+     * storage location. These credentials have a limited lifespan and are valid only
+     * for the build they were issued for.</p>
      */
     inline void SetUploadCredentials(AwsCredentials&& value) { m_uploadCredentials = std::move(value); }
 
     /**
-     * <p>AWS credentials required when uploading a game build to the storage location.
-     * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for.</p>
+     * <p>Amazon Web Services credentials required when uploading a game build to the
+     * storage location. These credentials have a limited lifespan and are valid only
+     * for the build they were issued for.</p>
      */
     inline RequestUploadCredentialsResult& WithUploadCredentials(const AwsCredentials& value) { SetUploadCredentials(value); return *this;}
 
     /**
-     * <p>AWS credentials required when uploading a game build to the storage location.
-     * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for.</p>
+     * <p>Amazon Web Services credentials required when uploading a game build to the
+     * storage location. These credentials have a limited lifespan and are valid only
+     * for the build they were issued for.</p>
      */
     inline RequestUploadCredentialsResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(std::move(value)); return *this;}
 

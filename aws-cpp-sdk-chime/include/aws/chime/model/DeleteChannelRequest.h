@@ -31,6 +31,8 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
      * <p>The ARN of the channel being deleted.</p>
@@ -72,10 +74,54 @@ namespace Model
      */
     inline DeleteChannelRequest& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
 
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline DeleteChannelRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline DeleteChannelRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline DeleteChannelRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet;
+
+    Aws::String m_chimeBearer;
+    bool m_chimeBearerHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,9 @@
 #include <aws/ec2/model/LaunchTemplateHibernationOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptions.h>
 #include <aws/ec2/model/LaunchTemplateEnclaveOptions.h>
+#include <aws/ec2/model/InstanceRequirements.h>
+#include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptions.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptions.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -832,42 +835,42 @@ namespace Model
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const LaunchTemplateCpuOptions& GetCpuOptions() const{ return m_cpuOptions; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetCpuOptions(const LaunchTemplateCpuOptions& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetCpuOptions(LaunchTemplateCpuOptions&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithCpuOptions(const LaunchTemplateCpuOptions& value) { SetCpuOptions(value); return *this;}
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithCpuOptions(LaunchTemplateCpuOptions&& value) { SetCpuOptions(std::move(value)); return *this;}
 
@@ -948,7 +951,7 @@ namespace Model
      * <p>Indicates whether an instance is configured for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const LaunchTemplateHibernationOptions& GetHibernationOptions() const{ return m_hibernationOptions; }
 
@@ -956,7 +959,7 @@ namespace Model
      * <p>Indicates whether an instance is configured for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
@@ -964,7 +967,7 @@ namespace Model
      * <p>Indicates whether an instance is configured for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetHibernationOptions(const LaunchTemplateHibernationOptions& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
@@ -972,7 +975,7 @@ namespace Model
      * <p>Indicates whether an instance is configured for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetHibernationOptions(LaunchTemplateHibernationOptions&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
@@ -980,7 +983,7 @@ namespace Model
      * <p>Indicates whether an instance is configured for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithHibernationOptions(const LaunchTemplateHibernationOptions& value) { SetHibernationOptions(value); return *this;}
 
@@ -988,7 +991,7 @@ namespace Model
      * <p>Indicates whether an instance is configured for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithHibernationOptions(LaunchTemplateHibernationOptions&& value) { SetHibernationOptions(std::move(value)); return *this;}
 
@@ -996,7 +999,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline const LaunchTemplateInstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
@@ -1004,7 +1007,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
@@ -1012,7 +1015,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline void SetMetadataOptions(const LaunchTemplateInstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
@@ -1020,7 +1023,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline void SetMetadataOptions(LaunchTemplateInstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
@@ -1028,7 +1031,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithMetadataOptions(const LaunchTemplateInstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
@@ -1036,41 +1039,191 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithMetadataOptions(LaunchTemplateInstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves.</p>
      */
     inline const LaunchTemplateEnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves.</p>
      */
     inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves.</p>
      */
     inline void SetEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves.</p>
      */
     inline void SetEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves.</p>
      */
     inline ResponseLaunchTemplateData& WithEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves.</p>
      */
     inline ResponseLaunchTemplateData& WithEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline const LaunchTemplatePrivateDnsNameOptions& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline void SetPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptions& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline void SetPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptions&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline ResponseLaunchTemplateData& WithPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptions& value) { SetPrivateDnsNameOptions(value); return *this;}
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline ResponseLaunchTemplateData& WithPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptions&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline const LaunchTemplateInstanceMaintenanceOptions& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline void SetMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptions& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline void SetMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptions&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline ResponseLaunchTemplateData& WithMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptions& value) { SetMaintenanceOptions(value); return *this;}
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline ResponseLaunchTemplateData& WithMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptions&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline bool GetDisableApiStop() const{ return m_disableApiStop; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
 
   private:
 
@@ -1154,6 +1307,18 @@ namespace Model
 
     LaunchTemplateEnclaveOptions m_enclaveOptions;
     bool m_enclaveOptionsHasBeenSet;
+
+    InstanceRequirements m_instanceRequirements;
+    bool m_instanceRequirementsHasBeenSet;
+
+    LaunchTemplatePrivateDnsNameOptions m_privateDnsNameOptions;
+    bool m_privateDnsNameOptionsHasBeenSet;
+
+    LaunchTemplateInstanceMaintenanceOptions m_maintenanceOptions;
+    bool m_maintenanceOptionsHasBeenSet;
+
+    bool m_disableApiStop;
+    bool m_disableApiStopHasBeenSet;
   };
 
 } // namespace Model

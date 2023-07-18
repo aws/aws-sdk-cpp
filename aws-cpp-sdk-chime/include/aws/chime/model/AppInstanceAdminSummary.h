@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The identity and metadata of an administrator.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary of the details of an <code>AppInstanceAdmin</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceAdminSummary">AWS
    * API Reference</a></p>
    */
@@ -38,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
      */
     inline const Identity& GetAdmin() const{ return m_admin; }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
      */
     inline bool AdminHasBeenSet() const { return m_adminHasBeenSet; }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
      */
     inline void SetAdmin(const Identity& value) { m_adminHasBeenSet = true; m_admin = value; }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
      */
     inline void SetAdmin(Identity&& value) { m_adminHasBeenSet = true; m_admin = std::move(value); }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
      */
     inline AppInstanceAdminSummary& WithAdmin(const Identity& value) { SetAdmin(value); return *this;}
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
      */
     inline AppInstanceAdminSummary& WithAdmin(Identity&& value) { SetAdmin(std::move(value)); return *this;}
 

@@ -55,6 +55,11 @@ AssumeRoleResult& AssumeRoleResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packedPolicySizeNode.GetText()).c_str()).c_str());
     }
+    XmlNode sourceIdentityNode = resultNode.FirstChild("SourceIdentity");
+    if(!sourceIdentityNode.IsNull())
+    {
+      m_sourceIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentityNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

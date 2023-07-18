@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your AWS customer account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 
@@ -141,80 +141,80 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeHsmConfigurationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeHsmConfigurationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmConfigurations</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeHsmConfigurationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

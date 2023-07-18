@@ -52,7 +52,8 @@ enum class ManagedBlockchainErrors
   INVALID_REQUEST,
   RESOURCE_ALREADY_EXISTS,
   RESOURCE_LIMIT_EXCEEDED,
-  RESOURCE_NOT_READY
+  RESOURCE_NOT_READY,
+  TOO_MANY_TAGS
 };
 
 class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainError : public Aws::Client::AWSError<ManagedBlockchainErrors>

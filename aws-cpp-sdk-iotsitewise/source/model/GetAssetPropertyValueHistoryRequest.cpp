@@ -61,14 +61,14 @@ void GetAssetPropertyValueHistoryRequest::AddQueryStringParameters(URI& uri) con
 
     if(m_startDateHasBeenSet)
     {
-      ss << m_startDate.ToGmtString(DateFormat::RFC822);
+      ss << m_startDate.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startDate", ss.str());
       ss.str("");
     }
 
     if(m_endDateHasBeenSet)
     {
-      ss << m_endDate.ToGmtString(DateFormat::RFC822);
+      ss << m_endDate.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("endDate", ss.str());
       ss.str("");
     }

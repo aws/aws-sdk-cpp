@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Sumary information for an Amazon Lookout for Vision dataset.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Summary information for an Amazon Lookout for Vision dataset. For more
+   * information, see <a>DescribeDataset</a> and
+   * <a>ProjectDescription</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DatasetMetadata">AWS
    * API Reference</a></p>
    */

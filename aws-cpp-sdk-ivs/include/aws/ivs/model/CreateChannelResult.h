@@ -33,35 +33,55 @@ namespace Model
     CreateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Channel& GetChannel() const{ return m_channel; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetChannel(const Channel& value) { m_channel = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetChannel(Channel&& value) { m_channel = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CreateChannelResult& WithChannel(const Channel& value) { SetChannel(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CreateChannelResult& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const StreamKey& GetStreamKey() const{ return m_streamKey; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStreamKey(const StreamKey& value) { m_streamKey = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStreamKey(StreamKey&& value) { m_streamKey = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CreateChannelResult& WithStreamKey(const StreamKey& value) { SetStreamKey(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CreateChannelResult& WithStreamKey(StreamKey&& value) { SetStreamKey(std::move(value)); return *this;}
 
   private:

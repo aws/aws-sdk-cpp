@@ -56,7 +56,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline const Aws::String& GetActivationKey() const{ return m_activationKey; }
 
@@ -69,7 +69,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline bool ActivationKeyHasBeenSet() const { return m_activationKeyHasBeenSet; }
 
@@ -82,7 +82,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline void SetActivationKey(const Aws::String& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
 
@@ -95,7 +95,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline void SetActivationKey(Aws::String&& value) { m_activationKeyHasBeenSet = true; m_activationKey = std::move(value); }
 
@@ -108,7 +108,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline void SetActivationKey(const char* value) { m_activationKeyHasBeenSet = true; m_activationKey.assign(value); }
 
@@ -121,7 +121,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline ActivateGatewayRequest& WithActivationKey(const Aws::String& value) { SetActivationKey(value); return *this;}
 
@@ -134,7 +134,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline ActivateGatewayRequest& WithActivationKey(Aws::String&& value) { SetActivationKey(std::move(value)); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     * activation key</a> in the <i>AWS Storage Gateway User Guide</i>.</p>
+     * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
     inline ActivateGatewayRequest& WithActivationKey(const char* value) { SetActivationKey(value); return *this;}
 
@@ -267,105 +267,121 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline bool GatewayRegionHasBeenSet() const { return m_gatewayRegionHasBeenSet; }
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline void SetGatewayRegion(const Aws::String& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::move(value); }
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline void SetGatewayRegion(const char* value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion.assign(value); }
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const Aws::String& value) { SetGatewayRegion(value); return *this;}
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A value that indicates the AWS Region where you want to store your data. The
-     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
-     * your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     * endpoints and quotas</a> in the <i>AWS General Reference</i>.</p> <p>Valid
-     * Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
-     * Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
+     * <code>Host</code> header in the request. For more information about available
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p> <p>Valid Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const char* value) { SetGatewayRegion(value); return *this;}
@@ -376,7 +392,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline const Aws::String& GetGatewayType() const{ return m_gatewayType; }
 
@@ -385,7 +401,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
 
@@ -394,7 +410,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
 
@@ -403,7 +419,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
 
@@ -412,7 +428,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(const char* value) { m_gatewayTypeHasBeenSet = true; m_gatewayType.assign(value); }
 
@@ -421,7 +437,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const Aws::String& value) { SetGatewayType(value); return *this;}
 
@@ -430,7 +446,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
 
@@ -439,7 +455,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
 

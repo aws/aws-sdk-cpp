@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a component on a AWS IoT Greengrass core
+   * <p>Contains information about a component on a Greengrass core
    * device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/InstalledComponent">AWS
    * API Reference</a></p>

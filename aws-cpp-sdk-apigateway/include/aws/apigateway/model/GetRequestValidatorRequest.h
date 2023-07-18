@@ -17,8 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Gets a RequestValidator of a given RestApi.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidatorRequest">AWS
    * API Reference</a></p>
    */
@@ -37,83 +36,83 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetRequestValidatorRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetRequestValidatorRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetRequestValidatorRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline const Aws::String& GetRequestValidatorId() const{ return m_requestValidatorId; }
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline bool RequestValidatorIdHasBeenSet() const { return m_requestValidatorIdHasBeenSet; }
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline void SetRequestValidatorId(const Aws::String& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = value; }
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline void SetRequestValidatorId(Aws::String&& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = std::move(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline void SetRequestValidatorId(const char* value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId.assign(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline GetRequestValidatorRequest& WithRequestValidatorId(const Aws::String& value) { SetRequestValidatorId(value); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline GetRequestValidatorRequest& WithRequestValidatorId(Aws::String&& value) { SetRequestValidatorId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+     * <p>The identifier of the RequestValidator to be retrieved.</p>
      */
     inline GetRequestValidatorRequest& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
 

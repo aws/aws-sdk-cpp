@@ -156,32 +156,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The starting position in the data stream from which to start streaming.</p>
      */
     inline const StartingPosition& GetStartingPosition() const{ return m_startingPosition; }
 
     /**
-     * <p/>
+     * <p>The starting position in the data stream from which to start streaming.</p>
      */
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The starting position in the data stream from which to start streaming.</p>
      */
     inline void SetStartingPosition(const StartingPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
 
     /**
-     * <p/>
+     * <p>The starting position in the data stream from which to start streaming.</p>
      */
     inline void SetStartingPosition(StartingPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The starting position in the data stream from which to start streaming.</p>
      */
     inline SubscribeToShardRequest& WithStartingPosition(const StartingPosition& value) { SetStartingPosition(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The starting position in the data stream from which to start streaming.</p>
      */
     inline SubscribeToShardRequest& WithStartingPosition(StartingPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 

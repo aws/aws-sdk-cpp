@@ -33,158 +33,123 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the secret that was updated.</p>  <p>Secrets Manager
-     * automatically adds several random characters to the name at the end of the ARN
-     * when you initially create a secret. This affects only the ARN and not the actual
-     * friendly name. This ensures that if you create a new secret with the same name
-     * as an old secret that you previously deleted, then users with access to the old
-     * secret <i>don't</i> automatically get access to the new secret because the ARNs
-     * are different.</p> 
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The ARN of the secret that was updated.</p>  <p>Secrets Manager
-     * automatically adds several random characters to the name at the end of the ARN
-     * when you initially create a secret. This affects only the ARN and not the actual
-     * friendly name. This ensures that if you create a new secret with the same name
-     * as an old secret that you previously deleted, then users with access to the old
-     * secret <i>don't</i> automatically get access to the new secret because the ARNs
-     * are different.</p> 
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>The ARN of the secret that was updated.</p>  <p>Secrets Manager
-     * automatically adds several random characters to the name at the end of the ARN
-     * when you initially create a secret. This affects only the ARN and not the actual
-     * friendly name. This ensures that if you create a new secret with the same name
-     * as an old secret that you previously deleted, then users with access to the old
-     * secret <i>don't</i> automatically get access to the new secret because the ARNs
-     * are different.</p> 
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>The ARN of the secret that was updated.</p>  <p>Secrets Manager
-     * automatically adds several random characters to the name at the end of the ARN
-     * when you initially create a secret. This affects only the ARN and not the actual
-     * friendly name. This ensures that if you create a new secret with the same name
-     * as an old secret that you previously deleted, then users with access to the old
-     * secret <i>don't</i> automatically get access to the new secret because the ARNs
-     * are different.</p> 
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>The ARN of the secret that was updated.</p>  <p>Secrets Manager
-     * automatically adds several random characters to the name at the end of the ARN
-     * when you initially create a secret. This affects only the ARN and not the actual
-     * friendly name. This ensures that if you create a new secret with the same name
-     * as an old secret that you previously deleted, then users with access to the old
-     * secret <i>don't</i> automatically get access to the new secret because the ARNs
-     * are different.</p> 
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline UpdateSecretResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The ARN of the secret that was updated.</p>  <p>Secrets Manager
-     * automatically adds several random characters to the name at the end of the ARN
-     * when you initially create a secret. This affects only the ARN and not the actual
-     * friendly name. This ensures that if you create a new secret with the same name
-     * as an old secret that you previously deleted, then users with access to the old
-     * secret <i>don't</i> automatically get access to the new secret because the ARNs
-     * are different.</p> 
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline UpdateSecretResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the secret that was updated.</p>  <p>Secrets Manager
-     * automatically adds several random characters to the name at the end of the ARN
-     * when you initially create a secret. This affects only the ARN and not the actual
-     * friendly name. This ensures that if you create a new secret with the same name
-     * as an old secret that you previously deleted, then users with access to the old
-     * secret <i>don't</i> automatically get access to the new secret because the ARNs
-     * are different.</p> 
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline UpdateSecretResult& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
-     * <p>The friendly name of the secret that was updated.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret that was updated.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The friendly name of the secret that was updated.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret that was updated.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret that was updated.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline UpdateSecretResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret that was updated.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline UpdateSecretResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret that was updated.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline UpdateSecretResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>If a new version of the secret was created by this operation, then
-     * <code>VersionId</code> contains the unique identifier of the new version.</p>
+     * <p>If Secrets Manager created a new version of the secret during this operation,
+     * then <code>VersionId</code> contains the unique identifier of the new
+     * version.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>If a new version of the secret was created by this operation, then
-     * <code>VersionId</code> contains the unique identifier of the new version.</p>
+     * <p>If Secrets Manager created a new version of the secret during this operation,
+     * then <code>VersionId</code> contains the unique identifier of the new
+     * version.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * <p>If a new version of the secret was created by this operation, then
-     * <code>VersionId</code> contains the unique identifier of the new version.</p>
+     * <p>If Secrets Manager created a new version of the secret during this operation,
+     * then <code>VersionId</code> contains the unique identifier of the new
+     * version.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * <p>If a new version of the secret was created by this operation, then
-     * <code>VersionId</code> contains the unique identifier of the new version.</p>
+     * <p>If Secrets Manager created a new version of the secret during this operation,
+     * then <code>VersionId</code> contains the unique identifier of the new
+     * version.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * <p>If a new version of the secret was created by this operation, then
-     * <code>VersionId</code> contains the unique identifier of the new version.</p>
+     * <p>If Secrets Manager created a new version of the secret during this operation,
+     * then <code>VersionId</code> contains the unique identifier of the new
+     * version.</p>
      */
     inline UpdateSecretResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>If a new version of the secret was created by this operation, then
-     * <code>VersionId</code> contains the unique identifier of the new version.</p>
+     * <p>If Secrets Manager created a new version of the secret during this operation,
+     * then <code>VersionId</code> contains the unique identifier of the new
+     * version.</p>
      */
     inline UpdateSecretResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>If a new version of the secret was created by this operation, then
-     * <code>VersionId</code> contains the unique identifier of the new version.</p>
+     * <p>If Secrets Manager created a new version of the secret during this operation,
+     * then <code>VersionId</code> contains the unique identifier of the new
+     * version.</p>
      */
     inline UpdateSecretResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FIXED_GRID_HASH = HashingUtils::HashString("FIXED_GRID");
         static const int PROPORTIONAL_HASH = HashingUtils::HashString("PROPORTIONAL");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         DvbSubtitleTeletextSpacing GetDvbSubtitleTeletextSpacingForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == PROPORTIONAL_HASH)
           {
             return DvbSubtitleTeletextSpacing::PROPORTIONAL;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return DvbSubtitleTeletextSpacing::AUTO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "FIXED_GRID";
           case DvbSubtitleTeletextSpacing::PROPORTIONAL:
             return "PROPORTIONAL";
+          case DvbSubtitleTeletextSpacing::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

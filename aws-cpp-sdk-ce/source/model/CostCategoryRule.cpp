@@ -20,13 +20,19 @@ namespace Model
 
 CostCategoryRule::CostCategoryRule() : 
     m_valueHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+    m_ruleHasBeenSet(false),
+    m_inheritedValueHasBeenSet(false),
+    m_type(CostCategoryRuleType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 CostCategoryRule::CostCategoryRule(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+    m_ruleHasBeenSet(false),
+    m_inheritedValueHasBeenSet(false),
+    m_type(CostCategoryRuleType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +53,20 @@ CostCategoryRule& CostCategoryRule::operator =(JsonView jsonValue)
     m_ruleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InheritedValue"))
+  {
+    m_inheritedValue = jsonValue.GetObject("InheritedValue");
+
+    m_inheritedValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = CostCategoryRuleTypeMapper::GetCostCategoryRuleTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +84,17 @@ JsonValue CostCategoryRule::Jsonize() const
   {
    payload.WithObject("Rule", m_rule.Jsonize());
 
+  }
+
+  if(m_inheritedValueHasBeenSet)
+  {
+   payload.WithObject("InheritedValue", m_inheritedValue.Jsonize());
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", CostCategoryRuleTypeMapper::GetNameForCostCategoryRuleType(m_type));
   }
 
   return payload;

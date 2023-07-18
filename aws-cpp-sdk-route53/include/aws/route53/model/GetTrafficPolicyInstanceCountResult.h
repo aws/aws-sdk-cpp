@@ -39,19 +39,19 @@ namespace Model
 
     /**
      * <p>The number of traffic policy instances that are associated with the current
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline int GetTrafficPolicyInstanceCount() const{ return m_trafficPolicyInstanceCount; }
 
     /**
      * <p>The number of traffic policy instances that are associated with the current
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline void SetTrafficPolicyInstanceCount(int value) { m_trafficPolicyInstanceCount = value; }
 
     /**
      * <p>The number of traffic policy instances that are associated with the current
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline GetTrafficPolicyInstanceCountResult& WithTrafficPolicyInstanceCount(int value) { SetTrafficPolicyInstanceCount(value); return *this;}
 

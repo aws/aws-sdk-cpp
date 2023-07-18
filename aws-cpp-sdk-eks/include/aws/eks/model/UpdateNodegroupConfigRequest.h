@@ -8,7 +8,9 @@
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/UpdateLabelsPayload.h>
+#include <aws/eks/model/UpdateTaintsPayload.h>
 #include <aws/eks/model/NodegroupScalingConfig.h>
+#include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -163,6 +165,55 @@ namespace Model
 
 
     /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline const UpdateTaintsPayload& GetTaints() const{ return m_taints; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline void SetTaints(const UpdateTaintsPayload& value) { m_taintsHasBeenSet = true; m_taints = value; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline void SetTaints(UpdateTaintsPayload&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline UpdateNodegroupConfigRequest& WithTaints(const UpdateTaintsPayload& value) { SetTaints(value); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline UpdateNodegroupConfigRequest& WithTaints(UpdateTaintsPayload&& value) { SetTaints(std::move(value)); return *this;}
+
+
+    /**
      * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
@@ -197,6 +248,37 @@ namespace Model
      * update.</p>
      */
     inline UpdateNodegroupConfigRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline UpdateNodegroupConfigRequest& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline UpdateNodegroupConfigRequest& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
 
 
     /**
@@ -258,8 +340,14 @@ namespace Model
     UpdateLabelsPayload m_labels;
     bool m_labelsHasBeenSet;
 
+    UpdateTaintsPayload m_taints;
+    bool m_taintsHasBeenSet;
+
     NodegroupScalingConfig m_scalingConfig;
     bool m_scalingConfigHasBeenSet;
+
+    NodegroupUpdateConfig m_updateConfig;
+    bool m_updateConfigHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AZMode.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -94,7 +95,7 @@ namespace Model
      * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
      * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
      * clusters running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 20.</p>  <p>Adding or removing Memcached
+     * this value must be between 1 and 40.</p>  <p>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending operation (see
      * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
      * of cache nodes in a cluster during its maintenance window, whether by adding or
@@ -125,7 +126,7 @@ namespace Model
      * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
      * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
      * clusters running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 20.</p>  <p>Adding or removing Memcached
+     * this value must be between 1 and 40.</p>  <p>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending operation (see
      * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
      * of cache nodes in a cluster during its maintenance window, whether by adding or
@@ -156,7 +157,7 @@ namespace Model
      * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
      * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
      * clusters running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 20.</p>  <p>Adding or removing Memcached
+     * this value must be between 1 and 40.</p>  <p>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending operation (see
      * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
      * of cache nodes in a cluster during its maintenance window, whether by adding or
@@ -187,7 +188,7 @@ namespace Model
      * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
      * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
      * clusters running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 20.</p>  <p>Adding or removing Memcached
+     * this value must be between 1 and 40.</p>  <p>Adding or removing Memcached
      * cache nodes can be applied immediately or as a pending operation (see
      * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
      * of cache nodes in a cluster during its maintenance window, whether by adding or
@@ -401,17 +402,17 @@ namespace Model
 
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -444,17 +445,17 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetNewAvailabilityZones() const{ return m_newAvailabilityZones; }
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -487,17 +488,17 @@ namespace Model
     inline bool NewAvailabilityZonesHasBeenSet() const { return m_newAvailabilityZonesHasBeenSet; }
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -530,17 +531,17 @@ namespace Model
     inline void SetNewAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones = value; }
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -573,17 +574,17 @@ namespace Model
     inline void SetNewAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones = std::move(value); }
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -616,17 +617,17 @@ namespace Model
     inline ModifyCacheClusterRequest& WithNewAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetNewAvailabilityZones(value); return *this;}
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -659,17 +660,17 @@ namespace Model
     inline ModifyCacheClusterRequest& WithNewAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetNewAvailabilityZones(std::move(value)); return *this;}
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -702,17 +703,17 @@ namespace Model
     inline ModifyCacheClusterRequest& AddNewAvailabilityZones(const Aws::String& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones.push_back(value); return *this; }
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -745,17 +746,17 @@ namespace Model
     inline ModifyCacheClusterRequest& AddNewAvailabilityZones(Aws::String&& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones.push_back(std::move(value)); return *this; }
 
     /**
+     *  <p>This option is only supported on Memcached clusters.</p> 
      * <p>The list of Availability Zones where the new Memcached cache nodes are
      * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
      * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
-     * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
-     * <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     * specify two Availability Zones for the two new nodes.</p> </li> <li> <p>
-     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from
-     * the scenario 1 call) and want to add 1 more node. Specify
+     * in this request.</p> <p>Scenarios:</p> <ul> <li> <p> <b>Scenario 1:</b> You have
+     * 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3
+     * + 2) and optionally specify two Availability Zones for the two new nodes.</p>
+     * </li> <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     * creation (from the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
      * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
@@ -1345,22 +1346,30 @@ namespace Model
 
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline ModifyCacheClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1590,7 +1599,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }
@@ -1600,7 +1609,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline bool AuthTokenUpdateStrategyHasBeenSet() const { return m_authTokenUpdateStrategyHasBeenSet; }
@@ -1610,7 +1619,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline void SetAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = value; }
@@ -1620,7 +1629,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline void SetAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = std::move(value); }
@@ -1630,7 +1639,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline ModifyCacheClusterRequest& WithAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { SetAuthTokenUpdateStrategy(value); return *this;}
@@ -1640,10 +1649,51 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline ModifyCacheClusterRequest& WithAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { SetAuthTokenUpdateStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyCacheClusterRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyCacheClusterRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyCacheClusterRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyCacheClusterRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1703,6 +1753,9 @@ namespace Model
 
     AuthTokenUpdateStrategyType m_authTokenUpdateStrategy;
     bool m_authTokenUpdateStrategyHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

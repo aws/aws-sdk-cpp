@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountAliases() const{ return m_accountAliases; }
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline void SetAccountAliases(const Aws::Vector<Aws::String>& value) { m_accountAliases = value; }
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline void SetAccountAliases(Aws::Vector<Aws::String>&& value) { m_accountAliases = std::move(value); }
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline ListAccountAliasesResult& WithAccountAliases(const Aws::Vector<Aws::String>& value) { SetAccountAliases(value); return *this;}
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline ListAccountAliasesResult& WithAccountAliases(Aws::Vector<Aws::String>&& value) { SetAccountAliases(std::move(value)); return *this;}
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline ListAccountAliasesResult& AddAccountAliases(const Aws::String& value) { m_accountAliases.push_back(value); return *this; }
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline ListAccountAliasesResult& AddAccountAliases(Aws::String&& value) { m_accountAliases.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of aliases associated with the account. AWS supports only one alias
-     * per account.</p>
+     * <p>A list of aliases associated with the account. Amazon Web Services supports
+     * only one alias per account.</p>
      */
     inline ListAccountAliasesResult& AddAccountAliases(const char* value) { m_accountAliases.push_back(value); return *this; }
 

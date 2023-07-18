@@ -73,14 +73,14 @@ void ListRecoveryPointsByBackupVaultRequest::AddQueryStringParameters(URI& uri) 
 
     if(m_byCreatedBeforeHasBeenSet)
     {
-      ss << m_byCreatedBefore.ToGmtString(DateFormat::RFC822);
+      ss << m_byCreatedBefore.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdBefore", ss.str());
       ss.str("");
     }
 
     if(m_byCreatedAfterHasBeenSet)
     {
-      ss << m_byCreatedAfter.ToGmtString(DateFormat::RFC822);
+      ss << m_byCreatedAfter.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdAfter", ss.str());
       ss.str("");
     }

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>For a SQL-based Kinesis Data Analytics application's output, describes the
-   * AWS Lambda function that is configured as its destination. </p><p><h3>See
+   * Amazon Lambda function that is configured as its destination. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/LambdaOutputDescription">AWS
    * API Reference</a></p>

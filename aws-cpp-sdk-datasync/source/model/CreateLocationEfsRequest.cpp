@@ -16,7 +16,11 @@ CreateLocationEfsRequest::CreateLocationEfsRequest() :
     m_subdirectoryHasBeenSet(false),
     m_efsFilesystemArnHasBeenSet(false),
     m_ec2ConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_accessPointArnHasBeenSet(false),
+    m_fileSystemAccessRoleArnHasBeenSet(false),
+    m_inTransitEncryption(EfsInTransitEncryption::NOT_SET),
+    m_inTransitEncryptionHasBeenSet(false)
 {
 }
 
@@ -51,6 +55,23 @@ Aws::String CreateLocationEfsRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_accessPointArnHasBeenSet)
+  {
+   payload.WithString("AccessPointArn", m_accessPointArn);
+
+  }
+
+  if(m_fileSystemAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("FileSystemAccessRoleArn", m_fileSystemAccessRoleArn);
+
+  }
+
+  if(m_inTransitEncryptionHasBeenSet)
+  {
+   payload.WithString("InTransitEncryption", EfsInTransitEncryptionMapper::GetNameForEfsInTransitEncryption(m_inTransitEncryption));
   }
 
   return payload.View().WriteReadable();

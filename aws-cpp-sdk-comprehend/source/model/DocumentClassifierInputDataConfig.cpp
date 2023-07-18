@@ -22,6 +22,7 @@ DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig() :
     m_dataFormat(DocumentClassifierDataFormat::NOT_SET),
     m_dataFormatHasBeenSet(false),
     m_s3UriHasBeenSet(false),
+    m_testS3UriHasBeenSet(false),
     m_labelDelimiterHasBeenSet(false),
     m_augmentedManifestsHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig(JsonView js
     m_dataFormat(DocumentClassifierDataFormat::NOT_SET),
     m_dataFormatHasBeenSet(false),
     m_s3UriHasBeenSet(false),
+    m_testS3UriHasBeenSet(false),
     m_labelDelimiterHasBeenSet(false),
     m_augmentedManifestsHasBeenSet(false)
 {
@@ -51,6 +53,13 @@ DocumentClassifierInputDataConfig& DocumentClassifierInputDataConfig::operator =
     m_s3Uri = jsonValue.GetString("S3Uri");
 
     m_s3UriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TestS3Uri"))
+  {
+    m_testS3Uri = jsonValue.GetString("TestS3Uri");
+
+    m_testS3UriHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LabelDelimiter"))
@@ -85,6 +94,12 @@ JsonValue DocumentClassifierInputDataConfig::Jsonize() const
   if(m_s3UriHasBeenSet)
   {
    payload.WithString("S3Uri", m_s3Uri);
+
+  }
+
+  if(m_testS3UriHasBeenSet)
+  {
+   payload.WithString("TestS3Uri", m_testS3Uri);
 
   }
 

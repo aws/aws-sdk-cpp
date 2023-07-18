@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the AWS account has already created the maximum number of access
-   * points allowed per file system.</p><p><h3>See Also:</h3>   <a
+   * <p>Returned if the Amazon Web Services account has already created the maximum
+   * number of access points allowed per file system. For more informaton, see <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointLimitExceeded">AWS
    * API Reference</a></p>
    */

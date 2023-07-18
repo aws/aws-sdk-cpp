@@ -2,7 +2,7 @@ include(sdksCommon)
 
 set(SDK_DEPENDENCY_BUILD_LIST "")
 
-if(REGENERATE_CLIENTS)
+if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     message(STATUS "Checking for SDK generation requirements")
     include(FindJava)
 
@@ -70,7 +70,7 @@ else()
 endif()
 
 # SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
-if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
+if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     execute_process(
         COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -109,6 +109,25 @@ if(REGENERATE_CLIENTS)
         endif()
     endforeach()
 endif()
+
+if(REGENERATE_DEFAULTS)
+    message(STATUS "Regenerating default client configurations.")
+
+    if(TRUE )#EXISTS ${SDK_C2J_FILE})
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --clientConfigDefaults "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/defaults/sdk-default-configuration.json" --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+        message(STATUS "Generated defaults into ${CMAKE_CURRENT_SOURCE_DIR}")
+    else()
+        message(STATUS "Defaults configuration missing")
+    endif()
+
+    set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
+    list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
+    LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
+endif()
+
 
 #at this point, if user has specified some customized clients, generate them and add them to the build here.
 foreach(custom_client ${ADD_CUSTOM_CLIENTS})
@@ -183,6 +202,20 @@ function(add_sdks)
     #testing
     if(ENABLE_TESTING)
         add_subdirectory(testing-resources)
+
+        if(ENABLE_FUNCTIONAL_TESTING)
+            message(STATUS "Clearing existing directory for document-test to prepare for generation.")
+            file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-document-test")
+
+            # Generates SDK client based on aws-cpp-sdk-core-tests/resources/api-descriptions/document-test-2021-06-28.normal.json for functional testing.
+            execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./ --prepareTool
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            )
+            message(STATUS "Generated service: document-test, version: 2021-06-28")
+            add_subdirectory(aws-cpp-sdk-document-test)
+            add_definitions(-DENABLE_FUNCTIONAL_TESTING)
+        endif()
 
         # android-unified-tests includes all the tests in our code base, those tests related services may not be incldued in BUILD_ONLY,
         # means, those services will not be built, but will be tried to linked against with test targets, which will cause link time error.

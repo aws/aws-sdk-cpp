@@ -17,7 +17,8 @@ CreateAssetRequest::CreateAssetRequest() :
     m_assetModelIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_assetDescriptionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,12 @@ Aws::String CreateAssetRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_assetDescriptionHasBeenSet)
+  {
+   payload.WithString("assetDescription", m_assetDescription);
 
   }
 

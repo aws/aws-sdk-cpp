@@ -26,7 +26,9 @@ PolicySummary::PolicySummary() :
     m_securityServiceType(SecurityServiceType::NOT_SET),
     m_securityServiceTypeHasBeenSet(false),
     m_remediationEnabled(false),
-    m_remediationEnabledHasBeenSet(false)
+    m_remediationEnabledHasBeenSet(false),
+    m_deleteUnusedFMManagedResources(false),
+    m_deleteUnusedFMManagedResourcesHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ PolicySummary::PolicySummary(JsonView jsonValue) :
     m_securityServiceType(SecurityServiceType::NOT_SET),
     m_securityServiceTypeHasBeenSet(false),
     m_remediationEnabled(false),
-    m_remediationEnabledHasBeenSet(false)
+    m_remediationEnabledHasBeenSet(false),
+    m_deleteUnusedFMManagedResources(false),
+    m_deleteUnusedFMManagedResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +91,13 @@ PolicySummary& PolicySummary::operator =(JsonView jsonValue)
     m_remediationEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeleteUnusedFMManagedResources"))
+  {
+    m_deleteUnusedFMManagedResources = jsonValue.GetBool("DeleteUnusedFMManagedResources");
+
+    m_deleteUnusedFMManagedResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +137,12 @@ JsonValue PolicySummary::Jsonize() const
   if(m_remediationEnabledHasBeenSet)
   {
    payload.WithBool("RemediationEnabled", m_remediationEnabled);
+
+  }
+
+  if(m_deleteUnusedFMManagedResourcesHasBeenSet)
+  {
+   payload.WithBool("DeleteUnusedFMManagedResources", m_deleteUnusedFMManagedResources);
 
   }
 

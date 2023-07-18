@@ -26,6 +26,7 @@ namespace Aws
         static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
         static const int AWS_Lambda_LayerVersion_HASH = HashingUtils::HashString("AWS::Lambda::LayerVersion");
         static const int AWS_KMS_Key_HASH = HashingUtils::HashString("AWS::KMS::Key");
+        static const int AWS_SecretsManager_Secret_HASH = HashingUtils::HashString("AWS::SecretsManager::Secret");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ResourceType::AWS_KMS_Key;
           }
+          else if (hashCode == AWS_SecretsManager_Secret_HASH)
+          {
+            return ResourceType::AWS_SecretsManager_Secret;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "AWS::Lambda::LayerVersion";
           case ResourceType::AWS_KMS_Key:
             return "AWS::KMS::Key";
+          case ResourceType::AWS_SecretsManager_Secret:
+            return "AWS::SecretsManager::Secret";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

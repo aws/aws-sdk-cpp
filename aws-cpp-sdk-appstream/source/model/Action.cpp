@@ -25,6 +25,8 @@ namespace Aws
         static const int FILE_UPLOAD_HASH = HashingUtils::HashString("FILE_UPLOAD");
         static const int FILE_DOWNLOAD_HASH = HashingUtils::HashString("FILE_DOWNLOAD");
         static const int PRINTING_TO_LOCAL_DEVICE_HASH = HashingUtils::HashString("PRINTING_TO_LOCAL_DEVICE");
+        static const int DOMAIN_PASSWORD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_PASSWORD_SIGNIN");
+        static const int DOMAIN_SMART_CARD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_SMART_CARD_SIGNIN");
 
 
         Action GetActionForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return Action::PRINTING_TO_LOCAL_DEVICE;
           }
+          else if (hashCode == DOMAIN_PASSWORD_SIGNIN_HASH)
+          {
+            return Action::DOMAIN_PASSWORD_SIGNIN;
+          }
+          else if (hashCode == DOMAIN_SMART_CARD_SIGNIN_HASH)
+          {
+            return Action::DOMAIN_SMART_CARD_SIGNIN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "FILE_DOWNLOAD";
           case Action::PRINTING_TO_LOCAL_DEVICE:
             return "PRINTING_TO_LOCAL_DEVICE";
+          case Action::DOMAIN_PASSWORD_SIGNIN:
+            return "DOMAIN_PASSWORD_SIGNIN";
+          case Action::DOMAIN_SMART_CARD_SIGNIN:
+            return "DOMAIN_SMART_CARD_SIGNIN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

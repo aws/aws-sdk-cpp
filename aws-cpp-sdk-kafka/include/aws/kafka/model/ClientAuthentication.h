@@ -7,6 +7,7 @@
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/Sasl.h>
 #include <aws/kafka/model/Tls.h>
+#include <aws/kafka/model/Unauthenticated.h>
 #include <utility>
 
 namespace Aws
@@ -126,6 +127,55 @@ namespace Model
      */
     inline ClientAuthentication& WithTls(Tls&& value) { SetTls(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Contains information about unauthenticated traffic to the
+     * cluster.</p>
+         
+     */
+    inline const Unauthenticated& GetUnauthenticated() const{ return m_unauthenticated; }
+
+    /**
+     * 
+            <p>Contains information about unauthenticated traffic to the
+     * cluster.</p>
+         
+     */
+    inline bool UnauthenticatedHasBeenSet() const { return m_unauthenticatedHasBeenSet; }
+
+    /**
+     * 
+            <p>Contains information about unauthenticated traffic to the
+     * cluster.</p>
+         
+     */
+    inline void SetUnauthenticated(const Unauthenticated& value) { m_unauthenticatedHasBeenSet = true; m_unauthenticated = value; }
+
+    /**
+     * 
+            <p>Contains information about unauthenticated traffic to the
+     * cluster.</p>
+         
+     */
+    inline void SetUnauthenticated(Unauthenticated&& value) { m_unauthenticatedHasBeenSet = true; m_unauthenticated = std::move(value); }
+
+    /**
+     * 
+            <p>Contains information about unauthenticated traffic to the
+     * cluster.</p>
+         
+     */
+    inline ClientAuthentication& WithUnauthenticated(const Unauthenticated& value) { SetUnauthenticated(value); return *this;}
+
+    /**
+     * 
+            <p>Contains information about unauthenticated traffic to the
+     * cluster.</p>
+         
+     */
+    inline ClientAuthentication& WithUnauthenticated(Unauthenticated&& value) { SetUnauthenticated(std::move(value)); return *this;}
+
   private:
 
     Sasl m_sasl;
@@ -133,6 +183,9 @@ namespace Model
 
     Tls m_tls;
     bool m_tlsHasBeenSet;
+
+    Unauthenticated m_unauthenticated;
+    bool m_unauthenticatedHasBeenSet;
   };
 
 } // namespace Model

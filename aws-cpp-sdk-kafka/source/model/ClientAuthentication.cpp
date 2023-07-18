@@ -20,13 +20,15 @@ namespace Model
 
 ClientAuthentication::ClientAuthentication() : 
     m_saslHasBeenSet(false),
-    m_tlsHasBeenSet(false)
+    m_tlsHasBeenSet(false),
+    m_unauthenticatedHasBeenSet(false)
 {
 }
 
 ClientAuthentication::ClientAuthentication(JsonView jsonValue) : 
     m_saslHasBeenSet(false),
-    m_tlsHasBeenSet(false)
+    m_tlsHasBeenSet(false),
+    m_unauthenticatedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ClientAuthentication& ClientAuthentication::operator =(JsonView jsonValue)
     m_tlsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unauthenticated"))
+  {
+    m_unauthenticated = jsonValue.GetObject("unauthenticated");
+
+    m_unauthenticatedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ClientAuthentication::Jsonize() const
   if(m_tlsHasBeenSet)
   {
    payload.WithObject("tls", m_tls.Jsonize());
+
+  }
+
+  if(m_unauthenticatedHasBeenSet)
+  {
+   payload.WithObject("unauthenticated", m_unauthenticated.Jsonize());
 
   }
 

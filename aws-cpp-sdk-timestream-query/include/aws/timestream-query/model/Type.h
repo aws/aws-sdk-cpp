@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/timestream-query/model/ScalarType.h>
+#include <aws/timestream-query/model/ColumnInfo.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <memory>
@@ -25,11 +26,10 @@ namespace TimestreamQuery
 namespace Model
 {
   class ColumnInfo;
-  class ColumnInfo;
 
   /**
    * <p>Contains the data type of a column in a query result set. The data type can
-   * be scalar or complex. The supported scalar data types are integers, boolean,
+   * be scalar or complex. The supported scalar data types are integers, Boolean,
    * string, double, timestamp, date, time, and intervals. The supported complex data
    * types are arrays, rows, and timeseries.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/Type">AWS
@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the column is of type string, integer, boolean, double,
+     * <p>Indicates if the column is of type string, integer, Boolean, double,
      * timestamp, date, time. </p>
      */
     inline const ScalarType& GetScalarType() const{ return m_scalarType; }
 
     /**
-     * <p>Indicates if the column is of type string, integer, boolean, double,
+     * <p>Indicates if the column is of type string, integer, Boolean, double,
      * timestamp, date, time. </p>
      */
     inline bool ScalarTypeHasBeenSet() const { return m_scalarTypeHasBeenSet; }
 
     /**
-     * <p>Indicates if the column is of type string, integer, boolean, double,
+     * <p>Indicates if the column is of type string, integer, Boolean, double,
      * timestamp, date, time. </p>
      */
     inline void SetScalarType(const ScalarType& value) { m_scalarTypeHasBeenSet = true; m_scalarType = value; }
 
     /**
-     * <p>Indicates if the column is of type string, integer, boolean, double,
+     * <p>Indicates if the column is of type string, integer, Boolean, double,
      * timestamp, date, time. </p>
      */
     inline void SetScalarType(ScalarType&& value) { m_scalarTypeHasBeenSet = true; m_scalarType = std::move(value); }
 
     /**
-     * <p>Indicates if the column is of type string, integer, boolean, double,
+     * <p>Indicates if the column is of type string, integer, Boolean, double,
      * timestamp, date, time. </p>
      */
     inline Type& WithScalarType(const ScalarType& value) { SetScalarType(value); return *this;}
 
     /**
-     * <p>Indicates if the column is of type string, integer, boolean, double,
+     * <p>Indicates if the column is of type string, integer, Boolean, double,
      * timestamp, date, time. </p>
      */
     inline Type& WithScalarType(ScalarType&& value) { SetScalarType(std::move(value)); return *this;}

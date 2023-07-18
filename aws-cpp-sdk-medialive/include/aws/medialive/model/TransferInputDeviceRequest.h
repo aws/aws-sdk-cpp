@@ -118,6 +118,47 @@ namespace Model
 
 
     /**
+     * The target AWS region to transfer the device.
+     */
+    inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
+
+    /**
+     * The target AWS region to transfer the device.
+     */
+    inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
+
+    /**
+     * The target AWS region to transfer the device.
+     */
+    inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
+
+    /**
+     * The target AWS region to transfer the device.
+     */
+    inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
+
+    /**
+     * The target AWS region to transfer the device.
+     */
+    inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
+
+    /**
+     * The target AWS region to transfer the device.
+     */
+    inline TransferInputDeviceRequest& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
+
+    /**
+     * The target AWS region to transfer the device.
+     */
+    inline TransferInputDeviceRequest& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
+
+    /**
+     * The target AWS region to transfer the device.
+     */
+    inline TransferInputDeviceRequest& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
+
+
+    /**
      * An optional message for the recipient. Maximum 280 characters.
      */
     inline const Aws::String& GetTransferMessage() const{ return m_transferMessage; }
@@ -164,6 +205,9 @@ namespace Model
 
     Aws::String m_targetCustomerId;
     bool m_targetCustomerIdHasBeenSet;
+
+    Aws::String m_targetRegion;
+    bool m_targetRegionHasBeenSet;
 
     Aws::String m_transferMessage;
     bool m_transferMessageHasBeenSet;

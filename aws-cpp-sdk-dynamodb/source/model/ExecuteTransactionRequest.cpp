@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 ExecuteTransactionRequest::ExecuteTransactionRequest() : 
     m_transactStatementsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
+    m_returnConsumedCapacityHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,11 @@ Aws::String ExecuteTransactionRequest::SerializePayload() const
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
 
+  }
+
+  if(m_returnConsumedCapacityHasBeenSet)
+  {
+   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
   }
 
   return payload.View().WriteReadable();

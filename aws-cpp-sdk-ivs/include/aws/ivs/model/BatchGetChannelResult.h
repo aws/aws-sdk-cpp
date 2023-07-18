@@ -34,25 +34,39 @@ namespace Model
     BatchGetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetChannels(const Aws::Vector<Channel>& value) { m_channels = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetChannels(Aws::Vector<Channel>&& value) { m_channels = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline BatchGetChannelResult& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline BatchGetChannelResult& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline BatchGetChannelResult& AddChannels(const Channel& value) { m_channels.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline BatchGetChannelResult& AddChannels(Channel&& value) { m_channels.push_back(std::move(value)); return *this; }
 
 

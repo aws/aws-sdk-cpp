@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies configuration information for the knowlege article types that
+   * <p>Provides the configuration information for the knowledge article types that
    * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
    * standard fields of knowledge articles, or the custom fields of custom knowledge
    * articles, but not both </p><p><h3>See Also:</h3>   <a
@@ -93,87 +93,73 @@ namespace Model
 
 
     /**
-     * <p>Provides configuration information for standard Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for standard Salesforce knowledge articles.</p>
      */
     inline const SalesforceStandardKnowledgeArticleTypeConfiguration& GetStandardKnowledgeArticleTypeConfiguration() const{ return m_standardKnowledgeArticleTypeConfiguration; }
 
     /**
-     * <p>Provides configuration information for standard Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for standard Salesforce knowledge articles.</p>
      */
     inline bool StandardKnowledgeArticleTypeConfigurationHasBeenSet() const { return m_standardKnowledgeArticleTypeConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for standard Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for standard Salesforce knowledge articles.</p>
      */
     inline void SetStandardKnowledgeArticleTypeConfiguration(const SalesforceStandardKnowledgeArticleTypeConfiguration& value) { m_standardKnowledgeArticleTypeConfigurationHasBeenSet = true; m_standardKnowledgeArticleTypeConfiguration = value; }
 
     /**
-     * <p>Provides configuration information for standard Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for standard Salesforce knowledge articles.</p>
      */
     inline void SetStandardKnowledgeArticleTypeConfiguration(SalesforceStandardKnowledgeArticleTypeConfiguration&& value) { m_standardKnowledgeArticleTypeConfigurationHasBeenSet = true; m_standardKnowledgeArticleTypeConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information for standard Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for standard Salesforce knowledge articles.</p>
      */
     inline SalesforceKnowledgeArticleConfiguration& WithStandardKnowledgeArticleTypeConfiguration(const SalesforceStandardKnowledgeArticleTypeConfiguration& value) { SetStandardKnowledgeArticleTypeConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information for standard Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for standard Salesforce knowledge articles.</p>
      */
     inline SalesforceKnowledgeArticleConfiguration& WithStandardKnowledgeArticleTypeConfiguration(SalesforceStandardKnowledgeArticleTypeConfiguration&& value) { SetStandardKnowledgeArticleTypeConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline const Aws::Vector<SalesforceCustomKnowledgeArticleTypeConfiguration>& GetCustomKnowledgeArticleTypeConfigurations() const{ return m_customKnowledgeArticleTypeConfigurations; }
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline bool CustomKnowledgeArticleTypeConfigurationsHasBeenSet() const { return m_customKnowledgeArticleTypeConfigurationsHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline void SetCustomKnowledgeArticleTypeConfigurations(const Aws::Vector<SalesforceCustomKnowledgeArticleTypeConfiguration>& value) { m_customKnowledgeArticleTypeConfigurationsHasBeenSet = true; m_customKnowledgeArticleTypeConfigurations = value; }
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline void SetCustomKnowledgeArticleTypeConfigurations(Aws::Vector<SalesforceCustomKnowledgeArticleTypeConfiguration>&& value) { m_customKnowledgeArticleTypeConfigurationsHasBeenSet = true; m_customKnowledgeArticleTypeConfigurations = std::move(value); }
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline SalesforceKnowledgeArticleConfiguration& WithCustomKnowledgeArticleTypeConfigurations(const Aws::Vector<SalesforceCustomKnowledgeArticleTypeConfiguration>& value) { SetCustomKnowledgeArticleTypeConfigurations(value); return *this;}
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline SalesforceKnowledgeArticleConfiguration& WithCustomKnowledgeArticleTypeConfigurations(Aws::Vector<SalesforceCustomKnowledgeArticleTypeConfiguration>&& value) { SetCustomKnowledgeArticleTypeConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline SalesforceKnowledgeArticleConfiguration& AddCustomKnowledgeArticleTypeConfigurations(const SalesforceCustomKnowledgeArticleTypeConfiguration& value) { m_customKnowledgeArticleTypeConfigurationsHasBeenSet = true; m_customKnowledgeArticleTypeConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Provides configuration information for custom Salesforce knowledge
-     * articles.</p>
+     * <p>Configuration information for custom Salesforce knowledge articles.</p>
      */
     inline SalesforceKnowledgeArticleConfiguration& AddCustomKnowledgeArticleTypeConfigurations(SalesforceCustomKnowledgeArticleTypeConfiguration&& value) { m_customKnowledgeArticleTypeConfigurationsHasBeenSet = true; m_customKnowledgeArticleTypeConfigurations.push_back(std::move(value)); return *this; }
 

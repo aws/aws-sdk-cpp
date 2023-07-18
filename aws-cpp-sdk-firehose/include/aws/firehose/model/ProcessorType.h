@@ -16,7 +16,10 @@ namespace Model
   enum class ProcessorType
   {
     NOT_SET,
-    Lambda
+    RecordDeAggregation,
+    Lambda,
+    MetadataExtraction,
+    AppendDelimiterToRecord
   };
 
 namespace ProcessorTypeMapper

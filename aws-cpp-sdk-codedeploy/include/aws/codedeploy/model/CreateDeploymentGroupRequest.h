@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/AlarmConfiguration.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
+#include <aws/codedeploy/model/OutdatedInstancesStrategy.h>
 #include <aws/codedeploy/model/DeploymentStyle.h>
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/LoadBalancerInfo.h>
@@ -611,6 +612,73 @@ namespace Model
 
 
     /**
+     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
+     * do not receive the deployed application revision.</p> <p>If this option is set
+     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     * 'auto-update outdated instances' deployments to apply the deployed application
+     * revision to the new EC2 instances.</p> <p>If this option is set to
+     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     * EC2 instances. This may result in instances having different revisions.</p>
+     */
+    inline const OutdatedInstancesStrategy& GetOutdatedInstancesStrategy() const{ return m_outdatedInstancesStrategy; }
+
+    /**
+     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
+     * do not receive the deployed application revision.</p> <p>If this option is set
+     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     * 'auto-update outdated instances' deployments to apply the deployed application
+     * revision to the new EC2 instances.</p> <p>If this option is set to
+     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     * EC2 instances. This may result in instances having different revisions.</p>
+     */
+    inline bool OutdatedInstancesStrategyHasBeenSet() const { return m_outdatedInstancesStrategyHasBeenSet; }
+
+    /**
+     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
+     * do not receive the deployed application revision.</p> <p>If this option is set
+     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     * 'auto-update outdated instances' deployments to apply the deployed application
+     * revision to the new EC2 instances.</p> <p>If this option is set to
+     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     * EC2 instances. This may result in instances having different revisions.</p>
+     */
+    inline void SetOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = value; }
+
+    /**
+     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
+     * do not receive the deployed application revision.</p> <p>If this option is set
+     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     * 'auto-update outdated instances' deployments to apply the deployed application
+     * revision to the new EC2 instances.</p> <p>If this option is set to
+     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     * EC2 instances. This may result in instances having different revisions.</p>
+     */
+    inline void SetOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = std::move(value); }
+
+    /**
+     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
+     * do not receive the deployed application revision.</p> <p>If this option is set
+     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     * 'auto-update outdated instances' deployments to apply the deployed application
+     * revision to the new EC2 instances.</p> <p>If this option is set to
+     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     * EC2 instances. This may result in instances having different revisions.</p>
+     */
+    inline CreateDeploymentGroupRequest& WithOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { SetOutdatedInstancesStrategy(value); return *this;}
+
+    /**
+     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
+     * do not receive the deployed application revision.</p> <p>If this option is set
+     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     * 'auto-update outdated instances' deployments to apply the deployed application
+     * revision to the new EC2 instances.</p> <p>If this option is set to
+     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     * EC2 instances. This may result in instances having different revisions.</p>
+     */
+    inline CreateDeploymentGroupRequest& WithOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { SetOutdatedInstancesStrategy(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
@@ -953,6 +1021,9 @@ namespace Model
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet;
+
+    OutdatedInstancesStrategy m_outdatedInstancesStrategy;
+    bool m_outdatedInstancesStrategyHasBeenSet;
 
     DeploymentStyle m_deploymentStyle;
     bool m_deploymentStyleHasBeenSet;

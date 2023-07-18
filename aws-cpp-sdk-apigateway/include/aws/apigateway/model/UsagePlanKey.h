@@ -24,12 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a usage plan key to identify a plan customer.</p> <div
-   * class="remarks"> <p>To associate an API stage with a selected API key in a usage
-   * plan, you must create a UsagePlanKey resource to represent the selected
-   * <a>ApiKey</a>.</p> </div>" <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
-   * and Use Usage Plans</a> </div><p><h3>See Also:</h3>   <a
+   * <p>Represents a usage plan key to identify a plan customer.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlanKey">AWS
    * API Reference</a></p>
    */

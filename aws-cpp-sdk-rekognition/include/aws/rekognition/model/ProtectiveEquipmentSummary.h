@@ -98,50 +98,50 @@ namespace Model
 
     /**
      * <p>An array of IDs for persons who are not wearing all of the types of PPE
-     * specified in the RequiredEquipmentTypes field of the detected personal
-     * protective equipment. </p>
+     * specified in the <code>RequiredEquipmentTypes</code> field of the detected
+     * personal protective equipment. </p>
      */
     inline const Aws::Vector<int>& GetPersonsWithoutRequiredEquipment() const{ return m_personsWithoutRequiredEquipment; }
 
     /**
      * <p>An array of IDs for persons who are not wearing all of the types of PPE
-     * specified in the RequiredEquipmentTypes field of the detected personal
-     * protective equipment. </p>
+     * specified in the <code>RequiredEquipmentTypes</code> field of the detected
+     * personal protective equipment. </p>
      */
     inline bool PersonsWithoutRequiredEquipmentHasBeenSet() const { return m_personsWithoutRequiredEquipmentHasBeenSet; }
 
     /**
      * <p>An array of IDs for persons who are not wearing all of the types of PPE
-     * specified in the RequiredEquipmentTypes field of the detected personal
-     * protective equipment. </p>
+     * specified in the <code>RequiredEquipmentTypes</code> field of the detected
+     * personal protective equipment. </p>
      */
     inline void SetPersonsWithoutRequiredEquipment(const Aws::Vector<int>& value) { m_personsWithoutRequiredEquipmentHasBeenSet = true; m_personsWithoutRequiredEquipment = value; }
 
     /**
      * <p>An array of IDs for persons who are not wearing all of the types of PPE
-     * specified in the RequiredEquipmentTypes field of the detected personal
-     * protective equipment. </p>
+     * specified in the <code>RequiredEquipmentTypes</code> field of the detected
+     * personal protective equipment. </p>
      */
     inline void SetPersonsWithoutRequiredEquipment(Aws::Vector<int>&& value) { m_personsWithoutRequiredEquipmentHasBeenSet = true; m_personsWithoutRequiredEquipment = std::move(value); }
 
     /**
      * <p>An array of IDs for persons who are not wearing all of the types of PPE
-     * specified in the RequiredEquipmentTypes field of the detected personal
-     * protective equipment. </p>
+     * specified in the <code>RequiredEquipmentTypes</code> field of the detected
+     * personal protective equipment. </p>
      */
     inline ProtectiveEquipmentSummary& WithPersonsWithoutRequiredEquipment(const Aws::Vector<int>& value) { SetPersonsWithoutRequiredEquipment(value); return *this;}
 
     /**
      * <p>An array of IDs for persons who are not wearing all of the types of PPE
-     * specified in the RequiredEquipmentTypes field of the detected personal
-     * protective equipment. </p>
+     * specified in the <code>RequiredEquipmentTypes</code> field of the detected
+     * personal protective equipment. </p>
      */
     inline ProtectiveEquipmentSummary& WithPersonsWithoutRequiredEquipment(Aws::Vector<int>&& value) { SetPersonsWithoutRequiredEquipment(std::move(value)); return *this;}
 
     /**
      * <p>An array of IDs for persons who are not wearing all of the types of PPE
-     * specified in the RequiredEquipmentTypes field of the detected personal
-     * protective equipment. </p>
+     * specified in the <code>RequiredEquipmentTypes</code> field of the detected
+     * personal protective equipment. </p>
      */
     inline ProtectiveEquipmentSummary& AddPersonsWithoutRequiredEquipment(int value) { m_personsWithoutRequiredEquipmentHasBeenSet = true; m_personsWithoutRequiredEquipment.push_back(value); return *this; }
 

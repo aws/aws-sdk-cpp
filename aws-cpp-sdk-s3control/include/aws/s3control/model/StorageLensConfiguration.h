@@ -266,37 +266,37 @@ namespace Model
 
 
     /**
-     * <p>A container for the AWS organization for this S3 Storage Lens
+     * <p>A container for the Amazon Web Services organization for this S3 Storage Lens
      * configuration.</p>
      */
     inline const StorageLensAwsOrg& GetAwsOrg() const{ return m_awsOrg; }
 
     /**
-     * <p>A container for the AWS organization for this S3 Storage Lens
+     * <p>A container for the Amazon Web Services organization for this S3 Storage Lens
      * configuration.</p>
      */
     inline bool AwsOrgHasBeenSet() const { return m_awsOrgHasBeenSet; }
 
     /**
-     * <p>A container for the AWS organization for this S3 Storage Lens
+     * <p>A container for the Amazon Web Services organization for this S3 Storage Lens
      * configuration.</p>
      */
     inline void SetAwsOrg(const StorageLensAwsOrg& value) { m_awsOrgHasBeenSet = true; m_awsOrg = value; }
 
     /**
-     * <p>A container for the AWS organization for this S3 Storage Lens
+     * <p>A container for the Amazon Web Services organization for this S3 Storage Lens
      * configuration.</p>
      */
     inline void SetAwsOrg(StorageLensAwsOrg&& value) { m_awsOrgHasBeenSet = true; m_awsOrg = std::move(value); }
 
     /**
-     * <p>A container for the AWS organization for this S3 Storage Lens
+     * <p>A container for the Amazon Web Services organization for this S3 Storage Lens
      * configuration.</p>
      */
     inline StorageLensConfiguration& WithAwsOrg(const StorageLensAwsOrg& value) { SetAwsOrg(value); return *this;}
 
     /**
-     * <p>A container for the AWS organization for this S3 Storage Lens
+     * <p>A container for the Amazon Web Services organization for this S3 Storage Lens
      * configuration.</p>
      */
     inline StorageLensConfiguration& WithAwsOrg(StorageLensAwsOrg&& value) { SetAwsOrg(std::move(value)); return *this;}

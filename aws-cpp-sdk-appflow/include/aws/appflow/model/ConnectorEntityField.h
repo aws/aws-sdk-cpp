@@ -9,6 +9,7 @@
 #include <aws/appflow/model/SupportedFieldTypeDetails.h>
 #include <aws/appflow/model/SourceFieldProperties.h>
 #include <aws/appflow/model/DestinationFieldProperties.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,47 @@ namespace Model
 
 
     /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline const Aws::String& GetParentIdentifier() const{ return m_parentIdentifier; }
+
+    /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline bool ParentIdentifierHasBeenSet() const { return m_parentIdentifierHasBeenSet; }
+
+    /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline void SetParentIdentifier(const Aws::String& value) { m_parentIdentifierHasBeenSet = true; m_parentIdentifier = value; }
+
+    /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline void SetParentIdentifier(Aws::String&& value) { m_parentIdentifierHasBeenSet = true; m_parentIdentifier = std::move(value); }
+
+    /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline void SetParentIdentifier(const char* value) { m_parentIdentifierHasBeenSet = true; m_parentIdentifier.assign(value); }
+
+    /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline ConnectorEntityField& WithParentIdentifier(const Aws::String& value) { SetParentIdentifier(value); return *this;}
+
+    /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline ConnectorEntityField& WithParentIdentifier(Aws::String&& value) { SetParentIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The parent identifier of the connector field.</p>
+     */
+    inline ConnectorEntityField& WithParentIdentifier(const char* value) { SetParentIdentifier(value); return *this;}
+
+
+    /**
      * <p> The label applied to a connector entity field. </p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
@@ -122,6 +164,93 @@ namespace Model
      * <p> The label applied to a connector entity field. </p>
      */
     inline ConnectorEntityField& WithLabel(const char* value) { SetLabel(value); return *this;}
+
+
+    /**
+     * <p>Booelan value that indicates whether this field can be used as a primary
+     * key.</p>
+     */
+    inline bool GetIsPrimaryKey() const{ return m_isPrimaryKey; }
+
+    /**
+     * <p>Booelan value that indicates whether this field can be used as a primary
+     * key.</p>
+     */
+    inline bool IsPrimaryKeyHasBeenSet() const { return m_isPrimaryKeyHasBeenSet; }
+
+    /**
+     * <p>Booelan value that indicates whether this field can be used as a primary
+     * key.</p>
+     */
+    inline void SetIsPrimaryKey(bool value) { m_isPrimaryKeyHasBeenSet = true; m_isPrimaryKey = value; }
+
+    /**
+     * <p>Booelan value that indicates whether this field can be used as a primary
+     * key.</p>
+     */
+    inline ConnectorEntityField& WithIsPrimaryKey(bool value) { SetIsPrimaryKey(value); return *this;}
+
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline ConnectorEntityField& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline ConnectorEntityField& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+
+    /**
+     * <p>Default value that can be assigned to this field.</p>
+     */
+    inline ConnectorEntityField& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
+
+    /**
+     * <p>Booelan value that indicates whether this field is deprecated or not.</p>
+     */
+    inline bool GetIsDeprecated() const{ return m_isDeprecated; }
+
+    /**
+     * <p>Booelan value that indicates whether this field is deprecated or not.</p>
+     */
+    inline bool IsDeprecatedHasBeenSet() const { return m_isDeprecatedHasBeenSet; }
+
+    /**
+     * <p>Booelan value that indicates whether this field is deprecated or not.</p>
+     */
+    inline void SetIsDeprecated(bool value) { m_isDeprecatedHasBeenSet = true; m_isDeprecated = value; }
+
+    /**
+     * <p>Booelan value that indicates whether this field is deprecated or not.</p>
+     */
+    inline ConnectorEntityField& WithIsDeprecated(bool value) { SetIsDeprecated(value); return *this;}
 
 
     /**
@@ -281,13 +410,91 @@ namespace Model
      */
     inline ConnectorEntityField& WithDestinationProperties(DestinationFieldProperties&& value) { SetDestinationProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomProperties() const{ return m_customProperties; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline bool CustomPropertiesHasBeenSet() const { return m_customPropertiesHasBeenSet; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline void SetCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customPropertiesHasBeenSet = true; m_customProperties = value; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline void SetCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customPropertiesHasBeenSet = true; m_customProperties = std::move(value); }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& WithCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomProperties(value); return *this;}
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& WithCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& AddCustomProperties(const Aws::String& key, const Aws::String& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& AddCustomProperties(Aws::String&& key, const Aws::String& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& AddCustomProperties(const Aws::String& key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& AddCustomProperties(Aws::String&& key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& AddCustomProperties(const char* key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& AddCustomProperties(Aws::String&& key, const char* value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that has specific properties related to the ConnectorEntityField.</p>
+     */
+    inline ConnectorEntityField& AddCustomProperties(const char* key, const char* value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet;
 
+    Aws::String m_parentIdentifier;
+    bool m_parentIdentifierHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
+
+    bool m_isPrimaryKey;
+    bool m_isPrimaryKeyHasBeenSet;
+
+    Aws::String m_defaultValue;
+    bool m_defaultValueHasBeenSet;
+
+    bool m_isDeprecated;
+    bool m_isDeprecatedHasBeenSet;
 
     SupportedFieldTypeDetails m_supportedFieldTypeDetails;
     bool m_supportedFieldTypeDetailsHasBeenSet;
@@ -300,6 +507,9 @@ namespace Model
 
     DestinationFieldProperties m_destinationProperties;
     bool m_destinationPropertiesHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customProperties;
+    bool m_customPropertiesHasBeenSet;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/translate/model/InputDataConfig.h>
 #include <aws/translate/model/OutputDataConfig.h>
+#include <aws/translate/model/TranslationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -417,49 +418,49 @@ namespace Model
 
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline TextTranslationJobProperties& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline TextTranslationJobProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline TextTranslationJobProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
@@ -649,6 +650,37 @@ namespace Model
      */
     inline TextTranslationJobProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline const TranslationSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline TextTranslationJobProperties& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline TextTranslationJobProperties& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -692,6 +724,9 @@ namespace Model
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet;
+
+    TranslationSettings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

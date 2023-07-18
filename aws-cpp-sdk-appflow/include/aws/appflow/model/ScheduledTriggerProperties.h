@@ -128,114 +128,273 @@ namespace Model
 
 
     /**
-     * <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow starts. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-26T13:00:00-07:00</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetScheduleStartTime() const{ return m_scheduleStartTime; }
 
     /**
-     * <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow starts. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-26T13:00:00-07:00</code>.</p>
      */
     inline bool ScheduleStartTimeHasBeenSet() const { return m_scheduleStartTimeHasBeenSet; }
 
     /**
-     * <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow starts. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-26T13:00:00-07:00</code>.</p>
      */
     inline void SetScheduleStartTime(const Aws::Utils::DateTime& value) { m_scheduleStartTimeHasBeenSet = true; m_scheduleStartTime = value; }
 
     /**
-     * <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow starts. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-26T13:00:00-07:00</code>.</p>
      */
     inline void SetScheduleStartTime(Aws::Utils::DateTime&& value) { m_scheduleStartTimeHasBeenSet = true; m_scheduleStartTime = std::move(value); }
 
     /**
-     * <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow starts. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-26T13:00:00-07:00</code>.</p>
      */
     inline ScheduledTriggerProperties& WithScheduleStartTime(const Aws::Utils::DateTime& value) { SetScheduleStartTime(value); return *this;}
 
     /**
-     * <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow starts. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-26T13:00:00-07:00</code>.</p>
      */
     inline ScheduledTriggerProperties& WithScheduleStartTime(Aws::Utils::DateTime&& value) { SetScheduleStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow ends. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-27T13:00:00-07:00</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetScheduleEndTime() const{ return m_scheduleEndTime; }
 
     /**
-     * <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow ends. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-27T13:00:00-07:00</code>.</p>
      */
     inline bool ScheduleEndTimeHasBeenSet() const { return m_scheduleEndTimeHasBeenSet; }
 
     /**
-     * <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow ends. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-27T13:00:00-07:00</code>.</p>
      */
     inline void SetScheduleEndTime(const Aws::Utils::DateTime& value) { m_scheduleEndTimeHasBeenSet = true; m_scheduleEndTime = value; }
 
     /**
-     * <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow ends. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-27T13:00:00-07:00</code>.</p>
      */
     inline void SetScheduleEndTime(Aws::Utils::DateTime&& value) { m_scheduleEndTimeHasBeenSet = true; m_scheduleEndTime = std::move(value); }
 
     /**
-     * <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow ends. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-27T13:00:00-07:00</code>.</p>
      */
     inline ScheduledTriggerProperties& WithScheduleEndTime(const Aws::Utils::DateTime& value) { SetScheduleEndTime(value); return *this;}
 
     /**
-     * <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+     * <p>The time at which the scheduled flow ends. The time is formatted as a
+     * timestamp that follows the ISO 8601 standard, such as
+     * <code>2022-04-27T13:00:00-07:00</code>.</p>
      */
     inline ScheduledTriggerProperties& WithScheduleEndTime(Aws::Utils::DateTime&& value) { SetScheduleEndTime(std::move(value)); return *this;}
 
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline ScheduledTriggerProperties& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline ScheduledTriggerProperties& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
-     * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * <p>Specifies the time zone used when referring to the dates and times of a
+     * scheduled flow, such as <code>America/New_York</code>. This time zone is only a
+     * descriptive label. It doesn't affect how Amazon AppFlow interprets the
+     * timestamps that you specify to schedule the flow.</p> <p>If you want to schedule
+     * a flow by using times in a particular time zone, indicate the time zone as a UTC
+     * offset in your timestamps. For example, the UTC offsets for the
+     * <code>America/New_York</code> timezone are <code>-04:00</code> EDT and
+     * <code>-05:00 EST</code>.</p>
      */
     inline ScheduledTriggerProperties& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline long long GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline void SetScheduleOffset(long long value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline ScheduledTriggerProperties& WithScheduleOffset(long long value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline const Aws::Utils::DateTime& GetFirstExecutionFrom() const{ return m_firstExecutionFrom; }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline bool FirstExecutionFromHasBeenSet() const { return m_firstExecutionFromHasBeenSet; }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline void SetFirstExecutionFrom(const Aws::Utils::DateTime& value) { m_firstExecutionFromHasBeenSet = true; m_firstExecutionFrom = value; }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline void SetFirstExecutionFrom(Aws::Utils::DateTime&& value) { m_firstExecutionFromHasBeenSet = true; m_firstExecutionFrom = std::move(value); }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline ScheduledTriggerProperties& WithFirstExecutionFrom(const Aws::Utils::DateTime& value) { SetFirstExecutionFrom(value); return *this;}
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline ScheduledTriggerProperties& WithFirstExecutionFrom(Aws::Utils::DateTime&& value) { SetFirstExecutionFrom(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Defines how many times a scheduled flow fails consecutively before Amazon
+     * AppFlow deactivates it.</p>
+     */
+    inline int GetFlowErrorDeactivationThreshold() const{ return m_flowErrorDeactivationThreshold; }
+
+    /**
+     * <p>Defines how many times a scheduled flow fails consecutively before Amazon
+     * AppFlow deactivates it.</p>
+     */
+    inline bool FlowErrorDeactivationThresholdHasBeenSet() const { return m_flowErrorDeactivationThresholdHasBeenSet; }
+
+    /**
+     * <p>Defines how many times a scheduled flow fails consecutively before Amazon
+     * AppFlow deactivates it.</p>
+     */
+    inline void SetFlowErrorDeactivationThreshold(int value) { m_flowErrorDeactivationThresholdHasBeenSet = true; m_flowErrorDeactivationThreshold = value; }
+
+    /**
+     * <p>Defines how many times a scheduled flow fails consecutively before Amazon
+     * AppFlow deactivates it.</p>
+     */
+    inline ScheduledTriggerProperties& WithFlowErrorDeactivationThreshold(int value) { SetFlowErrorDeactivationThreshold(value); return *this;}
 
   private:
 
@@ -253,6 +412,15 @@ namespace Model
 
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
+
+    long long m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Utils::DateTime m_firstExecutionFrom;
+    bool m_firstExecutionFromHasBeenSet;
+
+    int m_flowErrorDeactivationThreshold;
+    bool m_flowErrorDeactivationThresholdHasBeenSet;
   };
 
 } // namespace Model

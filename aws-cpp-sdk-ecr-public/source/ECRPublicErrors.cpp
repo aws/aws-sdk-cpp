@@ -43,7 +43,9 @@ static const int REPOSITORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("Repo
 static const int REGISTRY_NOT_FOUND_HASH = HashingUtils::HashString("RegistryNotFoundException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
+static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_LAYER_PART_HASH = HashingUtils::HashString("InvalidLayerPartException");
 static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
 static const int UPLOAD_NOT_FOUND_HASH = HashingUtils::HashString("UploadNotFoundException");
@@ -121,9 +123,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::IMAGE_ALREADY_EXISTS), false);
   }
+  else if (hashCode == INVALID_TAG_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::INVALID_TAG_PARAMETER), false);
+  }
   else if (hashCode == LAYER_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::LAYER_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == INVALID_LAYER_PART_HASH)
   {

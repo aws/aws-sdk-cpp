@@ -7,6 +7,8 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/PersonalizeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -117,100 +119,133 @@ namespace Model
 
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline CreateFilterRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline CreateFilterRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The filter expression that designates the interaction types that the filter
-     * will filter out. A filter expression must follow the following format:</p> <p>
-     * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> </p>
-     * <p>Where "EVENT_TYPE" is the type of event to filter out. To filter out all
-     * items with any interactions history, set <code>"*"</code> as the EVENT_TYPE. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-     * Filters with Amazon Personalize</a>.</p>
+     * <p>The filter expression defines which items are included or excluded from
+     * recommendations. Filter expression must follow specific format rules. For
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline CreateFilterRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
+
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline CreateFilterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline CreateFilterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline CreateFilterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the filter.</p>
+     */
+    inline CreateFilterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -222,6 +257,9 @@ namespace Model
 
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

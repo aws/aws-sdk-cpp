@@ -95,38 +95,38 @@ namespace Model
 
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline const Provider& GetProvider() const{ return m_provider; }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline void SetProvider(const Provider& value) { m_providerHasBeenSet = true; m_provider = value; }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline void SetProvider(Provider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline EncryptionConfig& WithProvider(const Provider& value) { SetProvider(value); return *this;}
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline EncryptionConfig& WithProvider(Provider&& value) { SetProvider(std::move(value)); return *this;}
 

@@ -36,11 +36,11 @@ namespace Model
 
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 
@@ -48,11 +48,11 @@ namespace Model
     inline const Aws::Vector<EmergencyContact>& GetEmergencyContactList() const{ return m_emergencyContactList; }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 
@@ -60,11 +60,11 @@ namespace Model
     inline bool EmergencyContactListHasBeenSet() const { return m_emergencyContactListHasBeenSet; }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 
@@ -72,11 +72,11 @@ namespace Model
     inline void SetEmergencyContactList(const Aws::Vector<EmergencyContact>& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList = value; }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 
@@ -84,11 +84,11 @@ namespace Model
     inline void SetEmergencyContactList(Aws::Vector<EmergencyContact>&& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList = std::move(value); }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 
@@ -96,11 +96,11 @@ namespace Model
     inline AssociateProactiveEngagementDetailsRequest& WithEmergencyContactList(const Aws::Vector<EmergencyContact>& value) { SetEmergencyContactList(value); return *this;}
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 
@@ -108,11 +108,11 @@ namespace Model
     inline AssociateProactiveEngagementDetailsRequest& WithEmergencyContactList(Aws::Vector<EmergencyContact>&& value) { SetEmergencyContactList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 
@@ -120,11 +120,11 @@ namespace Model
     inline AssociateProactiveEngagementDetailsRequest& AddEmergencyContactList(const EmergencyContact& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList.push_back(value); return *this; }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you for escalations to the DRT and to initiate proactive
-     * customer support. </p> <p>To enable proactive engagement, the contact list must
-     * include at least one phone number.</p>  <p>The contacts that you provide
-     * here replace any contacts that were already defined. If you already have
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you for escalations to the SRT and to initiate
+     * proactive customer support. </p> <p>To enable proactive engagement, the contact
+     * list must include at least one phone number.</p>  <p>The contacts that you
+     * provide here replace any contacts that were already defined. If you already have
      * contacts defined and want to use them, retrieve the list using
      * <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
      * 

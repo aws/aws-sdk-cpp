@@ -39,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline const UserPoolClientType& GetUserPoolClient() const{ return m_userPoolClient; }
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline void SetUserPoolClient(const UserPoolClientType& value) { m_userPoolClient = value; }
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline void SetUserPoolClient(UserPoolClientType&& value) { m_userPoolClient = std::move(value); }
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline UpdateUserPoolClientResult& WithUserPoolClient(const UserPoolClientType& value) { SetUserPoolClient(value); return *this;}
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline UpdateUserPoolClientResult& WithUserPoolClient(UserPoolClientType&& value) { SetUserPoolClient(std::move(value)); return *this;}
 

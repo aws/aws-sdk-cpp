@@ -33,6 +33,7 @@ EbsBlockDevice::EbsBlockDevice() :
     m_kmsKeyIdHasBeenSet(false),
     m_throughput(0),
     m_throughputHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false)
 {
@@ -51,6 +52,7 @@ EbsBlockDevice::EbsBlockDevice(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_throughput(0),
     m_throughputHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false)
 {
@@ -105,6 +107,12 @@ EbsBlockDevice& EbsBlockDevice::operator =(const XmlNode& xmlNode)
       m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
       m_throughputHasBeenSet = true;
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
     XmlNode encryptedNode = resultNode.FirstChild("encrypted");
     if(!encryptedNode.IsNull())
     {
@@ -153,6 +161,11 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
   if(m_encryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
@@ -189,6 +202,10 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_throughputHasBeenSet)
   {
       oStream << location << ".Throughput=" << m_throughput << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
   if(m_encryptedHasBeenSet)
   {

@@ -42,37 +42,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
+     * <p>The name of the IAM user that owns this access key.</p> <p/>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
+     * <p>The name of the IAM user that owns this access key.</p> <p/>
      */
     inline void SetUserName(const Aws::String& value) { m_userName = value; }
 
     /**
-     * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
+     * <p>The name of the IAM user that owns this access key.</p> <p/>
      */
     inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
 
     /**
-     * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
+     * <p>The name of the IAM user that owns this access key.</p> <p/>
      */
     inline void SetUserName(const char* value) { m_userName.assign(value); }
 
     /**
-     * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
+     * <p>The name of the IAM user that owns this access key.</p> <p/>
      */
     inline GetAccessKeyLastUsedResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
+     * <p>The name of the IAM user that owns this access key.</p> <p/>
      */
     inline GetAccessKeyLastUsedResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
+     * <p>The name of the IAM user that owns this access key.</p> <p/>
      */
     inline GetAccessKeyLastUsedResult& WithUserName(const char* value) { SetUserName(value); return *this;}
 

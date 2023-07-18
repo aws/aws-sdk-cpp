@@ -124,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline Route& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline Route& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline Route& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
 
@@ -288,42 +288,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline const Aws::String& GetInstanceOwnerId() const{ return m_instanceOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(const char* value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(const Aws::String& value) { SetInstanceOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
 
@@ -677,6 +677,47 @@ namespace Model
      */
     inline Route& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline Route& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline Route& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline Route& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidrBlock;
@@ -723,6 +764,9 @@ namespace Model
 
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
+
+    Aws::String m_coreNetworkArn;
+    bool m_coreNetworkArnHasBeenSet;
   };
 
 } // namespace Model

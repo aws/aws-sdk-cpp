@@ -171,9 +171,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline const Aws::String& GetCredentialsArn() const{ return m_credentialsArn; }
 
@@ -183,9 +184,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline bool CredentialsArnHasBeenSet() const { return m_credentialsArnHasBeenSet; }
 
@@ -195,9 +197,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline void SetCredentialsArn(const Aws::String& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = value; }
 
@@ -207,9 +210,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline void SetCredentialsArn(Aws::String&& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = std::move(value); }
 
@@ -219,9 +223,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline void SetCredentialsArn(const char* value) { m_credentialsArnHasBeenSet = true; m_credentialsArn.assign(value); }
 
@@ -231,9 +236,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline UpdateApiRequest& WithCredentialsArn(const Aws::String& value) { SetCredentialsArn(value); return *this;}
 
@@ -243,9 +249,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline UpdateApiRequest& WithCredentialsArn(Aws::String&& value) { SetCredentialsArn(std::move(value)); return *this;}
 
@@ -255,9 +262,10 @@ namespace Model
      * available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed
      * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
-     * permissions on supported AWS services, specify null. Currently, this property is
-     * not used for HTTP integrations. If provided, this value replaces the credentials
-     * associated with the quick create integration. Supported only for HTTP APIs.</p>
+     * permissions on supported AWS services, don't specify this parameter. Currently,
+     * this property is not used for HTTP integrations. If provided, this value
+     * replaces the credentials associated with the quick create integration. Supported
+     * only for HTTP APIs.</p>
      */
     inline UpdateApiRequest& WithCredentialsArn(const char* value) { SetCredentialsArn(value); return *this;}
 

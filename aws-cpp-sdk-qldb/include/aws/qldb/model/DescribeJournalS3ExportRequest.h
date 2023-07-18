@@ -74,42 +74,50 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline const Aws::String& GetExportId() const{ return m_exportId; }
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline bool ExportIdHasBeenSet() const { return m_exportIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline void SetExportId(const Aws::String& value) { m_exportIdHasBeenSet = true; m_exportId = value; }
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline void SetExportId(Aws::String&& value) { m_exportIdHasBeenSet = true; m_exportId = std::move(value); }
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline void SetExportId(const char* value) { m_exportIdHasBeenSet = true; m_exportId.assign(value); }
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline DescribeJournalS3ExportRequest& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline DescribeJournalS3ExportRequest& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the journal export job that you want to describe.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job to
+     * describe.</p>
      */
     inline DescribeJournalS3ExportRequest& WithExportId(const char* value) { SetExportId(value); return *this;}
 

@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an update to the code of a Flink-based Kinesis Data Analytics
-   * application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an update to the code of an application. Not supported for Apache
+   * Zeppelin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CodeContentUpdate">AWS
    * API Reference</a></p>
    */

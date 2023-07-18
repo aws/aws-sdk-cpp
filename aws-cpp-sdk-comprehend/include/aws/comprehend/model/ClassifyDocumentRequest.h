@@ -76,42 +76,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline ClassifyDocumentRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline ClassifyDocumentRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+     * <p>The Amazon Resource Number (ARN) of the endpoint. For information about
+     * endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline ClassifyDocumentRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 

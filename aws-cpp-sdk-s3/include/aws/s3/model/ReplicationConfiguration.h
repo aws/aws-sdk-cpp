@@ -41,82 +41,74 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ReplicationConfiguration& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ReplicationConfiguration& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that Amazon S3 assumes when replicating objects. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that Amazon S3 assumes when replicating objects. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How
-     * to Set Up Replication</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ReplicationConfiguration& WithRole(const char* value) { SetRole(value); return *this;}
 

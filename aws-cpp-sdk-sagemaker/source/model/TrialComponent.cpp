@@ -36,6 +36,7 @@ TrialComponent::TrialComponent() :
     m_metricsHasBeenSet(false),
     m_metadataPropertiesHasBeenSet(false),
     m_sourceDetailHasBeenSet(false),
+    m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_parentsHasBeenSet(false)
 {
@@ -59,6 +60,7 @@ TrialComponent::TrialComponent(JsonView jsonValue) :
     m_metricsHasBeenSet(false),
     m_metadataPropertiesHasBeenSet(false),
     m_sourceDetailHasBeenSet(false),
+    m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_parentsHasBeenSet(false)
 {
@@ -196,6 +198,13 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     m_sourceDetail = jsonValue.GetObject("SourceDetail");
 
     m_sourceDetailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LineageGroupArn"))
+  {
+    m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
+
+    m_lineageGroupArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -340,6 +349,12 @@ JsonValue TrialComponent::Jsonize() const
   if(m_sourceDetailHasBeenSet)
   {
    payload.WithObject("SourceDetail", m_sourceDetail.Jsonize());
+
+  }
+
+  if(m_lineageGroupArnHasBeenSet)
+  {
+   payload.WithString("LineageGroupArn", m_lineageGroupArn);
 
   }
 

@@ -80,7 +80,7 @@ namespace Model
      * <p>The type of client authentication to enable. Currently only the value
      * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
      * requires that you enable Kerberos Constrained Delegation for the Service User to
-     * the LDAP service in the on-premises AD. </p>
+     * the LDAP service in your self-managed AD. </p>
      */
     inline const ClientAuthenticationType& GetType() const{ return m_type; }
 
@@ -88,7 +88,7 @@ namespace Model
      * <p>The type of client authentication to enable. Currently only the value
      * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
      * requires that you enable Kerberos Constrained Delegation for the Service User to
-     * the LDAP service in the on-premises AD. </p>
+     * the LDAP service in your self-managed AD. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -96,7 +96,7 @@ namespace Model
      * <p>The type of client authentication to enable. Currently only the value
      * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
      * requires that you enable Kerberos Constrained Delegation for the Service User to
-     * the LDAP service in the on-premises AD. </p>
+     * the LDAP service in your self-managed AD. </p>
      */
     inline void SetType(const ClientAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -104,7 +104,7 @@ namespace Model
      * <p>The type of client authentication to enable. Currently only the value
      * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
      * requires that you enable Kerberos Constrained Delegation for the Service User to
-     * the LDAP service in the on-premises AD. </p>
+     * the LDAP service in your self-managed AD. </p>
      */
     inline void SetType(ClientAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -112,7 +112,7 @@ namespace Model
      * <p>The type of client authentication to enable. Currently only the value
      * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
      * requires that you enable Kerberos Constrained Delegation for the Service User to
-     * the LDAP service in the on-premises AD. </p>
+     * the LDAP service in your self-managed AD. </p>
      */
     inline EnableClientAuthenticationRequest& WithType(const ClientAuthenticationType& value) { SetType(value); return *this;}
 
@@ -120,7 +120,7 @@ namespace Model
      * <p>The type of client authentication to enable. Currently only the value
      * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
      * requires that you enable Kerberos Constrained Delegation for the Service User to
-     * the LDAP service in the on-premises AD. </p>
+     * the LDAP service in your self-managed AD. </p>
      */
     inline EnableClientAuthenticationRequest& WithType(ClientAuthenticationType&& value) { SetType(std::move(value)); return *this;}
 

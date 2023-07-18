@@ -187,6 +187,47 @@ namespace Model
      */
     inline TemplateSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline TemplateSummary& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline TemplateSummary& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the template that you're using.</p>
+     */
+    inline TemplateSummary& WithVersion(const char* value) { SetVersion(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -200,6 +241,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

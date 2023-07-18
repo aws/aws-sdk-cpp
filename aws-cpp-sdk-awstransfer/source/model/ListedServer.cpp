@@ -20,6 +20,8 @@ namespace Model
 
 ListedServer::ListedServer() : 
     m_arnHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
@@ -35,6 +37,8 @@ ListedServer::ListedServer() :
 
 ListedServer::ListedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
@@ -56,6 +60,13 @@ ListedServer& ListedServer::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Domain"))
+  {
+    m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("Domain"));
+
+    m_domainHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IdentityProviderType"))
@@ -111,6 +122,11 @@ JsonValue ListedServer::Jsonize() const
   {
    payload.WithString("Arn", m_arn);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   if(m_identityProviderTypeHasBeenSet)

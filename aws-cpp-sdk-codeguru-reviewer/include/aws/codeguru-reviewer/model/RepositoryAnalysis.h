@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/RepositoryHeadSourceCodeType.h>
+#include <aws/codeguru-reviewer/model/SourceCodeType.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 
   /**
    * <p> A code review type that analyzes all code under a specified branch in an
-   * associated respository. The assocated repository is specified using its ARN when
+   * associated repository. The associated repository is specified using its ARN when
    * you call <a
    * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
    * <code>CreateCodeReview</code> </a>. </p><p><h3>See Also:</h3>   <a
@@ -89,10 +90,32 @@ namespace Model
      */
     inline RepositoryAnalysis& WithRepositoryHead(RepositoryHeadSourceCodeType&& value) { SetRepositoryHead(std::move(value)); return *this;}
 
+
+    
+    inline const SourceCodeType& GetSourceCodeType() const{ return m_sourceCodeType; }
+
+    
+    inline bool SourceCodeTypeHasBeenSet() const { return m_sourceCodeTypeHasBeenSet; }
+
+    
+    inline void SetSourceCodeType(const SourceCodeType& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = value; }
+
+    
+    inline void SetSourceCodeType(SourceCodeType&& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = std::move(value); }
+
+    
+    inline RepositoryAnalysis& WithSourceCodeType(const SourceCodeType& value) { SetSourceCodeType(value); return *this;}
+
+    
+    inline RepositoryAnalysis& WithSourceCodeType(SourceCodeType&& value) { SetSourceCodeType(std::move(value)); return *this;}
+
   private:
 
     RepositoryHeadSourceCodeType m_repositoryHead;
     bool m_repositoryHeadHasBeenSet;
+
+    SourceCodeType m_sourceCodeType;
+    bool m_sourceCodeTypeHasBeenSet;
   };
 
 } // namespace Model

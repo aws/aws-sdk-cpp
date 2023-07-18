@@ -76,123 +76,179 @@ namespace Model
 
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline GetCommandInvocationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline GetCommandInvocationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an EC2 instance or an instance in your hybrid environment that
-     * is configured for Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline GetCommandInvocationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline const Aws::String& GetPluginName() const{ return m_pluginName; }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline bool PluginNameHasBeenSet() const { return m_pluginNameHasBeenSet; }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline void SetPluginName(const Aws::String& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline void SetPluginName(Aws::String&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::move(value); }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline void SetPluginName(const char* value) { m_pluginNameHasBeenSet = true; m_pluginName.assign(value); }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(const Aws::String& value) { SetPluginName(value); return *this;}
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
+     * <code>PluginName</code>, check the document content and find the name of the
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
+     * <code>PluginName</code> is the <code>Name</code> attribute of the
+     * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(const char* value) { SetPluginName(value); return *this;}
 

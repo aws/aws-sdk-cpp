@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline const Aws::Vector<DatasetContentSummary>& GetDatasetContentSummaries() const{ return m_datasetContentSummaries; }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline void SetDatasetContentSummaries(const Aws::Vector<DatasetContentSummary>& value) { m_datasetContentSummaries = value; }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline void SetDatasetContentSummaries(Aws::Vector<DatasetContentSummary>&& value) { m_datasetContentSummaries = std::move(value); }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& WithDatasetContentSummaries(const Aws::Vector<DatasetContentSummary>& value) { SetDatasetContentSummaries(value); return *this;}
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& WithDatasetContentSummaries(Aws::Vector<DatasetContentSummary>&& value) { SetDatasetContentSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& AddDatasetContentSummaries(const DatasetContentSummary& value) { m_datasetContentSummaries.push_back(value); return *this; }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& AddDatasetContentSummaries(DatasetContentSummary&& value) { m_datasetContentSummaries.push_back(std::move(value)); return *this; }
 

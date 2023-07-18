@@ -29,7 +29,9 @@ namespace Model
     RetireGrant,
     DescribeKey,
     GenerateDataKeyPair,
-    GenerateDataKeyPairWithoutPlaintext
+    GenerateDataKeyPairWithoutPlaintext,
+    GenerateMac,
+    VerifyMac
   };
 
 namespace GrantOperationMapper

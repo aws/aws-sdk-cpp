@@ -36,6 +36,7 @@ UserPoolType::UserPoolType() :
     m_emailVerificationSubjectHasBeenSet(false),
     m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
@@ -74,6 +75,7 @@ UserPoolType::UserPoolType(JsonView jsonValue) :
     m_emailVerificationSubjectHasBeenSet(false),
     m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
@@ -219,6 +221,13 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_smsAuthenticationMessage = jsonValue.GetString("SmsAuthenticationMessage");
 
     m_smsAuthenticationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserAttributeUpdateSettings"))
+  {
+    m_userAttributeUpdateSettings = jsonValue.GetObject("UserAttributeUpdateSettings");
+
+    m_userAttributeUpdateSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MfaConfiguration"))
@@ -446,6 +455,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_smsAuthenticationMessageHasBeenSet)
   {
    payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
+
+  }
+
+  if(m_userAttributeUpdateSettingsHasBeenSet)
+  {
+   payload.WithObject("UserAttributeUpdateSettings", m_userAttributeUpdateSettings.Jsonize());
 
   }
 

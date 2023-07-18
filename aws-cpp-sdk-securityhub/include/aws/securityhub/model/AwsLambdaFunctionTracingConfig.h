@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The function's AWS X-Ray tracing configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>The function's X-Ray tracing configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionTracingConfig">AWS
    * API Reference</a></p>
    */

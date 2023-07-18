@@ -40,124 +40,124 @@ namespace Model
 
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline GroupResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline GroupResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>Show Group Result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline GroupResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline GroupResult& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline GroupResult& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Show Group Result Name.</p>
+     * <p>Group Result Name.</p>
      */
     inline GroupResult& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline const Aws::Vector<TestCaseRun>& GetTests() const{ return m_tests; }
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline bool TestsHasBeenSet() const { return m_testsHasBeenSet; }
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline void SetTests(const Aws::Vector<TestCaseRun>& value) { m_testsHasBeenSet = true; m_tests = value; }
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline void SetTests(Aws::Vector<TestCaseRun>&& value) { m_testsHasBeenSet = true; m_tests = std::move(value); }
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline GroupResult& WithTests(const Aws::Vector<TestCaseRun>& value) { SetTests(value); return *this;}
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline GroupResult& WithTests(Aws::Vector<TestCaseRun>&& value) { SetTests(std::move(value)); return *this;}
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline GroupResult& AddTests(const TestCaseRun& value) { m_testsHasBeenSet = true; m_tests.push_back(value); return *this; }
 
     /**
-     * <p>Show Group Result.</p>
+     * <p>Tests under Group Result.</p>
      */
     inline GroupResult& AddTests(TestCaseRun&& value) { m_testsHasBeenSet = true; m_tests.push_back(std::move(value)); return *this; }
 

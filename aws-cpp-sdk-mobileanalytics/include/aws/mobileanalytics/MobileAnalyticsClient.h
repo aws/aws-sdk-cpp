@@ -101,20 +101,12 @@ namespace Model
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>The PutEvents operation records one or more events. You can have up to 1,500
-         * unique custom events per app, any combination of up to 40 attributes and metrics
-         * per custom event, and any number of attribute or metric values.</p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>The PutEvents operation records one or more events. You can have up to 1,500
-         * unique custom events per app, any combination of up to 40 attributes and metrics
-         * per custom event, and any number of attribute or metric values.</p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -7,6 +7,8 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/redshift/model/LogDestinationType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <utility>
 
@@ -218,6 +220,86 @@ namespace Model
     inline EnableLoggingResult& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
 
 
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationType = value; }
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationType = std::move(value); }
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline EnableLoggingResult& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline EnableLoggingResult& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLogExports() const{ return m_logExports; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline void SetLogExports(const Aws::Vector<Aws::String>& value) { m_logExports = value; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline void SetLogExports(Aws::Vector<Aws::String>&& value) { m_logExports = std::move(value); }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingResult& WithLogExports(const Aws::Vector<Aws::String>& value) { SetLogExports(value); return *this;}
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingResult& WithLogExports(Aws::Vector<Aws::String>&& value) { SetLogExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingResult& AddLogExports(const Aws::String& value) { m_logExports.push_back(value); return *this; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingResult& AddLogExports(Aws::String&& value) { m_logExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingResult& AddLogExports(const char* value) { m_logExports.push_back(value); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -246,6 +328,10 @@ namespace Model
     Aws::Utils::DateTime m_lastFailureTime;
 
     Aws::String m_lastFailureMessage;
+
+    LogDestinationType m_logDestinationType;
+
+    Aws::Vector<Aws::String> m_logExports;
 
     ResponseMetadata m_responseMetadata;
   };

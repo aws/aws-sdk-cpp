@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateStreamRequest::CreateStreamRequest() : 
     m_streamNameHasBeenSet(false),
     m_shardCount(0),
-    m_shardCountHasBeenSet(false)
+    m_shardCountHasBeenSet(false),
+    m_streamModeDetailsHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String CreateStreamRequest::SerializePayload() const
   if(m_shardCountHasBeenSet)
   {
    payload.WithInteger("ShardCount", m_shardCount);
+
+  }
+
+  if(m_streamModeDetailsHasBeenSet)
+  {
+   payload.WithObject("StreamModeDetails", m_streamModeDetails.Jsonize());
 
   }
 

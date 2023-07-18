@@ -19,6 +19,7 @@ namespace Model
 {
 
 AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails() : 
+    m_clientCertificateIdHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_defaultRouteSettingsHasBeenSet(false),
@@ -37,6 +38,7 @@ AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails() :
 }
 
 AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails(JsonView jsonValue) : 
+    m_clientCertificateIdHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_defaultRouteSettingsHasBeenSet(false),
@@ -57,6 +59,13 @@ AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails(JsonView jsonValue) :
 
 AwsApiGatewayV2StageDetails& AwsApiGatewayV2StageDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ClientCertificateId"))
+  {
+    m_clientCertificateId = jsonValue.GetString("ClientCertificateId");
+
+    m_clientCertificateIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
@@ -150,6 +159,12 @@ AwsApiGatewayV2StageDetails& AwsApiGatewayV2StageDetails::operator =(JsonView js
 JsonValue AwsApiGatewayV2StageDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_clientCertificateIdHasBeenSet)
+  {
+   payload.WithString("ClientCertificateId", m_clientCertificateId);
+
+  }
 
   if(m_createdDateHasBeenSet)
   {

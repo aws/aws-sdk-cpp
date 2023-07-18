@@ -21,7 +21,10 @@ CreateSecretRequest::CreateSecretRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_secretBinaryHasBeenSet(false),
     m_secretStringHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_addReplicaRegionsHasBeenSet(false),
+    m_forceOverwriteReplicaSecret(false),
+    m_forceOverwriteReplicaSecretHasBeenSet(false)
 {
 }
 
@@ -72,6 +75,23 @@ Aws::String CreateSecretRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_addReplicaRegionsHasBeenSet)
+  {
+   Array<JsonValue> addReplicaRegionsJsonList(m_addReplicaRegions.size());
+   for(unsigned addReplicaRegionsIndex = 0; addReplicaRegionsIndex < addReplicaRegionsJsonList.GetLength(); ++addReplicaRegionsIndex)
+   {
+     addReplicaRegionsJsonList[addReplicaRegionsIndex].AsObject(m_addReplicaRegions[addReplicaRegionsIndex].Jsonize());
+   }
+   payload.WithArray("AddReplicaRegions", std::move(addReplicaRegionsJsonList));
+
+  }
+
+  if(m_forceOverwriteReplicaSecretHasBeenSet)
+  {
+   payload.WithBool("ForceOverwriteReplicaSecret", m_forceOverwriteReplicaSecret);
 
   }
 

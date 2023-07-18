@@ -24,6 +24,7 @@ static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServer
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int RESOURCE_ALREADY_EXIST_HASH = HashingUtils::HashString("ResourceAlreadyExistException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -53,6 +54,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KendraErrors::RESOURCE_UNAVAILABLE), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KendraErrors::INVALID_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -21,7 +21,8 @@ namespace Model
     AMAZON_ELASTICSEARCH,
     NONE,
     HTTP,
-    RELATIONAL_DATABASE
+    RELATIONAL_DATABASE,
+    AMAZON_OPENSEARCH_SERVICE
   };
 
 namespace DataSourceTypeMapper

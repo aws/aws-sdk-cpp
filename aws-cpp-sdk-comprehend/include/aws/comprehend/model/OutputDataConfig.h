@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration parameters for the output of topic detection jobs.</p>
+   * <p>Provides configuration parameters for the output of inference jobs.</p>
    * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/OutputDataConfig">AWS
    * API Reference</a></p>
@@ -47,7 +47,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
@@ -60,7 +62,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
@@ -73,7 +77,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
@@ -86,7 +92,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
@@ -99,7 +107,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
@@ -112,7 +122,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline OutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
@@ -125,7 +137,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline OutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
@@ -138,7 +152,9 @@ namespace Model
      * creates an output file in a directory specific to the job. The
      * <code>S3Uri</code> field contains the location of the output file, called
      * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
-     * of the operation.</p>
+     * of the operation.</p> <p> For a PII entity detection job, the output file is
+     * plain text, not a compressed archive. The output file name is the same as the
+     * input file, with <code>.out</code> appended at the end. </p>
      */
     inline OutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 

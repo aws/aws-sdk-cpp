@@ -28,7 +28,8 @@ Datastore::Datastore() :
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_lastMessageArrivalTimeHasBeenSet(false),
-    m_fileFormatConfigurationHasBeenSet(false)
+    m_fileFormatConfigurationHasBeenSet(false),
+    m_datastorePartitionsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Datastore::Datastore(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_lastMessageArrivalTimeHasBeenSet(false),
-    m_fileFormatConfigurationHasBeenSet(false)
+    m_fileFormatConfigurationHasBeenSet(false),
+    m_datastorePartitionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ Datastore& Datastore::operator =(JsonView jsonValue)
     m_fileFormatConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("datastorePartitions"))
+  {
+    m_datastorePartitions = jsonValue.GetObject("datastorePartitions");
+
+    m_datastorePartitionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -166,6 +175,12 @@ JsonValue Datastore::Jsonize() const
   if(m_fileFormatConfigurationHasBeenSet)
   {
    payload.WithObject("fileFormatConfiguration", m_fileFormatConfiguration.Jsonize());
+
+  }
+
+  if(m_datastorePartitionsHasBeenSet)
+  {
+   payload.WithObject("datastorePartitions", m_datastorePartitions.Jsonize());
 
   }
 

@@ -30,7 +30,8 @@ DomainNameConfiguration::DomainNameConfiguration() :
     m_endpointTypeHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
     m_securityPolicy(SecurityPolicy::NOT_SET),
-    m_securityPolicyHasBeenSet(false)
+    m_securityPolicyHasBeenSet(false),
+    m_ownershipVerificationCertificateArnHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ DomainNameConfiguration::DomainNameConfiguration(JsonView jsonValue) :
     m_endpointTypeHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
     m_securityPolicy(SecurityPolicy::NOT_SET),
-    m_securityPolicyHasBeenSet(false)
+    m_securityPolicyHasBeenSet(false),
+    m_ownershipVerificationCertificateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,13 @@ DomainNameConfiguration& DomainNameConfiguration::operator =(JsonView jsonValue)
     m_securityPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ownershipVerificationCertificateArn"))
+  {
+    m_ownershipVerificationCertificateArn = jsonValue.GetString("ownershipVerificationCertificateArn");
+
+    m_ownershipVerificationCertificateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,6 +180,12 @@ JsonValue DomainNameConfiguration::Jsonize() const
   if(m_securityPolicyHasBeenSet)
   {
    payload.WithString("securityPolicy", SecurityPolicyMapper::GetNameForSecurityPolicy(m_securityPolicy));
+  }
+
+  if(m_ownershipVerificationCertificateArnHasBeenSet)
+  {
+   payload.WithString("ownershipVerificationCertificateArn", m_ownershipVerificationCertificateArn);
+
   }
 
   return payload;

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Filters cost anomalies based on the total impact. </p><p><h3>See Also:</h3> 
+   * <p>Filters cost anomalies based on the total impact. </p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TotalImpactFilter">AWS
    * API Reference</a></p>
@@ -39,74 +39,74 @@ namespace Model
 
 
     /**
-     * <p> The comparing value used in the filter. </p>
+     * <p>The comparing value that's used in the filter. </p>
      */
     inline const NumericOperator& GetNumericOperator() const{ return m_numericOperator; }
 
     /**
-     * <p> The comparing value used in the filter. </p>
+     * <p>The comparing value that's used in the filter. </p>
      */
     inline bool NumericOperatorHasBeenSet() const { return m_numericOperatorHasBeenSet; }
 
     /**
-     * <p> The comparing value used in the filter. </p>
+     * <p>The comparing value that's used in the filter. </p>
      */
     inline void SetNumericOperator(const NumericOperator& value) { m_numericOperatorHasBeenSet = true; m_numericOperator = value; }
 
     /**
-     * <p> The comparing value used in the filter. </p>
+     * <p>The comparing value that's used in the filter. </p>
      */
     inline void SetNumericOperator(NumericOperator&& value) { m_numericOperatorHasBeenSet = true; m_numericOperator = std::move(value); }
 
     /**
-     * <p> The comparing value used in the filter. </p>
+     * <p>The comparing value that's used in the filter. </p>
      */
     inline TotalImpactFilter& WithNumericOperator(const NumericOperator& value) { SetNumericOperator(value); return *this;}
 
     /**
-     * <p> The comparing value used in the filter. </p>
+     * <p>The comparing value that's used in the filter. </p>
      */
     inline TotalImpactFilter& WithNumericOperator(NumericOperator&& value) { SetNumericOperator(std::move(value)); return *this;}
 
 
     /**
-     * <p> The lower bound dollar value used in the filter. </p>
+     * <p>The lower bound dollar value that's used in the filter. </p>
      */
     inline double GetStartValue() const{ return m_startValue; }
 
     /**
-     * <p> The lower bound dollar value used in the filter. </p>
+     * <p>The lower bound dollar value that's used in the filter. </p>
      */
     inline bool StartValueHasBeenSet() const { return m_startValueHasBeenSet; }
 
     /**
-     * <p> The lower bound dollar value used in the filter. </p>
+     * <p>The lower bound dollar value that's used in the filter. </p>
      */
     inline void SetStartValue(double value) { m_startValueHasBeenSet = true; m_startValue = value; }
 
     /**
-     * <p> The lower bound dollar value used in the filter. </p>
+     * <p>The lower bound dollar value that's used in the filter. </p>
      */
     inline TotalImpactFilter& WithStartValue(double value) { SetStartValue(value); return *this;}
 
 
     /**
-     * <p> The upper bound dollar value used in the filter. </p>
+     * <p>The upper bound dollar value that's used in the filter. </p>
      */
     inline double GetEndValue() const{ return m_endValue; }
 
     /**
-     * <p> The upper bound dollar value used in the filter. </p>
+     * <p>The upper bound dollar value that's used in the filter. </p>
      */
     inline bool EndValueHasBeenSet() const { return m_endValueHasBeenSet; }
 
     /**
-     * <p> The upper bound dollar value used in the filter. </p>
+     * <p>The upper bound dollar value that's used in the filter. </p>
      */
     inline void SetEndValue(double value) { m_endValueHasBeenSet = true; m_endValue = value; }
 
     /**
-     * <p> The upper bound dollar value used in the filter. </p>
+     * <p>The upper bound dollar value that's used in the filter. </p>
      */
     inline TotalImpactFilter& WithEndValue(double value) { SetEndValue(value); return *this;}
 

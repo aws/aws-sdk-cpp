@@ -55,7 +55,9 @@ DBSnapshot::DBSnapshot() :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_originalSnapshotCreateTimeHasBeenSet(false),
+    m_snapshotTargetHasBeenSet(false)
 {
 }
 
@@ -94,7 +96,9 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_originalSnapshotCreateTimeHasBeenSet(false),
+    m_snapshotTargetHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -291,6 +295,18 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
 
       m_tagListHasBeenSet = true;
     }
+    XmlNode originalSnapshotCreateTimeNode = resultNode.FirstChild("OriginalSnapshotCreateTime");
+    if(!originalSnapshotCreateTimeNode.IsNull())
+    {
+      m_originalSnapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalSnapshotCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_originalSnapshotCreateTimeHasBeenSet = true;
+    }
+    XmlNode snapshotTargetNode = resultNode.FirstChild("SnapshotTarget");
+    if(!snapshotTargetNode.IsNull())
+    {
+      m_snapshotTarget = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTargetNode.GetText());
+      m_snapshotTargetHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -455,6 +471,16 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_originalSnapshotCreateTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_snapshotTargetHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -586,6 +612,14 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
         tagListSs << location <<  ".Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
+  }
+  if(m_originalSnapshotCreateTimeHasBeenSet)
+  {
+      oStream << location << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_snapshotTargetHasBeenSet)
+  {
+      oStream << location << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
   }
 }
 

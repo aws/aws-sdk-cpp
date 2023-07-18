@@ -22,6 +22,8 @@ namespace Aws
 
         static const int ADVANCED_AUDIO_HASH = HashingUtils::HashString("ADVANCED_AUDIO");
         static const int AUDIO_NORMALIZATION_HASH = HashingUtils::HashString("AUDIO_NORMALIZATION");
+        static const int MGHD_HASH = HashingUtils::HashString("MGHD");
+        static const int MGUHD_HASH = HashingUtils::HashString("MGUHD");
 
 
         ReservationSpecialFeature GetReservationSpecialFeatureForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == AUDIO_NORMALIZATION_HASH)
           {
             return ReservationSpecialFeature::AUDIO_NORMALIZATION;
+          }
+          else if (hashCode == MGHD_HASH)
+          {
+            return ReservationSpecialFeature::MGHD;
+          }
+          else if (hashCode == MGUHD_HASH)
+          {
+            return ReservationSpecialFeature::MGUHD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +63,10 @@ namespace Aws
             return "ADVANCED_AUDIO";
           case ReservationSpecialFeature::AUDIO_NORMALIZATION:
             return "AUDIO_NORMALIZATION";
+          case ReservationSpecialFeature::MGHD:
+            return "MGHD";
+          case ReservationSpecialFeature::MGUHD:
+            return "MGUHD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

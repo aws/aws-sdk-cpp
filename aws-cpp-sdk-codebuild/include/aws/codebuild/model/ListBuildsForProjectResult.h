@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_ids = value; }
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_ids = std::move(value); }
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline ListBuildsForProjectResult& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline ListBuildsForProjectResult& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline ListBuildsForProjectResult& AddIds(const Aws::String& value) { m_ids.push_back(value); return *this; }
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline ListBuildsForProjectResult& AddIds(Aws::String&& value) { m_ids.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of build IDs for the specified build project, with each build ID
-     * representing a single build.</p>
+     * <p>A list of build identifiers for the specified build project, with each build
+     * ID representing a single build.</p>
      */
     inline ListBuildsForProjectResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
 

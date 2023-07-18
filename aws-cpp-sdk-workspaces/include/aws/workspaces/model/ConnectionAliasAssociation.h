@@ -74,50 +74,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline const Aws::String& GetAssociatedAccountId() const{ return m_associatedAccountId; }
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline bool AssociatedAccountIdHasBeenSet() const { return m_associatedAccountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline void SetAssociatedAccountId(const Aws::String& value) { m_associatedAccountIdHasBeenSet = true; m_associatedAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline void SetAssociatedAccountId(Aws::String&& value) { m_associatedAccountIdHasBeenSet = true; m_associatedAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline void SetAssociatedAccountId(const char* value) { m_associatedAccountIdHasBeenSet = true; m_associatedAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline ConnectionAliasAssociation& WithAssociatedAccountId(const Aws::String& value) { SetAssociatedAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline ConnectionAliasAssociation& WithAssociatedAccountId(Aws::String&& value) { SetAssociatedAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that associated the connection alias with a
-     * directory.</p>
+     * <p>The identifier of the Amazon Web Services account that associated the
+     * connection alias with a directory.</p>
      */
     inline ConnectionAliasAssociation& WithAssociatedAccountId(const char* value) { SetAssociatedAccountId(value); return *this;}
 

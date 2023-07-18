@@ -192,75 +192,83 @@ namespace Model
 
 
     /**
-     * <p>The number of streaming distributions that were created by the current AWS
-     * account. </p>
+     * <p>The number of streaming distributions that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of streaming distributions that were created by the current AWS
-     * account. </p>
+     * <p>The number of streaming distributions that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of streaming distributions that were created by the current AWS
-     * account. </p>
+     * <p>The number of streaming distributions that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of streaming distributions that were created by the current AWS
-     * account. </p>
+     * <p>The number of streaming distributions that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline StreamingDistributionList& WithQuantity(int value) { SetQuantity(value); return *this;}
 
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline const Aws::Vector<StreamingDistributionSummary>& GetItems() const{ return m_items; }
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline void SetItems(const Aws::Vector<StreamingDistributionSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline void SetItems(Aws::Vector<StreamingDistributionSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline StreamingDistributionList& WithItems(const Aws::Vector<StreamingDistributionSummary>& value) { SetItems(value); return *this;}
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline StreamingDistributionList& WithItems(Aws::Vector<StreamingDistributionSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline StreamingDistributionList& AddItems(const StreamingDistributionSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
-     * element for each distribution that was created by the current AWS account.</p>
+     * element for each distribution that was created by the current Amazon Web
+     * Services account.</p>
      */
     inline StreamingDistributionList& AddItems(StreamingDistributionSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

@@ -19,12 +19,14 @@ namespace Model
 {
 
 AnomalySourceDetails::AnomalySourceDetails() : 
-    m_cloudWatchMetricsHasBeenSet(false)
+    m_cloudWatchMetricsHasBeenSet(false),
+    m_performanceInsightsMetricsHasBeenSet(false)
 {
 }
 
 AnomalySourceDetails::AnomalySourceDetails(JsonView jsonValue) : 
-    m_cloudWatchMetricsHasBeenSet(false)
+    m_cloudWatchMetricsHasBeenSet(false),
+    m_performanceInsightsMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ AnomalySourceDetails& AnomalySourceDetails::operator =(JsonView jsonValue)
       m_cloudWatchMetrics.push_back(cloudWatchMetricsJsonList[cloudWatchMetricsIndex].AsObject());
     }
     m_cloudWatchMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PerformanceInsightsMetrics"))
+  {
+    Array<JsonView> performanceInsightsMetricsJsonList = jsonValue.GetArray("PerformanceInsightsMetrics");
+    for(unsigned performanceInsightsMetricsIndex = 0; performanceInsightsMetricsIndex < performanceInsightsMetricsJsonList.GetLength(); ++performanceInsightsMetricsIndex)
+    {
+      m_performanceInsightsMetrics.push_back(performanceInsightsMetricsJsonList[performanceInsightsMetricsIndex].AsObject());
+    }
+    m_performanceInsightsMetricsHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue AnomalySourceDetails::Jsonize() const
      cloudWatchMetricsJsonList[cloudWatchMetricsIndex].AsObject(m_cloudWatchMetrics[cloudWatchMetricsIndex].Jsonize());
    }
    payload.WithArray("CloudWatchMetrics", std::move(cloudWatchMetricsJsonList));
+
+  }
+
+  if(m_performanceInsightsMetricsHasBeenSet)
+  {
+   Array<JsonValue> performanceInsightsMetricsJsonList(m_performanceInsightsMetrics.size());
+   for(unsigned performanceInsightsMetricsIndex = 0; performanceInsightsMetricsIndex < performanceInsightsMetricsJsonList.GetLength(); ++performanceInsightsMetricsIndex)
+   {
+     performanceInsightsMetricsJsonList[performanceInsightsMetricsIndex].AsObject(m_performanceInsightsMetrics[performanceInsightsMetricsIndex].Jsonize());
+   }
+   payload.WithArray("PerformanceInsightsMetrics", std::move(performanceInsightsMetricsJsonList));
 
   }
 

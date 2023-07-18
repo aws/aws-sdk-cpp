@@ -85,42 +85,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline AllocatePrivateVirtualInterfaceRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline AllocatePrivateVirtualInterfaceRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * interface.</p>
      */
     inline AllocatePrivateVirtualInterfaceRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 

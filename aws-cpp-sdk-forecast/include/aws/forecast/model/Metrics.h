@@ -98,52 +98,81 @@ namespace Model
 
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline const Aws::Vector<ErrorMetric>& GetErrorMetrics() const{ return m_errorMetrics; }
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline bool ErrorMetricsHasBeenSet() const { return m_errorMetricsHasBeenSet; }
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline void SetErrorMetrics(const Aws::Vector<ErrorMetric>& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics = value; }
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline void SetErrorMetrics(Aws::Vector<ErrorMetric>&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics = std::move(value); }
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline Metrics& WithErrorMetrics(const Aws::Vector<ErrorMetric>& value) { SetErrorMetrics(value); return *this;}
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline Metrics& WithErrorMetrics(Aws::Vector<ErrorMetric>&& value) { SetErrorMetrics(std::move(value)); return *this;}
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline Metrics& AddErrorMetrics(const ErrorMetric& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics.push_back(value); return *this; }
 
     /**
-     * <p> Provides detailed error metrics on forecast type, root-mean square-error
-     * (RMSE), and weighted average percentage error (WAPE). </p>
+     * <p> Provides detailed error metrics for each forecast type. Metrics include
+     * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
+     * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
     inline Metrics& AddErrorMetrics(ErrorMetric&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The average value of all weighted quantile losses.</p>
+     */
+    inline double GetAverageWeightedQuantileLoss() const{ return m_averageWeightedQuantileLoss; }
+
+    /**
+     * <p>The average value of all weighted quantile losses.</p>
+     */
+    inline bool AverageWeightedQuantileLossHasBeenSet() const { return m_averageWeightedQuantileLossHasBeenSet; }
+
+    /**
+     * <p>The average value of all weighted quantile losses.</p>
+     */
+    inline void SetAverageWeightedQuantileLoss(double value) { m_averageWeightedQuantileLossHasBeenSet = true; m_averageWeightedQuantileLoss = value; }
+
+    /**
+     * <p>The average value of all weighted quantile losses.</p>
+     */
+    inline Metrics& WithAverageWeightedQuantileLoss(double value) { SetAverageWeightedQuantileLoss(value); return *this;}
 
   private:
 
@@ -152,6 +181,9 @@ namespace Model
 
     Aws::Vector<ErrorMetric> m_errorMetrics;
     bool m_errorMetricsHasBeenSet;
+
+    double m_averageWeightedQuantileLoss;
+    bool m_averageWeightedQuantileLossHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,8 @@ namespace Model
 
 AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery() : 
     m_attributesHasBeenSet(false),
+    m_ipPreference(IpPreference::NOT_SET),
+    m_ipPreferenceHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
@@ -27,6 +29,8 @@ AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery() :
 
 AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
+    m_ipPreference(IpPreference::NOT_SET),
+    m_ipPreferenceHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
@@ -43,6 +47,13 @@ AwsCloudMapServiceDiscovery& AwsCloudMapServiceDiscovery::operator =(JsonView js
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
     }
     m_attributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipPreference"))
+  {
+    m_ipPreference = IpPreferenceMapper::GetIpPreferenceForName(jsonValue.GetString("ipPreference"));
+
+    m_ipPreferenceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("namespaceName"))
@@ -75,6 +86,11 @@ JsonValue AwsCloudMapServiceDiscovery::Jsonize() const
    }
    payload.WithArray("attributes", std::move(attributesJsonList));
 
+  }
+
+  if(m_ipPreferenceHasBeenSet)
+  {
+   payload.WithString("ipPreference", IpPreferenceMapper::GetNameForIpPreference(m_ipPreference));
   }
 
   if(m_namespaceNameHasBeenSet)

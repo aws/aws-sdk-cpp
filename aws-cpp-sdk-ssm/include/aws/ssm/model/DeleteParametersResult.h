@@ -75,49 +75,49 @@ namespace Model
 
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInvalidParameters() const{ return m_invalidParameters; }
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline void SetInvalidParameters(const Aws::Vector<Aws::String>& value) { m_invalidParameters = value; }
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline void SetInvalidParameters(Aws::Vector<Aws::String>&& value) { m_invalidParameters = std::move(value); }
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline DeleteParametersResult& WithInvalidParameters(const Aws::Vector<Aws::String>& value) { SetInvalidParameters(value); return *this;}
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline DeleteParametersResult& WithInvalidParameters(Aws::Vector<Aws::String>&& value) { SetInvalidParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline DeleteParametersResult& AddInvalidParameters(const Aws::String& value) { m_invalidParameters.push_back(value); return *this; }
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline DeleteParametersResult& AddInvalidParameters(Aws::String&& value) { m_invalidParameters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of parameters that weren't deleted because the parameters are not
+     * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
     inline DeleteParametersResult& AddInvalidParameters(const char* value) { m_invalidParameters.push_back(value); return *this; }

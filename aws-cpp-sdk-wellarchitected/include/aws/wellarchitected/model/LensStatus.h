@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     CURRENT,
     NOT_CURRENT,
-    DEPRECATED
+    DEPRECATED,
+    DELETED,
+    UNSHARED
   };
 
 namespace LensStatusMapper

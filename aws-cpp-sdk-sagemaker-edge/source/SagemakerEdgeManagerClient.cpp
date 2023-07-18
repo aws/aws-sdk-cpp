@@ -70,7 +70,7 @@ SagemakerEdgeManagerClient::~SagemakerEdgeManagerClient()
 {
 }
 
-void SagemakerEdgeManagerClient::init(const ClientConfiguration& config)
+void SagemakerEdgeManagerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Sagemaker Edge");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -99,9 +99,7 @@ void SagemakerEdgeManagerClient::OverrideEndpoint(const Aws::String& endpoint)
 GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(const GetDeviceRegistrationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetDeviceRegistration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetDeviceRegistration");
   return GetDeviceRegistrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -126,9 +124,7 @@ void SagemakerEdgeManagerClient::GetDeviceRegistrationAsyncHelper(const GetDevic
 SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbeatRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/SendHeartbeat";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/SendHeartbeat");
   return SendHeartbeatOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

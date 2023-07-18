@@ -28,8 +28,9 @@ namespace Model
 
   /**
    * <p>The data repository configuration object for Lustre file systems returned in
-   * the response of the <code>CreateFileSystem</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * the response of the <code>CreateFileSystem</code> operation.</p> <p>This data
+   * type is not supported for file systems with the <code>Persistent_2</code>
+   * deployment type. Instead, use .</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryConfiguration">AWS
    * API Reference</a></p>
    */
@@ -55,7 +56,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
      * a Misconfigured linked S3 bucket</a>. </p> </li> <li> <p> <code>UPDATING</code>
      * - The data repository is undergoing a customer initiated update and availability
-     * may be impacted.</p> </li> </ul>
+     * may be impacted.</p> </li> <li> <p> <code>FAILED</code> - The data repository is
+     * in a terminal state that cannot be recovered.</p> </li> </ul>
      */
     inline const DataRepositoryLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -72,7 +74,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
      * a Misconfigured linked S3 bucket</a>. </p> </li> <li> <p> <code>UPDATING</code>
      * - The data repository is undergoing a customer initiated update and availability
-     * may be impacted.</p> </li> </ul>
+     * may be impacted.</p> </li> <li> <p> <code>FAILED</code> - The data repository is
+     * in a terminal state that cannot be recovered.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -89,7 +92,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
      * a Misconfigured linked S3 bucket</a>. </p> </li> <li> <p> <code>UPDATING</code>
      * - The data repository is undergoing a customer initiated update and availability
-     * may be impacted.</p> </li> </ul>
+     * may be impacted.</p> </li> <li> <p> <code>FAILED</code> - The data repository is
+     * in a terminal state that cannot be recovered.</p> </li> </ul>
      */
     inline void SetLifecycle(const DataRepositoryLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -106,7 +110,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
      * a Misconfigured linked S3 bucket</a>. </p> </li> <li> <p> <code>UPDATING</code>
      * - The data repository is undergoing a customer initiated update and availability
-     * may be impacted.</p> </li> </ul>
+     * may be impacted.</p> </li> <li> <p> <code>FAILED</code> - The data repository is
+     * in a terminal state that cannot be recovered.</p> </li> </ul>
      */
     inline void SetLifecycle(DataRepositoryLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -123,7 +128,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
      * a Misconfigured linked S3 bucket</a>. </p> </li> <li> <p> <code>UPDATING</code>
      * - The data repository is undergoing a customer initiated update and availability
-     * may be impacted.</p> </li> </ul>
+     * may be impacted.</p> </li> <li> <p> <code>FAILED</code> - The data repository is
+     * in a terminal state that cannot be recovered.</p> </li> </ul>
      */
     inline DataRepositoryConfiguration& WithLifecycle(const DataRepositoryLifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -140,7 +146,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
      * a Misconfigured linked S3 bucket</a>. </p> </li> <li> <p> <code>UPDATING</code>
      * - The data repository is undergoing a customer initiated update and availability
-     * may be impacted.</p> </li> </ul>
+     * may be impacted.</p> </li> <li> <p> <code>FAILED</code> - The data repository is
+     * in a terminal state that cannot be recovered.</p> </li> </ul>
      */
     inline DataRepositoryConfiguration& WithLifecycle(DataRepositoryLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -322,10 +329,11 @@ namespace Model
      * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
      * AutoImport is on. Amazon FSx automatically imports file and directory listings
      * of any new objects added to the S3 bucket and any existing objects that are
-     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul>
      */
     inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
 
@@ -343,10 +351,11 @@ namespace Model
      * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
      * AutoImport is on. Amazon FSx automatically imports file and directory listings
      * of any new objects added to the S3 bucket and any existing objects that are
-     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul>
      */
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
 
@@ -364,10 +373,11 @@ namespace Model
      * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
      * AutoImport is on. Amazon FSx automatically imports file and directory listings
      * of any new objects added to the S3 bucket and any existing objects that are
-     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul>
      */
     inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
 
@@ -385,10 +395,11 @@ namespace Model
      * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
      * AutoImport is on. Amazon FSx automatically imports file and directory listings
      * of any new objects added to the S3 bucket and any existing objects that are
-     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul>
      */
     inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
 
@@ -406,10 +417,11 @@ namespace Model
      * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
      * AutoImport is on. Amazon FSx automatically imports file and directory listings
      * of any new objects added to the S3 bucket and any existing objects that are
-     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul>
      */
     inline DataRepositoryConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
 
@@ -427,10 +439,11 @@ namespace Model
      * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
      * AutoImport is on. Amazon FSx automatically imports file and directory listings
      * of any new objects added to the S3 bucket and any existing objects that are
-     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul>
      */
     inline DataRepositoryConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
 

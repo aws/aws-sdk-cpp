@@ -170,56 +170,56 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFilterInArns() const{ return m_filterInArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline bool FilterInArnsHasBeenSet() const { return m_filterInArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline void SetFilterInArns(const Aws::Vector<Aws::String>& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline void SetFilterInArns(Aws::Vector<Aws::String>&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline NetworkInsightsAnalysis& WithFilterInArns(const Aws::Vector<Aws::String>& value) { SetFilterInArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline NetworkInsightsAnalysis& WithFilterInArns(Aws::Vector<Aws::String>&& value) { SetFilterInArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline NetworkInsightsAnalysis& AddFilterInArns(const Aws::String& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline NetworkInsightsAnalysis& AddFilterInArns(Aws::String&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the AWS resources that the path must
-     * traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
+     * path must traverse.</p>
      */
     inline NetworkInsightsAnalysis& AddFilterInArns(const char* value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
 
@@ -325,6 +325,47 @@ namespace Model
      * <p>The status message, if the status is <code>failed</code>.</p>
      */
     inline NetworkInsightsAnalysis& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline const Aws::String& GetWarningMessage() const{ return m_warningMessage; }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline bool WarningMessageHasBeenSet() const { return m_warningMessageHasBeenSet; }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline void SetWarningMessage(const Aws::String& value) { m_warningMessageHasBeenSet = true; m_warningMessage = value; }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline void SetWarningMessage(Aws::String&& value) { m_warningMessageHasBeenSet = true; m_warningMessage = std::move(value); }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline void SetWarningMessage(const char* value) { m_warningMessageHasBeenSet = true; m_warningMessage.assign(value); }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline NetworkInsightsAnalysis& WithWarningMessage(const Aws::String& value) { SetWarningMessage(value); return *this;}
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline NetworkInsightsAnalysis& WithWarningMessage(Aws::String&& value) { SetWarningMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline NetworkInsightsAnalysis& WithWarningMessage(const char* value) { SetWarningMessage(value); return *this;}
 
 
     /**
@@ -590,6 +631,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
+    Aws::String m_warningMessage;
+    bool m_warningMessageHasBeenSet;
 
     bool m_networkPathFound;
     bool m_networkPathFoundHasBeenSet;

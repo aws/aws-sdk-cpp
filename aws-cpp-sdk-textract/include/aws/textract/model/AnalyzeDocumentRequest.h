@@ -9,6 +9,7 @@
 #include <aws/textract/model/Document.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/model/HumanLoopConfig.h>
+#include <aws/textract/model/QueriesConfig.h>
 #include <aws/textract/model/FeatureType.h>
 #include <utility>
 
@@ -40,54 +41,54 @@ namespace Model
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
-     * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * that are passed using the <code>Bytes</code> field. </p>
+     * document must be an image in JPEG, PNG, PDF, or TIFF format.</p> <p>If you're
+     * using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+     * image bytes that are passed using the <code>Bytes</code> field. </p>
      */
     inline const Document& GetDocument() const{ return m_document; }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
-     * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * that are passed using the <code>Bytes</code> field. </p>
+     * document must be an image in JPEG, PNG, PDF, or TIFF format.</p> <p>If you're
+     * using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+     * image bytes that are passed using the <code>Bytes</code> field. </p>
      */
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
-     * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * that are passed using the <code>Bytes</code> field. </p>
+     * document must be an image in JPEG, PNG, PDF, or TIFF format.</p> <p>If you're
+     * using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+     * image bytes that are passed using the <code>Bytes</code> field. </p>
      */
     inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
-     * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * that are passed using the <code>Bytes</code> field. </p>
+     * document must be an image in JPEG, PNG, PDF, or TIFF format.</p> <p>If you're
+     * using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+     * image bytes that are passed using the <code>Bytes</code> field. </p>
      */
     inline void SetDocument(Document&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
-     * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * that are passed using the <code>Bytes</code> field. </p>
+     * document must be an image in JPEG, PNG, PDF, or TIFF format.</p> <p>If you're
+     * using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+     * image bytes that are passed using the <code>Bytes</code> field. </p>
      */
     inline AnalyzeDocumentRequest& WithDocument(const Document& value) { SetDocument(value); return *this;}
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
-     * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * that are passed using the <code>Bytes</code> field. </p>
+     * document must be an image in JPEG, PNG, PDF, or TIFF format.</p> <p>If you're
+     * using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+     * image bytes that are passed using the <code>Bytes</code> field. </p>
      */
     inline AnalyzeDocumentRequest& WithDocument(Document&& value) { SetDocument(std::move(value)); return *this;}
 
@@ -209,6 +210,43 @@ namespace Model
      */
     inline AnalyzeDocumentRequest& WithHumanLoopConfig(HumanLoopConfig&& value) { SetHumanLoopConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains Queries and the alias for those Queries, as determined by the input.
+     * </p>
+     */
+    inline const QueriesConfig& GetQueriesConfig() const{ return m_queriesConfig; }
+
+    /**
+     * <p>Contains Queries and the alias for those Queries, as determined by the input.
+     * </p>
+     */
+    inline bool QueriesConfigHasBeenSet() const { return m_queriesConfigHasBeenSet; }
+
+    /**
+     * <p>Contains Queries and the alias for those Queries, as determined by the input.
+     * </p>
+     */
+    inline void SetQueriesConfig(const QueriesConfig& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = value; }
+
+    /**
+     * <p>Contains Queries and the alias for those Queries, as determined by the input.
+     * </p>
+     */
+    inline void SetQueriesConfig(QueriesConfig&& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = std::move(value); }
+
+    /**
+     * <p>Contains Queries and the alias for those Queries, as determined by the input.
+     * </p>
+     */
+    inline AnalyzeDocumentRequest& WithQueriesConfig(const QueriesConfig& value) { SetQueriesConfig(value); return *this;}
+
+    /**
+     * <p>Contains Queries and the alias for those Queries, as determined by the input.
+     * </p>
+     */
+    inline AnalyzeDocumentRequest& WithQueriesConfig(QueriesConfig&& value) { SetQueriesConfig(std::move(value)); return *this;}
+
   private:
 
     Document m_document;
@@ -219,6 +257,9 @@ namespace Model
 
     HumanLoopConfig m_humanLoopConfig;
     bool m_humanLoopConfigHasBeenSet;
+
+    QueriesConfig m_queriesConfig;
+    bool m_queriesConfigHasBeenSet;
   };
 
 } // namespace Model

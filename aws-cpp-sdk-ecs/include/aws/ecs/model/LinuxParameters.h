@@ -104,8 +104,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
 
@@ -117,8 +117,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
 
@@ -130,8 +130,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
 
@@ -143,8 +143,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
 
@@ -156,8 +156,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
 
@@ -169,8 +169,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
 
@@ -182,8 +182,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
 
@@ -195,8 +195,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>devices</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
 
@@ -287,8 +287,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline const Aws::Vector<Tmpfs>& GetTmpfs() const{ return m_tmpfs; }
 
@@ -296,8 +296,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline bool TmpfsHasBeenSet() const { return m_tmpfsHasBeenSet; }
 
@@ -305,8 +305,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline void SetTmpfs(const Aws::Vector<Tmpfs>& value) { m_tmpfsHasBeenSet = true; m_tmpfs = value; }
 
@@ -314,8 +314,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline void SetTmpfs(Aws::Vector<Tmpfs>&& value) { m_tmpfsHasBeenSet = true; m_tmpfs = std::move(value); }
 
@@ -323,8 +323,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& WithTmpfs(const Aws::Vector<Tmpfs>& value) { SetTmpfs(value); return *this;}
 
@@ -332,8 +332,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& WithTmpfs(Aws::Vector<Tmpfs>&& value) { SetTmpfs(std::move(value)); return *this;}
 
@@ -341,8 +341,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& AddTmpfs(const Tmpfs& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(value); return *this; }
 
@@ -350,8 +350,8 @@ namespace Model
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& AddTmpfs(Tmpfs&& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(std::move(value)); return *this; }
 
@@ -366,9 +366,9 @@ namespace Model
      * are <code>0</code> or any positive integer. If the <code>maxSwap</code>
      * parameter is omitted, the container will use the swap configuration for the
      * container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you are
+     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * is not supported.</p> 
+     * isn't supported.</p> 
      */
     inline int GetMaxSwap() const{ return m_maxSwap; }
 
@@ -382,9 +382,9 @@ namespace Model
      * are <code>0</code> or any positive integer. If the <code>maxSwap</code>
      * parameter is omitted, the container will use the swap configuration for the
      * container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you are
+     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * is not supported.</p> 
+     * isn't supported.</p> 
      */
     inline bool MaxSwapHasBeenSet() const { return m_maxSwapHasBeenSet; }
 
@@ -398,9 +398,9 @@ namespace Model
      * are <code>0</code> or any positive integer. If the <code>maxSwap</code>
      * parameter is omitted, the container will use the swap configuration for the
      * container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you are
+     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * is not supported.</p> 
+     * isn't supported.</p> 
      */
     inline void SetMaxSwap(int value) { m_maxSwapHasBeenSet = true; m_maxSwap = value; }
 
@@ -414,9 +414,9 @@ namespace Model
      * are <code>0</code> or any positive integer. If the <code>maxSwap</code>
      * parameter is omitted, the container will use the swap configuration for the
      * container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you are
+     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * is not supported.</p> 
+     * isn't supported.</p> 
      */
     inline LinuxParameters& WithMaxSwap(int value) { SetMaxSwap(value); return *this;}
 
@@ -432,8 +432,8 @@ namespace Model
      * then this parameter is ignored. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline int GetSwappiness() const{ return m_swappiness; }
 
@@ -448,8 +448,8 @@ namespace Model
      * then this parameter is ignored. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline bool SwappinessHasBeenSet() const { return m_swappinessHasBeenSet; }
 
@@ -464,8 +464,8 @@ namespace Model
      * then this parameter is ignored. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline void SetSwappiness(int value) { m_swappinessHasBeenSet = true; m_swappiness = value; }
 
@@ -480,8 +480,8 @@ namespace Model
      * then this parameter is ignored. This parameter maps to the
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter is not supported.</p> 
+     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
+     * the <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& WithSwappiness(int value) { SetSwappiness(value); return *this;}
 

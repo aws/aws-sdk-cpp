@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline const RequestedServiceQuotaChange& GetRequestedQuota() const{ return m_requestedQuota; }
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline void SetRequestedQuota(const RequestedServiceQuotaChange& value) { m_requestedQuota = value; }
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline void SetRequestedQuota(RequestedServiceQuotaChange&& value) { m_requestedQuota = std::move(value); }
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline RequestServiceQuotaIncreaseResult& WithRequestedQuota(const RequestedServiceQuotaChange& value) { SetRequestedQuota(value); return *this;}
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline RequestServiceQuotaIncreaseResult& WithRequestedQuota(RequestedServiceQuotaChange&& value) { SetRequestedQuota(std::move(value)); return *this;}
 

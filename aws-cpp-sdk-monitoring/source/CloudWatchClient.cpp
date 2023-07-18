@@ -24,6 +24,7 @@
 #include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/DeleteDashboardsRequest.h>
 #include <aws/monitoring/model/DeleteInsightRulesRequest.h>
+#include <aws/monitoring/model/DeleteMetricStreamRequest.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryRequest.h>
 #include <aws/monitoring/model/DescribeAlarmsRequest.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricRequest.h>
@@ -37,8 +38,10 @@
 #include <aws/monitoring/model/GetInsightRuleReportRequest.h>
 #include <aws/monitoring/model/GetMetricDataRequest.h>
 #include <aws/monitoring/model/GetMetricStatisticsRequest.h>
+#include <aws/monitoring/model/GetMetricStreamRequest.h>
 #include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
 #include <aws/monitoring/model/ListDashboardsRequest.h>
+#include <aws/monitoring/model/ListMetricStreamsRequest.h>
 #include <aws/monitoring/model/ListMetricsRequest.h>
 #include <aws/monitoring/model/ListTagsForResourceRequest.h>
 #include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
@@ -47,7 +50,10 @@
 #include <aws/monitoring/model/PutInsightRuleRequest.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
+#include <aws/monitoring/model/PutMetricStreamRequest.h>
 #include <aws/monitoring/model/SetAlarmStateRequest.h>
+#include <aws/monitoring/model/StartMetricStreamsRequest.h>
+#include <aws/monitoring/model/StopMetricStreamsRequest.h>
 #include <aws/monitoring/model/TagResourceRequest.h>
 #include <aws/monitoring/model/UntagResourceRequest.h>
 
@@ -99,7 +105,7 @@ CloudWatchClient::~CloudWatchClient()
 {
 }
 
-void CloudWatchClient::init(const ClientConfiguration& config)
+void CloudWatchClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudWatch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -138,9 +144,6 @@ Aws::String CloudWatchClient::ConvertRequestToPresignedUrl(const AmazonSerializa
 DeleteAlarmsOutcome CloudWatchClient::DeleteAlarms(const DeleteAlarmsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAlarmsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -165,9 +168,6 @@ void CloudWatchClient::DeleteAlarmsAsyncHelper(const DeleteAlarmsRequest& reques
 DeleteAnomalyDetectorOutcome CloudWatchClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -192,9 +192,6 @@ void CloudWatchClient::DeleteAnomalyDetectorAsyncHelper(const DeleteAnomalyDetec
 DeleteDashboardsOutcome CloudWatchClient::DeleteDashboards(const DeleteDashboardsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -219,9 +216,6 @@ void CloudWatchClient::DeleteDashboardsAsyncHelper(const DeleteDashboardsRequest
 DeleteInsightRulesOutcome CloudWatchClient::DeleteInsightRules(const DeleteInsightRulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteInsightRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -243,12 +237,33 @@ void CloudWatchClient::DeleteInsightRulesAsyncHelper(const DeleteInsightRulesReq
   handler(this, request, DeleteInsightRules(request), context);
 }
 
+DeleteMetricStreamOutcome CloudWatchClient::DeleteMetricStream(const DeleteMetricStreamRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteMetricStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteMetricStreamOutcomeCallable CloudWatchClient::DeleteMetricStreamCallable(const DeleteMetricStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMetricStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMetricStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::DeleteMetricStreamAsync(const DeleteMetricStreamRequest& request, const DeleteMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMetricStreamAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::DeleteMetricStreamAsyncHelper(const DeleteMetricStreamRequest& request, const DeleteMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMetricStream(request), context);
+}
+
 DescribeAlarmHistoryOutcome CloudWatchClient::DescribeAlarmHistory(const DescribeAlarmHistoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAlarmHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -273,9 +288,6 @@ void CloudWatchClient::DescribeAlarmHistoryAsyncHelper(const DescribeAlarmHistor
 DescribeAlarmsOutcome CloudWatchClient::DescribeAlarms(const DescribeAlarmsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAlarmsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -300,9 +312,6 @@ void CloudWatchClient::DescribeAlarmsAsyncHelper(const DescribeAlarmsRequest& re
 DescribeAlarmsForMetricOutcome CloudWatchClient::DescribeAlarmsForMetric(const DescribeAlarmsForMetricRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAlarmsForMetricOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -327,9 +336,6 @@ void CloudWatchClient::DescribeAlarmsForMetricAsyncHelper(const DescribeAlarmsFo
 DescribeAnomalyDetectorsOutcome CloudWatchClient::DescribeAnomalyDetectors(const DescribeAnomalyDetectorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAnomalyDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -354,9 +360,6 @@ void CloudWatchClient::DescribeAnomalyDetectorsAsyncHelper(const DescribeAnomaly
 DescribeInsightRulesOutcome CloudWatchClient::DescribeInsightRules(const DescribeInsightRulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeInsightRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -381,9 +384,6 @@ void CloudWatchClient::DescribeInsightRulesAsyncHelper(const DescribeInsightRule
 DisableAlarmActionsOutcome CloudWatchClient::DisableAlarmActions(const DisableAlarmActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisableAlarmActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -408,9 +408,6 @@ void CloudWatchClient::DisableAlarmActionsAsyncHelper(const DisableAlarmActionsR
 DisableInsightRulesOutcome CloudWatchClient::DisableInsightRules(const DisableInsightRulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisableInsightRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -435,9 +432,6 @@ void CloudWatchClient::DisableInsightRulesAsyncHelper(const DisableInsightRulesR
 EnableAlarmActionsOutcome CloudWatchClient::EnableAlarmActions(const EnableAlarmActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return EnableAlarmActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -462,9 +456,6 @@ void CloudWatchClient::EnableAlarmActionsAsyncHelper(const EnableAlarmActionsReq
 EnableInsightRulesOutcome CloudWatchClient::EnableInsightRules(const EnableInsightRulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return EnableInsightRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -489,9 +480,6 @@ void CloudWatchClient::EnableInsightRulesAsyncHelper(const EnableInsightRulesReq
 GetDashboardOutcome CloudWatchClient::GetDashboard(const GetDashboardRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -516,9 +504,6 @@ void CloudWatchClient::GetDashboardAsyncHelper(const GetDashboardRequest& reques
 GetInsightRuleReportOutcome CloudWatchClient::GetInsightRuleReport(const GetInsightRuleReportRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetInsightRuleReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -543,9 +528,6 @@ void CloudWatchClient::GetInsightRuleReportAsyncHelper(const GetInsightRuleRepor
 GetMetricDataOutcome CloudWatchClient::GetMetricData(const GetMetricDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -570,9 +552,6 @@ void CloudWatchClient::GetMetricDataAsyncHelper(const GetMetricDataRequest& requ
 GetMetricStatisticsOutcome CloudWatchClient::GetMetricStatistics(const GetMetricStatisticsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMetricStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -594,12 +573,33 @@ void CloudWatchClient::GetMetricStatisticsAsyncHelper(const GetMetricStatisticsR
   handler(this, request, GetMetricStatistics(request), context);
 }
 
+GetMetricStreamOutcome CloudWatchClient::GetMetricStream(const GetMetricStreamRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetMetricStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetMetricStreamOutcomeCallable CloudWatchClient::GetMetricStreamCallable(const GetMetricStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMetricStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMetricStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::GetMetricStreamAsync(const GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMetricStreamAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::GetMetricStreamAsyncHelper(const GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMetricStream(request), context);
+}
+
 GetMetricWidgetImageOutcome CloudWatchClient::GetMetricWidgetImage(const GetMetricWidgetImageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMetricWidgetImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -624,9 +624,6 @@ void CloudWatchClient::GetMetricWidgetImageAsyncHelper(const GetMetricWidgetImag
 ListDashboardsOutcome CloudWatchClient::ListDashboards(const ListDashboardsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -648,12 +645,33 @@ void CloudWatchClient::ListDashboardsAsyncHelper(const ListDashboardsRequest& re
   handler(this, request, ListDashboards(request), context);
 }
 
+ListMetricStreamsOutcome CloudWatchClient::ListMetricStreams(const ListMetricStreamsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMetricStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ListMetricStreamsOutcomeCallable CloudWatchClient::ListMetricStreamsCallable(const ListMetricStreamsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMetricStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricStreams(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::ListMetricStreamsAsync(const ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMetricStreamsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::ListMetricStreamsAsyncHelper(const ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMetricStreams(request), context);
+}
+
 ListMetricsOutcome CloudWatchClient::ListMetrics(const ListMetricsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -678,9 +696,6 @@ void CloudWatchClient::ListMetricsAsyncHelper(const ListMetricsRequest& request,
 ListTagsForResourceOutcome CloudWatchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -705,9 +720,6 @@ void CloudWatchClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceR
 PutAnomalyDetectorOutcome CloudWatchClient::PutAnomalyDetector(const PutAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -732,9 +744,6 @@ void CloudWatchClient::PutAnomalyDetectorAsyncHelper(const PutAnomalyDetectorReq
 PutCompositeAlarmOutcome CloudWatchClient::PutCompositeAlarm(const PutCompositeAlarmRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutCompositeAlarmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -759,9 +768,6 @@ void CloudWatchClient::PutCompositeAlarmAsyncHelper(const PutCompositeAlarmReque
 PutDashboardOutcome CloudWatchClient::PutDashboard(const PutDashboardRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -786,9 +792,6 @@ void CloudWatchClient::PutDashboardAsyncHelper(const PutDashboardRequest& reques
 PutInsightRuleOutcome CloudWatchClient::PutInsightRule(const PutInsightRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutInsightRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -813,9 +816,6 @@ void CloudWatchClient::PutInsightRuleAsyncHelper(const PutInsightRuleRequest& re
 PutMetricAlarmOutcome CloudWatchClient::PutMetricAlarm(const PutMetricAlarmRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutMetricAlarmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -840,9 +840,6 @@ void CloudWatchClient::PutMetricAlarmAsyncHelper(const PutMetricAlarmRequest& re
 PutMetricDataOutcome CloudWatchClient::PutMetricData(const PutMetricDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -864,12 +861,33 @@ void CloudWatchClient::PutMetricDataAsyncHelper(const PutMetricDataRequest& requ
   handler(this, request, PutMetricData(request), context);
 }
 
+PutMetricStreamOutcome CloudWatchClient::PutMetricStream(const PutMetricStreamRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutMetricStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PutMetricStreamOutcomeCallable CloudWatchClient::PutMetricStreamCallable(const PutMetricStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutMetricStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMetricStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::PutMetricStreamAsync(const PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutMetricStreamAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::PutMetricStreamAsyncHelper(const PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutMetricStream(request), context);
+}
+
 SetAlarmStateOutcome CloudWatchClient::SetAlarmState(const SetAlarmStateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SetAlarmStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -891,12 +909,57 @@ void CloudWatchClient::SetAlarmStateAsyncHelper(const SetAlarmStateRequest& requ
   handler(this, request, SetAlarmState(request), context);
 }
 
+StartMetricStreamsOutcome CloudWatchClient::StartMetricStreams(const StartMetricStreamsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartMetricStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+StartMetricStreamsOutcomeCallable CloudWatchClient::StartMetricStreamsCallable(const StartMetricStreamsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMetricStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMetricStreams(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::StartMetricStreamsAsync(const StartMetricStreamsRequest& request, const StartMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMetricStreamsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::StartMetricStreamsAsyncHelper(const StartMetricStreamsRequest& request, const StartMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMetricStreams(request), context);
+}
+
+StopMetricStreamsOutcome CloudWatchClient::StopMetricStreams(const StopMetricStreamsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopMetricStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+StopMetricStreamsOutcomeCallable CloudWatchClient::StopMetricStreamsCallable(const StopMetricStreamsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopMetricStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopMetricStreams(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::StopMetricStreamsAsync(const StopMetricStreamsRequest& request, const StopMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopMetricStreamsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::StopMetricStreamsAsyncHelper(const StopMetricStreamsRequest& request, const StopMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopMetricStreams(request), context);
+}
+
 TagResourceOutcome CloudWatchClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -921,9 +984,6 @@ void CloudWatchClient::TagResourceAsyncHelper(const TagResourceRequest& request,
 UntagResourceOutcome CloudWatchClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -944,6 +1004,4 @@ void CloudWatchClient::UntagResourceAsyncHelper(const UntagResourceRequest& requ
 {
   handler(this, request, UntagResource(request), context);
 }
-
-
 

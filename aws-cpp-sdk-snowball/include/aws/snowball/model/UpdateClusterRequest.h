@@ -8,6 +8,7 @@
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/JobResource.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
 #include <utility>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -98,7 +99,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -106,7 +107,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -114,7 +115,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -122,7 +123,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -130,7 +131,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline UpdateClusterRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -138,7 +139,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline UpdateClusterRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -146,7 +147,7 @@ namespace Model
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline UpdateClusterRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -227,6 +228,49 @@ namespace Model
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
      */
     inline UpdateClusterRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+     */
+    inline UpdateClusterRequest& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+     */
+    inline UpdateClusterRequest& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -399,6 +443,9 @@ namespace Model
 
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
 
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;

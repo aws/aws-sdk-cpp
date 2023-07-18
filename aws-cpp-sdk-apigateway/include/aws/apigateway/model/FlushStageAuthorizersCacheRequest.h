@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline FlushStageAuthorizersCacheRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline FlushStageAuthorizersCacheRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline FlushStageAuthorizersCacheRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 

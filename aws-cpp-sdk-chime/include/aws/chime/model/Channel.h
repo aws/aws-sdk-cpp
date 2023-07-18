@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Creates a channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Channel">AWS API
    * Reference</a></p>
    */
@@ -155,172 +155,166 @@ namespace Model
 
 
     /**
-     * <p>The channel's privacy setting, <code>PUBLIC</code> or
-     * <code>HIDDEN</code>.</p>
+     * <p>The channel's privacy setting.</p>
      */
     inline const ChannelPrivacy& GetPrivacy() const{ return m_privacy; }
 
     /**
-     * <p>The channel's privacy setting, <code>PUBLIC</code> or
-     * <code>HIDDEN</code>.</p>
+     * <p>The channel's privacy setting.</p>
      */
     inline bool PrivacyHasBeenSet() const { return m_privacyHasBeenSet; }
 
     /**
-     * <p>The channel's privacy setting, <code>PUBLIC</code> or
-     * <code>HIDDEN</code>.</p>
+     * <p>The channel's privacy setting.</p>
      */
     inline void SetPrivacy(const ChannelPrivacy& value) { m_privacyHasBeenSet = true; m_privacy = value; }
 
     /**
-     * <p>The channel's privacy setting, <code>PUBLIC</code> or
-     * <code>HIDDEN</code>.</p>
+     * <p>The channel's privacy setting.</p>
      */
     inline void SetPrivacy(ChannelPrivacy&& value) { m_privacyHasBeenSet = true; m_privacy = std::move(value); }
 
     /**
-     * <p>The channel's privacy setting, <code>PUBLIC</code> or
-     * <code>HIDDEN</code>.</p>
+     * <p>The channel's privacy setting.</p>
      */
     inline Channel& WithPrivacy(const ChannelPrivacy& value) { SetPrivacy(value); return *this;}
 
     /**
-     * <p>The channel's privacy setting, <code>PUBLIC</code> or
-     * <code>HIDDEN</code>.</p>
+     * <p>The channel's privacy setting.</p>
      */
     inline Channel& WithPrivacy(ChannelPrivacy&& value) { SetPrivacy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline Channel& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline Channel& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The channel's metadata.</p>
      */
     inline Channel& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
 
     /**
-     * <p>The administrator who created the channel.</p>
+     * <p>The <code>AppInstanceUser</code> who created the channel.</p>
      */
     inline const Identity& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The administrator who created the channel.</p>
+     * <p>The <code>AppInstanceUser</code> who created the channel.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The administrator who created the channel.</p>
+     * <p>The <code>AppInstanceUser</code> who created the channel.</p>
      */
     inline void SetCreatedBy(const Identity& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The administrator who created the channel.</p>
+     * <p>The <code>AppInstanceUser</code> who created the channel.</p>
      */
     inline void SetCreatedBy(Identity&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The administrator who created the channel.</p>
+     * <p>The <code>AppInstanceUser</code> who created the channel.</p>
      */
     inline Channel& WithCreatedBy(const Identity& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The administrator who created the channel.</p>
+     * <p>The <code>AppInstanceUser</code> who created the channel.</p>
      */
     inline Channel& WithCreatedBy(Identity&& value) { SetCreatedBy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time at which the administrator created the channel.</p>
+     * <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
-     * <p>The time at which the administrator created the channel.</p>
+     * <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
      */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
-     * <p>The time at which the administrator created the channel.</p>
+     * <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
      */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
-     * <p>The time at which the administrator created the channel.</p>
+     * <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
      */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
-     * <p>The time at which the administrator created the channel.</p>
+     * <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
      */
     inline Channel& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time at which the administrator created the channel.</p>
+     * <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
      */
     inline Channel& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time at which a member sent the last message in a session.</p>
+     * <p>The time at which a member sent the last message in the channel.</p>
      */
     inline const Aws::Utils::DateTime& GetLastMessageTimestamp() const{ return m_lastMessageTimestamp; }
 
     /**
-     * <p>The time at which a member sent the last message in a session.</p>
+     * <p>The time at which a member sent the last message in the channel.</p>
      */
     inline bool LastMessageTimestampHasBeenSet() const { return m_lastMessageTimestampHasBeenSet; }
 
     /**
-     * <p>The time at which a member sent the last message in a session.</p>
+     * <p>The time at which a member sent the last message in the channel.</p>
      */
     inline void SetLastMessageTimestamp(const Aws::Utils::DateTime& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = value; }
 
     /**
-     * <p>The time at which a member sent the last message in a session.</p>
+     * <p>The time at which a member sent the last message in the channel.</p>
      */
     inline void SetLastMessageTimestamp(Aws::Utils::DateTime&& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = std::move(value); }
 
     /**
-     * <p>The time at which a member sent the last message in a session.</p>
+     * <p>The time at which a member sent the last message in the channel.</p>
      */
     inline Channel& WithLastMessageTimestamp(const Aws::Utils::DateTime& value) { SetLastMessageTimestamp(value); return *this;}
 
     /**
-     * <p>The time at which a member sent the last message in a session.</p>
+     * <p>The time at which a member sent the last message in the channel.</p>
      */
     inline Channel& WithLastMessageTimestamp(Aws::Utils::DateTime&& value) { SetLastMessageTimestamp(std::move(value)); return *this;}
 

@@ -26,7 +26,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_iamRoleArnHasBeenSet(false),
     m_parameterGroupNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false)
+    m_sSESpecificationHasBeenSet(false),
+    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
+    m_clusterEndpointEncryptionTypeHasBeenSet(false)
 {
 }
 
@@ -125,6 +127,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
   {
    payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
 
+  }
+
+  if(m_clusterEndpointEncryptionTypeHasBeenSet)
+  {
+   payload.WithString("ClusterEndpointEncryptionType", ClusterEndpointEncryptionTypeMapper::GetNameForClusterEndpointEncryptionType(m_clusterEndpointEncryptionType));
   }
 
   return payload.View().WriteReadable();

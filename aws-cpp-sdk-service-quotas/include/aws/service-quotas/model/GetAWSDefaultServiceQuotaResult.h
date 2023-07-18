@@ -33,32 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Returns the <a>ServiceQuota</a> object which contains all values for a
-     * quota.</p>
+     * <p>Information about the quota.</p>
      */
     inline const ServiceQuota& GetQuota() const{ return m_quota; }
 
     /**
-     * <p>Returns the <a>ServiceQuota</a> object which contains all values for a
-     * quota.</p>
+     * <p>Information about the quota.</p>
      */
     inline void SetQuota(const ServiceQuota& value) { m_quota = value; }
 
     /**
-     * <p>Returns the <a>ServiceQuota</a> object which contains all values for a
-     * quota.</p>
+     * <p>Information about the quota.</p>
      */
     inline void SetQuota(ServiceQuota&& value) { m_quota = std::move(value); }
 
     /**
-     * <p>Returns the <a>ServiceQuota</a> object which contains all values for a
-     * quota.</p>
+     * <p>Information about the quota.</p>
      */
     inline GetAWSDefaultServiceQuotaResult& WithQuota(const ServiceQuota& value) { SetQuota(value); return *this;}
 
     /**
-     * <p>Returns the <a>ServiceQuota</a> object which contains all values for a
-     * quota.</p>
+     * <p>Information about the quota.</p>
      */
     inline GetAWSDefaultServiceQuotaResult& WithQuota(ServiceQuota&& value) { SetQuota(std::move(value)); return *this;}
 

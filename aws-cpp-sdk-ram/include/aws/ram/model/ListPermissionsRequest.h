@@ -33,128 +33,192 @@ namespace Model
 
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline ListPermissionsRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline ListPermissionsRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the resource type for which to list permissions. For example, to
-     * list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>.</p>
+     * <p>Specifies that you want to list permissions for only the specified resource
+     * type. For example, to list only permissions that apply to EC2 subnets, specify
+     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * get the specific string required.</p>
      */
     inline ListPermissionsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline ListPermissionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline ListPermissionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline ListPermissionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline ListPermissionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

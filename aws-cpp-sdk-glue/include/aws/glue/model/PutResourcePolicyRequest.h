@@ -78,66 +78,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline PutResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline PutResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Glue resource for the resource policy to be set. For more
-     * information about AWS Glue resource ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a> </p>
+     * <p>Do not use. For internal use only.</p>
      */
     inline PutResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
@@ -210,7 +186,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline const ExistCondition& GetPolicyExistsCondition() const{ return m_policyExistsCondition; }
@@ -218,7 +194,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline bool PolicyExistsConditionHasBeenSet() const { return m_policyExistsConditionHasBeenSet; }
@@ -226,7 +202,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline void SetPolicyExistsCondition(const ExistCondition& value) { m_policyExistsConditionHasBeenSet = true; m_policyExistsCondition = value; }
@@ -234,7 +210,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline void SetPolicyExistsCondition(ExistCondition&& value) { m_policyExistsConditionHasBeenSet = true; m_policyExistsCondition = std::move(value); }
@@ -242,7 +218,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyExistsCondition(const ExistCondition& value) { SetPolicyExistsCondition(value); return *this;}
@@ -250,75 +226,75 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyExistsCondition(ExistCondition&& value) { SetPolicyExistsCondition(std::move(value)); return *this;}
 
 
     /**
-     * <p>Allows you to specify if you want to use both resource-level and
-     * account/catalog-level resource policies. A resource-level policy is a policy
-     * attached to an individual resource such as a database or a table.</p> <p>The
-     * default value of <code>NO</code> indicates that resource-level policies cannot
-     * co-exist with an account-level policy. A value of <code>YES</code> means the use
-     * of both resource-level and account/catalog-level resource policies is
-     * allowed.</p>
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline const EnableHybridValues& GetEnableHybrid() const{ return m_enableHybrid; }
 
     /**
-     * <p>Allows you to specify if you want to use both resource-level and
-     * account/catalog-level resource policies. A resource-level policy is a policy
-     * attached to an individual resource such as a database or a table.</p> <p>The
-     * default value of <code>NO</code> indicates that resource-level policies cannot
-     * co-exist with an account-level policy. A value of <code>YES</code> means the use
-     * of both resource-level and account/catalog-level resource policies is
-     * allowed.</p>
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline bool EnableHybridHasBeenSet() const { return m_enableHybridHasBeenSet; }
 
     /**
-     * <p>Allows you to specify if you want to use both resource-level and
-     * account/catalog-level resource policies. A resource-level policy is a policy
-     * attached to an individual resource such as a database or a table.</p> <p>The
-     * default value of <code>NO</code> indicates that resource-level policies cannot
-     * co-exist with an account-level policy. A value of <code>YES</code> means the use
-     * of both resource-level and account/catalog-level resource policies is
-     * allowed.</p>
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline void SetEnableHybrid(const EnableHybridValues& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = value; }
 
     /**
-     * <p>Allows you to specify if you want to use both resource-level and
-     * account/catalog-level resource policies. A resource-level policy is a policy
-     * attached to an individual resource such as a database or a table.</p> <p>The
-     * default value of <code>NO</code> indicates that resource-level policies cannot
-     * co-exist with an account-level policy. A value of <code>YES</code> means the use
-     * of both resource-level and account/catalog-level resource policies is
-     * allowed.</p>
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline void SetEnableHybrid(EnableHybridValues&& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = std::move(value); }
 
     /**
-     * <p>Allows you to specify if you want to use both resource-level and
-     * account/catalog-level resource policies. A resource-level policy is a policy
-     * attached to an individual resource such as a database or a table.</p> <p>The
-     * default value of <code>NO</code> indicates that resource-level policies cannot
-     * co-exist with an account-level policy. A value of <code>YES</code> means the use
-     * of both resource-level and account/catalog-level resource policies is
-     * allowed.</p>
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline PutResourcePolicyRequest& WithEnableHybrid(const EnableHybridValues& value) { SetEnableHybrid(value); return *this;}
 
     /**
-     * <p>Allows you to specify if you want to use both resource-level and
-     * account/catalog-level resource policies. A resource-level policy is a policy
-     * attached to an individual resource such as a database or a table.</p> <p>The
-     * default value of <code>NO</code> indicates that resource-level policies cannot
-     * co-exist with an account-level policy. A value of <code>YES</code> means the use
-     * of both resource-level and account/catalog-level resource policies is
-     * allowed.</p>
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline PutResourcePolicyRequest& WithEnableHybrid(EnableHybridValues&& value) { SetEnableHybrid(std::move(value)); return *this;}
 

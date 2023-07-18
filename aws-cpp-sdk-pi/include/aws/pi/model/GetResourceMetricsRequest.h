@@ -39,103 +39,133 @@ namespace Model
 
 
     /**
-     * <p>The AWS service for which Performance Insights returns metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
 
     /**
-     * <p>The AWS service for which Performance Insights returns metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
 
     /**
-     * <p>The AWS service for which Performance Insights returns metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
-     * <p>The AWS service for which Performance Insights returns metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
 
     /**
-     * <p>The AWS service for which Performance Insights returns metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline GetResourceMetricsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
 
     /**
-     * <p>The AWS service for which Performance Insights returns metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline GetResourceMetricsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline GetResourceMetricsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline GetResourceMetricsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source,
+     * specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
     inline GetResourceMetricsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
@@ -198,111 +228,123 @@ namespace Model
 
 
     /**
-     * <p>The date and time specifying the beginning of the requested time series data.
-     * You can't specify a <code>StartTime</code> that's earlier than 7 days ago. The
-     * value specified is <i>inclusive</i> - data points equal to or greater than
-     * <code>StartTime</code> will be returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * <p>The date and time specifying the beginning of the requested time series query
+     * range. You can't specify a <code>StartTime</code> that is earlier than 7 days
+     * ago. By default, Performance Insights has 7 days of retention, but you can
+     * extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus,
+     * the command returns data points equal to or greater than
+     * <code>StartTime</code>.</p> <p>The value for <code>StartTime</code> must be
+     * earlier than the value for <code>EndTime</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The date and time specifying the beginning of the requested time series data.
-     * You can't specify a <code>StartTime</code> that's earlier than 7 days ago. The
-     * value specified is <i>inclusive</i> - data points equal to or greater than
-     * <code>StartTime</code> will be returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * <p>The date and time specifying the beginning of the requested time series query
+     * range. You can't specify a <code>StartTime</code> that is earlier than 7 days
+     * ago. By default, Performance Insights has 7 days of retention, but you can
+     * extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus,
+     * the command returns data points equal to or greater than
+     * <code>StartTime</code>.</p> <p>The value for <code>StartTime</code> must be
+     * earlier than the value for <code>EndTime</code>.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The date and time specifying the beginning of the requested time series data.
-     * You can't specify a <code>StartTime</code> that's earlier than 7 days ago. The
-     * value specified is <i>inclusive</i> - data points equal to or greater than
-     * <code>StartTime</code> will be returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * <p>The date and time specifying the beginning of the requested time series query
+     * range. You can't specify a <code>StartTime</code> that is earlier than 7 days
+     * ago. By default, Performance Insights has 7 days of retention, but you can
+     * extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus,
+     * the command returns data points equal to or greater than
+     * <code>StartTime</code>.</p> <p>The value for <code>StartTime</code> must be
+     * earlier than the value for <code>EndTime</code>.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The date and time specifying the beginning of the requested time series data.
-     * You can't specify a <code>StartTime</code> that's earlier than 7 days ago. The
-     * value specified is <i>inclusive</i> - data points equal to or greater than
-     * <code>StartTime</code> will be returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * <p>The date and time specifying the beginning of the requested time series query
+     * range. You can't specify a <code>StartTime</code> that is earlier than 7 days
+     * ago. By default, Performance Insights has 7 days of retention, but you can
+     * extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus,
+     * the command returns data points equal to or greater than
+     * <code>StartTime</code>.</p> <p>The value for <code>StartTime</code> must be
+     * earlier than the value for <code>EndTime</code>.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The date and time specifying the beginning of the requested time series data.
-     * You can't specify a <code>StartTime</code> that's earlier than 7 days ago. The
-     * value specified is <i>inclusive</i> - data points equal to or greater than
-     * <code>StartTime</code> will be returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * <p>The date and time specifying the beginning of the requested time series query
+     * range. You can't specify a <code>StartTime</code> that is earlier than 7 days
+     * ago. By default, Performance Insights has 7 days of retention, but you can
+     * extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus,
+     * the command returns data points equal to or greater than
+     * <code>StartTime</code>.</p> <p>The value for <code>StartTime</code> must be
+     * earlier than the value for <code>EndTime</code>.</p>
      */
     inline GetResourceMetricsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The date and time specifying the beginning of the requested time series data.
-     * You can't specify a <code>StartTime</code> that's earlier than 7 days ago. The
-     * value specified is <i>inclusive</i> - data points equal to or greater than
-     * <code>StartTime</code> will be returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * <p>The date and time specifying the beginning of the requested time series query
+     * range. You can't specify a <code>StartTime</code> that is earlier than 7 days
+     * ago. By default, Performance Insights has 7 days of retention, but you can
+     * extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus,
+     * the command returns data points equal to or greater than
+     * <code>StartTime</code>.</p> <p>The value for <code>StartTime</code> must be
+     * earlier than the value for <code>EndTime</code>.</p>
      */
     inline GetResourceMetricsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time specifying the end of the requested time series data. The
-     * value specified is <i>exclusive</i> - data points less than (but not equal to)
-     * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
-     * must be later than the value for <code>StartTime</code>.</p>
+     * <p>The date and time specifying the end of the requested time series query
+     * range. The value specified is <i>exclusive</i>. Thus, the command returns data
+     * points less than (but not equal to) <code>EndTime</code>.</p> <p>The value for
+     * <code>EndTime</code> must be later than the value for
+     * <code>StartTime</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time specifying the end of the requested time series data. The
-     * value specified is <i>exclusive</i> - data points less than (but not equal to)
-     * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
-     * must be later than the value for <code>StartTime</code>.</p>
+     * <p>The date and time specifying the end of the requested time series query
+     * range. The value specified is <i>exclusive</i>. Thus, the command returns data
+     * points less than (but not equal to) <code>EndTime</code>.</p> <p>The value for
+     * <code>EndTime</code> must be later than the value for
+     * <code>StartTime</code>.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time specifying the end of the requested time series data. The
-     * value specified is <i>exclusive</i> - data points less than (but not equal to)
-     * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
-     * must be later than the value for <code>StartTime</code>.</p>
+     * <p>The date and time specifying the end of the requested time series query
+     * range. The value specified is <i>exclusive</i>. Thus, the command returns data
+     * points less than (but not equal to) <code>EndTime</code>.</p> <p>The value for
+     * <code>EndTime</code> must be later than the value for
+     * <code>StartTime</code>.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time specifying the end of the requested time series data. The
-     * value specified is <i>exclusive</i> - data points less than (but not equal to)
-     * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
-     * must be later than the value for <code>StartTime</code>.</p>
+     * <p>The date and time specifying the end of the requested time series query
+     * range. The value specified is <i>exclusive</i>. Thus, the command returns data
+     * points less than (but not equal to) <code>EndTime</code>.</p> <p>The value for
+     * <code>EndTime</code> must be later than the value for
+     * <code>StartTime</code>.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time specifying the end of the requested time series data. The
-     * value specified is <i>exclusive</i> - data points less than (but not equal to)
-     * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
-     * must be later than the value for <code>StartTime</code>.</p>
+     * <p>The date and time specifying the end of the requested time series query
+     * range. The value specified is <i>exclusive</i>. Thus, the command returns data
+     * points less than (but not equal to) <code>EndTime</code>.</p> <p>The value for
+     * <code>EndTime</code> must be later than the value for
+     * <code>StartTime</code>.</p>
      */
     inline GetResourceMetricsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time specifying the end of the requested time series data. The
-     * value specified is <i>exclusive</i> - data points less than (but not equal to)
-     * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
-     * must be later than the value for <code>StartTime</code>.</p>
+     * <p>The date and time specifying the end of the requested time series query
+     * range. The value specified is <i>exclusive</i>. Thus, the command returns data
+     * points less than (but not equal to) <code>EndTime</code>.</p> <p>The value for
+     * <code>EndTime</code> must be later than the value for
+     * <code>StartTime</code>.</p>
      */
     inline GetResourceMetricsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

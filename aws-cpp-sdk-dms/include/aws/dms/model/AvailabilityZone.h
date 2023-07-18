@@ -28,9 +28,9 @@ namespace Model
    * <code>AvailabilityZone</code> is an optional parameter to the <a
    * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html">
    * <code>CreateReplicationInstance</code> </a> operation, and it’s value relates to
-   * the AWS Region of an endpoint. For example, the availability zone of an endpoint
-   * in the us-east-1 region might be us-east-1a, us-east-1b, us-east-1c, or
-   * us-east-1d.</p><p><h3>See Also:</h3>   <a
+   * the Amazon Web Services Region of an endpoint. For example, the availability
+   * zone of an endpoint in the us-east-1 region might be us-east-1a, us-east-1b,
+   * us-east-1c, or us-east-1d.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AvailabilityZone">AWS
    * API Reference</a></p>
    */

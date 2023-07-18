@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartStreamProcessorRequest::StartStreamProcessorRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_startSelectorHasBeenSet(false),
+    m_stopSelectorHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,18 @@ Aws::String StartStreamProcessorRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_startSelectorHasBeenSet)
+  {
+   payload.WithObject("StartSelector", m_startSelector.Jsonize());
+
+  }
+
+  if(m_stopSelectorHasBeenSet)
+  {
+   payload.WithObject("StopSelector", m_stopSelector.Jsonize());
 
   }
 

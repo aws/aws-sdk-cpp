@@ -85,20 +85,22 @@ namespace Model
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -110,27 +112,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -142,27 +150,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -174,27 +188,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -206,27 +226,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -238,27 +264,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -270,27 +302,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -302,27 +340,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -334,27 +378,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -366,27 +416,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -398,27 +454,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -430,27 +492,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -462,27 +530,33 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
-     * credential received from the notification service. For <code>APNS</code> and
-     * <code>APNS_SANDBOX</code>, <code>PlatformCredential</code> is <code>private
-     * key</code>. For <code>GCM</code> (Firebase Cloud Messaging),
-     * <code>PlatformCredential</code> is <code>API key</code>. For <code>ADM</code>,
-     * <code>PlatformCredential</code> is <code>client secret</code>.</p> </li> <li>
-     * <p> <code>PlatformPrincipal</code> – The principal received from the
-     * notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
-     * <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
-     * <code>GCM</code> (Firebase Cloud Messaging), there is no
-     * <code>PlatformPrincipal</code>. For <code>ADM</code>,
-     * <code>PlatformPrincipal</code> is <code>client id</code>.</p> </li> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which
-     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which
+     * credential received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformCredential</code>is client secret.</p> </li> <li> <p>For Apple
+     * Services using certificate credentials, <code>PlatformCredential</code> is
+     * private key.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
+     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
+     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
+     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
+     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
+     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
+     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
+     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
+     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -494,7 +568,11 @@ namespace Model
      * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write
      * access to use CloudWatch Logs on your behalf.</p> </li> <li> <p>
      * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of
-     * successfully delivered messages.</p> </li> </ul>
+     * successfully delivered messages.</p> </li> </ul> <p>The following attributes
+     * only apply to <code>APNs</code> token-based authentication:</p> <ul> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple
+     * developer account team.</p> </li> <li> <p> <code>ApplePlatformBundleID</code> –
+     * The bundle identifier that's assigned to your iOS app.</p> </li> </ul>
      */
     inline SetPlatformApplicationAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

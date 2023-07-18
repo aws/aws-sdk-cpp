@@ -157,58 +157,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline const Aws::Vector<ServiceField>& GetInclude() const{ return m_include; }
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(const Aws::Vector<ServiceField>& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(Aws::Vector<ServiceField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeServicesRequest& WithInclude(const Aws::Vector<ServiceField>& value) { SetInclude(value); return *this;}
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeServicesRequest& WithInclude(Aws::Vector<ServiceField>&& value) { SetInclude(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeServicesRequest& AddInclude(const ServiceField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether you want to see the resource tags for the service. If
+     * <p>Determines whether you want to see the resource tags for the service. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeServicesRequest& AddInclude(ServiceField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
 

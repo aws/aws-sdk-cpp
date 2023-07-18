@@ -236,25 +236,25 @@ namespace Model
 
     /**
      * <p>The number of CloudFront origin access identities that were created by the
-     * current AWS account. </p>
+     * current Amazon Web Services account.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The number of CloudFront origin access identities that were created by the
-     * current AWS account. </p>
+     * current Amazon Web Services account.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>The number of CloudFront origin access identities that were created by the
-     * current AWS account. </p>
+     * current Amazon Web Services account.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The number of CloudFront origin access identities that were created by the
-     * current AWS account. </p>
+     * current Amazon Web Services account.</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithQuantity(int value) { SetQuantity(value); return *this;}
 
@@ -262,56 +262,56 @@ namespace Model
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline const Aws::Vector<CloudFrontOriginAccessIdentitySummary>& GetItems() const{ return m_items; }
 
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline void SetItems(const Aws::Vector<CloudFrontOriginAccessIdentitySummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline void SetItems(Aws::Vector<CloudFrontOriginAccessIdentitySummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithItems(const Aws::Vector<CloudFrontOriginAccessIdentitySummary>& value) { SetItems(value); return *this;}
 
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithItems(Aws::Vector<CloudFrontOriginAccessIdentitySummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline CloudFrontOriginAccessIdentityList& AddItems(const CloudFrontOriginAccessIdentitySummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains one
      * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
-     * access identity that was created by the current AWS account.</p>
+     * access identity that was created by the current Amazon Web Services account.</p>
      */
     inline CloudFrontOriginAccessIdentityList& AddItems(CloudFrontOriginAccessIdentitySummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

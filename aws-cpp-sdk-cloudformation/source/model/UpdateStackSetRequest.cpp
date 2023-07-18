@@ -30,7 +30,10 @@ UpdateStackSetRequest::UpdateStackSetRequest() :
     m_operationId(Aws::Utils::UUID::RandomUUID()),
     m_operationIdHasBeenSet(true),
     m_accountsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+    m_regionsHasBeenSet(false),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false),
+    m_managedExecutionHasBeenSet(false)
 {
 }
 
@@ -149,6 +152,16 @@ Aws::String UpdateStackSetRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       regionsCount++;
     }
+  }
+
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+  }
+
+  if(m_managedExecutionHasBeenSet)
+  {
+    m_managedExecution.OutputToStream(ss, "ManagedExecution");
   }
 
   ss << "Version=2010-05-15";

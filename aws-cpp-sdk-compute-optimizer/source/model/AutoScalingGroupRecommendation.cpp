@@ -29,7 +29,11 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation() :
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_currentConfigurationHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
 }
 
@@ -44,7 +48,11 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValu
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_currentConfigurationHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +128,30 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
     m_lastRefreshTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentPerformanceRisk"))
+  {
+    m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
+
+    m_currentPerformanceRiskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inferredWorkloadTypes"))
+  {
+    Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
+    for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
+    {
+      m_inferredWorkloadTypes.push_back(InferredWorkloadTypeMapper::GetInferredWorkloadTypeForName(inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString()));
+    }
+    m_inferredWorkloadTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -187,6 +219,28 @@ JsonValue AutoScalingGroupRecommendation::Jsonize() const
   if(m_lastRefreshTimestampHasBeenSet)
   {
    payload.WithDouble("lastRefreshTimestamp", m_lastRefreshTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_currentPerformanceRiskHasBeenSet)
+  {
+   payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
+  }
+
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
+  }
+
+  if(m_inferredWorkloadTypesHasBeenSet)
+  {
+   Array<JsonValue> inferredWorkloadTypesJsonList(m_inferredWorkloadTypes.size());
+   for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
+   {
+     inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString(InferredWorkloadTypeMapper::GetNameForInferredWorkloadType(m_inferredWorkloadTypes[inferredWorkloadTypesIndex]));
+   }
+   payload.WithArray("inferredWorkloadTypes", std::move(inferredWorkloadTypesJsonList));
+
   }
 
   return payload;

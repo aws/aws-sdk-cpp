@@ -82,6 +82,12 @@ GetEmailIdentityResult& GetEmailIdentityResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("ConfigurationSetName"))
+  {
+    m_configurationSetName = jsonValue.GetString("ConfigurationSetName");
+
+  }
+
 
 
   return *this;

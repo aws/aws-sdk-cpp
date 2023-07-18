@@ -126,7 +126,7 @@ GuardDutyClient::~GuardDutyClient()
 {
 }
 
-void GuardDutyClient::init(const ClientConfiguration& config)
+void GuardDutyClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("GuardDuty");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -160,11 +160,9 @@ AcceptInvitationOutcome GuardDutyClient::AcceptInvitation(const AcceptInvitation
     return AcceptInvitationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/master";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/master");
   return AcceptInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -194,11 +192,9 @@ ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsReq
     return ArchiveFindingsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/findings/archive";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/findings/archive");
   return ArchiveFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -223,9 +219,7 @@ void GuardDutyClient::ArchiveFindingsAsyncHelper(const ArchiveFindingsRequest& r
 CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector");
   return CreateDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -255,11 +249,9 @@ CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& req
     return CreateFilterOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/filter";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/filter");
   return CreateFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -289,11 +281,9 @@ CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& reques
     return CreateIPSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/ipset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/ipset");
   return CreateIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -323,11 +313,9 @@ CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& 
     return CreateMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member");
   return CreateMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -357,11 +345,9 @@ CreatePublishingDestinationOutcome GuardDutyClient::CreatePublishingDestination(
     return CreatePublishingDestinationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/publishingDestination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/publishingDestination");
   return CreatePublishingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -391,11 +377,9 @@ CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSa
     return CreateSampleFindingsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/findings/create";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/findings/create");
   return CreateSampleFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -425,11 +409,9 @@ CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateTh
     return CreateThreatIntelSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/threatintelset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/threatintelset");
   return CreateThreatIntelSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,9 +436,7 @@ void GuardDutyClient::CreateThreatIntelSetAsyncHelper(const CreateThreatIntelSet
 DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitation/decline";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitation/decline");
   return DeclineInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -486,10 +466,8 @@ DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorReques
     return DeleteDetectorOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
   return DeleteDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -524,12 +502,10 @@ DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& req
     return DeleteFilterOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FilterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/filter/";
-  ss << request.GetFilterName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/filter/");
+  uri.AddPathSegment(request.GetFilterName());
   return DeleteFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -564,12 +540,10 @@ DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& reques
     return DeleteIPSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/ipset/";
-  ss << request.GetIpSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/ipset/");
+  uri.AddPathSegment(request.GetIpSetId());
   return DeleteIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -594,9 +568,7 @@ void GuardDutyClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, 
 DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitation/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitation/delete");
   return DeleteInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -626,11 +598,9 @@ DeleteMembersOutcome GuardDutyClient::DeleteMembers(const DeleteMembersRequest& 
     return DeleteMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/delete");
   return DeleteMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -665,12 +635,10 @@ DeletePublishingDestinationOutcome GuardDutyClient::DeletePublishingDestination(
     return DeletePublishingDestinationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DestinationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/publishingDestination/";
-  ss << request.GetDestinationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/publishingDestination/");
+  uri.AddPathSegment(request.GetDestinationId());
   return DeletePublishingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -705,12 +673,10 @@ DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteTh
     return DeleteThreatIntelSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThreatIntelSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/threatintelset/";
-  ss << request.GetThreatIntelSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/threatintelset/");
+  uri.AddPathSegment(request.GetThreatIntelSetId());
   return DeleteThreatIntelSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -740,11 +706,9 @@ DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationCo
     return DescribeOrganizationConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/admin";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/admin");
   return DescribeOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -779,12 +743,10 @@ DescribePublishingDestinationOutcome GuardDutyClient::DescribePublishingDestinat
     return DescribePublishingDestinationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DestinationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/publishingDestination/";
-  ss << request.GetDestinationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/publishingDestination/");
+  uri.AddPathSegment(request.GetDestinationId());
   return DescribePublishingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -809,9 +771,7 @@ void GuardDutyClient::DescribePublishingDestinationAsyncHelper(const DescribePub
 DisableOrganizationAdminAccountOutcome GuardDutyClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/admin/disable";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/admin/disable");
   return DisableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -841,11 +801,9 @@ DisassociateFromMasterAccountOutcome GuardDutyClient::DisassociateFromMasterAcco
     return DisassociateFromMasterAccountOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/master/disassociate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/master/disassociate");
   return DisassociateFromMasterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -875,11 +833,9 @@ DisassociateMembersOutcome GuardDutyClient::DisassociateMembers(const Disassocia
     return DisassociateMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/disassociate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/disassociate");
   return DisassociateMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -904,9 +860,7 @@ void GuardDutyClient::DisassociateMembersAsyncHelper(const DisassociateMembersRe
 EnableOrganizationAdminAccountOutcome GuardDutyClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/admin/enable";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/admin/enable");
   return EnableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -936,10 +890,8 @@ GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& reques
     return GetDetectorOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
   return GetDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -974,12 +926,10 @@ GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) con
     return GetFilterOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FilterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/filter/";
-  ss << request.GetFilterName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/filter/");
+  uri.AddPathSegment(request.GetFilterName());
   return GetFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1009,11 +959,9 @@ GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& reques
     return GetFindingsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/findings/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/findings/get");
   return GetFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1043,11 +991,9 @@ GetFindingsStatisticsOutcome GuardDutyClient::GetFindingsStatistics(const GetFin
     return GetFindingsStatisticsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/findings/statistics";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/findings/statistics");
   return GetFindingsStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1082,12 +1028,10 @@ GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const
     return GetIPSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/ipset/";
-  ss << request.GetIpSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/ipset/");
+  uri.AddPathSegment(request.GetIpSetId());
   return GetIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1112,9 +1056,7 @@ void GuardDutyClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, const 
 GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitation/count";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitation/count");
   return GetInvitationsCountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1144,11 +1086,9 @@ GetMasterAccountOutcome GuardDutyClient::GetMasterAccount(const GetMasterAccount
     return GetMasterAccountOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/master";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/master");
   return GetMasterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1178,11 +1118,9 @@ GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDet
     return GetMemberDetectorsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/detector/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/detector/get");
   return GetMemberDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1212,11 +1150,9 @@ GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) 
     return GetMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/get");
   return GetMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1251,12 +1187,10 @@ GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntel
     return GetThreatIntelSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThreatIntelSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/threatintelset/";
-  ss << request.GetThreatIntelSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/threatintelset/");
+  uri.AddPathSegment(request.GetThreatIntelSetId());
   return GetThreatIntelSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1286,11 +1220,9 @@ GetUsageStatisticsOutcome GuardDutyClient::GetUsageStatistics(const GetUsageStat
     return GetUsageStatisticsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/usage/statistics";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/usage/statistics");
   return GetUsageStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1320,11 +1252,9 @@ InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& 
     return InviteMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/invite";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/invite");
   return InviteMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1349,9 +1279,7 @@ void GuardDutyClient::InviteMembersAsyncHelper(const InviteMembersRequest& reque
 ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector");
   return ListDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1381,11 +1309,9 @@ ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& reques
     return ListFiltersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/filter";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/filter");
   return ListFiltersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1415,11 +1341,9 @@ ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& req
     return ListFindingsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/findings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/findings");
   return ListFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1449,11 +1373,9 @@ ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) 
     return ListIPSetsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/ipset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/ipset");
   return ListIPSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1478,9 +1400,7 @@ void GuardDutyClient::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, co
 ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitation");
   return ListInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1510,11 +1430,9 @@ ListMembersOutcome GuardDutyClient::ListMembers(const ListMembersRequest& reques
     return ListMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member");
   return ListMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1539,9 +1457,7 @@ void GuardDutyClient::ListMembersAsyncHelper(const ListMembersRequest& request, 
 ListOrganizationAdminAccountsOutcome GuardDutyClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/admin";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/admin");
   return ListOrganizationAdminAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1571,11 +1487,9 @@ ListPublishingDestinationsOutcome GuardDutyClient::ListPublishingDestinations(co
     return ListPublishingDestinationsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/publishingDestination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/publishingDestination");
   return ListPublishingDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1605,10 +1519,8 @@ ListTagsForResourceOutcome GuardDutyClient::ListTagsForResource(const ListTagsFo
     return ListTagsForResourceOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1638,11 +1550,9 @@ ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreat
     return ListThreatIntelSetsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/threatintelset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/threatintelset");
   return ListThreatIntelSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1672,11 +1582,9 @@ StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const Star
     return StartMonitoringMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/start";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/start");
   return StartMonitoringMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1706,11 +1614,9 @@ StopMonitoringMembersOutcome GuardDutyClient::StopMonitoringMembers(const StopMo
     return StopMonitoringMembersOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/stop");
   return StopMonitoringMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1740,10 +1646,8 @@ TagResourceOutcome GuardDutyClient::TagResource(const TagResourceRequest& reques
     return TagResourceOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1773,11 +1677,9 @@ UnarchiveFindingsOutcome GuardDutyClient::UnarchiveFindings(const UnarchiveFindi
     return UnarchiveFindingsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/findings/unarchive";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/findings/unarchive");
   return UnarchiveFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1812,10 +1714,8 @@ UntagResourceOutcome GuardDutyClient::UntagResource(const UntagResourceRequest& 
     return UntagResourceOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1845,10 +1745,8 @@ UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorReques
     return UpdateDetectorOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
   return UpdateDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1883,12 +1781,10 @@ UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& req
     return UpdateFilterOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FilterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/filter/";
-  ss << request.GetFilterName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/filter/");
+  uri.AddPathSegment(request.GetFilterName());
   return UpdateFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1918,11 +1814,9 @@ UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const Upda
     return UpdateFindingsFeedbackOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/findings/feedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/findings/feedback");
   return UpdateFindingsFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1957,12 +1851,10 @@ UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& reques
     return UpdateIPSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/ipset/";
-  ss << request.GetIpSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/ipset/");
+  uri.AddPathSegment(request.GetIpSetId());
   return UpdateIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1992,11 +1884,9 @@ UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const Update
     return UpdateMemberDetectorsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/member/detector/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/member/detector/update");
   return UpdateMemberDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2026,11 +1916,9 @@ UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfig
     return UpdateOrganizationConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/admin";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/admin");
   return UpdateOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2065,12 +1953,10 @@ UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(
     return UpdatePublishingDestinationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DestinationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/publishingDestination/";
-  ss << request.GetDestinationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/publishingDestination/");
+  uri.AddPathSegment(request.GetDestinationId());
   return UpdatePublishingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2105,12 +1991,10 @@ UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateTh
     return UpdateThreatIntelSetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThreatIntelSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detector/";
-  ss << request.GetDetectorId();
-  ss << "/threatintelset/";
-  ss << request.GetThreatIntelSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/threatintelset/");
+  uri.AddPathSegment(request.GetThreatIntelSetId());
   return UpdateThreatIntelSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

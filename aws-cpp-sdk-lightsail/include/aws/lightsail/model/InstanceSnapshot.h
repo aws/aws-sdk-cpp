@@ -293,64 +293,64 @@ namespace Model
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline InstanceSnapshot& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline InstanceSnapshot& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline InstanceSnapshot& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline InstanceSnapshot& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -387,42 +387,50 @@ namespace Model
 
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline const Aws::String& GetProgress() const{ return m_progress; }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline void SetProgress(Aws::String&& value) { m_progressHasBeenSet = true; m_progress = std::move(value); }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline void SetProgress(const char* value) { m_progressHasBeenSet = true; m_progress.assign(value); }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline InstanceSnapshot& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline InstanceSnapshot& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline InstanceSnapshot& WithProgress(const char* value) { SetProgress(value); return *this;}
 

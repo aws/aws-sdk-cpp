@@ -18,24 +18,38 @@ namespace QLDBSession
 namespace Model
 {
 
-EndSessionResult::EndSessionResult()
+EndSessionResult::EndSessionResult() : 
+    m_timingInformationHasBeenSet(false)
 {
 }
 
-EndSessionResult::EndSessionResult(JsonView jsonValue)
+EndSessionResult::EndSessionResult(JsonView jsonValue) : 
+    m_timingInformationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 EndSessionResult& EndSessionResult::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("TimingInformation"))
+  {
+    m_timingInformation = jsonValue.GetObject("TimingInformation");
+
+    m_timingInformationHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue EndSessionResult::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_timingInformationHasBeenSet)
+  {
+   payload.WithObject("TimingInformation", m_timingInformation.Jsonize());
+
+  }
 
   return payload;
 }

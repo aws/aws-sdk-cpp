@@ -228,39 +228,53 @@ namespace Model
 
 
     /**
-     * <p>The output of the provisioning artifact.</p>
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
      */
-    inline const Aws::Vector<ProvisioningArtifactOutput>& GetProvisioningArtifactOutputs() const{ return m_provisioningArtifactOutputs; }
+    inline const Aws::Vector<ProvisioningArtifactOutput>& GetProvisioningArtifactOutputKeys() const{ return m_provisioningArtifactOutputKeys; }
 
     /**
-     * <p>The output of the provisioning artifact.</p>
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
      */
-    inline void SetProvisioningArtifactOutputs(const Aws::Vector<ProvisioningArtifactOutput>& value) { m_provisioningArtifactOutputs = value; }
+    inline void SetProvisioningArtifactOutputKeys(const Aws::Vector<ProvisioningArtifactOutput>& value) { m_provisioningArtifactOutputKeys = value; }
 
     /**
-     * <p>The output of the provisioning artifact.</p>
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
      */
-    inline void SetProvisioningArtifactOutputs(Aws::Vector<ProvisioningArtifactOutput>&& value) { m_provisioningArtifactOutputs = std::move(value); }
+    inline void SetProvisioningArtifactOutputKeys(Aws::Vector<ProvisioningArtifactOutput>&& value) { m_provisioningArtifactOutputKeys = std::move(value); }
 
     /**
-     * <p>The output of the provisioning artifact.</p>
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
      */
-    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputs(const Aws::Vector<ProvisioningArtifactOutput>& value) { SetProvisioningArtifactOutputs(value); return *this;}
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputKeys(const Aws::Vector<ProvisioningArtifactOutput>& value) { SetProvisioningArtifactOutputKeys(value); return *this;}
 
     /**
-     * <p>The output of the provisioning artifact.</p>
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
      */
-    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputs(Aws::Vector<ProvisioningArtifactOutput>&& value) { SetProvisioningArtifactOutputs(std::move(value)); return *this;}
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputKeys(Aws::Vector<ProvisioningArtifactOutput>&& value) { SetProvisioningArtifactOutputKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The output of the provisioning artifact.</p>
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
      */
-    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputs(const ProvisioningArtifactOutput& value) { m_provisioningArtifactOutputs.push_back(value); return *this; }
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputKeys(const ProvisioningArtifactOutput& value) { m_provisioningArtifactOutputKeys.push_back(value); return *this; }
 
     /**
-     * <p>The output of the provisioning artifact.</p>
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
      */
-    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputs(ProvisioningArtifactOutput&& value) { m_provisioningArtifactOutputs.push_back(std::move(value)); return *this; }
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputKeys(ProvisioningArtifactOutput&& value) { m_provisioningArtifactOutputKeys.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -274,7 +288,7 @@ namespace Model
 
     ProvisioningArtifactPreferences m_provisioningArtifactPreferences;
 
-    Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputs;
+    Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputKeys;
   };
 
 } // namespace Model

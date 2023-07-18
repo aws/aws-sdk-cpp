@@ -7,6 +7,7 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/HMAC.h>
+#include <aws/core/utils/crypto/CRC32.h>
 
 #if ENABLE_BCRYPT_ENCRYPTION
     #include <aws/core/utils/crypto/bcrypt/CryptoImpl.h>
@@ -33,6 +34,24 @@ static std::shared_ptr<HashFactory>& GetMD5Factory()
 {
     static std::shared_ptr<HashFactory> s_MD5Factory(nullptr);
     return s_MD5Factory;
+}
+
+static std::shared_ptr<HashFactory>& GetCRC32Factory()
+{
+    static std::shared_ptr<HashFactory> s_CRC32Factory(nullptr);
+    return s_CRC32Factory;
+}
+
+static std::shared_ptr<HashFactory>& GetCRC32CFactory()
+{
+    static std::shared_ptr<HashFactory> s_CRC32CFactory(nullptr);
+    return s_CRC32CFactory;
+}
+
+static std::shared_ptr<HashFactory>& GetSha1Factory()
+{
+    static std::shared_ptr<HashFactory> s_Sha1Factory(nullptr);
+    return s_Sha1Factory;
 }
 
 static std::shared_ptr<HashFactory>& GetSha256Factory()
@@ -98,6 +117,69 @@ public:
         return Aws::MakeShared<MD5CommonCryptoImpl>(s_allocationTag);
 #else
     return nullptr;
+#endif
+    }
+
+    /**
+     * Opportunity to make any static initialization calls you need to make.
+     * Will only be called once.
+     */
+    void InitStaticState() override
+    {
+#if ENABLE_OPENSSL_ENCRYPTION
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
+#endif
+    }
+
+    /**
+     * Opportunity to make any static cleanup calls you need to make.
+     * will only be called at the end of the application.
+     */
+    void CleanupStaticState() override
+    {
+#if ENABLE_OPENSSL_ENCRYPTION
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
+#endif
+    }
+};
+
+class DefaultCRC32Factory : public HashFactory
+{
+public:
+    std::shared_ptr<Hash> CreateImplementation() const override
+    {
+        return Aws::MakeShared<CRC32Impl>(s_allocationTag);
+    }
+};
+
+class DefaultCRC32CFactory : public HashFactory
+{
+public:
+    std::shared_ptr<Hash> CreateImplementation() const override
+    {
+        return Aws::MakeShared<CRC32CImpl>(s_allocationTag);
+    }
+};
+
+class DefaultSHA1Factory : public HashFactory
+{
+public:
+    std::shared_ptr<Hash> CreateImplementation() const override
+    {
+#if ENABLE_BCRYPT_ENCRYPTION
+        return Aws::MakeShared<Sha1BcryptImpl>(s_allocationTag);
+#elif ENABLE_OPENSSL_ENCRYPTION
+        return Aws::MakeShared<Sha1OpenSSLImpl>(s_allocationTag);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+        return Aws::MakeShared<Sha1CommonCryptoImpl>(s_allocationTag);
+#else
+        return nullptr;
 #endif
     }
 
@@ -616,6 +698,26 @@ void Aws::Utils::Crypto::InitCrypto()
         GetMD5Factory()->InitStaticState();
     }
 
+    if(!GetCRC32Factory())
+    {
+        GetCRC32Factory() = Aws::MakeShared<DefaultCRC32Factory>(s_allocationTag);
+    }
+
+    if(!GetCRC32CFactory())
+    {
+        GetCRC32CFactory() = Aws::MakeShared<DefaultCRC32CFactory>(s_allocationTag);
+    }
+
+    if(GetSha1Factory())
+    {
+        GetSha1Factory()->InitStaticState();
+    }
+    else
+    {
+        GetSha1Factory() = Aws::MakeShared<DefaultSHA1Factory>(s_allocationTag);
+        GetSha1Factory()->InitStaticState();
+    }
+
     if(GetSha256Factory())
     {
         GetSha256Factory()->InitStaticState();
@@ -693,6 +795,22 @@ void Aws::Utils::Crypto::CleanupCrypto()
         GetMD5Factory() = nullptr;
     }
 
+    if(GetCRC32CFactory())
+    {
+        GetCRC32Factory() = nullptr;
+    }
+
+    if(GetCRC32CFactory())
+    {
+        GetCRC32CFactory() = nullptr;
+    }
+
+    if(GetSha1Factory())
+    {
+        GetSha1Factory()->CleanupStaticState();
+        GetSha1Factory() = nullptr;
+    }
+
     if(GetSha256Factory())
     {
         GetSha256Factory()->CleanupStaticState();
@@ -742,6 +860,21 @@ void Aws::Utils::Crypto::SetMD5Factory(const std::shared_ptr<HashFactory>& facto
     GetMD5Factory() = factory;
 }
 
+void Aws::Utils::Crypto::SetCRC32Factory(const std::shared_ptr<HashFactory>& factory)
+{
+    GetCRC32Factory() = factory;
+}
+
+void Aws::Utils::Crypto::SetCRC32CFactory(const std::shared_ptr<HashFactory>& factory)
+{
+    GetCRC32CFactory() = factory;
+}
+
+void Aws::Utils::Crypto::SetSha1Factory(const std::shared_ptr<HashFactory>& factory)
+{
+    GetSha1Factory() = factory;
+}
+
 void Aws::Utils::Crypto::SetSha256Factory(const std::shared_ptr<HashFactory>& factory)
 {
     GetSha256Factory() = factory;
@@ -782,8 +915,22 @@ std::shared_ptr<Hash> Aws::Utils::Crypto::CreateMD5Implementation()
     return GetMD5Factory()->CreateImplementation();
 }
 
-std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation()
+std::shared_ptr<Hash> Aws::Utils::Crypto::CreateCRC32Implementation()
 {
+    return GetCRC32Factory()->CreateImplementation();
+}
+
+std::shared_ptr<Hash> Aws::Utils::Crypto::CreateCRC32CImplementation()
+{
+    return GetCRC32CFactory()->CreateImplementation();
+}
+
+std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha1Implementation()
+{
+    return GetSha1Factory()->CreateImplementation();
+}
+
+std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation() {
     return GetSha256Factory()->CreateImplementation();
 }
 
@@ -891,5 +1038,5 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
 
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
-    return GetSecureRandom();
+    return GetSecureRandomFactory()->CreateImplementation();
 }

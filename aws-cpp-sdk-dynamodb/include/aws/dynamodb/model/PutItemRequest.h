@@ -420,10 +420,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul>  <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
@@ -435,10 +435,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul>  <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline bool ReturnValuesHasBeenSet() const { return m_returnValuesHasBeenSet; }
 
@@ -450,10 +450,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul>  <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -465,10 +465,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul>  <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = std::move(value); }
 
@@ -480,10 +480,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul>  <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline PutItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
@@ -495,10 +495,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul>  <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline PutItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 

@@ -183,66 +183,66 @@ namespace Model
 
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
 
     /**
-     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * <p>When using the CLI or boto3, provide the path of the JSON file that contains
+     * the table mappings. Precede the path with <code>file://</code>. For example,
+     * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
+     * API, provide the JSON as the parameter value. </p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
@@ -360,8 +360,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
 
@@ -380,8 +379,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
@@ -400,8 +398,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
 
@@ -420,8 +417,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
 
@@ -440,8 +436,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
 
@@ -460,8 +455,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline ModifyReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
 
@@ -480,8 +474,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline ModifyReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
 
@@ -500,8 +493,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline ModifyReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
 
@@ -575,7 +567,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline const Aws::String& GetTaskData() const{ return m_taskData; }
@@ -584,7 +576,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
@@ -593,7 +585,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
@@ -602,7 +594,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
@@ -611,7 +603,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
@@ -620,7 +612,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline ModifyReplicationTaskRequest& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
@@ -629,7 +621,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline ModifyReplicationTaskRequest& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
@@ -638,7 +630,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline ModifyReplicationTaskRequest& WithTaskData(const char* value) { SetTaskData(value); return *this;}

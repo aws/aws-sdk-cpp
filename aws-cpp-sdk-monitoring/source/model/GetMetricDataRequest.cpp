@@ -18,7 +18,8 @@ GetMetricDataRequest::GetMetricDataRequest() :
     m_scanBy(ScanBy::NOT_SET),
     m_scanByHasBeenSet(false),
     m_maxDatapoints(0),
-    m_maxDatapointsHasBeenSet(false)
+    m_maxDatapointsHasBeenSet(false),
+    m_labelOptionsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,11 @@ Aws::String GetMetricDataRequest::SerializePayload() const
   if(m_maxDatapointsHasBeenSet)
   {
     ss << "MaxDatapoints=" << m_maxDatapoints << "&";
+  }
+
+  if(m_labelOptionsHasBeenSet)
+  {
+    m_labelOptions.OutputToStream(ss, "LabelOptions");
   }
 
   ss << "Version=2010-08-01";

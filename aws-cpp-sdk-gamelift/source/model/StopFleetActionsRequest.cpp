@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 StopFleetActionsRequest::StopFleetActionsRequest() : 
     m_fleetIdHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+    m_actionsHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,12 @@ Aws::String StopFleetActionsRequest::SerializePayload() const
      actionsJsonList[actionsIndex].AsString(FleetActionMapper::GetNameForFleetAction(m_actions[actionsIndex]));
    }
    payload.WithArray("Actions", std::move(actionsJsonList));
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

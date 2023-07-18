@@ -20,7 +20,9 @@ namespace Model
     AVAILABLE,
     FAILED,
     COPYING,
-    DELETING
+    DELETING,
+    CREATING,
+    IMPORTING
   };
 
 namespace ImageStateMapper

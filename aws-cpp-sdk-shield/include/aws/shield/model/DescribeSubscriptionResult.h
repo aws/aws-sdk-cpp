@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The AWS Shield Advanced subscription details for an account.</p>
+     * <p>The Shield Advanced subscription details for an account.</p>
      */
     inline const Subscription& GetSubscription() const{ return m_subscription; }
 
     /**
-     * <p>The AWS Shield Advanced subscription details for an account.</p>
+     * <p>The Shield Advanced subscription details for an account.</p>
      */
     inline void SetSubscription(const Subscription& value) { m_subscription = value; }
 
     /**
-     * <p>The AWS Shield Advanced subscription details for an account.</p>
+     * <p>The Shield Advanced subscription details for an account.</p>
      */
     inline void SetSubscription(Subscription&& value) { m_subscription = std::move(value); }
 
     /**
-     * <p>The AWS Shield Advanced subscription details for an account.</p>
+     * <p>The Shield Advanced subscription details for an account.</p>
      */
     inline DescribeSubscriptionResult& WithSubscription(const Subscription& value) { SetSubscription(value); return *this;}
 
     /**
-     * <p>The AWS Shield Advanced subscription details for an account.</p>
+     * <p>The Shield Advanced subscription details for an account.</p>
      */
     inline DescribeSubscriptionResult& WithSubscription(Subscription&& value) { SetSubscription(std::move(value)); return *this;}
 

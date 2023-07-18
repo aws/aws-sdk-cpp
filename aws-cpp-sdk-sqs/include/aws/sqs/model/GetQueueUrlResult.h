@@ -28,8 +28,8 @@ namespace Model
   /**
    * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting
-   * Responses</a> in the <i>Amazon Simple Queue Service Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Responses</a> in the <i>Amazon SQS Developer Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrlResult">AWS
    * API Reference</a></p>
    */

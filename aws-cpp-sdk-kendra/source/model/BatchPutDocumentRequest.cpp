@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 BatchPutDocumentRequest::BatchPutDocumentRequest() : 
     m_indexIdHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_documentsHasBeenSet(false)
+    m_documentsHasBeenSet(false),
+    m_customDocumentEnrichmentConfigurationHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String BatchPutDocumentRequest::SerializePayload() const
      documentsJsonList[documentsIndex].AsObject(m_documents[documentsIndex].Jsonize());
    }
    payload.WithArray("Documents", std::move(documentsJsonList));
+
+  }
+
+  if(m_customDocumentEnrichmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDocumentEnrichmentConfiguration", m_customDocumentEnrichmentConfiguration.Jsonize());
 
   }
 

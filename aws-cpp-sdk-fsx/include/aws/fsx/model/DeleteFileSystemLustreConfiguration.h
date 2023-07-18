@@ -44,7 +44,10 @@ namespace Model
      * <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup
      * of the file system you are deleting. By default, Amazon FSx will not take a
      * final backup on your behalf when the <code>DeleteFileSystem</code> operation is
-     * invoked. (Default = true)</p>
+     * invoked. (Default = true)</p>  <p>The <code>fsx:CreateBackup</code>
+     * permission is required if you set <code>SkipFinalBackup</code> to
+     * <code>false</code> in order to delete the file system and take a final
+     * backup.</p> 
      */
     inline bool GetSkipFinalBackup() const{ return m_skipFinalBackup; }
 
@@ -52,7 +55,10 @@ namespace Model
      * <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup
      * of the file system you are deleting. By default, Amazon FSx will not take a
      * final backup on your behalf when the <code>DeleteFileSystem</code> operation is
-     * invoked. (Default = true)</p>
+     * invoked. (Default = true)</p>  <p>The <code>fsx:CreateBackup</code>
+     * permission is required if you set <code>SkipFinalBackup</code> to
+     * <code>false</code> in order to delete the file system and take a final
+     * backup.</p> 
      */
     inline bool SkipFinalBackupHasBeenSet() const { return m_skipFinalBackupHasBeenSet; }
 
@@ -60,7 +66,10 @@ namespace Model
      * <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup
      * of the file system you are deleting. By default, Amazon FSx will not take a
      * final backup on your behalf when the <code>DeleteFileSystem</code> operation is
-     * invoked. (Default = true)</p>
+     * invoked. (Default = true)</p>  <p>The <code>fsx:CreateBackup</code>
+     * permission is required if you set <code>SkipFinalBackup</code> to
+     * <code>false</code> in order to delete the file system and take a final
+     * backup.</p> 
      */
     inline void SetSkipFinalBackup(bool value) { m_skipFinalBackupHasBeenSet = true; m_skipFinalBackup = value; }
 
@@ -68,7 +77,10 @@ namespace Model
      * <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup
      * of the file system you are deleting. By default, Amazon FSx will not take a
      * final backup on your behalf when the <code>DeleteFileSystem</code> operation is
-     * invoked. (Default = true)</p>
+     * invoked. (Default = true)</p>  <p>The <code>fsx:CreateBackup</code>
+     * permission is required if you set <code>SkipFinalBackup</code> to
+     * <code>false</code> in order to delete the file system and take a final
+     * backup.</p> 
      */
     inline DeleteFileSystemLustreConfiguration& WithSkipFinalBackup(bool value) { SetSkipFinalBackup(value); return *this;}
 

@@ -33,10 +33,10 @@ namespace Model
    * utilization metric data to determine the performance difference between your
    * current resource and the recommended option.</p>  <p>The <code>Cpu</code>
    * and <code>Memory</code> metrics are the only projected utilization metrics
-   * returned when you run the <code>GetEC2RecommendationProjectedMetrics</code>
-   * action. Additionally, the <code>Memory</code> metric is returned only for
-   * resources that have the unified CloudWatch agent installed on them. For more
-   * information, see <a
+   * returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action.
+   * Additionally, the <code>Memory</code> metric is returned only for resources that
+   * have the unified CloudWatch agent installed on them. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
    * Memory Utilization with the CloudWatch Agent</a>.</p> <p><h3>See
    * Also:</h3>   <a
@@ -174,42 +174,42 @@ namespace Model
 
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const{ return m_timestamps; }
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline bool TimestampsHasBeenSet() const { return m_timestampsHasBeenSet; }
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline void SetTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { m_timestampsHasBeenSet = true; m_timestamps = value; }
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline void SetTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::move(value); }
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline ProjectedMetric& WithTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { SetTimestamps(value); return *this;}
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline ProjectedMetric& WithTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { SetTimestamps(std::move(value)); return *this;}
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline ProjectedMetric& AddTimestamps(const Aws::Utils::DateTime& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(value); return *this; }
 
     /**
-     * <p>The time stamps of the projected utilization metric.</p>
+     * <p>The timestamps of the projected utilization metric.</p>
      */
     inline ProjectedMetric& AddTimestamps(Aws::Utils::DateTime&& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(std::move(value)); return *this; }
 

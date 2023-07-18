@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Firewall administrator account for this policy.</p>
+     * <p>The ID of the Firewall Manager administrator account for this policy.</p>
      */
     inline const Aws::String& GetAdminAccountId() const{ return m_adminAccountId; }
 
     /**
-     * <p>The ID of the AWS Firewall administrator account for this policy.</p>
+     * <p>The ID of the Firewall Manager administrator account for this policy.</p>
      */
     inline void SetAdminAccountId(const Aws::String& value) { m_adminAccountId = value; }
 
     /**
-     * <p>The ID of the AWS Firewall administrator account for this policy.</p>
+     * <p>The ID of the Firewall Manager administrator account for this policy.</p>
      */
     inline void SetAdminAccountId(Aws::String&& value) { m_adminAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Firewall administrator account for this policy.</p>
+     * <p>The ID of the Firewall Manager administrator account for this policy.</p>
      */
     inline void SetAdminAccountId(const char* value) { m_adminAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Firewall administrator account for this policy.</p>
+     * <p>The ID of the Firewall Manager administrator account for this policy.</p>
      */
     inline GetProtectionStatusResult& WithAdminAccountId(const Aws::String& value) { SetAdminAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall administrator account for this policy.</p>
+     * <p>The ID of the Firewall Manager administrator account for this policy.</p>
      */
     inline GetProtectionStatusResult& WithAdminAccountId(Aws::String&& value) { SetAdminAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall administrator account for this policy.</p>
+     * <p>The ID of the Firewall Manager administrator account for this policy.</p>
      */
     inline GetProtectionStatusResult& WithAdminAccountId(const char* value) { SetAdminAccountId(value); return *this;}
 
@@ -170,7 +170,7 @@ namespace Model
      * <code>NextToken</code> value. To list more objects, submit another
      * <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code>
      * value from the response in the <code>NextToken</code> value in the next
-     * request.</p> <p>AWS SDKs provide auto-pagination that identify
+     * request.</p> <p>Amazon Web Services SDKs provide auto-pagination that identify
      * <code>NextToken</code> in a response and make subsequent request calls
      * automatically on your behalf. However, this feature is not supported by
      * <code>GetProtectionStatus</code>. You must submit subsequent requests with
@@ -184,7 +184,7 @@ namespace Model
      * <code>NextToken</code> value. To list more objects, submit another
      * <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code>
      * value from the response in the <code>NextToken</code> value in the next
-     * request.</p> <p>AWS SDKs provide auto-pagination that identify
+     * request.</p> <p>Amazon Web Services SDKs provide auto-pagination that identify
      * <code>NextToken</code> in a response and make subsequent request calls
      * automatically on your behalf. However, this feature is not supported by
      * <code>GetProtectionStatus</code>. You must submit subsequent requests with
@@ -198,7 +198,7 @@ namespace Model
      * <code>NextToken</code> value. To list more objects, submit another
      * <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code>
      * value from the response in the <code>NextToken</code> value in the next
-     * request.</p> <p>AWS SDKs provide auto-pagination that identify
+     * request.</p> <p>Amazon Web Services SDKs provide auto-pagination that identify
      * <code>NextToken</code> in a response and make subsequent request calls
      * automatically on your behalf. However, this feature is not supported by
      * <code>GetProtectionStatus</code>. You must submit subsequent requests with
@@ -212,7 +212,7 @@ namespace Model
      * <code>NextToken</code> value. To list more objects, submit another
      * <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code>
      * value from the response in the <code>NextToken</code> value in the next
-     * request.</p> <p>AWS SDKs provide auto-pagination that identify
+     * request.</p> <p>Amazon Web Services SDKs provide auto-pagination that identify
      * <code>NextToken</code> in a response and make subsequent request calls
      * automatically on your behalf. However, this feature is not supported by
      * <code>GetProtectionStatus</code>. You must submit subsequent requests with
@@ -226,7 +226,7 @@ namespace Model
      * <code>NextToken</code> value. To list more objects, submit another
      * <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code>
      * value from the response in the <code>NextToken</code> value in the next
-     * request.</p> <p>AWS SDKs provide auto-pagination that identify
+     * request.</p> <p>Amazon Web Services SDKs provide auto-pagination that identify
      * <code>NextToken</code> in a response and make subsequent request calls
      * automatically on your behalf. However, this feature is not supported by
      * <code>GetProtectionStatus</code>. You must submit subsequent requests with
@@ -240,7 +240,7 @@ namespace Model
      * <code>NextToken</code> value. To list more objects, submit another
      * <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code>
      * value from the response in the <code>NextToken</code> value in the next
-     * request.</p> <p>AWS SDKs provide auto-pagination that identify
+     * request.</p> <p>Amazon Web Services SDKs provide auto-pagination that identify
      * <code>NextToken</code> in a response and make subsequent request calls
      * automatically on your behalf. However, this feature is not supported by
      * <code>GetProtectionStatus</code>. You must submit subsequent requests with
@@ -254,7 +254,7 @@ namespace Model
      * <code>NextToken</code> value. To list more objects, submit another
      * <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code>
      * value from the response in the <code>NextToken</code> value in the next
-     * request.</p> <p>AWS SDKs provide auto-pagination that identify
+     * request.</p> <p>Amazon Web Services SDKs provide auto-pagination that identify
      * <code>NextToken</code> in a response and make subsequent request calls
      * automatically on your behalf. However, this feature is not supported by
      * <code>GetProtectionStatus</code>. You must submit subsequent requests with

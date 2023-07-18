@@ -233,6 +233,47 @@ namespace Model
      */
     inline ModifySpotFleetRequestRequest& WithOnDemandTargetCapacity(int value) { SetOnDemandTargetCapacity(value); return *this;}
 
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline ModifySpotFleetRequestRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline ModifySpotFleetRequestRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline ModifySpotFleetRequestRequest& WithContext(const char* value) { SetContext(value); return *this;}
+
   private:
 
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
@@ -249,6 +290,9 @@ namespace Model
 
     int m_onDemandTargetCapacity;
     bool m_onDemandTargetCapacityHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
   };
 
 } // namespace Model

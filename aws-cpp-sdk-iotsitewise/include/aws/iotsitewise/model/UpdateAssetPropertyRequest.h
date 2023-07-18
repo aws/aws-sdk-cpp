@@ -117,96 +117,88 @@ namespace Model
 
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
     inline const Aws::String& GetPropertyAlias() const{ return m_propertyAlias; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
     inline bool PropertyAliasHasBeenSet() const { return m_propertyAliasHasBeenSet; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
     inline void SetPropertyAlias(const Aws::String& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = value; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
     inline void SetPropertyAlias(Aws::String&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::move(value); }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
     inline void SetPropertyAlias(const char* value) { m_propertyAliasHasBeenSet = true; m_propertyAlias.assign(value); }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyAlias(const Aws::String& value) { SetPropertyAlias(value); return *this;}
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyAlias(Aws::String&& value) { SetPropertyAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
      * property.</p>
      */
@@ -215,60 +207,60 @@ namespace Model
 
     /**
      * <p>The MQTT notification state (enabled or disabled) for this asset property.
-     * When the notification state is enabled, AWS IoT SiteWise publishes property
-     * value updates to a unique MQTT topic. For more information, see <a
+     * When the notification state is enabled, IoT SiteWise publishes property value
+     * updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline const PropertyNotificationState& GetPropertyNotificationState() const{ return m_propertyNotificationState; }
 
     /**
      * <p>The MQTT notification state (enabled or disabled) for this asset property.
-     * When the notification state is enabled, AWS IoT SiteWise publishes property
-     * value updates to a unique MQTT topic. For more information, see <a
+     * When the notification state is enabled, IoT SiteWise publishes property value
+     * updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline bool PropertyNotificationStateHasBeenSet() const { return m_propertyNotificationStateHasBeenSet; }
 
     /**
      * <p>The MQTT notification state (enabled or disabled) for this asset property.
-     * When the notification state is enabled, AWS IoT SiteWise publishes property
-     * value updates to a unique MQTT topic. For more information, see <a
+     * When the notification state is enabled, IoT SiteWise publishes property value
+     * updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline void SetPropertyNotificationState(const PropertyNotificationState& value) { m_propertyNotificationStateHasBeenSet = true; m_propertyNotificationState = value; }
 
     /**
      * <p>The MQTT notification state (enabled or disabled) for this asset property.
-     * When the notification state is enabled, AWS IoT SiteWise publishes property
-     * value updates to a unique MQTT topic. For more information, see <a
+     * When the notification state is enabled, IoT SiteWise publishes property value
+     * updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline void SetPropertyNotificationState(PropertyNotificationState&& value) { m_propertyNotificationStateHasBeenSet = true; m_propertyNotificationState = std::move(value); }
 
     /**
      * <p>The MQTT notification state (enabled or disabled) for this asset property.
-     * When the notification state is enabled, AWS IoT SiteWise publishes property
-     * value updates to a unique MQTT topic. For more information, see <a
+     * When the notification state is enabled, IoT SiteWise publishes property value
+     * updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyNotificationState(const PropertyNotificationState& value) { SetPropertyNotificationState(value); return *this;}
 
     /**
      * <p>The MQTT notification state (enabled or disabled) for this asset property.
-     * When the notification state is enabled, AWS IoT SiteWise publishes property
-     * value updates to a unique MQTT topic. For more information, see <a
+     * When the notification state is enabled, IoT SiteWise publishes property value
+     * updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>If you
      * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyNotificationState(PropertyNotificationState&& value) { SetPropertyNotificationState(std::move(value)); return *this;}

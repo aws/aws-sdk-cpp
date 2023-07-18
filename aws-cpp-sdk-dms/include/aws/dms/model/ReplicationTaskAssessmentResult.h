@@ -242,83 +242,131 @@ namespace Model
 
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline const Aws::String& GetAssessmentResults() const{ return m_assessmentResults; }
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline bool AssessmentResultsHasBeenSet() const { return m_assessmentResultsHasBeenSet; }
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline void SetAssessmentResults(const Aws::String& value) { m_assessmentResultsHasBeenSet = true; m_assessmentResults = value; }
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline void SetAssessmentResults(Aws::String&& value) { m_assessmentResultsHasBeenSet = true; m_assessmentResults = std::move(value); }
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline void SetAssessmentResults(const char* value) { m_assessmentResultsHasBeenSet = true; m_assessmentResults.assign(value); }
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline ReplicationTaskAssessmentResult& WithAssessmentResults(const Aws::String& value) { SetAssessmentResults(value); return *this;}
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline ReplicationTaskAssessmentResult& WithAssessmentResults(Aws::String&& value) { SetAssessmentResults(std::move(value)); return *this;}
 
     /**
-     * <p> The task assessment results in JSON format. </p>
+     * <p> The task assessment results in JSON format. </p> <p>The response object only
+     * contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline ReplicationTaskAssessmentResult& WithAssessmentResults(const char* value) { SetAssessmentResults(value); return *this;}
 
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline const Aws::String& GetS3ObjectUrl() const{ return m_s3ObjectUrl; }
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline bool S3ObjectUrlHasBeenSet() const { return m_s3ObjectUrlHasBeenSet; }
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline void SetS3ObjectUrl(const Aws::String& value) { m_s3ObjectUrlHasBeenSet = true; m_s3ObjectUrl = value; }
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline void SetS3ObjectUrl(Aws::String&& value) { m_s3ObjectUrlHasBeenSet = true; m_s3ObjectUrl = std::move(value); }
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline void SetS3ObjectUrl(const char* value) { m_s3ObjectUrlHasBeenSet = true; m_s3ObjectUrl.assign(value); }
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline ReplicationTaskAssessmentResult& WithS3ObjectUrl(const Aws::String& value) { SetS3ObjectUrl(value); return *this;}
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline ReplicationTaskAssessmentResult& WithS3ObjectUrl(Aws::String&& value) { SetS3ObjectUrl(std::move(value)); return *this;}
 
     /**
-     * <p> The URL of the S3 object containing the task assessment results. </p>
+     * <p> The URL of the S3 object containing the task assessment results. </p> <p>The
+     * response object only contains this field if you provide
+     * <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the
+     * request.</p>
      */
     inline ReplicationTaskAssessmentResult& WithS3ObjectUrl(const char* value) { SetS3ObjectUrl(value); return *this;}
 

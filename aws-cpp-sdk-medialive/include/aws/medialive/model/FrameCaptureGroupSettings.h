@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/OutputLocationRef.h>
+#include <aws/medialive/model/FrameCaptureCdnSettings.h>
 #include <utility>
 
 namespace Aws
@@ -109,10 +110,44 @@ namespace Model
      */
     inline FrameCaptureGroupSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
 
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline const FrameCaptureCdnSettings& GetFrameCaptureCdnSettings() const{ return m_frameCaptureCdnSettings; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline bool FrameCaptureCdnSettingsHasBeenSet() const { return m_frameCaptureCdnSettingsHasBeenSet; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline void SetFrameCaptureCdnSettings(const FrameCaptureCdnSettings& value) { m_frameCaptureCdnSettingsHasBeenSet = true; m_frameCaptureCdnSettings = value; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline void SetFrameCaptureCdnSettings(FrameCaptureCdnSettings&& value) { m_frameCaptureCdnSettingsHasBeenSet = true; m_frameCaptureCdnSettings = std::move(value); }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline FrameCaptureGroupSettings& WithFrameCaptureCdnSettings(const FrameCaptureCdnSettings& value) { SetFrameCaptureCdnSettings(value); return *this;}
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline FrameCaptureGroupSettings& WithFrameCaptureCdnSettings(FrameCaptureCdnSettings&& value) { SetFrameCaptureCdnSettings(std::move(value)); return *this;}
+
   private:
 
     OutputLocationRef m_destination;
     bool m_destinationHasBeenSet;
+
+    FrameCaptureCdnSettings m_frameCaptureCdnSettings;
+    bool m_frameCaptureCdnSettingsHasBeenSet;
   };
 
 } // namespace Model

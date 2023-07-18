@@ -26,8 +26,10 @@ namespace Model
 
   /**
    * <p>An attribute of a schema, which defines a dataset field. A schema attribute
-   * is required for every field in a dataset. The <a>Schema</a> object contains an
-   * array of <code>SchemaAttribute</code> objects.</p><p><h3>See Also:</h3>   <a
+   * is required for every field in a dataset. The <a
+   * href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a>
+   * object contains an array of <code>SchemaAttribute</code> objects.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SchemaAttribute">AWS
    * API Reference</a></p>
    */
@@ -82,32 +84,44 @@ namespace Model
 
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The data type of the field.</p> <p>For a related time series dataset, other
+     * than date, item_id, and forecast dimensions attributes, all attributes should be
+     * of numerical type (integer/float).</p>
      */
     inline const AttributeType& GetAttributeType() const{ return m_attributeType; }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The data type of the field.</p> <p>For a related time series dataset, other
+     * than date, item_id, and forecast dimensions attributes, all attributes should be
+     * of numerical type (integer/float).</p>
      */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The data type of the field.</p> <p>For a related time series dataset, other
+     * than date, item_id, and forecast dimensions attributes, all attributes should be
+     * of numerical type (integer/float).</p>
      */
     inline void SetAttributeType(const AttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The data type of the field.</p> <p>For a related time series dataset, other
+     * than date, item_id, and forecast dimensions attributes, all attributes should be
+     * of numerical type (integer/float).</p>
      */
     inline void SetAttributeType(AttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The data type of the field.</p> <p>For a related time series dataset, other
+     * than date, item_id, and forecast dimensions attributes, all attributes should be
+     * of numerical type (integer/float).</p>
      */
     inline SchemaAttribute& WithAttributeType(const AttributeType& value) { SetAttributeType(value); return *this;}
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The data type of the field.</p> <p>For a related time series dataset, other
+     * than date, item_id, and forecast dimensions attributes, all attributes should be
+     * of numerical type (integer/float).</p>
      */
     inline SchemaAttribute& WithAttributeType(AttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
 

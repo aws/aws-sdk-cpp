@@ -20,13 +20,15 @@ namespace Model
 
 VirtualGatewayTlsValidationContextTrust::VirtualGatewayTlsValidationContextTrust() : 
     m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false)
+    m_fileHasBeenSet(false),
+    m_sdsHasBeenSet(false)
 {
 }
 
 VirtualGatewayTlsValidationContextTrust::VirtualGatewayTlsValidationContextTrust(JsonView jsonValue) : 
     m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false)
+    m_fileHasBeenSet(false),
+    m_sdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ VirtualGatewayTlsValidationContextTrust& VirtualGatewayTlsValidationContextTrust
     m_fileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sds"))
+  {
+    m_sds = jsonValue.GetObject("sds");
+
+    m_sdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue VirtualGatewayTlsValidationContextTrust::Jsonize() const
   if(m_fileHasBeenSet)
   {
    payload.WithObject("file", m_file.Jsonize());
+
+  }
+
+  if(m_sdsHasBeenSet)
+  {
+   payload.WithObject("sds", m_sds.Jsonize());
 
   }
 

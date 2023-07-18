@@ -27,8 +27,9 @@ namespace Model
   /**
    * <p>Represents a single entry in a list of task executions.
    * <code>TaskExecutionListEntry</code> returns an array that contains a list of
-   * specific invocations of a task when <a>ListTaskExecutions</a> operation is
-   * called.</p><p><h3>See Also:</h3>   <a
+   * specific invocations of a task when the <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html">ListTaskExecutions</a>
+   * operation is called.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskExecutionListEntry">AWS
    * API Reference</a></p>
    */

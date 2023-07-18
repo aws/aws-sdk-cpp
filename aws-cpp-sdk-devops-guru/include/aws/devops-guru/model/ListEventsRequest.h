@@ -147,6 +147,47 @@ namespace Model
      */
     inline ListEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline ListEventsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline ListEventsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Web Services account. </p>
+     */
+    inline ListEventsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
   private:
 
     ListEventsFilters m_filters;
@@ -157,6 +198,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
   };
 
 } // namespace Model

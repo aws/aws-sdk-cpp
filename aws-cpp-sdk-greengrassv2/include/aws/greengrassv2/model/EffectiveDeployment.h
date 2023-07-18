@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a deployment job that AWS IoT Greengrass sends to
-   * a AWS IoT Greengrass core device.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a deployment job that IoT Greengrass sends to a
+   * Greengrass core device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/EffectiveDeployment">AWS
    * API Reference</a></p>
    */
@@ -82,115 +82,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline const Aws::String& GetDeploymentName() const{ return m_deploymentName; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline bool DeploymentNameHasBeenSet() const { return m_deploymentNameHasBeenSet; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const Aws::String& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = value; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(Aws::String&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::move(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const char* value) { m_deploymentNameHasBeenSet = true; m_deploymentName.assign(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline EffectiveDeployment& WithDeploymentName(const Aws::String& value) { SetDeploymentName(value); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline EffectiveDeployment& WithDeploymentName(Aws::String&& value) { SetDeploymentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline EffectiveDeployment& WithDeploymentName(const char* value) { SetDeploymentName(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline const Aws::String& GetIotJobId() const{ return m_iotJobId; }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline bool IotJobIdHasBeenSet() const { return m_iotJobIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(const Aws::String& value) { m_iotJobIdHasBeenSet = true; m_iotJobId = value; }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(Aws::String&& value) { m_iotJobIdHasBeenSet = true; m_iotJobId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobId(const char* value) { m_iotJobIdHasBeenSet = true; m_iotJobId.assign(value); }
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline EffectiveDeployment& WithIotJobId(const Aws::String& value) { SetIotJobId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline EffectiveDeployment& WithIotJobId(Aws::String&& value) { SetIotJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT job that applies the deployment to target devices.</p>
+     * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
     inline EffectiveDeployment& WithIotJobId(const char* value) { SetIotJobId(value); return *this;}
 
@@ -198,56 +166,56 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline const Aws::String& GetIotJobArn() const{ return m_iotJobArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline bool IotJobArnHasBeenSet() const { return m_iotJobArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(const Aws::String& value) { m_iotJobArnHasBeenSet = true; m_iotJobArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(Aws::String&& value) { m_iotJobArnHasBeenSet = true; m_iotJobArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline void SetIotJobArn(const char* value) { m_iotJobArnHasBeenSet = true; m_iotJobArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline EffectiveDeployment& WithIotJobArn(const Aws::String& value) { SetIotJobArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline EffectiveDeployment& WithIotJobArn(Aws::String&& value) { SetIotJobArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT job that applies the deployment to target devices.</p>
+     * of the IoT job that applies the deployment to target devices.</p>
      */
     inline EffectiveDeployment& WithIotJobArn(const char* value) { SetIotJobArn(value); return *this;}
 
@@ -296,87 +264,87 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline EffectiveDeployment& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline EffectiveDeployment& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline EffectiveDeployment& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
 
     /**
-     * <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p>
      */
     inline const EffectiveDeploymentExecutionStatus& GetCoreDeviceExecutionStatus() const{ return m_coreDeviceExecutionStatus; }
 
     /**
-     * <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p>
      */
     inline bool CoreDeviceExecutionStatusHasBeenSet() const { return m_coreDeviceExecutionStatusHasBeenSet; }
 
     /**
-     * <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p>
      */
     inline void SetCoreDeviceExecutionStatus(const EffectiveDeploymentExecutionStatus& value) { m_coreDeviceExecutionStatusHasBeenSet = true; m_coreDeviceExecutionStatus = value; }
 
     /**
-     * <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p>
      */
     inline void SetCoreDeviceExecutionStatus(EffectiveDeploymentExecutionStatus&& value) { m_coreDeviceExecutionStatusHasBeenSet = true; m_coreDeviceExecutionStatus = std::move(value); }
 
     /**
-     * <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p>
      */
     inline EffectiveDeployment& WithCoreDeviceExecutionStatus(const EffectiveDeploymentExecutionStatus& value) { SetCoreDeviceExecutionStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment job on the AWS IoT Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p>
      */
     inline EffectiveDeployment& WithCoreDeviceExecutionStatus(EffectiveDeploymentExecutionStatus&& value) { SetCoreDeviceExecutionStatus(std::move(value)); return *this;}
 

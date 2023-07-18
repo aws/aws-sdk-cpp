@@ -26,10 +26,11 @@ namespace Model
 
   /**
    * <p>A validator provides a syntactic or semantic check to ensure the
-   * configuration you want to deploy functions as intended. To validate your
-   * application configuration data, you provide a schema or a Lambda function that
-   * runs against the configuration. The configuration deployment or update can only
-   * proceed when the configuration data is valid.</p><p><h3>See Also:</h3>   <a
+   * configuration that you want to deploy functions as intended. To validate your
+   * application configuration data, you provide a schema or an Amazon Web Services
+   * Lambda function that runs against the configuration. The configuration
+   * deployment or update can only proceed when the configuration data is
+   * valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Validator">AWS
    * API Reference</a></p>
    */
@@ -80,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline Validator& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline Validator& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS
-     * Lambda function.</p>
+     * <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
+     * function.</p>
      */
     inline Validator& WithContent(const char* value) { SetContent(value); return *this;}
 

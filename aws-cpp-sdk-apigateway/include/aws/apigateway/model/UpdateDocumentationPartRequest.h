@@ -39,132 +39,140 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateDocumentationPartRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateDocumentationPartRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateDocumentationPartRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline const Aws::String& GetDocumentationPartId() const{ return m_documentationPartId; }
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline bool DocumentationPartIdHasBeenSet() const { return m_documentationPartIdHasBeenSet; }
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline void SetDocumentationPartId(const Aws::String& value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId = value; }
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline void SetDocumentationPartId(Aws::String&& value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId = std::move(value); }
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline void SetDocumentationPartId(const char* value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId.assign(value); }
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline UpdateDocumentationPartRequest& WithDocumentationPartId(const Aws::String& value) { SetDocumentationPartId(value); return *this;}
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline UpdateDocumentationPartRequest& WithDocumentationPartId(Aws::String&& value) { SetDocumentationPartId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The identifier of the to-be-updated documentation part.</p>
+     * <p>The identifier of the to-be-updated documentation part.</p>
      */
     inline UpdateDocumentationPartRequest& WithDocumentationPartId(const char* value) { SetDocumentationPartId(value); return *this;}
 
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateDocumentationPartRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateDocumentationPartRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateDocumentationPartRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateDocumentationPartRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 

@@ -205,50 +205,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline const Aws::String& GetIotThingName() const{ return m_iotThingName; }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline bool IotThingNameHasBeenSet() const { return m_iotThingNameHasBeenSet; }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline void SetIotThingName(const Aws::String& value) { m_iotThingNameHasBeenSet = true; m_iotThingName = value; }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline void SetIotThingName(Aws::String&& value) { m_iotThingNameHasBeenSet = true; m_iotThingName = std::move(value); }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline void SetIotThingName(const char* value) { m_iotThingNameHasBeenSet = true; m_iotThingName.assign(value); }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline DeviceSummary& WithIotThingName(const Aws::String& value) { SetIotThingName(value); return *this;}
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline DeviceSummary& WithIotThingName(Aws::String&& value) { SetIotThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline DeviceSummary& WithIotThingName(const char* value) { SetIotThingName(value); return *this;}
 
@@ -355,6 +355,47 @@ namespace Model
      */
     inline DeviceSummary& AddModels(EdgeModelSummary&& value) { m_modelsHasBeenSet = true; m_models.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DeviceSummary& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DeviceSummary& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DeviceSummary& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
 
     Aws::String m_deviceName;
@@ -380,6 +421,9 @@ namespace Model
 
     Aws::Vector<EdgeModelSummary> m_models;
     bool m_modelsHasBeenSet;
+
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet;
   };
 
 } // namespace Model

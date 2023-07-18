@@ -21,7 +21,8 @@ namespace Model
     RUNNING,
     UPDATING,
     DELETING,
-    DISABLED
+    DISABLED,
+    DEPLOYING
   };
 
 namespace ContainerServiceStateMapper

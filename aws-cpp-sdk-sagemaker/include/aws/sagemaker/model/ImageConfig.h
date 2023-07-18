@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/RepositoryAccessMode.h>
+#include <aws/sagemaker/model/RepositoryAuthConfig.h>
 #include <utility>
 
 namespace Aws
@@ -87,10 +88,68 @@ namespace Model
      */
     inline ImageConfig& WithRepositoryAccessMode(RepositoryAccessMode&& value) { SetRepositoryAccessMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Optional) Specifies an authentication configuration for the private docker
+     * registry where your model image is hosted. Specify a value for this property
+     * only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where
+     * the model image is hosted requires authentication.</p>
+     */
+    inline const RepositoryAuthConfig& GetRepositoryAuthConfig() const{ return m_repositoryAuthConfig; }
+
+    /**
+     * <p>(Optional) Specifies an authentication configuration for the private docker
+     * registry where your model image is hosted. Specify a value for this property
+     * only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where
+     * the model image is hosted requires authentication.</p>
+     */
+    inline bool RepositoryAuthConfigHasBeenSet() const { return m_repositoryAuthConfigHasBeenSet; }
+
+    /**
+     * <p>(Optional) Specifies an authentication configuration for the private docker
+     * registry where your model image is hosted. Specify a value for this property
+     * only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where
+     * the model image is hosted requires authentication.</p>
+     */
+    inline void SetRepositoryAuthConfig(const RepositoryAuthConfig& value) { m_repositoryAuthConfigHasBeenSet = true; m_repositoryAuthConfig = value; }
+
+    /**
+     * <p>(Optional) Specifies an authentication configuration for the private docker
+     * registry where your model image is hosted. Specify a value for this property
+     * only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where
+     * the model image is hosted requires authentication.</p>
+     */
+    inline void SetRepositoryAuthConfig(RepositoryAuthConfig&& value) { m_repositoryAuthConfigHasBeenSet = true; m_repositoryAuthConfig = std::move(value); }
+
+    /**
+     * <p>(Optional) Specifies an authentication configuration for the private docker
+     * registry where your model image is hosted. Specify a value for this property
+     * only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where
+     * the model image is hosted requires authentication.</p>
+     */
+    inline ImageConfig& WithRepositoryAuthConfig(const RepositoryAuthConfig& value) { SetRepositoryAuthConfig(value); return *this;}
+
+    /**
+     * <p>(Optional) Specifies an authentication configuration for the private docker
+     * registry where your model image is hosted. Specify a value for this property
+     * only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where
+     * the model image is hosted requires authentication.</p>
+     */
+    inline ImageConfig& WithRepositoryAuthConfig(RepositoryAuthConfig&& value) { SetRepositoryAuthConfig(std::move(value)); return *this;}
+
   private:
 
     RepositoryAccessMode m_repositoryAccessMode;
     bool m_repositoryAccessModeHasBeenSet;
+
+    RepositoryAuthConfig m_repositoryAuthConfig;
+    bool m_repositoryAuthConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -21,7 +21,8 @@ StartEventsDetectionJobRequest::StartEventsDetectionJobRequest() :
     m_languageCodeHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_targetEventTypesHasBeenSet(false)
+    m_targetEventTypesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,17 @@ Aws::String StartEventsDetectionJobRequest::SerializePayload() const
      targetEventTypesJsonList[targetEventTypesIndex].AsString(m_targetEventTypes[targetEventTypesIndex]);
    }
    payload.WithArray("TargetEventTypes", std::move(targetEventTypesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

@@ -24,6 +24,7 @@ public class CppShapeInformation {
    private final String cppType;
    private final Set<String> headerIncludes;
    private final Set<String> sourceIncludes;
+   private final Set<String> forwardDeclarations;
    private final String baseClass;
    private final String requestContentType;
 
@@ -35,6 +36,8 @@ public class CppShapeInformation {
        cppType = CppViewHelper.computeCppType(shape);
        headerIncludes = CppViewHelper.computeHeaderIncludes(serviceModel.getMetadata().getProjectName(), shape);
        sourceIncludes = CppViewHelper.computeSourceIncludes(serviceModel.getMetadata().getProjectName(), shape);
+       sourceIncludes.removeAll(headerIncludes);
+       forwardDeclarations = CppViewHelper.computeForwardDeclarations(shape);
        baseClass = CppViewHelper.computeBaseClass(serviceModel.getMetadata().getClassNamePrefix(), shape);
        requestContentType = CppViewHelper.computeRequestContentType(serviceModel.getMetadata());
    }

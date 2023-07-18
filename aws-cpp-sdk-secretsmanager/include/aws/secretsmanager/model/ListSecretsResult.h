@@ -71,79 +71,65 @@ namespace Model
 
 
     /**
-     * <p>If present in the response, this value indicates that there's more output
-     * available than included in the current response. This can occur even when the
-     * response includes no values at all, such as when you ask for a filtered view of
-     * a very long list. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to continue processing and get the next
-     * part of the output. You should repeat this until the <code>NextToken</code>
-     * response element comes back empty (as <code>null</code>).</p>
+     * <p>Secrets Manager includes this value if there's more output available than
+     * what is included in the current response. This can occur even when the response
+     * includes no values at all, such as when you ask for a filtered view of a long
+     * list. To get the next results, call <code>ListSecrets</code> again with this
+     * value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If present in the response, this value indicates that there's more output
-     * available than included in the current response. This can occur even when the
-     * response includes no values at all, such as when you ask for a filtered view of
-     * a very long list. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to continue processing and get the next
-     * part of the output. You should repeat this until the <code>NextToken</code>
-     * response element comes back empty (as <code>null</code>).</p>
+     * <p>Secrets Manager includes this value if there's more output available than
+     * what is included in the current response. This can occur even when the response
+     * includes no values at all, such as when you ask for a filtered view of a long
+     * list. To get the next results, call <code>ListSecrets</code> again with this
+     * value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If present in the response, this value indicates that there's more output
-     * available than included in the current response. This can occur even when the
-     * response includes no values at all, such as when you ask for a filtered view of
-     * a very long list. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to continue processing and get the next
-     * part of the output. You should repeat this until the <code>NextToken</code>
-     * response element comes back empty (as <code>null</code>).</p>
+     * <p>Secrets Manager includes this value if there's more output available than
+     * what is included in the current response. This can occur even when the response
+     * includes no values at all, such as when you ask for a filtered view of a long
+     * list. To get the next results, call <code>ListSecrets</code> again with this
+     * value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If present in the response, this value indicates that there's more output
-     * available than included in the current response. This can occur even when the
-     * response includes no values at all, such as when you ask for a filtered view of
-     * a very long list. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to continue processing and get the next
-     * part of the output. You should repeat this until the <code>NextToken</code>
-     * response element comes back empty (as <code>null</code>).</p>
+     * <p>Secrets Manager includes this value if there's more output available than
+     * what is included in the current response. This can occur even when the response
+     * includes no values at all, such as when you ask for a filtered view of a long
+     * list. To get the next results, call <code>ListSecrets</code> again with this
+     * value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If present in the response, this value indicates that there's more output
-     * available than included in the current response. This can occur even when the
-     * response includes no values at all, such as when you ask for a filtered view of
-     * a very long list. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to continue processing and get the next
-     * part of the output. You should repeat this until the <code>NextToken</code>
-     * response element comes back empty (as <code>null</code>).</p>
+     * <p>Secrets Manager includes this value if there's more output available than
+     * what is included in the current response. This can occur even when the response
+     * includes no values at all, such as when you ask for a filtered view of a long
+     * list. To get the next results, call <code>ListSecrets</code> again with this
+     * value.</p>
      */
     inline ListSecretsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If present in the response, this value indicates that there's more output
-     * available than included in the current response. This can occur even when the
-     * response includes no values at all, such as when you ask for a filtered view of
-     * a very long list. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to continue processing and get the next
-     * part of the output. You should repeat this until the <code>NextToken</code>
-     * response element comes back empty (as <code>null</code>).</p>
+     * <p>Secrets Manager includes this value if there's more output available than
+     * what is included in the current response. This can occur even when the response
+     * includes no values at all, such as when you ask for a filtered view of a long
+     * list. To get the next results, call <code>ListSecrets</code> again with this
+     * value.</p>
      */
     inline ListSecretsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If present in the response, this value indicates that there's more output
-     * available than included in the current response. This can occur even when the
-     * response includes no values at all, such as when you ask for a filtered view of
-     * a very long list. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to continue processing and get the next
-     * part of the output. You should repeat this until the <code>NextToken</code>
-     * response element comes back empty (as <code>null</code>).</p>
+     * <p>Secrets Manager includes this value if there's more output available than
+     * what is included in the current response. This can occur even when the response
+     * includes no values at all, such as when you ask for a filtered view of a long
+     * list. To get the next results, call <code>ListSecrets</code> again with this
+     * value.</p>
      */
     inline ListSecretsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

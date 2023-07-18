@@ -63,7 +63,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline const Aws::Vector<Aws::String>& GetComputeTypesAllowed() const{ return m_computeTypesAllowed; }
@@ -72,7 +72,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline bool ComputeTypesAllowedHasBeenSet() const { return m_computeTypesAllowedHasBeenSet; }
@@ -81,7 +81,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline void SetComputeTypesAllowed(const Aws::Vector<Aws::String>& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed = value; }
@@ -90,7 +90,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline void SetComputeTypesAllowed(Aws::Vector<Aws::String>&& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed = std::move(value); }
@@ -99,7 +99,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline BatchRestrictions& WithComputeTypesAllowed(const Aws::Vector<Aws::String>& value) { SetComputeTypesAllowed(value); return *this;}
@@ -108,7 +108,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline BatchRestrictions& WithComputeTypesAllowed(Aws::Vector<Aws::String>&& value) { SetComputeTypesAllowed(std::move(value)); return *this;}
@@ -117,7 +117,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline BatchRestrictions& AddComputeTypesAllowed(const Aws::String& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(value); return *this; }
@@ -126,7 +126,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline BatchRestrictions& AddComputeTypesAllowed(Aws::String&& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(std::move(value)); return *this; }
@@ -135,7 +135,7 @@ namespace Model
      * <p>An array of strings that specify the compute types that are allowed for the
      * batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these
+     * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
     inline BatchRestrictions& AddComputeTypesAllowed(const char* value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(value); return *this; }

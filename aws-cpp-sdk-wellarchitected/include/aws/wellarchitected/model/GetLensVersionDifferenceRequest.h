@@ -103,6 +103,47 @@ namespace Model
      */
     inline GetLensVersionDifferenceRequest& WithBaseLensVersion(const char* value) { SetBaseLensVersion(value); return *this;}
 
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline const Aws::String& GetTargetLensVersion() const{ return m_targetLensVersion; }
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline bool TargetLensVersionHasBeenSet() const { return m_targetLensVersionHasBeenSet; }
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline void SetTargetLensVersion(const Aws::String& value) { m_targetLensVersionHasBeenSet = true; m_targetLensVersion = value; }
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline void SetTargetLensVersion(Aws::String&& value) { m_targetLensVersionHasBeenSet = true; m_targetLensVersion = std::move(value); }
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline void SetTargetLensVersion(const char* value) { m_targetLensVersionHasBeenSet = true; m_targetLensVersion.assign(value); }
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline GetLensVersionDifferenceRequest& WithTargetLensVersion(const Aws::String& value) { SetTargetLensVersion(value); return *this;}
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline GetLensVersionDifferenceRequest& WithTargetLensVersion(Aws::String&& value) { SetTargetLensVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The lens version to target a difference for.</p>
+     */
+    inline GetLensVersionDifferenceRequest& WithTargetLensVersion(const char* value) { SetTargetLensVersion(value); return *this;}
+
   private:
 
     Aws::String m_lensAlias;
@@ -110,6 +151,9 @@ namespace Model
 
     Aws::String m_baseLensVersion;
     bool m_baseLensVersionHasBeenSet;
+
+    Aws::String m_targetLensVersion;
+    bool m_targetLensVersionHasBeenSet;
   };
 
 } // namespace Model

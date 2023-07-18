@@ -102,6 +102,12 @@ DescribePipelineResult& DescribePipelineResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("ParallelismConfiguration"))
+  {
+    m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
+
+  }
+
 
 
   return *this;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ShrinkPolicy.h>
+#include <aws/elasticmapreduce/model/ReconfigurationType.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <utility>
 
@@ -190,6 +191,37 @@ namespace Model
 
 
     /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline const ReconfigurationType& GetReconfigurationType() const{ return m_reconfigurationType; }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline bool ReconfigurationTypeHasBeenSet() const { return m_reconfigurationTypeHasBeenSet; }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline void SetReconfigurationType(const ReconfigurationType& value) { m_reconfigurationTypeHasBeenSet = true; m_reconfigurationType = value; }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline void SetReconfigurationType(ReconfigurationType&& value) { m_reconfigurationTypeHasBeenSet = true; m_reconfigurationType = std::move(value); }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline InstanceGroupModifyConfig& WithReconfigurationType(const ReconfigurationType& value) { SetReconfigurationType(value); return *this;}
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline InstanceGroupModifyConfig& WithReconfigurationType(ReconfigurationType&& value) { SetReconfigurationType(std::move(value)); return *this;}
+
+
+    /**
      * <p>A list of new or modified configurations to apply for an instance group.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
@@ -242,6 +274,9 @@ namespace Model
 
     ShrinkPolicy m_shrinkPolicy;
     bool m_shrinkPolicyHasBeenSet;
+
+    ReconfigurationType m_reconfigurationType;
+    bool m_reconfigurationTypeHasBeenSet;
 
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;

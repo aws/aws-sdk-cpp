@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> Indicates that the request has invalid or missing parameters for the
-   * specified field. </p><p><h3>See Also:</h3>   <a
+   * <p> Indicates that the request has invalid or missing parameters for the field.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ValidationExceptionField">AWS
    * API Reference</a></p>
    */

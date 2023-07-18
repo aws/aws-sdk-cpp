@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/model/UpdateAbpV1_1.h>
+#include <aws/iotwireless/model/UpdateAbpV1_0_x.h>
 #include <utility>
 
 namespace Aws
@@ -24,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>LoRa object for update functions.</p><p><h3>See Also:</h3>   <a
+   * <p>LoRaWAN object for update functions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANUpdateDevice">AWS
    * API Reference</a></p>
    */
@@ -118,6 +120,68 @@ namespace Model
      */
     inline LoRaWANUpdateDevice& WithServiceProfileId(const char* value) { SetServiceProfileId(value); return *this;}
 
+
+    /**
+     * <p>ABP device object for update APIs for v1.1</p>
+     */
+    inline const UpdateAbpV1_1& GetAbpV1_1() const{ return m_abpV1_1; }
+
+    /**
+     * <p>ABP device object for update APIs for v1.1</p>
+     */
+    inline bool AbpV1_1HasBeenSet() const { return m_abpV1_1HasBeenSet; }
+
+    /**
+     * <p>ABP device object for update APIs for v1.1</p>
+     */
+    inline void SetAbpV1_1(const UpdateAbpV1_1& value) { m_abpV1_1HasBeenSet = true; m_abpV1_1 = value; }
+
+    /**
+     * <p>ABP device object for update APIs for v1.1</p>
+     */
+    inline void SetAbpV1_1(UpdateAbpV1_1&& value) { m_abpV1_1HasBeenSet = true; m_abpV1_1 = std::move(value); }
+
+    /**
+     * <p>ABP device object for update APIs for v1.1</p>
+     */
+    inline LoRaWANUpdateDevice& WithAbpV1_1(const UpdateAbpV1_1& value) { SetAbpV1_1(value); return *this;}
+
+    /**
+     * <p>ABP device object for update APIs for v1.1</p>
+     */
+    inline LoRaWANUpdateDevice& WithAbpV1_1(UpdateAbpV1_1&& value) { SetAbpV1_1(std::move(value)); return *this;}
+
+
+    /**
+     * <p>ABP device object for update APIs for v1.0.x</p>
+     */
+    inline const UpdateAbpV1_0_x& GetAbpV1_0_x() const{ return m_abpV1_0_x; }
+
+    /**
+     * <p>ABP device object for update APIs for v1.0.x</p>
+     */
+    inline bool AbpV1_0_xHasBeenSet() const { return m_abpV1_0_xHasBeenSet; }
+
+    /**
+     * <p>ABP device object for update APIs for v1.0.x</p>
+     */
+    inline void SetAbpV1_0_x(const UpdateAbpV1_0_x& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = value; }
+
+    /**
+     * <p>ABP device object for update APIs for v1.0.x</p>
+     */
+    inline void SetAbpV1_0_x(UpdateAbpV1_0_x&& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = std::move(value); }
+
+    /**
+     * <p>ABP device object for update APIs for v1.0.x</p>
+     */
+    inline LoRaWANUpdateDevice& WithAbpV1_0_x(const UpdateAbpV1_0_x& value) { SetAbpV1_0_x(value); return *this;}
+
+    /**
+     * <p>ABP device object for update APIs for v1.0.x</p>
+     */
+    inline LoRaWANUpdateDevice& WithAbpV1_0_x(UpdateAbpV1_0_x&& value) { SetAbpV1_0_x(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceProfileId;
@@ -125,6 +189,12 @@ namespace Model
 
     Aws::String m_serviceProfileId;
     bool m_serviceProfileIdHasBeenSet;
+
+    UpdateAbpV1_1 m_abpV1_1;
+    bool m_abpV1_1HasBeenSet;
+
+    UpdateAbpV1_0_x m_abpV1_0_x;
+    bool m_abpV1_0_xHasBeenSet;
   };
 
 } // namespace Model

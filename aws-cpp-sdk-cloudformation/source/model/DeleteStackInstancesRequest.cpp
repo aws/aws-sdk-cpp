@@ -19,7 +19,9 @@ DeleteStackInstancesRequest::DeleteStackInstancesRequest() :
     m_retainStacks(false),
     m_retainStacksHasBeenSet(false),
     m_operationId(Aws::Utils::UUID::RandomUUID()),
-    m_operationIdHasBeenSet(true)
+    m_operationIdHasBeenSet(true),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,11 @@ Aws::String DeleteStackInstancesRequest::SerializePayload() const
   if(m_operationIdHasBeenSet)
   {
     ss << "OperationId=" << StringUtils::URLEncode(m_operationId.c_str()) << "&";
+  }
+
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
   }
 
   ss << "Version=2010-05-15";

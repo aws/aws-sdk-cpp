@@ -79,50 +79,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline PutNotificationConfigurationRequest& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline PutNotificationConfigurationRequest& WithTopicARN(Aws::String&& value) { SetTopicARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline PutNotificationConfigurationRequest& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
 

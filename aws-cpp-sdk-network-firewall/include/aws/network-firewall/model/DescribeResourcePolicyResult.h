@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS Identity and Access Management policy for the resource. </p>
+     * <p>The IAM policy for the resource. </p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The AWS Identity and Access Management policy for the resource. </p>
+     * <p>The IAM policy for the resource. </p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * <p>The AWS Identity and Access Management policy for the resource. </p>
+     * <p>The IAM policy for the resource. </p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
-     * <p>The AWS Identity and Access Management policy for the resource. </p>
+     * <p>The IAM policy for the resource. </p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * <p>The AWS Identity and Access Management policy for the resource. </p>
+     * <p>The IAM policy for the resource. </p>
      */
     inline DescribeResourcePolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management policy for the resource. </p>
+     * <p>The IAM policy for the resource. </p>
      */
     inline DescribeResourcePolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management policy for the resource. </p>
+     * <p>The IAM policy for the resource. </p>
      */
     inline DescribeResourcePolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

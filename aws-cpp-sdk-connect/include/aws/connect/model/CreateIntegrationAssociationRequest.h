@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/IntegrationType.h>
 #include <aws/connect/model/SourceType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -35,42 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline CreateIntegrationAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline CreateIntegrationAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline CreateIntegrationAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -148,116 +157,204 @@ namespace Model
 
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline const Aws::String& GetSourceApplicationUrl() const{ return m_sourceApplicationUrl; }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline bool SourceApplicationUrlHasBeenSet() const { return m_sourceApplicationUrlHasBeenSet; }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationUrl(const Aws::String& value) { m_sourceApplicationUrlHasBeenSet = true; m_sourceApplicationUrl = value; }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationUrl(Aws::String&& value) { m_sourceApplicationUrlHasBeenSet = true; m_sourceApplicationUrl = std::move(value); }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationUrl(const char* value) { m_sourceApplicationUrlHasBeenSet = true; m_sourceApplicationUrl.assign(value); }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationUrl(const Aws::String& value) { SetSourceApplicationUrl(value); return *this;}
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationUrl(Aws::String&& value) { SetSourceApplicationUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationUrl(const char* value) { SetSourceApplicationUrl(value); return *this;}
 
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline const Aws::String& GetSourceApplicationName() const{ return m_sourceApplicationName; }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline bool SourceApplicationNameHasBeenSet() const { return m_sourceApplicationNameHasBeenSet; }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationName(const Aws::String& value) { m_sourceApplicationNameHasBeenSet = true; m_sourceApplicationName = value; }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationName(Aws::String&& value) { m_sourceApplicationNameHasBeenSet = true; m_sourceApplicationName = std::move(value); }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationName(const char* value) { m_sourceApplicationNameHasBeenSet = true; m_sourceApplicationName.assign(value); }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationName(const Aws::String& value) { SetSourceApplicationName(value); return *this;}
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationName(Aws::String&& value) { SetSourceApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationName(const char* value) { SetSourceApplicationName(value); return *this;}
 
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline CreateIntegrationAssociationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -278,6 +375,9 @@ namespace Model
 
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

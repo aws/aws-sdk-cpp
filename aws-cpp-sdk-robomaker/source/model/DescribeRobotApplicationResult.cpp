@@ -82,6 +82,18 @@ DescribeRobotApplicationResult& DescribeRobotApplicationResult::operator =(const
     }
   }
 
+  if(jsonValue.ValueExists("environment"))
+  {
+    m_environment = jsonValue.GetObject("environment");
+
+  }
+
+  if(jsonValue.ValueExists("imageDigest"))
+  {
+    m_imageDigest = jsonValue.GetString("imageDigest");
+
+  }
+
 
 
   return *this;

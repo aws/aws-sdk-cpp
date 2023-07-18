@@ -35,90 +35,90 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline const Aws::String& GetImagePipelineArn() const{ return m_imagePipelineArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline bool ImagePipelineArnHasBeenSet() const { return m_imagePipelineArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline void SetImagePipelineArn(const Aws::String& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline void SetImagePipelineArn(Aws::String&& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline void SetImagePipelineArn(const char* value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline StartImagePipelineExecutionRequest& WithImagePipelineArn(const Aws::String& value) { SetImagePipelineArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline StartImagePipelineExecutionRequest& WithImagePipelineArn(Aws::String&& value) { SetImagePipelineArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
-     * manually invoke. </p>
+     * manually invoke.</p>
      */
     inline StartImagePipelineExecutionRequest& WithImagePipelineArn(const char* value) { SetImagePipelineArn(value); return *this;}
 
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline StartImagePipelineExecutionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline StartImagePipelineExecutionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline StartImagePipelineExecutionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

@@ -25,7 +25,8 @@ LayerVersionsListItem::LayerVersionsListItem() :
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_compatibleRuntimesHasBeenSet(false),
-    m_licenseInfoHasBeenSet(false)
+    m_licenseInfoHasBeenSet(false),
+    m_compatibleArchitecturesHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ LayerVersionsListItem::LayerVersionsListItem(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_compatibleRuntimesHasBeenSet(false),
-    m_licenseInfoHasBeenSet(false)
+    m_licenseInfoHasBeenSet(false),
+    m_compatibleArchitecturesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,16 @@ LayerVersionsListItem& LayerVersionsListItem::operator =(JsonView jsonValue)
     m_licenseInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CompatibleArchitectures"))
+  {
+    Array<JsonView> compatibleArchitecturesJsonList = jsonValue.GetArray("CompatibleArchitectures");
+    for(unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength(); ++compatibleArchitecturesIndex)
+    {
+      m_compatibleArchitectures.push_back(ArchitectureMapper::GetArchitectureForName(compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString()));
+    }
+    m_compatibleArchitecturesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +145,17 @@ JsonValue LayerVersionsListItem::Jsonize() const
   if(m_licenseInfoHasBeenSet)
   {
    payload.WithString("LicenseInfo", m_licenseInfo);
+
+  }
+
+  if(m_compatibleArchitecturesHasBeenSet)
+  {
+   Array<JsonValue> compatibleArchitecturesJsonList(m_compatibleArchitectures.size());
+   for(unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength(); ++compatibleArchitecturesIndex)
+   {
+     compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitectures[compatibleArchitecturesIndex]));
+   }
+   payload.WithArray("CompatibleArchitectures", std::move(compatibleArchitecturesJsonList));
 
   }
 

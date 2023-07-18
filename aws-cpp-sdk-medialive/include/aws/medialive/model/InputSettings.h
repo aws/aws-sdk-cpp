@@ -319,6 +319,31 @@ namespace Model
 
 
     /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline int GetScte35Pid() const{ return m_scte35Pid; }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline bool Scte35PidHasBeenSet() const { return m_scte35PidHasBeenSet; }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline InputSettings& WithScte35Pid(int value) { SetScte35Pid(value); return *this;}
+
+
+    /**
      * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
      * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
      * messages.
@@ -480,6 +505,9 @@ namespace Model
 
     NetworkInputSettings m_networkInputSettings;
     bool m_networkInputSettingsHasBeenSet;
+
+    int m_scte35Pid;
+    bool m_scte35PidHasBeenSet;
 
     Smpte2038DataPreference m_smpte2038DataPreference;
     bool m_smpte2038DataPreferenceHasBeenSet;

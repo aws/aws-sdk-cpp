@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>Gets suite definition Id with GetSuiteDefinition API call.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Gets suite definition Id with GetSuiteDefinition API call.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionId = value; }
 
     /**
-     * <p>Gets suite definition Id with GetSuiteDefinition API call.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Gets suite definition Id with GetSuiteDefinition API call.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Gets suite definition Id with GetSuiteDefinition API call.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Gets suite definition Id with GetSuiteDefinition API call.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Gets suite definition Id with GetSuiteDefinition API call.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 
@@ -108,161 +108,151 @@ namespace Model
 
 
     /**
-     * <p>Gets suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Suite definition version of the suite definition.</p>
      */
     inline const Aws::String& GetSuiteDefinitionVersion() const{ return m_suiteDefinitionVersion; }
 
     /**
-     * <p>Gets suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Suite definition version of the suite definition.</p>
      */
     inline void SetSuiteDefinitionVersion(const Aws::String& value) { m_suiteDefinitionVersion = value; }
 
     /**
-     * <p>Gets suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Suite definition version of the suite definition.</p>
      */
     inline void SetSuiteDefinitionVersion(Aws::String&& value) { m_suiteDefinitionVersion = std::move(value); }
 
     /**
-     * <p>Gets suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Suite definition version of the suite definition.</p>
      */
     inline void SetSuiteDefinitionVersion(const char* value) { m_suiteDefinitionVersion.assign(value); }
 
     /**
-     * <p>Gets suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Suite definition version of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionVersion(const Aws::String& value) { SetSuiteDefinitionVersion(value); return *this;}
 
     /**
-     * <p>Gets suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Suite definition version of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionVersion(Aws::String&& value) { SetSuiteDefinitionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Gets suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Suite definition version of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionVersion(const char* value) { SetSuiteDefinitionVersion(value); return *this;}
 
 
     /**
-     * <p>Gets latest suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Latest suite definition version of the suite definition.</p>
      */
     inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
 
     /**
-     * <p>Gets latest suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Latest suite definition version of the suite definition.</p>
      */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersion = value; }
 
     /**
-     * <p>Gets latest suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Latest suite definition version of the suite definition.</p>
      */
     inline void SetLatestVersion(Aws::String&& value) { m_latestVersion = std::move(value); }
 
     /**
-     * <p>Gets latest suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Latest suite definition version of the suite definition.</p>
      */
     inline void SetLatestVersion(const char* value) { m_latestVersion.assign(value); }
 
     /**
-     * <p>Gets latest suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Latest suite definition version of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
 
     /**
-     * <p>Gets latest suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Latest suite definition version of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Gets latest suite definition version with GetSuiteDefinition API call.</p>
+     * <p>Latest suite definition version of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
 
     /**
-     * <p>Gets the suite configuration with GetSuiteDefinition API call.</p>
+     * <p>Suite configuration of the suite definition.</p>
      */
     inline const SuiteDefinitionConfiguration& GetSuiteDefinitionConfiguration() const{ return m_suiteDefinitionConfiguration; }
 
     /**
-     * <p>Gets the suite configuration with GetSuiteDefinition API call.</p>
+     * <p>Suite configuration of the suite definition.</p>
      */
     inline void SetSuiteDefinitionConfiguration(const SuiteDefinitionConfiguration& value) { m_suiteDefinitionConfiguration = value; }
 
     /**
-     * <p>Gets the suite configuration with GetSuiteDefinition API call.</p>
+     * <p>Suite configuration of the suite definition.</p>
      */
     inline void SetSuiteDefinitionConfiguration(SuiteDefinitionConfiguration&& value) { m_suiteDefinitionConfiguration = std::move(value); }
 
     /**
-     * <p>Gets the suite configuration with GetSuiteDefinition API call.</p>
+     * <p>Suite configuration of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionConfiguration(const SuiteDefinitionConfiguration& value) { SetSuiteDefinitionConfiguration(value); return *this;}
 
     /**
-     * <p>Gets the suite configuration with GetSuiteDefinition API call.</p>
+     * <p>Suite configuration of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionConfiguration(SuiteDefinitionConfiguration&& value) { SetSuiteDefinitionConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Gets the timestamp of the time suite was created with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Gets the timestamp of the time suite was created with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>Gets the timestamp of the time suite was created with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Gets the timestamp of the time suite was created with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was created.</p>
      */
     inline GetSuiteDefinitionResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Gets the timestamp of the time suite was created with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was created.</p>
      */
     inline GetSuiteDefinitionResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Gets the timestamp of the time suite was modified with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedAt() const{ return m_lastModifiedAt; }
 
     /**
-     * <p>Gets the timestamp of the time suite was modified with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
      */
     inline void SetLastModifiedAt(const Aws::Utils::DateTime& value) { m_lastModifiedAt = value; }
 
     /**
-     * <p>Gets the timestamp of the time suite was modified with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
      */
     inline void SetLastModifiedAt(Aws::Utils::DateTime&& value) { m_lastModifiedAt = std::move(value); }
 
     /**
-     * <p>Gets the timestamp of the time suite was modified with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
      */
     inline GetSuiteDefinitionResult& WithLastModifiedAt(const Aws::Utils::DateTime& value) { SetLastModifiedAt(value); return *this;}
 
     /**
-     * <p>Gets the timestamp of the time suite was modified with GetSuiteDefinition API
-     * call.</p>
+     * <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
      */
     inline GetSuiteDefinitionResult& WithLastModifiedAt(Aws::Utils::DateTime&& value) { SetLastModifiedAt(std::move(value)); return *this;}
 

@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Summaries about the Candidates.</p>
+     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline const Aws::Vector<AutoMLCandidate>& GetCandidates() const{ return m_candidates; }
 
     /**
-     * <p>Summaries about the Candidates.</p>
+     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline void SetCandidates(const Aws::Vector<AutoMLCandidate>& value) { m_candidates = value; }
 
     /**
-     * <p>Summaries about the Candidates.</p>
+     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline void SetCandidates(Aws::Vector<AutoMLCandidate>&& value) { m_candidates = std::move(value); }
 
     /**
-     * <p>Summaries about the Candidates.</p>
+     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline ListCandidatesForAutoMLJobResult& WithCandidates(const Aws::Vector<AutoMLCandidate>& value) { SetCandidates(value); return *this;}
 
     /**
-     * <p>Summaries about the Candidates.</p>
+     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline ListCandidatesForAutoMLJobResult& WithCandidates(Aws::Vector<AutoMLCandidate>&& value) { SetCandidates(std::move(value)); return *this;}
 
     /**
-     * <p>Summaries about the Candidates.</p>
+     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline ListCandidatesForAutoMLJobResult& AddCandidates(const AutoMLCandidate& value) { m_candidates.push_back(value); return *this; }
 
     /**
-     * <p>Summaries about the Candidates.</p>
+     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline ListCandidatesForAutoMLJobResult& AddCandidates(AutoMLCandidate&& value) { m_candidates.push_back(std::move(value)); return *this; }
 

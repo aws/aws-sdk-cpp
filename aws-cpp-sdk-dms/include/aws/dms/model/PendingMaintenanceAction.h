@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a maintenance action pending for an AWS DMS resource, including
-   * when and how it will be applied. This data type is a response element to the
+   * <p>Describes a maintenance action pending for an DMS resource, including when
+   * and how it will be applied. This data type is a response element to the
    * <code>DescribePendingMaintenanceActions</code> operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/PendingMaintenanceAction">AWS

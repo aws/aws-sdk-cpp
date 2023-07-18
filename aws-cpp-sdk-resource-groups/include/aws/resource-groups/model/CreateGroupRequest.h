@@ -168,43 +168,61 @@ namespace Model
 
     /**
      * <p>The resource query that determines which AWS resources are members of this
-     * group.</p>  <p>You can specify either a <code>ResourceQuery</code> or a
-     * <code>Configuration</code>, but not both.</p> 
+     * group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>  <p>A resource group can
+     * contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but
+     * not both.</p> 
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
 
     /**
      * <p>The resource query that determines which AWS resources are members of this
-     * group.</p>  <p>You can specify either a <code>ResourceQuery</code> or a
-     * <code>Configuration</code>, but not both.</p> 
+     * group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>  <p>A resource group can
+     * contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but
+     * not both.</p> 
      */
     inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
 
     /**
      * <p>The resource query that determines which AWS resources are members of this
-     * group.</p>  <p>You can specify either a <code>ResourceQuery</code> or a
-     * <code>Configuration</code>, but not both.</p> 
+     * group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>  <p>A resource group can
+     * contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but
+     * not both.</p> 
      */
     inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = value; }
 
     /**
      * <p>The resource query that determines which AWS resources are members of this
-     * group.</p>  <p>You can specify either a <code>ResourceQuery</code> or a
-     * <code>Configuration</code>, but not both.</p> 
+     * group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>  <p>A resource group can
+     * contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but
+     * not both.</p> 
      */
     inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::move(value); }
 
     /**
      * <p>The resource query that determines which AWS resources are members of this
-     * group.</p>  <p>You can specify either a <code>ResourceQuery</code> or a
-     * <code>Configuration</code>, but not both.</p> 
+     * group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>  <p>A resource group can
+     * contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but
+     * not both.</p> 
      */
     inline CreateGroupRequest& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
 
     /**
      * <p>The resource query that determines which AWS resources are members of this
-     * group.</p>  <p>You can specify either a <code>ResourceQuery</code> or a
-     * <code>Configuration</code>, but not both.</p> 
+     * group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>  <p>A resource group can
+     * contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but
+     * not both.</p> 
      */
     inline CreateGroupRequest& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
 
@@ -278,72 +296,96 @@ namespace Model
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline const Aws::Vector<GroupConfigurationItem>& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline void SetConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline void SetConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline CreateGroupRequest& WithConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline CreateGroupRequest& WithConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline CreateGroupRequest& AddConfiguration(const GroupConfigurationItem& value) { m_configurationHasBeenSet = true; m_configuration.push_back(value); return *this; }
 
     /**
      * <p>A configuration associates the resource group with an AWS service and
      * specifies how the service can interact with the resources in the group. A
-     * configuration is an array of <a>GroupConfigurationItem</a> elements.</p> 
-     * <p>You can specify either a <code>Configuration</code> or a
-     * <code>ResourceQuery</code> in a group, but not both.</p> 
+     * configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
+     * not both.</p> 
      */
     inline CreateGroupRequest& AddConfiguration(GroupConfigurationItem&& value) { m_configurationHasBeenSet = true; m_configuration.push_back(std::move(value)); return *this; }
 

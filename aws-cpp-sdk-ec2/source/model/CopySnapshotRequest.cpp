@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 CopySnapshotRequest::CopySnapshotRequest() : 
     m_descriptionHasBeenSet(false),
+    m_destinationOutpostArnHasBeenSet(false),
     m_destinationRegionHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
@@ -32,6 +33,11 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_destinationOutpostArnHasBeenSet)
+  {
+    ss << "DestinationOutpostArn=" << StringUtils::URLEncode(m_destinationOutpostArn.c_str()) << "&";
   }
 
   if(m_destinationRegionHasBeenSet)

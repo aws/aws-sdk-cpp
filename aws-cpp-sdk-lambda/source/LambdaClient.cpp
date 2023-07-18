@@ -26,6 +26,7 @@
 #include <aws/lambda/model/CreateCodeSigningConfigRequest.h>
 #include <aws/lambda/model/CreateEventSourceMappingRequest.h>
 #include <aws/lambda/model/CreateFunctionRequest.h>
+#include <aws/lambda/model/CreateFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/DeleteAliasRequest.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigRequest.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
@@ -33,6 +34,7 @@
 #include <aws/lambda/model/DeleteFunctionCodeSigningConfigRequest.h>
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/DeleteFunctionEventInvokeConfigRequest.h>
+#include <aws/lambda/model/DeleteFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
@@ -44,6 +46,7 @@
 #include <aws/lambda/model/GetFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
 #include <aws/lambda/model/GetFunctionEventInvokeConfigRequest.h>
+#include <aws/lambda/model/GetFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/GetLayerVersionRequest.h>
 #include <aws/lambda/model/GetLayerVersionByArnRequest.h>
 #include <aws/lambda/model/GetLayerVersionPolicyRequest.h>
@@ -54,6 +57,7 @@
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsRequest.h>
+#include <aws/lambda/model/ListFunctionUrlConfigsRequest.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
 #include <aws/lambda/model/ListFunctionsByCodeSigningConfigRequest.h>
 #include <aws/lambda/model/ListLayerVersionsRequest.h>
@@ -77,6 +81,7 @@
 #include <aws/lambda/model/UpdateFunctionCodeRequest.h>
 #include <aws/lambda/model/UpdateFunctionConfigurationRequest.h>
 #include <aws/lambda/model/UpdateFunctionEventInvokeConfigRequest.h>
+#include <aws/lambda/model/UpdateFunctionUrlConfigRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -125,7 +130,7 @@ LambdaClient::~LambdaClient()
 {
 }
 
-void LambdaClient::init(const ClientConfiguration& config)
+void LambdaClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Lambda");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -164,13 +169,11 @@ AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const A
     return AddLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers/";
-  ss << request.GetLayerName();
-  ss << "/versions/";
-  ss << request.GetVersionNumber();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers/");
+  uri.AddPathSegment(request.GetLayerName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionNumber());
+  uri.AddPathSegments("/policy");
   return AddLayerVersionPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,11 +203,9 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
     return AddPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/policy");
   return AddPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -234,11 +235,9 @@ CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) 
     return CreateAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/aliases";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/aliases");
   return CreateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,9 +262,7 @@ void LambdaClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, con
 CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const CreateCodeSigningConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-04-22/code-signing-configs/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
   return CreateCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -290,9 +287,7 @@ void LambdaClient::CreateCodeSigningConfigAsyncHelper(const CreateCodeSigningCon
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/event-source-mappings/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
   return CreateEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -317,9 +312,7 @@ void LambdaClient::CreateEventSourceMappingAsyncHelper(const CreateEventSourceMa
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions");
   return CreateFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -341,6 +334,38 @@ void LambdaClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& reques
   handler(this, request, CreateFunction(request), context);
 }
 
+CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const CreateFunctionUrlConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFunctionUrlConfig", "Required field: FunctionName, is not set");
+    return CreateFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2021-10-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/url");
+  return CreateFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFunctionUrlConfigOutcomeCallable LambdaClient::CreateFunctionUrlConfigCallable(const CreateFunctionUrlConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFunctionUrlConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::CreateFunctionUrlConfigAsync(const CreateFunctionUrlConfigRequest& request, const CreateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFunctionUrlConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::CreateFunctionUrlConfigAsyncHelper(const CreateFunctionUrlConfigRequest& request, const CreateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFunctionUrlConfig(request), context);
+}
+
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const
 {
   if (!request.FunctionNameHasBeenSet())
@@ -354,12 +379,10 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
     return DeleteAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/aliases/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetName());
   return DeleteAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -389,10 +412,8 @@ DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const Delet
     return DeleteCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-04-22/code-signing-configs/";
-  ss << request.GetCodeSigningConfigArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
+  uri.AddPathSegment(request.GetCodeSigningConfigArn());
   return DeleteCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -422,10 +443,8 @@ DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const Del
     return DeleteEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/event-source-mappings/";
-  ss << request.GetUUID();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
+  uri.AddPathSegment(request.GetUUID());
   return DeleteEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -455,10 +474,8 @@ DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& 
     return DeleteFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
   return DeleteFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -488,11 +505,9 @@ DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningCo
     return DeleteFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-06-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/code-signing-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-06-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/code-signing-config");
   return DeleteFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -522,11 +537,9 @@ DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const D
     return DeleteFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-10-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-10-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/concurrency");
   return DeleteFunctionConcurrencyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -556,11 +569,9 @@ DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeCo
     return DeleteFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-25/functions/";
-  ss << request.GetFunctionName();
-  ss << "/event-invoke-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-25/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/event-invoke-config");
   return DeleteFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -582,6 +593,38 @@ void LambdaClient::DeleteFunctionEventInvokeConfigAsyncHelper(const DeleteFuncti
   handler(this, request, DeleteFunctionEventInvokeConfig(request), context);
 }
 
+DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const DeleteFunctionUrlConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunctionUrlConfig", "Required field: FunctionName, is not set");
+    return DeleteFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2021-10-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/url");
+  return DeleteFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFunctionUrlConfigOutcomeCallable LambdaClient::DeleteFunctionUrlConfigCallable(const DeleteFunctionUrlConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunctionUrlConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::DeleteFunctionUrlConfigAsync(const DeleteFunctionUrlConfigRequest& request, const DeleteFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunctionUrlConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::DeleteFunctionUrlConfigAsyncHelper(const DeleteFunctionUrlConfigRequest& request, const DeleteFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFunctionUrlConfig(request), context);
+}
+
 DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
 {
   if (!request.LayerNameHasBeenSet())
@@ -595,12 +638,10 @@ DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVers
     return DeleteLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers/";
-  ss << request.GetLayerName();
-  ss << "/versions/";
-  ss << request.GetVersionNumber();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers/");
+  uri.AddPathSegment(request.GetLayerName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionNumber());
   return DeleteLayerVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -635,11 +676,9 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
     return DeleteProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/provisioned-concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/provisioned-concurrency");
   return DeleteProvisionedConcurrencyConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -664,9 +703,7 @@ void LambdaClient::DeleteProvisionedConcurrencyConfigAsyncHelper(const DeletePro
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2016-08-19/account-settings/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2016-08-19/account-settings/");
   return GetAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -701,12 +738,10 @@ GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
     return GetAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/aliases/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetName());
   return GetAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -736,10 +771,8 @@ GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSign
     return GetCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-04-22/code-signing-configs/";
-  ss << request.GetCodeSigningConfigArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
+  uri.AddPathSegment(request.GetCodeSigningConfigArn());
   return GetCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -769,10 +802,8 @@ GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventS
     return GetEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/event-source-mappings/";
-  ss << request.GetUUID();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
+  uri.AddPathSegment(request.GetUUID());
   return GetEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -802,10 +833,8 @@ GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) 
     return GetFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
   return GetFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -835,11 +864,9 @@ GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(c
     return GetFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-06-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/code-signing-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-06-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/code-signing-config");
   return GetFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -869,11 +896,9 @@ GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunc
     return GetFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/concurrency");
   return GetFunctionConcurrencyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -903,11 +928,9 @@ GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const Get
     return GetFunctionConfigurationOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/configuration");
   return GetFunctionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -937,11 +960,9 @@ GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(c
     return GetFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-25/functions/";
-  ss << request.GetFunctionName();
-  ss << "/event-invoke-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-25/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/event-invoke-config");
   return GetFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -963,6 +984,38 @@ void LambdaClient::GetFunctionEventInvokeConfigAsyncHelper(const GetFunctionEven
   handler(this, request, GetFunctionEventInvokeConfig(request), context);
 }
 
+GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunctionUrlConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionUrlConfig", "Required field: FunctionName, is not set");
+    return GetFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2021-10-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/url");
+  return GetFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFunctionUrlConfigOutcomeCallable LambdaClient::GetFunctionUrlConfigCallable(const GetFunctionUrlConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionUrlConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetFunctionUrlConfigAsync(const GetFunctionUrlConfigRequest& request, const GetFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionUrlConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetFunctionUrlConfigAsyncHelper(const GetFunctionUrlConfigRequest& request, const GetFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFunctionUrlConfig(request), context);
+}
+
 GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
 {
   if (!request.LayerNameHasBeenSet())
@@ -976,12 +1029,10 @@ GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionReques
     return GetLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers/";
-  ss << request.GetLayerName();
-  ss << "/versions/";
-  ss << request.GetVersionNumber();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers/");
+  uri.AddPathSegment(request.GetLayerName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionNumber());
   return GetLayerVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1012,8 +1063,7 @@ GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVer
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2018-10-31/layers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers");
   ss.str("?find=LayerVersion");
   uri.SetQueryString(ss.str());
   return GetLayerVersionByArnOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -1050,13 +1100,11 @@ GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerV
     return GetLayerVersionPolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers/";
-  ss << request.GetLayerName();
-  ss << "/versions/";
-  ss << request.GetVersionNumber();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers/");
+  uri.AddPathSegment(request.GetLayerName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionNumber());
+  uri.AddPathSegments("/policy");
   return GetLayerVersionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1086,11 +1134,9 @@ GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
     return GetPolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/policy");
   return GetPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1125,11 +1171,9 @@ GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyCo
     return GetProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/provisioned-concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/provisioned-concurrency");
   return GetProvisionedConcurrencyConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1159,11 +1203,9 @@ InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
     return InvokeOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/invocations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/invocations");
   return InvokeOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1193,11 +1235,9 @@ ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) 
     return ListAliasesOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/aliases";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/aliases");
   return ListAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1222,9 +1262,7 @@ void LambdaClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, con
 ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCodeSigningConfigsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-04-22/code-signing-configs/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
   return ListCodeSigningConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1249,9 +1287,7 @@ void LambdaClient::ListCodeSigningConfigsAsyncHelper(const ListCodeSigningConfig
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/event-source-mappings/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
   return ListEventSourceMappingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1281,11 +1317,9 @@ ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfi
     return ListFunctionEventInvokeConfigsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-25/functions/";
-  ss << request.GetFunctionName();
-  ss << "/event-invoke-config/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-25/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/event-invoke-config/list");
   return ListFunctionEventInvokeConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1307,12 +1341,42 @@ void LambdaClient::ListFunctionEventInvokeConfigsAsyncHelper(const ListFunctionE
   handler(this, request, ListFunctionEventInvokeConfigs(request), context);
 }
 
+ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFunctionUrlConfigsRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFunctionUrlConfigs", "Required field: FunctionName, is not set");
+    return ListFunctionUrlConfigsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2021-10-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/urls");
+  return ListFunctionUrlConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFunctionUrlConfigsOutcomeCallable LambdaClient::ListFunctionUrlConfigsCallable(const ListFunctionUrlConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFunctionUrlConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctionUrlConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListFunctionUrlConfigsAsync(const ListFunctionUrlConfigsRequest& request, const ListFunctionUrlConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFunctionUrlConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListFunctionUrlConfigsAsyncHelper(const ListFunctionUrlConfigsRequest& request, const ListFunctionUrlConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFunctionUrlConfigs(request), context);
+}
+
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
   return ListFunctionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1342,11 +1406,9 @@ ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigning
     return ListFunctionsByCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-04-22/code-signing-configs/";
-  ss << request.GetCodeSigningConfigArn();
-  ss << "/functions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
+  uri.AddPathSegment(request.GetCodeSigningConfigArn());
+  uri.AddPathSegments("/functions");
   return ListFunctionsByCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1376,11 +1438,9 @@ ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersions
     return ListLayerVersionsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers/";
-  ss << request.GetLayerName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers/");
+  uri.AddPathSegment(request.GetLayerName());
+  uri.AddPathSegments("/versions");
   return ListLayerVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1405,9 +1465,7 @@ void LambdaClient::ListLayerVersionsAsyncHelper(const ListLayerVersionsRequest& 
 ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers");
   return ListLayersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1438,10 +1496,9 @@ ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrenc
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2019-09-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/provisioned-concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/provisioned-concurrency");
   ss.str("?List=ALL");
   uri.SetQueryString(ss.str());
   return ListProvisionedConcurrencyConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -1473,10 +1530,8 @@ ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
     return ListTagsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-03-31/tags/";
-  ss << request.GetResource();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-03-31/tags/");
+  uri.AddPathSegment(request.GetResource());
   return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1506,11 +1561,9 @@ ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVer
     return ListVersionsByFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/versions");
   return ListVersionsByFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1540,11 +1593,9 @@ PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerV
     return PublishLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers/";
-  ss << request.GetLayerName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers/");
+  uri.AddPathSegment(request.GetLayerName());
+  uri.AddPathSegments("/versions");
   return PublishLayerVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1574,11 +1625,9 @@ PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& 
     return PublishVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/versions");
   return PublishVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1608,11 +1657,9 @@ PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(c
     return PutFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-06-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/code-signing-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-06-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/code-signing-config");
   return PutFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1642,11 +1689,9 @@ PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunc
     return PutFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-10-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-10-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/concurrency");
   return PutFunctionConcurrencyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1676,11 +1721,9 @@ PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(c
     return PutFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-25/functions/";
-  ss << request.GetFunctionName();
-  ss << "/event-invoke-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-25/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/event-invoke-config");
   return PutFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1715,11 +1758,9 @@ PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyCo
     return PutProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-30/functions/";
-  ss << request.GetFunctionName();
-  ss << "/provisioned-concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-30/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/provisioned-concurrency");
   return PutProvisionedConcurrencyConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1759,14 +1800,12 @@ RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(c
     return RemoveLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2018-10-31/layers/";
-  ss << request.GetLayerName();
-  ss << "/versions/";
-  ss << request.GetVersionNumber();
-  ss << "/policy/";
-  ss << request.GetStatementId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2018-10-31/layers/");
+  uri.AddPathSegment(request.GetLayerName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionNumber());
+  uri.AddPathSegments("/policy/");
+  uri.AddPathSegment(request.GetStatementId());
   return RemoveLayerVersionPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1801,12 +1840,10 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
     return RemovePermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/policy/";
-  ss << request.GetStatementId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/policy/");
+  uri.AddPathSegment(request.GetStatementId());
   return RemovePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1836,10 +1873,8 @@ TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) 
     return TagResourceOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-03-31/tags/";
-  ss << request.GetResource();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-03-31/tags/");
+  uri.AddPathSegment(request.GetResource());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1874,10 +1909,8 @@ UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& req
     return UntagResourceOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-03-31/tags/";
-  ss << request.GetResource();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-03-31/tags/");
+  uri.AddPathSegment(request.GetResource());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1912,12 +1945,10 @@ UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) 
     return UpdateAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/aliases/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetName());
   return UpdateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1947,10 +1978,8 @@ UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const Updat
     return UpdateCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-04-22/code-signing-configs/";
-  ss << request.GetCodeSigningConfigArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
+  uri.AddPathSegment(request.GetCodeSigningConfigArn());
   return UpdateCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1980,10 +2009,8 @@ UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const Upd
     return UpdateEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/event-source-mappings/";
-  ss << request.GetUUID();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
+  uri.AddPathSegment(request.GetUUID());
   return UpdateEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2013,11 +2040,9 @@ UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionC
     return UpdateFunctionCodeOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/code";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/code");
   return UpdateFunctionCodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2047,11 +2072,9 @@ UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(con
     return UpdateFunctionConfigurationOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-03-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/configuration");
   return UpdateFunctionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2081,11 +2104,9 @@ UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeCo
     return UpdateFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2019-09-25/functions/";
-  ss << request.GetFunctionName();
-  ss << "/event-invoke-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2019-09-25/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/event-invoke-config");
   return UpdateFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2105,5 +2126,37 @@ void LambdaClient::UpdateFunctionEventInvokeConfigAsync(const UpdateFunctionEven
 void LambdaClient::UpdateFunctionEventInvokeConfigAsyncHelper(const UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFunctionEventInvokeConfig(request), context);
+}
+
+UpdateFunctionUrlConfigOutcome LambdaClient::UpdateFunctionUrlConfig(const UpdateFunctionUrlConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunctionUrlConfig", "Required field: FunctionName, is not set");
+    return UpdateFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2021-10-31/functions/");
+  uri.AddPathSegment(request.GetFunctionName());
+  uri.AddPathSegments("/url");
+  return UpdateFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFunctionUrlConfigOutcomeCallable LambdaClient::UpdateFunctionUrlConfigCallable(const UpdateFunctionUrlConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunctionUrlConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::UpdateFunctionUrlConfigAsync(const UpdateFunctionUrlConfigRequest& request, const UpdateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunctionUrlConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::UpdateFunctionUrlConfigAsyncHelper(const UpdateFunctionUrlConfigRequest& request, const UpdateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFunctionUrlConfig(request), context);
 }
 

@@ -399,6 +399,47 @@ namespace Model
      */
     inline ScheduledUpdateGroupAction& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline ScheduledUpdateGroupAction& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline ScheduledUpdateGroupAction& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The time zone for the cron expression.</p>
+     */
+    inline ScheduledUpdateGroupAction& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -430,6 +471,9 @@ namespace Model
 
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
+
+    Aws::String m_timeZone;
+    bool m_timeZoneHasBeenSet;
   };
 
 } // namespace Model

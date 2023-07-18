@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeForecastResult::DescribeForecastResult()
+DescribeForecastResult::DescribeForecastResult() : 
+    m_estimatedTimeRemainingInMinutes(0)
 {
 }
 
-DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_estimatedTimeRemainingInMinutes(0)
 {
   *this = result;
 }
@@ -61,6 +63,12 @@ DescribeForecastResult& DescribeForecastResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("EstimatedTimeRemainingInMinutes"))
+  {
+    m_estimatedTimeRemainingInMinutes = jsonValue.GetInt64("EstimatedTimeRemainingInMinutes");
+
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
@@ -82,6 +90,12 @@ DescribeForecastResult& DescribeForecastResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
+
+  }
+
+  if(jsonValue.ValueExists("TimeSeriesSelector"))
+  {
+    m_timeSeriesSelector = jsonValue.GetObject("TimeSeriesSelector");
 
   }
 

@@ -88,237 +88,245 @@ namespace Model
 
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of a service role needed to start the assessment run.</p>
+     * <p>ARN of the service role needed to start the assessment run. The role must
+     * allow the <code>iam:PassRole</code> action.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline const Aws::String& GetResultLocationBucket() const{ return m_resultLocationBucket; }
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline bool ResultLocationBucketHasBeenSet() const { return m_resultLocationBucketHasBeenSet; }
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline void SetResultLocationBucket(const Aws::String& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = value; }
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline void SetResultLocationBucket(Aws::String&& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = std::move(value); }
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline void SetResultLocationBucket(const char* value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket.assign(value); }
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultLocationBucket(const Aws::String& value) { SetResultLocationBucket(value); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultLocationBucket(Aws::String&& value) { SetResultLocationBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where you want AWS DMS to store the results of this
-     * assessment run.</p>
+     * <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultLocationBucket(const char* value) { SetResultLocationBucket(value); return *this;}
 
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline const Aws::String& GetResultLocationFolder() const{ return m_resultLocationFolder; }
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline bool ResultLocationFolderHasBeenSet() const { return m_resultLocationFolderHasBeenSet; }
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline void SetResultLocationFolder(const Aws::String& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = value; }
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline void SetResultLocationFolder(Aws::String&& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = std::move(value); }
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline void SetResultLocationFolder(const char* value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder.assign(value); }
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultLocationFolder(const Aws::String& value) { SetResultLocationFolder(value); return *this;}
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultLocationFolder(Aws::String&& value) { SetResultLocationFolder(std::move(value)); return *this;}
 
     /**
-     * <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results
-     * of this assessment run.</p>
+     * <p>Folder within an Amazon S3 bucket where you want DMS to store the results of
+     * this assessment run.</p>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultLocationFolder(const char* value) { SetResultLocationFolder(value); return *this;}
 
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline const Aws::String& GetResultEncryptionMode() const{ return m_resultEncryptionMode; }
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline bool ResultEncryptionModeHasBeenSet() const { return m_resultEncryptionModeHasBeenSet; }
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline void SetResultEncryptionMode(const Aws::String& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = value; }
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline void SetResultEncryptionMode(Aws::String&& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = std::move(value); }
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline void SetResultEncryptionMode(const char* value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode.assign(value); }
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultEncryptionMode(const Aws::String& value) { SetResultEncryptionMode(value); return *this;}
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultEncryptionMode(Aws::String&& value) { SetResultEncryptionMode(std::move(value)); return *this;}
 
     /**
      * <p>Encryption mode that you can specify to encrypt the results of this
-     * assessment run. If you don't specify this request parameter, AWS DMS stores the
+     * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
      * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
      * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
-     * AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     * a custom KMS encryption key that you specify or the default KMS encryption key
-     * that DMS provides.</p> </li> </ul>
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultEncryptionMode(const char* value) { SetResultEncryptionMode(value); return *this;}
 
@@ -416,126 +424,117 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetIncludeOnly() const{ return m_includeOnly; }
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline bool IncludeOnlyHasBeenSet() const { return m_includeOnlyHasBeenSet; }
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline void SetIncludeOnly(const Aws::Vector<Aws::String>& value) { m_includeOnlyHasBeenSet = true; m_includeOnly = value; }
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline void SetIncludeOnly(Aws::Vector<Aws::String>&& value) { m_includeOnlyHasBeenSet = true; m_includeOnly = std::move(value); }
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline StartReplicationTaskAssessmentRunRequest& WithIncludeOnly(const Aws::Vector<Aws::String>& value) { SetIncludeOnly(value); return *this;}
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline StartReplicationTaskAssessmentRunRequest& WithIncludeOnly(Aws::Vector<Aws::String>&& value) { SetIncludeOnly(std::move(value)); return *this;}
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline StartReplicationTaskAssessmentRunRequest& AddIncludeOnly(const Aws::String& value) { m_includeOnlyHasBeenSet = true; m_includeOnly.push_back(value); return *this; }
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline StartReplicationTaskAssessmentRunRequest& AddIncludeOnly(Aws::String&& value) { m_includeOnlyHasBeenSet = true; m_includeOnly.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to include. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>IncludeOnly</code> if you also set a value for
      * <code>Exclude</code> in the API operation. </p> <p>To identify the names of the
-     * default individual assessments that AWS DMS supports for the associated
-     * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
-     * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
-     * 
+     * default individual assessments that DMS supports for the associated migration
+     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation
+     * using its own <code>ReplicationTaskArn</code> request parameter.</p> 
      */
     inline StartReplicationTaskAssessmentRunRequest& AddIncludeOnly(const char* value) { m_includeOnlyHasBeenSet = true; m_includeOnly.push_back(value); return *this; }
 
@@ -543,11 +542,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -557,11 +556,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -571,11 +570,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -585,11 +584,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -599,11 +598,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -613,11 +612,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -627,11 +626,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -641,11 +640,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 
@@ -655,11 +654,11 @@ namespace Model
     /**
      * <p>Space-separated list of names for specific individual assessments that you
      * want to exclude. These names come from the default list of individual
-     * assessments that AWS DMS supports for the associated migration task. This task
-     * is specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
+     * assessments that DMS supports for the associated migration task. This task is
+     * specified by <code>ReplicationTaskArn</code>.</p>  <p>You can't set a
      * value for <code>Exclude</code> if you also set a value for
      * <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of
-     * the default individual assessments that AWS DMS supports for the associated
+     * the default individual assessments that DMS supports for the associated
      * migration task, run the <code>DescribeApplicableIndividualAssessments</code>
      * operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
      * 

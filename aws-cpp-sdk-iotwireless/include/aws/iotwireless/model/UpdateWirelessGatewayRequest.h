@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -154,6 +155,59 @@ namespace Model
      */
     inline UpdateWirelessGatewayRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetJoinEuiFilters() const{ return m_joinEuiFilters; }
+
+    
+    inline bool JoinEuiFiltersHasBeenSet() const { return m_joinEuiFiltersHasBeenSet; }
+
+    
+    inline void SetJoinEuiFilters(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters = value; }
+
+    
+    inline void SetJoinEuiFilters(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters = std::move(value); }
+
+    
+    inline UpdateWirelessGatewayRequest& WithJoinEuiFilters(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetJoinEuiFilters(value); return *this;}
+
+    
+    inline UpdateWirelessGatewayRequest& WithJoinEuiFilters(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetJoinEuiFilters(std::move(value)); return *this;}
+
+    
+    inline UpdateWirelessGatewayRequest& AddJoinEuiFilters(const Aws::Vector<Aws::String>& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters.push_back(value); return *this; }
+
+    
+    inline UpdateWirelessGatewayRequest& AddJoinEuiFilters(Aws::Vector<Aws::String>&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const Aws::Vector<Aws::String>& GetNetIdFilters() const{ return m_netIdFilters; }
+
+    
+    inline bool NetIdFiltersHasBeenSet() const { return m_netIdFiltersHasBeenSet; }
+
+    
+    inline void SetNetIdFilters(const Aws::Vector<Aws::String>& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters = value; }
+
+    
+    inline void SetNetIdFilters(Aws::Vector<Aws::String>&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters = std::move(value); }
+
+    
+    inline UpdateWirelessGatewayRequest& WithNetIdFilters(const Aws::Vector<Aws::String>& value) { SetNetIdFilters(value); return *this;}
+
+    
+    inline UpdateWirelessGatewayRequest& WithNetIdFilters(Aws::Vector<Aws::String>&& value) { SetNetIdFilters(std::move(value)); return *this;}
+
+    
+    inline UpdateWirelessGatewayRequest& AddNetIdFilters(const Aws::String& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(value); return *this; }
+
+    
+    inline UpdateWirelessGatewayRequest& AddNetIdFilters(Aws::String&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(std::move(value)); return *this; }
+
+    
+    inline UpdateWirelessGatewayRequest& AddNetIdFilters(const char* value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(value); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -164,6 +218,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::Vector<Aws::Vector<Aws::String>> m_joinEuiFilters;
+    bool m_joinEuiFiltersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_netIdFilters;
+    bool m_netIdFiltersHasBeenSet;
   };
 
 } // namespace Model

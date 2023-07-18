@@ -33,37 +33,44 @@ namespace Model
 
 
     /**
-     * <p>The resulting Amazon MWAA envirnonment ARN.</p>
+     * <p>The Amazon Resource Name (ARN) returned in the response for the
+     * environment.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The resulting Amazon MWAA envirnonment ARN.</p>
+     * <p>The Amazon Resource Name (ARN) returned in the response for the
+     * environment.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The resulting Amazon MWAA envirnonment ARN.</p>
+     * <p>The Amazon Resource Name (ARN) returned in the response for the
+     * environment.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The resulting Amazon MWAA envirnonment ARN.</p>
+     * <p>The Amazon Resource Name (ARN) returned in the response for the
+     * environment.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The resulting Amazon MWAA envirnonment ARN.</p>
+     * <p>The Amazon Resource Name (ARN) returned in the response for the
+     * environment.</p>
      */
     inline CreateEnvironmentResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The resulting Amazon MWAA envirnonment ARN.</p>
+     * <p>The Amazon Resource Name (ARN) returned in the response for the
+     * environment.</p>
      */
     inline CreateEnvironmentResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The resulting Amazon MWAA envirnonment ARN.</p>
+     * <p>The Amazon Resource Name (ARN) returned in the response for the
+     * environment.</p>
      */
     inline CreateEnvironmentResult& WithArn(const char* value) { SetArn(value); return *this;}
 

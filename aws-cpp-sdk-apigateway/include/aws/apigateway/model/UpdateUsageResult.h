@@ -27,12 +27,7 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents the usage data of a usage plan.</p> <div class="remarks"/> <div
-   * class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
-   * and Use Usage Plans</a>, <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage">Manage
-   * Usage in a Usage Plan</a> </div><p><h3>See Also:</h3>   <a
+   * <p>Represents the usage data of a usage plan.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Usage">AWS
    * API Reference</a></p>
    */

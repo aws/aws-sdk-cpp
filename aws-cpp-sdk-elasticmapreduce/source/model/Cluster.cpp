@@ -57,7 +57,8 @@ Cluster::Cluster() :
     m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
-    m_placementGroupsHasBeenSet(false)
+    m_placementGroupsHasBeenSet(false),
+    m_oSReleaseLabelHasBeenSet(false)
 {
 }
 
@@ -100,7 +101,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
-    m_placementGroupsHasBeenSet(false)
+    m_placementGroupsHasBeenSet(false),
+    m_oSReleaseLabelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -329,6 +331,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_placementGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OSReleaseLabel"))
+  {
+    m_oSReleaseLabel = jsonValue.GetString("OSReleaseLabel");
+
+    m_oSReleaseLabelHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -530,6 +539,12 @@ JsonValue Cluster::Jsonize() const
      placementGroupsJsonList[placementGroupsIndex].AsObject(m_placementGroups[placementGroupsIndex].Jsonize());
    }
    payload.WithArray("PlacementGroups", std::move(placementGroupsJsonList));
+
+  }
+
+  if(m_oSReleaseLabelHasBeenSet)
+  {
+   payload.WithString("OSReleaseLabel", m_oSReleaseLabel);
 
   }
 

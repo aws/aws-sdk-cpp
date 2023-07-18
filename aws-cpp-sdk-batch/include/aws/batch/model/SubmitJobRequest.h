@@ -25,6 +25,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>SubmitJob</code>.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJobRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API SubmitJobRequest : public BatchRequest
   {
@@ -41,109 +45,203 @@ namespace Model
 
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline SubmitJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline SubmitJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline SubmitJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
+
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline int GetSchedulingPriorityOverride() const{ return m_schedulingPriorityOverride; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline bool SchedulingPriorityOverrideHasBeenSet() const { return m_schedulingPriorityOverrideHasBeenSet; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline void SetSchedulingPriorityOverride(int value) { m_schedulingPriorityOverrideHasBeenSet = true; m_schedulingPriorityOverride = value; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline SubmitJobRequest& WithSchedulingPriorityOverride(int value) { SetSchedulingPriorityOverride(value); return *this;}
 
 
     /**
@@ -151,7 +249,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const ArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
 
@@ -160,7 +258,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
 
@@ -169,7 +267,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(const ArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
 
@@ -178,7 +276,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(ArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
 
@@ -187,7 +285,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(const ArrayProperties& value) { SetArrayProperties(value); return *this;}
 
@@ -196,7 +294,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(ArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
 
@@ -461,68 +559,62 @@ namespace Model
 
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * <p>A list of container overrides in the JSON format that specify the name of a
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * <p>A list of container overrides in the JSON format that specify the name of a
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * <p>A list of container overrides in the JSON format that specify the name of a
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * <p>A list of container overrides in the JSON format that specify the name of a
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * <p>A list of container overrides in the JSON format that specify the name of a
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * <p>A list of container overrides in the JSON format that specify the name of a
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
 
@@ -530,7 +622,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline const NodeOverrides& GetNodeOverrides() const{ return m_nodeOverrides; }
@@ -538,7 +630,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline bool NodeOverridesHasBeenSet() const { return m_nodeOverridesHasBeenSet; }
@@ -546,7 +638,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(const NodeOverrides& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = value; }
@@ -554,7 +646,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(NodeOverrides&& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = std::move(value); }
@@ -562,7 +654,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(const NodeOverrides& value) { SetNodeOverrides(value); return *this;}
@@ -570,7 +662,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(NodeOverrides&& value) { SetNodeOverrides(std::move(value)); return *this;}
@@ -666,7 +758,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -679,7 +771,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -692,7 +784,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -705,7 +797,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -718,7 +810,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -731,7 +823,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -748,7 +840,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -757,7 +850,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -766,7 +860,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -775,7 +870,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -784,7 +880,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -793,7 +890,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -802,7 +900,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -811,7 +910,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -820,7 +920,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -829,7 +930,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -838,7 +940,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -847,7 +950,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -856,7 +960,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -867,6 +972,12 @@ namespace Model
 
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
+    Aws::String m_shareIdentifier;
+    bool m_shareIdentifierHasBeenSet;
+
+    int m_schedulingPriorityOverride;
+    bool m_schedulingPriorityOverrideHasBeenSet;
 
     ArrayProperties m_arrayProperties;
     bool m_arrayPropertiesHasBeenSet;

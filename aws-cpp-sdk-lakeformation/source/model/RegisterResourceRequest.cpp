@@ -45,14 +45,6 @@ Aws::String RegisterResourceRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RegisterResourceRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.RegisterResource"));
-  return headers;
-
-}
-
 
 
 

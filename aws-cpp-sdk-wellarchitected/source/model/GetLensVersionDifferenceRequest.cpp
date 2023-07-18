@@ -17,7 +17,8 @@ using namespace Aws::Http;
 
 GetLensVersionDifferenceRequest::GetLensVersionDifferenceRequest() : 
     m_lensAliasHasBeenSet(false),
-    m_baseLensVersionHasBeenSet(false)
+    m_baseLensVersionHasBeenSet(false),
+    m_targetLensVersionHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,13 @@ void GetLensVersionDifferenceRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_baseLensVersion;
       uri.AddQueryStringParameter("BaseLensVersion", ss.str());
+      ss.str("");
+    }
+
+    if(m_targetLensVersionHasBeenSet)
+    {
+      ss << m_targetLensVersion;
+      uri.AddQueryStringParameter("TargetLensVersion", ss.str());
       ss.str("");
     }
 

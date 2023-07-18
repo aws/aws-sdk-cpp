@@ -387,42 +387,42 @@ namespace Model
     /**
      * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the issue is detected.</p>
+     * compromise Amazon Web Services resources if the issue is detected.</p>
      */
     inline const SeverityRating& GetSeverityRating() const{ return m_severityRating; }
 
     /**
      * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the issue is detected.</p>
+     * compromise Amazon Web Services resources if the issue is detected.</p>
      */
     inline bool SeverityRatingHasBeenSet() const { return m_severityRatingHasBeenSet; }
 
     /**
      * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the issue is detected.</p>
+     * compromise Amazon Web Services resources if the issue is detected.</p>
      */
     inline void SetSeverityRating(const SeverityRating& value) { m_severityRatingHasBeenSet = true; m_severityRating = value; }
 
     /**
      * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the issue is detected.</p>
+     * compromise Amazon Web Services resources if the issue is detected.</p>
      */
     inline void SetSeverityRating(SeverityRating&& value) { m_severityRatingHasBeenSet = true; m_severityRating = std::move(value); }
 
     /**
      * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the issue is detected.</p>
+     * compromise Amazon Web Services resources if the issue is detected.</p>
      */
     inline StandardsControl& WithSeverityRating(const SeverityRating& value) { SetSeverityRating(value); return *this;}
 
     /**
      * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the issue is detected.</p>
+     * compromise Amazon Web Services resources if the issue is detected.</p>
      */
     inline StandardsControl& WithSeverityRating(SeverityRating&& value) { SetSeverityRating(std::move(value)); return *this;}
 

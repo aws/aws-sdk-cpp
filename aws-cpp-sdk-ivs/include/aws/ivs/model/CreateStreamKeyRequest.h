@@ -75,67 +75,80 @@ namespace Model
 
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>See <a>Channel$tags</a>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

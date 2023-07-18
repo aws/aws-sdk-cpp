@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An AWS Lambda layer.</p><p><h3>See Also:</h3>   <a
+   * <p>An Lambda layer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionLayer">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline AwsLambdaFunctionLayer& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline AwsLambdaFunctionLayer& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the function layer.</p>
      */
     inline AwsLambdaFunctionLayer& WithArn(const char* value) { SetArn(value); return *this;}
 

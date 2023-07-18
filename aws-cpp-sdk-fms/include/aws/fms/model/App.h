@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An individual AWS Firewall Manager application.</p><p><h3>See Also:</h3>   <a
+   * <p>An individual Firewall Manager application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/App">AWS API
    * Reference</a></p>
    */

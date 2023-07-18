@@ -28,6 +28,7 @@ Input::Input() :
     m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
+    m_dolbyVisionMetadataXmlHasBeenSet(false),
     m_fileInputHasBeenSet(false),
     m_filterEnable(InputFilterEnable::NOT_SET),
     m_filterEnableHasBeenSet(false),
@@ -46,6 +47,7 @@ Input::Input() :
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
+    m_videoGeneratorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
 }
@@ -60,6 +62,7 @@ Input::Input(JsonView jsonValue) :
     m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
+    m_dolbyVisionMetadataXmlHasBeenSet(false),
     m_fileInputHasBeenSet(false),
     m_filterEnable(InputFilterEnable::NOT_SET),
     m_filterEnableHasBeenSet(false),
@@ -78,6 +81,7 @@ Input::Input(JsonView jsonValue) :
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
+    m_videoGeneratorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
   *this = jsonValue;
@@ -141,6 +145,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_denoiseFilter = InputDenoiseFilterMapper::GetInputDenoiseFilterForName(jsonValue.GetString("denoiseFilter"));
 
     m_denoiseFilterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dolbyVisionMetadataXml"))
+  {
+    m_dolbyVisionMetadataXml = jsonValue.GetString("dolbyVisionMetadataXml");
+
+    m_dolbyVisionMetadataXmlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fileInput"))
@@ -233,6 +244,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_timecodeStartHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("videoGenerator"))
+  {
+    m_videoGenerator = jsonValue.GetObject("videoGenerator");
+
+    m_videoGeneratorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("videoSelector"))
   {
     m_videoSelector = jsonValue.GetObject("videoSelector");
@@ -300,6 +318,12 @@ JsonValue Input::Jsonize() const
   if(m_denoiseFilterHasBeenSet)
   {
    payload.WithString("denoiseFilter", InputDenoiseFilterMapper::GetNameForInputDenoiseFilter(m_denoiseFilter));
+  }
+
+  if(m_dolbyVisionMetadataXmlHasBeenSet)
+  {
+   payload.WithString("dolbyVisionMetadataXml", m_dolbyVisionMetadataXml);
+
   }
 
   if(m_fileInputHasBeenSet)
@@ -377,6 +401,12 @@ JsonValue Input::Jsonize() const
   if(m_timecodeStartHasBeenSet)
   {
    payload.WithString("timecodeStart", m_timecodeStart);
+
+  }
+
+  if(m_videoGeneratorHasBeenSet)
+  {
+   payload.WithObject("videoGenerator", m_videoGenerator.Jsonize());
 
   }
 

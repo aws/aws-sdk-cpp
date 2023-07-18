@@ -91,11 +91,14 @@ namespace Model
 
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -130,53 +133,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -189,24 +193,22 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -241,53 +243,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -300,24 +303,22 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -352,53 +353,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -411,24 +413,22 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -463,53 +463,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -522,24 +523,22 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -574,53 +573,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -633,24 +633,22 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline GetQueueAttributesRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -685,53 +683,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -744,24 +743,22 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline GetQueueAttributesRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -796,53 +793,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -855,24 +853,22 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline GetQueueAttributesRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
-     * future, new attributes might be added. If you write code that calls this action,
-     * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p>  <p>The following attributes are supported:</p>
-     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <p>A list of attributes for which to retrieve information.</p> <p>The
+     * <code>AttributeName.N</code> parameter is optional, but if you don't specify
+     * values for this parameter, the request returns empty results.</p>  <p>In
+     * the future, new attributes might be added. If you write code that calls this
+     * action, we recommend that you structure your code so that it can handle new
+     * attributes gracefully.</p>  <p>The following attributes are
+     * supported:</p>  <p>The
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
@@ -907,53 +903,54 @@ namespace Model
      * queue as a JSON object. For more information about the redrive policy and
      * dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p> <ul> <li> <p> <code>deadLetterTargetArn</code> – The
-     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
-     * <li> <p> <code>maxReceiveCount</code> – The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue. When
-     * the <code>ReceiveCount</code> for a message exceeds the
-     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
-     * – Returns the visibility timeout for the queue. For more information about the
-     * visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> – The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue. When the
+     * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+     * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+     * </ul> </li> <li> <p> <code>VisibilityTimeout</code> – Returns the visibility
+     * timeout for the queue. For more information about the visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p>The following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed
-     * customer master key (CMK) for Amazon SQS or a custom CMK. For more information,
-     * see <a
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web
+     * Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> –
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>To determine whether a queue is <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+     * queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>To
+     * determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
      * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
-     * </li> </ul> <p> <b>Preview: High throughput for FIFO queues</b> </p> <p> <b>High
-     * throughput for Amazon SQS FIFO queues is in preview release and is subject to
-     * change.</b> This feature provides a high number of transactions per second (TPS)
-     * for messages in FIFO queues. For information on throughput quotas, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <p>This preview includes two new attributes:</p> <ul> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+     * processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
+     * following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+     * throughput for FIFO queues</a>:</p> <ul> <li> <p>
      * <code>DeduplicationScope</code> – Specifies whether message deduplication occurs
      * at the message group or queue level. Valid values are <code>messageGroup</code>
      * and <code>queue</code>.</p> </li> <li> <p> <code>FifoThroughputLimit</code> –
@@ -966,15 +963,10 @@ namespace Model
      * to <code>messageGroup</code>.</p> </li> <li> <p>Set
      * <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
      * </ul> <p>If you set these attributes to anything other than the values shown for
-     * enabling high throughput, standard throughput is in effect and deduplication
-     * occurs as specified.</p> <p>This preview is available in the following AWS
-     * Regions:</p> <ul> <li> <p>US East (Ohio); us-east-2</p> </li> <li> <p>US East
-     * (N. Virginia); us-east-1</p> </li> <li> <p>US West (Oregon); us-west-2</p> </li>
-     * <li> <p>Europe (Ireland); eu-west-1</p> </li> </ul> <p>For more information
-     * about high throughput for FIFO queues, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-     * High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * enabling high throughput, normal throughput is in effect and deduplication
+     * occurs as specified.</p> <p>For information on throughput quotas, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline GetQueueAttributesRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 

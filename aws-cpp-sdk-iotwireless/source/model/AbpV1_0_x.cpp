@@ -20,13 +20,17 @@ namespace Model
 
 AbpV1_0_x::AbpV1_0_x() : 
     m_devAddrHasBeenSet(false),
-    m_sessionKeysHasBeenSet(false)
+    m_sessionKeysHasBeenSet(false),
+    m_fCntStart(0),
+    m_fCntStartHasBeenSet(false)
 {
 }
 
 AbpV1_0_x::AbpV1_0_x(JsonView jsonValue) : 
     m_devAddrHasBeenSet(false),
-    m_sessionKeysHasBeenSet(false)
+    m_sessionKeysHasBeenSet(false),
+    m_fCntStart(0),
+    m_fCntStartHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ AbpV1_0_x& AbpV1_0_x::operator =(JsonView jsonValue)
     m_sessionKeysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FCntStart"))
+  {
+    m_fCntStart = jsonValue.GetInteger("FCntStart");
+
+    m_fCntStartHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue AbpV1_0_x::Jsonize() const
   if(m_sessionKeysHasBeenSet)
   {
    payload.WithObject("SessionKeys", m_sessionKeys.Jsonize());
+
+  }
+
+  if(m_fCntStartHasBeenSet)
+  {
+   payload.WithInteger("FCntStart", m_fCntStart);
 
   }
 

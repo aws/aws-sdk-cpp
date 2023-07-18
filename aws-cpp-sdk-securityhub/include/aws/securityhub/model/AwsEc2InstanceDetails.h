@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/AwsEc2InstanceNetworkInterfacesDetails.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an EC2 instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceDetails">AWS
    * API Reference</a></p>
    */
@@ -448,6 +449,63 @@ namespace Model
      */
     inline AwsEc2InstanceDetails& WithLaunchedAt(const char* value) { SetLaunchedAt(value); return *this;}
 
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline const Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& WithNetworkInterfaces(const Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& WithNetworkInterfaces(Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& AddNetworkInterfaces(const AwsEc2InstanceNetworkInterfacesDetails& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& AddNetworkInterfaces(AwsEc2InstanceNetworkInterfacesDetails&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_type;
@@ -476,6 +534,9 @@ namespace Model
 
     Aws::String m_launchedAt;
     bool m_launchedAtHasBeenSet;
+
+    Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
   };
 
 } // namespace Model

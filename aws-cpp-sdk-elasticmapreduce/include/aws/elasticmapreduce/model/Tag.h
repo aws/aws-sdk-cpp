@@ -45,64 +45,64 @@ namespace Model
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-     * </a>. </p>
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+     * </p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 

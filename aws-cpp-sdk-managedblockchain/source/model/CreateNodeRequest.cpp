@@ -17,7 +17,8 @@ CreateNodeRequest::CreateNodeRequest() :
     m_clientRequestTokenHasBeenSet(true),
     m_networkIdHasBeenSet(false),
     m_memberIdHasBeenSet(false),
-    m_nodeConfigurationHasBeenSet(false)
+    m_nodeConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,9 +32,26 @@ Aws::String CreateNodeRequest::SerializePayload() const
 
   }
 
+  if(m_memberIdHasBeenSet)
+  {
+   payload.WithString("MemberId", m_memberId);
+
+  }
+
   if(m_nodeConfigurationHasBeenSet)
   {
    payload.WithObject("NodeConfiguration", m_nodeConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

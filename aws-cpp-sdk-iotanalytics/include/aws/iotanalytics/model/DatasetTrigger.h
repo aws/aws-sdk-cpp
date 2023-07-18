@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The <code>DatasetTrigger</code> that specifies when the data set is
+   * <p>The <code>DatasetTrigger</code> that specifies when the dataset is
    * automatically updated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetTrigger">AWS
    * API Reference</a></p>
@@ -71,37 +71,37 @@ namespace Model
 
 
     /**
-     * <p>The data set whose content creation triggers the creation of this data set's
+     * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
     inline const TriggeringDataset& GetDataset() const{ return m_dataset; }
 
     /**
-     * <p>The data set whose content creation triggers the creation of this data set's
+     * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
     inline bool DatasetHasBeenSet() const { return m_datasetHasBeenSet; }
 
     /**
-     * <p>The data set whose content creation triggers the creation of this data set's
+     * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
     inline void SetDataset(const TriggeringDataset& value) { m_datasetHasBeenSet = true; m_dataset = value; }
 
     /**
-     * <p>The data set whose content creation triggers the creation of this data set's
+     * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
     inline void SetDataset(TriggeringDataset&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
 
     /**
-     * <p>The data set whose content creation triggers the creation of this data set's
+     * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
     inline DatasetTrigger& WithDataset(const TriggeringDataset& value) { SetDataset(value); return *this;}
 
     /**
-     * <p>The data set whose content creation triggers the creation of this data set's
+     * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
     inline DatasetTrigger& WithDataset(TriggeringDataset&& value) { SetDataset(std::move(value)); return *this;}

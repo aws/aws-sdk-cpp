@@ -23,7 +23,9 @@ ListWirelessDevicesRequest::ListWirelessDevicesRequest() :
     m_deviceProfileIdHasBeenSet(false),
     m_serviceProfileIdHasBeenSet(false),
     m_wirelessDeviceType(WirelessDeviceType::NOT_SET),
-    m_wirelessDeviceTypeHasBeenSet(false)
+    m_wirelessDeviceTypeHasBeenSet(false),
+    m_fuotaTaskIdHasBeenSet(false),
+    m_multicastGroupIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,20 @@ void ListWirelessDevicesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << WirelessDeviceTypeMapper::GetNameForWirelessDeviceType(m_wirelessDeviceType);
       uri.AddQueryStringParameter("wirelessDeviceType", ss.str());
+      ss.str("");
+    }
+
+    if(m_fuotaTaskIdHasBeenSet)
+    {
+      ss << m_fuotaTaskId;
+      uri.AddQueryStringParameter("fuotaTaskId", ss.str());
+      ss.str("");
+    }
+
+    if(m_multicastGroupIdHasBeenSet)
+    {
+      ss << m_multicastGroupId;
+      uri.AddQueryStringParameter("multicastGroupId", ss.str());
       ss.str("");
     }
 

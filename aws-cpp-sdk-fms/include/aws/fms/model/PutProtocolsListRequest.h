@@ -37,32 +37,32 @@ namespace Model
 
 
     /**
-     * <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+     * <p>The details of the Firewall Manager protocols list to be created.</p>
      */
     inline const ProtocolsListData& GetProtocolsList() const{ return m_protocolsList; }
 
     /**
-     * <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+     * <p>The details of the Firewall Manager protocols list to be created.</p>
      */
     inline bool ProtocolsListHasBeenSet() const { return m_protocolsListHasBeenSet; }
 
     /**
-     * <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+     * <p>The details of the Firewall Manager protocols list to be created.</p>
      */
     inline void SetProtocolsList(const ProtocolsListData& value) { m_protocolsListHasBeenSet = true; m_protocolsList = value; }
 
     /**
-     * <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+     * <p>The details of the Firewall Manager protocols list to be created.</p>
      */
     inline void SetProtocolsList(ProtocolsListData&& value) { m_protocolsListHasBeenSet = true; m_protocolsList = std::move(value); }
 
     /**
-     * <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+     * <p>The details of the Firewall Manager protocols list to be created.</p>
      */
     inline PutProtocolsListRequest& WithProtocolsList(const ProtocolsListData& value) { SetProtocolsList(value); return *this;}
 
     /**
-     * <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+     * <p>The details of the Firewall Manager protocols list to be created.</p>
      */
     inline PutProtocolsListRequest& WithProtocolsList(ProtocolsListData&& value) { SetProtocolsList(std::move(value)); return *this;}
 

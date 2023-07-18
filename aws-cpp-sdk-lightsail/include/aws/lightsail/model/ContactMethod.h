@@ -305,22 +305,40 @@ namespace Model
     inline ContactMethod& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline ContactMethod& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline ContactMethod& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
 

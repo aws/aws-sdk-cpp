@@ -95,56 +95,56 @@ namespace Model
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistributionSummary& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistributionSummary& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistributionSummary& WithARN(const char* value) { SetARN(value); return *this;}
 
@@ -361,9 +361,9 @@ namespace Model
 
 
     /**
-     * <p>A complex type that specifies the AWS accounts, if any, that you want to
-     * allow to create signed URLs for private content. If you want to require signed
-     * URLs in requests for objects in the target origin that match the
+     * <p>A complex type that specifies the Amazon Web Services accounts, if any, that
+     * you want to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
@@ -381,9 +381,9 @@ namespace Model
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
     /**
-     * <p>A complex type that specifies the AWS accounts, if any, that you want to
-     * allow to create signed URLs for private content. If you want to require signed
-     * URLs in requests for objects in the target origin that match the
+     * <p>A complex type that specifies the Amazon Web Services accounts, if any, that
+     * you want to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
@@ -401,9 +401,9 @@ namespace Model
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
     /**
-     * <p>A complex type that specifies the AWS accounts, if any, that you want to
-     * allow to create signed URLs for private content. If you want to require signed
-     * URLs in requests for objects in the target origin that match the
+     * <p>A complex type that specifies the Amazon Web Services accounts, if any, that
+     * you want to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
@@ -421,9 +421,9 @@ namespace Model
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
     /**
-     * <p>A complex type that specifies the AWS accounts, if any, that you want to
-     * allow to create signed URLs for private content. If you want to require signed
-     * URLs in requests for objects in the target origin that match the
+     * <p>A complex type that specifies the Amazon Web Services accounts, if any, that
+     * you want to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
@@ -441,9 +441,9 @@ namespace Model
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
     /**
-     * <p>A complex type that specifies the AWS accounts, if any, that you want to
-     * allow to create signed URLs for private content. If you want to require signed
-     * URLs in requests for objects in the target origin that match the
+     * <p>A complex type that specifies the Amazon Web Services accounts, if any, that
+     * you want to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
@@ -461,9 +461,9 @@ namespace Model
     inline StreamingDistributionSummary& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
     /**
-     * <p>A complex type that specifies the AWS accounts, if any, that you want to
-     * allow to create signed URLs for private content. If you want to require signed
-     * URLs in requests for objects in the target origin that match the
+     * <p>A complex type that specifies the Amazon Web Services accounts, if any, that
+     * you want to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed

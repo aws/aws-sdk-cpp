@@ -104,42 +104,58 @@ namespace Model
 
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline const Aws::Vector<ClusterState>& GetClusterStates() const{ return m_clusterStates; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline bool ClusterStatesHasBeenSet() const { return m_clusterStatesHasBeenSet; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline void SetClusterStates(const Aws::Vector<ClusterState>& value) { m_clusterStatesHasBeenSet = true; m_clusterStates = value; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline void SetClusterStates(Aws::Vector<ClusterState>&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates = std::move(value); }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& WithClusterStates(const Aws::Vector<ClusterState>& value) { SetClusterStates(value); return *this;}
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& WithClusterStates(Aws::Vector<ClusterState>&& value) { SetClusterStates(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& AddClusterStates(const ClusterState& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(value); return *this; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& AddClusterStates(ClusterState&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(std::move(value)); return *this; }
 

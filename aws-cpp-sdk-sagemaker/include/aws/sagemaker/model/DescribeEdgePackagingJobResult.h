@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/EdgeOutputConfig.h>
 #include <aws/sagemaker/model/EdgePackagingJobStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/EdgePresetDeploymentOutput.h>
 #include <utility>
 
 namespace Aws
@@ -292,37 +293,44 @@ namespace Model
 
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline const Aws::String& GetResourceKey() const{ return m_resourceKey; }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline void SetResourceKey(const Aws::String& value) { m_resourceKey = value; }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline void SetResourceKey(Aws::String&& value) { m_resourceKey = std::move(value); }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline void SetResourceKey(const char* value) { m_resourceKey.assign(value); }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline DescribeEdgePackagingJobResult& WithResourceKey(const Aws::String& value) { SetResourceKey(value); return *this;}
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline DescribeEdgePackagingJobResult& WithResourceKey(Aws::String&& value) { SetResourceKey(std::move(value)); return *this;}
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline DescribeEdgePackagingJobResult& WithResourceKey(const char* value) { SetResourceKey(value); return *this;}
 
@@ -512,6 +520,32 @@ namespace Model
      */
     inline DescribeEdgePackagingJobResult& WithModelSignature(const char* value) { SetModelSignature(value); return *this;}
 
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline const EdgePresetDeploymentOutput& GetPresetDeploymentOutput() const{ return m_presetDeploymentOutput; }
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline void SetPresetDeploymentOutput(const EdgePresetDeploymentOutput& value) { m_presetDeploymentOutput = value; }
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline void SetPresetDeploymentOutput(EdgePresetDeploymentOutput&& value) { m_presetDeploymentOutput = std::move(value); }
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline DescribeEdgePackagingJobResult& WithPresetDeploymentOutput(const EdgePresetDeploymentOutput& value) { SetPresetDeploymentOutput(value); return *this;}
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline DescribeEdgePackagingJobResult& WithPresetDeploymentOutput(EdgePresetDeploymentOutput&& value) { SetPresetDeploymentOutput(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_edgePackagingJobArn;
@@ -541,6 +575,8 @@ namespace Model
     Aws::String m_modelArtifact;
 
     Aws::String m_modelSignature;
+
+    EdgePresetDeploymentOutput m_presetDeploymentOutput;
   };
 
 } // namespace Model

@@ -19,14 +19,16 @@ using namespace Aws;
 DescribeDomainResult::DescribeDomainResult() : 
     m_status(DomainStatus::NOT_SET),
     m_authMode(AuthMode::NOT_SET),
-    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET)
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
+    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET)
 {
 }
 
 DescribeDomainResult::DescribeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(DomainStatus::NOT_SET),
     m_authMode(AuthMode::NOT_SET),
-    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET)
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
+    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET)
 {
   *this = result;
 }
@@ -130,6 +132,24 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("DomainSettings"))
+  {
+    m_domainSettings = jsonValue.GetObject("DomainSettings");
+
+  }
+
+  if(jsonValue.ValueExists("AppSecurityGroupManagement"))
+  {
+    m_appSecurityGroupManagement = AppSecurityGroupManagementMapper::GetAppSecurityGroupManagementForName(jsonValue.GetString("AppSecurityGroupManagement"));
+
+  }
+
+  if(jsonValue.ValueExists("SecurityGroupIdForDomainBoundary"))
+  {
+    m_securityGroupIdForDomainBoundary = jsonValue.GetString("SecurityGroupIdForDomainBoundary");
 
   }
 

@@ -22,7 +22,9 @@ Cvss::Cvss() :
     m_versionHasBeenSet(false),
     m_baseScore(0.0),
     m_baseScoreHasBeenSet(false),
-    m_baseVectorHasBeenSet(false)
+    m_baseVectorHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_adjustmentsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ Cvss::Cvss(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_baseScore(0.0),
     m_baseScoreHasBeenSet(false),
-    m_baseVectorHasBeenSet(false)
+    m_baseVectorHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_adjustmentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,23 @@ Cvss& Cvss::operator =(JsonView jsonValue)
     m_baseVectorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Source"))
+  {
+    m_source = jsonValue.GetString("Source");
+
+    m_sourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Adjustments"))
+  {
+    Array<JsonView> adjustmentsJsonList = jsonValue.GetArray("Adjustments");
+    for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
+    {
+      m_adjustments.push_back(adjustmentsJsonList[adjustmentsIndex].AsObject());
+    }
+    m_adjustmentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +101,23 @@ JsonValue Cvss::Jsonize() const
   if(m_baseVectorHasBeenSet)
   {
    payload.WithString("BaseVector", m_baseVector);
+
+  }
+
+  if(m_sourceHasBeenSet)
+  {
+   payload.WithString("Source", m_source);
+
+  }
+
+  if(m_adjustmentsHasBeenSet)
+  {
+   Array<JsonValue> adjustmentsJsonList(m_adjustments.size());
+   for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
+   {
+     adjustmentsJsonList[adjustmentsIndex].AsObject(m_adjustments[adjustmentsIndex].Jsonize());
+   }
+   payload.WithArray("Adjustments", std::move(adjustmentsJsonList));
 
   }
 

@@ -46,6 +46,15 @@ CreateSecretResult& CreateSecretResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("ReplicationStatus"))
+  {
+    Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
+    for(unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex)
+    {
+      m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

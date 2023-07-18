@@ -20,12 +20,14 @@ namespace Model
 
 EgressEndpoint::EgressEndpoint() : 
     m_packagingConfigurationIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
 }
 
 EgressEndpoint::EgressEndpoint(JsonView jsonValue) : 
     m_packagingConfigurationIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ EgressEndpoint& EgressEndpoint::operator =(JsonView jsonValue)
     m_packagingConfigurationId = jsonValue.GetString("packagingConfigurationId");
 
     m_packagingConfigurationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetString("status");
+
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("url"))
@@ -57,6 +66,12 @@ JsonValue EgressEndpoint::Jsonize() const
   if(m_packagingConfigurationIdHasBeenSet)
   {
    payload.WithString("packagingConfigurationId", m_packagingConfigurationId);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", m_status);
 
   }
 

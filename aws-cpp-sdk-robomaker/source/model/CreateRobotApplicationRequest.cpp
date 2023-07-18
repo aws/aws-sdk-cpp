@@ -16,7 +16,8 @@ CreateRobotApplicationRequest::CreateRobotApplicationRequest() :
     m_nameHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_robotSoftwareSuiteHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,12 @@ Aws::String CreateRobotApplicationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   payload.WithObject("environment", m_environment.Jsonize());
 
   }
 

@@ -33,32 +33,27 @@ namespace Model
 
 
     /**
-     * <p>A structure that contains information about one service quota increase
-     * request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline const ServiceQuotaIncreaseRequestInTemplate& GetServiceQuotaIncreaseRequestInTemplate() const{ return m_serviceQuotaIncreaseRequestInTemplate; }
 
     /**
-     * <p>A structure that contains information about one service quota increase
-     * request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline void SetServiceQuotaIncreaseRequestInTemplate(const ServiceQuotaIncreaseRequestInTemplate& value) { m_serviceQuotaIncreaseRequestInTemplate = value; }
 
     /**
-     * <p>A structure that contains information about one service quota increase
-     * request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline void SetServiceQuotaIncreaseRequestInTemplate(ServiceQuotaIncreaseRequestInTemplate&& value) { m_serviceQuotaIncreaseRequestInTemplate = std::move(value); }
 
     /**
-     * <p>A structure that contains information about one service quota increase
-     * request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline PutServiceQuotaIncreaseRequestIntoTemplateResult& WithServiceQuotaIncreaseRequestInTemplate(const ServiceQuotaIncreaseRequestInTemplate& value) { SetServiceQuotaIncreaseRequestInTemplate(value); return *this;}
 
     /**
-     * <p>A structure that contains information about one service quota increase
-     * request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline PutServiceQuotaIncreaseRequestIntoTemplateResult& WithServiceQuotaIncreaseRequestInTemplate(ServiceQuotaIncreaseRequestInTemplate&& value) { SetServiceQuotaIncreaseRequestInTemplate(std::move(value)); return *this;}
 

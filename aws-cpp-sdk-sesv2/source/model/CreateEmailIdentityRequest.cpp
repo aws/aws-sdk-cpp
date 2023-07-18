@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateEmailIdentityRequest::CreateEmailIdentityRequest() : 
     m_emailIdentityHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_dkimSigningAttributesHasBeenSet(false)
+    m_dkimSigningAttributesHasBeenSet(false),
+    m_configurationSetNameHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String CreateEmailIdentityRequest::SerializePayload() const
   if(m_dkimSigningAttributesHasBeenSet)
   {
    payload.WithObject("DkimSigningAttributes", m_dkimSigningAttributes.Jsonize());
+
+  }
+
+  if(m_configurationSetNameHasBeenSet)
+  {
+   payload.WithString("ConfigurationSetName", m_configurationSetName);
 
   }
 

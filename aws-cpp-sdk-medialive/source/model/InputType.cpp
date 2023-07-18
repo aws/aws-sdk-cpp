@@ -29,6 +29,7 @@ namespace Aws
         static const int MEDIACONNECT_HASH = HashingUtils::HashString("MEDIACONNECT");
         static const int INPUT_DEVICE_HASH = HashingUtils::HashString("INPUT_DEVICE");
         static const int AWS_CDI_HASH = HashingUtils::HashString("AWS_CDI");
+        static const int TS_FILE_HASH = HashingUtils::HashString("TS_FILE");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return InputType::AWS_CDI;
           }
+          else if (hashCode == TS_FILE_HASH)
+          {
+            return InputType::TS_FILE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "INPUT_DEVICE";
           case InputType::AWS_CDI:
             return "AWS_CDI";
+          case InputType::TS_FILE:
+            return "TS_FILE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

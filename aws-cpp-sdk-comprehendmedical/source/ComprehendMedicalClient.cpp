@@ -24,22 +24,27 @@
 #include <aws/comprehendmedical/model/DescribeICD10CMInferenceJobRequest.h>
 #include <aws/comprehendmedical/model/DescribePHIDetectionJobRequest.h>
 #include <aws/comprehendmedical/model/DescribeRxNormInferenceJobRequest.h>
+#include <aws/comprehendmedical/model/DescribeSNOMEDCTInferenceJobRequest.h>
 #include <aws/comprehendmedical/model/DetectEntitiesV2Request.h>
 #include <aws/comprehendmedical/model/DetectPHIRequest.h>
 #include <aws/comprehendmedical/model/InferICD10CMRequest.h>
 #include <aws/comprehendmedical/model/InferRxNormRequest.h>
+#include <aws/comprehendmedical/model/InferSNOMEDCTRequest.h>
 #include <aws/comprehendmedical/model/ListEntitiesDetectionV2JobsRequest.h>
 #include <aws/comprehendmedical/model/ListICD10CMInferenceJobsRequest.h>
 #include <aws/comprehendmedical/model/ListPHIDetectionJobsRequest.h>
 #include <aws/comprehendmedical/model/ListRxNormInferenceJobsRequest.h>
+#include <aws/comprehendmedical/model/ListSNOMEDCTInferenceJobsRequest.h>
 #include <aws/comprehendmedical/model/StartEntitiesDetectionV2JobRequest.h>
 #include <aws/comprehendmedical/model/StartICD10CMInferenceJobRequest.h>
 #include <aws/comprehendmedical/model/StartPHIDetectionJobRequest.h>
 #include <aws/comprehendmedical/model/StartRxNormInferenceJobRequest.h>
+#include <aws/comprehendmedical/model/StartSNOMEDCTInferenceJobRequest.h>
 #include <aws/comprehendmedical/model/StopEntitiesDetectionV2JobRequest.h>
 #include <aws/comprehendmedical/model/StopICD10CMInferenceJobRequest.h>
 #include <aws/comprehendmedical/model/StopPHIDetectionJobRequest.h>
 #include <aws/comprehendmedical/model/StopRxNormInferenceJobRequest.h>
+#include <aws/comprehendmedical/model/StopSNOMEDCTInferenceJobRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -88,7 +93,7 @@ ComprehendMedicalClient::~ComprehendMedicalClient()
 {
 }
 
-void ComprehendMedicalClient::init(const ClientConfiguration& config)
+void ComprehendMedicalClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ComprehendMedical");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -117,9 +122,6 @@ void ComprehendMedicalClient::OverrideEndpoint(const Aws::String& endpoint)
 DescribeEntitiesDetectionV2JobOutcome ComprehendMedicalClient::DescribeEntitiesDetectionV2Job(const DescribeEntitiesDetectionV2JobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeEntitiesDetectionV2JobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -144,9 +146,6 @@ void ComprehendMedicalClient::DescribeEntitiesDetectionV2JobAsyncHelper(const De
 DescribeICD10CMInferenceJobOutcome ComprehendMedicalClient::DescribeICD10CMInferenceJob(const DescribeICD10CMInferenceJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeICD10CMInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,9 +170,6 @@ void ComprehendMedicalClient::DescribeICD10CMInferenceJobAsyncHelper(const Descr
 DescribePHIDetectionJobOutcome ComprehendMedicalClient::DescribePHIDetectionJob(const DescribePHIDetectionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribePHIDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,9 +194,6 @@ void ComprehendMedicalClient::DescribePHIDetectionJobAsyncHelper(const DescribeP
 DescribeRxNormInferenceJobOutcome ComprehendMedicalClient::DescribeRxNormInferenceJob(const DescribeRxNormInferenceJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeRxNormInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -222,12 +215,33 @@ void ComprehendMedicalClient::DescribeRxNormInferenceJobAsyncHelper(const Descri
   handler(this, request, DescribeRxNormInferenceJob(request), context);
 }
 
+DescribeSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::DescribeSNOMEDCTInferenceJob(const DescribeSNOMEDCTInferenceJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeSNOMEDCTInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobCallable(const DescribeSNOMEDCTInferenceJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSNOMEDCTInferenceJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobAsync(const DescribeSNOMEDCTInferenceJobRequest& request, const DescribeSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSNOMEDCTInferenceJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobAsyncHelper(const DescribeSNOMEDCTInferenceJobRequest& request, const DescribeSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSNOMEDCTInferenceJob(request), context);
+}
+
 DetectEntitiesV2Outcome ComprehendMedicalClient::DetectEntitiesV2(const DetectEntitiesV2Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DetectEntitiesV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -252,9 +266,6 @@ void ComprehendMedicalClient::DetectEntitiesV2AsyncHelper(const DetectEntitiesV2
 DetectPHIOutcome ComprehendMedicalClient::DetectPHI(const DetectPHIRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DetectPHIOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -279,9 +290,6 @@ void ComprehendMedicalClient::DetectPHIAsyncHelper(const DetectPHIRequest& reque
 InferICD10CMOutcome ComprehendMedicalClient::InferICD10CM(const InferICD10CMRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return InferICD10CMOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -306,9 +314,6 @@ void ComprehendMedicalClient::InferICD10CMAsyncHelper(const InferICD10CMRequest&
 InferRxNormOutcome ComprehendMedicalClient::InferRxNorm(const InferRxNormRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return InferRxNormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -330,12 +335,33 @@ void ComprehendMedicalClient::InferRxNormAsyncHelper(const InferRxNormRequest& r
   handler(this, request, InferRxNorm(request), context);
 }
 
+InferSNOMEDCTOutcome ComprehendMedicalClient::InferSNOMEDCT(const InferSNOMEDCTRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return InferSNOMEDCTOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+InferSNOMEDCTOutcomeCallable ComprehendMedicalClient::InferSNOMEDCTCallable(const InferSNOMEDCTRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< InferSNOMEDCTOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InferSNOMEDCT(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::InferSNOMEDCTAsync(const InferSNOMEDCTRequest& request, const InferSNOMEDCTResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->InferSNOMEDCTAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::InferSNOMEDCTAsyncHelper(const InferSNOMEDCTRequest& request, const InferSNOMEDCTResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, InferSNOMEDCT(request), context);
+}
+
 ListEntitiesDetectionV2JobsOutcome ComprehendMedicalClient::ListEntitiesDetectionV2Jobs(const ListEntitiesDetectionV2JobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListEntitiesDetectionV2JobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -360,9 +386,6 @@ void ComprehendMedicalClient::ListEntitiesDetectionV2JobsAsyncHelper(const ListE
 ListICD10CMInferenceJobsOutcome ComprehendMedicalClient::ListICD10CMInferenceJobs(const ListICD10CMInferenceJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListICD10CMInferenceJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -387,9 +410,6 @@ void ComprehendMedicalClient::ListICD10CMInferenceJobsAsyncHelper(const ListICD1
 ListPHIDetectionJobsOutcome ComprehendMedicalClient::ListPHIDetectionJobs(const ListPHIDetectionJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListPHIDetectionJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -414,9 +434,6 @@ void ComprehendMedicalClient::ListPHIDetectionJobsAsyncHelper(const ListPHIDetec
 ListRxNormInferenceJobsOutcome ComprehendMedicalClient::ListRxNormInferenceJobs(const ListRxNormInferenceJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListRxNormInferenceJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -438,12 +455,33 @@ void ComprehendMedicalClient::ListRxNormInferenceJobsAsyncHelper(const ListRxNor
   handler(this, request, ListRxNormInferenceJobs(request), context);
 }
 
+ListSNOMEDCTInferenceJobsOutcome ComprehendMedicalClient::ListSNOMEDCTInferenceJobs(const ListSNOMEDCTInferenceJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListSNOMEDCTInferenceJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSNOMEDCTInferenceJobsOutcomeCallable ComprehendMedicalClient::ListSNOMEDCTInferenceJobsCallable(const ListSNOMEDCTInferenceJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSNOMEDCTInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSNOMEDCTInferenceJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::ListSNOMEDCTInferenceJobsAsync(const ListSNOMEDCTInferenceJobsRequest& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSNOMEDCTInferenceJobsAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::ListSNOMEDCTInferenceJobsAsyncHelper(const ListSNOMEDCTInferenceJobsRequest& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSNOMEDCTInferenceJobs(request), context);
+}
+
 StartEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StartEntitiesDetectionV2Job(const StartEntitiesDetectionV2JobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartEntitiesDetectionV2JobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -468,9 +506,6 @@ void ComprehendMedicalClient::StartEntitiesDetectionV2JobAsyncHelper(const Start
 StartICD10CMInferenceJobOutcome ComprehendMedicalClient::StartICD10CMInferenceJob(const StartICD10CMInferenceJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartICD10CMInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -495,9 +530,6 @@ void ComprehendMedicalClient::StartICD10CMInferenceJobAsyncHelper(const StartICD
 StartPHIDetectionJobOutcome ComprehendMedicalClient::StartPHIDetectionJob(const StartPHIDetectionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartPHIDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -522,9 +554,6 @@ void ComprehendMedicalClient::StartPHIDetectionJobAsyncHelper(const StartPHIDete
 StartRxNormInferenceJobOutcome ComprehendMedicalClient::StartRxNormInferenceJob(const StartRxNormInferenceJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartRxNormInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -546,12 +575,33 @@ void ComprehendMedicalClient::StartRxNormInferenceJobAsyncHelper(const StartRxNo
   handler(this, request, StartRxNormInferenceJob(request), context);
 }
 
+StartSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StartSNOMEDCTInferenceJob(const StartSNOMEDCTInferenceJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartSNOMEDCTInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::StartSNOMEDCTInferenceJobCallable(const StartSNOMEDCTInferenceJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSNOMEDCTInferenceJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::StartSNOMEDCTInferenceJobAsync(const StartSNOMEDCTInferenceJobRequest& request, const StartSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSNOMEDCTInferenceJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::StartSNOMEDCTInferenceJobAsyncHelper(const StartSNOMEDCTInferenceJobRequest& request, const StartSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSNOMEDCTInferenceJob(request), context);
+}
+
 StopEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StopEntitiesDetectionV2Job(const StopEntitiesDetectionV2JobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopEntitiesDetectionV2JobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -576,9 +626,6 @@ void ComprehendMedicalClient::StopEntitiesDetectionV2JobAsyncHelper(const StopEn
 StopICD10CMInferenceJobOutcome ComprehendMedicalClient::StopICD10CMInferenceJob(const StopICD10CMInferenceJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopICD10CMInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -603,9 +650,6 @@ void ComprehendMedicalClient::StopICD10CMInferenceJobAsyncHelper(const StopICD10
 StopPHIDetectionJobOutcome ComprehendMedicalClient::StopPHIDetectionJob(const StopPHIDetectionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopPHIDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -630,9 +674,6 @@ void ComprehendMedicalClient::StopPHIDetectionJobAsyncHelper(const StopPHIDetect
 StopRxNormInferenceJobOutcome ComprehendMedicalClient::StopRxNormInferenceJob(const StopRxNormInferenceJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopRxNormInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -652,5 +693,29 @@ void ComprehendMedicalClient::StopRxNormInferenceJobAsync(const StopRxNormInfere
 void ComprehendMedicalClient::StopRxNormInferenceJobAsyncHelper(const StopRxNormInferenceJobRequest& request, const StopRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopRxNormInferenceJob(request), context);
+}
+
+StopSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StopSNOMEDCTInferenceJob(const StopSNOMEDCTInferenceJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopSNOMEDCTInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::StopSNOMEDCTInferenceJobCallable(const StopSNOMEDCTInferenceJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSNOMEDCTInferenceJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::StopSNOMEDCTInferenceJobAsync(const StopSNOMEDCTInferenceJobRequest& request, const StopSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopSNOMEDCTInferenceJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::StopSNOMEDCTInferenceJobAsyncHelper(const StopSNOMEDCTInferenceJobRequest& request, const StopSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopSNOMEDCTInferenceJob(request), context);
 }
 

@@ -160,7 +160,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetDashboardDefinition() const{ return m_dashboardDefinition; }
 
@@ -168,7 +168,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool DashboardDefinitionHasBeenSet() const { return m_dashboardDefinitionHasBeenSet; }
 
@@ -176,7 +176,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetDashboardDefinition(const Aws::String& value) { m_dashboardDefinitionHasBeenSet = true; m_dashboardDefinition = value; }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetDashboardDefinition(Aws::String&& value) { m_dashboardDefinitionHasBeenSet = true; m_dashboardDefinition = std::move(value); }
 
@@ -192,7 +192,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetDashboardDefinition(const char* value) { m_dashboardDefinitionHasBeenSet = true; m_dashboardDefinition.assign(value); }
 
@@ -200,7 +200,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateDashboardRequest& WithDashboardDefinition(const Aws::String& value) { SetDashboardDefinition(value); return *this;}
 
@@ -208,7 +208,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateDashboardRequest& WithDashboardDefinition(Aws::String&& value) { SetDashboardDefinition(std::move(value)); return *this;}
 
@@ -216,7 +216,7 @@ namespace Model
      * <p>The new dashboard definition, as specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateDashboardRequest& WithDashboardDefinition(const char* value) { SetDashboardDefinition(value); return *this;}
 

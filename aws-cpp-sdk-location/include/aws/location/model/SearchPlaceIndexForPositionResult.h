@@ -78,27 +78,37 @@ namespace Model
 
 
     /**
-     * <p>Contains a summary of the request.</p>
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the
+     * <code>DataSource</code> of the place index. </p>
      */
     inline const SearchPlaceIndexForPositionSummary& GetSummary() const{ return m_summary; }
 
     /**
-     * <p>Contains a summary of the request.</p>
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the
+     * <code>DataSource</code> of the place index. </p>
      */
     inline void SetSummary(const SearchPlaceIndexForPositionSummary& value) { m_summary = value; }
 
     /**
-     * <p>Contains a summary of the request.</p>
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the
+     * <code>DataSource</code> of the place index. </p>
      */
     inline void SetSummary(SearchPlaceIndexForPositionSummary&& value) { m_summary = std::move(value); }
 
     /**
-     * <p>Contains a summary of the request.</p>
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the
+     * <code>DataSource</code> of the place index. </p>
      */
     inline SearchPlaceIndexForPositionResult& WithSummary(const SearchPlaceIndexForPositionSummary& value) { SetSummary(value); return *this;}
 
     /**
-     * <p>Contains a summary of the request.</p>
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the
+     * <code>DataSource</code> of the place index. </p>
      */
     inline SearchPlaceIndexForPositionResult& WithSummary(SearchPlaceIndexForPositionSummary&& value) { SetSummary(std::move(value)); return *this;}
 

@@ -40,6 +40,12 @@ GetTerminologyResult& GetTerminologyResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("AuxiliaryDataLocation"))
+  {
+    m_auxiliaryDataLocation = jsonValue.GetObject("AuxiliaryDataLocation");
+
+  }
+
 
 
   return *this;

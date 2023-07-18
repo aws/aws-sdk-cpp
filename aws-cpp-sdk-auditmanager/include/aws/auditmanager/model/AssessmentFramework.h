@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> The file used to structure and automate AWS Audit Manager assessments for a
+   * <p> The file used to structure and automate Audit Manager assessments for a
    * given compliance standard. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentFramework">AWS
    * API Reference</a></p>
@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline AssessmentFramework& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline AssessmentFramework& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
     inline AssessmentFramework& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -143,42 +143,42 @@ namespace Model
 
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline const Aws::Vector<AssessmentControlSet>& GetControlSets() const{ return m_controlSets; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline bool ControlSetsHasBeenSet() const { return m_controlSetsHasBeenSet; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline void SetControlSets(const Aws::Vector<AssessmentControlSet>& value) { m_controlSetsHasBeenSet = true; m_controlSets = value; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline void SetControlSets(Aws::Vector<AssessmentControlSet>&& value) { m_controlSetsHasBeenSet = true; m_controlSets = std::move(value); }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline AssessmentFramework& WithControlSets(const Aws::Vector<AssessmentControlSet>& value) { SetControlSets(value); return *this;}
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline AssessmentFramework& WithControlSets(Aws::Vector<AssessmentControlSet>&& value) { SetControlSets(std::move(value)); return *this;}
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline AssessmentFramework& AddControlSets(const AssessmentControlSet& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(value); return *this; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline AssessmentFramework& AddControlSets(AssessmentControlSet&& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(std::move(value)); return *this; }
 

@@ -107,22 +107,12 @@ namespace Model
         virtual Model::GetDeviceRegistrationOutcome GetDeviceRegistration(const Model::GetDeviceRegistrationRequest& request) const;
 
         /**
-         * <p>Use to check if a device is registered with SageMaker Edge
-         * Manager.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeviceRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeviceRegistrationOutcomeCallable GetDeviceRegistrationCallable(const Model::GetDeviceRegistrationRequest& request) const;
 
         /**
-         * <p>Use to check if a device is registered with SageMaker Edge
-         * Manager.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeviceRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeviceRegistrationAsync(const Model::GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -135,22 +125,12 @@ namespace Model
         virtual Model::SendHeartbeatOutcome SendHeartbeat(const Model::SendHeartbeatRequest& request) const;
 
         /**
-         * <p>Use to get the current status of devices registered on SageMaker Edge
-         * Manager.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendHeartbeat that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendHeartbeatOutcomeCallable SendHeartbeatCallable(const Model::SendHeartbeatRequest& request) const;
 
         /**
-         * <p>Use to get the current status of devices registered on SageMaker Edge
-         * Manager.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendHeartbeat that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendHeartbeatAsync(const Model::SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

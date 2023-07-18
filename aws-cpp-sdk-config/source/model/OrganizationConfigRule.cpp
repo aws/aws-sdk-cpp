@@ -24,7 +24,8 @@ OrganizationConfigRule::OrganizationConfigRule() :
     m_organizationManagedRuleMetadataHasBeenSet(false),
     m_organizationCustomRuleMetadataHasBeenSet(false),
     m_excludedAccountsHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_organizationCustomPolicyRuleMetadataHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ OrganizationConfigRule::OrganizationConfigRule(JsonView jsonValue) :
     m_organizationManagedRuleMetadataHasBeenSet(false),
     m_organizationCustomRuleMetadataHasBeenSet(false),
     m_excludedAccountsHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_organizationCustomPolicyRuleMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ OrganizationConfigRule& OrganizationConfigRule::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OrganizationCustomPolicyRuleMetadata"))
+  {
+    m_organizationCustomPolicyRuleMetadata = jsonValue.GetObject("OrganizationCustomPolicyRuleMetadata");
+
+    m_organizationCustomPolicyRuleMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +140,12 @@ JsonValue OrganizationConfigRule::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_organizationCustomPolicyRuleMetadataHasBeenSet)
+  {
+   payload.WithObject("OrganizationCustomPolicyRuleMetadata", m_organizationCustomPolicyRuleMetadata.Jsonize());
+
   }
 
   return payload;

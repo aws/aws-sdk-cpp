@@ -34,83 +34,83 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline BatchAssociateAssessmentReportEvidenceRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline BatchAssociateAssessmentReportEvidenceRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline BatchAssociateAssessmentReportEvidenceRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
 
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline const Aws::String& GetEvidenceFolderId() const{ return m_evidenceFolderId; }
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline bool EvidenceFolderIdHasBeenSet() const { return m_evidenceFolderIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolderId(const Aws::String& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = value; }
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolderId(Aws::String&& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = std::move(value); }
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolderId(const char* value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId.assign(value); }
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline BatchAssociateAssessmentReportEvidenceRequest& WithEvidenceFolderId(const Aws::String& value) { SetEvidenceFolderId(value); return *this;}
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline BatchAssociateAssessmentReportEvidenceRequest& WithEvidenceFolderId(Aws::String&& value) { SetEvidenceFolderId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the folder in which the evidence is stored. </p>
+     * <p> The identifier for the folder that the evidence is stored in. </p>
      */
     inline BatchAssociateAssessmentReportEvidenceRequest& WithEvidenceFolderId(const char* value) { SetEvidenceFolderId(value); return *this;}
 

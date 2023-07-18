@@ -32,7 +32,11 @@ ICD10CMAttribute::ICD10CMAttribute() :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_traitsHasBeenSet(false)
+    m_traitsHasBeenSet(false),
+    m_category(ICD10CMEntityType::NOT_SET),
+    m_categoryHasBeenSet(false),
+    m_relationshipType(ICD10CMRelationshipType::NOT_SET),
+    m_relationshipTypeHasBeenSet(false)
 {
 }
 
@@ -50,7 +54,11 @@ ICD10CMAttribute::ICD10CMAttribute(JsonView jsonValue) :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_traitsHasBeenSet(false)
+    m_traitsHasBeenSet(false),
+    m_category(ICD10CMEntityType::NOT_SET),
+    m_categoryHasBeenSet(false),
+    m_relationshipType(ICD10CMRelationshipType::NOT_SET),
+    m_relationshipTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +124,20 @@ ICD10CMAttribute& ICD10CMAttribute::operator =(JsonView jsonValue)
     m_traitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Category"))
+  {
+    m_category = ICD10CMEntityTypeMapper::GetICD10CMEntityTypeForName(jsonValue.GetString("Category"));
+
+    m_categoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RelationshipType"))
+  {
+    m_relationshipType = ICD10CMRelationshipTypeMapper::GetICD10CMRelationshipTypeForName(jsonValue.GetString("RelationshipType"));
+
+    m_relationshipTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +195,16 @@ JsonValue ICD10CMAttribute::Jsonize() const
    }
    payload.WithArray("Traits", std::move(traitsJsonList));
 
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", ICD10CMEntityTypeMapper::GetNameForICD10CMEntityType(m_category));
+  }
+
+  if(m_relationshipTypeHasBeenSet)
+  {
+   payload.WithString("RelationshipType", ICD10CMRelationshipTypeMapper::GetNameForICD10CMRelationshipType(m_relationshipType));
   }
 
   return payload;

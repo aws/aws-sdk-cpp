@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
+#include <aws/qldb-session/model/TimingInformation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -35,6 +37,41 @@ namespace Model
     AbortTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline const TimingInformation& GetTimingInformation() const{ return m_timingInformation; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline void SetTimingInformation(const TimingInformation& value) { m_timingInformationHasBeenSet = true; m_timingInformation = value; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline void SetTimingInformation(TimingInformation&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::move(value); }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline AbortTransactionResult& WithTimingInformation(const TimingInformation& value) { SetTimingInformation(value); return *this;}
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline AbortTransactionResult& WithTimingInformation(TimingInformation&& value) { SetTimingInformation(std::move(value)); return *this;}
+
+  private:
+
+    TimingInformation m_timingInformation;
+    bool m_timingInformationHasBeenSet;
   };
 
 } // namespace Model

@@ -24,7 +24,12 @@ ScheduledTriggerProperties::ScheduledTriggerProperties() :
     m_dataPullModeHasBeenSet(false),
     m_scheduleStartTimeHasBeenSet(false),
     m_scheduleEndTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_firstExecutionFromHasBeenSet(false),
+    m_flowErrorDeactivationThreshold(0),
+    m_flowErrorDeactivationThresholdHasBeenSet(false)
 {
 }
 
@@ -34,7 +39,12 @@ ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue) :
     m_dataPullModeHasBeenSet(false),
     m_scheduleStartTimeHasBeenSet(false),
     m_scheduleEndTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_firstExecutionFromHasBeenSet(false),
+    m_flowErrorDeactivationThreshold(0),
+    m_flowErrorDeactivationThresholdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +86,27 @@ ScheduledTriggerProperties& ScheduledTriggerProperties::operator =(JsonView json
     m_timezoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scheduleOffset"))
+  {
+    m_scheduleOffset = jsonValue.GetInt64("scheduleOffset");
+
+    m_scheduleOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("firstExecutionFrom"))
+  {
+    m_firstExecutionFrom = jsonValue.GetDouble("firstExecutionFrom");
+
+    m_firstExecutionFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("flowErrorDeactivationThreshold"))
+  {
+    m_flowErrorDeactivationThreshold = jsonValue.GetInteger("flowErrorDeactivationThreshold");
+
+    m_flowErrorDeactivationThresholdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +138,23 @@ JsonValue ScheduledTriggerProperties::Jsonize() const
   if(m_timezoneHasBeenSet)
   {
    payload.WithString("timezone", m_timezone);
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInt64("scheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_firstExecutionFromHasBeenSet)
+  {
+   payload.WithDouble("firstExecutionFrom", m_firstExecutionFrom.SecondsWithMSPrecision());
+  }
+
+  if(m_flowErrorDeactivationThresholdHasBeenSet)
+  {
+   payload.WithInteger("flowErrorDeactivationThreshold", m_flowErrorDeactivationThreshold);
 
   }
 

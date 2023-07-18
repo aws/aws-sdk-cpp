@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateCollectionRequest::CreateCollectionRequest() : 
-    m_collectionIdHasBeenSet(false)
+    m_collectionIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,17 @@ Aws::String CreateCollectionRequest::SerializePayload() const
   if(m_collectionIdHasBeenSet)
   {
    payload.WithString("CollectionId", m_collectionId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

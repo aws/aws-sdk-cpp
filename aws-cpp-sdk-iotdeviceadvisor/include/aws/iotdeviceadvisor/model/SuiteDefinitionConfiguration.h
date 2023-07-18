@@ -184,42 +184,42 @@ namespace Model
 
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline const Aws::String& GetDevicePermissionRoleArn() const{ return m_devicePermissionRoleArn; }
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline bool DevicePermissionRoleArnHasBeenSet() const { return m_devicePermissionRoleArnHasBeenSet; }
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline void SetDevicePermissionRoleArn(const Aws::String& value) { m_devicePermissionRoleArnHasBeenSet = true; m_devicePermissionRoleArn = value; }
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline void SetDevicePermissionRoleArn(Aws::String&& value) { m_devicePermissionRoleArnHasBeenSet = true; m_devicePermissionRoleArn = std::move(value); }
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline void SetDevicePermissionRoleArn(const char* value) { m_devicePermissionRoleArnHasBeenSet = true; m_devicePermissionRoleArn.assign(value); }
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline SuiteDefinitionConfiguration& WithDevicePermissionRoleArn(const Aws::String& value) { SetDevicePermissionRoleArn(value); return *this;}
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline SuiteDefinitionConfiguration& WithDevicePermissionRoleArn(Aws::String&& value) { SetDevicePermissionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Gets device permission arn.</p>
+     * <p>Gets the device permission ARN.</p>
      */
     inline SuiteDefinitionConfiguration& WithDevicePermissionRoleArn(const char* value) { SetDevicePermissionRoleArn(value); return *this;}
 

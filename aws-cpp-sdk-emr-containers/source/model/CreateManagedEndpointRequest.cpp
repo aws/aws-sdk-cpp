@@ -18,7 +18,6 @@ CreateManagedEndpointRequest::CreateManagedEndpointRequest() :
     m_typeHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
     m_configurationOverridesHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
@@ -51,12 +50,6 @@ Aws::String CreateManagedEndpointRequest::SerializePayload() const
   if(m_executionRoleArnHasBeenSet)
   {
    payload.WithString("executionRoleArn", m_executionRoleArn);
-
-  }
-
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("certificateArn", m_certificateArn);
 
   }
 

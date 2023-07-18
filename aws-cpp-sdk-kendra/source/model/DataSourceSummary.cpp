@@ -26,7 +26,8 @@ DataSourceSummary::DataSourceSummary() :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_languageCodeHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ DataSourceSummary::DataSourceSummary(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_languageCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = jsonValue.GetString("LanguageCode");
+
+    m_languageCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue DataSourceSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", m_languageCode);
+
   }
 
   return payload;

@@ -73,6 +73,31 @@ TEST(XmlSerializerTest, TestXmlSerialize)
     ASSERT_TRUE(doc.GetErrorMessage().empty());
 }
 
+TEST(XmlSerializerTest, TestXmlSerializeNewlines)
+{
+    XmlDocument doc = XmlDocument::CreateWithRootNode("Newlines");
+    XmlNode rootElement = doc.GetRootElement();
+    XmlNode itemLF = rootElement.CreateChildElement("LF");
+    itemLF.SetText("a\n+\n");
+    XmlNode itemCR = rootElement.CreateChildElement("CR");
+    itemCR.SetText("b\r-\r");
+    XmlNode itemLFCR = rootElement.CreateChildElement("LFCR");
+    itemLFCR.SetText("c\n\r*");
+    XmlNode itemCRLF = rootElement.CreateChildElement("CRLF");
+    itemCRLF.SetText("d\r\n/");
+    Aws::String serializedXml = doc.ConvertToString();
+
+    Aws::String toCompare = "<?xml version=\"1.0\"?>\n"
+        "<Newlines>\n"
+        "    <LF>a&#xA;+&#xA;</LF>\n"
+        "    <CR>b&#xD;-&#xD;</CR>\n"
+        "    <LFCR>c&#xA;&#xD;*</LFCR>\n"
+        "    <CRLF>d&#xD;&#xA;/</CRLF>\n"
+        "</Newlines>\n";
+    ASSERT_EQ(toCompare, serializedXml);
+    ASSERT_TRUE(doc.GetErrorMessage().empty());
+}
+
 TEST(XmlSerializerTest, TestXmlHasChildren)
 {
     XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");

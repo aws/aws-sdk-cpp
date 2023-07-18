@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/AutoScalingSettingsUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dynamodb/model/TableClass.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexSettingsUpdate.h>
 #include <utility>
 
@@ -208,6 +209,43 @@ namespace Model
      */
     inline ReplicaSettingsUpdate& AddReplicaGlobalSecondaryIndexSettingsUpdate(ReplicaGlobalSecondaryIndexSettingsUpdate&& value) { m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet = true; m_replicaGlobalSecondaryIndexSettingsUpdate.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline const TableClass& GetReplicaTableClass() const{ return m_replicaTableClass; }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline bool ReplicaTableClassHasBeenSet() const { return m_replicaTableClassHasBeenSet; }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline void SetReplicaTableClass(const TableClass& value) { m_replicaTableClassHasBeenSet = true; m_replicaTableClass = value; }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline void SetReplicaTableClass(TableClass&& value) { m_replicaTableClassHasBeenSet = true; m_replicaTableClass = std::move(value); }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline ReplicaSettingsUpdate& WithReplicaTableClass(const TableClass& value) { SetReplicaTableClass(value); return *this;}
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline ReplicaSettingsUpdate& WithReplicaTableClass(TableClass&& value) { SetReplicaTableClass(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_regionName;
@@ -221,6 +259,9 @@ namespace Model
 
     Aws::Vector<ReplicaGlobalSecondaryIndexSettingsUpdate> m_replicaGlobalSecondaryIndexSettingsUpdate;
     bool m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet;
+
+    TableClass m_replicaTableClass;
+    bool m_replicaTableClassHasBeenSet;
   };
 
 } // namespace Model

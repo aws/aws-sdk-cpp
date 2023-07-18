@@ -16,11 +16,10 @@ namespace Model
   enum class ScopeFilterKey
   {
     NOT_SET,
-    BUCKET_CREATION_DATE,
     OBJECT_EXTENSION,
     OBJECT_LAST_MODIFIED_DATE,
     OBJECT_SIZE,
-    TAG
+    OBJECT_KEY
   };
 
 namespace ScopeFilterKeyMapper

@@ -127,65 +127,65 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServerCertificateArns() const{ return m_serverCertificateArns; }
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline bool ServerCertificateArnsHasBeenSet() const { return m_serverCertificateArnsHasBeenSet; }
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline void SetServerCertificateArns(const Aws::Vector<Aws::String>& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns = value; }
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline void SetServerCertificateArns(Aws::Vector<Aws::String>&& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns = std::move(value); }
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& WithServerCertificateArns(const Aws::Vector<Aws::String>& value) { SetServerCertificateArns(value); return *this;}
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& WithServerCertificateArns(Aws::Vector<Aws::String>&& value) { SetServerCertificateArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& AddServerCertificateArns(const Aws::String& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& AddServerCertificateArns(Aws::String&& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNs of the certificates that AWS IoT passes to the device during the TLS
+     * <p>The ARNs of the certificates that IoT passes to the device during the TLS
      * handshake. Currently you can specify only one certificate ARN. This value is not
-     * required for AWS-managed domains.</p>
+     * required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& AddServerCertificateArns(const char* value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns.push_back(value); return *this; }
 
@@ -193,56 +193,56 @@ namespace Model
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline const Aws::String& GetValidationCertificateArn() const{ return m_validationCertificateArn; }
 
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline bool ValidationCertificateArnHasBeenSet() const { return m_validationCertificateArnHasBeenSet; }
 
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline void SetValidationCertificateArn(const Aws::String& value) { m_validationCertificateArnHasBeenSet = true; m_validationCertificateArn = value; }
 
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline void SetValidationCertificateArn(Aws::String&& value) { m_validationCertificateArnHasBeenSet = true; m_validationCertificateArn = std::move(value); }
 
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline void SetValidationCertificateArn(const char* value) { m_validationCertificateArnHasBeenSet = true; m_validationCertificateArn.assign(value); }
 
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& WithValidationCertificateArn(const Aws::String& value) { SetValidationCertificateArn(value); return *this;}
 
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& WithValidationCertificateArn(Aws::String&& value) { SetValidationCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The certificate used to validate the server certificate and prove domain name
      * ownership. This certificate must be signed by a public certificate authority.
-     * This value is not required for AWS-managed domains.</p>
+     * This value is not required for Amazon Web Services-managed domains.</p>
      */
     inline CreateDomainConfigurationRequest& WithValidationCertificateArn(const char* value) { SetValidationCertificateArn(value); return *this;}
 
@@ -279,38 +279,44 @@ namespace Model
 
 
     /**
-     * <p>The type of service delivered by the endpoint.</p>  <p>AWS IoT Core
-     * currently supports only the <code>DATA</code> service type.</p> 
+     * <p>The type of service delivered by the endpoint.</p>  <p>Amazon Web
+     * Services IoT Core currently supports only the <code>DATA</code> service
+     * type.</p> 
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
 
     /**
-     * <p>The type of service delivered by the endpoint.</p>  <p>AWS IoT Core
-     * currently supports only the <code>DATA</code> service type.</p> 
+     * <p>The type of service delivered by the endpoint.</p>  <p>Amazon Web
+     * Services IoT Core currently supports only the <code>DATA</code> service
+     * type.</p> 
      */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
 
     /**
-     * <p>The type of service delivered by the endpoint.</p>  <p>AWS IoT Core
-     * currently supports only the <code>DATA</code> service type.</p> 
+     * <p>The type of service delivered by the endpoint.</p>  <p>Amazon Web
+     * Services IoT Core currently supports only the <code>DATA</code> service
+     * type.</p> 
      */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
-     * <p>The type of service delivered by the endpoint.</p>  <p>AWS IoT Core
-     * currently supports only the <code>DATA</code> service type.</p> 
+     * <p>The type of service delivered by the endpoint.</p>  <p>Amazon Web
+     * Services IoT Core currently supports only the <code>DATA</code> service
+     * type.</p> 
      */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
 
     /**
-     * <p>The type of service delivered by the endpoint.</p>  <p>AWS IoT Core
-     * currently supports only the <code>DATA</code> service type.</p> 
+     * <p>The type of service delivered by the endpoint.</p>  <p>Amazon Web
+     * Services IoT Core currently supports only the <code>DATA</code> service
+     * type.</p> 
      */
     inline CreateDomainConfigurationRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
 
     /**
-     * <p>The type of service delivered by the endpoint.</p>  <p>AWS IoT Core
-     * currently supports only the <code>DATA</code> service type.</p> 
+     * <p>The type of service delivered by the endpoint.</p>  <p>Amazon Web
+     * Services IoT Core currently supports only the <code>DATA</code> service
+     * type.</p> 
      */
     inline CreateDomainConfigurationRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
 

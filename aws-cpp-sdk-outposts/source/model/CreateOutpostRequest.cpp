@@ -18,7 +18,9 @@ CreateOutpostRequest::CreateOutpostRequest() :
     m_siteIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
+    m_supportedHardwareTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,11 @@ Aws::String CreateOutpostRequest::SerializePayload() const
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_supportedHardwareTypeHasBeenSet)
+  {
+   payload.WithString("SupportedHardwareType", SupportedHardwareTypeMapper::GetNameForSupportedHardwareType(m_supportedHardwareType));
   }
 
   return payload.View().WriteReadable();

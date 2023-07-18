@@ -34,88 +34,120 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline UntagResourceRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline UntagResourceRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to remove tags from.
+     * The tags are removed from the resource share, not the resources in the resource
+     * share.</p>
      */
     inline UntagResourceRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The tag keys of the tags to remove.</p>
+     * <p>Specifies a list of one or more tag keys that you want to remove.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

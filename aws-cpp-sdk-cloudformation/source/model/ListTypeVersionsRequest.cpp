@@ -19,7 +19,8 @@ ListTypeVersionsRequest::ListTypeVersionsRequest() :
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_deprecatedStatus(DeprecatedStatus::NOT_SET),
-    m_deprecatedStatusHasBeenSet(false)
+    m_deprecatedStatusHasBeenSet(false),
+    m_publisherIdHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,11 @@ Aws::String ListTypeVersionsRequest::SerializePayload() const
   if(m_deprecatedStatusHasBeenSet)
   {
     ss << "DeprecatedStatus=" << DeprecatedStatusMapper::GetNameForDeprecatedStatus(m_deprecatedStatus) << "&";
+  }
+
+  if(m_publisherIdHasBeenSet)
+  {
+    ss << "PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

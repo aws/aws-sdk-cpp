@@ -17,7 +17,8 @@ CreateCampaignRequest::CreateCampaignRequest() :
     m_solutionVersionArnHasBeenSet(false),
     m_minProvisionedTPS(0),
     m_minProvisionedTPSHasBeenSet(false),
-    m_campaignConfigHasBeenSet(false)
+    m_campaignConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String CreateCampaignRequest::SerializePayload() const
   if(m_campaignConfigHasBeenSet)
   {
    payload.WithObject("campaignConfig", m_campaignConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

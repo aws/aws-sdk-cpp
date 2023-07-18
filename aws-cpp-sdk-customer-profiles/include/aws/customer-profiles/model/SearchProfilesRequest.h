@@ -144,65 +144,81 @@ namespace Model
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline SearchProfilesRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline SearchProfilesRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>A searchable identifier of a customer profile. The predefined keys you can
-     * use to search include: _account, _profileId, _fullName, _phone, _email,
-     * _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-     * _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+     * use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+     * _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline SearchProfilesRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 

@@ -18,7 +18,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests API Gateway to change information about the current <a>Account</a>
+   * <p>Requests API Gateway to change information about the current Account
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccountRequest">AWS
    * API Reference</a></p>
@@ -38,50 +38,58 @@ namespace Model
 
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateAccountRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateAccountRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateAccountRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateAccountRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 

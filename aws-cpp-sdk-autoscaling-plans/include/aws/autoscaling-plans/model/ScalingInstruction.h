@@ -33,27 +33,25 @@ namespace Model
 {
 
   /**
-   * <p>Describes a scaling instruction for a scalable resource.</p> <p>The scaling
-   * instruction is used in combination with a scaling plan, which is a set of
-   * instructions for configuring dynamic scaling and predictive scaling for the
-   * scalable resources in your application. Each scaling instruction applies to one
-   * resource.</p> <p>AWS Auto Scaling creates target tracking scaling policies based
-   * on the scaling instructions. Target tracking scaling policies adjust the
-   * capacity of your scalable resource as required to maintain resource utilization
-   * at the target value that you specified. </p> <p>AWS Auto Scaling also configures
-   * predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of
-   * parameters, including the load metric, the scaling metric, the target value for
-   * the scaling metric, the predictive scaling mode (forecast and scale or forecast
-   * only), and the desired behavior when the forecast capacity exceeds the maximum
-   * capacity of the resource. With predictive scaling, AWS Auto Scaling generates
-   * forecasts with traffic predictions for the two days ahead and schedules scaling
-   * actions that proactively add and remove resource capacity to match the forecast.
-   * </p> <p>We recommend waiting a minimum of 24 hours after creating an Auto
+   * <p>Describes a scaling instruction for a scalable resource in a scaling plan.
+   * Each scaling instruction applies to one resource.</p> <p>AWS Auto Scaling
+   * creates target tracking scaling policies based on the scaling instructions.
+   * Target tracking scaling policies adjust the capacity of your scalable resource
+   * as required to maintain resource utilization at the target value that you
+   * specified. </p> <p>AWS Auto Scaling also configures predictive scaling for your
+   * Amazon EC2 Auto Scaling groups using a subset of parameters, including the load
+   * metric, the scaling metric, the target value for the scaling metric, the
+   * predictive scaling mode (forecast and scale or forecast only), and the desired
+   * behavior when the forecast capacity exceeds the maximum capacity of the
+   * resource. With predictive scaling, AWS Auto Scaling generates forecasts with
+   * traffic predictions for the two days ahead and schedules scaling actions that
+   * proactively add and remove resource capacity to match the forecast. </p>
+   *  <p>We recommend waiting a minimum of 24 hours after creating an Auto
    * Scaling group to configure predictive scaling. At minimum, there must be 24
-   * hours of historical data to generate a forecast.</p> <p>For more information,
-   * see <a
-   * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html">Getting
-   * Started with AWS Auto Scaling</a>.</p><p><h3>See Also:</h3>   <a
+   * hours of historical data to generate a forecast. For more information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html">Best
+   * Practices for AWS Auto Scaling</a> in the <i>AWS Auto Scaling User
+   * Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingInstruction">AWS
    * API Reference</a></p>
    */
@@ -444,90 +442,50 @@ namespace Model
 
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline const Aws::Vector<TargetTrackingConfiguration>& GetTargetTrackingConfigurations() const{ return m_targetTrackingConfigurations; }
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline bool TargetTrackingConfigurationsHasBeenSet() const { return m_targetTrackingConfigurationsHasBeenSet; }
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline void SetTargetTrackingConfigurations(const Aws::Vector<TargetTrackingConfiguration>& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations = value; }
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline void SetTargetTrackingConfigurations(Aws::Vector<TargetTrackingConfiguration>&& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations = std::move(value); }
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline ScalingInstruction& WithTargetTrackingConfigurations(const Aws::Vector<TargetTrackingConfiguration>& value) { SetTargetTrackingConfigurations(value); return *this;}
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline ScalingInstruction& WithTargetTrackingConfigurations(Aws::Vector<TargetTrackingConfiguration>&& value) { SetTargetTrackingConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline ScalingInstruction& AddTargetTrackingConfigurations(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The structure that defines new target tracking configurations (up to 10).
-     * Each of these structures includes a specific scaling metric and a target value
-     * for the metric, along with various parameters to use with dynamic scaling. </p>
-     * <p>With predictive scaling and dynamic scaling, the resource scales based on the
-     * target tracking configuration that provides the largest capacity for both scale
-     * in and scale out. </p> <p>Condition: The scaling metric must be unique across
-     * target tracking configurations.</p>
+     * <p>The target tracking configurations (up to 10). Each of these structures must
+     * specify a unique scaling metric and a target value for the metric. </p>
      */
     inline ScalingInstruction& AddTargetTrackingConfigurations(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations.push_back(std::move(value)); return *this; }
 

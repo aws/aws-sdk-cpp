@@ -16,7 +16,8 @@ namespace Model
   enum class Framework
   {
     NOT_SET,
-    HYPERLEDGER_FABRIC
+    HYPERLEDGER_FABRIC,
+    ETHEREUM
   };
 
 namespace FrameworkMapper

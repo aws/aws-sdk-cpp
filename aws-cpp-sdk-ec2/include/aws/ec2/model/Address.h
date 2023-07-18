@@ -300,42 +300,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceOwnerId() const{ return m_networkInterfaceOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline bool NetworkInterfaceOwnerIdHasBeenSet() const { return m_networkInterfaceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(const Aws::String& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(Aws::String&& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(const char* value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline Address& WithNetworkInterfaceOwnerId(const Aws::String& value) { SetNetworkInterfaceOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline Address& WithNetworkInterfaceOwnerId(Aws::String&& value) { SetNetworkInterfaceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the network
+     * interface.</p>
      */
     inline Address& WithNetworkInterfaceOwnerId(const char* value) { SetNetworkInterfaceOwnerId(value); return *this;}
 
@@ -465,49 +473,49 @@ namespace Model
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline Address& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline Address& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses. </p>
+     * Zones from which Amazon Web Services advertises IP addresses.</p>
      */
     inline Address& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 

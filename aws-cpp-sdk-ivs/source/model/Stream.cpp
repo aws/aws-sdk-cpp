@@ -20,12 +20,13 @@ namespace Model
 
 Stream::Stream() : 
     m_channelArnHasBeenSet(false),
+    m_health(StreamHealth::NOT_SET),
+    m_healthHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_state(StreamState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_health(StreamHealth::NOT_SET),
-    m_healthHasBeenSet(false),
+    m_streamIdHasBeenSet(false),
     m_viewerCount(0),
     m_viewerCountHasBeenSet(false)
 {
@@ -33,12 +34,13 @@ Stream::Stream() :
 
 Stream::Stream(JsonView jsonValue) : 
     m_channelArnHasBeenSet(false),
+    m_health(StreamHealth::NOT_SET),
+    m_healthHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_state(StreamState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_health(StreamHealth::NOT_SET),
-    m_healthHasBeenSet(false),
+    m_streamIdHasBeenSet(false),
     m_viewerCount(0),
     m_viewerCountHasBeenSet(false)
 {
@@ -54,6 +56,13 @@ Stream& Stream::operator =(JsonView jsonValue)
     m_channelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("health"))
+  {
+    m_health = StreamHealthMapper::GetStreamHealthForName(jsonValue.GetString("health"));
+
+    m_healthHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("playbackUrl"))
   {
     m_playbackUrl = jsonValue.GetString("playbackUrl");
@@ -63,7 +72,7 @@ Stream& Stream::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("startTime"))
   {
-    m_startTime = jsonValue.GetDouble("startTime");
+    m_startTime = jsonValue.GetString("startTime");
 
     m_startTimeHasBeenSet = true;
   }
@@ -75,11 +84,11 @@ Stream& Stream::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("health"))
+  if(jsonValue.ValueExists("streamId"))
   {
-    m_health = StreamHealthMapper::GetStreamHealthForName(jsonValue.GetString("health"));
+    m_streamId = jsonValue.GetString("streamId");
 
-    m_healthHasBeenSet = true;
+    m_streamIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("viewerCount"))
@@ -102,6 +111,11 @@ JsonValue Stream::Jsonize() const
 
   }
 
+  if(m_healthHasBeenSet)
+  {
+   payload.WithString("health", StreamHealthMapper::GetNameForStreamHealth(m_health));
+  }
+
   if(m_playbackUrlHasBeenSet)
   {
    payload.WithString("playbackUrl", m_playbackUrl);
@@ -110,7 +124,7 @@ JsonValue Stream::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+   payload.WithString("startTime", m_startTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_stateHasBeenSet)
@@ -118,9 +132,10 @@ JsonValue Stream::Jsonize() const
    payload.WithString("state", StreamStateMapper::GetNameForStreamState(m_state));
   }
 
-  if(m_healthHasBeenSet)
+  if(m_streamIdHasBeenSet)
   {
-   payload.WithString("health", StreamHealthMapper::GetNameForStreamHealth(m_health));
+   payload.WithString("streamId", m_streamId);
+
   }
 
   if(m_viewerCountHasBeenSet)

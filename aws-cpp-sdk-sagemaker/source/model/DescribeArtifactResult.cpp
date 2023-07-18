@@ -91,6 +91,12 @@ DescribeArtifactResult& DescribeArtifactResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("LineageGroupArn"))
+  {
+    m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
+
+  }
+
 
 
   return *this;

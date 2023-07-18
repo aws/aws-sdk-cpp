@@ -37,10 +37,28 @@ DescribeResourceCollectionHealthResult& DescribeResourceCollectionHealthResult::
     }
   }
 
+  if(jsonValue.ValueExists("Service"))
+  {
+    Array<JsonView> serviceJsonList = jsonValue.GetArray("Service");
+    for(unsigned serviceIndex = 0; serviceIndex < serviceJsonList.GetLength(); ++serviceIndex)
+    {
+      m_service.push_back(serviceJsonList[serviceIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
 
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
   }
 
 

@@ -51,7 +51,8 @@ enum class CloudSearchErrors
   DISABLED_OPERATION,
   INTERNAL,
   INVALID_TYPE,
-  LIMIT_EXCEEDED
+  LIMIT_EXCEEDED,
+  RESOURCE_ALREADY_EXISTS
 };
 
 class AWS_CLOUDSEARCH_API CloudSearchError : public Aws::Client::AWSError<CloudSearchErrors>

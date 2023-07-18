@@ -11,6 +11,7 @@
 #include <aws/appsync/model/DynamodbDataSourceConfig.h>
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
+#include <aws/appsync/model/OpenSearchServiceDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
 #include <utility>
@@ -193,42 +194,42 @@ namespace Model
 
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline UpdateDataSourceRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline UpdateDataSourceRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline UpdateDataSourceRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -265,65 +266,114 @@ namespace Model
 
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline void SetLambdaConfig(const LambdaDataSourceConfig& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline void SetLambdaConfig(LambdaDataSourceConfig&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(const LambdaDataSourceConfig& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(LambdaDataSourceConfig&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline const ElasticsearchDataSourceConfig& GetElasticsearchConfig() const{ return m_elasticsearchConfig; }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline bool ElasticsearchConfigHasBeenSet() const { return m_elasticsearchConfigHasBeenSet; }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline void SetElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = std::move(value); }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline UpdateDataSourceRequest& WithElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { SetElasticsearchConfig(value); return *this;}
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline UpdateDataSourceRequest& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline const OpenSearchServiceDataSourceConfig& GetOpenSearchServiceConfig() const{ return m_openSearchServiceConfig; }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline bool OpenSearchServiceConfigHasBeenSet() const { return m_openSearchServiceConfigHasBeenSet; }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline void SetOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = value; }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline void SetOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = std::move(value); }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline UpdateDataSourceRequest& WithOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { SetOpenSearchServiceConfig(value); return *this;}
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline UpdateDataSourceRequest& WithOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { SetOpenSearchServiceConfig(std::move(value)); return *this;}
 
 
     /**
@@ -412,6 +462,9 @@ namespace Model
 
     ElasticsearchDataSourceConfig m_elasticsearchConfig;
     bool m_elasticsearchConfigHasBeenSet;
+
+    OpenSearchServiceDataSourceConfig m_openSearchServiceConfig;
+    bool m_openSearchServiceConfigHasBeenSet;
 
     HttpDataSourceConfig m_httpConfig;
     bool m_httpConfigHasBeenSet;

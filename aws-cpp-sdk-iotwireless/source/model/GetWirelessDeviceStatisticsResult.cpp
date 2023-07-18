@@ -46,6 +46,12 @@ GetWirelessDeviceStatisticsResult& GetWirelessDeviceStatisticsResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("Sidewalk"))
+  {
+    m_sidewalk = jsonValue.GetObject("Sidewalk");
+
+  }
+
 
 
   return *this;

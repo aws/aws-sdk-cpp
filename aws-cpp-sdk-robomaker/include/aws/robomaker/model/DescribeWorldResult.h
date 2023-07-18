@@ -247,6 +247,49 @@ namespace Model
      */
     inline DescribeWorldResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Returns the JSON formatted string that describes the contents of your
+     * world.</p>
+     */
+    inline const Aws::String& GetWorldDescriptionBody() const{ return m_worldDescriptionBody; }
+
+    /**
+     * <p>Returns the JSON formatted string that describes the contents of your
+     * world.</p>
+     */
+    inline void SetWorldDescriptionBody(const Aws::String& value) { m_worldDescriptionBody = value; }
+
+    /**
+     * <p>Returns the JSON formatted string that describes the contents of your
+     * world.</p>
+     */
+    inline void SetWorldDescriptionBody(Aws::String&& value) { m_worldDescriptionBody = std::move(value); }
+
+    /**
+     * <p>Returns the JSON formatted string that describes the contents of your
+     * world.</p>
+     */
+    inline void SetWorldDescriptionBody(const char* value) { m_worldDescriptionBody.assign(value); }
+
+    /**
+     * <p>Returns the JSON formatted string that describes the contents of your
+     * world.</p>
+     */
+    inline DescribeWorldResult& WithWorldDescriptionBody(const Aws::String& value) { SetWorldDescriptionBody(value); return *this;}
+
+    /**
+     * <p>Returns the JSON formatted string that describes the contents of your
+     * world.</p>
+     */
+    inline DescribeWorldResult& WithWorldDescriptionBody(Aws::String&& value) { SetWorldDescriptionBody(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the JSON formatted string that describes the contents of your
+     * world.</p>
+     */
+    inline DescribeWorldResult& WithWorldDescriptionBody(const char* value) { SetWorldDescriptionBody(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -258,6 +301,8 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_worldDescriptionBody;
   };
 
 } // namespace Model

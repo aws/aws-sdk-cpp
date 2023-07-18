@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>The maximum number of
      * <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-     * If you do not specify a number, AWS Config uses the default. The default is 100.
+     * If you do not specify a number, Config uses the default. The default is 100.
      * </p>
      */
     inline int GetLimit() const{ return m_limit; }
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>The maximum number of
      * <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-     * If you do not specify a number, AWS Config uses the default. The default is 100.
+     * If you do not specify a number, Config uses the default. The default is 100.
      * </p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>The maximum number of
      * <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-     * If you do not specify a number, AWS Config uses the default. The default is 100.
+     * If you do not specify a number, Config uses the default. The default is 100.
      * </p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>The maximum number of
      * <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-     * If you do not specify a number, AWS Config uses the default. The default is 100.
+     * If you do not specify a number, Config uses the default. The default is 100.
      * </p>
      */
     inline GetOrganizationConformancePackDetailedStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}

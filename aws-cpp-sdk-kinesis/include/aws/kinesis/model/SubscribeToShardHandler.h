@@ -31,7 +31,7 @@ namespace Model
 
     public:
         SubscribeToShardHandler();
-        SubscribeToShardHandler& operator=(const SubscribeToShardHandler& handler) = default;
+        SubscribeToShardHandler& operator=(const SubscribeToShardHandler&) = default;
 
         virtual void OnEvent() override;
 

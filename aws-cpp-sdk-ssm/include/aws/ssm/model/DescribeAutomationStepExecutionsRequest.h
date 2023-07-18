@@ -213,26 +213,26 @@ namespace Model
 
 
     /**
-     * <p>A boolean that indicates whether to list step executions in reverse order by
-     * start time. The default value is false.</p>
+     * <p>Indicates whether to list step executions in reverse order by start time. The
+     * default value is 'false'.</p>
      */
     inline bool GetReverseOrder() const{ return m_reverseOrder; }
 
     /**
-     * <p>A boolean that indicates whether to list step executions in reverse order by
-     * start time. The default value is false.</p>
+     * <p>Indicates whether to list step executions in reverse order by start time. The
+     * default value is 'false'.</p>
      */
     inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
 
     /**
-     * <p>A boolean that indicates whether to list step executions in reverse order by
-     * start time. The default value is false.</p>
+     * <p>Indicates whether to list step executions in reverse order by start time. The
+     * default value is 'false'.</p>
      */
     inline void SetReverseOrder(bool value) { m_reverseOrderHasBeenSet = true; m_reverseOrder = value; }
 
     /**
-     * <p>A boolean that indicates whether to list step executions in reverse order by
-     * start time. The default value is false.</p>
+     * <p>Indicates whether to list step executions in reverse order by start time. The
+     * default value is 'false'.</p>
      */
     inline DescribeAutomationStepExecutionsRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
 

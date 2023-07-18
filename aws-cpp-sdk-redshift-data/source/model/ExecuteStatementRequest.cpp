@@ -16,6 +16,7 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_clusterIdentifierHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_sqlHasBeenSet(false),
     m_statementNameHasBeenSet(false),
@@ -43,6 +44,17 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
   if(m_dbUserHasBeenSet)
   {
    payload.WithString("DbUser", m_dbUser);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   Array<JsonValue> parametersJsonList(m_parameters.size());
+   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+   {
+     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+   }
+   payload.WithArray("Parameters", std::move(parametersJsonList));
 
   }
 

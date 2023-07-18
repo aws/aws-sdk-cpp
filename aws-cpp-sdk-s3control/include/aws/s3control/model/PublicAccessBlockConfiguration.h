@@ -26,9 +26,8 @@ namespace Model
    * combination. For more information about when Amazon S3 considers a bucket or
    * object public, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-   * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
-   * Guide</i>.</p> <p>This is not supported for Amazon S3 on Outposts.</p><p><h3>See
-   * Also:</h3>   <a
+   * Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This is not
+   * supported for Amazon S3 on Outposts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PublicAccessBlockConfiguration">AWS
    * API Reference</a></p>
    */
@@ -172,7 +171,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to
@@ -184,7 +183,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to
@@ -196,7 +195,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to
@@ -208,7 +207,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to

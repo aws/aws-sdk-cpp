@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/Scram.h>
+#include <aws/kafka/model/Iam.h>
 #include <utility>
 
 namespace Aws
@@ -82,10 +83,56 @@ namespace Model
      */
     inline Sasl& WithScram(Scram&& value) { SetScram(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Indicates whether IAM access control is enabled.</p>
+         
+     */
+    inline const Iam& GetIam() const{ return m_iam; }
+
+    /**
+     * 
+            <p>Indicates whether IAM access control is enabled.</p>
+         
+     */
+    inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
+
+    /**
+     * 
+            <p>Indicates whether IAM access control is enabled.</p>
+         
+     */
+    inline void SetIam(const Iam& value) { m_iamHasBeenSet = true; m_iam = value; }
+
+    /**
+     * 
+            <p>Indicates whether IAM access control is enabled.</p>
+         
+     */
+    inline void SetIam(Iam&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
+
+    /**
+     * 
+            <p>Indicates whether IAM access control is enabled.</p>
+         
+     */
+    inline Sasl& WithIam(const Iam& value) { SetIam(value); return *this;}
+
+    /**
+     * 
+            <p>Indicates whether IAM access control is enabled.</p>
+         
+     */
+    inline Sasl& WithIam(Iam&& value) { SetIam(std::move(value)); return *this;}
+
   private:
 
     Scram m_scram;
     bool m_scramHasBeenSet;
+
+    Iam m_iam;
+    bool m_iamHasBeenSet;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Violations for network interfaces associated with an EC2
+   * <p>Violation detail for network interfaces associated with an EC2
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AwsEc2NetworkInterfaceViolation">AWS
    * API Reference</a></p>
@@ -81,56 +81,56 @@ namespace Model
 
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline const Aws::Vector<Aws::String>& GetViolatingSecurityGroups() const{ return m_violatingSecurityGroups; }
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline bool ViolatingSecurityGroupsHasBeenSet() const { return m_violatingSecurityGroupsHasBeenSet; }
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline void SetViolatingSecurityGroups(const Aws::Vector<Aws::String>& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups = value; }
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline void SetViolatingSecurityGroups(Aws::Vector<Aws::String>&& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups = std::move(value); }
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline AwsEc2NetworkInterfaceViolation& WithViolatingSecurityGroups(const Aws::Vector<Aws::String>& value) { SetViolatingSecurityGroups(value); return *this;}
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline AwsEc2NetworkInterfaceViolation& WithViolatingSecurityGroups(Aws::Vector<Aws::String>&& value) { SetViolatingSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline AwsEc2NetworkInterfaceViolation& AddViolatingSecurityGroups(const Aws::String& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline AwsEc2NetworkInterfaceViolation& AddViolatingSecurityGroups(Aws::String&& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of security groups that violate the rules specified in the master
-     * security group of the AWS Firewall Manager policy.</p>
+     * <p>List of security groups that violate the rules specified in the primary
+     * security group of the Firewall Manager policy.</p>
      */
     inline AwsEc2NetworkInterfaceViolation& AddViolatingSecurityGroups(const char* value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups.push_back(value); return *this; }
 

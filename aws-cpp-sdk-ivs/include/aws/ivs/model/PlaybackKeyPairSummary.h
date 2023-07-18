@@ -80,121 +80,121 @@ namespace Model
 
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline PlaybackKeyPairSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline PlaybackKeyPairSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline PlaybackKeyPairSummary& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
-     * </p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string
+     * (key:value)</code>.</p>
      */
     inline PlaybackKeyPairSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

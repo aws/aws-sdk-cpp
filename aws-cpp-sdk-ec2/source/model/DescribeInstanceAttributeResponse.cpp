@@ -136,6 +136,11 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
     {
       m_userData = userDataNode;
     }
+    XmlNode disableApiStopNode = resultNode.FirstChild("disableApiStop");
+    if(!disableApiStopNode.IsNull())
+    {
+      m_disableApiStop = disableApiStopNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

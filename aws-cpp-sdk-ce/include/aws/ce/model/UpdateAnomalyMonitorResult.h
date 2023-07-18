@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p> A cost anomaly monitor ARN. </p>
+     * <p>A cost anomaly monitor ARN. </p>
      */
     inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
 
     /**
-     * <p> A cost anomaly monitor ARN. </p>
+     * <p>A cost anomaly monitor ARN. </p>
      */
     inline void SetMonitorArn(const Aws::String& value) { m_monitorArn = value; }
 
     /**
-     * <p> A cost anomaly monitor ARN. </p>
+     * <p>A cost anomaly monitor ARN. </p>
      */
     inline void SetMonitorArn(Aws::String&& value) { m_monitorArn = std::move(value); }
 
     /**
-     * <p> A cost anomaly monitor ARN. </p>
+     * <p>A cost anomaly monitor ARN. </p>
      */
     inline void SetMonitorArn(const char* value) { m_monitorArn.assign(value); }
 
     /**
-     * <p> A cost anomaly monitor ARN. </p>
+     * <p>A cost anomaly monitor ARN. </p>
      */
     inline UpdateAnomalyMonitorResult& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
 
     /**
-     * <p> A cost anomaly monitor ARN. </p>
+     * <p>A cost anomaly monitor ARN. </p>
      */
     inline UpdateAnomalyMonitorResult& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
 
     /**
-     * <p> A cost anomaly monitor ARN. </p>
+     * <p>A cost anomaly monitor ARN. </p>
      */
     inline UpdateAnomalyMonitorResult& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
 

@@ -8,6 +8,8 @@
 #include <aws/personalize/PersonalizeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/SolutionConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -259,56 +261,72 @@ namespace Model
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline CreateSolutionRequest& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline CreateSolutionRequest& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
      * <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema
      * field), this parameter specifies which event type (for example, 'click' or
-     * 'like') is used for training the model.</p>
+     * 'like') is used for training the model.</p> <p>If you do not provide an
+     * <code>eventType</code>, Amazon Personalize will use all interactions for
+     * training with equal weight regardless of type.</p>
      */
     inline CreateSolutionRequest& WithEventType(const char* value) { SetEventType(value); return *this;}
 
@@ -316,44 +334,107 @@ namespace Model
     /**
      * <p>The configuration to use with the solution. When <code>performAutoML</code>
      * is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code>
-     * section of the solution configuration.</p>
+     * section of the solution configuration.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline const SolutionConfig& GetSolutionConfig() const{ return m_solutionConfig; }
 
     /**
      * <p>The configuration to use with the solution. When <code>performAutoML</code>
      * is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code>
-     * section of the solution configuration.</p>
+     * section of the solution configuration.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline bool SolutionConfigHasBeenSet() const { return m_solutionConfigHasBeenSet; }
 
     /**
      * <p>The configuration to use with the solution. When <code>performAutoML</code>
      * is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code>
-     * section of the solution configuration.</p>
+     * section of the solution configuration.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline void SetSolutionConfig(const SolutionConfig& value) { m_solutionConfigHasBeenSet = true; m_solutionConfig = value; }
 
     /**
      * <p>The configuration to use with the solution. When <code>performAutoML</code>
      * is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code>
-     * section of the solution configuration.</p>
+     * section of the solution configuration.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline void SetSolutionConfig(SolutionConfig&& value) { m_solutionConfigHasBeenSet = true; m_solutionConfig = std::move(value); }
 
     /**
      * <p>The configuration to use with the solution. When <code>performAutoML</code>
      * is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code>
-     * section of the solution configuration.</p>
+     * section of the solution configuration.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline CreateSolutionRequest& WithSolutionConfig(const SolutionConfig& value) { SetSolutionConfig(value); return *this;}
 
     /**
      * <p>The configuration to use with the solution. When <code>performAutoML</code>
      * is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code>
-     * section of the solution configuration.</p>
+     * section of the solution configuration.</p>  <p>Amazon Personalize doesn't
+     * support configuring the <code>hpoObjective</code> at this time.</p> 
      */
     inline CreateSolutionRequest& WithSolutionConfig(SolutionConfig&& value) { SetSolutionConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline CreateSolutionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline CreateSolutionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline CreateSolutionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution.</p>
+     */
+    inline CreateSolutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -377,6 +458,9 @@ namespace Model
 
     SolutionConfig m_solutionConfig;
     bool m_solutionConfigHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

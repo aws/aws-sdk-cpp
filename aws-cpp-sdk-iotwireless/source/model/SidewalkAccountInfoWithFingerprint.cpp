@@ -20,13 +20,15 @@ namespace Model
 
 SidewalkAccountInfoWithFingerprint::SidewalkAccountInfoWithFingerprint() : 
     m_amazonIdHasBeenSet(false),
-    m_appServerPrivateKeyHasBeenSet(false)
+    m_fingerprintHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
 SidewalkAccountInfoWithFingerprint::SidewalkAccountInfoWithFingerprint(JsonView jsonValue) : 
     m_amazonIdHasBeenSet(false),
-    m_appServerPrivateKeyHasBeenSet(false)
+    m_fingerprintHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,11 +42,18 @@ SidewalkAccountInfoWithFingerprint& SidewalkAccountInfoWithFingerprint::operator
     m_amazonIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("AppServerPrivateKey"))
+  if(jsonValue.ValueExists("Fingerprint"))
   {
-    m_appServerPrivateKey = jsonValue.GetString("AppServerPrivateKey");
+    m_fingerprint = jsonValue.GetString("Fingerprint");
 
-    m_appServerPrivateKeyHasBeenSet = true;
+    m_fingerprintHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
   }
 
   return *this;
@@ -60,9 +69,15 @@ JsonValue SidewalkAccountInfoWithFingerprint::Jsonize() const
 
   }
 
-  if(m_appServerPrivateKeyHasBeenSet)
+  if(m_fingerprintHasBeenSet)
   {
-   payload.WithString("AppServerPrivateKey", m_appServerPrivateKey);
+   payload.WithString("Fingerprint", m_fingerprint);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

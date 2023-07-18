@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about a WAF WebACL.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about an WAF WebACL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafWebAclDetails">AWS
    * API Reference</a></p>
    */

@@ -40,7 +40,7 @@ namespace Model
      * <p>The start time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedStartTime</code> will be less than or equal to the value of the
-     * user-specified <code>StartTime</code>.</p>
+     * user-specified <code>StartTime</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetAlignedStartTime() const{ return m_alignedStartTime; }
 
@@ -48,7 +48,7 @@ namespace Model
      * <p>The start time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedStartTime</code> will be less than or equal to the value of the
-     * user-specified <code>StartTime</code>.</p>
+     * user-specified <code>StartTime</code>. </p>
      */
     inline void SetAlignedStartTime(const Aws::Utils::DateTime& value) { m_alignedStartTime = value; }
 
@@ -56,7 +56,7 @@ namespace Model
      * <p>The start time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedStartTime</code> will be less than or equal to the value of the
-     * user-specified <code>StartTime</code>.</p>
+     * user-specified <code>StartTime</code>. </p>
      */
     inline void SetAlignedStartTime(Aws::Utils::DateTime&& value) { m_alignedStartTime = std::move(value); }
 
@@ -64,7 +64,7 @@ namespace Model
      * <p>The start time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedStartTime</code> will be less than or equal to the value of the
-     * user-specified <code>StartTime</code>.</p>
+     * user-specified <code>StartTime</code>. </p>
      */
     inline DescribeDimensionKeysResult& WithAlignedStartTime(const Aws::Utils::DateTime& value) { SetAlignedStartTime(value); return *this;}
 
@@ -72,7 +72,7 @@ namespace Model
      * <p>The start time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedStartTime</code> will be less than or equal to the value of the
-     * user-specified <code>StartTime</code>.</p>
+     * user-specified <code>StartTime</code>. </p>
      */
     inline DescribeDimensionKeysResult& WithAlignedStartTime(Aws::Utils::DateTime&& value) { SetAlignedStartTime(std::move(value)); return *this;}
 
@@ -81,7 +81,7 @@ namespace Model
      * <p>The end time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedEndTime</code> will be greater than or equal to the value of the
-     * user-specified <code>Endtime</code>.</p>
+     * user-specified <code>Endtime</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetAlignedEndTime() const{ return m_alignedEndTime; }
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>The end time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedEndTime</code> will be greater than or equal to the value of the
-     * user-specified <code>Endtime</code>.</p>
+     * user-specified <code>Endtime</code>. </p>
      */
     inline void SetAlignedEndTime(const Aws::Utils::DateTime& value) { m_alignedEndTime = value; }
 
@@ -97,7 +97,7 @@ namespace Model
      * <p>The end time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedEndTime</code> will be greater than or equal to the value of the
-     * user-specified <code>Endtime</code>.</p>
+     * user-specified <code>Endtime</code>. </p>
      */
     inline void SetAlignedEndTime(Aws::Utils::DateTime&& value) { m_alignedEndTime = std::move(value); }
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>The end time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedEndTime</code> will be greater than or equal to the value of the
-     * user-specified <code>Endtime</code>.</p>
+     * user-specified <code>Endtime</code>. </p>
      */
     inline DescribeDimensionKeysResult& WithAlignedEndTime(const Aws::Utils::DateTime& value) { SetAlignedEndTime(value); return *this;}
 
@@ -113,7 +113,7 @@ namespace Model
      * <p>The end time for the returned dimension keys, after alignment to a granular
      * boundary (as specified by <code>PeriodInSeconds</code>).
      * <code>AlignedEndTime</code> will be greater than or equal to the value of the
-     * user-specified <code>Endtime</code>.</p>
+     * user-specified <code>Endtime</code>. </p>
      */
     inline DescribeDimensionKeysResult& WithAlignedEndTime(Aws::Utils::DateTime&& value) { SetAlignedEndTime(std::move(value)); return *this;}
 
@@ -121,49 +121,49 @@ namespace Model
     /**
      * <p>If <code>PartitionBy</code> was present in the request,
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
-     * specified partitions.</p>
+     * specified partitions. </p>
      */
     inline const Aws::Vector<ResponsePartitionKey>& GetPartitionKeys() const{ return m_partitionKeys; }
 
     /**
      * <p>If <code>PartitionBy</code> was present in the request,
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
-     * specified partitions.</p>
+     * specified partitions. </p>
      */
     inline void SetPartitionKeys(const Aws::Vector<ResponsePartitionKey>& value) { m_partitionKeys = value; }
 
     /**
      * <p>If <code>PartitionBy</code> was present in the request,
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
-     * specified partitions.</p>
+     * specified partitions. </p>
      */
     inline void SetPartitionKeys(Aws::Vector<ResponsePartitionKey>&& value) { m_partitionKeys = std::move(value); }
 
     /**
      * <p>If <code>PartitionBy</code> was present in the request,
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
-     * specified partitions.</p>
+     * specified partitions. </p>
      */
     inline DescribeDimensionKeysResult& WithPartitionKeys(const Aws::Vector<ResponsePartitionKey>& value) { SetPartitionKeys(value); return *this;}
 
     /**
      * <p>If <code>PartitionBy</code> was present in the request,
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
-     * specified partitions.</p>
+     * specified partitions. </p>
      */
     inline DescribeDimensionKeysResult& WithPartitionKeys(Aws::Vector<ResponsePartitionKey>&& value) { SetPartitionKeys(std::move(value)); return *this;}
 
     /**
      * <p>If <code>PartitionBy</code> was present in the request,
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
-     * specified partitions.</p>
+     * specified partitions. </p>
      */
     inline DescribeDimensionKeysResult& AddPartitionKeys(const ResponsePartitionKey& value) { m_partitionKeys.push_back(value); return *this; }
 
     /**
      * <p>If <code>PartitionBy</code> was present in the request,
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
-     * specified partitions.</p>
+     * specified partitions. </p>
      */
     inline DescribeDimensionKeysResult& AddPartitionKeys(ResponsePartitionKey&& value) { m_partitionKeys.push_back(std::move(value)); return *this; }
 
@@ -205,51 +205,58 @@ namespace Model
 
 
     /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * <p>A pagination token that indicates the response didn’t return all available
+     * records because <code>MaxRecords</code> was specified in the previous request.
+     * To get the remaining records, specify <code>NextToken</code> in a separate
+     * request with this value. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * <p>A pagination token that indicates the response didn’t return all available
+     * records because <code>MaxRecords</code> was specified in the previous request.
+     * To get the remaining records, specify <code>NextToken</code> in a separate
+     * request with this value. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * <p>A pagination token that indicates the response didn’t return all available
+     * records because <code>MaxRecords</code> was specified in the previous request.
+     * To get the remaining records, specify <code>NextToken</code> in a separate
+     * request with this value. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * <p>A pagination token that indicates the response didn’t return all available
+     * records because <code>MaxRecords</code> was specified in the previous request.
+     * To get the remaining records, specify <code>NextToken</code> in a separate
+     * request with this value. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * <p>A pagination token that indicates the response didn’t return all available
+     * records because <code>MaxRecords</code> was specified in the previous request.
+     * To get the remaining records, specify <code>NextToken</code> in a separate
+     * request with this value. </p>
      */
     inline DescribeDimensionKeysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * <p>A pagination token that indicates the response didn’t return all available
+     * records because <code>MaxRecords</code> was specified in the previous request.
+     * To get the remaining records, specify <code>NextToken</code> in a separate
+     * request with this value. </p>
      */
     inline DescribeDimensionKeysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * <p>A pagination token that indicates the response didn’t return all available
+     * records because <code>MaxRecords</code> was specified in the previous request.
+     * To get the remaining records, specify <code>NextToken</code> in a separate
+     * request with this value. </p>
      */
     inline DescribeDimensionKeysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

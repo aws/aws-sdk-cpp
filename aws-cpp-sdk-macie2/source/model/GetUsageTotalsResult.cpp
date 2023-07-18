@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetUsageTotalsResult::GetUsageTotalsResult()
+GetUsageTotalsResult::GetUsageTotalsResult() : 
+    m_timeRange(TimeRange::NOT_SET)
 {
 }
 
-GetUsageTotalsResult::GetUsageTotalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetUsageTotalsResult::GetUsageTotalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_timeRange(TimeRange::NOT_SET)
 {
   *this = result;
 }
@@ -28,6 +30,12 @@ GetUsageTotalsResult::GetUsageTotalsResult(const Aws::AmazonWebServiceResult<Jso
 GetUsageTotalsResult& GetUsageTotalsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("timeRange"))
+  {
+    m_timeRange = TimeRangeMapper::GetTimeRangeForName(jsonValue.GetString("timeRange"));
+
+  }
+
   if(jsonValue.ValueExists("usageTotals"))
   {
     Array<JsonView> usageTotalsJsonList = jsonValue.GetArray("usageTotals");

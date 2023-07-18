@@ -71,37 +71,6 @@ namespace Model
 
 
     /**
-     * <p>Gets the secondary device for suite run.</p>
-     */
-    inline const DeviceUnderTest& GetSecondaryDevice() const{ return m_secondaryDevice; }
-
-    /**
-     * <p>Gets the secondary device for suite run.</p>
-     */
-    inline bool SecondaryDeviceHasBeenSet() const { return m_secondaryDeviceHasBeenSet; }
-
-    /**
-     * <p>Gets the secondary device for suite run.</p>
-     */
-    inline void SetSecondaryDevice(const DeviceUnderTest& value) { m_secondaryDeviceHasBeenSet = true; m_secondaryDevice = value; }
-
-    /**
-     * <p>Gets the secondary device for suite run.</p>
-     */
-    inline void SetSecondaryDevice(DeviceUnderTest&& value) { m_secondaryDeviceHasBeenSet = true; m_secondaryDevice = std::move(value); }
-
-    /**
-     * <p>Gets the secondary device for suite run.</p>
-     */
-    inline SuiteRunConfiguration& WithSecondaryDevice(const DeviceUnderTest& value) { SetSecondaryDevice(value); return *this;}
-
-    /**
-     * <p>Gets the secondary device for suite run.</p>
-     */
-    inline SuiteRunConfiguration& WithSecondaryDevice(DeviceUnderTest&& value) { SetSecondaryDevice(std::move(value)); return *this;}
-
-
-    /**
      * <p>Gets test case list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSelectedTestList() const{ return m_selectedTestList; }
@@ -146,16 +115,37 @@ namespace Model
      */
     inline SuiteRunConfiguration& AddSelectedTestList(const char* value) { m_selectedTestListHasBeenSet = true; m_selectedTestList.push_back(value); return *this; }
 
+
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
+    inline bool GetParallelRun() const{ return m_parallelRun; }
+
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
+    inline bool ParallelRunHasBeenSet() const { return m_parallelRunHasBeenSet; }
+
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
+    inline void SetParallelRun(bool value) { m_parallelRunHasBeenSet = true; m_parallelRun = value; }
+
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
+    inline SuiteRunConfiguration& WithParallelRun(bool value) { SetParallelRun(value); return *this;}
+
   private:
 
     DeviceUnderTest m_primaryDevice;
     bool m_primaryDeviceHasBeenSet;
 
-    DeviceUnderTest m_secondaryDevice;
-    bool m_secondaryDeviceHasBeenSet;
-
     Aws::Vector<Aws::String> m_selectedTestList;
     bool m_selectedTestListHasBeenSet;
+
+    bool m_parallelRun;
+    bool m_parallelRunHasBeenSet;
   };
 
 } // namespace Model

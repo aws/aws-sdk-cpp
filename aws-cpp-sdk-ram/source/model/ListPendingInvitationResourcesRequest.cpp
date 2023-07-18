@@ -16,7 +16,9 @@ ListPendingInvitationResourcesRequest::ListPendingInvitationResourcesRequest() :
     m_resourceShareInvitationArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_resourceRegionScope(ResourceRegionScopeFilter::NOT_SET),
+    m_resourceRegionScopeHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,11 @@ Aws::String ListPendingInvitationResourcesRequest::SerializePayload() const
   {
    payload.WithInteger("maxResults", m_maxResults);
 
+  }
+
+  if(m_resourceRegionScopeHasBeenSet)
+  {
+   payload.WithString("resourceRegionScope", ResourceRegionScopeFilterMapper::GetNameForResourceRegionScopeFilter(m_resourceRegionScope));
   }
 
   return payload.View().WriteReadable();

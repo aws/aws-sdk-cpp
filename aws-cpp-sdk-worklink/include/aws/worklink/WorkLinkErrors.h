@@ -47,11 +47,7 @@ enum class WorkLinkErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INVALID_REQUEST,
-  RESOURCE_ALREADY_EXISTS,
-  TOO_MANY_REQUESTS,
-  UNAUTHORIZED
+
 };
 
 class AWS_WORKLINK_API WorkLinkError : public Aws::Client::AWSError<WorkLinkErrors>

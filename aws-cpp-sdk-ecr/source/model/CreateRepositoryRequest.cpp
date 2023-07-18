@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateRepositoryRequest::CreateRepositoryRequest() : 
+    m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_imageTagMutability(ImageTagMutability::NOT_SET),
@@ -25,6 +26,12 @@ CreateRepositoryRequest::CreateRepositoryRequest() :
 Aws::String CreateRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_registryIdHasBeenSet)
+  {
+   payload.WithString("registryId", m_registryId);
+
+  }
 
   if(m_repositoryNameHasBeenSet)
   {

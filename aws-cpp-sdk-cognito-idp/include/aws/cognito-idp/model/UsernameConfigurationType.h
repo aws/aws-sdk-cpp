@@ -36,62 +36,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
-     * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
-     * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
-     * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
-     * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
-     * insensitivity for all username input. For example, when this option is set to
-     * <code>False</code>, users will be able to sign in using either "username" or
-     * "Username". This option also enables both <code>preferred_username</code> and
-     * <code>email</code> alias to be case insensitive, in addition to the
-     * <code>username</code> attribute.</p> </li> </ul>
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
+     * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
+     * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
+     * option is set to <code>True</code>, users must sign in using the exact
+     * capitalization of their given username, such as “UserName”. This is the default
+     * value.</p> </dd> <dt>False</dt> <dd> <p>Enables case insensitivity for all
+     * username input. For example, when this option is set to <code>False</code>,
+     * users can sign in using either "username" or "Username". This option also
+     * enables both <code>preferred_username</code> and <code>email</code> alias to be
+     * case insensitive, in addition to the <code>username</code> attribute.</p> </dd>
+     * </dl>
      */
     inline bool GetCaseSensitive() const{ return m_caseSensitive; }
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
-     * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
-     * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
-     * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
-     * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
-     * insensitivity for all username input. For example, when this option is set to
-     * <code>False</code>, users will be able to sign in using either "username" or
-     * "Username". This option also enables both <code>preferred_username</code> and
-     * <code>email</code> alias to be case insensitive, in addition to the
-     * <code>username</code> attribute.</p> </li> </ul>
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
+     * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
+     * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
+     * option is set to <code>True</code>, users must sign in using the exact
+     * capitalization of their given username, such as “UserName”. This is the default
+     * value.</p> </dd> <dt>False</dt> <dd> <p>Enables case insensitivity for all
+     * username input. For example, when this option is set to <code>False</code>,
+     * users can sign in using either "username" or "Username". This option also
+     * enables both <code>preferred_username</code> and <code>email</code> alias to be
+     * case insensitive, in addition to the <code>username</code> attribute.</p> </dd>
+     * </dl>
      */
     inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
-     * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
-     * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
-     * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
-     * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
-     * insensitivity for all username input. For example, when this option is set to
-     * <code>False</code>, users will be able to sign in using either "username" or
-     * "Username". This option also enables both <code>preferred_username</code> and
-     * <code>email</code> alias to be case insensitive, in addition to the
-     * <code>username</code> attribute.</p> </li> </ul>
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
+     * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
+     * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
+     * option is set to <code>True</code>, users must sign in using the exact
+     * capitalization of their given username, such as “UserName”. This is the default
+     * value.</p> </dd> <dt>False</dt> <dd> <p>Enables case insensitivity for all
+     * username input. For example, when this option is set to <code>False</code>,
+     * users can sign in using either "username" or "Username". This option also
+     * enables both <code>preferred_username</code> and <code>email</code> alias to be
+     * case insensitive, in addition to the <code>username</code> attribute.</p> </dd>
+     * </dl>
      */
     inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
-     * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
-     * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
-     * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
-     * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
-     * insensitivity for all username input. For example, when this option is set to
-     * <code>False</code>, users will be able to sign in using either "username" or
-     * "Username". This option also enables both <code>preferred_username</code> and
-     * <code>email</code> alias to be case insensitive, in addition to the
-     * <code>username</code> attribute.</p> </li> </ul>
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
+     * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
+     * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
+     * option is set to <code>True</code>, users must sign in using the exact
+     * capitalization of their given username, such as “UserName”. This is the default
+     * value.</p> </dd> <dt>False</dt> <dd> <p>Enables case insensitivity for all
+     * username input. For example, when this option is set to <code>False</code>,
+     * users can sign in using either "username" or "Username". This option also
+     * enables both <code>preferred_username</code> and <code>email</code> alias to be
+     * case insensitive, in addition to the <code>username</code> attribute.</p> </dd>
+     * </dl>
      */
     inline UsernameConfigurationType& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
 

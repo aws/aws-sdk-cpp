@@ -80,42 +80,90 @@ namespace Model
 
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline RecommendationRelatedAnomalyResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline RecommendationRelatedAnomalyResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p> The type of the resource. </p>
+     * <p> The type of the resource. Resource types take the same form that is used by
+     * Amazon Web Services CloudFormation resource type identifiers,
+     * <code>service-provider::service-name::data-type-name</code>. For example,
+     * <code>AWS::RDS::DBCluster</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>Amazon Web
+     * Services CloudFormation User Guide</i>.</p>
      */
     inline RecommendationRelatedAnomalyResource& WithType(const char* value) { SetType(value); return *this;}
 

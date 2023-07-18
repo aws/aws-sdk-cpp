@@ -34,7 +34,8 @@ namespace Model
     Alarm,
     ContactMethod,
     Distribution,
-    Certificate
+    Certificate,
+    Bucket
   };
 
 namespace ResourceTypeMapper

@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline AdminSetUserPasswordRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline AdminSetUserPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user whose password you wish to set.</p>
+     * <p>The user name of the user whose password you want to set.</p>
      */
     inline AdminSetUserPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

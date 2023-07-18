@@ -34,53 +34,53 @@ namespace Model
 
 
     /**
-     * <p>Returns a message stating that your Reource Policy passed validation. </p>
+     * <p>True if your policy passes validation, otherwise false.</p>
      */
     inline bool GetPolicyValidationPassed() const{ return m_policyValidationPassed; }
 
     /**
-     * <p>Returns a message stating that your Reource Policy passed validation. </p>
+     * <p>True if your policy passes validation, otherwise false.</p>
      */
     inline void SetPolicyValidationPassed(bool value) { m_policyValidationPassed = value; }
 
     /**
-     * <p>Returns a message stating that your Reource Policy passed validation. </p>
+     * <p>True if your policy passes validation, otherwise false.</p>
      */
     inline ValidateResourcePolicyResult& WithPolicyValidationPassed(bool value) { SetPolicyValidationPassed(value); return *this;}
 
 
     /**
-     * <p>Returns an error message if your policy doesn't pass validatation.</p>
+     * <p>Validation errors if your policy didn't pass validation.</p>
      */
     inline const Aws::Vector<ValidationErrorsEntry>& GetValidationErrors() const{ return m_validationErrors; }
 
     /**
-     * <p>Returns an error message if your policy doesn't pass validatation.</p>
+     * <p>Validation errors if your policy didn't pass validation.</p>
      */
     inline void SetValidationErrors(const Aws::Vector<ValidationErrorsEntry>& value) { m_validationErrors = value; }
 
     /**
-     * <p>Returns an error message if your policy doesn't pass validatation.</p>
+     * <p>Validation errors if your policy didn't pass validation.</p>
      */
     inline void SetValidationErrors(Aws::Vector<ValidationErrorsEntry>&& value) { m_validationErrors = std::move(value); }
 
     /**
-     * <p>Returns an error message if your policy doesn't pass validatation.</p>
+     * <p>Validation errors if your policy didn't pass validation.</p>
      */
     inline ValidateResourcePolicyResult& WithValidationErrors(const Aws::Vector<ValidationErrorsEntry>& value) { SetValidationErrors(value); return *this;}
 
     /**
-     * <p>Returns an error message if your policy doesn't pass validatation.</p>
+     * <p>Validation errors if your policy didn't pass validation.</p>
      */
     inline ValidateResourcePolicyResult& WithValidationErrors(Aws::Vector<ValidationErrorsEntry>&& value) { SetValidationErrors(std::move(value)); return *this;}
 
     /**
-     * <p>Returns an error message if your policy doesn't pass validatation.</p>
+     * <p>Validation errors if your policy didn't pass validation.</p>
      */
     inline ValidateResourcePolicyResult& AddValidationErrors(const ValidationErrorsEntry& value) { m_validationErrors.push_back(value); return *this; }
 
     /**
-     * <p>Returns an error message if your policy doesn't pass validatation.</p>
+     * <p>Validation errors if your policy didn't pass validation.</p>
      */
     inline ValidateResourcePolicyResult& AddValidationErrors(ValidationErrorsEntry&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
 

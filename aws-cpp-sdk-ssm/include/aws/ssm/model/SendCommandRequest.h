@@ -41,380 +41,452 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline SendCommandRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline SendCommandRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The name of the Systems Manager document to run. This can be a
-     * public document or a custom document.</p>
+     * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
+     * to run. This can be a public document or a custom document. To run a shared
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline SendCommandRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline SendCommandRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline SendCommandRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the Command
+     * Line Interface (Amazon Web Services CLI), then you must escape the first two
+     * options by using a backslash. If you specify a version number, then you don't
+     * need to use the backslash. For example:</p> <p>--document-version
+     * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
+     * "3"</p>
      */
     inline SendCommandRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
@@ -500,26 +572,26 @@ namespace Model
 
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run.</p>
      */
     inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run.</p>
      */
     inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run.</p>
      */
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run.</p>
      */
     inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
@@ -636,57 +708,57 @@ namespace Model
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
@@ -790,220 +862,244 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
-     * such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a
+     * such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of MaxErrors, the systems stops
-     * sending the command to additional targets. You can specify a number like 10 or a
-     * percentage like 10%. The default value is 0. For more information about how to
-     * use MaxErrors, see <a
+     * command fails one more time beyond the value of <code>MaxErrors</code>, the
+     * systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>.
+     * For more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * error controls</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for Run Command commands.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) service role to use to
+     * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
+     * Command commands.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -1040,38 +1136,44 @@ namespace Model
 
 
     /**
-     * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
-     * </p>
+     * <p>Enables Amazon Web Services Systems Manager to send Run Command output to
+     * Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services
+     * Systems Manager.</p>
      */
     inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
 
     /**
-     * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
-     * </p>
+     * <p>Enables Amazon Web Services Systems Manager to send Run Command output to
+     * Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services
+     * Systems Manager.</p>
      */
     inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }
 
     /**
-     * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
-     * </p>
+     * <p>Enables Amazon Web Services Systems Manager to send Run Command output to
+     * Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services
+     * Systems Manager.</p>
      */
     inline void SetCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = value; }
 
     /**
-     * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
-     * </p>
+     * <p>Enables Amazon Web Services Systems Manager to send Run Command output to
+     * Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services
+     * Systems Manager.</p>
      */
     inline void SetCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = std::move(value); }
 
     /**
-     * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
-     * </p>
+     * <p>Enables Amazon Web Services Systems Manager to send Run Command output to
+     * Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services
+     * Systems Manager.</p>
      */
     inline SendCommandRequest& WithCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { SetCloudWatchOutputConfig(value); return *this;}
 
     /**
-     * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
-     * </p>
+     * <p>Enables Amazon Web Services Systems Manager to send Run Command output to
+     * Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services
+     * Systems Manager.</p>
      */
     inline SendCommandRequest& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
 

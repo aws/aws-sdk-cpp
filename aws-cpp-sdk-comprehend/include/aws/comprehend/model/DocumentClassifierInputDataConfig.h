@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>The input properties for training a document classifier. </p> <p>For more
-   * information on how the input file is formatted, see
-   * <a>how-document-classification-training-data</a>. </p><p><h3>See Also:</h3>   <a
+   * information on how the input file is formatted, see <a>prep-classifier-data</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierInputDataConfig">AWS
    * API Reference</a></p>
    */
@@ -231,6 +231,71 @@ namespace Model
 
 
     /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
+
+    /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
+
+    /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
+
+    /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline DocumentClassifierInputDataConfig& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline DocumentClassifierInputDataConfig& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
+     * same AWS Region as the API endpoint that you are calling. The URI can point to a
+     * single input file or it can provide the prefix for a collection of input files.
+     * </p>
+     */
+    inline DocumentClassifierInputDataConfig& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
+
+
+    /**
      * <p>Indicates the delimiter used to separate each label for training a
      * multi-label classifier. The default delimiter between labels is a pipe (|). You
      * can use a different character as a delimiter (if it's an allowed character) by
@@ -390,6 +455,9 @@ namespace Model
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet;
+
+    Aws::String m_testS3Uri;
+    bool m_testS3UriHasBeenSet;
 
     Aws::String m_labelDelimiter;
     bool m_labelDelimiterHasBeenSet;

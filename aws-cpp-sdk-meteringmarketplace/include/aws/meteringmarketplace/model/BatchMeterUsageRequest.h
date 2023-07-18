@@ -19,8 +19,9 @@ namespace Model
 {
 
   /**
-   * <p>A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of
-   * usage within your application.</p><p><h3>See Also:</h3>   <a
+   * <p>A <code>BatchMeterUsageRequest</code> contains <code>UsageRecords</code>,
+   * which indicate quantities of usage within your application.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsageRequest">AWS
    * API Reference</a></p>
    */
@@ -41,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline const Aws::Vector<UsageRecord>& GetUsageRecords() const{ return m_usageRecords; }
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline bool UsageRecordsHasBeenSet() const { return m_usageRecordsHasBeenSet; }
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline void SetUsageRecords(const Aws::Vector<UsageRecord>& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = value; }
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline void SetUsageRecords(Aws::Vector<UsageRecord>&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = std::move(value); }
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline BatchMeterUsageRequest& WithUsageRecords(const Aws::Vector<UsageRecord>& value) { SetUsageRecords(value); return *this;}
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline BatchMeterUsageRequest& WithUsageRecords(Aws::Vector<UsageRecord>&& value) { SetUsageRecords(std::move(value)); return *this;}
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline BatchMeterUsageRequest& AddUsageRecords(const UsageRecord& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.push_back(value); return *this; }
 
     /**
-     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
-     * UsageRecords at a time.</p>
+     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
+     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline BatchMeterUsageRequest& AddUsageRecords(UsageRecord&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.push_back(std::move(value)); return *this; }
 

@@ -7,6 +7,7 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/SelfManagedActiveDirectoryConfigurationUpdates.h>
+#include <aws/fsx/model/WindowsAuditLogCreateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -276,6 +277,49 @@ namespace Model
      */
     inline UpdateFileSystemWindowsConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates&& value) { SetSelfManagedActiveDirectoryConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system..</p>
+     */
+    inline const WindowsAuditLogCreateConfiguration& GetAuditLogConfiguration() const{ return m_auditLogConfiguration; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system..</p>
+     */
+    inline bool AuditLogConfigurationHasBeenSet() const { return m_auditLogConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system..</p>
+     */
+    inline void SetAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = value; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system..</p>
+     */
+    inline void SetAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system..</p>
+     */
+    inline UpdateFileSystemWindowsConfiguration& WithAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { SetAuditLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system..</p>
+     */
+    inline UpdateFileSystemWindowsConfiguration& WithAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { SetAuditLogConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -292,6 +336,9 @@ namespace Model
 
     SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;
     bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+
+    WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
+    bool m_auditLogConfigurationHasBeenSet;
   };
 
 } // namespace Model

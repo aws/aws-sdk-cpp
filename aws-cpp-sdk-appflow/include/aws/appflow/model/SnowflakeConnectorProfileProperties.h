@@ -317,42 +317,42 @@ namespace Model
 
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline SnowflakeConnectorProfileProperties& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline SnowflakeConnectorProfileProperties& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS Region of the Snowflake account. </p>
+     * <p> The Amazon Web Services Region of the Snowflake account. </p>
      */
     inline SnowflakeConnectorProfileProperties& WithRegion(const char* value) { SetRegion(value); return *this;}
 

@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents all of the attributes of an AWS Glue DataBrew
-   * project.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents all of the attributes of a DataBrew project.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Project">AWS
    * API Reference</a></p>
    */
@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline Project& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline Project& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the project.</p>
+     * <p>The ID of the Amazon Web Services account that owns the project.</p>
      */
     inline Project& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -114,42 +114,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline Project& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline Project& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline Project& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -227,42 +227,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline Project& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline Project& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline Project& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
@@ -392,42 +392,42 @@ namespace Model
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline const Sample& GetSample() const{ return m_sample; }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline void SetSample(const Sample& value) { m_sampleHasBeenSet = true; m_sample = value; }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline void SetSample(Sample&& value) { m_sampleHasBeenSet = true; m_sample = std::move(value); }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline Project& WithSample(const Sample& value) { SetSample(value); return *this;}
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline Project& WithSample(Sample&& value) { SetSample(std::move(value)); return *this;}
@@ -549,49 +549,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline const Aws::String& GetOpenedBy() const{ return m_openedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline bool OpenedByHasBeenSet() const { return m_openedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline void SetOpenedBy(const Aws::String& value) { m_openedByHasBeenSet = true; m_openedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline void SetOpenedBy(Aws::String&& value) { m_openedByHasBeenSet = true; m_openedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline void SetOpenedBy(const char* value) { m_openedByHasBeenSet = true; m_openedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline Project& WithOpenedBy(const Aws::String& value) { SetOpenedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline Project& WithOpenedBy(Aws::String&& value) { SetOpenedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline Project& WithOpenedBy(const char* value) { SetOpenedBy(value); return *this;}

@@ -25,7 +25,9 @@ namespace Model
     DESCRIBE,
     CREATE_DATABASE,
     CREATE_TABLE,
-    DATA_LOCATION_ACCESS
+    DATA_LOCATION_ACCESS,
+    CREATE_TAG,
+    ASSOCIATE
   };
 
 namespace PermissionMapper

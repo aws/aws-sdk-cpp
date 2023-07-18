@@ -30,7 +30,27 @@ ConnectorConfiguration::ConnectorConfiguration() :
     m_isPrivateLinkEndpointUrlRequired(false),
     m_isPrivateLinkEndpointUrlRequiredHasBeenSet(false),
     m_supportedTriggerTypesHasBeenSet(false),
-    m_connectorMetadataHasBeenSet(false)
+    m_connectorMetadataHasBeenSet(false),
+    m_connectorType(ConnectorType::NOT_SET),
+    m_connectorTypeHasBeenSet(false),
+    m_connectorLabelHasBeenSet(false),
+    m_connectorDescriptionHasBeenSet(false),
+    m_connectorOwnerHasBeenSet(false),
+    m_connectorNameHasBeenSet(false),
+    m_connectorVersionHasBeenSet(false),
+    m_connectorArnHasBeenSet(false),
+    m_connectorModesHasBeenSet(false),
+    m_authenticationConfigHasBeenSet(false),
+    m_connectorRuntimeSettingsHasBeenSet(false),
+    m_supportedApiVersionsHasBeenSet(false),
+    m_supportedOperatorsHasBeenSet(false),
+    m_supportedWriteOperationsHasBeenSet(false),
+    m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
+    m_connectorProvisioningTypeHasBeenSet(false),
+    m_connectorProvisioningConfigHasBeenSet(false),
+    m_logoURLHasBeenSet(false),
+    m_registeredAtHasBeenSet(false),
+    m_registeredByHasBeenSet(false)
 {
 }
 
@@ -46,7 +66,27 @@ ConnectorConfiguration::ConnectorConfiguration(JsonView jsonValue) :
     m_isPrivateLinkEndpointUrlRequired(false),
     m_isPrivateLinkEndpointUrlRequiredHasBeenSet(false),
     m_supportedTriggerTypesHasBeenSet(false),
-    m_connectorMetadataHasBeenSet(false)
+    m_connectorMetadataHasBeenSet(false),
+    m_connectorType(ConnectorType::NOT_SET),
+    m_connectorTypeHasBeenSet(false),
+    m_connectorLabelHasBeenSet(false),
+    m_connectorDescriptionHasBeenSet(false),
+    m_connectorOwnerHasBeenSet(false),
+    m_connectorNameHasBeenSet(false),
+    m_connectorVersionHasBeenSet(false),
+    m_connectorArnHasBeenSet(false),
+    m_connectorModesHasBeenSet(false),
+    m_authenticationConfigHasBeenSet(false),
+    m_connectorRuntimeSettingsHasBeenSet(false),
+    m_supportedApiVersionsHasBeenSet(false),
+    m_supportedOperatorsHasBeenSet(false),
+    m_supportedWriteOperationsHasBeenSet(false),
+    m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
+    m_connectorProvisioningTypeHasBeenSet(false),
+    m_connectorProvisioningConfigHasBeenSet(false),
+    m_logoURLHasBeenSet(false),
+    m_registeredAtHasBeenSet(false),
+    m_registeredByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +158,147 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     m_connectorMetadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectorType"))
+  {
+    m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
+
+    m_connectorTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorLabel"))
+  {
+    m_connectorLabel = jsonValue.GetString("connectorLabel");
+
+    m_connectorLabelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorDescription"))
+  {
+    m_connectorDescription = jsonValue.GetString("connectorDescription");
+
+    m_connectorDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorOwner"))
+  {
+    m_connectorOwner = jsonValue.GetString("connectorOwner");
+
+    m_connectorOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorName"))
+  {
+    m_connectorName = jsonValue.GetString("connectorName");
+
+    m_connectorNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorVersion"))
+  {
+    m_connectorVersion = jsonValue.GetString("connectorVersion");
+
+    m_connectorVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorArn"))
+  {
+    m_connectorArn = jsonValue.GetString("connectorArn");
+
+    m_connectorArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorModes"))
+  {
+    Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
+    for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
+    {
+      m_connectorModes.push_back(connectorModesJsonList[connectorModesIndex].AsString());
+    }
+    m_connectorModesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("authenticationConfig"))
+  {
+    m_authenticationConfig = jsonValue.GetObject("authenticationConfig");
+
+    m_authenticationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorRuntimeSettings"))
+  {
+    Array<JsonView> connectorRuntimeSettingsJsonList = jsonValue.GetArray("connectorRuntimeSettings");
+    for(unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength(); ++connectorRuntimeSettingsIndex)
+    {
+      m_connectorRuntimeSettings.push_back(connectorRuntimeSettingsJsonList[connectorRuntimeSettingsIndex].AsObject());
+    }
+    m_connectorRuntimeSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedApiVersions"))
+  {
+    Array<JsonView> supportedApiVersionsJsonList = jsonValue.GetArray("supportedApiVersions");
+    for(unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength(); ++supportedApiVersionsIndex)
+    {
+      m_supportedApiVersions.push_back(supportedApiVersionsJsonList[supportedApiVersionsIndex].AsString());
+    }
+    m_supportedApiVersionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedOperators"))
+  {
+    Array<JsonView> supportedOperatorsJsonList = jsonValue.GetArray("supportedOperators");
+    for(unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength(); ++supportedOperatorsIndex)
+    {
+      m_supportedOperators.push_back(OperatorsMapper::GetOperatorsForName(supportedOperatorsJsonList[supportedOperatorsIndex].AsString()));
+    }
+    m_supportedOperatorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedWriteOperations"))
+  {
+    Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
+    for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
+    {
+      m_supportedWriteOperations.push_back(WriteOperationTypeMapper::GetWriteOperationTypeForName(supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString()));
+    }
+    m_supportedWriteOperationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorProvisioningType"))
+  {
+    m_connectorProvisioningType = ConnectorProvisioningTypeMapper::GetConnectorProvisioningTypeForName(jsonValue.GetString("connectorProvisioningType"));
+
+    m_connectorProvisioningTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorProvisioningConfig"))
+  {
+    m_connectorProvisioningConfig = jsonValue.GetObject("connectorProvisioningConfig");
+
+    m_connectorProvisioningConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("logoURL"))
+  {
+    m_logoURL = jsonValue.GetString("logoURL");
+
+    m_logoURLHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("registeredAt"))
+  {
+    m_registeredAt = jsonValue.GetDouble("registeredAt");
+
+    m_registeredAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("registeredBy"))
+  {
+    m_registeredBy = jsonValue.GetString("registeredBy");
+
+    m_registeredByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +366,136 @@ JsonValue ConnectorConfiguration::Jsonize() const
   if(m_connectorMetadataHasBeenSet)
   {
    payload.WithObject("connectorMetadata", m_connectorMetadata.Jsonize());
+
+  }
+
+  if(m_connectorTypeHasBeenSet)
+  {
+   payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  }
+
+  if(m_connectorLabelHasBeenSet)
+  {
+   payload.WithString("connectorLabel", m_connectorLabel);
+
+  }
+
+  if(m_connectorDescriptionHasBeenSet)
+  {
+   payload.WithString("connectorDescription", m_connectorDescription);
+
+  }
+
+  if(m_connectorOwnerHasBeenSet)
+  {
+   payload.WithString("connectorOwner", m_connectorOwner);
+
+  }
+
+  if(m_connectorNameHasBeenSet)
+  {
+   payload.WithString("connectorName", m_connectorName);
+
+  }
+
+  if(m_connectorVersionHasBeenSet)
+  {
+   payload.WithString("connectorVersion", m_connectorVersion);
+
+  }
+
+  if(m_connectorArnHasBeenSet)
+  {
+   payload.WithString("connectorArn", m_connectorArn);
+
+  }
+
+  if(m_connectorModesHasBeenSet)
+  {
+   Array<JsonValue> connectorModesJsonList(m_connectorModes.size());
+   for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
+   {
+     connectorModesJsonList[connectorModesIndex].AsString(m_connectorModes[connectorModesIndex]);
+   }
+   payload.WithArray("connectorModes", std::move(connectorModesJsonList));
+
+  }
+
+  if(m_authenticationConfigHasBeenSet)
+  {
+   payload.WithObject("authenticationConfig", m_authenticationConfig.Jsonize());
+
+  }
+
+  if(m_connectorRuntimeSettingsHasBeenSet)
+  {
+   Array<JsonValue> connectorRuntimeSettingsJsonList(m_connectorRuntimeSettings.size());
+   for(unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength(); ++connectorRuntimeSettingsIndex)
+   {
+     connectorRuntimeSettingsJsonList[connectorRuntimeSettingsIndex].AsObject(m_connectorRuntimeSettings[connectorRuntimeSettingsIndex].Jsonize());
+   }
+   payload.WithArray("connectorRuntimeSettings", std::move(connectorRuntimeSettingsJsonList));
+
+  }
+
+  if(m_supportedApiVersionsHasBeenSet)
+  {
+   Array<JsonValue> supportedApiVersionsJsonList(m_supportedApiVersions.size());
+   for(unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength(); ++supportedApiVersionsIndex)
+   {
+     supportedApiVersionsJsonList[supportedApiVersionsIndex].AsString(m_supportedApiVersions[supportedApiVersionsIndex]);
+   }
+   payload.WithArray("supportedApiVersions", std::move(supportedApiVersionsJsonList));
+
+  }
+
+  if(m_supportedOperatorsHasBeenSet)
+  {
+   Array<JsonValue> supportedOperatorsJsonList(m_supportedOperators.size());
+   for(unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength(); ++supportedOperatorsIndex)
+   {
+     supportedOperatorsJsonList[supportedOperatorsIndex].AsString(OperatorsMapper::GetNameForOperators(m_supportedOperators[supportedOperatorsIndex]));
+   }
+   payload.WithArray("supportedOperators", std::move(supportedOperatorsJsonList));
+
+  }
+
+  if(m_supportedWriteOperationsHasBeenSet)
+  {
+   Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
+   for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
+   {
+     supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString(WriteOperationTypeMapper::GetNameForWriteOperationType(m_supportedWriteOperations[supportedWriteOperationsIndex]));
+   }
+   payload.WithArray("supportedWriteOperations", std::move(supportedWriteOperationsJsonList));
+
+  }
+
+  if(m_connectorProvisioningTypeHasBeenSet)
+  {
+   payload.WithString("connectorProvisioningType", ConnectorProvisioningTypeMapper::GetNameForConnectorProvisioningType(m_connectorProvisioningType));
+  }
+
+  if(m_connectorProvisioningConfigHasBeenSet)
+  {
+   payload.WithObject("connectorProvisioningConfig", m_connectorProvisioningConfig.Jsonize());
+
+  }
+
+  if(m_logoURLHasBeenSet)
+  {
+   payload.WithString("logoURL", m_logoURL);
+
+  }
+
+  if(m_registeredAtHasBeenSet)
+  {
+   payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
+  }
+
+  if(m_registeredByHasBeenSet)
+  {
+   payload.WithString("registeredBy", m_registeredBy);
 
   }
 

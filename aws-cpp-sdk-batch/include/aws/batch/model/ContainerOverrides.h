@@ -98,57 +98,57 @@ namespace Model
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline ContainerOverrides& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline ContainerOverrides& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
-     * Fargate resources and shouldn't be provided.</p> 
+     * parameter isn't applicable to single-node container jobs or jobs that run on
+     * Fargate resources, and shouldn't be provided.</p> 
      */
     inline ContainerOverrides& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -159,7 +159,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
@@ -169,7 +169,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
@@ -179,7 +179,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -189,7 +189,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -199,7 +199,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline ContainerOverrides& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
@@ -209,7 +209,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline ContainerOverrides& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -219,7 +219,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline ContainerOverrides& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -229,7 +229,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> 
+     * are set by the Batch service.</p> 
      */
     inline ContainerOverrides& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 

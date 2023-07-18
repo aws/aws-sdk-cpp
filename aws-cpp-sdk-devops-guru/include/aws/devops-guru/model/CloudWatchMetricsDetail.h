@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-guru/model/CloudWatchMetricsStat.h>
+#include <aws/devops-guru/model/CloudWatchMetricsDataSummary.h>
 #include <aws/devops-guru/model/CloudWatchMetricsDimension.h>
 #include <utility>
 
@@ -302,6 +303,37 @@ namespace Model
      */
     inline CloudWatchMetricsDetail& WithPeriod(int value) { SetPeriod(value); return *this;}
 
+
+    /**
+     * <p>This object returns anomaly metric data.</p>
+     */
+    inline const CloudWatchMetricsDataSummary& GetMetricDataSummary() const{ return m_metricDataSummary; }
+
+    /**
+     * <p>This object returns anomaly metric data.</p>
+     */
+    inline bool MetricDataSummaryHasBeenSet() const { return m_metricDataSummaryHasBeenSet; }
+
+    /**
+     * <p>This object returns anomaly metric data.</p>
+     */
+    inline void SetMetricDataSummary(const CloudWatchMetricsDataSummary& value) { m_metricDataSummaryHasBeenSet = true; m_metricDataSummary = value; }
+
+    /**
+     * <p>This object returns anomaly metric data.</p>
+     */
+    inline void SetMetricDataSummary(CloudWatchMetricsDataSummary&& value) { m_metricDataSummaryHasBeenSet = true; m_metricDataSummary = std::move(value); }
+
+    /**
+     * <p>This object returns anomaly metric data.</p>
+     */
+    inline CloudWatchMetricsDetail& WithMetricDataSummary(const CloudWatchMetricsDataSummary& value) { SetMetricDataSummary(value); return *this;}
+
+    /**
+     * <p>This object returns anomaly metric data.</p>
+     */
+    inline CloudWatchMetricsDetail& WithMetricDataSummary(CloudWatchMetricsDataSummary&& value) { SetMetricDataSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_metricName;
@@ -321,6 +353,9 @@ namespace Model
 
     int m_period;
     bool m_periodHasBeenSet;
+
+    CloudWatchMetricsDataSummary m_metricDataSummary;
+    bool m_metricDataSummaryHasBeenSet;
   };
 
 } // namespace Model

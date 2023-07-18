@@ -290,50 +290,50 @@ namespace Model
 
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline const Aws::String& GetResourceKey() const{ return m_resourceKey; }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline bool ResourceKeyHasBeenSet() const { return m_resourceKeyHasBeenSet; }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline void SetResourceKey(const Aws::String& value) { m_resourceKeyHasBeenSet = true; m_resourceKey = value; }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline void SetResourceKey(Aws::String&& value) { m_resourceKeyHasBeenSet = true; m_resourceKey = std::move(value); }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline void SetResourceKey(const char* value) { m_resourceKeyHasBeenSet = true; m_resourceKey.assign(value); }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline CreateEdgePackagingJobRequest& WithResourceKey(const Aws::String& value) { SetResourceKey(value); return *this;}
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline CreateEdgePackagingJobRequest& WithResourceKey(Aws::String&& value) { SetResourceKey(std::move(value)); return *this;}
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the edge packaging job runs
-     * on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the
+     * edge packaging job runs on.</p>
      */
     inline CreateEdgePackagingJobRequest& WithResourceKey(const char* value) { SetResourceKey(value); return *this;}
 

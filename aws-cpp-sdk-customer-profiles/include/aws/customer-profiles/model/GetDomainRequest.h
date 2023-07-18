@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline GetDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline GetDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline GetDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

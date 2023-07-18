@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateActionRequest& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateActionRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the action. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateActionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
 

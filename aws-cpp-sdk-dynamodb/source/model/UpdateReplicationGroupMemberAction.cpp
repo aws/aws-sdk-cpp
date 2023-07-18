@@ -22,7 +22,9 @@ UpdateReplicationGroupMemberAction::UpdateReplicationGroupMemberAction() :
     m_regionNameHasBeenSet(false),
     m_kMSMasterKeyIdHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+    m_globalSecondaryIndexesHasBeenSet(false),
+    m_tableClassOverride(TableClass::NOT_SET),
+    m_tableClassOverrideHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ UpdateReplicationGroupMemberAction::UpdateReplicationGroupMemberAction(JsonView 
     m_regionNameHasBeenSet(false),
     m_kMSMasterKeyIdHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+    m_globalSecondaryIndexesHasBeenSet(false),
+    m_tableClassOverride(TableClass::NOT_SET),
+    m_tableClassOverrideHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +72,13 @@ UpdateReplicationGroupMemberAction& UpdateReplicationGroupMemberAction::operator
     m_globalSecondaryIndexesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableClassOverride"))
+  {
+    m_tableClassOverride = TableClassMapper::GetTableClassForName(jsonValue.GetString("TableClassOverride"));
+
+    m_tableClassOverrideHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +113,11 @@ JsonValue UpdateReplicationGroupMemberAction::Jsonize() const
    }
    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
 
+  }
+
+  if(m_tableClassOverrideHasBeenSet)
+  {
+   payload.WithString("TableClassOverride", TableClassMapper::GetNameForTableClass(m_tableClassOverride));
   }
 
   return payload;

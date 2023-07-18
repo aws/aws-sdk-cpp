@@ -19,7 +19,9 @@ ListAccountIntegrationsRequest::ListAccountIntegrationsRequest() :
     m_uriHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_includeHidden(false),
+    m_includeHiddenHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,13 @@ void ListAccountIntegrationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("max-results", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeHiddenHasBeenSet)
+    {
+      ss << m_includeHidden;
+      uri.AddQueryStringParameter("include-hidden", ss.str());
       ss.str("");
     }
 

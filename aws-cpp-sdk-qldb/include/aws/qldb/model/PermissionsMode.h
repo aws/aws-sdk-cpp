@@ -16,7 +16,8 @@ namespace Model
   enum class PermissionsMode
   {
     NOT_SET,
-    ALLOW_ALL
+    ALLOW_ALL,
+    STANDARD
   };
 
 namespace PermissionsModeMapper

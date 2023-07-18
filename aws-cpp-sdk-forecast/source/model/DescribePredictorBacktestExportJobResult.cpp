@@ -76,6 +76,12 @@ DescribePredictorBacktestExportJobResult& DescribePredictorBacktestExportJobResu
 
   }
 
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = jsonValue.GetString("Format");
+
+  }
+
 
 
   return *this;

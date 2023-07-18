@@ -9,6 +9,7 @@
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/MetricValue.h>
 #include <aws/iot/model/ViolationEventAdditionalInfo.h>
+#include <aws/iot/model/VerificationState.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -265,6 +266,78 @@ namespace Model
 
 
     /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline const VerificationState& GetVerificationState() const{ return m_verificationState; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline void SetVerificationState(const VerificationState& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline void SetVerificationState(VerificationState&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline ActiveViolation& WithVerificationState(const VerificationState& value) { SetVerificationState(value); return *this;}
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline ActiveViolation& WithVerificationState(VerificationState&& value) { SetVerificationState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline const Aws::String& GetVerificationStateDescription() const{ return m_verificationStateDescription; }
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline bool VerificationStateDescriptionHasBeenSet() const { return m_verificationStateDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline void SetVerificationStateDescription(const Aws::String& value) { m_verificationStateDescriptionHasBeenSet = true; m_verificationStateDescription = value; }
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline void SetVerificationStateDescription(Aws::String&& value) { m_verificationStateDescriptionHasBeenSet = true; m_verificationStateDescription = std::move(value); }
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline void SetVerificationStateDescription(const char* value) { m_verificationStateDescriptionHasBeenSet = true; m_verificationStateDescription.assign(value); }
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline ActiveViolation& WithVerificationStateDescription(const Aws::String& value) { SetVerificationStateDescription(value); return *this;}
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline ActiveViolation& WithVerificationStateDescription(Aws::String&& value) { SetVerificationStateDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the verification state of the violation.</p>
+     */
+    inline ActiveViolation& WithVerificationStateDescription(const char* value) { SetVerificationStateDescription(value); return *this;}
+
+
+    /**
      * <p>The time the most recent violation occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetLastViolationTime() const{ return m_lastViolationTime; }
@@ -344,6 +417,12 @@ namespace Model
 
     ViolationEventAdditionalInfo m_violationEventAdditionalInfo;
     bool m_violationEventAdditionalInfoHasBeenSet;
+
+    VerificationState m_verificationState;
+    bool m_verificationStateHasBeenSet;
+
+    Aws::String m_verificationStateDescription;
+    bool m_verificationStateDescriptionHasBeenSet;
 
     Aws::Utils::DateTime m_lastViolationTime;
     bool m_lastViolationTimeHasBeenSet;

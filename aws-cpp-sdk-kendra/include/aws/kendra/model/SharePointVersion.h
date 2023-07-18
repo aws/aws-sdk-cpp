@@ -16,6 +16,8 @@ namespace Model
   enum class SharePointVersion
   {
     NOT_SET,
+    SHAREPOINT_2013,
+    SHAREPOINT_2016,
     SHAREPOINT_ONLINE
   };
 

@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchExecuteStatementRequest::BatchExecuteStatementRequest() : 
-    m_statementsHasBeenSet(false)
+    m_statementsHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
+    m_returnConsumedCapacityHasBeenSet(false)
 {
 }
 
@@ -30,6 +32,11 @@ Aws::String BatchExecuteStatementRequest::SerializePayload() const
    }
    payload.WithArray("Statements", std::move(statementsJsonList));
 
+  }
+
+  if(m_returnConsumedCapacityHasBeenSet)
+  {
+   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
   }
 
   return payload.View().WriteReadable();

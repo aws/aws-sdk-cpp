@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The number used to identify the AWS account.</p>
+     * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>The number used to identify the AWS account.</p>
+     * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_account = value; }
 
     /**
-     * <p>The number used to identify the AWS account.</p>
+     * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_account = std::move(value); }
 
     /**
-     * <p>The number used to identify the AWS account.</p>
+     * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline void SetAccount(const char* value) { m_account.assign(value); }
 
     /**
-     * <p>The number used to identify the AWS account.</p>
+     * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline GetAccessKeyInfoResult& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>The number used to identify the AWS account.</p>
+     * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline GetAccessKeyInfoResult& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The number used to identify the AWS account.</p>
+     * <p>The number used to identify the Amazon Web Services account.</p>
      */
     inline GetAccessKeyInfoResult& WithAccount(const char* value) { SetAccount(value); return *this;}
 

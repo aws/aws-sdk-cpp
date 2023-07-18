@@ -16,7 +16,8 @@ CreateTableRequest::CreateTableRequest() :
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_retentionPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_magneticStoreWritePropertiesHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String CreateTableRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_magneticStoreWritePropertiesHasBeenSet)
+  {
+   payload.WithObject("MagneticStoreWriteProperties", m_magneticStoreWriteProperties.Jsonize());
 
   }
 

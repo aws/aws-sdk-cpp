@@ -129,114 +129,114 @@ namespace Model
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline CreateMaintenanceWindowRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline CreateMaintenanceWindowRequest& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become active. StartDate allows you to delay activation of
-     * the maintenance window until the specified future date.</p>
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline CreateMaintenanceWindowRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline CreateMaintenanceWindowRequest& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline CreateMaintenanceWindowRequest& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
-     * maintenance window to become inactive. EndDate allows you to set a date and time
-     * in the future when the maintenance window will no longer run.</p>
+     * maintenance window to become inactive. <code>EndDate</code> allows you to set a
+     * date and time in the future when the maintenance window will no longer run.</p>
      */
     inline CreateMaintenanceWindowRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
@@ -364,7 +364,7 @@ namespace Model
 
 
     /**
-     * <p>The number of days to wait after the date and time specified by a CRON
+     * <p>The number of days to wait after the date and time specified by a cron
      * expression before running the maintenance window.</p> <p>For example, the
      * following cron expression schedules a maintenance window to run on the third
      * Tuesday of every month at 11:30 PM.</p> <p> <code>cron(30 23 ? * TUE#3 *)</code>
@@ -374,7 +374,7 @@ namespace Model
     inline int GetScheduleOffset() const{ return m_scheduleOffset; }
 
     /**
-     * <p>The number of days to wait after the date and time specified by a CRON
+     * <p>The number of days to wait after the date and time specified by a cron
      * expression before running the maintenance window.</p> <p>For example, the
      * following cron expression schedules a maintenance window to run on the third
      * Tuesday of every month at 11:30 PM.</p> <p> <code>cron(30 23 ? * TUE#3 *)</code>
@@ -384,7 +384,7 @@ namespace Model
     inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
 
     /**
-     * <p>The number of days to wait after the date and time specified by a CRON
+     * <p>The number of days to wait after the date and time specified by a cron
      * expression before running the maintenance window.</p> <p>For example, the
      * following cron expression schedules a maintenance window to run on the third
      * Tuesday of every month at 11:30 PM.</p> <p> <code>cron(30 23 ? * TUE#3 *)</code>
@@ -394,7 +394,7 @@ namespace Model
     inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
 
     /**
-     * <p>The number of days to wait after the date and time specified by a CRON
+     * <p>The number of days to wait after the date and time specified by a cron
      * expression before running the maintenance window.</p> <p>For example, the
      * following cron expression schedules a maintenance window to run on the third
      * Tuesday of every month at 11:30 PM.</p> <p> <code>cron(30 23 ? * TUE#3 *)</code>
@@ -426,66 +426,66 @@ namespace Model
 
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline int GetCutoff() const{ return m_cutoff; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline bool CutoffHasBeenSet() const { return m_cutoffHasBeenSet; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline void SetCutoff(int value) { m_cutoffHasBeenSet = true; m_cutoff = value; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline CreateMaintenanceWindowRequest& WithCutoff(int value) { SetCutoff(value); return *this;}
 
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * have not registered those instances as targets. If enabled, then you must
-     * specify the unregistered instances (by instance ID) when you register a task
-     * with the maintenance window.</p> <p>If you don't enable this option, then you
-     * must specify previously-registered targets when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
+     * maintenance window.</p> <p>If you don't enable this option, then you must
+     * specify previously-registered targets when you register a task with the
      * maintenance window.</p>
      */
     inline bool GetAllowUnassociatedTargets() const{ return m_allowUnassociatedTargets; }
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * have not registered those instances as targets. If enabled, then you must
-     * specify the unregistered instances (by instance ID) when you register a task
-     * with the maintenance window.</p> <p>If you don't enable this option, then you
-     * must specify previously-registered targets when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
+     * maintenance window.</p> <p>If you don't enable this option, then you must
+     * specify previously-registered targets when you register a task with the
      * maintenance window.</p>
      */
     inline bool AllowUnassociatedTargetsHasBeenSet() const { return m_allowUnassociatedTargetsHasBeenSet; }
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * have not registered those instances as targets. If enabled, then you must
-     * specify the unregistered instances (by instance ID) when you register a task
-     * with the maintenance window.</p> <p>If you don't enable this option, then you
-     * must specify previously-registered targets when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
+     * maintenance window.</p> <p>If you don't enable this option, then you must
+     * specify previously-registered targets when you register a task with the
      * maintenance window.</p>
      */
     inline void SetAllowUnassociatedTargets(bool value) { m_allowUnassociatedTargetsHasBeenSet = true; m_allowUnassociatedTargets = value; }
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * have not registered those instances as targets. If enabled, then you must
-     * specify the unregistered instances (by instance ID) when you register a task
-     * with the maintenance window.</p> <p>If you don't enable this option, then you
-     * must specify previously-registered targets when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
+     * maintenance window.</p> <p>If you don't enable this option, then you must
+     * specify previously-registered targets when you register a task with the
      * maintenance window.</p>
      */
     inline CreateMaintenanceWindowRequest& WithAllowUnassociatedTargets(bool value) { SetAllowUnassociatedTargets(value); return *this;}
@@ -537,12 +537,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -551,12 +551,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -565,12 +565,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -579,12 +579,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -593,12 +593,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline CreateMaintenanceWindowRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -607,12 +607,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline CreateMaintenanceWindowRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -621,12 +621,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline CreateMaintenanceWindowRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -635,12 +635,12 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. For example, you might want to tag a maintenance window to identify
      * the type of tasks it will run, the types of targets, and the environment it will
-     * run in. In this case, you could specify the following key name/value pairs:</p>
-     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * run in. In this case, you could specify the following key-value pairs:</p> <ul>
+     * <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
      * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-     * action.</p> 
+     * operation.</p> 
      */
     inline CreateMaintenanceWindowRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

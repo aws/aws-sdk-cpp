@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Context information that enables AWS CloudFormation to uniquely identify a
-   * resource. AWS CloudFormation uses context key-value pairs in cases where a
-   * resource's logical and physical IDs are not enough to uniquely identify that
+   * <p>Context information that enables CloudFormation to uniquely identify a
+   * resource. CloudFormation uses context key-value pairs in cases where a
+   * resource's logical and physical IDs aren't enough to uniquely identify that
    * resource. Each context key-value pair specifies a resource that contains the
    * targeted resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PhysicalResourceIdContextKeyValuePair">AWS

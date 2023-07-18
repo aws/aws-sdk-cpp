@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline LambdaInvokeOperation& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline LambdaInvokeOperation& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified
-     * job will invoke for each object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
+     * will invoke on every object in the manifest.</p>
      */
     inline LambdaInvokeOperation& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 

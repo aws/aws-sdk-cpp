@@ -97,58 +97,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline bool TargetDBInstanceIdentifierHasBeenSet() const { return m_targetDBInstanceIdentifierHasBeenSet; }
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
-     * specify the instance identifier for an Aurora Replica in the DB cluster. For
-     * example, <code>mydbcluster-replica1</code>.</p>
+     * <p>The name of the DB instance to promote to the primary DB instance.</p>
+     * <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
+     * readable standby in the DB cluster, for example
+     * <code>mydbcluster-replica1</code>.</p> <p>This setting isn't supported for RDS
+     * for MySQL Multi-AZ DB clusters.</p>
      */
     inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
 

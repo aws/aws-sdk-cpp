@@ -22,7 +22,8 @@ UpdateBackendAuthUserPoolConfig::UpdateBackendAuthUserPoolConfig() :
     m_forgotPasswordHasBeenSet(false),
     m_mfaHasBeenSet(false),
     m_oAuthHasBeenSet(false),
-    m_passwordPolicyHasBeenSet(false)
+    m_passwordPolicyHasBeenSet(false),
+    m_verificationMessageHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ UpdateBackendAuthUserPoolConfig::UpdateBackendAuthUserPoolConfig(JsonView jsonVa
     m_forgotPasswordHasBeenSet(false),
     m_mfaHasBeenSet(false),
     m_oAuthHasBeenSet(false),
-    m_passwordPolicyHasBeenSet(false)
+    m_passwordPolicyHasBeenSet(false),
+    m_verificationMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ UpdateBackendAuthUserPoolConfig& UpdateBackendAuthUserPoolConfig::operator =(Jso
     m_passwordPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("verificationMessage"))
+  {
+    m_verificationMessage = jsonValue.GetObject("verificationMessage");
+
+    m_verificationMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue UpdateBackendAuthUserPoolConfig::Jsonize() const
   if(m_passwordPolicyHasBeenSet)
   {
    payload.WithObject("passwordPolicy", m_passwordPolicy.Jsonize());
+
+  }
+
+  if(m_verificationMessageHasBeenSet)
+  {
+   payload.WithObject("verificationMessage", m_verificationMessage.Jsonize());
 
   }
 

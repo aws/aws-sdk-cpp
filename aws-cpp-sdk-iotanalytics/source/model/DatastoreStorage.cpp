@@ -20,13 +20,15 @@ namespace Model
 
 DatastoreStorage::DatastoreStorage() : 
     m_serviceManagedS3HasBeenSet(false),
-    m_customerManagedS3HasBeenSet(false)
+    m_customerManagedS3HasBeenSet(false),
+    m_iotSiteWiseMultiLayerStorageHasBeenSet(false)
 {
 }
 
 DatastoreStorage::DatastoreStorage(JsonView jsonValue) : 
     m_serviceManagedS3HasBeenSet(false),
-    m_customerManagedS3HasBeenSet(false)
+    m_customerManagedS3HasBeenSet(false),
+    m_iotSiteWiseMultiLayerStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ DatastoreStorage& DatastoreStorage::operator =(JsonView jsonValue)
     m_customerManagedS3HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iotSiteWiseMultiLayerStorage"))
+  {
+    m_iotSiteWiseMultiLayerStorage = jsonValue.GetObject("iotSiteWiseMultiLayerStorage");
+
+    m_iotSiteWiseMultiLayerStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue DatastoreStorage::Jsonize() const
   if(m_customerManagedS3HasBeenSet)
   {
    payload.WithObject("customerManagedS3", m_customerManagedS3.Jsonize());
+
+  }
+
+  if(m_iotSiteWiseMultiLayerStorageHasBeenSet)
+  {
+   payload.WithObject("iotSiteWiseMultiLayerStorage", m_iotSiteWiseMultiLayerStorage.Jsonize());
 
   }
 

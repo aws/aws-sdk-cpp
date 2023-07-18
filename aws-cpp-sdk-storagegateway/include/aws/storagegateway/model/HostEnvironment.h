@@ -20,7 +20,8 @@ namespace Model
     HYPER_V,
     EC2,
     KVM,
-    OTHER
+    OTHER,
+    SNOWBALL
   };
 
 namespace HostEnvironmentMapper

@@ -27,7 +27,7 @@ PutSessionResult::PutSessionResult(PutSessionResult&& toMove) :
     m_intentName(std::move(toMove.m_intentName)),
     m_slots(std::move(toMove.m_slots)),
     m_sessionAttributes(std::move(toMove.m_sessionAttributes)),
-    m_message(std::move(toMove.m_message)),
+    m_encodedMessage(std::move(toMove.m_encodedMessage)),
     m_messageFormat(toMove.m_messageFormat),
     m_dialogState(toMove.m_dialogState),
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
@@ -48,7 +48,7 @@ PutSessionResult& PutSessionResult::operator=(PutSessionResult&& toMove)
    m_intentName = std::move(toMove.m_intentName);
    m_slots = std::move(toMove.m_slots);
    m_sessionAttributes = std::move(toMove.m_sessionAttributes);
-   m_message = std::move(toMove.m_message);
+   m_encodedMessage = std::move(toMove.m_encodedMessage);
    m_messageFormat = toMove.m_messageFormat;
    m_dialogState = toMove.m_dialogState;
    m_slotToElicit = std::move(toMove.m_slotToElicit);
@@ -95,10 +95,10 @@ PutSessionResult& PutSessionResult::operator =(Aws::AmazonWebServiceResult<Respo
     m_sessionAttributes = sessionAttributesIter->second;
   }
 
-  const auto& messageIter = headers.find("x-amz-lex-message");
-  if(messageIter != headers.end())
+  const auto& encodedMessageIter = headers.find("x-amz-lex-encoded-message");
+  if(encodedMessageIter != headers.end())
   {
-    m_message = messageIter->second;
+    m_encodedMessage = encodedMessageIter->second;
   }
 
   const auto& messageFormatIter = headers.find("x-amz-lex-message-format");

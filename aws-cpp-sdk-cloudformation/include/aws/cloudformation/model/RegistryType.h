@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     RESOURCE,
-    MODULE
+    MODULE,
+    HOOK
   };
 
 namespace RegistryTypeMapper

@@ -16,11 +16,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ScheduleKeyDeletionResult::ScheduleKeyDeletionResult()
+ScheduleKeyDeletionResult::ScheduleKeyDeletionResult() : 
+    m_keyState(KeyState::NOT_SET),
+    m_pendingWindowInDays(0)
 {
 }
 
-ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_keyState(KeyState::NOT_SET),
+    m_pendingWindowInDays(0)
 {
   *this = result;
 }
@@ -37,6 +41,18 @@ ScheduleKeyDeletionResult& ScheduleKeyDeletionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("DeletionDate"))
   {
     m_deletionDate = jsonValue.GetDouble("DeletionDate");
+
+  }
+
+  if(jsonValue.ValueExists("KeyState"))
+  {
+    m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
+
+  }
+
+  if(jsonValue.ValueExists("PendingWindowInDays"))
+  {
+    m_pendingWindowInDays = jsonValue.GetInteger("PendingWindowInDays");
 
   }
 

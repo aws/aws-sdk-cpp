@@ -19,16 +19,20 @@ namespace Model
 {
 
 DevicePosition::DevicePosition() : 
+    m_accuracyHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_positionHasBeenSet(false),
+    m_positionPropertiesHasBeenSet(false),
     m_receivedTimeHasBeenSet(false),
     m_sampleTimeHasBeenSet(false)
 {
 }
 
 DevicePosition::DevicePosition(JsonView jsonValue) : 
+    m_accuracyHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_positionHasBeenSet(false),
+    m_positionPropertiesHasBeenSet(false),
     m_receivedTimeHasBeenSet(false),
     m_sampleTimeHasBeenSet(false)
 {
@@ -37,6 +41,13 @@ DevicePosition::DevicePosition(JsonView jsonValue) :
 
 DevicePosition& DevicePosition::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Accuracy"))
+  {
+    m_accuracy = jsonValue.GetObject("Accuracy");
+
+    m_accuracyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
@@ -52,6 +63,16 @@ DevicePosition& DevicePosition::operator =(JsonView jsonValue)
       m_position.push_back(positionJsonList[positionIndex].AsDouble());
     }
     m_positionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PositionProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> positionPropertiesJsonMap = jsonValue.GetObject("PositionProperties").GetAllObjects();
+    for(auto& positionPropertiesItem : positionPropertiesJsonMap)
+    {
+      m_positionProperties[positionPropertiesItem.first] = positionPropertiesItem.second.AsString();
+    }
+    m_positionPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReceivedTime"))
@@ -75,6 +96,12 @@ JsonValue DevicePosition::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_accuracyHasBeenSet)
+  {
+   payload.WithObject("Accuracy", m_accuracy.Jsonize());
+
+  }
+
   if(m_deviceIdHasBeenSet)
   {
    payload.WithString("DeviceId", m_deviceId);
@@ -89,6 +116,17 @@ JsonValue DevicePosition::Jsonize() const
      positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);
    }
    payload.WithArray("Position", std::move(positionJsonList));
+
+  }
+
+  if(m_positionPropertiesHasBeenSet)
+  {
+   JsonValue positionPropertiesJsonMap;
+   for(auto& positionPropertiesItem : m_positionProperties)
+   {
+     positionPropertiesJsonMap.WithString(positionPropertiesItem.first, positionPropertiesItem.second);
+   }
+   payload.WithObject("PositionProperties", std::move(positionPropertiesJsonMap));
 
   }
 

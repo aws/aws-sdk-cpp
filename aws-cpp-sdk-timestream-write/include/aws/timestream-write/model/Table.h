@@ -9,6 +9,7 @@
 #include <aws/timestream-write/model/TableStatus.h>
 #include <aws/timestream-write/model/RetentionProperties.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/timestream-write/model/MagneticStoreWriteProperties.h>
 #include <utility>
 
 namespace Aws
@@ -300,6 +301,43 @@ namespace Model
      */
     inline Table& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline const MagneticStoreWriteProperties& GetMagneticStoreWriteProperties() const{ return m_magneticStoreWriteProperties; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline bool MagneticStoreWritePropertiesHasBeenSet() const { return m_magneticStoreWritePropertiesHasBeenSet; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline void SetMagneticStoreWriteProperties(const MagneticStoreWriteProperties& value) { m_magneticStoreWritePropertiesHasBeenSet = true; m_magneticStoreWriteProperties = value; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline void SetMagneticStoreWriteProperties(MagneticStoreWriteProperties&& value) { m_magneticStoreWritePropertiesHasBeenSet = true; m_magneticStoreWriteProperties = std::move(value); }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline Table& WithMagneticStoreWriteProperties(const MagneticStoreWriteProperties& value) { SetMagneticStoreWriteProperties(value); return *this;}
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline Table& WithMagneticStoreWriteProperties(MagneticStoreWriteProperties&& value) { SetMagneticStoreWriteProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -322,6 +360,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
+    MagneticStoreWriteProperties m_magneticStoreWriteProperties;
+    bool m_magneticStoreWritePropertiesHasBeenSet;
   };
 
 } // namespace Model

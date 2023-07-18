@@ -27,13 +27,12 @@ namespace Model
 
   /**
    * <p>A single query to be processed. You must provide the metric to query. If no
-   * other parameters are specified, Performance Insights returns all of the data
-   * points for that metric. You can optionally request that the data points be
-   * aggregated by dimension group ( <code>GroupBy</code>), and return only those
-   * data points that match your criteria (<code>Filter</code>).</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricQuery">AWS API
-   * Reference</a></p>
+   * other parameters are specified, Performance Insights returns all data points for
+   * the specified metric. Optionally, you can request that the data points be
+   * aggregated by dimension group (<code>GroupBy</code>), and return only those data
+   * points that match your criteria (<code>Filter</code>).</p><p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricQuery">AWS
+   * API Reference</a></p>
    */
   class AWS_PI_API MetricQuery
   {
@@ -46,129 +45,161 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline MetricQuery& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline MetricQuery& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
-     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
-     * If the number of active sessions is greater than the internal threshold,
-     * Performance Insights samples the active sessions, with <code>db.load.avg</code>
-     * showing the scaled values, <code>db.sampledload.avg</code> showing the raw
-     * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
-     * For most use cases, you can query <code>db.load.avg</code> only. </p>
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of
+     * active sessions for the database engine.</p> </li> <li> <p>The counter metrics
+     * listed in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+     * Insights operating system counters</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>If the number of active sessions is less than an
+     * internal Performance Insights threshold, <code>db.load.avg</code> and
+     * <code>db.sampledload.avg</code> are the same value. If the number of active
+     * sessions is greater than the internal threshold, Performance Insights samples
+     * the active sessions, with <code>db.load.avg</code> showing the scaled values,
+     * <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
+     * cases, you can query <code>db.load.avg</code> only.</p>
      */
     inline MetricQuery& WithMetric(const char* value) { SetMetric(value); return *this;}
 

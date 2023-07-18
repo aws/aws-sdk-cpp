@@ -22,7 +22,10 @@ CreateDomainRequest::CreateDomainRequest() :
     m_tagsHasBeenSet(false),
     m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
     m_appNetworkAccessTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
+    m_appSecurityGroupManagementHasBeenSet(false),
+    m_domainSettingsHasBeenSet(false)
 {
 }
 
@@ -83,6 +86,17 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_appSecurityGroupManagementHasBeenSet)
+  {
+   payload.WithString("AppSecurityGroupManagement", AppSecurityGroupManagementMapper::GetNameForAppSecurityGroupManagement(m_appSecurityGroupManagement));
+  }
+
+  if(m_domainSettingsHasBeenSet)
+  {
+   payload.WithObject("DomainSettings", m_domainSettings.Jsonize());
 
   }
 

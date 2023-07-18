@@ -47,7 +47,9 @@ enum class WorkMailMessageFlowErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-
+  INVALID_CONTENT_LOCATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  MESSAGE_FROZEN,
+  MESSAGE_REJECTED
 };
 
 class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowError : public Aws::Client::AWSError<WorkMailMessageFlowErrors>

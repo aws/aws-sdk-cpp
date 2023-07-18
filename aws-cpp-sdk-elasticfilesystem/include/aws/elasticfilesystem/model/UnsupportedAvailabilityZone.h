@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Returned if the requested Amazon EFS functionality is not available in the
+   * specified Availability Zone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UnsupportedAvailabilityZone">AWS
    * API Reference</a></p>
    */

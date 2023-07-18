@@ -77,44 +77,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the bias job definition. The name must be unique within an AWS
-     * Region in the AWS account.</p>
+     * <p>The name of the bias job definition. The name must be unique within an Amazon
+     * Web Services Region in the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
 
     /**
-     * <p>The name of the bias job definition. The name must be unique within an AWS
-     * Region in the AWS account.</p>
+     * <p>The name of the bias job definition. The name must be unique within an Amazon
+     * Web Services Region in the Amazon Web Services account.</p>
      */
     inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionName = value; }
 
     /**
-     * <p>The name of the bias job definition. The name must be unique within an AWS
-     * Region in the AWS account.</p>
+     * <p>The name of the bias job definition. The name must be unique within an Amazon
+     * Web Services Region in the Amazon Web Services account.</p>
      */
     inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionName = std::move(value); }
 
     /**
-     * <p>The name of the bias job definition. The name must be unique within an AWS
-     * Region in the AWS account.</p>
+     * <p>The name of the bias job definition. The name must be unique within an Amazon
+     * Web Services Region in the Amazon Web Services account.</p>
      */
     inline void SetJobDefinitionName(const char* value) { m_jobDefinitionName.assign(value); }
 
     /**
-     * <p>The name of the bias job definition. The name must be unique within an AWS
-     * Region in the AWS account.</p>
+     * <p>The name of the bias job definition. The name must be unique within an Amazon
+     * Web Services Region in the Amazon Web Services account.</p>
      */
     inline DescribeModelBiasJobDefinitionResult& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
 
     /**
-     * <p>The name of the bias job definition. The name must be unique within an AWS
-     * Region in the AWS account.</p>
+     * <p>The name of the bias job definition. The name must be unique within an Amazon
+     * Web Services Region in the Amazon Web Services account.</p>
      */
     inline DescribeModelBiasJobDefinitionResult& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the bias job definition. The name must be unique within an AWS
-     * Region in the AWS account.</p>
+     * <p>The name of the bias job definition. The name must be unique within an Amazon
+     * Web Services Region in the Amazon Web Services account.</p>
      */
     inline DescribeModelBiasJobDefinitionResult& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 
@@ -282,51 +282,51 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that has read permission to the input data location and write
-     * permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that has read permission to the input data location and
+     * write permission to the output data location in Amazon S3.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that has read permission to the input data location and write
-     * permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that has read permission to the input data location and
+     * write permission to the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that has read permission to the input data location and write
-     * permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that has read permission to the input data location and
+     * write permission to the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that has read permission to the input data location and write
-     * permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that has read permission to the input data location and
+     * write permission to the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that has read permission to the input data location and write
-     * permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that has read permission to the input data location and
+     * write permission to the output data location in Amazon S3.</p>
      */
     inline DescribeModelBiasJobDefinitionResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that has read permission to the input data location and write
-     * permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that has read permission to the input data location and
+     * write permission to the output data location in Amazon S3.</p>
      */
     inline DescribeModelBiasJobDefinitionResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that has read permission to the input data location and write
-     * permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+     * Management (IAM) role that has read permission to the input data location and
+     * write permission to the output data location in Amazon S3.</p>
      */
     inline DescribeModelBiasJobDefinitionResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

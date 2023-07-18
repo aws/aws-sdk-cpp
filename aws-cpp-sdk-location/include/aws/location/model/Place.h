@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/PlaceGeometry.h>
+#include <aws/location/model/TimeZone.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +27,8 @@ namespace Model
 
   /**
    * <p>Contains details about addresses or points of interest that match the search
-   * criteria.</p><p><h3>See Also:</h3>   <a
+   * criteria.</p> <p>Not all details are included with all responses. Some details
+   * may only be returned by specific data partners.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/Place">AWS API
    * Reference</a></p>
    */
@@ -154,6 +156,51 @@ namespace Model
 
     
     inline Place& WithGeometry(PlaceGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+
+
+    /**
+     * <p> <code>True</code> if the result is interpolated from other known places.</p>
+     * <p> <code>False</code> if the Place is a known place.</p> <p>Not returned when
+     * the partner does not provide the information.</p> <p>For example, returns
+     * <code>False</code> for an address location that is found in the partner data,
+     * but returns <code>True</code> if an address does not exist in the partner data
+     * and its location is calculated by interpolating between other known addresses.
+     * </p>
+     */
+    inline bool GetInterpolated() const{ return m_interpolated; }
+
+    /**
+     * <p> <code>True</code> if the result is interpolated from other known places.</p>
+     * <p> <code>False</code> if the Place is a known place.</p> <p>Not returned when
+     * the partner does not provide the information.</p> <p>For example, returns
+     * <code>False</code> for an address location that is found in the partner data,
+     * but returns <code>True</code> if an address does not exist in the partner data
+     * and its location is calculated by interpolating between other known addresses.
+     * </p>
+     */
+    inline bool InterpolatedHasBeenSet() const { return m_interpolatedHasBeenSet; }
+
+    /**
+     * <p> <code>True</code> if the result is interpolated from other known places.</p>
+     * <p> <code>False</code> if the Place is a known place.</p> <p>Not returned when
+     * the partner does not provide the information.</p> <p>For example, returns
+     * <code>False</code> for an address location that is found in the partner data,
+     * but returns <code>True</code> if an address does not exist in the partner data
+     * and its location is calculated by interpolating between other known addresses.
+     * </p>
+     */
+    inline void SetInterpolated(bool value) { m_interpolatedHasBeenSet = true; m_interpolated = value; }
+
+    /**
+     * <p> <code>True</code> if the result is interpolated from other known places.</p>
+     * <p> <code>False</code> if the Place is a known place.</p> <p>Not returned when
+     * the partner does not provide the information.</p> <p>For example, returns
+     * <code>False</code> for an address location that is found in the partner data,
+     * but returns <code>True</code> if an address does not exist in the partner data
+     * and its location is calculated by interpolating between other known addresses.
+     * </p>
+     */
+    inline Place& WithInterpolated(bool value) { SetInterpolated(value); return *this;}
 
 
     /**
@@ -443,52 +490,89 @@ namespace Model
 
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline const Aws::String& GetSubRegion() const{ return m_subRegion; }
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline bool SubRegionHasBeenSet() const { return m_subRegionHasBeenSet; }
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline void SetSubRegion(const Aws::String& value) { m_subRegionHasBeenSet = true; m_subRegion = value; }
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline void SetSubRegion(Aws::String&& value) { m_subRegionHasBeenSet = true; m_subRegion = std::move(value); }
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline void SetSubRegion(const char* value) { m_subRegionHasBeenSet = true; m_subRegion.assign(value); }
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline Place& WithSubRegion(const Aws::String& value) { SetSubRegion(value); return *this;}
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline Place& WithSubRegion(Aws::String&& value) { SetSubRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A country, or an area that's part of a larger region . For example,
+     * <p>A country, or an area that's part of a larger region. For example,
      * <code>Metro Vancouver</code>.</p>
      */
     inline Place& WithSubRegion(const char* value) { SetSubRegion(value); return *this;}
+
+
+    /**
+     * <p>The time zone in which the <code>Place</code> is located. Returned only when
+     * using Here as the selected partner.</p>
+     */
+    inline const TimeZone& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * <p>The time zone in which the <code>Place</code> is located. Returned only when
+     * using Here as the selected partner.</p>
+     */
+    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
+
+    /**
+     * <p>The time zone in which the <code>Place</code> is located. Returned only when
+     * using Here as the selected partner.</p>
+     */
+    inline void SetTimeZone(const TimeZone& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
+
+    /**
+     * <p>The time zone in which the <code>Place</code> is located. Returned only when
+     * using Here as the selected partner.</p>
+     */
+    inline void SetTimeZone(TimeZone&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
+
+    /**
+     * <p>The time zone in which the <code>Place</code> is located. Returned only when
+     * using Here as the selected partner.</p>
+     */
+    inline Place& WithTimeZone(const TimeZone& value) { SetTimeZone(value); return *this;}
+
+    /**
+     * <p>The time zone in which the <code>Place</code> is located. Returned only when
+     * using Here as the selected partner.</p>
+     */
+    inline Place& WithTimeZone(TimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
 
   private:
 
@@ -500,6 +584,9 @@ namespace Model
 
     PlaceGeometry m_geometry;
     bool m_geometryHasBeenSet;
+
+    bool m_interpolated;
+    bool m_interpolatedHasBeenSet;
 
     Aws::String m_label;
     bool m_labelHasBeenSet;
@@ -521,6 +608,9 @@ namespace Model
 
     Aws::String m_subRegion;
     bool m_subRegionHasBeenSet;
+
+    TimeZone m_timeZone;
+    bool m_timeZoneHasBeenSet;
   };
 
 } // namespace Model

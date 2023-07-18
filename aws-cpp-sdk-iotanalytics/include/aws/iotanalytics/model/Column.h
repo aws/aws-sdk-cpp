@@ -82,56 +82,56 @@ namespace Model
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline Column& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline Column& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of data. For more information about the supported data types, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common
-     * data types</a> in the <i>AWS Glue Developer Guide</i>.</p>
+     * data types</a> in the <i>Glue Developer Guide</i>.</p>
      */
     inline Column& WithType(const char* value) { SetType(value); return *this;}
 

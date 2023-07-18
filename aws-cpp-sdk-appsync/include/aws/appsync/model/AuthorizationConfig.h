@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The authorization config in case the HTTP endpoint requires
+   * <p>The authorization configuration in case the HTTP endpoint requires
    * authorization.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AuthorizationConfig">AWS
    * API Reference</a></p>
@@ -40,69 +40,75 @@ namespace Model
 
 
     /**
-     * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
-     * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
+     * <p>The authorization type that the HTTP endpoint requires.</p> <ul> <li> <p>
+     * <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+     * </ul>
      */
     inline const AuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
 
     /**
-     * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
-     * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
+     * <p>The authorization type that the HTTP endpoint requires.</p> <ul> <li> <p>
+     * <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+     * </ul>
      */
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
 
     /**
-     * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
-     * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
+     * <p>The authorization type that the HTTP endpoint requires.</p> <ul> <li> <p>
+     * <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+     * </ul>
      */
     inline void SetAuthorizationType(const AuthorizationType& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
 
     /**
-     * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
-     * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
+     * <p>The authorization type that the HTTP endpoint requires.</p> <ul> <li> <p>
+     * <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+     * </ul>
      */
     inline void SetAuthorizationType(AuthorizationType&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
 
     /**
-     * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
-     * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
+     * <p>The authorization type that the HTTP endpoint requires.</p> <ul> <li> <p>
+     * <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+     * </ul>
      */
     inline AuthorizationConfig& WithAuthorizationType(const AuthorizationType& value) { SetAuthorizationType(value); return *this;}
 
     /**
-     * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
-     * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
+     * <p>The authorization type that the HTTP endpoint requires.</p> <ul> <li> <p>
+     * <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+     * </ul>
      */
     inline AuthorizationConfig& WithAuthorizationType(AuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management (IAM) settings.</p>
      */
     inline const AwsIamConfig& GetAwsIamConfig() const{ return m_awsIamConfig; }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management (IAM) settings.</p>
      */
     inline bool AwsIamConfigHasBeenSet() const { return m_awsIamConfigHasBeenSet; }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management (IAM) settings.</p>
      */
     inline void SetAwsIamConfig(const AwsIamConfig& value) { m_awsIamConfigHasBeenSet = true; m_awsIamConfig = value; }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management (IAM) settings.</p>
      */
     inline void SetAwsIamConfig(AwsIamConfig&& value) { m_awsIamConfigHasBeenSet = true; m_awsIamConfig = std::move(value); }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management (IAM) settings.</p>
      */
     inline AuthorizationConfig& WithAwsIamConfig(const AwsIamConfig& value) { SetAwsIamConfig(value); return *this;}
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management (IAM) settings.</p>
      */
     inline AuthorizationConfig& WithAwsIamConfig(AwsIamConfig&& value) { SetAwsIamConfig(std::move(value)); return *this;}
 

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     INSERT,
     UPSERT,
-    UPDATE
+    UPDATE,
+    DELETE_
   };
 
 namespace WriteOperationTypeMapper

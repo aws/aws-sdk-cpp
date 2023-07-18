@@ -88,139 +88,139 @@ namespace Model
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region associated with the automated backup.</p>
+     * <p>The Amazon Web Services Region associated with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -381,7 +381,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -389,7 +389,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -397,7 +397,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -405,7 +405,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -413,7 +413,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -421,7 +421,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -429,7 +429,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -437,7 +437,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.</p>
      */
@@ -486,32 +486,32 @@ namespace Model
 
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline void SetInstanceCreateTime(Aws::Utils::DateTime&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = std::move(value); }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline DBInstanceAutomatedBackup& WithInstanceCreateTime(const Aws::Utils::DateTime& value) { SetInstanceCreateTime(value); return *this;}
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline DBInstanceAutomatedBackup& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
 
@@ -681,22 +681,22 @@ namespace Model
 
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithIops(int value) { SetIops(value); return *this;}
 
@@ -862,58 +862,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline DBInstanceAutomatedBackup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline DBInstanceAutomatedBackup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     * key (CMK).</p>
+     * <p>The Amazon Web Services KMS key ID for an automated backup.</p> <p>The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the KMS key.</p>
      */
     inline DBInstanceAutomatedBackup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -984,26 +984,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline DBInstanceAutomatedBackup& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -1071,52 +1071,101 @@ namespace Model
 
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline const Aws::Vector<DBInstanceAutomatedBackupsReplication>& GetDBInstanceAutomatedBackupsReplications() const{ return m_dBInstanceAutomatedBackupsReplications; }
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline bool DBInstanceAutomatedBackupsReplicationsHasBeenSet() const { return m_dBInstanceAutomatedBackupsReplicationsHasBeenSet; }
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline void SetDBInstanceAutomatedBackupsReplications(const Aws::Vector<DBInstanceAutomatedBackupsReplication>& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = value; }
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline void SetDBInstanceAutomatedBackupsReplications(Aws::Vector<DBInstanceAutomatedBackupsReplication>&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = std::move(value); }
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceAutomatedBackupsReplications(const Aws::Vector<DBInstanceAutomatedBackupsReplication>& value) { SetDBInstanceAutomatedBackupsReplications(value); return *this;}
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceAutomatedBackupsReplications(Aws::Vector<DBInstanceAutomatedBackupsReplication>&& value) { SetDBInstanceAutomatedBackupsReplications(std::move(value)); return *this;}
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& AddDBInstanceAutomatedBackupsReplications(const DBInstanceAutomatedBackupsReplication& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.push_back(value); return *this; }
 
     /**
-     * <p>The list of replications to different AWS Regions associated with the
-     * automated backup.</p>
+     * <p>The list of replications to different Amazon Web Services Regions associated
+     * with the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& AddDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplication&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline const Aws::String& GetBackupTarget() const{ return m_backupTarget; }
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetBackupTarget(const Aws::String& value) { m_backupTargetHasBeenSet = true; m_backupTarget = value; }
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetBackupTarget(Aws::String&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::move(value); }
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetBackupTarget(const char* value) { m_backupTargetHasBeenSet = true; m_backupTarget.assign(value); }
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithBackupTarget(const Aws::String& value) { SetBackupTarget(value); return *this;}
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithBackupTarget(Aws::String&& value) { SetBackupTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies where automated backups are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
 
   private:
 
@@ -1197,6 +1246,9 @@ namespace Model
 
     Aws::Vector<DBInstanceAutomatedBackupsReplication> m_dBInstanceAutomatedBackupsReplications;
     bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet;
+
+    Aws::String m_backupTarget;
+    bool m_backupTargetHasBeenSet;
   };
 
 } // namespace Model

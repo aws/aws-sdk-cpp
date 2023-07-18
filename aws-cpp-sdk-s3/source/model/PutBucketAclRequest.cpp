@@ -22,6 +22,8 @@ PutBucketAclRequest::PutBucketAclRequest() :
     m_accessControlPolicyHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
     m_grantReadHasBeenSet(false),
     m_grantReadACPHasBeenSet(false),
@@ -86,6 +88,11 @@ Aws::Http::HeaderValueCollection PutBucketAclRequest::GetRequestSpecificHeaders(
     ss.str("");
   }
 
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
   if(m_grantFullControlHasBeenSet)
   {
     ss << m_grantFullControl;
@@ -130,3 +137,16 @@ Aws::Http::HeaderValueCollection PutBucketAclRequest::GetRequestSpecificHeaders(
 
   return headers;
 }
+
+Aws::String PutBucketAclRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

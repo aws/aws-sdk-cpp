@@ -38,7 +38,9 @@ UpdateSMBFileShareRequest::UpdateSMBFileShareRequest() :
     m_caseSensitivityHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false)
+    m_notificationPolicyHasBeenSet(false),
+    m_oplocksEnabled(false),
+    m_oplocksEnabledHasBeenSet(false)
 {
 }
 
@@ -164,6 +166,12 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
   if(m_notificationPolicyHasBeenSet)
   {
    payload.WithString("NotificationPolicy", m_notificationPolicy);
+
+  }
+
+  if(m_oplocksEnabledHasBeenSet)
+  {
+   payload.WithBool("OplocksEnabled", m_oplocksEnabled);
 
   }
 

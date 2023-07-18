@@ -16,6 +16,7 @@ DescribeConnectorProfilesRequest::DescribeConnectorProfilesRequest() :
     m_connectorProfileNamesHasBeenSet(false),
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
+    m_connectorLabelHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -40,6 +41,12 @@ Aws::String DescribeConnectorProfilesRequest::SerializePayload() const
   if(m_connectorTypeHasBeenSet)
   {
    payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  }
+
+  if(m_connectorLabelHasBeenSet)
+  {
+   payload.WithString("connectorLabel", m_connectorLabel);
+
   }
 
   if(m_maxResultsHasBeenSet)

@@ -32,7 +32,8 @@ Firewall::Firewall() :
     m_firewallPolicyChangeProtectionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_firewallIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Firewall::Firewall(JsonView jsonValue) :
     m_firewallPolicyChangeProtectionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_firewallIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +142,13 @@ Firewall& Firewall::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+
+    m_encryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -220,6 +229,12 @@ JsonValue Firewall::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

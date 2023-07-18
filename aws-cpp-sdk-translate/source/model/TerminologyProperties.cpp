@@ -30,7 +30,14 @@ TerminologyProperties::TerminologyProperties() :
     m_termCount(0),
     m_termCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_directionality(Directionality::NOT_SET),
+    m_directionalityHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_skippedTermCount(0),
+    m_skippedTermCountHasBeenSet(false),
+    m_format(TerminologyDataFormat::NOT_SET),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -46,7 +53,14 @@ TerminologyProperties::TerminologyProperties(JsonView jsonValue) :
     m_termCount(0),
     m_termCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_directionality(Directionality::NOT_SET),
+    m_directionalityHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_skippedTermCount(0),
+    m_skippedTermCountHasBeenSet(false),
+    m_format(TerminologyDataFormat::NOT_SET),
+    m_formatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +140,34 @@ TerminologyProperties& TerminologyProperties::operator =(JsonView jsonValue)
     m_lastUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Directionality"))
+  {
+    m_directionality = DirectionalityMapper::GetDirectionalityForName(jsonValue.GetString("Directionality"));
+
+    m_directionalityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+
+    m_messageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SkippedTermCount"))
+  {
+    m_skippedTermCount = jsonValue.GetInteger("SkippedTermCount");
+
+    m_skippedTermCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = TerminologyDataFormatMapper::GetTerminologyDataFormatForName(jsonValue.GetString("Format"));
+
+    m_formatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +236,28 @@ JsonValue TerminologyProperties::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_directionalityHasBeenSet)
+  {
+   payload.WithString("Directionality", DirectionalityMapper::GetNameForDirectionality(m_directionality));
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("Message", m_message);
+
+  }
+
+  if(m_skippedTermCountHasBeenSet)
+  {
+   payload.WithInteger("SkippedTermCount", m_skippedTermCount);
+
+  }
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", TerminologyDataFormatMapper::GetNameForTerminologyDataFormat(m_format));
   }
 
   return payload;

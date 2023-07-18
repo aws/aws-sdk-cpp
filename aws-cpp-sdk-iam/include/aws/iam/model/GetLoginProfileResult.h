@@ -40,31 +40,31 @@ namespace Model
 
 
     /**
-     * <p>A structure containing the user name and password create date for the
+     * <p>A structure containing the user name and the profile creation date for the
      * user.</p>
      */
     inline const LoginProfile& GetLoginProfile() const{ return m_loginProfile; }
 
     /**
-     * <p>A structure containing the user name and password create date for the
+     * <p>A structure containing the user name and the profile creation date for the
      * user.</p>
      */
     inline void SetLoginProfile(const LoginProfile& value) { m_loginProfile = value; }
 
     /**
-     * <p>A structure containing the user name and password create date for the
+     * <p>A structure containing the user name and the profile creation date for the
      * user.</p>
      */
     inline void SetLoginProfile(LoginProfile&& value) { m_loginProfile = std::move(value); }
 
     /**
-     * <p>A structure containing the user name and password create date for the
+     * <p>A structure containing the user name and the profile creation date for the
      * user.</p>
      */
     inline GetLoginProfileResult& WithLoginProfile(const LoginProfile& value) { SetLoginProfile(value); return *this;}
 
     /**
-     * <p>A structure containing the user name and password create date for the
+     * <p>A structure containing the user name and the profile creation date for the
      * user.</p>
      */
     inline GetLoginProfileResult& WithLoginProfile(LoginProfile&& value) { SetLoginProfile(std::move(value)); return *this;}

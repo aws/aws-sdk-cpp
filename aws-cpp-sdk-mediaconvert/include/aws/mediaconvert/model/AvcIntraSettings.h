@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AvcIntraClass.h>
+#include <aws/mediaconvert/model/AvcIntraUhdSettings.h>
 #include <aws/mediaconvert/model/AvcIntraFramerateControl.h>
 #include <aws/mediaconvert/model/AvcIntraFramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/AvcIntraInterlaceMode.h>
+#include <aws/mediaconvert/model/AvcIntraScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/AvcIntraSlowPal.h>
 #include <aws/mediaconvert/model/AvcIntraTelecine.h>
 #include <utility>
@@ -29,10 +31,13 @@ namespace Model
 {
 
   /**
-   * Required when you set your output video codec to AVC-Intra. For more information
-   * about the AVC-I settings, see the relevant specification. For detailed
-   * information about SD and HD in AVC-I, see
-   * https://ieeexplore.ieee.org/document/7290936.<p><h3>See Also:</h3>   <a
+   * Required when you choose AVC-Intra for your output video codec. For more
+   * information about the AVC-Intra settings, see the relevant specification. For
+   * detailed information about SD and HD in AVC-Intra, see
+   * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+   * AVC-Intra, see
+   * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AvcIntraSettings">AWS
    * API Reference</a></p>
    */
@@ -49,7 +54,8 @@ namespace Model
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection
      * determines the output video bit rate depending on the frame rate of the output.
      * Outputs with higher class values have higher bitrates and improved image
-     * quality.
+     * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma
+     * subsampling.
      */
     inline const AvcIntraClass& GetAvcIntraClass() const{ return m_avcIntraClass; }
 
@@ -57,7 +63,8 @@ namespace Model
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection
      * determines the output video bit rate depending on the frame rate of the output.
      * Outputs with higher class values have higher bitrates and improved image
-     * quality.
+     * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma
+     * subsampling.
      */
     inline bool AvcIntraClassHasBeenSet() const { return m_avcIntraClassHasBeenSet; }
 
@@ -65,7 +72,8 @@ namespace Model
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection
      * determines the output video bit rate depending on the frame rate of the output.
      * Outputs with higher class values have higher bitrates and improved image
-     * quality.
+     * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma
+     * subsampling.
      */
     inline void SetAvcIntraClass(const AvcIntraClass& value) { m_avcIntraClassHasBeenSet = true; m_avcIntraClass = value; }
 
@@ -73,7 +81,8 @@ namespace Model
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection
      * determines the output video bit rate depending on the frame rate of the output.
      * Outputs with higher class values have higher bitrates and improved image
-     * quality.
+     * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma
+     * subsampling.
      */
     inline void SetAvcIntraClass(AvcIntraClass&& value) { m_avcIntraClassHasBeenSet = true; m_avcIntraClass = std::move(value); }
 
@@ -81,7 +90,8 @@ namespace Model
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection
      * determines the output video bit rate depending on the frame rate of the output.
      * Outputs with higher class values have higher bitrates and improved image
-     * quality.
+     * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma
+     * subsampling.
      */
     inline AvcIntraSettings& WithAvcIntraClass(const AvcIntraClass& value) { SetAvcIntraClass(value); return *this;}
 
@@ -89,9 +99,53 @@ namespace Model
      * Specify the AVC-Intra class of your output. The AVC-Intra class selection
      * determines the output video bit rate depending on the frame rate of the output.
      * Outputs with higher class values have higher bitrates and improved image
-     * quality.
+     * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma
+     * subsampling.
      */
     inline AvcIntraSettings& WithAvcIntraClass(AvcIntraClass&& value) { SetAvcIntraClass(std::move(value)); return *this;}
+
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
+     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
+     * isn't allowed.
+     */
+    inline const AvcIntraUhdSettings& GetAvcIntraUhdSettings() const{ return m_avcIntraUhdSettings; }
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
+     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
+     * isn't allowed.
+     */
+    inline bool AvcIntraUhdSettingsHasBeenSet() const { return m_avcIntraUhdSettingsHasBeenSet; }
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
+     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
+     * isn't allowed.
+     */
+    inline void SetAvcIntraUhdSettings(const AvcIntraUhdSettings& value) { m_avcIntraUhdSettingsHasBeenSet = true; m_avcIntraUhdSettings = value; }
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
+     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
+     * isn't allowed.
+     */
+    inline void SetAvcIntraUhdSettings(AvcIntraUhdSettings&& value) { m_avcIntraUhdSettingsHasBeenSet = true; m_avcIntraUhdSettings = std::move(value); }
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
+     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
+     * isn't allowed.
+     */
+    inline AvcIntraSettings& WithAvcIntraUhdSettings(const AvcIntraUhdSettings& value) { SetAvcIntraUhdSettings(value); return *this;}
+
+    /**
+     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
+     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
+     * isn't allowed.
+     */
+    inline AvcIntraSettings& WithAvcIntraUhdSettings(AvcIntraUhdSettings&& value) { SetAvcIntraUhdSettings(std::move(value)); return *this;}
 
 
     /**
@@ -450,6 +504,109 @@ namespace Model
 
 
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const AvcIntraScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const AvcIntraScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(AvcIntraScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline AvcIntraSettings& WithScanTypeConversionMode(const AvcIntraScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline AvcIntraSettings& WithScanTypeConversionMode(AvcIntraScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+
+
+    /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
      * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
@@ -575,6 +732,9 @@ namespace Model
     AvcIntraClass m_avcIntraClass;
     bool m_avcIntraClassHasBeenSet;
 
+    AvcIntraUhdSettings m_avcIntraUhdSettings;
+    bool m_avcIntraUhdSettingsHasBeenSet;
+
     AvcIntraFramerateControl m_framerateControl;
     bool m_framerateControlHasBeenSet;
 
@@ -589,6 +749,9 @@ namespace Model
 
     AvcIntraInterlaceMode m_interlaceMode;
     bool m_interlaceModeHasBeenSet;
+
+    AvcIntraScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     AvcIntraSlowPal m_slowPal;
     bool m_slowPalHasBeenSet;

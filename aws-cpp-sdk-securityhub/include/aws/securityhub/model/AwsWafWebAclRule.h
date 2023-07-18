@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Details for a rule in a WAF WebACL.</p><p><h3>See Also:</h3>   <a
+   * <p>Details for a rule in an WAF WebACL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafWebAclRule">AWS
    * API Reference</a></p>
    */
@@ -42,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline const WafAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline void SetAction(const WafAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline AwsWafWebAclRule& WithAction(const WafAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline AwsWafWebAclRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
 

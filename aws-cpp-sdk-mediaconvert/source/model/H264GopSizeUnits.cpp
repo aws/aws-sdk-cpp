@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FRAMES_HASH = HashingUtils::HashString("FRAMES");
         static const int SECONDS_HASH = HashingUtils::HashString("SECONDS");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         H264GopSizeUnits GetH264GopSizeUnitsForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SECONDS_HASH)
           {
             return H264GopSizeUnits::SECONDS;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return H264GopSizeUnits::AUTO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "FRAMES";
           case H264GopSizeUnits::SECONDS:
             return "SECONDS";
+          case H264GopSizeUnits::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

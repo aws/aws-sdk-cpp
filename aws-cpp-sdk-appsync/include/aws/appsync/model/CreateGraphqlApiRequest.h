@@ -13,6 +13,7 @@
 #include <aws/appsync/model/OpenIDConnectConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appsync/model/LambdaAuthorizerConfig.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -112,38 +113,38 @@ namespace Model
 
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management (IAM),
+     * OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management (IAM),
+     * OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
      */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management (IAM),
+     * OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management (IAM),
+     * OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management (IAM),
+     * OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
      */
     inline CreateGraphqlApiRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management (IAM),
+     * OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
      */
     inline CreateGraphqlApiRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
@@ -180,32 +181,32 @@ namespace Model
 
 
     /**
-     * <p>The OpenID Connect configuration.</p>
+     * <p>The OIDC configuration.</p>
      */
     inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
 
     /**
-     * <p>The OpenID Connect configuration.</p>
+     * <p>The OIDC configuration.</p>
      */
     inline bool OpenIDConnectConfigHasBeenSet() const { return m_openIDConnectConfigHasBeenSet; }
 
     /**
-     * <p>The OpenID Connect configuration.</p>
+     * <p>The OIDC configuration.</p>
      */
     inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
 
     /**
-     * <p>The OpenID Connect configuration.</p>
+     * <p>The OIDC configuration.</p>
      */
     inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
 
     /**
-     * <p>The OpenID Connect configuration.</p>
+     * <p>The OIDC configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
 
     /**
-     * <p>The OpenID Connect configuration.</p>
+     * <p>The OIDC configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
 
@@ -326,28 +327,59 @@ namespace Model
 
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline bool GetXrayEnabled() const{ return m_xrayEnabled; }
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline bool XrayEnabledHasBeenSet() const { return m_xrayEnabledHasBeenSet; }
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline void SetXrayEnabled(bool value) { m_xrayEnabledHasBeenSet = true; m_xrayEnabled = value; }
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline CreateGraphqlApiRequest& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
+
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline void SetLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline void SetLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline CreateGraphqlApiRequest& WithLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { SetLambdaAuthorizerConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline CreateGraphqlApiRequest& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 
   private:
 
@@ -374,6 +406,9 @@ namespace Model
 
     bool m_xrayEnabled;
     bool m_xrayEnabledHasBeenSet;
+
+    LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
+    bool m_lambdaAuthorizerConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -16,7 +16,7 @@ namespace Model
 
   /**
    * <p>A request for the number of health checks that are associated with the
-   * current AWS account.</p><p><h3>See Also:</h3>   <a
+   * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCountRequest">AWS
    * API Reference</a></p>
    */

@@ -57,9 +57,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -92,9 +92,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -127,9 +127,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -162,9 +162,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -197,9 +197,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -232,9 +232,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -267,9 +267,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -302,9 +302,9 @@ namespace Model
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the VPC.</p> </li> <li> <p> <code>isDefault</code> - Indicates
+     * associated with the VPC.</p> </li> <li> <p> <code>is-default</code> - Indicates
      * whether the VPC is the default VPC.</p> </li> <li> <p> <code>owner-id</code> -
-     * The ID of the AWS account that owns the VPC.</p> </li> <li> <p>
+     * The ID of the Amazon Web Services account that owns the VPC.</p> </li> <li> <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> |
      * <code>available</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the

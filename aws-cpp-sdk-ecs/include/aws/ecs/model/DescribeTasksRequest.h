@@ -150,56 +150,56 @@ namespace Model
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline const Aws::Vector<TaskField>& GetInclude() const{ return m_include; }
 
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(const Aws::Vector<TaskField>& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(Aws::Vector<TaskField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTasksRequest& WithInclude(const Aws::Vector<TaskField>& value) { SetInclude(value); return *this;}
 
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTasksRequest& WithInclude(Aws::Vector<TaskField>&& value) { SetInclude(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTasksRequest& AddInclude(const TaskField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 
     /**
      * <p>Specifies whether you want to see the resource tags for the task. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTasksRequest& AddInclude(TaskField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
 

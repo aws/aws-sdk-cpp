@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An activity that adds data from the AWS IoT device registry to your
+   * <p>An activity that adds data from the IoT device registry to your
    * message.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeviceRegistryEnrichActivity">AWS
    * API Reference</a></p>

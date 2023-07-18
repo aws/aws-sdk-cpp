@@ -44,9 +44,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetTrailName() const{ return m_trailName; }
@@ -58,9 +58,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
@@ -72,9 +72,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
@@ -86,9 +86,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
@@ -100,9 +100,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
@@ -114,9 +114,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
@@ -128,9 +128,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
@@ -142,9 +142,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
@@ -232,7 +232,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
 
@@ -245,7 +245,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
 
@@ -258,7 +258,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
 
@@ -271,7 +271,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
 
@@ -284,7 +284,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
 
@@ -297,7 +297,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
 
@@ -310,7 +310,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
 
@@ -323,7 +323,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
 

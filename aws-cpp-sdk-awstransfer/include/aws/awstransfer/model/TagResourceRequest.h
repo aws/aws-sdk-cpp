@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline TagResourceRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline TagResourceRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server,
-     * user, or role.</p>
+     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
+     * such as a server, user, or role.</p>
      */
     inline TagResourceRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/EphemeralNvmeSupport.h>
+#include <aws/ec2/model/InstanceStorageEncryptionSupport.h>
 #include <aws/ec2/model/DiskInfo.h>
 #include <utility>
 
@@ -26,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the disks that are available for the instance type.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the instance store features that are supported by the instance
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStorageInfo">AWS
    * API Reference</a></p>
    */
@@ -105,40 +106,65 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
-     * instance store.</p>
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
     inline const EphemeralNvmeSupport& GetNvmeSupport() const{ return m_nvmeSupport; }
 
     /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
-     * instance store.</p>
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
     inline bool NvmeSupportHasBeenSet() const { return m_nvmeSupportHasBeenSet; }
 
     /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
-     * instance store.</p>
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
     inline void SetNvmeSupport(const EphemeralNvmeSupport& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
 
     /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
-     * instance store.</p>
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
     inline void SetNvmeSupport(EphemeralNvmeSupport&& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = std::move(value); }
 
     /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
-     * instance store.</p>
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
     inline InstanceStorageInfo& WithNvmeSupport(const EphemeralNvmeSupport& value) { SetNvmeSupport(value); return *this;}
 
     /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
-     * instance store.</p>
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
     inline InstanceStorageInfo& WithNvmeSupport(EphemeralNvmeSupport&& value) { SetNvmeSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether data is encrypted at rest.</p>
+     */
+    inline const InstanceStorageEncryptionSupport& GetEncryptionSupport() const{ return m_encryptionSupport; }
+
+    /**
+     * <p>Indicates whether data is encrypted at rest.</p>
+     */
+    inline bool EncryptionSupportHasBeenSet() const { return m_encryptionSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether data is encrypted at rest.</p>
+     */
+    inline void SetEncryptionSupport(const InstanceStorageEncryptionSupport& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = value; }
+
+    /**
+     * <p>Indicates whether data is encrypted at rest.</p>
+     */
+    inline void SetEncryptionSupport(InstanceStorageEncryptionSupport&& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether data is encrypted at rest.</p>
+     */
+    inline InstanceStorageInfo& WithEncryptionSupport(const InstanceStorageEncryptionSupport& value) { SetEncryptionSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether data is encrypted at rest.</p>
+     */
+    inline InstanceStorageInfo& WithEncryptionSupport(InstanceStorageEncryptionSupport&& value) { SetEncryptionSupport(std::move(value)); return *this;}
 
   private:
 
@@ -150,6 +176,9 @@ namespace Model
 
     EphemeralNvmeSupport m_nvmeSupport;
     bool m_nvmeSupportHasBeenSet;
+
+    InstanceStorageEncryptionSupport m_encryptionSupport;
+    bool m_encryptionSupportHasBeenSet;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SIGN_VERIFY_HASH = HashingUtils::HashString("SIGN_VERIFY");
         static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYPT");
+        static const int GENERATE_VERIFY_MAC_HASH = HashingUtils::HashString("GENERATE_VERIFY_MAC");
 
 
         KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ENCRYPT_DECRYPT_HASH)
           {
             return KeyUsageType::ENCRYPT_DECRYPT;
+          }
+          else if (hashCode == GENERATE_VERIFY_MAC_HASH)
+          {
+            return KeyUsageType::GENERATE_VERIFY_MAC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "SIGN_VERIFY";
           case KeyUsageType::ENCRYPT_DECRYPT:
             return "ENCRYPT_DECRYPT";
+          case KeyUsageType::GENERATE_VERIFY_MAC:
+            return "GENERATE_VERIFY_MAC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -26,7 +26,8 @@ namespace Model
     de_DE,
     pt_BR,
     ja_JP,
-    ko_KR
+    ko_KR,
+    zh_CN
   };
 
 namespace LanguageCodeMapper

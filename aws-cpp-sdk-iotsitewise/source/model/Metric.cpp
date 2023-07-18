@@ -21,14 +21,16 @@ namespace Model
 Metric::Metric() : 
     m_expressionHasBeenSet(false),
     m_variablesHasBeenSet(false),
-    m_windowHasBeenSet(false)
+    m_windowHasBeenSet(false),
+    m_processingConfigHasBeenSet(false)
 {
 }
 
 Metric::Metric(JsonView jsonValue) : 
     m_expressionHasBeenSet(false),
     m_variablesHasBeenSet(false),
-    m_windowHasBeenSet(false)
+    m_windowHasBeenSet(false),
+    m_processingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ Metric& Metric::operator =(JsonView jsonValue)
     m_windowHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("processingConfig"))
+  {
+    m_processingConfig = jsonValue.GetObject("processingConfig");
+
+    m_processingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +95,12 @@ JsonValue Metric::Jsonize() const
   if(m_windowHasBeenSet)
   {
    payload.WithObject("window", m_window.Jsonize());
+
+  }
+
+  if(m_processingConfigHasBeenSet)
+  {
+   payload.WithObject("processingConfig", m_processingConfig.Jsonize());
 
   }
 

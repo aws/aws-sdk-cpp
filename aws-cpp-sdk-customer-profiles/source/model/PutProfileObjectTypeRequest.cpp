@@ -22,6 +22,7 @@ PutProfileObjectTypeRequest::PutProfileObjectTypeRequest() :
     m_encryptionKeyHasBeenSet(false),
     m_allowProfileCreation(false),
     m_allowProfileCreationHasBeenSet(false),
+    m_sourceLastUpdatedTimestampFormatHasBeenSet(false),
     m_fieldsHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -59,6 +60,12 @@ Aws::String PutProfileObjectTypeRequest::SerializePayload() const
   if(m_allowProfileCreationHasBeenSet)
   {
    payload.WithBool("AllowProfileCreation", m_allowProfileCreation);
+
+  }
+
+  if(m_sourceLastUpdatedTimestampFormatHasBeenSet)
+  {
+   payload.WithString("SourceLastUpdatedTimestampFormat", m_sourceLastUpdatedTimestampFormat);
 
   }
 

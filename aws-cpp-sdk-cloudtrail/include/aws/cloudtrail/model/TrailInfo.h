@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline TrailInfo& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline TrailInfo& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline TrailInfo& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
 

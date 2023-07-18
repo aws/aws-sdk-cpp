@@ -21,6 +21,7 @@ namespace DetectiveErrorMapper
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -38,6 +39,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DetectiveErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == TOO_MANY_REQUESTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DetectiveErrors::TOO_MANY_REQUESTS), true);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -80,7 +80,7 @@ namespace Model
 
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -88,7 +88,7 @@ namespace Model
     inline const Aws::String& GetKeyPrefix() const{ return m_keyPrefix; }
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -96,7 +96,7 @@ namespace Model
     inline bool KeyPrefixHasBeenSet() const { return m_keyPrefixHasBeenSet; }
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -104,7 +104,7 @@ namespace Model
     inline void SetKeyPrefix(const Aws::String& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = value; }
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -112,7 +112,7 @@ namespace Model
     inline void SetKeyPrefix(Aws::String&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::move(value); }
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -120,7 +120,7 @@ namespace Model
     inline void SetKeyPrefix(const char* value) { m_keyPrefixHasBeenSet = true; m_keyPrefix.assign(value); }
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -128,7 +128,7 @@ namespace Model
     inline CustomerManagedChannelS3StorageSummary& WithKeyPrefix(const Aws::String& value) { SetKeyPrefix(value); return *this;}
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -136,7 +136,7 @@ namespace Model
     inline CustomerManagedChannelS3StorageSummary& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Optional. The prefix used to create the keys of the channel data objects.
+     * <p>(Optional) The prefix used to create the keys of the channel data objects.
      * Each object in an S3 bucket has a key that is its unique identifier within the
      * bucket (each object in a bucket has exactly one key). The prefix must end with a
      * forward slash (/).</p>
@@ -145,49 +145,49 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline CustomerManagedChannelS3StorageSummary& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline CustomerManagedChannelS3StorageSummary& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
     inline CustomerManagedChannelS3StorageSummary& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

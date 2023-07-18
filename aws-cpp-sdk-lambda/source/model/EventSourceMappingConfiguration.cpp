@@ -30,6 +30,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_parallelizationFactor(0),
     m_parallelizationFactorHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
+    m_filterCriteriaHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
@@ -64,6 +65,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_parallelizationFactor(0),
     m_parallelizationFactorHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
+    m_filterCriteriaHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
@@ -136,6 +138,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_eventSourceArn = jsonValue.GetString("EventSourceArn");
 
     m_eventSourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FilterCriteria"))
+  {
+    m_filterCriteria = jsonValue.GetObject("FilterCriteria");
+
+    m_filterCriteriaHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FunctionArn"))
@@ -299,6 +308,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_eventSourceArnHasBeenSet)
   {
    payload.WithString("EventSourceArn", m_eventSourceArn);
+
+  }
+
+  if(m_filterCriteriaHasBeenSet)
+  {
+   payload.WithObject("FilterCriteria", m_filterCriteria.Jsonize());
 
   }
 

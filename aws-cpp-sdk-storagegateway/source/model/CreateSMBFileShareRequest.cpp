@@ -43,7 +43,11 @@ CreateSMBFileShareRequest::CreateSMBFileShareRequest() :
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false)
+    m_notificationPolicyHasBeenSet(false),
+    m_vPCEndpointDNSNameHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
+    m_oplocksEnabled(false),
+    m_oplocksEnabledHasBeenSet(false)
 {
 }
 
@@ -204,6 +208,24 @@ Aws::String CreateSMBFileShareRequest::SerializePayload() const
   if(m_notificationPolicyHasBeenSet)
   {
    payload.WithString("NotificationPolicy", m_notificationPolicy);
+
+  }
+
+  if(m_vPCEndpointDNSNameHasBeenSet)
+  {
+   payload.WithString("VPCEndpointDNSName", m_vPCEndpointDNSName);
+
+  }
+
+  if(m_bucketRegionHasBeenSet)
+  {
+   payload.WithString("BucketRegion", m_bucketRegion);
+
+  }
+
+  if(m_oplocksEnabledHasBeenSet)
+  {
+   payload.WithBool("OplocksEnabled", m_oplocksEnabled);
 
   }
 

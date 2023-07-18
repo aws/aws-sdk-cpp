@@ -580,22 +580,34 @@ namespace Model
     inline BatchReadSuccessfulResponse& WithGetLinkAttributes(BatchGetLinkAttributesResponse&& value) { SetGetLinkAttributes(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The list of parent objects to retrieve.</p>
+     */
     inline const BatchListObjectParentsResponse& GetListObjectParents() const{ return m_listObjectParents; }
 
-    
+    /**
+     * <p>The list of parent objects to retrieve.</p>
+     */
     inline bool ListObjectParentsHasBeenSet() const { return m_listObjectParentsHasBeenSet; }
 
-    
+    /**
+     * <p>The list of parent objects to retrieve.</p>
+     */
     inline void SetListObjectParents(const BatchListObjectParentsResponse& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = value; }
 
-    
+    /**
+     * <p>The list of parent objects to retrieve.</p>
+     */
     inline void SetListObjectParents(BatchListObjectParentsResponse&& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = std::move(value); }
 
-    
+    /**
+     * <p>The list of parent objects to retrieve.</p>
+     */
     inline BatchReadSuccessfulResponse& WithListObjectParents(const BatchListObjectParentsResponse& value) { SetListObjectParents(value); return *this;}
 
-    
+    /**
+     * <p>The list of parent objects to retrieve.</p>
+     */
     inline BatchReadSuccessfulResponse& WithListObjectParents(BatchListObjectParentsResponse&& value) { SetListObjectParents(std::move(value)); return *this;}
 
   private:

@@ -64,6 +64,7 @@ namespace Aws
         {
         public:
             PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId, bool disableCaching = false);
+            PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, bool disableCaching = false);
             PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId, const char* identitiesFilePath, bool disableCaching = false);
 
             bool HasIdentityId() const override;

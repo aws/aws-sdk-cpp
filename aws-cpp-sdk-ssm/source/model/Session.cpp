@@ -27,8 +27,10 @@ Session::Session() :
     m_endDateHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_outputUrlHasBeenSet(false)
+    m_outputUrlHasBeenSet(false),
+    m_maxSessionDurationHasBeenSet(false)
 {
 }
 
@@ -41,8 +43,10 @@ Session::Session(JsonView jsonValue) :
     m_endDateHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_outputUrlHasBeenSet(false)
+    m_outputUrlHasBeenSet(false),
+    m_maxSessionDurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,13 @@ Session& Session::operator =(JsonView jsonValue)
     m_ownerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Reason"))
+  {
+    m_reason = jsonValue.GetString("Reason");
+
+    m_reasonHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetString("Details");
@@ -110,6 +121,13 @@ Session& Session::operator =(JsonView jsonValue)
     m_outputUrl = jsonValue.GetObject("OutputUrl");
 
     m_outputUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxSessionDuration"))
+  {
+    m_maxSessionDuration = jsonValue.GetString("MaxSessionDuration");
+
+    m_maxSessionDurationHasBeenSet = true;
   }
 
   return *this;
@@ -158,6 +176,12 @@ JsonValue Session::Jsonize() const
 
   }
 
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", m_reason);
+
+  }
+
   if(m_detailsHasBeenSet)
   {
    payload.WithString("Details", m_details);
@@ -167,6 +191,12 @@ JsonValue Session::Jsonize() const
   if(m_outputUrlHasBeenSet)
   {
    payload.WithObject("OutputUrl", m_outputUrl.Jsonize());
+
+  }
+
+  if(m_maxSessionDurationHasBeenSet)
+  {
+   payload.WithString("MaxSessionDuration", m_maxSessionDuration);
 
   }
 

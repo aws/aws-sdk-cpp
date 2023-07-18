@@ -10,7 +10,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/SetSourceRequest.h>
 #include <aws/mediaconnect/model/FailoverConfig.h>
+#include <aws/mediaconnect/model/AddMaintenance.h>
 #include <aws/mediaconnect/model/GrantEntitlementRequest.h>
+#include <aws/mediaconnect/model/AddMediaStreamRequest.h>
 #include <aws/mediaconnect/model/AddOutputRequest.h>
 #include <aws/mediaconnect/model/VpcInterfaceRequest.h>
 #include <utility>
@@ -131,6 +133,55 @@ namespace Model
      * The entitlements that you want to grant on a flow.
      */
     inline CreateFlowRequest& AddEntitlements(GrantEntitlementRequest&& value) { m_entitlementsHasBeenSet = true; m_entitlements.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline const Aws::Vector<AddMediaStreamRequest>& GetMediaStreams() const{ return m_mediaStreams; }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline bool MediaStreamsHasBeenSet() const { return m_mediaStreamsHasBeenSet; }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline void SetMediaStreams(const Aws::Vector<AddMediaStreamRequest>& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = value; }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline void SetMediaStreams(Aws::Vector<AddMediaStreamRequest>&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = std::move(value); }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline CreateFlowRequest& WithMediaStreams(const Aws::Vector<AddMediaStreamRequest>& value) { SetMediaStreams(value); return *this;}
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline CreateFlowRequest& WithMediaStreams(Aws::Vector<AddMediaStreamRequest>&& value) { SetMediaStreams(std::move(value)); return *this;}
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline CreateFlowRequest& AddMediaStreams(const AddMediaStreamRequest& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(value); return *this; }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these
+     * media streams with sources and outputs on the flow.
+     */
+    inline CreateFlowRequest& AddMediaStreams(AddMediaStreamRequest&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -318,6 +369,25 @@ namespace Model
      */
     inline CreateFlowRequest& AddVpcInterfaces(VpcInterfaceRequest&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const AddMaintenance& GetMaintenance() const{ return m_maintenance; }
+
+    
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    
+    inline void SetMaintenance(const AddMaintenance& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    
+    inline void SetMaintenance(AddMaintenance&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    
+    inline CreateFlowRequest& WithMaintenance(const AddMaintenance& value) { SetMaintenance(value); return *this;}
+
+    
+    inline CreateFlowRequest& WithMaintenance(AddMaintenance&& value) { SetMaintenance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -325,6 +395,9 @@ namespace Model
 
     Aws::Vector<GrantEntitlementRequest> m_entitlements;
     bool m_entitlementsHasBeenSet;
+
+    Aws::Vector<AddMediaStreamRequest> m_mediaStreams;
+    bool m_mediaStreamsHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -343,6 +416,9 @@ namespace Model
 
     Aws::Vector<VpcInterfaceRequest> m_vpcInterfaces;
     bool m_vpcInterfacesHasBeenSet;
+
+    AddMaintenance m_maintenance;
+    bool m_maintenanceHasBeenSet;
   };
 
 } // namespace Model

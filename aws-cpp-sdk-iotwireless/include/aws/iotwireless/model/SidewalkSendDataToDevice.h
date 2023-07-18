@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/MessageType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,10 +57,32 @@ namespace Model
      */
     inline SidewalkSendDataToDevice& WithSeq(int value) { SetSeq(value); return *this;}
 
+
+    
+    inline const MessageType& GetMessageType() const{ return m_messageType; }
+
+    
+    inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
+
+    
+    inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+
+    
+    inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
+
+    
+    inline SidewalkSendDataToDevice& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
+
+    
+    inline SidewalkSendDataToDevice& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+
   private:
 
     int m_seq;
     bool m_seqHasBeenSet;
+
+    MessageType m_messageType;
+    bool m_messageTypeHasBeenSet;
   };
 
 } // namespace Model

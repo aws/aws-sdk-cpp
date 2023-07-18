@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration properties for logging events associated with a peer node owned
-   * by a member in a Managed Blockchain network.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration properties for logging events associated with a peer node on a
+   * Hyperledger Fabric network on Managed Blockchain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeLogPublishingConfiguration">AWS
    * API Reference</a></p>
    */

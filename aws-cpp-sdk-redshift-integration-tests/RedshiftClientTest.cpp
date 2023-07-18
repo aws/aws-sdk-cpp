@@ -36,6 +36,7 @@
 #include <aws/redshift/model/DeleteSnapshotCopyGrantRequest.h>
 #include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 #include <aws/redshift/model/DisableSnapshotCopyRequest.h>
+#include <thread>
 
 
 using namespace Aws::Auth;

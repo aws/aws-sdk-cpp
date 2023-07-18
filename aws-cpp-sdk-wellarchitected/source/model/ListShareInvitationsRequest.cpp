@@ -17,6 +17,9 @@ using namespace Aws::Http;
 
 ListShareInvitationsRequest::ListShareInvitationsRequest() : 
     m_workloadNamePrefixHasBeenSet(false),
+    m_lensNamePrefixHasBeenSet(false),
+    m_shareResourceType(ShareResourceType::NOT_SET),
+    m_shareResourceTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -35,6 +38,20 @@ void ListShareInvitationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_workloadNamePrefix;
       uri.AddQueryStringParameter("WorkloadNamePrefix", ss.str());
+      ss.str("");
+    }
+
+    if(m_lensNamePrefixHasBeenSet)
+    {
+      ss << m_lensNamePrefix;
+      uri.AddQueryStringParameter("LensNamePrefix", ss.str());
+      ss.str("");
+    }
+
+    if(m_shareResourceTypeHasBeenSet)
+    {
+      ss << ShareResourceTypeMapper::GetNameForShareResourceType(m_shareResourceType);
+      uri.AddQueryStringParameter("ShareResourceType", ss.str());
       ss.str("");
     }
 

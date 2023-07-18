@@ -635,7 +635,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -644,7 +644,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
@@ -653,7 +653,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
@@ -662,7 +662,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
@@ -671,7 +671,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline DocumentClassifierProperties& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -680,7 +680,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline DocumentClassifierProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
@@ -734,6 +734,193 @@ namespace Model
      */
     inline DocumentClassifierProperties& WithMode(DocumentClassifierMode&& value) { SetMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline DocumentClassifierProperties& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline DocumentClassifierProperties& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline DocumentClassifierProperties& WithModelKmsKeyId(const char* value) { SetModelKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline DocumentClassifierProperties& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline DocumentClassifierProperties& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version name that you assigned to the document classifier.</p>
+     */
+    inline DocumentClassifierProperties& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline const Aws::String& GetSourceModelArn() const{ return m_sourceModelArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline bool SourceModelArnHasBeenSet() const { return m_sourceModelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(const Aws::String& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(Aws::String&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(const char* value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline DocumentClassifierProperties& WithSourceModelArn(const Aws::String& value) { SetSourceModelArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline DocumentClassifierProperties& WithSourceModelArn(Aws::String&& value) { SetSourceModelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the document classifier model in your AWS
+     * account.</p>
+     */
+    inline DocumentClassifierProperties& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
+
   private:
 
     Aws::String m_documentClassifierArn;
@@ -780,6 +967,15 @@ namespace Model
 
     DocumentClassifierMode m_mode;
     bool m_modeHasBeenSet;
+
+    Aws::String m_modelKmsKeyId;
+    bool m_modelKmsKeyIdHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
+
+    Aws::String m_sourceModelArn;
+    bool m_sourceModelArnHasBeenSet;
   };
 
 } // namespace Model

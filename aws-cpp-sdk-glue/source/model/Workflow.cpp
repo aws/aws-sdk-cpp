@@ -27,7 +27,8 @@ Workflow::Workflow() :
     m_lastRunHasBeenSet(false),
     m_graphHasBeenSet(false),
     m_maxConcurrentRuns(0),
-    m_maxConcurrentRunsHasBeenSet(false)
+    m_maxConcurrentRunsHasBeenSet(false),
+    m_blueprintDetailsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Workflow::Workflow(JsonView jsonValue) :
     m_lastRunHasBeenSet(false),
     m_graphHasBeenSet(false),
     m_maxConcurrentRuns(0),
-    m_maxConcurrentRunsHasBeenSet(false)
+    m_maxConcurrentRunsHasBeenSet(false),
+    m_blueprintDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ Workflow& Workflow::operator =(JsonView jsonValue)
     m_maxConcurrentRunsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BlueprintDetails"))
+  {
+    m_blueprintDetails = jsonValue.GetObject("BlueprintDetails");
+
+    m_blueprintDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +170,12 @@ JsonValue Workflow::Jsonize() const
   if(m_maxConcurrentRunsHasBeenSet)
   {
    payload.WithInteger("MaxConcurrentRuns", m_maxConcurrentRuns);
+
+  }
+
+  if(m_blueprintDetailsHasBeenSet)
+  {
+   payload.WithObject("BlueprintDetails", m_blueprintDetails.Jsonize());
 
   }
 

@@ -26,6 +26,7 @@ Resource::Resource() :
     m_regionHasBeenSet(false),
     m_resourceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_dataClassificationHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {
 }
@@ -38,6 +39,7 @@ Resource::Resource(JsonView jsonValue) :
     m_regionHasBeenSet(false),
     m_resourceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_dataClassificationHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -88,6 +90,13 @@ Resource& Resource::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataClassification"))
+  {
+    m_dataClassification = jsonValue.GetObject("DataClassification");
+
+    m_dataClassificationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Details"))
@@ -141,6 +150,12 @@ JsonValue Resource::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_dataClassificationHasBeenSet)
+  {
+   payload.WithObject("DataClassification", m_dataClassification.Jsonize());
 
   }
 

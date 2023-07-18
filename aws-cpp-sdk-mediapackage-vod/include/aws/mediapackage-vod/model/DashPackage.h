@@ -103,6 +103,47 @@ namespace Model
 
 
     /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline bool GetIncludeEncoderConfigurationInSegments() const{ return m_includeEncoderConfigurationInSegments; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline bool IncludeEncoderConfigurationInSegmentsHasBeenSet() const { return m_includeEncoderConfigurationInSegmentsHasBeenSet; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline void SetIncludeEncoderConfigurationInSegments(bool value) { m_includeEncoderConfigurationInSegmentsHasBeenSet = true; m_includeEncoderConfigurationInSegments = value; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline DashPackage& WithIncludeEncoderConfigurationInSegments(bool value) { SetIncludeEncoderConfigurationInSegments(value); return *this;}
+
+
+    /**
      * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
      * over HTTP (DASH)
 Media Presentation Description (MPD) will be partitioned into
@@ -307,6 +348,9 @@ rounded to the
 
     DashEncryption m_encryption;
     bool m_encryptionHasBeenSet;
+
+    bool m_includeEncoderConfigurationInSegments;
+    bool m_includeEncoderConfigurationInSegmentsHasBeenSet;
 
     Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
     bool m_periodTriggersHasBeenSet;

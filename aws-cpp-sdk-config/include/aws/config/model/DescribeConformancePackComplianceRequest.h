@@ -108,26 +108,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of AWS Config rules within a conformance pack are returned
-     * on each page.</p>
+     * <p>The maximum number of Config rules within a conformance pack are returned on
+     * each page.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of AWS Config rules within a conformance pack are returned
-     * on each page.</p>
+     * <p>The maximum number of Config rules within a conformance pack are returned on
+     * each page.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>The maximum number of AWS Config rules within a conformance pack are returned
-     * on each page.</p>
+     * <p>The maximum number of Config rules within a conformance pack are returned on
+     * each page.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of AWS Config rules within a conformance pack are returned
-     * on each page.</p>
+     * <p>The maximum number of Config rules within a conformance pack are returned on
+     * each page.</p>
      */
     inline DescribeConformancePackComplianceRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

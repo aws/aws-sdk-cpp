@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateSolutionVersionRequest::CreateSolutionVersionRequest() : 
     m_solutionArnHasBeenSet(false),
     m_trainingMode(TrainingMode::NOT_SET),
-    m_trainingModeHasBeenSet(false)
+    m_trainingModeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String CreateSolutionVersionRequest::SerializePayload() const
   if(m_trainingModeHasBeenSet)
   {
    payload.WithString("trainingMode", TrainingModeMapper::GetNameForTrainingMode(m_trainingMode));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/CostExplorerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/Expression.h>
 #include <aws/ce/model/AccountScope.h>
 #include <aws/ce/model/LookbackPeriodInDays.h>
 #include <aws/ce/model/TermInYears.h>
@@ -40,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID that is associated with the recommendation. </p>
+     * <p>The account ID that's associated with the recommendation. </p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -119,6 +120,25 @@ namespace Model
      * <p>The specific service that you want recommendations for.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithService(const char* value) { SetService(value); return *this;}
+
+
+    
+    inline const Expression& GetFilter() const{ return m_filter; }
+
+    
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    
+    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    
+    inline GetReservationPurchaseRecommendationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
+
+    
+    inline GetReservationPurchaseRecommendationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -171,38 +191,38 @@ namespace Model
 
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 
@@ -386,6 +406,9 @@ namespace Model
 
     Aws::String m_service;
     bool m_serviceHasBeenSet;
+
+    Expression m_filter;
+    bool m_filterHasBeenSet;
 
     AccountScope m_accountScope;
     bool m_accountScopeHasBeenSet;

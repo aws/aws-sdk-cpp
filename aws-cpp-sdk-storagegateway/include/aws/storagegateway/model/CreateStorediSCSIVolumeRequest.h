@@ -136,7 +136,7 @@ namespace Model
 
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -146,7 +146,7 @@ namespace Model
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -156,7 +156,7 @@ namespace Model
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -166,7 +166,7 @@ namespace Model
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -176,7 +176,7 @@ namespace Model
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -186,7 +186,7 @@ namespace Model
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -196,7 +196,7 @@ namespace Model
     inline CreateStorediSCSIVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -206,7 +206,7 @@ namespace Model
     inline CreateStorediSCSIVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot; otherwise, do not include this field. To list snapshots for
      * your account use <a
@@ -217,30 +217,30 @@ namespace Model
 
 
     /**
-     * <p>Set to true <code>true</code> if you want to preserve the data on the local
-     * disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * <p>Set to <code>true</code> if you want to preserve the data on the local disk.
+     * Otherwise, set to <code>false</code> to create an empty volume.</p> <p>Valid
+     * Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetPreserveExistingData() const{ return m_preserveExistingData; }
 
     /**
-     * <p>Set to true <code>true</code> if you want to preserve the data on the local
-     * disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * <p>Set to <code>true</code> if you want to preserve the data on the local disk.
+     * Otherwise, set to <code>false</code> to create an empty volume.</p> <p>Valid
+     * Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool PreserveExistingDataHasBeenSet() const { return m_preserveExistingDataHasBeenSet; }
 
     /**
-     * <p>Set to true <code>true</code> if you want to preserve the data on the local
-     * disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * <p>Set to <code>true</code> if you want to preserve the data on the local disk.
+     * Otherwise, set to <code>false</code> to create an empty volume.</p> <p>Valid
+     * Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetPreserveExistingData(bool value) { m_preserveExistingDataHasBeenSet = true; m_preserveExistingData = value; }
 
     /**
-     * <p>Set to true <code>true</code> if you want to preserve the data on the local
-     * disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * <p>Set to <code>true</code> if you want to preserve the data on the local disk.
+     * Otherwise, set to <code>false</code> to create an empty volume.</p> <p>Valid
+     * Values: <code>true</code> | <code>false</code> </p>
      */
     inline CreateStorediSCSIVolumeRequest& WithPreserveExistingData(bool value) { SetPreserveExistingData(value); return *this;}
 
@@ -401,28 +401,28 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline CreateStorediSCSIVolumeRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}

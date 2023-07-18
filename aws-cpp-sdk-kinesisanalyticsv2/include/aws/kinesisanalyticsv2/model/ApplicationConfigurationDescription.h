@@ -12,6 +12,7 @@
 #include <aws/kinesisanalyticsv2/model/EnvironmentPropertyDescriptions.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationSnapshotConfigurationDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalyticsv2/model/ZeppelinApplicationConfigurationDescription.h>
 #include <aws/kinesisanalyticsv2/model/VpcConfigurationDescription.h>
 #include <utility>
 
@@ -309,6 +310,43 @@ namespace Model
      */
     inline ApplicationConfigurationDescription& AddVpcConfigurationDescriptions(VpcConfigurationDescription&& value) { m_vpcConfigurationDescriptionsHasBeenSet = true; m_vpcConfigurationDescriptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * notebook.</p>
+     */
+    inline const ZeppelinApplicationConfigurationDescription& GetZeppelinApplicationConfigurationDescription() const{ return m_zeppelinApplicationConfigurationDescription; }
+
+    /**
+     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * notebook.</p>
+     */
+    inline bool ZeppelinApplicationConfigurationDescriptionHasBeenSet() const { return m_zeppelinApplicationConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * notebook.</p>
+     */
+    inline void SetZeppelinApplicationConfigurationDescription(const ZeppelinApplicationConfigurationDescription& value) { m_zeppelinApplicationConfigurationDescriptionHasBeenSet = true; m_zeppelinApplicationConfigurationDescription = value; }
+
+    /**
+     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * notebook.</p>
+     */
+    inline void SetZeppelinApplicationConfigurationDescription(ZeppelinApplicationConfigurationDescription&& value) { m_zeppelinApplicationConfigurationDescriptionHasBeenSet = true; m_zeppelinApplicationConfigurationDescription = std::move(value); }
+
+    /**
+     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * notebook.</p>
+     */
+    inline ApplicationConfigurationDescription& WithZeppelinApplicationConfigurationDescription(const ZeppelinApplicationConfigurationDescription& value) { SetZeppelinApplicationConfigurationDescription(value); return *this;}
+
+    /**
+     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * notebook.</p>
+     */
+    inline ApplicationConfigurationDescription& WithZeppelinApplicationConfigurationDescription(ZeppelinApplicationConfigurationDescription&& value) { SetZeppelinApplicationConfigurationDescription(std::move(value)); return *this;}
+
   private:
 
     SqlApplicationConfigurationDescription m_sqlApplicationConfigurationDescription;
@@ -331,6 +369,9 @@ namespace Model
 
     Aws::Vector<VpcConfigurationDescription> m_vpcConfigurationDescriptions;
     bool m_vpcConfigurationDescriptionsHasBeenSet;
+
+    ZeppelinApplicationConfigurationDescription m_zeppelinApplicationConfigurationDescription;
+    bool m_zeppelinApplicationConfigurationDescriptionHasBeenSet;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/robomaker/model/SimulationJobStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/robomaker/model/ComputeType.h>
 #include <utility>
 
 namespace Aws
@@ -327,6 +328,37 @@ namespace Model
      */
     inline SimulationJobSummary& AddDataSourceNames(const char* value) { m_dataSourceNamesHasBeenSet = true; m_dataSourceNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>The compute type for the simulation job summary.</p>
+     */
+    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+
+    /**
+     * <p>The compute type for the simulation job summary.</p>
+     */
+    inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
+
+    /**
+     * <p>The compute type for the simulation job summary.</p>
+     */
+    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+
+    /**
+     * <p>The compute type for the simulation job summary.</p>
+     */
+    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
+
+    /**
+     * <p>The compute type for the simulation job summary.</p>
+     */
+    inline SimulationJobSummary& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
+
+    /**
+     * <p>The compute type for the simulation job summary.</p>
+     */
+    inline SimulationJobSummary& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -349,6 +381,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_dataSourceNames;
     bool m_dataSourceNamesHasBeenSet;
+
+    ComputeType m_computeType;
+    bool m_computeTypeHasBeenSet;
   };
 
 } // namespace Model

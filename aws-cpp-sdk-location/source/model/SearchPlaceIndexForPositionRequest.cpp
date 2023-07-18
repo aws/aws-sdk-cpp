@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 SearchPlaceIndexForPositionRequest::SearchPlaceIndexForPositionRequest() : 
     m_indexNameHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_positionHasBeenSet(false)
@@ -23,6 +24,12 @@ SearchPlaceIndexForPositionRequest::SearchPlaceIndexForPositionRequest() :
 Aws::String SearchPlaceIndexForPositionRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("Language", m_language);
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {

@@ -63,27 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQuery = value; }
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQuery = std::move(value); }
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline CreateGroupResult& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline CreateGroupResult& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
 
@@ -150,57 +165,42 @@ namespace Model
 
 
     /**
-     * <p>The service configuration associated with the resource group. AWS Resource
-     * Groups supports adding service configurations for the following resource group
-     * types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> - Amazon
-     * EC2 capacity reservation pools. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-     * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
-     * </ul>
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline const GroupConfiguration& GetGroupConfiguration() const{ return m_groupConfiguration; }
 
     /**
-     * <p>The service configuration associated with the resource group. AWS Resource
-     * Groups supports adding service configurations for the following resource group
-     * types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> - Amazon
-     * EC2 capacity reservation pools. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-     * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
-     * </ul>
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline void SetGroupConfiguration(const GroupConfiguration& value) { m_groupConfiguration = value; }
 
     /**
-     * <p>The service configuration associated with the resource group. AWS Resource
-     * Groups supports adding service configurations for the following resource group
-     * types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> - Amazon
-     * EC2 capacity reservation pools. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-     * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
-     * </ul>
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline void SetGroupConfiguration(GroupConfiguration&& value) { m_groupConfiguration = std::move(value); }
 
     /**
-     * <p>The service configuration associated with the resource group. AWS Resource
-     * Groups supports adding service configurations for the following resource group
-     * types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> - Amazon
-     * EC2 capacity reservation pools. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-     * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
-     * </ul>
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline CreateGroupResult& WithGroupConfiguration(const GroupConfiguration& value) { SetGroupConfiguration(value); return *this;}
 
     /**
-     * <p>The service configuration associated with the resource group. AWS Resource
-     * Groups supports adding service configurations for the following resource group
-     * types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> - Amazon
-     * EC2 capacity reservation pools. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-     * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
-     * </ul>
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline CreateGroupResult& WithGroupConfiguration(GroupConfiguration&& value) { SetGroupConfiguration(std::move(value)); return *this;}
 

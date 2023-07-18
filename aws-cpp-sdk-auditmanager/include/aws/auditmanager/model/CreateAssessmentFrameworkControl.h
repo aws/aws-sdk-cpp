@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> Control entity attributes that uniquely identify an existing control to be
-   * added to a framework in AWS Audit Manager. </p><p><h3>See Also:</h3>   <a
+   * <p> The control entity attributes that uniquely identify an existing control to
+   * be added to a framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentFrameworkControl">AWS
    * API Reference</a></p>
    */

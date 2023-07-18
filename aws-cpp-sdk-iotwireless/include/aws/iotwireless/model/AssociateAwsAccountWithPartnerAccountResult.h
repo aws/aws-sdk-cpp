@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/SidewalkAccountInfo.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,47 @@ namespace Model
      */
     inline AssociateAwsAccountWithPartnerAccountResult& WithSidewalk(SidewalkAccountInfo&& value) { SetSidewalk(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline AssociateAwsAccountWithPartnerAccountResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline AssociateAwsAccountWithPartnerAccountResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline AssociateAwsAccountWithPartnerAccountResult& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     SidewalkAccountInfo m_sidewalk;
+
+    Aws::String m_arn;
   };
 
 } // namespace Model

@@ -62,6 +62,12 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("jobArn"))
+  {
+    m_jobArn = jsonValue.GetString("jobArn");
+
+  }
+
   if(jsonValue.ValueExists("outputS3Bucket"))
   {
     m_outputS3Bucket = jsonValue.GetString("outputS3Bucket");

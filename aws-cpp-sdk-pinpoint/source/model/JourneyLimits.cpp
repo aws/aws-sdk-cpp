@@ -24,7 +24,8 @@ JourneyLimits::JourneyLimits() :
     m_endpointReentryCap(0),
     m_endpointReentryCapHasBeenSet(false),
     m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false)
+    m_messagesPerSecondHasBeenSet(false),
+    m_endpointReentryIntervalHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ JourneyLimits::JourneyLimits(JsonView jsonValue) :
     m_endpointReentryCap(0),
     m_endpointReentryCapHasBeenSet(false),
     m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false)
+    m_messagesPerSecondHasBeenSet(false),
+    m_endpointReentryIntervalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,13 @@ JourneyLimits& JourneyLimits::operator =(JsonView jsonValue)
     m_messagesPerSecondHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndpointReentryInterval"))
+  {
+    m_endpointReentryInterval = jsonValue.GetString("EndpointReentryInterval");
+
+    m_endpointReentryIntervalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +93,12 @@ JsonValue JourneyLimits::Jsonize() const
   if(m_messagesPerSecondHasBeenSet)
   {
    payload.WithInteger("MessagesPerSecond", m_messagesPerSecond);
+
+  }
+
+  if(m_endpointReentryIntervalHasBeenSet)
+  {
+   payload.WithString("EndpointReentryInterval", m_endpointReentryInterval);
 
   }
 

@@ -17,6 +17,7 @@ UpdateClusterRequest::UpdateClusterRequest() :
     m_roleARNHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_resourcesHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
@@ -50,6 +51,12 @@ Aws::String UpdateClusterRequest::SerializePayload() const
   if(m_resourcesHasBeenSet)
   {
    payload.WithObject("Resources", m_resources.Jsonize());
+
+  }
+
+  if(m_onDeviceServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
 
   }
 

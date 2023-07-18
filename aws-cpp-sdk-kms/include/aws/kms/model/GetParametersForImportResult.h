@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-     * This is the same CMK specified in the <code>GetParametersForImport</code>
+     * ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request.
+     * This is the same KMS key specified in the <code>GetParametersForImport</code>
      * request.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
@@ -46,8 +46,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-     * This is the same CMK specified in the <code>GetParametersForImport</code>
+     * ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request.
+     * This is the same KMS key specified in the <code>GetParametersForImport</code>
      * request.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
@@ -55,8 +55,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-     * This is the same CMK specified in the <code>GetParametersForImport</code>
+     * ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request.
+     * This is the same KMS key specified in the <code>GetParametersForImport</code>
      * request.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
@@ -64,8 +64,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-     * This is the same CMK specified in the <code>GetParametersForImport</code>
+     * ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request.
+     * This is the same KMS key specified in the <code>GetParametersForImport</code>
      * request.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
@@ -73,8 +73,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-     * This is the same CMK specified in the <code>GetParametersForImport</code>
+     * ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request.
+     * This is the same KMS key specified in the <code>GetParametersForImport</code>
      * request.</p>
      */
     inline GetParametersForImportResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
@@ -82,8 +82,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-     * This is the same CMK specified in the <code>GetParametersForImport</code>
+     * ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request.
+     * This is the same KMS key specified in the <code>GetParametersForImport</code>
      * request.</p>
      */
     inline GetParametersForImportResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
@@ -91,8 +91,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-     * This is the same CMK specified in the <code>GetParametersForImport</code>
+     * ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request.
+     * This is the same KMS key specified in the <code>GetParametersForImport</code>
      * request.</p>
      */
     inline GetParametersForImportResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}

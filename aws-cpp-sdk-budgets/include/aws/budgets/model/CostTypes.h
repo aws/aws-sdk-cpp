@@ -25,7 +25,7 @@ namespace Model
    * <p>The types of cost that are included in a <code>COST</code> budget, such as
    * tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>,
    * <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and
-   * <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have
+   * <code>SAVINGS_PLANS_COVERAGE</code> budgets don't have
    * <code>CostTypes</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CostTypes">AWS
    * API Reference</a></p>

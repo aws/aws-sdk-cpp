@@ -28,7 +28,8 @@ Subscription::Subscription() :
     m_limitsHasBeenSet(false),
     m_proactiveEngagementStatus(ProactiveEngagementStatus::NOT_SET),
     m_proactiveEngagementStatusHasBeenSet(false),
-    m_subscriptionLimitsHasBeenSet(false)
+    m_subscriptionLimitsHasBeenSet(false),
+    m_subscriptionArnHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Subscription::Subscription(JsonView jsonValue) :
     m_limitsHasBeenSet(false),
     m_proactiveEngagementStatus(ProactiveEngagementStatus::NOT_SET),
     m_proactiveEngagementStatusHasBeenSet(false),
-    m_subscriptionLimitsHasBeenSet(false)
+    m_subscriptionLimitsHasBeenSet(false),
+    m_subscriptionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ Subscription& Subscription::operator =(JsonView jsonValue)
     m_subscriptionLimitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubscriptionArn"))
+  {
+    m_subscriptionArn = jsonValue.GetString("SubscriptionArn");
+
+    m_subscriptionArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +157,12 @@ JsonValue Subscription::Jsonize() const
   if(m_subscriptionLimitsHasBeenSet)
   {
    payload.WithObject("SubscriptionLimits", m_subscriptionLimits.Jsonize());
+
+  }
+
+  if(m_subscriptionArnHasBeenSet)
+  {
+   payload.WithString("SubscriptionArn", m_subscriptionArn);
 
   }
 

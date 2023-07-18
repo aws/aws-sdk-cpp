@@ -27,8 +27,7 @@ namespace Model
   /**
    * <p>The retry strategy associated with a job. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated
-   * job retries</a> in the <i>AWS Batch User Guide</i>.</p><p><h3>See Also:</h3>  
-   * <a
+   * job retries</a> in the <i>Batch User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RetryStrategy">AWS
    * API Reference</a></p>
    */
@@ -43,7 +42,7 @@ namespace Model
 
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
-     * may specify between 1 and 10 attempts. If the value of <code>attempts</code> is
+     * can specify between 1 and 10 attempts. If the value of <code>attempts</code> is
      * greater than one, the job is retried on failure the same number of attempts as
      * the value.</p>
      */
@@ -51,7 +50,7 @@ namespace Model
 
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
-     * may specify between 1 and 10 attempts. If the value of <code>attempts</code> is
+     * can specify between 1 and 10 attempts. If the value of <code>attempts</code> is
      * greater than one, the job is retried on failure the same number of attempts as
      * the value.</p>
      */
@@ -59,7 +58,7 @@ namespace Model
 
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
-     * may specify between 1 and 10 attempts. If the value of <code>attempts</code> is
+     * can specify between 1 and 10 attempts. If the value of <code>attempts</code> is
      * greater than one, the job is retried on failure the same number of attempts as
      * the value.</p>
      */
@@ -67,7 +66,7 @@ namespace Model
 
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
-     * may specify between 1 and 10 attempts. If the value of <code>attempts</code> is
+     * can specify between 1 and 10 attempts. If the value of <code>attempts</code> is
      * greater than one, the job is retried on failure the same number of attempts as
      * the value.</p>
      */

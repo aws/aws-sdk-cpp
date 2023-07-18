@@ -15,7 +15,10 @@ using namespace Aws::Utils;
 DescribeDocumentPermissionRequest::DescribeDocumentPermissionRequest() : 
     m_nameHasBeenSet(false),
     m_permissionType(DocumentPermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false)
+    m_permissionTypeHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -32,6 +35,18 @@ Aws::String DescribeDocumentPermissionRequest::SerializePayload() const
   if(m_permissionTypeHasBeenSet)
   {
    payload.WithString("PermissionType", DocumentPermissionTypeMapper::GetNameForDocumentPermissionType(m_permissionType));
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
+
   }
 
   return payload.View().WriteReadable();

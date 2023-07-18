@@ -23,7 +23,8 @@ Principal::Principal() :
     m_type(PrincipalType::NOT_SET),
     m_typeHasBeenSet(false),
     m_access(ReadAccessType::NOT_SET),
-    m_accessHasBeenSet(false)
+    m_accessHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Principal::Principal(JsonView jsonValue) :
     m_type(PrincipalType::NOT_SET),
     m_typeHasBeenSet(false),
     m_access(ReadAccessType::NOT_SET),
-    m_accessHasBeenSet(false)
+    m_accessHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ Principal& Principal::operator =(JsonView jsonValue)
     m_accessHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataSourceId"))
+  {
+    m_dataSourceId = jsonValue.GetString("DataSourceId");
+
+    m_dataSourceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue Principal::Jsonize() const
   if(m_accessHasBeenSet)
   {
    payload.WithString("Access", ReadAccessTypeMapper::GetNameForReadAccessType(m_access));
+  }
+
+  if(m_dataSourceIdHasBeenSet)
+  {
+   payload.WithString("DataSourceId", m_dataSourceId);
+
   }
 
   return payload;

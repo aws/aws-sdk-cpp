@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconnect/model/NetworkInterfaceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -85,6 +86,43 @@ namespace Model
      * flow.
      */
     inline VpcInterfaceRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * The type of network interface. If this value is not included in the request,
+     * MediaConnect uses ENA as the networkInterfaceType.
+     */
+    inline const NetworkInterfaceType& GetNetworkInterfaceType() const{ return m_networkInterfaceType; }
+
+    /**
+     * The type of network interface. If this value is not included in the request,
+     * MediaConnect uses ENA as the networkInterfaceType.
+     */
+    inline bool NetworkInterfaceTypeHasBeenSet() const { return m_networkInterfaceTypeHasBeenSet; }
+
+    /**
+     * The type of network interface. If this value is not included in the request,
+     * MediaConnect uses ENA as the networkInterfaceType.
+     */
+    inline void SetNetworkInterfaceType(const NetworkInterfaceType& value) { m_networkInterfaceTypeHasBeenSet = true; m_networkInterfaceType = value; }
+
+    /**
+     * The type of network interface. If this value is not included in the request,
+     * MediaConnect uses ENA as the networkInterfaceType.
+     */
+    inline void SetNetworkInterfaceType(NetworkInterfaceType&& value) { m_networkInterfaceTypeHasBeenSet = true; m_networkInterfaceType = std::move(value); }
+
+    /**
+     * The type of network interface. If this value is not included in the request,
+     * MediaConnect uses ENA as the networkInterfaceType.
+     */
+    inline VpcInterfaceRequest& WithNetworkInterfaceType(const NetworkInterfaceType& value) { SetNetworkInterfaceType(value); return *this;}
+
+    /**
+     * The type of network interface. If this value is not included in the request,
+     * MediaConnect uses ENA as the networkInterfaceType.
+     */
+    inline VpcInterfaceRequest& WithNetworkInterfaceType(NetworkInterfaceType&& value) { SetNetworkInterfaceType(std::move(value)); return *this;}
 
 
     /**
@@ -218,6 +256,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    NetworkInterfaceType m_networkInterfaceType;
+    bool m_networkInterfaceTypeHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

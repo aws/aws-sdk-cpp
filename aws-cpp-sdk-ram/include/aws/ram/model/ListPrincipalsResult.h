@@ -35,80 +35,108 @@ namespace Model
 
 
     /**
-     * <p>The principals.</p>
+     * <p>An array of objects that contain the details about the principals.</p>
      */
     inline const Aws::Vector<Principal>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The principals.</p>
+     * <p>An array of objects that contain the details about the principals.</p>
      */
     inline void SetPrincipals(const Aws::Vector<Principal>& value) { m_principals = value; }
 
     /**
-     * <p>The principals.</p>
+     * <p>An array of objects that contain the details about the principals.</p>
      */
     inline void SetPrincipals(Aws::Vector<Principal>&& value) { m_principals = std::move(value); }
 
     /**
-     * <p>The principals.</p>
+     * <p>An array of objects that contain the details about the principals.</p>
      */
     inline ListPrincipalsResult& WithPrincipals(const Aws::Vector<Principal>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The principals.</p>
+     * <p>An array of objects that contain the details about the principals.</p>
      */
     inline ListPrincipalsResult& WithPrincipals(Aws::Vector<Principal>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>The principals.</p>
+     * <p>An array of objects that contain the details about the principals.</p>
      */
     inline ListPrincipalsResult& AddPrincipals(const Principal& value) { m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The principals.</p>
+     * <p>An array of objects that contain the details about the principals.</p>
      */
     inline ListPrincipalsResult& AddPrincipals(Principal&& value) { m_principals.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline ListPrincipalsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline ListPrincipalsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline ListPrincipalsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

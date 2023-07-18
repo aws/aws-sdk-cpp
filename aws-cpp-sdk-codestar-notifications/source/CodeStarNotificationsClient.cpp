@@ -81,7 +81,7 @@ CodeStarNotificationsClient::~CodeStarNotificationsClient()
 {
 }
 
-void CodeStarNotificationsClient::init(const ClientConfiguration& config)
+void CodeStarNotificationsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("codestar notifications");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -110,9 +110,7 @@ void CodeStarNotificationsClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateNotificationRuleOutcome CodeStarNotificationsClient::CreateNotificationRule(const CreateNotificationRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createNotificationRule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createNotificationRule");
   return CreateNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -137,9 +135,7 @@ void CodeStarNotificationsClient::CreateNotificationRuleAsyncHelper(const Create
 DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRule(const DeleteNotificationRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteNotificationRule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteNotificationRule");
   return DeleteNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -164,9 +160,7 @@ void CodeStarNotificationsClient::DeleteNotificationRuleAsyncHelper(const Delete
 DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTargetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteTarget";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteTarget");
   return DeleteTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -191,9 +185,7 @@ void CodeStarNotificationsClient::DeleteTargetAsyncHelper(const DeleteTargetRequ
 DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificationRule(const DescribeNotificationRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeNotificationRule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeNotificationRule");
   return DescribeNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -218,9 +210,7 @@ void CodeStarNotificationsClient::DescribeNotificationRuleAsyncHelper(const Desc
 ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEventTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listEventTypes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listEventTypes");
   return ListEventTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -245,9 +235,7 @@ void CodeStarNotificationsClient::ListEventTypesAsyncHelper(const ListEventTypes
 ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(const ListNotificationRulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listNotificationRules";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listNotificationRules");
   return ListNotificationRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -272,9 +260,7 @@ void CodeStarNotificationsClient::ListNotificationRulesAsyncHelper(const ListNot
 ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listTagsForResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listTagsForResource");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -299,9 +285,7 @@ void CodeStarNotificationsClient::ListTagsForResourceAsyncHelper(const ListTagsF
 ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listTargets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listTargets");
   return ListTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -326,9 +310,7 @@ void CodeStarNotificationsClient::ListTargetsAsyncHelper(const ListTargetsReques
 SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/subscribe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/subscribe");
   return SubscribeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -353,9 +335,7 @@ void CodeStarNotificationsClient::SubscribeAsyncHelper(const SubscribeRequest& r
 TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagResource");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -380,9 +360,7 @@ void CodeStarNotificationsClient::TagResourceAsyncHelper(const TagResourceReques
 UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/unsubscribe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/unsubscribe");
   return UnsubscribeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -407,9 +385,7 @@ void CodeStarNotificationsClient::UnsubscribeAsyncHelper(const UnsubscribeReques
 UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/untagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/untagResource");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -434,9 +410,7 @@ void CodeStarNotificationsClient::UntagResourceAsyncHelper(const UntagResourceRe
 UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRule(const UpdateNotificationRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateNotificationRule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateNotificationRule");
   return UpdateNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

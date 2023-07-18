@@ -22,6 +22,7 @@ namespace Aws
 
         static const int COMPLIANT_HASH = HashingUtils::HashString("COMPLIANT");
         static const int NON_COMPLIANT_HASH = HashingUtils::HashString("NON_COMPLIANT");
+        static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT_DATA");
 
 
         ConformancePackComplianceType GetConformancePackComplianceTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NON_COMPLIANT_HASH)
           {
             return ConformancePackComplianceType::NON_COMPLIANT;
+          }
+          else if (hashCode == INSUFFICIENT_DATA_HASH)
+          {
+            return ConformancePackComplianceType::INSUFFICIENT_DATA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "COMPLIANT";
           case ConformancePackComplianceType::NON_COMPLIANT:
             return "NON_COMPLIANT";
+          case ConformancePackComplianceType::INSUFFICIENT_DATA:
+            return "INSUFFICIENT_DATA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

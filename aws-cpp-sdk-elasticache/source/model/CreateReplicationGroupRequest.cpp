@@ -52,7 +52,10 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false)
+    m_userGroupIdsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_dataTieringEnabled(false),
+    m_dataTieringEnabledHasBeenSet(false)
 {
 }
 
@@ -258,6 +261,21 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       userGroupIdsCount++;
     }
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
+    }
+  }
+
+  if(m_dataTieringEnabledHasBeenSet)
+  {
+    ss << "DataTieringEnabled=" << std::boolalpha << m_dataTieringEnabled << "&";
   }
 
   ss << "Version=2015-02-02";

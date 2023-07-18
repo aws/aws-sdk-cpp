@@ -20,13 +20,15 @@ namespace Model
 
 TlsValidationContextTrust::TlsValidationContextTrust() : 
     m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false)
+    m_fileHasBeenSet(false),
+    m_sdsHasBeenSet(false)
 {
 }
 
 TlsValidationContextTrust::TlsValidationContextTrust(JsonView jsonValue) : 
     m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false)
+    m_fileHasBeenSet(false),
+    m_sdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ TlsValidationContextTrust& TlsValidationContextTrust::operator =(JsonView jsonVa
     m_fileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sds"))
+  {
+    m_sds = jsonValue.GetObject("sds");
+
+    m_sdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue TlsValidationContextTrust::Jsonize() const
   if(m_fileHasBeenSet)
   {
    payload.WithObject("file", m_file.Jsonize());
+
+  }
+
+  if(m_sdsHasBeenSet)
+  {
+   payload.WithObject("sds", m_sds.Jsonize());
 
   }
 

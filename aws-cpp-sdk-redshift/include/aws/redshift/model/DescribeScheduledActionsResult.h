@@ -38,70 +38,70 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeScheduledActions</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeScheduledActions</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeScheduledActions</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeScheduledActions</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeScheduledActions</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeScheduledActionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeScheduledActions</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeScheduledActionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeScheduledActions</a> request
-     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
-     * the <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * exceed the value specified in <code>MaxRecords</code>, Amazon Web Services
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeScheduledActionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

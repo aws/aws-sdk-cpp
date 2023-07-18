@@ -51,7 +51,7 @@ namespace Model
      * during a service deployment, as specified in the
      * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
      * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
-     * deployment model powered by AWS CodeDeploy, which allows you to verify a new
+     * deployment model powered by CodeDeploy, which allows you to verify a new
      * deployment of a service before sending production traffic to it.</p> </dd>
      * <dt>EXTERNAL</dt> <dd> <p>The external (<code>EXTERNAL</code>) deployment type
      * enables you to use any third-party deployment controller for full control over
@@ -69,7 +69,7 @@ namespace Model
      * during a service deployment, as specified in the
      * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
      * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
-     * deployment model powered by AWS CodeDeploy, which allows you to verify a new
+     * deployment model powered by CodeDeploy, which allows you to verify a new
      * deployment of a service before sending production traffic to it.</p> </dd>
      * <dt>EXTERNAL</dt> <dd> <p>The external (<code>EXTERNAL</code>) deployment type
      * enables you to use any third-party deployment controller for full control over
@@ -87,7 +87,7 @@ namespace Model
      * during a service deployment, as specified in the
      * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
      * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
-     * deployment model powered by AWS CodeDeploy, which allows you to verify a new
+     * deployment model powered by CodeDeploy, which allows you to verify a new
      * deployment of a service before sending production traffic to it.</p> </dd>
      * <dt>EXTERNAL</dt> <dd> <p>The external (<code>EXTERNAL</code>) deployment type
      * enables you to use any third-party deployment controller for full control over
@@ -105,7 +105,7 @@ namespace Model
      * during a service deployment, as specified in the
      * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
      * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
-     * deployment model powered by AWS CodeDeploy, which allows you to verify a new
+     * deployment model powered by CodeDeploy, which allows you to verify a new
      * deployment of a service before sending production traffic to it.</p> </dd>
      * <dt>EXTERNAL</dt> <dd> <p>The external (<code>EXTERNAL</code>) deployment type
      * enables you to use any third-party deployment controller for full control over
@@ -123,7 +123,7 @@ namespace Model
      * during a service deployment, as specified in the
      * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
      * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
-     * deployment model powered by AWS CodeDeploy, which allows you to verify a new
+     * deployment model powered by CodeDeploy, which allows you to verify a new
      * deployment of a service before sending production traffic to it.</p> </dd>
      * <dt>EXTERNAL</dt> <dd> <p>The external (<code>EXTERNAL</code>) deployment type
      * enables you to use any third-party deployment controller for full control over
@@ -141,7 +141,7 @@ namespace Model
      * during a service deployment, as specified in the
      * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
      * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
-     * deployment model powered by AWS CodeDeploy, which allows you to verify a new
+     * deployment model powered by CodeDeploy, which allows you to verify a new
      * deployment of a service before sending production traffic to it.</p> </dd>
      * <dt>EXTERNAL</dt> <dd> <p>The external (<code>EXTERNAL</code>) deployment type
      * enables you to use any third-party deployment controller for full control over

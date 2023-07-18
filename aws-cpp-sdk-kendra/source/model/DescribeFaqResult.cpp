@@ -98,6 +98,12 @@ DescribeFaqResult& DescribeFaqResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = jsonValue.GetString("LanguageCode");
+
+  }
+
 
 
   return *this;

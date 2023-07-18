@@ -28,6 +28,7 @@ ModelVersionDetail::ModelVersionDetail() :
     m_trainingDataSourceHasBeenSet(false),
     m_trainingDataSchemaHasBeenSet(false),
     m_externalEventsDetailHasBeenSet(false),
+    m_ingestedEventsDetailHasBeenSet(false),
     m_trainingResultHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
@@ -45,6 +46,7 @@ ModelVersionDetail::ModelVersionDetail(JsonView jsonValue) :
     m_trainingDataSourceHasBeenSet(false),
     m_trainingDataSchemaHasBeenSet(false),
     m_externalEventsDetailHasBeenSet(false),
+    m_ingestedEventsDetailHasBeenSet(false),
     m_trainingResultHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
@@ -102,6 +104,13 @@ ModelVersionDetail& ModelVersionDetail::operator =(JsonView jsonValue)
     m_externalEventsDetail = jsonValue.GetObject("externalEventsDetail");
 
     m_externalEventsDetailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ingestedEventsDetail"))
+  {
+    m_ingestedEventsDetail = jsonValue.GetObject("ingestedEventsDetail");
+
+    m_ingestedEventsDetailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("trainingResult"))
@@ -176,6 +185,12 @@ JsonValue ModelVersionDetail::Jsonize() const
   if(m_externalEventsDetailHasBeenSet)
   {
    payload.WithObject("externalEventsDetail", m_externalEventsDetail.Jsonize());
+
+  }
+
+  if(m_ingestedEventsDetailHasBeenSet)
+  {
+   payload.WithObject("ingestedEventsDetail", m_ingestedEventsDetail.Jsonize());
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appflow/model/Range.h>
 #include <aws/appflow/model/Operator.h>
 #include <utility>
 
@@ -176,6 +177,150 @@ namespace Model
      */
     inline FieldTypeDetails& AddSupportedValues(const char* value) { m_supportedValuesHasBeenSet = true; m_supportedValues.push_back(value); return *this; }
 
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline const Aws::String& GetValueRegexPattern() const{ return m_valueRegexPattern; }
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline bool ValueRegexPatternHasBeenSet() const { return m_valueRegexPatternHasBeenSet; }
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline void SetValueRegexPattern(const Aws::String& value) { m_valueRegexPatternHasBeenSet = true; m_valueRegexPattern = value; }
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline void SetValueRegexPattern(Aws::String&& value) { m_valueRegexPatternHasBeenSet = true; m_valueRegexPattern = std::move(value); }
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline void SetValueRegexPattern(const char* value) { m_valueRegexPatternHasBeenSet = true; m_valueRegexPattern.assign(value); }
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline FieldTypeDetails& WithValueRegexPattern(const Aws::String& value) { SetValueRegexPattern(value); return *this;}
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline FieldTypeDetails& WithValueRegexPattern(Aws::String&& value) { SetValueRegexPattern(std::move(value)); return *this;}
+
+    /**
+     * <p>The regular expression pattern for the field name.</p>
+     */
+    inline FieldTypeDetails& WithValueRegexPattern(const char* value) { SetValueRegexPattern(value); return *this;}
+
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline const Aws::String& GetSupportedDateFormat() const{ return m_supportedDateFormat; }
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline bool SupportedDateFormatHasBeenSet() const { return m_supportedDateFormatHasBeenSet; }
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline void SetSupportedDateFormat(const Aws::String& value) { m_supportedDateFormatHasBeenSet = true; m_supportedDateFormat = value; }
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline void SetSupportedDateFormat(Aws::String&& value) { m_supportedDateFormatHasBeenSet = true; m_supportedDateFormat = std::move(value); }
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline void SetSupportedDateFormat(const char* value) { m_supportedDateFormatHasBeenSet = true; m_supportedDateFormat.assign(value); }
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline FieldTypeDetails& WithSupportedDateFormat(const Aws::String& value) { SetSupportedDateFormat(value); return *this;}
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline FieldTypeDetails& WithSupportedDateFormat(Aws::String&& value) { SetSupportedDateFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The date format that the field supports.</p>
+     */
+    inline FieldTypeDetails& WithSupportedDateFormat(const char* value) { SetSupportedDateFormat(value); return *this;}
+
+
+    /**
+     * <p>The range of values this field can hold.</p>
+     */
+    inline const Range& GetFieldValueRange() const{ return m_fieldValueRange; }
+
+    /**
+     * <p>The range of values this field can hold.</p>
+     */
+    inline bool FieldValueRangeHasBeenSet() const { return m_fieldValueRangeHasBeenSet; }
+
+    /**
+     * <p>The range of values this field can hold.</p>
+     */
+    inline void SetFieldValueRange(const Range& value) { m_fieldValueRangeHasBeenSet = true; m_fieldValueRange = value; }
+
+    /**
+     * <p>The range of values this field can hold.</p>
+     */
+    inline void SetFieldValueRange(Range&& value) { m_fieldValueRangeHasBeenSet = true; m_fieldValueRange = std::move(value); }
+
+    /**
+     * <p>The range of values this field can hold.</p>
+     */
+    inline FieldTypeDetails& WithFieldValueRange(const Range& value) { SetFieldValueRange(value); return *this;}
+
+    /**
+     * <p>The range of values this field can hold.</p>
+     */
+    inline FieldTypeDetails& WithFieldValueRange(Range&& value) { SetFieldValueRange(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This is the allowable length range for this field's value.</p>
+     */
+    inline const Range& GetFieldLengthRange() const{ return m_fieldLengthRange; }
+
+    /**
+     * <p>This is the allowable length range for this field's value.</p>
+     */
+    inline bool FieldLengthRangeHasBeenSet() const { return m_fieldLengthRangeHasBeenSet; }
+
+    /**
+     * <p>This is the allowable length range for this field's value.</p>
+     */
+    inline void SetFieldLengthRange(const Range& value) { m_fieldLengthRangeHasBeenSet = true; m_fieldLengthRange = value; }
+
+    /**
+     * <p>This is the allowable length range for this field's value.</p>
+     */
+    inline void SetFieldLengthRange(Range&& value) { m_fieldLengthRangeHasBeenSet = true; m_fieldLengthRange = std::move(value); }
+
+    /**
+     * <p>This is the allowable length range for this field's value.</p>
+     */
+    inline FieldTypeDetails& WithFieldLengthRange(const Range& value) { SetFieldLengthRange(value); return *this;}
+
+    /**
+     * <p>This is the allowable length range for this field's value.</p>
+     */
+    inline FieldTypeDetails& WithFieldLengthRange(Range&& value) { SetFieldLengthRange(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fieldType;
@@ -186,6 +331,18 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedValues;
     bool m_supportedValuesHasBeenSet;
+
+    Aws::String m_valueRegexPattern;
+    bool m_valueRegexPatternHasBeenSet;
+
+    Aws::String m_supportedDateFormat;
+    bool m_supportedDateFormatHasBeenSet;
+
+    Range m_fieldValueRange;
+    bool m_fieldValueRangeHasBeenSet;
+
+    Range m_fieldLengthRange;
+    bool m_fieldLengthRangeHasBeenSet;
   };
 
 } // namespace Model

@@ -32,19 +32,29 @@ namespace Model
     GetStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Stream& GetStream() const{ return m_stream; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStream(const Stream& value) { m_stream = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStream(Stream&& value) { m_stream = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline GetStreamResult& WithStream(const Stream& value) { SetStream(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetStreamResult& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
 
   private:

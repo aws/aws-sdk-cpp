@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list.</p>
+     * <p>The details of the Firewall Manager applications list.</p>
      */
     inline const AppsListData& GetAppsList() const{ return m_appsList; }
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list.</p>
+     * <p>The details of the Firewall Manager applications list.</p>
      */
     inline void SetAppsList(const AppsListData& value) { m_appsList = value; }
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list.</p>
+     * <p>The details of the Firewall Manager applications list.</p>
      */
     inline void SetAppsList(AppsListData&& value) { m_appsList = std::move(value); }
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list.</p>
+     * <p>The details of the Firewall Manager applications list.</p>
      */
     inline PutAppsListResult& WithAppsList(const AppsListData& value) { SetAppsList(value); return *this;}
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list.</p>
+     * <p>The details of the Firewall Manager applications list.</p>
      */
     inline PutAppsListResult& WithAppsList(AppsListData&& value) { SetAppsList(std::move(value)); return *this;}
 

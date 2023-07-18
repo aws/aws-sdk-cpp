@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/FaceSearchSettings.h>
+#include <aws/rekognition/model/ConnectedHomeSettings.h>
 #include <utility>
 
 namespace Aws
@@ -24,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Input parameters used to recognize faces in a streaming video analyzed by a
-   * Amazon Rekognition stream processor.</p><p><h3>See Also:</h3>   <a
+   * <p>Input parameters used in a streaming video analyzed by a Amazon Rekognition
+   * stream processor. You can use <code>FaceSearch</code> to recognize faces in a
+   * streaming video, or you can use <code>ConnectedHome</code> to detect labels.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorSettings">AWS
    * API Reference</a></p>
    */
@@ -68,10 +71,32 @@ namespace Model
      */
     inline StreamProcessorSettings& WithFaceSearch(FaceSearchSettings&& value) { SetFaceSearch(std::move(value)); return *this;}
 
+
+    
+    inline const ConnectedHomeSettings& GetConnectedHome() const{ return m_connectedHome; }
+
+    
+    inline bool ConnectedHomeHasBeenSet() const { return m_connectedHomeHasBeenSet; }
+
+    
+    inline void SetConnectedHome(const ConnectedHomeSettings& value) { m_connectedHomeHasBeenSet = true; m_connectedHome = value; }
+
+    
+    inline void SetConnectedHome(ConnectedHomeSettings&& value) { m_connectedHomeHasBeenSet = true; m_connectedHome = std::move(value); }
+
+    
+    inline StreamProcessorSettings& WithConnectedHome(const ConnectedHomeSettings& value) { SetConnectedHome(value); return *this;}
+
+    
+    inline StreamProcessorSettings& WithConnectedHome(ConnectedHomeSettings&& value) { SetConnectedHome(std::move(value)); return *this;}
+
   private:
 
     FaceSearchSettings m_faceSearch;
     bool m_faceSearchHasBeenSet;
+
+    ConnectedHomeSettings m_connectedHome;
+    bool m_connectedHomeHasBeenSet;
   };
 
 } // namespace Model

@@ -33,10 +33,15 @@
   ${spaces}payload.WithString("${memberName}", HashingUtils::Base64Encode(m_${lowerCaseVarName}));
 #elseif($member.shape.timeStamp)
   ${spaces}payload.With${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}", m_${lowerCaseVarName}${CppViewHelper.computeJsonizeString($member.shape)});
+#elseif($member.shape.document)
+    if(!m_${lowerCaseVarName}.View().IsNull())
+    {
+      ${spaces}payload.WithObject("${memberName}", JsonValue(m_${lowerCaseVarName}.View()));
+    }
 #else
 #if($member.shape.getName() == $shape.getName())
 #set($jsonizeString = "[0]" + ${CppViewHelper.computeJsonizeString($member.shape)})
-#elseif($member.shape.isMutuallyReferencedWith($shape) || $shape.isListMemberAndMutuallyReferencedWith($member.shape))
+#elseif($member.shape.isMutuallyReferencedWith($shape))
 #set($jsonizeString = ${CppViewHelper.computeJsonizeString($member.shape, true)})
 #else
 #set($jsonizeString = ${CppViewHelper.computeJsonizeString($member.shape)})

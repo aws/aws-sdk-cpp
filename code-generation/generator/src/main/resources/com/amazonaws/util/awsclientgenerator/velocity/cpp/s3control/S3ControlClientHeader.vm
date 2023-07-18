@@ -71,8 +71,8 @@ namespace Aws
     // Get endpoint, signer region and signer service name after computing the endpoint.
     struct ComputeEndpointResult
     {
-      ComputeEndpointResult(const Aws::String& endpoint = "", const Aws::String& signerRegion = "", const Aws::String& signerServiceName = "") :
-        endpoint(endpoint), signerRegion(signerRegion), signerServiceName(signerServiceName) {}
+      ComputeEndpointResult(const Aws::String& iEndpointName = "", const Aws::String& iSignerRegion = "", const Aws::String& iSignerServiceName = "") :
+        endpoint(iEndpointName), signerRegion(iSignerRegion), signerServiceName(iSignerServiceName) {}
 
       Aws::String endpoint;
       Aws::String signerRegion;

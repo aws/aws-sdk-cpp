@@ -23,6 +23,8 @@ namespace Model
 Change::Change() : 
     m_type(ChangeType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_hookInvocationCount(0),
+    m_hookInvocationCountHasBeenSet(false),
     m_resourceChangeHasBeenSet(false)
 {
 }
@@ -30,6 +32,8 @@ Change::Change() :
 Change::Change(const XmlNode& xmlNode) : 
     m_type(ChangeType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_hookInvocationCount(0),
+    m_hookInvocationCountHasBeenSet(false),
     m_resourceChangeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -46,6 +50,12 @@ Change& Change::operator =(const XmlNode& xmlNode)
     {
       m_type = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
+    }
+    XmlNode hookInvocationCountNode = resultNode.FirstChild("HookInvocationCount");
+    if(!hookInvocationCountNode.IsNull())
+    {
+      m_hookInvocationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationCountNode.GetText()).c_str()).c_str());
+      m_hookInvocationCountHasBeenSet = true;
     }
     XmlNode resourceChangeNode = resultNode.FirstChild("ResourceChange");
     if(!resourceChangeNode.IsNull())
@@ -65,6 +75,11 @@ void Change::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".Type=" << ChangeTypeMapper::GetNameForChangeType(m_type) << "&";
   }
 
+  if(m_hookInvocationCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HookInvocationCount=" << m_hookInvocationCount << "&";
+  }
+
   if(m_resourceChangeHasBeenSet)
   {
       Aws::StringStream resourceChangeLocationAndMemberSs;
@@ -79,6 +94,10 @@ void Change::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << ChangeTypeMapper::GetNameForChangeType(m_type) << "&";
+  }
+  if(m_hookInvocationCountHasBeenSet)
+  {
+      oStream << location << ".HookInvocationCount=" << m_hookInvocationCount << "&";
   }
   if(m_resourceChangeHasBeenSet)
   {

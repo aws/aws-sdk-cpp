@@ -16,6 +16,7 @@
 #include <aws/mediaconvert/model/Vc3Settings.h>
 #include <aws/mediaconvert/model/Vp8Settings.h>
 #include <aws/mediaconvert/model/Vp9Settings.h>
+#include <aws/mediaconvert/model/XavcSettings.h>
 #include <utility>
 
 namespace Aws
@@ -41,7 +42,8 @@ namespace Model
    * lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
    * AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings *
    * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3,
-   * Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings<p><h3>See Also:</h3>   <a
+   * Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -92,50 +94,56 @@ namespace Model
 
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information
-     * about the AVC-I settings, see the relevant specification. For detailed
-     * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline const AvcIntraSettings& GetAvcIntraSettings() const{ return m_avcIntraSettings; }
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information
-     * about the AVC-I settings, see the relevant specification. For detailed
-     * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline bool AvcIntraSettingsHasBeenSet() const { return m_avcIntraSettingsHasBeenSet; }
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information
-     * about the AVC-I settings, see the relevant specification. For detailed
-     * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline void SetAvcIntraSettings(const AvcIntraSettings& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = value; }
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information
-     * about the AVC-I settings, see the relevant specification. For detailed
-     * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline void SetAvcIntraSettings(AvcIntraSettings&& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = std::move(value); }
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information
-     * about the AVC-I settings, see the relevant specification. For detailed
-     * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline VideoCodecSettings& WithAvcIntraSettings(const AvcIntraSettings& value) { SetAvcIntraSettings(value); return *this;}
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information
-     * about the AVC-I settings, see the relevant specification. For detailed
-     * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline VideoCodecSettings& WithAvcIntraSettings(AvcIntraSettings&& value) { SetAvcIntraSettings(std::move(value)); return *this;}
 
@@ -466,6 +474,43 @@ namespace Model
      */
     inline VideoCodecSettings& WithVp9Settings(Vp9Settings&& value) { SetVp9Settings(std::move(value)); return *this;}
 
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline const XavcSettings& GetXavcSettings() const{ return m_xavcSettings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline bool XavcSettingsHasBeenSet() const { return m_xavcSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline void SetXavcSettings(const XavcSettings& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline void SetXavcSettings(XavcSettings&& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline VideoCodecSettings& WithXavcSettings(const XavcSettings& value) { SetXavcSettings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline VideoCodecSettings& WithXavcSettings(XavcSettings&& value) { SetXavcSettings(std::move(value)); return *this;}
+
   private:
 
     Av1Settings m_av1Settings;
@@ -500,6 +545,9 @@ namespace Model
 
     Vp9Settings m_vp9Settings;
     bool m_vp9SettingsHasBeenSet;
+
+    XavcSettings m_xavcSettings;
+    bool m_xavcSettingsHasBeenSet;
   };
 
 } // namespace Model

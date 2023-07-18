@@ -46,64 +46,64 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline CreateCapacityReservationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline CreateCapacityReservationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
      */
     inline CreateCapacityReservationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -111,56 +111,56 @@ namespace Model
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateCapacityReservationRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateCapacityReservationRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type for which to reserve capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateCapacityReservationRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -290,9 +290,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other AWS accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline const CapacityReservationTenancy& GetTenancy() const{ return m_tenancy; }
 
@@ -300,9 +301,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other AWS accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
@@ -310,9 +312,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other AWS accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetTenancy(const CapacityReservationTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
@@ -320,9 +323,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other AWS accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetTenancy(CapacityReservationTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
@@ -330,9 +334,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other AWS accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline CreateCapacityReservationRequest& WithTenancy(const CapacityReservationTenancy& value) { SetTenancy(value); return *this;}
 
@@ -340,30 +345,35 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other AWS accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline CreateCapacityReservationRequest& WithTenancy(CapacityReservationTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
+     * - 1000</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
+     * - 1000</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
+     * - 1000</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
+     * - 1000</p>
      */
     inline CreateCapacityReservationRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -752,6 +762,128 @@ namespace Model
      */
     inline CreateCapacityReservationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline CreateCapacityReservationRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline CreateCapacityReservationRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline CreateCapacityReservationRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetPlacementGroupArn() const{ return m_placementGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline bool PlacementGroupArnHasBeenSet() const { return m_placementGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline void SetPlacementGroupArn(const Aws::String& value) { m_placementGroupArnHasBeenSet = true; m_placementGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline void SetPlacementGroupArn(Aws::String&& value) { m_placementGroupArnHasBeenSet = true; m_placementGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline void SetPlacementGroupArn(const char* value) { m_placementGroupArnHasBeenSet = true; m_placementGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline CreateCapacityReservationRequest& WithPlacementGroupArn(const Aws::String& value) { SetPlacementGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline CreateCapacityReservationRequest& WithPlacementGroupArn(Aws::String&& value) { SetPlacementGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
+     * create the Capacity Reservation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline CreateCapacityReservationRequest& WithPlacementGroupArn(const char* value) { SetPlacementGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -795,6 +927,12 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
+
+    Aws::String m_placementGroupArn;
+    bool m_placementGroupArnHasBeenSet;
   };
 
 } // namespace Model

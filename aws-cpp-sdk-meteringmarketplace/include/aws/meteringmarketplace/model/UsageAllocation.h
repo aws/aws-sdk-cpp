@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Usage allocations allow you to split usage into buckets by tags.</p> <p>Each
-   * UsageAllocation indicates the usage quantity for a specific set of
+   * <code>UsageAllocation</code> indicates the usage quantity for a specific set of
    * tags.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageAllocation">AWS
    * API Reference</a></p>

@@ -38,25 +38,25 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that you can set to allow or disallow guest-level
+     * <p>A boolean value that can be set to allow or disallow guest-level
      * authorization into your Amplify app.</p>
      */
     inline bool GetUnauthenticatedLogin() const{ return m_unauthenticatedLogin; }
 
     /**
-     * <p>A Boolean value that you can set to allow or disallow guest-level
+     * <p>A boolean value that can be set to allow or disallow guest-level
      * authorization into your Amplify app.</p>
      */
     inline bool UnauthenticatedLoginHasBeenSet() const { return m_unauthenticatedLoginHasBeenSet; }
 
     /**
-     * <p>A Boolean value that you can set to allow or disallow guest-level
+     * <p>A boolean value that can be set to allow or disallow guest-level
      * authorization into your Amplify app.</p>
      */
     inline void SetUnauthenticatedLogin(bool value) { m_unauthenticatedLoginHasBeenSet = true; m_unauthenticatedLogin = value; }
 
     /**
-     * <p>A Boolean value that you can set to allow or disallow guest-level
+     * <p>A boolean value that can be set to allow or disallow guest-level
      * authorization into your Amplify app.</p>
      */
     inline UpdateBackendAuthIdentityPoolConfig& WithUnauthenticatedLogin(bool value) { SetUnauthenticatedLogin(value); return *this;}

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Assets_per_revision,
-    Asset_size_in_GB
+    Asset_size_in_GB,
+    Amazon_Redshift_datashare_assets_per_revision
   };
 
 namespace JobErrorLimitNameMapper

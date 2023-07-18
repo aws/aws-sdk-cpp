@@ -32,6 +32,7 @@ namespace Model
     ACUITY,
     TEST_VALUE,
     TEST_UNITS,
+    TEST_UNIT,
     DIRECTION,
     SYSTEM_ORGAN_SITE
   };

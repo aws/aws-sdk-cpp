@@ -79,56 +79,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline StreamJournalToKinesisRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline StreamJournalToKinesisRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline StreamJournalToKinesisRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -215,10 +231,10 @@ namespace Model
     /**
      * <p>The inclusive start date and time from which to start streaming journal data.
      * This parameter must be in <code>ISO 8601</code> date and time format and in
-     * Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-     * </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be
-     * before <code>ExclusiveEndTime</code>.</p> <p>If you provide an
-     * <code>InclusiveStartTime</code> that is before the ledger's
+     * Universal Coordinated Time (UTC). For example:
+     * <code>2019-06-13T21:36:34Z</code>.</p> <p>The <code>InclusiveStartTime</code>
+     * cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+     * <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
      * <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
      * <code>CreationDateTime</code>.</p>
      */
@@ -227,10 +243,10 @@ namespace Model
     /**
      * <p>The inclusive start date and time from which to start streaming journal data.
      * This parameter must be in <code>ISO 8601</code> date and time format and in
-     * Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-     * </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be
-     * before <code>ExclusiveEndTime</code>.</p> <p>If you provide an
-     * <code>InclusiveStartTime</code> that is before the ledger's
+     * Universal Coordinated Time (UTC). For example:
+     * <code>2019-06-13T21:36:34Z</code>.</p> <p>The <code>InclusiveStartTime</code>
+     * cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+     * <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
      * <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
      * <code>CreationDateTime</code>.</p>
      */
@@ -239,10 +255,10 @@ namespace Model
     /**
      * <p>The inclusive start date and time from which to start streaming journal data.
      * This parameter must be in <code>ISO 8601</code> date and time format and in
-     * Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-     * </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be
-     * before <code>ExclusiveEndTime</code>.</p> <p>If you provide an
-     * <code>InclusiveStartTime</code> that is before the ledger's
+     * Universal Coordinated Time (UTC). For example:
+     * <code>2019-06-13T21:36:34Z</code>.</p> <p>The <code>InclusiveStartTime</code>
+     * cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+     * <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
      * <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
      * <code>CreationDateTime</code>.</p>
      */
@@ -251,10 +267,10 @@ namespace Model
     /**
      * <p>The inclusive start date and time from which to start streaming journal data.
      * This parameter must be in <code>ISO 8601</code> date and time format and in
-     * Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-     * </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be
-     * before <code>ExclusiveEndTime</code>.</p> <p>If you provide an
-     * <code>InclusiveStartTime</code> that is before the ledger's
+     * Universal Coordinated Time (UTC). For example:
+     * <code>2019-06-13T21:36:34Z</code>.</p> <p>The <code>InclusiveStartTime</code>
+     * cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+     * <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
      * <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
      * <code>CreationDateTime</code>.</p>
      */
@@ -263,10 +279,10 @@ namespace Model
     /**
      * <p>The inclusive start date and time from which to start streaming journal data.
      * This parameter must be in <code>ISO 8601</code> date and time format and in
-     * Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-     * </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be
-     * before <code>ExclusiveEndTime</code>.</p> <p>If you provide an
-     * <code>InclusiveStartTime</code> that is before the ledger's
+     * Universal Coordinated Time (UTC). For example:
+     * <code>2019-06-13T21:36:34Z</code>.</p> <p>The <code>InclusiveStartTime</code>
+     * cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+     * <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
      * <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
      * <code>CreationDateTime</code>.</p>
      */
@@ -275,10 +291,10 @@ namespace Model
     /**
      * <p>The inclusive start date and time from which to start streaming journal data.
      * This parameter must be in <code>ISO 8601</code> date and time format and in
-     * Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-     * </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be
-     * before <code>ExclusiveEndTime</code>.</p> <p>If you provide an
-     * <code>InclusiveStartTime</code> that is before the ledger's
+     * Universal Coordinated Time (UTC). For example:
+     * <code>2019-06-13T21:36:34Z</code>.</p> <p>The <code>InclusiveStartTime</code>
+     * cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+     * <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
      * <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
      * <code>CreationDateTime</code>.</p>
      */
@@ -290,7 +306,7 @@ namespace Model
      * define this parameter, the stream runs indefinitely until you cancel it.</p>
      * <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and
      * time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code> </p>
+     * <code>2019-06-13T21:36:34Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetExclusiveEndTime() const{ return m_exclusiveEndTime; }
 
@@ -299,7 +315,7 @@ namespace Model
      * define this parameter, the stream runs indefinitely until you cancel it.</p>
      * <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and
      * time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code> </p>
+     * <code>2019-06-13T21:36:34Z</code>.</p>
      */
     inline bool ExclusiveEndTimeHasBeenSet() const { return m_exclusiveEndTimeHasBeenSet; }
 
@@ -308,7 +324,7 @@ namespace Model
      * define this parameter, the stream runs indefinitely until you cancel it.</p>
      * <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and
      * time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code> </p>
+     * <code>2019-06-13T21:36:34Z</code>.</p>
      */
     inline void SetExclusiveEndTime(const Aws::Utils::DateTime& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = value; }
 
@@ -317,7 +333,7 @@ namespace Model
      * define this parameter, the stream runs indefinitely until you cancel it.</p>
      * <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and
      * time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code> </p>
+     * <code>2019-06-13T21:36:34Z</code>.</p>
      */
     inline void SetExclusiveEndTime(Aws::Utils::DateTime&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::move(value); }
 
@@ -326,7 +342,7 @@ namespace Model
      * define this parameter, the stream runs indefinitely until you cancel it.</p>
      * <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and
      * time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code> </p>
+     * <code>2019-06-13T21:36:34Z</code>.</p>
      */
     inline StreamJournalToKinesisRequest& WithExclusiveEndTime(const Aws::Utils::DateTime& value) { SetExclusiveEndTime(value); return *this;}
 
@@ -335,7 +351,7 @@ namespace Model
      * define this parameter, the stream runs indefinitely until you cancel it.</p>
      * <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and
      * time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code> </p>
+     * <code>2019-06-13T21:36:34Z</code>.</p>
      */
     inline StreamJournalToKinesisRequest& WithExclusiveEndTime(Aws::Utils::DateTime&& value) { SetExclusiveEndTime(std::move(value)); return *this;}
 

@@ -35,7 +35,16 @@ RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() :
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_domainIAMRoleNameHasBeenSet(false)
+    m_domainIAMRoleNameHasBeenSet(false),
+    m_scalingConfigurationHasBeenSet(false),
+    m_engineModeHasBeenSet(false),
+    m_dBClusterInstanceClassHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -153,6 +162,41 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_domainIAMRoleNameHasBeenSet)
   {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
+  }
+
+  if(m_scalingConfigurationHasBeenSet)
+  {
+    m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
+  }
+
+  if(m_engineModeHasBeenSet)
+  {
+    ss << "EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
+  }
+
+  if(m_dBClusterInstanceClassHasBeenSet)
+  {
+    ss << "DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+    ss << "Iops=" << m_iops << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";

@@ -36,57 +36,57 @@ namespace Model
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline ListTagsForResourceRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline ListTagsForResourceRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An
-     * ARN is an identifier for a specific AWS resource, such as a server, user, or
-     * role.</p>
+     * ARN is an identifier for a specific Amazon Web Services resource, such as a
+     * server, user, or role.</p>
      */
     inline ListTagsForResourceRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

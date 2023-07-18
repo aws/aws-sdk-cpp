@@ -115,65 +115,65 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline StartDBInstanceAutomatedBackupsReplicationRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline StartDBInstanceAutomatedBackupsReplicationRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of the replicated automated
-     * backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption
-     * key in the destination AWS Region, for example,
+     * <p>The Amazon Web Services KMS key identifier for encryption of the replicated
+     * automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS
+     * encryption key in the destination Amazon Web Services Region, for example,
      * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
      */
     inline StartDBInstanceAutomatedBackupsReplicationRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
@@ -181,73 +181,81 @@ namespace Model
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline StartDBInstanceAutomatedBackupsReplicationRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline StartDBInstanceAutomatedBackupsReplicationRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
-     * StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region
-     * of the source DB instance. The presigned URL must be a valid request for the
-     * StartDBInstanceAutomatedBackupsReplication API action that can be executed in
-     * the AWS Region that contains the source DB instance.</p>
+     * StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web
+     * Services Region of the source DB instance. The presigned URL must be a valid
+     * request for the StartDBInstanceAutomatedBackupsReplication API action that can
+     * be executed in the Amazon Web Services Region that contains the source DB
+     * instance.</p>
      */
     inline StartDBInstanceAutomatedBackupsReplicationRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

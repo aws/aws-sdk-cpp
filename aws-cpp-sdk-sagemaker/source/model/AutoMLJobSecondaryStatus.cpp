@@ -30,6 +30,13 @@ namespace Aws
         static const int MaxAutoMLJobRuntimeReached_HASH = HashingUtils::HashString("MaxAutoMLJobRuntimeReached");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
         static const int CandidateDefinitionsGenerated_HASH = HashingUtils::HashString("CandidateDefinitionsGenerated");
+        static const int GeneratingExplainabilityReport_HASH = HashingUtils::HashString("GeneratingExplainabilityReport");
+        static const int Completed_HASH = HashingUtils::HashString("Completed");
+        static const int ExplainabilityError_HASH = HashingUtils::HashString("ExplainabilityError");
+        static const int DeployingModel_HASH = HashingUtils::HashString("DeployingModel");
+        static const int ModelDeploymentError_HASH = HashingUtils::HashString("ModelDeploymentError");
+        static const int GeneratingModelInsightsReport_HASH = HashingUtils::HashString("GeneratingModelInsightsReport");
+        static const int ModelInsightsError_HASH = HashingUtils::HashString("ModelInsightsError");
 
 
         AutoMLJobSecondaryStatus GetAutoMLJobSecondaryStatusForName(const Aws::String& name)
@@ -75,6 +82,34 @@ namespace Aws
           {
             return AutoMLJobSecondaryStatus::CandidateDefinitionsGenerated;
           }
+          else if (hashCode == GeneratingExplainabilityReport_HASH)
+          {
+            return AutoMLJobSecondaryStatus::GeneratingExplainabilityReport;
+          }
+          else if (hashCode == Completed_HASH)
+          {
+            return AutoMLJobSecondaryStatus::Completed;
+          }
+          else if (hashCode == ExplainabilityError_HASH)
+          {
+            return AutoMLJobSecondaryStatus::ExplainabilityError;
+          }
+          else if (hashCode == DeployingModel_HASH)
+          {
+            return AutoMLJobSecondaryStatus::DeployingModel;
+          }
+          else if (hashCode == ModelDeploymentError_HASH)
+          {
+            return AutoMLJobSecondaryStatus::ModelDeploymentError;
+          }
+          else if (hashCode == GeneratingModelInsightsReport_HASH)
+          {
+            return AutoMLJobSecondaryStatus::GeneratingModelInsightsReport;
+          }
+          else if (hashCode == ModelInsightsError_HASH)
+          {
+            return AutoMLJobSecondaryStatus::ModelInsightsError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +144,20 @@ namespace Aws
             return "Stopping";
           case AutoMLJobSecondaryStatus::CandidateDefinitionsGenerated:
             return "CandidateDefinitionsGenerated";
+          case AutoMLJobSecondaryStatus::GeneratingExplainabilityReport:
+            return "GeneratingExplainabilityReport";
+          case AutoMLJobSecondaryStatus::Completed:
+            return "Completed";
+          case AutoMLJobSecondaryStatus::ExplainabilityError:
+            return "ExplainabilityError";
+          case AutoMLJobSecondaryStatus::DeployingModel:
+            return "DeployingModel";
+          case AutoMLJobSecondaryStatus::ModelDeploymentError:
+            return "ModelDeploymentError";
+          case AutoMLJobSecondaryStatus::GeneratingModelInsightsReport:
+            return "GeneratingModelInsightsReport";
+          case AutoMLJobSecondaryStatus::ModelInsightsError:
+            return "ModelInsightsError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

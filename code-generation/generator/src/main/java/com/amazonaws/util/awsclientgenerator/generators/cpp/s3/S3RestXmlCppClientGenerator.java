@@ -25,14 +25,20 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
+    private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
 
     static {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
+        opsThatDoNotSupportVirtualAddressing.add("WriteGetObjectResponse");
 
         opsThatDoNotSupportArnEndpoint.add("CreateBucket");
         opsThatDoNotSupportArnEndpoint.add("ListBuckets");
+        opsThatDoNotSupportArnEndpoint.add("WriteGetObjectResponse");
+
+        opsThatDoNotSupportFutureInS3CRT.add("GetObject");
+        opsThatDoNotSupportFutureInS3CRT.add("PutObject");
 
         bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
@@ -53,6 +59,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         bucketLocationConstraints.add("ca-central-1");
         bucketLocationConstraints.add("us-gov-west-1");
         bucketLocationConstraints.add("eu-north-1");
+        bucketLocationConstraints.add("us-iso-west-1");
     }
 
     public S3RestXmlCppClientGenerator() throws Exception {
@@ -72,22 +79,33 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         serviceModel.getOperations().values().stream()
                 .filter(operationEntry ->
                         !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setVirtualAddressAllowed(true));
-
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setVirtualAddressMemberName("Bucket"));
-
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        !opsThatDoNotSupportArnEndpoint.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setArnEndpointAllowed(true));
+                .forEach(operationEntry -> {
+                    operationEntry.setVirtualAddressAllowed(true);
+                    operationEntry.setVirtualAddressMemberName("Bucket");
+                });
 
         serviceModel.getOperations().values().stream()
                 .filter(operationEntry ->
                         !opsThatDoNotSupportArnEndpoint.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setArnEndpointMemberName("Bucket"));
+                .forEach(operationEntry -> {
+                    operationEntry.setArnEndpointAllowed(true);
+                    operationEntry.setArnEndpointMemberName("Bucket");
+                });
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry -> operationEntry.getName().equals("WriteGetObjectResponse"))
+                .forEach(operationEntry -> {
+                    operationEntry.setRequiresServiceNameOverride(true);
+                    operationEntry.setServiceNameOverride("s3-object-lambda");
+                    operationEntry.setSupportsChunkedEncoding(true);
+                });
+
+
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry ->
+                        serviceModel.getMetadata().getNamespace().equals("S3Crt") && opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
+                .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 
@@ -318,5 +336,20 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         return makeFile(template, context, fileName, true);
     }
-}
 
+    @Override
+    protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
+        if ("S3-CRT".equalsIgnoreCase(serviceModel.getMetadata().getProjectName())) {
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfig.vm", StandardCharsets.UTF_8.name());
+
+            VelocityContext context = createContext(serviceModel);
+            context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+            String fileName = String.format("include/aws/%s/ClientConfiguration.h", serviceModel.getMetadata().getProjectName());
+
+            return makeFile(template, context, fileName, true);
+        }
+
+        return null;
+    }
+}

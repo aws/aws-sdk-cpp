@@ -52,3 +52,4 @@ zip -r BuildSpec.zip BuildSpec.json
 aws s3 cp BuildSpec.zip s3://aws-sdk-cpp-dev-pipeline/"${buildspecLocation}"/BuildSpec.zip
 S3VERSION=$(aws s3api head-object --bucket aws-sdk-cpp-dev-pipeline --key "${buildspecLocation}"/BuildSpec.zip | awk '/VersionId/{gsub(/[",]/, ""); print $2}')
 echo -e "\033[30;42mYour build version ID is ${S3VERSION}\033[0m"
+echo "Remember that the code that is going to be build and tested is the one in the remote branch $branch. If you didn't push your changes, you are building an old version."

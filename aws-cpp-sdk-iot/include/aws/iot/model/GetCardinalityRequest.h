@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline GetCardinalityRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline GetCardinalityRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
-     * <p>The search query.</p>
+     * <p>The search query string.</p>
      */
     inline GetCardinalityRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
 

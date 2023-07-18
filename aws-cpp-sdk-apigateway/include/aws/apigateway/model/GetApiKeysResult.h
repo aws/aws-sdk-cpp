@@ -27,10 +27,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a collection of API keys as represented by an <a>ApiKeys</a>
-   * resource.</p> <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
-   * API Keys</a> </div><p><h3>See Also:</h3>   <a
+   * <p>Represents a collection of API keys as represented by an ApiKeys
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ApiKeys">AWS
    * API Reference</a></p>
    */

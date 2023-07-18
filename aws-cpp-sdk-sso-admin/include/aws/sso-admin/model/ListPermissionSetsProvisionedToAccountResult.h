@@ -77,42 +77,42 @@ namespace Model
 
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPermissionSets() const{ return m_permissionSets; }
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline void SetPermissionSets(const Aws::Vector<Aws::String>& value) { m_permissionSets = value; }
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline void SetPermissionSets(Aws::Vector<Aws::String>&& value) { m_permissionSets = std::move(value); }
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline ListPermissionSetsProvisionedToAccountResult& WithPermissionSets(const Aws::Vector<Aws::String>& value) { SetPermissionSets(value); return *this;}
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline ListPermissionSetsProvisionedToAccountResult& WithPermissionSets(Aws::Vector<Aws::String>&& value) { SetPermissionSets(std::move(value)); return *this;}
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline ListPermissionSetsProvisionedToAccountResult& AddPermissionSets(const Aws::String& value) { m_permissionSets.push_back(value); return *this; }
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline ListPermissionSetsProvisionedToAccountResult& AddPermissionSets(Aws::String&& value) { m_permissionSets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Defines the level of access that an AWS account has.</p>
+     * <p>Defines the level of access that an Amazon Web Services account has.</p>
      */
     inline ListPermissionSetsProvisionedToAccountResult& AddPermissionSets(const char* value) { m_permissionSets.push_back(value); return *this; }
 

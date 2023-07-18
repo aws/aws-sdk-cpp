@@ -6,12 +6,15 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/ProtocolDetails.h>
+#include <aws/awstransfer/model/Domain.h>
 #include <aws/awstransfer/model/EndpointDetails.h>
 #include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/awstransfer/model/State.h>
+#include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
@@ -88,87 +91,199 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline DescribedServer& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline DescribedServer& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline DescribedServer& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline DescribedServer& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline DescribedServer& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
+    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
+    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
+    inline DescribedServer& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
+    inline DescribedServer& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline DescribedServer& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline DescribedServer& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
@@ -276,156 +391,376 @@ namespace Model
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline const IdentityProviderDetails& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetIdentityProviderDetails(IdentityProviderDetails&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline DescribedServer& WithIdentityProviderDetails(const IdentityProviderDetails& value) { SetIdentityProviderDetails(value); return *this;}
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline DescribedServer& WithIdentityProviderDetails(IdentityProviderDetails&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline DescribedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline DescribedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
+
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline const Aws::String& GetPostAuthenticationLoginBanner() const{ return m_postAuthenticationLoginBanner; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline bool PostAuthenticationLoginBannerHasBeenSet() const { return m_postAuthenticationLoginBannerHasBeenSet; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline void SetPostAuthenticationLoginBanner(const Aws::String& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = value; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline void SetPostAuthenticationLoginBanner(Aws::String&& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = std::move(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline void SetPostAuthenticationLoginBanner(const char* value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner.assign(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline DescribedServer& WithPostAuthenticationLoginBanner(const Aws::String& value) { SetPostAuthenticationLoginBanner(value); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline DescribedServer& WithPostAuthenticationLoginBanner(Aws::String&& value) { SetPostAuthenticationLoginBanner(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline DescribedServer& WithPostAuthenticationLoginBanner(const char* value) { SetPostAuthenticationLoginBanner(value); return *this;}
+
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline const Aws::String& GetPreAuthenticationLoginBanner() const{ return m_preAuthenticationLoginBanner; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline bool PreAuthenticationLoginBannerHasBeenSet() const { return m_preAuthenticationLoginBannerHasBeenSet; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline void SetPreAuthenticationLoginBanner(const Aws::String& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = value; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline void SetPreAuthenticationLoginBanner(Aws::String&& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = std::move(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline void SetPreAuthenticationLoginBanner(const char* value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner.assign(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline DescribedServer& WithPreAuthenticationLoginBanner(const Aws::String& value) { SetPreAuthenticationLoginBanner(value); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline DescribedServer& WithPreAuthenticationLoginBanner(Aws::String&& value) { SetPreAuthenticationLoginBanner(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline DescribedServer& WithPreAuthenticationLoginBanner(const char* value) { SetPreAuthenticationLoginBanner(value); return *this;}
 
 
     /**
@@ -753,6 +1088,43 @@ namespace Model
      */
     inline DescribedServer& WithUserCount(int value) { SetUserCount(value); return *this;}
 
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline DescribedServer& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline DescribedServer& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -760,6 +1132,12 @@ namespace Model
 
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
+    ProtocolDetails m_protocolDetails;
+    bool m_protocolDetailsHasBeenSet;
+
+    Domain m_domain;
+    bool m_domainHasBeenSet;
 
     EndpointDetails m_endpointDetails;
     bool m_endpointDetailsHasBeenSet;
@@ -779,6 +1157,12 @@ namespace Model
     Aws::String m_loggingRole;
     bool m_loggingRoleHasBeenSet;
 
+    Aws::String m_postAuthenticationLoginBanner;
+    bool m_postAuthenticationLoginBannerHasBeenSet;
+
+    Aws::String m_preAuthenticationLoginBanner;
+    bool m_preAuthenticationLoginBannerHasBeenSet;
+
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet;
 
@@ -796,6 +1180,9 @@ namespace Model
 
     int m_userCount;
     bool m_userCountHasBeenSet;
+
+    WorkflowDetails m_workflowDetails;
+    bool m_workflowDetailsHasBeenSet;
   };
 
 } // namespace Model

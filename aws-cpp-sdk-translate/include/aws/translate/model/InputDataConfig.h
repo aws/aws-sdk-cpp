@@ -104,11 +104,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
@@ -129,11 +132,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
@@ -154,11 +160,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
@@ -179,11 +188,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
@@ -204,11 +216,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
@@ -229,11 +244,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline InputDataConfig& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
@@ -254,11 +272,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline InputDataConfig& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
@@ -279,11 +300,14 @@ namespace Model
      * (.pptx).</p> </li> <li> <p>
      * <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>:
      * The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-     * </ul>  <p>If you structure your input data as HTML, ensure that you
-     * set this parameter to <code>text/html</code>. By doing so, you cut costs by
-     * limiting the translation to the contents of the <code>html</code> element in
-     * each file. Otherwise, if you set this parameter to <code>text/plain</code>, your
-     * costs will cover the translation of every character.</p> 
+     * <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or
+     * more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon
+     * Translate supports only XLIFF version 1.2.</p> </li> </ul>  <p>If you
+     * structure your input data as HTML, ensure that you set this parameter to
+     * <code>text/html</code>. By doing so, you cut costs by limiting the translation
+     * to the contents of the <code>html</code> element in each file. Otherwise, if you
+     * set this parameter to <code>text/plain</code>, your costs will cover the
+     * translation of every character.</p> 
      */
     inline InputDataConfig& WithContentType(const char* value) { SetContentType(value); return *this;}
 

@@ -193,38 +193,38 @@ namespace Model
 
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline const EnableIoTLoggingParams& GetEnableIoTLoggingParams() const{ return m_enableIoTLoggingParams; }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline bool EnableIoTLoggingParamsHasBeenSet() const { return m_enableIoTLoggingParamsHasBeenSet; }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline void SetEnableIoTLoggingParams(const EnableIoTLoggingParams& value) { m_enableIoTLoggingParamsHasBeenSet = true; m_enableIoTLoggingParams = value; }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline void SetEnableIoTLoggingParams(EnableIoTLoggingParams&& value) { m_enableIoTLoggingParamsHasBeenSet = true; m_enableIoTLoggingParams = std::move(value); }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline MitigationActionParams& WithEnableIoTLoggingParams(const EnableIoTLoggingParams& value) { SetEnableIoTLoggingParams(value); return *this;}
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline MitigationActionParams& WithEnableIoTLoggingParams(EnableIoTLoggingParams&& value) { SetEnableIoTLoggingParams(std::move(value)); return *this;}
 

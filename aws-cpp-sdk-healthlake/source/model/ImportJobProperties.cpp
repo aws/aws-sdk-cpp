@@ -27,6 +27,7 @@ ImportJobProperties::ImportJobProperties() :
     m_endTimeHasBeenSet(false),
     m_datastoreIdHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
+    m_jobOutputDataConfigHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -41,6 +42,7 @@ ImportJobProperties::ImportJobProperties(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_datastoreIdHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
+    m_jobOutputDataConfigHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -96,6 +98,13 @@ ImportJobProperties& ImportJobProperties::operator =(JsonView jsonValue)
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
 
     m_inputDataConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobOutputDataConfig"))
+  {
+    m_jobOutputDataConfig = jsonValue.GetObject("JobOutputDataConfig");
+
+    m_jobOutputDataConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DataAccessRoleArn"))
@@ -155,6 +164,12 @@ JsonValue ImportJobProperties::Jsonize() const
   if(m_inputDataConfigHasBeenSet)
   {
    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+
+  }
+
+  if(m_jobOutputDataConfigHasBeenSet)
+  {
+   payload.WithObject("JobOutputDataConfig", m_jobOutputDataConfig.Jsonize());
 
   }
 

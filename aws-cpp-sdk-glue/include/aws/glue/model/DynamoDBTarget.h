@@ -116,7 +116,7 @@ namespace Model
 
 
     /**
-     * <p>The percentage of the configured read capacity units to use by the AWS Glue
+     * <p>The percentage of the configured read capacity units to use by the Glue
      * crawler. Read capacity units is a term defined by DynamoDB, and is a numeric
      * value that acts as rate limiter for the number of reads that can be performed on
      * that table per second.</p> <p>The valid values are null or a value between 0.1
@@ -127,7 +127,7 @@ namespace Model
     inline double GetScanRate() const{ return m_scanRate; }
 
     /**
-     * <p>The percentage of the configured read capacity units to use by the AWS Glue
+     * <p>The percentage of the configured read capacity units to use by the Glue
      * crawler. Read capacity units is a term defined by DynamoDB, and is a numeric
      * value that acts as rate limiter for the number of reads that can be performed on
      * that table per second.</p> <p>The valid values are null or a value between 0.1
@@ -138,7 +138,7 @@ namespace Model
     inline bool ScanRateHasBeenSet() const { return m_scanRateHasBeenSet; }
 
     /**
-     * <p>The percentage of the configured read capacity units to use by the AWS Glue
+     * <p>The percentage of the configured read capacity units to use by the Glue
      * crawler. Read capacity units is a term defined by DynamoDB, and is a numeric
      * value that acts as rate limiter for the number of reads that can be performed on
      * that table per second.</p> <p>The valid values are null or a value between 0.1
@@ -149,7 +149,7 @@ namespace Model
     inline void SetScanRate(double value) { m_scanRateHasBeenSet = true; m_scanRate = value; }
 
     /**
-     * <p>The percentage of the configured read capacity units to use by the AWS Glue
+     * <p>The percentage of the configured read capacity units to use by the Glue
      * crawler. Read capacity units is a term defined by DynamoDB, and is a numeric
      * value that acts as rate limiter for the number of reads that can be performed on
      * that table per second.</p> <p>The valid values are null or a value between 0.1

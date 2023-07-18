@@ -18,6 +18,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for
+   * <code>DescribeJobDefinitions</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitionsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API DescribeJobDefinitionsRequest : public BatchRequest
   {
@@ -34,56 +38,83 @@ namespace Model
 
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJobDefinitions() const{ return m_jobDefinitions; }
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline bool JobDefinitionsHasBeenSet() const { return m_jobDefinitionsHasBeenSet; }
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline void SetJobDefinitions(const Aws::Vector<Aws::String>& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = value; }
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline void SetJobDefinitions(Aws::Vector<Aws::String>&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = std::move(value); }
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline DescribeJobDefinitionsRequest& WithJobDefinitions(const Aws::Vector<Aws::String>& value) { SetJobDefinitions(value); return *this;}
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline DescribeJobDefinitionsRequest& WithJobDefinitions(Aws::Vector<Aws::String>&& value) { SetJobDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline DescribeJobDefinitionsRequest& AddJobDefinitions(const Aws::String& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline DescribeJobDefinitionsRequest& AddJobDefinitions(Aws::String&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of up to 100 job definition names or full Amazon Resource Name (ARN)
-     * entries.</p>
+     * <p>A list of up to 100 job definitions. Each entry in the list can either be an
+     * ARN in the format
+     * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+     * or a short version using the form
+     * <code>${JobDefinitionName}:${Revision}</code>.</p>
      */
     inline DescribeJobDefinitionsRequest& AddJobDefinitions(const char* value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
 
@@ -92,8 +123,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
@@ -105,8 +136,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
@@ -118,8 +149,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
@@ -131,8 +162,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
@@ -229,9 +260,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -241,9 +272,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -253,9 +284,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -265,9 +296,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -277,9 +308,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -289,9 +320,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -301,9 +332,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -313,9 +344,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p>  <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> 
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

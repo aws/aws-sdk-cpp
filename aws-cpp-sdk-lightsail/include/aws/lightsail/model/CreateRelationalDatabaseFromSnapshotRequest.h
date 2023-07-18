@@ -38,58 +38,66 @@ namespace Model
 
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
 

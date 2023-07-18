@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Specifies data Model Monitor will capture.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureOption">AWS
    * API Reference</a></p>
    */
@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline const CaptureMode& GetCaptureMode() const{ return m_captureMode; }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline bool CaptureModeHasBeenSet() const { return m_captureModeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline void SetCaptureMode(const CaptureMode& value) { m_captureModeHasBeenSet = true; m_captureMode = value; }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline void SetCaptureMode(CaptureMode&& value) { m_captureModeHasBeenSet = true; m_captureMode = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline CaptureOption& WithCaptureMode(const CaptureMode& value) { SetCaptureMode(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline CaptureOption& WithCaptureMode(CaptureMode&& value) { SetCaptureMode(std::move(value)); return *this;}
 

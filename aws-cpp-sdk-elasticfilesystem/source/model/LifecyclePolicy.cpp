@@ -20,13 +20,17 @@ namespace Model
 
 LifecyclePolicy::LifecyclePolicy() : 
     m_transitionToIA(TransitionToIARules::NOT_SET),
-    m_transitionToIAHasBeenSet(false)
+    m_transitionToIAHasBeenSet(false),
+    m_transitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules::NOT_SET),
+    m_transitionToPrimaryStorageClassHasBeenSet(false)
 {
 }
 
 LifecyclePolicy::LifecyclePolicy(JsonView jsonValue) : 
     m_transitionToIA(TransitionToIARules::NOT_SET),
-    m_transitionToIAHasBeenSet(false)
+    m_transitionToIAHasBeenSet(false),
+    m_transitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules::NOT_SET),
+    m_transitionToPrimaryStorageClassHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ LifecyclePolicy& LifecyclePolicy::operator =(JsonView jsonValue)
     m_transitionToIAHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransitionToPrimaryStorageClass"))
+  {
+    m_transitionToPrimaryStorageClass = TransitionToPrimaryStorageClassRulesMapper::GetTransitionToPrimaryStorageClassRulesForName(jsonValue.GetString("TransitionToPrimaryStorageClass"));
+
+    m_transitionToPrimaryStorageClassHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,11 @@ JsonValue LifecyclePolicy::Jsonize() const
   if(m_transitionToIAHasBeenSet)
   {
    payload.WithString("TransitionToIA", TransitionToIARulesMapper::GetNameForTransitionToIARules(m_transitionToIA));
+  }
+
+  if(m_transitionToPrimaryStorageClassHasBeenSet)
+  {
+   payload.WithString("TransitionToPrimaryStorageClass", TransitionToPrimaryStorageClassRulesMapper::GetNameForTransitionToPrimaryStorageClassRules(m_transitionToPrimaryStorageClass));
   }
 
   return payload;

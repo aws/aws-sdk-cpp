@@ -42,43 +42,43 @@ namespace Model
 
 
     /**
-     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * <p>An account limit structure that contain a list of CloudFormation account
      * limits and their values.</p>
      */
     inline const Aws::Vector<AccountLimit>& GetAccountLimits() const{ return m_accountLimits; }
 
     /**
-     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * <p>An account limit structure that contain a list of CloudFormation account
      * limits and their values.</p>
      */
     inline void SetAccountLimits(const Aws::Vector<AccountLimit>& value) { m_accountLimits = value; }
 
     /**
-     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * <p>An account limit structure that contain a list of CloudFormation account
      * limits and their values.</p>
      */
     inline void SetAccountLimits(Aws::Vector<AccountLimit>&& value) { m_accountLimits = std::move(value); }
 
     /**
-     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * <p>An account limit structure that contain a list of CloudFormation account
      * limits and their values.</p>
      */
     inline DescribeAccountLimitsResult& WithAccountLimits(const Aws::Vector<AccountLimit>& value) { SetAccountLimits(value); return *this;}
 
     /**
-     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * <p>An account limit structure that contain a list of CloudFormation account
      * limits and their values.</p>
      */
     inline DescribeAccountLimitsResult& WithAccountLimits(Aws::Vector<AccountLimit>&& value) { SetAccountLimits(std::move(value)); return *this;}
 
     /**
-     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * <p>An account limit structure that contain a list of CloudFormation account
      * limits and their values.</p>
      */
     inline DescribeAccountLimitsResult& AddAccountLimits(const AccountLimit& value) { m_accountLimits.push_back(value); return *this; }
 
     /**
-     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * <p>An account limit structure that contain a list of CloudFormation account
      * limits and their values.</p>
      */
     inline DescribeAccountLimitsResult& AddAccountLimits(AccountLimit&& value) { m_accountLimits.push_back(std::move(value)); return *this; }

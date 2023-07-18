@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline FailedDeleteRemediationExceptionsBatch& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline FailedDeleteRemediationExceptionsBatch& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a failure message for delete remediation exception. For example, AWS
+     * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
     inline FailedDeleteRemediationExceptionsBatch& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}

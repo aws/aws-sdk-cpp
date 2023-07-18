@@ -24,9 +24,9 @@ namespace Model
 
   /**
    * <p>Optional configuration to replicate existing source bucket objects. For more
-   * information, see <a href="
-   * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
-   * Existing Objects</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
+   * Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ExistingObjectReplication">AWS
    * API Reference</a></p>

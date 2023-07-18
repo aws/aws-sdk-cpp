@@ -161,83 +161,124 @@ namespace Model
 
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline User& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline User& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline User& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::move(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion.assign(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline User& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline User& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline User& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>Access permissions string used for this user.</p>
      */
     inline const Aws::String& GetAccessString() const{ return m_accessString; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline bool AccessStringHasBeenSet() const { return m_accessStringHasBeenSet; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(const Aws::String& value) { m_accessStringHasBeenSet = true; m_accessString = value; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(Aws::String&& value) { m_accessStringHasBeenSet = true; m_accessString = std::move(value); }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(const char* value) { m_accessStringHasBeenSet = true; m_accessString.assign(value); }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline User& WithAccessString(const Aws::String& value) { SetAccessString(value); return *this;}
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline User& WithAccessString(Aws::String&& value) { SetAccessString(std::move(value)); return *this;}
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline User& WithAccessString(const char* value) { SetAccessString(value); return *this;}
 
@@ -320,42 +361,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline User& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline User& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline User& WithARN(const char* value) { SetARN(value); return *this;}
 
@@ -391,6 +432,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
+    Aws::String m_minimumEngineVersion;
+    bool m_minimumEngineVersionHasBeenSet;
 
     Aws::String m_accessString;
     bool m_accessStringHasBeenSet;

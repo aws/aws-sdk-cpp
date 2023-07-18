@@ -20,12 +20,12 @@ CreateInvalidation2020_05_31Result::CreateInvalidation2020_05_31Result()
 {
 }
 
-CreateInvalidation2020_05_31Result::CreateInvalidation2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInvalidation2020_05_31Result::CreateInvalidation2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateInvalidation2020_05_31Result& CreateInvalidation2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInvalidation2020_05_31Result& CreateInvalidation2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -23,7 +23,7 @@ namespace CloudTrail
 namespace Model
 {
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an
+   * <p>Returns the objects or data if successful. Otherwise, returns an
    * error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTagsResponse">AWS
    * API Reference</a></p>

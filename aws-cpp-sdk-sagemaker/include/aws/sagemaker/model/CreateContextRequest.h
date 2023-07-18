@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetContextName() const{ return m_contextName; }
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline bool ContextNameHasBeenSet() const { return m_contextNameHasBeenSet; }
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetContextName(const Aws::String& value) { m_contextNameHasBeenSet = true; m_contextName = value; }
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetContextName(Aws::String&& value) { m_contextNameHasBeenSet = true; m_contextName = std::move(value); }
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetContextName(const char* value) { m_contextNameHasBeenSet = true; m_contextName.assign(value); }
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateContextRequest& WithContextName(const Aws::String& value) { SetContextName(value); return *this;}
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateContextRequest& WithContextName(Aws::String&& value) { SetContextName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+     * <p>The name of the context. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateContextRequest& WithContextName(const char* value) { SetContextName(value); return *this;}
 

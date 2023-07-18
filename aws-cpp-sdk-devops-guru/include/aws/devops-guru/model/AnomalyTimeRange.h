@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p> A time range that specifies when the observed unusual behavior in an anomaly
-   * started and ended. </p><p><h3>See Also:</h3>   <a
+   * started and ended. This is different from <code>AnomalyReportedTimeRange</code>,
+   * which specifies the time range when DevOps Guru opens and then closes an
+   * anomaly. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalyTimeRange">AWS
    * API Reference</a></p>
    */

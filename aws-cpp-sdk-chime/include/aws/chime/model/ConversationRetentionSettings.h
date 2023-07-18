@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>The retention settings that determine how long to retain chat conversation
+   * <p>The retention settings that determine how long to retain conversation
    * messages for an Amazon Chime Enterprise account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ConversationRetentionSettings">AWS
    * API Reference</a></p>
@@ -37,22 +37,22 @@ namespace Model
 
 
     /**
-     * <p>The number of days for which to retain chat conversation messages.</p>
+     * <p>The number of days for which to retain conversation messages.</p>
      */
     inline int GetRetentionDays() const{ return m_retentionDays; }
 
     /**
-     * <p>The number of days for which to retain chat conversation messages.</p>
+     * <p>The number of days for which to retain conversation messages.</p>
      */
     inline bool RetentionDaysHasBeenSet() const { return m_retentionDaysHasBeenSet; }
 
     /**
-     * <p>The number of days for which to retain chat conversation messages.</p>
+     * <p>The number of days for which to retain conversation messages.</p>
      */
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
 
     /**
-     * <p>The number of days for which to retain chat conversation messages.</p>
+     * <p>The number of days for which to retain conversation messages.</p>
      */
     inline ConversationRetentionSettings& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
 

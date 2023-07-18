@@ -42,50 +42,50 @@ namespace Model
   public:
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceOptionGroupIdentifier() const{ return m_sourceOptionGroupIdentifier; }
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline bool SourceOptionGroupIdentifierHasBeenSet() const { return m_sourceOptionGroupIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline void SetSourceOptionGroupIdentifier(const Aws::String& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = value; }
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline void SetSourceOptionGroupIdentifier(Aws::String&& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline void SetSourceOptionGroupIdentifier(const char* value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier.assign(value); }
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(const Aws::String& value) { SetSourceOptionGroupIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(Aws::String&& value) { SetSourceOptionGroupIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the source option group. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must specify a valid option group.</p> </li> </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(const char* value) { SetSourceOptionGroupIdentifier(value); return *this;}
 

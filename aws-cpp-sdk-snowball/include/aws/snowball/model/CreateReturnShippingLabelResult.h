@@ -34,31 +34,31 @@ namespace Model
 
     /**
      * <p>The status information of the task on a Snow device that is being returned to
-     * AWS.</p>
+     * Amazon Web Services.</p>
      */
     inline const ShippingLabelStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status information of the task on a Snow device that is being returned to
-     * AWS.</p>
+     * Amazon Web Services.</p>
      */
     inline void SetStatus(const ShippingLabelStatus& value) { m_status = value; }
 
     /**
      * <p>The status information of the task on a Snow device that is being returned to
-     * AWS.</p>
+     * Amazon Web Services.</p>
      */
     inline void SetStatus(ShippingLabelStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status information of the task on a Snow device that is being returned to
-     * AWS.</p>
+     * Amazon Web Services.</p>
      */
     inline CreateReturnShippingLabelResult& WithStatus(const ShippingLabelStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status information of the task on a Snow device that is being returned to
-     * AWS.</p>
+     * Amazon Web Services.</p>
      */
     inline CreateReturnShippingLabelResult& WithStatus(ShippingLabelStatus&& value) { SetStatus(std::move(value)); return *this;}
 

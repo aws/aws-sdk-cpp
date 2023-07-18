@@ -139,50 +139,32 @@ namespace Model
 
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
-     * <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
-     * <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
-     * <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
-     * <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
-     * <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline UpdateComponentConfigurationRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
-     * <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline UpdateComponentConfigurationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
@@ -291,6 +273,31 @@ namespace Model
      */
     inline UpdateComponentConfigurationRequest& WithComponentConfiguration(const char* value) { SetComponentConfiguration(value); return *this;}
 
+
+    /**
+     * <p> Automatically configures the component by applying the recommended
+     * configurations. </p>
+     */
+    inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
+
+    /**
+     * <p> Automatically configures the component by applying the recommended
+     * configurations. </p>
+     */
+    inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
+
+    /**
+     * <p> Automatically configures the component by applying the recommended
+     * configurations. </p>
+     */
+    inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
+
+    /**
+     * <p> Automatically configures the component by applying the recommended
+     * configurations. </p>
+     */
+    inline UpdateComponentConfigurationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -307,6 +314,9 @@ namespace Model
 
     Aws::String m_componentConfiguration;
     bool m_componentConfigurationHasBeenSet;
+
+    bool m_autoConfigEnabled;
+    bool m_autoConfigEnabledHasBeenSet;
   };
 
 } // namespace Model

@@ -101,32 +101,32 @@ namespace Model
 
 
     /**
-     * <p>The account-level and bucket-level permissions for the bucket.</p>
+     * <p>The account-level and bucket-level permissions settings for the bucket.</p>
      */
     inline const BucketPermissionConfiguration& GetPermissionConfiguration() const{ return m_permissionConfiguration; }
 
     /**
-     * <p>The account-level and bucket-level permissions for the bucket.</p>
+     * <p>The account-level and bucket-level permissions settings for the bucket.</p>
      */
     inline bool PermissionConfigurationHasBeenSet() const { return m_permissionConfigurationHasBeenSet; }
 
     /**
-     * <p>The account-level and bucket-level permissions for the bucket.</p>
+     * <p>The account-level and bucket-level permissions settings for the bucket.</p>
      */
     inline void SetPermissionConfiguration(const BucketPermissionConfiguration& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = value; }
 
     /**
-     * <p>The account-level and bucket-level permissions for the bucket.</p>
+     * <p>The account-level and bucket-level permissions settings for the bucket.</p>
      */
     inline void SetPermissionConfiguration(BucketPermissionConfiguration&& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = std::move(value); }
 
     /**
-     * <p>The account-level and bucket-level permissions for the bucket.</p>
+     * <p>The account-level and bucket-level permissions settings for the bucket.</p>
      */
     inline BucketPublicAccess& WithPermissionConfiguration(const BucketPermissionConfiguration& value) { SetPermissionConfiguration(value); return *this;}
 
     /**
-     * <p>The account-level and bucket-level permissions for the bucket.</p>
+     * <p>The account-level and bucket-level permissions settings for the bucket.</p>
      */
     inline BucketPublicAccess& WithPermissionConfiguration(BucketPermissionConfiguration&& value) { SetPermissionConfiguration(std::move(value)); return *this;}
 

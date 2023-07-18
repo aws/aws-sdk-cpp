@@ -24,7 +24,8 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
     m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
     m_pipelineExecutionStatusHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false)
+    m_pipelineExecutionDisplayNameHasBeenSet(false),
+    m_pipelineExecutionFailureReasonHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue) :
     m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
     m_pipelineExecutionStatusHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false)
+    m_pipelineExecutionDisplayNameHasBeenSet(false),
+    m_pipelineExecutionFailureReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(JsonView jsonValu
     m_pipelineExecutionDisplayNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PipelineExecutionFailureReason"))
+  {
+    m_pipelineExecutionFailureReason = jsonValue.GetString("PipelineExecutionFailureReason");
+
+    m_pipelineExecutionFailureReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue PipelineExecutionSummary::Jsonize() const
   if(m_pipelineExecutionDisplayNameHasBeenSet)
   {
    payload.WithString("PipelineExecutionDisplayName", m_pipelineExecutionDisplayName);
+
+  }
+
+  if(m_pipelineExecutionFailureReasonHasBeenSet)
+  {
+   payload.WithString("PipelineExecutionFailureReason", m_pipelineExecutionFailureReason);
 
   }
 

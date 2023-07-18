@@ -20,6 +20,7 @@ namespace SyntheticsErrorMapper
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("RequestEntityTooLargeException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -33,6 +34,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == REQUEST_ENTITY_TOO_LARGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::REQUEST_ENTITY_TOO_LARGE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

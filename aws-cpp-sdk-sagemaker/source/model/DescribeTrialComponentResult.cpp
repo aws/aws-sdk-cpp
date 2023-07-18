@@ -136,6 +136,12 @@ DescribeTrialComponentResult& DescribeTrialComponentResult::operator =(const Aws
     }
   }
 
+  if(jsonValue.ValueExists("LineageGroupArn"))
+  {
+    m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
+
+  }
+
 
 
   return *this;

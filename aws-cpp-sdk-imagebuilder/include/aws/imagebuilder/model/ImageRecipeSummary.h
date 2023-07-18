@@ -194,42 +194,42 @@ namespace Model
 
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipeSummary& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipeSummary& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipeSummary& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 

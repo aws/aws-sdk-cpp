@@ -7,6 +7,7 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
@@ -27,11 +28,11 @@ namespace Model
 {
 
   /**
-   * <p>The firewall defines the configuration settings for an AWS Network Firewall
+   * <p>The firewall defines the configuration settings for an Network Firewall
    * firewall. These settings include the firewall policy, the subnets in your VPC to
    * use for the firewall endpoints, and any tags that are attached to the firewall
-   * AWS resource. </p> <p>The status of the firewall, for example whether it's ready
-   * to filter network traffic, is provided in the corresponding
+   * Amazon Web Services resource. </p> <p>The status of the firewall, for example
+   * whether it's ready to filter network traffic, is provided in the corresponding
    * <a>FirewallStatus</a>. You can retrieve both objects by calling
    * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Firewall">AWS
@@ -520,6 +521,43 @@ namespace Model
      */
     inline Firewall& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall.</p>
+     */
+    inline Firewall& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall.</p>
+     */
+    inline Firewall& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_firewallName;
@@ -554,6 +592,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model

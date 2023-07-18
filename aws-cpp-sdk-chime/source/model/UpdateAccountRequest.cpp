@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 UpdateAccountRequest::UpdateAccountRequest() : 
     m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_defaultLicense(License::NOT_SET),
+    m_defaultLicenseHasBeenSet(false)
 {
 }
 
@@ -26,6 +28,11 @@ Aws::String UpdateAccountRequest::SerializePayload() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_defaultLicenseHasBeenSet)
+  {
+   payload.WithString("DefaultLicense", LicenseMapper::GetNameForLicense(m_defaultLicense));
   }
 
   return payload.View().WriteReadable();

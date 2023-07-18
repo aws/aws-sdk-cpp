@@ -29,7 +29,8 @@ WorkflowRun::WorkflowRun() :
     m_statusHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_startingEventBatchConditionHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ WorkflowRun::WorkflowRun(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_startingEventBatchConditionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,13 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
     m_graphHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StartingEventBatchCondition"))
+  {
+    m_startingEventBatchCondition = jsonValue.GetObject("StartingEventBatchCondition");
+
+    m_startingEventBatchConditionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +199,12 @@ JsonValue WorkflowRun::Jsonize() const
   if(m_graphHasBeenSet)
   {
    payload.WithObject("Graph", m_graph.Jsonize());
+
+  }
+
+  if(m_startingEventBatchConditionHasBeenSet)
+  {
+   payload.WithObject("StartingEventBatchCondition", m_startingEventBatchCondition.Jsonize());
 
   }
 

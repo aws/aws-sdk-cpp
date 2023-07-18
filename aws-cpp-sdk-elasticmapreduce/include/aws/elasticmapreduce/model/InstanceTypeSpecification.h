@@ -253,50 +253,50 @@ namespace Model
 
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline const Aws::Vector<EbsBlockDevice>& GetEbsBlockDevices() const{ return m_ebsBlockDevices; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline bool EbsBlockDevicesHasBeenSet() const { return m_ebsBlockDevicesHasBeenSet; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline void SetEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline void SetEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = std::move(value); }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& WithEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { SetEbsBlockDevices(value); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& WithEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { SetEbsBlockDevices(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& AddEbsBlockDevices(const EbsBlockDevice& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(std::move(value)); return *this; }
 
@@ -325,6 +325,47 @@ namespace Model
      */
     inline InstanceTypeSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeSpecification& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeSpecification& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeSpecification& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
   private:
 
     Aws::String m_instanceType;
@@ -347,6 +388,9 @@ namespace Model
 
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
   };
 
 } // namespace Model

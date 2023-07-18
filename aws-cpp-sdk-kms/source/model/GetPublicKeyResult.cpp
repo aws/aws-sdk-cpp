@@ -18,13 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetPublicKeyResult::GetPublicKeyResult() : 
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
+    m_keySpec(KeySpec::NOT_SET),
     m_keyUsage(KeyUsageType::NOT_SET)
 {
 }
 
 GetPublicKeyResult::GetPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
+    m_keySpec(KeySpec::NOT_SET),
     m_keyUsage(KeyUsageType::NOT_SET)
 {
   *this = result;
@@ -44,9 +44,9 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
     m_publicKey = HashingUtils::Base64Decode(jsonValue.GetString("PublicKey"));
   }
 
-  if(jsonValue.ValueExists("CustomerMasterKeySpec"))
+  if(jsonValue.ValueExists("KeySpec"))
   {
-    m_customerMasterKeySpec = CustomerMasterKeySpecMapper::GetCustomerMasterKeySpecForName(jsonValue.GetString("CustomerMasterKeySpec"));
+    m_keySpec = KeySpecMapper::GetKeySpecForName(jsonValue.GetString("KeySpec"));
 
   }
 

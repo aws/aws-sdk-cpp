@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 DescribeEC2InstanceLimitsRequest::DescribeEC2InstanceLimitsRequest() : 
     m_eC2InstanceType(EC2InstanceType::NOT_SET),
-    m_eC2InstanceTypeHasBeenSet(false)
+    m_eC2InstanceTypeHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -25,6 +26,12 @@ Aws::String DescribeEC2InstanceLimitsRequest::SerializePayload() const
   if(m_eC2InstanceTypeHasBeenSet)
   {
    payload.WithString("EC2InstanceType", EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_eC2InstanceType));
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
+
   }
 
   return payload.View().WriteReadable();

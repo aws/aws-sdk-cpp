@@ -232,32 +232,32 @@ namespace Model
 
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline const RestoreJobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline void SetStatus(const RestoreJobStatus& value) { m_status = value; }
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline void SetStatus(RestoreJobStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline DescribeRestoreJobResult& WithStatus(const RestoreJobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline DescribeRestoreJobResult& WithStatus(RestoreJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 

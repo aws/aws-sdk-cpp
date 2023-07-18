@@ -85,58 +85,66 @@ namespace Model
 
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline DescribeCoipPoolsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline DescribeCoipPoolsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline DescribeCoipPoolsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>The filters. The following are the possible values:</p> <ul> <li> <p>
-     * <code>coip-pool.pool-id</code> </p> </li> </ul> <ul> <li> <p>
-     * <code>coip-pool.local-gateway-route-table-id</code> </p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local
+     * gateway route table.</p> </li> <li> <p> <code>coip-pool.pool-id</code> - The ID
+     * of the address pool.</p> </li> </ul>
      */
     inline DescribeCoipPoolsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

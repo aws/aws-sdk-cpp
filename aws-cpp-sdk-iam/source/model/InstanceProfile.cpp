@@ -26,7 +26,8 @@ InstanceProfile::InstanceProfile() :
     m_instanceProfileIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_rolesHasBeenSet(false)
+    m_rolesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ InstanceProfile::InstanceProfile(const XmlNode& xmlNode) :
     m_instanceProfileIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_rolesHasBeenSet(false)
+    m_rolesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -89,6 +91,18 @@ InstanceProfile& InstanceProfile::operator =(const XmlNode& xmlNode)
 
       m_rolesHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -132,6 +146,17 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -164,6 +189,16 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
         Aws::StringStream rolesSs;
         rolesSs << location <<  ".Roles.member." << rolesIdx++;
         item.OutputToStream(oStream, rolesSs.str().c_str());
+      }
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }

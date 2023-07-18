@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SINGLE_MASTER_HASH = HashingUtils::HashString("SINGLE_MASTER");
+        static const int FULL_MESH_HASH = HashingUtils::HashString("FULL_MESH");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SINGLE_MASTER_HASH)
           {
             return ChannelType::SINGLE_MASTER;
+          }
+          else if (hashCode == FULL_MESH_HASH)
+          {
+            return ChannelType::FULL_MESH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ChannelType::SINGLE_MASTER:
             return "SINGLE_MASTER";
+          case ChannelType::FULL_MESH:
+            return "FULL_MESH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

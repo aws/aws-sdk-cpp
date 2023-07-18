@@ -18,24 +18,38 @@ namespace WAFV2
 namespace Model
 {
 
-BlockAction::BlockAction()
+BlockAction::BlockAction() : 
+    m_customResponseHasBeenSet(false)
 {
 }
 
-BlockAction::BlockAction(JsonView jsonValue)
+BlockAction::BlockAction(JsonView jsonValue) : 
+    m_customResponseHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 BlockAction& BlockAction::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("CustomResponse"))
+  {
+    m_customResponse = jsonValue.GetObject("CustomResponse");
+
+    m_customResponseHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue BlockAction::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customResponseHasBeenSet)
+  {
+   payload.WithObject("CustomResponse", m_customResponse.Jsonize());
+
+  }
 
   return payload;
 }

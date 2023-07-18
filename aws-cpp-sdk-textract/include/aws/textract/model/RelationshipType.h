@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     VALUE,
     CHILD,
-    COMPLEX_FEATURES
+    COMPLEX_FEATURES,
+    MERGED_CELL,
+    TITLE,
+    ANSWER
   };
 
 namespace RelationshipTypeMapper

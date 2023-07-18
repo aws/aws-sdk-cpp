@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrackerResult::DescribeTrackerResult()
+DescribeTrackerResult::DescribeTrackerResult() : 
+    m_positionFiltering(PositionFiltering::NOT_SET)
 {
 }
 
-DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_positionFiltering(PositionFiltering::NOT_SET)
 {
   *this = result;
 }
@@ -38,6 +40,27 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
   {
     m_description = jsonValue.GetString("Description");
 
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("PositionFiltering"))
+  {
+    m_positionFiltering = PositionFilteringMapper::GetPositionFilteringForName(jsonValue.GetString("PositionFiltering"));
+
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
   }
 
   if(jsonValue.ValueExists("TrackerArn"))

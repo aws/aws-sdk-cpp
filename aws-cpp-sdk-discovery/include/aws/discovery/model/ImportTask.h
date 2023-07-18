@@ -43,49 +43,49 @@ namespace Model
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline void SetImportTaskId(Aws::String&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::move(value); }
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline void SetImportTaskId(const char* value) { m_importTaskIdHasBeenSet = true; m_importTaskId.assign(value); }
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline ImportTask& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline ImportTask& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
-     * but they are unique within an AWS account.</p>
+     * but they are unique within an Amazon Web Services account.</p>
      */
     inline ImportTask& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 

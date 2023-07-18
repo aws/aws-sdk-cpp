@@ -21,6 +21,7 @@
 #include <aws/sagemaker-runtime/SageMakerRuntimeEndpoint.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeErrorMarshaller.h>
 #include <aws/sagemaker-runtime/model/InvokeEndpointRequest.h>
+#include <aws/sagemaker-runtime/model/InvokeEndpointAsyncRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -69,7 +70,7 @@ SageMakerRuntimeClient::~SageMakerRuntimeClient()
 {
 }
 
-void SageMakerRuntimeClient::init(const ClientConfiguration& config)
+void SageMakerRuntimeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SageMaker Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -103,11 +104,9 @@ InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpoin
     return InvokeEndpointOutcome(Aws::Client::AWSError<SageMakerRuntimeErrors>(SageMakerRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/endpoints/";
-  ss << request.GetEndpointName();
-  ss << "/invocations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetEndpointName());
+  uri.AddPathSegments("/invocations");
   return InvokeEndpointOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -127,5 +126,42 @@ void SageMakerRuntimeClient::InvokeEndpointAsync(const InvokeEndpointRequest& re
 void SageMakerRuntimeClient::InvokeEndpointAsyncHelper(const InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, InvokeEndpoint(request), context);
+}
+
+InvokeEndpointAsyncOutcome SageMakerRuntimeClient::InvokeEndpointAsync(const InvokeEndpointAsyncRequest& request) const
+{
+  if (!request.EndpointNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InvokeEndpointAsync", "Required field: EndpointName, is not set");
+    return InvokeEndpointAsyncOutcome(Aws::Client::AWSError<SageMakerRuntimeErrors>(SageMakerRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
+  }
+  if (!request.InputLocationHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InvokeEndpointAsync", "Required field: InputLocation, is not set");
+    return InvokeEndpointAsyncOutcome(Aws::Client::AWSError<SageMakerRuntimeErrors>(SageMakerRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputLocation]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetEndpointName());
+  uri.AddPathSegments("/async-invocations");
+  return InvokeEndpointAsyncOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+InvokeEndpointAsyncOutcomeCallable SageMakerRuntimeClient::InvokeEndpointAsyncCallable(const InvokeEndpointAsyncRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< InvokeEndpointAsyncOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InvokeEndpointAsync(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerRuntimeClient::InvokeEndpointAsyncAsync(const InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->InvokeEndpointAsyncAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerRuntimeClient::InvokeEndpointAsyncAsyncHelper(const InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, InvokeEndpointAsync(request), context);
 }
 

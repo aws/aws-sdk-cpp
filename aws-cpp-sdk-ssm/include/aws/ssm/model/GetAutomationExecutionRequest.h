@@ -37,56 +37,56 @@ namespace Model
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline const Aws::String& GetAutomationExecutionId() const{ return m_automationExecutionId; }
 
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
 
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::move(value); }
 
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline void SetAutomationExecutionId(const char* value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId.assign(value); }
 
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline GetAutomationExecutionRequest& WithAutomationExecutionId(const Aws::String& value) { SetAutomationExecutionId(value); return *this;}
 
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline GetAutomationExecutionRequest& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an
-     * Automation document is initiated.</p>
+     * Automation runbook is initiated.</p>
      */
     inline GetAutomationExecutionRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
 

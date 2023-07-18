@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/frauddetector/model/UnlabeledEventsTreatment.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -207,10 +208,44 @@ namespace Model
      */
     inline LabelSchema& AddLabelMapper(const char* key, const Aws::Vector<Aws::String>& value) { m_labelMapperHasBeenSet = true; m_labelMapper.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The action to take for unlabeled events.</p>
+     */
+    inline const UnlabeledEventsTreatment& GetUnlabeledEventsTreatment() const{ return m_unlabeledEventsTreatment; }
+
+    /**
+     * <p>The action to take for unlabeled events.</p>
+     */
+    inline bool UnlabeledEventsTreatmentHasBeenSet() const { return m_unlabeledEventsTreatmentHasBeenSet; }
+
+    /**
+     * <p>The action to take for unlabeled events.</p>
+     */
+    inline void SetUnlabeledEventsTreatment(const UnlabeledEventsTreatment& value) { m_unlabeledEventsTreatmentHasBeenSet = true; m_unlabeledEventsTreatment = value; }
+
+    /**
+     * <p>The action to take for unlabeled events.</p>
+     */
+    inline void SetUnlabeledEventsTreatment(UnlabeledEventsTreatment&& value) { m_unlabeledEventsTreatmentHasBeenSet = true; m_unlabeledEventsTreatment = std::move(value); }
+
+    /**
+     * <p>The action to take for unlabeled events.</p>
+     */
+    inline LabelSchema& WithUnlabeledEventsTreatment(const UnlabeledEventsTreatment& value) { SetUnlabeledEventsTreatment(value); return *this;}
+
+    /**
+     * <p>The action to take for unlabeled events.</p>
+     */
+    inline LabelSchema& WithUnlabeledEventsTreatment(UnlabeledEventsTreatment&& value) { SetUnlabeledEventsTreatment(std::move(value)); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_labelMapper;
     bool m_labelMapperHasBeenSet;
+
+    UnlabeledEventsTreatment m_unlabeledEventsTreatment;
+    bool m_unlabeledEventsTreatmentHasBeenSet;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,81 @@ namespace Model
      */
     inline LoRaWANGateway& WithRfRegion(const char* value) { SetRfRegion(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetJoinEuiFilters() const{ return m_joinEuiFilters; }
+
+    
+    inline bool JoinEuiFiltersHasBeenSet() const { return m_joinEuiFiltersHasBeenSet; }
+
+    
+    inline void SetJoinEuiFilters(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters = value; }
+
+    
+    inline void SetJoinEuiFilters(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters = std::move(value); }
+
+    
+    inline LoRaWANGateway& WithJoinEuiFilters(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetJoinEuiFilters(value); return *this;}
+
+    
+    inline LoRaWANGateway& WithJoinEuiFilters(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetJoinEuiFilters(std::move(value)); return *this;}
+
+    
+    inline LoRaWANGateway& AddJoinEuiFilters(const Aws::Vector<Aws::String>& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters.push_back(value); return *this; }
+
+    
+    inline LoRaWANGateway& AddJoinEuiFilters(Aws::Vector<Aws::String>&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const Aws::Vector<Aws::String>& GetNetIdFilters() const{ return m_netIdFilters; }
+
+    
+    inline bool NetIdFiltersHasBeenSet() const { return m_netIdFiltersHasBeenSet; }
+
+    
+    inline void SetNetIdFilters(const Aws::Vector<Aws::String>& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters = value; }
+
+    
+    inline void SetNetIdFilters(Aws::Vector<Aws::String>&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters = std::move(value); }
+
+    
+    inline LoRaWANGateway& WithNetIdFilters(const Aws::Vector<Aws::String>& value) { SetNetIdFilters(value); return *this;}
+
+    
+    inline LoRaWANGateway& WithNetIdFilters(Aws::Vector<Aws::String>&& value) { SetNetIdFilters(std::move(value)); return *this;}
+
+    
+    inline LoRaWANGateway& AddNetIdFilters(const Aws::String& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(value); return *this; }
+
+    
+    inline LoRaWANGateway& AddNetIdFilters(Aws::String&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(std::move(value)); return *this; }
+
+    
+    inline LoRaWANGateway& AddNetIdFilters(const char* value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(value); return *this; }
+
+
+    
+    inline const Aws::Vector<int>& GetSubBands() const{ return m_subBands; }
+
+    
+    inline bool SubBandsHasBeenSet() const { return m_subBandsHasBeenSet; }
+
+    
+    inline void SetSubBands(const Aws::Vector<int>& value) { m_subBandsHasBeenSet = true; m_subBands = value; }
+
+    
+    inline void SetSubBands(Aws::Vector<int>&& value) { m_subBandsHasBeenSet = true; m_subBands = std::move(value); }
+
+    
+    inline LoRaWANGateway& WithSubBands(const Aws::Vector<int>& value) { SetSubBands(value); return *this;}
+
+    
+    inline LoRaWANGateway& WithSubBands(Aws::Vector<int>&& value) { SetSubBands(std::move(value)); return *this;}
+
+    
+    inline LoRaWANGateway& AddSubBands(int value) { m_subBandsHasBeenSet = true; m_subBands.push_back(value); return *this; }
+
   private:
 
     Aws::String m_gatewayEui;
@@ -125,6 +201,15 @@ namespace Model
 
     Aws::String m_rfRegion;
     bool m_rfRegionHasBeenSet;
+
+    Aws::Vector<Aws::Vector<Aws::String>> m_joinEuiFilters;
+    bool m_joinEuiFiltersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_netIdFilters;
+    bool m_netIdFiltersHasBeenSet;
+
+    Aws::Vector<int> m_subBands;
+    bool m_subBandsHasBeenSet;
   };
 
 } // namespace Model

@@ -88,8 +88,8 @@ namespace Model
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself and <i>all</i> associated stack set
+     * instances.</p>
      */
     inline const StackSetOperationAction& GetAction() const{ return m_action; }
 
@@ -97,8 +97,8 @@ namespace Model
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself and <i>all</i> associated stack set
+     * instances.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
@@ -106,8 +106,8 @@ namespace Model
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself and <i>all</i> associated stack set
+     * instances.</p>
      */
     inline void SetAction(const StackSetOperationAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -115,8 +115,8 @@ namespace Model
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself and <i>all</i> associated stack set
+     * instances.</p>
      */
     inline void SetAction(StackSetOperationAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -124,8 +124,8 @@ namespace Model
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself and <i>all</i> associated stack set
+     * instances.</p>
      */
     inline StackSetOperationSummary& WithAction(const StackSetOperationAction& value) { SetAction(value); return *this;}
 
@@ -133,8 +133,8 @@ namespace Model
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself and <i>all</i> associated stack set
+     * instances.</p>
      */
     inline StackSetOperationSummary& WithAction(StackSetOperationAction&& value) { SetAction(std::move(value)); return *this;}
 
@@ -146,19 +146,18 @@ namespace Model
      * create and update operations. If the number of failed stacks within a Region
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-     * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * to <code>FAILED</code>, and CloudFormation cancels the operation in any
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline const StackSetOperationStatus& GetStatus() const{ return m_status; }
 
@@ -169,19 +168,18 @@ namespace Model
      * create and update operations. If the number of failed stacks within a Region
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-     * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * to <code>FAILED</code>, and CloudFormation cancels the operation in any
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -192,19 +190,18 @@ namespace Model
      * create and update operations. If the number of failed stacks within a Region
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-     * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * to <code>FAILED</code>, and CloudFormation cancels the operation in any
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(const StackSetOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -215,19 +212,18 @@ namespace Model
      * create and update operations. If the number of failed stacks within a Region
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-     * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * to <code>FAILED</code>, and CloudFormation cancels the operation in any
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(StackSetOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -238,19 +234,18 @@ namespace Model
      * create and update operations. If the number of failed stacks within a Region
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-     * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * to <code>FAILED</code>, and CloudFormation cancels the operation in any
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperationSummary& WithStatus(const StackSetOperationStatus& value) { SetStatus(value); return *this;}
 
@@ -261,19 +256,18 @@ namespace Model
      * create and update operations. If the number of failed stacks within a Region
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-     * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * to <code>FAILED</code>, and CloudFormation cancels the operation in any
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperationSummary& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -281,8 +275,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
@@ -290,8 +284,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
@@ -299,8 +293,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
@@ -308,8 +302,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
@@ -317,8 +311,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline StackSetOperationSummary& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
@@ -326,8 +320,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline StackSetOperationSummary& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
@@ -375,6 +369,47 @@ namespace Model
      */
     inline StackSetOperationSummary& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperationSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperationSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperationSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
   private:
 
     Aws::String m_operationId;
@@ -391,6 +426,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTimestamp;
     bool m_endTimestampHasBeenSet;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet;
   };
 
 } // namespace Model

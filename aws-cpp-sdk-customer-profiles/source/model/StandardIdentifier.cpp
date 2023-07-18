@@ -21,10 +21,13 @@ namespace Aws
       {
 
         static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
+        static const int ASSET_HASH = HashingUtils::HashString("ASSET");
+        static const int CASE_HASH = HashingUtils::HashString("CASE");
         static const int UNIQUE_HASH = HashingUtils::HashString("UNIQUE");
         static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
         static const int LOOKUP_ONLY_HASH = HashingUtils::HashString("LOOKUP_ONLY");
         static const int NEW_ONLY_HASH = HashingUtils::HashString("NEW_ONLY");
+        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
 
 
         StandardIdentifier GetStandardIdentifierForName(const Aws::String& name)
@@ -33,6 +36,14 @@ namespace Aws
           if (hashCode == PROFILE_HASH)
           {
             return StandardIdentifier::PROFILE;
+          }
+          else if (hashCode == ASSET_HASH)
+          {
+            return StandardIdentifier::ASSET;
+          }
+          else if (hashCode == CASE_HASH)
+          {
+            return StandardIdentifier::CASE;
           }
           else if (hashCode == UNIQUE_HASH)
           {
@@ -50,6 +61,10 @@ namespace Aws
           {
             return StandardIdentifier::NEW_ONLY;
           }
+          else if (hashCode == ORDER_HASH)
+          {
+            return StandardIdentifier::ORDER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -66,6 +81,10 @@ namespace Aws
           {
           case StandardIdentifier::PROFILE:
             return "PROFILE";
+          case StandardIdentifier::ASSET:
+            return "ASSET";
+          case StandardIdentifier::CASE:
+            return "CASE";
           case StandardIdentifier::UNIQUE:
             return "UNIQUE";
           case StandardIdentifier::SECONDARY:
@@ -74,6 +93,8 @@ namespace Aws
             return "LOOKUP_ONLY";
           case StandardIdentifier::NEW_ONLY:
             return "NEW_ONLY";
+          case StandardIdentifier::ORDER:
+            return "ORDER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm/SSMErrors.h>
+#include <aws/ssm/model/OpsItemRelatedItemAlreadyExistsException.h>
 #include <aws/ssm/model/ResourceDataSyncNotFoundException.h>
 #include <aws/ssm/model/OpsItemAlreadyExistsException.h>
 #include <aws/ssm/model/ItemSizeLimitExceededException.h>
@@ -25,6 +26,12 @@ namespace Aws
 {
 namespace SSM
 {
+template<> AWS_SSM_API OpsItemRelatedItemAlreadyExistsException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS);
+  return OpsItemRelatedItemAlreadyExistsException(this->GetJsonPayload().View());
+}
+
 template<> AWS_SSM_API ResourceDataSyncNotFoundException SSMError::GetModeledError()
 {
   assert(this->GetErrorType() == SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND);
@@ -101,6 +108,7 @@ static const int ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashStr
 static const int INVALID_PERMISSION_TYPE_HASH = HashingUtils::HashString("InvalidPermissionType");
 static const int INCOMPATIBLE_POLICY_HASH = HashingUtils::HashString("IncompatiblePolicyException");
 static const int INVALID_ASSOCIATION_VERSION_HASH = HashingUtils::HashString("InvalidAssociationVersion");
+static const int OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemRelatedItemAlreadyExistsException");
 static const int PARAMETER_NOT_FOUND_HASH = HashingUtils::HashString("ParameterNotFound");
 static const int INVALID_DOCUMENT_TYPE_HASH = HashingUtils::HashString("InvalidDocumentType");
 static const int PARAMETER_ALREADY_EXISTS_HASH = HashingUtils::HashString("ParameterAlreadyExists");
@@ -131,6 +139,7 @@ static const int ITEM_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ItemS
 static const int OPS_METADATA_TOO_MANY_UPDATES_HASH = HashingUtils::HashString("OpsMetadataTooManyUpdatesException");
 static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterVersionLabelLimitExceeded");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
+static const int OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("OpsItemRelatedItemAssociationNotFoundException");
 static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
 static const int ASSOCIATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("AssociationAlreadyExists");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
@@ -161,6 +170,7 @@ static const int ITEM_CONTENT_MISMATCH_HASH = HashingUtils::HashString("ItemCont
 static const int PARAMETER_PATTERN_MISMATCH_HASH = HashingUtils::HashString("ParameterPatternMismatchException");
 static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
 static const int INVALID_COMMAND_ID_HASH = HashingUtils::HashString("InvalidCommandId");
+static const int INVALID_TARGET_MAPS_HASH = HashingUtils::HashString("InvalidTargetMaps");
 static const int INVOCATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InvocationDoesNotExist");
 static const int TOTAL_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TotalSizeLimitExceededException");
 static const int AUTOMATION_DEFINITION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionNotFoundException");
@@ -203,485 +213,634 @@ static const int SERVICE_SETTING_NOT_FOUND_HASH = HashingUtils::HashString("Serv
 static const int DOCUMENT_PERMISSION_LIMIT_HASH = HashingUtils::HashString("DocumentPermissionLimit");
 
 
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
-  int hashCode = HashingUtils::HashString(errorName);
+/*
+The if-else chains in this file are converted into a jump table by the compiler,
+which allows constant time lookup. The chain has been broken into helper functions
+because MSVC has a maximum of 122 chained if-else blocks.
+*/
 
+static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
+{
   if (hashCode == INVALID_OUTPUT_LOCATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_LOCATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_LOCATION), false);
+    return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_COUNT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_COUNT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == PARAMETER_VERSION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == INVALID_POLICY_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_TYPE), false);
+    return true;
   }
   else if (hashCode == INVALID_AGGREGATOR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AGGREGATOR), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AGGREGATOR), false);
+    return true;
   }
   else if (hashCode == INVALID_INVENTORY_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_REQUEST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_REQUEST), false);
+    return true;
   }
   else if (hashCode == DUPLICATE_DOCUMENT_VERSION_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_VERSION_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_VERSION_NAME), false);
+    return true;
   }
   else if (hashCode == OPS_METADATA_INVALID_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_INVALID_ARGUMENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_INVALID_ARGUMENT), false);
+    return true;
   }
   else if (hashCode == INVALID_TYPE_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TYPE_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TYPE_NAME), false);
+    return true;
   }
   else if (hashCode == UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_SCHEMA_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_SCHEMA_VERSION), false);
+    return true;
   }
   else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), false);
+    return true;
   }
   else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_OPTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OPTION), false);
+    return true;
   }
   else if (hashCode == PARAMETER_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == SUB_TYPE_COUNT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SUB_TYPE_COUNT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SUB_TYPE_COUNT_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_VERSION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_VERSION_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_PERMISSION_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PERMISSION_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PERMISSION_TYPE), false);
+    return true;
   }
   else if (hashCode == INCOMPATIBLE_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INCOMPATIBLE_POLICY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INCOMPATIBLE_POLICY), false);
+    return true;
   }
   else if (hashCode == INVALID_ASSOCIATION_VERSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION_VERSION), false);
+    return true;
+  }
+  else if (hashCode == OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == PARAMETER_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == INVALID_DOCUMENT_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_TYPE), false);
+    return true;
   }
   else if (hashCode == PARAMETER_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_LEVEL_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_LEVEL_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_VERSION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_VERSION_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == INVALID_FILTER_VALUE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), false);
+    return true;
   }
   else if (hashCode == OPS_ITEM_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == INVALID_DELETE_INVENTORY_PARAMETERS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETE_INVENTORY_PARAMETERS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETE_INVENTORY_PARAMETERS), false);
+    return true;
   }
   else if (hashCode == OPS_METADATA_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == FEATURE_NOT_AVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::FEATURE_NOT_AVAILABLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::FEATURE_NOT_AVAILABLE), false);
+    return true;
   }
   else if (hashCode == INVALID_PLUGIN_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PLUGIN_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PLUGIN_NAME), false);
+    return true;
   }
   else if (hashCode == INVALID_DOCUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT), false);
+    return true;
   }
   else if (hashCode == INVALID_AUTOMATION_SIGNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
+    return true;
   }
   else if (hashCode == AUTOMATION_DEFINITION_NOT_APPROVED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_APPROVED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_APPROVED), false);
+    return true;
   }
   else if (hashCode == AUTOMATION_EXECUTION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == INVALID_INVENTORY_ITEM_CONTEXT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_ITEM_CONTEXT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_ITEM_CONTEXT), false);
+    return true;
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_IN_USE), false);
+    return true;
   }
   else if (hashCode == ASSOCIATION_EXECUTION_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_EXECUTION_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_EXECUTION_DOES_NOT_EXIST), false);
+    return true;
   }
   else if (hashCode == INVALID_RESOURCE_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_ID), false);
+    return true;
   }
   else if (hashCode == INVALID_INSTANCE_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_ID), false);
+    return true;
   }
   else if (hashCode == ASSOCIATED_INSTANCES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATED_INSTANCES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATED_INSTANCES), false);
+    return true;
   }
   else if (hashCode == OPS_METADATA_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == TARGET_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_IN_USE), false);
+    return true;
   }
   else if (hashCode == INVALID_KEY_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_KEY_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_KEY_ID), false);
+    return true;
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == ITEM_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == OPS_METADATA_TOO_MANY_UPDATES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_TOO_MANY_UPDATES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_TOO_MANY_UPDATES), false);
+    return true;
   }
   else if (hashCode == PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), false);
+    return true;
+  }
+  else if (hashCode == OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == DOCUMENT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == ASSOCIATION_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NEXT_TOKEN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NEXT_TOKEN), false);
+    return true;
   }
   else if (hashCode == UNSUPPORTED_OPERATING_SYSTEM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_OPERATING_SYSTEM), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_OPERATING_SYSTEM), false);
+    return true;
   }
   else if (hashCode == AUTOMATION_EXECUTION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_DELETION_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETION_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETION_ID), false);
+    return true;
   }
   else if (hashCode == INVALID_TARGET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TARGET), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TARGET), false);
+    return true;
   }
   else if (hashCode == INVALID_DOCUMENT_CONTENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_CONTENT), false);
+    return true;
   }
   else if (hashCode == UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT), false);
+    return true;
   }
   else if (hashCode == INVALID_POLICY_ATTRIBUTE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_ATTRIBUTE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_ATTRIBUTE), false);
+    return true;
   }
   else if (hashCode == AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_VERSION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_VERSION_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_MAX_VERSION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_MAX_VERSION_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == AUTOMATION_STEP_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_STEP_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_STEP_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == INVALID_RESULT_ATTRIBUTE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESULT_ATTRIBUTE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESULT_ATTRIBUTE), false);
+    return true;
   }
   else if (hashCode == UNSUPPORTED_FEATURE_REQUIRED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_FEATURE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_FEATURE_REQUIRED), false);
+    return true;
   }
   else if (hashCode == STATUS_UNCHANGED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::STATUS_UNCHANGED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::STATUS_UNCHANGED), false);
+    return true;
   }
   else if (hashCode == OPS_ITEM_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == DUPLICATE_INSTANCE_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), false);
+    return true;
   }
   else if (hashCode == DUPLICATE_DOCUMENT_CONTENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_CONTENT), false);
+    return true;
   }
   else if (hashCode == INVALID_OUTPUT_FOLDER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_FOLDER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_FOLDER), false);
+    return true;
   }
   else if (hashCode == TOO_MANY_UPDATES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_UPDATES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_UPDATES), false);
+    return true;
   }
   else if (hashCode == INVALID_DOCUMENT_SCHEMA_VERSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_SCHEMA_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_SCHEMA_VERSION), false);
+    return true;
   }
   else if (hashCode == INVALID_AUTOMATION_STATUS_UPDATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_STATUS_UPDATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_STATUS_UPDATE), false);
+    return true;
   }
   else if (hashCode == INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_EXECUTION_PARAMETERS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_EXECUTION_PARAMETERS), false);
+    return true;
   }
   else if (hashCode == ITEM_CONTENT_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_CONTENT_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_CONTENT_MISMATCH), false);
+    return true;
   }
   else if (hashCode == PARAMETER_PATTERN_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_PATTERN_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_PATTERN_MISMATCH), false);
+    return true;
   }
   else if (hashCode == INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_INFORMATION_FILTER_VALUE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_INFORMATION_FILTER_VALUE), false);
+    return true;
   }
   else if (hashCode == INVALID_COMMAND_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_COMMAND_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_COMMAND_ID), false);
+    return true;
+  }
+  else if (hashCode == INVALID_TARGET_MAPS_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TARGET_MAPS), false);
+    return true;
   }
   else if (hashCode == INVOCATION_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVOCATION_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVOCATION_DOES_NOT_EXIST), false);
+    return true;
   }
   else if (hashCode == TOTAL_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOTAL_SIZE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOTAL_SIZE_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == AUTOMATION_DEFINITION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_ALLOWED_PATTERN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ALLOWED_PATTERN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ALLOWED_PATTERN), false);
+    return true;
   }
   else if (hashCode == INVALID_ROLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ROLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ROLE), false);
+    return true;
   }
   else if (hashCode == INVALID_PARAMETERS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PARAMETERS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PARAMETERS), false);
+    return true;
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_TAGS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_TAGS), false);
+    return true;
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_ACTIVATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION), false);
+    return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_INVALID_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_INVALID_CONFIGURATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_INVALID_CONFIGURATION), false);
+    return true;
   }
   else if (hashCode == INVALID_ASSOCIATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION), false);
+    return true;
   }
   else if (hashCode == HIERARCHY_TYPE_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_TYPE_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_TYPE_MISMATCH), false);
+    return true;
   }
   else if (hashCode == DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOES_NOT_EXIST), false);
+    return true;
   }
   else if (hashCode == INVALID_DOCUMENT_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
+    return true;
   }
   else if (hashCode == OPS_METADATA_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == OPS_ITEM_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == INVALID_UPDATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_UPDATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_UPDATE), false);
+    return true;
   }
   else if (hashCode == INVALID_FILTER_OPTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_OPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_OPTION), false);
+    return true;
   }
   else if (hashCode == INVALID_ITEM_CONTENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ITEM_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ITEM_CONTENT), false);
+    return true;
   }
   else if (hashCode == TARGET_NOT_CONNECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_NOT_CONNECTED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_NOT_CONNECTED), false);
+    return true;
   }
   else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), false);
+    return true;
   }
   else if (hashCode == UNSUPPORTED_CALENDAR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_CALENDAR), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_CALENDAR), false);
+    return true;
   }
   else if (hashCode == INVALID_DOCUMENT_VERSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_VERSION), false);
+    return true;
   }
   else if (hashCode == INVALID_NOTIFICATION_CONFIG_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NOTIFICATION_CONFIG), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NOTIFICATION_CONFIG), false);
+    return true;
   }
   else if (hashCode == INVALID_SCHEDULE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), false);
+    return true;
   }
   else if (hashCode == INVALID_ACTIVATION_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION_ID), false);
+    return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), false);
+    return true;
   }
   else if (hashCode == OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_FILTER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), false);
+    return true;
   }
   else if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), false);
+    return true;
   }
   else if (hashCode == INVALID_INVENTORY_GROUP_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), false);
+    return true;
   }
   else if (hashCode == POLICIES_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::POLICIES_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::POLICIES_LIMIT_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == UNSUPPORTED_PARAMETER_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PARAMETER_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PARAMETER_TYPE), false);
+    return true;
   }
   else if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
+    return true;
   }
   else if (hashCode == INVALID_FILTER_KEY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
+    return true;
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    return true;
   }
   else if (hashCode == UNSUPPORTED_PLATFORM_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PLATFORM_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PLATFORM_TYPE), false);
+    return true;
   }
   else if (hashCode == SERVICE_SETTING_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_SETTING_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_SETTING_NOT_FOUND), false);
+    return true;
   }
   else if (hashCode == DOCUMENT_PERMISSION_LIMIT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_PERMISSION_LIMIT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_PERMISSION_LIMIT), false);
+    return true;
+  }
+  return false;
+}
+
+AWSError<CoreErrors> GetErrorForName(const char* errorName)
+{
+  int hashCode = HashingUtils::HashString(errorName);
+  AWSError<CoreErrors> error;
+  if (GetErrorForNameHelper0(hashCode, error))
+  {
+    return error;
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

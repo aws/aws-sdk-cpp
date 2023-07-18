@@ -27,6 +27,8 @@ DestinationFieldProperties::DestinationFieldProperties() :
     m_isUpsertableHasBeenSet(false),
     m_isUpdatable(false),
     m_isUpdatableHasBeenSet(false),
+    m_isDefaultedOnCreate(false),
+    m_isDefaultedOnCreateHasBeenSet(false),
     m_supportedWriteOperationsHasBeenSet(false)
 {
 }
@@ -40,6 +42,8 @@ DestinationFieldProperties::DestinationFieldProperties(JsonView jsonValue) :
     m_isUpsertableHasBeenSet(false),
     m_isUpdatable(false),
     m_isUpdatableHasBeenSet(false),
+    m_isDefaultedOnCreate(false),
+    m_isDefaultedOnCreateHasBeenSet(false),
     m_supportedWriteOperationsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -73,6 +77,13 @@ DestinationFieldProperties& DestinationFieldProperties::operator =(JsonView json
     m_isUpdatable = jsonValue.GetBool("isUpdatable");
 
     m_isUpdatableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isDefaultedOnCreate"))
+  {
+    m_isDefaultedOnCreate = jsonValue.GetBool("isDefaultedOnCreate");
+
+    m_isDefaultedOnCreateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("supportedWriteOperations"))
@@ -113,6 +124,12 @@ JsonValue DestinationFieldProperties::Jsonize() const
   if(m_isUpdatableHasBeenSet)
   {
    payload.WithBool("isUpdatable", m_isUpdatable);
+
+  }
+
+  if(m_isDefaultedOnCreateHasBeenSet)
+  {
+   payload.WithBool("isDefaultedOnCreate", m_isDefaultedOnCreate);
 
   }
 

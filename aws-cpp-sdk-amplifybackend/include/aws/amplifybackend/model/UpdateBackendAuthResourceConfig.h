@@ -80,37 +80,37 @@ namespace Model
 
     /**
      * <p>Describes the authorization configuration for the Amazon Cognito identity
-     * pool, provisioned as a part of the auth resource in your Amplify project.</p>
+     * pool, provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline const UpdateBackendAuthIdentityPoolConfig& GetIdentityPoolConfigs() const{ return m_identityPoolConfigs; }
 
     /**
      * <p>Describes the authorization configuration for the Amazon Cognito identity
-     * pool, provisioned as a part of the auth resource in your Amplify project.</p>
+     * pool, provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline bool IdentityPoolConfigsHasBeenSet() const { return m_identityPoolConfigsHasBeenSet; }
 
     /**
      * <p>Describes the authorization configuration for the Amazon Cognito identity
-     * pool, provisioned as a part of the auth resource in your Amplify project.</p>
+     * pool, provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline void SetIdentityPoolConfigs(const UpdateBackendAuthIdentityPoolConfig& value) { m_identityPoolConfigsHasBeenSet = true; m_identityPoolConfigs = value; }
 
     /**
      * <p>Describes the authorization configuration for the Amazon Cognito identity
-     * pool, provisioned as a part of the auth resource in your Amplify project.</p>
+     * pool, provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline void SetIdentityPoolConfigs(UpdateBackendAuthIdentityPoolConfig&& value) { m_identityPoolConfigsHasBeenSet = true; m_identityPoolConfigs = std::move(value); }
 
     /**
      * <p>Describes the authorization configuration for the Amazon Cognito identity
-     * pool, provisioned as a part of the auth resource in your Amplify project.</p>
+     * pool, provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline UpdateBackendAuthResourceConfig& WithIdentityPoolConfigs(const UpdateBackendAuthIdentityPoolConfig& value) { SetIdentityPoolConfigs(value); return *this;}
 
     /**
      * <p>Describes the authorization configuration for the Amazon Cognito identity
-     * pool, provisioned as a part of the auth resource in your Amplify project.</p>
+     * pool, provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline UpdateBackendAuthResourceConfig& WithIdentityPoolConfigs(UpdateBackendAuthIdentityPoolConfig&& value) { SetIdentityPoolConfigs(std::move(value)); return *this;}
 
@@ -154,37 +154,37 @@ namespace Model
 
     /**
      * <p>Describes the authentication configuration for the Amazon Cognito user pool,
-     * provisioned as a part of the auth resource in your Amplify project.</p>
+     * provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline const UpdateBackendAuthUserPoolConfig& GetUserPoolConfigs() const{ return m_userPoolConfigs; }
 
     /**
      * <p>Describes the authentication configuration for the Amazon Cognito user pool,
-     * provisioned as a part of the auth resource in your Amplify project.</p>
+     * provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline bool UserPoolConfigsHasBeenSet() const { return m_userPoolConfigsHasBeenSet; }
 
     /**
      * <p>Describes the authentication configuration for the Amazon Cognito user pool,
-     * provisioned as a part of the auth resource in your Amplify project.</p>
+     * provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline void SetUserPoolConfigs(const UpdateBackendAuthUserPoolConfig& value) { m_userPoolConfigsHasBeenSet = true; m_userPoolConfigs = value; }
 
     /**
      * <p>Describes the authentication configuration for the Amazon Cognito user pool,
-     * provisioned as a part of the auth resource in your Amplify project.</p>
+     * provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline void SetUserPoolConfigs(UpdateBackendAuthUserPoolConfig&& value) { m_userPoolConfigsHasBeenSet = true; m_userPoolConfigs = std::move(value); }
 
     /**
      * <p>Describes the authentication configuration for the Amazon Cognito user pool,
-     * provisioned as a part of the auth resource in your Amplify project.</p>
+     * provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline UpdateBackendAuthResourceConfig& WithUserPoolConfigs(const UpdateBackendAuthUserPoolConfig& value) { SetUserPoolConfigs(value); return *this;}
 
     /**
      * <p>Describes the authentication configuration for the Amazon Cognito user pool,
-     * provisioned as a part of the auth resource in your Amplify project.</p>
+     * provisioned as a part of your auth resource in the Amplify project.</p>
      */
     inline UpdateBackendAuthResourceConfig& WithUserPoolConfigs(UpdateBackendAuthUserPoolConfig&& value) { SetUserPoolConfigs(std::move(value)); return *this;}
 

@@ -20,13 +20,17 @@ namespace Model
 
 DkimSigningAttributes::DkimSigningAttributes() : 
     m_domainSigningSelectorHasBeenSet(false),
-    m_domainSigningPrivateKeyHasBeenSet(false)
+    m_domainSigningPrivateKeyHasBeenSet(false),
+    m_nextSigningKeyLength(DkimSigningKeyLength::NOT_SET),
+    m_nextSigningKeyLengthHasBeenSet(false)
 {
 }
 
 DkimSigningAttributes::DkimSigningAttributes(JsonView jsonValue) : 
     m_domainSigningSelectorHasBeenSet(false),
-    m_domainSigningPrivateKeyHasBeenSet(false)
+    m_domainSigningPrivateKeyHasBeenSet(false),
+    m_nextSigningKeyLength(DkimSigningKeyLength::NOT_SET),
+    m_nextSigningKeyLengthHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ DkimSigningAttributes& DkimSigningAttributes::operator =(JsonView jsonValue)
     m_domainSigningPrivateKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NextSigningKeyLength"))
+  {
+    m_nextSigningKeyLength = DkimSigningKeyLengthMapper::GetDkimSigningKeyLengthForName(jsonValue.GetString("NextSigningKeyLength"));
+
+    m_nextSigningKeyLengthHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +75,11 @@ JsonValue DkimSigningAttributes::Jsonize() const
   {
    payload.WithString("DomainSigningPrivateKey", m_domainSigningPrivateKey);
 
+  }
+
+  if(m_nextSigningKeyLengthHasBeenSet)
+  {
+   payload.WithString("NextSigningKeyLength", DkimSigningKeyLengthMapper::GetNameForDkimSigningKeyLength(m_nextSigningKeyLength));
   }
 
   return payload;

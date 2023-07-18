@@ -39,58 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline const Aws::String& GetFrom() const{ return m_from; }
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline NotifyConfigurationType& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline NotifyConfigurationType& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
 
     /**
-     * <p>The email address that is sending the email. It must be either individually
-     * verified with Amazon SES, or from a domain that has been verified with Amazon
-     * SES.</p>
+     * <p>The email address that is sending the email. The address must be either
+     * individually verified with Amazon Simple Email Service, or from a domain that
+     * has been verified with Amazon SES.</p>
      */
     inline NotifyConfigurationType& WithFrom(const char* value) { SetFrom(value); return *this;}
 
@@ -138,57 +138,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline NotifyConfigurationType& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline NotifyConfigurationType& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
-     * sending authorization policy. It permits Amazon Cognito to send for the email
-     * address specified in the <code>From</code> parameter.</p>
+     * sending authorization policy. This identity permits Amazon Cognito to send for
+     * the email address specified in the <code>From</code> parameter.</p>
      */
     inline NotifyConfigurationType& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
@@ -256,38 +256,38 @@ namespace Model
 
 
     /**
-     * <p>The MFA email template used when MFA is challenged as part of a detected
-     * risk.</p>
+     * <p>The multi-factor authentication (MFA) email template used when MFA is
+     * challenged as part of a detected risk.</p>
      */
     inline const NotifyEmailType& GetMfaEmail() const{ return m_mfaEmail; }
 
     /**
-     * <p>The MFA email template used when MFA is challenged as part of a detected
-     * risk.</p>
+     * <p>The multi-factor authentication (MFA) email template used when MFA is
+     * challenged as part of a detected risk.</p>
      */
     inline bool MfaEmailHasBeenSet() const { return m_mfaEmailHasBeenSet; }
 
     /**
-     * <p>The MFA email template used when MFA is challenged as part of a detected
-     * risk.</p>
+     * <p>The multi-factor authentication (MFA) email template used when MFA is
+     * challenged as part of a detected risk.</p>
      */
     inline void SetMfaEmail(const NotifyEmailType& value) { m_mfaEmailHasBeenSet = true; m_mfaEmail = value; }
 
     /**
-     * <p>The MFA email template used when MFA is challenged as part of a detected
-     * risk.</p>
+     * <p>The multi-factor authentication (MFA) email template used when MFA is
+     * challenged as part of a detected risk.</p>
      */
     inline void SetMfaEmail(NotifyEmailType&& value) { m_mfaEmailHasBeenSet = true; m_mfaEmail = std::move(value); }
 
     /**
-     * <p>The MFA email template used when MFA is challenged as part of a detected
-     * risk.</p>
+     * <p>The multi-factor authentication (MFA) email template used when MFA is
+     * challenged as part of a detected risk.</p>
      */
     inline NotifyConfigurationType& WithMfaEmail(const NotifyEmailType& value) { SetMfaEmail(value); return *this;}
 
     /**
-     * <p>The MFA email template used when MFA is challenged as part of a detected
-     * risk.</p>
+     * <p>The multi-factor authentication (MFA) email template used when MFA is
+     * challenged as part of a detected risk.</p>
      */
     inline NotifyConfigurationType& WithMfaEmail(NotifyEmailType&& value) { SetMfaEmail(std::move(value)); return *this;}
 

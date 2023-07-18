@@ -22,7 +22,8 @@ AdditionalAuthenticationProvider::AdditionalAuthenticationProvider() :
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_openIDConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false)
+    m_userPoolConfigHasBeenSet(false),
+    m_lambdaAuthorizerConfigHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AdditionalAuthenticationProvider::AdditionalAuthenticationProvider(JsonView json
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_openIDConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false)
+    m_userPoolConfigHasBeenSet(false),
+    m_lambdaAuthorizerConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ AdditionalAuthenticationProvider& AdditionalAuthenticationProvider::operator =(J
     m_userPoolConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambdaAuthorizerConfig"))
+  {
+    m_lambdaAuthorizerConfig = jsonValue.GetObject("lambdaAuthorizerConfig");
+
+    m_lambdaAuthorizerConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue AdditionalAuthenticationProvider::Jsonize() const
   if(m_userPoolConfigHasBeenSet)
   {
    payload.WithObject("userPoolConfig", m_userPoolConfig.Jsonize());
+
+  }
+
+  if(m_lambdaAuthorizerConfigHasBeenSet)
+  {
+   payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
 
   }
 

@@ -20,7 +20,8 @@ namespace Model
     available,
     updating,
     deleting,
-    deleted
+    deleted,
+    error
   };
 
 namespace LifeCycleStateMapper

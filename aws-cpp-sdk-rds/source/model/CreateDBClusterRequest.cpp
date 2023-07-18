@@ -53,6 +53,25 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_domainIAMRoleNameHasBeenSet(false),
     m_enableGlobalWriteForwarding(false),
     m_enableGlobalWriteForwardingHasBeenSet(false),
+    m_dBClusterInstanceClassHasBeenSet(false),
+    m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_autoMinorVersionUpgrade(false),
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false),
+    m_monitoringRoleArnHasBeenSet(false),
+    m_enablePerformanceInsights(false),
+    m_enablePerformanceInsightsHasBeenSet(false),
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -247,6 +266,66 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_enableGlobalWriteForwardingHasBeenSet)
   {
     ss << "EnableGlobalWriteForwarding=" << std::boolalpha << m_enableGlobalWriteForwarding << "&";
+  }
+
+  if(m_dBClusterInstanceClassHasBeenSet)
+  {
+    ss << "DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
+  }
+
+  if(m_allocatedStorageHasBeenSet)
+  {
+    ss << "AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+    ss << "Iops=" << m_iops << "&";
+  }
+
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
+  if(m_autoMinorVersionUpgradeHasBeenSet)
+  {
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+  }
+
+  if(m_monitoringIntervalHasBeenSet)
+  {
+    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
+  }
+
+  if(m_monitoringRoleArnHasBeenSet)
+  {
+    ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+
+  if(m_enablePerformanceInsightsHasBeenSet)
+  {
+    ss << "EnablePerformanceInsights=" << std::boolalpha << m_enablePerformanceInsights << "&";
+  }
+
+  if(m_performanceInsightsKMSKeyIdHasBeenSet)
+  {
+    ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+    ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";

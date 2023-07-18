@@ -41,7 +41,11 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_tagsHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_desiredCapacityTypeHasBeenSet(false),
+    m_defaultInstanceWarmup(0),
+    m_defaultInstanceWarmupHasBeenSet(false)
 {
 }
 
@@ -196,6 +200,21 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   if(m_maxInstanceLifetimeHasBeenSet)
   {
     ss << "MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
+  }
+
+  if(m_contextHasBeenSet)
+  {
+    ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+
+  if(m_desiredCapacityTypeHasBeenSet)
+  {
+    ss << "DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
+  }
+
+  if(m_defaultInstanceWarmupHasBeenSet)
+  {
+    ss << "DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
   }
 
   ss << "Version=2011-01-01";

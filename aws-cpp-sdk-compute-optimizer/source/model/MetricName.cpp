@@ -26,6 +26,14 @@ namespace Aws
         static const int EBS_WRITE_OPS_PER_SECOND_HASH = HashingUtils::HashString("EBS_WRITE_OPS_PER_SECOND");
         static const int EBS_READ_BYTES_PER_SECOND_HASH = HashingUtils::HashString("EBS_READ_BYTES_PER_SECOND");
         static const int EBS_WRITE_BYTES_PER_SECOND_HASH = HashingUtils::HashString("EBS_WRITE_BYTES_PER_SECOND");
+        static const int DISK_READ_OPS_PER_SECOND_HASH = HashingUtils::HashString("DISK_READ_OPS_PER_SECOND");
+        static const int DISK_WRITE_OPS_PER_SECOND_HASH = HashingUtils::HashString("DISK_WRITE_OPS_PER_SECOND");
+        static const int DISK_READ_BYTES_PER_SECOND_HASH = HashingUtils::HashString("DISK_READ_BYTES_PER_SECOND");
+        static const int DISK_WRITE_BYTES_PER_SECOND_HASH = HashingUtils::HashString("DISK_WRITE_BYTES_PER_SECOND");
+        static const int NETWORK_IN_BYTES_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_IN_BYTES_PER_SECOND");
+        static const int NETWORK_OUT_BYTES_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_OUT_BYTES_PER_SECOND");
+        static const int NETWORK_PACKETS_IN_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_PACKETS_IN_PER_SECOND");
+        static const int NETWORK_PACKETS_OUT_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_PACKETS_OUT_PER_SECOND");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
@@ -55,6 +63,38 @@ namespace Aws
           {
             return MetricName::EBS_WRITE_BYTES_PER_SECOND;
           }
+          else if (hashCode == DISK_READ_OPS_PER_SECOND_HASH)
+          {
+            return MetricName::DISK_READ_OPS_PER_SECOND;
+          }
+          else if (hashCode == DISK_WRITE_OPS_PER_SECOND_HASH)
+          {
+            return MetricName::DISK_WRITE_OPS_PER_SECOND;
+          }
+          else if (hashCode == DISK_READ_BYTES_PER_SECOND_HASH)
+          {
+            return MetricName::DISK_READ_BYTES_PER_SECOND;
+          }
+          else if (hashCode == DISK_WRITE_BYTES_PER_SECOND_HASH)
+          {
+            return MetricName::DISK_WRITE_BYTES_PER_SECOND;
+          }
+          else if (hashCode == NETWORK_IN_BYTES_PER_SECOND_HASH)
+          {
+            return MetricName::NETWORK_IN_BYTES_PER_SECOND;
+          }
+          else if (hashCode == NETWORK_OUT_BYTES_PER_SECOND_HASH)
+          {
+            return MetricName::NETWORK_OUT_BYTES_PER_SECOND;
+          }
+          else if (hashCode == NETWORK_PACKETS_IN_PER_SECOND_HASH)
+          {
+            return MetricName::NETWORK_PACKETS_IN_PER_SECOND;
+          }
+          else if (hashCode == NETWORK_PACKETS_OUT_PER_SECOND_HASH)
+          {
+            return MetricName::NETWORK_PACKETS_OUT_PER_SECOND;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +121,22 @@ namespace Aws
             return "EBS_READ_BYTES_PER_SECOND";
           case MetricName::EBS_WRITE_BYTES_PER_SECOND:
             return "EBS_WRITE_BYTES_PER_SECOND";
+          case MetricName::DISK_READ_OPS_PER_SECOND:
+            return "DISK_READ_OPS_PER_SECOND";
+          case MetricName::DISK_WRITE_OPS_PER_SECOND:
+            return "DISK_WRITE_OPS_PER_SECOND";
+          case MetricName::DISK_READ_BYTES_PER_SECOND:
+            return "DISK_READ_BYTES_PER_SECOND";
+          case MetricName::DISK_WRITE_BYTES_PER_SECOND:
+            return "DISK_WRITE_BYTES_PER_SECOND";
+          case MetricName::NETWORK_IN_BYTES_PER_SECOND:
+            return "NETWORK_IN_BYTES_PER_SECOND";
+          case MetricName::NETWORK_OUT_BYTES_PER_SECOND:
+            return "NETWORK_OUT_BYTES_PER_SECOND";
+          case MetricName::NETWORK_PACKETS_IN_PER_SECOND:
+            return "NETWORK_PACKETS_IN_PER_SECOND";
+          case MetricName::NETWORK_PACKETS_OUT_PER_SECOND:
+            return "NETWORK_PACKETS_OUT_PER_SECOND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

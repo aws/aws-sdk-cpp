@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>A JSON blob with environment details.</p>
+     * <p>An object containing all available details about the environment.</p>
      */
     inline const Environment& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>A JSON blob with environment details.</p>
+     * <p>An object containing all available details about the environment.</p>
      */
     inline void SetEnvironment(const Environment& value) { m_environment = value; }
 
     /**
-     * <p>A JSON blob with environment details.</p>
+     * <p>An object containing all available details about the environment.</p>
      */
     inline void SetEnvironment(Environment&& value) { m_environment = std::move(value); }
 
     /**
-     * <p>A JSON blob with environment details.</p>
+     * <p>An object containing all available details about the environment.</p>
      */
     inline GetEnvironmentResult& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>A JSON blob with environment details.</p>
+     * <p>An object containing all available details about the environment.</p>
      */
     inline GetEnvironmentResult& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
 

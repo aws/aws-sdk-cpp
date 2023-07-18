@@ -7,7 +7,7 @@
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/resource-groups/model/ResourceIdentifier.h>
+#include <aws/resource-groups/model/ListGroupResourcesItem.h>
 #include <aws/resource-groups/model/QueryError.h>
 #include <utility>
 
@@ -36,46 +36,46 @@ namespace Model
 
 
     /**
-     * <p>The ARNs and resource types of resources that are members of the group that
-     * you specified.</p>
+     * <p>An array of resources from which you can determine each resource's identity,
+     * type, and group membership status.</p>
      */
-    inline const Aws::Vector<ResourceIdentifier>& GetResourceIdentifiers() const{ return m_resourceIdentifiers; }
+    inline const Aws::Vector<ListGroupResourcesItem>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The ARNs and resource types of resources that are members of the group that
-     * you specified.</p>
+     * <p>An array of resources from which you can determine each resource's identity,
+     * type, and group membership status.</p>
      */
-    inline void SetResourceIdentifiers(const Aws::Vector<ResourceIdentifier>& value) { m_resourceIdentifiers = value; }
+    inline void SetResources(const Aws::Vector<ListGroupResourcesItem>& value) { m_resources = value; }
 
     /**
-     * <p>The ARNs and resource types of resources that are members of the group that
-     * you specified.</p>
+     * <p>An array of resources from which you can determine each resource's identity,
+     * type, and group membership status.</p>
      */
-    inline void SetResourceIdentifiers(Aws::Vector<ResourceIdentifier>&& value) { m_resourceIdentifiers = std::move(value); }
+    inline void SetResources(Aws::Vector<ListGroupResourcesItem>&& value) { m_resources = std::move(value); }
 
     /**
-     * <p>The ARNs and resource types of resources that are members of the group that
-     * you specified.</p>
+     * <p>An array of resources from which you can determine each resource's identity,
+     * type, and group membership status.</p>
      */
-    inline ListGroupResourcesResult& WithResourceIdentifiers(const Aws::Vector<ResourceIdentifier>& value) { SetResourceIdentifiers(value); return *this;}
+    inline ListGroupResourcesResult& WithResources(const Aws::Vector<ListGroupResourcesItem>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The ARNs and resource types of resources that are members of the group that
-     * you specified.</p>
+     * <p>An array of resources from which you can determine each resource's identity,
+     * type, and group membership status.</p>
      */
-    inline ListGroupResourcesResult& WithResourceIdentifiers(Aws::Vector<ResourceIdentifier>&& value) { SetResourceIdentifiers(std::move(value)); return *this;}
+    inline ListGroupResourcesResult& WithResources(Aws::Vector<ListGroupResourcesItem>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs and resource types of resources that are members of the group that
-     * you specified.</p>
+     * <p>An array of resources from which you can determine each resource's identity,
+     * type, and group membership status.</p>
      */
-    inline ListGroupResourcesResult& AddResourceIdentifiers(const ResourceIdentifier& value) { m_resourceIdentifiers.push_back(value); return *this; }
+    inline ListGroupResourcesResult& AddResources(const ListGroupResourcesItem& value) { m_resources.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs and resource types of resources that are members of the group that
-     * you specified.</p>
+     * <p>An array of resources from which you can determine each resource's identity,
+     * type, and group membership status.</p>
      */
-    inline ListGroupResourcesResult& AddResourceIdentifiers(ResourceIdentifier&& value) { m_resourceIdentifiers.push_back(std::move(value)); return *this; }
+    inline ListGroupResourcesResult& AddResources(ListGroupResourcesItem&& value) { m_resources.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -200,7 +200,7 @@ namespace Model
 
   private:
 
-    Aws::Vector<ResourceIdentifier> m_resourceIdentifiers;
+    Aws::Vector<ListGroupResourcesItem> m_resources;
 
     Aws::String m_nextToken;
 

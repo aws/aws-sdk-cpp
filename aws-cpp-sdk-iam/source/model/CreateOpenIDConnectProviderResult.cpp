@@ -43,6 +43,17 @@ CreateOpenIDConnectProviderResult& CreateOpenIDConnectProviderResult::operator =
     {
       m_openIDConnectProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(openIDConnectProviderArnNode.GetText());
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

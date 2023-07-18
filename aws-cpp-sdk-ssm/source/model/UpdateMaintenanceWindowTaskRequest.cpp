@@ -28,7 +28,9 @@ UpdateMaintenanceWindowTaskRequest::UpdateMaintenanceWindowTaskRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_replace(false),
-    m_replaceHasBeenSet(false)
+    m_replaceHasBeenSet(false),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
+    m_cutoffBehaviorHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,11 @@ Aws::String UpdateMaintenanceWindowTaskRequest::SerializePayload() const
   {
    payload.WithBool("Replace", m_replace);
 
+  }
+
+  if(m_cutoffBehaviorHasBeenSet)
+  {
+   payload.WithString("CutoffBehavior", MaintenanceWindowTaskCutoffBehaviorMapper::GetNameForMaintenanceWindowTaskCutoffBehavior(m_cutoffBehavior));
   }
 
   return payload.View().WriteReadable();

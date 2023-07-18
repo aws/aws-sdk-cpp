@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline CognitoUserPoolConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline CognitoUserPoolConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline CognitoUserPoolConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

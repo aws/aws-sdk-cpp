@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The <code>Context</code> attribute that you specified for the
-   * <code>InventoryItem</code> is not allowed for this inventory type. You can only
+   * <code>InventoryItem</code> isn't allowed for this inventory type. You can only
    * use the <code>Context</code> attribute with inventory types like
    * <code>AWS:ComplianceItem</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnsupportedInventoryItemContextException">AWS

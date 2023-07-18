@@ -33,7 +33,8 @@ TextTranslationJobProperties::TextTranslationJobProperties() :
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ TextTranslationJobProperties::TextTranslationJobProperties(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +168,13 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
     m_dataAccessRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Settings"))
+  {
+    m_settings = jsonValue.GetObject("Settings");
+
+    m_settingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -266,6 +275,12 @@ JsonValue TextTranslationJobProperties::Jsonize() const
   if(m_dataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

@@ -32,6 +32,7 @@ Target::Target() :
     m_sqsParametersHasBeenSet(false),
     m_httpParametersHasBeenSet(false),
     m_redshiftDataParametersHasBeenSet(false),
+    m_sageMakerPipelineParametersHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
     m_retryPolicyHasBeenSet(false)
 {
@@ -51,6 +52,7 @@ Target::Target(JsonView jsonValue) :
     m_sqsParametersHasBeenSet(false),
     m_httpParametersHasBeenSet(false),
     m_redshiftDataParametersHasBeenSet(false),
+    m_sageMakerPipelineParametersHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
     m_retryPolicyHasBeenSet(false)
 {
@@ -150,6 +152,13 @@ Target& Target::operator =(JsonView jsonValue)
     m_redshiftDataParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SageMakerPipelineParameters"))
+  {
+    m_sageMakerPipelineParameters = jsonValue.GetObject("SageMakerPipelineParameters");
+
+    m_sageMakerPipelineParametersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DeadLetterConfig"))
   {
     m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
@@ -246,6 +255,12 @@ JsonValue Target::Jsonize() const
   if(m_redshiftDataParametersHasBeenSet)
   {
    payload.WithObject("RedshiftDataParameters", m_redshiftDataParameters.Jsonize());
+
+  }
+
+  if(m_sageMakerPipelineParametersHasBeenSet)
+  {
+   payload.WithObject("SageMakerPipelineParameters", m_sageMakerPipelineParameters.Jsonize());
 
   }
 

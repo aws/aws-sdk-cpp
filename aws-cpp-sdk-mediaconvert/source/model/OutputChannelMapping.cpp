@@ -19,12 +19,14 @@ namespace Model
 {
 
 OutputChannelMapping::OutputChannelMapping() : 
-    m_inputChannelsHasBeenSet(false)
+    m_inputChannelsHasBeenSet(false),
+    m_inputChannelsFineTuneHasBeenSet(false)
 {
 }
 
 OutputChannelMapping::OutputChannelMapping(JsonView jsonValue) : 
-    m_inputChannelsHasBeenSet(false)
+    m_inputChannelsHasBeenSet(false),
+    m_inputChannelsFineTuneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ OutputChannelMapping& OutputChannelMapping::operator =(JsonView jsonValue)
       m_inputChannels.push_back(inputChannelsJsonList[inputChannelsIndex].AsInteger());
     }
     m_inputChannelsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputChannelsFineTune"))
+  {
+    Array<JsonView> inputChannelsFineTuneJsonList = jsonValue.GetArray("inputChannelsFineTune");
+    for(unsigned inputChannelsFineTuneIndex = 0; inputChannelsFineTuneIndex < inputChannelsFineTuneJsonList.GetLength(); ++inputChannelsFineTuneIndex)
+    {
+      m_inputChannelsFineTune.push_back(inputChannelsFineTuneJsonList[inputChannelsFineTuneIndex].AsDouble());
+    }
+    m_inputChannelsFineTuneHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue OutputChannelMapping::Jsonize() const
      inputChannelsJsonList[inputChannelsIndex].AsInteger(m_inputChannels[inputChannelsIndex]);
    }
    payload.WithArray("inputChannels", std::move(inputChannelsJsonList));
+
+  }
+
+  if(m_inputChannelsFineTuneHasBeenSet)
+  {
+   Array<JsonValue> inputChannelsFineTuneJsonList(m_inputChannelsFineTune.size());
+   for(unsigned inputChannelsFineTuneIndex = 0; inputChannelsFineTuneIndex < inputChannelsFineTuneJsonList.GetLength(); ++inputChannelsFineTuneIndex)
+   {
+     inputChannelsFineTuneJsonList[inputChannelsFineTuneIndex].AsDouble(m_inputChannelsFineTune[inputChannelsFineTuneIndex]);
+   }
+   payload.WithArray("inputChannelsFineTune", std::move(inputChannelsFineTuneJsonList));
 
   }
 

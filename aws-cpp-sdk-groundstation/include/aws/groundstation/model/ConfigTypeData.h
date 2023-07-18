@@ -9,6 +9,7 @@
 #include <aws/groundstation/model/AntennaDownlinkDemodDecodeConfig.h>
 #include <aws/groundstation/model/AntennaUplinkConfig.h>
 #include <aws/groundstation/model/DataflowEndpointConfig.h>
+#include <aws/groundstation/model/S3RecordingConfig.h>
 #include <aws/groundstation/model/TrackingConfig.h>
 #include <aws/groundstation/model/UplinkEchoConfig.h>
 #include <utility>
@@ -187,6 +188,37 @@ namespace Model
 
 
     /**
+     * <p>Information about an S3 recording <code>Config</code>.</p>
+     */
+    inline const S3RecordingConfig& GetS3RecordingConfig() const{ return m_s3RecordingConfig; }
+
+    /**
+     * <p>Information about an S3 recording <code>Config</code>.</p>
+     */
+    inline bool S3RecordingConfigHasBeenSet() const { return m_s3RecordingConfigHasBeenSet; }
+
+    /**
+     * <p>Information about an S3 recording <code>Config</code>.</p>
+     */
+    inline void SetS3RecordingConfig(const S3RecordingConfig& value) { m_s3RecordingConfigHasBeenSet = true; m_s3RecordingConfig = value; }
+
+    /**
+     * <p>Information about an S3 recording <code>Config</code>.</p>
+     */
+    inline void SetS3RecordingConfig(S3RecordingConfig&& value) { m_s3RecordingConfigHasBeenSet = true; m_s3RecordingConfig = std::move(value); }
+
+    /**
+     * <p>Information about an S3 recording <code>Config</code>.</p>
+     */
+    inline ConfigTypeData& WithS3RecordingConfig(const S3RecordingConfig& value) { SetS3RecordingConfig(value); return *this;}
+
+    /**
+     * <p>Information about an S3 recording <code>Config</code>.</p>
+     */
+    inline ConfigTypeData& WithS3RecordingConfig(S3RecordingConfig&& value) { SetS3RecordingConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Object that determines whether tracking should be used during a contact
      * executed with this <code>Config</code> in the mission profile. </p>
      */
@@ -284,6 +316,9 @@ namespace Model
 
     DataflowEndpointConfig m_dataflowEndpointConfig;
     bool m_dataflowEndpointConfigHasBeenSet;
+
+    S3RecordingConfig m_s3RecordingConfig;
+    bool m_s3RecordingConfigHasBeenSet;
 
     TrackingConfig m_trackingConfig;
     bool m_trackingConfigHasBeenSet;

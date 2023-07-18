@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/model/PluginNameValue.h>
 #include <utility>
 
 namespace Aws
@@ -39,64 +40,64 @@ namespace Model
 
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
     inline const Aws::String& GetAfterConnectScript() const{ return m_afterConnectScript; }
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
     inline bool AfterConnectScriptHasBeenSet() const { return m_afterConnectScriptHasBeenSet; }
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
     inline void SetAfterConnectScript(const Aws::String& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = value; }
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
     inline void SetAfterConnectScript(Aws::String&& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = std::move(value); }
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
     inline void SetAfterConnectScript(const char* value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript.assign(value); }
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
     inline PostgreSQLSettings& WithAfterConnectScript(const Aws::String& value) { SetAfterConnectScript(value); return *this;}
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
     inline PostgreSQLSettings& WithAfterConnectScript(Aws::String&& value) { SetAfterConnectScript(std::move(value)); return *this;}
 
     /**
-     * <p>For use with change data capture (CDC) only, this attribute has AWS DMS
-     * bypass foreign keys and user triggers to reduce the time it takes to bulk load
+     * <p>For use with change data capture (CDC) only, this attribute has DMS bypass
+     * foreign keys and user triggers to reduce the time it takes to bulk load
      * data.</p> <p>Example: <code>afterConnectScript=SET
      * session_replication_role='replica'</code> </p>
      */
@@ -104,7 +105,7 @@ namespace Model
 
 
     /**
-     * <p>To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL
+     * <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL
      * database when the task starts. You can later remove these artifacts.</p> <p>If
      * this value is set to <code>N</code>, you don't have to create tables or triggers
      * on the source database.</p>
@@ -112,7 +113,7 @@ namespace Model
     inline bool GetCaptureDdls() const{ return m_captureDdls; }
 
     /**
-     * <p>To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL
+     * <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL
      * database when the task starts. You can later remove these artifacts.</p> <p>If
      * this value is set to <code>N</code>, you don't have to create tables or triggers
      * on the source database.</p>
@@ -120,7 +121,7 @@ namespace Model
     inline bool CaptureDdlsHasBeenSet() const { return m_captureDdlsHasBeenSet; }
 
     /**
-     * <p>To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL
+     * <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL
      * database when the task starts. You can later remove these artifacts.</p> <p>If
      * this value is set to <code>N</code>, you don't have to create tables or triggers
      * on the source database.</p>
@@ -128,7 +129,7 @@ namespace Model
     inline void SetCaptureDdls(bool value) { m_captureDdlsHasBeenSet = true; m_captureDdls = value; }
 
     /**
-     * <p>To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL
+     * <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL
      * database when the task starts. You can later remove these artifacts.</p> <p>If
      * this value is set to <code>N</code>, you don't have to create tables or triggers
      * on the source database.</p>
@@ -314,6 +315,101 @@ namespace Model
 
 
     /**
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+     */
+    inline bool GetHeartbeatEnable() const{ return m_heartbeatEnable; }
+
+    /**
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+     */
+    inline bool HeartbeatEnableHasBeenSet() const { return m_heartbeatEnableHasBeenSet; }
+
+    /**
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+     */
+    inline void SetHeartbeatEnable(bool value) { m_heartbeatEnableHasBeenSet = true; m_heartbeatEnable = value; }
+
+    /**
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+     */
+    inline PostgreSQLSettings& WithHeartbeatEnable(bool value) { SetHeartbeatEnable(value); return *this;}
+
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline const Aws::String& GetHeartbeatSchema() const{ return m_heartbeatSchema; }
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline bool HeartbeatSchemaHasBeenSet() const { return m_heartbeatSchemaHasBeenSet; }
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline void SetHeartbeatSchema(const Aws::String& value) { m_heartbeatSchemaHasBeenSet = true; m_heartbeatSchema = value; }
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline void SetHeartbeatSchema(Aws::String&& value) { m_heartbeatSchemaHasBeenSet = true; m_heartbeatSchema = std::move(value); }
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline void SetHeartbeatSchema(const char* value) { m_heartbeatSchemaHasBeenSet = true; m_heartbeatSchema.assign(value); }
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline PostgreSQLSettings& WithHeartbeatSchema(const Aws::String& value) { SetHeartbeatSchema(value); return *this;}
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline PostgreSQLSettings& WithHeartbeatSchema(Aws::String&& value) { SetHeartbeatSchema(std::move(value)); return *this;}
+
+    /**
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     */
+    inline PostgreSQLSettings& WithHeartbeatSchema(const char* value) { SetHeartbeatSchema(value); return *this;}
+
+
+    /**
+     * <p>Sets the WAL heartbeat frequency (in minutes).</p>
+     */
+    inline int GetHeartbeatFrequency() const{ return m_heartbeatFrequency; }
+
+    /**
+     * <p>Sets the WAL heartbeat frequency (in minutes).</p>
+     */
+    inline bool HeartbeatFrequencyHasBeenSet() const { return m_heartbeatFrequencyHasBeenSet; }
+
+    /**
+     * <p>Sets the WAL heartbeat frequency (in minutes).</p>
+     */
+    inline void SetHeartbeatFrequency(int value) { m_heartbeatFrequencyHasBeenSet = true; m_heartbeatFrequency = value; }
+
+    /**
+     * <p>Sets the WAL heartbeat frequency (in minutes).</p>
+     */
+    inline PostgreSQLSettings& WithHeartbeatFrequency(int value) { SetHeartbeatFrequency(value); return *this;}
+
+
+    /**
      * <p>Endpoint connection password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
@@ -355,22 +451,22 @@ namespace Model
 
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline PostgreSQLSettings& WithPort(int value) { SetPort(value); return *this;}
 
@@ -458,68 +554,437 @@ namespace Model
 
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline const Aws::String& GetSlotName() const{ return m_slotName; }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline PostgreSQLSettings& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline PostgreSQLSettings& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the AWS DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline PostgreSQLSettings& WithSlotName(const char* value) { SetSlotName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the plugin to use to create a replication slot.</p>
+     */
+    inline const PluginNameValue& GetPluginName() const{ return m_pluginName; }
+
+    /**
+     * <p>Specifies the plugin to use to create a replication slot.</p>
+     */
+    inline bool PluginNameHasBeenSet() const { return m_pluginNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the plugin to use to create a replication slot.</p>
+     */
+    inline void SetPluginName(const PluginNameValue& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
+
+    /**
+     * <p>Specifies the plugin to use to create a replication slot.</p>
+     */
+    inline void SetPluginName(PluginNameValue&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::move(value); }
+
+    /**
+     * <p>Specifies the plugin to use to create a replication slot.</p>
+     */
+    inline PostgreSQLSettings& WithPluginName(const PluginNameValue& value) { SetPluginName(value); return *this;}
+
+    /**
+     * <p>Specifies the plugin to use to create a replication slot.</p>
+     */
+    inline PostgreSQLSettings& WithPluginName(PluginNameValue&& value) { SetPluginName(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline PostgreSQLSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline PostgreSQLSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the PostgreSQL endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline PostgreSQLSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline PostgreSQLSettings& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline PostgreSQLSettings& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint
+     * connection details.</p>
+     */
+    inline PostgreSQLSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
   private:
 
@@ -544,6 +1009,15 @@ namespace Model
     bool m_failTasksOnLobTruncation;
     bool m_failTasksOnLobTruncationHasBeenSet;
 
+    bool m_heartbeatEnable;
+    bool m_heartbeatEnableHasBeenSet;
+
+    Aws::String m_heartbeatSchema;
+    bool m_heartbeatSchemaHasBeenSet;
+
+    int m_heartbeatFrequency;
+    bool m_heartbeatFrequencyHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
 
@@ -558,6 +1032,15 @@ namespace Model
 
     Aws::String m_slotName;
     bool m_slotNameHasBeenSet;
+
+    PluginNameValue m_pluginName;
+    bool m_pluginNameHasBeenSet;
+
+    Aws::String m_secretsManagerAccessRoleArn;
+    bool m_secretsManagerAccessRoleArnHasBeenSet;
+
+    Aws::String m_secretsManagerSecretId;
+    bool m_secretsManagerSecretIdHasBeenSet;
   };
 
 } // namespace Model

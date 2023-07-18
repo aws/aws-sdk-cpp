@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for HLS content. </p><p><h3>See Also:</h3>   <a
+   * <p>The configuration for HLS content.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/HlsConfiguration">AWS
    * API Reference</a></p>
    */

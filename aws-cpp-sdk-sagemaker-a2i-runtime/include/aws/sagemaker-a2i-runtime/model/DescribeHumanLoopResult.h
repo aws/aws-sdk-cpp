@@ -105,37 +105,51 @@ namespace Model
 
 
     /**
-     * <p>A failure code that identifies the type of failure.</p>
+     * <p>A failure code that identifies the type of failure.</p> <p>Possible values:
+     * <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
 
     /**
-     * <p>A failure code that identifies the type of failure.</p>
+     * <p>A failure code that identifies the type of failure.</p> <p>Possible values:
+     * <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     inline void SetFailureCode(const Aws::String& value) { m_failureCode = value; }
 
     /**
-     * <p>A failure code that identifies the type of failure.</p>
+     * <p>A failure code that identifies the type of failure.</p> <p>Possible values:
+     * <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     inline void SetFailureCode(Aws::String&& value) { m_failureCode = std::move(value); }
 
     /**
-     * <p>A failure code that identifies the type of failure.</p>
+     * <p>A failure code that identifies the type of failure.</p> <p>Possible values:
+     * <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     inline void SetFailureCode(const char* value) { m_failureCode.assign(value); }
 
     /**
-     * <p>A failure code that identifies the type of failure.</p>
+     * <p>A failure code that identifies the type of failure.</p> <p>Possible values:
+     * <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     inline DescribeHumanLoopResult& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
 
     /**
-     * <p>A failure code that identifies the type of failure.</p>
+     * <p>A failure code that identifies the type of failure.</p> <p>Possible values:
+     * <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     inline DescribeHumanLoopResult& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
 
     /**
-     * <p>A failure code that identifies the type of failure.</p>
+     * <p>A failure code that identifies the type of failure.</p> <p>Possible values:
+     * <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     inline DescribeHumanLoopResult& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
 

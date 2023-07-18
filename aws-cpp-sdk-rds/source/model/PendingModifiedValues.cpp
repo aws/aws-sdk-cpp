@@ -42,7 +42,10 @@ PendingModifiedValues::PendingModifiedValues() :
     m_pendingCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_automationMode(AutomationMode::NOT_SET),
+    m_automationModeHasBeenSet(false),
+    m_resumeFullAutomationModeTimeHasBeenSet(false)
 {
 }
 
@@ -68,7 +71,10 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_pendingCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_automationMode(AutomationMode::NOT_SET),
+    m_automationModeHasBeenSet(false),
+    m_resumeFullAutomationModeTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -181,6 +187,18 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
+    XmlNode automationModeNode = resultNode.FirstChild("AutomationMode");
+    if(!automationModeNode.IsNull())
+    {
+      m_automationMode = AutomationModeMapper::GetAutomationModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automationModeNode.GetText()).c_str()).c_str());
+      m_automationModeHasBeenSet = true;
+    }
+    XmlNode resumeFullAutomationModeTimeNode = resultNode.FirstChild("ResumeFullAutomationModeTime");
+    if(!resumeFullAutomationModeTimeNode.IsNull())
+    {
+      m_resumeFullAutomationModeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resumeFullAutomationModeTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_resumeFullAutomationModeTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -276,6 +294,16 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
+  if(m_automationModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+  }
+
+  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -351,6 +379,14 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+  if(m_automationModeHasBeenSet)
+  {
+      oStream << location << ".AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+  }
+  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  {
+      oStream << location << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

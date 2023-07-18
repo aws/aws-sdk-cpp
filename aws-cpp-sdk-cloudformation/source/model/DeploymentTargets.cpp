@@ -22,12 +22,14 @@ namespace Model
 
 DeploymentTargets::DeploymentTargets() : 
     m_accountsHasBeenSet(false),
+    m_accountsUrlHasBeenSet(false),
     m_organizationalUnitIdsHasBeenSet(false)
 {
 }
 
 DeploymentTargets::DeploymentTargets(const XmlNode& xmlNode) : 
     m_accountsHasBeenSet(false),
+    m_accountsUrlHasBeenSet(false),
     m_organizationalUnitIdsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -50,6 +52,12 @@ DeploymentTargets& DeploymentTargets::operator =(const XmlNode& xmlNode)
       }
 
       m_accountsHasBeenSet = true;
+    }
+    XmlNode accountsUrlNode = resultNode.FirstChild("AccountsUrl");
+    if(!accountsUrlNode.IsNull())
+    {
+      m_accountsUrl = Aws::Utils::Xml::DecodeEscapedXmlText(accountsUrlNode.GetText());
+      m_accountsUrlHasBeenSet = true;
     }
     XmlNode organizationalUnitIdsNode = resultNode.FirstChild("OrganizationalUnitIds");
     if(!organizationalUnitIdsNode.IsNull())
@@ -79,6 +87,11 @@ void DeploymentTargets::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_accountsUrlHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AccountsUrl=" << StringUtils::URLEncode(m_accountsUrl.c_str()) << "&";
+  }
+
   if(m_organizationalUnitIdsHasBeenSet)
   {
       unsigned organizationalUnitIdsIdx = 1;
@@ -99,6 +112,10 @@ void DeploymentTargets::OutputToStream(Aws::OStream& oStream, const char* locati
       {
         oStream << location << ".Accounts.member." << accountsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_accountsUrlHasBeenSet)
+  {
+      oStream << location << ".AccountsUrl=" << StringUtils::URLEncode(m_accountsUrl.c_str()) << "&";
   }
   if(m_organizationalUnitIdsHasBeenSet)
   {

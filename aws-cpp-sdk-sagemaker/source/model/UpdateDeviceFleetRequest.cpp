@@ -16,7 +16,9 @@ UpdateDeviceFleetRequest::UpdateDeviceFleetRequest() :
     m_deviceFleetNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_outputConfigHasBeenSet(false)
+    m_outputConfigHasBeenSet(false),
+    m_enableIotRoleAlias(false),
+    m_enableIotRoleAliasHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,12 @@ Aws::String UpdateDeviceFleetRequest::SerializePayload() const
   if(m_outputConfigHasBeenSet)
   {
    payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
+
+  }
+
+  if(m_enableIotRoleAliasHasBeenSet)
+  {
+   payload.WithBool("EnableIotRoleAlias", m_enableIotRoleAlias);
 
   }
 

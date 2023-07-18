@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline EventTracker& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline EventTracker& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon AWS account that owns the event tracker.</p>
+     * <p>The Amazon Web Services account that owns the event tracker.</p>
      */
     inline EventTracker& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

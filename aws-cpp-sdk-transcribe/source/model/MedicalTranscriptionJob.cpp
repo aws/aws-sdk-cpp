@@ -35,10 +35,13 @@ MedicalTranscriptionJob::MedicalTranscriptionJob() :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -59,10 +62,13 @@ MedicalTranscriptionJob::MedicalTranscriptionJob(JsonView jsonValue) :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -153,6 +159,13 @@ MedicalTranscriptionJob& MedicalTranscriptionJob::operator =(JsonView jsonValue)
     m_settingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentIdentificationType"))
+  {
+    m_contentIdentificationType = MedicalContentIdentificationTypeMapper::GetMedicalContentIdentificationTypeForName(jsonValue.GetString("ContentIdentificationType"));
+
+    m_contentIdentificationTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Specialty"))
   {
     m_specialty = SpecialtyMapper::GetSpecialtyForName(jsonValue.GetString("Specialty"));
@@ -165,6 +178,16 @@ MedicalTranscriptionJob& MedicalTranscriptionJob::operator =(JsonView jsonValue)
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
   }
 
   return *this;
@@ -240,6 +263,11 @@ JsonValue MedicalTranscriptionJob::Jsonize() const
 
   }
 
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+   payload.WithString("ContentIdentificationType", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
+  }
+
   if(m_specialtyHasBeenSet)
   {
    payload.WithString("Specialty", SpecialtyMapper::GetNameForSpecialty(m_specialty));
@@ -248,6 +276,17 @@ JsonValue MedicalTranscriptionJob::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", TypeMapper::GetNameForType(m_type));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload;

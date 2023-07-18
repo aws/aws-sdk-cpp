@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/SecurityHubRequest.h>
+#include <aws/securityhub/model/AutoEnableStandards.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,10 +64,80 @@ namespace Model
      */
     inline UpdateOrganizationConfigurationRequest& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
 
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>By default,
+     * this parameter is equal to <code>DEFAULT</code>, and new member accounts are
+     * automatically enabled with default Security Hub standards.</p> <p>To opt out of
+     * enabling default standards for new member accounts, set this parameter equal to
+     * <code>NONE</code>.</p>
+     */
+    inline const AutoEnableStandards& GetAutoEnableStandards() const{ return m_autoEnableStandards; }
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>By default,
+     * this parameter is equal to <code>DEFAULT</code>, and new member accounts are
+     * automatically enabled with default Security Hub standards.</p> <p>To opt out of
+     * enabling default standards for new member accounts, set this parameter equal to
+     * <code>NONE</code>.</p>
+     */
+    inline bool AutoEnableStandardsHasBeenSet() const { return m_autoEnableStandardsHasBeenSet; }
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>By default,
+     * this parameter is equal to <code>DEFAULT</code>, and new member accounts are
+     * automatically enabled with default Security Hub standards.</p> <p>To opt out of
+     * enabling default standards for new member accounts, set this parameter equal to
+     * <code>NONE</code>.</p>
+     */
+    inline void SetAutoEnableStandards(const AutoEnableStandards& value) { m_autoEnableStandardsHasBeenSet = true; m_autoEnableStandards = value; }
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>By default,
+     * this parameter is equal to <code>DEFAULT</code>, and new member accounts are
+     * automatically enabled with default Security Hub standards.</p> <p>To opt out of
+     * enabling default standards for new member accounts, set this parameter equal to
+     * <code>NONE</code>.</p>
+     */
+    inline void SetAutoEnableStandards(AutoEnableStandards&& value) { m_autoEnableStandardsHasBeenSet = true; m_autoEnableStandards = std::move(value); }
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>By default,
+     * this parameter is equal to <code>DEFAULT</code>, and new member accounts are
+     * automatically enabled with default Security Hub standards.</p> <p>To opt out of
+     * enabling default standards for new member accounts, set this parameter equal to
+     * <code>NONE</code>.</p>
+     */
+    inline UpdateOrganizationConfigurationRequest& WithAutoEnableStandards(const AutoEnableStandards& value) { SetAutoEnableStandards(value); return *this;}
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>By default,
+     * this parameter is equal to <code>DEFAULT</code>, and new member accounts are
+     * automatically enabled with default Security Hub standards.</p> <p>To opt out of
+     * enabling default standards for new member accounts, set this parameter equal to
+     * <code>NONE</code>.</p>
+     */
+    inline UpdateOrganizationConfigurationRequest& WithAutoEnableStandards(AutoEnableStandards&& value) { SetAutoEnableStandards(std::move(value)); return *this;}
+
   private:
 
     bool m_autoEnable;
     bool m_autoEnableHasBeenSet;
+
+    AutoEnableStandards m_autoEnableStandards;
+    bool m_autoEnableStandardsHasBeenSet;
   };
 
 } // namespace Model

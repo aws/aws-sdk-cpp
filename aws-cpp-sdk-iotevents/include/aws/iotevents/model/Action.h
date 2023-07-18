@@ -393,8 +393,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * One column of the DynamoDB table receives all attribute-value pairs in the
      * payload that you specify. For more information, see <a
@@ -406,8 +405,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * One column of the DynamoDB table receives all attribute-value pairs in the
      * payload that you specify. For more information, see <a
@@ -419,8 +417,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * One column of the DynamoDB table receives all attribute-value pairs in the
      * payload that you specify. For more information, see <a
@@ -432,8 +429,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * One column of the DynamoDB table receives all attribute-value pairs in the
      * payload that you specify. For more information, see <a
@@ -445,8 +441,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * One column of the DynamoDB table receives all attribute-value pairs in the
      * payload that you specify. For more information, see <a
@@ -458,8 +453,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * One column of the DynamoDB table receives all attribute-value pairs in the
      * payload that you specify. For more information, see <a
@@ -472,8 +466,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * A separate column of the DynamoDB table receives one attribute-value pair in the
      * payload that you specify. For more information, see <a
@@ -485,8 +478,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * A separate column of the DynamoDB table receives one attribute-value pair in the
      * payload that you specify. For more information, see <a
@@ -498,8 +490,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * A separate column of the DynamoDB table receives one attribute-value pair in the
      * payload that you specify. For more information, see <a
@@ -511,8 +502,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * A separate column of the DynamoDB table receives one attribute-value pair in the
      * payload that you specify. For more information, see <a
@@ -524,8 +514,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * A separate column of the DynamoDB table receives one attribute-value pair in the
      * payload that you specify. For more information, see <a
@@ -537,8 +526,7 @@ namespace Model
     /**
      * <p>Writes to the DynamoDB table that you created. The default action payload
      * contains all attribute-value pairs that have the information about the detector
-     * model instance and the event that triggered the action. You can also customize
-     * the <a
+     * model instance and the event that triggered the action. You can customize the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
      * A separate column of the DynamoDB table receives one attribute-value pair in the
      * payload that you specify. For more information, see <a

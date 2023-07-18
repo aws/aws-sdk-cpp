@@ -7,7 +7,9 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/KeyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -83,66 +85,122 @@ namespace Model
 
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline bool KeyFingerprintHasBeenSet() const { return m_keyFingerprintHasBeenSet; }
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = value; }
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = std::move(value); }
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(const char* value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint.assign(value); }
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline KeyPairInfo& WithKeyFingerprint(const Aws::String& value) { SetKeyFingerprint(value); return *this;}
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline KeyPairInfo& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
 
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
-     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
      */
     inline KeyPairInfo& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 
@@ -189,6 +247,37 @@ namespace Model
 
 
     /**
+     * <p>The type of key pair.</p>
+     */
+    inline const KeyType& GetKeyType() const{ return m_keyType; }
+
+    /**
+     * <p>The type of key pair.</p>
+     */
+    inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
+
+    /**
+     * <p>The type of key pair.</p>
+     */
+    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+
+    /**
+     * <p>The type of key pair.</p>
+     */
+    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
+
+    /**
+     * <p>The type of key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
+
+    /**
+     * <p>The type of key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Any tags applied to the key pair.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -228,6 +317,114 @@ namespace Model
      */
     inline KeyPairInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline KeyPairInfo& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline KeyPairInfo& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline KeyPairInfo& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline KeyPairInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline KeyPairInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_keyPairId;
@@ -239,8 +436,17 @@ namespace Model
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
 
+    KeyType m_keyType;
+    bool m_keyTypeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_publicKey;
+    bool m_publicKeyHasBeenSet;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet;
   };
 
 } // namespace Model

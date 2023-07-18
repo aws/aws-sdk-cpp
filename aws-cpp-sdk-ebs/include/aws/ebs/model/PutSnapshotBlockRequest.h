@@ -37,42 +37,82 @@ namespace Model
 
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline PutSnapshotBlockRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline PutSnapshotBlockRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline PutSnapshotBlockRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
@@ -116,29 +156,29 @@ namespace Model
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline int GetDataLength() const{ return m_dataLength; }
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline bool DataLengthHasBeenSet() const { return m_dataLengthHasBeenSet; }
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline void SetDataLength(int value) { m_dataLengthHasBeenSet = true; m_dataLength = value; }
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline PutSnapshotBlockRequest& WithDataLength(int value) { SetDataLength(value); return *this;}
 

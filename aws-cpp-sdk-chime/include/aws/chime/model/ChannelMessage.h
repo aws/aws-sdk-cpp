@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Creates a message in a channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a message in a channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMessage">AWS
    * API Reference</a></p>
    */
@@ -361,46 +361,54 @@ namespace Model
 
 
     /**
-     * <p>Hides the content of a message. The message still exists on the back end, but
-     * this action only returns metadata.</p>
+     * <p>Hides the content of a message.</p>
      */
     inline bool GetRedacted() const{ return m_redacted; }
 
     /**
-     * <p>Hides the content of a message. The message still exists on the back end, but
-     * this action only returns metadata.</p>
+     * <p>Hides the content of a message.</p>
      */
     inline bool RedactedHasBeenSet() const { return m_redactedHasBeenSet; }
 
     /**
-     * <p>Hides the content of a message. The message still exists on the back end, but
-     * this action only returns metadata.</p>
+     * <p>Hides the content of a message.</p>
      */
     inline void SetRedacted(bool value) { m_redactedHasBeenSet = true; m_redacted = value; }
 
     /**
-     * <p>Hides the content of a message. The message still exists on the back end, but
-     * this action only returns metadata.</p>
+     * <p>Hides the content of a message.</p>
      */
     inline ChannelMessage& WithRedacted(bool value) { SetRedacted(value); return *this;}
 
 
-    
+    /**
+     * <p>The persistence setting for a channel message.</p>
+     */
     inline const ChannelMessagePersistenceType& GetPersistence() const{ return m_persistence; }
 
-    
+    /**
+     * <p>The persistence setting for a channel message.</p>
+     */
     inline bool PersistenceHasBeenSet() const { return m_persistenceHasBeenSet; }
 
-    
+    /**
+     * <p>The persistence setting for a channel message.</p>
+     */
     inline void SetPersistence(const ChannelMessagePersistenceType& value) { m_persistenceHasBeenSet = true; m_persistence = value; }
 
-    
+    /**
+     * <p>The persistence setting for a channel message.</p>
+     */
     inline void SetPersistence(ChannelMessagePersistenceType&& value) { m_persistenceHasBeenSet = true; m_persistence = std::move(value); }
 
-    
+    /**
+     * <p>The persistence setting for a channel message.</p>
+     */
     inline ChannelMessage& WithPersistence(const ChannelMessagePersistenceType& value) { SetPersistence(value); return *this;}
 
-    
+    /**
+     * <p>The persistence setting for a channel message.</p>
+     */
     inline ChannelMessage& WithPersistence(ChannelMessagePersistenceType&& value) { SetPersistence(std::move(value)); return *this;}
 
   private:

@@ -26,8 +26,14 @@ namespace Model
 {
 
   /**
-   * <p>The Cost Categories values used for filtering the costs.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The Cost Categories values used for filtering the costs.</p> <p>If
+   * <code>Values</code> and <code>Key</code> are not specified, the
+   * <code>ABSENT</code> <code>MatchOption</code> is applied to all Cost Categories.
+   * That is, it filters on resources that aren't mapped to any Cost Categories.</p>
+   * <p>If <code>Values</code> is provided and <code>Key</code> isn't specified, the
+   * <code>ABSENT</code> <code>MatchOption</code> is applied to the Cost Categories
+   * <code>Key</code> only. That is, it filters on resources without the given Cost
+   * Categories key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryValues">AWS
    * API Reference</a></p>
    */
@@ -112,65 +118,65 @@ namespace Model
 
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline const Aws::Vector<MatchOption>& GetMatchOptions() const{ return m_matchOptions; }
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline void SetMatchOptions(const Aws::Vector<MatchOption>& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = value; }
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline void SetMatchOptions(Aws::Vector<MatchOption>&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::move(value); }
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline CostCategoryValues& WithMatchOptions(const Aws::Vector<MatchOption>& value) { SetMatchOptions(value); return *this;}
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline CostCategoryValues& WithMatchOptions(Aws::Vector<MatchOption>&& value) { SetMatchOptions(std::move(value)); return *this;}
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline CostCategoryValues& AddMatchOptions(const MatchOption& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
 
     /**
-     * <p> The match options that you can use to filter your results. MatchOptions is
-     * only applicable for only applicable for actions related to cost category. The
-     * default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * <p>The match options that you can use to filter your results. MatchOptions is
+     * only applicable for actions related to cost category. The default values for
+     * <code>MatchOptions</code> is <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>. </p>
      */
     inline CostCategoryValues& AddMatchOptions(MatchOption&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(std::move(value)); return *this; }

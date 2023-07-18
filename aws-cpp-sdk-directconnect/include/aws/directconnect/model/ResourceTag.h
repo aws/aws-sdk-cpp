@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tag associated with an AWS Direct Connect
+   * <p>Information about a tag associated with an Direct Connect
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag">AWS
    * API Reference</a></p>

@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Request to get a signing certificate from Cognito.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Request to get a signing certificate from Amazon Cognito.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificateRequest">AWS
    * API Reference</a></p>
    */

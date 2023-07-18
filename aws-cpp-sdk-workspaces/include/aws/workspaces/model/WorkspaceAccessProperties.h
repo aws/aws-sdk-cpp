@@ -41,123 +41,69 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether users can use Windows clients to access their WorkSpaces.
-     * To restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use Windows clients to access their
+     * WorkSpaces.</p>
      */
     inline const AccessPropertyValue& GetDeviceTypeWindows() const{ return m_deviceTypeWindows; }
 
     /**
-     * <p>Indicates whether users can use Windows clients to access their WorkSpaces.
-     * To restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use Windows clients to access their
+     * WorkSpaces.</p>
      */
     inline bool DeviceTypeWindowsHasBeenSet() const { return m_deviceTypeWindowsHasBeenSet; }
 
     /**
-     * <p>Indicates whether users can use Windows clients to access their WorkSpaces.
-     * To restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use Windows clients to access their
+     * WorkSpaces.</p>
      */
     inline void SetDeviceTypeWindows(const AccessPropertyValue& value) { m_deviceTypeWindowsHasBeenSet = true; m_deviceTypeWindows = value; }
 
     /**
-     * <p>Indicates whether users can use Windows clients to access their WorkSpaces.
-     * To restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use Windows clients to access their
+     * WorkSpaces.</p>
      */
     inline void SetDeviceTypeWindows(AccessPropertyValue&& value) { m_deviceTypeWindowsHasBeenSet = true; m_deviceTypeWindows = std::move(value); }
 
     /**
-     * <p>Indicates whether users can use Windows clients to access their WorkSpaces.
-     * To restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use Windows clients to access their
+     * WorkSpaces.</p>
      */
     inline WorkspaceAccessProperties& WithDeviceTypeWindows(const AccessPropertyValue& value) { SetDeviceTypeWindows(value); return *this;}
 
     /**
-     * <p>Indicates whether users can use Windows clients to access their WorkSpaces.
-     * To restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use Windows clients to access their
+     * WorkSpaces.</p>
      */
     inline WorkspaceAccessProperties& WithDeviceTypeWindows(AccessPropertyValue&& value) { SetDeviceTypeWindows(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether users can use macOS clients to access their WorkSpaces. To
-     * restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
      */
     inline const AccessPropertyValue& GetDeviceTypeOsx() const{ return m_deviceTypeOsx; }
 
     /**
-     * <p>Indicates whether users can use macOS clients to access their WorkSpaces. To
-     * restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
      */
     inline bool DeviceTypeOsxHasBeenSet() const { return m_deviceTypeOsxHasBeenSet; }
 
     /**
-     * <p>Indicates whether users can use macOS clients to access their WorkSpaces. To
-     * restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
      */
     inline void SetDeviceTypeOsx(const AccessPropertyValue& value) { m_deviceTypeOsxHasBeenSet = true; m_deviceTypeOsx = value; }
 
     /**
-     * <p>Indicates whether users can use macOS clients to access their WorkSpaces. To
-     * restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
      */
     inline void SetDeviceTypeOsx(AccessPropertyValue&& value) { m_deviceTypeOsxHasBeenSet = true; m_deviceTypeOsx = std::move(value); }
 
     /**
-     * <p>Indicates whether users can use macOS clients to access their WorkSpaces. To
-     * restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
      */
     inline WorkspaceAccessProperties& WithDeviceTypeOsx(const AccessPropertyValue& value) { SetDeviceTypeOsx(value); return *this;}
 
     /**
-     * <p>Indicates whether users can use macOS clients to access their WorkSpaces. To
-     * restrict WorkSpaces access to trusted devices (also known as managed devices)
-     * with valid certificates, specify a value of <code>TRUST</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-     * WorkSpaces Access to Trusted Devices</a>. </p>
+     * <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
      */
     inline WorkspaceAccessProperties& WithDeviceTypeOsx(AccessPropertyValue&& value) { SetDeviceTypeOsx(std::move(value)); return *this;}
 
@@ -231,38 +177,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether users can use Android devices to access their
-     * WorkSpaces.</p>
+     * <p>Indicates whether users can use Android and Android-compatible Chrome OS
+     * devices to access their WorkSpaces.</p>
      */
     inline const AccessPropertyValue& GetDeviceTypeAndroid() const{ return m_deviceTypeAndroid; }
 
     /**
-     * <p>Indicates whether users can use Android devices to access their
-     * WorkSpaces.</p>
+     * <p>Indicates whether users can use Android and Android-compatible Chrome OS
+     * devices to access their WorkSpaces.</p>
      */
     inline bool DeviceTypeAndroidHasBeenSet() const { return m_deviceTypeAndroidHasBeenSet; }
 
     /**
-     * <p>Indicates whether users can use Android devices to access their
-     * WorkSpaces.</p>
+     * <p>Indicates whether users can use Android and Android-compatible Chrome OS
+     * devices to access their WorkSpaces.</p>
      */
     inline void SetDeviceTypeAndroid(const AccessPropertyValue& value) { m_deviceTypeAndroidHasBeenSet = true; m_deviceTypeAndroid = value; }
 
     /**
-     * <p>Indicates whether users can use Android devices to access their
-     * WorkSpaces.</p>
+     * <p>Indicates whether users can use Android and Android-compatible Chrome OS
+     * devices to access their WorkSpaces.</p>
      */
     inline void SetDeviceTypeAndroid(AccessPropertyValue&& value) { m_deviceTypeAndroidHasBeenSet = true; m_deviceTypeAndroid = std::move(value); }
 
     /**
-     * <p>Indicates whether users can use Android devices to access their
-     * WorkSpaces.</p>
+     * <p>Indicates whether users can use Android and Android-compatible Chrome OS
+     * devices to access their WorkSpaces.</p>
      */
     inline WorkspaceAccessProperties& WithDeviceTypeAndroid(const AccessPropertyValue& value) { SetDeviceTypeAndroid(value); return *this;}
 
     /**
-     * <p>Indicates whether users can use Android devices to access their
-     * WorkSpaces.</p>
+     * <p>Indicates whether users can use Android and Android-compatible Chrome OS
+     * devices to access their WorkSpaces.</p>
      */
     inline WorkspaceAccessProperties& WithDeviceTypeAndroid(AccessPropertyValue&& value) { SetDeviceTypeAndroid(std::move(value)); return *this;}
 
@@ -334,6 +280,37 @@ namespace Model
      */
     inline WorkspaceAccessProperties& WithDeviceTypeZeroClient(AccessPropertyValue&& value) { SetDeviceTypeZeroClient(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline const AccessPropertyValue& GetDeviceTypeLinux() const{ return m_deviceTypeLinux; }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline bool DeviceTypeLinuxHasBeenSet() const { return m_deviceTypeLinuxHasBeenSet; }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline void SetDeviceTypeLinux(const AccessPropertyValue& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = value; }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline void SetDeviceTypeLinux(AccessPropertyValue&& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = std::move(value); }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline WorkspaceAccessProperties& WithDeviceTypeLinux(const AccessPropertyValue& value) { SetDeviceTypeLinux(value); return *this;}
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline WorkspaceAccessProperties& WithDeviceTypeLinux(AccessPropertyValue&& value) { SetDeviceTypeLinux(std::move(value)); return *this;}
+
   private:
 
     AccessPropertyValue m_deviceTypeWindows;
@@ -356,6 +333,9 @@ namespace Model
 
     AccessPropertyValue m_deviceTypeZeroClient;
     bool m_deviceTypeZeroClientHasBeenSet;
+
+    AccessPropertyValue m_deviceTypeLinux;
+    bool m_deviceTypeLinuxHasBeenSet;
   };
 
 } // namespace Model

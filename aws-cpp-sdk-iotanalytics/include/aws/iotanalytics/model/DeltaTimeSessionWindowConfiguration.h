@@ -30,7 +30,7 @@ namespace Model
    * the data store since the last execution. For an example of
    * <code>DeltaTime</code>, see <a
    * href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6">
-   * Creating a SQL dataset with a delta window (CLI)</a> in the <i>AWS IoT Analytics
+   * Creating a SQL dataset with a delta window (CLI)</a> in the <i>IoT Analytics
    * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeltaTimeSessionWindowConfiguration">AWS
    * API Reference</a></p>
@@ -45,9 +45,9 @@ namespace Model
 
 
     /**
-     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that AWS IoT
+     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
      * Analytics can batch up late data notifications that have been generated since
-     * the last execution. AWS IoT Analytics sends one batch of notifications to Amazon
+     * the last execution. IoT Analytics sends one batch of notifications to Amazon
      * CloudWatch Events at one time.</p> <p>For more information about how to write a
      * timestamp expression, see <a
      * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time
@@ -56,9 +56,9 @@ namespace Model
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
-     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that AWS IoT
+     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
      * Analytics can batch up late data notifications that have been generated since
-     * the last execution. AWS IoT Analytics sends one batch of notifications to Amazon
+     * the last execution. IoT Analytics sends one batch of notifications to Amazon
      * CloudWatch Events at one time.</p> <p>For more information about how to write a
      * timestamp expression, see <a
      * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time
@@ -67,9 +67,9 @@ namespace Model
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
 
     /**
-     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that AWS IoT
+     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
      * Analytics can batch up late data notifications that have been generated since
-     * the last execution. AWS IoT Analytics sends one batch of notifications to Amazon
+     * the last execution. IoT Analytics sends one batch of notifications to Amazon
      * CloudWatch Events at one time.</p> <p>For more information about how to write a
      * timestamp expression, see <a
      * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time
@@ -78,9 +78,9 @@ namespace Model
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
-     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that AWS IoT
+     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
      * Analytics can batch up late data notifications that have been generated since
-     * the last execution. AWS IoT Analytics sends one batch of notifications to Amazon
+     * the last execution. IoT Analytics sends one batch of notifications to Amazon
      * CloudWatch Events at one time.</p> <p>For more information about how to write a
      * timestamp expression, see <a
      * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time

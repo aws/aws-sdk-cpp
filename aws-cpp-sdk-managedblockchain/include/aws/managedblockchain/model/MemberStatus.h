@@ -21,7 +21,8 @@ namespace Model
     CREATE_FAILED,
     UPDATING,
     DELETING,
-    DELETED
+    DELETED,
+    INACCESSIBLE_ENCRYPTION_KEY
   };
 
 namespace MemberStatusMapper

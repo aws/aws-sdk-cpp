@@ -78,74 +78,82 @@ namespace Model
 
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline DescribeMaintenanceWindowExecutionsRequest& WithFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline DescribeMaintenanceWindowExecutionsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline DescribeMaintenanceWindowExecutionsRequest& AddFilters(const MaintenanceWindowFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
-     * between 1 and 128 characters)</p> <p>Values (array of strings, each string is
-     * between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and
-     * ExecutedAfter with the value being a date/time string such as
-     * 2016-11-04T05:00:00Z.</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key. A
+     * string between 1 and 128 characters. Supported keys include
+     * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
+     * <p>Values. An array of strings, each between 1 and 256 characters. Supported
+     * values are date/time strings in a valid ISO 8601 date/time format, such as
+     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline DescribeMaintenanceWindowExecutionsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

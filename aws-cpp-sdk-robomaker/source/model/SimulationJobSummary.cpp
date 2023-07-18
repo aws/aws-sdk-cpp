@@ -26,7 +26,9 @@ SimulationJobSummary::SimulationJobSummary() :
     m_statusHasBeenSet(false),
     m_simulationApplicationNamesHasBeenSet(false),
     m_robotApplicationNamesHasBeenSet(false),
-    m_dataSourceNamesHasBeenSet(false)
+    m_dataSourceNamesHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ SimulationJobSummary::SimulationJobSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_simulationApplicationNamesHasBeenSet(false),
     m_robotApplicationNamesHasBeenSet(false),
-    m_dataSourceNamesHasBeenSet(false)
+    m_dataSourceNamesHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +107,13 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
     m_dataSourceNamesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("computeType"))
+  {
+    m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
+
+    m_computeTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +174,11 @@ JsonValue SimulationJobSummary::Jsonize() const
    }
    payload.WithArray("dataSourceNames", std::move(dataSourceNamesJsonList));
 
+  }
+
+  if(m_computeTypeHasBeenSet)
+  {
+   payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
   }
 
   return payload;

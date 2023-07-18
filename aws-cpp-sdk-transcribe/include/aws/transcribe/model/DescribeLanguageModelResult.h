@@ -33,32 +33,57 @@ namespace Model
 
 
     /**
-     * <p>The name of the custom language model you requested more information
-     * about.</p>
+     * <p>Provides information about the specified custom language model.</p> <p>This
+     * parameter also shows if the base language model you used to create your custom
+     * language model has been updated. If Amazon Transcribe has updated the base
+     * model, you can create a new custom language model using the updated base
+     * model.</p> <p>If you tried to create a new custom language model and the request
+     * wasn't successful, you can use this <code>DescribeLanguageModel</code> to help
+     * identify the reason for this failure.</p>
      */
     inline const LanguageModel& GetLanguageModel() const{ return m_languageModel; }
 
     /**
-     * <p>The name of the custom language model you requested more information
-     * about.</p>
+     * <p>Provides information about the specified custom language model.</p> <p>This
+     * parameter also shows if the base language model you used to create your custom
+     * language model has been updated. If Amazon Transcribe has updated the base
+     * model, you can create a new custom language model using the updated base
+     * model.</p> <p>If you tried to create a new custom language model and the request
+     * wasn't successful, you can use this <code>DescribeLanguageModel</code> to help
+     * identify the reason for this failure.</p>
      */
     inline void SetLanguageModel(const LanguageModel& value) { m_languageModel = value; }
 
     /**
-     * <p>The name of the custom language model you requested more information
-     * about.</p>
+     * <p>Provides information about the specified custom language model.</p> <p>This
+     * parameter also shows if the base language model you used to create your custom
+     * language model has been updated. If Amazon Transcribe has updated the base
+     * model, you can create a new custom language model using the updated base
+     * model.</p> <p>If you tried to create a new custom language model and the request
+     * wasn't successful, you can use this <code>DescribeLanguageModel</code> to help
+     * identify the reason for this failure.</p>
      */
     inline void SetLanguageModel(LanguageModel&& value) { m_languageModel = std::move(value); }
 
     /**
-     * <p>The name of the custom language model you requested more information
-     * about.</p>
+     * <p>Provides information about the specified custom language model.</p> <p>This
+     * parameter also shows if the base language model you used to create your custom
+     * language model has been updated. If Amazon Transcribe has updated the base
+     * model, you can create a new custom language model using the updated base
+     * model.</p> <p>If you tried to create a new custom language model and the request
+     * wasn't successful, you can use this <code>DescribeLanguageModel</code> to help
+     * identify the reason for this failure.</p>
      */
     inline DescribeLanguageModelResult& WithLanguageModel(const LanguageModel& value) { SetLanguageModel(value); return *this;}
 
     /**
-     * <p>The name of the custom language model you requested more information
-     * about.</p>
+     * <p>Provides information about the specified custom language model.</p> <p>This
+     * parameter also shows if the base language model you used to create your custom
+     * language model has been updated. If Amazon Transcribe has updated the base
+     * model, you can create a new custom language model using the updated base
+     * model.</p> <p>If you tried to create a new custom language model and the request
+     * wasn't successful, you can use this <code>DescribeLanguageModel</code> to help
+     * identify the reason for this failure.</p>
      */
     inline DescribeLanguageModelResult& WithLanguageModel(LanguageModel&& value) { SetLanguageModel(std::move(value)); return *this;}
 

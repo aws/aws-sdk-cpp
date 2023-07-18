@@ -155,7 +155,7 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
 
@@ -163,7 +163,7 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
 
@@ -171,7 +171,7 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
 
@@ -179,7 +179,7 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
 
@@ -187,7 +187,7 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
 
@@ -195,7 +195,7 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline Trail& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
 
@@ -203,7 +203,7 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline Trail& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
 
@@ -211,89 +211,89 @@ namespace Model
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
-     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
     inline Trail& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline Trail& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline Trail& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     * notifications when log files are delivered. The following is the format of a
+     * topic ARN.</p> <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline Trail& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 
 
     /**
-     * <p>Set to <b>True</b> to include AWS API calls from AWS global services such as
-     * IAM. Otherwise, <b>False</b>.</p>
+     * <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web
+     * Services global services such as IAM. Otherwise, <b>False</b>.</p>
      */
     inline bool GetIncludeGlobalServiceEvents() const{ return m_includeGlobalServiceEvents; }
 
     /**
-     * <p>Set to <b>True</b> to include AWS API calls from AWS global services such as
-     * IAM. Otherwise, <b>False</b>.</p>
+     * <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web
+     * Services global services such as IAM. Otherwise, <b>False</b>.</p>
      */
     inline bool IncludeGlobalServiceEventsHasBeenSet() const { return m_includeGlobalServiceEventsHasBeenSet; }
 
     /**
-     * <p>Set to <b>True</b> to include AWS API calls from AWS global services such as
-     * IAM. Otherwise, <b>False</b>.</p>
+     * <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web
+     * Services global services such as IAM. Otherwise, <b>False</b>.</p>
      */
     inline void SetIncludeGlobalServiceEvents(bool value) { m_includeGlobalServiceEventsHasBeenSet = true; m_includeGlobalServiceEvents = value; }
 
     /**
-     * <p>Set to <b>True</b> to include AWS API calls from AWS global services such as
-     * IAM. Otherwise, <b>False</b>.</p>
+     * <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web
+     * Services global services such as IAM. Otherwise, <b>False</b>.</p>
      */
     inline Trail& WithIncludeGlobalServiceEvents(bool value) { SetIncludeGlobalServiceEvents(value); return *this;}
 
@@ -365,49 +365,57 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetTrailARN() const{ return m_trailARN; }
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline bool TrailARNHasBeenSet() const { return m_trailARNHasBeenSet; }
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailARN(const Aws::String& value) { m_trailARNHasBeenSet = true; m_trailARN = value; }
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailARN(Aws::String&& value) { m_trailARNHasBeenSet = true; m_trailARN = std::move(value); }
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailARN(const char* value) { m_trailARNHasBeenSet = true; m_trailARN.assign(value); }
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline Trail& WithTrailARN(const Aws::String& value) { SetTrailARN(value); return *this;}
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline Trail& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail. The following is the format of a trail
+     * ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline Trail& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
@@ -534,7 +542,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -542,7 +550,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -550,7 +558,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -558,7 +566,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -566,7 +574,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -574,7 +582,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -582,7 +590,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -590,7 +598,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */

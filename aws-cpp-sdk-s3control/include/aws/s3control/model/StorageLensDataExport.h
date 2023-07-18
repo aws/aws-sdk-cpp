@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/model/S3BucketDestination.h>
+#include <aws/s3control/model/CloudWatchMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -40,44 +41,90 @@ namespace Model
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline const S3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline void SetS3BucketDestination(const S3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline void SetS3BucketDestination(S3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline StorageLensDataExport& WithS3BucketDestination(const S3BucketDestination& value) { SetS3BucketDestination(value); return *this;}
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline StorageLensDataExport& WithS3BucketDestination(S3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens
+     * metrics.</p>
+     */
+    inline const CloudWatchMetrics& GetCloudWatchMetrics() const{ return m_cloudWatchMetrics; }
+
+    /**
+     * <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens
+     * metrics.</p>
+     */
+    inline bool CloudWatchMetricsHasBeenSet() const { return m_cloudWatchMetricsHasBeenSet; }
+
+    /**
+     * <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens
+     * metrics.</p>
+     */
+    inline void SetCloudWatchMetrics(const CloudWatchMetrics& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = value; }
+
+    /**
+     * <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens
+     * metrics.</p>
+     */
+    inline void SetCloudWatchMetrics(CloudWatchMetrics&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = std::move(value); }
+
+    /**
+     * <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens
+     * metrics.</p>
+     */
+    inline StorageLensDataExport& WithCloudWatchMetrics(const CloudWatchMetrics& value) { SetCloudWatchMetrics(value); return *this;}
+
+    /**
+     * <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens
+     * metrics.</p>
+     */
+    inline StorageLensDataExport& WithCloudWatchMetrics(CloudWatchMetrics&& value) { SetCloudWatchMetrics(std::move(value)); return *this;}
 
   private:
 
     S3BucketDestination m_s3BucketDestination;
     bool m_s3BucketDestinationHasBeenSet;
+
+    CloudWatchMetrics m_cloudWatchMetrics;
+    bool m_cloudWatchMetricsHasBeenSet;
   };
 
 } // namespace Model

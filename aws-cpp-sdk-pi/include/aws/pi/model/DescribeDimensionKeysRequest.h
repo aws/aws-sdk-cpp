@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/pi/model/DimensionGroup.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -39,103 +40,109 @@ namespace Model
 
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights will return
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights will return
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights will return
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights will return
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights will return
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline DescribeDimensionKeysRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights will return
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline DescribeDimensionKeysRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline DescribeDimensionKeysRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline DescribeDimensionKeysRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value. For
-     * example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source.</p> <p>To use an
+     * Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+     * value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
      */
     inline DescribeDimensionKeysRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
@@ -144,9 +151,9 @@ namespace Model
      * <p>The date and time specifying the beginning of the requested time series data.
      * You must specify a <code>StartTime</code> within the past 7 days. The value
      * specified is <i>inclusive</i>, which means that data points equal to or greater
-     * than <code>StartTime</code> are returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * than <code>StartTime</code> are returned. </p> <p>The value for
+     * <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
+     * </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
@@ -154,9 +161,9 @@ namespace Model
      * <p>The date and time specifying the beginning of the requested time series data.
      * You must specify a <code>StartTime</code> within the past 7 days. The value
      * specified is <i>inclusive</i>, which means that data points equal to or greater
-     * than <code>StartTime</code> are returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * than <code>StartTime</code> are returned. </p> <p>The value for
+     * <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
+     * </p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
@@ -164,9 +171,9 @@ namespace Model
      * <p>The date and time specifying the beginning of the requested time series data.
      * You must specify a <code>StartTime</code> within the past 7 days. The value
      * specified is <i>inclusive</i>, which means that data points equal to or greater
-     * than <code>StartTime</code> are returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * than <code>StartTime</code> are returned. </p> <p>The value for
+     * <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
+     * </p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
@@ -174,9 +181,9 @@ namespace Model
      * <p>The date and time specifying the beginning of the requested time series data.
      * You must specify a <code>StartTime</code> within the past 7 days. The value
      * specified is <i>inclusive</i>, which means that data points equal to or greater
-     * than <code>StartTime</code> are returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * than <code>StartTime</code> are returned. </p> <p>The value for
+     * <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
+     * </p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
@@ -184,9 +191,9 @@ namespace Model
      * <p>The date and time specifying the beginning of the requested time series data.
      * You must specify a <code>StartTime</code> within the past 7 days. The value
      * specified is <i>inclusive</i>, which means that data points equal to or greater
-     * than <code>StartTime</code> are returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * than <code>StartTime</code> are returned. </p> <p>The value for
+     * <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
+     * </p>
      */
     inline DescribeDimensionKeysRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
@@ -194,9 +201,9 @@ namespace Model
      * <p>The date and time specifying the beginning of the requested time series data.
      * You must specify a <code>StartTime</code> within the past 7 days. The value
      * specified is <i>inclusive</i>, which means that data points equal to or greater
-     * than <code>StartTime</code> are returned.</p> <p>The value for
-     * <code>StartTime</code> must be earlier than the value for
-     * <code>EndTime</code>.</p>
+     * than <code>StartTime</code> are returned. </p> <p>The value for
+     * <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
+     * </p>
      */
     inline DescribeDimensionKeysRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -258,11 +265,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -274,11 +281,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -290,11 +297,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -306,11 +313,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -322,11 +329,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -338,11 +345,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -354,11 +361,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -370,11 +377,11 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
-     * scaled representation of the number of active sessions for the database
-     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
-     * active sessions for the database engine.</p> </li> </ul> <p>If the number of
-     * active sessions is less than an internal Performance Insights threshold,
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
+     * scaled representation of the number of active sessions for the database engine.
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
+     * sessions for the database engine. </p> </li> </ul> <p>If the number of active
+     * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
      * If the number of active sessions is greater than the internal threshold,
      * Performance Insights samples the active sessions, with <code>db.load.avg</code>
@@ -388,52 +395,52 @@ namespace Model
     /**
      * <p>The granularity, in seconds, of the data points returned from Performance
      * Insights. A period can be as short as one second, or as long as one day (86400
-     * seconds). Valid values are:</p> <ul> <li> <p> <code>1</code> (one second)</p>
+     * seconds). Valid values are: </p> <ul> <li> <p> <code>1</code> (one second)</p>
      * </li> <li> <p> <code>60</code> (one minute)</p> </li> <li> <p> <code>300</code>
      * (five minutes)</p> </li> <li> <p> <code>3600</code> (one hour)</p> </li> <li>
      * <p> <code>86400</code> (twenty-four hours)</p> </li> </ul> <p>If you don't
      * specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value
-     * for you, with a goal of returning roughly 100-200 data points in the
-     * response.</p>
+     * for you, with a goal of returning roughly 100-200 data points in the response.
+     * </p>
      */
     inline int GetPeriodInSeconds() const{ return m_periodInSeconds; }
 
     /**
      * <p>The granularity, in seconds, of the data points returned from Performance
      * Insights. A period can be as short as one second, or as long as one day (86400
-     * seconds). Valid values are:</p> <ul> <li> <p> <code>1</code> (one second)</p>
+     * seconds). Valid values are: </p> <ul> <li> <p> <code>1</code> (one second)</p>
      * </li> <li> <p> <code>60</code> (one minute)</p> </li> <li> <p> <code>300</code>
      * (five minutes)</p> </li> <li> <p> <code>3600</code> (one hour)</p> </li> <li>
      * <p> <code>86400</code> (twenty-four hours)</p> </li> </ul> <p>If you don't
      * specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value
-     * for you, with a goal of returning roughly 100-200 data points in the
-     * response.</p>
+     * for you, with a goal of returning roughly 100-200 data points in the response.
+     * </p>
      */
     inline bool PeriodInSecondsHasBeenSet() const { return m_periodInSecondsHasBeenSet; }
 
     /**
      * <p>The granularity, in seconds, of the data points returned from Performance
      * Insights. A period can be as short as one second, or as long as one day (86400
-     * seconds). Valid values are:</p> <ul> <li> <p> <code>1</code> (one second)</p>
+     * seconds). Valid values are: </p> <ul> <li> <p> <code>1</code> (one second)</p>
      * </li> <li> <p> <code>60</code> (one minute)</p> </li> <li> <p> <code>300</code>
      * (five minutes)</p> </li> <li> <p> <code>3600</code> (one hour)</p> </li> <li>
      * <p> <code>86400</code> (twenty-four hours)</p> </li> </ul> <p>If you don't
      * specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value
-     * for you, with a goal of returning roughly 100-200 data points in the
-     * response.</p>
+     * for you, with a goal of returning roughly 100-200 data points in the response.
+     * </p>
      */
     inline void SetPeriodInSeconds(int value) { m_periodInSecondsHasBeenSet = true; m_periodInSeconds = value; }
 
     /**
      * <p>The granularity, in seconds, of the data points returned from Performance
      * Insights. A period can be as short as one second, or as long as one day (86400
-     * seconds). Valid values are:</p> <ul> <li> <p> <code>1</code> (one second)</p>
+     * seconds). Valid values are: </p> <ul> <li> <p> <code>1</code> (one second)</p>
      * </li> <li> <p> <code>60</code> (one minute)</p> </li> <li> <p> <code>300</code>
      * (five minutes)</p> </li> <li> <p> <code>3600</code> (one hour)</p> </li> <li>
      * <p> <code>86400</code> (twenty-four hours)</p> </li> </ul> <p>If you don't
      * specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value
-     * for you, with a goal of returning roughly 100-200 data points in the
-     * response.</p>
+     * for you, with a goal of returning roughly 100-200 data points in the response.
+     * </p>
      */
     inline DescribeDimensionKeysRequest& WithPeriodInSeconds(int value) { SetPeriodInSeconds(value); return *this;}
 
@@ -443,7 +450,7 @@ namespace Model
      * must specify a valid dimension group. Performance Insights returns all
      * dimensions within this group, unless you provide the names of specific
      * dimensions within this group. You can also request that Performance Insights
-     * return a limited number of values for a dimension.</p>
+     * return a limited number of values for a dimension. </p>
      */
     inline const DimensionGroup& GetGroupBy() const{ return m_groupBy; }
 
@@ -452,7 +459,7 @@ namespace Model
      * must specify a valid dimension group. Performance Insights returns all
      * dimensions within this group, unless you provide the names of specific
      * dimensions within this group. You can also request that Performance Insights
-     * return a limited number of values for a dimension.</p>
+     * return a limited number of values for a dimension. </p>
      */
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
@@ -461,7 +468,7 @@ namespace Model
      * must specify a valid dimension group. Performance Insights returns all
      * dimensions within this group, unless you provide the names of specific
      * dimensions within this group. You can also request that Performance Insights
-     * return a limited number of values for a dimension.</p>
+     * return a limited number of values for a dimension. </p>
      */
     inline void SetGroupBy(const DimensionGroup& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
@@ -470,7 +477,7 @@ namespace Model
      * must specify a valid dimension group. Performance Insights returns all
      * dimensions within this group, unless you provide the names of specific
      * dimensions within this group. You can also request that Performance Insights
-     * return a limited number of values for a dimension.</p>
+     * return a limited number of values for a dimension. </p>
      */
     inline void SetGroupBy(DimensionGroup&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
@@ -479,7 +486,7 @@ namespace Model
      * must specify a valid dimension group. Performance Insights returns all
      * dimensions within this group, unless you provide the names of specific
      * dimensions within this group. You can also request that Performance Insights
-     * return a limited number of values for a dimension.</p>
+     * return a limited number of values for a dimension. </p>
      */
     inline DescribeDimensionKeysRequest& WithGroupBy(const DimensionGroup& value) { SetGroupBy(value); return *this;}
 
@@ -488,44 +495,126 @@ namespace Model
      * must specify a valid dimension group. Performance Insights returns all
      * dimensions within this group, unless you provide the names of specific
      * dimensions within this group. You can also request that Performance Insights
-     * return a limited number of values for a dimension.</p>
+     * return a limited number of values for a dimension. </p>
      */
     inline DescribeDimensionKeysRequest& WithGroupBy(DimensionGroup&& value) { SetGroupBy(std::move(value)); return *this;}
 
 
     /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAdditionalMetrics() const{ return m_additionalMetrics; }
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline bool AdditionalMetricsHasBeenSet() const { return m_additionalMetricsHasBeenSet; }
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline void SetAdditionalMetrics(const Aws::Vector<Aws::String>& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = value; }
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline void SetAdditionalMetrics(Aws::Vector<Aws::String>&& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = std::move(value); }
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline DescribeDimensionKeysRequest& WithAdditionalMetrics(const Aws::Vector<Aws::String>& value) { SetAdditionalMetrics(value); return *this;}
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline DescribeDimensionKeysRequest& WithAdditionalMetrics(Aws::Vector<Aws::String>&& value) { SetAdditionalMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline DescribeDimensionKeysRequest& AddAdditionalMetrics(const Aws::String& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.push_back(value); return *this; }
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline DescribeDimensionKeysRequest& AddAdditionalMetrics(Aws::String&& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Additional metrics for the top <code>N</code> dimension keys. If the
+     * specified dimension group in the <code>GroupBy</code> parameter is
+     * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     */
+    inline DescribeDimensionKeysRequest& AddAdditionalMetrics(const char* value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.push_back(value); return *this; }
+
+
+    /**
      * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
-     * dimension to further subdivide the partition keys in the response.</p>
+     * dimension to further subdivide the partition keys in the response. </p>
      */
     inline const DimensionGroup& GetPartitionBy() const{ return m_partitionBy; }
 
     /**
      * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
-     * dimension to further subdivide the partition keys in the response.</p>
+     * dimension to further subdivide the partition keys in the response. </p>
      */
     inline bool PartitionByHasBeenSet() const { return m_partitionByHasBeenSet; }
 
     /**
      * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
-     * dimension to further subdivide the partition keys in the response.</p>
+     * dimension to further subdivide the partition keys in the response. </p>
      */
     inline void SetPartitionBy(const DimensionGroup& value) { m_partitionByHasBeenSet = true; m_partitionBy = value; }
 
     /**
      * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
-     * dimension to further subdivide the partition keys in the response.</p>
+     * dimension to further subdivide the partition keys in the response. </p>
      */
     inline void SetPartitionBy(DimensionGroup&& value) { m_partitionByHasBeenSet = true; m_partitionBy = std::move(value); }
 
     /**
      * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
-     * dimension to further subdivide the partition keys in the response.</p>
+     * dimension to further subdivide the partition keys in the response. </p>
      */
     inline DescribeDimensionKeysRequest& WithPartitionBy(const DimensionGroup& value) { SetPartitionBy(value); return *this;}
 
     /**
      * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
-     * dimension to further subdivide the partition keys in the response.</p>
+     * dimension to further subdivide the partition keys in the response. </p>
      */
     inline DescribeDimensionKeysRequest& WithPartitionBy(DimensionGroup&& value) { SetPartitionBy(std::move(value)); return *this;}
 
@@ -742,6 +831,9 @@ namespace Model
 
     DimensionGroup m_groupBy;
     bool m_groupByHasBeenSet;
+
+    Aws::Vector<Aws::String> m_additionalMetrics;
+    bool m_additionalMetricsHasBeenSet;
 
     DimensionGroup m_partitionBy;
     bool m_partitionByHasBeenSet;

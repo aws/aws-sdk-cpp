@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * Settings for MOV Container.<p><h3>See Also:</h3>   <a
+   * These settings relate to your QuickTime MOV output container.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MovSettings">AWS
    * API Reference</a></p>
    */

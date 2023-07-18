@@ -45,7 +45,11 @@ UserPoolClientType::UserPoolClientType() :
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
     m_analyticsConfigurationHasBeenSet(false),
     m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
-    m_preventUserExistenceErrorsHasBeenSet(false)
+    m_preventUserExistenceErrorsHasBeenSet(false),
+    m_enableTokenRevocation(false),
+    m_enableTokenRevocationHasBeenSet(false),
+    m_enablePropagateAdditionalUserContextData(false),
+    m_enablePropagateAdditionalUserContextDataHasBeenSet(false)
 {
 }
 
@@ -76,7 +80,11 @@ UserPoolClientType::UserPoolClientType(JsonView jsonValue) :
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
     m_analyticsConfigurationHasBeenSet(false),
     m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
-    m_preventUserExistenceErrorsHasBeenSet(false)
+    m_preventUserExistenceErrorsHasBeenSet(false),
+    m_enableTokenRevocation(false),
+    m_enableTokenRevocationHasBeenSet(false),
+    m_enablePropagateAdditionalUserContextData(false),
+    m_enablePropagateAdditionalUserContextDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -261,6 +269,20 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     m_preventUserExistenceErrorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableTokenRevocation"))
+  {
+    m_enableTokenRevocation = jsonValue.GetBool("EnableTokenRevocation");
+
+    m_enableTokenRevocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnablePropagateAdditionalUserContextData"))
+  {
+    m_enablePropagateAdditionalUserContextData = jsonValue.GetBool("EnablePropagateAdditionalUserContextData");
+
+    m_enablePropagateAdditionalUserContextDataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -435,6 +457,18 @@ JsonValue UserPoolClientType::Jsonize() const
   if(m_preventUserExistenceErrorsHasBeenSet)
   {
    payload.WithString("PreventUserExistenceErrors", PreventUserExistenceErrorTypesMapper::GetNameForPreventUserExistenceErrorTypes(m_preventUserExistenceErrors));
+  }
+
+  if(m_enableTokenRevocationHasBeenSet)
+  {
+   payload.WithBool("EnableTokenRevocation", m_enableTokenRevocation);
+
+  }
+
+  if(m_enablePropagateAdditionalUserContextDataHasBeenSet)
+  {
+   payload.WithBool("EnablePropagateAdditionalUserContextData", m_enablePropagateAdditionalUserContextData);
+
   }
 
   return payload;

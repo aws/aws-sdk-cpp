@@ -81,50 +81,66 @@ namespace Model
 
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline const Aws::String& GetCronExpression() const{ return m_cronExpression; }
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(const Aws::String& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = value; }
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(Aws::String&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::move(value); }
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(const char* value) { m_cronExpressionHasBeenSet = true; m_cronExpression.assign(value); }
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline CreateScheduleRequest& WithCronExpression(const Aws::String& value) { SetCronExpression(value); return *this;}
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline CreateScheduleRequest& WithCronExpression(Aws::String&& value) { SetCronExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The date or dates and time or times, in <code>cron</code> format, when the
-     * jobs are to be run.</p>
+     * <p>The date or dates and time or times when the jobs are to be run. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline CreateScheduleRequest& WithCronExpression(const char* value) { SetCronExpression(value); return *this;}
 
@@ -196,42 +212,50 @@ namespace Model
 
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateScheduleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateScheduleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique name for the schedule.</p>
+     * <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z,
+     * 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateScheduleRequest& WithName(const char* value) { SetName(value); return *this;}
 

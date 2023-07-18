@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon RDS DB subnet group. </p> <p>This data type
-   * is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon RDS DB subnet group.</p> <p>This data type
+   * is used as a response element in the <code>DescribeDBSubnetGroups</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSubnetGroup">AWS
    * API Reference</a></p>
    */
@@ -208,42 +208,42 @@ namespace Model
 
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline DBSubnetGroup& WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline DBSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline DBSubnetGroup& AddSubnets(const Subnet& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p> Contains a list of <code>Subnet</code> elements. </p>
+     * <p>Contains a list of <code>Subnet</code> elements.</p>
      */
     inline DBSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
@@ -288,6 +288,106 @@ namespace Model
      */
     inline DBSubnetGroup& WithDBSubnetGroupArn(const char* value) { SetDBSubnetGroupArn(value); return *this;}
 
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedNetworkTypes() const{ return m_supportedNetworkTypes; }
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetSupportedNetworkTypes(const Aws::Vector<Aws::String>& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = value; }
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetSupportedNetworkTypes(Aws::Vector<Aws::String>&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::move(value); }
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline DBSubnetGroup& WithSupportedNetworkTypes(const Aws::Vector<Aws::String>& value) { SetSupportedNetworkTypes(value); return *this;}
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline DBSubnetGroup& WithSupportedNetworkTypes(Aws::Vector<Aws::String>&& value) { SetSupportedNetworkTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline DBSubnetGroup& AddSupportedNetworkTypes(const Aws::String& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline DBSubnetGroup& AddSupportedNetworkTypes(Aws::String&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The network type of the DB subnet group.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul>
+     * <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
+     * and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline DBSubnetGroup& AddSupportedNetworkTypes(const char* value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_dBSubnetGroupName;
@@ -307,6 +407,9 @@ namespace Model
 
     Aws::String m_dBSubnetGroupArn;
     bool m_dBSubnetGroupArnHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedNetworkTypes;
+    bool m_supportedNetworkTypesHasBeenSet;
   };
 
 } // namespace Model

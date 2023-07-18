@@ -20,13 +20,15 @@ namespace Model
 
 MedicalAlternative::MedicalAlternative() : 
     m_transcriptHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_entitiesHasBeenSet(false)
 {
 }
 
 MedicalAlternative::MedicalAlternative(JsonView jsonValue) : 
     m_transcriptHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_entitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ MedicalAlternative& MedicalAlternative::operator =(JsonView jsonValue)
     m_itemsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Entities"))
+  {
+    Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
+    for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
+    {
+      m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
+    }
+    m_entitiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +83,17 @@ JsonValue MedicalAlternative::Jsonize() const
      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
    }
    payload.WithArray("Items", std::move(itemsJsonList));
+
+  }
+
+  if(m_entitiesHasBeenSet)
+  {
+   Array<JsonValue> entitiesJsonList(m_entities.size());
+   for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
+   {
+     entitiesJsonList[entitiesIndex].AsObject(m_entities[entitiesIndex].Jsonize());
+   }
+   payload.WithArray("Entities", std::move(entitiesJsonList));
 
   }
 

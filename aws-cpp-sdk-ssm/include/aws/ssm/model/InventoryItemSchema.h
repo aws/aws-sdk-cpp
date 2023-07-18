@@ -42,65 +42,73 @@ namespace Model
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline InventoryItemSchema& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline InventoryItemSchema& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * Amazon Web Services. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline InventoryItemSchema& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 

@@ -29,6 +29,7 @@ ContainerRecipe::ContainerRecipe() :
     m_ownerHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_componentsHasBeenSet(false),
+    m_instanceConfigurationHasBeenSet(false),
     m_dockerfileTemplateDataHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_encrypted(false),
@@ -52,6 +53,7 @@ ContainerRecipe::ContainerRecipe(JsonView jsonValue) :
     m_ownerHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_componentsHasBeenSet(false),
+    m_instanceConfigurationHasBeenSet(false),
     m_dockerfileTemplateDataHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_encrypted(false),
@@ -124,6 +126,13 @@ ContainerRecipe& ContainerRecipe::operator =(JsonView jsonValue)
       m_components.push_back(componentsJsonList[componentsIndex].AsObject());
     }
     m_componentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceConfiguration"))
+  {
+    m_instanceConfiguration = jsonValue.GetObject("instanceConfiguration");
+
+    m_instanceConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dockerfileTemplateData"))
@@ -240,6 +249,12 @@ JsonValue ContainerRecipe::Jsonize() const
      componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());
    }
    payload.WithArray("components", std::move(componentsJsonList));
+
+  }
+
+  if(m_instanceConfigurationHasBeenSet)
+  {
+   payload.WithObject("instanceConfiguration", m_instanceConfiguration.Jsonize());
 
   }
 

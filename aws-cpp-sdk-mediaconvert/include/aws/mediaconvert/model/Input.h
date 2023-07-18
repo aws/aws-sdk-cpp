@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/model/InputScanType.h>
 #include <aws/mediaconvert/model/InputPsiControl.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
+#include <aws/mediaconvert/model/InputVideoGenerator.h>
 #include <aws/mediaconvert/model/VideoSelector.h>
 #include <aws/mediaconvert/model/AudioSelectorGroup.h>
 #include <aws/mediaconvert/model/AudioSelector.h>
@@ -40,7 +41,13 @@ namespace Model
 {
 
   /**
-   * Specifies media input<p><h3>See Also:</h3>   <a
+   * Use inputs to define the source files used in your transcoding job. For more
+   * information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/specify-input-settings.html.
+   * You can use multiple video inputs to do input stitching. For more information,
+   * see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/assembling-multiple-inputs-and-input-clips.html<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Input">AWS
    * API Reference</a></p>
    */
@@ -54,86 +61,98 @@ namespace Model
 
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline const Aws::Map<Aws::String, AudioSelectorGroup>& GetAudioSelectorGroups() const{ return m_audioSelectorGroups; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline bool AudioSelectorGroupsHasBeenSet() const { return m_audioSelectorGroupsHasBeenSet; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline void SetAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = value; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline void SetAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = std::move(value); }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& WithAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { SetAudioSelectorGroups(value); return *this;}
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& WithAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { SetAudioSelectorGroups(std::move(value)); return *this;}
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& AddAudioSelectorGroups(const Aws::String& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& AddAudioSelectorGroups(Aws::String&& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), value); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& AddAudioSelectorGroups(const Aws::String& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& AddAudioSelectorGroups(Aws::String&& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& AddAudioSelectorGroups(const char* key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline Input& AddAudioSelectorGroups(const char* key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
 
@@ -466,6 +485,111 @@ namespace Model
      * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline Input& WithDenoiseFilter(InputDenoiseFilter&& value) { SetDenoiseFilter(std::move(value)); return *this;}
+
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline const Aws::String& GetDolbyVisionMetadataXml() const{ return m_dolbyVisionMetadataXml; }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline bool DolbyVisionMetadataXmlHasBeenSet() const { return m_dolbyVisionMetadataXmlHasBeenSet; }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline void SetDolbyVisionMetadataXml(const Aws::String& value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml = value; }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline void SetDolbyVisionMetadataXml(Aws::String&& value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml = std::move(value); }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline void SetDolbyVisionMetadataXml(const char* value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml.assign(value); }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline Input& WithDolbyVisionMetadataXml(const Aws::String& value) { SetDolbyVisionMetadataXml(value); return *this;}
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline Input& WithDolbyVisionMetadataXml(Aws::String&& value) { SetDolbyVisionMetadataXml(std::move(value)); return *this;}
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline Input& WithDolbyVisionMetadataXml(const char* value) { SetDolbyVisionMetadataXml(value); return *this;}
 
 
     /**
@@ -1245,32 +1369,93 @@ namespace Model
 
 
     /**
-     * Selector for video.
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline const InputVideoGenerator& GetVideoGenerator() const{ return m_videoGenerator; }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline bool VideoGeneratorHasBeenSet() const { return m_videoGeneratorHasBeenSet; }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline void SetVideoGenerator(const InputVideoGenerator& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = value; }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline void SetVideoGenerator(InputVideoGenerator&& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = std::move(value); }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline Input& WithVideoGenerator(const InputVideoGenerator& value) { SetVideoGenerator(value); return *this;}
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline Input& WithVideoGenerator(InputVideoGenerator&& value) { SetVideoGenerator(std::move(value)); return *this;}
+
+
+    /**
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline const VideoSelector& GetVideoSelector() const{ return m_videoSelector; }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline bool VideoSelectorHasBeenSet() const { return m_videoSelectorHasBeenSet; }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline void SetVideoSelector(const VideoSelector& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = value; }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline void SetVideoSelector(VideoSelector&& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = std::move(value); }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline Input& WithVideoSelector(const VideoSelector& value) { SetVideoSelector(value); return *this;}
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline Input& WithVideoSelector(VideoSelector&& value) { SetVideoSelector(std::move(value)); return *this;}
 
@@ -1296,6 +1481,9 @@ namespace Model
 
     InputDenoiseFilter m_denoiseFilter;
     bool m_denoiseFilterHasBeenSet;
+
+    Aws::String m_dolbyVisionMetadataXml;
+    bool m_dolbyVisionMetadataXmlHasBeenSet;
 
     Aws::String m_fileInput;
     bool m_fileInputHasBeenSet;
@@ -1332,6 +1520,9 @@ namespace Model
 
     Aws::String m_timecodeStart;
     bool m_timecodeStartHasBeenSet;
+
+    InputVideoGenerator m_videoGenerator;
+    bool m_videoGeneratorHasBeenSet;
 
     VideoSelector m_videoSelector;
     bool m_videoSelectorHasBeenSet;

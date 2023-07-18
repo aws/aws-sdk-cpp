@@ -42,66 +42,74 @@ namespace Model
   public:
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

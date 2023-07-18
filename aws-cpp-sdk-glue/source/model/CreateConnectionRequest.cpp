@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateConnectionRequest::CreateConnectionRequest() : 
     m_catalogIdHasBeenSet(false),
-    m_connectionInputHasBeenSet(false)
+    m_connectionInputHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,17 @@ Aws::String CreateConnectionRequest::SerializePayload() const
   if(m_connectionInputHasBeenSet)
   {
    payload.WithObject("ConnectionInput", m_connectionInput.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

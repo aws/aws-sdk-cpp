@@ -21,7 +21,10 @@ UpdateUserRequest::UpdateUserRequest() :
     m_roleHasBeenSet(false),
     m_customPermissionsNameHasBeenSet(false),
     m_unapplyCustomPermissions(false),
-    m_unapplyCustomPermissionsHasBeenSet(false)
+    m_unapplyCustomPermissionsHasBeenSet(false),
+    m_externalLoginFederationProviderTypeHasBeenSet(false),
+    m_customFederationProviderUrlHasBeenSet(false),
+    m_externalLoginIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +52,24 @@ Aws::String UpdateUserRequest::SerializePayload() const
   if(m_unapplyCustomPermissionsHasBeenSet)
   {
    payload.WithBool("UnapplyCustomPermissions", m_unapplyCustomPermissions);
+
+  }
+
+  if(m_externalLoginFederationProviderTypeHasBeenSet)
+  {
+   payload.WithString("ExternalLoginFederationProviderType", m_externalLoginFederationProviderType);
+
+  }
+
+  if(m_customFederationProviderUrlHasBeenSet)
+  {
+   payload.WithString("CustomFederationProviderUrl", m_customFederationProviderUrl);
+
+  }
+
+  if(m_externalLoginIdHasBeenSet)
+  {
+   payload.WithString("ExternalLoginId", m_externalLoginId);
 
   }
 

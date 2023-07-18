@@ -78,44 +78,37 @@ namespace Model
 
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline const Aws::Vector<SidewalkAccountInfoWithFingerprint>& GetSidewalk() const{ return m_sidewalk; }
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline void SetSidewalk(const Aws::Vector<SidewalkAccountInfoWithFingerprint>& value) { m_sidewalk = value; }
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline void SetSidewalk(Aws::Vector<SidewalkAccountInfoWithFingerprint>&& value) { m_sidewalk = std::move(value); }
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline ListPartnerAccountsResult& WithSidewalk(const Aws::Vector<SidewalkAccountInfoWithFingerprint>& value) { SetSidewalk(value); return *this;}
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline ListPartnerAccountsResult& WithSidewalk(Aws::Vector<SidewalkAccountInfoWithFingerprint>&& value) { SetSidewalk(std::move(value)); return *this;}
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline ListPartnerAccountsResult& AddSidewalk(const SidewalkAccountInfoWithFingerprint& value) { m_sidewalk.push_back(value); return *this; }
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline ListPartnerAccountsResult& AddSidewalk(SidewalkAccountInfoWithFingerprint&& value) { m_sidewalk.push_back(std::move(value)); return *this; }
 

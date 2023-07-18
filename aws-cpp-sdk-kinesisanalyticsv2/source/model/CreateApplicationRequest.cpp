@@ -20,7 +20,9 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_serviceExecutionRoleHasBeenSet(false),
     m_applicationConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,11 @@ Aws::String CreateApplicationRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_applicationModeHasBeenSet)
+  {
+   payload.WithString("ApplicationMode", ApplicationModeMapper::GetNameForApplicationMode(m_applicationMode));
   }
 
   return payload.View().WriteReadable();

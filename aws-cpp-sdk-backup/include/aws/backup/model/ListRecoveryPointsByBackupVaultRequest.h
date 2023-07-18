@@ -42,64 +42,72 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
+     * available when a supported service creates the backup.</p> 
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
 

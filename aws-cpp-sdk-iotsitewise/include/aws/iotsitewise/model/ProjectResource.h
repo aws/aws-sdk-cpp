@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Identifies a specific AWS IoT SiteWise Monitor project.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Identifies a specific IoT SiteWise Monitor project.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ProjectResource">AWS
    * API Reference</a></p>
    */

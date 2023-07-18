@@ -31,6 +31,7 @@ ContainerService::ContainerService() :
     m_powerIdHasBeenSet(false),
     m_state(ContainerServiceState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_stateDetailHasBeenSet(false),
     m_scale(0),
     m_scaleHasBeenSet(false),
     m_currentDeploymentHasBeenSet(false),
@@ -40,7 +41,8 @@ ContainerService::ContainerService() :
     m_principalArnHasBeenSet(false),
     m_privateDomainNameHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,7 @@ ContainerService::ContainerService(JsonView jsonValue) :
     m_powerIdHasBeenSet(false),
     m_state(ContainerServiceState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_stateDetailHasBeenSet(false),
     m_scale(0),
     m_scaleHasBeenSet(false),
     m_currentDeploymentHasBeenSet(false),
@@ -66,7 +69,8 @@ ContainerService::ContainerService(JsonView jsonValue) :
     m_principalArnHasBeenSet(false),
     m_privateDomainNameHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +143,13 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stateDetail"))
+  {
+    m_stateDetail = jsonValue.GetObject("stateDetail");
+
+    m_stateDetailHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scale"))
   {
     m_scale = jsonValue.GetInteger("scale");
@@ -205,6 +216,13 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
     m_urlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("privateRegistryAccess"))
+  {
+    m_privateRegistryAccess = jsonValue.GetObject("privateRegistryAccess");
+
+    m_privateRegistryAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -267,6 +285,12 @@ JsonValue ContainerService::Jsonize() const
    payload.WithString("state", ContainerServiceStateMapper::GetNameForContainerServiceState(m_state));
   }
 
+  if(m_stateDetailHasBeenSet)
+  {
+   payload.WithObject("stateDetail", m_stateDetail.Jsonize());
+
+  }
+
   if(m_scaleHasBeenSet)
   {
    payload.WithInteger("scale", m_scale);
@@ -322,6 +346,12 @@ JsonValue ContainerService::Jsonize() const
   if(m_urlHasBeenSet)
   {
    payload.WithString("url", m_url);
+
+  }
+
+  if(m_privateRegistryAccessHasBeenSet)
+  {
+   payload.WithObject("privateRegistryAccess", m_privateRegistryAccess.Jsonize());
 
   }
 

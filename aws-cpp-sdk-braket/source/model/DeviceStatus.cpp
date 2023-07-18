@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
         static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
+        static const int RETIRED_HASH = HashingUtils::HashString("RETIRED");
 
 
         DeviceStatus GetDeviceStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == OFFLINE_HASH)
           {
             return DeviceStatus::OFFLINE;
+          }
+          else if (hashCode == RETIRED_HASH)
+          {
+            return DeviceStatus::RETIRED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ONLINE";
           case DeviceStatus::OFFLINE:
             return "OFFLINE";
+          case DeviceStatus::RETIRED:
+            return "RETIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

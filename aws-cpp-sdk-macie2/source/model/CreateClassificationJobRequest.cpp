@@ -21,6 +21,9 @@ CreateClassificationJobRequest::CreateClassificationJobRequest() :
     m_initialRunHasBeenSet(false),
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
+    m_managedDataIdentifierIdsHasBeenSet(false),
+    m_managedDataIdentifierSelector(ManagedDataIdentifierSelector::NOT_SET),
+    m_managedDataIdentifierSelectorHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_s3JobDefinitionHasBeenSet(false),
     m_samplingPercentage(0),
@@ -66,6 +69,22 @@ Aws::String CreateClassificationJobRequest::SerializePayload() const
   if(m_jobTypeHasBeenSet)
   {
    payload.WithString("jobType", JobTypeMapper::GetNameForJobType(m_jobType));
+  }
+
+  if(m_managedDataIdentifierIdsHasBeenSet)
+  {
+   Array<JsonValue> managedDataIdentifierIdsJsonList(m_managedDataIdentifierIds.size());
+   for(unsigned managedDataIdentifierIdsIndex = 0; managedDataIdentifierIdsIndex < managedDataIdentifierIdsJsonList.GetLength(); ++managedDataIdentifierIdsIndex)
+   {
+     managedDataIdentifierIdsJsonList[managedDataIdentifierIdsIndex].AsString(m_managedDataIdentifierIds[managedDataIdentifierIdsIndex]);
+   }
+   payload.WithArray("managedDataIdentifierIds", std::move(managedDataIdentifierIdsJsonList));
+
+  }
+
+  if(m_managedDataIdentifierSelectorHasBeenSet)
+  {
+   payload.WithString("managedDataIdentifierSelector", ManagedDataIdentifierSelectorMapper::GetNameForManagedDataIdentifierSelector(m_managedDataIdentifierSelector));
   }
 
   if(m_nameHasBeenSet)

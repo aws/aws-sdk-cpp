@@ -22,7 +22,9 @@ BackupSelection::BackupSelection() :
     m_selectionNameHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_listOfTagsHasBeenSet(false)
+    m_listOfTagsHasBeenSet(false),
+    m_notResourcesHasBeenSet(false),
+    m_conditionsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ BackupSelection::BackupSelection(JsonView jsonValue) :
     m_selectionNameHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_listOfTagsHasBeenSet(false)
+    m_listOfTagsHasBeenSet(false),
+    m_notResourcesHasBeenSet(false),
+    m_conditionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,23 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
     m_listOfTagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotResources"))
+  {
+    Array<JsonView> notResourcesJsonList = jsonValue.GetArray("NotResources");
+    for(unsigned notResourcesIndex = 0; notResourcesIndex < notResourcesJsonList.GetLength(); ++notResourcesIndex)
+    {
+      m_notResources.push_back(notResourcesJsonList[notResourcesIndex].AsString());
+    }
+    m_notResourcesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Conditions"))
+  {
+    m_conditions = jsonValue.GetObject("Conditions");
+
+    m_conditionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +130,23 @@ JsonValue BackupSelection::Jsonize() const
      listOfTagsJsonList[listOfTagsIndex].AsObject(m_listOfTags[listOfTagsIndex].Jsonize());
    }
    payload.WithArray("ListOfTags", std::move(listOfTagsJsonList));
+
+  }
+
+  if(m_notResourcesHasBeenSet)
+  {
+   Array<JsonValue> notResourcesJsonList(m_notResources.size());
+   for(unsigned notResourcesIndex = 0; notResourcesIndex < notResourcesJsonList.GetLength(); ++notResourcesIndex)
+   {
+     notResourcesJsonList[notResourcesIndex].AsString(m_notResources[notResourcesIndex]);
+   }
+   payload.WithArray("NotResources", std::move(notResourcesJsonList));
+
+  }
+
+  if(m_conditionsHasBeenSet)
+  {
+   payload.WithObject("Conditions", m_conditions.Jsonize());
 
   }
 

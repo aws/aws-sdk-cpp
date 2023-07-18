@@ -43,8 +43,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline const Aws::Vector<TransactWriteItem>& GetTransactItems() const{ return m_transactItems; }
 
@@ -52,8 +52,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline bool TransactItemsHasBeenSet() const { return m_transactItemsHasBeenSet; }
 
@@ -61,8 +61,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline void SetTransactItems(const Aws::Vector<TransactWriteItem>& value) { m_transactItemsHasBeenSet = true; m_transactItems = value; }
 
@@ -70,8 +70,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline void SetTransactItems(Aws::Vector<TransactWriteItem>&& value) { m_transactItemsHasBeenSet = true; m_transactItems = std::move(value); }
 
@@ -79,8 +79,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline TransactWriteItemsRequest& WithTransactItems(const Aws::Vector<TransactWriteItem>& value) { SetTransactItems(value); return *this;}
 
@@ -88,8 +88,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline TransactWriteItemsRequest& WithTransactItems(Aws::Vector<TransactWriteItem>&& value) { SetTransactItems(std::move(value)); return *this;}
 
@@ -97,8 +97,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline TransactWriteItemsRequest& AddTransactItems(const TransactWriteItem& value) { m_transactItemsHasBeenSet = true; m_transactItems.push_back(value); return *this; }
 
@@ -106,8 +106,8 @@ namespace Model
      * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
-     * in different tables, but the tables must reside in the same AWS account and
-     * Region, and no two of them can operate on the same item. </p>
+     * in different tables, but the tables must reside in the same Amazon Web Services
+     * account and Region, and no two of them can operate on the same item. </p>
      */
     inline TransactWriteItemsRequest& AddTransactItems(TransactWriteItem&& value) { m_transactItemsHasBeenSet = true; m_transactItems.push_back(std::move(value)); return *this; }
 

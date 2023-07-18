@@ -573,22 +573,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether active tracing with AWS X-Ray is enabled for the stage.</p>
+     * <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
      */
     inline bool GetTracingEnabled() const{ return m_tracingEnabled; }
 
     /**
-     * <p>Indicates whether active tracing with AWS X-Ray is enabled for the stage.</p>
+     * <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
      */
     inline bool TracingEnabledHasBeenSet() const { return m_tracingEnabledHasBeenSet; }
 
     /**
-     * <p>Indicates whether active tracing with AWS X-Ray is enabled for the stage.</p>
+     * <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
      */
     inline void SetTracingEnabled(bool value) { m_tracingEnabledHasBeenSet = true; m_tracingEnabled = value; }
 
     /**
-     * <p>Indicates whether active tracing with AWS X-Ray is enabled for the stage.</p>
+     * <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
      */
     inline AwsApiGatewayStageDetails& WithTracingEnabled(bool value) { SetTracingEnabled(value); return *this;}
 

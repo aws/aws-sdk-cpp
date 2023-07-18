@@ -14,7 +14,10 @@
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/ModelMetrics.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/sagemaker/model/DriftCheckBaselines.h>
 #include <aws/sagemaker/model/Tag.h>
+#include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -101,58 +104,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline CreateModelPackageRequest& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline CreateModelPackageRequest& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline CreateModelPackageRequest& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
 
@@ -266,38 +269,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline const ModelPackageValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline bool ValidationSpecificationHasBeenSet() const { return m_validationSpecificationHasBeenSet; }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline void SetValidationSpecification(const ModelPackageValidationSpecification& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = value; }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline void SetValidationSpecification(ModelPackageValidationSpecification&& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = std::move(value); }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline CreateModelPackageRequest& WithValidationSpecification(const ModelPackageValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline CreateModelPackageRequest& WithValidationSpecification(ModelPackageValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 
@@ -334,30 +337,30 @@ namespace Model
 
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline bool CertifyForMarketplaceHasBeenSet() const { return m_certifyForMarketplaceHasBeenSet; }
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplaceHasBeenSet = true; m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline CreateModelPackageRequest& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 
@@ -366,7 +369,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -374,7 +378,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -382,7 +387,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -390,7 +396,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -398,7 +405,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -406,7 +414,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -414,7 +423,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -422,7 +432,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -566,6 +577,403 @@ namespace Model
      */
     inline CreateModelPackageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline bool CustomerMetadataPropertiesHasBeenSet() const { return m_customerMetadataPropertiesHasBeenSet; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline const DriftCheckBaselines& GetDriftCheckBaselines() const{ return m_driftCheckBaselines; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline bool DriftCheckBaselinesHasBeenSet() const { return m_driftCheckBaselinesHasBeenSet; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(const DriftCheckBaselines& value) { m_driftCheckBaselinesHasBeenSet = true; m_driftCheckBaselines = value; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(DriftCheckBaselines&& value) { m_driftCheckBaselinesHasBeenSet = true; m_driftCheckBaselines = std::move(value); }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline CreateModelPackageRequest& WithDriftCheckBaselines(const DriftCheckBaselines& value) { SetDriftCheckBaselines(value); return *this;}
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline CreateModelPackageRequest& WithDriftCheckBaselines(DriftCheckBaselines&& value) { SetDriftCheckBaselines(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline CreateModelPackageRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline CreateModelPackageRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>The machine learning domain of your model package and its components. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline CreateModelPackageRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline const Aws::String& GetTask() const{ return m_task; }
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline CreateModelPackageRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline CreateModelPackageRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
+
+    /**
+     * <p>The machine learning task your model package accomplishes. Common machine
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
+     */
+    inline CreateModelPackageRequest& WithTask(const char* value) { SetTask(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline const Aws::String& GetSamplePayloadUrl() const{ return m_samplePayloadUrl; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline bool SamplePayloadUrlHasBeenSet() const { return m_samplePayloadUrlHasBeenSet; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(const Aws::String& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = value; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(Aws::String&& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = std::move(value); }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(const char* value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl.assign(value); }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline CreateModelPackageRequest& WithSamplePayloadUrl(const Aws::String& value) { SetSamplePayloadUrl(value); return *this;}
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline CreateModelPackageRequest& WithSamplePayloadUrl(Aws::String&& value) { SetSamplePayloadUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path must point to a single gzip compressed tar archive
+     * (.tar.gz suffix).</p>
+     */
+    inline CreateModelPackageRequest& WithSamplePayloadUrl(const char* value) { SetSamplePayloadUrl(value); return *this;}
+
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline const Aws::Vector<AdditionalInferenceSpecificationDefinition>& GetAdditionalInferenceSpecifications() const{ return m_additionalInferenceSpecifications; }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline bool AdditionalInferenceSpecificationsHasBeenSet() const { return m_additionalInferenceSpecificationsHasBeenSet; }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline void SetAdditionalInferenceSpecifications(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { m_additionalInferenceSpecificationsHasBeenSet = true; m_additionalInferenceSpecifications = value; }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline void SetAdditionalInferenceSpecifications(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { m_additionalInferenceSpecificationsHasBeenSet = true; m_additionalInferenceSpecifications = std::move(value); }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline CreateModelPackageRequest& WithAdditionalInferenceSpecifications(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { SetAdditionalInferenceSpecifications(value); return *this;}
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline CreateModelPackageRequest& WithAdditionalInferenceSpecifications(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { SetAdditionalInferenceSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline CreateModelPackageRequest& AddAdditionalInferenceSpecifications(const AdditionalInferenceSpecificationDefinition& value) { m_additionalInferenceSpecificationsHasBeenSet = true; m_additionalInferenceSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts. </p>
+     */
+    inline CreateModelPackageRequest& AddAdditionalInferenceSpecifications(AdditionalInferenceSpecificationDefinition&& value) { m_additionalInferenceSpecificationsHasBeenSet = true; m_additionalInferenceSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_modelPackageName;
@@ -603,6 +1011,24 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
+    bool m_customerMetadataPropertiesHasBeenSet;
+
+    DriftCheckBaselines m_driftCheckBaselines;
+    bool m_driftCheckBaselinesHasBeenSet;
+
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
+
+    Aws::String m_task;
+    bool m_taskHasBeenSet;
+
+    Aws::String m_samplePayloadUrl;
+    bool m_samplePayloadUrlHasBeenSet;
+
+    Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
+    bool m_additionalInferenceSpecificationsHasBeenSet;
   };
 
 } // namespace Model

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information for connecting to an Amazon VPC.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides the configuration information to connect to an Amazon
+   * VPC.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceVpcConfiguration">AWS
    * API Reference</a></p>
    */

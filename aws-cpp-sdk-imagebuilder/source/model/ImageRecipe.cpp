@@ -33,7 +33,8 @@ ImageRecipe::ImageRecipe() :
     m_blockDeviceMappingsHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false)
+    m_workingDirectoryHasBeenSet(false),
+    m_additionalInstanceConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ ImageRecipe::ImageRecipe(JsonView jsonValue) :
     m_blockDeviceMappingsHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false)
+    m_workingDirectoryHasBeenSet(false),
+    m_additionalInstanceConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +161,13 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
     m_workingDirectoryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("additionalInstanceConfiguration"))
+  {
+    m_additionalInstanceConfiguration = jsonValue.GetObject("additionalInstanceConfiguration");
+
+    m_additionalInstanceConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -254,6 +263,12 @@ JsonValue ImageRecipe::Jsonize() const
   if(m_workingDirectoryHasBeenSet)
   {
    payload.WithString("workingDirectory", m_workingDirectory);
+
+  }
+
+  if(m_additionalInstanceConfigurationHasBeenSet)
+  {
+   payload.WithObject("additionalInstanceConfiguration", m_additionalInstanceConfiguration.Jsonize());
 
   }
 

@@ -7,6 +7,8 @@
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/model/EventIngestion.h>
+#include <aws/frauddetector/model/IngestedEventStatistics.h>
 #include <utility>
 
 namespace Aws
@@ -259,6 +261,92 @@ namespace Model
 
 
     /**
+     * <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you
+     * generate a prediction and uses that data to update calculated variables in near
+     * real-time. Amazon Fraud Detector uses this data, known as
+     * <code>INGESTED_EVENTS</code>, to train your model and improve fraud
+     * predictions.</p>
+     */
+    inline const EventIngestion& GetEventIngestion() const{ return m_eventIngestion; }
+
+    /**
+     * <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you
+     * generate a prediction and uses that data to update calculated variables in near
+     * real-time. Amazon Fraud Detector uses this data, known as
+     * <code>INGESTED_EVENTS</code>, to train your model and improve fraud
+     * predictions.</p>
+     */
+    inline bool EventIngestionHasBeenSet() const { return m_eventIngestionHasBeenSet; }
+
+    /**
+     * <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you
+     * generate a prediction and uses that data to update calculated variables in near
+     * real-time. Amazon Fraud Detector uses this data, known as
+     * <code>INGESTED_EVENTS</code>, to train your model and improve fraud
+     * predictions.</p>
+     */
+    inline void SetEventIngestion(const EventIngestion& value) { m_eventIngestionHasBeenSet = true; m_eventIngestion = value; }
+
+    /**
+     * <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you
+     * generate a prediction and uses that data to update calculated variables in near
+     * real-time. Amazon Fraud Detector uses this data, known as
+     * <code>INGESTED_EVENTS</code>, to train your model and improve fraud
+     * predictions.</p>
+     */
+    inline void SetEventIngestion(EventIngestion&& value) { m_eventIngestionHasBeenSet = true; m_eventIngestion = std::move(value); }
+
+    /**
+     * <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you
+     * generate a prediction and uses that data to update calculated variables in near
+     * real-time. Amazon Fraud Detector uses this data, known as
+     * <code>INGESTED_EVENTS</code>, to train your model and improve fraud
+     * predictions.</p>
+     */
+    inline EventType& WithEventIngestion(const EventIngestion& value) { SetEventIngestion(value); return *this;}
+
+    /**
+     * <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you
+     * generate a prediction and uses that data to update calculated variables in near
+     * real-time. Amazon Fraud Detector uses this data, known as
+     * <code>INGESTED_EVENTS</code>, to train your model and improve fraud
+     * predictions.</p>
+     */
+    inline EventType& WithEventIngestion(EventIngestion&& value) { SetEventIngestion(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Data about the stored events.</p>
+     */
+    inline const IngestedEventStatistics& GetIngestedEventStatistics() const{ return m_ingestedEventStatistics; }
+
+    /**
+     * <p>Data about the stored events.</p>
+     */
+    inline bool IngestedEventStatisticsHasBeenSet() const { return m_ingestedEventStatisticsHasBeenSet; }
+
+    /**
+     * <p>Data about the stored events.</p>
+     */
+    inline void SetIngestedEventStatistics(const IngestedEventStatistics& value) { m_ingestedEventStatisticsHasBeenSet = true; m_ingestedEventStatistics = value; }
+
+    /**
+     * <p>Data about the stored events.</p>
+     */
+    inline void SetIngestedEventStatistics(IngestedEventStatistics&& value) { m_ingestedEventStatisticsHasBeenSet = true; m_ingestedEventStatistics = std::move(value); }
+
+    /**
+     * <p>Data about the stored events.</p>
+     */
+    inline EventType& WithIngestedEventStatistics(const IngestedEventStatistics& value) { SetIngestedEventStatistics(value); return *this;}
+
+    /**
+     * <p>Data about the stored events.</p>
+     */
+    inline EventType& WithIngestedEventStatistics(IngestedEventStatistics&& value) { SetIngestedEventStatistics(std::move(value)); return *this;}
+
+
+    /**
      * <p>Timestamp of when the event type was last updated.</p>
      */
     inline const Aws::String& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
@@ -396,6 +484,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_entityTypes;
     bool m_entityTypesHasBeenSet;
+
+    EventIngestion m_eventIngestion;
+    bool m_eventIngestionHasBeenSet;
+
+    IngestedEventStatistics m_ingestedEventStatistics;
+    bool m_ingestedEventStatisticsHasBeenSet;
 
     Aws::String m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;

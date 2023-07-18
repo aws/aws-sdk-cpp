@@ -25,7 +25,8 @@ MediaPlacement::MediaPlacement() :
     m_screenSharingUrlHasBeenSet(false),
     m_screenViewingUrlHasBeenSet(false),
     m_signalingUrlHasBeenSet(false),
-    m_turnControlUrlHasBeenSet(false)
+    m_turnControlUrlHasBeenSet(false),
+    m_eventIngestionUrlHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ MediaPlacement::MediaPlacement(JsonView jsonValue) :
     m_screenSharingUrlHasBeenSet(false),
     m_screenViewingUrlHasBeenSet(false),
     m_signalingUrlHasBeenSet(false),
-    m_turnControlUrlHasBeenSet(false)
+    m_turnControlUrlHasBeenSet(false),
+    m_eventIngestionUrlHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ MediaPlacement& MediaPlacement::operator =(JsonView jsonValue)
     m_turnControlUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventIngestionUrl"))
+  {
+    m_eventIngestionUrl = jsonValue.GetString("EventIngestionUrl");
+
+    m_eventIngestionUrlHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue MediaPlacement::Jsonize() const
   if(m_turnControlUrlHasBeenSet)
   {
    payload.WithString("TurnControlUrl", m_turnControlUrl);
+
+  }
+
+  if(m_eventIngestionUrlHasBeenSet)
+  {
+   payload.WithString("EventIngestionUrl", m_eventIngestionUrl);
 
   }
 

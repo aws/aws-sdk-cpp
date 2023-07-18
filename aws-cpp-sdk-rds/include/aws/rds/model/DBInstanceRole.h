@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an AWS Identity and Access Management (IAM) role that is associated
-   * with a DB instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an Amazon Web Services Identity and Access Management (IAM) role
+   * that is associated with a DB instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceRole">AWS
    * API Reference</a></p>
    */
@@ -90,58 +90,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline const Aws::String& GetFeatureName() const{ return m_featureName; }
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline DBInstanceRole& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline DBInstanceRole& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the feature associated with the AWS Identity and Access
-     * Management (IAM) role. For the list of supported feature names, see
-     * <code>DBEngineVersion</code>. </p>
+     * <p>The name of the feature associated with the Amazon Web Services Identity and
+     * Access Management (IAM) role. For information about supported feature names, see
+     * <code>DBEngineVersion</code>.</p>
      */
     inline DBInstanceRole& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
 
@@ -150,11 +150,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -162,11 +163,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -174,11 +176,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -186,11 +189,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -198,11 +202,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -210,11 +215,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline DBInstanceRole& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -222,11 +228,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline DBInstanceRole& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -234,11 +241,12 @@ namespace Model
      * <p>Describes the state of association between the IAM role and the DB instance.
      * The Status property returns one of the following values:</p> <ul> <li> <p>
      * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
-     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
-     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
-     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * can be used to access other Amazon Web Services services on your behalf.</p>
+     * </li> <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with
+     * the DB instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
      * associated with the DB instance, but the DB instance is unable to assume the IAM
-     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     * role in order to access other Amazon Web Services services on your behalf.</p>
+     * </li> </ul>
      */
     inline DBInstanceRole& WithStatus(const char* value) { SetStatus(value); return *this;}
 

@@ -40,12 +40,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -53,12 +53,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -66,12 +66,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -79,12 +79,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -92,12 +92,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -105,12 +105,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -118,12 +118,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -131,12 +131,12 @@ namespace Model
 
     /**
      * <p>The name of the domain. Specify a fully qualified domain name, for example,
-     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
      * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
      * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
      * zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Route 53, change the name
+     * domain name is registered with a registrar other than Route 53, change the name
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
@@ -146,8 +146,10 @@ namespace Model
     /**
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
-     * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use <a
+     * specify only one Amazon VPC when you create a private hosted zone. If you are
+     * associating a VPC with a hosted zone with this request, the paramaters
+     * <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> <p>To
+     * associate additional Amazon VPCs with the hosted zone, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
      * after you create a hosted zone.</p>
      */
@@ -156,8 +158,10 @@ namespace Model
     /**
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
-     * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use <a
+     * specify only one Amazon VPC when you create a private hosted zone. If you are
+     * associating a VPC with a hosted zone with this request, the paramaters
+     * <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> <p>To
+     * associate additional Amazon VPCs with the hosted zone, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
      * after you create a hosted zone.</p>
      */
@@ -166,8 +170,10 @@ namespace Model
     /**
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
-     * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use <a
+     * specify only one Amazon VPC when you create a private hosted zone. If you are
+     * associating a VPC with a hosted zone with this request, the paramaters
+     * <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> <p>To
+     * associate additional Amazon VPCs with the hosted zone, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
      * after you create a hosted zone.</p>
      */
@@ -176,8 +182,10 @@ namespace Model
     /**
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
-     * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use <a
+     * specify only one Amazon VPC when you create a private hosted zone. If you are
+     * associating a VPC with a hosted zone with this request, the paramaters
+     * <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> <p>To
+     * associate additional Amazon VPCs with the hosted zone, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
      * after you create a hosted zone.</p>
      */
@@ -186,8 +194,10 @@ namespace Model
     /**
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
-     * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use <a
+     * specify only one Amazon VPC when you create a private hosted zone. If you are
+     * associating a VPC with a hosted zone with this request, the paramaters
+     * <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> <p>To
+     * associate additional Amazon VPCs with the hosted zone, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
      * after you create a hosted zone.</p>
      */
@@ -196,8 +206,10 @@ namespace Model
     /**
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
-     * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use <a
+     * specify only one Amazon VPC when you create a private hosted zone. If you are
+     * associating a VPC with a hosted zone with this request, the paramaters
+     * <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> <p>To
+     * associate additional Amazon VPCs with the hosted zone, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
      * after you create a hosted zone.</p>
      */
@@ -348,7 +360,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
@@ -356,7 +368,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
@@ -364,7 +376,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
@@ -372,7 +384,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
@@ -380,7 +392,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
@@ -388,7 +400,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
@@ -396,7 +408,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
@@ -404,7 +416,7 @@ namespace Model
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
-     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
      * it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */

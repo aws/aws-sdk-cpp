@@ -163,26 +163,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the bundle is active, and can be specified for a new
-     * distribution.</p>
+     * <p>Indicates whether the bundle is active, and can be specified for a new or
+     * existing distribution.</p>
      */
     inline bool GetIsActive() const{ return m_isActive; }
 
     /**
-     * <p>Indicates whether the bundle is active, and can be specified for a new
-     * distribution.</p>
+     * <p>Indicates whether the bundle is active, and can be specified for a new or
+     * existing distribution.</p>
      */
     inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
 
     /**
-     * <p>Indicates whether the bundle is active, and can be specified for a new
-     * distribution.</p>
+     * <p>Indicates whether the bundle is active, and can be specified for a new or
+     * existing distribution.</p>
      */
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
 
     /**
-     * <p>Indicates whether the bundle is active, and can be specified for a new
-     * distribution.</p>
+     * <p>Indicates whether the bundle is active, and can be specified for a new or
+     * existing distribution.</p>
      */
     inline DistributionBundle& WithIsActive(bool value) { SetIsActive(value); return *this;}
 

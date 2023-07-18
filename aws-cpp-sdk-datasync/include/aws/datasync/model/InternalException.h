@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>This exception is thrown when an error occurs in the AWS DataSync
+   * <p>This exception is thrown when an error occurs in the DataSync
    * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/InternalException">AWS
    * API Reference</a></p>

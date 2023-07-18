@@ -43,6 +43,7 @@ namespace Aws
         static const int INVALID_SYSTEM_TAGS_PARAMETER_HASH = HashingUtils::HashString("INVALID_SYSTEM_TAGS_PARAMETER");
         static const int DUPLICATE_TAG_KEY_HASH = HashingUtils::HashString("DUPLICATE_TAG_KEY");
         static const int TARGET_NOT_SUPPORTED_HASH = HashingUtils::HashString("TARGET_NOT_SUPPORTED");
+        static const int INVALID_EMAIL_ADDRESS_TARGET_HASH = HashingUtils::HashString("INVALID_EMAIL_ADDRESS_TARGET");
 
 
         InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name)
@@ -140,6 +141,10 @@ namespace Aws
           {
             return InvalidInputExceptionReason::TARGET_NOT_SUPPORTED;
           }
+          else if (hashCode == INVALID_EMAIL_ADDRESS_TARGET_HASH)
+          {
+            return InvalidInputExceptionReason::INVALID_EMAIL_ADDRESS_TARGET;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -200,6 +205,8 @@ namespace Aws
             return "DUPLICATE_TAG_KEY";
           case InvalidInputExceptionReason::TARGET_NOT_SUPPORTED:
             return "TARGET_NOT_SUPPORTED";
+          case InvalidInputExceptionReason::INVALID_EMAIL_ADDRESS_TARGET:
+            return "INVALID_EMAIL_ADDRESS_TARGET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

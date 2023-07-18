@@ -176,6 +176,49 @@ namespace Model
 
 
     /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up.</p>
+     */
+    inline const Aws::String& GetSourceLastUpdatedTimestampFormat() const{ return m_sourceLastUpdatedTimestampFormat; }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up.</p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(const Aws::String& value) { m_sourceLastUpdatedTimestampFormat = value; }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up.</p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(Aws::String&& value) { m_sourceLastUpdatedTimestampFormat = std::move(value); }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up.</p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(const char* value) { m_sourceLastUpdatedTimestampFormat.assign(value); }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up.</p>
+     */
+    inline GetProfileObjectTypeTemplateResult& WithSourceLastUpdatedTimestampFormat(const Aws::String& value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up.</p>
+     */
+    inline GetProfileObjectTypeTemplateResult& WithSourceLastUpdatedTimestampFormat(Aws::String&& value) { SetSourceLastUpdatedTimestampFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up.</p>
+     */
+    inline GetProfileObjectTypeTemplateResult& WithSourceLastUpdatedTimestampFormat(const char* value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
+
+
+    /**
      * <p>A map of the name and ObjectType field.</p>
      */
     inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const{ return m_fields; }
@@ -295,6 +338,8 @@ namespace Model
     Aws::String m_sourceObject;
 
     bool m_allowProfileCreation;
+
+    Aws::String m_sourceLastUpdatedTimestampFormat;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
 

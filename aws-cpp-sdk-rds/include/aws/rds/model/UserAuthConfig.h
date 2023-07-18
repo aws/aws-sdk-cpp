@@ -227,38 +227,38 @@ namespace Model
 
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline const IAMAuthMode& GetIAMAuth() const{ return m_iAMAuth; }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline bool IAMAuthHasBeenSet() const { return m_iAMAuthHasBeenSet; }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline void SetIAMAuth(const IAMAuthMode& value) { m_iAMAuthHasBeenSet = true; m_iAMAuth = value; }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline void SetIAMAuth(IAMAuthMode&& value) { m_iAMAuthHasBeenSet = true; m_iAMAuth = std::move(value); }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline UserAuthConfig& WithIAMAuth(const IAMAuthMode& value) { SetIAMAuth(value); return *this;}
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline UserAuthConfig& WithIAMAuth(IAMAuthMode&& value) { SetIAMAuth(std::move(value)); return *this;}
 

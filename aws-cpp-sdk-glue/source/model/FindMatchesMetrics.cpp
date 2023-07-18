@@ -27,7 +27,8 @@ FindMatchesMetrics::FindMatchesMetrics() :
     m_recallHasBeenSet(false),
     m_f1(0.0),
     m_f1HasBeenSet(false),
-    m_confusionMatrixHasBeenSet(false)
+    m_confusionMatrixHasBeenSet(false),
+    m_columnImportancesHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ FindMatchesMetrics::FindMatchesMetrics(JsonView jsonValue) :
     m_recallHasBeenSet(false),
     m_f1(0.0),
     m_f1HasBeenSet(false),
-    m_confusionMatrixHasBeenSet(false)
+    m_confusionMatrixHasBeenSet(false),
+    m_columnImportancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +84,16 @@ FindMatchesMetrics& FindMatchesMetrics::operator =(JsonView jsonValue)
     m_confusionMatrixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColumnImportances"))
+  {
+    Array<JsonView> columnImportancesJsonList = jsonValue.GetArray("ColumnImportances");
+    for(unsigned columnImportancesIndex = 0; columnImportancesIndex < columnImportancesJsonList.GetLength(); ++columnImportancesIndex)
+    {
+      m_columnImportances.push_back(columnImportancesJsonList[columnImportancesIndex].AsObject());
+    }
+    m_columnImportancesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +128,17 @@ JsonValue FindMatchesMetrics::Jsonize() const
   if(m_confusionMatrixHasBeenSet)
   {
    payload.WithObject("ConfusionMatrix", m_confusionMatrix.Jsonize());
+
+  }
+
+  if(m_columnImportancesHasBeenSet)
+  {
+   Array<JsonValue> columnImportancesJsonList(m_columnImportances.size());
+   for(unsigned columnImportancesIndex = 0; columnImportancesIndex < columnImportancesJsonList.GetLength(); ++columnImportancesIndex)
+   {
+     columnImportancesJsonList[columnImportancesIndex].AsObject(m_columnImportances[columnImportancesIndex].Jsonize());
+   }
+   payload.WithArray("ColumnImportances", std::move(columnImportancesJsonList));
 
   }
 

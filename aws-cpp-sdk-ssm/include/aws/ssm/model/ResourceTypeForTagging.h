@@ -21,7 +21,9 @@ namespace Model
     MaintenanceWindow,
     Parameter,
     PatchBaseline,
-    OpsItem
+    OpsItem,
+    OpsMetadata,
+    Automation
   };
 
 namespace ResourceTypeForTaggingMapper

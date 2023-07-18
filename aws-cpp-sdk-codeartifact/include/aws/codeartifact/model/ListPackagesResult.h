@@ -36,50 +36,50 @@ namespace Model
 
     /**
      * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects. </p>
      */
     inline const Aws::Vector<PackageSummary>& GetPackages() const{ return m_packages; }
 
     /**
      * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects. </p>
      */
     inline void SetPackages(const Aws::Vector<PackageSummary>& value) { m_packages = value; }
 
     /**
      * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects. </p>
      */
     inline void SetPackages(Aws::Vector<PackageSummary>&& value) { m_packages = std::move(value); }
 
     /**
      * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects. </p>
      */
     inline ListPackagesResult& WithPackages(const Aws::Vector<PackageSummary>& value) { SetPackages(value); return *this;}
 
     /**
      * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects. </p>
      */
     inline ListPackagesResult& WithPackages(Aws::Vector<PackageSummary>&& value) { SetPackages(std::move(value)); return *this;}
 
     /**
      * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects. </p>
      */
     inline ListPackagesResult& AddPackages(const PackageSummary& value) { m_packages.push_back(value); return *this; }
 
     /**
      * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects. </p>
      */
     inline ListPackagesResult& AddPackages(PackageSummary&& value) { m_packages.push_back(std::move(value)); return *this; }
 

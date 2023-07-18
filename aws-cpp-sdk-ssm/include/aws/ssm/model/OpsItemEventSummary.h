@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about an OpsItem event.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information about an OpsItem event or that associated an OpsItem with
+   * a related item.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemEventSummary">AWS
    * API Reference</a></p>
    */

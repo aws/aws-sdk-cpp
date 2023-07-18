@@ -80,74 +80,74 @@ namespace Model
 
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServices() const{ return m_services; }
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline void SetServices(const Aws::Vector<Aws::String>& value) { m_servicesHasBeenSet = true; m_services = value; }
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline DestinationConfig& WithServices(const Aws::Vector<Aws::String>& value) { SetServices(value); return *this;}
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline DestinationConfig& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline DestinationConfig& AddServices(const Aws::String& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline DestinationConfig& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of service names that identity the target application. The AWS IoT
-     * client running on the destination device reads this value and uses it to look up
-     * a port or an IP address and a port. The AWS IoT client instantiates the local
-     * proxy which uses this information to connect to the destination application.</p>
+     * <p>A list of service names that identify the target application. The IoT client
+     * running on the destination device reads this value and uses it to look up a port
+     * or an IP address and a port. The IoT client instantiates the local proxy, which
+     * uses this information to connect to the destination application.</p>
      */
     inline DestinationConfig& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 

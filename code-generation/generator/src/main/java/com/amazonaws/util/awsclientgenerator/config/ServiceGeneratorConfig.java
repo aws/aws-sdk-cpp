@@ -13,12 +13,14 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenera
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.apigateway.APIGatewayRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.apigatewayv2.APIGatewayV2RestJsonCppClientGenerator;
-import com.amazonaws.util.awsclientgenerator.generators.cpp.cloudfront.CloudfrontCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.docdb.DocDBCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.dynamodb.DynamoDBJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.ec2.Ec2CppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.eventbridge.EventBridgeCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.glacier.GlacierRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.lambda.LambdaRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.machinelearning.MachineLearningJsonCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.neptune.NeptuneCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.polly.PollyCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
@@ -51,14 +53,17 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-lambda", new LambdaRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-sqs", new SQSQueryXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3", new S3RestXmlCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-s3-crt", new S3RestXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3control", new S3ControlRestXmlCppClientGenerator());
-            SPEC_OVERRIDE_MAPPING.put("cpp-cloudfront", new CloudfrontCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2", new Ec2CppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-apigateway", new APIGatewayRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-apigatewayv2", new APIGatewayV2RestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-machinelearning", new MachineLearningJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-polly", new PollyCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-docdb", new DocDBCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-neptune", new NeptuneCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-eventbridge", new EventBridgeCppClientGenerator());
 
         } catch (Exception e) {
             e.printStackTrace();

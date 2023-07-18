@@ -28,10 +28,10 @@ namespace Model
   /**
    * <p>Represents the output of an <code>CreateRealtimeEndpoint</code>
    * operation.</p> <p>The result contains the <code>MLModelId</code> and the
-   * endpoint information for the <code>MLModel</code>.</p>  <p>The endpoint
-   * information includes the URI of the <code>MLModel</code>; that is, the location
-   * to send online prediction requests for the specified <code>MLModel</code>.</p>
-   * <p><h3>See Also:</h3>   <a
+   * endpoint information for the <code>MLModel</code>.</p> <p> <b>Note:</b> The
+   * endpoint information includes the URI of the <code>MLModel</code>; that is, the
+   * location to send online prediction requests for the specified
+   * <code>MLModel</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpointOutput">AWS
    * API Reference</a></p>
    */

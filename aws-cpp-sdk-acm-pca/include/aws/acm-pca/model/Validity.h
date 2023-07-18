@@ -25,13 +25,17 @@ namespace Model
 
   /**
    * <p>Validity specifies the period of time during which a certificate is valid.
-   * Validity can be expressed as an explicit date and time when the certificate
-   * expires, or as a span of time after issuance, stated in days, months, or years.
-   * For more information, see <a
-   * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-   * 5280.</p> <p>You can issue a certificate by calling the <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a>
-   * action.</p><p><h3>See Also:</h3>   <a
+   * Validity can be expressed as an explicit date and time when the validity of a
+   * certificate starts or expires, or as a span of time after issuance, stated in
+   * days, months, or years. For more information, see <a
+   * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+   * in RFC 5280.</p> <p>ACM Private CA API consumes the <code>Validity</code> data
+   * type differently in two distinct parameters of the <code>IssueCertificate</code>
+   * action. The required parameter
+   * <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a
+   * certificate's validity period. The optional parameter
+   * <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a
+   * customized starting time for the validity period.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Validity">AWS
    * API Reference</a></p>
    */
@@ -80,14 +84,18 @@ namespace Model
      * than 50, the year is interpreted as 20YY.</p> <ul> <li> <p>Sample input value:
      * 491231235959 (UTCTime format)</p> </li> <li> <p>Output expiration date/time:
      * 12/31/2049 23:59:59</p> </li> </ul> <p> <code>ABSOLUTE</code>: The specific date
-     * and time when the certificate will expire, expressed in seconds since the Unix
-     * Epoch. </p> <ul> <li> <p>Sample input value: 2524608000</p> </li> <li> <p>Output
-     * expiration date/time: 01/01/2050 00:00:00</p> </li> </ul> <p> <code>DAYS</code>,
-     * <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of
-     * issuance until the certificate will expire, expressed in days, months, or years.
-     * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
-     * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * and time when the validity of a certificate will start or expire, expressed in
+     * seconds since the Unix Epoch. </p> <ul> <li> <p>Sample input value:
+     * 2524608000</p> </li> <li> <p>Output expiration date/time: 01/01/2050
+     * 00:00:00</p> </li> </ul> <p> <code>DAYS</code>, <code>MONTHS</code>,
+     * <code>YEARS</code>: The relative time from the moment of issuance until the
+     * certificate will expire, expressed in days, months, or years. </p> <p>Example if
+     * <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p> <ul> <li> <p>Sample
+     * input value: 90</p> </li> <li> <p>Output expiration date: 01/10/2020 12:34:54
+     * UTC</p> </li> </ul> <p>The minimum validity duration for a certificate using
+     * relative time (<code>DAYS</code>) is one day. The minimum validity for a
+     * certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>)
+     * is one second.</p>
      */
     inline const ValidityPeriodType& GetType() const{ return m_type; }
 
@@ -102,14 +110,18 @@ namespace Model
      * than 50, the year is interpreted as 20YY.</p> <ul> <li> <p>Sample input value:
      * 491231235959 (UTCTime format)</p> </li> <li> <p>Output expiration date/time:
      * 12/31/2049 23:59:59</p> </li> </ul> <p> <code>ABSOLUTE</code>: The specific date
-     * and time when the certificate will expire, expressed in seconds since the Unix
-     * Epoch. </p> <ul> <li> <p>Sample input value: 2524608000</p> </li> <li> <p>Output
-     * expiration date/time: 01/01/2050 00:00:00</p> </li> </ul> <p> <code>DAYS</code>,
-     * <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of
-     * issuance until the certificate will expire, expressed in days, months, or years.
-     * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
-     * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * and time when the validity of a certificate will start or expire, expressed in
+     * seconds since the Unix Epoch. </p> <ul> <li> <p>Sample input value:
+     * 2524608000</p> </li> <li> <p>Output expiration date/time: 01/01/2050
+     * 00:00:00</p> </li> </ul> <p> <code>DAYS</code>, <code>MONTHS</code>,
+     * <code>YEARS</code>: The relative time from the moment of issuance until the
+     * certificate will expire, expressed in days, months, or years. </p> <p>Example if
+     * <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p> <ul> <li> <p>Sample
+     * input value: 90</p> </li> <li> <p>Output expiration date: 01/10/2020 12:34:54
+     * UTC</p> </li> </ul> <p>The minimum validity duration for a certificate using
+     * relative time (<code>DAYS</code>) is one day. The minimum validity for a
+     * certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>)
+     * is one second.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -124,14 +136,18 @@ namespace Model
      * than 50, the year is interpreted as 20YY.</p> <ul> <li> <p>Sample input value:
      * 491231235959 (UTCTime format)</p> </li> <li> <p>Output expiration date/time:
      * 12/31/2049 23:59:59</p> </li> </ul> <p> <code>ABSOLUTE</code>: The specific date
-     * and time when the certificate will expire, expressed in seconds since the Unix
-     * Epoch. </p> <ul> <li> <p>Sample input value: 2524608000</p> </li> <li> <p>Output
-     * expiration date/time: 01/01/2050 00:00:00</p> </li> </ul> <p> <code>DAYS</code>,
-     * <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of
-     * issuance until the certificate will expire, expressed in days, months, or years.
-     * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
-     * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * and time when the validity of a certificate will start or expire, expressed in
+     * seconds since the Unix Epoch. </p> <ul> <li> <p>Sample input value:
+     * 2524608000</p> </li> <li> <p>Output expiration date/time: 01/01/2050
+     * 00:00:00</p> </li> </ul> <p> <code>DAYS</code>, <code>MONTHS</code>,
+     * <code>YEARS</code>: The relative time from the moment of issuance until the
+     * certificate will expire, expressed in days, months, or years. </p> <p>Example if
+     * <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p> <ul> <li> <p>Sample
+     * input value: 90</p> </li> <li> <p>Output expiration date: 01/10/2020 12:34:54
+     * UTC</p> </li> </ul> <p>The minimum validity duration for a certificate using
+     * relative time (<code>DAYS</code>) is one day. The minimum validity for a
+     * certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>)
+     * is one second.</p>
      */
     inline void SetType(const ValidityPeriodType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -146,14 +162,18 @@ namespace Model
      * than 50, the year is interpreted as 20YY.</p> <ul> <li> <p>Sample input value:
      * 491231235959 (UTCTime format)</p> </li> <li> <p>Output expiration date/time:
      * 12/31/2049 23:59:59</p> </li> </ul> <p> <code>ABSOLUTE</code>: The specific date
-     * and time when the certificate will expire, expressed in seconds since the Unix
-     * Epoch. </p> <ul> <li> <p>Sample input value: 2524608000</p> </li> <li> <p>Output
-     * expiration date/time: 01/01/2050 00:00:00</p> </li> </ul> <p> <code>DAYS</code>,
-     * <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of
-     * issuance until the certificate will expire, expressed in days, months, or years.
-     * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
-     * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * and time when the validity of a certificate will start or expire, expressed in
+     * seconds since the Unix Epoch. </p> <ul> <li> <p>Sample input value:
+     * 2524608000</p> </li> <li> <p>Output expiration date/time: 01/01/2050
+     * 00:00:00</p> </li> </ul> <p> <code>DAYS</code>, <code>MONTHS</code>,
+     * <code>YEARS</code>: The relative time from the moment of issuance until the
+     * certificate will expire, expressed in days, months, or years. </p> <p>Example if
+     * <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p> <ul> <li> <p>Sample
+     * input value: 90</p> </li> <li> <p>Output expiration date: 01/10/2020 12:34:54
+     * UTC</p> </li> </ul> <p>The minimum validity duration for a certificate using
+     * relative time (<code>DAYS</code>) is one day. The minimum validity for a
+     * certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>)
+     * is one second.</p>
      */
     inline void SetType(ValidityPeriodType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -168,14 +188,18 @@ namespace Model
      * than 50, the year is interpreted as 20YY.</p> <ul> <li> <p>Sample input value:
      * 491231235959 (UTCTime format)</p> </li> <li> <p>Output expiration date/time:
      * 12/31/2049 23:59:59</p> </li> </ul> <p> <code>ABSOLUTE</code>: The specific date
-     * and time when the certificate will expire, expressed in seconds since the Unix
-     * Epoch. </p> <ul> <li> <p>Sample input value: 2524608000</p> </li> <li> <p>Output
-     * expiration date/time: 01/01/2050 00:00:00</p> </li> </ul> <p> <code>DAYS</code>,
-     * <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of
-     * issuance until the certificate will expire, expressed in days, months, or years.
-     * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
-     * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * and time when the validity of a certificate will start or expire, expressed in
+     * seconds since the Unix Epoch. </p> <ul> <li> <p>Sample input value:
+     * 2524608000</p> </li> <li> <p>Output expiration date/time: 01/01/2050
+     * 00:00:00</p> </li> </ul> <p> <code>DAYS</code>, <code>MONTHS</code>,
+     * <code>YEARS</code>: The relative time from the moment of issuance until the
+     * certificate will expire, expressed in days, months, or years. </p> <p>Example if
+     * <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p> <ul> <li> <p>Sample
+     * input value: 90</p> </li> <li> <p>Output expiration date: 01/10/2020 12:34:54
+     * UTC</p> </li> </ul> <p>The minimum validity duration for a certificate using
+     * relative time (<code>DAYS</code>) is one day. The minimum validity for a
+     * certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>)
+     * is one second.</p>
      */
     inline Validity& WithType(const ValidityPeriodType& value) { SetType(value); return *this;}
 
@@ -190,14 +214,18 @@ namespace Model
      * than 50, the year is interpreted as 20YY.</p> <ul> <li> <p>Sample input value:
      * 491231235959 (UTCTime format)</p> </li> <li> <p>Output expiration date/time:
      * 12/31/2049 23:59:59</p> </li> </ul> <p> <code>ABSOLUTE</code>: The specific date
-     * and time when the certificate will expire, expressed in seconds since the Unix
-     * Epoch. </p> <ul> <li> <p>Sample input value: 2524608000</p> </li> <li> <p>Output
-     * expiration date/time: 01/01/2050 00:00:00</p> </li> </ul> <p> <code>DAYS</code>,
-     * <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of
-     * issuance until the certificate will expire, expressed in days, months, or years.
-     * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
-     * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * and time when the validity of a certificate will start or expire, expressed in
+     * seconds since the Unix Epoch. </p> <ul> <li> <p>Sample input value:
+     * 2524608000</p> </li> <li> <p>Output expiration date/time: 01/01/2050
+     * 00:00:00</p> </li> </ul> <p> <code>DAYS</code>, <code>MONTHS</code>,
+     * <code>YEARS</code>: The relative time from the moment of issuance until the
+     * certificate will expire, expressed in days, months, or years. </p> <p>Example if
+     * <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p> <ul> <li> <p>Sample
+     * input value: 90</p> </li> <li> <p>Output expiration date: 01/10/2020 12:34:54
+     * UTC</p> </li> </ul> <p>The minimum validity duration for a certificate using
+     * relative time (<code>DAYS</code>) is one day. The minimum validity for a
+     * certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>)
+     * is one second.</p>
      */
     inline Validity& WithType(ValidityPeriodType&& value) { SetType(std::move(value)); return *this;}
 

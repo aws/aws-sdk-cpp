@@ -32,6 +32,7 @@ namespace Aws
         static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
         static const int UPDATE_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS");
         static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int UPDATE_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
         static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
         static const int UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS");
@@ -94,6 +95,10 @@ namespace Aws
           else if (hashCode == UPDATE_COMPLETE_HASH)
           {
             return StackStatus::UPDATE_COMPLETE;
+          }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return StackStatus::UPDATE_FAILED;
           }
           else if (hashCode == UPDATE_ROLLBACK_IN_PROGRESS_HASH)
           {
@@ -173,6 +178,8 @@ namespace Aws
             return "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS";
           case StackStatus::UPDATE_COMPLETE:
             return "UPDATE_COMPLETE";
+          case StackStatus::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           case StackStatus::UPDATE_ROLLBACK_IN_PROGRESS:
             return "UPDATE_ROLLBACK_IN_PROGRESS";
           case StackStatus::UPDATE_ROLLBACK_FAILED:

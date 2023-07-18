@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Permissions designate which private CA actions can be performed by an AWS
-   * service or entity. In order for ACM to automatically renew private certificates,
-   * you must give the ACM service principal all available permissions
+   * <p>Permissions designate which private CA actions can be performed by an Amazon
+   * Web Services service or entity. In order for ACM to automatically renew private
+   * certificates, you must give the ACM service principal all available permissions
    * (<code>IssueCertificate</code>, <code>GetCertificate</code>, and
    * <code>ListPermissions</code>). Permissions can be assigned with the <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a>
@@ -131,50 +131,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline Permission& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline Permission& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service or entity that holds the permission. At this time, the only
-     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or entity that holds the permission. At this
+     * time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline Permission& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
@@ -221,50 +221,50 @@ namespace Model
 
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline const Aws::Vector<ActionType>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline void SetActions(const Aws::Vector<ActionType>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline void SetActions(Aws::Vector<ActionType>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline Permission& WithActions(const Aws::Vector<ActionType>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline Permission& WithActions(Aws::Vector<ActionType>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline Permission& AddActions(const ActionType& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The private CA actions that can be performed by the designated AWS
-     * service.</p>
+     * <p>The private CA actions that can be performed by the designated Amazon Web
+     * Services service.</p>
      */
     inline Permission& AddActions(ActionType&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 

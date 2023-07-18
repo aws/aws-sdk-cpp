@@ -61,37 +61,37 @@ namespace Model
 
 
     /**
-     * <p>The key signing keys (KSKs) in your account.</p>
+     * <p>The key-signing keys (KSKs) in your account.</p>
      */
     inline const Aws::Vector<KeySigningKey>& GetKeySigningKeys() const{ return m_keySigningKeys; }
 
     /**
-     * <p>The key signing keys (KSKs) in your account.</p>
+     * <p>The key-signing keys (KSKs) in your account.</p>
      */
     inline void SetKeySigningKeys(const Aws::Vector<KeySigningKey>& value) { m_keySigningKeys = value; }
 
     /**
-     * <p>The key signing keys (KSKs) in your account.</p>
+     * <p>The key-signing keys (KSKs) in your account.</p>
      */
     inline void SetKeySigningKeys(Aws::Vector<KeySigningKey>&& value) { m_keySigningKeys = std::move(value); }
 
     /**
-     * <p>The key signing keys (KSKs) in your account.</p>
+     * <p>The key-signing keys (KSKs) in your account.</p>
      */
     inline GetDNSSECResult& WithKeySigningKeys(const Aws::Vector<KeySigningKey>& value) { SetKeySigningKeys(value); return *this;}
 
     /**
-     * <p>The key signing keys (KSKs) in your account.</p>
+     * <p>The key-signing keys (KSKs) in your account.</p>
      */
     inline GetDNSSECResult& WithKeySigningKeys(Aws::Vector<KeySigningKey>&& value) { SetKeySigningKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The key signing keys (KSKs) in your account.</p>
+     * <p>The key-signing keys (KSKs) in your account.</p>
      */
     inline GetDNSSECResult& AddKeySigningKeys(const KeySigningKey& value) { m_keySigningKeys.push_back(value); return *this; }
 
     /**
-     * <p>The key signing keys (KSKs) in your account.</p>
+     * <p>The key-signing keys (KSKs) in your account.</p>
      */
     inline GetDNSSECResult& AddKeySigningKeys(KeySigningKey&& value) { m_keySigningKeys.push_back(std::move(value)); return *this; }
 

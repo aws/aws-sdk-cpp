@@ -22,13 +22,15 @@ namespace Model
 
 AnalysisComponent::AnalysisComponent() : 
     m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
 AnalysisComponent::AnalysisComponent(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +53,12 @@ AnalysisComponent& AnalysisComponent::operator =(const XmlNode& xmlNode)
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
+    XmlNode nameNode = resultNode.FirstChild("name");
+    if(!nameNode.IsNull())
+    {
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
+      m_nameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -68,6 +76,11 @@ void AnalysisComponent::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+
 }
 
 void AnalysisComponent::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -79,6 +92,10 @@ void AnalysisComponent::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_arnHasBeenSet)
   {
       oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 }
 

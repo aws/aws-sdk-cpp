@@ -19,6 +19,8 @@ namespace Model
 {
 
 ProresSettings::ProresSettings() : 
+    m_chromaSampling(ProresChromaSampling::NOT_SET),
+    m_chromaSamplingHasBeenSet(false),
     m_codecProfile(ProresCodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
     m_framerateControl(ProresFramerateControl::NOT_SET),
@@ -37,6 +39,8 @@ ProresSettings::ProresSettings() :
     m_parDenominatorHasBeenSet(false),
     m_parNumerator(0),
     m_parNumeratorHasBeenSet(false),
+    m_scanTypeConversionMode(ProresScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_slowPal(ProresSlowPal::NOT_SET),
     m_slowPalHasBeenSet(false),
     m_telecine(ProresTelecine::NOT_SET),
@@ -45,6 +49,8 @@ ProresSettings::ProresSettings() :
 }
 
 ProresSettings::ProresSettings(JsonView jsonValue) : 
+    m_chromaSampling(ProresChromaSampling::NOT_SET),
+    m_chromaSamplingHasBeenSet(false),
     m_codecProfile(ProresCodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
     m_framerateControl(ProresFramerateControl::NOT_SET),
@@ -63,6 +69,8 @@ ProresSettings::ProresSettings(JsonView jsonValue) :
     m_parDenominatorHasBeenSet(false),
     m_parNumerator(0),
     m_parNumeratorHasBeenSet(false),
+    m_scanTypeConversionMode(ProresScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_slowPal(ProresSlowPal::NOT_SET),
     m_slowPalHasBeenSet(false),
     m_telecine(ProresTelecine::NOT_SET),
@@ -73,6 +81,13 @@ ProresSettings::ProresSettings(JsonView jsonValue) :
 
 ProresSettings& ProresSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("chromaSampling"))
+  {
+    m_chromaSampling = ProresChromaSamplingMapper::GetProresChromaSamplingForName(jsonValue.GetString("chromaSampling"));
+
+    m_chromaSamplingHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("codecProfile"))
   {
     m_codecProfile = ProresCodecProfileMapper::GetProresCodecProfileForName(jsonValue.GetString("codecProfile"));
@@ -136,6 +151,13 @@ ProresSettings& ProresSettings::operator =(JsonView jsonValue)
     m_parNumeratorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = ProresScanTypeConversionModeMapper::GetProresScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("slowPal"))
   {
     m_slowPal = ProresSlowPalMapper::GetProresSlowPalForName(jsonValue.GetString("slowPal"));
@@ -156,6 +178,11 @@ ProresSettings& ProresSettings::operator =(JsonView jsonValue)
 JsonValue ProresSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_chromaSamplingHasBeenSet)
+  {
+   payload.WithString("chromaSampling", ProresChromaSamplingMapper::GetNameForProresChromaSampling(m_chromaSampling));
+  }
 
   if(m_codecProfileHasBeenSet)
   {
@@ -204,6 +231,11 @@ JsonValue ProresSettings::Jsonize() const
   {
    payload.WithInteger("parNumerator", m_parNumerator);
 
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", ProresScanTypeConversionModeMapper::GetNameForProresScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_slowPalHasBeenSet)

@@ -16,7 +16,8 @@ DeleteApplicationVpcConfigurationRequest::DeleteApplicationVpcConfigurationReque
     m_applicationNameHasBeenSet(false),
     m_currentApplicationVersionId(0),
     m_currentApplicationVersionIdHasBeenSet(false),
-    m_vpcConfigurationIdHasBeenSet(false)
+    m_vpcConfigurationIdHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String DeleteApplicationVpcConfigurationRequest::SerializePayload() const
   if(m_vpcConfigurationIdHasBeenSet)
   {
    payload.WithString("VpcConfigurationId", m_vpcConfigurationId);
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
 
   }
 

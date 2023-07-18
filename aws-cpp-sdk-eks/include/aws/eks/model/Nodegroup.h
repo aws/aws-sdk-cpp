@@ -16,7 +16,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/NodegroupResources.h>
 #include <aws/eks/model/NodegroupHealth.h>
+#include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
+#include <aws/eks/model/Taint.h>
 #include <utility>
 
 namespace Aws
@@ -663,66 +665,66 @@ namespace Model
 
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline const Aws::String& GetNodeRole() const{ return m_nodeRole; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline bool NodeRoleHasBeenSet() const { return m_nodeRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline void SetNodeRole(Aws::String&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = std::move(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline void SetNodeRole(const char* value) { m_nodeRoleHasBeenSet = true; m_nodeRole.assign(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(Aws::String&& value) { SetNodeRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(const char* value) { SetNodeRole(value); return *this;}
 
@@ -817,6 +819,95 @@ namespace Model
      * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -923,6 +1014,37 @@ namespace Model
 
 
     /**
+     * <p>The node group update configuration.</p>
+     */
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline Nodegroup& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline Nodegroup& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>If a launch template was used to create the node group, then this is the
      * launch template that was used.</p>
      */
@@ -961,105 +1083,105 @@ namespace Model
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -1113,6 +1235,9 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_labels;
     bool m_labelsHasBeenSet;
 
+    Aws::Vector<Taint> m_taints;
+    bool m_taintsHasBeenSet;
+
     NodegroupResources m_resources;
     bool m_resourcesHasBeenSet;
 
@@ -1121,6 +1246,9 @@ namespace Model
 
     NodegroupHealth m_health;
     bool m_healthHasBeenSet;
+
+    NodegroupUpdateConfig m_updateConfig;
+    bool m_updateConfigHasBeenSet;
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;

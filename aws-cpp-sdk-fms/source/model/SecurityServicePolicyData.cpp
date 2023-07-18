@@ -21,14 +21,16 @@ namespace Model
 SecurityServicePolicyData::SecurityServicePolicyData() : 
     m_type(SecurityServiceType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_managedServiceDataHasBeenSet(false)
+    m_managedServiceDataHasBeenSet(false),
+    m_policyOptionHasBeenSet(false)
 {
 }
 
 SecurityServicePolicyData::SecurityServicePolicyData(JsonView jsonValue) : 
     m_type(SecurityServiceType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_managedServiceDataHasBeenSet(false)
+    m_managedServiceDataHasBeenSet(false),
+    m_policyOptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ SecurityServicePolicyData& SecurityServicePolicyData::operator =(JsonView jsonVa
     m_managedServiceDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PolicyOption"))
+  {
+    m_policyOption = jsonValue.GetObject("PolicyOption");
+
+    m_policyOptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +73,12 @@ JsonValue SecurityServicePolicyData::Jsonize() const
   if(m_managedServiceDataHasBeenSet)
   {
    payload.WithString("ManagedServiceData", m_managedServiceData);
+
+  }
+
+  if(m_policyOptionHasBeenSet)
+  {
+   payload.WithObject("PolicyOption", m_policyOption.Jsonize());
 
   }
 

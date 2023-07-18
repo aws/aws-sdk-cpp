@@ -19,12 +19,14 @@ namespace Model
 {
 
 ComponentConfiguration::ComponentConfiguration() : 
-    m_componentArnHasBeenSet(false)
+    m_componentArnHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
 ComponentConfiguration::ComponentConfiguration(JsonView jsonValue) : 
-    m_componentArnHasBeenSet(false)
+    m_componentArnHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,16 @@ ComponentConfiguration& ComponentConfiguration::operator =(JsonView jsonValue)
     m_componentArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parameters"))
+  {
+    Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
+    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+    {
+      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
+    }
+    m_parametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +60,17 @@ JsonValue ComponentConfiguration::Jsonize() const
   if(m_componentArnHasBeenSet)
   {
    payload.WithString("componentArn", m_componentArn);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   Array<JsonValue> parametersJsonList(m_parameters.size());
+   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+   {
+     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+   }
+   payload.WithArray("parameters", std::move(parametersJsonList));
 
   }
 

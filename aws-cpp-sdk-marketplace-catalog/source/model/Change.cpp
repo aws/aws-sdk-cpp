@@ -21,14 +21,16 @@ namespace Model
 Change::Change() : 
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_changeNameHasBeenSet(false)
 {
 }
 
 Change::Change(JsonView jsonValue) : 
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_changeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ Change& Change::operator =(JsonView jsonValue)
     m_detailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChangeName"))
+  {
+    m_changeName = jsonValue.GetString("ChangeName");
+
+    m_changeNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue Change::Jsonize() const
   if(m_detailsHasBeenSet)
   {
    payload.WithString("Details", m_details);
+
+  }
+
+  if(m_changeNameHasBeenSet)
+  {
+   payload.WithString("ChangeName", m_changeName);
 
   }
 

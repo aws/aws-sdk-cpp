@@ -28,12 +28,15 @@ Endpoint::Endpoint() :
     m_stateHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
+    m_certificateAuthorityHasBeenSet(false),
     m_configurationOverridesHasBeenSet(false),
     m_serverUrlHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_stateDetailsHasBeenSet(false),
+    m_failureReason(FailureReason::NOT_SET),
+    m_failureReasonHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -48,12 +51,15 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
+    m_certificateAuthorityHasBeenSet(false),
     m_configurationOverridesHasBeenSet(false),
     m_serverUrlHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_stateDetailsHasBeenSet(false),
+    m_failureReason(FailureReason::NOT_SET),
+    m_failureReasonHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -117,11 +123,11 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_executionRoleArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("certificateArn"))
+  if(jsonValue.ValueExists("certificateAuthority"))
   {
-    m_certificateArn = jsonValue.GetString("certificateArn");
+    m_certificateAuthority = jsonValue.GetObject("certificateAuthority");
 
-    m_certificateArnHasBeenSet = true;
+    m_certificateAuthorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("configurationOverrides"))
@@ -140,7 +146,7 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
   }
@@ -160,6 +166,20 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stateDetails"))
+  {
+    m_stateDetails = jsonValue.GetString("stateDetails");
+
+    m_stateDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("failureReason"));
+
+    m_failureReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -226,9 +246,9 @@ JsonValue Endpoint::Jsonize() const
 
   }
 
-  if(m_certificateArnHasBeenSet)
+  if(m_certificateAuthorityHasBeenSet)
   {
-   payload.WithString("certificateArn", m_certificateArn);
+   payload.WithObject("certificateAuthority", m_certificateAuthority.Jsonize());
 
   }
 
@@ -246,7 +266,7 @@ JsonValue Endpoint::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_securityGroupHasBeenSet)
@@ -264,6 +284,17 @@ JsonValue Endpoint::Jsonize() const
    }
    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
 
+  }
+
+  if(m_stateDetailsHasBeenSet)
+  {
+   payload.WithString("stateDetails", m_stateDetails);
+
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("failureReason", FailureReasonMapper::GetNameForFailureReason(m_failureReason));
   }
 
   if(m_tagsHasBeenSet)

@@ -29,7 +29,9 @@ RegisterTaskWithMaintenanceWindowRequest::RegisterTaskWithMaintenanceWindowReque
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
+    m_cutoffBehaviorHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,11 @@ Aws::String RegisterTaskWithMaintenanceWindowRequest::SerializePayload() const
   {
    payload.WithString("ClientToken", m_clientToken);
 
+  }
+
+  if(m_cutoffBehaviorHasBeenSet)
+  {
+   payload.WithString("CutoffBehavior", MaintenanceWindowTaskCutoffBehaviorMapper::GetNameForMaintenanceWindowTaskCutoffBehavior(m_cutoffBehavior));
   }
 
   return payload.View().WriteReadable();

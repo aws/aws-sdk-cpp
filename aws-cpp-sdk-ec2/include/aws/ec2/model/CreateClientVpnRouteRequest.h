@@ -83,9 +83,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
@@ -94,9 +94,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
 
@@ -105,9 +105,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
@@ -116,9 +116,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
 
@@ -127,9 +127,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
@@ -138,9 +138,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline CreateClientVpnRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -149,9 +149,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline CreateClientVpnRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
 
@@ -160,9 +160,9 @@ namespace Model
      * example:</p> <ul> <li> <p>To add a route for Internet access, enter
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
-     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> <li> <p>To add a route for the local network, enter the client
-     * CIDR range</p> </li> </ul>
+     * on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's
+     * IPv4 CIDR range</p> </li> <li> <p>To add a route for the local network, enter
+     * the client CIDR range</p> </li> </ul>
      */
     inline CreateClientVpnRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -277,7 +277,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -285,7 +285,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -293,7 +293,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -301,7 +301,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -309,7 +309,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -317,7 +317,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnRouteRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -325,7 +325,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnRouteRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -333,7 +333,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnRouteRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

@@ -22,7 +22,8 @@ ContentRedaction::ContentRedaction() :
     m_redactionType(RedactionType::NOT_SET),
     m_redactionTypeHasBeenSet(false),
     m_redactionOutput(RedactionOutput::NOT_SET),
-    m_redactionOutputHasBeenSet(false)
+    m_redactionOutputHasBeenSet(false),
+    m_piiEntityTypesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ContentRedaction::ContentRedaction(JsonView jsonValue) :
     m_redactionType(RedactionType::NOT_SET),
     m_redactionTypeHasBeenSet(false),
     m_redactionOutput(RedactionOutput::NOT_SET),
-    m_redactionOutputHasBeenSet(false)
+    m_redactionOutputHasBeenSet(false),
+    m_piiEntityTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,16 @@ ContentRedaction& ContentRedaction::operator =(JsonView jsonValue)
     m_redactionOutputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PiiEntityTypes"))
+  {
+    Array<JsonView> piiEntityTypesJsonList = jsonValue.GetArray("PiiEntityTypes");
+    for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
+    {
+      m_piiEntityTypes.push_back(PiiEntityTypeMapper::GetPiiEntityTypeForName(piiEntityTypesJsonList[piiEntityTypesIndex].AsString()));
+    }
+    m_piiEntityTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +78,17 @@ JsonValue ContentRedaction::Jsonize() const
   if(m_redactionOutputHasBeenSet)
   {
    payload.WithString("RedactionOutput", RedactionOutputMapper::GetNameForRedactionOutput(m_redactionOutput));
+  }
+
+  if(m_piiEntityTypesHasBeenSet)
+  {
+   Array<JsonValue> piiEntityTypesJsonList(m_piiEntityTypes.size());
+   for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
+   {
+     piiEntityTypesJsonList[piiEntityTypesIndex].AsString(PiiEntityTypeMapper::GetNameForPiiEntityType(m_piiEntityTypes[piiEntityTypesIndex]));
+   }
+   payload.WithArray("PiiEntityTypes", std::move(piiEntityTypesJsonList));
+
   }
 
   return payload;

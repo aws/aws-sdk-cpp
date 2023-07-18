@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline NatGatewayAddress& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline NatGatewayAddress& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
-     * gateway.</p>
+     * <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
      */
     inline NatGatewayAddress& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
@@ -131,83 +131,91 @@ namespace Model
 
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline const Aws::String& GetPrivateIp() const{ return m_privateIp; }
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline bool PrivateIpHasBeenSet() const { return m_privateIpHasBeenSet; }
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline void SetPrivateIp(const Aws::String& value) { m_privateIpHasBeenSet = true; m_privateIp = value; }
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline void SetPrivateIp(Aws::String&& value) { m_privateIpHasBeenSet = true; m_privateIp = std::move(value); }
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline void SetPrivateIp(const char* value) { m_privateIpHasBeenSet = true; m_privateIp.assign(value); }
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline NatGatewayAddress& WithPrivateIp(const Aws::String& value) { SetPrivateIp(value); return *this;}
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline NatGatewayAddress& WithPrivateIp(Aws::String&& value) { SetPrivateIp(std::move(value)); return *this;}
 
     /**
-     * <p>The private IP address associated with the Elastic IP address.</p>
+     * <p>The private IP address associated with the NAT gateway.</p>
      */
     inline NatGatewayAddress& WithPrivateIp(const char* value) { SetPrivateIp(value); return *this;}
 
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline NatGatewayAddress& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline NatGatewayAddress& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     * <p>[Public NAT gateway only] The Elastic IP address associated with the NAT
+     * gateway.</p>
      */
     inline NatGatewayAddress& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 

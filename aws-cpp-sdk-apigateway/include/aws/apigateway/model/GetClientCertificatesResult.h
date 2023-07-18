@@ -27,10 +27,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a collection of <a>ClientCertificate</a> resources.</p> <div
-   * class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
-   * Client-Side Certificate</a> </div><p><h3>See Also:</h3>   <a
+   * <p>Represents a collection of ClientCertificate resources.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ClientCertificates">AWS
    * API Reference</a></p>
    */

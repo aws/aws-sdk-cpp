@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateRegionSettingsRequest::UpdateRegionSettingsRequest() : 
-    m_resourceTypeOptInPreferenceHasBeenSet(false)
+    m_resourceTypeOptInPreferenceHasBeenSet(false),
+    m_resourceTypeManagementPreferenceHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,17 @@ Aws::String UpdateRegionSettingsRequest::SerializePayload() const
      resourceTypeOptInPreferenceJsonMap.WithBool(resourceTypeOptInPreferenceItem.first, resourceTypeOptInPreferenceItem.second);
    }
    payload.WithObject("ResourceTypeOptInPreference", std::move(resourceTypeOptInPreferenceJsonMap));
+
+  }
+
+  if(m_resourceTypeManagementPreferenceHasBeenSet)
+  {
+   JsonValue resourceTypeManagementPreferenceJsonMap;
+   for(auto& resourceTypeManagementPreferenceItem : m_resourceTypeManagementPreference)
+   {
+     resourceTypeManagementPreferenceJsonMap.WithBool(resourceTypeManagementPreferenceItem.first, resourceTypeManagementPreferenceItem.second);
+   }
+   payload.WithObject("ResourceTypeManagementPreference", std::move(resourceTypeManagementPreferenceJsonMap));
 
   }
 

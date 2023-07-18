@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -49,8 +49,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -61,8 +61,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -73,8 +73,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -85,8 +85,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -97,8 +97,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -109,8 +109,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -121,8 +121,8 @@ namespace Model
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
      * <code>PolicySummary</code> objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
-     * value in the response that allows you to list another group of
+     * <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value
+     * in the response that allows you to list another group of
      * <code>PolicySummary</code> objects. For the second and subsequent
      * <code>ListPolicies</code> requests, specify the value of <code>NextToken</code>
      * from the previous response to get information about another batch of
@@ -132,7 +132,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS
+     * <p>Specifies the number of <code>PolicySummary</code> objects that you want
      * Firewall Manager to return for this request. If you have more
      * <code>PolicySummary</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
@@ -141,7 +141,7 @@ namespace Model
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS
+     * <p>Specifies the number of <code>PolicySummary</code> objects that you want
      * Firewall Manager to return for this request. If you have more
      * <code>PolicySummary</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
@@ -150,7 +150,7 @@ namespace Model
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS
+     * <p>Specifies the number of <code>PolicySummary</code> objects that you want
      * Firewall Manager to return for this request. If you have more
      * <code>PolicySummary</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
@@ -159,7 +159,7 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS
+     * <p>Specifies the number of <code>PolicySummary</code> objects that you want
      * Firewall Manager to return for this request. If you have more
      * <code>PolicySummary</code> objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value

@@ -22,6 +22,8 @@ Resource::Resource() :
     m_accessKeyDetailsHasBeenSet(false),
     m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
+    m_eksClusterDetailsHasBeenSet(false),
+    m_kubernetesDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
 }
@@ -30,6 +32,8 @@ Resource::Resource(JsonView jsonValue) :
     m_accessKeyDetailsHasBeenSet(false),
     m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
+    m_eksClusterDetailsHasBeenSet(false),
+    m_kubernetesDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -59,6 +63,20 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_instanceDetails = jsonValue.GetObject("instanceDetails");
 
     m_instanceDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eksClusterDetails"))
+  {
+    m_eksClusterDetails = jsonValue.GetObject("eksClusterDetails");
+
+    m_eksClusterDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kubernetesDetails"))
+  {
+    m_kubernetesDetails = jsonValue.GetObject("kubernetesDetails");
+
+    m_kubernetesDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceType"))
@@ -95,6 +113,18 @@ JsonValue Resource::Jsonize() const
   if(m_instanceDetailsHasBeenSet)
   {
    payload.WithObject("instanceDetails", m_instanceDetails.Jsonize());
+
+  }
+
+  if(m_eksClusterDetailsHasBeenSet)
+  {
+   payload.WithObject("eksClusterDetails", m_eksClusterDetails.Jsonize());
+
+  }
+
+  if(m_kubernetesDetailsHasBeenSet)
+  {
+   payload.WithObject("kubernetesDetails", m_kubernetesDetails.Jsonize());
 
   }
 

@@ -23,6 +23,7 @@ namespace Aws
         static const int instance_HASH = HashingUtils::HashString("instance");
         static const int ip_HASH = HashingUtils::HashString("ip");
         static const int lambda_HASH = HashingUtils::HashString("lambda");
+        static const int alb_HASH = HashingUtils::HashString("alb");
 
 
         TargetTypeEnum GetTargetTypeEnumForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == lambda_HASH)
           {
             return TargetTypeEnum::lambda;
+          }
+          else if (hashCode == alb_HASH)
+          {
+            return TargetTypeEnum::alb;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "ip";
           case TargetTypeEnum::lambda:
             return "lambda";
+          case TargetTypeEnum::alb:
+            return "alb";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

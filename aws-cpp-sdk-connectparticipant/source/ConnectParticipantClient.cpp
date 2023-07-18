@@ -20,11 +20,14 @@
 #include <aws/connectparticipant/ConnectParticipantClient.h>
 #include <aws/connectparticipant/ConnectParticipantEndpoint.h>
 #include <aws/connectparticipant/ConnectParticipantErrorMarshaller.h>
+#include <aws/connectparticipant/model/CompleteAttachmentUploadRequest.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionRequest.h>
 #include <aws/connectparticipant/model/DisconnectParticipantRequest.h>
+#include <aws/connectparticipant/model/GetAttachmentRequest.h>
 #include <aws/connectparticipant/model/GetTranscriptRequest.h>
 #include <aws/connectparticipant/model/SendEventRequest.h>
 #include <aws/connectparticipant/model/SendMessageRequest.h>
+#include <aws/connectparticipant/model/StartAttachmentUploadRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -73,7 +76,7 @@ ConnectParticipantClient::~ConnectParticipantClient()
 {
 }
 
-void ConnectParticipantClient::init(const ClientConfiguration& config)
+void ConnectParticipantClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ConnectParticipant");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -99,6 +102,36 @@ void ConnectParticipantClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUpload(const CompleteAttachmentUploadRequest& request) const
+{
+  if (!request.ConnectionTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteAttachmentUpload", "Required field: ConnectionToken, is not set");
+    return CompleteAttachmentUploadOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/participant/complete-attachment-upload");
+  return CompleteAttachmentUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CompleteAttachmentUploadOutcomeCallable ConnectParticipantClient::CompleteAttachmentUploadCallable(const CompleteAttachmentUploadRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CompleteAttachmentUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CompleteAttachmentUpload(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectParticipantClient::CompleteAttachmentUploadAsync(const CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CompleteAttachmentUploadAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectParticipantClient::CompleteAttachmentUploadAsyncHelper(const CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CompleteAttachmentUpload(request), context);
+}
+
 CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantConnection(const CreateParticipantConnectionRequest& request) const
 {
   if (!request.ParticipantTokenHasBeenSet())
@@ -107,9 +140,7 @@ CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantCo
     return CreateParticipantConnectionOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ParticipantToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/connection";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/connection");
   return CreateParticipantConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -139,9 +170,7 @@ DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(con
     return DisconnectParticipantOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/disconnect";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/disconnect");
   return DisconnectParticipantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -163,6 +192,36 @@ void ConnectParticipantClient::DisconnectParticipantAsyncHelper(const Disconnect
   handler(this, request, DisconnectParticipant(request), context);
 }
 
+GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachmentRequest& request) const
+{
+  if (!request.ConnectionTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAttachment", "Required field: ConnectionToken, is not set");
+    return GetAttachmentOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/participant/attachment");
+  return GetAttachmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAttachmentOutcomeCallable ConnectParticipantClient::GetAttachmentCallable(const GetAttachmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAttachment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectParticipantClient::GetAttachmentAsync(const GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAttachmentAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectParticipantClient::GetAttachmentAsyncHelper(const GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAttachment(request), context);
+}
+
 GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscriptRequest& request) const
 {
   if (!request.ConnectionTokenHasBeenSet())
@@ -171,9 +230,7 @@ GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscript
     return GetTranscriptOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/transcript";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/transcript");
   return GetTranscriptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -203,9 +260,7 @@ SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& req
     return SendEventOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/event";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/event");
   return SendEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -235,9 +290,7 @@ SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageReques
     return SendMessageOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/message";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/message");
   return SendMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -257,5 +310,35 @@ void ConnectParticipantClient::SendMessageAsync(const SendMessageRequest& reques
 void ConnectParticipantClient::SendMessageAsyncHelper(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendMessage(request), context);
+}
+
+StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(const StartAttachmentUploadRequest& request) const
+{
+  if (!request.ConnectionTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartAttachmentUpload", "Required field: ConnectionToken, is not set");
+    return StartAttachmentUploadOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/participant/start-attachment-upload");
+  return StartAttachmentUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartAttachmentUploadOutcomeCallable ConnectParticipantClient::StartAttachmentUploadCallable(const StartAttachmentUploadRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartAttachmentUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAttachmentUpload(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectParticipantClient::StartAttachmentUploadAsync(const StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartAttachmentUploadAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectParticipantClient::StartAttachmentUploadAsyncHelper(const StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartAttachmentUpload(request), context);
 }
 

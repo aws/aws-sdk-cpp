@@ -33,9 +33,12 @@ ServiceConfiguration::ServiceConfiguration() :
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
+    m_payerResponsibility(PayerResponsibility::NOT_SET),
+    m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -53,9 +56,12 @@ ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) :
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
+    m_payerResponsibility(PayerResponsibility::NOT_SET),
+    m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -145,6 +151,18 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
 
       m_gatewayLoadBalancerArnsHasBeenSet = true;
     }
+    XmlNode supportedIpAddressTypesNode = resultNode.FirstChild("supportedIpAddressTypeSet");
+    if(!supportedIpAddressTypesNode.IsNull())
+    {
+      XmlNode supportedIpAddressTypesMember = supportedIpAddressTypesNode.FirstChild("item");
+      while(!supportedIpAddressTypesMember.IsNull())
+      {
+        m_supportedIpAddressTypes.push_back(ServiceConnectivityTypeMapper::GetServiceConnectivityTypeForName(StringUtils::Trim(supportedIpAddressTypesMember.GetText().c_str())));
+        supportedIpAddressTypesMember = supportedIpAddressTypesMember.NextNode("item");
+      }
+
+      m_supportedIpAddressTypesHasBeenSet = true;
+    }
     XmlNode baseEndpointDnsNamesNode = resultNode.FirstChild("baseEndpointDnsNameSet");
     if(!baseEndpointDnsNamesNode.IsNull())
     {
@@ -168,6 +186,12 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_privateDnsNameConfiguration = privateDnsNameConfigurationNode;
       m_privateDnsNameConfigurationHasBeenSet = true;
+    }
+    XmlNode payerResponsibilityNode = resultNode.FirstChild("payerResponsibility");
+    if(!payerResponsibilityNode.IsNull())
+    {
+      m_payerResponsibility = PayerResponsibilityMapper::GetPayerResponsibilityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerResponsibilityNode.GetText()).c_str()).c_str());
+      m_payerResponsibilityHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -251,6 +275,15 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+      }
+  }
+
   if(m_baseEndpointDnsNamesHasBeenSet)
   {
       unsigned baseEndpointDnsNamesIdx = 1;
@@ -270,6 +303,11 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       Aws::StringStream privateDnsNameConfigurationLocationAndMemberSs;
       privateDnsNameConfigurationLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameConfiguration";
       m_privateDnsNameConfiguration.OutputToStream(oStream, privateDnsNameConfigurationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_payerResponsibilityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -341,6 +379,14 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
         oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+      }
+  }
   if(m_baseEndpointDnsNamesHasBeenSet)
   {
       unsigned baseEndpointDnsNamesIdx = 1;
@@ -358,6 +404,10 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       Aws::String privateDnsNameConfigurationLocationAndMember(location);
       privateDnsNameConfigurationLocationAndMember += ".PrivateDnsNameConfiguration";
       m_privateDnsNameConfiguration.OutputToStream(oStream, privateDnsNameConfigurationLocationAndMember.c_str());
+  }
+  if(m_payerResponsibilityHasBeenSet)
+  {
+      oStream << location << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
   }
   if(m_tagsHasBeenSet)
   {

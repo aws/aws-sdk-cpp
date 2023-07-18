@@ -29,7 +29,8 @@ TypeVersionSummary::TypeVersionSummary() :
     m_isDefaultVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_timeCreatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ TypeVersionSummary::TypeVersionSummary(const XmlNode& xmlNode) :
     m_isDefaultVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_timeCreatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +97,12 @@ TypeVersionSummary& TypeVersionSummary::operator =(const XmlNode& xmlNode)
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode publicVersionNumberNode = resultNode.FirstChild("PublicVersionNumber");
+    if(!publicVersionNumberNode.IsNull())
+    {
+      m_publicVersionNumber = Aws::Utils::Xml::DecodeEscapedXmlText(publicVersionNumberNode.GetText());
+      m_publicVersionNumberHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -137,6 +145,11 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_publicVersionNumberHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
+  }
+
 }
 
 void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -168,6 +181,10 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_publicVersionNumberHasBeenSet)
+  {
+      oStream << location << ".PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
   }
 }
 

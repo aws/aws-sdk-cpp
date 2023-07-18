@@ -17,11 +17,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeDatasetResult::DescribeDatasetResult() : 
+    m_format(InputFormat::NOT_SET),
     m_source(Source::NOT_SET)
 {
 }
 
 DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_format(InputFormat::NOT_SET),
     m_source(Source::NOT_SET)
 {
   *this = result;
@@ -45,6 +47,12 @@ DescribeDatasetResult& DescribeDatasetResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
+
+  }
+
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("Format"));
 
   }
 
@@ -75,6 +83,12 @@ DescribeDatasetResult& DescribeDatasetResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Source"))
   {
     m_source = SourceMapper::GetSourceForName(jsonValue.GetString("Source"));
+
+  }
+
+  if(jsonValue.ValueExists("PathOptions"))
+  {
+    m_pathOptions = jsonValue.GetObject("PathOptions");
 
   }
 

@@ -274,148 +274,142 @@ namespace Model
 
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline const AlgorithmValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline bool ValidationSpecificationHasBeenSet() const { return m_validationSpecificationHasBeenSet; }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline void SetValidationSpecification(const AlgorithmValidationSpecification& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = value; }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline void SetValidationSpecification(AlgorithmValidationSpecification&& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = std::move(value); }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline CreateAlgorithmRequest& WithValidationSpecification(const AlgorithmValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline CreateAlgorithmRequest& WithValidationSpecification(AlgorithmValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 
 
     /**
-     * <p>Whether to certify the algorithm so that it can be listed in AWS
-     * Marketplace.</p>
+     * <p>Whether to certify the algorithm so that it can be listed in Amazon Web
+     * Services Marketplace.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether to certify the algorithm so that it can be listed in AWS
-     * Marketplace.</p>
+     * <p>Whether to certify the algorithm so that it can be listed in Amazon Web
+     * Services Marketplace.</p>
      */
     inline bool CertifyForMarketplaceHasBeenSet() const { return m_certifyForMarketplaceHasBeenSet; }
 
     /**
-     * <p>Whether to certify the algorithm so that it can be listed in AWS
-     * Marketplace.</p>
+     * <p>Whether to certify the algorithm so that it can be listed in Amazon Web
+     * Services Marketplace.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplaceHasBeenSet = true; m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether to certify the algorithm so that it can be listed in AWS
-     * Marketplace.</p>
+     * <p>Whether to certify the algorithm so that it can be listed in Amazon Web
+     * Services Marketplace.</p>
      */
     inline CreateAlgorithmRequest& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateAlgorithmRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateAlgorithmRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateAlgorithmRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateAlgorithmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

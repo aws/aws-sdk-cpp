@@ -23,14 +23,19 @@
 #include <aws/ecr/model/BatchCheckLayerAvailabilityRequest.h>
 #include <aws/ecr/model/BatchDeleteImageRequest.h>
 #include <aws/ecr/model/BatchGetImageRequest.h>
+#include <aws/ecr/model/BatchGetRepositoryScanningConfigurationRequest.h>
 #include <aws/ecr/model/CompleteLayerUploadRequest.h>
+#include <aws/ecr/model/CreatePullThroughCacheRuleRequest.h>
 #include <aws/ecr/model/CreateRepositoryRequest.h>
 #include <aws/ecr/model/DeleteLifecyclePolicyRequest.h>
+#include <aws/ecr/model/DeletePullThroughCacheRuleRequest.h>
 #include <aws/ecr/model/DeleteRegistryPolicyRequest.h>
 #include <aws/ecr/model/DeleteRepositoryRequest.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyRequest.h>
+#include <aws/ecr/model/DescribeImageReplicationStatusRequest.h>
 #include <aws/ecr/model/DescribeImageScanFindingsRequest.h>
 #include <aws/ecr/model/DescribeImagesRequest.h>
+#include <aws/ecr/model/DescribePullThroughCacheRulesRequest.h>
 #include <aws/ecr/model/DescribeRegistryRequest.h>
 #include <aws/ecr/model/DescribeRepositoriesRequest.h>
 #include <aws/ecr/model/GetAuthorizationTokenRequest.h>
@@ -38,6 +43,7 @@
 #include <aws/ecr/model/GetLifecyclePolicyRequest.h>
 #include <aws/ecr/model/GetLifecyclePolicyPreviewRequest.h>
 #include <aws/ecr/model/GetRegistryPolicyRequest.h>
+#include <aws/ecr/model/GetRegistryScanningConfigurationRequest.h>
 #include <aws/ecr/model/GetRepositoryPolicyRequest.h>
 #include <aws/ecr/model/InitiateLayerUploadRequest.h>
 #include <aws/ecr/model/ListImagesRequest.h>
@@ -47,6 +53,7 @@
 #include <aws/ecr/model/PutImageTagMutabilityRequest.h>
 #include <aws/ecr/model/PutLifecyclePolicyRequest.h>
 #include <aws/ecr/model/PutRegistryPolicyRequest.h>
+#include <aws/ecr/model/PutRegistryScanningConfigurationRequest.h>
 #include <aws/ecr/model/PutReplicationConfigurationRequest.h>
 #include <aws/ecr/model/SetRepositoryPolicyRequest.h>
 #include <aws/ecr/model/StartImageScanRequest.h>
@@ -102,7 +109,7 @@ ECRClient::~ECRClient()
 {
 }
 
-void ECRClient::init(const ClientConfiguration& config)
+void ECRClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ECR");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -131,9 +138,6 @@ void ECRClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchCheckLayerAvailabilityOutcome ECRClient::BatchCheckLayerAvailability(const BatchCheckLayerAvailabilityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchCheckLayerAvailabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -158,9 +162,6 @@ void ECRClient::BatchCheckLayerAvailabilityAsyncHelper(const BatchCheckLayerAvai
 BatchDeleteImageOutcome ECRClient::BatchDeleteImage(const BatchDeleteImageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeleteImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -185,9 +186,6 @@ void ECRClient::BatchDeleteImageAsyncHelper(const BatchDeleteImageRequest& reque
 BatchGetImageOutcome ECRClient::BatchGetImage(const BatchGetImageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchGetImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -209,12 +207,33 @@ void ECRClient::BatchGetImageAsyncHelper(const BatchGetImageRequest& request, co
   handler(this, request, BatchGetImage(request), context);
 }
 
+BatchGetRepositoryScanningConfigurationOutcome ECRClient::BatchGetRepositoryScanningConfiguration(const BatchGetRepositoryScanningConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchGetRepositoryScanningConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetRepositoryScanningConfigurationOutcomeCallable ECRClient::BatchGetRepositoryScanningConfigurationCallable(const BatchGetRepositoryScanningConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetRepositoryScanningConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetRepositoryScanningConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::BatchGetRepositoryScanningConfigurationAsync(const BatchGetRepositoryScanningConfigurationRequest& request, const BatchGetRepositoryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetRepositoryScanningConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::BatchGetRepositoryScanningConfigurationAsyncHelper(const BatchGetRepositoryScanningConfigurationRequest& request, const BatchGetRepositoryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetRepositoryScanningConfiguration(request), context);
+}
+
 CompleteLayerUploadOutcome ECRClient::CompleteLayerUpload(const CompleteLayerUploadRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CompleteLayerUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -236,12 +255,33 @@ void ECRClient::CompleteLayerUploadAsyncHelper(const CompleteLayerUploadRequest&
   handler(this, request, CompleteLayerUpload(request), context);
 }
 
+CreatePullThroughCacheRuleOutcome ECRClient::CreatePullThroughCacheRule(const CreatePullThroughCacheRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreatePullThroughCacheRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePullThroughCacheRuleOutcomeCallable ECRClient::CreatePullThroughCacheRuleCallable(const CreatePullThroughCacheRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePullThroughCacheRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePullThroughCacheRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::CreatePullThroughCacheRuleAsync(const CreatePullThroughCacheRuleRequest& request, const CreatePullThroughCacheRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePullThroughCacheRuleAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::CreatePullThroughCacheRuleAsyncHelper(const CreatePullThroughCacheRuleRequest& request, const CreatePullThroughCacheRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePullThroughCacheRule(request), context);
+}
+
 CreateRepositoryOutcome ECRClient::CreateRepository(const CreateRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -266,9 +306,6 @@ void ECRClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& reque
 DeleteLifecyclePolicyOutcome ECRClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteLifecyclePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -290,12 +327,33 @@ void ECRClient::DeleteLifecyclePolicyAsyncHelper(const DeleteLifecyclePolicyRequ
   handler(this, request, DeleteLifecyclePolicy(request), context);
 }
 
+DeletePullThroughCacheRuleOutcome ECRClient::DeletePullThroughCacheRule(const DeletePullThroughCacheRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeletePullThroughCacheRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePullThroughCacheRuleOutcomeCallable ECRClient::DeletePullThroughCacheRuleCallable(const DeletePullThroughCacheRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePullThroughCacheRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePullThroughCacheRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::DeletePullThroughCacheRuleAsync(const DeletePullThroughCacheRuleRequest& request, const DeletePullThroughCacheRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePullThroughCacheRuleAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::DeletePullThroughCacheRuleAsyncHelper(const DeletePullThroughCacheRuleRequest& request, const DeletePullThroughCacheRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePullThroughCacheRule(request), context);
+}
+
 DeleteRegistryPolicyOutcome ECRClient::DeleteRegistryPolicy(const DeleteRegistryPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteRegistryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -320,9 +378,6 @@ void ECRClient::DeleteRegistryPolicyAsyncHelper(const DeleteRegistryPolicyReques
 DeleteRepositoryOutcome ECRClient::DeleteRepository(const DeleteRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -347,9 +402,6 @@ void ECRClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& reque
 DeleteRepositoryPolicyOutcome ECRClient::DeleteRepositoryPolicy(const DeleteRepositoryPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteRepositoryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -371,12 +423,33 @@ void ECRClient::DeleteRepositoryPolicyAsyncHelper(const DeleteRepositoryPolicyRe
   handler(this, request, DeleteRepositoryPolicy(request), context);
 }
 
+DescribeImageReplicationStatusOutcome ECRClient::DescribeImageReplicationStatus(const DescribeImageReplicationStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeImageReplicationStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeImageReplicationStatusOutcomeCallable ECRClient::DescribeImageReplicationStatusCallable(const DescribeImageReplicationStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeImageReplicationStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImageReplicationStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::DescribeImageReplicationStatusAsync(const DescribeImageReplicationStatusRequest& request, const DescribeImageReplicationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageReplicationStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::DescribeImageReplicationStatusAsyncHelper(const DescribeImageReplicationStatusRequest& request, const DescribeImageReplicationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeImageReplicationStatus(request), context);
+}
+
 DescribeImageScanFindingsOutcome ECRClient::DescribeImageScanFindings(const DescribeImageScanFindingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeImageScanFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -401,9 +474,6 @@ void ECRClient::DescribeImageScanFindingsAsyncHelper(const DescribeImageScanFind
 DescribeImagesOutcome ECRClient::DescribeImages(const DescribeImagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -425,12 +495,33 @@ void ECRClient::DescribeImagesAsyncHelper(const DescribeImagesRequest& request, 
   handler(this, request, DescribeImages(request), context);
 }
 
+DescribePullThroughCacheRulesOutcome ECRClient::DescribePullThroughCacheRules(const DescribePullThroughCacheRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribePullThroughCacheRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribePullThroughCacheRulesOutcomeCallable ECRClient::DescribePullThroughCacheRulesCallable(const DescribePullThroughCacheRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePullThroughCacheRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePullThroughCacheRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::DescribePullThroughCacheRulesAsync(const DescribePullThroughCacheRulesRequest& request, const DescribePullThroughCacheRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePullThroughCacheRulesAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::DescribePullThroughCacheRulesAsyncHelper(const DescribePullThroughCacheRulesRequest& request, const DescribePullThroughCacheRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePullThroughCacheRules(request), context);
+}
+
 DescribeRegistryOutcome ECRClient::DescribeRegistry(const DescribeRegistryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -455,9 +546,6 @@ void ECRClient::DescribeRegistryAsyncHelper(const DescribeRegistryRequest& reque
 DescribeRepositoriesOutcome ECRClient::DescribeRepositories(const DescribeRepositoriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeRepositoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -482,9 +570,6 @@ void ECRClient::DescribeRepositoriesAsyncHelper(const DescribeRepositoriesReques
 GetAuthorizationTokenOutcome ECRClient::GetAuthorizationToken(const GetAuthorizationTokenRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAuthorizationTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -509,9 +594,6 @@ void ECRClient::GetAuthorizationTokenAsyncHelper(const GetAuthorizationTokenRequ
 GetDownloadUrlForLayerOutcome ECRClient::GetDownloadUrlForLayer(const GetDownloadUrlForLayerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDownloadUrlForLayerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -536,9 +618,6 @@ void ECRClient::GetDownloadUrlForLayerAsyncHelper(const GetDownloadUrlForLayerRe
 GetLifecyclePolicyOutcome ECRClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetLifecyclePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -563,9 +642,6 @@ void ECRClient::GetLifecyclePolicyAsyncHelper(const GetLifecyclePolicyRequest& r
 GetLifecyclePolicyPreviewOutcome ECRClient::GetLifecyclePolicyPreview(const GetLifecyclePolicyPreviewRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetLifecyclePolicyPreviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -590,9 +666,6 @@ void ECRClient::GetLifecyclePolicyPreviewAsyncHelper(const GetLifecyclePolicyPre
 GetRegistryPolicyOutcome ECRClient::GetRegistryPolicy(const GetRegistryPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRegistryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -614,12 +687,33 @@ void ECRClient::GetRegistryPolicyAsyncHelper(const GetRegistryPolicyRequest& req
   handler(this, request, GetRegistryPolicy(request), context);
 }
 
+GetRegistryScanningConfigurationOutcome ECRClient::GetRegistryScanningConfiguration(const GetRegistryScanningConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetRegistryScanningConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRegistryScanningConfigurationOutcomeCallable ECRClient::GetRegistryScanningConfigurationCallable(const GetRegistryScanningConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRegistryScanningConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRegistryScanningConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::GetRegistryScanningConfigurationAsync(const GetRegistryScanningConfigurationRequest& request, const GetRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRegistryScanningConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::GetRegistryScanningConfigurationAsyncHelper(const GetRegistryScanningConfigurationRequest& request, const GetRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRegistryScanningConfiguration(request), context);
+}
+
 GetRepositoryPolicyOutcome ECRClient::GetRepositoryPolicy(const GetRepositoryPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRepositoryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -644,9 +738,6 @@ void ECRClient::GetRepositoryPolicyAsyncHelper(const GetRepositoryPolicyRequest&
 InitiateLayerUploadOutcome ECRClient::InitiateLayerUpload(const InitiateLayerUploadRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return InitiateLayerUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -671,9 +762,6 @@ void ECRClient::InitiateLayerUploadAsyncHelper(const InitiateLayerUploadRequest&
 ListImagesOutcome ECRClient::ListImages(const ListImagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -698,9 +786,6 @@ void ECRClient::ListImagesAsyncHelper(const ListImagesRequest& request, const Li
 ListTagsForResourceOutcome ECRClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -725,9 +810,6 @@ void ECRClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
 PutImageOutcome ECRClient::PutImage(const PutImageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -752,9 +834,6 @@ void ECRClient::PutImageAsyncHelper(const PutImageRequest& request, const PutIma
 PutImageScanningConfigurationOutcome ECRClient::PutImageScanningConfiguration(const PutImageScanningConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutImageScanningConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -779,9 +858,6 @@ void ECRClient::PutImageScanningConfigurationAsyncHelper(const PutImageScanningC
 PutImageTagMutabilityOutcome ECRClient::PutImageTagMutability(const PutImageTagMutabilityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutImageTagMutabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -806,9 +882,6 @@ void ECRClient::PutImageTagMutabilityAsyncHelper(const PutImageTagMutabilityRequ
 PutLifecyclePolicyOutcome ECRClient::PutLifecyclePolicy(const PutLifecyclePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutLifecyclePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -833,9 +906,6 @@ void ECRClient::PutLifecyclePolicyAsyncHelper(const PutLifecyclePolicyRequest& r
 PutRegistryPolicyOutcome ECRClient::PutRegistryPolicy(const PutRegistryPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutRegistryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -857,12 +927,33 @@ void ECRClient::PutRegistryPolicyAsyncHelper(const PutRegistryPolicyRequest& req
   handler(this, request, PutRegistryPolicy(request), context);
 }
 
+PutRegistryScanningConfigurationOutcome ECRClient::PutRegistryScanningConfiguration(const PutRegistryScanningConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutRegistryScanningConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutRegistryScanningConfigurationOutcomeCallable ECRClient::PutRegistryScanningConfigurationCallable(const PutRegistryScanningConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRegistryScanningConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRegistryScanningConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::PutRegistryScanningConfigurationAsync(const PutRegistryScanningConfigurationRequest& request, const PutRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRegistryScanningConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::PutRegistryScanningConfigurationAsyncHelper(const PutRegistryScanningConfigurationRequest& request, const PutRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRegistryScanningConfiguration(request), context);
+}
+
 PutReplicationConfigurationOutcome ECRClient::PutReplicationConfiguration(const PutReplicationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -887,9 +978,6 @@ void ECRClient::PutReplicationConfigurationAsyncHelper(const PutReplicationConfi
 SetRepositoryPolicyOutcome ECRClient::SetRepositoryPolicy(const SetRepositoryPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SetRepositoryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -914,9 +1002,6 @@ void ECRClient::SetRepositoryPolicyAsyncHelper(const SetRepositoryPolicyRequest&
 StartImageScanOutcome ECRClient::StartImageScan(const StartImageScanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartImageScanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -941,9 +1026,6 @@ void ECRClient::StartImageScanAsyncHelper(const StartImageScanRequest& request, 
 StartLifecyclePolicyPreviewOutcome ECRClient::StartLifecyclePolicyPreview(const StartLifecyclePolicyPreviewRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartLifecyclePolicyPreviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -968,9 +1050,6 @@ void ECRClient::StartLifecyclePolicyPreviewAsyncHelper(const StartLifecyclePolic
 TagResourceOutcome ECRClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -995,9 +1074,6 @@ void ECRClient::TagResourceAsyncHelper(const TagResourceRequest& request, const 
 UntagResourceOutcome ECRClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1022,9 +1098,6 @@ void ECRClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
 UploadLayerPartOutcome ECRClient::UploadLayerPart(const UploadLayerPartRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UploadLayerPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

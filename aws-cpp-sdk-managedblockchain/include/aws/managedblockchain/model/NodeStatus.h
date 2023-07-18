@@ -18,11 +18,13 @@ namespace Model
     NOT_SET,
     CREATING,
     AVAILABLE,
+    UNHEALTHY,
     CREATE_FAILED,
     UPDATING,
     DELETING,
     DELETED,
-    FAILED
+    FAILED,
+    INACCESSIBLE_ENCRYPTION_KEY
   };
 
 namespace NodeStatusMapper

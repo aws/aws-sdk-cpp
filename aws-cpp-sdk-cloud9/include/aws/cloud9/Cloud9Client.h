@@ -123,22 +123,22 @@ namespace Model
     typedef std::function<void(const Cloud9Client*, const Model::UpdateEnvironmentMembershipRequest&, const Model::UpdateEnvironmentMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentMembershipResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Cloud9</fullname> <p>AWS Cloud9 is a collection of tools that you
-   * can use to code, build, run, test, debug, and release software in the cloud.</p>
-   * <p>For more information about AWS Cloud9, see the <a
-   * href="https://docs.aws.amazon.com/cloud9/latest/user-guide">AWS Cloud9 User
-   * Guide</a>.</p> <p>AWS Cloud9 supports these operations:</p> <ul> <li> <p>
-   * <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development
-   * environment, launches an Amazon EC2 instance, and then connects from the
-   * instance to the environment.</p> </li> <li> <p>
-   * <code>CreateEnvironmentMembership</code>: Adds an environment member to an
-   * environment.</p> </li> <li> <p> <code>DeleteEnvironment</code>: Deletes an
-   * environment. If an Amazon EC2 instance is connected to the environment, also
-   * terminates the instance.</p> </li> <li> <p>
-   * <code>DeleteEnvironmentMembership</code>: Deletes an environment member from an
-   * environment.</p> </li> <li> <p> <code>DescribeEnvironmentMemberships</code>:
-   * Gets information about environment members for an environment.</p> </li> <li>
-   * <p> <code>DescribeEnvironments</code>: Gets information about environments.</p>
+   * <fullname>Cloud9</fullname> <p>Cloud9 is a collection of tools that you can use
+   * to code, build, run, test, debug, and release software in the cloud.</p> <p>For
+   * more information about Cloud9, see the <a
+   * href="https://docs.aws.amazon.com/cloud9/latest/user-guide">Cloud9 User
+   * Guide</a>.</p> <p>Cloud9 supports these operations:</p> <ul> <li> <p>
+   * <code>CreateEnvironmentEC2</code>: Creates an Cloud9 development environment,
+   * launches an Amazon EC2 instance, and then connects from the instance to the
+   * environment.</p> </li> <li> <p> <code>CreateEnvironmentMembership</code>: Adds
+   * an environment member to an environment.</p> </li> <li> <p>
+   * <code>DeleteEnvironment</code>: Deletes an environment. If an Amazon EC2
+   * instance is connected to the environment, also terminates the instance.</p>
+   * </li> <li> <p> <code>DeleteEnvironmentMembership</code>: Deletes an environment
+   * member from an environment.</p> </li> <li> <p>
+   * <code>DescribeEnvironmentMemberships</code>: Gets information about environment
+   * members for an environment.</p> </li> <li> <p>
+   * <code>DescribeEnvironments</code>: Gets information about environments.</p>
    * </li> <li> <p> <code>DescribeEnvironmentStatus</code>: Gets status information
    * for an environment.</p> </li> <li> <p> <code>ListEnvironments</code>: Gets a
    * list of environment identifiers.</p> </li> <li> <p>
@@ -178,8 +178,8 @@ namespace Model
 
 
         /**
-         * <p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic
-         * Compute Cloud (Amazon EC2) instance, and then connects from the instance to the
+         * <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute
+         * Cloud (Amazon EC2) instance, and then connects from the instance to the
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">AWS
          * API Reference</a></p>
@@ -187,29 +187,17 @@ namespace Model
         virtual Model::CreateEnvironmentEC2Outcome CreateEnvironmentEC2(const Model::CreateEnvironmentEC2Request& request) const;
 
         /**
-         * <p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic
-         * Compute Cloud (Amazon EC2) instance, and then connects from the instance to the
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateEnvironmentEC2 that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEnvironmentEC2OutcomeCallable CreateEnvironmentEC2Callable(const Model::CreateEnvironmentEC2Request& request) const;
 
         /**
-         * <p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic
-         * Compute Cloud (Amazon EC2) instance, and then connects from the instance to the
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateEnvironmentEC2 that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEnvironmentEC2Async(const Model::CreateEnvironmentEC2Request& request, const CreateEnvironmentEC2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds an environment member to an AWS Cloud9 development
+         * <p>Adds an environment member to an Cloud9 development
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentMembership">AWS
          * API Reference</a></p>
@@ -217,27 +205,17 @@ namespace Model
         virtual Model::CreateEnvironmentMembershipOutcome CreateEnvironmentMembership(const Model::CreateEnvironmentMembershipRequest& request) const;
 
         /**
-         * <p>Adds an environment member to an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentMembership">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateEnvironmentMembership that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEnvironmentMembershipOutcomeCallable CreateEnvironmentMembershipCallable(const Model::CreateEnvironmentMembershipRequest& request) const;
 
         /**
-         * <p>Adds an environment member to an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentMembership">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateEnvironmentMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEnvironmentMembershipAsync(const Model::CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is
+         * <p>Deletes an Cloud9 development environment. If an Amazon EC2 instance is
          * connected to the environment, also terminates the instance.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">AWS
@@ -246,29 +224,17 @@ namespace Model
         virtual Model::DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is
-         * connected to the environment, also terminates the instance.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is
-         * connected to the environment, also terminates the instance.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an environment member from an AWS Cloud9 development
+         * <p>Deletes an environment member from an Cloud9 development
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironmentMembership">AWS
          * API Reference</a></p>
@@ -276,27 +242,17 @@ namespace Model
         virtual Model::DeleteEnvironmentMembershipOutcome DeleteEnvironmentMembership(const Model::DeleteEnvironmentMembershipRequest& request) const;
 
         /**
-         * <p>Deletes an environment member from an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironmentMembership">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteEnvironmentMembership that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEnvironmentMembershipOutcomeCallable DeleteEnvironmentMembershipCallable(const Model::DeleteEnvironmentMembershipRequest& request) const;
 
         /**
-         * <p>Deletes an environment member from an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironmentMembership">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteEnvironmentMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEnvironmentMembershipAsync(const Model::DeleteEnvironmentMembershipRequest& request, const DeleteEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about environment members for an AWS Cloud9 development
+         * <p>Gets information about environment members for an Cloud9 development
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentMemberships">AWS
          * API Reference</a></p>
@@ -304,55 +260,35 @@ namespace Model
         virtual Model::DescribeEnvironmentMembershipsOutcome DescribeEnvironmentMemberships(const Model::DescribeEnvironmentMembershipsRequest& request) const;
 
         /**
-         * <p>Gets information about environment members for an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentMemberships">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeEnvironmentMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEnvironmentMembershipsOutcomeCallable DescribeEnvironmentMembershipsCallable(const Model::DescribeEnvironmentMembershipsRequest& request) const;
 
         /**
-         * <p>Gets information about environment members for an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentMemberships">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeEnvironmentMemberships that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEnvironmentMembershipsAsync(const Model::DescribeEnvironmentMembershipsRequest& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets status information for an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets status information for an Cloud9 development environment.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEnvironmentStatusOutcome DescribeEnvironmentStatus(const Model::DescribeEnvironmentStatusRequest& request) const;
 
         /**
-         * <p>Gets status information for an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeEnvironmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEnvironmentStatusOutcomeCallable DescribeEnvironmentStatusCallable(const Model::DescribeEnvironmentStatusRequest& request) const;
 
         /**
-         * <p>Gets status information for an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeEnvironmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEnvironmentStatusAsync(const Model::DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about AWS Cloud9 development environments.</p><p><h3>See
+         * <p>Gets information about Cloud9 development environments.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironments">AWS
          * API Reference</a></p>
@@ -360,27 +296,17 @@ namespace Model
         virtual Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request) const;
 
         /**
-         * <p>Gets information about AWS Cloud9 development environments.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request) const;
 
         /**
-         * <p>Gets information about AWS Cloud9 development environments.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of AWS Cloud9 development environment identifiers.</p><p><h3>See
+         * <p>Gets a list of Cloud9 development environment identifiers.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListEnvironments">AWS
          * API Reference</a></p>
@@ -388,27 +314,17 @@ namespace Model
         virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
 
         /**
-         * <p>Gets a list of AWS Cloud9 development environment identifiers.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListEnvironments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const Model::ListEnvironmentsRequest& request) const;
 
         /**
-         * <p>Gets a list of AWS Cloud9 development environment identifiers.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListEnvironments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of the tags associated with an AWS Cloud9 development
+         * <p>Gets a list of the tags associated with an Cloud9 development
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -416,89 +332,54 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets a list of the tags associated with an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets a list of the tags associated with an AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
-         * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds tags to an Cloud9 development environment.</p>  <p>Tags that
+         * you add to an Cloud9 environment by using this method will NOT be automatically
+         * propagated to underlying resources.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
-         * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> <p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
-         * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> <p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from an AWS Cloud9 development environment.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes tags from an Cloud9 development environment.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an AWS Cloud9 development environment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an AWS Cloud9 development environment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the settings of an existing AWS Cloud9 development
+         * <p>Changes the settings of an existing Cloud9 development
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironment">AWS
          * API Reference</a></p>
@@ -506,27 +387,17 @@ namespace Model
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p>Changes the settings of an existing AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p>Changes the settings of an existing AWS Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the settings of an existing environment member for an AWS Cloud9
+         * <p>Changes the settings of an existing environment member for an Cloud9
          * development environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironmentMembership">AWS
          * API Reference</a></p>
@@ -534,22 +405,12 @@ namespace Model
         virtual Model::UpdateEnvironmentMembershipOutcome UpdateEnvironmentMembership(const Model::UpdateEnvironmentMembershipRequest& request) const;
 
         /**
-         * <p>Changes the settings of an existing environment member for an AWS Cloud9
-         * development environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironmentMembership">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateEnvironmentMembership that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateEnvironmentMembershipOutcomeCallable UpdateEnvironmentMembershipCallable(const Model::UpdateEnvironmentMembershipRequest& request) const;
 
         /**
-         * <p>Changes the settings of an existing environment member for an AWS Cloud9
-         * development environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironmentMembership">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateEnvironmentMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateEnvironmentMembershipAsync(const Model::UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

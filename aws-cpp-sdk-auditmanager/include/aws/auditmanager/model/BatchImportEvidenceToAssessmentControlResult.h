@@ -34,44 +34,44 @@ namespace Model
 
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
      */
     inline const Aws::Vector<BatchImportEvidenceToAssessmentControlError>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
      */
     inline void SetErrors(const Aws::Vector<BatchImportEvidenceToAssessmentControlError>& value) { m_errors = value; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
      */
     inline void SetErrors(Aws::Vector<BatchImportEvidenceToAssessmentControlError>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
      */
     inline BatchImportEvidenceToAssessmentControlResult& WithErrors(const Aws::Vector<BatchImportEvidenceToAssessmentControlError>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
      */
     inline BatchImportEvidenceToAssessmentControlResult& WithErrors(Aws::Vector<BatchImportEvidenceToAssessmentControlError>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
      */
     inline BatchImportEvidenceToAssessmentControlResult& AddErrors(const BatchImportEvidenceToAssessmentControlError& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
+     * <p> A list of errors that the
+     * <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
      */
     inline BatchImportEvidenceToAssessmentControlResult& AddErrors(BatchImportEvidenceToAssessmentControlError&& value) { m_errors.push_back(std::move(value)); return *this; }
 

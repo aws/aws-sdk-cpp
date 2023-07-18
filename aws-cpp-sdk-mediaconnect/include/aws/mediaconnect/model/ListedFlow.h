@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/SourceType.h>
 #include <aws/mediaconnect/model/Status.h>
+#include <aws/mediaconnect/model/Maintenance.h>
 #include <utility>
 
 namespace Aws
@@ -277,6 +278,25 @@ namespace Model
      */
     inline ListedFlow& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Maintenance& GetMaintenance() const{ return m_maintenance; }
+
+    
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    
+    inline void SetMaintenance(const Maintenance& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    
+    inline void SetMaintenance(Maintenance&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    
+    inline ListedFlow& WithMaintenance(const Maintenance& value) { SetMaintenance(value); return *this;}
+
+    
+    inline ListedFlow& WithMaintenance(Maintenance&& value) { SetMaintenance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -296,6 +316,9 @@ namespace Model
 
     Status m_status;
     bool m_statusHasBeenSet;
+
+    Maintenance m_maintenance;
+    bool m_maintenanceHasBeenSet;
   };
 
 } // namespace Model

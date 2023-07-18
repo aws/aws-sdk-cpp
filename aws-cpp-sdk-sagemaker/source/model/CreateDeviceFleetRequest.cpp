@@ -17,7 +17,9 @@ CreateDeviceFleetRequest::CreateDeviceFleetRequest() :
     m_roleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableIotRoleAlias(false),
+    m_enableIotRoleAliasHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,12 @@ Aws::String CreateDeviceFleetRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_enableIotRoleAliasHasBeenSet)
+  {
+   payload.WithBool("EnableIotRoleAlias", m_enableIotRoleAlias);
 
   }
 

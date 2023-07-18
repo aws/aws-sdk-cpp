@@ -33,50 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline CreateMeetingDialOutRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline CreateMeetingDialOutRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Chime SDK meeting ID.</p> <p>Type: String</p> <p>Pattern:
-     * [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</p> <p>Required: No</p>
+     * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline CreateMeetingDialOutRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
 
@@ -165,57 +157,57 @@ namespace Model
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline const Aws::String& GetJoinToken() const{ return m_joinToken; }
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline bool JoinTokenHasBeenSet() const { return m_joinTokenHasBeenSet; }
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline void SetJoinToken(const Aws::String& value) { m_joinTokenHasBeenSet = true; m_joinToken = value; }
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline void SetJoinToken(Aws::String&& value) { m_joinTokenHasBeenSet = true; m_joinToken = std::move(value); }
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline void SetJoinToken(const char* value) { m_joinTokenHasBeenSet = true; m_joinToken.assign(value); }
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline CreateMeetingDialOutRequest& WithJoinToken(const Aws::String& value) { SetJoinToken(value); return *this;}
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline CreateMeetingDialOutRequest& WithJoinToken(Aws::String&& value) { SetJoinToken(std::move(value)); return *this;}
 
     /**
      * <p>Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-     * CreateAttendee API</a> to get a join token. </p>
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     * action to get a join token.</p>
      */
     inline CreateMeetingDialOutRequest& WithJoinToken(const char* value) { SetJoinToken(value); return *this;}
 

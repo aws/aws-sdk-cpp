@@ -133,6 +133,21 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("PrimaryRegion"))
+  {
+    m_primaryRegion = jsonValue.GetString("PrimaryRegion");
+
+  }
+
+  if(jsonValue.ValueExists("ReplicationStatus"))
+  {
+    Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
+    for(unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex)
+    {
+      m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

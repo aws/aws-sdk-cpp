@@ -20,6 +20,8 @@ namespace Model
 
 BucketMetadata::BucketMetadata() : 
     m_accountIdHasBeenSet(false),
+    m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
+    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
     m_bucketArnHasBeenSet(false),
     m_bucketCreatedAtHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
@@ -27,6 +29,9 @@ BucketMetadata::BucketMetadata() :
     m_classifiableObjectCountHasBeenSet(false),
     m_classifiableSizeInBytes(0),
     m_classifiableSizeInBytesHasBeenSet(false),
+    m_errorCode(BucketMetadataErrorCode::NOT_SET),
+    m_errorCodeHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
@@ -35,6 +40,7 @@ BucketMetadata::BucketMetadata() :
     m_publicAccessHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_replicationDetailsHasBeenSet(false),
+    m_serverSideEncryptionHasBeenSet(false),
     m_sharedAccess(SharedAccess::NOT_SET),
     m_sharedAccessHasBeenSet(false),
     m_sizeInBytes(0),
@@ -51,6 +57,8 @@ BucketMetadata::BucketMetadata() :
 
 BucketMetadata::BucketMetadata(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
+    m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
+    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
     m_bucketArnHasBeenSet(false),
     m_bucketCreatedAtHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
@@ -58,6 +66,9 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_classifiableObjectCountHasBeenSet(false),
     m_classifiableSizeInBytes(0),
     m_classifiableSizeInBytesHasBeenSet(false),
+    m_errorCode(BucketMetadataErrorCode::NOT_SET),
+    m_errorCodeHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
@@ -66,6 +77,7 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_publicAccessHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_replicationDetailsHasBeenSet(false),
+    m_serverSideEncryptionHasBeenSet(false),
     m_sharedAccess(SharedAccess::NOT_SET),
     m_sharedAccessHasBeenSet(false),
     m_sizeInBytes(0),
@@ -88,6 +100,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
 
     m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("allowsUnencryptedObjectUploads"))
+  {
+    m_allowsUnencryptedObjectUploads = AllowsUnencryptedObjectUploadsMapper::GetAllowsUnencryptedObjectUploadsForName(jsonValue.GetString("allowsUnencryptedObjectUploads"));
+
+    m_allowsUnencryptedObjectUploadsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bucketArn"))
@@ -123,6 +142,20 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_classifiableSizeInBytes = jsonValue.GetInt64("classifiableSizeInBytes");
 
     m_classifiableSizeInBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = BucketMetadataErrorCodeMapper::GetBucketMetadataErrorCodeForName(jsonValue.GetString("errorCode"));
+
+    m_errorCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+
+    m_errorMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobDetails"))
@@ -172,6 +205,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_replicationDetails = jsonValue.GetObject("replicationDetails");
 
     m_replicationDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serverSideEncryption"))
+  {
+    m_serverSideEncryption = jsonValue.GetObject("serverSideEncryption");
+
+    m_serverSideEncryptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sharedAccess"))
@@ -239,6 +279,11 @@ JsonValue BucketMetadata::Jsonize() const
 
   }
 
+  if(m_allowsUnencryptedObjectUploadsHasBeenSet)
+  {
+   payload.WithString("allowsUnencryptedObjectUploads", AllowsUnencryptedObjectUploadsMapper::GetNameForAllowsUnencryptedObjectUploads(m_allowsUnencryptedObjectUploads));
+  }
+
   if(m_bucketArnHasBeenSet)
   {
    payload.WithString("bucketArn", m_bucketArn);
@@ -265,6 +310,17 @@ JsonValue BucketMetadata::Jsonize() const
   if(m_classifiableSizeInBytesHasBeenSet)
   {
    payload.WithInt64("classifiableSizeInBytes", m_classifiableSizeInBytes);
+
+  }
+
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", BucketMetadataErrorCodeMapper::GetNameForBucketMetadataErrorCode(m_errorCode));
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("errorMessage", m_errorMessage);
 
   }
 
@@ -306,6 +362,12 @@ JsonValue BucketMetadata::Jsonize() const
   if(m_replicationDetailsHasBeenSet)
   {
    payload.WithObject("replicationDetails", m_replicationDetails.Jsonize());
+
+  }
+
+  if(m_serverSideEncryptionHasBeenSet)
+  {
+   payload.WithObject("serverSideEncryption", m_serverSideEncryption.Jsonize());
 
   }
 

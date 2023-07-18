@@ -44,6 +44,15 @@ DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<Jso
 DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("actionsRequired"))
+  {
+    Array<JsonView> actionsRequiredJsonList = jsonValue.GetArray("actionsRequired");
+    for(unsigned actionsRequiredIndex = 0; actionsRequiredIndex < actionsRequiredJsonList.GetLength(); ++actionsRequiredIndex)
+    {
+      m_actionsRequired.push_back(actionsRequiredJsonList[actionsRequiredIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("authenticationStrategy"))
   {
     m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));

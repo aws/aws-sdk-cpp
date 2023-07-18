@@ -16,8 +16,8 @@ namespace Model
   enum class FeedbackType
   {
     NOT_SET,
-    Negative,
-    Positive
+    Positive,
+    Negative
   };
 
 namespace FeedbackTypeMapper

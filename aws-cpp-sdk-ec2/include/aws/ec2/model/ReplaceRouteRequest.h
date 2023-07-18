@@ -691,6 +691,47 @@ namespace Model
      */
     inline ReplaceRouteRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline ReplaceRouteRequest& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline ReplaceRouteRequest& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline ReplaceRouteRequest& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidrBlock;
@@ -740,6 +781,9 @@ namespace Model
 
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
+
+    Aws::String m_coreNetworkArn;
+    bool m_coreNetworkArnHasBeenSet;
   };
 
 } // namespace Model

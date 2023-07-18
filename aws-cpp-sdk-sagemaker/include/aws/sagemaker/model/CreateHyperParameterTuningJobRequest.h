@@ -42,72 +42,72 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline const Aws::String& GetHyperParameterTuningJobName() const{ return m_hyperParameterTuningJobName; }
 
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
 
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
 
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline void SetHyperParameterTuningJobName(Aws::String&& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = std::move(value); }
 
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline void SetHyperParameterTuningJobName(const char* value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName.assign(value); }
 
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const Aws::String& value) { SetHyperParameterTuningJobName(value); return *this;}
 
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(Aws::String&& value) { SetHyperParameterTuningJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
-     * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
-     * sensitive.</p>
+     * same Amazon Web Services account and Amazon Web Services Region. The name must
+     * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
+     * (hyphen). The name is not case sensitive.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const char* value) { SetHyperParameterTuningJobName(value); return *this;}
 
@@ -375,82 +375,82 @@ namespace Model
 
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
-     * added to all training jobs that the tuning job launches.</p>
+     * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
+     * job are also added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

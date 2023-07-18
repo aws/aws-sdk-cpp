@@ -70,7 +70,7 @@ PersonalizeRuntimeClient::~PersonalizeRuntimeClient()
 {
 }
 
-void PersonalizeRuntimeClient::init(const ClientConfiguration& config)
+void PersonalizeRuntimeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Personalize Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -99,9 +99,7 @@ void PersonalizeRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(const GetPersonalizedRankingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/personalize-ranking";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/personalize-ranking");
   return GetPersonalizedRankingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -126,9 +124,7 @@ void PersonalizeRuntimeClient::GetPersonalizedRankingAsyncHelper(const GetPerson
 GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const GetRecommendationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recommendations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recommendations");
   return GetRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

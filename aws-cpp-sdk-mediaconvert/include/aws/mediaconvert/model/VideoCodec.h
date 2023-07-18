@@ -25,7 +25,8 @@ namespace Model
     PRORES,
     VC3,
     VP8,
-    VP9
+    VP9,
+    XAVC
   };
 
 namespace VideoCodecMapper

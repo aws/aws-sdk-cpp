@@ -29,7 +29,8 @@ namespace Model
    * <li> <p> <a>ResourceQuery</a> - Use a resource query to specify a set of tag
    * keys and values. All resources in the same AWS Region and AWS account that have
    * those keys with the same values are included in the group. You can add a
-   * resource query when you create the group.</p> </li> <li> <p>
+   * resource query when you create the group, or later by using the
+   * <a>PutGroupConfiguration</a> operation.</p> </li> <li> <p>
    * <a>GroupConfiguration</a> - Use a service configuration to associate the group
    * with an AWS service. The configuration specifies which resource types can be
    * included in the group.</p> </li> </ul><p><h3>See Also:</h3>   <a

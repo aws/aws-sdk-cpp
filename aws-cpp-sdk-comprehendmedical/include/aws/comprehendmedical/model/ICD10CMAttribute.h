@@ -8,6 +8,8 @@
 #include <aws/comprehendmedical/model/ICD10CMAttributeType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/comprehendmedical/model/ICD10CMEntityType.h>
+#include <aws/comprehendmedical/model/ICD10CMRelationshipType.h>
 #include <aws/comprehendmedical/model/ICD10CMTrait.h>
 #include <utility>
 
@@ -303,6 +305,86 @@ namespace Model
      */
     inline ICD10CMAttribute& AddTraits(ICD10CMTrait&& value) { m_traitsHasBeenSet = true; m_traits.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The category of attribute. Can be either of <code>DX_NAME</code> or
+     * <code>TIME_EXPRESSION</code>.</p>
+     */
+    inline const ICD10CMEntityType& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The category of attribute. Can be either of <code>DX_NAME</code> or
+     * <code>TIME_EXPRESSION</code>.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category of attribute. Can be either of <code>DX_NAME</code> or
+     * <code>TIME_EXPRESSION</code>.</p>
+     */
+    inline void SetCategory(const ICD10CMEntityType& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>The category of attribute. Can be either of <code>DX_NAME</code> or
+     * <code>TIME_EXPRESSION</code>.</p>
+     */
+    inline void SetCategory(ICD10CMEntityType&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>The category of attribute. Can be either of <code>DX_NAME</code> or
+     * <code>TIME_EXPRESSION</code>.</p>
+     */
+    inline ICD10CMAttribute& WithCategory(const ICD10CMEntityType& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>The category of attribute. Can be either of <code>DX_NAME</code> or
+     * <code>TIME_EXPRESSION</code>.</p>
+     */
+    inline ICD10CMAttribute& WithCategory(ICD10CMEntityType&& value) { SetCategory(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship can be either of <code>OVERLAP</code> or
+     * <code>SYSTEM_ORGAN_SITE</code>.</p>
+     */
+    inline const ICD10CMRelationshipType& GetRelationshipType() const{ return m_relationshipType; }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship can be either of <code>OVERLAP</code> or
+     * <code>SYSTEM_ORGAN_SITE</code>.</p>
+     */
+    inline bool RelationshipTypeHasBeenSet() const { return m_relationshipTypeHasBeenSet; }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship can be either of <code>OVERLAP</code> or
+     * <code>SYSTEM_ORGAN_SITE</code>.</p>
+     */
+    inline void SetRelationshipType(const ICD10CMRelationshipType& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship can be either of <code>OVERLAP</code> or
+     * <code>SYSTEM_ORGAN_SITE</code>.</p>
+     */
+    inline void SetRelationshipType(ICD10CMRelationshipType&& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = std::move(value); }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship can be either of <code>OVERLAP</code> or
+     * <code>SYSTEM_ORGAN_SITE</code>.</p>
+     */
+    inline ICD10CMAttribute& WithRelationshipType(const ICD10CMRelationshipType& value) { SetRelationshipType(value); return *this;}
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship can be either of <code>OVERLAP</code> or
+     * <code>SYSTEM_ORGAN_SITE</code>.</p>
+     */
+    inline ICD10CMAttribute& WithRelationshipType(ICD10CMRelationshipType&& value) { SetRelationshipType(std::move(value)); return *this;}
+
   private:
 
     ICD10CMAttributeType m_type;
@@ -328,6 +410,12 @@ namespace Model
 
     Aws::Vector<ICD10CMTrait> m_traits;
     bool m_traitsHasBeenSet;
+
+    ICD10CMEntityType m_category;
+    bool m_categoryHasBeenSet;
+
+    ICD10CMRelationshipType m_relationshipType;
+    bool m_relationshipTypeHasBeenSet;
   };
 
 } // namespace Model

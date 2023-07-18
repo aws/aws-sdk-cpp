@@ -40,7 +40,9 @@ JobDescriptor::JobDescriptor() :
     m_terminationDateHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_suspendedDateHasBeenSet(false),
-    m_suspendedCauseHasBeenSet(false)
+    m_suspendedCauseHasBeenSet(false),
+    m_manifestGeneratorHasBeenSet(false),
+    m_generatedManifestDescriptorHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ JobDescriptor::JobDescriptor(const XmlNode& xmlNode) :
     m_terminationDateHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_suspendedDateHasBeenSet(false),
-    m_suspendedCauseHasBeenSet(false)
+    m_suspendedCauseHasBeenSet(false),
+    m_manifestGeneratorHasBeenSet(false),
+    m_generatedManifestDescriptorHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -183,6 +187,18 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
       m_suspendedCause = Aws::Utils::Xml::DecodeEscapedXmlText(suspendedCauseNode.GetText());
       m_suspendedCauseHasBeenSet = true;
     }
+    XmlNode manifestGeneratorNode = resultNode.FirstChild("ManifestGenerator");
+    if(!manifestGeneratorNode.IsNull())
+    {
+      m_manifestGenerator = manifestGeneratorNode;
+      m_manifestGeneratorHasBeenSet = true;
+    }
+    XmlNode generatedManifestDescriptorNode = resultNode.FirstChild("GeneratedManifestDescriptor");
+    if(!generatedManifestDescriptorNode.IsNull())
+    {
+      m_generatedManifestDescriptor = generatedManifestDescriptorNode;
+      m_generatedManifestDescriptorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -299,6 +315,18 @@ void JobDescriptor::AddToNode(XmlNode& parentNode) const
   {
    XmlNode suspendedCauseNode = parentNode.CreateChildElement("SuspendedCause");
    suspendedCauseNode.SetText(m_suspendedCause);
+  }
+
+  if(m_manifestGeneratorHasBeenSet)
+  {
+   XmlNode manifestGeneratorNode = parentNode.CreateChildElement("ManifestGenerator");
+   m_manifestGenerator.AddToNode(manifestGeneratorNode);
+  }
+
+  if(m_generatedManifestDescriptorHasBeenSet)
+  {
+   XmlNode generatedManifestDescriptorNode = parentNode.CreateChildElement("GeneratedManifestDescriptor");
+   m_generatedManifestDescriptor.AddToNode(generatedManifestDescriptorNode);
   }
 
 }

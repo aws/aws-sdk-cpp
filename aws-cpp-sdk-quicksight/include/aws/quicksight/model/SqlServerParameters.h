@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>SQL Server parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for SQL Server.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SqlServerParameters">AWS
    * API Reference</a></p>
    */

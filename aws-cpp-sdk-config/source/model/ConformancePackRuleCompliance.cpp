@@ -21,14 +21,16 @@ namespace Model
 ConformancePackRuleCompliance::ConformancePackRuleCompliance() : 
     m_configRuleNameHasBeenSet(false),
     m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false)
+    m_complianceTypeHasBeenSet(false),
+    m_controlsHasBeenSet(false)
 {
 }
 
 ConformancePackRuleCompliance::ConformancePackRuleCompliance(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false)
+    m_complianceTypeHasBeenSet(false),
+    m_controlsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ ConformancePackRuleCompliance& ConformancePackRuleCompliance::operator =(JsonVie
     m_complianceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Controls"))
+  {
+    Array<JsonView> controlsJsonList = jsonValue.GetArray("Controls");
+    for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
+    {
+      m_controls.push_back(controlsJsonList[controlsIndex].AsString());
+    }
+    m_controlsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +77,17 @@ JsonValue ConformancePackRuleCompliance::Jsonize() const
   if(m_complianceTypeHasBeenSet)
   {
    payload.WithString("ComplianceType", ConformancePackComplianceTypeMapper::GetNameForConformancePackComplianceType(m_complianceType));
+  }
+
+  if(m_controlsHasBeenSet)
+  {
+   Array<JsonValue> controlsJsonList(m_controls.size());
+   for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
+   {
+     controlsJsonList[controlsIndex].AsString(m_controls[controlsIndex]);
+   }
+   payload.WithArray("Controls", std::move(controlsJsonList));
+
   }
 
   return payload;

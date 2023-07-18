@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline const Framework& GetFramework() const{ return m_framework; }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline void SetFramework(const Framework& value) { m_framework = value; }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline void SetFramework(Framework&& value) { m_framework = std::move(value); }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline UpdateAssessmentFrameworkResult& WithFramework(const Framework& value) { SetFramework(value); return *this;}
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline UpdateAssessmentFrameworkResult& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
 

@@ -23,6 +23,8 @@ namespace Aws
         static const int HealthCheckPath_HASH = HashingUtils::HashString("HealthCheckPath");
         static const int SessionStickinessEnabled_HASH = HashingUtils::HashString("SessionStickinessEnabled");
         static const int SessionStickiness_LB_CookieDurationSeconds_HASH = HashingUtils::HashString("SessionStickiness_LB_CookieDurationSeconds");
+        static const int HttpsRedirectionEnabled_HASH = HashingUtils::HashString("HttpsRedirectionEnabled");
+        static const int TlsPolicyName_HASH = HashingUtils::HashString("TlsPolicyName");
 
 
         LoadBalancerAttributeName GetLoadBalancerAttributeNameForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == SessionStickiness_LB_CookieDurationSeconds_HASH)
           {
             return LoadBalancerAttributeName::SessionStickiness_LB_CookieDurationSeconds;
+          }
+          else if (hashCode == HttpsRedirectionEnabled_HASH)
+          {
+            return LoadBalancerAttributeName::HttpsRedirectionEnabled;
+          }
+          else if (hashCode == TlsPolicyName_HASH)
+          {
+            return LoadBalancerAttributeName::TlsPolicyName;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "SessionStickinessEnabled";
           case LoadBalancerAttributeName::SessionStickiness_LB_CookieDurationSeconds:
             return "SessionStickiness_LB_CookieDurationSeconds";
+          case LoadBalancerAttributeName::HttpsRedirectionEnabled:
+            return "HttpsRedirectionEnabled";
+          case LoadBalancerAttributeName::TlsPolicyName:
+            return "TlsPolicyName";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

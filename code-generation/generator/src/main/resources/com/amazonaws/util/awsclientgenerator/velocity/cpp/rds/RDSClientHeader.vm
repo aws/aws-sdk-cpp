@@ -99,6 +99,9 @@ namespace Aws
         void OverrideEndpoint(const Aws::String& endpoint);
     private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+#if($metadata.hasEndpointDiscoveryTrait)
+        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
+#end
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
 #if($metadata.hasEndpointTrait)

@@ -357,20 +357,12 @@ namespace Model
         virtual Model::AddTagsToOnPremisesInstancesOutcome AddTagsToOnPremisesInstances(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Adds tags to on-premises instances.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AddTagsToOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AddTagsToOnPremisesInstancesOutcomeCallable AddTagsToOnPremisesInstancesCallable(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Adds tags to on-premises instances.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AddTagsToOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddTagsToOnPremisesInstancesAsync(const Model::AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -384,24 +376,12 @@ namespace Model
         virtual Model::BatchGetApplicationRevisionsOutcome BatchGetApplicationRevisions(const Model::BatchGetApplicationRevisionsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more application revisions. The maximum number
-         * of application revisions that can be returned is 25.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchGetApplicationRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetApplicationRevisionsOutcomeCallable BatchGetApplicationRevisionsCallable(const Model::BatchGetApplicationRevisionsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more application revisions. The maximum number
-         * of application revisions that can be returned is 25.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchGetApplicationRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetApplicationRevisionsAsync(const Model::BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -414,22 +394,12 @@ namespace Model
         virtual Model::BatchGetApplicationsOutcome BatchGetApplications(const Model::BatchGetApplicationsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more applications. The maximum number of
-         * applications that can be returned is 100.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchGetApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetApplicationsOutcomeCallable BatchGetApplicationsCallable(const Model::BatchGetApplicationsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more applications. The maximum number of
-         * applications that can be returned is 100.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchGetApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetApplicationsAsync(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -442,22 +412,12 @@ namespace Model
         virtual Model::BatchGetDeploymentGroupsOutcome BatchGetDeploymentGroups(const Model::BatchGetDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more deployment groups.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchGetDeploymentGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetDeploymentGroupsOutcomeCallable BatchGetDeploymentGroupsCallable(const Model::BatchGetDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more deployment groups.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchGetDeploymentGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetDeploymentGroupsAsync(const Model::BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -479,40 +439,12 @@ namespace Model
         virtual Model::BatchGetDeploymentTargetsOutcome BatchGetDeploymentTargets(const Model::BatchGetDeploymentTargetsRequest& request) const;
 
         /**
-         * <p> Returns an array of one or more targets associated with a deployment. This
-         * method works with all compute types and should be used instead of the deprecated
-         * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
-         * be returned is 25.</p> <p> The type of targets returned depends on the
-         * deployment's compute platform or deployment method: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
-         * </li> <li> <p> <b>CloudFormation</b>: Information about targets of blue/green
-         * deployments initiated by a CloudFormation stack update.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchGetDeploymentTargets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetDeploymentTargetsOutcomeCallable BatchGetDeploymentTargetsCallable(const Model::BatchGetDeploymentTargetsRequest& request) const;
 
         /**
-         * <p> Returns an array of one or more targets associated with a deployment. This
-         * method works with all compute types and should be used instead of the deprecated
-         * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
-         * be returned is 25.</p> <p> The type of targets returned depends on the
-         * deployment's compute platform or deployment method: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
-         * </li> <li> <p> <b>CloudFormation</b>: Information about targets of blue/green
-         * deployments initiated by a CloudFormation stack update.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchGetDeploymentTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetDeploymentTargetsAsync(const Model::BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -525,22 +457,12 @@ namespace Model
         virtual Model::BatchGetDeploymentsOutcome BatchGetDeployments(const Model::BatchGetDeploymentsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more deployments. The maximum number of
-         * deployments that can be returned is 25.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchGetDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetDeploymentsOutcomeCallable BatchGetDeploymentsCallable(const Model::BatchGetDeploymentsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more deployments. The maximum number of
-         * deployments that can be returned is 25.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchGetDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetDeploymentsAsync(const Model::BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -554,24 +476,12 @@ namespace Model
         virtual Model::BatchGetOnPremisesInstancesOutcome BatchGetOnPremisesInstances(const Model::BatchGetOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more on-premises instances. The maximum number
-         * of on-premises instances that can be returned is 25.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchGetOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetOnPremisesInstancesOutcomeCallable BatchGetOnPremisesInstancesCallable(const Model::BatchGetOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more on-premises instances. The maximum number
-         * of on-premises instances that can be returned is 25.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchGetOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetOnPremisesInstancesAsync(const Model::BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -588,30 +498,12 @@ namespace Model
         virtual Model::ContinueDeploymentOutcome ContinueDeployment(const Model::ContinueDeploymentRequest& request) const;
 
         /**
-         * <p>For a blue/green deployment, starts the process of rerouting traffic from
-         * instances in the original environment to instances in the replacement
-         * environment without waiting for a specified wait time to elapse. (Traffic
-         * rerouting, which is achieved by registering instances in the replacement
-         * environment with the load balancer, can start as soon as all instances have a
-         * status of Ready.) </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ContinueDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ContinueDeploymentOutcomeCallable ContinueDeploymentCallable(const Model::ContinueDeploymentRequest& request) const;
 
         /**
-         * <p>For a blue/green deployment, starts the process of rerouting traffic from
-         * instances in the original environment to instances in the replacement
-         * environment without waiting for a specified wait time to elapse. (Traffic
-         * rerouting, which is achieved by registering instances in the replacement
-         * environment with the load balancer, can start as soon as all instances have a
-         * status of Ready.) </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ContinueDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ContinueDeploymentAsync(const Model::ContinueDeploymentRequest& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -623,20 +515,12 @@ namespace Model
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -649,22 +533,12 @@ namespace Model
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
         /**
-         * <p>Deploys an application revision through the specified deployment
-         * group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
 
         /**
-         * <p>Deploys an application revision through the specified deployment
-         * group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -676,20 +550,12 @@ namespace Model
         virtual Model::CreateDeploymentConfigOutcome CreateDeploymentConfig(const Model::CreateDeploymentConfigRequest& request) const;
 
         /**
-         * <p> Creates a deployment configuration. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDeploymentConfig that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDeploymentConfigOutcomeCallable CreateDeploymentConfigCallable(const Model::CreateDeploymentConfigRequest& request) const;
 
         /**
-         * <p> Creates a deployment configuration. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDeploymentConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDeploymentConfigAsync(const Model::CreateDeploymentConfigRequest& request, const CreateDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -702,22 +568,12 @@ namespace Model
         virtual Model::CreateDeploymentGroupOutcome CreateDeploymentGroup(const Model::CreateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Creates a deployment group to which application revisions are
-         * deployed.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDeploymentGroupOutcomeCallable CreateDeploymentGroupCallable(const Model::CreateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Creates a deployment group to which application revisions are
-         * deployed.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDeploymentGroupAsync(const Model::CreateDeploymentGroupRequest& request, const CreateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -729,20 +585,12 @@ namespace Model
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -756,24 +604,12 @@ namespace Model
         virtual Model::DeleteDeploymentConfigOutcome DeleteDeploymentConfig(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
-         * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDeploymentConfig that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeploymentConfigOutcomeCallable DeleteDeploymentConfigCallable(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
-         * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDeploymentConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeploymentConfigAsync(const Model::DeleteDeploymentConfigRequest& request, const DeleteDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -785,20 +621,12 @@ namespace Model
         virtual Model::DeleteDeploymentGroupOutcome DeleteDeploymentGroup(const Model::DeleteDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Deletes a deployment group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeploymentGroupOutcomeCallable DeleteDeploymentGroupCallable(const Model::DeleteDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Deletes a deployment group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeploymentGroupAsync(const Model::DeleteDeploymentGroupRequest& request, const DeleteDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -810,20 +638,12 @@ namespace Model
         virtual Model::DeleteGitHubAccountTokenOutcome DeleteGitHubAccountToken(const Model::DeleteGitHubAccountTokenRequest& request) const;
 
         /**
-         * <p>Deletes a GitHub account connection.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteGitHubAccountToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteGitHubAccountTokenOutcomeCallable DeleteGitHubAccountTokenCallable(const Model::DeleteGitHubAccountTokenRequest& request) const;
 
         /**
-         * <p>Deletes a GitHub account connection.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteGitHubAccountToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGitHubAccountTokenAsync(const Model::DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -835,20 +655,12 @@ namespace Model
         virtual Model::DeleteResourcesByExternalIdOutcome DeleteResourcesByExternalId(const Model::DeleteResourcesByExternalIdRequest& request) const;
 
         /**
-         * <p>Deletes resources linked to an external ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteResourcesByExternalId">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteResourcesByExternalId that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteResourcesByExternalIdOutcomeCallable DeleteResourcesByExternalIdCallable(const Model::DeleteResourcesByExternalIdRequest& request) const;
 
         /**
-         * <p>Deletes resources linked to an external ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteResourcesByExternalId">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteResourcesByExternalId that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteResourcesByExternalIdAsync(const Model::DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -860,20 +672,12 @@ namespace Model
         virtual Model::DeregisterOnPremisesInstanceOutcome DeregisterOnPremisesInstance(const Model::DeregisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Deregisters an on-premises instance.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeregisterOnPremisesInstance that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterOnPremisesInstanceOutcomeCallable DeregisterOnPremisesInstanceCallable(const Model::DeregisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Deregisters an on-premises instance.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeregisterOnPremisesInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterOnPremisesInstanceAsync(const Model::DeregisterOnPremisesInstanceRequest& request, const DeregisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -885,20 +689,12 @@ namespace Model
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Gets information about an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Gets information about an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -910,20 +706,12 @@ namespace Model
         virtual Model::GetApplicationRevisionOutcome GetApplicationRevision(const Model::GetApplicationRevisionRequest& request) const;
 
         /**
-         * <p>Gets information about an application revision.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetApplicationRevision that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApplicationRevisionOutcomeCallable GetApplicationRevisionCallable(const Model::GetApplicationRevisionRequest& request) const;
 
         /**
-         * <p>Gets information about an application revision.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetApplicationRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApplicationRevisionAsync(const Model::GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -939,28 +727,12 @@ namespace Model
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
-         * property of the <code>appSpecContent</code> object in the returned revision is
-         * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
-         * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
-         * property of the <code>appSpecContent</code> object in the returned revision is
-         * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
-         * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -973,22 +745,12 @@ namespace Model
         virtual Model::GetDeploymentConfigOutcome GetDeploymentConfig(const Model::GetDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment configuration.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeploymentConfig that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentConfigOutcomeCallable GetDeploymentConfigCallable(const Model::GetDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment configuration.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeploymentConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentConfigAsync(const Model::GetDeploymentConfigRequest& request, const GetDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1000,20 +762,12 @@ namespace Model
         virtual Model::GetDeploymentGroupOutcome GetDeploymentGroup(const Model::GetDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentGroupOutcomeCallable GetDeploymentGroupCallable(const Model::GetDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentGroupAsync(const Model::GetDeploymentGroupRequest& request, const GetDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1026,22 +780,12 @@ namespace Model
         virtual Model::GetDeploymentTargetOutcome GetDeploymentTarget(const Model::GetDeploymentTargetRequest& request) const;
 
         /**
-         * <p> Returns information about a deployment target. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeploymentTarget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentTargetOutcomeCallable GetDeploymentTargetCallable(const Model::GetDeploymentTargetRequest& request) const;
 
         /**
-         * <p> Returns information about a deployment target. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeploymentTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentTargetAsync(const Model::GetDeploymentTargetRequest& request, const GetDeploymentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1054,22 +798,12 @@ namespace Model
         virtual Model::GetOnPremisesInstanceOutcome GetOnPremisesInstance(const Model::GetOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p> Gets information about an on-premises instance. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetOnPremisesInstance that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetOnPremisesInstanceOutcomeCallable GetOnPremisesInstanceCallable(const Model::GetOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p> Gets information about an on-premises instance. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetOnPremisesInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetOnPremisesInstanceAsync(const Model::GetOnPremisesInstanceRequest& request, const GetOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1082,22 +816,12 @@ namespace Model
         virtual Model::ListApplicationRevisionsOutcome ListApplicationRevisions(const Model::ListApplicationRevisionsRequest& request) const;
 
         /**
-         * <p>Lists information about revisions for an application.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListApplicationRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListApplicationRevisionsOutcomeCallable ListApplicationRevisionsCallable(const Model::ListApplicationRevisionsRequest& request) const;
 
         /**
-         * <p>Lists information about revisions for an application.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListApplicationRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationRevisionsAsync(const Model::ListApplicationRevisionsRequest& request, const ListApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1110,22 +834,12 @@ namespace Model
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists the applications registered with the IAM user or AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists the applications registered with the IAM user or AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1138,22 +852,12 @@ namespace Model
         virtual Model::ListDeploymentConfigsOutcome ListDeploymentConfigs(const Model::ListDeploymentConfigsRequest& request) const;
 
         /**
-         * <p>Lists the deployment configurations with the IAM user or AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeploymentConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeploymentConfigsOutcomeCallable ListDeploymentConfigsCallable(const Model::ListDeploymentConfigsRequest& request) const;
 
         /**
-         * <p>Lists the deployment configurations with the IAM user or AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeploymentConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeploymentConfigsAsync(const Model::ListDeploymentConfigsRequest& request, const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1166,22 +870,12 @@ namespace Model
         virtual Model::ListDeploymentGroupsOutcome ListDeploymentGroups(const Model::ListDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Lists the deployment groups for an application registered with the IAM user
-         * or AWS account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeploymentGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeploymentGroupsOutcomeCallable ListDeploymentGroupsCallable(const Model::ListDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Lists the deployment groups for an application registered with the IAM user
-         * or AWS account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeploymentGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeploymentGroupsAsync(const Model::ListDeploymentGroupsRequest& request, const ListDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1194,22 +888,12 @@ namespace Model
         virtual Model::ListDeploymentTargetsOutcome ListDeploymentTargets(const Model::ListDeploymentTargetsRequest& request) const;
 
         /**
-         * <p> Returns an array of target IDs that are associated a deployment.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeploymentTargets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeploymentTargetsOutcomeCallable ListDeploymentTargetsCallable(const Model::ListDeploymentTargetsRequest& request) const;
 
         /**
-         * <p> Returns an array of target IDs that are associated a deployment.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeploymentTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeploymentTargetsAsync(const Model::ListDeploymentTargetsRequest& request, const ListDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1222,22 +906,12 @@ namespace Model
         virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments in a deployment group for an application registered
-         * with the IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments in a deployment group for an application registered
-         * with the IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1250,22 +924,12 @@ namespace Model
         virtual Model::ListGitHubAccountTokenNamesOutcome ListGitHubAccountTokenNames(const Model::ListGitHubAccountTokenNamesRequest& request) const;
 
         /**
-         * <p>Lists the names of stored connections to GitHub accounts.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListGitHubAccountTokenNames that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListGitHubAccountTokenNamesOutcomeCallable ListGitHubAccountTokenNamesCallable(const Model::ListGitHubAccountTokenNamesRequest& request) const;
 
         /**
-         * <p>Lists the names of stored connections to GitHub accounts.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListGitHubAccountTokenNames that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGitHubAccountTokenNamesAsync(const Model::ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1280,26 +944,12 @@ namespace Model
         virtual Model::ListOnPremisesInstancesOutcome ListOnPremisesInstances(const Model::ListOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
-         * otherwise specified, both registered and deregistered on-premises instance names
-         * are listed. To list only registered or deregistered on-premises instance names,
-         * use the registration status parameter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListOnPremisesInstancesOutcomeCallable ListOnPremisesInstancesCallable(const Model::ListOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
-         * otherwise specified, both registered and deregistered on-premises instance names
-         * are listed. To list only registered or deregistered on-premises instance names,
-         * use the registration status parameter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOnPremisesInstancesAsync(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1313,24 +963,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns a list of tags for the resource identified by a specified Amazon
-         * Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy
-         * resources. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns a list of tags for the resource identified by a specified Amazon
-         * Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy
-         * resources. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1354,44 +992,12 @@ namespace Model
         virtual Model::PutLifecycleEventHookExecutionStatusOutcome PutLifecycleEventHookExecutionStatus(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
 
         /**
-         * <p> Sets the result of a Lambda validation function. The function validates
-         * lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS
-         * compute platform. For AWS Lambda deployments, the available lifecycle hooks are
-         * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon
-         * ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>,
-         * <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
-         * <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda
-         * validation functions return <code>Succeeded</code> or <code>Failed</code>. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
-         * 'hooks' Section for an AWS Lambda Deployment </a> and <a
-         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
-         * 'hooks' Section for an Amazon ECS Deployment</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutLifecycleEventHookExecutionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutLifecycleEventHookExecutionStatusOutcomeCallable PutLifecycleEventHookExecutionStatusCallable(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
 
         /**
-         * <p> Sets the result of a Lambda validation function. The function validates
-         * lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS
-         * compute platform. For AWS Lambda deployments, the available lifecycle hooks are
-         * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon
-         * ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>,
-         * <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
-         * <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda
-         * validation functions return <code>Succeeded</code> or <code>Failed</code>. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
-         * 'hooks' Section for an AWS Lambda Deployment </a> and <a
-         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
-         * 'hooks' Section for an Amazon ECS Deployment</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutLifecycleEventHookExecutionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutLifecycleEventHookExecutionStatusAsync(const Model::PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1404,22 +1010,12 @@ namespace Model
         virtual Model::RegisterApplicationRevisionOutcome RegisterApplicationRevision(const Model::RegisterApplicationRevisionRequest& request) const;
 
         /**
-         * <p>Registers with AWS CodeDeploy a revision for the specified
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RegisterApplicationRevision that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterApplicationRevisionOutcomeCallable RegisterApplicationRevisionCallable(const Model::RegisterApplicationRevisionRequest& request) const;
 
         /**
-         * <p>Registers with AWS CodeDeploy a revision for the specified
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RegisterApplicationRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterApplicationRevisionAsync(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1433,24 +1029,12 @@ namespace Model
         virtual Model::RegisterOnPremisesInstanceOutcome RegisterOnPremisesInstance(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
-         * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RegisterOnPremisesInstance that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterOnPremisesInstanceOutcomeCallable RegisterOnPremisesInstanceCallable(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
-         * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RegisterOnPremisesInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterOnPremisesInstanceAsync(const Model::RegisterOnPremisesInstanceRequest& request, const RegisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1463,22 +1047,12 @@ namespace Model
         virtual Model::RemoveTagsFromOnPremisesInstancesOutcome RemoveTagsFromOnPremisesInstances(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from one or more on-premises
-         * instances.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RemoveTagsFromOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsFromOnPremisesInstancesOutcomeCallable RemoveTagsFromOnPremisesInstancesCallable(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from one or more on-premises
-         * instances.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RemoveTagsFromOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveTagsFromOnPremisesInstancesAsync(const Model::RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1490,20 +1064,12 @@ namespace Model
         virtual Model::StopDeploymentOutcome StopDeployment(const Model::StopDeploymentRequest& request) const;
 
         /**
-         * <p>Attempts to stop an ongoing deployment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StopDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopDeploymentOutcomeCallable StopDeploymentCallable(const Model::StopDeploymentRequest& request) const;
 
         /**
-         * <p>Attempts to stop an ongoing deployment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StopDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopDeploymentAsync(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1517,24 +1083,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p> Associates the list of tags in the input <code>Tags</code> parameter with
-         * the resource identified by the <code>ResourceArn</code> input parameter.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p> Associates the list of tags in the input <code>Tags</code> parameter with
-         * the resource identified by the <code>ResourceArn</code> input parameter.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1549,26 +1103,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p> Disassociates a resource from a list of tags. The resource is identified by
-         * the <code>ResourceArn</code> input parameter. The tags are identified by the
-         * list of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p> Disassociates a resource from a list of tags. The resource is identified by
-         * the <code>ResourceArn</code> input parameter. The tags are identified by the
-         * list of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1580,20 +1120,12 @@ namespace Model
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Changes the name of an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Changes the name of an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1605,20 +1137,12 @@ namespace Model
         virtual Model::UpdateDeploymentGroupOutcome UpdateDeploymentGroup(const Model::UpdateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Changes information about a deployment group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeploymentGroupOutcomeCallable UpdateDeploymentGroupCallable(const Model::UpdateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Changes information about a deployment group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDeploymentGroupAsync(const Model::UpdateDeploymentGroupRequest& request, const UpdateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 RebootReplicationInstanceRequest::RebootReplicationInstanceRequest() : 
     m_replicationInstanceArnHasBeenSet(false),
     m_forceFailover(false),
-    m_forceFailoverHasBeenSet(false)
+    m_forceFailoverHasBeenSet(false),
+    m_forcePlannedFailover(false),
+    m_forcePlannedFailoverHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,12 @@ Aws::String RebootReplicationInstanceRequest::SerializePayload() const
   if(m_forceFailoverHasBeenSet)
   {
    payload.WithBool("ForceFailover", m_forceFailover);
+
+  }
+
+  if(m_forcePlannedFailoverHasBeenSet)
+  {
+   payload.WithBool("ForcePlannedFailover", m_forcePlannedFailover);
 
   }
 

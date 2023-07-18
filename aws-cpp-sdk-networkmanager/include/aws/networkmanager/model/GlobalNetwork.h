@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a global network.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a global network. This is a single private network acting as a
+   * high-level container for your network objects, including an Amazon Web
+   * Services-managed Core Network.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GlobalNetwork">AWS
    * API Reference</a></p>
    */

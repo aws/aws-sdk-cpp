@@ -26,6 +26,7 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <fstream>
+#include <thread>
 
 using namespace Aws;
 using namespace Aws::Utils;
@@ -35,6 +36,16 @@ using namespace Aws::MediaStore;
 using namespace Aws::MediaStore::Model;
 using namespace Aws::MediaStoreData;
 using namespace Aws::MediaStoreData::Model;
+
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
 
 namespace
 {

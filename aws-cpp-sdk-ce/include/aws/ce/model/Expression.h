@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ce/model/Expression.h>
 #include <aws/ce/model/DimensionValues.h>
 #include <aws/ce/model/TagValues.h>
 #include <aws/ce/model/CostCategoryValues.h>
@@ -34,31 +33,34 @@ namespace Model
    * filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
    * <code>GetRightsizingRecommendation</code>, the Region is a full name (for
    * example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-   * example looks like:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [
-   * "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are
-   * OR'd together to retrieve cost or usage data. You can create
+   * example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION",
+   * "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension
+   * values are OR'd together to retrieve cost or usage data. You can create
    * <code>Expression</code> and <code>DimensionValues</code> objects using either
    * <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p>
    * </li> <li> <p>Compound dimension values with logical operations - You can use
    * multiple <code>Expression</code> types and the logical operators
    * <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code>
-   * objects. This allows you to filter on more advanced options. For example, you
-   * can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type
-   * == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code>
-   * for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": {
-   * "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key":
-   * "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key":
-   * "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p>  <p>Because
-   * each <code>Expression</code> can have only one operator, the service returns an
-   * error if more than one is specified. The following example shows an
+   * objects. By doing this, you can filter on more advanced options. For example,
+   * you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR
+   * (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The
+   * <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or":
+   * [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }},
+   * {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions":
+   * { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> 
+   * <p>Because each <code>Expression</code> can have only one operator, the service
+   * returns an error if more than one is specified. The following example shows an
    * <code>Expression</code> object that creates an error.</p>  <p> <code> {
    * "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [
-   * "DataTransfer" ] } } </code> </p> </li> </ul>  <p>For
-   * <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is
-   * not supported. OR is not supported between different dimensions, or dimensions
+   * "DataTransfer" ] } } </code> </p> </li> </ul>  <p>For the
+   * <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT
+   * isn't supported. OR isn't supported between different dimensions, or dimensions
    * and tags. NOT operators aren't supported. Dimensions are also limited to
    * <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-   * <code>RIGHTSIZING_TYPE</code>.</p> <p><h3>See Also:</h3>   <a
+   * <code>RIGHTSIZING_TYPE</code>.</p> <p>For the
+   * <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported.
+   * AND and OR aren't supported. Dimensions are limited to
+   * <code>LINKED_ACCOUNT</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Expression">AWS API
    * Reference</a></p>
    */
@@ -247,32 +249,32 @@ namespace Model
 
 
     /**
-     * <p>The filter based on <code>CostCategory</code> values.</p>
+     * <p>The filter that's based on <code>CostCategory</code> values.</p>
      */
     inline const CostCategoryValues& GetCostCategories() const{ return m_costCategories; }
 
     /**
-     * <p>The filter based on <code>CostCategory</code> values.</p>
+     * <p>The filter that's based on <code>CostCategory</code> values.</p>
      */
     inline bool CostCategoriesHasBeenSet() const { return m_costCategoriesHasBeenSet; }
 
     /**
-     * <p>The filter based on <code>CostCategory</code> values.</p>
+     * <p>The filter that's based on <code>CostCategory</code> values.</p>
      */
     inline void SetCostCategories(const CostCategoryValues& value) { m_costCategoriesHasBeenSet = true; m_costCategories = value; }
 
     /**
-     * <p>The filter based on <code>CostCategory</code> values.</p>
+     * <p>The filter that's based on <code>CostCategory</code> values.</p>
      */
     inline void SetCostCategories(CostCategoryValues&& value) { m_costCategoriesHasBeenSet = true; m_costCategories = std::move(value); }
 
     /**
-     * <p>The filter based on <code>CostCategory</code> values.</p>
+     * <p>The filter that's based on <code>CostCategory</code> values.</p>
      */
     inline Expression& WithCostCategories(const CostCategoryValues& value) { SetCostCategories(value); return *this;}
 
     /**
-     * <p>The filter based on <code>CostCategory</code> values.</p>
+     * <p>The filter that's based on <code>CostCategory</code> values.</p>
      */
     inline Expression& WithCostCategories(CostCategoryValues&& value) { SetCostCategories(std::move(value)); return *this;}
 

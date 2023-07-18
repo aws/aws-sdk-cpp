@@ -20,7 +20,11 @@ StartOutboundVoiceContactRequest::StartOutboundVoiceContactRequest() :
     m_clientTokenHasBeenSet(true),
     m_sourcePhoneNumberHasBeenSet(false),
     m_queueIdHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_answerMachineDetectionConfigHasBeenSet(false),
+    m_campaignIdHasBeenSet(false),
+    m_trafficType(TrafficType::NOT_SET),
+    m_trafficTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,23 @@ Aws::String StartOutboundVoiceContactRequest::SerializePayload() const
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
 
+  }
+
+  if(m_answerMachineDetectionConfigHasBeenSet)
+  {
+   payload.WithObject("AnswerMachineDetectionConfig", m_answerMachineDetectionConfig.Jsonize());
+
+  }
+
+  if(m_campaignIdHasBeenSet)
+  {
+   payload.WithString("CampaignId", m_campaignId);
+
+  }
+
+  if(m_trafficTypeHasBeenSet)
+  {
+   payload.WithString("TrafficType", TrafficTypeMapper::GetNameForTrafficType(m_trafficType));
   }
 
   return payload.View().WriteReadable();

@@ -27,6 +27,7 @@ namespace Aws
         static const int FAILED_WORKFLOW_HASH = HashingUtils::HashString("FAILED_WORKFLOW");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int WORKFLOW_COMPLETED_HASH = HashingUtils::HashString("WORKFLOW_COMPLETED");
 
 
         ReceivedStatus GetReceivedStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ReceivedStatus::DISABLED;
           }
+          else if (hashCode == WORKFLOW_COMPLETED_HASH)
+          {
+            return ReceivedStatus::WORKFLOW_COMPLETED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "DELETED";
           case ReceivedStatus::DISABLED:
             return "DISABLED";
+          case ReceivedStatus::WORKFLOW_COMPLETED:
+            return "WORKFLOW_COMPLETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateAnomalyMonitorRequest::CreateAnomalyMonitorRequest() : 
-    m_anomalyMonitorHasBeenSet(false)
+    m_anomalyMonitorHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,17 @@ Aws::String CreateAnomalyMonitorRequest::SerializePayload() const
   if(m_anomalyMonitorHasBeenSet)
   {
    payload.WithObject("AnomalyMonitor", m_anomalyMonitor.Jsonize());
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+   {
+     resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
+   }
+   payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
 
   }
 

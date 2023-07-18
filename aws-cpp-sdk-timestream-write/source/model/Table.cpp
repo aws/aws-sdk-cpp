@@ -26,7 +26,8 @@ Table::Table() :
     m_tableStatusHasBeenSet(false),
     m_retentionPropertiesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_magneticStoreWritePropertiesHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ Table::Table(JsonView jsonValue) :
     m_tableStatusHasBeenSet(false),
     m_retentionPropertiesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_magneticStoreWritePropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,13 @@ Table& Table::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MagneticStoreWriteProperties"))
+  {
+    m_magneticStoreWriteProperties = jsonValue.GetObject("MagneticStoreWriteProperties");
+
+    m_magneticStoreWritePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue Table::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_magneticStoreWritePropertiesHasBeenSet)
+  {
+   payload.WithObject("MagneticStoreWriteProperties", m_magneticStoreWriteProperties.Jsonize());
+
   }
 
   return payload;

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a type of sensitive data that was detected by
-   * managed data identifiers and produced a sensitive data finding.</p><p><h3>See
+   * <p>Provides information about a type of sensitive data that was detected by a
+   * managed data identifier and produced a sensitive data finding.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DefaultDetection">AWS
    * API Reference</a></p>

@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The field that AWS CloudFormation will change, such as the name of a
-   * resource's property, and whether the resource will be recreated.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The field that CloudFormation will change, such as the name of a resource's
+   * property, and whether the resource will be recreated.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceTargetDefinition">AWS
    * API Reference</a></p>
    */
@@ -142,7 +142,7 @@ namespace Model
      * To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline const RequiresRecreation& GetRequiresRecreation() const{ return m_requiresRecreation; }
 
@@ -153,7 +153,7 @@ namespace Model
      * To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline bool RequiresRecreationHasBeenSet() const { return m_requiresRecreationHasBeenSet; }
 
@@ -164,7 +164,7 @@ namespace Model
      * To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline void SetRequiresRecreation(const RequiresRecreation& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = value; }
 
@@ -175,7 +175,7 @@ namespace Model
      * To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline void SetRequiresRecreation(RequiresRecreation&& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = std::move(value); }
 
@@ -186,7 +186,7 @@ namespace Model
      * To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline ResourceTargetDefinition& WithRequiresRecreation(const RequiresRecreation& value) { SetRequiresRecreation(value); return *this;}
 
@@ -197,7 +197,7 @@ namespace Model
      * To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline ResourceTargetDefinition& WithRequiresRecreation(RequiresRecreation&& value) { SetRequiresRecreation(std::move(value)); return *this;}
 

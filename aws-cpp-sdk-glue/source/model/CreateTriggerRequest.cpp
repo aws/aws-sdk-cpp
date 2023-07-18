@@ -23,7 +23,8 @@ CreateTriggerRequest::CreateTriggerRequest() :
     m_descriptionHasBeenSet(false),
     m_startOnCreation(false),
     m_startOnCreationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_eventBatchingConditionHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,12 @@ Aws::String CreateTriggerRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_eventBatchingConditionHasBeenSet)
+  {
+   payload.WithObject("EventBatchingCondition", m_eventBatchingCondition.Jsonize());
 
   }
 

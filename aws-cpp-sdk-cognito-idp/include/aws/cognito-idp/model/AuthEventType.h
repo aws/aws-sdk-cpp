@@ -252,43 +252,43 @@ namespace Model
 
 
     /**
-     * <p>The user context data captured at the time of an event request. It provides
-     * additional information about the client from which event the request is
+     * <p>The user context data captured at the time of an event request. This value
+     * provides additional information about the client from which event the request is
      * received.</p>
      */
     inline const EventContextDataType& GetEventContextData() const{ return m_eventContextData; }
 
     /**
-     * <p>The user context data captured at the time of an event request. It provides
-     * additional information about the client from which event the request is
+     * <p>The user context data captured at the time of an event request. This value
+     * provides additional information about the client from which event the request is
      * received.</p>
      */
     inline bool EventContextDataHasBeenSet() const { return m_eventContextDataHasBeenSet; }
 
     /**
-     * <p>The user context data captured at the time of an event request. It provides
-     * additional information about the client from which event the request is
+     * <p>The user context data captured at the time of an event request. This value
+     * provides additional information about the client from which event the request is
      * received.</p>
      */
     inline void SetEventContextData(const EventContextDataType& value) { m_eventContextDataHasBeenSet = true; m_eventContextData = value; }
 
     /**
-     * <p>The user context data captured at the time of an event request. It provides
-     * additional information about the client from which event the request is
+     * <p>The user context data captured at the time of an event request. This value
+     * provides additional information about the client from which event the request is
      * received.</p>
      */
     inline void SetEventContextData(EventContextDataType&& value) { m_eventContextDataHasBeenSet = true; m_eventContextData = std::move(value); }
 
     /**
-     * <p>The user context data captured at the time of an event request. It provides
-     * additional information about the client from which event the request is
+     * <p>The user context data captured at the time of an event request. This value
+     * provides additional information about the client from which event the request is
      * received.</p>
      */
     inline AuthEventType& WithEventContextData(const EventContextDataType& value) { SetEventContextData(value); return *this;}
 
     /**
-     * <p>The user context data captured at the time of an event request. It provides
-     * additional information about the client from which event the request is
+     * <p>The user context data captured at the time of an event request. This value
+     * provides additional information about the client from which event the request is
      * received.</p>
      */
     inline AuthEventType& WithEventContextData(EventContextDataType&& value) { SetEventContextData(std::move(value)); return *this;}

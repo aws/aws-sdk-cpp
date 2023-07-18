@@ -159,49 +159,49 @@ namespace Model
 
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline CreateStreamRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline CreateStreamRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * <p>An IAM role that allows the IoT service principal to access your S3
      * files.</p>
      */
     inline CreateStreamRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

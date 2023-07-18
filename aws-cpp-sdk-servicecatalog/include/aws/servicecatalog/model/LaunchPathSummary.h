@@ -165,42 +165,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline LaunchPathSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline LaunchPathSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the portfolio to which the user was assigned.</p>
+     * <p>The name of the portfolio that contains the product. </p>
      */
     inline LaunchPathSummary& WithName(const char* value) { SetName(value); return *this;}
 

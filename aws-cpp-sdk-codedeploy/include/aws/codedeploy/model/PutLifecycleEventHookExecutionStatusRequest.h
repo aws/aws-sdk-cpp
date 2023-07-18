@@ -134,38 +134,44 @@ namespace Model
 
 
     /**
-     * <p>The result of a Lambda function that validates a deployment lifecycle event
-     * (<code>Succeeded</code> or <code>Failed</code>).</p>
+     * <p>The result of a Lambda function that validates a deployment lifecycle event.
+     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
+     * <code>status</code>.</p>
      */
     inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The result of a Lambda function that validates a deployment lifecycle event
-     * (<code>Succeeded</code> or <code>Failed</code>).</p>
+     * <p>The result of a Lambda function that validates a deployment lifecycle event.
+     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
+     * <code>status</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The result of a Lambda function that validates a deployment lifecycle event
-     * (<code>Succeeded</code> or <code>Failed</code>).</p>
+     * <p>The result of a Lambda function that validates a deployment lifecycle event.
+     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
+     * <code>status</code>.</p>
      */
     inline void SetStatus(const LifecycleEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The result of a Lambda function that validates a deployment lifecycle event
-     * (<code>Succeeded</code> or <code>Failed</code>).</p>
+     * <p>The result of a Lambda function that validates a deployment lifecycle event.
+     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
+     * <code>status</code>.</p>
      */
     inline void SetStatus(LifecycleEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The result of a Lambda function that validates a deployment lifecycle event
-     * (<code>Succeeded</code> or <code>Failed</code>).</p>
+     * <p>The result of a Lambda function that validates a deployment lifecycle event.
+     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
+     * <code>status</code>.</p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithStatus(const LifecycleEventStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The result of a Lambda function that validates a deployment lifecycle event
-     * (<code>Succeeded</code> or <code>Failed</code>).</p>
+     * <p>The result of a Lambda function that validates a deployment lifecycle event.
+     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
+     * <code>status</code>.</p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithStatus(LifecycleEventStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -2,11 +2,22 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <aws/s3-encryption/S3EncryptionClient.h>
-#include <aws/s3-encryption/modules/CryptoModule.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <aws/core/utils/logging/LogMacros.h>
+
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
+
+#include <aws/s3-encryption/modules/CryptoModule.h>
+#include <aws/s3-encryption/S3EncryptionClient.h>
 
 using namespace Aws::Utils::Crypto;
 using namespace Aws::Client;

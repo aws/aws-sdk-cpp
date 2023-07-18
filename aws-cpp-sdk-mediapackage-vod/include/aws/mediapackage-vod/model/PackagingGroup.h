@@ -7,6 +7,7 @@
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage-vod/model/Authorization.h>
+#include <aws/mediapackage-vod/model/EgressAccessLogs.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -140,6 +141,25 @@ namespace Model
     inline PackagingGroup& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
+    
+    inline const EgressAccessLogs& GetEgressAccessLogs() const{ return m_egressAccessLogs; }
+
+    
+    inline bool EgressAccessLogsHasBeenSet() const { return m_egressAccessLogsHasBeenSet; }
+
+    
+    inline void SetEgressAccessLogs(const EgressAccessLogs& value) { m_egressAccessLogsHasBeenSet = true; m_egressAccessLogs = value; }
+
+    
+    inline void SetEgressAccessLogs(EgressAccessLogs&& value) { m_egressAccessLogsHasBeenSet = true; m_egressAccessLogs = std::move(value); }
+
+    
+    inline PackagingGroup& WithEgressAccessLogs(const EgressAccessLogs& value) { SetEgressAccessLogs(value); return *this;}
+
+    
+    inline PackagingGroup& WithEgressAccessLogs(EgressAccessLogs&& value) { SetEgressAccessLogs(std::move(value)); return *this;}
+
+
     /**
      * The ID of the PackagingGroup.
      */
@@ -230,6 +250,9 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
+    EgressAccessLogs m_egressAccessLogs;
+    bool m_egressAccessLogsHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

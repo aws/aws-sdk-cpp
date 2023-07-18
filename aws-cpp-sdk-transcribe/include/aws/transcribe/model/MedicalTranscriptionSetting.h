@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Optional settings for the <a>StartMedicalTranscriptionJob</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Allows additional optional settings in your request, including channel
+   * identification, alternative transcriptions, and speaker labeling; allows you to
+   * apply custom vocabularies to your medical transcription job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionSetting">AWS
    * API Reference</a></p>
    */
@@ -39,247 +41,343 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recognition labels individual
-     * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
-     * to true, you must also set the maximum number of speaker labels in the
-     * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
+     * <p>Enables speaker identification (diarization) in your transcription output.
+     * Speaker identification labels the speech from individual speakers in your media
+     * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. If you set both, your request returns a
-     * <code>BadRequestException</code>.</p>
+     * same request. Including both parameters returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * speakers (diarization)</a>.</p>
      */
     inline bool GetShowSpeakerLabels() const{ return m_showSpeakerLabels; }
 
     /**
-     * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recognition labels individual
-     * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
-     * to true, you must also set the maximum number of speaker labels in the
-     * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
+     * <p>Enables speaker identification (diarization) in your transcription output.
+     * Speaker identification labels the speech from individual speakers in your media
+     * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. If you set both, your request returns a
-     * <code>BadRequestException</code>.</p>
+     * same request. Including both parameters returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * speakers (diarization)</a>.</p>
      */
     inline bool ShowSpeakerLabelsHasBeenSet() const { return m_showSpeakerLabelsHasBeenSet; }
 
     /**
-     * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recognition labels individual
-     * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
-     * to true, you must also set the maximum number of speaker labels in the
-     * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
+     * <p>Enables speaker identification (diarization) in your transcription output.
+     * Speaker identification labels the speech from individual speakers in your media
+     * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. If you set both, your request returns a
-     * <code>BadRequestException</code>.</p>
+     * same request. Including both parameters returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * speakers (diarization)</a>.</p>
      */
     inline void SetShowSpeakerLabels(bool value) { m_showSpeakerLabelsHasBeenSet = true; m_showSpeakerLabels = value; }
 
     /**
-     * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recognition labels individual
-     * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
-     * to true, you must also set the maximum number of speaker labels in the
-     * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
+     * <p>Enables speaker identification (diarization) in your transcription output.
+     * Speaker identification labels the speech from individual speakers in your media
+     * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. If you set both, your request returns a
-     * <code>BadRequestException</code>.</p>
+     * same request. Including both parameters returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * speakers (diarization)</a>.</p>
      */
     inline MedicalTranscriptionSetting& WithShowSpeakerLabels(bool value) { SetShowSpeakerLabels(value); return *this;}
 
 
     /**
-     * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers are identified as
-     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
-     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * <p>Specify the maximum number of speakers you want to identify in your
+     * media.</p> <p>Note that if your media contains more speakers than the specified
+     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
+     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline int GetMaxSpeakerLabels() const{ return m_maxSpeakerLabels; }
 
     /**
-     * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers are identified as
-     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
-     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * <p>Specify the maximum number of speakers you want to identify in your
+     * media.</p> <p>Note that if your media contains more speakers than the specified
+     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
+     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline bool MaxSpeakerLabelsHasBeenSet() const { return m_maxSpeakerLabelsHasBeenSet; }
 
     /**
-     * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers are identified as
-     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
-     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * <p>Specify the maximum number of speakers you want to identify in your
+     * media.</p> <p>Note that if your media contains more speakers than the specified
+     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
+     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline void SetMaxSpeakerLabels(int value) { m_maxSpeakerLabelsHasBeenSet = true; m_maxSpeakerLabels = value; }
 
     /**
-     * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers are identified as
-     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
-     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * <p>Specify the maximum number of speakers you want to identify in your
+     * media.</p> <p>Note that if your media contains more speakers than the specified
+     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
+     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline MedicalTranscriptionSetting& WithMaxSpeakerLabels(int value) { SetMaxSpeakerLabels(value); return *this;}
 
 
     /**
-     * <p>Instructs Amazon Transcribe Medical to process each audio channel separately
-     * and then merge the transcription output of each channel into a single
-     * transcription.</p> <p>Amazon Transcribe Medical also produces a transcription of
-     * each item detected on an audio channel, including the start time and end time of
-     * the item and alternative transcriptions of item. The alternative transcriptions
-     * also come with confidence scores provided by Amazon Transcribe Medical.</p>
-     * <p>You can't set both <code>ShowSpeakerLabels</code> and
-     * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * <p>Enables channel identification in multi-channel audio.</p> <p>Channel
+     * identification transcribes the audio on each channel independently, then appends
+     * the output for each channel into one transcript.</p> <p>If you have
+     * multi-channel audio and do not enable channel identification, your audio is
+     * transcribed in a continuous manner and your transcript does not separate the
+     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
+     * and <code>ChannelIdentification</code> in the same request. Including both
+     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
+     * multi-channel audio</a>.</p>
      */
     inline bool GetChannelIdentification() const{ return m_channelIdentification; }
 
     /**
-     * <p>Instructs Amazon Transcribe Medical to process each audio channel separately
-     * and then merge the transcription output of each channel into a single
-     * transcription.</p> <p>Amazon Transcribe Medical also produces a transcription of
-     * each item detected on an audio channel, including the start time and end time of
-     * the item and alternative transcriptions of item. The alternative transcriptions
-     * also come with confidence scores provided by Amazon Transcribe Medical.</p>
-     * <p>You can't set both <code>ShowSpeakerLabels</code> and
-     * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * <p>Enables channel identification in multi-channel audio.</p> <p>Channel
+     * identification transcribes the audio on each channel independently, then appends
+     * the output for each channel into one transcript.</p> <p>If you have
+     * multi-channel audio and do not enable channel identification, your audio is
+     * transcribed in a continuous manner and your transcript does not separate the
+     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
+     * and <code>ChannelIdentification</code> in the same request. Including both
+     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
+     * multi-channel audio</a>.</p>
      */
     inline bool ChannelIdentificationHasBeenSet() const { return m_channelIdentificationHasBeenSet; }
 
     /**
-     * <p>Instructs Amazon Transcribe Medical to process each audio channel separately
-     * and then merge the transcription output of each channel into a single
-     * transcription.</p> <p>Amazon Transcribe Medical also produces a transcription of
-     * each item detected on an audio channel, including the start time and end time of
-     * the item and alternative transcriptions of item. The alternative transcriptions
-     * also come with confidence scores provided by Amazon Transcribe Medical.</p>
-     * <p>You can't set both <code>ShowSpeakerLabels</code> and
-     * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * <p>Enables channel identification in multi-channel audio.</p> <p>Channel
+     * identification transcribes the audio on each channel independently, then appends
+     * the output for each channel into one transcript.</p> <p>If you have
+     * multi-channel audio and do not enable channel identification, your audio is
+     * transcribed in a continuous manner and your transcript does not separate the
+     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
+     * and <code>ChannelIdentification</code> in the same request. Including both
+     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
+     * multi-channel audio</a>.</p>
      */
     inline void SetChannelIdentification(bool value) { m_channelIdentificationHasBeenSet = true; m_channelIdentification = value; }
 
     /**
-     * <p>Instructs Amazon Transcribe Medical to process each audio channel separately
-     * and then merge the transcription output of each channel into a single
-     * transcription.</p> <p>Amazon Transcribe Medical also produces a transcription of
-     * each item detected on an audio channel, including the start time and end time of
-     * the item and alternative transcriptions of item. The alternative transcriptions
-     * also come with confidence scores provided by Amazon Transcribe Medical.</p>
-     * <p>You can't set both <code>ShowSpeakerLabels</code> and
-     * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * <p>Enables channel identification in multi-channel audio.</p> <p>Channel
+     * identification transcribes the audio on each channel independently, then appends
+     * the output for each channel into one transcript.</p> <p>If you have
+     * multi-channel audio and do not enable channel identification, your audio is
+     * transcribed in a continuous manner and your transcript does not separate the
+     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
+     * and <code>ChannelIdentification</code> in the same request. Including both
+     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
+     * multi-channel audio</a>.</p>
      */
     inline MedicalTranscriptionSetting& WithChannelIdentification(bool value) { SetChannelIdentification(value); return *this;}
 
 
     /**
-     * <p>Determines whether alternative transcripts are generated along with the
-     * transcript that has the highest confidence. If you set
-     * <code>ShowAlternatives</code> field to true, you must also set the maximum
-     * number of alternatives to return in the <code>MaxAlternatives</code> field.</p>
+     * <p>To include alternative transcriptions within your transcription output,
+     * include <code>ShowAlternatives</code> in your transcription request.</p> <p>If
+     * you include <code>ShowAlternatives</code>, you must also include
+     * <code>MaxAlternatives</code>, which is the maximum number of alternative
+     * transcriptions you want Amazon Transcribe Medical to generate.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline bool GetShowAlternatives() const{ return m_showAlternatives; }
 
     /**
-     * <p>Determines whether alternative transcripts are generated along with the
-     * transcript that has the highest confidence. If you set
-     * <code>ShowAlternatives</code> field to true, you must also set the maximum
-     * number of alternatives to return in the <code>MaxAlternatives</code> field.</p>
+     * <p>To include alternative transcriptions within your transcription output,
+     * include <code>ShowAlternatives</code> in your transcription request.</p> <p>If
+     * you include <code>ShowAlternatives</code>, you must also include
+     * <code>MaxAlternatives</code>, which is the maximum number of alternative
+     * transcriptions you want Amazon Transcribe Medical to generate.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline bool ShowAlternativesHasBeenSet() const { return m_showAlternativesHasBeenSet; }
 
     /**
-     * <p>Determines whether alternative transcripts are generated along with the
-     * transcript that has the highest confidence. If you set
-     * <code>ShowAlternatives</code> field to true, you must also set the maximum
-     * number of alternatives to return in the <code>MaxAlternatives</code> field.</p>
+     * <p>To include alternative transcriptions within your transcription output,
+     * include <code>ShowAlternatives</code> in your transcription request.</p> <p>If
+     * you include <code>ShowAlternatives</code>, you must also include
+     * <code>MaxAlternatives</code>, which is the maximum number of alternative
+     * transcriptions you want Amazon Transcribe Medical to generate.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline void SetShowAlternatives(bool value) { m_showAlternativesHasBeenSet = true; m_showAlternatives = value; }
 
     /**
-     * <p>Determines whether alternative transcripts are generated along with the
-     * transcript that has the highest confidence. If you set
-     * <code>ShowAlternatives</code> field to true, you must also set the maximum
-     * number of alternatives to return in the <code>MaxAlternatives</code> field.</p>
+     * <p>To include alternative transcriptions within your transcription output,
+     * include <code>ShowAlternatives</code> in your transcription request.</p> <p>If
+     * you include <code>ShowAlternatives</code>, you must also include
+     * <code>MaxAlternatives</code>, which is the maximum number of alternative
+     * transcriptions you want Amazon Transcribe Medical to generate.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline MedicalTranscriptionSetting& WithShowAlternatives(bool value) { SetShowAlternatives(value); return *this;}
 
 
     /**
-     * <p>The maximum number of alternatives that you tell the service to return. If
-     * you specify the <code>MaxAlternatives</code> field, you must set the
-     * <code>ShowAlternatives</code> field to true.</p>
+     * <p>Indicate the maximum number of alternative transcriptions you want Amazon
+     * Transcribe Medical to include in your transcript.</p> <p>If you select a number
+     * greater than the number of alternative transcriptions generated by Amazon
+     * Transcribe Medical, only the actual number of alternative transcriptions are
+     * included.</p> <p>If you include <code>MaxAlternatives</code> in your request,
+     * you must also include <code>ShowAlternatives</code> with a value of
+     * <code>true</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline int GetMaxAlternatives() const{ return m_maxAlternatives; }
 
     /**
-     * <p>The maximum number of alternatives that you tell the service to return. If
-     * you specify the <code>MaxAlternatives</code> field, you must set the
-     * <code>ShowAlternatives</code> field to true.</p>
+     * <p>Indicate the maximum number of alternative transcriptions you want Amazon
+     * Transcribe Medical to include in your transcript.</p> <p>If you select a number
+     * greater than the number of alternative transcriptions generated by Amazon
+     * Transcribe Medical, only the actual number of alternative transcriptions are
+     * included.</p> <p>If you include <code>MaxAlternatives</code> in your request,
+     * you must also include <code>ShowAlternatives</code> with a value of
+     * <code>true</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline bool MaxAlternativesHasBeenSet() const { return m_maxAlternativesHasBeenSet; }
 
     /**
-     * <p>The maximum number of alternatives that you tell the service to return. If
-     * you specify the <code>MaxAlternatives</code> field, you must set the
-     * <code>ShowAlternatives</code> field to true.</p>
+     * <p>Indicate the maximum number of alternative transcriptions you want Amazon
+     * Transcribe Medical to include in your transcript.</p> <p>If you select a number
+     * greater than the number of alternative transcriptions generated by Amazon
+     * Transcribe Medical, only the actual number of alternative transcriptions are
+     * included.</p> <p>If you include <code>MaxAlternatives</code> in your request,
+     * you must also include <code>ShowAlternatives</code> with a value of
+     * <code>true</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline void SetMaxAlternatives(int value) { m_maxAlternativesHasBeenSet = true; m_maxAlternatives = value; }
 
     /**
-     * <p>The maximum number of alternatives that you tell the service to return. If
-     * you specify the <code>MaxAlternatives</code> field, you must set the
-     * <code>ShowAlternatives</code> field to true.</p>
+     * <p>Indicate the maximum number of alternative transcriptions you want Amazon
+     * Transcribe Medical to include in your transcript.</p> <p>If you select a number
+     * greater than the number of alternative transcriptions generated by Amazon
+     * Transcribe Medical, only the actual number of alternative transcriptions are
+     * included.</p> <p>If you include <code>MaxAlternatives</code> in your request,
+     * you must also include <code>ShowAlternatives</code> with a value of
+     * <code>true</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+     * transcriptions</a>.</p>
      */
     inline MedicalTranscriptionSetting& WithMaxAlternatives(int value) { SetMaxAlternatives(value); return *this;}
 
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline MedicalTranscriptionSetting& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline MedicalTranscriptionSetting& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary to use when processing a medical transcription
-     * job.</p>
+     * <p>The name of the custom vocabulary you want to use when processing your
+     * medical transcription job. Vocabulary names are case sensitive.</p> <p>The
+     * language of the specified vocabulary must match the language code you specify in
+     * your transcription request. If the languages don't match, the vocabulary isn't
+     * applied. There are no errors or warnings associated with a language mismatch. US
+     * English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+     * Medical.</p>
      */
     inline MedicalTranscriptionSetting& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 

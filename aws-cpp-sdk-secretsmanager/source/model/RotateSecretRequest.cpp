@@ -17,7 +17,9 @@ RotateSecretRequest::RotateSecretRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_rotationLambdaARNHasBeenSet(false),
-    m_rotationRulesHasBeenSet(false)
+    m_rotationRulesHasBeenSet(false),
+    m_rotateImmediately(false),
+    m_rotateImmediatelyHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,12 @@ Aws::String RotateSecretRequest::SerializePayload() const
   if(m_rotationRulesHasBeenSet)
   {
    payload.WithObject("RotationRules", m_rotationRules.Jsonize());
+
+  }
+
+  if(m_rotateImmediatelyHasBeenSet)
+  {
+   payload.WithBool("RotateImmediately", m_rotateImmediately);
 
   }
 

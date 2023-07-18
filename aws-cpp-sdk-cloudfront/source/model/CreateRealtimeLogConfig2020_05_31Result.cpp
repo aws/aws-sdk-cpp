@@ -19,19 +19,23 @@ CreateRealtimeLogConfig2020_05_31Result::CreateRealtimeLogConfig2020_05_31Result
 {
 }
 
-CreateRealtimeLogConfig2020_05_31Result::CreateRealtimeLogConfig2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+CreateRealtimeLogConfig2020_05_31Result::CreateRealtimeLogConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateRealtimeLogConfig2020_05_31Result& CreateRealtimeLogConfig2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateRealtimeLogConfig2020_05_31Result& CreateRealtimeLogConfig2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
   if(!resultNode.IsNull())
   {
-    m_realtimeLogConfig = resultNode;
+    XmlNode realtimeLogConfigNode = resultNode.FirstChild("RealtimeLogConfig");
+    if(!realtimeLogConfigNode.IsNull())
+    {
+      m_realtimeLogConfig = realtimeLogConfigNode;
+    }
   }
 
   return *this;

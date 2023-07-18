@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The details of the AWS Firewall Manager policy.</p>
+     * <p>The details of the Firewall Manager policy.</p>
      */
     inline const Policy& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The details of the AWS Firewall Manager policy.</p>
+     * <p>The details of the Firewall Manager policy.</p>
      */
     inline void SetPolicy(const Policy& value) { m_policy = value; }
 
     /**
-     * <p>The details of the AWS Firewall Manager policy.</p>
+     * <p>The details of the Firewall Manager policy.</p>
      */
     inline void SetPolicy(Policy&& value) { m_policy = std::move(value); }
 
     /**
-     * <p>The details of the AWS Firewall Manager policy.</p>
+     * <p>The details of the Firewall Manager policy.</p>
      */
     inline PutPolicyResult& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The details of the AWS Firewall Manager policy.</p>
+     * <p>The details of the Firewall Manager policy.</p>
      */
     inline PutPolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
 

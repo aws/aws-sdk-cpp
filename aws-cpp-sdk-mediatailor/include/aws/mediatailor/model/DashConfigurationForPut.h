@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for DASH PUT operations. </p><p><h3>See Also:</h3>   <a
+   * <p>The configuration for DASH PUT operations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DashConfigurationForPut">AWS
    * API Reference</a></p>
    */
@@ -45,8 +45,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline const Aws::String& GetMpdLocation() const{ return m_mpdLocation; }
 
@@ -57,8 +57,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline bool MpdLocationHasBeenSet() const { return m_mpdLocationHasBeenSet; }
 
@@ -69,8 +69,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline void SetMpdLocation(const Aws::String& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = value; }
 
@@ -81,8 +81,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline void SetMpdLocation(Aws::String&& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = std::move(value); }
 
@@ -93,8 +93,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline void SetMpdLocation(const char* value) { m_mpdLocationHasBeenSet = true; m_mpdLocation.assign(value); }
 
@@ -105,8 +105,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline DashConfigurationForPut& WithMpdLocation(const Aws::String& value) { SetMpdLocation(value); return *this;}
 
@@ -117,8 +117,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline DashConfigurationForPut& WithMpdLocation(Aws::String&& value) { SetMpdLocation(std::move(value)); return *this;}
 
@@ -129,8 +129,8 @@ namespace Model
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
      * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
-     * </p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
+     * value.</p>
      */
     inline DashConfigurationForPut& WithMpdLocation(const char* value) { SetMpdLocation(value); return *this;}
 
@@ -140,7 +140,7 @@ namespace Model
      * origin server as multi-period manifests or single-period manifests. If your
      * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
      * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD. </p>
+     * or set it to MULTI_PERIOD.</p>
      */
     inline const OriginManifestType& GetOriginManifestType() const{ return m_originManifestType; }
 
@@ -149,7 +149,7 @@ namespace Model
      * origin server as multi-period manifests or single-period manifests. If your
      * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
      * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD. </p>
+     * or set it to MULTI_PERIOD.</p>
      */
     inline bool OriginManifestTypeHasBeenSet() const { return m_originManifestTypeHasBeenSet; }
 
@@ -158,7 +158,7 @@ namespace Model
      * origin server as multi-period manifests or single-period manifests. If your
      * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
      * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD. </p>
+     * or set it to MULTI_PERIOD.</p>
      */
     inline void SetOriginManifestType(const OriginManifestType& value) { m_originManifestTypeHasBeenSet = true; m_originManifestType = value; }
 
@@ -167,7 +167,7 @@ namespace Model
      * origin server as multi-period manifests or single-period manifests. If your
      * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
      * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD. </p>
+     * or set it to MULTI_PERIOD.</p>
      */
     inline void SetOriginManifestType(OriginManifestType&& value) { m_originManifestTypeHasBeenSet = true; m_originManifestType = std::move(value); }
 
@@ -176,7 +176,7 @@ namespace Model
      * origin server as multi-period manifests or single-period manifests. If your
      * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
      * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD. </p>
+     * or set it to MULTI_PERIOD.</p>
      */
     inline DashConfigurationForPut& WithOriginManifestType(const OriginManifestType& value) { SetOriginManifestType(value); return *this;}
 
@@ -185,7 +185,7 @@ namespace Model
      * origin server as multi-period manifests or single-period manifests. If your
      * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
      * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD. </p>
+     * or set it to MULTI_PERIOD.</p>
      */
     inline DashConfigurationForPut& WithOriginManifestType(OriginManifestType&& value) { SetOriginManifestType(std::move(value)); return *this;}
 

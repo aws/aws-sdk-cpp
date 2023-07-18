@@ -20,6 +20,8 @@ namespace Model
 
 VpcInterfaceRequest::VpcInterfaceRequest() : 
     m_nameHasBeenSet(false),
+    m_networkInterfaceType(NetworkInterfaceType::NOT_SET),
+    m_networkInterfaceTypeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false)
@@ -28,6 +30,8 @@ VpcInterfaceRequest::VpcInterfaceRequest() :
 
 VpcInterfaceRequest::VpcInterfaceRequest(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_networkInterfaceType(NetworkInterfaceType::NOT_SET),
+    m_networkInterfaceTypeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false)
@@ -42,6 +46,13 @@ VpcInterfaceRequest& VpcInterfaceRequest::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkInterfaceType"))
+  {
+    m_networkInterfaceType = NetworkInterfaceTypeMapper::GetNetworkInterfaceTypeForName(jsonValue.GetString("networkInterfaceType"));
+
+    m_networkInterfaceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -79,6 +90,11 @@ JsonValue VpcInterfaceRequest::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_networkInterfaceTypeHasBeenSet)
+  {
+   payload.WithString("networkInterfaceType", NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_networkInterfaceType));
   }
 
   if(m_roleArnHasBeenSet)

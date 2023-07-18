@@ -7,6 +7,7 @@
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/cloud9/Cloud9Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloud9/model/ManagedCredentialsAction.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +157,79 @@ namespace Model
      */
     inline UpdateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Allows the environment owner to turn on or turn off the Amazon Web Services
+     * managed temporary credentials for an Cloud9 environment by using one of the
+     * following values:</p> <ul> <li> <p> <code>ENABLE</code> </p> </li> <li> <p>
+     * <code>DISABLE</code> </p> </li> </ul>  <p>Only the environment owner can
+     * change the status of managed temporary credentials. An
+     * <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn
+     * off managed temporary credentials is made by an account that's not the
+     * environment owner.</p> 
+     */
+    inline const ManagedCredentialsAction& GetManagedCredentialsAction() const{ return m_managedCredentialsAction; }
+
+    /**
+     * <p>Allows the environment owner to turn on or turn off the Amazon Web Services
+     * managed temporary credentials for an Cloud9 environment by using one of the
+     * following values:</p> <ul> <li> <p> <code>ENABLE</code> </p> </li> <li> <p>
+     * <code>DISABLE</code> </p> </li> </ul>  <p>Only the environment owner can
+     * change the status of managed temporary credentials. An
+     * <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn
+     * off managed temporary credentials is made by an account that's not the
+     * environment owner.</p> 
+     */
+    inline bool ManagedCredentialsActionHasBeenSet() const { return m_managedCredentialsActionHasBeenSet; }
+
+    /**
+     * <p>Allows the environment owner to turn on or turn off the Amazon Web Services
+     * managed temporary credentials for an Cloud9 environment by using one of the
+     * following values:</p> <ul> <li> <p> <code>ENABLE</code> </p> </li> <li> <p>
+     * <code>DISABLE</code> </p> </li> </ul>  <p>Only the environment owner can
+     * change the status of managed temporary credentials. An
+     * <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn
+     * off managed temporary credentials is made by an account that's not the
+     * environment owner.</p> 
+     */
+    inline void SetManagedCredentialsAction(const ManagedCredentialsAction& value) { m_managedCredentialsActionHasBeenSet = true; m_managedCredentialsAction = value; }
+
+    /**
+     * <p>Allows the environment owner to turn on or turn off the Amazon Web Services
+     * managed temporary credentials for an Cloud9 environment by using one of the
+     * following values:</p> <ul> <li> <p> <code>ENABLE</code> </p> </li> <li> <p>
+     * <code>DISABLE</code> </p> </li> </ul>  <p>Only the environment owner can
+     * change the status of managed temporary credentials. An
+     * <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn
+     * off managed temporary credentials is made by an account that's not the
+     * environment owner.</p> 
+     */
+    inline void SetManagedCredentialsAction(ManagedCredentialsAction&& value) { m_managedCredentialsActionHasBeenSet = true; m_managedCredentialsAction = std::move(value); }
+
+    /**
+     * <p>Allows the environment owner to turn on or turn off the Amazon Web Services
+     * managed temporary credentials for an Cloud9 environment by using one of the
+     * following values:</p> <ul> <li> <p> <code>ENABLE</code> </p> </li> <li> <p>
+     * <code>DISABLE</code> </p> </li> </ul>  <p>Only the environment owner can
+     * change the status of managed temporary credentials. An
+     * <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn
+     * off managed temporary credentials is made by an account that's not the
+     * environment owner.</p> 
+     */
+    inline UpdateEnvironmentRequest& WithManagedCredentialsAction(const ManagedCredentialsAction& value) { SetManagedCredentialsAction(value); return *this;}
+
+    /**
+     * <p>Allows the environment owner to turn on or turn off the Amazon Web Services
+     * managed temporary credentials for an Cloud9 environment by using one of the
+     * following values:</p> <ul> <li> <p> <code>ENABLE</code> </p> </li> <li> <p>
+     * <code>DISABLE</code> </p> </li> </ul>  <p>Only the environment owner can
+     * change the status of managed temporary credentials. An
+     * <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn
+     * off managed temporary credentials is made by an account that's not the
+     * environment owner.</p> 
+     */
+    inline UpdateEnvironmentRequest& WithManagedCredentialsAction(ManagedCredentialsAction&& value) { SetManagedCredentialsAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_environmentId;
@@ -166,6 +240,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    ManagedCredentialsAction m_managedCredentialsAction;
+    bool m_managedCredentialsActionHasBeenSet;
   };
 
 } // namespace Model

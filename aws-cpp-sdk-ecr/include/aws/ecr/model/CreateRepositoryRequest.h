@@ -40,6 +40,63 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline CreateRepositoryRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline CreateRepositoryRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the registry to create the
+     * repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
+    inline CreateRepositoryRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+
+
+    /**
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
@@ -304,6 +361,9 @@ namespace Model
     inline CreateRepositoryRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_registryId;
+    bool m_registryIdHasBeenSet;
 
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;

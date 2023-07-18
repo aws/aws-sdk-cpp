@@ -25,11 +25,11 @@ namespace Model
 
   /**
    * <p>An event bus receives events from a source and routes them to rules
-   * associated with that event bus. Your account's default event bus receives rules
-   * from AWS services. A custom event bus can receive rules from AWS services as
-   * well as your custom applications and services. A partner event bus receives
-   * events from an event source created by an SaaS partner. These events come from
-   * the partners services or applications.</p><p><h3>See Also:</h3>   <a
+   * associated with that event bus. Your account's default event bus receives events
+   * from Amazon Web Services services. A custom event bus can receive events from
+   * your custom applications and services. A partner event bus receives events from
+   * an event source created by an SaaS partner. These events come from the partners
+   * services or applications.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EventBus">AWS
    * API Reference</a></p>
    */
@@ -125,50 +125,50 @@ namespace Model
 
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline EventBus& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline EventBus& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The permissions policy of the event bus, describing which other AWS accounts
-     * can write events to this event bus.</p>
+     * <p>The permissions policy of the event bus, describing which other Amazon Web
+     * Services accounts can write events to this event bus.</p>
      */
     inline EventBus& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

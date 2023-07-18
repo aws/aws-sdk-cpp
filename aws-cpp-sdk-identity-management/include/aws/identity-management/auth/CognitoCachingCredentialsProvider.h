@@ -66,6 +66,9 @@ namespace Aws
             CognitoCachingAnonymousCredentialsProvider(const Aws::String& accountId, const Aws::String& identityPoolId,
                         const std::shared_ptr<CognitoIdentity::CognitoIdentityClient>& cognitoIdentityClient = nullptr);
 
+            CognitoCachingAnonymousCredentialsProvider(const Aws::String& identityPoolId,
+                        const std::shared_ptr<CognitoIdentity::CognitoIdentityClient>& cognitoIdentityClient = nullptr);
+
         protected:
             CognitoIdentity::Model::GetCredentialsForIdentityOutcome GetCredentialsFromCognito() const override;
         };

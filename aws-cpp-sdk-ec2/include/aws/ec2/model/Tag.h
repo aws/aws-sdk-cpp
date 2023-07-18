@@ -98,49 +98,49 @@ namespace Model
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
-     * accept a maximum of 255 Unicode characters.</p>
+     * accept a maximum of 256 Unicode characters.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

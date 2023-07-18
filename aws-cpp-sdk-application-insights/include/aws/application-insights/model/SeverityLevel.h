@@ -16,6 +16,7 @@ namespace Model
   enum class SeverityLevel
   {
     NOT_SET,
+    Informative,
     Low,
     Medium,
     High

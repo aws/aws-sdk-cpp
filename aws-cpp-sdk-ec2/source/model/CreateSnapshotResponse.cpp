@@ -20,14 +20,16 @@ using namespace Aws;
 CreateSnapshotResponse::CreateSnapshotResponse() : 
     m_encrypted(false),
     m_state(SnapshotState::NOT_SET),
-    m_volumeSize(0)
+    m_volumeSize(0),
+    m_storageTier(StorageTier::NOT_SET)
 {
 }
 
 CreateSnapshotResponse::CreateSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_encrypted(false),
     m_state(SnapshotState::NOT_SET),
-    m_volumeSize(0)
+    m_volumeSize(0),
+    m_storageTier(StorageTier::NOT_SET)
 {
   *this = result;
 }
@@ -109,6 +111,11 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     {
       m_ownerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAliasNode.GetText());
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -119,6 +126,16 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
         tagsMember = tagsMember.NextNode("item");
       }
 
+    }
+    XmlNode storageTierNode = resultNode.FirstChild("storageTier");
+    if(!storageTierNode.IsNull())
+    {
+      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()).c_str());
+    }
+    XmlNode restoreExpiryTimeNode = resultNode.FirstChild("restoreExpiryTime");
+    if(!restoreExpiryTimeNode.IsNull())
+    {
+      m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

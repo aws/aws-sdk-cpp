@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the S3 storage type.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the Amazon Simple Storage Service (Amazon S3) storage
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/S3Config">AWS
    * API Reference</a></p>
    */
@@ -121,32 +122,32 @@ namespace Model
 
 
     /**
-     * <p>The S3 encryption configuration.</p>
+     * <p>The Amazon S3 encryption configuration.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
 
     /**
-     * <p>The S3 encryption configuration.</p>
+     * <p>The Amazon S3 encryption configuration.</p>
      */
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
 
     /**
-     * <p>The S3 encryption configuration.</p>
+     * <p>The Amazon S3 encryption configuration.</p>
      */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
 
     /**
-     * <p>The S3 encryption configuration.</p>
+     * <p>The Amazon S3 encryption configuration.</p>
      */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
 
     /**
-     * <p>The S3 encryption configuration.</p>
+     * <p>The Amazon S3 encryption configuration.</p>
      */
     inline S3Config& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
 
     /**
-     * <p>The S3 encryption configuration.</p>
+     * <p>The Amazon S3 encryption configuration.</p>
      */
     inline S3Config& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
 

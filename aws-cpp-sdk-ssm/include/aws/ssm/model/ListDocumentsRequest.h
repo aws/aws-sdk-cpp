@@ -79,98 +79,122 @@ namespace Model
 
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline const Aws::Vector<DocumentKeyValuesFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline void SetFilters(const Aws::Vector<DocumentKeyValuesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline void SetFilters(Aws::Vector<DocumentKeyValuesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline ListDocumentsRequest& WithFilters(const Aws::Vector<DocumentKeyValuesFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline ListDocumentsRequest& WithFilters(Aws::Vector<DocumentKeyValuesFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline ListDocumentsRequest& AddFilters(const DocumentKeyValuesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more DocumentKeyValuesFilter objects. Use a filter to return a more
-     * specific list of results. For keys, you can specify one or more key-value pair
-     * tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+     * <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to
+     * return a more specific list of results. For keys, you can specify one or more
+     * key-value pair tags that have been applied to a document. Other valid keys
+     * include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
      * <code>DocumentType</code>, and <code>TargetType</code>. For example, to return
      * documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom
      * key-value pair, use the format
-     * <code>Key=tag:tagName,Values=valueName</code>.</p>
+     * <code>Key=tag:tagName,Values=valueName</code>.</p>  <p>This API operation
+     * only supports filtering documents by using a single tag key and one or more tag
+     * values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     * </p> 
      */
     inline ListDocumentsRequest& AddFilters(DocumentKeyValuesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

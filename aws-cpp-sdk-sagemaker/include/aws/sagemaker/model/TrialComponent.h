@@ -331,22 +331,34 @@ namespace Model
     inline TrialComponent& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline TrialComponent& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline TrialComponent& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 
 
@@ -675,6 +687,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline const Aws::String& GetLineageGroupArn() const{ return m_lineageGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline bool LineageGroupArnHasBeenSet() const { return m_lineageGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline void SetLineageGroupArn(const Aws::String& value) { m_lineageGroupArnHasBeenSet = true; m_lineageGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline void SetLineageGroupArn(Aws::String&& value) { m_lineageGroupArnHasBeenSet = true; m_lineageGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline void SetLineageGroupArn(const char* value) { m_lineageGroupArnHasBeenSet = true; m_lineageGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline TrialComponent& WithLineageGroupArn(const Aws::String& value) { SetLineageGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline TrialComponent& WithLineageGroupArn(Aws::String&& value) { SetLineageGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline TrialComponent& WithLineageGroupArn(const char* value) { SetLineageGroupArn(value); return *this;}
+
+
+    /**
      * <p>The list of tags that are associated with the component. You can use
      * <a>Search</a> API to search on the tags.</p>
      */
@@ -831,6 +884,9 @@ namespace Model
 
     TrialComponentSourceDetail m_sourceDetail;
     bool m_sourceDetailHasBeenSet;
+
+    Aws::String m_lineageGroupArn;
+    bool m_lineageGroupArnHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

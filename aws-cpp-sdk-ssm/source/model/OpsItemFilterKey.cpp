@@ -46,6 +46,7 @@ namespace Aws
         static const int ChangeRequestByApproverName_HASH = HashingUtils::HashString("ChangeRequestByApproverName");
         static const int ChangeRequestByTemplate_HASH = HashingUtils::HashString("ChangeRequestByTemplate");
         static const int ChangeRequestByTargetsResourceGroup_HASH = HashingUtils::HashString("ChangeRequestByTargetsResourceGroup");
+        static const int InsightByType_HASH = HashingUtils::HashString("InsightByType");
 
 
         OpsItemFilterKey GetOpsItemFilterKeyForName(const Aws::String& name)
@@ -155,6 +156,10 @@ namespace Aws
           {
             return OpsItemFilterKey::ChangeRequestByTargetsResourceGroup;
           }
+          else if (hashCode == InsightByType_HASH)
+          {
+            return OpsItemFilterKey::InsightByType;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -221,6 +226,8 @@ namespace Aws
             return "ChangeRequestByTemplate";
           case OpsItemFilterKey::ChangeRequestByTargetsResourceGroup:
             return "ChangeRequestByTargetsResourceGroup";
+          case OpsItemFilterKey::InsightByType:
+            return "InsightByType";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

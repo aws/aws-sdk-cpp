@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information that Amazon ES derives based on <code>VPCOptions</code> for the
+   * <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainVPCOptions">AWS
    * API Reference</a></p>

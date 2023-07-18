@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains Availability Zone information.</p> <p> This data type is used as an
+   * <p>Contains Availability Zone information.</p> <p>This data type is used as an
    * element in the <code>OrderableDBInstanceOption</code> data type.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AvailabilityZone">AWS

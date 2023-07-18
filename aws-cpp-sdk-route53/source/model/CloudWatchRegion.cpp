@@ -34,6 +34,7 @@ namespace Aws
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
         static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
+        static const int ap_southeast_3_HASH = HashingUtils::HashString("ap-southeast-3");
         static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
         static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
         static const int ap_northeast_3_HASH = HashingUtils::HashString("ap-northeast-3");
@@ -46,6 +47,7 @@ namespace Aws
         static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
         static const int us_gov_east_1_HASH = HashingUtils::HashString("us-gov-east-1");
         static const int us_iso_east_1_HASH = HashingUtils::HashString("us-iso-east-1");
+        static const int us_iso_west_1_HASH = HashingUtils::HashString("us-iso-west-1");
         static const int us_isob_east_1_HASH = HashingUtils::HashString("us-isob-east-1");
 
 
@@ -108,6 +110,10 @@ namespace Aws
           {
             return CloudWatchRegion::ap_southeast_2;
           }
+          else if (hashCode == ap_southeast_3_HASH)
+          {
+            return CloudWatchRegion::ap_southeast_3;
+          }
           else if (hashCode == ap_northeast_1_HASH)
           {
             return CloudWatchRegion::ap_northeast_1;
@@ -156,6 +162,10 @@ namespace Aws
           {
             return CloudWatchRegion::us_iso_east_1;
           }
+          else if (hashCode == us_iso_west_1_HASH)
+          {
+            return CloudWatchRegion::us_iso_west_1;
+          }
           else if (hashCode == us_isob_east_1_HASH)
           {
             return CloudWatchRegion::us_isob_east_1;
@@ -202,6 +212,8 @@ namespace Aws
             return "ap-southeast-1";
           case CloudWatchRegion::ap_southeast_2:
             return "ap-southeast-2";
+          case CloudWatchRegion::ap_southeast_3:
+            return "ap-southeast-3";
           case CloudWatchRegion::ap_northeast_1:
             return "ap-northeast-1";
           case CloudWatchRegion::ap_northeast_2:
@@ -226,6 +238,8 @@ namespace Aws
             return "us-gov-east-1";
           case CloudWatchRegion::us_iso_east_1:
             return "us-iso-east-1";
+          case CloudWatchRegion::us_iso_west_1:
+            return "us-iso-west-1";
           case CloudWatchRegion::us_isob_east_1:
             return "us-isob-east-1";
           default:

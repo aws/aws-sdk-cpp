@@ -23,7 +23,11 @@ AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails() :
     m_networkInterfaceIdHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false)
+    m_sourceDestCheckHasBeenSet(false),
+    m_ipV6AddressesHasBeenSet(false),
+    m_privateIpAddressesHasBeenSet(false),
+    m_publicDnsNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -32,7 +36,11 @@ AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails(JsonView jsonValue)
     m_networkInterfaceIdHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false)
+    m_sourceDestCheckHasBeenSet(false),
+    m_ipV6AddressesHasBeenSet(false),
+    m_privateIpAddressesHasBeenSet(false),
+    m_publicDnsNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +78,40 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
     m_sourceDestCheckHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IpV6Addresses"))
+  {
+    Array<JsonView> ipV6AddressesJsonList = jsonValue.GetArray("IpV6Addresses");
+    for(unsigned ipV6AddressesIndex = 0; ipV6AddressesIndex < ipV6AddressesJsonList.GetLength(); ++ipV6AddressesIndex)
+    {
+      m_ipV6Addresses.push_back(ipV6AddressesJsonList[ipV6AddressesIndex].AsObject());
+    }
+    m_ipV6AddressesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivateIpAddresses"))
+  {
+    Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("PrivateIpAddresses");
+    for(unsigned privateIpAddressesIndex = 0; privateIpAddressesIndex < privateIpAddressesJsonList.GetLength(); ++privateIpAddressesIndex)
+    {
+      m_privateIpAddresses.push_back(privateIpAddressesJsonList[privateIpAddressesIndex].AsObject());
+    }
+    m_privateIpAddressesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PublicDnsName"))
+  {
+    m_publicDnsName = jsonValue.GetString("PublicDnsName");
+
+    m_publicDnsNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PublicIp"))
+  {
+    m_publicIp = jsonValue.GetString("PublicIp");
+
+    m_publicIpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +145,40 @@ JsonValue AwsEc2NetworkInterfaceDetails::Jsonize() const
   if(m_sourceDestCheckHasBeenSet)
   {
    payload.WithBool("SourceDestCheck", m_sourceDestCheck);
+
+  }
+
+  if(m_ipV6AddressesHasBeenSet)
+  {
+   Array<JsonValue> ipV6AddressesJsonList(m_ipV6Addresses.size());
+   for(unsigned ipV6AddressesIndex = 0; ipV6AddressesIndex < ipV6AddressesJsonList.GetLength(); ++ipV6AddressesIndex)
+   {
+     ipV6AddressesJsonList[ipV6AddressesIndex].AsObject(m_ipV6Addresses[ipV6AddressesIndex].Jsonize());
+   }
+   payload.WithArray("IpV6Addresses", std::move(ipV6AddressesJsonList));
+
+  }
+
+  if(m_privateIpAddressesHasBeenSet)
+  {
+   Array<JsonValue> privateIpAddressesJsonList(m_privateIpAddresses.size());
+   for(unsigned privateIpAddressesIndex = 0; privateIpAddressesIndex < privateIpAddressesJsonList.GetLength(); ++privateIpAddressesIndex)
+   {
+     privateIpAddressesJsonList[privateIpAddressesIndex].AsObject(m_privateIpAddresses[privateIpAddressesIndex].Jsonize());
+   }
+   payload.WithArray("PrivateIpAddresses", std::move(privateIpAddressesJsonList));
+
+  }
+
+  if(m_publicDnsNameHasBeenSet)
+  {
+   payload.WithString("PublicDnsName", m_publicDnsName);
+
+  }
+
+  if(m_publicIpHasBeenSet)
+  {
+   payload.WithString("PublicIp", m_publicIp);
 
   }
 

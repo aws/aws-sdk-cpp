@@ -34,63 +34,63 @@ namespace Model
 
 
     /**
-     * <p>The name and ARN of the admin for the app instance.</p>
+     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
      */
     inline const Identity& GetAppInstanceAdmin() const{ return m_appInstanceAdmin; }
 
     /**
-     * <p>The name and ARN of the admin for the app instance.</p>
+     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceAdmin(const Identity& value) { m_appInstanceAdmin = value; }
 
     /**
-     * <p>The name and ARN of the admin for the app instance.</p>
+     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceAdmin(Identity&& value) { m_appInstanceAdmin = std::move(value); }
 
     /**
-     * <p>The name and ARN of the admin for the app instance.</p>
+     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceAdmin(const Identity& value) { SetAppInstanceAdmin(value); return *this;}
 
     /**
-     * <p>The name and ARN of the admin for the app instance.</p>
+     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceAdmin(Identity&& value) { SetAppInstanceAdmin(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN of the of the admin for the app instance.</p>
+     * <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
      */
     inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
 
     /**
-     * <p>The ARN of the of the admin for the app instance.</p>
+     * <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArn = value; }
 
     /**
-     * <p>The ARN of the of the admin for the app instance.</p>
+     * <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the of the admin for the app instance.</p>
+     * <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const char* value) { m_appInstanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the of the admin for the app instance.</p>
+     * <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the of the admin for the app instance.</p>
+     * <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the of the admin for the app instance.</p>
+     * <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
 

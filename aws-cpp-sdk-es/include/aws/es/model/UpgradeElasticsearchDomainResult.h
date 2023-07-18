@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/model/ChangeProgressDetails.h>
 #include <utility>
 
 namespace Aws
@@ -114,6 +115,22 @@ namespace Model
      */
     inline UpgradeElasticsearchDomainResult& WithPerformCheckOnly(bool value) { SetPerformCheckOnly(value); return *this;}
 
+
+    
+    inline const ChangeProgressDetails& GetChangeProgressDetails() const{ return m_changeProgressDetails; }
+
+    
+    inline void SetChangeProgressDetails(const ChangeProgressDetails& value) { m_changeProgressDetails = value; }
+
+    
+    inline void SetChangeProgressDetails(ChangeProgressDetails&& value) { m_changeProgressDetails = std::move(value); }
+
+    
+    inline UpgradeElasticsearchDomainResult& WithChangeProgressDetails(const ChangeProgressDetails& value) { SetChangeProgressDetails(value); return *this;}
+
+    
+    inline UpgradeElasticsearchDomainResult& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -121,6 +138,8 @@ namespace Model
     Aws::String m_targetVersion;
 
     bool m_performCheckOnly;
+
+    ChangeProgressDetails m_changeProgressDetails;
   };
 
 } // namespace Model

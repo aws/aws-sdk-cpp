@@ -28,7 +28,8 @@ AwsElbv2LoadBalancerDetails::AwsElbv2LoadBalancerDetails() :
     m_securityGroupsHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_loadBalancerAttributesHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ AwsElbv2LoadBalancerDetails::AwsElbv2LoadBalancerDetails(JsonView jsonValue) :
     m_securityGroupsHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_loadBalancerAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +127,16 @@ AwsElbv2LoadBalancerDetails& AwsElbv2LoadBalancerDetails::operator =(JsonView js
     m_vpcIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LoadBalancerAttributes"))
+  {
+    Array<JsonView> loadBalancerAttributesJsonList = jsonValue.GetArray("LoadBalancerAttributes");
+    for(unsigned loadBalancerAttributesIndex = 0; loadBalancerAttributesIndex < loadBalancerAttributesJsonList.GetLength(); ++loadBalancerAttributesIndex)
+    {
+      m_loadBalancerAttributes.push_back(loadBalancerAttributesJsonList[loadBalancerAttributesIndex].AsObject());
+    }
+    m_loadBalancerAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +211,17 @@ JsonValue AwsElbv2LoadBalancerDetails::Jsonize() const
   if(m_vpcIdHasBeenSet)
   {
    payload.WithString("VpcId", m_vpcId);
+
+  }
+
+  if(m_loadBalancerAttributesHasBeenSet)
+  {
+   Array<JsonValue> loadBalancerAttributesJsonList(m_loadBalancerAttributes.size());
+   for(unsigned loadBalancerAttributesIndex = 0; loadBalancerAttributesIndex < loadBalancerAttributesJsonList.GetLength(); ++loadBalancerAttributesIndex)
+   {
+     loadBalancerAttributesJsonList[loadBalancerAttributesIndex].AsObject(m_loadBalancerAttributes[loadBalancerAttributesIndex].Jsonize());
+   }
+   payload.WithArray("LoadBalancerAttributes", std::move(loadBalancerAttributesJsonList));
 
   }
 

@@ -24,6 +24,9 @@ namespace Aws
         static const int EndpointAccessUpdate_HASH = HashingUtils::HashString("EndpointAccessUpdate");
         static const int LoggingUpdate_HASH = HashingUtils::HashString("LoggingUpdate");
         static const int ConfigUpdate_HASH = HashingUtils::HashString("ConfigUpdate");
+        static const int AssociateIdentityProviderConfig_HASH = HashingUtils::HashString("AssociateIdentityProviderConfig");
+        static const int DisassociateIdentityProviderConfig_HASH = HashingUtils::HashString("DisassociateIdentityProviderConfig");
+        static const int AssociateEncryptionConfig_HASH = HashingUtils::HashString("AssociateEncryptionConfig");
         static const int AddonUpdate_HASH = HashingUtils::HashString("AddonUpdate");
 
 
@@ -45,6 +48,18 @@ namespace Aws
           else if (hashCode == ConfigUpdate_HASH)
           {
             return UpdateType::ConfigUpdate;
+          }
+          else if (hashCode == AssociateIdentityProviderConfig_HASH)
+          {
+            return UpdateType::AssociateIdentityProviderConfig;
+          }
+          else if (hashCode == DisassociateIdentityProviderConfig_HASH)
+          {
+            return UpdateType::DisassociateIdentityProviderConfig;
+          }
+          else if (hashCode == AssociateEncryptionConfig_HASH)
+          {
+            return UpdateType::AssociateEncryptionConfig;
           }
           else if (hashCode == AddonUpdate_HASH)
           {
@@ -72,6 +87,12 @@ namespace Aws
             return "LoggingUpdate";
           case UpdateType::ConfigUpdate:
             return "ConfigUpdate";
+          case UpdateType::AssociateIdentityProviderConfig:
+            return "AssociateIdentityProviderConfig";
+          case UpdateType::DisassociateIdentityProviderConfig:
+            return "DisassociateIdentityProviderConfig";
+          case UpdateType::AssociateEncryptionConfig:
+            return "AssociateEncryptionConfig";
           case UpdateType::AddonUpdate:
             return "AddonUpdate";
           default:

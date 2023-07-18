@@ -17,6 +17,8 @@ using namespace Aws::Http;
 
 ListIntegrationAssociationsRequest::ListIntegrationAssociationsRequest() : 
     m_instanceIdHasBeenSet(false),
+    m_integrationType(IntegrationType::NOT_SET),
+    m_integrationTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -31,6 +33,13 @@ Aws::String ListIntegrationAssociationsRequest::SerializePayload() const
 void ListIntegrationAssociationsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_integrationTypeHasBeenSet)
+    {
+      ss << IntegrationTypeMapper::GetNameForIntegrationType(m_integrationType);
+      uri.AddQueryStringParameter("integrationType", ss.str());
+      ss.str("");
+    }
+
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;

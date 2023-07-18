@@ -19,6 +19,8 @@
 #include <aws/securityhub/model/RecordState.h>
 #include <aws/securityhub/model/Note.h>
 #include <aws/securityhub/model/PatchSummary.h>
+#include <aws/securityhub/model/Action.h>
+#include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/Malware.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
@@ -45,11 +47,11 @@ namespace Model
   /**
    * <p>Provides consistent format for the contents of the Security Hub-aggregated
    * findings. <code>AwsSecurityFinding</code> format enables you to share findings
-   * between AWS security services and third-party solutions, and security standards
-   * checks.</p>  <p>A finding is a potential security issue generated either
-   * by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the
-   * integrated third-party solutions and standards checks.</p> <p><h3>See
-   * Also:</h3>   <a
+   * between Amazon Web Services security services and third-party solutions, and
+   * security standards checks.</p>  <p>A finding is a potential security issue
+   * generated either by Amazon Web Services services or by the integrated
+   * third-party solutions and standards checks.</p> <p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
    * API Reference</a></p>
    */
@@ -202,6 +204,225 @@ namespace Model
 
 
     /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline const Aws::String& GetProductName() const{ return m_productName; }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithProductName(const char* value) { SetProductName(value); return *this;}
+
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline const Aws::String& GetCompanyName() const{ return m_companyName; }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline void SetCompanyName(const Aws::String& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline void SetCompanyName(Aws::String&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline void SetCompanyName(const char* value) { m_companyNameHasBeenSet = true; m_companyName.assign(value); }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithCompanyName(const Aws::String& value) { SetCompanyName(value); return *this;}
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithCompanyName(Aws::String&& value) { SetCompanyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithCompanyName(const char* value) { SetCompanyName(value); return *this;}
+
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline AwsSecurityFinding& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline AwsSecurityFinding& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline AwsSecurityFinding& WithRegion(const char* value) { SetRegion(value); return *this;}
+
+
+    /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
@@ -259,42 +480,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFinding& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFinding& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFinding& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -954,91 +1175,117 @@ namespace Model
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProductFields() const{ return m_productFields; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline void SetProductFields(const Aws::Map<Aws::String, Aws::String>& value) { m_productFieldsHasBeenSet = true; m_productFields = value; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline void SetProductFields(Aws::Map<Aws::String, Aws::String>&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::move(value); }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& WithProductFields(const Aws::Map<Aws::String, Aws::String>& value) { SetProductFields(value); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& WithProductFields(Aws::Map<Aws::String, Aws::String>&& value) { SetProductFields(std::move(value)); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const Aws::String& key, const Aws::String& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, const Aws::String& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const Aws::String& key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const char* key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, const char* value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const char* key, const char* value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, value); return *this; }
 
@@ -1367,42 +1614,48 @@ namespace Model
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(const Compliance& value) { SetCompliance(value); return *this;}
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 
@@ -1686,6 +1939,107 @@ namespace Model
      */
     inline AwsSecurityFinding& WithPatchSummary(PatchSummary&& value) { SetPatchSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline const Action& GetAction() const{ return m_action; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline AwsSecurityFinding& WithAction(const Action& value) { SetAction(value); return *this;}
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline AwsSecurityFinding& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline const FindingProviderFields& GetFindingProviderFields() const{ return m_findingProviderFields; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline bool FindingProviderFieldsHasBeenSet() const { return m_findingProviderFieldsHasBeenSet; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline void SetFindingProviderFields(const FindingProviderFields& value) { m_findingProviderFieldsHasBeenSet = true; m_findingProviderFields = value; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline void SetFindingProviderFields(FindingProviderFields&& value) { m_findingProviderFieldsHasBeenSet = true; m_findingProviderFields = std::move(value); }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline AwsSecurityFinding& WithFindingProviderFields(const FindingProviderFields& value) { SetFindingProviderFields(value); return *this;}
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline AwsSecurityFinding& WithFindingProviderFields(FindingProviderFields&& value) { SetFindingProviderFields(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool GetSample() const{ return m_sample; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline void SetSample(bool value) { m_sampleHasBeenSet = true; m_sample = value; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline AwsSecurityFinding& WithSample(bool value) { SetSample(value); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -1696,6 +2050,15 @@ namespace Model
 
     Aws::String m_productArn;
     bool m_productArnHasBeenSet;
+
+    Aws::String m_productName;
+    bool m_productNameHasBeenSet;
+
+    Aws::String m_companyName;
+    bool m_companyNameHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
 
     Aws::String m_generatorId;
     bool m_generatorIdHasBeenSet;
@@ -1789,6 +2152,15 @@ namespace Model
 
     PatchSummary m_patchSummary;
     bool m_patchSummaryHasBeenSet;
+
+    Action m_action;
+    bool m_actionHasBeenSet;
+
+    FindingProviderFields m_findingProviderFields;
+    bool m_findingProviderFieldsHasBeenSet;
+
+    bool m_sample;
+    bool m_sampleHasBeenSet;
   };
 
 } // namespace Model

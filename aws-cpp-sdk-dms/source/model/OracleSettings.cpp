@@ -25,6 +25,7 @@ OracleSettings::OracleSettings() :
     m_archivedLogDestIdHasBeenSet(false),
     m_additionalArchivedLogDestId(0),
     m_additionalArchivedLogDestIdHasBeenSet(false),
+    m_extraArchivedLogDestIdsHasBeenSet(false),
     m_allowSelectNestedTables(false),
     m_allowSelectNestedTablesHasBeenSet(false),
     m_parallelAsmReadThreads(0),
@@ -67,7 +68,20 @@ OracleSettings::OracleSettings() :
     m_securityDbEncryptionHasBeenSet(false),
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet(false),
+    m_standbyDelayTime(0),
+    m_standbyDelayTimeHasBeenSet(false),
+    m_usernameHasBeenSet(false),
+    m_useBFile(false),
+    m_useBFileHasBeenSet(false),
+    m_useDirectPathFullLoad(false),
+    m_useDirectPathFullLoadHasBeenSet(false),
+    m_useLogminerReader(false),
+    m_useLogminerReaderHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
 {
 }
 
@@ -78,6 +92,7 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_archivedLogDestIdHasBeenSet(false),
     m_additionalArchivedLogDestId(0),
     m_additionalArchivedLogDestIdHasBeenSet(false),
+    m_extraArchivedLogDestIdsHasBeenSet(false),
     m_allowSelectNestedTables(false),
     m_allowSelectNestedTablesHasBeenSet(false),
     m_parallelAsmReadThreads(0),
@@ -120,7 +135,20 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_securityDbEncryptionHasBeenSet(false),
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet(false),
+    m_standbyDelayTime(0),
+    m_standbyDelayTimeHasBeenSet(false),
+    m_usernameHasBeenSet(false),
+    m_useBFile(false),
+    m_useBFileHasBeenSet(false),
+    m_useDirectPathFullLoad(false),
+    m_useDirectPathFullLoadHasBeenSet(false),
+    m_useLogminerReader(false),
+    m_useLogminerReaderHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +174,16 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_additionalArchivedLogDestId = jsonValue.GetInteger("AdditionalArchivedLogDestId");
 
     m_additionalArchivedLogDestIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExtraArchivedLogDestIds"))
+  {
+    Array<JsonView> extraArchivedLogDestIdsJsonList = jsonValue.GetArray("ExtraArchivedLogDestIds");
+    for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
+    {
+      m_extraArchivedLogDestIds.push_back(extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger());
+    }
+    m_extraArchivedLogDestIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AllowSelectNestedTables"))
@@ -330,11 +368,74 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_serverNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SpatialDataOptionToGeoJsonFunctionName"))
+  {
+    m_spatialDataOptionToGeoJsonFunctionName = jsonValue.GetString("SpatialDataOptionToGeoJsonFunctionName");
+
+    m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StandbyDelayTime"))
+  {
+    m_standbyDelayTime = jsonValue.GetInteger("StandbyDelayTime");
+
+    m_standbyDelayTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
 
     m_usernameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseBFile"))
+  {
+    m_useBFile = jsonValue.GetBool("UseBFile");
+
+    m_useBFileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseDirectPathFullLoad"))
+  {
+    m_useDirectPathFullLoad = jsonValue.GetBool("UseDirectPathFullLoad");
+
+    m_useDirectPathFullLoadHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseLogminerReader"))
+  {
+    m_useLogminerReader = jsonValue.GetBool("UseLogminerReader");
+
+    m_useLogminerReaderHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
+  {
+    m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
+
+    m_secretsManagerAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerSecretId"))
+  {
+    m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
+
+    m_secretsManagerSecretIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerOracleAsmAccessRoleArn"))
+  {
+    m_secretsManagerOracleAsmAccessRoleArn = jsonValue.GetString("SecretsManagerOracleAsmAccessRoleArn");
+
+    m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerOracleAsmSecretId"))
+  {
+    m_secretsManagerOracleAsmSecretId = jsonValue.GetString("SecretsManagerOracleAsmSecretId");
+
+    m_secretsManagerOracleAsmSecretIdHasBeenSet = true;
   }
 
   return *this;
@@ -359,6 +460,17 @@ JsonValue OracleSettings::Jsonize() const
   if(m_additionalArchivedLogDestIdHasBeenSet)
   {
    payload.WithInteger("AdditionalArchivedLogDestId", m_additionalArchivedLogDestId);
+
+  }
+
+  if(m_extraArchivedLogDestIdsHasBeenSet)
+  {
+   Array<JsonValue> extraArchivedLogDestIdsJsonList(m_extraArchivedLogDestIds.size());
+   for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
+   {
+     extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger(m_extraArchivedLogDestIds[extraArchivedLogDestIdsIndex]);
+   }
+   payload.WithArray("ExtraArchivedLogDestIds", std::move(extraArchivedLogDestIdsJsonList));
 
   }
 
@@ -517,9 +629,63 @@ JsonValue OracleSettings::Jsonize() const
 
   }
 
+  if(m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet)
+  {
+   payload.WithString("SpatialDataOptionToGeoJsonFunctionName", m_spatialDataOptionToGeoJsonFunctionName);
+
+  }
+
+  if(m_standbyDelayTimeHasBeenSet)
+  {
+   payload.WithInteger("StandbyDelayTime", m_standbyDelayTime);
+
+  }
+
   if(m_usernameHasBeenSet)
   {
    payload.WithString("Username", m_username);
+
+  }
+
+  if(m_useBFileHasBeenSet)
+  {
+   payload.WithBool("UseBFile", m_useBFile);
+
+  }
+
+  if(m_useDirectPathFullLoadHasBeenSet)
+  {
+   payload.WithBool("UseDirectPathFullLoad", m_useDirectPathFullLoad);
+
+  }
+
+  if(m_useLogminerReaderHasBeenSet)
+  {
+   payload.WithBool("UseLogminerReader", m_useLogminerReader);
+
+  }
+
+  if(m_secretsManagerAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_secretsManagerOracleAsmAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerOracleAsmAccessRoleArn", m_secretsManagerOracleAsmAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerOracleAsmSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerOracleAsmSecretId", m_secretsManagerOracleAsmSecretId);
 
   }
 

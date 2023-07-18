@@ -11,15 +11,21 @@ Example:
 ```
 
 ### ADD_CUSTOM_CLIENTS
-Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python 2.7, java, jdk1.8, and maven installed and in your executable path. Example: 
+Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python 2.7, java, jdk1.8, and maven installed and in your executable path. Example:
 ```sh
 -DADD_CUSTOM_CLIENTS="serviceName=myCustomService, version=2015-12-21;serviceName=someOtherService, version=2015-08-15"
 ```
 
 ### REGENERATE_CLIENTS
-This argument will wipe out all generated code and generate the client directories from the code-generation/api-definitions folder. To use this argument, you need to have python 2.7, java, jdk1.8, and maven installed in your executable path. Example: 
+This argument will wipe out all generated code and generate the client directories from the code-generation/api-definitions folder. To use this argument, you need to have python 2.7, java, jdk1.8, and maven installed in your executable path. Example:
 ```sh
 -DREGENERATE_CLIENTS=1
+```
+
+### REGENERATE_DEFAULTS
+This argument will wipe out all generated defaults code and generate it again from the code-generation/defaults folder. To use this argument, you need to have python 2.7, java, jdk1.8, and maven installed in your executable path. Example:
+```sh
+-DREGENERATE_DEFAULTS=1
 ```
 
 ### CUSTOM_MEMORY_MANAGEMENT
@@ -72,6 +78,11 @@ For more information, see the CMake documentation for your platform.
 
 ### ENABLE_TESTING
 (Defaults to ON) Controls whether or not the unit and integration test projects are built
+
+### USE_OPENSSL
+(Defaults to ON) Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto
+
+If disabled, SDK will build and install [AWS-LC](https://github.com/awslabs/aws-lc) on Linux system when `BUILD_DEPS` is `ON`. This is an experimental feature. It will install AWS-LC as replacement of OpenSSL in the system default directory. Do not use if you have an OpenSSL installation in your system already.
 
 ### ENABLE_VIRTUAL_OPERATIONS
 (Defaults to ON) This option usually works with REGENERATE_CLIENTS.

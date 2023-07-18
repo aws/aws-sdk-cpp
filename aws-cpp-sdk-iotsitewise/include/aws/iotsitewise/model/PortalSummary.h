@@ -163,66 +163,66 @@ namespace Model
 
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline const Aws::String& GetStartUrl() const{ return m_startUrl; }
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline bool StartUrlHasBeenSet() const { return m_startUrlHasBeenSet; }
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline void SetStartUrl(const Aws::String& value) { m_startUrlHasBeenSet = true; m_startUrl = value; }
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline void SetStartUrl(Aws::String&& value) { m_startUrlHasBeenSet = true; m_startUrl = std::move(value); }
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline void SetStartUrl(const char* value) { m_startUrlHasBeenSet = true; m_startUrl.assign(value); }
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline PortalSummary& WithStartUrl(const Aws::String& value) { SetStartUrl(value); return *this;}
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline PortalSummary& WithStartUrl(Aws::String&& value) { SetStartUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
-     * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
-     * can use to access the portal.</p>
+     * <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access
+     * portals that use Amazon Web Services SSO for authentication. For portals that
+     * use IAM for authentication, you must use the IoT SiteWise console to get a URL
+     * that you can use to access the portal.</p>
      */
     inline PortalSummary& WithStartUrl(const char* value) { SetStartUrl(value); return *this;}
 
@@ -292,10 +292,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
@@ -303,10 +303,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -314,10 +314,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
@@ -325,10 +325,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
@@ -336,10 +336,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
@@ -347,10 +347,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline PortalSummary& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
@@ -358,10 +358,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline PortalSummary& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
@@ -369,10 +369,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the service role that allows the portal's users to access your AWS IoT
-     * SiteWise resources on your behalf. For more information, see <a
+     * of the service role that allows the portal's users to access your IoT SiteWise
+     * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline PortalSummary& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

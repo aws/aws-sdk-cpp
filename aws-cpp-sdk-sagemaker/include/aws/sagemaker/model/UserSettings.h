@@ -11,6 +11,8 @@
 #include <aws/sagemaker/model/JupyterServerAppSettings.h>
 #include <aws/sagemaker/model/KernelGatewayAppSettings.h>
 #include <aws/sagemaker/model/TensorBoardAppSettings.h>
+#include <aws/sagemaker/model/RStudioServerProAppSettings.h>
+#include <aws/sagemaker/model/RSessionAppSettings.h>
 #include <utility>
 
 namespace Aws
@@ -29,7 +31,14 @@ namespace Model
 {
 
   /**
-   * <p>A collection of settings.</p><p><h3>See Also:</h3>   <a
+   * <p>A collection of settings that apply to users of Amazon SageMaker Studio.
+   * These settings are specified when the <code>CreateUserProfile</code> API is
+   * called, and as <code>DefaultUserSettings</code> when the
+   * <code>CreateDomain</code> API is called.</p> <p> <code>SecurityGroups</code> is
+   * aggregated when specified in both calls. For all other settings in
+   * <code>UserSettings</code>, the values specified in
+   * <code>CreateUserProfile</code> take precedence over those specified in
+   * <code>CreateDomain</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserSettings">AWS
    * API Reference</a></p>
    */
@@ -89,7 +98,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
@@ -99,7 +110,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
@@ -109,7 +122,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
@@ -119,7 +134,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
@@ -129,7 +146,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline UserSettings& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
@@ -139,7 +158,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline UserSettings& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
@@ -149,7 +170,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline UserSettings& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
@@ -159,7 +182,9 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline UserSettings& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
@@ -169,38 +194,40 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p>
+     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
+     * traffic from SageMaker Studio. Therefore, the number of security groups that you
+     * can specify is one less than the maximum number shown.</p>
      */
     inline UserSettings& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline const SharingSettings& GetSharingSettings() const{ return m_sharingSettings; }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline bool SharingSettingsHasBeenSet() const { return m_sharingSettingsHasBeenSet; }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline void SetSharingSettings(const SharingSettings& value) { m_sharingSettingsHasBeenSet = true; m_sharingSettings = value; }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline void SetSharingSettings(SharingSettings&& value) { m_sharingSettingsHasBeenSet = true; m_sharingSettings = std::move(value); }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline UserSettings& WithSharingSettings(const SharingSettings& value) { SetSharingSettings(value); return *this;}
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline UserSettings& WithSharingSettings(SharingSettings&& value) { SetSharingSettings(std::move(value)); return *this;}
 
@@ -297,6 +324,80 @@ namespace Model
      */
     inline UserSettings& WithTensorBoardAppSettings(TensorBoardAppSettings&& value) { SetTensorBoardAppSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline const RStudioServerProAppSettings& GetRStudioServerProAppSettings() const{ return m_rStudioServerProAppSettings; }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline bool RStudioServerProAppSettingsHasBeenSet() const { return m_rStudioServerProAppSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetRStudioServerProAppSettings(const RStudioServerProAppSettings& value) { m_rStudioServerProAppSettingsHasBeenSet = true; m_rStudioServerProAppSettings = value; }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetRStudioServerProAppSettings(RStudioServerProAppSettings&& value) { m_rStudioServerProAppSettingsHasBeenSet = true; m_rStudioServerProAppSettings = std::move(value); }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline UserSettings& WithRStudioServerProAppSettings(const RStudioServerProAppSettings& value) { SetRStudioServerProAppSettings(value); return *this;}
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline UserSettings& WithRStudioServerProAppSettings(RStudioServerProAppSettings&& value) { SetRStudioServerProAppSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline const RSessionAppSettings& GetRSessionAppSettings() const{ return m_rSessionAppSettings; }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline bool RSessionAppSettingsHasBeenSet() const { return m_rSessionAppSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline void SetRSessionAppSettings(const RSessionAppSettings& value) { m_rSessionAppSettingsHasBeenSet = true; m_rSessionAppSettings = value; }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline void SetRSessionAppSettings(RSessionAppSettings&& value) { m_rSessionAppSettingsHasBeenSet = true; m_rSessionAppSettings = std::move(value); }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline UserSettings& WithRSessionAppSettings(const RSessionAppSettings& value) { SetRSessionAppSettings(value); return *this;}
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline UserSettings& WithRSessionAppSettings(RSessionAppSettings&& value) { SetRSessionAppSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionRole;
@@ -316,6 +417,12 @@ namespace Model
 
     TensorBoardAppSettings m_tensorBoardAppSettings;
     bool m_tensorBoardAppSettingsHasBeenSet;
+
+    RStudioServerProAppSettings m_rStudioServerProAppSettings;
+    bool m_rStudioServerProAppSettingsHasBeenSet;
+
+    RSessionAppSettings m_rSessionAppSettings;
+    bool m_rSessionAppSettingsHasBeenSet;
   };
 
 } // namespace Model

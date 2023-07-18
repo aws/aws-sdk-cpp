@@ -586,6 +586,31 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithMaxIopsPerGib(double value) { SetMaxIopsPerGib(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -647,6 +672,9 @@ namespace Model
 
     double m_maxIopsPerGib;
     bool m_maxIopsPerGibHasBeenSet;
+
+    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabasesHasBeenSet;
   };
 
 } // namespace Model

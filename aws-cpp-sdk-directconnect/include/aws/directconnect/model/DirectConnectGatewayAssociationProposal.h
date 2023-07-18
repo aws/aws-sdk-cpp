@@ -125,42 +125,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayOwnerAccount() const{ return m_directConnectGatewayOwnerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline bool DirectConnectGatewayOwnerAccountHasBeenSet() const { return m_directConnectGatewayOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline void SetDirectConnectGatewayOwnerAccount(const Aws::String& value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline void SetDirectConnectGatewayOwnerAccount(Aws::String&& value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline void SetDirectConnectGatewayOwnerAccount(const char* value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociationProposal& WithDirectConnectGatewayOwnerAccount(const Aws::String& value) { SetDirectConnectGatewayOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociationProposal& WithDirectConnectGatewayOwnerAccount(Aws::String&& value) { SetDirectConnectGatewayOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Direct Connect
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociationProposal& WithDirectConnectGatewayOwnerAccount(const char* value) { SetDirectConnectGatewayOwnerAccount(value); return *this;}
 

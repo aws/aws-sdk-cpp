@@ -21,6 +21,8 @@ namespace Model
 CmafPackage::CmafPackage() : 
     m_encryptionHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
+    m_includeEncoderConfigurationInSegments(false),
+    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false)
 {
@@ -29,6 +31,8 @@ CmafPackage::CmafPackage() :
 CmafPackage::CmafPackage(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
+    m_includeEncoderConfigurationInSegments(false),
+    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false)
 {
@@ -52,6 +56,13 @@ CmafPackage& CmafPackage::operator =(JsonView jsonValue)
       m_hlsManifests.push_back(hlsManifestsJsonList[hlsManifestsIndex].AsObject());
     }
     m_hlsManifestsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("includeEncoderConfigurationInSegments"))
+  {
+    m_includeEncoderConfigurationInSegments = jsonValue.GetBool("includeEncoderConfigurationInSegments");
+
+    m_includeEncoderConfigurationInSegmentsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentDurationSeconds"))
@@ -82,6 +93,12 @@ JsonValue CmafPackage::Jsonize() const
      hlsManifestsJsonList[hlsManifestsIndex].AsObject(m_hlsManifests[hlsManifestsIndex].Jsonize());
    }
    payload.WithArray("hlsManifests", std::move(hlsManifestsJsonList));
+
+  }
+
+  if(m_includeEncoderConfigurationInSegmentsHasBeenSet)
+  {
+   payload.WithBool("includeEncoderConfigurationInSegments", m_includeEncoderConfigurationInSegments);
 
   }
 

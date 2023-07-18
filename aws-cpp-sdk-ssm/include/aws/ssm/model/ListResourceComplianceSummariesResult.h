@@ -35,7 +35,7 @@ namespace Model
 
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -43,7 +43,7 @@ namespace Model
     inline const Aws::Vector<ResourceComplianceSummaryItem>& GetResourceComplianceSummaryItems() const{ return m_resourceComplianceSummaryItems; }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -51,7 +51,7 @@ namespace Model
     inline void SetResourceComplianceSummaryItems(const Aws::Vector<ResourceComplianceSummaryItem>& value) { m_resourceComplianceSummaryItems = value; }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -59,7 +59,7 @@ namespace Model
     inline void SetResourceComplianceSummaryItems(Aws::Vector<ResourceComplianceSummaryItem>&& value) { m_resourceComplianceSummaryItems = std::move(value); }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -67,7 +67,7 @@ namespace Model
     inline ListResourceComplianceSummariesResult& WithResourceComplianceSummaryItems(const Aws::Vector<ResourceComplianceSummaryItem>& value) { SetResourceComplianceSummaryItems(value); return *this;}
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -75,7 +75,7 @@ namespace Model
     inline ListResourceComplianceSummariesResult& WithResourceComplianceSummaryItems(Aws::Vector<ResourceComplianceSummaryItem>&& value) { SetResourceComplianceSummaryItems(std::move(value)); return *this;}
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -83,7 +83,7 @@ namespace Model
     inline ListResourceComplianceSummariesResult& AddResourceComplianceSummaryItems(const ResourceComplianceSummaryItem& value) { m_resourceComplianceSummaryItems.push_back(value); return *this; }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>

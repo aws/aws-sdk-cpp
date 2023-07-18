@@ -26,7 +26,7 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Amazon ML returns the following elements. </p><p><h3>See Also:</h3>   <a
+   * <p>Amazon ML returns the following elements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTagsOutput">AWS
    * API Reference</a></p>
    */

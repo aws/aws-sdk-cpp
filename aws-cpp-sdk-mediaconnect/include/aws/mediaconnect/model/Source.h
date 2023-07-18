@@ -7,7 +7,9 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Transport.h>
+#include <aws/mediaconnect/model/MediaStreamSourceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -260,6 +262,55 @@ namespace Model
 
 
     /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline const Aws::Vector<MediaStreamSourceConfiguration>& GetMediaStreamSourceConfigurations() const{ return m_mediaStreamSourceConfigurations; }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline bool MediaStreamSourceConfigurationsHasBeenSet() const { return m_mediaStreamSourceConfigurationsHasBeenSet; }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamSourceConfigurations(const Aws::Vector<MediaStreamSourceConfiguration>& value) { m_mediaStreamSourceConfigurationsHasBeenSet = true; m_mediaStreamSourceConfigurations = value; }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamSourceConfigurations(Aws::Vector<MediaStreamSourceConfiguration>&& value) { m_mediaStreamSourceConfigurationsHasBeenSet = true; m_mediaStreamSourceConfigurations = std::move(value); }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline Source& WithMediaStreamSourceConfigurations(const Aws::Vector<MediaStreamSourceConfiguration>& value) { SetMediaStreamSourceConfigurations(value); return *this;}
+
+    /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline Source& WithMediaStreamSourceConfigurations(Aws::Vector<MediaStreamSourceConfiguration>&& value) { SetMediaStreamSourceConfigurations(std::move(value)); return *this;}
+
+    /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline Source& AddMediaStreamSourceConfigurations(const MediaStreamSourceConfiguration& value) { m_mediaStreamSourceConfigurationsHasBeenSet = true; m_mediaStreamSourceConfigurations.push_back(value); return *this; }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for
+     * those associations.
+     */
+    inline Source& AddMediaStreamSourceConfigurations(MediaStreamSourceConfiguration&& value) { m_mediaStreamSourceConfigurationsHasBeenSet = true; m_mediaStreamSourceConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The name of the source.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -298,6 +349,80 @@ namespace Model
      * The name of the source.
      */
     inline Source& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline int GetSenderControlPort() const{ return m_senderControlPort; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline void SetSenderControlPort(int value) { m_senderControlPortHasBeenSet = true; m_senderControlPort = value; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline Source& WithSenderControlPort(int value) { SetSenderControlPort(value); return *this;}
+
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline const Aws::String& GetSenderIpAddress() const{ return m_senderIpAddress; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const Aws::String& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = value; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(Aws::String&& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = std::move(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const char* value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress.assign(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline Source& WithSenderIpAddress(const Aws::String& value) { SetSenderIpAddress(value); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline Source& WithSenderIpAddress(Aws::String&& value) { SetSenderIpAddress(std::move(value)); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline Source& WithSenderIpAddress(const char* value) { SetSenderIpAddress(value); return *this;}
 
 
     /**
@@ -373,42 +498,42 @@ namespace Model
 
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline const Aws::String& GetVpcInterfaceName() const{ return m_vpcInterfaceName; }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline void SetVpcInterfaceName(const Aws::String& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = value; }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline void SetVpcInterfaceName(Aws::String&& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = std::move(value); }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline void SetVpcInterfaceName(const char* value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName.assign(value); }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline Source& WithVpcInterfaceName(const Aws::String& value) { SetVpcInterfaceName(value); return *this;}
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline Source& WithVpcInterfaceName(Aws::String&& value) { SetVpcInterfaceName(std::move(value)); return *this;}
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      */
     inline Source& WithVpcInterfaceName(const char* value) { SetVpcInterfaceName(value); return *this;}
 
@@ -489,8 +614,17 @@ namespace Model
     int m_ingestPort;
     bool m_ingestPortHasBeenSet;
 
+    Aws::Vector<MediaStreamSourceConfiguration> m_mediaStreamSourceConfigurations;
+    bool m_mediaStreamSourceConfigurationsHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    int m_senderControlPort;
+    bool m_senderControlPortHasBeenSet;
+
+    Aws::String m_senderIpAddress;
+    bool m_senderIpAddressHasBeenSet;
 
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;

@@ -263,25 +263,29 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline int GetRekeyMarginTimeSeconds() const{ return m_rekeyMarginTimeSeconds; }
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline bool RekeyMarginTimeSecondsHasBeenSet() const { return m_rekeyMarginTimeSecondsHasBeenSet; }
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline void SetRekeyMarginTimeSeconds(int value) { m_rekeyMarginTimeSecondsHasBeenSet = true; m_rekeyMarginTimeSeconds = value; }
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline TunnelOption& WithRekeyMarginTimeSeconds(int value) { SetRekeyMarginTimeSeconds(value); return *this;}
 

@@ -16,6 +16,7 @@ CreateModelRequest::CreateModelRequest() :
     m_modelNameHasBeenSet(false),
     m_primaryContainerHasBeenSet(false),
     m_containersHasBeenSet(false),
+    m_inferenceExecutionConfigHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
@@ -48,6 +49,12 @@ Aws::String CreateModelRequest::SerializePayload() const
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
    }
    payload.WithArray("Containers", std::move(containersJsonList));
+
+  }
+
+  if(m_inferenceExecutionConfigHasBeenSet)
+  {
+   payload.WithObject("InferenceExecutionConfig", m_inferenceExecutionConfig.Jsonize());
 
   }
 

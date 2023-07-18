@@ -89,73 +89,73 @@ namespace Model
 
 
     /**
-     * <p>The code associated with the error.</p>
+     * <p>The error code.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>The code associated with the error.</p>
+     * <p>The error code.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>The code associated with the error.</p>
+     * <p>The error code.</p>
      */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The code associated with the error.</p>
+     * <p>The error code.</p>
      */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>The code associated with the error.</p>
+     * <p>The error code.</p>
      */
     inline BatchPutMessageErrorEntry& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The code associated with the error.</p>
+     * <p>The error code.</p>
      */
     inline BatchPutMessageErrorEntry& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline BatchPutMessageErrorEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline BatchPutMessageErrorEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>More information about the error.</p>
+     * <p>A message that describes the error.</p>
      */
     inline BatchPutMessageErrorEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

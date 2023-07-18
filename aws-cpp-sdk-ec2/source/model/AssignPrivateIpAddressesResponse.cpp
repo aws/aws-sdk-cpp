@@ -54,6 +54,17 @@ AssignPrivateIpAddressesResponse& AssignPrivateIpAddressesResponse::operator =(c
       }
 
     }
+    XmlNode assignedIpv4PrefixesNode = resultNode.FirstChild("assignedIpv4PrefixSet");
+    if(!assignedIpv4PrefixesNode.IsNull())
+    {
+      XmlNode assignedIpv4PrefixesMember = assignedIpv4PrefixesNode.FirstChild("item");
+      while(!assignedIpv4PrefixesMember.IsNull())
+      {
+        m_assignedIpv4Prefixes.push_back(assignedIpv4PrefixesMember);
+        assignedIpv4PrefixesMember = assignedIpv4PrefixesMember.NextNode("item");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

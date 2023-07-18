@@ -56,14 +56,14 @@ void DescribeActivitiesRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_startTimeHasBeenSet)
     {
-      ss << m_startTime.ToGmtString(DateFormat::RFC822);
+      ss << m_startTime.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startTime", ss.str());
       ss.str("");
     }
 
     if(m_endTimeHasBeenSet)
     {
-      ss << m_endTime.ToGmtString(DateFormat::RFC822);
+      ss << m_endTime.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("endTime", ss.str());
       ss.str("");
     }

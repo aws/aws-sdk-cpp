@@ -45,8 +45,8 @@ namespace Model
      * match its instance type configuration, or if it only accepts Host tenancy
      * instance launches that specify its unique host ID. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-     * Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User
-     * Guide for Linux Instances</i>.</p> <p>Default: <code>on</code> </p>
+     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>Default: <code>on</code> </p>
      */
     inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
 
@@ -55,8 +55,8 @@ namespace Model
      * match its instance type configuration, or if it only accepts Host tenancy
      * instance launches that specify its unique host ID. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-     * Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User
-     * Guide for Linux Instances</i>.</p> <p>Default: <code>on</code> </p>
+     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>Default: <code>on</code> </p>
      */
     inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
 
@@ -65,8 +65,8 @@ namespace Model
      * match its instance type configuration, or if it only accepts Host tenancy
      * instance launches that specify its unique host ID. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-     * Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User
-     * Guide for Linux Instances</i>.</p> <p>Default: <code>on</code> </p>
+     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>Default: <code>on</code> </p>
      */
     inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
 
@@ -75,8 +75,8 @@ namespace Model
      * match its instance type configuration, or if it only accepts Host tenancy
      * instance launches that specify its unique host ID. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-     * Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User
-     * Guide for Linux Instances</i>.</p> <p>Default: <code>on</code> </p>
+     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>Default: <code>on</code> </p>
      */
     inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
 
@@ -85,8 +85,8 @@ namespace Model
      * match its instance type configuration, or if it only accepts Host tenancy
      * instance launches that specify its unique host ID. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-     * Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User
-     * Guide for Linux Instances</i>.</p> <p>Default: <code>on</code> </p>
+     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>Default: <code>on</code> </p>
      */
     inline AllocateHostsRequest& WithAutoPlacement(const AutoPlacement& value) { SetAutoPlacement(value); return *this;}
 
@@ -95,8 +95,8 @@ namespace Model
      * match its instance type configuration, or if it only accepts Host tenancy
      * instance launches that specify its unique host ID. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-     * Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User
-     * Guide for Linux Instances</i>.</p> <p>Default: <code>on</code> </p>
+     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>Default: <code>on</code> </p>
      */
     inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
 
@@ -145,64 +145,64 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline AllocateHostsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline AllocateHostsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline AllocateHostsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -439,8 +439,8 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * Host recovery is disabled by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>off</code> </p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>off</code> </p>
      */
     inline const HostRecovery& GetHostRecovery() const{ return m_hostRecovery; }
 
@@ -448,8 +448,8 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * Host recovery is disabled by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>off</code> </p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>off</code> </p>
      */
     inline bool HostRecoveryHasBeenSet() const { return m_hostRecoveryHasBeenSet; }
 
@@ -457,8 +457,8 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * Host recovery is disabled by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>off</code> </p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>off</code> </p>
      */
     inline void SetHostRecovery(const HostRecovery& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = value; }
 
@@ -466,8 +466,8 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * Host recovery is disabled by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>off</code> </p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>off</code> </p>
      */
     inline void SetHostRecovery(HostRecovery&& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = std::move(value); }
 
@@ -475,8 +475,8 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * Host recovery is disabled by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>off</code> </p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>off</code> </p>
      */
     inline AllocateHostsRequest& WithHostRecovery(const HostRecovery& value) { SetHostRecovery(value); return *this;}
 
@@ -484,10 +484,59 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * Host recovery is disabled by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>off</code> </p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>off</code> </p>
      */
     inline AllocateHostsRequest& WithHostRecovery(HostRecovery&& value) { SetHostRecovery(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline AllocateHostsRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline AllocateHostsRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline AllocateHostsRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
   private:
 
@@ -514,6 +563,9 @@ namespace Model
 
     HostRecovery m_hostRecovery;
     bool m_hostRecoveryHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
   };
 
 } // namespace Model

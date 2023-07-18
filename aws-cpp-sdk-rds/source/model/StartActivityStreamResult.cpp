@@ -20,14 +20,16 @@ using namespace Aws;
 StartActivityStreamResult::StartActivityStreamResult() : 
     m_status(ActivityStreamStatus::NOT_SET),
     m_mode(ActivityStreamMode::NOT_SET),
-    m_applyImmediately(false)
+    m_applyImmediately(false),
+    m_engineNativeAuditFieldsIncluded(false)
 {
 }
 
 StartActivityStreamResult::StartActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(ActivityStreamStatus::NOT_SET),
     m_mode(ActivityStreamMode::NOT_SET),
-    m_applyImmediately(false)
+    m_applyImmediately(false),
+    m_engineNativeAuditFieldsIncluded(false)
 {
   *this = result;
 }
@@ -68,6 +70,11 @@ StartActivityStreamResult& StartActivityStreamResult::operator =(const Aws::Amaz
     if(!applyImmediatelyNode.IsNull())
     {
       m_applyImmediately = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyImmediatelyNode.GetText()).c_str()).c_str());
+    }
+    XmlNode engineNativeAuditFieldsIncludedNode = resultNode.FirstChild("EngineNativeAuditFieldsIncluded");
+    if(!engineNativeAuditFieldsIncludedNode.IsNull())
+    {
+      m_engineNativeAuditFieldsIncluded = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(engineNativeAuditFieldsIncludedNode.GetText()).c_str()).c_str());
     }
   }
 

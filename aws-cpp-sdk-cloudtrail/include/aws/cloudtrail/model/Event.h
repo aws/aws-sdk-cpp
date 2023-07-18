@@ -166,58 +166,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline Event& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline Event& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS access key ID that was used to sign the request. If the request was
-     * made with temporary security credentials, this is the access key ID of the
-     * temporary credentials.</p>
+     * <p>The Amazon Web Services access key ID that was used to sign the request. If
+     * the request was made with temporary security credentials, this is the access key
+     * ID of the temporary credentials.</p>
      */
     inline Event& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
@@ -254,42 +254,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline const Aws::String& GetEventSource() const{ return m_eventSource; }
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline Event& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline Event& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service that the request was made to.</p>
+     * <p>The Amazon Web Services service to which the request was made.</p>
      */
     inline Event& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 

@@ -21,6 +21,7 @@ namespace Model
 S3EncryptionSettings::S3EncryptionSettings() : 
     m_encryptionType(S3ServerSideEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
+    m_kmsEncryptionContextHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ S3EncryptionSettings::S3EncryptionSettings() :
 S3EncryptionSettings::S3EncryptionSettings(JsonView jsonValue) : 
     m_encryptionType(S3ServerSideEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
+    m_kmsEncryptionContextHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -40,6 +42,13 @@ S3EncryptionSettings& S3EncryptionSettings::operator =(JsonView jsonValue)
     m_encryptionType = S3ServerSideEncryptionTypeMapper::GetS3ServerSideEncryptionTypeForName(jsonValue.GetString("encryptionType"));
 
     m_encryptionTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsEncryptionContext"))
+  {
+    m_kmsEncryptionContext = jsonValue.GetString("kmsEncryptionContext");
+
+    m_kmsEncryptionContextHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("kmsKeyArn"))
@@ -59,6 +68,12 @@ JsonValue S3EncryptionSettings::Jsonize() const
   if(m_encryptionTypeHasBeenSet)
   {
    payload.WithString("encryptionType", S3ServerSideEncryptionTypeMapper::GetNameForS3ServerSideEncryptionType(m_encryptionType));
+  }
+
+  if(m_kmsEncryptionContextHasBeenSet)
+  {
+   payload.WithString("kmsEncryptionContext", m_kmsEncryptionContext);
+
   }
 
   if(m_kmsKeyArnHasBeenSet)

@@ -22,15 +22,11 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>The path component of the URI of a web
-   * request. This is the part of a web request that identifies a resource, for
-   * example, <code>/images/daily-ad.jpg</code>.</p> <p>This is used only to indicate
-   * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-   * specification. </p><p><h3>See Also:</h3>   <a
+   * <p>Inspect the path component of the URI of the web request. This is the part of
+   * the web request that identifies a resource. For example,
+   * <code>/images/daily-ad.jpg</code>.</p> <p>This is used only in the
+   * <a>FieldToMatch</a> specification for some web request component types. </p>
+   * <p>JSON specification: <code>"UriPath": {}</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UriPath">AWS API
    * Reference</a></p>
    */

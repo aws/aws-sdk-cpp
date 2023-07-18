@@ -23,6 +23,8 @@ ScheduleActionSettings::ScheduleActionSettings() :
     m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputPrepareSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
+    m_motionGraphicsImageActivateSettingsHasBeenSet(false),
+    m_motionGraphicsImageDeactivateSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
@@ -37,6 +39,8 @@ ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) :
     m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputPrepareSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
+    m_motionGraphicsImageActivateSettingsHasBeenSet(false),
+    m_motionGraphicsImageDeactivateSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
@@ -75,6 +79,20 @@ ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
     m_inputSwitchSettings = jsonValue.GetObject("inputSwitchSettings");
 
     m_inputSwitchSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("motionGraphicsImageActivateSettings"))
+  {
+    m_motionGraphicsImageActivateSettings = jsonValue.GetObject("motionGraphicsImageActivateSettings");
+
+    m_motionGraphicsImageActivateSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("motionGraphicsImageDeactivateSettings"))
+  {
+    m_motionGraphicsImageDeactivateSettings = jsonValue.GetObject("motionGraphicsImageDeactivateSettings");
+
+    m_motionGraphicsImageDeactivateSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pauseStateSettings"))
@@ -147,6 +165,18 @@ JsonValue ScheduleActionSettings::Jsonize() const
   if(m_inputSwitchSettingsHasBeenSet)
   {
    payload.WithObject("inputSwitchSettings", m_inputSwitchSettings.Jsonize());
+
+  }
+
+  if(m_motionGraphicsImageActivateSettingsHasBeenSet)
+  {
+   payload.WithObject("motionGraphicsImageActivateSettings", m_motionGraphicsImageActivateSettings.Jsonize());
+
+  }
+
+  if(m_motionGraphicsImageDeactivateSettingsHasBeenSet)
+  {
+   payload.WithObject("motionGraphicsImageDeactivateSettings", m_motionGraphicsImageDeactivateSettings.Jsonize());
 
   }
 

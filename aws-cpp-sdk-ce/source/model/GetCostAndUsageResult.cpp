@@ -52,6 +52,15 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("DimensionValueAttributes"))
+  {
+    Array<JsonView> dimensionValueAttributesJsonList = jsonValue.GetArray("DimensionValueAttributes");
+    for(unsigned dimensionValueAttributesIndex = 0; dimensionValueAttributesIndex < dimensionValueAttributesJsonList.GetLength(); ++dimensionValueAttributesIndex)
+    {
+      m_dimensionValueAttributes.push_back(dimensionValueAttributesJsonList[dimensionValueAttributesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

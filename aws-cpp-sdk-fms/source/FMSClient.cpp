@@ -21,11 +21,13 @@
 #include <aws/fms/FMSEndpoint.h>
 #include <aws/fms/FMSErrorMarshaller.h>
 #include <aws/fms/model/AssociateAdminAccountRequest.h>
+#include <aws/fms/model/AssociateThirdPartyFirewallRequest.h>
 #include <aws/fms/model/DeleteAppsListRequest.h>
 #include <aws/fms/model/DeleteNotificationChannelRequest.h>
 #include <aws/fms/model/DeletePolicyRequest.h>
 #include <aws/fms/model/DeleteProtocolsListRequest.h>
 #include <aws/fms/model/DisassociateAdminAccountRequest.h>
+#include <aws/fms/model/DisassociateThirdPartyFirewallRequest.h>
 #include <aws/fms/model/GetAdminAccountRequest.h>
 #include <aws/fms/model/GetAppsListRequest.h>
 #include <aws/fms/model/GetComplianceDetailRequest.h>
@@ -33,6 +35,7 @@
 #include <aws/fms/model/GetPolicyRequest.h>
 #include <aws/fms/model/GetProtectionStatusRequest.h>
 #include <aws/fms/model/GetProtocolsListRequest.h>
+#include <aws/fms/model/GetThirdPartyFirewallAssociationStatusRequest.h>
 #include <aws/fms/model/GetViolationDetailsRequest.h>
 #include <aws/fms/model/ListAppsListsRequest.h>
 #include <aws/fms/model/ListComplianceStatusRequest.h>
@@ -40,6 +43,7 @@
 #include <aws/fms/model/ListPoliciesRequest.h>
 #include <aws/fms/model/ListProtocolsListsRequest.h>
 #include <aws/fms/model/ListTagsForResourceRequest.h>
+#include <aws/fms/model/ListThirdPartyFirewallFirewallPoliciesRequest.h>
 #include <aws/fms/model/PutAppsListRequest.h>
 #include <aws/fms/model/PutNotificationChannelRequest.h>
 #include <aws/fms/model/PutPolicyRequest.h>
@@ -94,7 +98,7 @@ FMSClient::~FMSClient()
 {
 }
 
-void FMSClient::init(const ClientConfiguration& config)
+void FMSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("FMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -123,9 +127,6 @@ void FMSClient::OverrideEndpoint(const Aws::String& endpoint)
 AssociateAdminAccountOutcome FMSClient::AssociateAdminAccount(const AssociateAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AssociateAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -147,12 +148,33 @@ void FMSClient::AssociateAdminAccountAsyncHelper(const AssociateAdminAccountRequ
   handler(this, request, AssociateAdminAccount(request), context);
 }
 
+AssociateThirdPartyFirewallOutcome FMSClient::AssociateThirdPartyFirewall(const AssociateThirdPartyFirewallRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociateThirdPartyFirewallOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateThirdPartyFirewallOutcomeCallable FMSClient::AssociateThirdPartyFirewallCallable(const AssociateThirdPartyFirewallRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateThirdPartyFirewallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateThirdPartyFirewall(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::AssociateThirdPartyFirewallAsync(const AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateThirdPartyFirewallAsyncHelper( request, handler, context ); } );
+}
+
+void FMSClient::AssociateThirdPartyFirewallAsyncHelper(const AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateThirdPartyFirewall(request), context);
+}
+
 DeleteAppsListOutcome FMSClient::DeleteAppsList(const DeleteAppsListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAppsListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -177,9 +199,6 @@ void FMSClient::DeleteAppsListAsyncHelper(const DeleteAppsListRequest& request, 
 DeleteNotificationChannelOutcome FMSClient::DeleteNotificationChannel(const DeleteNotificationChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteNotificationChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -204,9 +223,6 @@ void FMSClient::DeleteNotificationChannelAsyncHelper(const DeleteNotificationCha
 DeletePolicyOutcome FMSClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeletePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -231,9 +247,6 @@ void FMSClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, cons
 DeleteProtocolsListOutcome FMSClient::DeleteProtocolsList(const DeleteProtocolsListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteProtocolsListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -258,9 +271,6 @@ void FMSClient::DeleteProtocolsListAsyncHelper(const DeleteProtocolsListRequest&
 DisassociateAdminAccountOutcome FMSClient::DisassociateAdminAccount(const DisassociateAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisassociateAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -282,12 +292,33 @@ void FMSClient::DisassociateAdminAccountAsyncHelper(const DisassociateAdminAccou
   handler(this, request, DisassociateAdminAccount(request), context);
 }
 
+DisassociateThirdPartyFirewallOutcome FMSClient::DisassociateThirdPartyFirewall(const DisassociateThirdPartyFirewallRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociateThirdPartyFirewallOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateThirdPartyFirewallOutcomeCallable FMSClient::DisassociateThirdPartyFirewallCallable(const DisassociateThirdPartyFirewallRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateThirdPartyFirewallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateThirdPartyFirewall(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::DisassociateThirdPartyFirewallAsync(const DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateThirdPartyFirewallAsyncHelper( request, handler, context ); } );
+}
+
+void FMSClient::DisassociateThirdPartyFirewallAsyncHelper(const DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateThirdPartyFirewall(request), context);
+}
+
 GetAdminAccountOutcome FMSClient::GetAdminAccount(const GetAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -312,9 +343,6 @@ void FMSClient::GetAdminAccountAsyncHelper(const GetAdminAccountRequest& request
 GetAppsListOutcome FMSClient::GetAppsList(const GetAppsListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAppsListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -339,9 +367,6 @@ void FMSClient::GetAppsListAsyncHelper(const GetAppsListRequest& request, const 
 GetComplianceDetailOutcome FMSClient::GetComplianceDetail(const GetComplianceDetailRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetComplianceDetailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -366,9 +391,6 @@ void FMSClient::GetComplianceDetailAsyncHelper(const GetComplianceDetailRequest&
 GetNotificationChannelOutcome FMSClient::GetNotificationChannel(const GetNotificationChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetNotificationChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -393,9 +415,6 @@ void FMSClient::GetNotificationChannelAsyncHelper(const GetNotificationChannelRe
 GetPolicyOutcome FMSClient::GetPolicy(const GetPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -420,9 +439,6 @@ void FMSClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetP
 GetProtectionStatusOutcome FMSClient::GetProtectionStatus(const GetProtectionStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetProtectionStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -447,9 +463,6 @@ void FMSClient::GetProtectionStatusAsyncHelper(const GetProtectionStatusRequest&
 GetProtocolsListOutcome FMSClient::GetProtocolsList(const GetProtocolsListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetProtocolsListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -471,12 +484,33 @@ void FMSClient::GetProtocolsListAsyncHelper(const GetProtocolsListRequest& reque
   handler(this, request, GetProtocolsList(request), context);
 }
 
+GetThirdPartyFirewallAssociationStatusOutcome FMSClient::GetThirdPartyFirewallAssociationStatus(const GetThirdPartyFirewallAssociationStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetThirdPartyFirewallAssociationStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetThirdPartyFirewallAssociationStatusOutcomeCallable FMSClient::GetThirdPartyFirewallAssociationStatusCallable(const GetThirdPartyFirewallAssociationStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetThirdPartyFirewallAssociationStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetThirdPartyFirewallAssociationStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::GetThirdPartyFirewallAssociationStatusAsync(const GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetThirdPartyFirewallAssociationStatusAsyncHelper( request, handler, context ); } );
+}
+
+void FMSClient::GetThirdPartyFirewallAssociationStatusAsyncHelper(const GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetThirdPartyFirewallAssociationStatus(request), context);
+}
+
 GetViolationDetailsOutcome FMSClient::GetViolationDetails(const GetViolationDetailsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetViolationDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -501,9 +535,6 @@ void FMSClient::GetViolationDetailsAsyncHelper(const GetViolationDetailsRequest&
 ListAppsListsOutcome FMSClient::ListAppsLists(const ListAppsListsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListAppsListsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -528,9 +559,6 @@ void FMSClient::ListAppsListsAsyncHelper(const ListAppsListsRequest& request, co
 ListComplianceStatusOutcome FMSClient::ListComplianceStatus(const ListComplianceStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListComplianceStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -555,9 +583,6 @@ void FMSClient::ListComplianceStatusAsyncHelper(const ListComplianceStatusReques
 ListMemberAccountsOutcome FMSClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListMemberAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -582,9 +607,6 @@ void FMSClient::ListMemberAccountsAsyncHelper(const ListMemberAccountsRequest& r
 ListPoliciesOutcome FMSClient::ListPolicies(const ListPoliciesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -609,9 +631,6 @@ void FMSClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, cons
 ListProtocolsListsOutcome FMSClient::ListProtocolsLists(const ListProtocolsListsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListProtocolsListsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -636,9 +655,6 @@ void FMSClient::ListProtocolsListsAsyncHelper(const ListProtocolsListsRequest& r
 ListTagsForResourceOutcome FMSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -660,12 +676,33 @@ void FMSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
   handler(this, request, ListTagsForResource(request), context);
 }
 
+ListThirdPartyFirewallFirewallPoliciesOutcome FMSClient::ListThirdPartyFirewallFirewallPolicies(const ListThirdPartyFirewallFirewallPoliciesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListThirdPartyFirewallFirewallPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListThirdPartyFirewallFirewallPoliciesOutcomeCallable FMSClient::ListThirdPartyFirewallFirewallPoliciesCallable(const ListThirdPartyFirewallFirewallPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThirdPartyFirewallFirewallPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThirdPartyFirewallFirewallPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::ListThirdPartyFirewallFirewallPoliciesAsync(const ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThirdPartyFirewallFirewallPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void FMSClient::ListThirdPartyFirewallFirewallPoliciesAsyncHelper(const ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThirdPartyFirewallFirewallPolicies(request), context);
+}
+
 PutAppsListOutcome FMSClient::PutAppsList(const PutAppsListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutAppsListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -690,9 +727,6 @@ void FMSClient::PutAppsListAsyncHelper(const PutAppsListRequest& request, const 
 PutNotificationChannelOutcome FMSClient::PutNotificationChannel(const PutNotificationChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutNotificationChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -717,9 +751,6 @@ void FMSClient::PutNotificationChannelAsyncHelper(const PutNotificationChannelRe
 PutPolicyOutcome FMSClient::PutPolicy(const PutPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -744,9 +775,6 @@ void FMSClient::PutPolicyAsyncHelper(const PutPolicyRequest& request, const PutP
 PutProtocolsListOutcome FMSClient::PutProtocolsList(const PutProtocolsListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutProtocolsListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -771,9 +799,6 @@ void FMSClient::PutProtocolsListAsyncHelper(const PutProtocolsListRequest& reque
 TagResourceOutcome FMSClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -798,9 +823,6 @@ void FMSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const 
 UntagResourceOutcome FMSClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

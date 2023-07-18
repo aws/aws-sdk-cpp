@@ -19,12 +19,16 @@ namespace Model
 {
 
 ComponentRunWith::ComponentRunWith() : 
-    m_posixUserHasBeenSet(false)
+    m_posixUserHasBeenSet(false),
+    m_systemResourceLimitsHasBeenSet(false),
+    m_windowsUserHasBeenSet(false)
 {
 }
 
 ComponentRunWith::ComponentRunWith(JsonView jsonValue) : 
-    m_posixUserHasBeenSet(false)
+    m_posixUserHasBeenSet(false),
+    m_systemResourceLimitsHasBeenSet(false),
+    m_windowsUserHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,20 @@ ComponentRunWith& ComponentRunWith::operator =(JsonView jsonValue)
     m_posixUserHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("systemResourceLimits"))
+  {
+    m_systemResourceLimits = jsonValue.GetObject("systemResourceLimits");
+
+    m_systemResourceLimitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("windowsUser"))
+  {
+    m_windowsUser = jsonValue.GetString("windowsUser");
+
+    m_windowsUserHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +66,18 @@ JsonValue ComponentRunWith::Jsonize() const
   if(m_posixUserHasBeenSet)
   {
    payload.WithString("posixUser", m_posixUser);
+
+  }
+
+  if(m_systemResourceLimitsHasBeenSet)
+  {
+   payload.WithObject("systemResourceLimits", m_systemResourceLimits.Jsonize());
+
+  }
+
+  if(m_windowsUserHasBeenSet)
+  {
+   payload.WithString("windowsUser", m_windowsUser);
 
   }
 

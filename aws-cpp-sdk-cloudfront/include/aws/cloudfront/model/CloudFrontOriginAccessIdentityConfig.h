@@ -177,42 +177,50 @@ namespace Model
 
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline CloudFrontOriginAccessIdentityConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline CloudFrontOriginAccessIdentityConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>Any comments you want to include about the origin access identity. </p>
+     * <p>A comment to describe the origin access identity. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline CloudFrontOriginAccessIdentityConfig& WithComment(const char* value) { SetComment(value); return *this;}
 

@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/GatewayRouteHostnameMatch.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appmesh/model/GrpcGatewayRouteMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +39,78 @@ namespace Model
     GrpcGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
     GrpcGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The gateway route host name to be matched on.</p>
+     */
+    inline const GatewayRouteHostnameMatch& GetHostname() const{ return m_hostname; }
+
+    /**
+     * <p>The gateway route host name to be matched on.</p>
+     */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p>The gateway route host name to be matched on.</p>
+     */
+    inline void SetHostname(const GatewayRouteHostnameMatch& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+
+    /**
+     * <p>The gateway route host name to be matched on.</p>
+     */
+    inline void SetHostname(GatewayRouteHostnameMatch&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
+
+    /**
+     * <p>The gateway route host name to be matched on.</p>
+     */
+    inline GrpcGatewayRouteMatch& WithHostname(const GatewayRouteHostnameMatch& value) { SetHostname(value); return *this;}
+
+    /**
+     * <p>The gateway route host name to be matched on.</p>
+     */
+    inline GrpcGatewayRouteMatch& WithHostname(GatewayRouteHostnameMatch&& value) { SetHostname(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline const Aws::Vector<GrpcGatewayRouteMetadata>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline void SetMetadata(const Aws::Vector<GrpcGatewayRouteMetadata>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline void SetMetadata(Aws::Vector<GrpcGatewayRouteMetadata>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline GrpcGatewayRouteMatch& WithMetadata(const Aws::Vector<GrpcGatewayRouteMetadata>& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline GrpcGatewayRouteMatch& WithMetadata(Aws::Vector<GrpcGatewayRouteMetadata>&& value) { SetMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline GrpcGatewayRouteMatch& AddMetadata(const GrpcGatewayRouteMetadata& value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
+
+    /**
+     * <p>The gateway route metadata to be matched on.</p>
+     */
+    inline GrpcGatewayRouteMatch& AddMetadata(GrpcGatewayRouteMetadata&& value) { m_metadataHasBeenSet = true; m_metadata.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -87,6 +162,12 @@ namespace Model
     inline GrpcGatewayRouteMatch& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
   private:
+
+    GatewayRouteHostnameMatch m_hostname;
+    bool m_hostnameHasBeenSet;
+
+    Aws::Vector<GrpcGatewayRouteMetadata> m_metadata;
+    bool m_metadataHasBeenSet;
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;

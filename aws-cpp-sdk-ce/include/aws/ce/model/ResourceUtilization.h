@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>Utilization of current Amazon EC2 instance. </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline const EC2ResourceUtilization& GetEC2ResourceUtilization() const{ return m_eC2ResourceUtilization; }
 
     /**
-     * <p>Utilization of current Amazon EC2 instance. </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline bool EC2ResourceUtilizationHasBeenSet() const { return m_eC2ResourceUtilizationHasBeenSet; }
 
     /**
-     * <p>Utilization of current Amazon EC2 instance. </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline void SetEC2ResourceUtilization(const EC2ResourceUtilization& value) { m_eC2ResourceUtilizationHasBeenSet = true; m_eC2ResourceUtilization = value; }
 
     /**
-     * <p>Utilization of current Amazon EC2 instance. </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline void SetEC2ResourceUtilization(EC2ResourceUtilization&& value) { m_eC2ResourceUtilizationHasBeenSet = true; m_eC2ResourceUtilization = std::move(value); }
 
     /**
-     * <p>Utilization of current Amazon EC2 instance. </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline ResourceUtilization& WithEC2ResourceUtilization(const EC2ResourceUtilization& value) { SetEC2ResourceUtilization(value); return *this;}
 
     /**
-     * <p>Utilization of current Amazon EC2 instance. </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline ResourceUtilization& WithEC2ResourceUtilization(EC2ResourceUtilization&& value) { SetEC2ResourceUtilization(std::move(value)); return *this;}
 

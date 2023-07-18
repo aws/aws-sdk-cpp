@@ -35,66 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline const Aws::String& GetDistributionName() const{ return m_distributionName; }
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline bool DistributionNameHasBeenSet() const { return m_distributionNameHasBeenSet; }
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline void SetDistributionName(const Aws::String& value) { m_distributionNameHasBeenSet = true; m_distributionName = value; }
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline void SetDistributionName(Aws::String&& value) { m_distributionNameHasBeenSet = true; m_distributionName = std::move(value); }
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline void SetDistributionName(const char* value) { m_distributionNameHasBeenSet = true; m_distributionName.assign(value); }
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline GetDistributionsRequest& WithDistributionName(const Aws::String& value) { SetDistributionName(value); return *this;}
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline GetDistributionsRequest& WithDistributionName(Aws::String&& value) { SetDistributionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the distribution for which to return information.</p> <p>Use the
-     * <code>GetDistributions</code> action to get a list of distribution names that
-     * you can specify.</p> <p>When omitted, the response includes all of your
-     * distributions in the AWS Region where the request is made.</p>
+     * <p>The name of the distribution for which to return information.</p> <p>When
+     * omitted, the response includes all of your distributions in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline GetDistributionsRequest& WithDistributionName(const char* value) { SetDistributionName(value); return *this;}
 

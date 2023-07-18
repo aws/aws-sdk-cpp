@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline DomainDeliverabilityTrackingOption& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline DomainDeliverabilityTrackingOption& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
+     * <p>A verified domain that’s associated with your Amazon Web Services account and
+     * currently has an active Deliverability dashboard subscription.</p>
      */
     inline DomainDeliverabilityTrackingOption& WithDomain(const char* value) { SetDomain(value); return *this;}
 

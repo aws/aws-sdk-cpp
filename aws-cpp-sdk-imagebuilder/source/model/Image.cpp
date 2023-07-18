@@ -39,7 +39,9 @@ Image::Image() :
     m_imageTestsConfigurationHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_outputResourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_buildType(BuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ Image::Image(JsonView jsonValue) :
     m_imageTestsConfigurationHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_outputResourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_buildType(BuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +204,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("buildType"))
+  {
+    m_buildType = BuildTypeMapper::GetBuildTypeForName(jsonValue.GetString("buildType"));
+
+    m_buildTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -316,6 +327,11 @@ JsonValue Image::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_buildTypeHasBeenSet)
+  {
+   payload.WithString("buildType", BuildTypeMapper::GetNameForBuildType(m_buildType));
   }
 
   return payload;

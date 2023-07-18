@@ -413,7 +413,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -421,7 +421,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -429,7 +429,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -437,7 +437,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -445,7 +445,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -453,7 +453,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -461,7 +461,7 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */

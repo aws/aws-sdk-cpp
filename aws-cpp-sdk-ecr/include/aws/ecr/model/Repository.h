@@ -44,8 +44,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline const Aws::String& GetRepositoryArn() const{ return m_repositoryArn; }
@@ -53,8 +53,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline bool RepositoryArnHasBeenSet() const { return m_repositoryArnHasBeenSet; }
@@ -62,8 +62,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline void SetRepositoryArn(const Aws::String& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = value; }
@@ -71,8 +71,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline void SetRepositoryArn(Aws::String&& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = std::move(value); }
@@ -80,8 +80,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline void SetRepositoryArn(const char* value) { m_repositoryArnHasBeenSet = true; m_repositoryArn.assign(value); }
@@ -89,8 +89,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline Repository& WithRepositoryArn(const Aws::String& value) { SetRepositoryArn(value); return *this;}
@@ -98,8 +98,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline Repository& WithRepositoryArn(Aws::String&& value) { SetRepositoryArn(std::move(value)); return *this;}
@@ -107,58 +107,58 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline Repository& WithRepositoryArn(const char* value) { SetRepositoryArn(value); return *this;}
 
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline Repository& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline Repository& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline Repository& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 

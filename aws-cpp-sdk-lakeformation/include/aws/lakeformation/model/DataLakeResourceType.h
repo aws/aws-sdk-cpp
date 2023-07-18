@@ -19,7 +19,11 @@ namespace Model
     CATALOG,
     DATABASE,
     TABLE,
-    DATA_LOCATION
+    DATA_LOCATION,
+    LF_TAG,
+    LF_TAG_POLICY,
+    LF_TAG_POLICY_DATABASE,
+    LF_TAG_POLICY_TABLE
   };
 
 namespace DataLakeResourceTypeMapper

@@ -73,37 +73,37 @@ namespace Model
 
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const Aws::String& value) { m_backupJobId = value; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(Aws::String&& value) { m_backupJobId = std::move(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const char* value) { m_backupJobId.assign(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline DescribeBackupJobResult& WithBackupJobId(const Aws::String& value) { SetBackupJobId(value); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline DescribeBackupJobResult& WithBackupJobId(Aws::String&& value) { SetBackupJobId(std::move(value)); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline DescribeBackupJobResult& WithBackupJobId(const char* value) { SetBackupJobId(value); return *this;}
 
@@ -111,56 +111,56 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultName = value; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const char* value) { m_backupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline DescribeBackupJobResult& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline DescribeBackupJobResult& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline DescribeBackupJobResult& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
 
@@ -596,51 +596,51 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database.</p>
      */
     inline DescribeBackupJobResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database.</p>
      */
     inline DescribeBackupJobResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database.</p>
      */
     inline DescribeBackupJobResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -841,57 +841,57 @@ namespace Model
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
-     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
-     * is a regular backup.</p>
+     * a successful Windows Volume Shadow Copy Service (VSS) backup was taken,
+     * <code>BackupType</code> returns <code>"WindowsVSS"</code>. If
+     * <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
      */
     inline const Aws::String& GetBackupType() const{ return m_backupType; }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
-     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
-     * is a regular backup.</p>
+     * a successful Windows Volume Shadow Copy Service (VSS) backup was taken,
+     * <code>BackupType</code> returns <code>"WindowsVSS"</code>. If
+     * <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
      */
     inline void SetBackupType(const Aws::String& value) { m_backupType = value; }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
-     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
-     * is a regular backup.</p>
+     * a successful Windows Volume Shadow Copy Service (VSS) backup was taken,
+     * <code>BackupType</code> returns <code>"WindowsVSS"</code>. If
+     * <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
      */
     inline void SetBackupType(Aws::String&& value) { m_backupType = std::move(value); }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
-     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
-     * is a regular backup.</p>
+     * a successful Windows Volume Shadow Copy Service (VSS) backup was taken,
+     * <code>BackupType</code> returns <code>"WindowsVSS"</code>. If
+     * <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
      */
     inline void SetBackupType(const char* value) { m_backupType.assign(value); }
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
-     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
-     * is a regular backup.</p>
+     * a successful Windows Volume Shadow Copy Service (VSS) backup was taken,
+     * <code>BackupType</code> returns <code>"WindowsVSS"</code>. If
+     * <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
      */
     inline DescribeBackupJobResult& WithBackupType(const Aws::String& value) { SetBackupType(value); return *this;}
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
-     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
-     * is a regular backup.</p>
+     * a successful Windows Volume Shadow Copy Service (VSS) backup was taken,
+     * <code>BackupType</code> returns <code>"WindowsVSS"</code>. If
+     * <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
      */
     inline DescribeBackupJobResult& WithBackupType(Aws::String&& value) { SetBackupType(std::move(value)); return *this;}
 
     /**
      * <p>Represents the actual backup type selected for a backup job. For example, if
-     * a successful WindowsVSS backup was taken, <code>BackupType</code> returns
-     * "WindowsVSS". If <code>BackupType</code> is empty, then the backup type that was
-     * is a regular backup.</p>
+     * a successful Windows Volume Shadow Copy Service (VSS) backup was taken,
+     * <code>BackupType</code> returns <code>"WindowsVSS"</code>. If
+     * <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
      */
     inline DescribeBackupJobResult& WithBackupType(const char* value) { SetBackupType(value); return *this;}
 

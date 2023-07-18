@@ -103,56 +103,56 @@ namespace Model
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline const Aws::Vector<CapacityProviderField>& GetInclude() const{ return m_include; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(const Aws::Vector<CapacityProviderField>& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(Aws::Vector<CapacityProviderField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& WithInclude(const Aws::Vector<CapacityProviderField>& value) { SetInclude(value); return *this;}
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& WithInclude(Aws::Vector<CapacityProviderField>&& value) { SetInclude(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& AddInclude(const CapacityProviderField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& AddInclude(CapacityProviderField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
 

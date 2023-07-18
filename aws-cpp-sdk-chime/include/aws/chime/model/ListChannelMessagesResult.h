@@ -114,37 +114,37 @@ namespace Model
 
 
     /**
-     * <p>The information about and content of each requested message.</p>
+     * <p>The information about, and content of, each requested message.</p>
      */
     inline const Aws::Vector<ChannelMessageSummary>& GetChannelMessages() const{ return m_channelMessages; }
 
     /**
-     * <p>The information about and content of each requested message.</p>
+     * <p>The information about, and content of, each requested message.</p>
      */
     inline void SetChannelMessages(const Aws::Vector<ChannelMessageSummary>& value) { m_channelMessages = value; }
 
     /**
-     * <p>The information about and content of each requested message.</p>
+     * <p>The information about, and content of, each requested message.</p>
      */
     inline void SetChannelMessages(Aws::Vector<ChannelMessageSummary>&& value) { m_channelMessages = std::move(value); }
 
     /**
-     * <p>The information about and content of each requested message.</p>
+     * <p>The information about, and content of, each requested message.</p>
      */
     inline ListChannelMessagesResult& WithChannelMessages(const Aws::Vector<ChannelMessageSummary>& value) { SetChannelMessages(value); return *this;}
 
     /**
-     * <p>The information about and content of each requested message.</p>
+     * <p>The information about, and content of, each requested message.</p>
      */
     inline ListChannelMessagesResult& WithChannelMessages(Aws::Vector<ChannelMessageSummary>&& value) { SetChannelMessages(std::move(value)); return *this;}
 
     /**
-     * <p>The information about and content of each requested message.</p>
+     * <p>The information about, and content of, each requested message.</p>
      */
     inline ListChannelMessagesResult& AddChannelMessages(const ChannelMessageSummary& value) { m_channelMessages.push_back(value); return *this; }
 
     /**
-     * <p>The information about and content of each requested message.</p>
+     * <p>The information about, and content of, each requested message.</p>
      */
     inline ListChannelMessagesResult& AddChannelMessages(ChannelMessageSummary&& value) { m_channelMessages.push_back(std::move(value)); return *this; }
 

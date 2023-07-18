@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     file_system_id,
-    task_lifecycle
+    task_lifecycle,
+    data_repository_association_id
   };
 
 namespace DataRepositoryTaskFilterNameMapper

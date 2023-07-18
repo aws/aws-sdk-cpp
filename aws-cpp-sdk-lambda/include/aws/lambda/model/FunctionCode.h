@@ -41,87 +41,87 @@ namespace Model
 
 
     /**
-     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
-     * clients handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the deployment package. Amazon Web Services
+     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
-     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
-     * clients handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the deployment package. Amazon Web Services
+     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
-     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
-     * clients handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the deployment package. Amazon Web Services
+     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
-     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
-     * clients handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the deployment package. Amazon Web Services
+     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline void SetZipFile(Aws::Utils::CryptoBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
-     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
-     * clients handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the deployment package. Amazon Web Services
+     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline FunctionCode& WithZipFile(const Aws::Utils::CryptoBuffer& value) { SetZipFile(value); return *this;}
 
     /**
-     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
-     * clients handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the deployment package. Amazon Web Services
+     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline FunctionCode& WithZipFile(Aws::Utils::CryptoBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline FunctionCode& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline FunctionCode& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
-     * be in a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
+     * The bucket can be in a different Amazon Web Services account.</p>
      */
     inline FunctionCode& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
@@ -217,42 +217,58 @@ namespace Model
 
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline const Aws::String& GetImageUri() const{ return m_imageUri; }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline FunctionCode& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline FunctionCode& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+     * image</a> in the Amazon ECR registry.</p>
      */
     inline FunctionCode& WithImageUri(const char* value) { SetImageUri(value); return *this;}
 

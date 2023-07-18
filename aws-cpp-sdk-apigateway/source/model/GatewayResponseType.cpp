@@ -40,6 +40,7 @@ namespace Aws
         static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("REQUEST_TOO_LARGE");
         static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
         static const int QUOTA_EXCEEDED_HASH = HashingUtils::HashString("QUOTA_EXCEEDED");
+        static const int WAF_FILTERED_HASH = HashingUtils::HashString("WAF_FILTERED");
 
 
         GatewayResponseType GetGatewayResponseTypeForName(const Aws::String& name)
@@ -125,6 +126,10 @@ namespace Aws
           {
             return GatewayResponseType::QUOTA_EXCEEDED;
           }
+          else if (hashCode == WAF_FILTERED_HASH)
+          {
+            return GatewayResponseType::WAF_FILTERED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -179,6 +184,8 @@ namespace Aws
             return "THROTTLED";
           case GatewayResponseType::QUOTA_EXCEEDED:
             return "QUOTA_EXCEEDED";
+          case GatewayResponseType::WAF_FILTERED:
+            return "WAF_FILTERED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

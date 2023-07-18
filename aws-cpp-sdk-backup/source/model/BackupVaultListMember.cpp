@@ -25,7 +25,14 @@ BackupVaultListMember::BackupVaultListMember() :
     m_encryptionKeyArnHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
     m_numberOfRecoveryPoints(0),
-    m_numberOfRecoveryPointsHasBeenSet(false)
+    m_numberOfRecoveryPointsHasBeenSet(false),
+    m_locked(false),
+    m_lockedHasBeenSet(false),
+    m_minRetentionDays(0),
+    m_minRetentionDaysHasBeenSet(false),
+    m_maxRetentionDays(0),
+    m_maxRetentionDaysHasBeenSet(false),
+    m_lockDateHasBeenSet(false)
 {
 }
 
@@ -36,7 +43,14 @@ BackupVaultListMember::BackupVaultListMember(JsonView jsonValue) :
     m_encryptionKeyArnHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
     m_numberOfRecoveryPoints(0),
-    m_numberOfRecoveryPointsHasBeenSet(false)
+    m_numberOfRecoveryPointsHasBeenSet(false),
+    m_locked(false),
+    m_lockedHasBeenSet(false),
+    m_minRetentionDays(0),
+    m_minRetentionDaysHasBeenSet(false),
+    m_maxRetentionDays(0),
+    m_maxRetentionDaysHasBeenSet(false),
+    m_lockDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +99,34 @@ BackupVaultListMember& BackupVaultListMember::operator =(JsonView jsonValue)
     m_numberOfRecoveryPointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Locked"))
+  {
+    m_locked = jsonValue.GetBool("Locked");
+
+    m_lockedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MinRetentionDays"))
+  {
+    m_minRetentionDays = jsonValue.GetInt64("MinRetentionDays");
+
+    m_minRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxRetentionDays"))
+  {
+    m_maxRetentionDays = jsonValue.GetInt64("MaxRetentionDays");
+
+    m_maxRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LockDate"))
+  {
+    m_lockDate = jsonValue.GetDouble("LockDate");
+
+    m_lockDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +167,29 @@ JsonValue BackupVaultListMember::Jsonize() const
   {
    payload.WithInt64("NumberOfRecoveryPoints", m_numberOfRecoveryPoints);
 
+  }
+
+  if(m_lockedHasBeenSet)
+  {
+   payload.WithBool("Locked", m_locked);
+
+  }
+
+  if(m_minRetentionDaysHasBeenSet)
+  {
+   payload.WithInt64("MinRetentionDays", m_minRetentionDays);
+
+  }
+
+  if(m_maxRetentionDaysHasBeenSet)
+  {
+   payload.WithInt64("MaxRetentionDays", m_maxRetentionDays);
+
+  }
+
+  if(m_lockDateHasBeenSet)
+  {
+   payload.WithDouble("LockDate", m_lockDate.SecondsWithMSPrecision());
   }
 
   return payload;

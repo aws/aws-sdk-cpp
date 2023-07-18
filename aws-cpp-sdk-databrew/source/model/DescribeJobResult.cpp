@@ -121,10 +121,43 @@ DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("DataCatalogOutputs"))
+  {
+    Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
+    for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
+    {
+      m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("DatabaseOutputs"))
+  {
+    Array<JsonView> databaseOutputsJsonList = jsonValue.GetArray("DatabaseOutputs");
+    for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+    {
+      m_databaseOutputs.push_back(databaseOutputsJsonList[databaseOutputsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("ProjectName"))
   {
     m_projectName = jsonValue.GetString("ProjectName");
 
+  }
+
+  if(jsonValue.ValueExists("ProfileConfiguration"))
+  {
+    m_profileConfiguration = jsonValue.GetObject("ProfileConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ValidationConfigurations"))
+  {
+    Array<JsonView> validationConfigurationsJsonList = jsonValue.GetArray("ValidationConfigurations");
+    for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
+    {
+      m_validationConfigurations.push_back(validationConfigurationsJsonList[validationConfigurationsIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("RecipeReference"))
@@ -157,6 +190,12 @@ DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
+
+  }
+
+  if(jsonValue.ValueExists("JobSample"))
+  {
+    m_jobSample = jsonValue.GetObject("JobSample");
 
   }
 

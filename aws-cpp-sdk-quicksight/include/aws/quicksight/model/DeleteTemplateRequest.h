@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline DeleteTemplateRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline DeleteTemplateRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * deleting.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're deleting.</p>
      */
     inline DeleteTemplateRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

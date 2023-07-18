@@ -22,6 +22,9 @@ namespace Aws
 
         static const int Ec2Instance_HASH = HashingUtils::HashString("Ec2Instance");
         static const int AutoScalingGroup_HASH = HashingUtils::HashString("AutoScalingGroup");
+        static const int EbsVolume_HASH = HashingUtils::HashString("EbsVolume");
+        static const int LambdaFunction_HASH = HashingUtils::HashString("LambdaFunction");
+        static const int NotApplicable_HASH = HashingUtils::HashString("NotApplicable");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -34,6 +37,18 @@ namespace Aws
           else if (hashCode == AutoScalingGroup_HASH)
           {
             return ResourceType::AutoScalingGroup;
+          }
+          else if (hashCode == EbsVolume_HASH)
+          {
+            return ResourceType::EbsVolume;
+          }
+          else if (hashCode == LambdaFunction_HASH)
+          {
+            return ResourceType::LambdaFunction;
+          }
+          else if (hashCode == NotApplicable_HASH)
+          {
+            return ResourceType::NotApplicable;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +68,12 @@ namespace Aws
             return "Ec2Instance";
           case ResourceType::AutoScalingGroup:
             return "AutoScalingGroup";
+          case ResourceType::EbsVolume:
+            return "EbsVolume";
+          case ResourceType::LambdaFunction:
+            return "LambdaFunction";
+          case ResourceType::NotApplicable:
+            return "NotApplicable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

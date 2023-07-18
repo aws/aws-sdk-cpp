@@ -21,7 +21,8 @@ namespace Model
     antenna_uplink,
     dataflow_endpoint,
     tracking,
-    uplink_echo
+    uplink_echo,
+    s3_recording
   };
 
 namespace ConfigCapabilityTypeMapper

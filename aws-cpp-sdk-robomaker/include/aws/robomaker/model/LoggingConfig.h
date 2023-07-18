@@ -34,31 +34,6 @@ namespace Model
     LoggingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline bool GetRecordAllRosTopics() const{ return m_recordAllRosTopics; }
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline bool RecordAllRosTopicsHasBeenSet() const { return m_recordAllRosTopicsHasBeenSet; }
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline void SetRecordAllRosTopics(bool value) { m_recordAllRosTopicsHasBeenSet = true; m_recordAllRosTopics = value; }
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline LoggingConfig& WithRecordAllRosTopics(bool value) { SetRecordAllRosTopics(value); return *this;}
-
-  private:
-
-    bool m_recordAllRosTopics;
-    bool m_recordAllRosTopicsHasBeenSet;
   };
 
 } // namespace Model

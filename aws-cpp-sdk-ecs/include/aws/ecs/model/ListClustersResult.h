@@ -34,49 +34,49 @@ namespace Model
 
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClusterArns() const{ return m_clusterArns; }
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline void SetClusterArns(const Aws::Vector<Aws::String>& value) { m_clusterArns = value; }
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline void SetClusterArns(Aws::Vector<Aws::String>&& value) { m_clusterArns = std::move(value); }
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline ListClustersResult& WithClusterArns(const Aws::Vector<Aws::String>& value) { SetClusterArns(value); return *this;}
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline ListClustersResult& WithClusterArns(Aws::Vector<Aws::String>&& value) { SetClusterArns(std::move(value)); return *this;}
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline ListClustersResult& AddClusterArns(const Aws::String& value) { m_clusterArns.push_back(value); return *this; }
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline ListClustersResult& AddClusterArns(Aws::String&& value) { m_clusterArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
+     * <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's
      * associated with your account.</p>
      */
     inline ListClustersResult& AddClusterArns(const char* value) { m_clusterArns.push_back(value); return *this; }

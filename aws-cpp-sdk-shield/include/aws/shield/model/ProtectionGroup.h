@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>A grouping of protected resources that you and AWS Shield Advanced can
-   * monitor as a collective. This resource grouping improves the accuracy of
-   * detection and reduces false positives. </p><p><h3>See Also:</h3>   <a
+   * <p>A grouping of protected resources that you and Shield Advanced can monitor as
+   * a collective. This resource grouping improves the accuracy of detection and
+   * reduces false positives. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ProtectionGroup">AWS
    * API Reference</a></p>
    */
@@ -101,90 +101,90 @@ namespace Model
 
 
     /**
-     * <p>Defines how AWS Shield combines resource data for the group in order to
-     * detect, mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total
-     * traffic across the group. This is a good choice for most cases. Examples include
-     * Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-     * </li> <li> <p>Mean - Use the average of the traffic across the group. This is a
-     * good choice for resources that share traffic uniformly. Examples include
-     * accelerators and load balancers.</p> </li> <li> <p>Max - Use the highest traffic
-     * from each resource. This is useful for resources that don't share traffic and
-     * for resources that share that traffic in a non-uniform way. Examples include
+     * <p>Defines how Shield combines resource data for the group in order to detect,
+     * mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total traffic across
+     * the group. This is a good choice for most cases. Examples include Elastic IP
+     * addresses for EC2 instances that scale manually or automatically.</p> </li> <li>
+     * <p>Mean - Use the average of the traffic across the group. This is a good choice
+     * for resources that share traffic uniformly. Examples include accelerators and
+     * load balancers.</p> </li> <li> <p>Max - Use the highest traffic from each
+     * resource. This is useful for resources that don't share traffic and for
+     * resources that share that traffic in a non-uniform way. Examples include Amazon
      * CloudFront distributions and origin resources for CloudFront distributions.</p>
      * </li> </ul>
      */
     inline const ProtectionGroupAggregation& GetAggregation() const{ return m_aggregation; }
 
     /**
-     * <p>Defines how AWS Shield combines resource data for the group in order to
-     * detect, mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total
-     * traffic across the group. This is a good choice for most cases. Examples include
-     * Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-     * </li> <li> <p>Mean - Use the average of the traffic across the group. This is a
-     * good choice for resources that share traffic uniformly. Examples include
-     * accelerators and load balancers.</p> </li> <li> <p>Max - Use the highest traffic
-     * from each resource. This is useful for resources that don't share traffic and
-     * for resources that share that traffic in a non-uniform way. Examples include
+     * <p>Defines how Shield combines resource data for the group in order to detect,
+     * mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total traffic across
+     * the group. This is a good choice for most cases. Examples include Elastic IP
+     * addresses for EC2 instances that scale manually or automatically.</p> </li> <li>
+     * <p>Mean - Use the average of the traffic across the group. This is a good choice
+     * for resources that share traffic uniformly. Examples include accelerators and
+     * load balancers.</p> </li> <li> <p>Max - Use the highest traffic from each
+     * resource. This is useful for resources that don't share traffic and for
+     * resources that share that traffic in a non-uniform way. Examples include Amazon
      * CloudFront distributions and origin resources for CloudFront distributions.</p>
      * </li> </ul>
      */
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
 
     /**
-     * <p>Defines how AWS Shield combines resource data for the group in order to
-     * detect, mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total
-     * traffic across the group. This is a good choice for most cases. Examples include
-     * Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-     * </li> <li> <p>Mean - Use the average of the traffic across the group. This is a
-     * good choice for resources that share traffic uniformly. Examples include
-     * accelerators and load balancers.</p> </li> <li> <p>Max - Use the highest traffic
-     * from each resource. This is useful for resources that don't share traffic and
-     * for resources that share that traffic in a non-uniform way. Examples include
+     * <p>Defines how Shield combines resource data for the group in order to detect,
+     * mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total traffic across
+     * the group. This is a good choice for most cases. Examples include Elastic IP
+     * addresses for EC2 instances that scale manually or automatically.</p> </li> <li>
+     * <p>Mean - Use the average of the traffic across the group. This is a good choice
+     * for resources that share traffic uniformly. Examples include accelerators and
+     * load balancers.</p> </li> <li> <p>Max - Use the highest traffic from each
+     * resource. This is useful for resources that don't share traffic and for
+     * resources that share that traffic in a non-uniform way. Examples include Amazon
      * CloudFront distributions and origin resources for CloudFront distributions.</p>
      * </li> </ul>
      */
     inline void SetAggregation(const ProtectionGroupAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
 
     /**
-     * <p>Defines how AWS Shield combines resource data for the group in order to
-     * detect, mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total
-     * traffic across the group. This is a good choice for most cases. Examples include
-     * Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-     * </li> <li> <p>Mean - Use the average of the traffic across the group. This is a
-     * good choice for resources that share traffic uniformly. Examples include
-     * accelerators and load balancers.</p> </li> <li> <p>Max - Use the highest traffic
-     * from each resource. This is useful for resources that don't share traffic and
-     * for resources that share that traffic in a non-uniform way. Examples include
+     * <p>Defines how Shield combines resource data for the group in order to detect,
+     * mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total traffic across
+     * the group. This is a good choice for most cases. Examples include Elastic IP
+     * addresses for EC2 instances that scale manually or automatically.</p> </li> <li>
+     * <p>Mean - Use the average of the traffic across the group. This is a good choice
+     * for resources that share traffic uniformly. Examples include accelerators and
+     * load balancers.</p> </li> <li> <p>Max - Use the highest traffic from each
+     * resource. This is useful for resources that don't share traffic and for
+     * resources that share that traffic in a non-uniform way. Examples include Amazon
      * CloudFront distributions and origin resources for CloudFront distributions.</p>
      * </li> </ul>
      */
     inline void SetAggregation(ProtectionGroupAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
 
     /**
-     * <p>Defines how AWS Shield combines resource data for the group in order to
-     * detect, mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total
-     * traffic across the group. This is a good choice for most cases. Examples include
-     * Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-     * </li> <li> <p>Mean - Use the average of the traffic across the group. This is a
-     * good choice for resources that share traffic uniformly. Examples include
-     * accelerators and load balancers.</p> </li> <li> <p>Max - Use the highest traffic
-     * from each resource. This is useful for resources that don't share traffic and
-     * for resources that share that traffic in a non-uniform way. Examples include
+     * <p>Defines how Shield combines resource data for the group in order to detect,
+     * mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total traffic across
+     * the group. This is a good choice for most cases. Examples include Elastic IP
+     * addresses for EC2 instances that scale manually or automatically.</p> </li> <li>
+     * <p>Mean - Use the average of the traffic across the group. This is a good choice
+     * for resources that share traffic uniformly. Examples include accelerators and
+     * load balancers.</p> </li> <li> <p>Max - Use the highest traffic from each
+     * resource. This is useful for resources that don't share traffic and for
+     * resources that share that traffic in a non-uniform way. Examples include Amazon
      * CloudFront distributions and origin resources for CloudFront distributions.</p>
      * </li> </ul>
      */
     inline ProtectionGroup& WithAggregation(const ProtectionGroupAggregation& value) { SetAggregation(value); return *this;}
 
     /**
-     * <p>Defines how AWS Shield combines resource data for the group in order to
-     * detect, mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total
-     * traffic across the group. This is a good choice for most cases. Examples include
-     * Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-     * </li> <li> <p>Mean - Use the average of the traffic across the group. This is a
-     * good choice for resources that share traffic uniformly. Examples include
-     * accelerators and load balancers.</p> </li> <li> <p>Max - Use the highest traffic
-     * from each resource. This is useful for resources that don't share traffic and
-     * for resources that share that traffic in a non-uniform way. Examples include
+     * <p>Defines how Shield combines resource data for the group in order to detect,
+     * mitigate, and report events.</p> <ul> <li> <p>Sum - Use the total traffic across
+     * the group. This is a good choice for most cases. Examples include Elastic IP
+     * addresses for EC2 instances that scale manually or automatically.</p> </li> <li>
+     * <p>Mean - Use the average of the traffic across the group. This is a good choice
+     * for resources that share traffic uniformly. Examples include accelerators and
+     * load balancers.</p> </li> <li> <p>Max - Use the highest traffic from each
+     * resource. This is useful for resources that don't share traffic and for
+     * resources that share that traffic in a non-uniform way. Examples include Amazon
      * CloudFront distributions and origin resources for CloudFront distributions.</p>
      * </li> </ul>
      */
@@ -361,6 +361,47 @@ namespace Model
      */
     inline ProtectionGroup& AddMembers(const char* value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline const Aws::String& GetProtectionGroupArn() const{ return m_protectionGroupArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline bool ProtectionGroupArnHasBeenSet() const { return m_protectionGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline void SetProtectionGroupArn(const Aws::String& value) { m_protectionGroupArnHasBeenSet = true; m_protectionGroupArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline void SetProtectionGroupArn(Aws::String&& value) { m_protectionGroupArnHasBeenSet = true; m_protectionGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline void SetProtectionGroupArn(const char* value) { m_protectionGroupArnHasBeenSet = true; m_protectionGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline ProtectionGroup& WithProtectionGroupArn(const Aws::String& value) { SetProtectionGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline ProtectionGroup& WithProtectionGroupArn(Aws::String&& value) { SetProtectionGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline ProtectionGroup& WithProtectionGroupArn(const char* value) { SetProtectionGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_protectionGroupId;
@@ -377,6 +418,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_members;
     bool m_membersHasBeenSet;
+
+    Aws::String m_protectionGroupArn;
+    bool m_protectionGroupArnHasBeenSet;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     KEY,
-    VALUE
+    VALUE,
+    COLUMN_HEADER
   };
 
 namespace EntityTypeMapper

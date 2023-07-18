@@ -74,7 +74,7 @@ ElasticInferenceClient::~ElasticInferenceClient()
 {
 }
 
-void ElasticInferenceClient::init(const ClientConfiguration& config)
+void ElasticInferenceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elastic Inference");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -103,9 +103,7 @@ void ElasticInferenceClient::OverrideEndpoint(const Aws::String& endpoint)
 DescribeAcceleratorOfferingsOutcome ElasticInferenceClient::DescribeAcceleratorOfferings(const DescribeAcceleratorOfferingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-accelerator-offerings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-accelerator-offerings");
   return DescribeAcceleratorOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -130,9 +128,7 @@ void ElasticInferenceClient::DescribeAcceleratorOfferingsAsyncHelper(const Descr
 DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes(const DescribeAcceleratorTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-accelerator-types";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-accelerator-types");
   return DescribeAcceleratorTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -157,9 +153,7 @@ void ElasticInferenceClient::DescribeAcceleratorTypesAsyncHelper(const DescribeA
 DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const DescribeAcceleratorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-accelerators";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-accelerators");
   return DescribeAcceleratorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -189,10 +183,8 @@ ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const Lis
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ElasticInferenceErrors>(ElasticInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -222,10 +214,8 @@ TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest&
     return TagResourceOutcome(Aws::Client::AWSError<ElasticInferenceErrors>(ElasticInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -260,10 +250,8 @@ UntagResourceOutcome ElasticInferenceClient::UntagResource(const UntagResourceRe
     return UntagResourceOutcome(Aws::Client::AWSError<ElasticInferenceErrors>(ElasticInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 

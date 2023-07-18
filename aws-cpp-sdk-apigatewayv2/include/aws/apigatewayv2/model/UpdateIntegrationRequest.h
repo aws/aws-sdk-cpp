@@ -897,15 +897,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const{ return m_requestParameters; }
 
@@ -918,15 +932,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
 
@@ -939,15 +967,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline void SetRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
 
@@ -960,15 +1002,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline void SetRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::move(value); }
 
@@ -981,15 +1037,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& WithRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestParameters(value); return *this;}
 
@@ -1002,15 +1072,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& WithRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestParameters(std::move(value)); return *this;}
 
@@ -1023,15 +1107,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const Aws::String& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
@@ -1044,15 +1142,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
 
@@ -1065,15 +1177,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const Aws::String& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
 
@@ -1086,15 +1212,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1107,15 +1247,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const char* key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
 
@@ -1128,15 +1282,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
 
@@ -1149,15 +1317,29 @@ namespace Model
      * pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * , where  <replaceable>{location}</replaceable>  is querystring, path, or header;
-     * and <replaceable>{name}</replaceable> must be a valid and unique method request
-     * parameter name.</p> <p>For HTTP APIs, request parameters are a key-value map
-     * specifying parameters that are passed to AWS_PROXY integrations with a specified
-     * integrationSubtype. You can provide static values, or map request data, stage
-     * variables, or context variables that are evaluated at runtime. To learn more,
-     * see <a
+     * , where 
+            <replaceable>{location}</replaceable>
+           is
+     * querystring, path, or header; and 
+           
+     * <replaceable>{name}</replaceable>
+           must be a valid and unique method
+     * request parameter name.</p> <p>For HTTP API integrations with a specified
+     * integrationSubtype, request parameters are a key-value map specifying parameters
+     * that are passed to AWS_PROXY integrations. You can provide static values, or map
+     * request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
-     * with AWS service integrations for HTTP APIs</a>.</p>
+     * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
+     * integrations, without a specified integrationSubtype request parameters are a
+     * key-value map specifying how to transform HTTP requests before sending them to
+     * the backend. The key should follow the pattern
+     * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can
+     * be append, overwrite or remove. For values, you can provide static values, or
+     * map request data, stage variables, or context variables that are evaluated at
+     * runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const char* key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
@@ -1265,6 +1447,187 @@ namespace Model
      * value. Supported only for WebSocket APIs.</p>
      */
     inline UpdateIntegrationRequest& AddRequestTemplates(const char* key, const char* value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetResponseParameters() const{ return m_responseParameters; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline void SetResponseParameters(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline void SetResponseParameters(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = std::move(value); }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& WithResponseParameters(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetResponseParameters(value); return *this;}
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& WithResponseParameters(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetResponseParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& AddResponseParameters(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& AddResponseParameters(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& AddResponseParameters(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& AddResponseParameters(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& AddResponseParameters(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Supported only for HTTP APIs. You use response parameters to transform the
+     * HTTP response from a backend integration before returning the response to
+     * clients. Specify a key-value map from a selection key to response parameters.
+     * The selection key must be a valid HTTP status code within the range of 200-599.
+     * Response parameters are a key-value map. The key must match pattern
+     * &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The
+     * action can be append, overwrite or remove. The value can be a static value, or
+     * map to response data, stage variables, or context variables that are evaluated
+     * at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.</p>
+     */
+    inline UpdateIntegrationRequest& AddResponseParameters(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -1425,6 +1788,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
     bool m_requestTemplatesHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_responseParameters;
+    bool m_responseParametersHasBeenSet;
 
     Aws::String m_templateSelectionExpression;
     bool m_templateSelectionExpressionHasBeenSet;

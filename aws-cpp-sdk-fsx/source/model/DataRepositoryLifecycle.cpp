@@ -25,6 +25,7 @@ namespace Aws
         static const int MISCONFIGURED_HASH = HashingUtils::HashString("MISCONFIGURED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         DataRepositoryLifecycle GetDataRepositoryLifecycleForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return DataRepositoryLifecycle::DELETING;
           }
+          else if (hashCode == FAILED_HASH)
+          {
+            return DataRepositoryLifecycle::FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "UPDATING";
           case DataRepositoryLifecycle::DELETING:
             return "DELETING";
+          case DataRepositoryLifecycle::FAILED:
+            return "FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

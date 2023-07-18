@@ -25,6 +25,8 @@ namespace Aws
         static const int MONGODB_HASH = HashingUtils::HashString("MONGODB");
         static const int KAFKA_HASH = HashingUtils::HashString("KAFKA");
         static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
+        static const int MARKETPLACE_HASH = HashingUtils::HashString("MARKETPLACE");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return ConnectionType::NETWORK;
           }
+          else if (hashCode == MARKETPLACE_HASH)
+          {
+            return ConnectionType::MARKETPLACE;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return ConnectionType::CUSTOM;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "KAFKA";
           case ConnectionType::NETWORK:
             return "NETWORK";
+          case ConnectionType::MARKETPLACE:
+            return "MARKETPLACE";
+          case ConnectionType::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

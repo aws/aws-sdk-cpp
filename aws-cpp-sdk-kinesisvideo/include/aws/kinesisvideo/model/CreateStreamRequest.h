@@ -245,80 +245,80 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline CreateStreamRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline CreateStreamRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */

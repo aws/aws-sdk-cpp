@@ -84,43 +84,43 @@ namespace Model
 
 
     /**
-     * <p>The port number on the container that is used with the network binding.</p>
+     * <p>The port number on the container that's used with the network binding.</p>
      */
     inline int GetContainerPort() const{ return m_containerPort; }
 
     /**
-     * <p>The port number on the container that is used with the network binding.</p>
+     * <p>The port number on the container that's used with the network binding.</p>
      */
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
 
     /**
-     * <p>The port number on the container that is used with the network binding.</p>
+     * <p>The port number on the container that's used with the network binding.</p>
      */
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
 
     /**
-     * <p>The port number on the container that is used with the network binding.</p>
+     * <p>The port number on the container that's used with the network binding.</p>
      */
     inline NetworkBinding& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 
 
     /**
-     * <p>The port number on the host that is used with the network binding.</p>
+     * <p>The port number on the host that's used with the network binding.</p>
      */
     inline int GetHostPort() const{ return m_hostPort; }
 
     /**
-     * <p>The port number on the host that is used with the network binding.</p>
+     * <p>The port number on the host that's used with the network binding.</p>
      */
     inline bool HostPortHasBeenSet() const { return m_hostPortHasBeenSet; }
 
     /**
-     * <p>The port number on the host that is used with the network binding.</p>
+     * <p>The port number on the host that's used with the network binding.</p>
      */
     inline void SetHostPort(int value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
 
     /**
-     * <p>The port number on the host that is used with the network binding.</p>
+     * <p>The port number on the host that's used with the network binding.</p>
      */
     inline NetworkBinding& WithHostPort(int value) { SetHostPort(value); return *this;}
 

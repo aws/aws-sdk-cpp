@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
+#include <aws/ec2/model/Ipv4PrefixSpecificationResponse.h>
+#include <aws/ec2/model/Ipv6PrefixSpecificationResponse.h>
 #include <utility>
 
 namespace Aws
@@ -48,7 +50,7 @@ namespace Model
      * Wavelength Zone and want to associate a Carrier IP address with the network
      * interface. For more information about Carrier IP addresses, see <a
      * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
-     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     * IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
      */
     inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
 
@@ -58,7 +60,7 @@ namespace Model
      * Wavelength Zone and want to associate a Carrier IP address with the network
      * interface. For more information about Carrier IP addresses, see <a
      * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
-     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     * IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
      */
     inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }
 
@@ -68,7 +70,7 @@ namespace Model
      * Wavelength Zone and want to associate a Carrier IP address with the network
      * interface. For more information about Carrier IP addresses, see <a
      * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
-     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     * IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
      */
     inline void SetAssociateCarrierIpAddress(bool value) { m_associateCarrierIpAddressHasBeenSet = true; m_associateCarrierIpAddress = value; }
 
@@ -78,7 +80,7 @@ namespace Model
      * Wavelength Zone and want to associate a Carrier IP address with the network
      * interface. For more information about Carrier IP addresses, see <a
      * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
-     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     * IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithAssociateCarrierIpAddress(bool value) { SetAssociateCarrierIpAddress(value); return *this;}
 
@@ -549,6 +551,138 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
 
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline const Aws::Vector<Ipv4PrefixSpecificationResponse>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline void SetIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationResponse>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline void SetIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationResponse>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationResponse>& value) { SetIpv4Prefixes(value); return *this;}
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationResponse>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& AddIpv4Prefixes(const Ipv4PrefixSpecificationResponse& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& AddIpv4Prefixes(Ipv4PrefixSpecificationResponse&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }
+
+    /**
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline void SetIpv4PrefixCount(int value) { m_ipv4PrefixCountHasBeenSet = true; m_ipv4PrefixCount = value; }
+
+    /**
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithIpv4PrefixCount(int value) { SetIpv4PrefixCount(value); return *this;}
+
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline const Aws::Vector<Ipv6PrefixSpecificationResponse>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline void SetIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationResponse>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline void SetIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationResponse>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationResponse>& value) { SetIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationResponse>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& AddIpv6Prefixes(const Ipv6PrefixSpecificationResponse& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv6 prefixes assigned to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& AddIpv6Prefixes(Ipv6PrefixSpecificationResponse&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline int GetIpv6PrefixCount() const{ return m_ipv6PrefixCount; }
+
+    /**
+     * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline bool Ipv6PrefixCountHasBeenSet() const { return m_ipv6PrefixCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline void SetIpv6PrefixCount(int value) { m_ipv6PrefixCountHasBeenSet = true; m_ipv6PrefixCount = value; }
+
+    /**
+     * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned
+     * to the network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithIpv6PrefixCount(int value) { SetIpv6PrefixCount(value); return *this;}
+
   private:
 
     bool m_associateCarrierIpAddress;
@@ -595,6 +729,18 @@ namespace Model
 
     int m_networkCardIndex;
     bool m_networkCardIndexHasBeenSet;
+
+    Aws::Vector<Ipv4PrefixSpecificationResponse> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet;
+
+    int m_ipv4PrefixCount;
+    bool m_ipv4PrefixCountHasBeenSet;
+
+    Aws::Vector<Ipv6PrefixSpecificationResponse> m_ipv6Prefixes;
+    bool m_ipv6PrefixesHasBeenSet;
+
+    int m_ipv6PrefixCount;
+    bool m_ipv6PrefixCountHasBeenSet;
   };
 
 } // namespace Model

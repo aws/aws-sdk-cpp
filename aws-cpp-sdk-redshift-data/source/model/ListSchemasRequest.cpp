@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 ListSchemasRequest::ListSchemasRequest() : 
     m_clusterIdentifierHasBeenSet(false),
+    m_connectedDatabaseHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
     m_maxResults(0),
@@ -31,6 +32,12 @@ Aws::String ListSchemasRequest::SerializePayload() const
   if(m_clusterIdentifierHasBeenSet)
   {
    payload.WithString("ClusterIdentifier", m_clusterIdentifier);
+
+  }
+
+  if(m_connectedDatabaseHasBeenSet)
+  {
+   payload.WithString("ConnectedDatabase", m_connectedDatabase);
 
   }
 

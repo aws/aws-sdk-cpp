@@ -23,6 +23,7 @@ namespace Aws
         static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
         static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
 
 
         Status GetStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == PENDING_HASH)
           {
             return Status::PENDING;
+          }
+          else if (hashCode == RECURRING_HASH)
+          {
+            return Status::RECURRING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "RESOLVED";
           case Status::PENDING:
             return "PENDING";
+          case Status::RECURRING:
+            return "RECURRING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

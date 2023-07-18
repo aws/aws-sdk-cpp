@@ -71,32 +71,32 @@ namespace Model
 
 
     /**
-     * <p>Account takeover risk configuration actions</p>
+     * <p>Account takeover risk configuration actions.</p>
      */
     inline const AccountTakeoverActionsType& GetActions() const{ return m_actions; }
 
     /**
-     * <p>Account takeover risk configuration actions</p>
+     * <p>Account takeover risk configuration actions.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>Account takeover risk configuration actions</p>
+     * <p>Account takeover risk configuration actions.</p>
      */
     inline void SetActions(const AccountTakeoverActionsType& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>Account takeover risk configuration actions</p>
+     * <p>Account takeover risk configuration actions.</p>
      */
     inline void SetActions(AccountTakeoverActionsType&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>Account takeover risk configuration actions</p>
+     * <p>Account takeover risk configuration actions.</p>
      */
     inline AccountTakeoverRiskConfigurationType& WithActions(const AccountTakeoverActionsType& value) { SetActions(value); return *this;}
 
     /**
-     * <p>Account takeover risk configuration actions</p>
+     * <p>Account takeover risk configuration actions.</p>
      */
     inline AccountTakeoverRiskConfigurationType& WithActions(AccountTakeoverActionsType&& value) { SetActions(std::move(value)); return *this;}
 

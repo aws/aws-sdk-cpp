@@ -31,20 +31,20 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the GameLift FleetIQ and game server
    * groups.</b> </p> <p>Properties that describe a game server group resource. A
-   * game server group manages certain properties related to a corresponding EC2 Auto
-   * Scaling group. </p> <p>A game server group is created by a successful call to
-   * <code>CreateGameServerGroup</code> and deleted by calling
+   * game server group manages certain properties related to a corresponding Amazon
+   * EC2 Auto Scaling group. </p> <p>A game server group is created by a successful
+   * call to <code>CreateGameServerGroup</code> and deleted by calling
    * <code>DeleteGameServerGroup</code>. Game server group activity can be
    * temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
-   * and <code>ResumeGameServerGroup</code>, respectively. </p> <ul> <li> <p>
-   * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
-   * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
-   * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
-   * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
-   * <a>SuspendGameServerGroup</a> </p> </li> <li> <p>
-   * <a>DescribeGameServerInstances</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * and <code>ResumeGameServerGroup</code>, respectively. </p> <p> <b>Related
+   * actions</b> </p> <p> <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a>
+   * | <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> |
+   * <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
+   * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroup">AWS
    * API Reference</a></p>
    */
@@ -59,49 +59,49 @@ namespace Model
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline GameServerGroup& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline GameServerGroup& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A developer-defined identifier for the game server group. The name is unique
-     * for each Region in each AWS account.</p>
+     * for each Region in each Amazon Web Services account.</p>
      */
     inline GameServerGroup& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 
@@ -150,121 +150,121 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline GameServerGroup& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline GameServerGroup& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline GameServerGroup& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const{ return m_instanceDefinitions; }
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline bool InstanceDefinitionsHasBeenSet() const { return m_instanceDefinitionsHasBeenSet; }
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline void SetInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = value; }
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline void SetInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::move(value); }
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline GameServerGroup& WithInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { SetInstanceDefinitions(value); return *this;}
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline GameServerGroup& WithInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { SetInstanceDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline GameServerGroup& AddInstanceDefinitions(const InstanceDefinition& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing
-     * and automatically scaling instances in the corresponding Auto Scaling group.
-     * </p>
+     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
+     * balancing and automatically scaling instances in the corresponding Auto Scaling
+     * group. </p>
      */
     inline GameServerGroup& AddInstanceDefinitions(InstanceDefinition&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(std::move(value)); return *this; }
 
@@ -397,7 +397,7 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. </p>
+     * can be terminated by Amazon Web Services regardless of protection status. </p>
      */
     inline const GameServerProtectionPolicy& GetGameServerProtectionPolicy() const{ return m_gameServerProtectionPolicy; }
 
@@ -408,7 +408,7 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. </p>
+     * can be terminated by Amazon Web Services regardless of protection status. </p>
      */
     inline bool GameServerProtectionPolicyHasBeenSet() const { return m_gameServerProtectionPolicyHasBeenSet; }
 
@@ -419,7 +419,7 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. </p>
+     * can be terminated by Amazon Web Services regardless of protection status. </p>
      */
     inline void SetGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = value; }
 
@@ -430,7 +430,7 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. </p>
+     * can be terminated by Amazon Web Services regardless of protection status. </p>
      */
     inline void SetGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = std::move(value); }
 
@@ -441,7 +441,7 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. </p>
+     * can be terminated by Amazon Web Services regardless of protection status. </p>
      */
     inline GameServerGroup& WithGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { SetGameServerProtectionPolicy(value); return *this;}
 
@@ -452,56 +452,56 @@ namespace Model
      * to be dropped from the game. Protected instances cannot be terminated while
      * there are active game servers running except in the event of a forced game
      * server group deletion (see ). An exception to this is with Spot Instances, which
-     * can be terminated by AWS regardless of protection status. </p>
+     * can be terminated by Amazon Web Services regardless of protection status. </p>
      */
     inline GameServerGroup& WithGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { SetGameServerProtectionPolicy(std::move(value)); return *this;}
 
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupArn() const{ return m_autoScalingGroupArn; }
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline bool AutoScalingGroupArnHasBeenSet() const { return m_autoScalingGroupArnHasBeenSet; }
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline void SetAutoScalingGroupArn(const Aws::String& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = value; }
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline void SetAutoScalingGroupArn(Aws::String&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::move(value); }
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline void SetAutoScalingGroupArn(const char* value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn.assign(value); }
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline GameServerGroup& WithAutoScalingGroupArn(const Aws::String& value) { SetAutoScalingGroupArn(value); return *this;}
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline GameServerGroup& WithAutoScalingGroupArn(Aws::String&& value) { SetAutoScalingGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>A generated unique ID for the EC2 Auto Scaling group that is associated with
-     * this game server group.</p>
+     * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
+     * associated with this game server group.</p>
      */
     inline GameServerGroup& WithAutoScalingGroupArn(const char* value) { SetAutoScalingGroupArn(value); return *this;}
 
@@ -511,10 +511,10 @@ namespace Model
      * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
      * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your AWS account. </p> </li>
-     * <li> <p> <code>ACTIVE</code> - The game server group has been successfully
-     * created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete
-     * the game server group has been received. </p> </li> <li> <p>
+     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
+     * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
+     * request to delete the game server group has been received. </p> </li> <li> <p>
      * <code>DELETING</code> - GameLift FleetIQ has received a valid
      * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
      * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
@@ -530,10 +530,10 @@ namespace Model
      * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
      * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your AWS account. </p> </li>
-     * <li> <p> <code>ACTIVE</code> - The game server group has been successfully
-     * created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete
-     * the game server group has been received. </p> </li> <li> <p>
+     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
+     * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
+     * request to delete the game server group has been received. </p> </li> <li> <p>
      * <code>DELETING</code> - GameLift FleetIQ has received a valid
      * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
      * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
@@ -549,10 +549,10 @@ namespace Model
      * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
      * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your AWS account. </p> </li>
-     * <li> <p> <code>ACTIVE</code> - The game server group has been successfully
-     * created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete
-     * the game server group has been received. </p> </li> <li> <p>
+     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
+     * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
+     * request to delete the game server group has been received. </p> </li> <li> <p>
      * <code>DELETING</code> - GameLift FleetIQ has received a valid
      * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
      * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
@@ -568,10 +568,10 @@ namespace Model
      * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
      * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your AWS account. </p> </li>
-     * <li> <p> <code>ACTIVE</code> - The game server group has been successfully
-     * created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete
-     * the game server group has been received. </p> </li> <li> <p>
+     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
+     * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
+     * request to delete the game server group has been received. </p> </li> <li> <p>
      * <code>DELETING</code> - GameLift FleetIQ has received a valid
      * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
      * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
@@ -587,10 +587,10 @@ namespace Model
      * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
      * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your AWS account. </p> </li>
-     * <li> <p> <code>ACTIVE</code> - The game server group has been successfully
-     * created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete
-     * the game server group has been received. </p> </li> <li> <p>
+     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
+     * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
+     * request to delete the game server group has been received. </p> </li> <li> <p>
      * <code>DELETING</code> - GameLift FleetIQ has received a valid
      * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
      * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
@@ -606,10 +606,10 @@ namespace Model
      * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
      * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your AWS account. </p> </li>
-     * <li> <p> <code>ACTIVE</code> - The game server group has been successfully
-     * created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete
-     * the game server group has been received. </p> </li> <li> <p>
+     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
+     * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
+     * request to delete the game server group has been received. </p> </li> <li> <p>
      * <code>DELETING</code> - GameLift FleetIQ has received a valid
      * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
      * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
@@ -728,43 +728,43 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline GameServerGroup& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline GameServerGroup& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}

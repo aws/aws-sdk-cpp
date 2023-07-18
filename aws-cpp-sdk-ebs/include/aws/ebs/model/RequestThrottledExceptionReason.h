@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACCOUNT_THROTTLED,
-    DEPENDENCY_REQUEST_THROTTLED
+    DEPENDENCY_REQUEST_THROTTLED,
+    RESOURCE_LEVEL_THROTTLE
   };
 
 namespace RequestThrottledExceptionReasonMapper

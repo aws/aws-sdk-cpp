@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline StartRemediationExecutionRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline StartRemediationExecutionRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The list of names of AWS Config rules that you want to run remediation
-     * execution for.</p>
+     * <p>The list of names of Config rules that you want to run remediation execution
+     * for.</p>
      */
     inline StartRemediationExecutionRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 

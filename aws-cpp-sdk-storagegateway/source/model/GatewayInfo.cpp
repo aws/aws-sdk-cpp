@@ -25,7 +25,10 @@ GatewayInfo::GatewayInfo() :
     m_gatewayOperationalStateHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_ec2InstanceRegionHasBeenSet(false)
+    m_ec2InstanceRegionHasBeenSet(false),
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_hostEnvironmentHasBeenSet(false),
+    m_hostEnvironmentIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ GatewayInfo::GatewayInfo(JsonView jsonValue) :
     m_gatewayOperationalStateHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_ec2InstanceRegionHasBeenSet(false)
+    m_ec2InstanceRegionHasBeenSet(false),
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_hostEnvironmentHasBeenSet(false),
+    m_hostEnvironmentIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +98,20 @@ GatewayInfo& GatewayInfo::operator =(JsonView jsonValue)
     m_ec2InstanceRegionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HostEnvironment"))
+  {
+    m_hostEnvironment = HostEnvironmentMapper::GetHostEnvironmentForName(jsonValue.GetString("HostEnvironment"));
+
+    m_hostEnvironmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HostEnvironmentId"))
+  {
+    m_hostEnvironmentId = jsonValue.GetString("HostEnvironmentId");
+
+    m_hostEnvironmentIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +158,17 @@ JsonValue GatewayInfo::Jsonize() const
   if(m_ec2InstanceRegionHasBeenSet)
   {
    payload.WithString("Ec2InstanceRegion", m_ec2InstanceRegion);
+
+  }
+
+  if(m_hostEnvironmentHasBeenSet)
+  {
+   payload.WithString("HostEnvironment", HostEnvironmentMapper::GetNameForHostEnvironment(m_hostEnvironment));
+  }
+
+  if(m_hostEnvironmentIdHasBeenSet)
+  {
+   payload.WithString("HostEnvironmentId", m_hostEnvironmentId);
 
   }
 

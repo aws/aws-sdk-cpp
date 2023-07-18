@@ -84,7 +84,11 @@ namespace Model
      * <p>Specifies the commit digest for the transaction to commit. For every active
      * transaction, the commit digest must be passed. QLDB validates
      * <code>CommitDigest</code> and rejects the commit with an error if the digest
-     * computed on the client does not match the digest computed by QLDB.</p>
+     * computed on the client does not match the digest computed by QLDB.</p> <p>The
+     * purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB
+     * commits a transaction if and only if the server has processed the exact set of
+     * statements sent by the client, in the same order that client sent them, and with
+     * no duplicates.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCommitDigest() const{ return m_commitDigest; }
 
@@ -92,7 +96,11 @@ namespace Model
      * <p>Specifies the commit digest for the transaction to commit. For every active
      * transaction, the commit digest must be passed. QLDB validates
      * <code>CommitDigest</code> and rejects the commit with an error if the digest
-     * computed on the client does not match the digest computed by QLDB.</p>
+     * computed on the client does not match the digest computed by QLDB.</p> <p>The
+     * purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB
+     * commits a transaction if and only if the server has processed the exact set of
+     * statements sent by the client, in the same order that client sent them, and with
+     * no duplicates.</p>
      */
     inline bool CommitDigestHasBeenSet() const { return m_commitDigestHasBeenSet; }
 
@@ -100,7 +108,11 @@ namespace Model
      * <p>Specifies the commit digest for the transaction to commit. For every active
      * transaction, the commit digest must be passed. QLDB validates
      * <code>CommitDigest</code> and rejects the commit with an error if the digest
-     * computed on the client does not match the digest computed by QLDB.</p>
+     * computed on the client does not match the digest computed by QLDB.</p> <p>The
+     * purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB
+     * commits a transaction if and only if the server has processed the exact set of
+     * statements sent by the client, in the same order that client sent them, and with
+     * no duplicates.</p>
      */
     inline void SetCommitDigest(const Aws::Utils::ByteBuffer& value) { m_commitDigestHasBeenSet = true; m_commitDigest = value; }
 
@@ -108,7 +120,11 @@ namespace Model
      * <p>Specifies the commit digest for the transaction to commit. For every active
      * transaction, the commit digest must be passed. QLDB validates
      * <code>CommitDigest</code> and rejects the commit with an error if the digest
-     * computed on the client does not match the digest computed by QLDB.</p>
+     * computed on the client does not match the digest computed by QLDB.</p> <p>The
+     * purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB
+     * commits a transaction if and only if the server has processed the exact set of
+     * statements sent by the client, in the same order that client sent them, and with
+     * no duplicates.</p>
      */
     inline void SetCommitDigest(Aws::Utils::ByteBuffer&& value) { m_commitDigestHasBeenSet = true; m_commitDigest = std::move(value); }
 
@@ -116,7 +132,11 @@ namespace Model
      * <p>Specifies the commit digest for the transaction to commit. For every active
      * transaction, the commit digest must be passed. QLDB validates
      * <code>CommitDigest</code> and rejects the commit with an error if the digest
-     * computed on the client does not match the digest computed by QLDB.</p>
+     * computed on the client does not match the digest computed by QLDB.</p> <p>The
+     * purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB
+     * commits a transaction if and only if the server has processed the exact set of
+     * statements sent by the client, in the same order that client sent them, and with
+     * no duplicates.</p>
      */
     inline CommitTransactionRequest& WithCommitDigest(const Aws::Utils::ByteBuffer& value) { SetCommitDigest(value); return *this;}
 
@@ -124,7 +144,11 @@ namespace Model
      * <p>Specifies the commit digest for the transaction to commit. For every active
      * transaction, the commit digest must be passed. QLDB validates
      * <code>CommitDigest</code> and rejects the commit with an error if the digest
-     * computed on the client does not match the digest computed by QLDB.</p>
+     * computed on the client does not match the digest computed by QLDB.</p> <p>The
+     * purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB
+     * commits a transaction if and only if the server has processed the exact set of
+     * statements sent by the client, in the same order that client sent them, and with
+     * no duplicates.</p>
      */
     inline CommitTransactionRequest& WithCommitDigest(Aws::Utils::ByteBuffer&& value) { SetCommitDigest(std::move(value)); return *this;}
 

@@ -24,7 +24,8 @@ TaskOverride::TaskOverride() :
     m_inferenceAcceleratorOverridesHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false)
+    m_taskRoleArnHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ TaskOverride::TaskOverride(JsonView jsonValue) :
     m_inferenceAcceleratorOverridesHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false)
+    m_taskRoleArnHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,13 @@ TaskOverride& TaskOverride::operator =(JsonView jsonValue)
     m_taskRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ephemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +148,12 @@ JsonValue TaskOverride::Jsonize() const
   if(m_taskRoleArnHasBeenSet)
   {
    payload.WithString("taskRoleArn", m_taskRoleArn);
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/comprehend/model/InputFormat.h>
+#include <aws/comprehend/model/DocumentReaderConfig.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The input properties for a topic detection job.</p><p><h3>See Also:</h3>   <a
+   * <p>The input properties for an inference job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/InputDataConfig">AWS
    * API Reference</a></p>
    */
@@ -179,6 +180,55 @@ namespace Model
      */
     inline InputDataConfig& WithInputFormat(InputFormat&& value) { SetInputFormat(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The document reader config field applies only for InputDataConfig of
+     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
+     * specifications about how you want your inference documents read. Currently it
+     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     */
+    inline const DocumentReaderConfig& GetDocumentReaderConfig() const{ return m_documentReaderConfig; }
+
+    /**
+     * <p>The document reader config field applies only for InputDataConfig of
+     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
+     * specifications about how you want your inference documents read. Currently it
+     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     */
+    inline bool DocumentReaderConfigHasBeenSet() const { return m_documentReaderConfigHasBeenSet; }
+
+    /**
+     * <p>The document reader config field applies only for InputDataConfig of
+     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
+     * specifications about how you want your inference documents read. Currently it
+     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     */
+    inline void SetDocumentReaderConfig(const DocumentReaderConfig& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = value; }
+
+    /**
+     * <p>The document reader config field applies only for InputDataConfig of
+     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
+     * specifications about how you want your inference documents read. Currently it
+     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     */
+    inline void SetDocumentReaderConfig(DocumentReaderConfig&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::move(value); }
+
+    /**
+     * <p>The document reader config field applies only for InputDataConfig of
+     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
+     * specifications about how you want your inference documents read. Currently it
+     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     */
+    inline InputDataConfig& WithDocumentReaderConfig(const DocumentReaderConfig& value) { SetDocumentReaderConfig(value); return *this;}
+
+    /**
+     * <p>The document reader config field applies only for InputDataConfig of
+     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
+     * specifications about how you want your inference documents read. Currently it
+     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     */
+    inline InputDataConfig& WithDocumentReaderConfig(DocumentReaderConfig&& value) { SetDocumentReaderConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
@@ -186,6 +236,9 @@ namespace Model
 
     InputFormat m_inputFormat;
     bool m_inputFormatHasBeenSet;
+
+    DocumentReaderConfig m_documentReaderConfig;
+    bool m_documentReaderConfigHasBeenSet;
   };
 
 } // namespace Model

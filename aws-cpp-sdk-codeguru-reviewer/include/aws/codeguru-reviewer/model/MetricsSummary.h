@@ -97,6 +97,83 @@ namespace Model
 
 
     /**
+     * <p>Lines of code suppressed in the code review based on the
+     * <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code>
+     * file. For full repository analyses, this number includes all lines of code in
+     * the files that are suppressed. For pull requests, this number only includes the
+     * <i>changed</i> lines of code that are suppressed. In both cases, this number
+     * does not include non-code lines such as comments and import statements. For
+     * example, if you initiate a full repository analysis on a repository containing 5
+     * files, each file with 100 lines of code, and 2 files are listed as excluded in
+     * the <code>aws-codeguru-reviewer.yml</code> file, then
+     * <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total
+     * number of lines of code suppressed. However, if you submit a pull request for
+     * the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes
+     * the lines in the 2 files that changed. If only 1 of the 2 files changed in the
+     * pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100)
+     * as the total number of lines of code suppressed.</p>
+     */
+    inline long long GetSuppressedLinesOfCodeCount() const{ return m_suppressedLinesOfCodeCount; }
+
+    /**
+     * <p>Lines of code suppressed in the code review based on the
+     * <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code>
+     * file. For full repository analyses, this number includes all lines of code in
+     * the files that are suppressed. For pull requests, this number only includes the
+     * <i>changed</i> lines of code that are suppressed. In both cases, this number
+     * does not include non-code lines such as comments and import statements. For
+     * example, if you initiate a full repository analysis on a repository containing 5
+     * files, each file with 100 lines of code, and 2 files are listed as excluded in
+     * the <code>aws-codeguru-reviewer.yml</code> file, then
+     * <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total
+     * number of lines of code suppressed. However, if you submit a pull request for
+     * the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes
+     * the lines in the 2 files that changed. If only 1 of the 2 files changed in the
+     * pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100)
+     * as the total number of lines of code suppressed.</p>
+     */
+    inline bool SuppressedLinesOfCodeCountHasBeenSet() const { return m_suppressedLinesOfCodeCountHasBeenSet; }
+
+    /**
+     * <p>Lines of code suppressed in the code review based on the
+     * <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code>
+     * file. For full repository analyses, this number includes all lines of code in
+     * the files that are suppressed. For pull requests, this number only includes the
+     * <i>changed</i> lines of code that are suppressed. In both cases, this number
+     * does not include non-code lines such as comments and import statements. For
+     * example, if you initiate a full repository analysis on a repository containing 5
+     * files, each file with 100 lines of code, and 2 files are listed as excluded in
+     * the <code>aws-codeguru-reviewer.yml</code> file, then
+     * <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total
+     * number of lines of code suppressed. However, if you submit a pull request for
+     * the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes
+     * the lines in the 2 files that changed. If only 1 of the 2 files changed in the
+     * pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100)
+     * as the total number of lines of code suppressed.</p>
+     */
+    inline void SetSuppressedLinesOfCodeCount(long long value) { m_suppressedLinesOfCodeCountHasBeenSet = true; m_suppressedLinesOfCodeCount = value; }
+
+    /**
+     * <p>Lines of code suppressed in the code review based on the
+     * <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code>
+     * file. For full repository analyses, this number includes all lines of code in
+     * the files that are suppressed. For pull requests, this number only includes the
+     * <i>changed</i> lines of code that are suppressed. In both cases, this number
+     * does not include non-code lines such as comments and import statements. For
+     * example, if you initiate a full repository analysis on a repository containing 5
+     * files, each file with 100 lines of code, and 2 files are listed as excluded in
+     * the <code>aws-codeguru-reviewer.yml</code> file, then
+     * <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total
+     * number of lines of code suppressed. However, if you submit a pull request for
+     * the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes
+     * the lines in the 2 files that changed. If only 1 of the 2 files changed in the
+     * pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100)
+     * as the total number of lines of code suppressed.</p>
+     */
+    inline MetricsSummary& WithSuppressedLinesOfCodeCount(long long value) { SetSuppressedLinesOfCodeCount(value); return *this;}
+
+
+    /**
      * <p> Total number of recommendations found in the code review. </p>
      */
     inline long long GetFindingsCount() const{ return m_findingsCount; }
@@ -120,6 +197,9 @@ namespace Model
 
     long long m_meteredLinesOfCodeCount;
     bool m_meteredLinesOfCodeCountHasBeenSet;
+
+    long long m_suppressedLinesOfCodeCount;
+    bool m_suppressedLinesOfCodeCountHasBeenSet;
 
     long long m_findingsCount;
     bool m_findingsCountHasBeenSet;

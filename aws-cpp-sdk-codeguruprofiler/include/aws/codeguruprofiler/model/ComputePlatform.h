@@ -16,8 +16,8 @@ namespace Model
   enum class ComputePlatform
   {
     NOT_SET,
-    AWSLambda,
-    Default
+    Default,
+    AWSLambda
   };
 
 namespace ComputePlatformMapper

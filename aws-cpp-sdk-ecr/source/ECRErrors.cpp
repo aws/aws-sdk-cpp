@@ -37,6 +37,7 @@ static const int IMAGE_DIGEST_DOES_NOT_MATCH_HASH = HashingUtils::HashString("Im
 static const int IMAGE_TAG_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageTagAlreadyExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
+static const int UNSUPPORTED_UPSTREAM_REGISTRY_HASH = HashingUtils::HashString("UnsupportedUpstreamRegistryException");
 static const int REPOSITORY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryPolicyNotFoundException");
 static const int SCAN_NOT_FOUND_HASH = HashingUtils::HashString("ScanNotFoundException");
 static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPartTooSmallException");
@@ -45,6 +46,7 @@ static const int LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = HashingUtils::HashStr
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int REGISTRY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RegistryPolicyNotFoundException");
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
+static const int PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH = HashingUtils::HashString("PullThroughCacheRuleNotFoundException");
 static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
 static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
 static const int REFERENCED_IMAGES_NOT_FOUND_HASH = HashingUtils::HashString("ReferencedImagesNotFoundException");
@@ -59,6 +61,7 @@ static const int UNSUPPORTED_IMAGE_TYPE_HASH = HashingUtils::HashString("Unsuppo
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
 static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
 static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
+static const int PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS_HASH = HashingUtils::HashString("PullThroughCacheRuleAlreadyExistsException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_LAYER_PART_HASH = HashingUtils::HashString("InvalidLayerPartException");
 static const int UPLOAD_NOT_FOUND_HASH = HashingUtils::HashString("UploadNotFoundException");
@@ -83,6 +86,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LAYER_INACCESSIBLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYER_INACCESSIBLE), false);
+  }
+  else if (hashCode == UNSUPPORTED_UPSTREAM_REGISTRY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNSUPPORTED_UPSTREAM_REGISTRY), false);
   }
   else if (hashCode == REPOSITORY_POLICY_NOT_FOUND_HASH)
   {
@@ -115,6 +122,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TAG_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_TAG_PARAMETER), false);
+  }
+  else if (hashCode == PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::PULL_THROUGH_CACHE_RULE_NOT_FOUND), false);
   }
   else if (hashCode == IMAGE_NOT_FOUND_HASH)
   {
@@ -171,6 +182,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LAYER_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYER_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS), false);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {

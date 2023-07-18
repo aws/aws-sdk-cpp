@@ -225,32 +225,32 @@ namespace Model
 
 
     /**
-     * <p>Details about configurations for one or more training jobs that Amazon
-     * SageMaker runs to test the algorithm.</p>
+     * <p>Details about configurations for one or more training jobs that SageMaker
+     * runs to test the algorithm.</p>
      */
     inline const AlgorithmValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
     /**
-     * <p>Details about configurations for one or more training jobs that Amazon
-     * SageMaker runs to test the algorithm.</p>
+     * <p>Details about configurations for one or more training jobs that SageMaker
+     * runs to test the algorithm.</p>
      */
     inline void SetValidationSpecification(const AlgorithmValidationSpecification& value) { m_validationSpecification = value; }
 
     /**
-     * <p>Details about configurations for one or more training jobs that Amazon
-     * SageMaker runs to test the algorithm.</p>
+     * <p>Details about configurations for one or more training jobs that SageMaker
+     * runs to test the algorithm.</p>
      */
     inline void SetValidationSpecification(AlgorithmValidationSpecification&& value) { m_validationSpecification = std::move(value); }
 
     /**
-     * <p>Details about configurations for one or more training jobs that Amazon
-     * SageMaker runs to test the algorithm.</p>
+     * <p>Details about configurations for one or more training jobs that SageMaker
+     * runs to test the algorithm.</p>
      */
     inline DescribeAlgorithmResult& WithValidationSpecification(const AlgorithmValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
     /**
-     * <p>Details about configurations for one or more training jobs that Amazon
-     * SageMaker runs to test the algorithm.</p>
+     * <p>Details about configurations for one or more training jobs that SageMaker
+     * runs to test the algorithm.</p>
      */
     inline DescribeAlgorithmResult& WithValidationSpecification(AlgorithmValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 
@@ -344,17 +344,20 @@ namespace Model
 
 
     /**
-     * <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+     * <p>Whether the algorithm is certified to be listed in Amazon Web Services
+     * Marketplace.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+     * <p>Whether the algorithm is certified to be listed in Amazon Web Services
+     * Marketplace.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+     * <p>Whether the algorithm is certified to be listed in Amazon Web Services
+     * Marketplace.</p>
      */
     inline DescribeAlgorithmResult& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 

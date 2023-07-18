@@ -42,75 +42,75 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline const Aws::String& GetSharedAccountId() const{ return m_sharedAccountId; }
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline void SetSharedAccountId(const Aws::String& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline void SetSharedAccountId(Aws::String&& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline void SetSharedAccountId(const char* value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline ConnectionAliasPermission& WithSharedAccountId(const Aws::String& value) { SetSharedAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline ConnectionAliasPermission& WithSharedAccountId(Aws::String&& value) { SetSharedAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that the connection alias is shared
-     * with.</p>
+     * <p>The identifier of the Amazon Web Services account that the connection alias
+     * is shared with.</p>
      */
     inline ConnectionAliasPermission& WithSharedAccountId(const char* value) { SetSharedAccountId(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the specified AWS account is allowed to associate the
-     * connection alias with a directory.</p>
+     * <p>Indicates whether the specified Amazon Web Services account is allowed to
+     * associate the connection alias with a directory.</p>
      */
     inline bool GetAllowAssociation() const{ return m_allowAssociation; }
 
     /**
-     * <p>Indicates whether the specified AWS account is allowed to associate the
-     * connection alias with a directory.</p>
+     * <p>Indicates whether the specified Amazon Web Services account is allowed to
+     * associate the connection alias with a directory.</p>
      */
     inline bool AllowAssociationHasBeenSet() const { return m_allowAssociationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the specified AWS account is allowed to associate the
-     * connection alias with a directory.</p>
+     * <p>Indicates whether the specified Amazon Web Services account is allowed to
+     * associate the connection alias with a directory.</p>
      */
     inline void SetAllowAssociation(bool value) { m_allowAssociationHasBeenSet = true; m_allowAssociation = value; }
 
     /**
-     * <p>Indicates whether the specified AWS account is allowed to associate the
-     * connection alias with a directory.</p>
+     * <p>Indicates whether the specified Amazon Web Services account is allowed to
+     * associate the connection alias with a directory.</p>
      */
     inline ConnectionAliasPermission& WithAllowAssociation(bool value) { SetAllowAssociation(value); return *this;}
 

@@ -27,8 +27,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
    * prerequisites</a>. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-   * your instance</a> in the <i>Amazon Elastic Compute Cloud User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HibernationOptionsRequest">AWS
    * API Reference</a></p>
    */

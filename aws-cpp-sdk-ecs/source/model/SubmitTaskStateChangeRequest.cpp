@@ -19,6 +19,7 @@ SubmitTaskStateChangeRequest::SubmitTaskStateChangeRequest() :
     m_reasonHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
+    m_managedAgentsHasBeenSet(false),
     m_pullStartedAtHasBeenSet(false),
     m_pullStoppedAtHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false)
@@ -72,6 +73,17 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
    }
    payload.WithArray("attachments", std::move(attachmentsJsonList));
+
+  }
+
+  if(m_managedAgentsHasBeenSet)
+  {
+   Array<JsonValue> managedAgentsJsonList(m_managedAgents.size());
+   for(unsigned managedAgentsIndex = 0; managedAgentsIndex < managedAgentsJsonList.GetLength(); ++managedAgentsIndex)
+   {
+     managedAgentsJsonList[managedAgentsIndex].AsObject(m_managedAgents[managedAgentsIndex].Jsonize());
+   }
+   payload.WithArray("managedAgents", std::move(managedAgentsJsonList));
 
   }
 

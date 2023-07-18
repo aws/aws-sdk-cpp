@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline DescribeUserProfileRequest& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline DescribeUserProfileRequest& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline DescribeUserProfileRequest& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
 

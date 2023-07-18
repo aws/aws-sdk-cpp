@@ -30,6 +30,8 @@ InputSettings::InputSettings() :
     m_inputFilter(InputFilter::NOT_SET),
     m_inputFilterHasBeenSet(false),
     m_networkInputSettingsHasBeenSet(false),
+    m_scte35Pid(0),
+    m_scte35PidHasBeenSet(false),
     m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
     m_smpte2038DataPreferenceHasBeenSet(false),
     m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
@@ -50,6 +52,8 @@ InputSettings::InputSettings(JsonView jsonValue) :
     m_inputFilter(InputFilter::NOT_SET),
     m_inputFilterHasBeenSet(false),
     m_networkInputSettingsHasBeenSet(false),
+    m_scte35Pid(0),
+    m_scte35PidHasBeenSet(false),
     m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
     m_smpte2038DataPreferenceHasBeenSet(false),
     m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
@@ -114,6 +118,13 @@ InputSettings& InputSettings::operator =(JsonView jsonValue)
     m_networkInputSettings = jsonValue.GetObject("networkInputSettings");
 
     m_networkInputSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scte35Pid"))
+  {
+    m_scte35Pid = jsonValue.GetInteger("scte35Pid");
+
+    m_scte35PidHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("smpte2038DataPreference"))
@@ -190,6 +201,12 @@ JsonValue InputSettings::Jsonize() const
   if(m_networkInputSettingsHasBeenSet)
   {
    payload.WithObject("networkInputSettings", m_networkInputSettings.Jsonize());
+
+  }
+
+  if(m_scte35PidHasBeenSet)
+  {
+   payload.WithInteger("scte35Pid", m_scte35Pid);
 
   }
 

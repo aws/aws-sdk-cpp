@@ -33,7 +33,8 @@ SnapshotInfo::SnapshotInfo() :
     m_startTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ SnapshotInfo::SnapshotInfo(const XmlNode& xmlNode) :
     m_startTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -127,6 +129,12 @@ SnapshotInfo& SnapshotInfo::operator =(const XmlNode& xmlNode)
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -190,6 +198,11 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
 }
 
 void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -239,6 +252,10 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 }
 

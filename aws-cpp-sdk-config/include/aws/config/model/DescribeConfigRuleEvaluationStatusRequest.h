@@ -39,65 +39,65 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const{ return m_configRuleNames; }
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& WithConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetConfigRuleNames(value); return *this;}
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(const Aws::String& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The name of the AWS managed Config rules for which you want status
-     * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use.</p>
+     * <p>The name of the Config managed rules for which you want status information.
+     * If you do not specify any names, Config returns status information for all
+     * Config managed rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
@@ -156,8 +156,8 @@ namespace Model
      * parameter is required if the rule limit for your account is more than the
      * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
-     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
+     * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
@@ -166,8 +166,8 @@ namespace Model
      * parameter is required if the rule limit for your account is more than the
      * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
-     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
+     * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
@@ -176,8 +176,8 @@ namespace Model
      * parameter is required if the rule limit for your account is more than the
      * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
-     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
+     * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
@@ -186,8 +186,8 @@ namespace Model
      * parameter is required if the rule limit for your account is more than the
      * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
-     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
+     * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

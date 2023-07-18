@@ -21,16 +21,24 @@
 #include <aws/detective/DetectiveEndpoint.h>
 #include <aws/detective/DetectiveErrorMarshaller.h>
 #include <aws/detective/model/AcceptInvitationRequest.h>
+#include <aws/detective/model/CreateGraphRequest.h>
 #include <aws/detective/model/CreateMembersRequest.h>
 #include <aws/detective/model/DeleteGraphRequest.h>
 #include <aws/detective/model/DeleteMembersRequest.h>
+#include <aws/detective/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/detective/model/DisassociateMembershipRequest.h>
+#include <aws/detective/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/detective/model/GetMembersRequest.h>
 #include <aws/detective/model/ListGraphsRequest.h>
 #include <aws/detective/model/ListInvitationsRequest.h>
 #include <aws/detective/model/ListMembersRequest.h>
+#include <aws/detective/model/ListOrganizationAdminAccountsRequest.h>
+#include <aws/detective/model/ListTagsForResourceRequest.h>
 #include <aws/detective/model/RejectInvitationRequest.h>
 #include <aws/detective/model/StartMonitoringMemberRequest.h>
+#include <aws/detective/model/TagResourceRequest.h>
+#include <aws/detective/model/UntagResourceRequest.h>
+#include <aws/detective/model/UpdateOrganizationConfigurationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -79,7 +87,7 @@ DetectiveClient::~DetectiveClient()
 {
 }
 
-void DetectiveClient::init(const ClientConfiguration& config)
+void DetectiveClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Detective");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -108,9 +116,7 @@ void DetectiveClient::OverrideEndpoint(const Aws::String& endpoint)
 AcceptInvitationOutcome DetectiveClient::AcceptInvitation(const AcceptInvitationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitation");
   return AcceptInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -132,37 +138,35 @@ void DetectiveClient::AcceptInvitationAsyncHelper(const AcceptInvitationRequest&
   handler(this, request, AcceptInvitation(request), context);
 }
 
-CreateGraphOutcome DetectiveClient::CreateGraph() const
+CreateGraphOutcome DetectiveClient::CreateGraph(const CreateGraphRequest& request) const
 {
-  Aws::StringStream ss;
-  ss << m_uri << "/graph";
-  return CreateGraphOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "CreateGraph"));
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/graph");
+  return CreateGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-CreateGraphOutcomeCallable DetectiveClient::CreateGraphCallable() const
+CreateGraphOutcomeCallable DetectiveClient::CreateGraphCallable(const CreateGraphRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGraphOutcome() > >(ALLOCATION_TAG, [this](){ return this->CreateGraph(); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateGraphOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGraph(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void DetectiveClient::CreateGraphAsync(const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::CreateGraphAsync(const CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, handler, context](){ this->CreateGraphAsyncHelper( handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGraphAsyncHelper( request, handler, context ); } );
 }
 
-void DetectiveClient::CreateGraphAsyncHelper(const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void DetectiveClient::CreateGraphAsyncHelper(const CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, CreateGraph(), context);
+  handler(this, request, CreateGraph(request), context);
 }
 
 CreateMembersOutcome DetectiveClient::CreateMembers(const CreateMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/graph/members";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/graph/members");
   return CreateMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -187,9 +191,7 @@ void DetectiveClient::CreateMembersAsyncHelper(const CreateMembersRequest& reque
 DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/graph/removal";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/graph/removal");
   return DeleteGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -214,9 +216,7 @@ void DetectiveClient::DeleteGraphAsyncHelper(const DeleteGraphRequest& request, 
 DeleteMembersOutcome DetectiveClient::DeleteMembers(const DeleteMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/graph/members/removal";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/graph/members/removal");
   return DeleteMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -238,12 +238,60 @@ void DetectiveClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& reque
   handler(this, request, DeleteMembers(request), context);
 }
 
+DescribeOrganizationConfigurationOutcome DetectiveClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/orgs/describeOrganizationConfiguration");
+  return DescribeOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeOrganizationConfigurationOutcomeCallable DetectiveClient::DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::DescribeOrganizationConfigurationAsyncHelper(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationConfiguration(request), context);
+}
+
+DisableOrganizationAdminAccountOutcome DetectiveClient::DisableOrganizationAdminAccount() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/orgs/disableAdminAccount";
+  return DisableOrganizationAdminAccountOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DisableOrganizationAdminAccount"));
+}
+
+DisableOrganizationAdminAccountOutcomeCallable DetectiveClient::DisableOrganizationAdminAccountCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this](){ return this->DisableOrganizationAdminAccount(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context](){ this->DisableOrganizationAdminAccountAsyncHelper( handler, context ); } );
+}
+
+void DetectiveClient::DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, DisableOrganizationAdminAccount(), context);
+}
+
 DisassociateMembershipOutcome DetectiveClient::DisassociateMembership(const DisassociateMembershipRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/membership/removal";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/membership/removal");
   return DisassociateMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -265,12 +313,35 @@ void DetectiveClient::DisassociateMembershipAsyncHelper(const DisassociateMember
   handler(this, request, DisassociateMembership(request), context);
 }
 
+EnableOrganizationAdminAccountOutcome DetectiveClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/orgs/enableAdminAccount");
+  return EnableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EnableOrganizationAdminAccountOutcomeCallable DetectiveClient::EnableOrganizationAdminAccountCallable(const EnableOrganizationAdminAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableOrganizationAdminAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableOrganizationAdminAccount(request), context);
+}
+
 GetMembersOutcome DetectiveClient::GetMembers(const GetMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/graph/members/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/graph/members/get");
   return GetMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -295,9 +366,7 @@ void DetectiveClient::GetMembersAsyncHelper(const GetMembersRequest& request, co
 ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/graphs/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/graphs/list");
   return ListGraphsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -322,9 +391,7 @@ void DetectiveClient::ListGraphsAsyncHelper(const ListGraphsRequest& request, co
 ListInvitationsOutcome DetectiveClient::ListInvitations(const ListInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitations/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitations/list");
   return ListInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -349,9 +416,7 @@ void DetectiveClient::ListInvitationsAsyncHelper(const ListInvitationsRequest& r
 ListMembersOutcome DetectiveClient::ListMembers(const ListMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/graph/members/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/graph/members/list");
   return ListMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -373,12 +438,66 @@ void DetectiveClient::ListMembersAsyncHelper(const ListMembersRequest& request, 
   handler(this, request, ListMembers(request), context);
 }
 
+ListOrganizationAdminAccountsOutcome DetectiveClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/orgs/adminAccountslist");
+  return ListOrganizationAdminAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOrganizationAdminAccountsOutcomeCallable DetectiveClient::ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationAdminAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationAdminAccounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationAdminAccountsAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::ListOrganizationAdminAccountsAsyncHelper(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOrganizationAdminAccounts(request), context);
+}
+
+ListTagsForResourceOutcome DetectiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<DetectiveErrors>(DetectiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable DetectiveClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitation/removal";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitation/removal");
   return RejectInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -403,9 +522,7 @@ void DetectiveClient::RejectInvitationAsyncHelper(const RejectInvitationRequest&
 StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartMonitoringMemberRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/graph/member/monitoringstate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/graph/member/monitoringstate");
   return StartMonitoringMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -425,5 +542,97 @@ void DetectiveClient::StartMonitoringMemberAsync(const StartMonitoringMemberRequ
 void DetectiveClient::StartMonitoringMemberAsyncHelper(const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartMonitoringMember(request), context);
+}
+
+TagResourceOutcome DetectiveClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<DetectiveErrors>(DetectiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable DetectiveClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome DetectiveClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<DetectiveErrors>(DetectiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<DetectiveErrors>(DetectiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable DetectiveClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
+UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/orgs/updateOrganizationConfiguration");
+  return UpdateOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateOrganizationConfigurationOutcomeCallable DetectiveClient::UpdateOrganizationConfigurationCallable(const UpdateOrganizationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOrganizationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateOrganizationConfiguration(request), context);
 }
 

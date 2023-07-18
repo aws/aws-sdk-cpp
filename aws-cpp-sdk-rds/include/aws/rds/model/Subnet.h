@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a response element for the
-   * <code>DescribeDBSubnetGroups</code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>This data type is used as a response element for the
+   * <code>DescribeDBSubnetGroups</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Subnet">AWS API
    * Reference</a></p>
    */
@@ -106,7 +106,8 @@ namespace Model
      * <p>If the subnet is associated with an Outpost, this value specifies the
      * Outpost.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline const Outpost& GetSubnetOutpost() const{ return m_subnetOutpost; }
 
@@ -114,7 +115,8 @@ namespace Model
      * <p>If the subnet is associated with an Outpost, this value specifies the
      * Outpost.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline bool SubnetOutpostHasBeenSet() const { return m_subnetOutpostHasBeenSet; }
 
@@ -122,7 +124,8 @@ namespace Model
      * <p>If the subnet is associated with an Outpost, this value specifies the
      * Outpost.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline void SetSubnetOutpost(const Outpost& value) { m_subnetOutpostHasBeenSet = true; m_subnetOutpost = value; }
 
@@ -130,7 +133,8 @@ namespace Model
      * <p>If the subnet is associated with an Outpost, this value specifies the
      * Outpost.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline void SetSubnetOutpost(Outpost&& value) { m_subnetOutpostHasBeenSet = true; m_subnetOutpost = std::move(value); }
 
@@ -138,7 +142,8 @@ namespace Model
      * <p>If the subnet is associated with an Outpost, this value specifies the
      * Outpost.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline Subnet& WithSubnetOutpost(const Outpost& value) { SetSubnetOutpost(value); return *this;}
 
@@ -146,7 +151,8 @@ namespace Model
      * <p>If the subnet is associated with an Outpost, this value specifies the
      * Outpost.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline Subnet& WithSubnetOutpost(Outpost&& value) { SetSubnetOutpost(std::move(value)); return *this;}
 

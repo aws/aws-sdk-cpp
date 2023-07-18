@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Details on termination recommendation. </p><p><h3>See Also:</h3>   <a
+   * <p>Details on termination recommendation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TerminateRecommendationDetail">AWS
    * API Reference</a></p>
    */
@@ -38,91 +38,91 @@ namespace Model
 
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline const Aws::String& GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline void SetEstimatedMonthlySavings(const Aws::String& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline void SetEstimatedMonthlySavings(Aws::String&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::move(value); }
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline void SetEstimatedMonthlySavings(const char* value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings.assign(value); }
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline TerminateRecommendationDetail& WithEstimatedMonthlySavings(const Aws::String& value) { SetEstimatedMonthlySavings(value); return *this;}
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline TerminateRecommendationDetail& WithEstimatedMonthlySavings(Aws::String&& value) { SetEstimatedMonthlySavings(std::move(value)); return *this;}
 
     /**
-     * <p> Estimated savings resulting from modification, on a monthly basis.</p>
+     * <p>The estimated savings that result from modification, on a monthly basis.</p>
      */
     inline TerminateRecommendationDetail& WithEstimatedMonthlySavings(const char* value) { SetEstimatedMonthlySavings(value); return *this;}
 
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline TerminateRecommendationDetail& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline TerminateRecommendationDetail& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p> The currency code that AWS used to calculate the costs for this
-     * instance.</p>
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
+     * this instance.</p>
      */
     inline TerminateRecommendationDetail& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 

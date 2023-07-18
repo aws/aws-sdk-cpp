@@ -69,7 +69,7 @@ KinesisVideoMediaClient::~KinesisVideoMediaClient()
 {
 }
 
-void KinesisVideoMediaClient::init(const ClientConfiguration& config)
+void KinesisVideoMediaClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Kinesis Video Media");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -98,9 +98,7 @@ void KinesisVideoMediaClient::OverrideEndpoint(const Aws::String& endpoint)
 GetMediaOutcome KinesisVideoMediaClient::GetMedia(const GetMediaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getMedia";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getMedia");
   return GetMediaOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 

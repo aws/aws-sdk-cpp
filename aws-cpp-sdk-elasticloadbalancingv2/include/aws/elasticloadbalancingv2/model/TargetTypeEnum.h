@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     instance,
     ip,
-    lambda
+    lambda,
+    alb
   };
 
 namespace TargetTypeEnumMapper

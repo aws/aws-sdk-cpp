@@ -47,49 +47,55 @@ namespace Model
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline const AccountScope& GetAccountScope() const{ return m_accountScope; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline void SetAccountScope(AccountScope&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithAccountScope(const AccountScope& value) { SetAccountScope(value); return *this;}
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithAccountScope(AccountScope&& value) { SetAccountScope(std::move(value)); return *this;}
 
@@ -126,148 +132,148 @@ namespace Model
 
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline const TermInYears& GetTermInYears() const{ return m_termInYears; }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline bool TermInYearsHasBeenSet() const { return m_termInYearsHasBeenSet; }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline void SetTermInYears(const TermInYears& value) { m_termInYearsHasBeenSet = true; m_termInYears = value; }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline void SetTermInYears(TermInYears&& value) { m_termInYearsHasBeenSet = true; m_termInYears = std::move(value); }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithTermInYears(const TermInYears& value) { SetTermInYears(value); return *this;}
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithTermInYears(TermInYears&& value) { SetTermInYears(std::move(value)); return *this;}
 
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& GetSavingsPlansPurchaseRecommendationDetails() const{ return m_savingsPlansPurchaseRecommendationDetails; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline bool SavingsPlansPurchaseRecommendationDetailsHasBeenSet() const { return m_savingsPlansPurchaseRecommendationDetailsHasBeenSet; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline void SetSavingsPlansPurchaseRecommendationDetails(const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails = value; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline void SetSavingsPlansPurchaseRecommendationDetails(Aws::Vector<SavingsPlansPurchaseRecommendationDetail>&& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails = std::move(value); }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithSavingsPlansPurchaseRecommendationDetails(const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& value) { SetSavingsPlansPurchaseRecommendationDetails(value); return *this;}
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithSavingsPlansPurchaseRecommendationDetails(Aws::Vector<SavingsPlansPurchaseRecommendationDetail>&& value) { SetSavingsPlansPurchaseRecommendationDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& AddSavingsPlansPurchaseRecommendationDetails(const SavingsPlansPurchaseRecommendationDetail& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails.push_back(value); return *this; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& AddSavingsPlansPurchaseRecommendationDetails(SavingsPlansPurchaseRecommendationDetail&& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails.push_back(std::move(value)); return *this; }

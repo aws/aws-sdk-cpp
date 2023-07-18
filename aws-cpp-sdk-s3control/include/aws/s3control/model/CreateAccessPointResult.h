@@ -74,9 +74,47 @@ namespace Model
      */
     inline CreateAccessPointResult& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
 
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(const Aws::String& value) { m_alias = value; }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(Aws::String&& value) { m_alias = std::move(value); }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(const char* value) { m_alias.assign(value); }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline CreateAccessPointResult& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline CreateAccessPointResult& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline CreateAccessPointResult& WithAlias(const char* value) { SetAlias(value); return *this;}
+
   private:
 
     Aws::String m_accessPointArn;
+
+    Aws::String m_alias;
   };
 
 } // namespace Model

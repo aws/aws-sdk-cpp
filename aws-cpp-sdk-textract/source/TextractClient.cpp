@@ -21,11 +21,15 @@
 #include <aws/textract/TextractEndpoint.h>
 #include <aws/textract/TextractErrorMarshaller.h>
 #include <aws/textract/model/AnalyzeDocumentRequest.h>
+#include <aws/textract/model/AnalyzeExpenseRequest.h>
+#include <aws/textract/model/AnalyzeIDRequest.h>
 #include <aws/textract/model/DetectDocumentTextRequest.h>
 #include <aws/textract/model/GetDocumentAnalysisRequest.h>
 #include <aws/textract/model/GetDocumentTextDetectionRequest.h>
+#include <aws/textract/model/GetExpenseAnalysisRequest.h>
 #include <aws/textract/model/StartDocumentAnalysisRequest.h>
 #include <aws/textract/model/StartDocumentTextDetectionRequest.h>
+#include <aws/textract/model/StartExpenseAnalysisRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -74,7 +78,7 @@ TextractClient::~TextractClient()
 {
 }
 
-void TextractClient::init(const ClientConfiguration& config)
+void TextractClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Textract");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -103,9 +107,6 @@ void TextractClient::OverrideEndpoint(const Aws::String& endpoint)
 AnalyzeDocumentOutcome TextractClient::AnalyzeDocument(const AnalyzeDocumentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AnalyzeDocumentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -127,12 +128,57 @@ void TextractClient::AnalyzeDocumentAsyncHelper(const AnalyzeDocumentRequest& re
   handler(this, request, AnalyzeDocument(request), context);
 }
 
+AnalyzeExpenseOutcome TextractClient::AnalyzeExpense(const AnalyzeExpenseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AnalyzeExpenseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AnalyzeExpenseOutcomeCallable TextractClient::AnalyzeExpenseCallable(const AnalyzeExpenseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AnalyzeExpenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AnalyzeExpense(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::AnalyzeExpenseAsync(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AnalyzeExpenseAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::AnalyzeExpenseAsyncHelper(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AnalyzeExpense(request), context);
+}
+
+AnalyzeIDOutcome TextractClient::AnalyzeID(const AnalyzeIDRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AnalyzeIDOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AnalyzeIDOutcomeCallable TextractClient::AnalyzeIDCallable(const AnalyzeIDRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AnalyzeIDOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AnalyzeID(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::AnalyzeIDAsync(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AnalyzeIDAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::AnalyzeIDAsyncHelper(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AnalyzeID(request), context);
+}
+
 DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumentTextRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DetectDocumentTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -157,9 +203,6 @@ void TextractClient::DetectDocumentTextAsyncHelper(const DetectDocumentTextReque
 GetDocumentAnalysisOutcome TextractClient::GetDocumentAnalysis(const GetDocumentAnalysisRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDocumentAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -184,9 +227,6 @@ void TextractClient::GetDocumentAnalysisAsyncHelper(const GetDocumentAnalysisReq
 GetDocumentTextDetectionOutcome TextractClient::GetDocumentTextDetection(const GetDocumentTextDetectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDocumentTextDetectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -208,12 +248,33 @@ void TextractClient::GetDocumentTextDetectionAsyncHelper(const GetDocumentTextDe
   handler(this, request, GetDocumentTextDetection(request), context);
 }
 
+GetExpenseAnalysisOutcome TextractClient::GetExpenseAnalysis(const GetExpenseAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetExpenseAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetExpenseAnalysisOutcomeCallable TextractClient::GetExpenseAnalysisCallable(const GetExpenseAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExpenseAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExpenseAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::GetExpenseAnalysisAsync(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExpenseAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::GetExpenseAnalysisAsyncHelper(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExpenseAnalysis(request), context);
+}
+
 StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDocumentAnalysisRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartDocumentAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -238,9 +299,6 @@ void TextractClient::StartDocumentAnalysisAsyncHelper(const StartDocumentAnalysi
 StartDocumentTextDetectionOutcome TextractClient::StartDocumentTextDetection(const StartDocumentTextDetectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartDocumentTextDetectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -260,5 +318,29 @@ void TextractClient::StartDocumentTextDetectionAsync(const StartDocumentTextDete
 void TextractClient::StartDocumentTextDetectionAsyncHelper(const StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartDocumentTextDetection(request), context);
+}
+
+StartExpenseAnalysisOutcome TextractClient::StartExpenseAnalysis(const StartExpenseAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartExpenseAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartExpenseAnalysisOutcomeCallable TextractClient::StartExpenseAnalysisCallable(const StartExpenseAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartExpenseAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartExpenseAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::StartExpenseAnalysisAsync(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartExpenseAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::StartExpenseAnalysisAsyncHelper(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartExpenseAnalysis(request), context);
 }
 

@@ -49,7 +49,8 @@ enum class DetectiveErrors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
-  SERVICE_QUOTA_EXCEEDED
+  SERVICE_QUOTA_EXCEEDED,
+  TOO_MANY_REQUESTS
 };
 
 class AWS_DETECTIVE_API DetectiveError : public Aws::Client::AWSError<DetectiveErrors>

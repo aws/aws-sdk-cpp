@@ -19,12 +19,14 @@ namespace Model
 {
 
 StreamProcessorSettings::StreamProcessorSettings() : 
-    m_faceSearchHasBeenSet(false)
+    m_faceSearchHasBeenSet(false),
+    m_connectedHomeHasBeenSet(false)
 {
 }
 
 StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue) : 
-    m_faceSearchHasBeenSet(false)
+    m_faceSearchHasBeenSet(false),
+    m_connectedHomeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ StreamProcessorSettings& StreamProcessorSettings::operator =(JsonView jsonValue)
     m_faceSearchHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectedHome"))
+  {
+    m_connectedHome = jsonValue.GetObject("ConnectedHome");
+
+    m_connectedHomeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue StreamProcessorSettings::Jsonize() const
   if(m_faceSearchHasBeenSet)
   {
    payload.WithObject("FaceSearch", m_faceSearch.Jsonize());
+
+  }
+
+  if(m_connectedHomeHasBeenSet)
+  {
+   payload.WithObject("ConnectedHome", m_connectedHome.Jsonize());
 
   }
 

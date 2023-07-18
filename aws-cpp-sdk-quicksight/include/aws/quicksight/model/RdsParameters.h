@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Amazon RDS parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for Amazon RDS.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RdsParameters">AWS
    * API Reference</a></p>
    */

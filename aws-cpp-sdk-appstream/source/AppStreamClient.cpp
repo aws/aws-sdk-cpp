@@ -20,19 +20,28 @@
 #include <aws/appstream/AppStreamClient.h>
 #include <aws/appstream/AppStreamEndpoint.h>
 #include <aws/appstream/AppStreamErrorMarshaller.h>
+#include <aws/appstream/model/AssociateApplicationFleetRequest.h>
+#include <aws/appstream/model/AssociateApplicationToEntitlementRequest.h>
 #include <aws/appstream/model/AssociateFleetRequest.h>
 #include <aws/appstream/model/BatchAssociateUserStackRequest.h>
 #include <aws/appstream/model/BatchDisassociateUserStackRequest.h>
 #include <aws/appstream/model/CopyImageRequest.h>
+#include <aws/appstream/model/CreateAppBlockRequest.h>
+#include <aws/appstream/model/CreateApplicationRequest.h>
 #include <aws/appstream/model/CreateDirectoryConfigRequest.h>
+#include <aws/appstream/model/CreateEntitlementRequest.h>
 #include <aws/appstream/model/CreateFleetRequest.h>
 #include <aws/appstream/model/CreateImageBuilderRequest.h>
 #include <aws/appstream/model/CreateImageBuilderStreamingURLRequest.h>
 #include <aws/appstream/model/CreateStackRequest.h>
 #include <aws/appstream/model/CreateStreamingURLRequest.h>
+#include <aws/appstream/model/CreateUpdatedImageRequest.h>
 #include <aws/appstream/model/CreateUsageReportSubscriptionRequest.h>
 #include <aws/appstream/model/CreateUserRequest.h>
+#include <aws/appstream/model/DeleteAppBlockRequest.h>
+#include <aws/appstream/model/DeleteApplicationRequest.h>
 #include <aws/appstream/model/DeleteDirectoryConfigRequest.h>
+#include <aws/appstream/model/DeleteEntitlementRequest.h>
 #include <aws/appstream/model/DeleteFleetRequest.h>
 #include <aws/appstream/model/DeleteImageRequest.h>
 #include <aws/appstream/model/DeleteImageBuilderRequest.h>
@@ -40,7 +49,11 @@
 #include <aws/appstream/model/DeleteStackRequest.h>
 #include <aws/appstream/model/DeleteUsageReportSubscriptionRequest.h>
 #include <aws/appstream/model/DeleteUserRequest.h>
+#include <aws/appstream/model/DescribeAppBlocksRequest.h>
+#include <aws/appstream/model/DescribeApplicationFleetAssociationsRequest.h>
+#include <aws/appstream/model/DescribeApplicationsRequest.h>
 #include <aws/appstream/model/DescribeDirectoryConfigsRequest.h>
+#include <aws/appstream/model/DescribeEntitlementsRequest.h>
 #include <aws/appstream/model/DescribeFleetsRequest.h>
 #include <aws/appstream/model/DescribeImageBuildersRequest.h>
 #include <aws/appstream/model/DescribeImagePermissionsRequest.h>
@@ -51,11 +64,14 @@
 #include <aws/appstream/model/DescribeUserStackAssociationsRequest.h>
 #include <aws/appstream/model/DescribeUsersRequest.h>
 #include <aws/appstream/model/DisableUserRequest.h>
+#include <aws/appstream/model/DisassociateApplicationFleetRequest.h>
+#include <aws/appstream/model/DisassociateApplicationFromEntitlementRequest.h>
 #include <aws/appstream/model/DisassociateFleetRequest.h>
 #include <aws/appstream/model/EnableUserRequest.h>
 #include <aws/appstream/model/ExpireSessionRequest.h>
 #include <aws/appstream/model/ListAssociatedFleetsRequest.h>
 #include <aws/appstream/model/ListAssociatedStacksRequest.h>
+#include <aws/appstream/model/ListEntitledApplicationsRequest.h>
 #include <aws/appstream/model/ListTagsForResourceRequest.h>
 #include <aws/appstream/model/StartFleetRequest.h>
 #include <aws/appstream/model/StartImageBuilderRequest.h>
@@ -63,7 +79,9 @@
 #include <aws/appstream/model/StopImageBuilderRequest.h>
 #include <aws/appstream/model/TagResourceRequest.h>
 #include <aws/appstream/model/UntagResourceRequest.h>
+#include <aws/appstream/model/UpdateApplicationRequest.h>
 #include <aws/appstream/model/UpdateDirectoryConfigRequest.h>
+#include <aws/appstream/model/UpdateEntitlementRequest.h>
 #include <aws/appstream/model/UpdateFleetRequest.h>
 #include <aws/appstream/model/UpdateImagePermissionsRequest.h>
 #include <aws/appstream/model/UpdateStackRequest.h>
@@ -115,7 +133,7 @@ AppStreamClient::~AppStreamClient()
 {
 }
 
-void AppStreamClient::init(const ClientConfiguration& config)
+void AppStreamClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AppStream");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -141,12 +159,57 @@ void AppStreamClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateApplicationFleetOutcome AppStreamClient::AssociateApplicationFleet(const AssociateApplicationFleetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociateApplicationFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateApplicationFleetOutcomeCallable AppStreamClient::AssociateApplicationFleetCallable(const AssociateApplicationFleetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateApplicationFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateApplicationFleet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::AssociateApplicationFleetAsync(const AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateApplicationFleetAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::AssociateApplicationFleetAsyncHelper(const AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateApplicationFleet(request), context);
+}
+
+AssociateApplicationToEntitlementOutcome AppStreamClient::AssociateApplicationToEntitlement(const AssociateApplicationToEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociateApplicationToEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateApplicationToEntitlementOutcomeCallable AppStreamClient::AssociateApplicationToEntitlementCallable(const AssociateApplicationToEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateApplicationToEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateApplicationToEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::AssociateApplicationToEntitlementAsync(const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateApplicationToEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::AssociateApplicationToEntitlementAsyncHelper(const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateApplicationToEntitlement(request), context);
+}
+
 AssociateFleetOutcome AppStreamClient::AssociateFleet(const AssociateFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AssociateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,9 +234,6 @@ void AppStreamClient::AssociateFleetAsyncHelper(const AssociateFleetRequest& req
 BatchAssociateUserStackOutcome AppStreamClient::BatchAssociateUserStack(const BatchAssociateUserStackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchAssociateUserStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,9 +258,6 @@ void AppStreamClient::BatchAssociateUserStackAsyncHelper(const BatchAssociateUse
 BatchDisassociateUserStackOutcome AppStreamClient::BatchDisassociateUserStack(const BatchDisassociateUserStackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDisassociateUserStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -225,9 +282,6 @@ void AppStreamClient::BatchDisassociateUserStackAsyncHelper(const BatchDisassoci
 CopyImageOutcome AppStreamClient::CopyImage(const CopyImageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CopyImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -249,12 +303,57 @@ void AppStreamClient::CopyImageAsyncHelper(const CopyImageRequest& request, cons
   handler(this, request, CopyImage(request), context);
 }
 
+CreateAppBlockOutcome AppStreamClient::CreateAppBlock(const CreateAppBlockRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateAppBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAppBlockOutcomeCallable AppStreamClient::CreateAppBlockCallable(const CreateAppBlockRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppBlock(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateAppBlockAsync(const CreateAppBlockRequest& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAppBlockAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateAppBlockAsyncHelper(const CreateAppBlockRequest& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAppBlock(request), context);
+}
+
+CreateApplicationOutcome AppStreamClient::CreateApplication(const CreateApplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateApplicationOutcomeCallable AppStreamClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateApplication(request), context);
+}
+
 CreateDirectoryConfigOutcome AppStreamClient::CreateDirectoryConfig(const CreateDirectoryConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateDirectoryConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -276,12 +375,33 @@ void AppStreamClient::CreateDirectoryConfigAsyncHelper(const CreateDirectoryConf
   handler(this, request, CreateDirectoryConfig(request), context);
 }
 
+CreateEntitlementOutcome AppStreamClient::CreateEntitlement(const CreateEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEntitlementOutcomeCallable AppStreamClient::CreateEntitlementCallable(const CreateEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateEntitlementAsync(const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateEntitlementAsyncHelper(const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEntitlement(request), context);
+}
+
 CreateFleetOutcome AppStreamClient::CreateFleet(const CreateFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -306,9 +426,6 @@ void AppStreamClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, 
 CreateImageBuilderOutcome AppStreamClient::CreateImageBuilder(const CreateImageBuilderRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -333,9 +450,6 @@ void AppStreamClient::CreateImageBuilderAsyncHelper(const CreateImageBuilderRequ
 CreateImageBuilderStreamingURLOutcome AppStreamClient::CreateImageBuilderStreamingURL(const CreateImageBuilderStreamingURLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateImageBuilderStreamingURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -360,9 +474,6 @@ void AppStreamClient::CreateImageBuilderStreamingURLAsyncHelper(const CreateImag
 CreateStackOutcome AppStreamClient::CreateStack(const CreateStackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -387,9 +498,6 @@ void AppStreamClient::CreateStackAsyncHelper(const CreateStackRequest& request, 
 CreateStreamingURLOutcome AppStreamClient::CreateStreamingURL(const CreateStreamingURLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateStreamingURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -411,12 +519,33 @@ void AppStreamClient::CreateStreamingURLAsyncHelper(const CreateStreamingURLRequ
   handler(this, request, CreateStreamingURL(request), context);
 }
 
+CreateUpdatedImageOutcome AppStreamClient::CreateUpdatedImage(const CreateUpdatedImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateUpdatedImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateUpdatedImageOutcomeCallable AppStreamClient::CreateUpdatedImageCallable(const CreateUpdatedImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUpdatedImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUpdatedImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateUpdatedImageAsync(const CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUpdatedImageAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateUpdatedImageAsyncHelper(const CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUpdatedImage(request), context);
+}
+
 CreateUsageReportSubscriptionOutcome AppStreamClient::CreateUsageReportSubscription(const CreateUsageReportSubscriptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateUsageReportSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -441,9 +570,6 @@ void AppStreamClient::CreateUsageReportSubscriptionAsyncHelper(const CreateUsage
 CreateUserOutcome AppStreamClient::CreateUser(const CreateUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -465,12 +591,57 @@ void AppStreamClient::CreateUserAsyncHelper(const CreateUserRequest& request, co
   handler(this, request, CreateUser(request), context);
 }
 
+DeleteAppBlockOutcome AppStreamClient::DeleteAppBlock(const DeleteAppBlockRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteAppBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppBlockOutcomeCallable AppStreamClient::DeleteAppBlockCallable(const DeleteAppBlockRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppBlock(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DeleteAppBlockAsync(const DeleteAppBlockRequest& request, const DeleteAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppBlockAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DeleteAppBlockAsyncHelper(const DeleteAppBlockRequest& request, const DeleteAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppBlock(request), context);
+}
+
+DeleteApplicationOutcome AppStreamClient::DeleteApplication(const DeleteApplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteApplicationOutcomeCallable AppStreamClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApplication(request), context);
+}
+
 DeleteDirectoryConfigOutcome AppStreamClient::DeleteDirectoryConfig(const DeleteDirectoryConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteDirectoryConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -492,12 +663,33 @@ void AppStreamClient::DeleteDirectoryConfigAsyncHelper(const DeleteDirectoryConf
   handler(this, request, DeleteDirectoryConfig(request), context);
 }
 
+DeleteEntitlementOutcome AppStreamClient::DeleteEntitlement(const DeleteEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEntitlementOutcomeCallable AppStreamClient::DeleteEntitlementCallable(const DeleteEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DeleteEntitlementAsync(const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DeleteEntitlementAsyncHelper(const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEntitlement(request), context);
+}
+
 DeleteFleetOutcome AppStreamClient::DeleteFleet(const DeleteFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -522,9 +714,6 @@ void AppStreamClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, 
 DeleteImageOutcome AppStreamClient::DeleteImage(const DeleteImageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -549,9 +738,6 @@ void AppStreamClient::DeleteImageAsyncHelper(const DeleteImageRequest& request, 
 DeleteImageBuilderOutcome AppStreamClient::DeleteImageBuilder(const DeleteImageBuilderRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -576,9 +762,6 @@ void AppStreamClient::DeleteImageBuilderAsyncHelper(const DeleteImageBuilderRequ
 DeleteImagePermissionsOutcome AppStreamClient::DeleteImagePermissions(const DeleteImagePermissionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteImagePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -603,9 +786,6 @@ void AppStreamClient::DeleteImagePermissionsAsyncHelper(const DeleteImagePermiss
 DeleteStackOutcome AppStreamClient::DeleteStack(const DeleteStackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -630,9 +810,6 @@ void AppStreamClient::DeleteStackAsyncHelper(const DeleteStackRequest& request, 
 DeleteUsageReportSubscriptionOutcome AppStreamClient::DeleteUsageReportSubscription(const DeleteUsageReportSubscriptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteUsageReportSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -657,9 +834,6 @@ void AppStreamClient::DeleteUsageReportSubscriptionAsyncHelper(const DeleteUsage
 DeleteUserOutcome AppStreamClient::DeleteUser(const DeleteUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -681,12 +855,81 @@ void AppStreamClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, co
   handler(this, request, DeleteUser(request), context);
 }
 
+DescribeAppBlocksOutcome AppStreamClient::DescribeAppBlocks(const DescribeAppBlocksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeAppBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppBlocksOutcomeCallable AppStreamClient::DescribeAppBlocksCallable(const DescribeAppBlocksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAppBlocksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppBlocks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DescribeAppBlocksAsync(const DescribeAppBlocksRequest& request, const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppBlocksAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DescribeAppBlocksAsyncHelper(const DescribeAppBlocksRequest& request, const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAppBlocks(request), context);
+}
+
+DescribeApplicationFleetAssociationsOutcome AppStreamClient::DescribeApplicationFleetAssociations(const DescribeApplicationFleetAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeApplicationFleetAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeApplicationFleetAssociationsOutcomeCallable AppStreamClient::DescribeApplicationFleetAssociationsCallable(const DescribeApplicationFleetAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationFleetAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApplicationFleetAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DescribeApplicationFleetAssociationsAsync(const DescribeApplicationFleetAssociationsRequest& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationFleetAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DescribeApplicationFleetAssociationsAsyncHelper(const DescribeApplicationFleetAssociationsRequest& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeApplicationFleetAssociations(request), context);
+}
+
+DescribeApplicationsOutcome AppStreamClient::DescribeApplications(const DescribeApplicationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeApplicationsOutcomeCallable AppStreamClient::DescribeApplicationsCallable(const DescribeApplicationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApplications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationsAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DescribeApplicationsAsyncHelper(const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeApplications(request), context);
+}
+
 DescribeDirectoryConfigsOutcome AppStreamClient::DescribeDirectoryConfigs(const DescribeDirectoryConfigsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeDirectoryConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -708,12 +951,33 @@ void AppStreamClient::DescribeDirectoryConfigsAsyncHelper(const DescribeDirector
   handler(this, request, DescribeDirectoryConfigs(request), context);
 }
 
+DescribeEntitlementsOutcome AppStreamClient::DescribeEntitlements(const DescribeEntitlementsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeEntitlementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEntitlementsOutcomeCallable AppStreamClient::DescribeEntitlementsCallable(const DescribeEntitlementsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEntitlementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEntitlements(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DescribeEntitlementsAsync(const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntitlementsAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DescribeEntitlementsAsyncHelper(const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEntitlements(request), context);
+}
+
 DescribeFleetsOutcome AppStreamClient::DescribeFleets(const DescribeFleetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -738,9 +1002,6 @@ void AppStreamClient::DescribeFleetsAsyncHelper(const DescribeFleetsRequest& req
 DescribeImageBuildersOutcome AppStreamClient::DescribeImageBuilders(const DescribeImageBuildersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeImageBuildersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -765,9 +1026,6 @@ void AppStreamClient::DescribeImageBuildersAsyncHelper(const DescribeImageBuilde
 DescribeImagePermissionsOutcome AppStreamClient::DescribeImagePermissions(const DescribeImagePermissionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeImagePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -792,9 +1050,6 @@ void AppStreamClient::DescribeImagePermissionsAsyncHelper(const DescribeImagePer
 DescribeImagesOutcome AppStreamClient::DescribeImages(const DescribeImagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -819,9 +1074,6 @@ void AppStreamClient::DescribeImagesAsyncHelper(const DescribeImagesRequest& req
 DescribeSessionsOutcome AppStreamClient::DescribeSessions(const DescribeSessionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeSessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -846,9 +1098,6 @@ void AppStreamClient::DescribeSessionsAsyncHelper(const DescribeSessionsRequest&
 DescribeStacksOutcome AppStreamClient::DescribeStacks(const DescribeStacksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeStacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -873,9 +1122,6 @@ void AppStreamClient::DescribeStacksAsyncHelper(const DescribeStacksRequest& req
 DescribeUsageReportSubscriptionsOutcome AppStreamClient::DescribeUsageReportSubscriptions(const DescribeUsageReportSubscriptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeUsageReportSubscriptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -900,9 +1146,6 @@ void AppStreamClient::DescribeUsageReportSubscriptionsAsyncHelper(const Describe
 DescribeUserStackAssociationsOutcome AppStreamClient::DescribeUserStackAssociations(const DescribeUserStackAssociationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeUserStackAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -927,9 +1170,6 @@ void AppStreamClient::DescribeUserStackAssociationsAsyncHelper(const DescribeUse
 DescribeUsersOutcome AppStreamClient::DescribeUsers(const DescribeUsersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -954,9 +1194,6 @@ void AppStreamClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& reque
 DisableUserOutcome AppStreamClient::DisableUser(const DisableUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -978,12 +1215,57 @@ void AppStreamClient::DisableUserAsyncHelper(const DisableUserRequest& request, 
   handler(this, request, DisableUser(request), context);
 }
 
+DisassociateApplicationFleetOutcome AppStreamClient::DisassociateApplicationFleet(const DisassociateApplicationFleetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociateApplicationFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateApplicationFleetOutcomeCallable AppStreamClient::DisassociateApplicationFleetCallable(const DisassociateApplicationFleetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateApplicationFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateApplicationFleet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DisassociateApplicationFleetAsync(const DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApplicationFleetAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DisassociateApplicationFleetAsyncHelper(const DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateApplicationFleet(request), context);
+}
+
+DisassociateApplicationFromEntitlementOutcome AppStreamClient::DisassociateApplicationFromEntitlement(const DisassociateApplicationFromEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociateApplicationFromEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateApplicationFromEntitlementOutcomeCallable AppStreamClient::DisassociateApplicationFromEntitlementCallable(const DisassociateApplicationFromEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateApplicationFromEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateApplicationFromEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DisassociateApplicationFromEntitlementAsync(const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApplicationFromEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DisassociateApplicationFromEntitlementAsyncHelper(const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateApplicationFromEntitlement(request), context);
+}
+
 DisassociateFleetOutcome AppStreamClient::DisassociateFleet(const DisassociateFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisassociateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1008,9 +1290,6 @@ void AppStreamClient::DisassociateFleetAsyncHelper(const DisassociateFleetReques
 EnableUserOutcome AppStreamClient::EnableUser(const EnableUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return EnableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1035,9 +1314,6 @@ void AppStreamClient::EnableUserAsyncHelper(const EnableUserRequest& request, co
 ExpireSessionOutcome AppStreamClient::ExpireSession(const ExpireSessionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ExpireSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1062,9 +1338,6 @@ void AppStreamClient::ExpireSessionAsyncHelper(const ExpireSessionRequest& reque
 ListAssociatedFleetsOutcome AppStreamClient::ListAssociatedFleets(const ListAssociatedFleetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListAssociatedFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1089,9 +1362,6 @@ void AppStreamClient::ListAssociatedFleetsAsyncHelper(const ListAssociatedFleets
 ListAssociatedStacksOutcome AppStreamClient::ListAssociatedStacks(const ListAssociatedStacksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListAssociatedStacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1113,12 +1383,33 @@ void AppStreamClient::ListAssociatedStacksAsyncHelper(const ListAssociatedStacks
   handler(this, request, ListAssociatedStacks(request), context);
 }
 
+ListEntitledApplicationsOutcome AppStreamClient::ListEntitledApplications(const ListEntitledApplicationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListEntitledApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEntitledApplicationsOutcomeCallable AppStreamClient::ListEntitledApplicationsCallable(const ListEntitledApplicationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEntitledApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntitledApplications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::ListEntitledApplicationsAsync(const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEntitledApplicationsAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::ListEntitledApplicationsAsyncHelper(const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEntitledApplications(request), context);
+}
+
 ListTagsForResourceOutcome AppStreamClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1143,9 +1434,6 @@ void AppStreamClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRe
 StartFleetOutcome AppStreamClient::StartFleet(const StartFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1170,9 +1458,6 @@ void AppStreamClient::StartFleetAsyncHelper(const StartFleetRequest& request, co
 StartImageBuilderOutcome AppStreamClient::StartImageBuilder(const StartImageBuilderRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1197,9 +1482,6 @@ void AppStreamClient::StartImageBuilderAsyncHelper(const StartImageBuilderReques
 StopFleetOutcome AppStreamClient::StopFleet(const StopFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1224,9 +1506,6 @@ void AppStreamClient::StopFleetAsyncHelper(const StopFleetRequest& request, cons
 StopImageBuilderOutcome AppStreamClient::StopImageBuilder(const StopImageBuilderRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1251,9 +1530,6 @@ void AppStreamClient::StopImageBuilderAsyncHelper(const StopImageBuilderRequest&
 TagResourceOutcome AppStreamClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1278,9 +1554,6 @@ void AppStreamClient::TagResourceAsyncHelper(const TagResourceRequest& request, 
 UntagResourceOutcome AppStreamClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1302,12 +1575,33 @@ void AppStreamClient::UntagResourceAsyncHelper(const UntagResourceRequest& reque
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateApplicationOutcome AppStreamClient::UpdateApplication(const UpdateApplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateApplicationOutcomeCallable AppStreamClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApplication(request), context);
+}
+
 UpdateDirectoryConfigOutcome AppStreamClient::UpdateDirectoryConfig(const UpdateDirectoryConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateDirectoryConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1329,12 +1623,33 @@ void AppStreamClient::UpdateDirectoryConfigAsyncHelper(const UpdateDirectoryConf
   handler(this, request, UpdateDirectoryConfig(request), context);
 }
 
+UpdateEntitlementOutcome AppStreamClient::UpdateEntitlement(const UpdateEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEntitlementOutcomeCallable AppStreamClient::UpdateEntitlementCallable(const UpdateEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::UpdateEntitlementAsync(const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::UpdateEntitlementAsyncHelper(const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEntitlement(request), context);
+}
+
 UpdateFleetOutcome AppStreamClient::UpdateFleet(const UpdateFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1359,9 +1674,6 @@ void AppStreamClient::UpdateFleetAsyncHelper(const UpdateFleetRequest& request, 
 UpdateImagePermissionsOutcome AppStreamClient::UpdateImagePermissions(const UpdateImagePermissionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateImagePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1386,9 +1698,6 @@ void AppStreamClient::UpdateImagePermissionsAsyncHelper(const UpdateImagePermiss
 UpdateStackOutcome AppStreamClient::UpdateStack(const UpdateStackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

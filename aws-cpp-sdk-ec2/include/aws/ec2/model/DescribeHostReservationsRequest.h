@@ -45,7 +45,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -63,7 +63,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -81,7 +81,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -99,7 +99,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -117,7 +117,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -135,7 +135,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -153,7 +153,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -171,7 +171,7 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
      * assigned to the resource. Use the tag key in the filter name and the tag value
      * as the filter value. For example, to find all resources that have a tag with the
      * key <code>Owner</code> and the value <code>TeamA</code>, specify

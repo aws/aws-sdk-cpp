@@ -25,7 +25,8 @@ TargetInstance::TargetInstance() :
     m_defaultTargetInstance(false),
     m_defaultTargetInstanceHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
-    m_expectedResourceUtilizationHasBeenSet(false)
+    m_expectedResourceUtilizationHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ TargetInstance::TargetInstance(JsonView jsonValue) :
     m_defaultTargetInstance(false),
     m_defaultTargetInstanceHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
-    m_expectedResourceUtilizationHasBeenSet(false)
+    m_expectedResourceUtilizationHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,16 @@ TargetInstance& TargetInstance::operator =(JsonView jsonValue)
     m_expectedResourceUtilizationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PlatformDifferences"))
+  {
+    Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("PlatformDifferences");
+    for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+    {
+      m_platformDifferences.push_back(PlatformDifferenceMapper::GetPlatformDifferenceForName(platformDifferencesJsonList[platformDifferencesIndex].AsString()));
+    }
+    m_platformDifferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +137,17 @@ JsonValue TargetInstance::Jsonize() const
   if(m_expectedResourceUtilizationHasBeenSet)
   {
    payload.WithObject("ExpectedResourceUtilization", m_expectedResourceUtilization.Jsonize());
+
+  }
+
+  if(m_platformDifferencesHasBeenSet)
+  {
+   Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
+   for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+   {
+     platformDifferencesJsonList[platformDifferencesIndex].AsString(PlatformDifferenceMapper::GetNameForPlatformDifference(m_platformDifferences[platformDifferencesIndex]));
+   }
+   payload.WithArray("PlatformDifferences", std::move(platformDifferencesJsonList));
 
   }
 

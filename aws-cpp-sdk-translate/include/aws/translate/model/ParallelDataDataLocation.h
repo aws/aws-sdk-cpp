@@ -81,49 +81,105 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline ParallelDataDataLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline ParallelDataDataLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p>
+     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+     * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
+     * that a record contains malicious code. The record begins with a special
+     * character, such as =, +, -, or @. When the file is opened in a spreadsheet
+     * program, the program might interpret the record as a formula and run the code
+     * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
+     * you recognize the file and trust its creator.</p> 
      */
     inline ParallelDataDataLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
 

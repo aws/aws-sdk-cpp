@@ -22,6 +22,7 @@ namespace Aws
 
         static const int speke_HASH = HashingUtils::HashString("speke");
         static const int static_key_HASH = HashingUtils::HashString("static-key");
+        static const int srt_password_HASH = HashingUtils::HashString("srt-password");
 
 
         KeyType GetKeyTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == static_key_HASH)
           {
             return KeyType::static_key;
+          }
+          else if (hashCode == srt_password_HASH)
+          {
+            return KeyType::srt_password;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "speke";
           case KeyType::static_key:
             return "static-key";
+          case KeyType::srt_password:
+            return "srt-password";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

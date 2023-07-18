@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Software license that is managed in AWS License Manager.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Software license that is managed in License Manager.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/License">AWS
    * API Reference</a></p>
    */

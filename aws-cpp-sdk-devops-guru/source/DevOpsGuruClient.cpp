@@ -21,21 +21,32 @@
 #include <aws/devops-guru/DevOpsGuruEndpoint.h>
 #include <aws/devops-guru/DevOpsGuruErrorMarshaller.h>
 #include <aws/devops-guru/model/AddNotificationChannelRequest.h>
+#include <aws/devops-guru/model/DeleteInsightRequest.h>
 #include <aws/devops-guru/model/DescribeAccountHealthRequest.h>
 #include <aws/devops-guru/model/DescribeAccountOverviewRequest.h>
 #include <aws/devops-guru/model/DescribeAnomalyRequest.h>
+#include <aws/devops-guru/model/DescribeEventSourcesConfigRequest.h>
+#include <aws/devops-guru/model/DescribeFeedbackRequest.h>
 #include <aws/devops-guru/model/DescribeInsightRequest.h>
+#include <aws/devops-guru/model/DescribeOrganizationHealthRequest.h>
+#include <aws/devops-guru/model/DescribeOrganizationOverviewRequest.h>
+#include <aws/devops-guru/model/DescribeOrganizationResourceCollectionHealthRequest.h>
 #include <aws/devops-guru/model/DescribeResourceCollectionHealthRequest.h>
 #include <aws/devops-guru/model/DescribeServiceIntegrationRequest.h>
+#include <aws/devops-guru/model/GetCostEstimationRequest.h>
 #include <aws/devops-guru/model/GetResourceCollectionRequest.h>
 #include <aws/devops-guru/model/ListAnomaliesForInsightRequest.h>
 #include <aws/devops-guru/model/ListEventsRequest.h>
 #include <aws/devops-guru/model/ListInsightsRequest.h>
 #include <aws/devops-guru/model/ListNotificationChannelsRequest.h>
+#include <aws/devops-guru/model/ListOrganizationInsightsRequest.h>
 #include <aws/devops-guru/model/ListRecommendationsRequest.h>
 #include <aws/devops-guru/model/PutFeedbackRequest.h>
 #include <aws/devops-guru/model/RemoveNotificationChannelRequest.h>
 #include <aws/devops-guru/model/SearchInsightsRequest.h>
+#include <aws/devops-guru/model/SearchOrganizationInsightsRequest.h>
+#include <aws/devops-guru/model/StartCostEstimationRequest.h>
+#include <aws/devops-guru/model/UpdateEventSourcesConfigRequest.h>
 #include <aws/devops-guru/model/UpdateResourceCollectionRequest.h>
 #include <aws/devops-guru/model/UpdateServiceIntegrationRequest.h>
 
@@ -86,7 +97,7 @@ DevOpsGuruClient::~DevOpsGuruClient()
 {
 }
 
-void DevOpsGuruClient::init(const ClientConfiguration& config)
+void DevOpsGuruClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DevOps Guru");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -115,9 +126,7 @@ void DevOpsGuruClient::OverrideEndpoint(const Aws::String& endpoint)
 AddNotificationChannelOutcome DevOpsGuruClient::AddNotificationChannel(const AddNotificationChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   return AddNotificationChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -139,12 +148,41 @@ void DevOpsGuruClient::AddNotificationChannelAsyncHelper(const AddNotificationCh
   handler(this, request, AddNotificationChannel(request), context);
 }
 
+DeleteInsightOutcome DevOpsGuruClient::DeleteInsight(const DeleteInsightRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteInsight", "Required field: Id, is not set");
+    return DeleteInsightOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteInsightOutcomeCallable DevOpsGuruClient::DeleteInsightCallable(const DeleteInsightRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInsightOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInsight(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DeleteInsightAsync(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteInsightAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DeleteInsightAsyncHelper(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteInsight(request), context);
+}
+
 DescribeAccountHealthOutcome DevOpsGuruClient::DescribeAccountHealth(const DescribeAccountHealthRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/health";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/health");
   return DescribeAccountHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -169,9 +207,7 @@ void DevOpsGuruClient::DescribeAccountHealthAsyncHelper(const DescribeAccountHea
 DescribeAccountOverviewOutcome DevOpsGuruClient::DescribeAccountOverview(const DescribeAccountOverviewRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/overview";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/overview");
   return DescribeAccountOverviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -201,10 +237,8 @@ DescribeAnomalyOutcome DevOpsGuruClient::DescribeAnomaly(const DescribeAnomalyRe
     return DescribeAnomalyOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/anomalies/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/anomalies/");
+  uri.AddPathSegment(request.GetId());
   return DescribeAnomalyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -226,6 +260,56 @@ void DevOpsGuruClient::DescribeAnomalyAsyncHelper(const DescribeAnomalyRequest& 
   handler(this, request, DescribeAnomaly(request), context);
 }
 
+DescribeEventSourcesConfigOutcome DevOpsGuruClient::DescribeEventSourcesConfig(const DescribeEventSourcesConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-sources");
+  return DescribeEventSourcesConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEventSourcesConfigOutcomeCallable DevOpsGuruClient::DescribeEventSourcesConfigCallable(const DescribeEventSourcesConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEventSourcesConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventSourcesConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DescribeEventSourcesConfigAsync(const DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSourcesConfigAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DescribeEventSourcesConfigAsyncHelper(const DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEventSourcesConfig(request), context);
+}
+
+DescribeFeedbackOutcome DevOpsGuruClient::DescribeFeedback(const DescribeFeedbackRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/feedback");
+  return DescribeFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFeedbackOutcomeCallable DevOpsGuruClient::DescribeFeedbackCallable(const DescribeFeedbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFeedback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DescribeFeedbackAsync(const DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFeedbackAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DescribeFeedbackAsyncHelper(const DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFeedback(request), context);
+}
+
 DescribeInsightOutcome DevOpsGuruClient::DescribeInsight(const DescribeInsightRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -234,10 +318,8 @@ DescribeInsightOutcome DevOpsGuruClient::DescribeInsight(const DescribeInsightRe
     return DescribeInsightOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights/");
+  uri.AddPathSegment(request.GetId());
   return DescribeInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -259,6 +341,81 @@ void DevOpsGuruClient::DescribeInsightAsyncHelper(const DescribeInsightRequest& 
   handler(this, request, DescribeInsight(request), context);
 }
 
+DescribeOrganizationHealthOutcome DevOpsGuruClient::DescribeOrganizationHealth(const DescribeOrganizationHealthRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/organization/health");
+  return DescribeOrganizationHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeOrganizationHealthOutcomeCallable DevOpsGuruClient::DescribeOrganizationHealthCallable(const DescribeOrganizationHealthRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationHealthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationHealth(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DescribeOrganizationHealthAsync(const DescribeOrganizationHealthRequest& request, const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationHealthAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DescribeOrganizationHealthAsyncHelper(const DescribeOrganizationHealthRequest& request, const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationHealth(request), context);
+}
+
+DescribeOrganizationOverviewOutcome DevOpsGuruClient::DescribeOrganizationOverview(const DescribeOrganizationOverviewRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/organization/overview");
+  return DescribeOrganizationOverviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeOrganizationOverviewOutcomeCallable DevOpsGuruClient::DescribeOrganizationOverviewCallable(const DescribeOrganizationOverviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationOverviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationOverview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DescribeOrganizationOverviewAsync(const DescribeOrganizationOverviewRequest& request, const DescribeOrganizationOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationOverviewAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DescribeOrganizationOverviewAsyncHelper(const DescribeOrganizationOverviewRequest& request, const DescribeOrganizationOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationOverview(request), context);
+}
+
+DescribeOrganizationResourceCollectionHealthOutcome DevOpsGuruClient::DescribeOrganizationResourceCollectionHealth(const DescribeOrganizationResourceCollectionHealthRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/organization/health/resource-collection");
+  return DescribeOrganizationResourceCollectionHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeOrganizationResourceCollectionHealthOutcomeCallable DevOpsGuruClient::DescribeOrganizationResourceCollectionHealthCallable(const DescribeOrganizationResourceCollectionHealthRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationResourceCollectionHealthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationResourceCollectionHealth(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DescribeOrganizationResourceCollectionHealthAsync(const DescribeOrganizationResourceCollectionHealthRequest& request, const DescribeOrganizationResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationResourceCollectionHealthAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DescribeOrganizationResourceCollectionHealthAsyncHelper(const DescribeOrganizationResourceCollectionHealthRequest& request, const DescribeOrganizationResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationResourceCollectionHealth(request), context);
+}
+
 DescribeResourceCollectionHealthOutcome DevOpsGuruClient::DescribeResourceCollectionHealth(const DescribeResourceCollectionHealthRequest& request) const
 {
   if (!request.ResourceCollectionTypeHasBeenSet())
@@ -267,10 +424,8 @@ DescribeResourceCollectionHealthOutcome DevOpsGuruClient::DescribeResourceCollec
     return DescribeResourceCollectionHealthOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceCollectionType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/health/resource-collection/";
-  ss << ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/health/resource-collection/");
+  uri.AddPathSegment(ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType()));
   return DescribeResourceCollectionHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -295,9 +450,7 @@ void DevOpsGuruClient::DescribeResourceCollectionHealthAsyncHelper(const Describ
 DescribeServiceIntegrationOutcome DevOpsGuruClient::DescribeServiceIntegration(const DescribeServiceIntegrationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/service-integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/service-integrations");
   return DescribeServiceIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -319,6 +472,31 @@ void DevOpsGuruClient::DescribeServiceIntegrationAsyncHelper(const DescribeServi
   handler(this, request, DescribeServiceIntegration(request), context);
 }
 
+GetCostEstimationOutcome DevOpsGuruClient::GetCostEstimation(const GetCostEstimationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/cost-estimation");
+  return GetCostEstimationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCostEstimationOutcomeCallable DevOpsGuruClient::GetCostEstimationCallable(const GetCostEstimationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCostEstimationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCostEstimation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::GetCostEstimationAsync(const GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCostEstimationAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::GetCostEstimationAsyncHelper(const GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCostEstimation(request), context);
+}
+
 GetResourceCollectionOutcome DevOpsGuruClient::GetResourceCollection(const GetResourceCollectionRequest& request) const
 {
   if (!request.ResourceCollectionTypeHasBeenSet())
@@ -327,10 +505,8 @@ GetResourceCollectionOutcome DevOpsGuruClient::GetResourceCollection(const GetRe
     return GetResourceCollectionOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceCollectionType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resource-collections/";
-  ss << ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resource-collections/");
+  uri.AddPathSegment(ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType()));
   return GetResourceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -360,10 +536,8 @@ ListAnomaliesForInsightOutcome DevOpsGuruClient::ListAnomaliesForInsight(const L
     return ListAnomaliesForInsightOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InsightId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/anomalies/insight/";
-  ss << request.GetInsightId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/anomalies/insight/");
+  uri.AddPathSegment(request.GetInsightId());
   return ListAnomaliesForInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -388,9 +562,7 @@ void DevOpsGuruClient::ListAnomaliesForInsightAsyncHelper(const ListAnomaliesFor
 ListEventsOutcome DevOpsGuruClient::ListEvents(const ListEventsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/events";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/events");
   return ListEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -415,9 +587,7 @@ void DevOpsGuruClient::ListEventsAsyncHelper(const ListEventsRequest& request, c
 ListInsightsOutcome DevOpsGuruClient::ListInsights(const ListInsightsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights");
   return ListInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -442,9 +612,7 @@ void DevOpsGuruClient::ListInsightsAsyncHelper(const ListInsightsRequest& reques
 ListNotificationChannelsOutcome DevOpsGuruClient::ListNotificationChannels(const ListNotificationChannelsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   return ListNotificationChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -466,12 +634,35 @@ void DevOpsGuruClient::ListNotificationChannelsAsyncHelper(const ListNotificatio
   handler(this, request, ListNotificationChannels(request), context);
 }
 
+ListOrganizationInsightsOutcome DevOpsGuruClient::ListOrganizationInsights(const ListOrganizationInsightsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/organization/insights");
+  return ListOrganizationInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOrganizationInsightsOutcomeCallable DevOpsGuruClient::ListOrganizationInsightsCallable(const ListOrganizationInsightsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationInsights(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::ListOrganizationInsightsAsync(const ListOrganizationInsightsRequest& request, const ListOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationInsightsAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::ListOrganizationInsightsAsyncHelper(const ListOrganizationInsightsRequest& request, const ListOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOrganizationInsights(request), context);
+}
+
 ListRecommendationsOutcome DevOpsGuruClient::ListRecommendations(const ListRecommendationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recommendations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recommendations");
   return ListRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -496,9 +687,7 @@ void DevOpsGuruClient::ListRecommendationsAsyncHelper(const ListRecommendationsR
 PutFeedbackOutcome DevOpsGuruClient::PutFeedback(const PutFeedbackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/feedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/feedback");
   return PutFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -528,10 +717,8 @@ RemoveNotificationChannelOutcome DevOpsGuruClient::RemoveNotificationChannel(con
     return RemoveNotificationChannelOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetId());
   return RemoveNotificationChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -556,9 +743,7 @@ void DevOpsGuruClient::RemoveNotificationChannelAsyncHelper(const RemoveNotifica
 SearchInsightsOutcome DevOpsGuruClient::SearchInsights(const SearchInsightsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights/search");
   return SearchInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -580,12 +765,85 @@ void DevOpsGuruClient::SearchInsightsAsyncHelper(const SearchInsightsRequest& re
   handler(this, request, SearchInsights(request), context);
 }
 
+SearchOrganizationInsightsOutcome DevOpsGuruClient::SearchOrganizationInsights(const SearchOrganizationInsightsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/organization/insights/search");
+  return SearchOrganizationInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchOrganizationInsightsOutcomeCallable DevOpsGuruClient::SearchOrganizationInsightsCallable(const SearchOrganizationInsightsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchOrganizationInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchOrganizationInsights(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::SearchOrganizationInsightsAsync(const SearchOrganizationInsightsRequest& request, const SearchOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchOrganizationInsightsAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::SearchOrganizationInsightsAsyncHelper(const SearchOrganizationInsightsRequest& request, const SearchOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchOrganizationInsights(request), context);
+}
+
+StartCostEstimationOutcome DevOpsGuruClient::StartCostEstimation(const StartCostEstimationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/cost-estimation");
+  return StartCostEstimationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartCostEstimationOutcomeCallable DevOpsGuruClient::StartCostEstimationCallable(const StartCostEstimationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartCostEstimationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCostEstimation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::StartCostEstimationAsync(const StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartCostEstimationAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::StartCostEstimationAsyncHelper(const StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartCostEstimation(request), context);
+}
+
+UpdateEventSourcesConfigOutcome DevOpsGuruClient::UpdateEventSourcesConfig(const UpdateEventSourcesConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-sources");
+  return UpdateEventSourcesConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEventSourcesConfigOutcomeCallable DevOpsGuruClient::UpdateEventSourcesConfigCallable(const UpdateEventSourcesConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEventSourcesConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventSourcesConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::UpdateEventSourcesConfigAsync(const UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventSourcesConfigAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::UpdateEventSourcesConfigAsyncHelper(const UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEventSourcesConfig(request), context);
+}
+
 UpdateResourceCollectionOutcome DevOpsGuruClient::UpdateResourceCollection(const UpdateResourceCollectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resource-collections";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resource-collections");
   return UpdateResourceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -610,9 +868,7 @@ void DevOpsGuruClient::UpdateResourceCollectionAsyncHelper(const UpdateResourceC
 UpdateServiceIntegrationOutcome DevOpsGuruClient::UpdateServiceIntegration(const UpdateServiceIntegrationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/service-integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/service-integrations");
   return UpdateServiceIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

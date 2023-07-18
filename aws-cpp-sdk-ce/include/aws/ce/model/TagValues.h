@@ -26,8 +26,14 @@ namespace Model
 {
 
   /**
-   * <p>The values that are available for a tag.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagValues">AWS API
+   * <p>The values that are available for a tag.</p> <p>If <code>Values</code> and
+   * <code>Key</code> aren't specified, the <code>ABSENT</code>
+   * <code>MatchOption</code> is applied to all tags. That is, it's filtered on
+   * resources with no tags.</p> <p>If <code>Values</code> is provided and
+   * <code>Key</code> isn't specified, the <code>ABSENT</code>
+   * <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is,
+   * it's filtered on resources without the given tag key.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagValues">AWS API
    * Reference</a></p>
    */
   class AWS_COSTEXPLORER_API TagValues

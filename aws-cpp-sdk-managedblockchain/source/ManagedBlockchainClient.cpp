@@ -36,7 +36,10 @@
 #include <aws/managedblockchain/model/ListNodesRequest.h>
 #include <aws/managedblockchain/model/ListProposalVotesRequest.h>
 #include <aws/managedblockchain/model/ListProposalsRequest.h>
+#include <aws/managedblockchain/model/ListTagsForResourceRequest.h>
 #include <aws/managedblockchain/model/RejectInvitationRequest.h>
+#include <aws/managedblockchain/model/TagResourceRequest.h>
+#include <aws/managedblockchain/model/UntagResourceRequest.h>
 #include <aws/managedblockchain/model/UpdateMemberRequest.h>
 #include <aws/managedblockchain/model/UpdateNodeRequest.h>
 #include <aws/managedblockchain/model/VoteOnProposalRequest.h>
@@ -88,7 +91,7 @@ ManagedBlockchainClient::~ManagedBlockchainClient()
 {
 }
 
-void ManagedBlockchainClient::init(const ClientConfiguration& config)
+void ManagedBlockchainClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ManagedBlockchain");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -122,11 +125,9 @@ CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequ
     return CreateMemberOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/members");
   return CreateMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -151,9 +152,7 @@ void ManagedBlockchainClient::CreateMemberAsyncHelper(const CreateMemberRequest&
 CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks");
   return CreateNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -182,19 +181,10 @@ CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& r
     AWS_LOGSTREAM_ERROR("CreateNode", "Required field: NetworkId, is not set");
     return CreateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateNode", "Required field: MemberId, is not set");
-    return CreateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  ss << "/nodes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/nodes");
   return CreateNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -224,11 +214,9 @@ CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreatePropos
     return CreateProposalOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/proposals";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/proposals");
   return CreateProposalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,12 +251,10 @@ DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequ
     return DeleteMemberOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(request.GetMemberId());
   return DeleteMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -297,25 +283,16 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
     AWS_LOGSTREAM_ERROR("DeleteNode", "Required field: NetworkId, is not set");
     return DeleteNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteNode", "Required field: MemberId, is not set");
-    return DeleteNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   if (!request.NodeIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteNode", "Required field: NodeId, is not set");
     return DeleteNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  ss << "/nodes/";
-  ss << request.GetNodeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/nodes/");
+  uri.AddPathSegment(request.GetNodeId());
   return DeleteNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -350,12 +327,10 @@ GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& requ
     return GetMemberOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(request.GetMemberId());
   return GetMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -385,10 +360,8 @@ GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& r
     return GetNetworkOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
   return GetNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -417,25 +390,16 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
     AWS_LOGSTREAM_ERROR("GetNode", "Required field: NetworkId, is not set");
     return GetNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetNode", "Required field: MemberId, is not set");
-    return GetNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   if (!request.NodeIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetNode", "Required field: NodeId, is not set");
     return GetNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  ss << "/nodes/";
-  ss << request.GetNodeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/nodes/");
+  uri.AddPathSegment(request.GetNodeId());
   return GetNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -470,12 +434,10 @@ GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest
     return GetProposalOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProposalId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/proposals/";
-  ss << request.GetProposalId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/proposals/");
+  uri.AddPathSegment(request.GetProposalId());
   return GetProposalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -500,9 +462,7 @@ void ManagedBlockchainClient::GetProposalAsyncHelper(const GetProposalRequest& r
 ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitations");
   return ListInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -532,11 +492,9 @@ ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest
     return ListMembersOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/members");
   return ListMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -561,9 +519,7 @@ void ManagedBlockchainClient::ListMembersAsyncHelper(const ListMembersRequest& r
 ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks");
   return ListNetworksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -592,19 +548,10 @@ ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& requ
     AWS_LOGSTREAM_ERROR("ListNodes", "Required field: NetworkId, is not set");
     return ListNodesOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListNodes", "Required field: MemberId, is not set");
-    return ListNodesOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  ss << "/nodes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/nodes");
   return ListNodesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -639,13 +586,11 @@ ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListPr
     return ListProposalVotesOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProposalId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/proposals/";
-  ss << request.GetProposalId();
-  ss << "/votes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/proposals/");
+  uri.AddPathSegment(request.GetProposalId());
+  uri.AddPathSegments("/votes");
   return ListProposalVotesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -675,11 +620,9 @@ ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsR
     return ListProposalsOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/proposals";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/proposals");
   return ListProposalsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -701,6 +644,37 @@ void ManagedBlockchainClient::ListProposalsAsyncHelper(const ListProposalsReques
   handler(this, request, ListProposals(request), context);
 }
 
+ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable ManagedBlockchainClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ManagedBlockchainClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectInvitationRequest& request) const
 {
   if (!request.InvitationIdHasBeenSet())
@@ -709,10 +683,8 @@ RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectIn
     return RejectInvitationOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InvitationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitations/";
-  ss << request.GetInvitationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitations/");
+  uri.AddPathSegment(request.GetInvitationId());
   return RejectInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -734,6 +706,73 @@ void ManagedBlockchainClient::RejectInvitationAsyncHelper(const RejectInvitation
   handler(this, request, RejectInvitation(request), context);
 }
 
+TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable ManagedBlockchainClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ManagedBlockchainClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable ManagedBlockchainClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ManagedBlockchainClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequest& request) const
 {
   if (!request.NetworkIdHasBeenSet())
@@ -747,12 +786,10 @@ UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequ
     return UpdateMemberOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(request.GetMemberId());
   return UpdateMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -781,25 +818,16 @@ UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& r
     AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: NetworkId, is not set");
     return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: MemberId, is not set");
-    return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   if (!request.NodeIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: NodeId, is not set");
     return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
-  ss << "/nodes/";
-  ss << request.GetNodeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/nodes/");
+  uri.AddPathSegment(request.GetNodeId());
   return UpdateNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -834,13 +862,11 @@ VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnPropos
     return VoteOnProposalOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProposalId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/networks/";
-  ss << request.GetNetworkId();
-  ss << "/proposals/";
-  ss << request.GetProposalId();
-  ss << "/votes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/networks/");
+  uri.AddPathSegment(request.GetNetworkId());
+  uri.AddPathSegments("/proposals/");
+  uri.AddPathSegment(request.GetProposalId());
+  uri.AddPathSegments("/votes");
   return VoteOnProposalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

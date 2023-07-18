@@ -162,6 +162,52 @@ namespace Model
 
 
     /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupRuleIds() const{ return m_securityGroupRuleIds; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline bool SecurityGroupRuleIdsHasBeenSet() const { return m_securityGroupRuleIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline void SetSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = value; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline void SetSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = std::move(value); }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupEgressRequest& WithSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupRuleIds(value); return *this;}
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupEgressRequest& WithSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupRuleIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupEgressRequest& AddSecurityGroupRuleIds(const Aws::String& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupEgressRequest& AddSecurityGroupRuleIds(Aws::String&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupEgressRequest& AddSecurityGroupRuleIds(const char* value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+
+
+    /**
      * <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
      */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
@@ -400,6 +446,9 @@ namespace Model
 
     Aws::Vector<IpPermission> m_ipPermissions;
     bool m_ipPermissionsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_securityGroupRuleIds;
+    bool m_securityGroupRuleIdsHasBeenSet;
 
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet;

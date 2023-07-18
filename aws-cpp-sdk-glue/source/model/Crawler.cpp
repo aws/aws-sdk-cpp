@@ -40,7 +40,8 @@ Crawler::Crawler() :
     m_version(0),
     m_versionHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_crawlerSecurityConfigurationHasBeenSet(false)
+    m_crawlerSecurityConfigurationHasBeenSet(false),
+    m_lakeFormationConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Crawler::Crawler(JsonView jsonValue) :
     m_version(0),
     m_versionHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_crawlerSecurityConfigurationHasBeenSet(false)
+    m_crawlerSecurityConfigurationHasBeenSet(false),
+    m_lakeFormationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +211,13 @@ Crawler& Crawler::operator =(JsonView jsonValue)
     m_crawlerSecurityConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LakeFormationConfiguration"))
+  {
+    m_lakeFormationConfiguration = jsonValue.GetObject("LakeFormationConfiguration");
+
+    m_lakeFormationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -329,6 +338,12 @@ JsonValue Crawler::Jsonize() const
   if(m_crawlerSecurityConfigurationHasBeenSet)
   {
    payload.WithString("CrawlerSecurityConfiguration", m_crawlerSecurityConfiguration);
+
+  }
+
+  if(m_lakeFormationConfigurationHasBeenSet)
+  {
+   payload.WithObject("LakeFormationConfiguration", m_lakeFormationConfiguration.Jsonize());
 
   }
 

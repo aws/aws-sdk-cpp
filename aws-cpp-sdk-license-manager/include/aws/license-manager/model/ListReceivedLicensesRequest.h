@@ -85,64 +85,72 @@ namespace Model
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline ListReceivedLicensesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline ListReceivedLicensesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline ListReceivedLicensesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>ProductSKU</code> </p> </li> <li> <p> <code>Status</code> </p>
-     * </li> <li> <p> <code>KeyFingerprint</code> </p> </li> <li> <p>
-     * <code>Issuer</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
+     * <code>IssuerName</code> </p> </li> <li> <p> <code>Beneficiary</code> </p> </li>
+     * </ul>
      */
     inline ListReceivedLicensesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

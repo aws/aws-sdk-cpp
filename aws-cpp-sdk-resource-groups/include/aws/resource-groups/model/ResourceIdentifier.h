@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The ARN of a resource, and its resource type.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that contains the ARN of a resource and its resource
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ResourceIdentifier">AWS
    * API Reference</a></p>
    */

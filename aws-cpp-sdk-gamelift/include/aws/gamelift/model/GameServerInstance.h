@@ -25,19 +25,19 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the GameLift FleetIQ and game server
    * groups.</b> </p> <p> Additional properties, including status, that describe an
    * EC2 instance in a game server group. Instance configurations are set with game
    * server group properties (see <code>DescribeGameServerGroup</code> and with the
    * EC2 launch template that was used when creating the game server group. </p>
    * <p>Retrieve game server instances for a game server group by calling
-   * <code>DescribeGameServerInstances</code>. </p> <ul> <li> <p>
-   * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
-   * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
-   * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
-   * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
-   * <a>SuspendGameServerGroup</a> </p> </li> <li> <p>
-   * <a>DescribeGameServerInstances</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <code>DescribeGameServerInstances</code>. </p> <p> <b>Related actions</b> </p>
+   * <p> <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> |
+   * <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> |
+   * <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
+   * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerInstance">AWS
    * API Reference</a></p>
    */
@@ -52,57 +52,57 @@ namespace Model
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline GameServerInstance& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline GameServerInstance& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline GameServerInstance& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 

@@ -17,7 +17,8 @@ ModifyFleetRequest::ModifyFleetRequest() :
     m_excessCapacityTerminationPolicyHasBeenSet(false),
     m_launchTemplateConfigsHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_targetCapacitySpecificationHasBeenSet(false)
+    m_targetCapacitySpecificationHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,11 @@ Aws::String ModifyFleetRequest::SerializePayload() const
   if(m_targetCapacitySpecificationHasBeenSet)
   {
     m_targetCapacitySpecification.OutputToStream(ss, "TargetCapacitySpecification");
+  }
+
+  if(m_contextHasBeenSet)
+  {
+    ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

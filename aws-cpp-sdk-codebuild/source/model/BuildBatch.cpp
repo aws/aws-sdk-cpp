@@ -52,7 +52,9 @@ BuildBatch::BuildBatch() :
     m_buildBatchNumberHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
     m_buildBatchConfigHasBeenSet(false),
-    m_buildGroupsHasBeenSet(false)
+    m_buildGroupsHasBeenSet(false),
+    m_debugSessionEnabled(false),
+    m_debugSessionEnabledHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,9 @@ BuildBatch::BuildBatch(JsonView jsonValue) :
     m_buildBatchNumberHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
     m_buildBatchConfigHasBeenSet(false),
-    m_buildGroupsHasBeenSet(false)
+    m_buildGroupsHasBeenSet(false),
+    m_debugSessionEnabled(false),
+    m_debugSessionEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -318,6 +322,13 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
     m_buildGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("debugSessionEnabled"))
+  {
+    m_debugSessionEnabled = jsonValue.GetBool("debugSessionEnabled");
+
+    m_debugSessionEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -523,6 +534,12 @@ JsonValue BuildBatch::Jsonize() const
      buildGroupsJsonList[buildGroupsIndex].AsObject(m_buildGroups[buildGroupsIndex].Jsonize());
    }
    payload.WithArray("buildGroups", std::move(buildGroupsJsonList));
+
+  }
+
+  if(m_debugSessionEnabledHasBeenSet)
+  {
+   payload.WithBool("debugSessionEnabled", m_debugSessionEnabled);
 
   }
 

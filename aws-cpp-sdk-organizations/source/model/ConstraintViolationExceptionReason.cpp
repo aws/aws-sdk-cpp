@@ -48,6 +48,11 @@ namespace Aws
         static const int CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG_HASH = HashingUtils::HashString("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
         static const int DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE_HASH = HashingUtils::HashString("DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE");
         static const int MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE");
+        static const int CANNOT_CLOSE_MANAGEMENT_ACCOUNT_HASH = HashingUtils::HashString("CANNOT_CLOSE_MANAGEMENT_ACCOUNT");
+        static const int CLOSE_ACCOUNT_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("CLOSE_ACCOUNT_QUOTA_EXCEEDED");
+        static const int CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED");
+        static const int SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("SERVICE_ACCESS_NOT_ENABLED");
+        static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -165,6 +170,26 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE;
           }
+          else if (hashCode == CANNOT_CLOSE_MANAGEMENT_ACCOUNT_HASH)
+          {
+            return ConstraintViolationExceptionReason::CANNOT_CLOSE_MANAGEMENT_ACCOUNT;
+          }
+          else if (hashCode == CLOSE_ACCOUNT_QUOTA_EXCEEDED_HASH)
+          {
+            return ConstraintViolationExceptionReason::CLOSE_ACCOUNT_QUOTA_EXCEEDED;
+          }
+          else if (hashCode == CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED_HASH)
+          {
+            return ConstraintViolationExceptionReason::CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == SERVICE_ACCESS_NOT_ENABLED_HASH)
+          {
+            return ConstraintViolationExceptionReason::SERVICE_ACCESS_NOT_ENABLED;
+          }
+          else if (hashCode == INVALID_PAYMENT_INSTRUMENT_HASH)
+          {
+            return ConstraintViolationExceptionReason::INVALID_PAYMENT_INSTRUMENT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -235,6 +260,16 @@ namespace Aws
             return "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE";
           case ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE:
             return "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE";
+          case ConstraintViolationExceptionReason::CANNOT_CLOSE_MANAGEMENT_ACCOUNT:
+            return "CANNOT_CLOSE_MANAGEMENT_ACCOUNT";
+          case ConstraintViolationExceptionReason::CLOSE_ACCOUNT_QUOTA_EXCEEDED:
+            return "CLOSE_ACCOUNT_QUOTA_EXCEEDED";
+          case ConstraintViolationExceptionReason::CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED:
+            return "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED";
+          case ConstraintViolationExceptionReason::SERVICE_ACCESS_NOT_ENABLED:
+            return "SERVICE_ACCESS_NOT_ENABLED";
+          case ConstraintViolationExceptionReason::INVALID_PAYMENT_INSTRUMENT:
+            return "INVALID_PAYMENT_INSTRUMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

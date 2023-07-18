@@ -37,73 +37,73 @@ namespace Model
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetRetentionConfigurationNames() const{ return m_retentionConfigurationNames; }
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline bool RetentionConfigurationNamesHasBeenSet() const { return m_retentionConfigurationNamesHasBeenSet; }
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline void SetRetentionConfigurationNames(const Aws::Vector<Aws::String>& value) { m_retentionConfigurationNamesHasBeenSet = true; m_retentionConfigurationNames = value; }
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline void SetRetentionConfigurationNames(Aws::Vector<Aws::String>&& value) { m_retentionConfigurationNamesHasBeenSet = true; m_retentionConfigurationNames = std::move(value); }
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline DescribeRetentionConfigurationsRequest& WithRetentionConfigurationNames(const Aws::Vector<Aws::String>& value) { SetRetentionConfigurationNames(value); return *this;}
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline DescribeRetentionConfigurationsRequest& WithRetentionConfigurationNames(Aws::Vector<Aws::String>&& value) { SetRetentionConfigurationNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline DescribeRetentionConfigurationsRequest& AddRetentionConfigurationNames(const Aws::String& value) { m_retentionConfigurationNamesHasBeenSet = true; m_retentionConfigurationNames.push_back(value); return *this; }
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline DescribeRetentionConfigurationsRequest& AddRetentionConfigurationNames(Aws::String&& value) { m_retentionConfigurationNamesHasBeenSet = true; m_retentionConfigurationNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of names of retention configurations for which you want details. If
-     * you do not specify a name, AWS Config returns details for all the retention
-     * configurations for that account.</p>  <p>Currently, AWS Config supports
-     * only one retention configuration per region in your account.</p> 
+     * you do not specify a name, Config returns details for all the retention
+     * configurations for that account.</p>  <p>Currently, Config supports only
+     * one retention configuration per region in your account.</p> 
      */
     inline DescribeRetentionConfigurationsRequest& AddRetentionConfigurationNames(const char* value) { m_retentionConfigurationNamesHasBeenSet = true; m_retentionConfigurationNames.push_back(value); return *this; }
 

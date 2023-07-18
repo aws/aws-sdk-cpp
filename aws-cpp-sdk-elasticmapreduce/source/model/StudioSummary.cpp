@@ -24,6 +24,8 @@ StudioSummary::StudioSummary() :
     m_vpcIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_urlHasBeenSet(false),
+    m_authMode(AuthMode::NOT_SET),
+    m_authModeHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
 }
@@ -34,6 +36,8 @@ StudioSummary::StudioSummary(JsonView jsonValue) :
     m_vpcIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_urlHasBeenSet(false),
+    m_authMode(AuthMode::NOT_SET),
+    m_authModeHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -74,6 +78,13 @@ StudioSummary& StudioSummary::operator =(JsonView jsonValue)
     m_url = jsonValue.GetString("Url");
 
     m_urlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuthMode"))
+  {
+    m_authMode = AuthModeMapper::GetAuthModeForName(jsonValue.GetString("AuthMode"));
+
+    m_authModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationTime"))
@@ -118,6 +129,11 @@ JsonValue StudioSummary::Jsonize() const
   {
    payload.WithString("Url", m_url);
 
+  }
+
+  if(m_authModeHasBeenSet)
+  {
+   payload.WithString("AuthMode", AuthModeMapper::GetNameForAuthMode(m_authMode));
   }
 
   if(m_creationTimeHasBeenSet)

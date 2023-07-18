@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CRAWL_EVERYTHING_HASH = HashingUtils::HashString("CRAWL_EVERYTHING");
         static const int CRAWL_NEW_FOLDERS_ONLY_HASH = HashingUtils::HashString("CRAWL_NEW_FOLDERS_ONLY");
+        static const int CRAWL_EVENT_MODE_HASH = HashingUtils::HashString("CRAWL_EVENT_MODE");
 
 
         RecrawlBehavior GetRecrawlBehaviorForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CRAWL_NEW_FOLDERS_ONLY_HASH)
           {
             return RecrawlBehavior::CRAWL_NEW_FOLDERS_ONLY;
+          }
+          else if (hashCode == CRAWL_EVENT_MODE_HASH)
+          {
+            return RecrawlBehavior::CRAWL_EVENT_MODE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "CRAWL_EVERYTHING";
           case RecrawlBehavior::CRAWL_NEW_FOLDERS_ONLY:
             return "CRAWL_NEW_FOLDERS_ONLY";
+          case RecrawlBehavior::CRAWL_EVENT_MODE:
+            return "CRAWL_EVENT_MODE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1016,8 +1016,13 @@ namespace Aws
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
             auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
-            auto handler = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
-                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
+            auto handler = [self](const Aws::S3::S3Client* client,
+                                  const Aws::S3::Model::ListObjectsV2Request& lambdaRequest,
+                                  const Aws::S3::Model::ListObjectsV2Outcome& lambdaOutcome,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& lambdaContext)
+                                {
+                                    self->HandleListObjectsResponse(client, lambdaRequest, lambdaOutcome, lambdaContext);
+                                };
 
             auto downloadContext = std::static_pointer_cast<const DownloadDirectoryContext>(context);
             const auto& directory = downloadContext->rootDirectory;

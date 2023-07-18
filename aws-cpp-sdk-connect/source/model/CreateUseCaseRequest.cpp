@@ -16,7 +16,8 @@ CreateUseCaseRequest::CreateUseCaseRequest() :
     m_instanceIdHasBeenSet(false),
     m_integrationAssociationIdHasBeenSet(false),
     m_useCaseType(UseCaseType::NOT_SET),
-    m_useCaseTypeHasBeenSet(false)
+    m_useCaseTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,6 +28,17 @@ Aws::String CreateUseCaseRequest::SerializePayload() const
   if(m_useCaseTypeHasBeenSet)
   {
    payload.WithString("UseCaseType", UseCaseTypeMapper::GetNameForUseCaseType(m_useCaseType));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

@@ -50,50 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline const Aws::Vector<AwsRdsDbInstanceAssociatedRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline void SetAssociatedRoles(const Aws::Vector<AwsRdsDbInstanceAssociatedRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline void SetAssociatedRoles(Aws::Vector<AwsRdsDbInstanceAssociatedRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::move(value); }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline AwsRdsDbInstanceDetails& WithAssociatedRoles(const Aws::Vector<AwsRdsDbInstanceAssociatedRole>& value) { SetAssociatedRoles(value); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline AwsRdsDbInstanceDetails& WithAssociatedRoles(Aws::Vector<AwsRdsDbInstanceAssociatedRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline AwsRdsDbInstanceDetails& AddAssociatedRoles(const AwsRdsDbInstanceAssociatedRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) roles associated with the DB
-     * instance.</p>
+     * <p>The IAM roles associated with the DB instance.</p>
      */
     inline AwsRdsDbInstanceDetails& AddAssociatedRoles(AwsRdsDbInstanceAssociatedRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
@@ -312,58 +304,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline AwsRdsDbInstanceDetails& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline AwsRdsDbInstanceDetails& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed. </p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * instance. This identifier is found in CloudTrail log entries whenever the KMS
+     * key for the DB instance is accessed. </p>
      */
     inline AwsRdsDbInstanceDetails& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
@@ -596,42 +588,38 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p> <p>IAM database
-     * authentication can be enabled for the following database engines.</p> <ul> <li>
-     * <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL
-     * 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher</p>
-     * </li> </ul>
+     * <p>True if mapping of IAM accounts to database accounts is enabled, and
+     * otherwise false.</p> <p>IAM database authentication can be enabled for the
+     * following database engines.</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34
+     * or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p>
+     * </li> <li> <p>Aurora 5.6 or higher</p> </li> </ul>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p> <p>IAM database
-     * authentication can be enabled for the following database engines.</p> <ul> <li>
-     * <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL
-     * 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher</p>
-     * </li> </ul>
+     * <p>True if mapping of IAM accounts to database accounts is enabled, and
+     * otherwise false.</p> <p>IAM database authentication can be enabled for the
+     * following database engines.</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34
+     * or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p>
+     * </li> <li> <p>Aurora 5.6 or higher</p> </li> </ul>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p> <p>IAM database
-     * authentication can be enabled for the following database engines.</p> <ul> <li>
-     * <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL
-     * 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher</p>
-     * </li> </ul>
+     * <p>True if mapping of IAM accounts to database accounts is enabled, and
+     * otherwise false.</p> <p>IAM database authentication can be enabled for the
+     * following database engines.</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34
+     * or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p>
+     * </li> <li> <p>Aurora 5.6 or higher</p> </li> </ul>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p> <p>IAM database
-     * authentication can be enabled for the following database engines.</p> <ul> <li>
-     * <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL
-     * 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher</p>
-     * </li> </ul>
+     * <p>True if mapping of IAM accounts to database accounts is enabled, and
+     * otherwise false.</p> <p>IAM database authentication can be enabled for the
+     * following database engines.</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34
+     * or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p>
+     * </li> <li> <p>Aurora 5.6 or higher</p> </li> </ul>
      */
     inline AwsRdsDbInstanceDetails& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -710,49 +698,49 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline AwsRdsDbInstanceDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline AwsRdsDbInstanceDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB instance.</p>
      */
     inline AwsRdsDbInstanceDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
@@ -2198,49 +2186,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKmsKeyId() const{ return m_performanceInsightsKmsKeyId; }
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline bool PerformanceInsightsKmsKeyIdHasBeenSet() const { return m_performanceInsightsKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline void SetPerformanceInsightsKmsKeyId(const Aws::String& value) { m_performanceInsightsKmsKeyIdHasBeenSet = true; m_performanceInsightsKmsKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline void SetPerformanceInsightsKmsKeyId(Aws::String&& value) { m_performanceInsightsKmsKeyIdHasBeenSet = true; m_performanceInsightsKmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline void SetPerformanceInsightsKmsKeyId(const char* value) { m_performanceInsightsKmsKeyIdHasBeenSet = true; m_performanceInsightsKmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline AwsRdsDbInstanceDetails& WithPerformanceInsightsKmsKeyId(const Aws::String& value) { SetPerformanceInsightsKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline AwsRdsDbInstanceDetails& WithPerformanceInsightsKmsKeyId(Aws::String&& value) { SetPerformanceInsightsKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS key used to encrypt the Performance Insights
+     * <p>The identifier of the KMS key used to encrypt the Performance Insights
      * data.</p>
      */
     inline AwsRdsDbInstanceDetails& WithPerformanceInsightsKmsKeyId(const char* value) { SetPerformanceInsightsKmsKeyId(value); return *this;}

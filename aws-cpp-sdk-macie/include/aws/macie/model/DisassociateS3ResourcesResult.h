@@ -34,51 +34,51 @@ namespace Model
 
 
     /**
-     * <p>S3 resources that couldn't be removed from being monitored and classified by
-     * Amazon Macie Classic. An error code and an error message are provided for each
-     * failed item. </p>
+     * <p>(Discontinued) S3 resources that couldn't be removed from being monitored and
+     * classified by Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item. </p>
      */
     inline const Aws::Vector<FailedS3Resource>& GetFailedS3Resources() const{ return m_failedS3Resources; }
 
     /**
-     * <p>S3 resources that couldn't be removed from being monitored and classified by
-     * Amazon Macie Classic. An error code and an error message are provided for each
-     * failed item. </p>
+     * <p>(Discontinued) S3 resources that couldn't be removed from being monitored and
+     * classified by Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item. </p>
      */
     inline void SetFailedS3Resources(const Aws::Vector<FailedS3Resource>& value) { m_failedS3Resources = value; }
 
     /**
-     * <p>S3 resources that couldn't be removed from being monitored and classified by
-     * Amazon Macie Classic. An error code and an error message are provided for each
-     * failed item. </p>
+     * <p>(Discontinued) S3 resources that couldn't be removed from being monitored and
+     * classified by Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item. </p>
      */
     inline void SetFailedS3Resources(Aws::Vector<FailedS3Resource>&& value) { m_failedS3Resources = std::move(value); }
 
     /**
-     * <p>S3 resources that couldn't be removed from being monitored and classified by
-     * Amazon Macie Classic. An error code and an error message are provided for each
-     * failed item. </p>
+     * <p>(Discontinued) S3 resources that couldn't be removed from being monitored and
+     * classified by Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item. </p>
      */
     inline DisassociateS3ResourcesResult& WithFailedS3Resources(const Aws::Vector<FailedS3Resource>& value) { SetFailedS3Resources(value); return *this;}
 
     /**
-     * <p>S3 resources that couldn't be removed from being monitored and classified by
-     * Amazon Macie Classic. An error code and an error message are provided for each
-     * failed item. </p>
+     * <p>(Discontinued) S3 resources that couldn't be removed from being monitored and
+     * classified by Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item. </p>
      */
     inline DisassociateS3ResourcesResult& WithFailedS3Resources(Aws::Vector<FailedS3Resource>&& value) { SetFailedS3Resources(std::move(value)); return *this;}
 
     /**
-     * <p>S3 resources that couldn't be removed from being monitored and classified by
-     * Amazon Macie Classic. An error code and an error message are provided for each
-     * failed item. </p>
+     * <p>(Discontinued) S3 resources that couldn't be removed from being monitored and
+     * classified by Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item. </p>
      */
     inline DisassociateS3ResourcesResult& AddFailedS3Resources(const FailedS3Resource& value) { m_failedS3Resources.push_back(value); return *this; }
 
     /**
-     * <p>S3 resources that couldn't be removed from being monitored and classified by
-     * Amazon Macie Classic. An error code and an error message are provided for each
-     * failed item. </p>
+     * <p>(Discontinued) S3 resources that couldn't be removed from being monitored and
+     * classified by Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item. </p>
      */
     inline DisassociateS3ResourcesResult& AddFailedS3Resources(FailedS3Resource&& value) { m_failedS3Resources.push_back(std::move(value)); return *this; }
 

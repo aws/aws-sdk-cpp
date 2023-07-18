@@ -26,7 +26,7 @@ namespace Aws
              * @brief Constructor of SimpleUDP
              * @param addressFamily, AF_INET for IPV4 or AF_INET6 for IPV6
              * @param sendBufSize, if nonzero, try set socket's send buffer size to this value.
-             * @param receieveBufSize, if nonzero, try set socket's receive buffer size to this value.
+             * @param receiveBufSize, if nonzero, try set socket's receive buffer size to this value.
              * @param nonBlocking, if it is true, implementation will try to create a non-blocking underlying UDP socket.
              * Implementation should create and set the underlying udp socket.
              */
@@ -36,7 +36,7 @@ namespace Aws
             * @brief An easy constructor of an IPV4 or IPV6 SimpleUDP
             * @param addressFamily, either AF_INET for IPV4 or AF_INET6 for IPV6
             * @param sendBufSize, if nonzero, try set socket's send buffer size to this value.
-            * @param receieveBufSize, if nonzero, try set socket's receive buffer size to this value.
+            * @param receiveBufSize, if nonzero, try set socket's receive buffer size to this value.
             * @param nonBlocking, if it is true, implementation will try to create a non-blocking underlying UDP socket.
             * Implementation should create and set the underlying udp socket.
             */
@@ -48,7 +48,7 @@ namespace Aws
             * Note that "localhost" is not necessarily bind to 127.0.0.1, it could bind to ipv6 address ::1, or other type of ip addresses. If you pass localhost here, we will go through getaddrinfo procedure on Linux and Windows.
             * @param port, the port number that the host listens on.
             * @param sendBufSize, if nonzero, try set socket's send buffer size to this value.
-            * @param receieveBufSize, if nonzero, try set socket's receive buffer size to this value.
+            * @param receiveBufSize, if nonzero, try set socket's receive buffer size to this value.
             * @param nonBlocking, if it is true, implementation will try to create a non-blocking underlying UDP socket.
             * Implementation should create and set the underlying udp socket.
             */

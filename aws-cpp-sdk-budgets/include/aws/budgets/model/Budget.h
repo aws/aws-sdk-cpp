@@ -14,6 +14,7 @@
 #include <aws/budgets/model/CalculatedSpend.h>
 #include <aws/budgets/model/BudgetType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/budgets/model/AutoAdjustData.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -35,9 +36,10 @@ namespace Model
   /**
    * <p>Represents the output of the <code>CreateBudget</code> operation. The content
    * consists of the detailed metadata and data file information, and the current
-   * status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a
-   * budget: </p> <p> <code>arn:aws:budgets::AccountId:budget/budgetName</code>
-   * </p><p><h3>See Also:</h3>   <a
+   * status of the <code>budget</code> object.</p> <p>This is the Amazon Resource
+   * Name (ARN) pattern for a budget: </p> <p>
+   * <code>arn:aws:budgets::AccountId:budget/budgetName</code> </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Budget">AWS API
    * Reference</a></p>
    */
@@ -112,7 +114,7 @@ namespace Model
      * utilization, or Savings Plans coverage that you want to track with your
      * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
      * but optional for RI or Savings Plans utilization or coverage budgets. RI and
-     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * Savings Plans utilization or coverage budgets default to <code>100</code>. This
      * is the only valid value for RI or Savings Plans utilization or coverage budgets.
      * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
@@ -124,7 +126,7 @@ namespace Model
      * utilization, or Savings Plans coverage that you want to track with your
      * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
      * but optional for RI or Savings Plans utilization or coverage budgets. RI and
-     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * Savings Plans utilization or coverage budgets default to <code>100</code>. This
      * is the only valid value for RI or Savings Plans utilization or coverage budgets.
      * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
@@ -136,7 +138,7 @@ namespace Model
      * utilization, or Savings Plans coverage that you want to track with your
      * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
      * but optional for RI or Savings Plans utilization or coverage budgets. RI and
-     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * Savings Plans utilization or coverage budgets default to <code>100</code>. This
      * is the only valid value for RI or Savings Plans utilization or coverage budgets.
      * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
@@ -148,7 +150,7 @@ namespace Model
      * utilization, or Savings Plans coverage that you want to track with your
      * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
      * but optional for RI or Savings Plans utilization or coverage budgets. RI and
-     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * Savings Plans utilization or coverage budgets default to <code>100</code>. This
      * is the only valid value for RI or Savings Plans utilization or coverage budgets.
      * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
@@ -160,7 +162,7 @@ namespace Model
      * utilization, or Savings Plans coverage that you want to track with your
      * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
      * but optional for RI or Savings Plans utilization or coverage budgets. RI and
-     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * Savings Plans utilization or coverage budgets default to <code>100</code>. This
      * is the only valid value for RI or Savings Plans utilization or coverage budgets.
      * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
@@ -172,7 +174,7 @@ namespace Model
      * utilization, or Savings Plans coverage that you want to track with your
      * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
      * but optional for RI or Savings Plans utilization or coverage budgets. RI and
-     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * Savings Plans utilization or coverage budgets default to <code>100</code>. This
      * is the only valid value for RI or Savings Plans utilization or coverage budgets.
      * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
@@ -183,16 +185,16 @@ namespace Model
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -201,28 +203,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline const Aws::Map<Aws::String, Spend>& GetPlannedBudgetLimits() const{ return m_plannedBudgetLimits; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -231,28 +233,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline bool PlannedBudgetLimitsHasBeenSet() const { return m_plannedBudgetLimitsHasBeenSet; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -261,28 +263,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline void SetPlannedBudgetLimits(const Aws::Map<Aws::String, Spend>& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits = value; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -291,28 +293,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline void SetPlannedBudgetLimits(Aws::Map<Aws::String, Spend>&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits = std::move(value); }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -321,28 +323,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& WithPlannedBudgetLimits(const Aws::Map<Aws::String, Spend>& value) { SetPlannedBudgetLimits(value); return *this;}
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -351,28 +353,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& WithPlannedBudgetLimits(Aws::Map<Aws::String, Spend>&& value) { SetPlannedBudgetLimits(std::move(value)); return *this;}
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -381,28 +383,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& AddPlannedBudgetLimits(const Aws::String& key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, value); return *this; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -411,28 +413,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& AddPlannedBudgetLimits(Aws::String&& key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -441,28 +443,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& AddPlannedBudgetLimits(const Aws::String& key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -471,28 +473,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& AddPlannedBudgetLimits(Aws::String&& key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -501,28 +503,28 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& AddPlannedBudgetLimits(const char* key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map containing multiple <code>BudgetLimit</code>, including current or
      * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
-     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
      * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
      * values. This must start from the current month and include the next 11 months.
      * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
-     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * seconds. </p> <p>For quarterly budgets, provide four quarters of
      * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
-     * increments. This must start from the current quarter and include the next 3
+     * increments. This must start from the current quarter and include the next three
      * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
      * epoch seconds. </p> <p>If the planned budget expires before 12 months for
-     * monthly or 4 quarters for quarterly, provide the
+     * monthly or four quarters for quarterly, provide the
      * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
      * <p>If the budget begins at a date in the future, provide
      * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
@@ -531,133 +533,145 @@ namespace Model
      * limit as the <code>BudgetLimit</code>. At that point, the planned budget
      * provides the same experience as a fixed budget. </p> <p>
      * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code>
      * representing the current month or quarter limit present in
-     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
-     * <code>PlannedBudgetLimits</code>. Budgets created without
-     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
-     * no <code>PlannedBudgetLimits</code>.</p>
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets that are created
+     * with <code>PlannedBudgetLimits</code>. Budgets that are created without
+     * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
+     * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
     inline Budget& AddPlannedBudgetLimits(const char* key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline bool CostFiltersHasBeenSet() const { return m_costFiltersHasBeenSet; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline void SetCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_costFiltersHasBeenSet = true; m_costFilters = value; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline void SetCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::move(value); }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& WithCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetCostFilters(value); return *this;}
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& WithCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetCostFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
-     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
-     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
-     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
-     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
-     * </ul>
+     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
+     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
+     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
+     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
+     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
+     * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
@@ -743,104 +757,110 @@ namespace Model
 
 
     /**
-     * <p>The period of time that is covered by a budget. The period has a start date
-     * and an end date. The start date must come before the end date. The end date must
-     * come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget
-     * and don't specify a start date, AWS defaults to the start of your chosen time
-     * period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
-     * your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a
-     * start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
-     * chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
-     * UTC</code>. If you didn't specify an end date, AWS set your end date to
-     * <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
-     * and Cost Management console and the API. </p> <p>You can change either date with
-     * the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes
-     * the budget and all associated notifications and subscribers.</p>
+     * <p>The period of time that's covered by a budget. You setthe start date and end
+     * date. The start date must come before the end date. The end date must come
+     * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
+     * don't specify a start date, Amazon Web Services defaults to the start of your
+     * chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
+     * created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
+     * set a start date, Amazon Web Services set your start date to <code>01/24/18
+     * 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set
+     * your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end
+     * date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>.
+     * The defaults are the same for the Billing and Cost Management console and the
+     * API. </p> <p>You can change either date with the <code>UpdateBudget</code>
+     * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
+     * all the associated notifications and subscribers.</p>
      */
     inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The period of time that is covered by a budget. The period has a start date
-     * and an end date. The start date must come before the end date. The end date must
-     * come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget
-     * and don't specify a start date, AWS defaults to the start of your chosen time
-     * period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
-     * your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a
-     * start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
-     * chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
-     * UTC</code>. If you didn't specify an end date, AWS set your end date to
-     * <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
-     * and Cost Management console and the API. </p> <p>You can change either date with
-     * the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes
-     * the budget and all associated notifications and subscribers.</p>
+     * <p>The period of time that's covered by a budget. You setthe start date and end
+     * date. The start date must come before the end date. The end date must come
+     * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
+     * don't specify a start date, Amazon Web Services defaults to the start of your
+     * chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
+     * created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
+     * set a start date, Amazon Web Services set your start date to <code>01/24/18
+     * 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set
+     * your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end
+     * date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>.
+     * The defaults are the same for the Billing and Cost Management console and the
+     * API. </p> <p>You can change either date with the <code>UpdateBudget</code>
+     * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
+     * all the associated notifications and subscribers.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
-     * <p>The period of time that is covered by a budget. The period has a start date
-     * and an end date. The start date must come before the end date. The end date must
-     * come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget
-     * and don't specify a start date, AWS defaults to the start of your chosen time
-     * period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
-     * your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a
-     * start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
-     * chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
-     * UTC</code>. If you didn't specify an end date, AWS set your end date to
-     * <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
-     * and Cost Management console and the API. </p> <p>You can change either date with
-     * the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes
-     * the budget and all associated notifications and subscribers.</p>
+     * <p>The period of time that's covered by a budget. You setthe start date and end
+     * date. The start date must come before the end date. The end date must come
+     * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
+     * don't specify a start date, Amazon Web Services defaults to the start of your
+     * chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
+     * created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
+     * set a start date, Amazon Web Services set your start date to <code>01/24/18
+     * 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set
+     * your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end
+     * date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>.
+     * The defaults are the same for the Billing and Cost Management console and the
+     * API. </p> <p>You can change either date with the <code>UpdateBudget</code>
+     * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
+     * all the associated notifications and subscribers.</p>
      */
     inline void SetTimePeriod(const TimePeriod& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The period of time that is covered by a budget. The period has a start date
-     * and an end date. The start date must come before the end date. The end date must
-     * come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget
-     * and don't specify a start date, AWS defaults to the start of your chosen time
-     * period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
-     * your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a
-     * start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
-     * chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
-     * UTC</code>. If you didn't specify an end date, AWS set your end date to
-     * <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
-     * and Cost Management console and the API. </p> <p>You can change either date with
-     * the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes
-     * the budget and all associated notifications and subscribers.</p>
+     * <p>The period of time that's covered by a budget. You setthe start date and end
+     * date. The start date must come before the end date. The end date must come
+     * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
+     * don't specify a start date, Amazon Web Services defaults to the start of your
+     * chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
+     * created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
+     * set a start date, Amazon Web Services set your start date to <code>01/24/18
+     * 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set
+     * your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end
+     * date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>.
+     * The defaults are the same for the Billing and Cost Management console and the
+     * API. </p> <p>You can change either date with the <code>UpdateBudget</code>
+     * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
+     * all the associated notifications and subscribers.</p>
      */
     inline void SetTimePeriod(TimePeriod&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The period of time that is covered by a budget. The period has a start date
-     * and an end date. The start date must come before the end date. The end date must
-     * come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget
-     * and don't specify a start date, AWS defaults to the start of your chosen time
-     * period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
-     * your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a
-     * start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
-     * chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
-     * UTC</code>. If you didn't specify an end date, AWS set your end date to
-     * <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
-     * and Cost Management console and the API. </p> <p>You can change either date with
-     * the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes
-     * the budget and all associated notifications and subscribers.</p>
+     * <p>The period of time that's covered by a budget. You setthe start date and end
+     * date. The start date must come before the end date. The end date must come
+     * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
+     * don't specify a start date, Amazon Web Services defaults to the start of your
+     * chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
+     * created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
+     * set a start date, Amazon Web Services set your start date to <code>01/24/18
+     * 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set
+     * your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end
+     * date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>.
+     * The defaults are the same for the Billing and Cost Management console and the
+     * API. </p> <p>You can change either date with the <code>UpdateBudget</code>
+     * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
+     * all the associated notifications and subscribers.</p>
      */
     inline Budget& WithTimePeriod(const TimePeriod& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The period of time that is covered by a budget. The period has a start date
-     * and an end date. The start date must come before the end date. The end date must
-     * come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget
-     * and don't specify a start date, AWS defaults to the start of your chosen time
-     * period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
-     * your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a
-     * start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
-     * chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
-     * UTC</code>. If you didn't specify an end date, AWS set your end date to
-     * <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
-     * and Cost Management console and the API. </p> <p>You can change either date with
-     * the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes
-     * the budget and all associated notifications and subscribers.</p>
+     * <p>The period of time that's covered by a budget. You setthe start date and end
+     * date. The start date must come before the end date. The end date must come
+     * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
+     * don't specify a start date, Amazon Web Services defaults to the start of your
+     * chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
+     * created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
+     * set a start date, Amazon Web Services set your start date to <code>01/24/18
+     * 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set
+     * your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end
+     * date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>.
+     * The defaults are the same for the Billing and Cost Management console and the
+     * API. </p> <p>You can change either date with the <code>UpdateBudget</code>
+     * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
+     * all the associated notifications and subscribers.</p>
      */
     inline Budget& WithTimePeriod(TimePeriod&& value) { SetTimePeriod(std::move(value)); return *this;}
 
@@ -877,38 +897,38 @@ namespace Model
 
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
-     * Plans utilization, or Savings Plans coverage.</p>
+     * <p>Specifies whether this budget tracks costs, usage, RI utilization, RI
+     * coverage, Savings Plans utilization, or Savings Plans coverage.</p>
      */
     inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
-     * Plans utilization, or Savings Plans coverage.</p>
+     * <p>Specifies whether this budget tracks costs, usage, RI utilization, RI
+     * coverage, Savings Plans utilization, or Savings Plans coverage.</p>
      */
     inline bool BudgetTypeHasBeenSet() const { return m_budgetTypeHasBeenSet; }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
-     * Plans utilization, or Savings Plans coverage.</p>
+     * <p>Specifies whether this budget tracks costs, usage, RI utilization, RI
+     * coverage, Savings Plans utilization, or Savings Plans coverage.</p>
      */
     inline void SetBudgetType(const BudgetType& value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
-     * Plans utilization, or Savings Plans coverage.</p>
+     * <p>Specifies whether this budget tracks costs, usage, RI utilization, RI
+     * coverage, Savings Plans utilization, or Savings Plans coverage.</p>
      */
     inline void SetBudgetType(BudgetType&& value) { m_budgetTypeHasBeenSet = true; m_budgetType = std::move(value); }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
-     * Plans utilization, or Savings Plans coverage.</p>
+     * <p>Specifies whether this budget tracks costs, usage, RI utilization, RI
+     * coverage, Savings Plans utilization, or Savings Plans coverage.</p>
      */
     inline Budget& WithBudgetType(const BudgetType& value) { SetBudgetType(value); return *this;}
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
-     * Plans utilization, or Savings Plans coverage.</p>
+     * <p>Specifies whether this budget tracks costs, usage, RI utilization, RI
+     * coverage, Savings Plans utilization, or Savings Plans coverage.</p>
      */
     inline Budget& WithBudgetType(BudgetType&& value) { SetBudgetType(std::move(value)); return *this;}
 
@@ -943,6 +963,43 @@ namespace Model
      */
     inline Budget& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The parameters that determine the budget amount for an auto-adjusting
+     * budget.</p>
+     */
+    inline const AutoAdjustData& GetAutoAdjustData() const{ return m_autoAdjustData; }
+
+    /**
+     * <p>The parameters that determine the budget amount for an auto-adjusting
+     * budget.</p>
+     */
+    inline bool AutoAdjustDataHasBeenSet() const { return m_autoAdjustDataHasBeenSet; }
+
+    /**
+     * <p>The parameters that determine the budget amount for an auto-adjusting
+     * budget.</p>
+     */
+    inline void SetAutoAdjustData(const AutoAdjustData& value) { m_autoAdjustDataHasBeenSet = true; m_autoAdjustData = value; }
+
+    /**
+     * <p>The parameters that determine the budget amount for an auto-adjusting
+     * budget.</p>
+     */
+    inline void SetAutoAdjustData(AutoAdjustData&& value) { m_autoAdjustDataHasBeenSet = true; m_autoAdjustData = std::move(value); }
+
+    /**
+     * <p>The parameters that determine the budget amount for an auto-adjusting
+     * budget.</p>
+     */
+    inline Budget& WithAutoAdjustData(const AutoAdjustData& value) { SetAutoAdjustData(value); return *this;}
+
+    /**
+     * <p>The parameters that determine the budget amount for an auto-adjusting
+     * budget.</p>
+     */
+    inline Budget& WithAutoAdjustData(AutoAdjustData&& value) { SetAutoAdjustData(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_budgetName;
@@ -974,6 +1031,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
+    AutoAdjustData m_autoAdjustData;
+    bool m_autoAdjustDataHasBeenSet;
   };
 
 } // namespace Model

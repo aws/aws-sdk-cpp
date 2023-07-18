@@ -26,7 +26,11 @@ InstanceMetadataOptionsRequest::InstanceMetadataOptionsRequest() :
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(InstanceMetadataProtocolState::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false),
+    m_instanceMetadataTags(InstanceMetadataTagsState::NOT_SET),
+    m_instanceMetadataTagsHasBeenSet(false)
 {
 }
 
@@ -36,7 +40,11 @@ InstanceMetadataOptionsRequest::InstanceMetadataOptionsRequest(const XmlNode& xm
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(InstanceMetadataProtocolState::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false),
+    m_instanceMetadataTags(InstanceMetadataTagsState::NOT_SET),
+    m_instanceMetadataTagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +73,18 @@ InstanceMetadataOptionsRequest& InstanceMetadataOptionsRequest::operator =(const
       m_httpEndpoint = InstanceMetadataEndpointStateMapper::GetInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()).c_str());
       m_httpEndpointHasBeenSet = true;
     }
+    XmlNode httpProtocolIpv6Node = resultNode.FirstChild("HttpProtocolIpv6");
+    if(!httpProtocolIpv6Node.IsNull())
+    {
+      m_httpProtocolIpv6 = InstanceMetadataProtocolStateMapper::GetInstanceMetadataProtocolStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpProtocolIpv6Node.GetText()).c_str()).c_str());
+      m_httpProtocolIpv6HasBeenSet = true;
+    }
+    XmlNode instanceMetadataTagsNode = resultNode.FirstChild("InstanceMetadataTags");
+    if(!instanceMetadataTagsNode.IsNull())
+    {
+      m_instanceMetadataTags = InstanceMetadataTagsStateMapper::GetInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()).c_str());
+      m_instanceMetadataTagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -87,6 +107,16 @@ void InstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& oStream, const
       oStream << location << index << locationValue << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
   }
 
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6) << "&";
+  }
+
+  if(m_instanceMetadataTagsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+  }
+
 }
 
 void InstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -102,6 +132,14 @@ void InstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& oStream, const
   if(m_httpEndpointHasBeenSet)
   {
       oStream << location << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+  }
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << ".HttpProtocolIpv6=" << InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6) << "&";
+  }
+  if(m_instanceMetadataTagsHasBeenSet)
+  {
+      oStream << location << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
   }
 }
 

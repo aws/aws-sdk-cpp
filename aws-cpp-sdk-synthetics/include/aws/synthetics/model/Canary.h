@@ -12,7 +12,9 @@
 #include <aws/synthetics/model/CanaryStatus.h>
 #include <aws/synthetics/model/CanaryTimeline.h>
 #include <aws/synthetics/model/VpcConfigOutput.h>
+#include <aws/synthetics/model/VisualReferenceOutput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/synthetics/model/ArtifactConfigOutput.h>
 #include <utility>
 
 namespace Aws
@@ -560,6 +562,55 @@ namespace Model
 
 
     /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
+    inline const VisualReferenceOutput& GetVisualReference() const{ return m_visualReference; }
+
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
+    inline bool VisualReferenceHasBeenSet() const { return m_visualReferenceHasBeenSet; }
+
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
+    inline void SetVisualReference(const VisualReferenceOutput& value) { m_visualReferenceHasBeenSet = true; m_visualReference = value; }
+
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
+    inline void SetVisualReference(VisualReferenceOutput&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::move(value); }
+
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
+    inline Canary& WithVisualReference(const VisualReferenceOutput& value) { SetVisualReference(value); return *this;}
+
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
+    inline Canary& WithVisualReference(VisualReferenceOutput&& value) { SetVisualReference(std::move(value)); return *this;}
+
+
+    /**
      * <p>The list of key-value pairs that are associated with the canary.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -624,6 +675,49 @@ namespace Model
      */
     inline Canary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline const ArtifactConfigOutput& GetArtifactConfig() const{ return m_artifactConfig; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline bool ArtifactConfigHasBeenSet() const { return m_artifactConfigHasBeenSet; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline void SetArtifactConfig(const ArtifactConfigOutput& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = value; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline void SetArtifactConfig(ArtifactConfigOutput&& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = std::move(value); }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline Canary& WithArtifactConfig(const ArtifactConfigOutput& value) { SetArtifactConfig(value); return *this;}
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline Canary& WithArtifactConfig(ArtifactConfigOutput&& value) { SetArtifactConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -668,8 +762,14 @@ namespace Model
     VpcConfigOutput m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
 
+    VisualReferenceOutput m_visualReference;
+    bool m_visualReferenceHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    ArtifactConfigOutput m_artifactConfig;
+    bool m_artifactConfigHasBeenSet;
   };
 
 } // namespace Model

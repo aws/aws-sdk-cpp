@@ -35,43 +35,43 @@ namespace Model
 
     /**
      * <p>A user-supplied DB cluster identifier. This identifier is the unique key that
-     * identifies a DB cluster. </p>
+     * identifies a DB cluster.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>A user-supplied DB cluster identifier. This identifier is the unique key that
-     * identifies a DB cluster. </p>
+     * identifies a DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifier = value; }
 
     /**
      * <p>A user-supplied DB cluster identifier. This identifier is the unique key that
-     * identifies a DB cluster. </p>
+     * identifies a DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>A user-supplied DB cluster identifier. This identifier is the unique key that
-     * identifies a DB cluster. </p>
+     * identifies a DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>A user-supplied DB cluster identifier. This identifier is the unique key that
-     * identifies a DB cluster. </p>
+     * identifies a DB cluster.</p>
      */
     inline ModifyCurrentDBClusterCapacityResult& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>A user-supplied DB cluster identifier. This identifier is the unique key that
-     * identifies a DB cluster. </p>
+     * identifies a DB cluster.</p>
      */
     inline ModifyCurrentDBClusterCapacityResult& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied DB cluster identifier. This identifier is the unique key that
-     * identifies a DB cluster. </p>
+     * identifies a DB cluster.</p>
      */
     inline ModifyCurrentDBClusterCapacityResult& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 

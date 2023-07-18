@@ -19,6 +19,8 @@ CreateDistributionRequest::CreateDistributionRequest() :
     m_cacheBehaviorSettingsHasBeenSet(false),
     m_cacheBehaviorsHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -66,6 +68,11 @@ Aws::String CreateDistributionRequest::SerializePayload() const
   {
    payload.WithString("bundleId", m_bundleId);
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   if(m_tagsHasBeenSet)

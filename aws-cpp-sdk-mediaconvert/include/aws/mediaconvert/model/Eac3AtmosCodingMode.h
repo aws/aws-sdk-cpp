@@ -16,6 +16,9 @@ namespace Model
   enum class Eac3AtmosCodingMode
   {
     NOT_SET,
+    CODING_MODE_AUTO,
+    CODING_MODE_5_1_4,
+    CODING_MODE_7_1_4,
     CODING_MODE_9_1_6
   };
 

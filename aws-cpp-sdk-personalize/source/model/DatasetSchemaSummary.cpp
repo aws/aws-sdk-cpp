@@ -22,7 +22,9 @@ DatasetSchemaSummary::DatasetSchemaSummary() :
     m_nameHasBeenSet(false),
     m_schemaArnHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ DatasetSchemaSummary::DatasetSchemaSummary(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_schemaArnHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ DatasetSchemaSummary& DatasetSchemaSummary::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("domain"))
+  {
+    m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("domain"));
+
+    m_domainHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +103,11 @@ JsonValue DatasetSchemaSummary::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   return payload;

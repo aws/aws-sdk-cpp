@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline ResetUserPasswordRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline ResetUserPasswordRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
-     * the user resides.</p>
+     * <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the
+     * user resides.</p>
      */
     inline ResetUserPasswordRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

@@ -20,13 +20,17 @@ namespace Model
 
 ResultSetOptions::ResultSetOptions() : 
     m_decimalReturnType(DecimalReturnType::NOT_SET),
-    m_decimalReturnTypeHasBeenSet(false)
+    m_decimalReturnTypeHasBeenSet(false),
+    m_longReturnType(LongReturnType::NOT_SET),
+    m_longReturnTypeHasBeenSet(false)
 {
 }
 
 ResultSetOptions::ResultSetOptions(JsonView jsonValue) : 
     m_decimalReturnType(DecimalReturnType::NOT_SET),
-    m_decimalReturnTypeHasBeenSet(false)
+    m_decimalReturnTypeHasBeenSet(false),
+    m_longReturnType(LongReturnType::NOT_SET),
+    m_longReturnTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ ResultSetOptions& ResultSetOptions::operator =(JsonView jsonValue)
     m_decimalReturnTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("longReturnType"))
+  {
+    m_longReturnType = LongReturnTypeMapper::GetLongReturnTypeForName(jsonValue.GetString("longReturnType"));
+
+    m_longReturnTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,11 @@ JsonValue ResultSetOptions::Jsonize() const
   if(m_decimalReturnTypeHasBeenSet)
   {
    payload.WithString("decimalReturnType", DecimalReturnTypeMapper::GetNameForDecimalReturnType(m_decimalReturnType));
+  }
+
+  if(m_longReturnTypeHasBeenSet)
+  {
+   payload.WithString("longReturnType", LongReturnTypeMapper::GetNameForLongReturnType(m_longReturnType));
   }
 
   return payload;

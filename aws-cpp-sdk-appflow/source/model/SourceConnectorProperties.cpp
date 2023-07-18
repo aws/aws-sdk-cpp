@@ -32,7 +32,9 @@ SourceConnectorProperties::SourceConnectorProperties() :
     m_slackHasBeenSet(false),
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
+    m_zendeskHasBeenSet(false),
+    m_sAPODataHasBeenSet(false),
+    m_customConnectorHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ SourceConnectorProperties::SourceConnectorProperties(JsonView jsonValue) :
     m_slackHasBeenSet(false),
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
+    m_zendeskHasBeenSet(false),
+    m_sAPODataHasBeenSet(false),
+    m_customConnectorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +159,20 @@ SourceConnectorProperties& SourceConnectorProperties::operator =(JsonView jsonVa
     m_zendeskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SAPOData"))
+  {
+    m_sAPOData = jsonValue.GetObject("SAPOData");
+
+    m_sAPODataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomConnector"))
+  {
+    m_customConnector = jsonValue.GetObject("CustomConnector");
+
+    m_customConnectorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +261,18 @@ JsonValue SourceConnectorProperties::Jsonize() const
   if(m_zendeskHasBeenSet)
   {
    payload.WithObject("Zendesk", m_zendesk.Jsonize());
+
+  }
+
+  if(m_sAPODataHasBeenSet)
+  {
+   payload.WithObject("SAPOData", m_sAPOData.Jsonize());
+
+  }
+
+  if(m_customConnectorHasBeenSet)
+  {
+   payload.WithObject("CustomConnector", m_customConnector.Jsonize());
 
   }
 

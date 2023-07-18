@@ -85,9 +85,9 @@ CognitoSyncClient::~CognitoSyncClient()
 {
 }
 
-void CognitoSyncClient::init(const ClientConfiguration& config)
+void CognitoSyncClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("cognito-sync");
+  SetServiceClientName("Cognito Sync");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -119,11 +119,9 @@ BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& requ
     return BulkPublishOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/bulkpublish";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/bulkpublish");
   return BulkPublishOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -163,14 +161,12 @@ DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest
     return DeleteDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
   return DeleteDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -210,14 +206,12 @@ DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetR
     return DescribeDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
   return DescribeDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -247,10 +241,8 @@ DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(co
     return DescribeIdentityPoolUsageOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
   return DescribeIdentityPoolUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -285,12 +277,10 @@ DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const Desc
     return DescribeIdentityUsageOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
   return DescribeIdentityUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -320,11 +310,9 @@ GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetB
     return GetBulkPublishDetailsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/getBulkPublishDetails";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/getBulkPublishDetails");
   return GetBulkPublishDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -354,11 +342,9 @@ GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEven
     return GetCognitoEventsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/events";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/events");
   return GetCognitoEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -388,11 +374,9 @@ GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfigurat
     return GetIdentityPoolConfigurationOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/configuration");
   return GetIdentityPoolConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -427,13 +411,11 @@ ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& r
     return ListDatasetsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  ss << "/datasets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/datasets");
   return ListDatasetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -458,9 +440,7 @@ void CognitoSyncClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& reque
 ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const ListIdentityPoolUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools");
   return ListIdentityPoolUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -500,15 +480,13 @@ ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& requ
     return ListRecordsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  ss << "/records";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
+  uri.AddPathSegments("/records");
   return ListRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -543,13 +521,11 @@ RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequ
     return RegisterDeviceOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identity/";
-  ss << request.GetIdentityId();
-  ss << "/device";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identity/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/device");
   return RegisterDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -579,11 +555,9 @@ SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEven
     return SetCognitoEventsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/events";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/events");
   return SetCognitoEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -613,11 +587,9 @@ SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfigurat
     return SetIdentityPoolConfigurationOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/configuration");
   return SetIdentityPoolConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -662,16 +634,14 @@ SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeT
     return SubscribeToDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  ss << "/subscriptions/";
-  ss << request.GetDeviceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
+  uri.AddPathSegments("/subscriptions/");
+  uri.AddPathSegment(request.GetDeviceId());
   return SubscribeToDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -716,16 +686,14 @@ UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const Un
     return UnsubscribeFromDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  ss << "/subscriptions/";
-  ss << request.GetDeviceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
+  uri.AddPathSegments("/subscriptions/");
+  uri.AddPathSegment(request.GetDeviceId());
   return UnsubscribeFromDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -765,14 +733,12 @@ UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest
     return UpdateRecordsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/identitypools/";
-  ss << request.GetIdentityPoolId();
-  ss << "/identities/";
-  ss << request.GetIdentityId();
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/identitypools/");
+  uri.AddPathSegment(request.GetIdentityPoolId());
+  uri.AddPathSegments("/identities/");
+  uri.AddPathSegment(request.GetIdentityId());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
   return UpdateRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

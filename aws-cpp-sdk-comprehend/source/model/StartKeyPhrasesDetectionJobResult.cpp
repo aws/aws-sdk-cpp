@@ -36,6 +36,12 @@ StartKeyPhrasesDetectionJobResult& StartKeyPhrasesDetectionJobResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("JobArn"))
+  {
+    m_jobArn = jsonValue.GetString("JobArn");
+
+  }
+
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));

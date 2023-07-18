@@ -20,7 +20,9 @@ UpdateFindingsFilterRequest::UpdateFindingsFilterRequest() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_position(0),
-    m_positionHasBeenSet(false)
+    m_positionHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -54,6 +56,12 @@ Aws::String UpdateFindingsFilterRequest::SerializePayload() const
   if(m_positionHasBeenSet)
   {
    payload.WithInteger("position", m_position);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

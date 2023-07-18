@@ -33,6 +33,7 @@ Container::Container() :
     m_networkInterfacesHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
+    m_managedAgentsHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_memoryReservationHasBeenSet(false),
@@ -55,6 +56,7 @@ Container::Container(JsonView jsonValue) :
     m_networkInterfacesHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
+    m_managedAgentsHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_memoryReservationHasBeenSet(false),
@@ -153,6 +155,16 @@ Container& Container::operator =(JsonView jsonValue)
     m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("healthStatus"));
 
     m_healthStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("managedAgents"))
+  {
+    Array<JsonView> managedAgentsJsonList = jsonValue.GetArray("managedAgents");
+    for(unsigned managedAgentsIndex = 0; managedAgentsIndex < managedAgentsJsonList.GetLength(); ++managedAgentsIndex)
+    {
+      m_managedAgents.push_back(managedAgentsJsonList[managedAgentsIndex].AsObject());
+    }
+    m_managedAgentsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cpu"))
@@ -272,6 +284,17 @@ JsonValue Container::Jsonize() const
   if(m_healthStatusHasBeenSet)
   {
    payload.WithString("healthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
+  }
+
+  if(m_managedAgentsHasBeenSet)
+  {
+   Array<JsonValue> managedAgentsJsonList(m_managedAgents.size());
+   for(unsigned managedAgentsIndex = 0; managedAgentsIndex < managedAgentsJsonList.GetLength(); ++managedAgentsIndex)
+   {
+     managedAgentsJsonList[managedAgentsIndex].AsObject(m_managedAgents[managedAgentsIndex].Jsonize());
+   }
+   payload.WithArray("managedAgents", std::move(managedAgentsJsonList));
+
   }
 
   if(m_cpuHasBeenSet)

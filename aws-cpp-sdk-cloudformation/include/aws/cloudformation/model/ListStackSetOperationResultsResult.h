@@ -37,50 +37,50 @@ namespace Model
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
-     * information about the specified operation results, for accounts and Regions that
-     * are included in the operation.</p>
+     * information about the specified operation results, for accounts and Amazon Web
+     * Services Regions that are included in the operation.</p>
      */
     inline const Aws::Vector<StackSetOperationResultSummary>& GetSummaries() const{ return m_summaries; }
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
-     * information about the specified operation results, for accounts and Regions that
-     * are included in the operation.</p>
+     * information about the specified operation results, for accounts and Amazon Web
+     * Services Regions that are included in the operation.</p>
      */
     inline void SetSummaries(const Aws::Vector<StackSetOperationResultSummary>& value) { m_summaries = value; }
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
-     * information about the specified operation results, for accounts and Regions that
-     * are included in the operation.</p>
+     * information about the specified operation results, for accounts and Amazon Web
+     * Services Regions that are included in the operation.</p>
      */
     inline void SetSummaries(Aws::Vector<StackSetOperationResultSummary>&& value) { m_summaries = std::move(value); }
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
-     * information about the specified operation results, for accounts and Regions that
-     * are included in the operation.</p>
+     * information about the specified operation results, for accounts and Amazon Web
+     * Services Regions that are included in the operation.</p>
      */
     inline ListStackSetOperationResultsResult& WithSummaries(const Aws::Vector<StackSetOperationResultSummary>& value) { SetSummaries(value); return *this;}
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
-     * information about the specified operation results, for accounts and Regions that
-     * are included in the operation.</p>
+     * information about the specified operation results, for accounts and Amazon Web
+     * Services Regions that are included in the operation.</p>
      */
     inline ListStackSetOperationResultsResult& WithSummaries(Aws::Vector<StackSetOperationResultSummary>&& value) { SetSummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
-     * information about the specified operation results, for accounts and Regions that
-     * are included in the operation.</p>
+     * information about the specified operation results, for accounts and Amazon Web
+     * Services Regions that are included in the operation.</p>
      */
     inline ListStackSetOperationResultsResult& AddSummaries(const StackSetOperationResultSummary& value) { m_summaries.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
-     * information about the specified operation results, for accounts and Regions that
-     * are included in the operation.</p>
+     * information about the specified operation results, for accounts and Amazon Web
+     * Services Regions that are included in the operation.</p>
      */
     inline ListStackSetOperationResultsResult& AddSummaries(StackSetOperationResultSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
 

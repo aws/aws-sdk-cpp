@@ -476,7 +476,12 @@ namespace Model
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
      * calculate your bill.</p>  <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> 
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline long long GetVolumeUsedInBytes() const{ return m_volumeUsedInBytes; }
 
@@ -487,7 +492,12 @@ namespace Model
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
      * calculate your bill.</p>  <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> 
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline bool VolumeUsedInBytesHasBeenSet() const { return m_volumeUsedInBytesHasBeenSet; }
 
@@ -498,7 +508,12 @@ namespace Model
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
      * calculate your bill.</p>  <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> 
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline void SetVolumeUsedInBytes(long long value) { m_volumeUsedInBytesHasBeenSet = true; m_volumeUsedInBytes = value; }
 
@@ -509,7 +524,12 @@ namespace Model
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
      * calculate your bill.</p>  <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> 
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline CachediSCSIVolume& WithVolumeUsedInBytes(long long value) { SetVolumeUsedInBytes(value); return *this;}
 

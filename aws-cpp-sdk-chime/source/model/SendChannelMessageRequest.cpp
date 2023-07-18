@@ -5,6 +5,7 @@
 
 #include <aws/chime/model/SendChannelMessageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -21,7 +22,8 @@ SendChannelMessageRequest::SendChannelMessageRequest() :
     m_persistenceHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,21 @@ Aws::String SendChannelMessageRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection SendChannelMessageRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

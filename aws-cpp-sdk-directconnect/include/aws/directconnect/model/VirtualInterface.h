@@ -44,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline VirtualInterface& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline VirtualInterface& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline VirtualInterface& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -877,50 +885,50 @@ namespace Model
 
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline const Aws::Vector<RouteFilterPrefix>& GetRouteFilterPrefixes() const{ return m_routeFilterPrefixes; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline bool RouteFilterPrefixesHasBeenSet() const { return m_routeFilterPrefixesHasBeenSet; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline void SetRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes = value; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline void SetRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes = std::move(value); }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline VirtualInterface& WithRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { SetRouteFilterPrefixes(value); return *this;}
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline VirtualInterface& WithRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { SetRouteFilterPrefixes(std::move(value)); return *this;}
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline VirtualInterface& AddRouteFilterPrefixes(const RouteFilterPrefix& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes.push_back(value); return *this; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline VirtualInterface& AddRouteFilterPrefixes(RouteFilterPrefix&& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes.push_back(std::move(value)); return *this; }
 
@@ -967,85 +975,142 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline VirtualInterface& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline VirtualInterface& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline VirtualInterface& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline VirtualInterface& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline VirtualInterface& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint on which the virtual interface terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline VirtualInterface& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
+
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline bool AwsLogicalDeviceIdHasBeenSet() const { return m_awsLogicalDeviceIdHasBeenSet; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = value; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = std::move(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId.assign(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline VirtualInterface& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline VirtualInterface& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline VirtualInterface& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
 
 
     /**
@@ -1087,6 +1152,27 @@ namespace Model
      * <p>The tags associated with the virtual interface.</p>
      */
     inline VirtualInterface& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline bool GetSiteLinkEnabled() const{ return m_siteLinkEnabled; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline bool SiteLinkEnabledHasBeenSet() const { return m_siteLinkEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline void SetSiteLinkEnabled(bool value) { m_siteLinkEnabledHasBeenSet = true; m_siteLinkEnabled = value; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline VirtualInterface& WithSiteLinkEnabled(bool value) { SetSiteLinkEnabled(value); return *this;}
 
   private:
 
@@ -1159,8 +1245,14 @@ namespace Model
     Aws::String m_awsDeviceV2;
     bool m_awsDeviceV2HasBeenSet;
 
+    Aws::String m_awsLogicalDeviceId;
+    bool m_awsLogicalDeviceIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_siteLinkEnabled;
+    bool m_siteLinkEnabledHasBeenSet;
   };
 
 } // namespace Model

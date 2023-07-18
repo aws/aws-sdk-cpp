@@ -23,7 +23,8 @@ HierarchyGroup::HierarchyGroup() :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_levelIdHasBeenSet(false),
-    m_hierarchyPathHasBeenSet(false)
+    m_hierarchyPathHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ HierarchyGroup::HierarchyGroup(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_levelIdHasBeenSet(false),
-    m_hierarchyPathHasBeenSet(false)
+    m_hierarchyPathHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,16 @@ HierarchyGroup& HierarchyGroup::operator =(JsonView jsonValue)
     m_hierarchyPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +120,17 @@ JsonValue HierarchyGroup::Jsonize() const
   if(m_hierarchyPathHasBeenSet)
   {
    payload.WithObject("HierarchyPath", m_hierarchyPath.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

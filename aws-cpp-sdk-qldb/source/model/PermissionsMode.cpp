@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ALLOW_ALL_HASH = HashingUtils::HashString("ALLOW_ALL");
+        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 
 
         PermissionsMode GetPermissionsModeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ALLOW_ALL_HASH)
           {
             return PermissionsMode::ALLOW_ALL;
+          }
+          else if (hashCode == STANDARD_HASH)
+          {
+            return PermissionsMode::STANDARD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case PermissionsMode::ALLOW_ALL:
             return "ALLOW_ALL";
+          case PermissionsMode::STANDARD:
+            return "STANDARD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -20,13 +20,15 @@ namespace Model
 
 S3StorageConfig::S3StorageConfig() : 
     m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_resolvedOutputS3UriHasBeenSet(false)
 {
 }
 
 S3StorageConfig::S3StorageConfig(JsonView jsonValue) : 
     m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_resolvedOutputS3UriHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ S3StorageConfig& S3StorageConfig::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResolvedOutputS3Uri"))
+  {
+    m_resolvedOutputS3Uri = jsonValue.GetString("ResolvedOutputS3Uri");
+
+    m_resolvedOutputS3UriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue S3StorageConfig::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_resolvedOutputS3UriHasBeenSet)
+  {
+   payload.WithString("ResolvedOutputS3Uri", m_resolvedOutputS3Uri);
 
   }
 

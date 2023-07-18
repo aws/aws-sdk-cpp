@@ -107,37 +107,42 @@ namespace Model
 
 
     /**
-     * <p> The type of the custom metric. Types include <code>string-list</code>,
-     * <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-     * </p>
+     * <p> The type of the custom metric. </p>  <p>The type
+     * <code>number</code> only takes a single metric value as an input, but while
+     * submitting the metrics value in the DeviceMetrics report, it must be passed as
+     * an array with a single value.</p> 
      */
     inline const CustomMetricType& GetMetricType() const{ return m_metricType; }
 
     /**
-     * <p> The type of the custom metric. Types include <code>string-list</code>,
-     * <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-     * </p>
+     * <p> The type of the custom metric. </p>  <p>The type
+     * <code>number</code> only takes a single metric value as an input, but while
+     * submitting the metrics value in the DeviceMetrics report, it must be passed as
+     * an array with a single value.</p> 
      */
     inline void SetMetricType(const CustomMetricType& value) { m_metricType = value; }
 
     /**
-     * <p> The type of the custom metric. Types include <code>string-list</code>,
-     * <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-     * </p>
+     * <p> The type of the custom metric. </p>  <p>The type
+     * <code>number</code> only takes a single metric value as an input, but while
+     * submitting the metrics value in the DeviceMetrics report, it must be passed as
+     * an array with a single value.</p> 
      */
     inline void SetMetricType(CustomMetricType&& value) { m_metricType = std::move(value); }
 
     /**
-     * <p> The type of the custom metric. Types include <code>string-list</code>,
-     * <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-     * </p>
+     * <p> The type of the custom metric. </p>  <p>The type
+     * <code>number</code> only takes a single metric value as an input, but while
+     * submitting the metrics value in the DeviceMetrics report, it must be passed as
+     * an array with a single value.</p> 
      */
     inline UpdateCustomMetricResult& WithMetricType(const CustomMetricType& value) { SetMetricType(value); return *this;}
 
     /**
-     * <p> The type of the custom metric. Types include <code>string-list</code>,
-     * <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-     * </p>
+     * <p> The type of the custom metric. </p>  <p>The type
+     * <code>number</code> only takes a single metric value as an input, but while
+     * submitting the metrics value in the DeviceMetrics report, it must be passed as
+     * an array with a single value.</p> 
      */
     inline UpdateCustomMetricResult& WithMetricType(CustomMetricType&& value) { SetMetricType(std::move(value)); return *this;}
 

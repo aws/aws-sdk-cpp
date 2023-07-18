@@ -10,6 +10,7 @@
 #include <aws/appflow/model/ConnectionMode.h>
 #include <aws/appflow/model/ConnectorProfileProperties.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/appflow/model/PrivateConnectionProvisioningState.h>
 #include <utility>
 
 namespace Aws
@@ -89,49 +90,49 @@ namespace Model
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline const Aws::String& GetConnectorProfileName() const{ return m_connectorProfileName; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline bool ConnectorProfileNameHasBeenSet() const { return m_connectorProfileNameHasBeenSet; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const Aws::String& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = value; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(Aws::String&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::move(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const char* value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName.assign(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline ConnectorProfile& WithConnectorProfileName(const Aws::String& value) { SetConnectorProfileName(value); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline ConnectorProfile& WithConnectorProfileName(Aws::String&& value) { SetConnectorProfileName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline ConnectorProfile& WithConnectorProfileName(const char* value) { SetConnectorProfileName(value); return *this;}
 
@@ -165,6 +166,47 @@ namespace Model
      * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline ConnectorProfile& WithConnectorType(ConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline ConnectorProfile& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline ConnectorProfile& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline ConnectorProfile& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
 
 
     /**
@@ -331,6 +373,37 @@ namespace Model
      */
     inline ConnectorProfile& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Specifies the private connection provisioning state. </p>
+     */
+    inline const PrivateConnectionProvisioningState& GetPrivateConnectionProvisioningState() const{ return m_privateConnectionProvisioningState; }
+
+    /**
+     * <p> Specifies the private connection provisioning state. </p>
+     */
+    inline bool PrivateConnectionProvisioningStateHasBeenSet() const { return m_privateConnectionProvisioningStateHasBeenSet; }
+
+    /**
+     * <p> Specifies the private connection provisioning state. </p>
+     */
+    inline void SetPrivateConnectionProvisioningState(const PrivateConnectionProvisioningState& value) { m_privateConnectionProvisioningStateHasBeenSet = true; m_privateConnectionProvisioningState = value; }
+
+    /**
+     * <p> Specifies the private connection provisioning state. </p>
+     */
+    inline void SetPrivateConnectionProvisioningState(PrivateConnectionProvisioningState&& value) { m_privateConnectionProvisioningStateHasBeenSet = true; m_privateConnectionProvisioningState = std::move(value); }
+
+    /**
+     * <p> Specifies the private connection provisioning state. </p>
+     */
+    inline ConnectorProfile& WithPrivateConnectionProvisioningState(const PrivateConnectionProvisioningState& value) { SetPrivateConnectionProvisioningState(value); return *this;}
+
+    /**
+     * <p> Specifies the private connection provisioning state. </p>
+     */
+    inline ConnectorProfile& WithPrivateConnectionProvisioningState(PrivateConnectionProvisioningState&& value) { SetPrivateConnectionProvisioningState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_connectorProfileArn;
@@ -341,6 +414,9 @@ namespace Model
 
     ConnectorType m_connectorType;
     bool m_connectorTypeHasBeenSet;
+
+    Aws::String m_connectorLabel;
+    bool m_connectorLabelHasBeenSet;
 
     ConnectionMode m_connectionMode;
     bool m_connectionModeHasBeenSet;
@@ -356,6 +432,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
+    PrivateConnectionProvisioningState m_privateConnectionProvisioningState;
+    bool m_privateConnectionProvisioningStateHasBeenSet;
   };
 
 } // namespace Model

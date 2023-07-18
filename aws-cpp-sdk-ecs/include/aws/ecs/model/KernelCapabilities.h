@@ -26,11 +26,11 @@ namespace Model
 
   /**
    * <p>The Linux capabilities for the container that are added to or dropped from
-   * the default configuration provided by Docker. For more information on the
+   * the default configuration provided by Docker. For more information about the
    * default capabilities and the non-default available capabilities, see <a
    * href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime
    * privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For
-   * more detailed information on these Linux capabilities, see the <a
+   * more detailed information about these Linux capabilities, see the <a
    * href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a>
    * Linux manual page.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/KernelCapabilities">AWS
@@ -54,7 +54,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -76,7 +76,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -98,7 +98,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -120,7 +120,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -142,7 +142,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -164,7 +164,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -186,7 +186,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -208,7 +208,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
@@ -230,7 +230,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>Tasks launched on AWS Fargate only support adding the
+     * run</a>.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
      * "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |

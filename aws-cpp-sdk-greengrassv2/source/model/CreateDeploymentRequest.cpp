@@ -18,7 +18,9 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_componentsHasBeenSet(false),
     m_iotJobConfigurationHasBeenSet(false),
     m_deploymentPoliciesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -69,6 +71,12 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

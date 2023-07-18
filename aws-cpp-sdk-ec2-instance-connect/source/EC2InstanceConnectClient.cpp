@@ -21,6 +21,7 @@
 #include <aws/ec2-instance-connect/EC2InstanceConnectEndpoint.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectErrorMarshaller.h>
 #include <aws/ec2-instance-connect/model/SendSSHPublicKeyRequest.h>
+#include <aws/ec2-instance-connect/model/SendSerialConsoleSSHPublicKeyRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -69,7 +70,7 @@ EC2InstanceConnectClient::~EC2InstanceConnectClient()
 {
 }
 
-void EC2InstanceConnectClient::init(const ClientConfiguration& config)
+void EC2InstanceConnectClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EC2 Instance Connect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -98,9 +99,6 @@ void EC2InstanceConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 SendSSHPublicKeyOutcome EC2InstanceConnectClient::SendSSHPublicKey(const SendSSHPublicKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SendSSHPublicKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -120,5 +118,29 @@ void EC2InstanceConnectClient::SendSSHPublicKeyAsync(const SendSSHPublicKeyReque
 void EC2InstanceConnectClient::SendSSHPublicKeyAsyncHelper(const SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendSSHPublicKey(request), context);
+}
+
+SendSerialConsoleSSHPublicKeyOutcome EC2InstanceConnectClient::SendSerialConsoleSSHPublicKey(const SendSerialConsoleSSHPublicKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SendSerialConsoleSSHPublicKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendSerialConsoleSSHPublicKeyOutcomeCallable EC2InstanceConnectClient::SendSerialConsoleSSHPublicKeyCallable(const SendSerialConsoleSSHPublicKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendSerialConsoleSSHPublicKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendSerialConsoleSSHPublicKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2InstanceConnectClient::SendSerialConsoleSSHPublicKeyAsync(const SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendSerialConsoleSSHPublicKeyAsyncHelper( request, handler, context ); } );
+}
+
+void EC2InstanceConnectClient::SendSerialConsoleSSHPublicKeyAsyncHelper(const SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendSerialConsoleSSHPublicKey(request), context);
 }
 

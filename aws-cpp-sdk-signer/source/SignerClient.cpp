@@ -85,7 +85,7 @@ SignerClient::~SignerClient()
 {
 }
 
-void SignerClient::init(const ClientConfiguration& config)
+void SignerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("signer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -119,11 +119,9 @@ AddProfilePermissionOutcome SignerClient::AddProfilePermission(const AddProfileP
     return AddProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles/";
-  ss << request.GetProfileName();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles/");
+  uri.AddPathSegment(request.GetProfileName());
+  uri.AddPathSegments("/permissions");
   return AddProfilePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -153,10 +151,8 @@ CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigni
     return CancelSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles/";
-  ss << request.GetProfileName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles/");
+  uri.AddPathSegment(request.GetProfileName());
   return CancelSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -186,10 +182,8 @@ DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigning
     return DescribeSigningJobOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return DescribeSigningJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -219,10 +213,8 @@ GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatf
     return GetSigningPlatformOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlatformId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-platforms/";
-  ss << request.GetPlatformId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-platforms/");
+  uri.AddPathSegment(request.GetPlatformId());
   return GetSigningPlatformOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -252,10 +244,8 @@ GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfile
     return GetSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles/";
-  ss << request.GetProfileName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles/");
+  uri.AddPathSegment(request.GetProfileName());
   return GetSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -285,11 +275,9 @@ ListProfilePermissionsOutcome SignerClient::ListProfilePermissions(const ListPro
     return ListProfilePermissionsOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles/";
-  ss << request.GetProfileName();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles/");
+  uri.AddPathSegment(request.GetProfileName());
+  uri.AddPathSegments("/permissions");
   return ListProfilePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -314,9 +302,7 @@ void SignerClient::ListProfilePermissionsAsyncHelper(const ListProfilePermission
 ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-jobs");
   return ListSigningJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -341,9 +327,7 @@ void SignerClient::ListSigningJobsAsyncHelper(const ListSigningJobsRequest& requ
 ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigningPlatformsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-platforms";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-platforms");
   return ListSigningPlatformsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -368,9 +352,7 @@ void SignerClient::ListSigningPlatformsAsyncHelper(const ListSigningPlatformsReq
 ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningProfilesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles");
   return ListSigningProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -400,10 +382,8 @@ ListTagsForResourceOutcome SignerClient::ListTagsForResource(const ListTagsForRe
     return ListTagsForResourceOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -433,10 +413,8 @@ PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfile
     return PutSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles/";
-  ss << request.GetProfileName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles/");
+  uri.AddPathSegment(request.GetProfileName());
   return PutSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -476,12 +454,10 @@ RemoveProfilePermissionOutcome SignerClient::RemoveProfilePermission(const Remov
     return RemoveProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles/";
-  ss << request.GetProfileName();
-  ss << "/permissions/";
-  ss << request.GetStatementId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles/");
+  uri.AddPathSegment(request.GetProfileName());
+  uri.AddPathSegments("/permissions/");
+  uri.AddPathSegment(request.GetStatementId());
   return RemoveProfilePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -511,11 +487,9 @@ RevokeSignatureOutcome SignerClient::RevokeSignature(const RevokeSignatureReques
     return RevokeSignatureOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-jobs/";
-  ss << request.GetJobId();
-  ss << "/revoke";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/revoke");
   return RevokeSignatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -545,11 +519,9 @@ RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigni
     return RevokeSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-profiles/";
-  ss << request.GetProfileName();
-  ss << "/revoke";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-profiles/");
+  uri.AddPathSegment(request.GetProfileName());
+  uri.AddPathSegments("/revoke");
   return RevokeSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -574,9 +546,7 @@ void SignerClient::RevokeSigningProfileAsyncHelper(const RevokeSigningProfileReq
 StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signing-jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signing-jobs");
   return StartSigningJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -606,10 +576,8 @@ TagResourceOutcome SignerClient::TagResource(const TagResourceRequest& request) 
     return TagResourceOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -644,10 +612,8 @@ UntagResourceOutcome SignerClient::UntagResource(const UntagResourceRequest& req
     return UntagResourceOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 

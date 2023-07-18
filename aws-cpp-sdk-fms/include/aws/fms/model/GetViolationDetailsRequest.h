@@ -35,91 +35,91 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline GetViolationDetailsRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline GetViolationDetailsRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that you want the details for. This
+     * <p>The ID of the Firewall Manager policy that you want the details for. This
      * currently only supports security group content audit policies.</p>
      */
     inline GetViolationDetailsRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline const Aws::String& GetMemberAccount() const{ return m_memberAccount; }
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline bool MemberAccountHasBeenSet() const { return m_memberAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline void SetMemberAccount(const Aws::String& value) { m_memberAccountHasBeenSet = true; m_memberAccount = value; }
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline void SetMemberAccount(Aws::String&& value) { m_memberAccountHasBeenSet = true; m_memberAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline void SetMemberAccount(const char* value) { m_memberAccountHasBeenSet = true; m_memberAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline GetViolationDetailsRequest& WithMemberAccount(const Aws::String& value) { SetMemberAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline GetViolationDetailsRequest& WithMemberAccount(Aws::String&& value) { SetMemberAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that you want the details for.</p>
+     * <p>The Amazon Web Services account ID that you want the details for.</p>
      */
     inline GetViolationDetailsRequest& WithMemberAccount(const char* value) { SetMemberAccount(value); return *this;}
 
@@ -167,8 +167,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
@@ -178,8 +178,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
@@ -189,8 +189,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
@@ -200,8 +200,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
@@ -211,8 +211,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
@@ -222,8 +222,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
@@ -233,8 +233,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
@@ -244,8 +244,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are:
      * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
      * <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and

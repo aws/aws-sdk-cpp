@@ -22,7 +22,8 @@ PutScheduledUpdateGroupActionRequest::PutScheduledUpdateGroupActionRequest() :
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
+    m_desiredCapacityHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,11 @@ Aws::String PutScheduledUpdateGroupActionRequest::SerializePayload() const
   if(m_desiredCapacityHasBeenSet)
   {
     ss << "DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+
+  if(m_timeZoneHasBeenSet)
+  {
+    ss << "TimeZone=" << StringUtils::URLEncode(m_timeZone.c_str()) << "&";
   }
 
   ss << "Version=2011-01-01";

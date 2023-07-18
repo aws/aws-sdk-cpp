@@ -123,32 +123,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS Lambda configuration information in a user pool description.</p>
+     * <p>The Lambda configuration information in a user pool description.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The AWS Lambda configuration information in a user pool description.</p>
+     * <p>The Lambda configuration information in a user pool description.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda configuration information in a user pool description.</p>
+     * <p>The Lambda configuration information in a user pool description.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The AWS Lambda configuration information in a user pool description.</p>
+     * <p>The Lambda configuration information in a user pool description.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The AWS Lambda configuration information in a user pool description.</p>
+     * <p>The Lambda configuration information in a user pool description.</p>
      */
     inline UserPoolDescriptionType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The AWS Lambda configuration information in a user pool description.</p>
+     * <p>The Lambda configuration information in a user pool description.</p>
      */
     inline UserPoolDescriptionType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 

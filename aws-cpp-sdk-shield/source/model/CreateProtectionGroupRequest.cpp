@@ -20,7 +20,8 @@ CreateProtectionGroupRequest::CreateProtectionGroupRequest() :
     m_patternHasBeenSet(false),
     m_resourceType(ProtectedResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_membersHasBeenSet(false)
+    m_membersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,17 @@ Aws::String CreateProtectionGroupRequest::SerializePayload() const
      membersJsonList[membersIndex].AsString(m_members[membersIndex]);
    }
    payload.WithArray("Members", std::move(membersJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

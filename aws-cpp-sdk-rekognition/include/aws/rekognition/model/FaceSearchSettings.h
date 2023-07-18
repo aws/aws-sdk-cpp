@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>Input face recognition parameters for an Amazon Rekognition stream processor.
-   * <code>FaceRecognitionSettings</code> is a request parameter for
+   * Includes the collection to use for face recognition and the face attributes to
+   * detect. Defining the settings is required in the request parameter for
    * <a>CreateStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceSearchSettings">AWS
    * API Reference</a></p>
@@ -82,29 +83,33 @@ namespace Model
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline void SetFaceMatchThreshold(double value) { m_faceMatchThresholdHasBeenSet = true; m_faceMatchThreshold = value; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline FaceSearchSettings& WithFaceMatchThreshold(double value) { SetFaceMatchThreshold(value); return *this;}
 

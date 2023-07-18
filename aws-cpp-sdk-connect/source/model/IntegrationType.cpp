@@ -21,6 +21,10 @@ namespace Aws
       {
 
         static const int EVENT_HASH = HashingUtils::HashString("EVENT");
+        static const int VOICE_ID_HASH = HashingUtils::HashString("VOICE_ID");
+        static const int PINPOINT_APP_HASH = HashingUtils::HashString("PINPOINT_APP");
+        static const int WISDOM_ASSISTANT_HASH = HashingUtils::HashString("WISDOM_ASSISTANT");
+        static const int WISDOM_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("WISDOM_KNOWLEDGE_BASE");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -29,6 +33,22 @@ namespace Aws
           if (hashCode == EVENT_HASH)
           {
             return IntegrationType::EVENT;
+          }
+          else if (hashCode == VOICE_ID_HASH)
+          {
+            return IntegrationType::VOICE_ID;
+          }
+          else if (hashCode == PINPOINT_APP_HASH)
+          {
+            return IntegrationType::PINPOINT_APP;
+          }
+          else if (hashCode == WISDOM_ASSISTANT_HASH)
+          {
+            return IntegrationType::WISDOM_ASSISTANT;
+          }
+          else if (hashCode == WISDOM_KNOWLEDGE_BASE_HASH)
+          {
+            return IntegrationType::WISDOM_KNOWLEDGE_BASE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +66,14 @@ namespace Aws
           {
           case IntegrationType::EVENT:
             return "EVENT";
+          case IntegrationType::VOICE_ID:
+            return "VOICE_ID";
+          case IntegrationType::PINPOINT_APP:
+            return "PINPOINT_APP";
+          case IntegrationType::WISDOM_ASSISTANT:
+            return "WISDOM_ASSISTANT";
+          case IntegrationType::WISDOM_KNOWLEDGE_BASE:
+            return "WISDOM_KNOWLEDGE_BASE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

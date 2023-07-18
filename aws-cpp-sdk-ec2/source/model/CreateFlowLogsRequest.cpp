@@ -27,7 +27,8 @@ CreateFlowLogsRequest::CreateFlowLogsRequest() :
     m_logFormatHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_maxAggregationInterval(0),
-    m_maxAggregationIntervalHasBeenSet(false)
+    m_maxAggregationIntervalHasBeenSet(false),
+    m_destinationOptionsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,11 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   if(m_maxAggregationIntervalHasBeenSet)
   {
     ss << "MaxAggregationInterval=" << m_maxAggregationInterval << "&";
+  }
+
+  if(m_destinationOptionsHasBeenSet)
+  {
+    m_destinationOptions.OutputToStream(ss, "DestinationOptions");
   }
 
   ss << "Version=2016-11-15";

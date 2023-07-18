@@ -45,71 +45,71 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline Finding& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline Finding& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that the finding applies to. This
-     * is typically the account that owns the affected resource.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the finding
+     * applies to. This is typically the account that owns the affected resource.</p>
      */
     inline Finding& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>Specifies whether the finding is archived.</p>
+     * <p>Specifies whether the finding is archived (suppressed).</p>
      */
     inline bool GetArchived() const{ return m_archived; }
 
     /**
-     * <p>Specifies whether the finding is archived.</p>
+     * <p>Specifies whether the finding is archived (suppressed).</p>
      */
     inline bool ArchivedHasBeenSet() const { return m_archivedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the finding is archived.</p>
+     * <p>Specifies whether the finding is archived (suppressed).</p>
      */
     inline void SetArchived(bool value) { m_archivedHasBeenSet = true; m_archived = value; }
 
     /**
-     * <p>Specifies whether the finding is archived.</p>
+     * <p>Specifies whether the finding is archived (suppressed).</p>
      */
     inline Finding& WithArchived(bool value) { SetArchived(value); return *this;}
 
@@ -345,42 +345,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline const Aws::String& GetPartition() const{ return m_partition; }
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline void SetPartition(const Aws::String& value) { m_partitionHasBeenSet = true; m_partition = value; }
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline void SetPartition(Aws::String&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline void SetPartition(const char* value) { m_partitionHasBeenSet = true; m_partition.assign(value); }
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline Finding& WithPartition(const Aws::String& value) { SetPartition(value); return *this;}
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline Finding& WithPartition(Aws::String&& value) { SetPartition(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS partition that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services partition that Amazon Macie created the finding
+     * in.</p>
      */
     inline Finding& WithPartition(const char* value) { SetPartition(value); return *this;}
 
@@ -423,42 +431,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline Finding& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline Finding& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that Amazon Macie created the finding in.</p>
+     * <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
      */
     inline Finding& WithRegion(const char* value) { SetRegion(value); return *this;}
 

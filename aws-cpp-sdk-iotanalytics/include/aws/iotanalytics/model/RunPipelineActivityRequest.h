@@ -36,54 +36,54 @@ namespace Model
 
     /**
      * <p>The pipeline activity that is run. This must not be a channel activity or a
-     * datastore activity because these activities are used in a pipeline only to load
+     * data store activity because these activities are used in a pipeline only to load
      * the original message and to store the (possibly) transformed message. If a
-     * lambda activity is specified, only short-running Lambda functions (those with a
+     * Lambda activity is specified, only short-running Lambda functions (those with a
      * timeout of less than 30 seconds or less) can be used.</p>
      */
     inline const PipelineActivity& GetPipelineActivity() const{ return m_pipelineActivity; }
 
     /**
      * <p>The pipeline activity that is run. This must not be a channel activity or a
-     * datastore activity because these activities are used in a pipeline only to load
+     * data store activity because these activities are used in a pipeline only to load
      * the original message and to store the (possibly) transformed message. If a
-     * lambda activity is specified, only short-running Lambda functions (those with a
+     * Lambda activity is specified, only short-running Lambda functions (those with a
      * timeout of less than 30 seconds or less) can be used.</p>
      */
     inline bool PipelineActivityHasBeenSet() const { return m_pipelineActivityHasBeenSet; }
 
     /**
      * <p>The pipeline activity that is run. This must not be a channel activity or a
-     * datastore activity because these activities are used in a pipeline only to load
+     * data store activity because these activities are used in a pipeline only to load
      * the original message and to store the (possibly) transformed message. If a
-     * lambda activity is specified, only short-running Lambda functions (those with a
+     * Lambda activity is specified, only short-running Lambda functions (those with a
      * timeout of less than 30 seconds or less) can be used.</p>
      */
     inline void SetPipelineActivity(const PipelineActivity& value) { m_pipelineActivityHasBeenSet = true; m_pipelineActivity = value; }
 
     /**
      * <p>The pipeline activity that is run. This must not be a channel activity or a
-     * datastore activity because these activities are used in a pipeline only to load
+     * data store activity because these activities are used in a pipeline only to load
      * the original message and to store the (possibly) transformed message. If a
-     * lambda activity is specified, only short-running Lambda functions (those with a
+     * Lambda activity is specified, only short-running Lambda functions (those with a
      * timeout of less than 30 seconds or less) can be used.</p>
      */
     inline void SetPipelineActivity(PipelineActivity&& value) { m_pipelineActivityHasBeenSet = true; m_pipelineActivity = std::move(value); }
 
     /**
      * <p>The pipeline activity that is run. This must not be a channel activity or a
-     * datastore activity because these activities are used in a pipeline only to load
+     * data store activity because these activities are used in a pipeline only to load
      * the original message and to store the (possibly) transformed message. If a
-     * lambda activity is specified, only short-running Lambda functions (those with a
+     * Lambda activity is specified, only short-running Lambda functions (those with a
      * timeout of less than 30 seconds or less) can be used.</p>
      */
     inline RunPipelineActivityRequest& WithPipelineActivity(const PipelineActivity& value) { SetPipelineActivity(value); return *this;}
 
     /**
      * <p>The pipeline activity that is run. This must not be a channel activity or a
-     * datastore activity because these activities are used in a pipeline only to load
+     * data store activity because these activities are used in a pipeline only to load
      * the original message and to store the (possibly) transformed message. If a
-     * lambda activity is specified, only short-running Lambda functions (those with a
+     * Lambda activity is specified, only short-running Lambda functions (those with a
      * timeout of less than 30 seconds or less) can be used.</p>
      */
     inline RunPipelineActivityRequest& WithPipelineActivity(PipelineActivity&& value) { SetPipelineActivity(std::move(value)); return *this;}

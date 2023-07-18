@@ -35,91 +35,99 @@ namespace Model
 
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline ListMemberAccountsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline ListMemberAccountsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Use this parameter when paginating results. Set the value of this parameter
-     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
-     * the action fill nextToken in the request with the value of nextToken from the
-     * previous response to continue listing data. </p>
+     * <p>(Discontinued) Use this parameter when paginating results. Set the value of
+     * this parameter to null on your first call to the <code>ListMemberAccounts</code>
+     * action. Subsequent calls to the action fill <code>nextToken</code> in the
+     * request with the value of <code>nextToken</code> from the previous response to
+     * continue listing data.</p>
      */
     inline ListMemberAccountsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>Use this parameter to indicate the maximum number of items that you want in
-     * the response. The default value is 250. </p>
+     * <p>(Discontinued) Use this parameter to indicate the maximum number of items
+     * that you want in the response. The default value is 250.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Use this parameter to indicate the maximum number of items that you want in
-     * the response. The default value is 250. </p>
+     * <p>(Discontinued) Use this parameter to indicate the maximum number of items
+     * that you want in the response. The default value is 250.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Use this parameter to indicate the maximum number of items that you want in
-     * the response. The default value is 250. </p>
+     * <p>(Discontinued) Use this parameter to indicate the maximum number of items
+     * that you want in the response. The default value is 250.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Use this parameter to indicate the maximum number of items that you want in
-     * the response. The default value is 250. </p>
+     * <p>(Discontinued) Use this parameter to indicate the maximum number of items
+     * that you want in the response. The default value is 250.</p>
      */
     inline ListMemberAccountsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

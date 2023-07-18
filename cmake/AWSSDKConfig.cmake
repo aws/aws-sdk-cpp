@@ -24,7 +24,6 @@ if(AWSSDK_FOUND)
     return()
 endif()
 
-include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
@@ -40,6 +39,19 @@ endif()
 if (NOT AWSSDK_INSTALL_INCLUDEDIR)
     set(AWSSDK_INSTALL_INCLUDEDIR "include")
 endif()
+
+if (DEFINED CMAKE_PREFIX_PATH)
+    file(TO_CMAKE_PATH "${CMAKE_PREFIX_PATH}" CMAKE_PREFIX_PATH)
+endif()
+
+if (DEFINED CMAKE_INSTALL_PREFIX)
+    file(TO_CMAKE_PATH "${CMAKE_INSTALL_PREFIX}" CMAKE_INSTALL_PREFIX)
+endif()
+
+set(AWS_MODULE_DIR "/${AWSSDK_INSTALL_LIBDIR}/cmake")
+string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
+string(REPLACE ";" "${AWS_MODULE_DIR};" SYSTEM_MODULE_PATH "${CMAKE_SYSTEM_PREFIX_PATH}${AWS_MODULE_DIR}")
+list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH} ${SYSTEM_MODULE_PATH})
 
 # On Windows, dlls are treated as runtime target and installed in bindir
 if (WIN32 AND AWSSDK_INSTALL_AS_SHARED_LIBS)
@@ -116,11 +128,13 @@ endif()
 get_filename_component(TEMP_PATH "${AWSSDK_CORE_LIB_FILE}" PATH)
 get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
 
-while (NOT TEMP_NAME STREQUAL ${LIB_SEARCH_PREFIX})
-    set(TEMP_PLATFORM_PREFIX "${TEMP_NAME}/${TEMP_PLATFORM_PREFIX}")
-    get_filename_component(TEMP_PATH "${TEMP_PATH}" PATH)
-    get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
-endwhile()
+if (LIB_SEARCH_PREFIX)
+    while (NOT TEMP_NAME STREQUAL "${LIB_SEARCH_PREFIX}")
+        set(TEMP_PLATFORM_PREFIX "${TEMP_NAME}/${TEMP_PLATFORM_PREFIX}")
+        get_filename_component(TEMP_PATH "${TEMP_PATH}" PATH)
+        get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
+    endwhile()
+endif()
 
 set(AWSSDK_PLATFORM_PREFIX "${TEMP_PLATFORM_PREFIX}")
 
@@ -147,13 +161,13 @@ if (AWSSDK_ADDITIONAL_LIBS)
     set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_ADDITIONAL_LIBS}")
 endif()
 
-message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
+message(STATUS "Found AWS SDK for C++, Version: ${AWSSDK_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
 
 
 # copy libs of services in SERVICE_LIST and all there dependent libs to DEST_DIR
 # CONFIG denote copy release or debug version
 macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
-    set(ALL_SERVICES "core" ${AWSSDK_THIRD_PARTY_LIBS})
+    set(ALL_SERVICES "core" ${AWSSDK_COMMON_RUNTIME_LIBS})
 
     foreach(SVC IN LISTS ${SERVICE_LIST})
         list(APPEND ALL_SERVICES ${SVC})
@@ -251,7 +265,7 @@ macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
         list(APPEND ${OUTPUT_VAR} "aws-cpp-sdk-${DEP}")
     endforeach()
     if (NOT AWSSDK_INSTALL_AS_SHARED_LIBS)
-        list(APPEND ${OUTPUT_VAR} ${AWSSDK_THIRD_PARTY_LIBS} ${AWSSDK_PLATFORM_DEPS})
+        list(APPEND ${OUTPUT_VAR} ${AWSSDK_COMMON_RUNTIME_LIBS} ${AWSSDK_PLATFORM_DEPS})
     endif()
 endmacro(AWSSDK_DETERMINE_LIBS_TO_LINK)
 
@@ -282,8 +296,8 @@ if (AWSSDK_FIND_COMPONENTS)
 
     # platform dependencies will be resolved automatically when doing find_package(aws-cpp-sdk-core).
     list(REMOVE_ITEM AWSSDK_LINK_LIBRARIES ${AWSSDK_PLATFORM_DEPS})
-    # third_party dependencies will be resolved automatically when doing find_package(aws-cpp-sdk-core) as well.
-    list(REMOVE_ITEM AWSSDK_LINK_LIBRARIES ${AWSSDK_THIRD_PARTY_LIBS})
+    # AWS common runtime dependencies will be resolved automatically when doing find_package(aws-cpp-sdk-core) as well.
+    list(REMOVE_ITEM AWSSDK_LINK_LIBRARIES ${AWSSDK_COMMON_RUNTIME_LIBS})
 
     set(AWSSDK_TARGETS ${AWSSDK_LINK_LIBRARIES})
     list(REVERSE AWSSDK_TARGETS)

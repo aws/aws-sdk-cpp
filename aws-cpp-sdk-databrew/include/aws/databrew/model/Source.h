@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     S3,
-    DATA_CATALOG
+    DATA_CATALOG,
+    DATABASE
   };
 
 namespace SourceMapper

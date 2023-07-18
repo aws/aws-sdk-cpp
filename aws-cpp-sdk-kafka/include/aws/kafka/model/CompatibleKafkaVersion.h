@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * 
-            <p>Contains source Kafka versions and compatible target Kafka
-   * versions.</p>
+            <p>Contains source Apache Kafka versions and compatible target
+   * Apache Kafka versions.</p>
         <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CompatibleKafkaVersion">AWS
    * API Reference</a></p>
@@ -43,56 +43,56 @@ namespace Model
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline CompatibleKafkaVersion& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline CompatibleKafkaVersion& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
      * 
-            <p>A Kafka version.</p>
+            <p>An Apache Kafka version.</p>
             
      */
     inline CompatibleKafkaVersion& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
@@ -100,63 +100,63 @@ namespace Model
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline const Aws::Vector<Aws::String>& GetTargetVersions() const{ return m_targetVersions; }
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline bool TargetVersionsHasBeenSet() const { return m_targetVersionsHasBeenSet; }
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline void SetTargetVersions(const Aws::Vector<Aws::String>& value) { m_targetVersionsHasBeenSet = true; m_targetVersions = value; }
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline void SetTargetVersions(Aws::Vector<Aws::String>&& value) { m_targetVersionsHasBeenSet = true; m_targetVersions = std::move(value); }
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline CompatibleKafkaVersion& WithTargetVersions(const Aws::Vector<Aws::String>& value) { SetTargetVersions(value); return *this;}
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline CompatibleKafkaVersion& WithTargetVersions(Aws::Vector<Aws::String>&& value) { SetTargetVersions(std::move(value)); return *this;}
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline CompatibleKafkaVersion& AddTargetVersions(const Aws::String& value) { m_targetVersionsHasBeenSet = true; m_targetVersions.push_back(value); return *this; }
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline CompatibleKafkaVersion& AddTargetVersions(Aws::String&& value) { m_targetVersionsHasBeenSet = true; m_targetVersions.push_back(std::move(value)); return *this; }
 
     /**
      * 
-            <p>A list of Kafka versions.</p>
+            <p>A list of Apache Kafka versions.</p>
             
      */
     inline CompatibleKafkaVersion& AddTargetVersions(const char* value) { m_targetVersionsHasBeenSet = true; m_targetVersions.push_back(value); return *this; }

@@ -18,40 +18,24 @@ namespace RoboMaker
 namespace Model
 {
 
-LoggingConfig::LoggingConfig() : 
-    m_recordAllRosTopics(false),
-    m_recordAllRosTopicsHasBeenSet(false)
+LoggingConfig::LoggingConfig()
 {
 }
 
-LoggingConfig::LoggingConfig(JsonView jsonValue) : 
-    m_recordAllRosTopics(false),
-    m_recordAllRosTopicsHasBeenSet(false)
+LoggingConfig::LoggingConfig(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
 LoggingConfig& LoggingConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("recordAllRosTopics"))
-  {
-    m_recordAllRosTopics = jsonValue.GetBool("recordAllRosTopics");
-
-    m_recordAllRosTopicsHasBeenSet = true;
-  }
-
+  AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
 JsonValue LoggingConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_recordAllRosTopicsHasBeenSet)
-  {
-   payload.WithBool("recordAllRosTopics", m_recordAllRosTopics);
-
-  }
 
   return payload;
 }

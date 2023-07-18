@@ -672,22 +672,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon
+     * DocumentDB does not perform minor version upgrades regardless of the value
+     * set.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon
+     * DocumentDB does not perform minor version upgrades regardless of the value
+     * set.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon
+     * DocumentDB does not perform minor version upgrades regardless of the value
+     * set.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon
+     * DocumentDB does not perform minor version upgrades regardless of the value
+     * set.</p>
      */
     inline DBInstance& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -837,107 +845,107 @@ namespace Model
 
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline DBInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline DBInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key
      * identifier for the encrypted instance. </p>
      */
     inline DBInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the instance. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the instance
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the instance.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
@@ -1054,56 +1062,56 @@ namespace Model
 
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline bool EnabledCloudwatchLogsExportsHasBeenSet() const { return m_enabledCloudwatchLogsExportsHasBeenSet; }
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of log types that this instance is configured to export to Amazon
-     * CloudWatch Logs.</p>
+     * <p>A list of log types that this instance is configured to export to CloudWatch
+     * Logs.</p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 

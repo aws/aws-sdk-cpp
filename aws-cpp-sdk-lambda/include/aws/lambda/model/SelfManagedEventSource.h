@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The Self-Managed Apache Kafka cluster for your event source.</p><p><h3>See
+   * <p>The self-managed Apache Kafka cluster for your event source.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SelfManagedEventSource">AWS
    * API Reference</a></p>

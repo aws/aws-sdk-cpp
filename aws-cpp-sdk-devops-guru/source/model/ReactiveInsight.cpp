@@ -27,7 +27,8 @@ ReactiveInsight::ReactiveInsight() :
     m_statusHasBeenSet(false),
     m_insightTimeRangeHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false),
-    m_ssmOpsItemIdHasBeenSet(false)
+    m_ssmOpsItemIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ ReactiveInsight::ReactiveInsight(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_insightTimeRangeHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false),
-    m_ssmOpsItemIdHasBeenSet(false)
+    m_ssmOpsItemIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,13 @@ ReactiveInsight& ReactiveInsight::operator =(JsonView jsonValue)
     m_ssmOpsItemIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +149,12 @@ JsonValue ReactiveInsight::Jsonize() const
   if(m_ssmOpsItemIdHasBeenSet)
   {
    payload.WithString("SsmOpsItemId", m_ssmOpsItemId);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

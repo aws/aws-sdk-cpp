@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int FLINK_DASHBOARD_URL_HASH = HashingUtils::HashString("FLINK_DASHBOARD_URL");
+        static const int ZEPPELIN_UI_URL_HASH = HashingUtils::HashString("ZEPPELIN_UI_URL");
 
 
         UrlType GetUrlTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == FLINK_DASHBOARD_URL_HASH)
           {
             return UrlType::FLINK_DASHBOARD_URL;
+          }
+          else if (hashCode == ZEPPELIN_UI_URL_HASH)
+          {
+            return UrlType::ZEPPELIN_UI_URL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case UrlType::FLINK_DASHBOARD_URL:
             return "FLINK_DASHBOARD_URL";
+          case UrlType::ZEPPELIN_UI_URL:
+            return "ZEPPELIN_UI_URL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

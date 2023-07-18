@@ -80,64 +80,64 @@ namespace Model
 
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline CancelCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline CancelCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline CancelCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline CancelCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
-     * not provided, the command is canceled on every instance on which it was
+     * <p>(Optional) A list of managed node IDs on which you want to cancel the
+     * command. If not provided, the command is canceled on every node on which it was
      * requested.</p>
      */
     inline CancelCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }

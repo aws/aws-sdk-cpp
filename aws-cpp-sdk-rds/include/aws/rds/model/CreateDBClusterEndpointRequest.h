@@ -137,49 +137,49 @@ namespace Model
 
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline CreateDBClusterEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline CreateDBClusterEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>,
      * <code>ANY</code>.</p>
      */
     inline CreateDBClusterEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
@@ -243,63 +243,63 @@ namespace Model
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludedMembers() const{ return m_excludedMembers; }
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline bool ExcludedMembersHasBeenSet() const { return m_excludedMembersHasBeenSet; }
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline void SetExcludedMembers(const Aws::Vector<Aws::String>& value) { m_excludedMembersHasBeenSet = true; m_excludedMembers = value; }
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline void SetExcludedMembers(Aws::Vector<Aws::String>&& value) { m_excludedMembersHasBeenSet = true; m_excludedMembers = std::move(value); }
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline CreateDBClusterEndpointRequest& WithExcludedMembers(const Aws::Vector<Aws::String>& value) { SetExcludedMembers(value); return *this;}
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline CreateDBClusterEndpointRequest& WithExcludedMembers(Aws::Vector<Aws::String>&& value) { SetExcludedMembers(std::move(value)); return *this;}
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline CreateDBClusterEndpointRequest& AddExcludedMembers(const Aws::String& value) { m_excludedMembersHasBeenSet = true; m_excludedMembers.push_back(value); return *this; }
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline CreateDBClusterEndpointRequest& AddExcludedMembers(Aws::String&& value) { m_excludedMembersHasBeenSet = true; m_excludedMembers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of DB instance identifiers that aren't part of the custom endpoint
      * group. All other eligible instances are reachable through the custom endpoint.
-     * Only relevant if the list of static members is empty.</p>
+     * This parameter is relevant only if the list of static members is empty.</p>
      */
     inline CreateDBClusterEndpointRequest& AddExcludedMembers(const char* value) { m_excludedMembersHasBeenSet = true; m_excludedMembers.push_back(value); return *this; }
 

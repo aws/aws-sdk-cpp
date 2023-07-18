@@ -19,6 +19,7 @@ namespace Model
 {
 
 AssessmentFrameworkMetadata::AssessmentFrameworkMetadata() : 
+    m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_type(FrameworkType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -36,6 +37,7 @@ AssessmentFrameworkMetadata::AssessmentFrameworkMetadata() :
 }
 
 AssessmentFrameworkMetadata::AssessmentFrameworkMetadata(JsonView jsonValue) : 
+    m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_type(FrameworkType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -55,6 +57,13 @@ AssessmentFrameworkMetadata::AssessmentFrameworkMetadata(JsonView jsonValue) :
 
 AssessmentFrameworkMetadata& AssessmentFrameworkMetadata::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -131,6 +140,12 @@ AssessmentFrameworkMetadata& AssessmentFrameworkMetadata::operator =(JsonView js
 JsonValue AssessmentFrameworkMetadata::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
 
   if(m_idHasBeenSet)
   {

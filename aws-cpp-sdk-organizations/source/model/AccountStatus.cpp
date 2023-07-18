@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static const int PENDING_CLOSURE_HASH = HashingUtils::HashString("PENDING_CLOSURE");
 
 
         AccountStatus GetAccountStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SUSPENDED_HASH)
           {
             return AccountStatus::SUSPENDED;
+          }
+          else if (hashCode == PENDING_CLOSURE_HASH)
+          {
+            return AccountStatus::PENDING_CLOSURE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ACTIVE";
           case AccountStatus::SUSPENDED:
             return "SUSPENDED";
+          case AccountStatus::PENDING_CLOSURE:
+            return "PENDING_CLOSURE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

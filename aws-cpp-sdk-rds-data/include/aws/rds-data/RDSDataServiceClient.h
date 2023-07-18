@@ -88,11 +88,7 @@ namespace Model
    * these statements, you work with the Data Service API.</p> <p>For more
    * information about the Data Service API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-   * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
-   * Guide</i>.</p>  <p>If you have questions or comments related to the Data
-   * API, send email to <a
-   * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.</p>
-   * </p>
+   * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
    */
   class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -135,32 +131,12 @@ namespace Model
         virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
-         * update and insert operations for multiple records using a DML statement with
-         * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p>  <p>If
-         * a call isn't part of a transaction because it doesn't include the
-         * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
-         * update and insert operations for multiple records using a DML statement with
-         * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p>  <p>If
-         * a call isn't part of a transaction because it doesn't include the
-         * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -181,38 +157,12 @@ namespace Model
         virtual Model::BeginTransactionOutcome BeginTransaction(const Model::BeginTransactionRequest& request) const;
 
         /**
-         * <p>Starts a SQL transaction.</p> <pre><code> &lt;important&gt; &lt;p&gt;A
-         * transaction can run for a maximum of 24 hours. A transaction is terminated and
-         * rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times
-         * out if no calls use its transaction ID in three minutes. If a transaction times
-         * out before it's committed, it's rolled back automatically.&lt;/p&gt;
-         * &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We
-         * recommend that you run each DDL statement in a separate
-         * &lt;code&gt;ExecuteStatement&lt;/code&gt; call with
-         * &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt;
-         * &lt;/important&gt; </code></pre><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BeginTransaction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BeginTransactionOutcomeCallable BeginTransactionCallable(const Model::BeginTransactionRequest& request) const;
 
         /**
-         * <p>Starts a SQL transaction.</p> <pre><code> &lt;important&gt; &lt;p&gt;A
-         * transaction can run for a maximum of 24 hours. A transaction is terminated and
-         * rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times
-         * out if no calls use its transaction ID in three minutes. If a transaction times
-         * out before it's committed, it's rolled back automatically.&lt;/p&gt;
-         * &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We
-         * recommend that you run each DDL statement in a separate
-         * &lt;code&gt;ExecuteStatement&lt;/code&gt; call with
-         * &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt;
-         * &lt;/important&gt; </code></pre><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BeginTransaction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BeginTransactionAsync(const Model::BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -225,22 +175,12 @@ namespace Model
         virtual Model::CommitTransactionOutcome CommitTransaction(const Model::CommitTransactionRequest& request) const;
 
         /**
-         * <p>Ends a SQL transaction started with the <code>BeginTransaction</code>
-         * operation and commits the changes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CommitTransaction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CommitTransactionOutcomeCallable CommitTransactionCallable(const Model::CommitTransactionRequest& request) const;
 
         /**
-         * <p>Ends a SQL transaction started with the <code>BeginTransaction</code>
-         * operation and commits the changes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CommitTransaction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CommitTransactionAsync(const Model::CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -248,36 +188,20 @@ namespace Model
          * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         *  <p>The response size limit is 1 MB. If the call returns more than 1
-         * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
+         *  <p>If the binary response data from the database is more than 1 MB,
+         * the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
          */
         virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
-         * part of a transaction because it doesn't include the <code>transactionID</code>
-         * parameter, changes that result from the call are committed automatically.</p>
-         *  <p>The response size limit is 1 MB. If the call returns more than 1
-         * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
-         * part of a transaction because it doesn't include the <code>transactionID</code>
-         * parameter, changes that result from the call are committed automatically.</p>
-         *  <p>The response size limit is 1 MB. If the call returns more than 1
-         * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExecuteStatementAsync(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -290,22 +214,12 @@ namespace Model
         virtual Model::RollbackTransactionOutcome RollbackTransaction(const Model::RollbackTransactionRequest& request) const;
 
         /**
-         * <p>Performs a rollback of a transaction. Rolling back a transaction cancels its
-         * changes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RollbackTransaction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RollbackTransactionOutcomeCallable RollbackTransactionCallable(const Model::RollbackTransactionRequest& request) const;
 
         /**
-         * <p>Performs a rollback of a transaction. Rolling back a transaction cancels its
-         * changes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RollbackTransaction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RollbackTransactionAsync(const Model::RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

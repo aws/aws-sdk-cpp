@@ -19,7 +19,8 @@ GetEC2RecommendationProjectedMetricsRequest::GetEC2RecommendationProjectedMetric
     m_period(0),
     m_periodHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_recommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String GetEC2RecommendationProjectedMetricsRequest::SerializePayload() cons
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_recommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

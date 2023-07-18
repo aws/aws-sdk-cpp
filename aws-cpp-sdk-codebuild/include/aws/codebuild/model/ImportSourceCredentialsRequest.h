@@ -168,42 +168,42 @@ namespace Model
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
      * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the AWS CodeBuild console. </p>
+     * must be created using the CodeBuild console. </p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
      * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the AWS CodeBuild console. </p>
+     * must be created using the CodeBuild console. </p>
      */
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
      * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the AWS CodeBuild console. </p>
+     * must be created using the CodeBuild console. </p>
      */
     inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
      * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the AWS CodeBuild console. </p>
+     * must be created using the CodeBuild console. </p>
      */
     inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
      * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the AWS CodeBuild console. </p>
+     * must be created using the CodeBuild console. </p>
      */
     inline ImportSourceCredentialsRequest& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
      * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the AWS CodeBuild console. </p>
+     * must be created using the CodeBuild console. </p>
      */
     inline ImportSourceCredentialsRequest& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
 

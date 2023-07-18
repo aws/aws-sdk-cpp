@@ -76,51 +76,58 @@ namespace Model
 
 
     /**
-     * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
-     * to retrieve the next page of results.</p> <p>If a response does not contain a
-     * marker, then there are no more results to be retrieved.</p>
+     * <p>An opaque string that can be used as part of a subsequent
+     * <code>DescribeTapes</code> call to retrieve the next page of results.</p> <p>If
+     * a response does not contain a marker, then there are no more results to be
+     * retrieved.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
-     * to retrieve the next page of results.</p> <p>If a response does not contain a
-     * marker, then there are no more results to be retrieved.</p>
+     * <p>An opaque string that can be used as part of a subsequent
+     * <code>DescribeTapes</code> call to retrieve the next page of results.</p> <p>If
+     * a response does not contain a marker, then there are no more results to be
+     * retrieved.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
-     * to retrieve the next page of results.</p> <p>If a response does not contain a
-     * marker, then there are no more results to be retrieved.</p>
+     * <p>An opaque string that can be used as part of a subsequent
+     * <code>DescribeTapes</code> call to retrieve the next page of results.</p> <p>If
+     * a response does not contain a marker, then there are no more results to be
+     * retrieved.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
-     * to retrieve the next page of results.</p> <p>If a response does not contain a
-     * marker, then there are no more results to be retrieved.</p>
+     * <p>An opaque string that can be used as part of a subsequent
+     * <code>DescribeTapes</code> call to retrieve the next page of results.</p> <p>If
+     * a response does not contain a marker, then there are no more results to be
+     * retrieved.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
-     * to retrieve the next page of results.</p> <p>If a response does not contain a
-     * marker, then there are no more results to be retrieved.</p>
+     * <p>An opaque string that can be used as part of a subsequent
+     * <code>DescribeTapes</code> call to retrieve the next page of results.</p> <p>If
+     * a response does not contain a marker, then there are no more results to be
+     * retrieved.</p>
      */
     inline DescribeTapesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
-     * to retrieve the next page of results.</p> <p>If a response does not contain a
-     * marker, then there are no more results to be retrieved.</p>
+     * <p>An opaque string that can be used as part of a subsequent
+     * <code>DescribeTapes</code> call to retrieve the next page of results.</p> <p>If
+     * a response does not contain a marker, then there are no more results to be
+     * retrieved.</p>
      */
     inline DescribeTapesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
-     * to retrieve the next page of results.</p> <p>If a response does not contain a
-     * marker, then there are no more results to be retrieved.</p>
+     * <p>An opaque string that can be used as part of a subsequent
+     * <code>DescribeTapes</code> call to retrieve the next page of results.</p> <p>If
+     * a response does not contain a marker, then there are no more results to be
+     * retrieved.</p>
      */
     inline DescribeTapesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/LogsConfigStatusType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codebuild/model/BucketOwnerAccess.h>
 #include <utility>
 
 namespace Aws
@@ -185,6 +186,25 @@ namespace Model
      */
     inline S3LogsConfig& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
 
+
+    
+    inline const BucketOwnerAccess& GetBucketOwnerAccess() const{ return m_bucketOwnerAccess; }
+
+    
+    inline bool BucketOwnerAccessHasBeenSet() const { return m_bucketOwnerAccessHasBeenSet; }
+
+    
+    inline void SetBucketOwnerAccess(const BucketOwnerAccess& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = value; }
+
+    
+    inline void SetBucketOwnerAccess(BucketOwnerAccess&& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = std::move(value); }
+
+    
+    inline S3LogsConfig& WithBucketOwnerAccess(const BucketOwnerAccess& value) { SetBucketOwnerAccess(value); return *this;}
+
+    
+    inline S3LogsConfig& WithBucketOwnerAccess(BucketOwnerAccess&& value) { SetBucketOwnerAccess(std::move(value)); return *this;}
+
   private:
 
     LogsConfigStatusType m_status;
@@ -195,6 +215,9 @@ namespace Model
 
     bool m_encryptionDisabled;
     bool m_encryptionDisabledHasBeenSet;
+
+    BucketOwnerAccess m_bucketOwnerAccess;
+    bool m_bucketOwnerAccessHasBeenSet;
   };
 
 } // namespace Model

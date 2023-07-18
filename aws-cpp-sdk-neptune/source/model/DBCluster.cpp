@@ -62,9 +62,14 @@ DBCluster::DBCluster() :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_crossAccountClone(false),
+    m_crossAccountCloneHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false)
 {
 }
 
@@ -110,9 +115,14 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_crossAccountClone(false),
+    m_crossAccountCloneHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -369,6 +379,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_clusterCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
+    XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
+    if(!copyTagsToSnapshotNode.IsNull())
+    {
+      m_copyTagsToSnapshot = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyTagsToSnapshotNode.GetText()).c_str()).c_str());
+      m_copyTagsToSnapshotHasBeenSet = true;
+    }
     XmlNode enabledCloudwatchLogsExportsNode = resultNode.FirstChild("EnabledCloudwatchLogsExports");
     if(!enabledCloudwatchLogsExportsNode.IsNull())
     {
@@ -386,6 +402,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionProtectionNode.GetText()).c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
+    }
+    XmlNode crossAccountCloneNode = resultNode.FirstChild("CrossAccountClone");
+    if(!crossAccountCloneNode.IsNull())
+    {
+      m_crossAccountClone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(crossAccountCloneNode.GetText()).c_str()).c_str());
+      m_crossAccountCloneHasBeenSet = true;
+    }
+    XmlNode automaticRestartTimeNode = resultNode.FirstChild("AutomaticRestartTime");
+    if(!automaticRestartTimeNode.IsNull())
+    {
+      m_automaticRestartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticRestartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_automaticRestartTimeHasBeenSet = true;
     }
   }
 
@@ -601,6 +629,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
+
   if(m_enabledCloudwatchLogsExportsHasBeenSet)
   {
       unsigned enabledCloudwatchLogsExportsIdx = 1;
@@ -613,6 +646,16 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_crossAccountCloneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CrossAccountClone=" << std::boolalpha << m_crossAccountClone << "&";
+  }
+
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -791,6 +834,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   {
       oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
   if(m_enabledCloudwatchLogsExportsHasBeenSet)
   {
       unsigned enabledCloudwatchLogsExportsIdx = 1;
@@ -802,6 +849,14 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+  if(m_crossAccountCloneHasBeenSet)
+  {
+      oStream << location << ".CrossAccountClone=" << std::boolalpha << m_crossAccountClone << "&";
+  }
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

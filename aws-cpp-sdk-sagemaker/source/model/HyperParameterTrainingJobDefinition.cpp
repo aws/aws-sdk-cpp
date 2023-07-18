@@ -36,7 +36,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false)
+    m_checkpointConfigHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false)
+    m_checkpointConfigHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -176,6 +178,13 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_checkpointConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
+
+    m_retryStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -280,6 +289,12 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_checkpointConfigHasBeenSet)
   {
    payload.WithObject("CheckpointConfig", m_checkpointConfig.Jsonize());
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 

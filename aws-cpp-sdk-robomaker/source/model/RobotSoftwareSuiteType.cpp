@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ROS_HASH = HashingUtils::HashString("ROS");
         static const int ROS2_HASH = HashingUtils::HashString("ROS2");
+        static const int General_HASH = HashingUtils::HashString("General");
 
 
         RobotSoftwareSuiteType GetRobotSoftwareSuiteTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ROS2_HASH)
           {
             return RobotSoftwareSuiteType::ROS2;
+          }
+          else if (hashCode == General_HASH)
+          {
+            return RobotSoftwareSuiteType::General;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ROS";
           case RobotSoftwareSuiteType::ROS2:
             return "ROS2";
+          case RobotSoftwareSuiteType::General:
+            return "General";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

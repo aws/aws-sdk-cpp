@@ -27,7 +27,15 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_forceNewDeployment(false),
     m_forceNewDeploymentHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
+    m_enableECSManagedTags(false),
+    m_enableECSManagedTagsHasBeenSet(false),
+    m_loadBalancersHasBeenSet(false),
+    m_propagateTags(PropagateTags::NOT_SET),
+    m_propagateTagsHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false)
 {
 }
 
@@ -119,6 +127,45 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_healthCheckGracePeriodSecondsHasBeenSet)
   {
    payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+
+  }
+
+  if(m_enableECSManagedTagsHasBeenSet)
+  {
+   payload.WithBool("enableECSManagedTags", m_enableECSManagedTags);
+
+  }
+
+  if(m_loadBalancersHasBeenSet)
+  {
+   Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
+   for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
+   {
+     loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
+   }
+   payload.WithArray("loadBalancers", std::move(loadBalancersJsonList));
+
+  }
+
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  }
+
+  if(m_serviceRegistriesHasBeenSet)
+  {
+   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+   {
+     serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
+   }
+   payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
 
   }
 

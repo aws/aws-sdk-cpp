@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Network Firewall stateful rule group, used in a
+   * <p>Network Firewall stateful rule group, used in a
    * <a>NetworkFirewallPolicyDescription</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/StatefulRuleGroup">AWS
    * API Reference</a></p>

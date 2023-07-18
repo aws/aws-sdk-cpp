@@ -17,6 +17,7 @@ CreateDocumentRequest::CreateDocumentRequest() :
     m_requiresHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_documentType(DocumentType::NOT_SET),
     m_documentTypeHasBeenSet(false),
@@ -62,6 +63,12 @@ Aws::String CreateDocumentRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 

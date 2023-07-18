@@ -14,6 +14,7 @@
 #include <aws/eventbridge/model/SqsParameters.h>
 #include <aws/eventbridge/model/HttpParameters.h>
 #include <aws/eventbridge/model/RedshiftDataParameters.h>
+#include <aws/eventbridge/model/SageMakerPipelineParameters.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
 #include <aws/eventbridge/model/RetryPolicy.h>
 #include <utility>
@@ -35,15 +36,16 @@ namespace Model
 
   /**
    * <p>Targets are the resources to be invoked when a rule is triggered. For a
-   * complete list of services and resources that can be set as a target, see
-   * <a>PutTargets</a>.</p> <p>If you are setting the event bus of another account as
-   * the target, and that account granted permission to your account through an
-   * organization instead of directly by the account ID, then you must specify a
-   * <code>RoleArn</code> with proper permissions in the <code>Target</code>
-   * structure. For more information, see <a
+   * complete list of services and resources that can be set as a target, see <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.</p>
+   * <p>If you are setting the event bus of another account as the target, and that
+   * account granted permission to your account through an organization instead of
+   * directly by the account ID, then you must specify a <code>RoleArn</code> with
+   * proper permissions in the <code>Target</code> structure. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
-   * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon
+   * EventBridge User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Target">AWS
    * API Reference</a></p>
    */
@@ -57,42 +59,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline Target& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline Target& WithId(const char* value) { SetId(value); return *this;}
 
@@ -504,50 +522,50 @@ namespace Model
 
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline const BatchParameters& GetBatchParameters() const{ return m_batchParameters; }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline bool BatchParametersHasBeenSet() const { return m_batchParametersHasBeenSet; }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(const BatchParameters& value) { m_batchParametersHasBeenSet = true; m_batchParameters = value; }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(BatchParameters&& value) { m_batchParametersHasBeenSet = true; m_batchParameters = std::move(value); }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(const BatchParameters& value) { SetBatchParameters(value); return *this;}
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(BatchParameters&& value) { SetBatchParameters(std::move(value)); return *this;}
 
@@ -597,100 +615,167 @@ namespace Model
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline const HttpParameters& GetHttpParameters() const{ return m_httpParameters; }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline bool HttpParametersHasBeenSet() const { return m_httpParametersHasBeenSet; }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline void SetHttpParameters(const HttpParameters& value) { m_httpParametersHasBeenSet = true; m_httpParameters = value; }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline void SetHttpParameters(HttpParameters&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::move(value); }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline Target& WithHttpParameters(const HttpParameters& value) { SetHttpParameters(value); return *this;}
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline Target& WithHttpParameters(HttpParameters&& value) { SetHttpParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline const RedshiftDataParameters& GetRedshiftDataParameters() const{ return m_redshiftDataParameters; }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline bool RedshiftDataParametersHasBeenSet() const { return m_redshiftDataParametersHasBeenSet; }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline void SetRedshiftDataParameters(const RedshiftDataParameters& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = value; }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline void SetRedshiftDataParameters(RedshiftDataParameters&& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = std::move(value); }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline Target& WithRedshiftDataParameters(const RedshiftDataParameters& value) { SetRedshiftDataParameters(value); return *this;}
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline Target& WithRedshiftDataParameters(RedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline const SageMakerPipelineParameters& GetSageMakerPipelineParameters() const{ return m_sageMakerPipelineParameters; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline bool SageMakerPipelineParametersHasBeenSet() const { return m_sageMakerPipelineParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline void SetSageMakerPipelineParameters(const SageMakerPipelineParameters& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = value; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline void SetSageMakerPipelineParameters(SageMakerPipelineParameters&& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = std::move(value); }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline Target& WithSageMakerPipelineParameters(const SageMakerPipelineParameters& value) { SetSageMakerPipelineParameters(value); return *this;}
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline Target& WithSageMakerPipelineParameters(SageMakerPipelineParameters&& value) { SetSageMakerPipelineParameters(std::move(value)); return *this;}
 
 
     /**
@@ -806,6 +891,9 @@ namespace Model
 
     RedshiftDataParameters m_redshiftDataParameters;
     bool m_redshiftDataParametersHasBeenSet;
+
+    SageMakerPipelineParameters m_sageMakerPipelineParameters;
+    bool m_sageMakerPipelineParametersHasBeenSet;
 
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;

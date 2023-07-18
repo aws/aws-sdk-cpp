@@ -24,6 +24,7 @@ ScheduledAction::ScheduledAction() :
     m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_timezoneHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_scalableDimension(ScalableDimension::NOT_SET),
     m_scalableDimensionHasBeenSet(false),
@@ -40,6 +41,7 @@ ScheduledAction::ScheduledAction(JsonView jsonValue) :
     m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_timezoneHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_scalableDimension(ScalableDimension::NOT_SET),
     m_scalableDimensionHasBeenSet(false),
@@ -79,6 +81,13 @@ ScheduledAction& ScheduledAction::operator =(JsonView jsonValue)
     m_schedule = jsonValue.GetString("Schedule");
 
     m_scheduleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Timezone"))
+  {
+    m_timezone = jsonValue.GetString("Timezone");
+
+    m_timezoneHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceId"))
@@ -150,6 +159,12 @@ JsonValue ScheduledAction::Jsonize() const
   if(m_scheduleHasBeenSet)
   {
    payload.WithString("Schedule", m_schedule);
+
+  }
+
+  if(m_timezoneHasBeenSet)
+  {
+   payload.WithString("Timezone", m_timezone);
 
   }
 

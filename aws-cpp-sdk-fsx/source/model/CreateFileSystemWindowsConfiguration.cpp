@@ -32,7 +32,8 @@ CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration() :
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
-    m_aliasesHasBeenSet(false)
+    m_aliasesHasBeenSet(false),
+    m_auditLogConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration(JsonV
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
-    m_aliasesHasBeenSet(false)
+    m_aliasesHasBeenSet(false),
+    m_auditLogConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +132,13 @@ CreateFileSystemWindowsConfiguration& CreateFileSystemWindowsConfiguration::oper
     m_aliasesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuditLogConfiguration"))
+  {
+    m_auditLogConfiguration = jsonValue.GetObject("AuditLogConfiguration");
+
+    m_auditLogConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,12 @@ JsonValue CreateFileSystemWindowsConfiguration::Jsonize() const
      aliasesJsonList[aliasesIndex].AsString(m_aliases[aliasesIndex]);
    }
    payload.WithArray("Aliases", std::move(aliasesJsonList));
+
+  }
+
+  if(m_auditLogConfigurationHasBeenSet)
+  {
+   payload.WithObject("AuditLogConfiguration", m_auditLogConfiguration.Jsonize());
 
   }
 

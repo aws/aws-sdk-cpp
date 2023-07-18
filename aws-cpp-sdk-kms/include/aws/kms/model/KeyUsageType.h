@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SIGN_VERIFY,
-    ENCRYPT_DECRYPT
+    ENCRYPT_DECRYPT,
+    GENERATE_VERIFY_MAC
   };
 
 namespace KeyUsageTypeMapper

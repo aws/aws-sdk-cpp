@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Request to delete an existing model in an existing <a>RestApi</a>
+   * <p>Request to delete an existing model in an existing RestApi
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModelRequest">AWS
    * API Reference</a></p>
@@ -37,83 +37,83 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteModelRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteModelRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline DeleteModelRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline DeleteModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the model to delete.</p>
+     * <p>The name of the model to delete.</p>
      */
     inline DeleteModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 

@@ -34,6 +34,7 @@ CreateFleetRequest::CreateFleetRequest() :
     m_fleetTypeHasBeenSet(false),
     m_instanceRoleArnHasBeenSet(false),
     m_certificateConfigurationHasBeenSet(false),
+    m_locationsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -159,6 +160,17 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_certificateConfigurationHasBeenSet)
   {
    payload.WithObject("CertificateConfiguration", m_certificateConfiguration.Jsonize());
+
+  }
+
+  if(m_locationsHasBeenSet)
+  {
+   Array<JsonValue> locationsJsonList(m_locations.size());
+   for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
+   {
+     locationsJsonList[locationsIndex].AsObject(m_locations[locationsIndex].Jsonize());
+   }
+   payload.WithArray("Locations", std::move(locationsJsonList));
 
   }
 

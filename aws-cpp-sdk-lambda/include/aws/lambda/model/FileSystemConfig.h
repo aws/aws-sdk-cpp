@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Details about the connection between a Lambda function and an Amazon EFS file
-   * system.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the connection between a Lambda function and an <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+   * EFS file system</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FileSystemConfig">AWS
    * API Reference</a></p>
    */

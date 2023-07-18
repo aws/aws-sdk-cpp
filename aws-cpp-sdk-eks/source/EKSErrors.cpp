@@ -8,10 +8,10 @@
 #include <aws/eks/EKSErrors.h>
 #include <aws/eks/model/ClientException.h>
 #include <aws/eks/model/ResourceNotFoundException.h>
+#include <aws/eks/model/ServerException.h>
 #include <aws/eks/model/InvalidParameterException.h>
 #include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/UnsupportedAvailabilityZoneException.h>
-#include <aws/eks/model/ServerException.h>
 #include <aws/eks/model/ResourceInUseException.h>
 #include <aws/eks/model/InvalidRequestException.h>
 
@@ -36,6 +36,12 @@ template<> AWS_EKS_API ResourceNotFoundException EKSError::GetModeledError()
   return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
+template<> AWS_EKS_API ServerException EKSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EKSErrors::SERVER);
+  return ServerException(this->GetJsonPayload().View());
+}
+
 template<> AWS_EKS_API InvalidParameterException EKSError::GetModeledError()
 {
   assert(this->GetErrorType() == EKSErrors::INVALID_PARAMETER);
@@ -52,12 +58,6 @@ template<> AWS_EKS_API UnsupportedAvailabilityZoneException EKSError::GetModeled
 {
   assert(this->GetErrorType() == EKSErrors::UNSUPPORTED_AVAILABILITY_ZONE);
   return UnsupportedAvailabilityZoneException(this->GetJsonPayload().View());
-}
-
-template<> AWS_EKS_API ServerException EKSError::GetModeledError()
-{
-  assert(this->GetErrorType() == EKSErrors::SERVER);
-  return ServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_EKS_API ResourceInUseException EKSError::GetModeledError()
@@ -81,6 +81,7 @@ static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParam
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
 static const int UNSUPPORTED_AVAILABILITY_ZONE_HASH = HashingUtils::HashString("UnsupportedAvailabilityZoneException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
+static const int RESOURCE_PROPAGATION_DELAY_HASH = HashingUtils::HashString("ResourcePropagationDelayException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
@@ -113,6 +114,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::SERVER), false);
+  }
+  else if (hashCode == RESOURCE_PROPAGATION_DELAY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_PROPAGATION_DELAY), false);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {

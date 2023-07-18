@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     EC2,
     Fargate,
-    Lambda
+    Lambda,
+    SageMaker
   };
 
 namespace SavingsPlanProductTypeMapper

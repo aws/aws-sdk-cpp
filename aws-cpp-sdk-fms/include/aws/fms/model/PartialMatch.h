@@ -40,49 +40,49 @@ namespace Model
 
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline const Aws::String& GetReference() const{ return m_reference; }
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline void SetReference(const Aws::String& value) { m_referenceHasBeenSet = true; m_reference = value; }
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline void SetReference(Aws::String&& value) { m_referenceHasBeenSet = true; m_reference = std::move(value); }
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline void SetReference(const char* value) { m_referenceHasBeenSet = true; m_reference.assign(value); }
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline PartialMatch& WithReference(const Aws::String& value) { SetReference(value); return *this;}
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline PartialMatch& WithReference(Aws::String&& value) { SetReference(std::move(value)); return *this;}
 
     /**
-     * <p>The reference rule from the master security group of the AWS Firewall Manager
+     * <p>The reference rule from the primary security group of the Firewall Manager
      * policy.</p>
      */
     inline PartialMatch& WithReference(const char* value) { SetReference(value); return *this;}

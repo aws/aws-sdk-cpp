@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>The Tag type enables you to specify a key-value pair that can be used to
-   * store information about an AWS CloudFormation stack.</p><p><h3>See Also:</h3>  
-   * <a
+   * store information about an CloudFormation stack.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">AWS
    * API Reference</a></p>
    */
@@ -43,57 +42,57 @@ namespace Model
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
-     * have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
+     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 

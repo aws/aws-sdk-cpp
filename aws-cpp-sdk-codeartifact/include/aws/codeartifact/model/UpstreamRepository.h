@@ -26,10 +26,10 @@ namespace Model
   /**
    * <p> Information about an upstream repository. A list of
    * <code>UpstreamRepository</code> objects is an input parameter to <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">
-   * <code>CreateRepository</code> </a> and <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">
-   * <code>UpdateRepository</code> </a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">CreateRepository</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">UpdateRepository</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpstreamRepository">AWS
    * API Reference</a></p>
    */

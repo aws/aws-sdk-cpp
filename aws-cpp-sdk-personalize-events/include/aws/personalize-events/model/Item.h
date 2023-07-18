@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>Represents item metadata added to an Items dataset using the
-   * <code>PutItems</code> API.</p><p><h3>See Also:</h3>   <a
+   * <code>PutItems</code> API. For more information see <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+   * Items Incrementally</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/Item">AWS
    * API Reference</a></p>
    */
@@ -81,73 +83,97 @@ namespace Model
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline const Aws::String& GetProperties() const{ return m_properties; }
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline void SetProperties(const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline void SetProperties(Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline void SetProperties(const char* value) { m_propertiesHasBeenSet = true; m_properties.assign(value); }
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline Item& WithProperties(const Aws::String& value) { SetProperties(value); return *this;}
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline Item& WithProperties(Aws::String&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
      * <p>A string map of item-specific metadata. Each element in the map consists of a
-     * key-value pair. For example, </p> <p> <code>{"numberOfRatings": "12"}</code>
-     * </p> <p>The keys use camel case names that match the fields in the Items schema.
-     * In the above example, the <code>numberOfRatings</code> would match the
-     * 'NUMBER_OF_RATINGS' field defined in the Items schema.</p>
+     * key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> <p>The
+     * keys use camel case names that match the fields in the schema for the Items
+     * dataset. In the previous example, the <code>numberOfRatings</code> matches the
+     * 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string
+     * data, to include multiple categories for a single item, separate each category
+     * with a pipe separator (<code>|</code>). For example,
+     * <code>\"Horror|Action\"</code>.</p>
      */
     inline Item& WithProperties(const char* value) { SetProperties(value); return *this;}
 

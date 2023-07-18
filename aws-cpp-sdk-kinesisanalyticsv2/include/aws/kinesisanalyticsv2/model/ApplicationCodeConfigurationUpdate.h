@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes code configuration updates to a Flink-based Kinesis Data Analytics
-   * application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes code configuration updates for an application. This is supported
+   * for a Flink-based Kinesis Data Analytics application or a SQL-based Kinesis Data
+   * Analytics application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationCodeConfigurationUpdate">AWS
    * API Reference</a></p>
    */

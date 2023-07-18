@@ -98,6 +98,15 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("severityLevels"))
+  {
+    Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
+    for(unsigned severityLevelsIndex = 0; severityLevelsIndex < severityLevelsJsonList.GetLength(); ++severityLevelsIndex)
+    {
+      m_severityLevels.push_back(severityLevelsJsonList[severityLevelsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

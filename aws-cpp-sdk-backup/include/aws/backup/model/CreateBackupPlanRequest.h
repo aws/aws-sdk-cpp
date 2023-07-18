@@ -167,7 +167,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
@@ -175,7 +176,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
@@ -183,7 +185,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
@@ -191,7 +194,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
@@ -199,7 +203,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
@@ -207,7 +212,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline CreateBackupPlanRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
@@ -215,7 +221,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline CreateBackupPlanRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
@@ -223,7 +230,8 @@ namespace Model
      * <p>Identifies the request and allows failed requests to be retried without the
      * risk of running the operation twice. If the request includes a
      * <code>CreatorRequestId</code> that matches an existing backup plan, that plan is
-     * returned. This parameter is optional.</p>
+     * returned. This parameter is optional.</p> <p>If used, this parameter must
+     * contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline CreateBackupPlanRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

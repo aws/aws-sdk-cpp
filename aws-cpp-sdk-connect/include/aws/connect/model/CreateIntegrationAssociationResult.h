@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the association.</p>
+     * <p>The identifier for the integration association.</p>
      */
     inline const Aws::String& GetIntegrationAssociationId() const{ return m_integrationAssociationId; }
 
     /**
-     * <p>The identifier for the association.</p>
+     * <p>The identifier for the integration association.</p>
      */
     inline void SetIntegrationAssociationId(const Aws::String& value) { m_integrationAssociationId = value; }
 
     /**
-     * <p>The identifier for the association.</p>
+     * <p>The identifier for the integration association.</p>
      */
     inline void SetIntegrationAssociationId(Aws::String&& value) { m_integrationAssociationId = std::move(value); }
 
     /**
-     * <p>The identifier for the association.</p>
+     * <p>The identifier for the integration association.</p>
      */
     inline void SetIntegrationAssociationId(const char* value) { m_integrationAssociationId.assign(value); }
 
     /**
-     * <p>The identifier for the association.</p>
+     * <p>The identifier for the integration association.</p>
      */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationId(const Aws::String& value) { SetIntegrationAssociationId(value); return *this;}
 
     /**
-     * <p>The identifier for the association.</p>
+     * <p>The identifier for the integration association.</p>
      */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationId(Aws::String&& value) { SetIntegrationAssociationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the association.</p>
+     * <p>The identifier for the integration association.</p>
      */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationId(const char* value) { SetIntegrationAssociationId(value); return *this;}
 

@@ -41,56 +41,72 @@ namespace Model
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline PiiOutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline PiiOutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
      * <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous
      * operations, you specify the Amazon S3 location where you want to write the
-     * output data. </p>
+     * output data. </p> <p> For a PII entity detection job, the output file is plain
+     * text, not a compressed archive. The output file name is the same as the input
+     * file, with <code>.out</code> appended at the end. </p>
      */
     inline PiiOutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 

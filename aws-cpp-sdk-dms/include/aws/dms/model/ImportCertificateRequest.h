@@ -144,32 +144,50 @@ namespace Model
 
 
     /**
-     * <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+     * <p>The location of an imported Oracle Wallet certificate for use with SSL.
+     * Provide the name of a <code>.sso</code> file using the <code>fileb://</code>
+     * prefix. You can't provide the certificate inline.</p> <p>Example:
+     * <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
      */
     inline const Aws::Utils::ByteBuffer& GetCertificateWallet() const{ return m_certificateWallet; }
 
     /**
-     * <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+     * <p>The location of an imported Oracle Wallet certificate for use with SSL.
+     * Provide the name of a <code>.sso</code> file using the <code>fileb://</code>
+     * prefix. You can't provide the certificate inline.</p> <p>Example:
+     * <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
      */
     inline bool CertificateWalletHasBeenSet() const { return m_certificateWalletHasBeenSet; }
 
     /**
-     * <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+     * <p>The location of an imported Oracle Wallet certificate for use with SSL.
+     * Provide the name of a <code>.sso</code> file using the <code>fileb://</code>
+     * prefix. You can't provide the certificate inline.</p> <p>Example:
+     * <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
      */
     inline void SetCertificateWallet(const Aws::Utils::ByteBuffer& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
 
     /**
-     * <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+     * <p>The location of an imported Oracle Wallet certificate for use with SSL.
+     * Provide the name of a <code>.sso</code> file using the <code>fileb://</code>
+     * prefix. You can't provide the certificate inline.</p> <p>Example:
+     * <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
      */
     inline void SetCertificateWallet(Aws::Utils::ByteBuffer&& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = std::move(value); }
 
     /**
-     * <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+     * <p>The location of an imported Oracle Wallet certificate for use with SSL.
+     * Provide the name of a <code>.sso</code> file using the <code>fileb://</code>
+     * prefix. You can't provide the certificate inline.</p> <p>Example:
+     * <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
      */
     inline ImportCertificateRequest& WithCertificateWallet(const Aws::Utils::ByteBuffer& value) { SetCertificateWallet(value); return *this;}
 
     /**
-     * <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+     * <p>The location of an imported Oracle Wallet certificate for use with SSL.
+     * Provide the name of a <code>.sso</code> file using the <code>fileb://</code>
+     * prefix. You can't provide the certificate inline.</p> <p>Example:
+     * <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
      */
     inline ImportCertificateRequest& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(std::move(value)); return *this;}
 

@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline DmsTransferSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline DmsTransferSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p>
      */
     inline DmsTransferSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 

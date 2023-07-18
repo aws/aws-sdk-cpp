@@ -19,7 +19,13 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_cWEMonitorEnabled(false),
     m_cWEMonitorEnabledHasBeenSet(false),
     m_opsItemSNSTopicArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autoConfigEnabled(false),
+    m_autoConfigEnabledHasBeenSet(false),
+    m_autoCreate(false),
+    m_autoCreateHasBeenSet(false),
+    m_groupingType(GroupingType::NOT_SET),
+    m_groupingTypeHasBeenSet(false)
 {
 }
 
@@ -60,6 +66,23 @@ Aws::String CreateApplicationRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_autoConfigEnabledHasBeenSet)
+  {
+   payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
+
+  }
+
+  if(m_autoCreateHasBeenSet)
+  {
+   payload.WithBool("AutoCreate", m_autoCreate);
+
+  }
+
+  if(m_groupingTypeHasBeenSet)
+  {
+   payload.WithString("GroupingType", GroupingTypeMapper::GetNameForGroupingType(m_groupingType));
   }
 
   return payload.View().WriteReadable();

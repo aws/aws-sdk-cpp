@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline ConfigurationItem& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline ConfigurationItem& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline ConfigurationItem& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -384,32 +384,32 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline ConfigurationItem& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline ConfigurationItem& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -680,12 +680,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRelatedEvents() const{ return m_relatedEvents; }
 
@@ -694,12 +694,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline bool RelatedEventsHasBeenSet() const { return m_relatedEventsHasBeenSet; }
 
@@ -708,12 +708,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline void SetRelatedEvents(const Aws::Vector<Aws::String>& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents = value; }
 
@@ -722,12 +722,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline void SetRelatedEvents(Aws::Vector<Aws::String>&& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents = std::move(value); }
 
@@ -736,12 +736,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline ConfigurationItem& WithRelatedEvents(const Aws::Vector<Aws::String>& value) { SetRelatedEvents(value); return *this;}
 
@@ -750,12 +750,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline ConfigurationItem& WithRelatedEvents(Aws::Vector<Aws::String>&& value) { SetRelatedEvents(std::move(value)); return *this;}
 
@@ -764,12 +764,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(const Aws::String& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(value); return *this; }
 
@@ -778,12 +778,12 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(Aws::String&& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(std::move(value)); return *this; }
 
@@ -792,53 +792,53 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * Is CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event. As of Version 1.3, the
      * relatedEvents field is empty. You can access the <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
-     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
-     * the resource.</p>
+     * API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the
+     * resource.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(const char* value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline const Aws::Vector<Relationship>& GetRelationships() const{ return m_relationships; }
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline bool RelationshipsHasBeenSet() const { return m_relationshipsHasBeenSet; }
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline void SetRelationships(const Aws::Vector<Relationship>& value) { m_relationshipsHasBeenSet = true; m_relationships = value; }
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline void SetRelationships(Aws::Vector<Relationship>&& value) { m_relationshipsHasBeenSet = true; m_relationships = std::move(value); }
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline ConfigurationItem& WithRelationships(const Aws::Vector<Relationship>& value) { SetRelationships(value); return *this;}
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline ConfigurationItem& WithRelationships(Aws::Vector<Relationship>&& value) { SetRelationships(std::move(value)); return *this;}
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline ConfigurationItem& AddRelationships(const Relationship& value) { m_relationshipsHasBeenSet = true; m_relationships.push_back(value); return *this; }
 
     /**
-     * <p>A list of related AWS resources.</p>
+     * <p>A list of related Amazon Web Services resources.</p>
      */
     inline ConfigurationItem& AddRelationships(Relationship&& value) { m_relationshipsHasBeenSet = true; m_relationships.push_back(std::move(value)); return *this; }
 
@@ -885,92 +885,92 @@ namespace Model
 
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSupplementaryConfiguration() const{ return m_supplementaryConfiguration; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline bool SupplementaryConfigurationHasBeenSet() const { return m_supplementaryConfigurationHasBeenSet; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline void SetSupplementaryConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration = value; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline void SetSupplementaryConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration = std::move(value); }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& WithSupplementaryConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetSupplementaryConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& WithSupplementaryConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetSupplementaryConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(const Aws::String& key, const Aws::String& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, value); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, const Aws::String& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(const Aws::String& key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(const char* key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the <code>configuration</code>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the <code>configuration</code>
      * parameter.</p>
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(const char* key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, value); return *this; }

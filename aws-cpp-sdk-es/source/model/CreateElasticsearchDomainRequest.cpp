@@ -26,7 +26,9 @@ CreateElasticsearchDomainRequest::CreateElasticsearchDomainRequest() :
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -125,6 +127,23 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_autoTuneOptionsHasBeenSet)
+  {
+   payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_tagListHasBeenSet)
+  {
+   Array<JsonValue> tagListJsonList(m_tagList.size());
+   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
+   {
+     tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+   }
+   payload.WithArray("TagList", std::move(tagListJsonList));
 
   }
 

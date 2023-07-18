@@ -145,42 +145,54 @@ namespace Model
     /**
      * <p>The operator that is used to compare filter values (for example,
      * <code>Equals</code> or <code>Contains</code>). For more about API filtering
-     * operators, see <a>query-resources</a>.</p>
+     * operators, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
+     * filters for ListTasks and ListLocations</a>.</p>
      */
     inline const Operator& GetOperator() const{ return m_operator; }
 
     /**
      * <p>The operator that is used to compare filter values (for example,
      * <code>Equals</code> or <code>Contains</code>). For more about API filtering
-     * operators, see <a>query-resources</a>.</p>
+     * operators, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
+     * filters for ListTasks and ListLocations</a>.</p>
      */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
 
     /**
      * <p>The operator that is used to compare filter values (for example,
      * <code>Equals</code> or <code>Contains</code>). For more about API filtering
-     * operators, see <a>query-resources</a>.</p>
+     * operators, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
+     * filters for ListTasks and ListLocations</a>.</p>
      */
     inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
 
     /**
      * <p>The operator that is used to compare filter values (for example,
      * <code>Equals</code> or <code>Contains</code>). For more about API filtering
-     * operators, see <a>query-resources</a>.</p>
+     * operators, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
+     * filters for ListTasks and ListLocations</a>.</p>
      */
     inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
     /**
      * <p>The operator that is used to compare filter values (for example,
      * <code>Equals</code> or <code>Contains</code>). For more about API filtering
-     * operators, see <a>query-resources</a>.</p>
+     * operators, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
+     * filters for ListTasks and ListLocations</a>.</p>
      */
     inline TaskFilter& WithOperator(const Operator& value) { SetOperator(value); return *this;}
 
     /**
      * <p>The operator that is used to compare filter values (for example,
      * <code>Equals</code> or <code>Contains</code>). For more about API filtering
-     * operators, see <a>query-resources</a>.</p>
+     * operators, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
+     * filters for ListTasks and ListLocations</a>.</p>
      */
     inline TaskFilter& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
 

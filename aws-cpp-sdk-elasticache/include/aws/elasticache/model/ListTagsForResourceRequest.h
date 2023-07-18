@@ -47,7 +47,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
@@ -58,7 +58,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
@@ -69,7 +69,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
@@ -80,7 +80,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
@@ -91,7 +91,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
@@ -102,7 +102,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
@@ -113,7 +113,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
@@ -124,7 +124,7 @@ namespace Model
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 

@@ -22,7 +22,8 @@ UpdateLagResult::UpdateLagResult() :
     m_minimumLinks(0),
     m_allowsHostedConnections(false),
     m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_macSecCapable(false)
 {
 }
 
@@ -32,7 +33,8 @@ UpdateLagResult::UpdateLagResult(const Aws::AmazonWebServiceResult<JsonValue>& r
     m_minimumLinks(0),
     m_allowsHostedConnections(false),
     m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_macSecCapable(false)
 {
   *this = result;
 }
@@ -106,6 +108,12 @@ UpdateLagResult& UpdateLagResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+  }
+
   if(jsonValue.ValueExists("connections"))
   {
     Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
@@ -146,6 +154,27 @@ UpdateLagResult& UpdateLagResult::operator =(const Aws::AmazonWebServiceResult<J
   {
     m_providerName = jsonValue.GetString("providerName");
 
+  }
+
+  if(jsonValue.ValueExists("macSecCapable"))
+  {
+    m_macSecCapable = jsonValue.GetBool("macSecCapable");
+
+  }
+
+  if(jsonValue.ValueExists("encryptionMode"))
+  {
+    m_encryptionMode = jsonValue.GetString("encryptionMode");
+
+  }
+
+  if(jsonValue.ValueExists("macSecKeys"))
+  {
+    Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+    {
+      m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
+    }
   }
 
 

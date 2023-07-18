@@ -28,10 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about an Automation runbook (Automation document) used in a
-   * runbook workflow in Change Manager.</p>  <p>The Automation runbooks
-   * specified for the runbook workflow can't run until all required approvals for
-   * the change request have been received.</p> <p><h3>See Also:</h3>   <a
+   * <p>Information about an Automation runbook used in a runbook workflow in Change
+   * Manager.</p>  <p>The Automation runbooks specified for the runbook
+   * workflow can't run until all required approvals for the change request have been
+   * received.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Runbook">AWS API
    * Reference</a></p>
    */
@@ -45,99 +45,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline Runbook& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline Runbook& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The name of the Automation runbook used in a runbook workflow.</p>
      */
     inline Runbook& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline Runbook& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline Runbook& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the Automation runbook (Automation document) used in a runbook
-     * workflow.</p>
+     * <p>The version of the Automation runbook used in a runbook workflow.</p>
      */
     inline Runbook& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
@@ -265,52 +249,101 @@ namespace Model
 
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline Runbook& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline Runbook& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline Runbook& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>A key-value mapping to target resources that the Runbook operation performs
+     * <p>A key-value mapping to target resources that the runbook operation performs
      * tasks on. Required if you specify <code>TargetParameterName</code>.</p>
      */
     inline Runbook& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -428,50 +461,50 @@ namespace Model
 
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>Information about the AWS Regions and accounts targeted by the current
-     * Runbook operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 
@@ -491,6 +524,9 @@ namespace Model
 
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
 
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;

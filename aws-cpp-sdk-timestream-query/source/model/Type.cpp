@@ -5,7 +5,6 @@
 
 #include <aws/timestream-query/model/Type.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/timestream-query/model/ColumnInfo.h>
 
 #include <utility>
 

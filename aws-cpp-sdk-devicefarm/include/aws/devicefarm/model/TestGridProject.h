@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/model/TestGridVpcConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -163,6 +164,37 @@ namespace Model
 
 
     /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline const TestGridVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(const TestGridVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(TestGridVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline TestGridProject& WithVpcConfig(const TestGridVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline TestGridProject& WithVpcConfig(TestGridVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>When the project was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
@@ -202,6 +234,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    TestGridVpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
 
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;

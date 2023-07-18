@@ -28,9 +28,9 @@ namespace Model
   /**
    * <p> Information about a domain, including its name, Amazon Resource Name (ARN),
    * and status. The <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html">
-   * <code>ListDomains</code> </a> operation returns a list of
-   * <code>DomainSummary</code> objects. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html">ListDomains</a>
+   * operation returns a list of <code>DomainSummary</code> objects. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainSummary">AWS
    * API Reference</a></p>
    */
@@ -85,50 +85,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline DomainSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline DomainSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline DomainSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
 
@@ -175,44 +175,32 @@ namespace Model
 
 
     /**
-     * <p> A string that contains the status of the domain. The valid values are: </p>
-     * <ul> <li> <p> <code>Active</code> </p> </li> <li> <p> <code>Deleted</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the domain. </p>
      */
     inline const DomainStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> A string that contains the status of the domain. The valid values are: </p>
-     * <ul> <li> <p> <code>Active</code> </p> </li> <li> <p> <code>Deleted</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the domain. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> A string that contains the status of the domain. The valid values are: </p>
-     * <ul> <li> <p> <code>Active</code> </p> </li> <li> <p> <code>Deleted</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the domain. </p>
      */
     inline void SetStatus(const DomainStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> A string that contains the status of the domain. The valid values are: </p>
-     * <ul> <li> <p> <code>Active</code> </p> </li> <li> <p> <code>Deleted</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the domain. </p>
      */
     inline void SetStatus(DomainStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> A string that contains the status of the domain. The valid values are: </p>
-     * <ul> <li> <p> <code>Active</code> </p> </li> <li> <p> <code>Deleted</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the domain. </p>
      */
     inline DomainSummary& WithStatus(const DomainStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> A string that contains the status of the domain. The valid values are: </p>
-     * <ul> <li> <p> <code>Active</code> </p> </li> <li> <p> <code>Deleted</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the domain. </p>
      */
     inline DomainSummary& WithStatus(DomainStatus&& value) { SetStatus(std::move(value)); return *this;}
 

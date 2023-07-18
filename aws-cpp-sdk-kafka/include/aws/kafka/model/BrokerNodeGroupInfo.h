@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/model/StorageInfo.h>
+#include <aws/kafka/model/ConnectivityInfo.h>
 #include <utility>
 
 namespace Aws
@@ -28,8 +29,8 @@ namespace Model
 
   /**
    * 
-            <p>Describes the setup to be used for Kafka broker nodes in the
-   * cluster.</p>
+            <p>Describes the setup to be used for Apache Kafka broker nodes in
+   * the cluster.</p>
          <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BrokerNodeGroupInfo">AWS
    * API Reference</a></p>
@@ -215,9 +216,9 @@ namespace Model
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -226,9 +227,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -237,9 +238,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -248,9 +249,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -259,9 +260,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -270,9 +271,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -281,9 +282,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -292,9 +293,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     /**
      * 
-            <p>The type of Amazon EC2 instances to use for Kafka brokers. The
-     * following instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
-     * kafka.m5.2xlarge,
+            <p>The type of Amazon EC2 instances to use for Apache Kafka
+     * brokers. The following instance types are allowed: kafka.m5.large,
+     * kafka.m5.xlarge, kafka.m5.2xlarge,
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
@@ -441,6 +442,49 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      */
     inline BrokerNodeGroupInfo& WithStorageInfo(StorageInfo&& value) { SetStorageInfo(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline const ConnectivityInfo& GetConnectivityInfo() const{ return m_connectivityInfo; }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline void SetConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = value; }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline void SetConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::move(value); }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline BrokerNodeGroupInfo& WithConnectivityInfo(const ConnectivityInfo& value) { SetConnectivityInfo(value); return *this;}
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline BrokerNodeGroupInfo& WithConnectivityInfo(ConnectivityInfo&& value) { SetConnectivityInfo(std::move(value)); return *this;}
+
   private:
 
     BrokerAZDistribution m_brokerAZDistribution;
@@ -457,6 +501,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     StorageInfo m_storageInfo;
     bool m_storageInfoHasBeenSet;
+
+    ConnectivityInfo m_connectivityInfo;
+    bool m_connectivityInfoHasBeenSet;
   };
 
 } // namespace Model

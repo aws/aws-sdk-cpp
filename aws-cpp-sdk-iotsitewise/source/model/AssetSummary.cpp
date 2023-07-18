@@ -26,7 +26,8 @@ AssetSummary::AssetSummary() :
     m_creationDateHasBeenSet(false),
     m_lastUpdateDateHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_hierarchiesHasBeenSet(false)
+    m_hierarchiesHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ AssetSummary::AssetSummary(JsonView jsonValue) :
     m_creationDateHasBeenSet(false),
     m_lastUpdateDateHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_hierarchiesHasBeenSet(false)
+    m_hierarchiesHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ AssetSummary& AssetSummary::operator =(JsonView jsonValue)
     m_hierarchiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +168,12 @@ JsonValue AssetSummary::Jsonize() const
      hierarchiesJsonList[hierarchiesIndex].AsObject(m_hierarchies[hierarchiesIndex].Jsonize());
    }
    payload.WithArray("hierarchies", std::move(hierarchiesJsonList));
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The number of managed instances found for each patch severity level defined
-   * in the request filter.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of managed nodes found for each patch severity level defined in
+   * the request filter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SeveritySummary">AWS
    * API Reference</a></p>
    */

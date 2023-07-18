@@ -48,8 +48,10 @@ enum class BackupErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   DEPENDENCY_FAILURE,
   INVALID_REQUEST,
+  INVALID_RESOURCE_STATE,
   LIMIT_EXCEEDED,
   MISSING_PARAMETER_VALUE
 };

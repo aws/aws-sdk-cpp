@@ -28,8 +28,8 @@ namespace Model
    * objects that you want to replicate. You can choose to enable or disable the
    * replication of these objects. Currently, Amazon S3 supports only the filter that
    * you can specify for objects created with server-side encryption using a customer
-   * master key (CMK) stored in AWS Key Management Service (SSE-KMS).</p><p><h3>See
-   * Also:</h3>   <a
+   * managed key stored in Amazon Web Services Key Management Service
+   * (SSE-KMS).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SourceSelectionCriteria">AWS
    * API Reference</a></p>
    */
@@ -45,43 +45,49 @@ namespace Model
 
     /**
      * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with AWS KMS. If you include <code>SourceSelectionCriteria</code> in
-     * the replication configuration, this element is required. </p>
+     * encrypted with Amazon Web Services KMS. If you include
+     * <code>SourceSelectionCriteria</code> in the replication configuration, this
+     * element is required. </p>
      */
     inline const SseKmsEncryptedObjects& GetSseKmsEncryptedObjects() const{ return m_sseKmsEncryptedObjects; }
 
     /**
      * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with AWS KMS. If you include <code>SourceSelectionCriteria</code> in
-     * the replication configuration, this element is required. </p>
+     * encrypted with Amazon Web Services KMS. If you include
+     * <code>SourceSelectionCriteria</code> in the replication configuration, this
+     * element is required. </p>
      */
     inline bool SseKmsEncryptedObjectsHasBeenSet() const { return m_sseKmsEncryptedObjectsHasBeenSet; }
 
     /**
      * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with AWS KMS. If you include <code>SourceSelectionCriteria</code> in
-     * the replication configuration, this element is required. </p>
+     * encrypted with Amazon Web Services KMS. If you include
+     * <code>SourceSelectionCriteria</code> in the replication configuration, this
+     * element is required. </p>
      */
     inline void SetSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = value; }
 
     /**
      * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with AWS KMS. If you include <code>SourceSelectionCriteria</code> in
-     * the replication configuration, this element is required. </p>
+     * encrypted with Amazon Web Services KMS. If you include
+     * <code>SourceSelectionCriteria</code> in the replication configuration, this
+     * element is required. </p>
      */
     inline void SetSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = std::move(value); }
 
     /**
      * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with AWS KMS. If you include <code>SourceSelectionCriteria</code> in
-     * the replication configuration, this element is required. </p>
+     * encrypted with Amazon Web Services KMS. If you include
+     * <code>SourceSelectionCriteria</code> in the replication configuration, this
+     * element is required. </p>
      */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { SetSseKmsEncryptedObjects(value); return *this;}
 
     /**
      * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with AWS KMS. If you include <code>SourceSelectionCriteria</code> in
-     * the replication configuration, this element is required. </p>
+     * encrypted with Amazon Web Services KMS. If you include
+     * <code>SourceSelectionCriteria</code> in the replication configuration, this
+     * element is required. </p>
      */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { SetSseKmsEncryptedObjects(std::move(value)); return *this;}
 

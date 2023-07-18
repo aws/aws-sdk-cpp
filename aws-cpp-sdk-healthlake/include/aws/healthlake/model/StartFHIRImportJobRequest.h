@@ -8,6 +8,7 @@
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/model/InputDataConfig.h>
+#include <aws/healthlake/model/OutputDataConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -114,43 +115,62 @@ namespace Model
     inline StartFHIRImportJobRequest& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
 
+    
+    inline const OutputDataConfig& GetJobOutputDataConfig() const{ return m_jobOutputDataConfig; }
+
+    
+    inline bool JobOutputDataConfigHasBeenSet() const { return m_jobOutputDataConfigHasBeenSet; }
+
+    
+    inline void SetJobOutputDataConfig(const OutputDataConfig& value) { m_jobOutputDataConfigHasBeenSet = true; m_jobOutputDataConfig = value; }
+
+    
+    inline void SetJobOutputDataConfig(OutputDataConfig&& value) { m_jobOutputDataConfigHasBeenSet = true; m_jobOutputDataConfig = std::move(value); }
+
+    
+    inline StartFHIRImportJobRequest& WithJobOutputDataConfig(const OutputDataConfig& value) { SetJobOutputDataConfig(value); return *this;}
+
+    
+    inline StartFHIRImportJobRequest& WithJobOutputDataConfig(OutputDataConfig&& value) { SetJobOutputDataConfig(std::move(value)); return *this;}
+
+
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
 
@@ -251,6 +271,9 @@ namespace Model
 
     InputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet;
+
+    OutputDataConfig m_jobOutputDataConfig;
+    bool m_jobOutputDataConfigHasBeenSet;
 
     Aws::String m_datastoreId;
     bool m_datastoreIdHasBeenSet;

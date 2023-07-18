@@ -41,92 +41,92 @@ namespace Model
 
 
     /**
-     * <p>A collection of objects containing game session properties and the protection
-     * policy currently in force for each session matching the request.</p>
+     * <p>A collection of properties for each game session that matches the
+     * request.</p>
      */
     inline const Aws::Vector<GameSessionDetail>& GetGameSessionDetails() const{ return m_gameSessionDetails; }
 
     /**
-     * <p>A collection of objects containing game session properties and the protection
-     * policy currently in force for each session matching the request.</p>
+     * <p>A collection of properties for each game session that matches the
+     * request.</p>
      */
     inline void SetGameSessionDetails(const Aws::Vector<GameSessionDetail>& value) { m_gameSessionDetails = value; }
 
     /**
-     * <p>A collection of objects containing game session properties and the protection
-     * policy currently in force for each session matching the request.</p>
+     * <p>A collection of properties for each game session that matches the
+     * request.</p>
      */
     inline void SetGameSessionDetails(Aws::Vector<GameSessionDetail>&& value) { m_gameSessionDetails = std::move(value); }
 
     /**
-     * <p>A collection of objects containing game session properties and the protection
-     * policy currently in force for each session matching the request.</p>
+     * <p>A collection of properties for each game session that matches the
+     * request.</p>
      */
     inline DescribeGameSessionDetailsResult& WithGameSessionDetails(const Aws::Vector<GameSessionDetail>& value) { SetGameSessionDetails(value); return *this;}
 
     /**
-     * <p>A collection of objects containing game session properties and the protection
-     * policy currently in force for each session matching the request.</p>
+     * <p>A collection of properties for each game session that matches the
+     * request.</p>
      */
     inline DescribeGameSessionDetailsResult& WithGameSessionDetails(Aws::Vector<GameSessionDetail>&& value) { SetGameSessionDetails(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of objects containing game session properties and the protection
-     * policy currently in force for each session matching the request.</p>
+     * <p>A collection of properties for each game session that matches the
+     * request.</p>
      */
     inline DescribeGameSessionDetailsResult& AddGameSessionDetails(const GameSessionDetail& value) { m_gameSessionDetails.push_back(value); return *this; }
 
     /**
-     * <p>A collection of objects containing game session properties and the protection
-     * policy currently in force for each session matching the request.</p>
+     * <p>A collection of properties for each game session that matches the
+     * request.</p>
      */
     inline DescribeGameSessionDetailsResult& AddGameSessionDetails(GameSessionDetail&& value) { m_gameSessionDetails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeGameSessionDetailsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeGameSessionDetailsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Pipe_HASH = HashingUtils::HashString("Pipe");
         static const int File_HASH = HashingUtils::HashString("File");
+        static const int FastFile_HASH = HashingUtils::HashString("FastFile");
 
 
         TrainingInputMode GetTrainingInputModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == File_HASH)
           {
             return TrainingInputMode::File;
+          }
+          else if (hashCode == FastFile_HASH)
+          {
+            return TrainingInputMode::FastFile;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "Pipe";
           case TrainingInputMode::File:
             return "File";
+          case TrainingInputMode::FastFile:
+            return "FastFile";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

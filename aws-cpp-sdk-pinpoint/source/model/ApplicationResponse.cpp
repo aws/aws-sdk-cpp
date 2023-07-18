@@ -22,7 +22,8 @@ ApplicationResponse::ApplicationResponse() :
     m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_creationDateHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ApplicationResponse::ApplicationResponse(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_creationDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ ApplicationResponse& ApplicationResponse::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreationDate"))
+  {
+    m_creationDate = jsonValue.GetString("CreationDate");
+
+    m_creationDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +110,12 @@ JsonValue ApplicationResponse::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_creationDateHasBeenSet)
+  {
+   payload.WithString("CreationDate", m_creationDate);
 
   }
 

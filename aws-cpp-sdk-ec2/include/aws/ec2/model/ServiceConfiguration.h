@@ -10,7 +10,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ServiceState.h>
 #include <aws/ec2/model/PrivateDnsNameConfiguration.h>
+#include <aws/ec2/model/PayerResponsibility.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
+#include <aws/ec2/model/ServiceConnectivityType.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -246,26 +248,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline ServiceConfiguration& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
 
@@ -406,6 +408,47 @@ namespace Model
 
 
     /**
+     * <p>The supported IP address types.</p>
+     */
+    inline const Aws::Vector<ServiceConnectivityType>& GetSupportedIpAddressTypes() const{ return m_supportedIpAddressTypes; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline bool SupportedIpAddressTypesHasBeenSet() const { return m_supportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline void SetSupportedIpAddressTypes(const Aws::Vector<ServiceConnectivityType>& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = value; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline void SetSupportedIpAddressTypes(Aws::Vector<ServiceConnectivityType>&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceConfiguration& WithSupportedIpAddressTypes(const Aws::Vector<ServiceConnectivityType>& value) { SetSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceConfiguration& WithSupportedIpAddressTypes(Aws::Vector<ServiceConnectivityType>&& value) { SetSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceConfiguration& AddSupportedIpAddressTypes(const ServiceConnectivityType& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceConfiguration& AddSupportedIpAddressTypes(ServiceConnectivityType&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The DNS names for the service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBaseEndpointDnsNames() const{ return m_baseEndpointDnsNames; }
@@ -524,6 +567,37 @@ namespace Model
 
 
     /**
+     * <p>The payer responsibility.</p>
+     */
+    inline const PayerResponsibility& GetPayerResponsibility() const{ return m_payerResponsibility; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline bool PayerResponsibilityHasBeenSet() const { return m_payerResponsibilityHasBeenSet; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline void SetPayerResponsibility(const PayerResponsibility& value) { m_payerResponsibilityHasBeenSet = true; m_payerResponsibility = value; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline void SetPayerResponsibility(PayerResponsibility&& value) { m_payerResponsibilityHasBeenSet = true; m_payerResponsibility = std::move(value); }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline ServiceConfiguration& WithPayerResponsibility(const PayerResponsibility& value) { SetPayerResponsibility(value); return *this;}
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline ServiceConfiguration& WithPayerResponsibility(PayerResponsibility&& value) { SetPayerResponsibility(std::move(value)); return *this;}
+
+
+    /**
      * <p>Any tags assigned to the service.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -592,6 +666,9 @@ namespace Model
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
     bool m_gatewayLoadBalancerArnsHasBeenSet;
 
+    Aws::Vector<ServiceConnectivityType> m_supportedIpAddressTypes;
+    bool m_supportedIpAddressTypesHasBeenSet;
+
     Aws::Vector<Aws::String> m_baseEndpointDnsNames;
     bool m_baseEndpointDnsNamesHasBeenSet;
 
@@ -600,6 +677,9 @@ namespace Model
 
     PrivateDnsNameConfiguration m_privateDnsNameConfiguration;
     bool m_privateDnsNameConfigurationHasBeenSet;
+
+    PayerResponsibility m_payerResponsibility;
+    bool m_payerResponsibilityHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

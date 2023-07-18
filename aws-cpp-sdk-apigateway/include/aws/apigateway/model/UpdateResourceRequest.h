@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>Request to change information about a <a>Resource</a> resource.</p><p><h3>See
+   * <p>Request to change information about a Resource resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResourceRequest">AWS
    * API Reference</a></p>
@@ -39,132 +39,140 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateResourceRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateResourceRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateResourceRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline UpdateResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline UpdateResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+     * <p>The identifier of the Resource resource.</p>
      */
     inline UpdateResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateResourceRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateResourceRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateResourceRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateResourceRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 

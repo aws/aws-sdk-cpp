@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>A key-value pair associated with an AWS resource. In EventBridge, rules and
-   * event buses support tagging.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Tag">AWS API
-   * Reference</a></p>
+   * <p>A key-value pair associated with an Amazon Web Services resource. In
+   * EventBridge, rules and event buses support tagging.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Tag">AWS
+   * API Reference</a></p>
    */
   class AWS_EVENTBRIDGE_API Tag
   {

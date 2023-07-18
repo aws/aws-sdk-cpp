@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to get the header information for the .csv file for
-   * the user import job.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the request to get the header information of the CSV file for the
+   * user import job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeaderRequest">AWS
    * API Reference</a></p>
    */

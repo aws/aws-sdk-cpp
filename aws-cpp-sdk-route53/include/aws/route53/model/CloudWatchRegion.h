@@ -30,6 +30,7 @@ namespace Model
     ap_south_1,
     ap_southeast_1,
     ap_southeast_2,
+    ap_southeast_3,
     ap_northeast_1,
     ap_northeast_2,
     ap_northeast_3,
@@ -42,6 +43,7 @@ namespace Model
     us_gov_west_1,
     us_gov_east_1,
     us_iso_east_1,
+    us_iso_west_1,
     us_isob_east_1
   };
 

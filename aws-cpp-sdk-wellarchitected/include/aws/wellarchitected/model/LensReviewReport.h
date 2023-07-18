@@ -62,6 +62,47 @@ namespace Model
     inline LensReviewReport& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
 
 
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline LensReviewReport& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline LensReviewReport& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline LensReviewReport& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+
+
     
     inline const Aws::String& GetBase64String() const{ return m_base64String; }
 
@@ -90,6 +131,9 @@ namespace Model
 
     Aws::String m_lensAlias;
     bool m_lensAliasHasBeenSet;
+
+    Aws::String m_lensArn;
+    bool m_lensArnHasBeenSet;
 
     Aws::String m_base64String;
     bool m_base64StringHasBeenSet;

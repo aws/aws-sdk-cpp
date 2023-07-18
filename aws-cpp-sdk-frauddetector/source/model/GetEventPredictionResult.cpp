@@ -46,6 +46,15 @@ GetEventPredictionResult& GetEventPredictionResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("externalModelOutputs"))
+  {
+    Array<JsonView> externalModelOutputsJsonList = jsonValue.GetArray("externalModelOutputs");
+    for(unsigned externalModelOutputsIndex = 0; externalModelOutputsIndex < externalModelOutputsJsonList.GetLength(); ++externalModelOutputsIndex)
+    {
+      m_externalModelOutputs.push_back(externalModelOutputsJsonList[externalModelOutputsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

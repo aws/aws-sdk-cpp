@@ -20,25 +20,25 @@ namespace Aws
       namespace AggregationPeriodMapper
       {
 
-        static const int P1D_HASH = HashingUtils::HashString("P1D");
-        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
         static const int PT5M_HASH = HashingUtils::HashString("PT5M");
+        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
+        static const int P1D_HASH = HashingUtils::HashString("P1D");
 
 
         AggregationPeriod GetAggregationPeriodForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == P1D_HASH)
+          if (hashCode == PT5M_HASH)
           {
-            return AggregationPeriod::P1D;
+            return AggregationPeriod::PT5M;
           }
           else if (hashCode == PT1H_HASH)
           {
             return AggregationPeriod::PT1H;
           }
-          else if (hashCode == PT5M_HASH)
+          else if (hashCode == P1D_HASH)
           {
-            return AggregationPeriod::PT5M;
+            return AggregationPeriod::P1D;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -54,12 +54,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case AggregationPeriod::P1D:
-            return "P1D";
-          case AggregationPeriod::PT1H:
-            return "PT1H";
           case AggregationPeriod::PT5M:
             return "PT5M";
+          case AggregationPeriod::PT1H:
+            return "PT1H";
+          case AggregationPeriod::P1D:
+            return "P1D";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

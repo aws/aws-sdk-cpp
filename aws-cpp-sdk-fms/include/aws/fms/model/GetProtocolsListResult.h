@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the specified AWS Firewall Manager protocols list.</p>
+     * <p>Information about the specified Firewall Manager protocols list.</p>
      */
     inline const ProtocolsListData& GetProtocolsList() const{ return m_protocolsList; }
 
     /**
-     * <p>Information about the specified AWS Firewall Manager protocols list.</p>
+     * <p>Information about the specified Firewall Manager protocols list.</p>
      */
     inline void SetProtocolsList(const ProtocolsListData& value) { m_protocolsList = value; }
 
     /**
-     * <p>Information about the specified AWS Firewall Manager protocols list.</p>
+     * <p>Information about the specified Firewall Manager protocols list.</p>
      */
     inline void SetProtocolsList(ProtocolsListData&& value) { m_protocolsList = std::move(value); }
 
     /**
-     * <p>Information about the specified AWS Firewall Manager protocols list.</p>
+     * <p>Information about the specified Firewall Manager protocols list.</p>
      */
     inline GetProtocolsListResult& WithProtocolsList(const ProtocolsListData& value) { SetProtocolsList(value); return *this;}
 
     /**
-     * <p>Information about the specified AWS Firewall Manager protocols list.</p>
+     * <p>Information about the specified Firewall Manager protocols list.</p>
      */
     inline GetProtocolsListResult& WithProtocolsList(ProtocolsListData&& value) { SetProtocolsList(std::move(value)); return *this;}
 

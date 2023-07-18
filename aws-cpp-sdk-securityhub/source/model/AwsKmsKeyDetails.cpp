@@ -26,7 +26,9 @@ AwsKmsKeyDetails::AwsKmsKeyDetails() :
     m_keyManagerHasBeenSet(false),
     m_keyStateHasBeenSet(false),
     m_originHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_keyRotationStatus(false),
+    m_keyRotationStatusHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue) :
     m_keyManagerHasBeenSet(false),
     m_keyStateHasBeenSet(false),
     m_originHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_keyRotationStatus(false),
+    m_keyRotationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +98,13 @@ AwsKmsKeyDetails& AwsKmsKeyDetails::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyRotationStatus"))
+  {
+    m_keyRotationStatus = jsonValue.GetBool("KeyRotationStatus");
+
+    m_keyRotationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +151,12 @@ JsonValue AwsKmsKeyDetails::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_keyRotationStatusHasBeenSet)
+  {
+   payload.WithBool("KeyRotationStatus", m_keyRotationStatus);
 
   }
 

@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p>A ZIP archive that contains the contents of an <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-   * Lambda layer</a>. You can specify either an Amazon S3 location, or upload a
-   * layer archive directly.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+   * layer</a>. You can specify either an Amazon S3 location, or upload a layer
+   * archive directly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/LayerVersionContentInput">AWS
    * API Reference</a></p>
    */
@@ -165,38 +165,38 @@ namespace Model
 
 
     /**
-     * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients
-     * handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and
+     * Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
-     * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients
-     * handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and
+     * Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
-     * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients
-     * handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and
+     * Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
-     * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients
-     * handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and
+     * Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline void SetZipFile(Aws::Utils::CryptoBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
-     * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients
-     * handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and
+     * Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline LayerVersionContentInput& WithZipFile(const Aws::Utils::CryptoBuffer& value) { SetZipFile(value); return *this;}
 
     /**
-     * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients
-     * handle the encoding for you.</p>
+     * <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and
+     * Amazon Web Services CLI clients handle the encoding for you.</p>
      */
     inline LayerVersionContentInput& WithZipFile(Aws::Utils::CryptoBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 

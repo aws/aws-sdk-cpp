@@ -19,11 +19,13 @@ namespace Model
 {
 
 UserContextDataType::UserContextDataType() : 
+    m_ipAddressHasBeenSet(false),
     m_encodedDataHasBeenSet(false)
 {
 }
 
 UserContextDataType::UserContextDataType(JsonView jsonValue) : 
+    m_ipAddressHasBeenSet(false),
     m_encodedDataHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ UserContextDataType::UserContextDataType(JsonView jsonValue) :
 
 UserContextDataType& UserContextDataType::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("IpAddress"))
+  {
+    m_ipAddress = jsonValue.GetString("IpAddress");
+
+    m_ipAddressHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("EncodedData"))
   {
     m_encodedData = jsonValue.GetString("EncodedData");
@@ -44,6 +53,12 @@ UserContextDataType& UserContextDataType::operator =(JsonView jsonValue)
 JsonValue UserContextDataType::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_ipAddressHasBeenSet)
+  {
+   payload.WithString("IpAddress", m_ipAddress);
+
+  }
 
   if(m_encodedDataHasBeenSet)
   {

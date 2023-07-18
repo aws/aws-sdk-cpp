@@ -79,50 +79,50 @@ namespace Model
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * this release, <code>ApiErrorRateInsight</code> and
+     * <code>ApiCallRateInsight</code> are supported as insight types.</p>
      */
     inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const{ return m_insightSelectors; }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * this release, <code>ApiErrorRateInsight</code> and
+     * <code>ApiCallRateInsight</code> are supported as insight types.</p>
      */
     inline void SetInsightSelectors(const Aws::Vector<InsightSelector>& value) { m_insightSelectors = value; }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * this release, <code>ApiErrorRateInsight</code> and
+     * <code>ApiCallRateInsight</code> are supported as insight types.</p>
      */
     inline void SetInsightSelectors(Aws::Vector<InsightSelector>&& value) { m_insightSelectors = std::move(value); }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * this release, <code>ApiErrorRateInsight</code> and
+     * <code>ApiCallRateInsight</code> are supported as insight types.</p>
      */
     inline GetInsightSelectorsResult& WithInsightSelectors(const Aws::Vector<InsightSelector>& value) { SetInsightSelectors(value); return *this;}
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * this release, <code>ApiErrorRateInsight</code> and
+     * <code>ApiCallRateInsight</code> are supported as insight types.</p>
      */
     inline GetInsightSelectorsResult& WithInsightSelectors(Aws::Vector<InsightSelector>&& value) { SetInsightSelectors(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * this release, <code>ApiErrorRateInsight</code> and
+     * <code>ApiCallRateInsight</code> are supported as insight types.</p>
      */
     inline GetInsightSelectorsResult& AddInsightSelectors(const InsightSelector& value) { m_insightSelectors.push_back(value); return *this; }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * this release, <code>ApiErrorRateInsight</code> and
+     * <code>ApiCallRateInsight</code> are supported as insight types.</p>
      */
     inline GetInsightSelectorsResult& AddInsightSelectors(InsightSelector&& value) { m_insightSelectors.push_back(std::move(value)); return *this; }
 

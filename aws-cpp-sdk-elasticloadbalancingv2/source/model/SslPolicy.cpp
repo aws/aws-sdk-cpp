@@ -23,14 +23,16 @@ namespace Model
 SslPolicy::SslPolicy() : 
     m_sslProtocolsHasBeenSet(false),
     m_ciphersHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_supportedLoadBalancerTypesHasBeenSet(false)
 {
 }
 
 SslPolicy::SslPolicy(const XmlNode& xmlNode) : 
     m_sslProtocolsHasBeenSet(false),
     m_ciphersHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_supportedLoadBalancerTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +73,18 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
+    XmlNode supportedLoadBalancerTypesNode = resultNode.FirstChild("SupportedLoadBalancerTypes");
+    if(!supportedLoadBalancerTypesNode.IsNull())
+    {
+      XmlNode supportedLoadBalancerTypesMember = supportedLoadBalancerTypesNode.FirstChild("member");
+      while(!supportedLoadBalancerTypesMember.IsNull())
+      {
+        m_supportedLoadBalancerTypes.push_back(supportedLoadBalancerTypesMember.GetText());
+        supportedLoadBalancerTypesMember = supportedLoadBalancerTypesMember.NextNode("member");
+      }
+
+      m_supportedLoadBalancerTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -103,6 +117,15 @@ void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
+  if(m_supportedLoadBalancerTypesHasBeenSet)
+  {
+      unsigned supportedLoadBalancerTypesIdx = 1;
+      for(auto& item : m_supportedLoadBalancerTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedLoadBalancerTypes.member." << supportedLoadBalancerTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -128,6 +151,14 @@ void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_nameHasBeenSet)
   {
       oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_supportedLoadBalancerTypesHasBeenSet)
+  {
+      unsigned supportedLoadBalancerTypesIdx = 1;
+      for(auto& item : m_supportedLoadBalancerTypes)
+      {
+        oStream << location << ".SupportedLoadBalancerTypes.member." << supportedLoadBalancerTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

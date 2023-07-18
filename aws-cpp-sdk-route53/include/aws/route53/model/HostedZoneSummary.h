@@ -135,37 +135,43 @@ namespace Model
 
     /**
      * <p>The owner of a private hosted zone that the specified VPC is associated with.
-     * The owner can be either an AWS account or an AWS service.</p>
+     * The owner can be either an Amazon Web Services account or an Amazon Web Services
+     * service.</p>
      */
     inline const HostedZoneOwner& GetOwner() const{ return m_owner; }
 
     /**
      * <p>The owner of a private hosted zone that the specified VPC is associated with.
-     * The owner can be either an AWS account or an AWS service.</p>
+     * The owner can be either an Amazon Web Services account or an Amazon Web Services
+     * service.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The owner of a private hosted zone that the specified VPC is associated with.
-     * The owner can be either an AWS account or an AWS service.</p>
+     * The owner can be either an Amazon Web Services account or an Amazon Web Services
+     * service.</p>
      */
     inline void SetOwner(const HostedZoneOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>The owner of a private hosted zone that the specified VPC is associated with.
-     * The owner can be either an AWS account or an AWS service.</p>
+     * The owner can be either an Amazon Web Services account or an Amazon Web Services
+     * service.</p>
      */
     inline void SetOwner(HostedZoneOwner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of a private hosted zone that the specified VPC is associated with.
-     * The owner can be either an AWS account or an AWS service.</p>
+     * The owner can be either an Amazon Web Services account or an Amazon Web Services
+     * service.</p>
      */
     inline HostedZoneSummary& WithOwner(const HostedZoneOwner& value) { SetOwner(value); return *this;}
 
     /**
      * <p>The owner of a private hosted zone that the specified VPC is associated with.
-     * The owner can be either an AWS account or an AWS service.</p>
+     * The owner can be either an Amazon Web Services account or an Amazon Web Services
+     * service.</p>
      */
     inline HostedZoneSummary& WithOwner(HostedZoneOwner&& value) { SetOwner(std::move(value)); return *this;}
 

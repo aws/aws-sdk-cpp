@@ -34,9 +34,13 @@ JobRun::JobRun() :
     m_logSubscriptionHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_outputsHasBeenSet(false),
+    m_dataCatalogOutputsHasBeenSet(false),
+    m_databaseOutputsHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
-    m_startedOnHasBeenSet(false)
+    m_startedOnHasBeenSet(false),
+    m_jobSampleHasBeenSet(false),
+    m_validationConfigurationsHasBeenSet(false)
 {
 }
 
@@ -56,9 +60,13 @@ JobRun::JobRun(JsonView jsonValue) :
     m_logSubscriptionHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_outputsHasBeenSet(false),
+    m_dataCatalogOutputsHasBeenSet(false),
+    m_databaseOutputsHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
-    m_startedOnHasBeenSet(false)
+    m_startedOnHasBeenSet(false),
+    m_jobSampleHasBeenSet(false),
+    m_validationConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +153,26 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_outputsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataCatalogOutputs"))
+  {
+    Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
+    for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
+    {
+      m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
+    }
+    m_dataCatalogOutputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatabaseOutputs"))
+  {
+    Array<JsonView> databaseOutputsJsonList = jsonValue.GetArray("DatabaseOutputs");
+    for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+    {
+      m_databaseOutputs.push_back(databaseOutputsJsonList[databaseOutputsIndex].AsObject());
+    }
+    m_databaseOutputsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RecipeReference"))
   {
     m_recipeReference = jsonValue.GetObject("RecipeReference");
@@ -164,6 +192,23 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_startedOn = jsonValue.GetDouble("StartedOn");
 
     m_startedOnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobSample"))
+  {
+    m_jobSample = jsonValue.GetObject("JobSample");
+
+    m_jobSampleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidationConfigurations"))
+  {
+    Array<JsonView> validationConfigurationsJsonList = jsonValue.GetArray("ValidationConfigurations");
+    for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
+    {
+      m_validationConfigurations.push_back(validationConfigurationsJsonList[validationConfigurationsIndex].AsObject());
+    }
+    m_validationConfigurationsHasBeenSet = true;
   }
 
   return *this;
@@ -241,6 +286,28 @@ JsonValue JobRun::Jsonize() const
 
   }
 
+  if(m_dataCatalogOutputsHasBeenSet)
+  {
+   Array<JsonValue> dataCatalogOutputsJsonList(m_dataCatalogOutputs.size());
+   for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
+   {
+     dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject(m_dataCatalogOutputs[dataCatalogOutputsIndex].Jsonize());
+   }
+   payload.WithArray("DataCatalogOutputs", std::move(dataCatalogOutputsJsonList));
+
+  }
+
+  if(m_databaseOutputsHasBeenSet)
+  {
+   Array<JsonValue> databaseOutputsJsonList(m_databaseOutputs.size());
+   for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+   {
+     databaseOutputsJsonList[databaseOutputsIndex].AsObject(m_databaseOutputs[databaseOutputsIndex].Jsonize());
+   }
+   payload.WithArray("DatabaseOutputs", std::move(databaseOutputsJsonList));
+
+  }
+
   if(m_recipeReferenceHasBeenSet)
   {
    payload.WithObject("RecipeReference", m_recipeReference.Jsonize());
@@ -256,6 +323,23 @@ JsonValue JobRun::Jsonize() const
   if(m_startedOnHasBeenSet)
   {
    payload.WithDouble("StartedOn", m_startedOn.SecondsWithMSPrecision());
+  }
+
+  if(m_jobSampleHasBeenSet)
+  {
+   payload.WithObject("JobSample", m_jobSample.Jsonize());
+
+  }
+
+  if(m_validationConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> validationConfigurationsJsonList(m_validationConfigurations.size());
+   for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
+   {
+     validationConfigurationsJsonList[validationConfigurationsIndex].AsObject(m_validationConfigurations[validationConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("ValidationConfigurations", std::move(validationConfigurationsJsonList));
+
   }
 
   return payload;

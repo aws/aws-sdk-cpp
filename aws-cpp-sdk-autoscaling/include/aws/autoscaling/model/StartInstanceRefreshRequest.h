@@ -8,6 +8,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/RefreshStrategy.h>
+#include <aws/autoscaling/model/DesiredConfiguration.h>
 #include <aws/autoscaling/model/RefreshPreferences.h>
 #include <utility>
 
@@ -81,140 +82,183 @@ namespace Model
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
-     * all instances in an Auto Scaling group until all instances have been updated. A
-     * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale in. If the rolling update process fails, any
-     * instances that were already replaced are not rolled back to their previous
+     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
+     * gradually. A rolling update can fail due to failed health checks or if instances
+     * are on standby or are protected from scale in. If the rolling update process
+     * fails, any instances that are replaced are not rolled back to their previous
      * configuration. </p>
      */
     inline const RefreshStrategy& GetStrategy() const{ return m_strategy; }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
-     * all instances in an Auto Scaling group until all instances have been updated. A
-     * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale in. If the rolling update process fails, any
-     * instances that were already replaced are not rolled back to their previous
+     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
+     * gradually. A rolling update can fail due to failed health checks or if instances
+     * are on standby or are protected from scale in. If the rolling update process
+     * fails, any instances that are replaced are not rolled back to their previous
      * configuration. </p>
      */
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
-     * all instances in an Auto Scaling group until all instances have been updated. A
-     * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale in. If the rolling update process fails, any
-     * instances that were already replaced are not rolled back to their previous
+     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
+     * gradually. A rolling update can fail due to failed health checks or if instances
+     * are on standby or are protected from scale in. If the rolling update process
+     * fails, any instances that are replaced are not rolled back to their previous
      * configuration. </p>
      */
     inline void SetStrategy(const RefreshStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
-     * all instances in an Auto Scaling group until all instances have been updated. A
-     * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale in. If the rolling update process fails, any
-     * instances that were already replaced are not rolled back to their previous
+     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
+     * gradually. A rolling update can fail due to failed health checks or if instances
+     * are on standby or are protected from scale in. If the rolling update process
+     * fails, any instances that are replaced are not rolled back to their previous
      * configuration. </p>
      */
     inline void SetStrategy(RefreshStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
-     * all instances in an Auto Scaling group until all instances have been updated. A
-     * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale in. If the rolling update process fails, any
-     * instances that were already replaced are not rolled back to their previous
+     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
+     * gradually. A rolling update can fail due to failed health checks or if instances
+     * are on standby or are protected from scale in. If the rolling update process
+     * fails, any instances that are replaced are not rolled back to their previous
      * configuration. </p>
      */
     inline StartInstanceRefreshRequest& WithStrategy(const RefreshStrategy& value) { SetStrategy(value); return *this;}
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
-     * all instances in an Auto Scaling group until all instances have been updated. A
-     * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale in. If the rolling update process fails, any
-     * instances that were already replaced are not rolled back to their previous
+     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
+     * gradually. A rolling update can fail due to failed health checks or if instances
+     * are on standby or are protected from scale in. If the rolling update process
+     * fails, any instances that are replaced are not rolled back to their previous
      * configuration. </p>
      */
     inline StartInstanceRefreshRequest& WithStrategy(RefreshStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
-     * not provided, the default values are used. For
-     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
-     * <code>InstanceWarmup</code>, the default is to use the value specified for the
-     * health check grace period for the Auto Scaling group.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+     * <p>The desired configuration. For example, the desired configuration can specify
+     * a new launch template or a new version of the current launch template.</p>
+     * <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the
+     * settings of the Auto Scaling group to reflect the new desired configuration.
+     * </p>  <p>When you specify a new launch template or a new version of the
+     * current launch template for your desired configuration, consider enabling the
+     * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
+     * Auto Scaling skips replacing instances that already use the specified launch
+     * template and version. This can help you reduce the number of replacements that
+     * are required to apply updates. </p> 
+     */
+    inline const DesiredConfiguration& GetDesiredConfiguration() const{ return m_desiredConfiguration; }
+
+    /**
+     * <p>The desired configuration. For example, the desired configuration can specify
+     * a new launch template or a new version of the current launch template.</p>
+     * <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the
+     * settings of the Auto Scaling group to reflect the new desired configuration.
+     * </p>  <p>When you specify a new launch template or a new version of the
+     * current launch template for your desired configuration, consider enabling the
+     * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
+     * Auto Scaling skips replacing instances that already use the specified launch
+     * template and version. This can help you reduce the number of replacements that
+     * are required to apply updates. </p> 
+     */
+    inline bool DesiredConfigurationHasBeenSet() const { return m_desiredConfigurationHasBeenSet; }
+
+    /**
+     * <p>The desired configuration. For example, the desired configuration can specify
+     * a new launch template or a new version of the current launch template.</p>
+     * <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the
+     * settings of the Auto Scaling group to reflect the new desired configuration.
+     * </p>  <p>When you specify a new launch template or a new version of the
+     * current launch template for your desired configuration, consider enabling the
+     * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
+     * Auto Scaling skips replacing instances that already use the specified launch
+     * template and version. This can help you reduce the number of replacements that
+     * are required to apply updates. </p> 
+     */
+    inline void SetDesiredConfiguration(const DesiredConfiguration& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = value; }
+
+    /**
+     * <p>The desired configuration. For example, the desired configuration can specify
+     * a new launch template or a new version of the current launch template.</p>
+     * <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the
+     * settings of the Auto Scaling group to reflect the new desired configuration.
+     * </p>  <p>When you specify a new launch template or a new version of the
+     * current launch template for your desired configuration, consider enabling the
+     * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
+     * Auto Scaling skips replacing instances that already use the specified launch
+     * template and version. This can help you reduce the number of replacements that
+     * are required to apply updates. </p> 
+     */
+    inline void SetDesiredConfiguration(DesiredConfiguration&& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = std::move(value); }
+
+    /**
+     * <p>The desired configuration. For example, the desired configuration can specify
+     * a new launch template or a new version of the current launch template.</p>
+     * <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the
+     * settings of the Auto Scaling group to reflect the new desired configuration.
+     * </p>  <p>When you specify a new launch template or a new version of the
+     * current launch template for your desired configuration, consider enabling the
+     * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
+     * Auto Scaling skips replacing instances that already use the specified launch
+     * template and version. This can help you reduce the number of replacements that
+     * are required to apply updates. </p> 
+     */
+    inline StartInstanceRefreshRequest& WithDesiredConfiguration(const DesiredConfiguration& value) { SetDesiredConfiguration(value); return *this;}
+
+    /**
+     * <p>The desired configuration. For example, the desired configuration can specify
+     * a new launch template or a new version of the current launch template.</p>
+     * <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the
+     * settings of the Auto Scaling group to reflect the new desired configuration.
+     * </p>  <p>When you specify a new launch template or a new version of the
+     * current launch template for your desired configuration, consider enabling the
+     * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
+     * Auto Scaling skips replacing instances that already use the specified launch
+     * template and version. This can help you reduce the number of replacements that
+     * are required to apply updates. </p> 
+     */
+    inline StartInstanceRefreshRequest& WithDesiredConfiguration(DesiredConfiguration&& value) { SetDesiredConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set of preferences associated with the instance refresh request. If not
+     * provided, the default values are used.</p>
      */
     inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
-     * not provided, the default values are used. For
-     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
-     * <code>InstanceWarmup</code>, the default is to use the value specified for the
-     * health check grace period for the Auto Scaling group.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+     * <p>Set of preferences associated with the instance refresh request. If not
+     * provided, the default values are used.</p>
      */
     inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
-     * not provided, the default values are used. For
-     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
-     * <code>InstanceWarmup</code>, the default is to use the value specified for the
-     * health check grace period for the Auto Scaling group.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+     * <p>Set of preferences associated with the instance refresh request. If not
+     * provided, the default values are used.</p>
      */
     inline void SetPreferences(const RefreshPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
-     * not provided, the default values are used. For
-     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
-     * <code>InstanceWarmup</code>, the default is to use the value specified for the
-     * health check grace period for the Auto Scaling group.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+     * <p>Set of preferences associated with the instance refresh request. If not
+     * provided, the default values are used.</p>
      */
     inline void SetPreferences(RefreshPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
-     * not provided, the default values are used. For
-     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
-     * <code>InstanceWarmup</code>, the default is to use the value specified for the
-     * health check grace period for the Auto Scaling group.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+     * <p>Set of preferences associated with the instance refresh request. If not
+     * provided, the default values are used.</p>
      */
     inline StartInstanceRefreshRequest& WithPreferences(const RefreshPreferences& value) { SetPreferences(value); return *this;}
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
-     * not provided, the default values are used. For
-     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
-     * <code>InstanceWarmup</code>, the default is to use the value specified for the
-     * health check grace period for the Auto Scaling group.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+     * <p>Set of preferences associated with the instance refresh request. If not
+     * provided, the default values are used.</p>
      */
     inline StartInstanceRefreshRequest& WithPreferences(RefreshPreferences&& value) { SetPreferences(std::move(value)); return *this;}
 
@@ -225,6 +269,9 @@ namespace Model
 
     RefreshStrategy m_strategy;
     bool m_strategyHasBeenSet;
+
+    DesiredConfiguration m_desiredConfiguration;
+    bool m_desiredConfigurationHasBeenSet;
 
     RefreshPreferences m_preferences;
     bool m_preferencesHasBeenSet;

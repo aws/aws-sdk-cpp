@@ -75,38 +75,38 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
-     * value: <code>us-east-1</code>.</p>
+     * <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code> . </p>
      */
     inline const VoiceConnectorAwsRegion& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
-     * value: <code>us-east-1</code>.</p>
+     * <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code> . </p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
-     * value: <code>us-east-1</code>.</p>
+     * <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code> . </p>
      */
     inline void SetAwsRegion(const VoiceConnectorAwsRegion& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
-     * value: <code>us-east-1</code>.</p>
+     * <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code> . </p>
      */
     inline void SetAwsRegion(VoiceConnectorAwsRegion&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
-     * value: <code>us-east-1</code>.</p>
+     * <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code> . </p>
      */
     inline CreateVoiceConnectorRequest& WithAwsRegion(const VoiceConnectorAwsRegion& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
-     * value: <code>us-east-1</code>.</p>
+     * <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code> . </p>
      */
     inline CreateVoiceConnectorRequest& WithAwsRegion(VoiceConnectorAwsRegion&& value) { SetAwsRegion(std::move(value)); return *this;}
 

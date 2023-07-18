@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Metadata that help you categorize IT assets.</p><p><h3>See Also:</h3>   <a
+   * <p>Metadata that help you categorize IT assets.</p>  <p>Do not store
+   * sensitive information (like personal data) in tags.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/Tag">AWS API
    * Reference</a></p>
    */

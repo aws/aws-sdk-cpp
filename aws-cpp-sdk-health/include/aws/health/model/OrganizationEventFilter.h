@@ -108,157 +108,157 @@ namespace Model
 
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAwsAccountIds() const{ return m_awsAccountIds; }
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline bool AwsAccountIdsHasBeenSet() const { return m_awsAccountIdsHasBeenSet; }
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline void SetAwsAccountIds(const Aws::Vector<Aws::String>& value) { m_awsAccountIdsHasBeenSet = true; m_awsAccountIds = value; }
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline void SetAwsAccountIds(Aws::Vector<Aws::String>&& value) { m_awsAccountIdsHasBeenSet = true; m_awsAccountIds = std::move(value); }
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline OrganizationEventFilter& WithAwsAccountIds(const Aws::Vector<Aws::String>& value) { SetAwsAccountIds(value); return *this;}
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline OrganizationEventFilter& WithAwsAccountIds(Aws::Vector<Aws::String>&& value) { SetAwsAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline OrganizationEventFilter& AddAwsAccountIds(const Aws::String& value) { m_awsAccountIdsHasBeenSet = true; m_awsAccountIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline OrganizationEventFilter& AddAwsAccountIds(Aws::String&& value) { m_awsAccountIdsHasBeenSet = true; m_awsAccountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of 12-digit AWS account numbers that contains the affected
-     * entities.</p>
+     * <p>A list of 12-digit Amazon Web Services account numbers that contains the
+     * affected entities.</p>
      */
     inline OrganizationEventFilter& AddAwsAccountIds(const char* value) { m_awsAccountIdsHasBeenSet = true; m_awsAccountIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServices() const{ return m_services; }
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline void SetServices(const Aws::Vector<Aws::String>& value) { m_servicesHasBeenSet = true; m_services = value; }
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline OrganizationEventFilter& WithServices(const Aws::Vector<Aws::String>& value) { SetServices(value); return *this;}
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline OrganizationEventFilter& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline OrganizationEventFilter& AddServices(const Aws::String& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline OrganizationEventFilter& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
-     * <code>RDS</code>.</p>
+     * <p>The Amazon Web Services services associated with the event. For example,
+     * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline OrganizationEventFilter& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline OrganizationEventFilter& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline OrganizationEventFilter& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline OrganizationEventFilter& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline OrganizationEventFilter& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS Regions.</p>
+     * <p>A list of Amazon Web Services Regions.</p>
      */
     inline OrganizationEventFilter& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
@@ -422,50 +422,58 @@ namespace Model
 
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline const Aws::Vector<EventTypeCategory>& GetEventTypeCategories() const{ return m_eventTypeCategories; }
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline bool EventTypeCategoriesHasBeenSet() const { return m_eventTypeCategoriesHasBeenSet; }
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline void SetEventTypeCategories(const Aws::Vector<EventTypeCategory>& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories = value; }
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline void SetEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories = std::move(value); }
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline OrganizationEventFilter& WithEventTypeCategories(const Aws::Vector<EventTypeCategory>& value) { SetEventTypeCategories(value); return *this;}
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline OrganizationEventFilter& WithEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { SetEventTypeCategories(std::move(value)); return *this;}
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline OrganizationEventFilter& AddEventTypeCategories(const EventTypeCategory& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(value); return *this; }
 
     /**
-     * <p>A list of event type category codes (issue, scheduledChange, or
-     * accountNotification).</p>
+     * <p>A list of event type category codes. Possible values are <code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
+     * the <code>investigation</code> value isn't supported at this time.</p>
      */
     inline OrganizationEventFilter& AddEventTypeCategories(EventTypeCategory&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(std::move(value)); return *this; }
 

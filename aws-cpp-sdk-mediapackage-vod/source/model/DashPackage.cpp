@@ -21,6 +21,8 @@ namespace Model
 DashPackage::DashPackage() : 
     m_dashManifestsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_includeEncoderConfigurationInSegments(false),
+    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
     m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
@@ -32,6 +34,8 @@ DashPackage::DashPackage() :
 DashPackage::DashPackage(JsonView jsonValue) : 
     m_dashManifestsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_includeEncoderConfigurationInSegments(false),
+    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
     m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
@@ -58,6 +62,13 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_encryption = jsonValue.GetObject("encryption");
 
     m_encryptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("includeEncoderConfigurationInSegments"))
+  {
+    m_includeEncoderConfigurationInSegments = jsonValue.GetBool("includeEncoderConfigurationInSegments");
+
+    m_includeEncoderConfigurationInSegmentsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("periodTriggers"))
@@ -105,6 +116,12 @@ JsonValue DashPackage::Jsonize() const
   if(m_encryptionHasBeenSet)
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
+
+  }
+
+  if(m_includeEncoderConfigurationInSegmentsHasBeenSet)
+  {
+   payload.WithBool("includeEncoderConfigurationInSegments", m_includeEncoderConfigurationInSegments);
 
   }
 

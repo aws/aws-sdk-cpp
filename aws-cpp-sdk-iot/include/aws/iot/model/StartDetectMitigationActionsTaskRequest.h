@@ -236,64 +236,64 @@ namespace Model
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline StartDetectMitigationActionsTaskRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline StartDetectMitigationActionsTaskRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p> Each mitigation action task must have a unique client request token. If you
      * try to create a new task with the same token as a task that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request. </p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request. </p>
      */
     inline StartDetectMitigationActionsTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

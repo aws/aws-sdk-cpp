@@ -35,6 +35,7 @@ Service::Service() :
     m_launchTypeHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_taskSetsHasBeenSet(false),
@@ -55,7 +56,9 @@ Service::Service() :
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
+    m_propagateTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,7 @@ Service::Service(JsonView jsonValue) :
     m_launchTypeHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_taskSetsHasBeenSet(false),
@@ -96,7 +100,9 @@ Service::Service(JsonView jsonValue) :
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
+    m_propagateTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -194,6 +200,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_platformVersion = jsonValue.GetString("platformVersion");
 
     m_platformVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformFamily"))
+  {
+    m_platformFamily = jsonValue.GetString("platformFamily");
+
+    m_platformFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("taskDefinition"))
@@ -333,6 +346,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_propagateTagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+
+    m_enableExecuteCommandHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -423,6 +443,12 @@ JsonValue Service::Jsonize() const
   if(m_platformVersionHasBeenSet)
   {
    payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
+  if(m_platformFamilyHasBeenSet)
+  {
+   payload.WithString("platformFamily", m_platformFamily);
 
   }
 
@@ -553,6 +579,12 @@ JsonValue Service::Jsonize() const
   if(m_propagateTagsHasBeenSet)
   {
    payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+
   }
 
   return payload;

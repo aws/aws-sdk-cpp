@@ -274,49 +274,57 @@ namespace Model
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline Solution& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline Solution& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
      * <p>The event type (for example, 'click' or 'like') that is used for training the
-     * model.</p>
+     * model. If no <code>eventType</code> is provided, Amazon Personalize uses all
+     * interactions for training with equal weight regardless of type.</p>
      */
     inline Solution& WithEventType(const char* value) { SetEventType(value); return *this;}
 

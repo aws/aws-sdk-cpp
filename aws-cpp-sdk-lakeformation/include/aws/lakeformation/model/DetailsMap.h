@@ -28,8 +28,8 @@ namespace Model
    * <p>A structure containing the additional details to be returned in the
    * <code>AdditionalDetails</code> attribute of
    * <code>PrincipalResourcePermissions</code>.</p> <p>If a catalog resource is
-   * shared through AWS Resource Access Manager (AWS RAM), then there will exist a
-   * corresponding RAM share resource ARN.</p><p><h3>See Also:</h3>   <a
+   * shared through Resource Access Manager (RAM), then there will exist a
+   * corresponding RAM resource share ARN.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DetailsMap">AWS
    * API Reference</a></p>
    */
@@ -43,56 +43,47 @@ namespace Model
 
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceShare() const{ return m_resourceShare; }
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline bool ResourceShareHasBeenSet() const { return m_resourceShareHasBeenSet; }
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline void SetResourceShare(const Aws::Vector<Aws::String>& value) { m_resourceShareHasBeenSet = true; m_resourceShare = value; }
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline void SetResourceShare(Aws::Vector<Aws::String>&& value) { m_resourceShareHasBeenSet = true; m_resourceShare = std::move(value); }
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline DetailsMap& WithResourceShare(const Aws::Vector<Aws::String>& value) { SetResourceShare(value); return *this;}
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline DetailsMap& WithResourceShare(Aws::Vector<Aws::String>&& value) { SetResourceShare(std::move(value)); return *this;}
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline DetailsMap& AddResourceShare(const Aws::String& value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(value); return *this; }
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline DetailsMap& AddResourceShare(Aws::String&& value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A share resource ARN for a catalog resource shared through AWS Resource
-     * Access Manager (AWS RAM).</p>
+     * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
     inline DetailsMap& AddResourceShare(const char* value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(value); return *this; }
 

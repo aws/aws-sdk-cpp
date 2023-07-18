@@ -77,6 +77,27 @@ namespace Model
      */
     inline SourceFieldProperties& WithIsQueryable(bool value) { SetIsQueryable(value); return *this;}
 
+
+    /**
+     * <p>Indicates if this timestamp field can be used for incremental queries.</p>
+     */
+    inline bool GetIsTimestampFieldForIncrementalQueries() const{ return m_isTimestampFieldForIncrementalQueries; }
+
+    /**
+     * <p>Indicates if this timestamp field can be used for incremental queries.</p>
+     */
+    inline bool IsTimestampFieldForIncrementalQueriesHasBeenSet() const { return m_isTimestampFieldForIncrementalQueriesHasBeenSet; }
+
+    /**
+     * <p>Indicates if this timestamp field can be used for incremental queries.</p>
+     */
+    inline void SetIsTimestampFieldForIncrementalQueries(bool value) { m_isTimestampFieldForIncrementalQueriesHasBeenSet = true; m_isTimestampFieldForIncrementalQueries = value; }
+
+    /**
+     * <p>Indicates if this timestamp field can be used for incremental queries.</p>
+     */
+    inline SourceFieldProperties& WithIsTimestampFieldForIncrementalQueries(bool value) { SetIsTimestampFieldForIncrementalQueries(value); return *this;}
+
   private:
 
     bool m_isRetrievable;
@@ -84,6 +105,9 @@ namespace Model
 
     bool m_isQueryable;
     bool m_isQueryableHasBeenSet;
+
+    bool m_isTimestampFieldForIncrementalQueries;
+    bool m_isTimestampFieldForIncrementalQueriesHasBeenSet;
   };
 
 } // namespace Model

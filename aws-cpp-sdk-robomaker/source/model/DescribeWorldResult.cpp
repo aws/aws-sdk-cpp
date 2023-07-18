@@ -61,6 +61,12 @@ DescribeWorldResult& DescribeWorldResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("worldDescriptionBody"))
+  {
+    m_worldDescriptionBody = jsonValue.GetString("worldDescriptionBody");
+
+  }
+
 
 
   return *this;

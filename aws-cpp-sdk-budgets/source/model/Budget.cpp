@@ -30,7 +30,8 @@ Budget::Budget() :
     m_calculatedSpendHasBeenSet(false),
     m_budgetType(BudgetType::NOT_SET),
     m_budgetTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_autoAdjustDataHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Budget::Budget(JsonView jsonValue) :
     m_calculatedSpendHasBeenSet(false),
     m_budgetType(BudgetType::NOT_SET),
     m_budgetTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_autoAdjustDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +138,13 @@ Budget& Budget::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoAdjustData"))
+  {
+    m_autoAdjustData = jsonValue.GetObject("AutoAdjustData");
+
+    m_autoAdjustDataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue Budget::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_autoAdjustDataHasBeenSet)
+  {
+   payload.WithObject("AutoAdjustData", m_autoAdjustData.Jsonize());
+
   }
 
   return payload;

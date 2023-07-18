@@ -76,16 +76,18 @@ namespace Model
     /**
      * <p>Traditional MP4 file that contains the media clip from the specified video
      * stream. The output will contain the first 100 MB or the first 200 fragments from
-     * the specified start timestamp. For more information, see <a href="Kinesis Video
-     * Streams Limits">Kinesis Video Streams Limits</a>. </p>
+     * the specified start timestamp. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+     * Video Streams Limits</a>. </p>
      */
     inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
 
     /**
      * <p>Traditional MP4 file that contains the media clip from the specified video
      * stream. The output will contain the first 100 MB or the first 200 fragments from
-     * the specified start timestamp. For more information, see <a href="Kinesis Video
-     * Streams Limits">Kinesis Video Streams Limits</a>. </p>
+     * the specified start timestamp. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+     * Video Streams Limits</a>. </p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
 

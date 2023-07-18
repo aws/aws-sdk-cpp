@@ -27,7 +27,7 @@ namespace Model
    * <p>Shows the scaling configuration for an Aurora DB cluster in
    * <code>serverless</code> DB engine mode.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-   * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User
+   * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ScalingConfigurationInfo">AWS
    * API Reference</a></p>
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
      * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless DB cluster, the DB cluster automatically
+     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline bool GetAutoPause() const{ return m_autoPause; }
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
      * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless DB cluster, the DB cluster automatically
+     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline bool AutoPauseHasBeenSet() const { return m_autoPauseHasBeenSet; }
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
      * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless DB cluster, the DB cluster automatically
+     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline void SetAutoPause(bool value) { m_autoPauseHasBeenSet = true; m_autoPause = value; }
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
      * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless DB cluster, the DB cluster automatically
+     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline ScalingConfigurationInfo& WithAutoPause(bool value) { SetAutoPause(value); return *this;}
@@ -156,60 +156,129 @@ namespace Model
 
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline const Aws::String& GetTimeoutAction() const{ return m_timeoutAction; }
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline bool TimeoutActionHasBeenSet() const { return m_timeoutActionHasBeenSet; }
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline void SetTimeoutAction(const Aws::String& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline void SetTimeoutAction(Aws::String&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline void SetTimeoutAction(const char* value) { m_timeoutActionHasBeenSet = true; m_timeoutAction.assign(value); }
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline ScalingConfigurationInfo& WithTimeoutAction(const Aws::String& value) { SetTimeoutAction(value); return *this;}
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline ScalingConfigurationInfo& WithTimeoutAction(Aws::String&& value) { SetTimeoutAction(std::move(value)); return *this;}
 
     /**
-     * <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>,
-     * either <code>ForceApplyCapacityChange</code> or
-     * <code>RollbackCapacityChange</code>.</p>
+     * <p>The action that occurs when Aurora times out while attempting to change the
+     * capacity of an Aurora Serverless v1 cluster. The value is either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point isn't found in the timeout
+     * period.</p>
      */
     inline ScalingConfigurationInfo& WithTimeoutAction(const char* value) { SetTimeoutAction(value); return *this;}
+
+
+    /**
+     * <p>The number of seconds before scaling times out. What happens when an
+     * attempted scaling action times out is determined by the
+     * <code>TimeoutAction</code> setting.</p>
+     */
+    inline int GetSecondsBeforeTimeout() const{ return m_secondsBeforeTimeout; }
+
+    /**
+     * <p>The number of seconds before scaling times out. What happens when an
+     * attempted scaling action times out is determined by the
+     * <code>TimeoutAction</code> setting.</p>
+     */
+    inline bool SecondsBeforeTimeoutHasBeenSet() const { return m_secondsBeforeTimeoutHasBeenSet; }
+
+    /**
+     * <p>The number of seconds before scaling times out. What happens when an
+     * attempted scaling action times out is determined by the
+     * <code>TimeoutAction</code> setting.</p>
+     */
+    inline void SetSecondsBeforeTimeout(int value) { m_secondsBeforeTimeoutHasBeenSet = true; m_secondsBeforeTimeout = value; }
+
+    /**
+     * <p>The number of seconds before scaling times out. What happens when an
+     * attempted scaling action times out is determined by the
+     * <code>TimeoutAction</code> setting.</p>
+     */
+    inline ScalingConfigurationInfo& WithSecondsBeforeTimeout(int value) { SetSecondsBeforeTimeout(value); return *this;}
 
   private:
 
@@ -227,6 +296,9 @@ namespace Model
 
     Aws::String m_timeoutAction;
     bool m_timeoutActionHasBeenSet;
+
+    int m_secondsBeforeTimeout;
+    bool m_secondsBeforeTimeoutHasBeenSet;
   };
 
 } // namespace Model

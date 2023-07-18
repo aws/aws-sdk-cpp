@@ -18,7 +18,9 @@ UpdateEndpointRequest::UpdateEndpointRequest() :
     m_retainAllVariantProperties(false),
     m_retainAllVariantPropertiesHasBeenSet(false),
     m_excludeRetainedVariantPropertiesHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false)
+    m_deploymentConfigHasBeenSet(false),
+    m_retainDeploymentConfig(false),
+    m_retainDeploymentConfigHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,12 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
   if(m_deploymentConfigHasBeenSet)
   {
    payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
+
+  }
+
+  if(m_retainDeploymentConfigHasBeenSet)
+  {
+   payload.WithBool("RetainDeploymentConfig", m_retainDeploymentConfig);
 
   }
 

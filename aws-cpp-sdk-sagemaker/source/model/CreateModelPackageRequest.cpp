@@ -27,7 +27,13 @@ CreateModelPackageRequest::CreateModelPackageRequest() :
     m_metadataPropertiesHasBeenSet(false),
     m_modelMetricsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_customerMetadataPropertiesHasBeenSet(false),
+    m_driftCheckBaselinesHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_taskHasBeenSet(false),
+    m_samplePayloadUrlHasBeenSet(false),
+    m_additionalInferenceSpecificationsHasBeenSet(false)
 {
 }
 
@@ -108,6 +114,52 @@ Aws::String CreateModelPackageRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_customerMetadataPropertiesHasBeenSet)
+  {
+   JsonValue customerMetadataPropertiesJsonMap;
+   for(auto& customerMetadataPropertiesItem : m_customerMetadataProperties)
+   {
+     customerMetadataPropertiesJsonMap.WithString(customerMetadataPropertiesItem.first, customerMetadataPropertiesItem.second);
+   }
+   payload.WithObject("CustomerMetadataProperties", std::move(customerMetadataPropertiesJsonMap));
+
+  }
+
+  if(m_driftCheckBaselinesHasBeenSet)
+  {
+   payload.WithObject("DriftCheckBaselines", m_driftCheckBaselines.Jsonize());
+
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", m_domain);
+
+  }
+
+  if(m_taskHasBeenSet)
+  {
+   payload.WithString("Task", m_task);
+
+  }
+
+  if(m_samplePayloadUrlHasBeenSet)
+  {
+   payload.WithString("SamplePayloadUrl", m_samplePayloadUrl);
+
+  }
+
+  if(m_additionalInferenceSpecificationsHasBeenSet)
+  {
+   Array<JsonValue> additionalInferenceSpecificationsJsonList(m_additionalInferenceSpecifications.size());
+   for(unsigned additionalInferenceSpecificationsIndex = 0; additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength(); ++additionalInferenceSpecificationsIndex)
+   {
+     additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject(m_additionalInferenceSpecifications[additionalInferenceSpecificationsIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalInferenceSpecifications", std::move(additionalInferenceSpecificationsJsonList));
 
   }
 

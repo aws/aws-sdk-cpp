@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CENTERED_HASH = HashingUtils::HashString("CENTERED");
         static const int LEFT_HASH = HashingUtils::HashString("LEFT");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         DvbSubtitleAlignment GetDvbSubtitleAlignmentForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == LEFT_HASH)
           {
             return DvbSubtitleAlignment::LEFT;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return DvbSubtitleAlignment::AUTO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "CENTERED";
           case DvbSubtitleAlignment::LEFT:
             return "LEFT";
+          case DvbSubtitleAlignment::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

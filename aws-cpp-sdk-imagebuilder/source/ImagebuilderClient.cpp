@@ -47,11 +47,13 @@
 #include <aws/imagebuilder/model/GetImageRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/GetInfrastructureConfigurationRequest.h>
 #include <aws/imagebuilder/model/ImportComponentRequest.h>
+#include <aws/imagebuilder/model/ImportVmImageRequest.h>
 #include <aws/imagebuilder/model/ListComponentBuildVersionsRequest.h>
 #include <aws/imagebuilder/model/ListComponentsRequest.h>
 #include <aws/imagebuilder/model/ListContainerRecipesRequest.h>
 #include <aws/imagebuilder/model/ListDistributionConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListImageBuildVersionsRequest.h>
+#include <aws/imagebuilder/model/ListImagePackagesRequest.h>
 #include <aws/imagebuilder/model/ListImagePipelineImagesRequest.h>
 #include <aws/imagebuilder/model/ListImagePipelinesRequest.h>
 #include <aws/imagebuilder/model/ListImageRecipesRequest.h>
@@ -116,7 +118,7 @@ ImagebuilderClient::~ImagebuilderClient()
 {
 }
 
-void ImagebuilderClient::init(const ClientConfiguration& config)
+void ImagebuilderClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("imagebuilder");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -145,9 +147,7 @@ void ImagebuilderClient::OverrideEndpoint(const Aws::String& endpoint)
 CancelImageCreationOutcome ImagebuilderClient::CancelImageCreation(const CancelImageCreationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CancelImageCreation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CancelImageCreation");
   return CancelImageCreationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -172,9 +172,7 @@ void ImagebuilderClient::CancelImageCreationAsyncHelper(const CancelImageCreatio
 CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateComponent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateComponent");
   return CreateComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -199,9 +197,7 @@ void ImagebuilderClient::CreateComponentAsyncHelper(const CreateComponentRequest
 CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const CreateContainerRecipeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateContainerRecipe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateContainerRecipe");
   return CreateContainerRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -226,9 +222,7 @@ void ImagebuilderClient::CreateContainerRecipeAsyncHelper(const CreateContainerR
 CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionConfiguration(const CreateDistributionConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateDistributionConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateDistributionConfiguration");
   return CreateDistributionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -253,9 +247,7 @@ void ImagebuilderClient::CreateDistributionConfigurationAsyncHelper(const Create
 CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateImage";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateImage");
   return CreateImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -280,9 +272,7 @@ void ImagebuilderClient::CreateImageAsyncHelper(const CreateImageRequest& reques
 CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateImagePipelineRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateImagePipeline";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateImagePipeline");
   return CreateImagePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -307,9 +297,7 @@ void ImagebuilderClient::CreateImagePipelineAsyncHelper(const CreateImagePipelin
 CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImageRecipeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateImageRecipe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateImageRecipe");
   return CreateImageRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,9 +322,7 @@ void ImagebuilderClient::CreateImageRecipeAsyncHelper(const CreateImageRecipeReq
 CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructureConfiguration(const CreateInfrastructureConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateInfrastructureConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateInfrastructureConfiguration");
   return CreateInfrastructureConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -366,9 +352,7 @@ DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponent
     return DeleteComponentOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ComponentBuildVersionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteComponent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteComponent");
   return DeleteComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -398,9 +382,7 @@ DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const Del
     return DeleteContainerRecipeOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContainerRecipeArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteContainerRecipe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteContainerRecipe");
   return DeleteContainerRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -430,9 +412,7 @@ DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionCon
     return DeleteDistributionConfigurationOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionConfigurationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteDistributionConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteDistributionConfiguration");
   return DeleteDistributionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -462,9 +442,7 @@ DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& req
     return DeleteImageOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImageBuildVersionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteImage";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteImage");
   return DeleteImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -494,9 +472,7 @@ DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteI
     return DeleteImagePipelineOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImagePipelineArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteImagePipeline";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteImagePipeline");
   return DeleteImagePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -526,9 +502,7 @@ DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImage
     return DeleteImageRecipeOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImageRecipeArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteImageRecipe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteImageRecipe");
   return DeleteImageRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -558,9 +532,7 @@ DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructur
     return DeleteInfrastructureConfigurationOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InfrastructureConfigurationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteInfrastructureConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteInfrastructureConfiguration");
   return DeleteInfrastructureConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -590,9 +562,7 @@ GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& 
     return GetComponentOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ComponentBuildVersionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetComponent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetComponent");
   return GetComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -622,9 +592,7 @@ GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetCompon
     return GetComponentPolicyOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ComponentArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetComponentPolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetComponentPolicy");
   return GetComponentPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -654,9 +622,7 @@ GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContai
     return GetContainerRecipeOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContainerRecipeArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetContainerRecipe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetContainerRecipe");
   return GetContainerRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -686,9 +652,7 @@ GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(con
     return GetContainerRecipePolicyOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContainerRecipeArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetContainerRecipePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetContainerRecipePolicy");
   return GetContainerRecipePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -718,9 +682,7 @@ GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfigura
     return GetDistributionConfigurationOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionConfigurationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetDistributionConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetDistributionConfiguration");
   return GetDistributionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -750,9 +712,7 @@ GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) con
     return GetImageOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImageBuildVersionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetImage";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetImage");
   return GetImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -782,9 +742,7 @@ GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipel
     return GetImagePipelineOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImagePipelineArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetImagePipeline";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetImagePipeline");
   return GetImagePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -814,9 +772,7 @@ GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyReq
     return GetImagePolicyOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImageArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetImagePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetImagePolicy");
   return GetImagePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -846,9 +802,7 @@ GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeReq
     return GetImageRecipeOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImageRecipeArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetImageRecipe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetImageRecipe");
   return GetImageRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -878,9 +832,7 @@ GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetIm
     return GetImageRecipePolicyOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImageRecipeArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetImageRecipePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetImageRecipePolicy");
   return GetImageRecipePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -910,9 +862,7 @@ GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfi
     return GetInfrastructureConfigurationOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InfrastructureConfigurationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetInfrastructureConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetInfrastructureConfiguration");
   return GetInfrastructureConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -937,9 +887,7 @@ void ImagebuilderClient::GetInfrastructureConfigurationAsyncHelper(const GetInfr
 ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ImportComponent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ImportComponent");
   return ImportComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -961,12 +909,35 @@ void ImagebuilderClient::ImportComponentAsyncHelper(const ImportComponentRequest
   handler(this, request, ImportComponent(request), context);
 }
 
+ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ImportVmImage");
+  return ImportVmImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportVmImageOutcomeCallable ImagebuilderClient::ImportVmImageCallable(const ImportVmImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportVmImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportVmImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::ImportVmImageAsync(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportVmImageAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::ImportVmImageAsyncHelper(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportVmImage(request), context);
+}
+
 ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions(const ListComponentBuildVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListComponentBuildVersions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListComponentBuildVersions");
   return ListComponentBuildVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -991,9 +962,7 @@ void ImagebuilderClient::ListComponentBuildVersionsAsyncHelper(const ListCompone
 ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListComponents";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListComponents");
   return ListComponentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1018,9 +987,7 @@ void ImagebuilderClient::ListComponentsAsyncHelper(const ListComponentsRequest& 
 ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListContainerRecipesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListContainerRecipes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListContainerRecipes");
   return ListContainerRecipesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1045,9 +1012,7 @@ void ImagebuilderClient::ListContainerRecipesAsyncHelper(const ListContainerReci
 ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfigurations(const ListDistributionConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListDistributionConfigurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListDistributionConfigurations");
   return ListDistributionConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1072,9 +1037,7 @@ void ImagebuilderClient::ListDistributionConfigurationsAsyncHelper(const ListDis
 ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const ListImageBuildVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListImageBuildVersions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListImageBuildVersions");
   return ListImageBuildVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1096,12 +1059,35 @@ void ImagebuilderClient::ListImageBuildVersionsAsyncHelper(const ListImageBuildV
   handler(this, request, ListImageBuildVersions(request), context);
 }
 
+ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePackagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ListImagePackages");
+  return ListImagePackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImagePackagesOutcomeCallable ImagebuilderClient::ListImagePackagesCallable(const ListImagePackagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImagePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImagePackages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::ListImagePackagesAsync(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImagePackagesAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::ListImagePackagesAsyncHelper(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImagePackages(request), context);
+}
+
 ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const ListImagePipelineImagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListImagePipelineImages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListImagePipelineImages");
   return ListImagePipelineImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1126,9 +1112,7 @@ void ImagebuilderClient::ListImagePipelineImagesAsyncHelper(const ListImagePipel
 ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImagePipelinesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListImagePipelines";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListImagePipelines");
   return ListImagePipelinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1153,9 +1137,7 @@ void ImagebuilderClient::ListImagePipelinesAsyncHelper(const ListImagePipelinesR
 ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageRecipesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListImageRecipes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListImageRecipes");
   return ListImageRecipesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1180,9 +1162,7 @@ void ImagebuilderClient::ListImageRecipesAsyncHelper(const ListImageRecipesReque
 ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListImages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListImages");
   return ListImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1207,9 +1187,7 @@ void ImagebuilderClient::ListImagesAsyncHelper(const ListImagesRequest& request,
 ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureConfigurations(const ListInfrastructureConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListInfrastructureConfigurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListInfrastructureConfigurations");
   return ListInfrastructureConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1239,10 +1217,8 @@ ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1267,9 +1243,7 @@ void ImagebuilderClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutComponentPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/PutComponentPolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/PutComponentPolicy");
   return PutComponentPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1294,9 +1268,7 @@ void ImagebuilderClient::PutComponentPolicyAsyncHelper(const PutComponentPolicyR
 PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(const PutContainerRecipePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/PutContainerRecipePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/PutContainerRecipePolicy");
   return PutContainerRecipePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1321,9 +1293,7 @@ void ImagebuilderClient::PutContainerRecipePolicyAsyncHelper(const PutContainerR
 PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/PutImagePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/PutImagePolicy");
   return PutImagePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1348,9 +1318,7 @@ void ImagebuilderClient::PutImagePolicyAsyncHelper(const PutImagePolicyRequest& 
 PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutImageRecipePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/PutImageRecipePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/PutImageRecipePolicy");
   return PutImageRecipePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1375,9 +1343,7 @@ void ImagebuilderClient::PutImageRecipePolicyAsyncHelper(const PutImageRecipePol
 StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecution(const StartImagePipelineExecutionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/StartImagePipelineExecution";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/StartImagePipelineExecution");
   return StartImagePipelineExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1407,10 +1373,8 @@ TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1445,10 +1409,8 @@ UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1473,9 +1435,7 @@ void ImagebuilderClient::UntagResourceAsyncHelper(const UntagResourceRequest& re
 UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionConfiguration(const UpdateDistributionConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateDistributionConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateDistributionConfiguration");
   return UpdateDistributionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1500,9 +1460,7 @@ void ImagebuilderClient::UpdateDistributionConfigurationAsyncHelper(const Update
 UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateImagePipelineRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateImagePipeline";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateImagePipeline");
   return UpdateImagePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1527,9 +1485,7 @@ void ImagebuilderClient::UpdateImagePipelineAsyncHelper(const UpdateImagePipelin
 UpdateInfrastructureConfigurationOutcome ImagebuilderClient::UpdateInfrastructureConfiguration(const UpdateInfrastructureConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateInfrastructureConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateInfrastructureConfiguration");
   return UpdateInfrastructureConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

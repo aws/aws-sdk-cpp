@@ -145,6 +145,11 @@ namespace Aws
             double SecondsWithMSPrecision() const;
 
             /**
+             * Get the seconds without millisecond precision.
+             */
+            int64_t Seconds() const;
+
+            /**
              * Milliseconds since epoch of this datetime.
              */
             int64_t Millis() const;

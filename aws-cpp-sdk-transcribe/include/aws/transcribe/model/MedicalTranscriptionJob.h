@@ -13,8 +13,11 @@
 #include <aws/transcribe/model/MedicalTranscript.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/MedicalTranscriptionSetting.h>
+#include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Specialty.h>
 #include <aws/transcribe/model/Type.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -33,8 +36,13 @@ namespace Model
 {
 
   /**
-   * <p>The data structure that contains the information for a medical transcription
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides detailed information about a medical transcription job.</p> <p>To
+   * view the status of the specified medical transcription job, check the
+   * <code>TranscriptionJobStatus</code> field. If the status is
+   * <code>COMPLETED</code>, the job is finished and you can find the results at the
+   * location specified in <code>TranscriptFileUri</code>. If the status is
+   * <code>FAILED</code>, <code>FailureReason</code> provides details on why your
+   * transcription job failed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionJob">AWS
    * API Reference</a></p>
    */
@@ -48,163 +56,169 @@ namespace Model
 
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline MedicalTranscriptionJob& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline MedicalTranscriptionJob& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for a given medical transcription job.</p>
+     * <p>The name of the medical transcription job. Job names are case sensitive and
+     * must be unique within an Amazon Web Services account.</p>
      */
     inline MedicalTranscriptionJob& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
 
 
     /**
-     * <p>The completion status of a medical transcription job.</p>
+     * <p>Provides the status of the specified medical transcription job.</p> <p>If the
+     * status is <code>COMPLETED</code>, the job is finished and you can find the
+     * results at the location specified in <code>TranscriptFileUri</code>. If the
+     * status is <code>FAILED</code>, <code>FailureReason</code> provides details on
+     * why your transcription job failed.</p>
      */
     inline const TranscriptionJobStatus& GetTranscriptionJobStatus() const{ return m_transcriptionJobStatus; }
 
     /**
-     * <p>The completion status of a medical transcription job.</p>
+     * <p>Provides the status of the specified medical transcription job.</p> <p>If the
+     * status is <code>COMPLETED</code>, the job is finished and you can find the
+     * results at the location specified in <code>TranscriptFileUri</code>. If the
+     * status is <code>FAILED</code>, <code>FailureReason</code> provides details on
+     * why your transcription job failed.</p>
      */
     inline bool TranscriptionJobStatusHasBeenSet() const { return m_transcriptionJobStatusHasBeenSet; }
 
     /**
-     * <p>The completion status of a medical transcription job.</p>
+     * <p>Provides the status of the specified medical transcription job.</p> <p>If the
+     * status is <code>COMPLETED</code>, the job is finished and you can find the
+     * results at the location specified in <code>TranscriptFileUri</code>. If the
+     * status is <code>FAILED</code>, <code>FailureReason</code> provides details on
+     * why your transcription job failed.</p>
      */
     inline void SetTranscriptionJobStatus(const TranscriptionJobStatus& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = value; }
 
     /**
-     * <p>The completion status of a medical transcription job.</p>
+     * <p>Provides the status of the specified medical transcription job.</p> <p>If the
+     * status is <code>COMPLETED</code>, the job is finished and you can find the
+     * results at the location specified in <code>TranscriptFileUri</code>. If the
+     * status is <code>FAILED</code>, <code>FailureReason</code> provides details on
+     * why your transcription job failed.</p>
      */
     inline void SetTranscriptionJobStatus(TranscriptionJobStatus&& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = std::move(value); }
 
     /**
-     * <p>The completion status of a medical transcription job.</p>
+     * <p>Provides the status of the specified medical transcription job.</p> <p>If the
+     * status is <code>COMPLETED</code>, the job is finished and you can find the
+     * results at the location specified in <code>TranscriptFileUri</code>. If the
+     * status is <code>FAILED</code>, <code>FailureReason</code> provides details on
+     * why your transcription job failed.</p>
      */
     inline MedicalTranscriptionJob& WithTranscriptionJobStatus(const TranscriptionJobStatus& value) { SetTranscriptionJobStatus(value); return *this;}
 
     /**
-     * <p>The completion status of a medical transcription job.</p>
+     * <p>Provides the status of the specified medical transcription job.</p> <p>If the
+     * status is <code>COMPLETED</code>, the job is finished and you can find the
+     * results at the location specified in <code>TranscriptFileUri</code>. If the
+     * status is <code>FAILED</code>, <code>FailureReason</code> provides details on
+     * why your transcription job failed.</p>
      */
     inline MedicalTranscriptionJob& WithTranscriptionJobStatus(TranscriptionJobStatus&& value) { SetTranscriptionJobStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The language code for the language spoken in the source audio file. US
-     * English (en-US) is the only supported language for medical transcriptions. Any
-     * other value you enter for language code results in a
-     * <code>BadRequestException</code> error.</p>
+     * <p>The language code used to create your medical transcription job. US English
+     * (<code>en-US</code>) is the only supported language for medical
+     * transcriptions.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code for the language spoken in the source audio file. US
-     * English (en-US) is the only supported language for medical transcriptions. Any
-     * other value you enter for language code results in a
-     * <code>BadRequestException</code> error.</p>
+     * <p>The language code used to create your medical transcription job. US English
+     * (<code>en-US</code>) is the only supported language for medical
+     * transcriptions.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code for the language spoken in the source audio file. US
-     * English (en-US) is the only supported language for medical transcriptions. Any
-     * other value you enter for language code results in a
-     * <code>BadRequestException</code> error.</p>
+     * <p>The language code used to create your medical transcription job. US English
+     * (<code>en-US</code>) is the only supported language for medical
+     * transcriptions.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code for the language spoken in the source audio file. US
-     * English (en-US) is the only supported language for medical transcriptions. Any
-     * other value you enter for language code results in a
-     * <code>BadRequestException</code> error.</p>
+     * <p>The language code used to create your medical transcription job. US English
+     * (<code>en-US</code>) is the only supported language for medical
+     * transcriptions.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code for the language spoken in the source audio file. US
-     * English (en-US) is the only supported language for medical transcriptions. Any
-     * other value you enter for language code results in a
-     * <code>BadRequestException</code> error.</p>
+     * <p>The language code used to create your medical transcription job. US English
+     * (<code>en-US</code>) is the only supported language for medical
+     * transcriptions.</p>
      */
     inline MedicalTranscriptionJob& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code for the language spoken in the source audio file. US
-     * English (en-US) is the only supported language for medical transcriptions. Any
-     * other value you enter for language code results in a
-     * <code>BadRequestException</code> error.</p>
+     * <p>The language code used to create your medical transcription job. US English
+     * (<code>en-US</code>) is the only supported language for medical
+     * transcriptions.</p>
      */
     inline MedicalTranscriptionJob& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The sample rate, in Hertz, of the source audio containing medical
-     * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
-     * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the source audio containing medical
-     * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
-     * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the source audio containing medical
-     * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
-     * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the source audio containing medical
-     * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
-     * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
      */
     inline MedicalTranscriptionJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -260,519 +274,647 @@ namespace Model
 
 
     /**
-     * <p>An object that contains the <code>MedicalTranscript</code>. The
-     * <code>MedicalTranscript</code> contains the <code>TranscriptFileUri</code>.</p>
+     * <p>Provides you with the Amazon S3 URI you can use to access your
+     * transcript.</p>
      */
     inline const MedicalTranscript& GetTranscript() const{ return m_transcript; }
 
     /**
-     * <p>An object that contains the <code>MedicalTranscript</code>. The
-     * <code>MedicalTranscript</code> contains the <code>TranscriptFileUri</code>.</p>
+     * <p>Provides you with the Amazon S3 URI you can use to access your
+     * transcript.</p>
      */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
 
     /**
-     * <p>An object that contains the <code>MedicalTranscript</code>. The
-     * <code>MedicalTranscript</code> contains the <code>TranscriptFileUri</code>.</p>
+     * <p>Provides you with the Amazon S3 URI you can use to access your
+     * transcript.</p>
      */
     inline void SetTranscript(const MedicalTranscript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
 
     /**
-     * <p>An object that contains the <code>MedicalTranscript</code>. The
-     * <code>MedicalTranscript</code> contains the <code>TranscriptFileUri</code>.</p>
+     * <p>Provides you with the Amazon S3 URI you can use to access your
+     * transcript.</p>
      */
     inline void SetTranscript(MedicalTranscript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
 
     /**
-     * <p>An object that contains the <code>MedicalTranscript</code>. The
-     * <code>MedicalTranscript</code> contains the <code>TranscriptFileUri</code>.</p>
+     * <p>Provides you with the Amazon S3 URI you can use to access your
+     * transcript.</p>
      */
     inline MedicalTranscriptionJob& WithTranscript(const MedicalTranscript& value) { SetTranscript(value); return *this;}
 
     /**
-     * <p>An object that contains the <code>MedicalTranscript</code>. The
-     * <code>MedicalTranscript</code> contains the <code>TranscriptFileUri</code>.</p>
+     * <p>Provides you with the Amazon S3 URI you can use to access your
+     * transcript.</p>
      */
     inline MedicalTranscriptionJob& WithTranscript(MedicalTranscript&& value) { SetTranscript(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp that shows when the job started processing.</p>
+     * <p>The date and time the specified medical transcription job began
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A timestamp that shows when the job started processing.</p>
+     * <p>The date and time the specified medical transcription job began
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that shows when the job started processing.</p>
+     * <p>The date and time the specified medical transcription job began
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A timestamp that shows when the job started processing.</p>
+     * <p>The date and time the specified medical transcription job began
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>A timestamp that shows when the job started processing.</p>
+     * <p>The date and time the specified medical transcription job began
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline MedicalTranscriptionJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp that shows when the job started processing.</p>
+     * <p>The date and time the specified medical transcription job began
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline MedicalTranscriptionJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp that shows when the job was created.</p>
+     * <p>The date and time the specified medical transcription job request was
+     * made.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>A timestamp that shows when the job was created.</p>
+     * <p>The date and time the specified medical transcription job request was
+     * made.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that shows when the job was created.</p>
+     * <p>The date and time the specified medical transcription job request was
+     * made.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>A timestamp that shows when the job was created.</p>
+     * <p>The date and time the specified medical transcription job request was
+     * made.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>A timestamp that shows when the job was created.</p>
+     * <p>The date and time the specified medical transcription job request was
+     * made.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline MedicalTranscriptionJob& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>A timestamp that shows when the job was created.</p>
+     * <p>The date and time the specified medical transcription job request was
+     * made.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job
+     * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
     inline MedicalTranscriptionJob& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>The date and time the specified medical transcription job finished
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job
+     * that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>The date and time the specified medical transcription job finished
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job
+     * that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>The date and time the specified medical transcription job finished
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job
+     * that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>The date and time the specified medical transcription job finished
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job
+     * that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>The date and time the specified medical transcription job finished
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job
+     * that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
     inline MedicalTranscriptionJob& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>The date and time the specified medical transcription job finished
+     * processing.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job
+     * that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
     inline MedicalTranscriptionJob& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline MedicalTranscriptionJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline MedicalTranscriptionJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p> <p>The
-     * <code>FailureReason</code> field contains one of the following values:</p> <ul>
-     * <li> <p> <code>Unsupported media format</code>- The media format specified in
-     * the <code>MediaFormat</code> field of the request isn't valid. See the
-     * description of the <code>MediaFormat</code> field for a list of valid
-     * values.</p> </li> <li> <p> <code>The media format provided does not match the
-     * detected media format</code>- The media format of the audio file doesn't match
-     * the format specified in the <code>MediaFormat</code> field in the request. Check
-     * the media format of your media file and make sure the two values match.</p>
-     * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
-     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
-     * <code>The sample rate provided does not match the detected sample rate</code>-
-     * The sample rate in the audio file doesn't match the sample rate specified in the
-     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
-     * your media file and make sure that the two values match.</p> </li> <li> <p>
-     * <code>Invalid file size: file size too large</code>- The size of your audio file
-     * is larger than what Amazon Transcribe Medical can process. For more information,
-     * see <a
+     * <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the transcription job
+     * request failed.</p> <p>The <code>FailureReason</code> field contains one of the
+     * following values:</p> <ul> <li> <p> <code>Unsupported media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to
+     * <b>MediaFormat</b> for a list of supported formats.</p> </li> <li> <p> <code>The
+     * media format provided does not match the detected media format</code>.</p>
+     * <p>The media format specified in <code>MediaFormat</code> doesn't match the
+     * format of the input file. Check the media format of your media file and correct
+     * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
+     * file</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
+     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * not match the detected sample rate</code>.</p> <p>The sample rate specified in
+     * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
+     * input media file. Check the sample rate of your media file and correct the
+     * specified value.</p> </li> <li> <p> <code>Invalid file size: file size too
+     * large</code>.</p> <p>The size of your media file is larger than what Amazon
+     * Transcribe can process. For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
-     * <code>Invalid number of channels: number of channels too large</code>- Your
-     * audio contains more channels than Amazon Transcribe Medical is configured to
-     * process. To request additional channels, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-     * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * and quotas</a>.</p> </li> <li> <p> <code>Invalid number of channels: number of
+     * channels too large</code>.</p> <p>Your audio contains more channels than Amazon
+     * Transcribe is able to process. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+     * and quotas</a>.</p> </li> </ul>
      */
     inline MedicalTranscriptionJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
     /**
-     * <p>Object that contains object.</p>
+     * <p>Specify additional optional settings in your request, including channel
+     * identification, alternative transcriptions, and speaker labeling; allows you to
+     * apply custom vocabularies to your medical transcription job.</p>
      */
     inline const MedicalTranscriptionSetting& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Object that contains object.</p>
+     * <p>Specify additional optional settings in your request, including channel
+     * identification, alternative transcriptions, and speaker labeling; allows you to
+     * apply custom vocabularies to your medical transcription job.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>Object that contains object.</p>
+     * <p>Specify additional optional settings in your request, including channel
+     * identification, alternative transcriptions, and speaker labeling; allows you to
+     * apply custom vocabularies to your medical transcription job.</p>
      */
     inline void SetSettings(const MedicalTranscriptionSetting& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>Object that contains object.</p>
+     * <p>Specify additional optional settings in your request, including channel
+     * identification, alternative transcriptions, and speaker labeling; allows you to
+     * apply custom vocabularies to your medical transcription job.</p>
      */
     inline void SetSettings(MedicalTranscriptionSetting&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>Object that contains object.</p>
+     * <p>Specify additional optional settings in your request, including channel
+     * identification, alternative transcriptions, and speaker labeling; allows you to
+     * apply custom vocabularies to your medical transcription job.</p>
      */
     inline MedicalTranscriptionJob& WithSettings(const MedicalTranscriptionSetting& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Object that contains object.</p>
+     * <p>Specify additional optional settings in your request, including channel
+     * identification, alternative transcriptions, and speaker labeling; allows you to
+     * apply custom vocabularies to your medical transcription job.</p>
      */
     inline MedicalTranscriptionJob& WithSettings(MedicalTranscriptionSetting&& value) { SetSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * <p>Labels all personal health information (PHI) identified in your transcript.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+     * personal health information (PHI) in a transcription</a>.</p>
+     */
+    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+
+    /**
+     * <p>Labels all personal health information (PHI) identified in your transcript.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+     * personal health information (PHI) in a transcription</a>.</p>
+     */
+    inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
+
+    /**
+     * <p>Labels all personal health information (PHI) identified in your transcript.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+     * personal health information (PHI) in a transcription</a>.</p>
+     */
+    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+
+    /**
+     * <p>Labels all personal health information (PHI) identified in your transcript.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+     * personal health information (PHI) in a transcription</a>.</p>
+     */
+    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
+
+    /**
+     * <p>Labels all personal health information (PHI) identified in your transcript.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+     * personal health information (PHI) in a transcription</a>.</p>
+     */
+    inline MedicalTranscriptionJob& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
+
+    /**
+     * <p>Labels all personal health information (PHI) identified in your transcript.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+     * personal health information (PHI) in a transcription</a>.</p>
+     */
+    inline MedicalTranscriptionJob& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the medical specialty represented in your media.</p>
      */
     inline const Specialty& GetSpecialty() const{ return m_specialty; }
 
     /**
-     * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * <p>Describes the medical specialty represented in your media.</p>
      */
     inline bool SpecialtyHasBeenSet() const { return m_specialtyHasBeenSet; }
 
     /**
-     * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * <p>Describes the medical specialty represented in your media.</p>
      */
     inline void SetSpecialty(const Specialty& value) { m_specialtyHasBeenSet = true; m_specialty = value; }
 
     /**
-     * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * <p>Describes the medical specialty represented in your media.</p>
      */
     inline void SetSpecialty(Specialty&& value) { m_specialtyHasBeenSet = true; m_specialty = std::move(value); }
 
     /**
-     * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * <p>Describes the medical specialty represented in your media.</p>
      */
     inline MedicalTranscriptionJob& WithSpecialty(const Specialty& value) { SetSpecialty(value); return *this;}
 
     /**
-     * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * <p>Describes the medical specialty represented in your media.</p>
      */
     inline MedicalTranscriptionJob& WithSpecialty(Specialty&& value) { SetSpecialty(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
-     * generally used for patient-physician dialogues. <code>DICTATION</code> is the
-     * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * <p>Indicates whether the input media is a dictation or a conversation, as
+     * specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
-     * generally used for patient-physician dialogues. <code>DICTATION</code> is the
-     * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * <p>Indicates whether the input media is a dictation or a conversation, as
+     * specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
-     * generally used for patient-physician dialogues. <code>DICTATION</code> is the
-     * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * <p>Indicates whether the input media is a dictation or a conversation, as
+     * specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
-     * generally used for patient-physician dialogues. <code>DICTATION</code> is the
-     * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * <p>Indicates whether the input media is a dictation or a conversation, as
+     * specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
-     * generally used for patient-physician dialogues. <code>DICTATION</code> is the
-     * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * <p>Indicates whether the input media is a dictation or a conversation, as
+     * specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline MedicalTranscriptionJob& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
-     * generally used for patient-physician dialogues. <code>DICTATION</code> is the
-     * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * <p>Indicates whether the input media is a dictation or a conversation, as
+     * specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline MedicalTranscriptionJob& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -812,11 +954,17 @@ namespace Model
     MedicalTranscriptionSetting m_settings;
     bool m_settingsHasBeenSet;
 
+    MedicalContentIdentificationType m_contentIdentificationType;
+    bool m_contentIdentificationTypeHasBeenSet;
+
     Specialty m_specialty;
     bool m_specialtyHasBeenSet;
 
     Type m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

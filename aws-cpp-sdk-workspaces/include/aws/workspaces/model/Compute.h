@@ -22,7 +22,9 @@ namespace Model
     POWER,
     GRAPHICS,
     POWERPRO,
-    GRAPHICSPRO
+    GRAPHICSPRO,
+    GRAPHICS_G4DN,
+    GRAPHICSPRO_G4DN
   };
 
 namespace ComputeMapper

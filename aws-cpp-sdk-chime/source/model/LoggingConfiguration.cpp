@@ -20,13 +20,17 @@ namespace Model
 
 LoggingConfiguration::LoggingConfiguration() : 
     m_enableSIPLogs(false),
-    m_enableSIPLogsHasBeenSet(false)
+    m_enableSIPLogsHasBeenSet(false),
+    m_enableMediaMetricLogs(false),
+    m_enableMediaMetricLogsHasBeenSet(false)
 {
 }
 
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
     m_enableSIPLogs(false),
-    m_enableSIPLogsHasBeenSet(false)
+    m_enableSIPLogsHasBeenSet(false),
+    m_enableMediaMetricLogs(false),
+    m_enableMediaMetricLogsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     m_enableSIPLogsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableMediaMetricLogs"))
+  {
+    m_enableMediaMetricLogs = jsonValue.GetBool("EnableMediaMetricLogs");
+
+    m_enableMediaMetricLogsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue LoggingConfiguration::Jsonize() const
   if(m_enableSIPLogsHasBeenSet)
   {
    payload.WithBool("EnableSIPLogs", m_enableSIPLogs);
+
+  }
+
+  if(m_enableMediaMetricLogsHasBeenSet)
+  {
+   payload.WithBool("EnableMediaMetricLogs", m_enableMediaMetricLogs);
 
   }
 

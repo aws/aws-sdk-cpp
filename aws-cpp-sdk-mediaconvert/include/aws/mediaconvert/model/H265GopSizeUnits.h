@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     FRAMES,
-    SECONDS
+    SECONDS,
+    AUTO
   };
 
 namespace H265GopSizeUnitsMapper

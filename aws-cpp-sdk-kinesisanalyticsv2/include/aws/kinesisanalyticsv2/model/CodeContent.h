@@ -122,32 +122,38 @@ namespace Model
 
 
     /**
-     * <p>Information about the Amazon S3 bucket containing the application code.</p>
+     * <p>Information about the Amazon S3 bucket that contains the application
+     * code.</p>
      */
     inline const S3ContentLocation& GetS3ContentLocation() const{ return m_s3ContentLocation; }
 
     /**
-     * <p>Information about the Amazon S3 bucket containing the application code.</p>
+     * <p>Information about the Amazon S3 bucket that contains the application
+     * code.</p>
      */
     inline bool S3ContentLocationHasBeenSet() const { return m_s3ContentLocationHasBeenSet; }
 
     /**
-     * <p>Information about the Amazon S3 bucket containing the application code.</p>
+     * <p>Information about the Amazon S3 bucket that contains the application
+     * code.</p>
      */
     inline void SetS3ContentLocation(const S3ContentLocation& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = value; }
 
     /**
-     * <p>Information about the Amazon S3 bucket containing the application code.</p>
+     * <p>Information about the Amazon S3 bucket that contains the application
+     * code.</p>
      */
     inline void SetS3ContentLocation(S3ContentLocation&& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = std::move(value); }
 
     /**
-     * <p>Information about the Amazon S3 bucket containing the application code.</p>
+     * <p>Information about the Amazon S3 bucket that contains the application
+     * code.</p>
      */
     inline CodeContent& WithS3ContentLocation(const S3ContentLocation& value) { SetS3ContentLocation(value); return *this;}
 
     /**
-     * <p>Information about the Amazon S3 bucket containing the application code.</p>
+     * <p>Information about the Amazon S3 bucket that contains the application
+     * code.</p>
      */
     inline CodeContent& WithS3ContentLocation(S3ContentLocation&& value) { SetS3ContentLocation(std::move(value)); return *this;}
 

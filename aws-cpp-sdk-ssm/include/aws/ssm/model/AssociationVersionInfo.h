@@ -200,50 +200,50 @@ namespace Model
 
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline AssociationVersionInfo& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline AssociationVersionInfo& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of a Systems Manager document used when the association version
-     * was created.</p>
+     * <p>The version of an Amazon Web Services Systems Manager document (SSM document)
+     * used when the association version was created.</p>
      */
     inline AssociationVersionInfo& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
@@ -500,12 +500,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
@@ -516,12 +517,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
@@ -532,12 +534,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
@@ -548,12 +551,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
@@ -564,12 +568,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
@@ -580,12 +585,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline AssociationVersionInfo& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
@@ -596,12 +602,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline AssociationVersionInfo& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
@@ -612,12 +619,13 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set MaxError to 10%, then the system stops
-     * sending the request when the sixth error is received.</p> <p>Executions that are
-     * already running an association when MaxErrors is reached are allowed to
-     * complete, but some of these executions may fail as well. If you need to ensure
-     * that there won't be more than max-errors failed executions, set MaxConcurrency
-     * to 1 so that executions proceed one at a time.</p>
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
+     * system stops sending the request when the sixth error is received.</p>
+     * <p>Executions that are already running an association when
+     * <code>MaxErrors</code> is reached are allowed to complete, but some of these
+     * executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
+     * executions proceed one at a time.</p>
      */
     inline AssociationVersionInfo& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
@@ -626,11 +634,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
@@ -638,11 +646,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
@@ -650,11 +658,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -662,11 +670,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
@@ -674,11 +682,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
@@ -686,11 +694,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline AssociationVersionInfo& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
@@ -698,11 +706,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline AssociationVersionInfo& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
@@ -710,11 +718,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running MaxConcurrency associations,
-     * the association is allowed to run. During the next association interval, the new
-     * instance will process its association within the limit specified for
-     * MaxConcurrency.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline AssociationVersionInfo& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -758,10 +766,10 @@ namespace Model
      * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
-     * managed by State Manager. It is managed by your direct call to the
-     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
-     * <code>AUTO</code> mode.</p>
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
+     * It is managed by your direct call to the <a>PutComplianceItems</a> API
+     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline const AssociationSyncCompliance& GetSyncCompliance() const{ return m_syncCompliance; }
 
@@ -773,10 +781,10 @@ namespace Model
      * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
-     * managed by State Manager. It is managed by your direct call to the
-     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
-     * <code>AUTO</code> mode.</p>
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
+     * It is managed by your direct call to the <a>PutComplianceItems</a> API
+     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline bool SyncComplianceHasBeenSet() const { return m_syncComplianceHasBeenSet; }
 
@@ -788,10 +796,10 @@ namespace Model
      * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
-     * managed by State Manager. It is managed by your direct call to the
-     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
-     * <code>AUTO</code> mode.</p>
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
+     * It is managed by your direct call to the <a>PutComplianceItems</a> API
+     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline void SetSyncCompliance(const AssociationSyncCompliance& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = value; }
 
@@ -803,10 +811,10 @@ namespace Model
      * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
-     * managed by State Manager. It is managed by your direct call to the
-     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
-     * <code>AUTO</code> mode.</p>
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
+     * It is managed by your direct call to the <a>PutComplianceItems</a> API
+     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline void SetSyncCompliance(AssociationSyncCompliance&& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = std::move(value); }
 
@@ -818,10 +826,10 @@ namespace Model
      * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
-     * managed by State Manager. It is managed by your direct call to the
-     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
-     * <code>AUTO</code> mode.</p>
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
+     * It is managed by your direct call to the <a>PutComplianceItems</a> API
+     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline AssociationVersionInfo& WithSyncCompliance(const AssociationSyncCompliance& value) { SetSyncCompliance(value); return *this;}
 
@@ -833,10 +841,10 @@ namespace Model
      * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
-     * managed by State Manager. It is managed by your direct call to the
-     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
-     * <code>AUTO</code> mode.</p>
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
+     * It is managed by your direct call to the <a>PutComplianceItems</a> API
+     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline AssociationVersionInfo& WithSyncCompliance(AssociationSyncCompliance&& value) { SetSyncCompliance(std::move(value)); return *this;}
 
@@ -845,7 +853,7 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
+     * immediately after you create it. This parameter isn't supported for rate
      * expressions.</p>
      */
     inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
@@ -854,7 +862,7 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
+     * immediately after you create it. This parameter isn't supported for rate
      * expressions.</p>
      */
     inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
@@ -863,7 +871,7 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
+     * immediately after you create it. This parameter isn't supported for rate
      * expressions.</p>
      */
     inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
@@ -872,59 +880,219 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
+     * immediately after you create it. This parameter isn't supported for rate
      * expressions.</p>
      */
     inline AssociationVersionInfo& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
 
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline void SetCalendarNames(const Aws::Vector<Aws::String>& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = value; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline void SetCalendarNames(Aws::Vector<Aws::String>&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::move(value); }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline AssociationVersionInfo& WithCalendarNames(const Aws::Vector<Aws::String>& value) { SetCalendarNames(value); return *this;}
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline AssociationVersionInfo& WithCalendarNames(Aws::Vector<Aws::String>&& value) { SetCalendarNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline AssociationVersionInfo& AddCalendarNames(const Aws::String& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline AssociationVersionInfo& AddCalendarNames(Aws::String&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type
+     * documents your associations are gated under. The associations for this version
+     * only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     * Web Services Systems Manager Change Calendar</a>.</p>
+     */
+    inline AssociationVersionInfo& AddCalendarNames(const char* value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline AssociationVersionInfo& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationVersionInfo& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationVersionInfo& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationVersionInfo& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationVersionInfo& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -973,8 +1141,17 @@ namespace Model
     bool m_applyOnlyAtCronInterval;
     bool m_applyOnlyAtCronIntervalHasBeenSet;
 
+    Aws::Vector<Aws::String> m_calendarNames;
+    bool m_calendarNamesHasBeenSet;
+
     Aws::Vector<TargetLocation> m_targetLocations;
     bool m_targetLocationsHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
   };
 
 } // namespace Model

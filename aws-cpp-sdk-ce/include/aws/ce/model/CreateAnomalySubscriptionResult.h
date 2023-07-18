@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier of your newly created cost anomaly subscription. </p>
+     * <p>The unique identifier of your newly created cost anomaly subscription. </p>
      */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
 
     /**
-     * <p> The unique identifier of your newly created cost anomaly subscription. </p>
+     * <p>The unique identifier of your newly created cost anomaly subscription. </p>
      */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
 
     /**
-     * <p> The unique identifier of your newly created cost anomaly subscription. </p>
+     * <p>The unique identifier of your newly created cost anomaly subscription. </p>
      */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = std::move(value); }
 
     /**
-     * <p> The unique identifier of your newly created cost anomaly subscription. </p>
+     * <p>The unique identifier of your newly created cost anomaly subscription. </p>
      */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
 
     /**
-     * <p> The unique identifier of your newly created cost anomaly subscription. </p>
+     * <p>The unique identifier of your newly created cost anomaly subscription. </p>
      */
     inline CreateAnomalySubscriptionResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
 
     /**
-     * <p> The unique identifier of your newly created cost anomaly subscription. </p>
+     * <p>The unique identifier of your newly created cost anomaly subscription. </p>
      */
     inline CreateAnomalySubscriptionResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier of your newly created cost anomaly subscription. </p>
+     * <p>The unique identifier of your newly created cost anomaly subscription. </p>
      */
     inline CreateAnomalySubscriptionResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 

@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>A request to get information about the current <a>ApiKeys</a>
+   * <p>A request to get information about the current ApiKeys
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeysRequest">AWS
    * API Reference</a></p>

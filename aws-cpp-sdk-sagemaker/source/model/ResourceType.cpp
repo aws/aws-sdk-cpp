@@ -30,6 +30,7 @@ namespace Aws
         static const int Pipeline_HASH = HashingUtils::HashString("Pipeline");
         static const int PipelineExecution_HASH = HashingUtils::HashString("PipelineExecution");
         static const int FeatureGroup_HASH = HashingUtils::HashString("FeatureGroup");
+        static const int Project_HASH = HashingUtils::HashString("Project");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ResourceType::FeatureGroup;
           }
+          else if (hashCode == Project_HASH)
+          {
+            return ResourceType::Project;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +114,8 @@ namespace Aws
             return "PipelineExecution";
           case ResourceType::FeatureGroup:
             return "FeatureGroup";
+          case ResourceType::Project:
+            return "Project";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

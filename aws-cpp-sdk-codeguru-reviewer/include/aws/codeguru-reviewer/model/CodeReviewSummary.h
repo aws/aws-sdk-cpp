@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/codeguru-reviewer/model/Type.h>
 #include <aws/codeguru-reviewer/model/MetricsSummary.h>
+#include <aws/codeguru-reviewer/model/SourceCodeType.h>
 #include <utility>
 
 namespace Aws
@@ -183,66 +184,74 @@ namespace Model
 
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline CodeReviewSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline CodeReviewSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
-     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
-     * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * <p>The owner of the repository. For an Amazon Web Services CodeCommit
+     * repository, this is the Amazon Web Services account ID of the account that owns
+     * the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository,
+     * this is the username for the account that owns the repository. For an S3
+     * repository, it can be the username or Amazon Web Services account ID.</p>
      */
     inline CodeReviewSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
 
@@ -515,6 +524,25 @@ namespace Model
      */
     inline CodeReviewSummary& WithMetricsSummary(MetricsSummary&& value) { SetMetricsSummary(std::move(value)); return *this;}
 
+
+    
+    inline const SourceCodeType& GetSourceCodeType() const{ return m_sourceCodeType; }
+
+    
+    inline bool SourceCodeTypeHasBeenSet() const { return m_sourceCodeTypeHasBeenSet; }
+
+    
+    inline void SetSourceCodeType(const SourceCodeType& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = value; }
+
+    
+    inline void SetSourceCodeType(SourceCodeType&& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = std::move(value); }
+
+    
+    inline CodeReviewSummary& WithSourceCodeType(const SourceCodeType& value) { SetSourceCodeType(value); return *this;}
+
+    
+    inline CodeReviewSummary& WithSourceCodeType(SourceCodeType&& value) { SetSourceCodeType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -549,6 +577,9 @@ namespace Model
 
     MetricsSummary m_metricsSummary;
     bool m_metricsSummaryHasBeenSet;
+
+    SourceCodeType m_sourceCodeType;
+    bool m_sourceCodeTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -23,7 +23,8 @@ QueryExecutionStatus::QueryExecutionStatus() :
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_submissionDateTimeHasBeenSet(false),
-    m_completionDateTimeHasBeenSet(false)
+    m_completionDateTimeHasBeenSet(false),
+    m_athenaErrorHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ QueryExecutionStatus::QueryExecutionStatus(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_submissionDateTimeHasBeenSet(false),
-    m_completionDateTimeHasBeenSet(false)
+    m_completionDateTimeHasBeenSet(false),
+    m_athenaErrorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ QueryExecutionStatus& QueryExecutionStatus::operator =(JsonView jsonValue)
     m_completionDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AthenaError"))
+  {
+    m_athenaError = jsonValue.GetObject("AthenaError");
+
+    m_athenaErrorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue QueryExecutionStatus::Jsonize() const
   if(m_completionDateTimeHasBeenSet)
   {
    payload.WithDouble("CompletionDateTime", m_completionDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_athenaErrorHasBeenSet)
+  {
+   payload.WithObject("AthenaError", m_athenaError.Jsonize());
+
   }
 
   return payload;

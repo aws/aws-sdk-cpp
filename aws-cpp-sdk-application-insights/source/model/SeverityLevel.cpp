@@ -20,6 +20,7 @@ namespace Aws
       namespace SeverityLevelMapper
       {
 
+        static const int Informative_HASH = HashingUtils::HashString("Informative");
         static const int Low_HASH = HashingUtils::HashString("Low");
         static const int Medium_HASH = HashingUtils::HashString("Medium");
         static const int High_HASH = HashingUtils::HashString("High");
@@ -28,7 +29,11 @@ namespace Aws
         SeverityLevel GetSeverityLevelForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Low_HASH)
+          if (hashCode == Informative_HASH)
+          {
+            return SeverityLevel::Informative;
+          }
+          else if (hashCode == Low_HASH)
           {
             return SeverityLevel::Low;
           }
@@ -54,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SeverityLevel::Informative:
+            return "Informative";
           case SeverityLevel::Low:
             return "Low";
           case SeverityLevel::Medium:

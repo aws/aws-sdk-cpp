@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information on the sum of usage based on an AWS
+   * <p>Contains information on the sum of usage based on an Amazon Web Services
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UsageResourceResult">AWS
    * API Reference</a></p>
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline UsageResourceResult& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline UsageResourceResult& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS resource that generated usage.</p>
+     * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline UsageResourceResult& WithResource(const char* value) { SetResource(value); return *this;}
 

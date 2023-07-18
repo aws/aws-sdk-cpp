@@ -37,49 +37,49 @@ namespace Model
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
-     * format of a trail ARN is:</p> <p>
+     * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetTrailARN() const{ return m_trailARN; }
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
-     * format of a trail ARN is:</p> <p>
+     * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailARN(const Aws::String& value) { m_trailARN = value; }
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
-     * format of a trail ARN is:</p> <p>
+     * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailARN(Aws::String&& value) { m_trailARN = std::move(value); }
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
-     * format of a trail ARN is:</p> <p>
+     * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailARN(const char* value) { m_trailARN.assign(value); }
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
-     * format of a trail ARN is:</p> <p>
+     * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsResult& WithTrailARN(const Aws::String& value) { SetTrailARN(value); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
-     * format of a trail ARN is:</p> <p>
+     * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsResult& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
-     * format of a trail ARN is:</p> <p>
+     * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsResult& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}

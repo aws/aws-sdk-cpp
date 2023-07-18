@@ -196,6 +196,42 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
+
+    /**
+     * <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
+
+    /**
+     * <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+     */
+    inline GetQuantumTaskResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+     */
+    inline GetQuantumTaskResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+     */
+    inline GetQuantumTaskResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+
+
+    /**
      * <p>The S3 bucket where task results are stored.</p>
      */
     inline const Aws::String& GetOutputS3Bucket() const{ return m_outputS3Bucket; }
@@ -416,6 +452,8 @@ namespace Model
     Aws::Utils::DateTime m_endedAt;
 
     Aws::String m_failureReason;
+
+    Aws::String m_jobArn;
 
     Aws::String m_outputS3Bucket;
 

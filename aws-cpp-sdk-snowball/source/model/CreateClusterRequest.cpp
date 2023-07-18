@@ -16,6 +16,7 @@ CreateClusterRequest::CreateClusterRequest() :
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_resourcesHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_kmsKeyARNHasBeenSet(false),
@@ -26,7 +27,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_shippingOptionHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false)
+    m_taxDocumentsHasBeenSet(false),
+    m_remoteManagement(RemoteManagement::NOT_SET),
+    m_remoteManagementHasBeenSet(false)
 {
 }
 
@@ -42,6 +45,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_resourcesHasBeenSet)
   {
    payload.WithObject("Resources", m_resources.Jsonize());
+
+  }
+
+  if(m_onDeviceServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
 
   }
 
@@ -95,6 +104,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
   {
    payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
 
+  }
+
+  if(m_remoteManagementHasBeenSet)
+  {
+   payload.WithString("RemoteManagement", RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement));
   }
 
   return payload.View().WriteReadable();

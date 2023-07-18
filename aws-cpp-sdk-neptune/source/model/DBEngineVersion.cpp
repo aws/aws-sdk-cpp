@@ -34,7 +34,9 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsLogExportsToCloudwatchLogs(false),
     m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
     m_supportsReadReplica(false),
-    m_supportsReadReplicaHasBeenSet(false)
+    m_supportsReadReplicaHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsLogExportsToCloudwatchLogs(false),
     m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
     m_supportsReadReplica(false),
-    m_supportsReadReplicaHasBeenSet(false)
+    m_supportsReadReplicaHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -159,6 +163,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_supportsReadReplica = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsReadReplicaNode.GetText()).c_str()).c_str());
       m_supportsReadReplicaHasBeenSet = true;
     }
+    XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
+    if(!supportsGlobalDatabasesNode.IsNull())
+    {
+      m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
+      m_supportsGlobalDatabasesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -250,6 +260,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SupportsReadReplica=" << std::boolalpha << m_supportsReadReplica << "&";
   }
 
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -325,6 +340,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsReadReplicaHasBeenSet)
   {
       oStream << location << ".SupportsReadReplica=" << std::boolalpha << m_supportsReadReplica << "&";
+  }
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 }
 

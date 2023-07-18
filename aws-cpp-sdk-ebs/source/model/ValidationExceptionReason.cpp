@@ -31,6 +31,7 @@ namespace Aws
         static const int INVALID_DEPENDENCY_REQUEST_HASH = HashingUtils::HashString("INVALID_DEPENDENCY_REQUEST");
         static const int INVALID_PARAMETER_VALUE_HASH = HashingUtils::HashString("INVALID_PARAMETER_VALUE");
         static const int INVALID_VOLUME_SIZE_HASH = HashingUtils::HashString("INVALID_VOLUME_SIZE");
+        static const int CONFLICTING_BLOCK_UPDATE_HASH = HashingUtils::HashString("CONFLICTING_BLOCK_UPDATE");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ValidationExceptionReason::INVALID_VOLUME_SIZE;
           }
+          else if (hashCode == CONFLICTING_BLOCK_UPDATE_HASH)
+          {
+            return ValidationExceptionReason::CONFLICTING_BLOCK_UPDATE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +121,8 @@ namespace Aws
             return "INVALID_PARAMETER_VALUE";
           case ValidationExceptionReason::INVALID_VOLUME_SIZE:
             return "INVALID_VOLUME_SIZE";
+          case ValidationExceptionReason::CONFLICTING_BLOCK_UPDATE:
+            return "CONFLICTING_BLOCK_UPDATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

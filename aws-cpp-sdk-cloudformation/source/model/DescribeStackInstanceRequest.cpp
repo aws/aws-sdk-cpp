@@ -13,7 +13,9 @@ using namespace Aws::Utils;
 DescribeStackInstanceRequest::DescribeStackInstanceRequest() : 
     m_stackSetNameHasBeenSet(false),
     m_stackInstanceAccountHasBeenSet(false),
-    m_stackInstanceRegionHasBeenSet(false)
+    m_stackInstanceRegionHasBeenSet(false),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,11 @@ Aws::String DescribeStackInstanceRequest::SerializePayload() const
   if(m_stackInstanceRegionHasBeenSet)
   {
     ss << "StackInstanceRegion=" << StringUtils::URLEncode(m_stackInstanceRegion.c_str()) << "&";
+  }
+
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
   }
 
   ss << "Version=2010-05-15";

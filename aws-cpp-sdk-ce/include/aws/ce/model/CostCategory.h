@@ -9,6 +9,7 @@
 #include <aws/ce/model/CostCategoryRuleVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ce/model/CostCategoryRule.h>
+#include <aws/ce/model/CostCategorySplitChargeRule.h>
 #include <aws/ce/model/CostCategoryProcessingStatus.h>
 #include <utility>
 
@@ -43,124 +44,124 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline const Aws::String& GetCostCategoryArn() const{ return m_costCategoryArn; }
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline void SetCostCategoryArn(const Aws::String& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = value; }
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline void SetCostCategoryArn(Aws::String&& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = std::move(value); }
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline void SetCostCategoryArn(const char* value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn.assign(value); }
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline CostCategory& WithCostCategoryArn(const Aws::String& value) { SetCostCategoryArn(value); return *this;}
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline CostCategory& WithCostCategoryArn(Aws::String&& value) { SetCostCategoryArn(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for your Cost Category. </p>
+     * <p>The unique identifier for your Cost Category. </p>
      */
     inline CostCategory& WithCostCategoryArn(const char* value) { SetCostCategoryArn(value); return *this;}
 
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = value; }
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::move(value); }
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline void SetEffectiveStart(const char* value) { m_effectiveStartHasBeenSet = true; m_effectiveStart.assign(value); }
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
 
     /**
-     * <p> The Cost Category's effective start date.</p>
+     * <p>The effective state data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
 
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline const Aws::String& GetEffectiveEnd() const{ return m_effectiveEnd; }
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline bool EffectiveEndHasBeenSet() const { return m_effectiveEndHasBeenSet; }
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(const Aws::String& value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd = value; }
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(Aws::String&& value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd = std::move(value); }
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(const char* value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd.assign(value); }
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(const Aws::String& value) { SetEffectiveEnd(value); return *this;}
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(Aws::String&& value) { SetEffectiveEnd(std::move(value)); return *this;}
 
     /**
-     * <p> The Cost Category's effective end date.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(const char* value) { SetEffectiveEnd(value); return *this;}
 
@@ -210,56 +211,56 @@ namespace Model
 
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
     inline const Aws::Vector<CostCategoryRule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
     inline void SetRules(const Aws::Vector<CostCategoryRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
     inline void SetRules(Aws::Vector<CostCategoryRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
     inline CostCategory& WithRules(const Aws::Vector<CostCategoryRule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
     inline CostCategory& WithRules(Aws::Vector<CostCategoryRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
     inline CostCategory& AddRules(const CostCategoryRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
+     * <p>The rules are processed in order. If there are multiple rules that match the
      * line item, then the first rule to match is used to determine that Cost Category
      * value. </p>
      */
@@ -267,52 +268,126 @@ namespace Model
 
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const{ return m_splitChargeRules; }
+
+    /**
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline bool SplitChargeRulesHasBeenSet() const { return m_splitChargeRulesHasBeenSet; }
+
+    /**
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline void SetSplitChargeRules(const Aws::Vector<CostCategorySplitChargeRule>& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules = value; }
+
+    /**
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline void SetSplitChargeRules(Aws::Vector<CostCategorySplitChargeRule>&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules = std::move(value); }
+
+    /**
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline CostCategory& WithSplitChargeRules(const Aws::Vector<CostCategorySplitChargeRule>& value) { SetSplitChargeRules(value); return *this;}
+
+    /**
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline CostCategory& WithSplitChargeRules(Aws::Vector<CostCategorySplitChargeRule>&& value) { SetSplitChargeRules(std::move(value)); return *this;}
+
+    /**
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline CostCategory& AddSplitChargeRules(const CostCategorySplitChargeRule& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules.push_back(value); return *this; }
+
+    /**
+     * <p> The split charge rules that are used to allocate your charges between your
+     * Cost Category values. </p>
+     */
+    inline CostCategory& AddSplitChargeRules(CostCategorySplitChargeRule&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline const Aws::Vector<CostCategoryProcessingStatus>& GetProcessingStatus() const{ return m_processingStatus; }
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline bool ProcessingStatusHasBeenSet() const { return m_processingStatusHasBeenSet; }
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline void SetProcessingStatus(const Aws::Vector<CostCategoryProcessingStatus>& value) { m_processingStatusHasBeenSet = true; m_processingStatus = value; }
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline void SetProcessingStatus(Aws::Vector<CostCategoryProcessingStatus>&& value) { m_processingStatusHasBeenSet = true; m_processingStatus = std::move(value); }
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline CostCategory& WithProcessingStatus(const Aws::Vector<CostCategoryProcessingStatus>& value) { SetProcessingStatus(value); return *this;}
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline CostCategory& WithProcessingStatus(Aws::Vector<CostCategoryProcessingStatus>&& value) { SetProcessingStatus(std::move(value)); return *this;}
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline CostCategory& AddProcessingStatus(const CostCategoryProcessingStatus& value) { m_processingStatusHasBeenSet = true; m_processingStatus.push_back(value); return *this; }
 
     /**
-     * <p> The list of processing statuses for Cost Management products for a specific
+     * <p>The list of processing statuses for Cost Management products for a specific
      * cost category. </p>
      */
     inline CostCategory& AddProcessingStatus(CostCategoryProcessingStatus&& value) { m_processingStatusHasBeenSet = true; m_processingStatus.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    
+    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+
+    
+    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+
+    
+    inline CostCategory& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    
+    inline CostCategory& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+
+    
+    inline CostCategory& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
   private:
 
@@ -334,8 +409,14 @@ namespace Model
     Aws::Vector<CostCategoryRule> m_rules;
     bool m_rulesHasBeenSet;
 
+    Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
+    bool m_splitChargeRulesHasBeenSet;
+
     Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
     bool m_processingStatusHasBeenSet;
+
+    Aws::String m_defaultValue;
+    bool m_defaultValueHasBeenSet;
   };
 
 } // namespace Model

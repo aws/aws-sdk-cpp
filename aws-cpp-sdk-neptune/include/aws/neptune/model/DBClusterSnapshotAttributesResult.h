@@ -28,8 +28,8 @@ namespace Model
   /**
    * <p>Contains the results of a successful call to the
    * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster
-   * snapshot attributes are used to authorize other AWS accounts to copy or restore
-   * a manual DB cluster snapshot. For more information, see the
+   * snapshot attributes are used to authorize other Amazon accounts to copy or
+   * restore a manual DB cluster snapshot. For more information, see the
    * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBClusterSnapshotAttributesResult">AWS

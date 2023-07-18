@@ -22,7 +22,8 @@ Source::Source() :
     m_owner(Owner::NOT_SET),
     m_ownerHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false)
+    m_sourceDetailsHasBeenSet(false),
+    m_customPolicyDetailsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Source::Source(JsonView jsonValue) :
     m_owner(Owner::NOT_SET),
     m_ownerHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false)
+    m_sourceDetailsHasBeenSet(false),
+    m_customPolicyDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,13 @@ Source& Source::operator =(JsonView jsonValue)
     m_sourceDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomPolicyDetails"))
+  {
+    m_customPolicyDetails = jsonValue.GetObject("CustomPolicyDetails");
+
+    m_customPolicyDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,6 +96,12 @@ JsonValue Source::Jsonize() const
      sourceDetailsJsonList[sourceDetailsIndex].AsObject(m_sourceDetails[sourceDetailsIndex].Jsonize());
    }
    payload.WithArray("SourceDetails", std::move(sourceDetailsJsonList));
+
+  }
+
+  if(m_customPolicyDetailsHasBeenSet)
+  {
+   payload.WithObject("CustomPolicyDetails", m_customPolicyDetails.Jsonize());
 
   }
 

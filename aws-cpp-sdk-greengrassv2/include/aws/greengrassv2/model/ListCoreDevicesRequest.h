@@ -42,64 +42,80 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline const Aws::String& GetThingGroupArn() const{ return m_thingGroupArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline bool ThingGroupArnHasBeenSet() const { return m_thingGroupArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline void SetThingGroupArn(const Aws::String& value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline void SetThingGroupArn(Aws::String&& value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline void SetThingGroupArn(const char* value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline ListCoreDevicesRequest& WithThingGroupArn(const Aws::String& value) { SetThingGroupArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline ListCoreDevicesRequest& WithThingGroupArn(Aws::String&& value) { SetThingGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the AWS IoT thing group by which to filter. If you specify this parameter,
-     * the list includes only core devices that are members of this thing group.</p>
+     * of the IoT thing group by which to filter. If you specify this parameter, the
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline ListCoreDevicesRequest& WithThingGroupArn(const char* value) { SetThingGroupArn(value); return *this;}
 
@@ -107,60 +123,60 @@ namespace Model
     /**
      * <p>The core device status by which to filter. If you specify this parameter, the
      * list includes only core devices that have this status. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT
-     * Greengrass Core software and all components run on the core device without
-     * issue.</p> </li> <li> <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core
-     * software or a component is in a failed state on the core device.</p> </li> </ul>
+     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass
+     * Core software and all components run on the core device without issue.</p> </li>
+     * <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a
+     * component is in a failed state on the core device.</p> </li> </ul>
      */
     inline const CoreDeviceStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The core device status by which to filter. If you specify this parameter, the
      * list includes only core devices that have this status. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT
-     * Greengrass Core software and all components run on the core device without
-     * issue.</p> </li> <li> <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core
-     * software or a component is in a failed state on the core device.</p> </li> </ul>
+     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass
+     * Core software and all components run on the core device without issue.</p> </li>
+     * <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a
+     * component is in a failed state on the core device.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The core device status by which to filter. If you specify this parameter, the
      * list includes only core devices that have this status. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT
-     * Greengrass Core software and all components run on the core device without
-     * issue.</p> </li> <li> <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core
-     * software or a component is in a failed state on the core device.</p> </li> </ul>
+     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass
+     * Core software and all components run on the core device without issue.</p> </li>
+     * <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a
+     * component is in a failed state on the core device.</p> </li> </ul>
      */
     inline void SetStatus(const CoreDeviceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The core device status by which to filter. If you specify this parameter, the
      * list includes only core devices that have this status. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT
-     * Greengrass Core software and all components run on the core device without
-     * issue.</p> </li> <li> <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core
-     * software or a component is in a failed state on the core device.</p> </li> </ul>
+     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass
+     * Core software and all components run on the core device without issue.</p> </li>
+     * <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a
+     * component is in a failed state on the core device.</p> </li> </ul>
      */
     inline void SetStatus(CoreDeviceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The core device status by which to filter. If you specify this parameter, the
      * list includes only core devices that have this status. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT
-     * Greengrass Core software and all components run on the core device without
-     * issue.</p> </li> <li> <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core
-     * software or a component is in a failed state on the core device.</p> </li> </ul>
+     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass
+     * Core software and all components run on the core device without issue.</p> </li>
+     * <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a
+     * component is in a failed state on the core device.</p> </li> </ul>
      */
     inline ListCoreDevicesRequest& WithStatus(const CoreDeviceStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The core device status by which to filter. If you specify this parameter, the
      * list includes only core devices that have this status. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT
-     * Greengrass Core software and all components run on the core device without
-     * issue.</p> </li> <li> <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core
-     * software or a component is in a failed state on the core device.</p> </li> </ul>
+     * following options:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass
+     * Core software and all components run on the core device without issue.</p> </li>
+     * <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a
+     * component is in a failed state on the core device.</p> </li> </ul>
      */
     inline ListCoreDevicesRequest& WithStatus(CoreDeviceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

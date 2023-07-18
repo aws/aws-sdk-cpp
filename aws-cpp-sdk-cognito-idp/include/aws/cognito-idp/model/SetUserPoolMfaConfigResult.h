@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
      * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
      * <code>OPTIONAL</code> MFA will be required only for individual users who have an
      * MFA factor enabled.</p> </li> </ul>
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
      * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
      * <code>OPTIONAL</code> MFA will be required only for individual users who have an
      * MFA factor enabled.</p> </li> </ul>
@@ -106,7 +106,7 @@ namespace Model
 
     /**
      * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
      * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
      * <code>OPTIONAL</code> MFA will be required only for individual users who have an
      * MFA factor enabled.</p> </li> </ul>
@@ -115,7 +115,7 @@ namespace Model
 
     /**
      * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
      * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
      * <code>OPTIONAL</code> MFA will be required only for individual users who have an
      * MFA factor enabled.</p> </li> </ul>
@@ -124,7 +124,7 @@ namespace Model
 
     /**
      * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
      * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
      * <code>OPTIONAL</code> MFA will be required only for individual users who have an
      * MFA factor enabled.</p> </li> </ul>

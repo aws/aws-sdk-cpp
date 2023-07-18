@@ -205,42 +205,42 @@ namespace Model
 
     /**
      * <p>The status of the signal, which is either success or failure. A failure
-     * signal causes AWS CloudFormation to immediately fail the stack creation or
+     * signal causes CloudFormation to immediately fail the stack creation or
      * update.</p>
      */
     inline const ResourceSignalStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the signal, which is either success or failure. A failure
-     * signal causes AWS CloudFormation to immediately fail the stack creation or
+     * signal causes CloudFormation to immediately fail the stack creation or
      * update.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the signal, which is either success or failure. A failure
-     * signal causes AWS CloudFormation to immediately fail the stack creation or
+     * signal causes CloudFormation to immediately fail the stack creation or
      * update.</p>
      */
     inline void SetStatus(const ResourceSignalStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the signal, which is either success or failure. A failure
-     * signal causes AWS CloudFormation to immediately fail the stack creation or
+     * signal causes CloudFormation to immediately fail the stack creation or
      * update.</p>
      */
     inline void SetStatus(ResourceSignalStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the signal, which is either success or failure. A failure
-     * signal causes AWS CloudFormation to immediately fail the stack creation or
+     * signal causes CloudFormation to immediately fail the stack creation or
      * update.</p>
      */
     inline SignalResourceRequest& WithStatus(const ResourceSignalStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the signal, which is either success or failure. A failure
-     * signal causes AWS CloudFormation to immediately fail the stack creation or
+     * signal causes CloudFormation to immediately fail the stack creation or
      * update.</p>
      */
     inline SignalResourceRequest& WithStatus(ResourceSignalStatus&& value) { SetStatus(std::move(value)); return *this;}

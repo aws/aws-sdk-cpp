@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a container in which AWS Lambda functions run on
-   * AWS IoT Greengrass core devices.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a container in which Lambda functions run on
+   * Greengrass core devices.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaContainerParams">AWS
    * API Reference</a></p>
    */

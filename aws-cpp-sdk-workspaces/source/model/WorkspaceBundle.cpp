@@ -27,7 +27,8 @@ WorkspaceBundle::WorkspaceBundle() :
     m_rootStorageHasBeenSet(false),
     m_userStorageHasBeenSet(false),
     m_computeTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_creationTimeHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ WorkspaceBundle::WorkspaceBundle(JsonView jsonValue) :
     m_rootStorageHasBeenSet(false),
     m_userStorageHasBeenSet(false),
     m_computeTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_creationTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ WorkspaceBundle& WorkspaceBundle::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreationTime"))
+  {
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,11 @@ JsonValue WorkspaceBundle::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;

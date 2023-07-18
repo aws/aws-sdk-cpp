@@ -77,50 +77,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline const Aws::String& GetMemberAccountId() const{ return m_memberAccountId; }
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline void SetMemberAccountId(Aws::String&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline void SetMemberAccountId(const char* value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId.assign(value); }
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline GetProtectionStatusRequest& WithMemberAccountId(const Aws::String& value) { SetMemberAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline GetProtectionStatusRequest& WithMemberAccountId(Aws::String&& value) { SetMemberAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that is in scope of the policy that you want to get the
-     * details for.</p>
+     * <p>The Amazon Web Services account that is in scope of the policy that you want
+     * to get the details for.</p>
      */
     inline GetProtectionStatusRequest& WithMemberAccountId(const char* value) { SetMemberAccountId(value); return *this;}
 
@@ -128,8 +128,8 @@ namespace Model
     /**
      * <p>The start of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -137,8 +137,8 @@ namespace Model
     /**
      * <p>The start of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -146,8 +146,8 @@ namespace Model
     /**
      * <p>The start of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
@@ -155,8 +155,8 @@ namespace Model
     /**
      * <p>The start of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
@@ -164,8 +164,8 @@ namespace Model
     /**
      * <p>The start of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline GetProtectionStatusRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
@@ -173,8 +173,8 @@ namespace Model
     /**
      * <p>The start of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline GetProtectionStatusRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
@@ -183,8 +183,8 @@ namespace Model
     /**
      * <p>The end of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
@@ -192,8 +192,8 @@ namespace Model
     /**
      * <p>The end of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
@@ -201,8 +201,8 @@ namespace Model
     /**
      * <p>The end of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
@@ -210,8 +210,8 @@ namespace Model
     /**
      * <p>The end of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
@@ -219,8 +219,8 @@ namespace Model
     /**
      * <p>The end of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline GetProtectionStatusRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
@@ -228,8 +228,8 @@ namespace Model
     /**
      * <p>The end of the time period to query for the attacks. This is a
      * <code>timestamp</code> type. The request syntax listing indicates a
-     * <code>number</code> type because the default used by AWS Firewall Manager is
-     * Unix time in seconds. However, any valid <code>timestamp</code> format is
+     * <code>number</code> type because the default used by Firewall Manager is Unix
+     * time in seconds. However, any valid <code>timestamp</code> format is
      * allowed.</p>
      */
     inline GetProtectionStatusRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
@@ -237,9 +237,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -248,9 +248,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -259,9 +259,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -270,9 +270,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -281,9 +281,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -292,9 +292,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -303,9 +303,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -314,9 +314,9 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more objects
-     * than the number that you specify for <code>MaxResults</code>, AWS Firewall
-     * Manager returns a <code>NextToken</code> value in the response, which you can
-     * use to retrieve another group of objects. For the second and subsequent
+     * than the number that you specify for <code>MaxResults</code>, Firewall Manager
+     * returns a <code>NextToken</code> value in the response, which you can use to
+     * retrieve another group of objects. For the second and subsequent
      * <code>GetProtectionStatus</code> requests, specify the value of
      * <code>NextToken</code> from the previous response to get information about
      * another batch of objects.</p>
@@ -325,32 +325,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the number of objects that you want AWS Firewall Manager to return
-     * for this request. If you have more objects than the number that you specify for
+     * <p>Specifies the number of objects that you want Firewall Manager to return for
+     * this request. If you have more objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of objects.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Specifies the number of objects that you want AWS Firewall Manager to return
-     * for this request. If you have more objects than the number that you specify for
+     * <p>Specifies the number of objects that you want Firewall Manager to return for
+     * this request. If you have more objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of objects.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Specifies the number of objects that you want AWS Firewall Manager to return
-     * for this request. If you have more objects than the number that you specify for
+     * <p>Specifies the number of objects that you want Firewall Manager to return for
+     * this request. If you have more objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of objects.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Specifies the number of objects that you want AWS Firewall Manager to return
-     * for this request. If you have more objects than the number that you specify for
+     * <p>Specifies the number of objects that you want Firewall Manager to return for
+     * this request. If you have more objects than the number that you specify for
      * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
      * that you can use to get another batch of objects.</p>
      */

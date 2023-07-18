@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/OrganizationS3LogsConfiguration.h>
+#include <aws/guardduty/model/OrganizationKubernetesConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -75,10 +76,50 @@ namespace Model
      */
     inline OrganizationDataSourceConfigurations& WithS3Logs(OrganizationS3LogsConfiguration&& value) { SetS3Logs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources for new members of the
+     * organization.</p>
+     */
+    inline const OrganizationKubernetesConfiguration& GetKubernetes() const{ return m_kubernetes; }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources for new members of the
+     * organization.</p>
+     */
+    inline bool KubernetesHasBeenSet() const { return m_kubernetesHasBeenSet; }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources for new members of the
+     * organization.</p>
+     */
+    inline void SetKubernetes(const OrganizationKubernetesConfiguration& value) { m_kubernetesHasBeenSet = true; m_kubernetes = value; }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources for new members of the
+     * organization.</p>
+     */
+    inline void SetKubernetes(OrganizationKubernetesConfiguration&& value) { m_kubernetesHasBeenSet = true; m_kubernetes = std::move(value); }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources for new members of the
+     * organization.</p>
+     */
+    inline OrganizationDataSourceConfigurations& WithKubernetes(const OrganizationKubernetesConfiguration& value) { SetKubernetes(value); return *this;}
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources for new members of the
+     * organization.</p>
+     */
+    inline OrganizationDataSourceConfigurations& WithKubernetes(OrganizationKubernetesConfiguration&& value) { SetKubernetes(std::move(value)); return *this;}
+
   private:
 
     OrganizationS3LogsConfiguration m_s3Logs;
     bool m_s3LogsHasBeenSet;
+
+    OrganizationKubernetesConfiguration m_kubernetes;
+    bool m_kubernetesHasBeenSet;
   };
 
 } // namespace Model

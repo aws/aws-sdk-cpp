@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The rows that comprise a query result table.</p><p><h3>See Also:</h3>   <a
+   * <p>The rows that make up a query result table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/Row">AWS API
    * Reference</a></p>
    */

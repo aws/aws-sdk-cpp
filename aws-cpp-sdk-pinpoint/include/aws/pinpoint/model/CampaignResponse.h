@@ -986,6 +986,35 @@ namespace Model
      */
     inline CampaignResponse& WithVersion(int value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline CampaignResponse& WithPriority(int value) { SetPriority(value); return *this;}
+
   private:
 
     Aws::Vector<TreatmentResource> m_additionalTreatments;
@@ -1059,6 +1088,9 @@ namespace Model
 
     int m_version;
     bool m_versionHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
   };
 
 } // namespace Model

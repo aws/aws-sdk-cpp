@@ -20,22 +20,24 @@ namespace Model
 
 ChannelSummary::ChannelSummary() : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
+    m_latencyMode(ChannelLatencyMode::NOT_SET),
+    m_latencyModeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 ChannelSummary::ChannelSummary(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
+    m_latencyMode(ChannelLatencyMode::NOT_SET),
+    m_latencyModeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,11 +52,11 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("authorized"))
   {
-    m_name = jsonValue.GetString("name");
+    m_authorized = jsonValue.GetBool("authorized");
 
-    m_nameHasBeenSet = true;
+    m_authorizedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("latencyMode"))
@@ -64,11 +66,18 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_latencyModeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("authorized"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_authorized = jsonValue.GetBool("authorized");
+    m_name = jsonValue.GetString("name");
 
-    m_authorizedHasBeenSet = true;
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recordingConfigurationArn"))
+  {
+    m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
+
+    m_recordingConfigurationArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -94,9 +103,9 @@ JsonValue ChannelSummary::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_authorizedHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("authorized", m_authorized);
 
   }
 
@@ -105,9 +114,15 @@ JsonValue ChannelSummary::Jsonize() const
    payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
   }
 
-  if(m_authorizedHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithBool("authorized", m_authorized);
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_recordingConfigurationArnHasBeenSet)
+  {
+   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
 
   }
 

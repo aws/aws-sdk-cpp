@@ -97,56 +97,56 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline Distribution& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline Distribution& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline Distribution& WithARN(const char* value) { SetARN(value); return *this;}
 
@@ -314,9 +314,9 @@ namespace Model
      * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
      * this field to the response if you’ve configured a cache behavior in this
      * distribution to serve private content using trusted signers. This field contains
-     * a list of AWS account IDs and the active CloudFront key pairs in each account
-     * that CloudFront can use to verify the signatures of signed URLs or signed
-     * cookies.</p>
+     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
+     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * signed cookies.</p>
      */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
 
@@ -325,9 +325,9 @@ namespace Model
      * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
      * this field to the response if you’ve configured a cache behavior in this
      * distribution to serve private content using trusted signers. This field contains
-     * a list of AWS account IDs and the active CloudFront key pairs in each account
-     * that CloudFront can use to verify the signatures of signed URLs or signed
-     * cookies.</p>
+     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
+     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * signed cookies.</p>
      */
     inline bool ActiveTrustedSignersHasBeenSet() const { return m_activeTrustedSignersHasBeenSet; }
 
@@ -336,9 +336,9 @@ namespace Model
      * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
      * this field to the response if you’ve configured a cache behavior in this
      * distribution to serve private content using trusted signers. This field contains
-     * a list of AWS account IDs and the active CloudFront key pairs in each account
-     * that CloudFront can use to verify the signatures of signed URLs or signed
-     * cookies.</p>
+     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
+     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * signed cookies.</p>
      */
     inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
@@ -347,9 +347,9 @@ namespace Model
      * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
      * this field to the response if you’ve configured a cache behavior in this
      * distribution to serve private content using trusted signers. This field contains
-     * a list of AWS account IDs and the active CloudFront key pairs in each account
-     * that CloudFront can use to verify the signatures of signed URLs or signed
-     * cookies.</p>
+     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
+     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * signed cookies.</p>
      */
     inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
 
@@ -358,9 +358,9 @@ namespace Model
      * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
      * this field to the response if you’ve configured a cache behavior in this
      * distribution to serve private content using trusted signers. This field contains
-     * a list of AWS account IDs and the active CloudFront key pairs in each account
-     * that CloudFront can use to verify the signatures of signed URLs or signed
-     * cookies.</p>
+     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
+     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * signed cookies.</p>
      */
     inline Distribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
 
@@ -369,9 +369,9 @@ namespace Model
      * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
      * this field to the response if you’ve configured a cache behavior in this
      * distribution to serve private content using trusted signers. This field contains
-     * a list of AWS account IDs and the active CloudFront key pairs in each account
-     * that CloudFront can use to verify the signatures of signed URLs or signed
-     * cookies.</p>
+     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
+     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * signed cookies.</p>
      */
     inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
@@ -475,98 +475,98 @@ namespace Model
 
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline const Aws::Vector<AliasICPRecordal>& GetAliasICPRecordals() const{ return m_aliasICPRecordals; }
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline bool AliasICPRecordalsHasBeenSet() const { return m_aliasICPRecordalsHasBeenSet; }
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline void SetAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = value; }
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline void SetAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = std::move(value); }
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline Distribution& WithAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { SetAliasICPRecordals(value); return *this;}
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline Distribution& WithAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { SetAliasICPRecordals(std::move(value)); return *this;}
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline Distribution& AddAliasICPRecordals(const AliasICPRecordal& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(value); return *this; }
 
     /**
-     * <p>AWS services in China customers must file for an Internet Content Provider
-     * (ICP) recordal if they want to serve content publicly on an alternate domain
-     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
-     * <p>For more information about ICP recordals, see <a
+     * <p>Amazon Web Services services in China customers must file for an Internet
+     * Content Provider (ICP) recordal if they want to serve content publicly on an
+     * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * distributions.</p> <p>For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-     * China</i>.</p>
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+     * Services services in China</i>.</p>
      */
     inline Distribution& AddAliasICPRecordals(AliasICPRecordal&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(std::move(value)); return *this; }
 

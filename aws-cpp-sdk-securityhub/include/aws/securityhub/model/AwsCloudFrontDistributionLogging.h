@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline AwsCloudFrontDistributionLogging& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline AwsCloudFrontDistributionLogging& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket to store the access logs in.</p>
+     * <p>The S3 bucket to store the access logs in.</p>
      */
     inline AwsCloudFrontDistributionLogging& WithBucket(const char* value) { SetBucket(value); return *this;}
 

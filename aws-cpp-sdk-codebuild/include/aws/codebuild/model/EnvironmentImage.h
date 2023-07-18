@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a Docker image that is managed by AWS
-   * CodeBuild.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a Docker image that is managed by CodeBuild.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentImage">AWS
    * API Reference</a></p>
    */

@@ -43,7 +43,8 @@ Workload::Workload() :
     m_pillarPrioritiesHasBeenSet(false),
     m_lensesHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false)
+    m_shareInvitationIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ Workload::Workload(JsonView jsonValue) :
     m_pillarPrioritiesHasBeenSet(false),
     m_lensesHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false)
+    m_shareInvitationIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -251,6 +253,16 @@ Workload& Workload::operator =(JsonView jsonValue)
     m_shareInvitationIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -413,6 +425,17 @@ JsonValue Workload::Jsonize() const
   if(m_shareInvitationIdHasBeenSet)
   {
    payload.WithString("ShareInvitationId", m_shareInvitationId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

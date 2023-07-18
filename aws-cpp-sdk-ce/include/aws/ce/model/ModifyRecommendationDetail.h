@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Details on the modification recommendation.</p><p><h3>See Also:</h3>   <a
+   * <p>Details for the modification recommendation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ModifyRecommendationDetail">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline const Aws::Vector<TargetInstance>& GetTargetInstances() const{ return m_targetInstances; }
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline bool TargetInstancesHasBeenSet() const { return m_targetInstancesHasBeenSet; }
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline void SetTargetInstances(const Aws::Vector<TargetInstance>& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline void SetTargetInstances(Aws::Vector<TargetInstance>&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = std::move(value); }
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline ModifyRecommendationDetail& WithTargetInstances(const Aws::Vector<TargetInstance>& value) { SetTargetInstances(value); return *this;}
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline ModifyRecommendationDetail& WithTargetInstances(Aws::Vector<TargetInstance>&& value) { SetTargetInstances(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline ModifyRecommendationDetail& AddTargetInstances(const TargetInstance& value) { m_targetInstancesHasBeenSet = true; m_targetInstances.push_back(value); return *this; }
 
     /**
-     * <p>Identifies whether this instance type is the AWS default recommendation.</p>
+     * <p>Determines whether this instance type is the Amazon Web Services default
+     * recommendation.</p>
      */
     inline ModifyRecommendationDetail& AddTargetInstances(TargetInstance&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances.push_back(std::move(value)); return *this; }
 

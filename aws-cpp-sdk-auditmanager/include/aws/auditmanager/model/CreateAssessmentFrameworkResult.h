@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p> The name of the new framework returned by the
-     * <code>CreateAssessmentFramework</code> API. </p>
+     * <p> The name of the new framework that the
+     * <code>CreateAssessmentFramework</code> API returned. </p>
      */
     inline const Framework& GetFramework() const{ return m_framework; }
 
     /**
-     * <p> The name of the new framework returned by the
-     * <code>CreateAssessmentFramework</code> API. </p>
+     * <p> The name of the new framework that the
+     * <code>CreateAssessmentFramework</code> API returned. </p>
      */
     inline void SetFramework(const Framework& value) { m_framework = value; }
 
     /**
-     * <p> The name of the new framework returned by the
-     * <code>CreateAssessmentFramework</code> API. </p>
+     * <p> The name of the new framework that the
+     * <code>CreateAssessmentFramework</code> API returned. </p>
      */
     inline void SetFramework(Framework&& value) { m_framework = std::move(value); }
 
     /**
-     * <p> The name of the new framework returned by the
-     * <code>CreateAssessmentFramework</code> API. </p>
+     * <p> The name of the new framework that the
+     * <code>CreateAssessmentFramework</code> API returned. </p>
      */
     inline CreateAssessmentFrameworkResult& WithFramework(const Framework& value) { SetFramework(value); return *this;}
 
     /**
-     * <p> The name of the new framework returned by the
-     * <code>CreateAssessmentFramework</code> API. </p>
+     * <p> The name of the new framework that the
+     * <code>CreateAssessmentFramework</code> API returned. </p>
      */
     inline CreateAssessmentFrameworkResult& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
 

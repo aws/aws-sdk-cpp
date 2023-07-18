@@ -34,7 +34,9 @@ Proposal::Proposal() :
     m_noVoteCount(0),
     m_noVoteCountHasBeenSet(false),
     m_outstandingVoteCount(0),
-    m_outstandingVoteCountHasBeenSet(false)
+    m_outstandingVoteCountHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ Proposal::Proposal(JsonView jsonValue) :
     m_noVoteCount(0),
     m_noVoteCountHasBeenSet(false),
     m_outstandingVoteCount(0),
-    m_outstandingVoteCountHasBeenSet(false)
+    m_outstandingVoteCountHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +149,23 @@ Proposal& Proposal::operator =(JsonView jsonValue)
     m_outstandingVoteCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -218,6 +239,23 @@ JsonValue Proposal::Jsonize() const
   if(m_outstandingVoteCountHasBeenSet)
   {
    payload.WithInteger("OutstandingVoteCount", m_outstandingVoteCount);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

@@ -79,7 +79,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -136,20 +136,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:
@@ -201,7 +202,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -258,20 +259,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:
@@ -323,7 +325,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -380,20 +382,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:
@@ -445,7 +448,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -502,20 +505,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:
@@ -567,7 +571,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -624,20 +628,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:
@@ -689,7 +694,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -746,20 +751,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:
@@ -811,7 +817,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -868,20 +874,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:
@@ -933,7 +940,7 @@ namespace Model
      * to return inbound or outbound Resolver endpoints. If you specify
      * <code>DIRECTION</code> for <code>Name</code>, specify <code>INBOUND</code> or
      * <code>OUTBOUND</code> for <code>Values</code>.</p> </li> <li> <p>
-     * <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through
+     * <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through
      * on the way from your network to your VPCs in a region, or the VPC that outbound
      * queries pass through on the way from your VPCs to your network. In a <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
@@ -990,20 +997,21 @@ namespace Model
      * format and Coordinated Universal Time (UTC). </p> </li> <li> <p>
      * <code>CreatorRequestId</code>: A unique string that identifies the request that
      * created the query logging configuration.</p> </li> <li> <p>
-     * <code>Destination</code>: The AWS service that you want to forward query logs
-     * to. Valid values include the following:</p> <ul> <li> <p> <code>S3</code> </p>
-     * </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li> <p>
-     * <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
+     * <code>Destination</code>: The Amazon Web Services service that you want to
+     * forward query logs to. Valid values include the following:</p> <ul> <li> <p>
+     * <code>S3</code> </p> </li> <li> <p> <code>CloudWatchLogs</code> </p> </li> <li>
+     * <p> <code>KinesisFirehose</code> </p> </li> </ul> </li> <li> <p>
      * <code>DestinationArn</code>: The ARN of the location that Resolver is sending
      * query logs to. This value can be the ARN for an S3 bucket, a CloudWatch Logs log
      * group, or a Kinesis Data Firehose delivery stream.</p> </li> <li> <p>
      * <code>Id</code>: The ID of the query logging configuration</p> </li> <li> <p>
      * <code>Name</code>: The name of the query logging configuration</p> </li> <li>
-     * <p> <code>OwnerId</code>: The AWS account ID for the account that created the
-     * query logging configuration.</p> </li> <li> <p> <code>ShareStatus</code>: An
-     * indication of whether the query logging configuration is shared with other AWS
-     * accounts, or was shared with the current account by another AWS account. Valid
-     * values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
+     * <p> <code>OwnerId</code>: The Amazon Web Services account ID for the account
+     * that created the query logging configuration.</p> </li> <li> <p>
+     * <code>ShareStatus</code>: An indication of whether the query logging
+     * configuration is shared with other Amazon Web Services accounts, or was shared
+     * with the current account by another Amazon Web Services account. Valid values
+     * include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>, or
      * <code>SHARED_BY_ME</code>.</p> </li> <li> <p> <code>Status</code>: The status of
      * the query logging configuration. If you specify <code>Status</code> for
      * <code>Name</code>, specify the applicable status code for <code>Values</code>:

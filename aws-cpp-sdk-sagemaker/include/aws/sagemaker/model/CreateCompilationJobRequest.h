@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/OutputConfig.h>
+#include <aws/sagemaker/model/NeoVpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
@@ -40,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline const Aws::String& GetCompilationJobName() const{ return m_compilationJobName; }
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline bool CompilationJobNameHasBeenSet() const { return m_compilationJobNameHasBeenSet; }
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline void SetCompilationJobName(const Aws::String& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = value; }
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline void SetCompilationJobName(Aws::String&& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = std::move(value); }
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline void SetCompilationJobName(const char* value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName.assign(value); }
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline CreateCompilationJobRequest& WithCompilationJobName(const Aws::String& value) { SetCompilationJobName(value); return *this;}
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline CreateCompilationJobRequest& WithCompilationJobName(Aws::String&& value) { SetCompilationJobName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the model compilation job. The name must be unique within the AWS
-     * Region and within your AWS account. </p>
+     * <p>A name for the model compilation job. The name must be unique within the
+     * Amazon Web Services Region and within your Amazon Web Services account. </p>
      */
     inline CreateCompilationJobRequest& WithCompilationJobName(const char* value) { SetCompilationJobName(value); return *this;}
 
@@ -210,6 +211,71 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline const Aws::String& GetModelPackageVersionArn() const{ return m_modelPackageVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline bool ModelPackageVersionArnHasBeenSet() const { return m_modelPackageVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline void SetModelPackageVersionArn(const Aws::String& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline void SetModelPackageVersionArn(Aws::String&& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline void SetModelPackageVersionArn(const char* value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline CreateCompilationJobRequest& WithModelPackageVersionArn(const Aws::String& value) { SetModelPackageVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline CreateCompilationJobRequest& WithModelPackageVersionArn(Aws::String&& value) { SetModelPackageVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline CreateCompilationJobRequest& WithModelPackageVersionArn(const char* value) { SetModelPackageVersionArn(value); return *this;}
+
+
+    /**
      * <p>Provides information about the location of input model artifacts, the name
      * and shape of the expected data inputs, and the framework in which the model was
      * trained.</p>
@@ -290,6 +356,61 @@ namespace Model
 
 
     /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline const NeoVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(const NeoVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(NeoVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline CreateCompilationJobRequest& WithVpcConfig(const NeoVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline CreateCompilationJobRequest& WithVpcConfig(NeoVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies a limit to how long a model compilation job can run. When the job
      * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
      * to cap model training costs.</p>
@@ -333,74 +454,74 @@ namespace Model
 
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateCompilationJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateCompilationJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateCompilationJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateCompilationJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -412,11 +533,17 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
 
+    Aws::String m_modelPackageVersionArn;
+    bool m_modelPackageVersionArnHasBeenSet;
+
     InputConfig m_inputConfig;
     bool m_inputConfigHasBeenSet;
 
     OutputConfig m_outputConfig;
     bool m_outputConfigHasBeenSet;
+
+    NeoVpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
 
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet;

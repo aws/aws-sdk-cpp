@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateOpsMetadataRequest::CreateOpsMetadataRequest() : 
     m_resourceIdHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,17 @@ Aws::String CreateOpsMetadataRequest::SerializePayload() const
      metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.Jsonize());
    }
    payload.WithObject("Metadata", std::move(metadataJsonMap));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

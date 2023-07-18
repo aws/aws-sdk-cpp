@@ -104,10 +104,10 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
-     * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
-     * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * to 32,000 IOPS.</p> <p>This parameter is supported for <code>io1</code>,
+     * <code>io2</code>, and <code>gp3</code> volumes only. This parameter is not
+     * supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -124,10 +124,10 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
-     * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
-     * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * to 32,000 IOPS.</p> <p>This parameter is supported for <code>io1</code>,
+     * <code>io2</code>, and <code>gp3</code> volumes only. This parameter is not
+     * supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -144,10 +144,10 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
-     * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
-     * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * to 32,000 IOPS.</p> <p>This parameter is supported for <code>io1</code>,
+     * <code>io2</code>, and <code>gp3</code> volumes only. This parameter is not
+     * supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -164,58 +164,58 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
-     * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
-     * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * to 32,000 IOPS.</p> <p>This parameter is supported for <code>io1</code>,
+     * <code>io2</code>, and <code>gp3</code> volumes only. This parameter is not
+     * supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithIops(int value) { SetIops(value); return *this;}
 
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
      * encryption.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
@@ -264,96 +264,82 @@ namespace Model
 
     /**
      * <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a
-     * volume size. If you specify a snapshot, the default is the snapshot size. You
-     * can specify a volume size that is equal to or larger than the snapshot size.</p>
-     * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
-     * <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li> <li> <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * volume size. The following are the supported volumes sizes for each volume
+     * type:</p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p>
+     * </li> <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li>
+     * <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
      * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
      * <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a
-     * volume size. If you specify a snapshot, the default is the snapshot size. You
-     * can specify a volume size that is equal to or larger than the snapshot size.</p>
-     * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
-     * <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li> <li> <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * volume size. The following are the supported volumes sizes for each volume
+     * type:</p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p>
+     * </li> <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li>
+     * <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
      * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
      * <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a
-     * volume size. If you specify a snapshot, the default is the snapshot size. You
-     * can specify a volume size that is equal to or larger than the snapshot size.</p>
-     * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
-     * <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li> <li> <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * volume size. The following are the supported volumes sizes for each volume
+     * type:</p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p>
+     * </li> <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li>
+     * <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
      * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
      * <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a
-     * volume size. If you specify a snapshot, the default is the snapshot size. You
-     * can specify a volume size that is equal to or larger than the snapshot size.</p>
-     * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
-     * <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li> <li> <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * volume size. The following are the supported volumes sizes for each volume
+     * type:</p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p>
+     * </li> <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li>
+     * <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
      * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
 
     /**
-     * <p>The volume type. The default is <code>gp2</code>. For more information, see
-     * <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type. The default is <code>gp2</code>. For more information, see
-     * <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The volume type. The default is <code>gp2</code>. For more information, see
-     * <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type. The default is <code>gp2</code>. For more information, see
-     * <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type. The default is <code>gp2</code>. For more information, see
-     * <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type. The default is <code>gp2</code>. For more information, see
-     * <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */

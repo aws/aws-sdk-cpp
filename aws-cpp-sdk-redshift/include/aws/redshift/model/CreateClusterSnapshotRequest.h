@@ -43,81 +43,89 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline CreateClusterSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline CreateClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     * must be unique for all snapshots within the Amazon Web Services account.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline CreateClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 

@@ -38,91 +38,91 @@ namespace Model
 
     /**
      * <p>Use one of the following variables to filter a list of
-     * <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
-     * criteria to <code>DataSource</code> creation dates.</li> <li>
+     * <code>DataSource</code>:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the
+     * search criteria to <code>DataSource</code> creation dates.</p> </li> <li> <p>
      * <code>Status</code> - Sets the search criteria to <code>DataSource</code>
-     * statuses.</li> <li> <code>Name</code> - Sets the search criteria to the contents
-     * of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li>
+     * statuses.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the URI of data files used to
      * create the <code>DataSource</code>. The URI can identify either a file or an
-     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * the <code>DataSource</code> creation.</li> </ul>
+     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked the <code>DataSource</code> creation.</p> </li> </ul>
      */
     inline const DataSourceFilterVariable& GetFilterVariable() const{ return m_filterVariable; }
 
     /**
      * <p>Use one of the following variables to filter a list of
-     * <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
-     * criteria to <code>DataSource</code> creation dates.</li> <li>
+     * <code>DataSource</code>:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the
+     * search criteria to <code>DataSource</code> creation dates.</p> </li> <li> <p>
      * <code>Status</code> - Sets the search criteria to <code>DataSource</code>
-     * statuses.</li> <li> <code>Name</code> - Sets the search criteria to the contents
-     * of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li>
+     * statuses.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the URI of data files used to
      * create the <code>DataSource</code>. The URI can identify either a file or an
-     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * the <code>DataSource</code> creation.</li> </ul>
+     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked the <code>DataSource</code> creation.</p> </li> </ul>
      */
     inline bool FilterVariableHasBeenSet() const { return m_filterVariableHasBeenSet; }
 
     /**
      * <p>Use one of the following variables to filter a list of
-     * <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
-     * criteria to <code>DataSource</code> creation dates.</li> <li>
+     * <code>DataSource</code>:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the
+     * search criteria to <code>DataSource</code> creation dates.</p> </li> <li> <p>
      * <code>Status</code> - Sets the search criteria to <code>DataSource</code>
-     * statuses.</li> <li> <code>Name</code> - Sets the search criteria to the contents
-     * of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li>
+     * statuses.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the URI of data files used to
      * create the <code>DataSource</code>. The URI can identify either a file or an
-     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * the <code>DataSource</code> creation.</li> </ul>
+     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked the <code>DataSource</code> creation.</p> </li> </ul>
      */
     inline void SetFilterVariable(const DataSourceFilterVariable& value) { m_filterVariableHasBeenSet = true; m_filterVariable = value; }
 
     /**
      * <p>Use one of the following variables to filter a list of
-     * <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
-     * criteria to <code>DataSource</code> creation dates.</li> <li>
+     * <code>DataSource</code>:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the
+     * search criteria to <code>DataSource</code> creation dates.</p> </li> <li> <p>
      * <code>Status</code> - Sets the search criteria to <code>DataSource</code>
-     * statuses.</li> <li> <code>Name</code> - Sets the search criteria to the contents
-     * of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li>
+     * statuses.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the URI of data files used to
      * create the <code>DataSource</code>. The URI can identify either a file or an
-     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * the <code>DataSource</code> creation.</li> </ul>
+     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked the <code>DataSource</code> creation.</p> </li> </ul>
      */
     inline void SetFilterVariable(DataSourceFilterVariable&& value) { m_filterVariableHasBeenSet = true; m_filterVariable = std::move(value); }
 
     /**
      * <p>Use one of the following variables to filter a list of
-     * <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
-     * criteria to <code>DataSource</code> creation dates.</li> <li>
+     * <code>DataSource</code>:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the
+     * search criteria to <code>DataSource</code> creation dates.</p> </li> <li> <p>
      * <code>Status</code> - Sets the search criteria to <code>DataSource</code>
-     * statuses.</li> <li> <code>Name</code> - Sets the search criteria to the contents
-     * of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li>
+     * statuses.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the URI of data files used to
      * create the <code>DataSource</code>. The URI can identify either a file or an
-     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * the <code>DataSource</code> creation.</li> </ul>
+     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked the <code>DataSource</code> creation.</p> </li> </ul>
      */
     inline DescribeDataSourcesRequest& WithFilterVariable(const DataSourceFilterVariable& value) { SetFilterVariable(value); return *this;}
 
     /**
      * <p>Use one of the following variables to filter a list of
-     * <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
-     * criteria to <code>DataSource</code> creation dates.</li> <li>
+     * <code>DataSource</code>:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the
+     * search criteria to <code>DataSource</code> creation dates.</p> </li> <li> <p>
      * <code>Status</code> - Sets the search criteria to <code>DataSource</code>
-     * statuses.</li> <li> <code>Name</code> - Sets the search criteria to the contents
-     * of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li>
+     * statuses.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the URI of data files used to
      * create the <code>DataSource</code>. The URI can identify either a file or an
-     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * the <code>DataSource</code> creation.</li> </ul>
+     * Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked the <code>DataSource</code> creation.</p> </li> </ul>
      */
     inline DescribeDataSourcesRequest& WithFilterVariable(DataSourceFilterVariable&& value) { SetFilterVariable(std::move(value)); return *this;}
 
@@ -476,8 +476,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
@@ -488,8 +488,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
@@ -500,8 +500,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
@@ -512,8 +512,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
@@ -524,8 +524,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
@@ -536,8 +536,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline DescribeDataSourcesRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
@@ -548,8 +548,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline DescribeDataSourcesRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
@@ -560,63 +560,63 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>DataSource</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline DescribeDataSourcesRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>DataSource</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>DataSource</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>DataSource</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>DataSource</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>DataSource</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>DataSource</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>DataSource</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>DataSource</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>DataSource</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>DataSource</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline DescribeDataSourcesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>DataSource</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>DataSource</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline DescribeDataSourcesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 

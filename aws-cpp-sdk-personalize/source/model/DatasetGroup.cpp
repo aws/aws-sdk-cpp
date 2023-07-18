@@ -26,7 +26,9 @@ DatasetGroup::DatasetGroup() :
     m_kmsKeyArnHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ DatasetGroup::DatasetGroup(JsonView jsonValue) :
     m_kmsKeyArnHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +105,13 @@ DatasetGroup& DatasetGroup::operator =(JsonView jsonValue)
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("domain"))
+  {
+    m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("domain"));
+
+    m_domainHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +163,11 @@ JsonValue DatasetGroup::Jsonize() const
   {
    payload.WithString("failureReason", m_failureReason);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   return payload;

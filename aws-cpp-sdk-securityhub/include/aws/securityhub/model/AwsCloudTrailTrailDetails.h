@@ -79,50 +79,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline void SetCloudWatchLogsRoleArn(const char* value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline AwsCloudTrailTrailDetails& WithCloudWatchLogsRoleArn(const Aws::String& value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline AwsCloudTrailTrailDetails& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes
-     * to the log group.</p>
+     * <p>The ARN of the role that the CloudWatch Events endpoint assumes when it
+     * writes to the log group.</p>
      */
     inline AwsCloudTrailTrailDetails& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
@@ -240,67 +240,67 @@ namespace Model
 
 
     /**
-     * <p>Whether the trail is created for all accounts in an organization in AWS
-     * Organizations, or only for the current AWS account.</p>
+     * <p>Whether the trail is created for all accounts in an organization in
+     * Organizations, or only for the current Amazon Web Services account.</p>
      */
     inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
 
     /**
-     * <p>Whether the trail is created for all accounts in an organization in AWS
-     * Organizations, or only for the current AWS account.</p>
+     * <p>Whether the trail is created for all accounts in an organization in
+     * Organizations, or only for the current Amazon Web Services account.</p>
      */
     inline bool IsOrganizationTrailHasBeenSet() const { return m_isOrganizationTrailHasBeenSet; }
 
     /**
-     * <p>Whether the trail is created for all accounts in an organization in AWS
-     * Organizations, or only for the current AWS account.</p>
+     * <p>Whether the trail is created for all accounts in an organization in
+     * Organizations, or only for the current Amazon Web Services account.</p>
      */
     inline void SetIsOrganizationTrail(bool value) { m_isOrganizationTrailHasBeenSet = true; m_isOrganizationTrail = value; }
 
     /**
-     * <p>Whether the trail is created for all accounts in an organization in AWS
-     * Organizations, or only for the current AWS account.</p>
+     * <p>Whether the trail is created for all accounts in an organization in
+     * Organizations, or only for the current Amazon Web Services account.</p>
      */
     inline AwsCloudTrailTrailDetails& WithIsOrganizationTrail(bool value) { SetIsOrganizationTrail(value); return *this;}
 
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline AwsCloudTrailTrailDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline AwsCloudTrailTrailDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key ID to use to encrypt the logs.</p>
+     * <p>The KMS key ID to use to encrypt the logs.</p>
      */
     inline AwsCloudTrailTrailDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

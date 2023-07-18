@@ -23,7 +23,10 @@ RegisterUserRequest::RegisterUserRequest() :
     m_awsAccountIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_userNameHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false)
+    m_customPermissionsNameHasBeenSet(false),
+    m_externalLoginFederationProviderTypeHasBeenSet(false),
+    m_customFederationProviderUrlHasBeenSet(false),
+    m_externalLoginIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +71,24 @@ Aws::String RegisterUserRequest::SerializePayload() const
   if(m_customPermissionsNameHasBeenSet)
   {
    payload.WithString("CustomPermissionsName", m_customPermissionsName);
+
+  }
+
+  if(m_externalLoginFederationProviderTypeHasBeenSet)
+  {
+   payload.WithString("ExternalLoginFederationProviderType", m_externalLoginFederationProviderType);
+
+  }
+
+  if(m_customFederationProviderUrlHasBeenSet)
+  {
+   payload.WithString("CustomFederationProviderUrl", m_customFederationProviderUrl);
+
+  }
+
+  if(m_externalLoginIdHasBeenSet)
+  {
+   payload.WithString("ExternalLoginId", m_externalLoginId);
 
   }
 

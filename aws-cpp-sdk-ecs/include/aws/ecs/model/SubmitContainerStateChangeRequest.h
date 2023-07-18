@@ -250,22 +250,22 @@ namespace Model
 
 
     /**
-     * <p>The exit code returned for the state change request.</p>
+     * <p>The exit code that's returned for the state change request.</p>
      */
     inline int GetExitCode() const{ return m_exitCode; }
 
     /**
-     * <p>The exit code returned for the state change request.</p>
+     * <p>The exit code that's returned for the state change request.</p>
      */
     inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
 
     /**
-     * <p>The exit code returned for the state change request.</p>
+     * <p>The exit code that's returned for the state change request.</p>
      */
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
-     * <p>The exit code returned for the state change request.</p>
+     * <p>The exit code that's returned for the state change request.</p>
      */
     inline SubmitContainerStateChangeRequest& WithExitCode(int value) { SetExitCode(value); return *this;}
 

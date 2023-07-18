@@ -280,32 +280,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Statistics about the images in a dataset.</p>
      */
     inline const DatasetImageStats& GetImageStats() const{ return m_imageStats; }
 
     /**
-     * <p/>
+     * <p>Statistics about the images in a dataset.</p>
      */
     inline bool ImageStatsHasBeenSet() const { return m_imageStatsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Statistics about the images in a dataset.</p>
      */
     inline void SetImageStats(const DatasetImageStats& value) { m_imageStatsHasBeenSet = true; m_imageStats = value; }
 
     /**
-     * <p/>
+     * <p>Statistics about the images in a dataset.</p>
      */
     inline void SetImageStats(DatasetImageStats&& value) { m_imageStatsHasBeenSet = true; m_imageStats = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Statistics about the images in a dataset.</p>
      */
     inline DatasetDescription& WithImageStats(const DatasetImageStats& value) { SetImageStats(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Statistics about the images in a dataset.</p>
      */
     inline DatasetDescription& WithImageStats(DatasetImageStats&& value) { SetImageStats(std::move(value)); return *this;}
 

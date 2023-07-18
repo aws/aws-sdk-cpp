@@ -61,18 +61,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -102,18 +103,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -143,18 +145,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -184,18 +187,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -225,18 +229,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -266,18 +271,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -307,18 +313,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
@@ -348,18 +355,19 @@ namespace Model
      * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
-     * Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> - The ID of
-     * the Reserved Instance.</p> </li> <li> <p> <code>start</code> - The time at which
-     * the Reserved Instance purchase request was placed (for example,
-     * 2014-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Reserved Instance (<code>payment-pending</code> | <code>active</code> |
+     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
+     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL
+     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
+     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).</p> </li> <li>
+     * <p> <code>reserved-instances-id</code> - The ID of the Reserved Instance.</p>
+     * </li> <li> <p> <code>start</code> - The time at which the Reserved Instance
+     * purchase request was placed (for example, 2014-08-07T11:54:42.000Z).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Reserved Instance
+     * (<code>payment-pending</code> | <code>active</code> |
      * <code>payment-failed</code> | <code>retired</code>).</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify

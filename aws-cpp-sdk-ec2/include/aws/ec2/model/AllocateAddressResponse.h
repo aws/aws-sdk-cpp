@@ -71,44 +71,44 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
@@ -151,43 +151,43 @@ namespace Model
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroup = value; }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroup = std::move(value); }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroup.assign(value); }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 

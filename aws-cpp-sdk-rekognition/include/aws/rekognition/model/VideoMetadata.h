@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rekognition/model/VideoColorRange.h>
 #include <utility>
 
 namespace Aws
@@ -204,6 +205,43 @@ namespace Model
      */
     inline VideoMetadata& WithFrameWidth(long long value) { SetFrameWidth(value); return *this;}
 
+
+    /**
+     * <p> A description of the range of luminance values in a video, either LIMITED
+     * (16 to 235) or FULL (0 to 255). </p>
+     */
+    inline const VideoColorRange& GetColorRange() const{ return m_colorRange; }
+
+    /**
+     * <p> A description of the range of luminance values in a video, either LIMITED
+     * (16 to 235) or FULL (0 to 255). </p>
+     */
+    inline bool ColorRangeHasBeenSet() const { return m_colorRangeHasBeenSet; }
+
+    /**
+     * <p> A description of the range of luminance values in a video, either LIMITED
+     * (16 to 235) or FULL (0 to 255). </p>
+     */
+    inline void SetColorRange(const VideoColorRange& value) { m_colorRangeHasBeenSet = true; m_colorRange = value; }
+
+    /**
+     * <p> A description of the range of luminance values in a video, either LIMITED
+     * (16 to 235) or FULL (0 to 255). </p>
+     */
+    inline void SetColorRange(VideoColorRange&& value) { m_colorRangeHasBeenSet = true; m_colorRange = std::move(value); }
+
+    /**
+     * <p> A description of the range of luminance values in a video, either LIMITED
+     * (16 to 235) or FULL (0 to 255). </p>
+     */
+    inline VideoMetadata& WithColorRange(const VideoColorRange& value) { SetColorRange(value); return *this;}
+
+    /**
+     * <p> A description of the range of luminance values in a video, either LIMITED
+     * (16 to 235) or FULL (0 to 255). </p>
+     */
+    inline VideoMetadata& WithColorRange(VideoColorRange&& value) { SetColorRange(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_codec;
@@ -223,6 +261,9 @@ namespace Model
 
     long long m_frameWidth;
     bool m_frameWidthHasBeenSet;
+
+    VideoColorRange m_colorRange;
+    bool m_colorRangeHasBeenSet;
   };
 
 } // namespace Model

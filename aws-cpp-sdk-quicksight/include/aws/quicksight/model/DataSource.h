@@ -87,50 +87,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DataSource& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DataSource& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DataSource& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
@@ -464,80 +464,80 @@ namespace Model
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline const VpcConnectionProperties& GetVpcConnectionProperties() const{ return m_vpcConnectionProperties; }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline bool VpcConnectionPropertiesHasBeenSet() const { return m_vpcConnectionPropertiesHasBeenSet; }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline void SetVpcConnectionProperties(const VpcConnectionProperties& value) { m_vpcConnectionPropertiesHasBeenSet = true; m_vpcConnectionProperties = value; }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline void SetVpcConnectionProperties(VpcConnectionProperties&& value) { m_vpcConnectionPropertiesHasBeenSet = true; m_vpcConnectionProperties = std::move(value); }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline DataSource& WithVpcConnectionProperties(const VpcConnectionProperties& value) { SetVpcConnectionProperties(value); return *this;}
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline DataSource& WithVpcConnectionProperties(VpcConnectionProperties&& value) { SetVpcConnectionProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline const SslProperties& GetSslProperties() const{ return m_sslProperties; }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline bool SslPropertiesHasBeenSet() const { return m_sslPropertiesHasBeenSet; }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline void SetSslProperties(const SslProperties& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = value; }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline void SetSslProperties(SslProperties&& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = std::move(value); }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline DataSource& WithSslProperties(const SslProperties& value) { SetSslProperties(value); return *this;}
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline DataSource& WithSslProperties(SslProperties&& value) { SetSslProperties(std::move(value)); return *this;}
 

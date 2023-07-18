@@ -17,8 +17,11 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/AdvancedSecurityOptionsInput.h>
+#include <aws/es/model/AutoTuneOptionsInput.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
+#include <aws/es/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -746,6 +749,78 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& WithAdvancedSecurityOptions(AdvancedSecurityOptionsInput&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline const AutoTuneOptionsInput& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(const AutoTuneOptionsInput& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(AutoTuneOptionsInput&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithAutoTuneOptions(const AutoTuneOptionsInput& value) { SetAutoTuneOptions(value); return *this;}
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithAutoTuneOptions(AutoTuneOptionsInput&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline CreateElasticsearchDomainRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>Tag</code> added during domain creation.</p>
+     */
+    inline CreateElasticsearchDomainRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainName;
@@ -789,6 +864,12 @@ namespace Model
 
     AdvancedSecurityOptionsInput m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet;
+
+    AutoTuneOptionsInput m_autoTuneOptions;
+    bool m_autoTuneOptionsHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
   };
 
 } // namespace Model

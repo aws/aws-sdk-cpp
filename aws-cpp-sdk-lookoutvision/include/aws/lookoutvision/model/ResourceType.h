@@ -19,7 +19,8 @@ namespace Model
     PROJECT,
     DATASET,
     MODEL,
-    TRIAL
+    TRIAL,
+    MODEL_PACKAGE_JOB
   };
 
 namespace ResourceTypeMapper

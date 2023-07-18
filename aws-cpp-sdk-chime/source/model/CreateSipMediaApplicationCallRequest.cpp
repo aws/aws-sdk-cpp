@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateSipMediaApplicationCallRequest::CreateSipMediaApplicationCallRequest() : 
     m_fromPhoneNumberHasBeenSet(false),
     m_toPhoneNumberHasBeenSet(false),
-    m_sipMediaApplicationIdHasBeenSet(false)
+    m_sipMediaApplicationIdHasBeenSet(false),
+    m_sipHeadersHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String CreateSipMediaApplicationCallRequest::SerializePayload() const
   if(m_toPhoneNumberHasBeenSet)
   {
    payload.WithString("ToPhoneNumber", m_toPhoneNumber);
+
+  }
+
+  if(m_sipHeadersHasBeenSet)
+  {
+   JsonValue sipHeadersJsonMap;
+   for(auto& sipHeadersItem : m_sipHeaders)
+   {
+     sipHeadersJsonMap.WithString(sipHeadersItem.first, sipHeadersItem.second);
+   }
+   payload.WithObject("SipHeaders", std::move(sipHeadersJsonMap));
 
   }
 

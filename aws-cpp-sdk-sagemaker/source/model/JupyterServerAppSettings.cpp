@@ -19,12 +19,14 @@ namespace Model
 {
 
 JupyterServerAppSettings::JupyterServerAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_lifecycleConfigArnsHasBeenSet(false)
 {
 }
 
 JupyterServerAppSettings::JupyterServerAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_lifecycleConfigArnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,16 @@ JupyterServerAppSettings& JupyterServerAppSettings::operator =(JsonView jsonValu
     m_defaultResourceSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LifecycleConfigArns"))
+  {
+    Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
+    for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
+    {
+      m_lifecycleConfigArns.push_back(lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString());
+    }
+    m_lifecycleConfigArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +60,17 @@ JsonValue JupyterServerAppSettings::Jsonize() const
   if(m_defaultResourceSpecHasBeenSet)
   {
    payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_lifecycleConfigArnsHasBeenSet)
+  {
+   Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
+   for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
+   {
+     lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);
+   }
+   payload.WithArray("LifecycleConfigArns", std::move(lifecycleConfigArnsJsonList));
 
   }
 

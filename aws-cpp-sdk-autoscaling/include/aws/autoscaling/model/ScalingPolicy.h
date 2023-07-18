@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/TargetTrackingConfiguration.h>
+#include <aws/autoscaling/model/PredictiveScalingConfiguration.h>
 #include <aws/autoscaling/model/StepAdjustment.h>
 #include <aws/autoscaling/model/Alarm.h>
 #include <utility>
@@ -169,8 +170,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -182,8 +183,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -195,8 +196,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -208,8 +209,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -221,8 +222,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -234,8 +235,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -247,8 +248,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -260,8 +261,8 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul> <p>For
-     * more information, see <a
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
      * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
@@ -647,6 +648,37 @@ namespace Model
      */
     inline ScalingPolicy& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline const PredictiveScalingConfiguration& GetPredictiveScalingConfiguration() const{ return m_predictiveScalingConfiguration; }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline bool PredictiveScalingConfigurationHasBeenSet() const { return m_predictiveScalingConfigurationHasBeenSet; }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = value; }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = std::move(value); }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline ScalingPolicy& WithPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { SetPredictiveScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline ScalingPolicy& WithPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { SetPredictiveScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -693,6 +725,9 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    PredictiveScalingConfiguration m_predictiveScalingConfiguration;
+    bool m_predictiveScalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

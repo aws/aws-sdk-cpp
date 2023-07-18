@@ -39,67 +39,73 @@ namespace Model
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline GetUsageForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline GetUsageForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
@@ -197,75 +203,165 @@ namespace Model
 
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetUsageForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetUsageForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetUsageForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetUsageForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetUsageForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline GetUsageForecastRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetUsageForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline GetUsageForecastRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline int GetPredictionIntervalLevel() const{ return m_predictionIntervalLevel; }
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline bool PredictionIntervalLevelHasBeenSet() const { return m_predictionIntervalLevelHasBeenSet; }
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline void SetPredictionIntervalLevel(int value) { m_predictionIntervalLevelHasBeenSet = true; m_predictionIntervalLevel = value; }
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline GetUsageForecastRequest& WithPredictionIntervalLevel(int value) { SetPredictionIntervalLevel(value); return *this;}
 

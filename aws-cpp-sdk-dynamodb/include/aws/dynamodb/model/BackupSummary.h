@@ -357,7 +357,7 @@ namespace Model
      * backup is automatically created and is retained for 35 days (at no additional
      * cost). System backups allow you to restore the deleted table to the state it was
      * in just before the point of deletion. </p> </li> <li> <p>
-     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from Backup
      * service.</p> </li> </ul>
      */
     inline const BackupType& GetBackupType() const{ return m_backupType; }
@@ -369,7 +369,7 @@ namespace Model
      * backup is automatically created and is retained for 35 days (at no additional
      * cost). System backups allow you to restore the deleted table to the state it was
      * in just before the point of deletion. </p> </li> <li> <p>
-     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from Backup
      * service.</p> </li> </ul>
      */
     inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
@@ -381,7 +381,7 @@ namespace Model
      * backup is automatically created and is retained for 35 days (at no additional
      * cost). System backups allow you to restore the deleted table to the state it was
      * in just before the point of deletion. </p> </li> <li> <p>
-     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from Backup
      * service.</p> </li> </ul>
      */
     inline void SetBackupType(const BackupType& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
@@ -393,7 +393,7 @@ namespace Model
      * backup is automatically created and is retained for 35 days (at no additional
      * cost). System backups allow you to restore the deleted table to the state it was
      * in just before the point of deletion. </p> </li> <li> <p>
-     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from Backup
      * service.</p> </li> </ul>
      */
     inline void SetBackupType(BackupType&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
@@ -405,7 +405,7 @@ namespace Model
      * backup is automatically created and is retained for 35 days (at no additional
      * cost). System backups allow you to restore the deleted table to the state it was
      * in just before the point of deletion. </p> </li> <li> <p>
-     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from Backup
      * service.</p> </li> </ul>
      */
     inline BackupSummary& WithBackupType(const BackupType& value) { SetBackupType(value); return *this;}
@@ -417,7 +417,7 @@ namespace Model
      * backup is automatically created and is retained for 35 days (at no additional
      * cost). System backups allow you to restore the deleted table to the state it was
      * in just before the point of deletion. </p> </li> <li> <p>
-     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from Backup
      * service.</p> </li> </ul>
      */
     inline BackupSummary& WithBackupType(BackupType&& value) { SetBackupType(std::move(value)); return *this;}

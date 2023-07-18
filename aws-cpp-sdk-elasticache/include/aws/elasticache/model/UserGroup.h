@@ -128,42 +128,42 @@ namespace Model
 
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline UserGroup& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline UserGroup& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline UserGroup& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -215,32 +215,73 @@ namespace Model
 
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::move(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion.assign(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline UserGroup& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline UserGroup& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline UserGroup& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline const UserGroupPendingChanges& GetPendingChanges() const{ return m_pendingChanges; }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline bool PendingChangesHasBeenSet() const { return m_pendingChangesHasBeenSet; }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline void SetPendingChanges(const UserGroupPendingChanges& value) { m_pendingChangesHasBeenSet = true; m_pendingChanges = value; }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline void SetPendingChanges(UserGroupPendingChanges&& value) { m_pendingChangesHasBeenSet = true; m_pendingChanges = std::move(value); }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline UserGroup& WithPendingChanges(const UserGroupPendingChanges& value) { SetPendingChanges(value); return *this;}
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline UserGroup& WithPendingChanges(UserGroupPendingChanges&& value) { SetPendingChanges(std::move(value)); return *this;}
 
@@ -363,6 +404,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userIds;
     bool m_userIdsHasBeenSet;
+
+    Aws::String m_minimumEngineVersion;
+    bool m_minimumEngineVersionHasBeenSet;
 
     UserGroupPendingChanges m_pendingChanges;
     bool m_pendingChangesHasBeenSet;

@@ -793,7 +793,7 @@
         {"shape":"InvalidParametersException"},
         {"shape":"OperationNotSupportedException"}
       ],
-      "documentation":"<p>Lists all portfolios for which sharing was accepted by this account.</p>"
+      "documentation":"<p>Lists all imported portfolios for which account-to-account shares were accepted by this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios for which organizational shares were accepted by this account.</p>"
     },
     "ListBudgetsForResource":{
       "name":"ListBudgetsForResource",
@@ -1333,10 +1333,9 @@
       "member":{"shape":"Tag"},
       "max":20
     },
-    "AllowedValue":{"type":"string"},
     "AllowedValues":{
       "type":"list",
-      "member":{"shape":"AllowedValue"}
+      "member":{"shape":"String"}
     },
     "ApproximateCount":{"type":"integer"},
     "AssociateBudgetWithResourceInput":{
@@ -2746,7 +2745,13 @@
         },
         "ProvisioningArtifactOutputs":{
           "shape":"ProvisioningArtifactOutputs",
-          "documentation":"<p>The output of the provisioning artifact.</p>"
+          "documentation":"<p>The output of the provisioning artifact.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
+        },
+        "ProvisioningArtifactOutputKeys":{
+          "shape":"ProvisioningArtifactOutputs",
+          "documentation":"<p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>"
         }
       }
     },
@@ -3344,7 +3349,7 @@
         },
         "Name":{
           "shape":"PortfolioName",
-          "documentation":"<p>The name of the portfolio to which the user was assigned.</p>"
+          "documentation":"<p>The name of the portfolio that contains the product. </p>"
         }
       },
       "documentation":"<p>Summary information about a product path for a user.</p>"
@@ -3372,12 +3377,12 @@
           "documentation":"<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
         },
         "PageSize":{
-          "shape":"PageSize",
+          "shape":"PageSizeMax100",
           "documentation":"<p>The maximum number of items to return with this call.</p>"
         },
         "PortfolioShareType":{
           "shape":"PortfolioShareType",
-          "documentation":"<p>The type of shared portfolios to list. The default is to list imported portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li> <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li> </ul>"
+          "documentation":"<p>The type of shared portfolios to list. The default is to list imported portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li> <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li> <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li> </ul>"
         }
       }
     },
@@ -3601,7 +3606,7 @@
           "documentation":"<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
         },
         "PageSize":{
-          "shape":"PageSize",
+          "shape":"PageSizeMax100",
           "documentation":"<p>The maximum number of items to return with this call.</p>"
         }
       }
@@ -3631,7 +3636,7 @@
           "documentation":"<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
         },
         "PageSize":{
-          "shape":"PageSize",
+          "shape":"PageSizeMax100",
           "documentation":"<p>The maximum number of items to return with this call.</p>"
         }
       }
@@ -4118,6 +4123,30 @@
         "AllowedValues":{
           "shape":"AllowedValues",
           "documentation":"<p>The values that the administrator has allowed for the parameter.</p>"
+        },
+        "AllowedPattern":{
+          "shape":"String",
+          "documentation":"<p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>"
+        },
+        "ConstraintDescription":{
+          "shape":"String",
+          "documentation":"<p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p> <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p> <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p> <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>"
+        },
+        "MaxLength":{
+          "shape":"String",
+          "documentation":"<p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>"
+        },
+        "MinLength":{
+          "shape":"String",
+          "documentation":"<p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>"
+        },
+        "MaxValue":{
+          "shape":"String",
+          "documentation":"<p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>"
+        },
+        "MinValue":{
+          "shape":"String",
+          "documentation":"<p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>"
         }
       },
       "documentation":"<p>The constraints that the administrator has put on the parameter.</p>"
@@ -5556,7 +5585,7 @@
           "documentation":"<p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>"
         },
         "PageSize":{
-          "shape":"PageSize",
+          "shape":"PageSizeMax100",
           "documentation":"<p>The maximum number of items to return with this call.</p>"
         },
         "SortBy":{
@@ -5904,6 +5933,7 @@
       "type":"string",
       "pattern":"[\\u0009\\u000a\\u000d\\u0020-\\uD7FF\\uE000-\\uFFFD]*"
     },
+    "String":{"type":"string"},
     "SuccessfulShares":{
       "type":"list",
       "member":{"shape":"AccountId"}

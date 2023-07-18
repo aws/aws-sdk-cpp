@@ -11,11 +11,16 @@
 #include <aws/mediaconvert/model/CmafCodecSpecification.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/CmafEncryptionSettings.h>
+#include <aws/mediaconvert/model/CmafImageBasedTrickPlay.h>
+#include <aws/mediaconvert/model/CmafImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
 #include <aws/mediaconvert/model/CmafMpdProfile.h>
+#include <aws/mediaconvert/model/CmafPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/CmafSegmentControl.h>
+#include <aws/mediaconvert/model/CmafSegmentLengthControl.h>
 #include <aws/mediaconvert/model/CmafStreamInfResolution.h>
+#include <aws/mediaconvert/model/CmafTargetDurationCompatibilityMode.h>
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
 #include <aws/mediaconvert/model/CmafWriteHLSManifest.h>
 #include <aws/mediaconvert/model/CmafWriteSegmentTimelineInRepresentation.h>
@@ -38,9 +43,11 @@ namespace Model
 {
 
   /**
-   * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-   * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-   * single video, audio, or caption output.<p><h3>See Also:</h3>   <a
+   * Settings related to your CMAF output package. For more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+   * you work directly in your JSON job specification, include this object and any
+   * required children when you set Type, under OutputGroupSettings, to
+   * CMAF_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmafGroupSettings">AWS
    * API Reference</a></p>
    */
@@ -413,44 +420,170 @@ namespace Model
 
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline int GetFragmentLength() const{ return m_fragmentLength; }
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline CmafGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
+
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline const CmafImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(const CmafImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(CmafImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlay(const CmafImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlay(CmafImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
+
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline const CmafImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(const CmafImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(CmafImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlaySettings(const CmafImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlaySettings(CmafImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
 
 
     /**
@@ -675,6 +808,85 @@ namespace Model
 
 
     /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline const CmafPtsOffsetHandlingForBFrames& GetPtsOffsetHandlingForBFrames() const{ return m_ptsOffsetHandlingForBFrames; }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline bool PtsOffsetHandlingForBFramesHasBeenSet() const { return m_ptsOffsetHandlingForBFramesHasBeenSet; }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline void SetPtsOffsetHandlingForBFrames(const CmafPtsOffsetHandlingForBFrames& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = value; }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline void SetPtsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames&& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = std::move(value); }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline CmafGroupSettings& WithPtsOffsetHandlingForBFrames(const CmafPtsOffsetHandlingForBFrames& value) { SetPtsOffsetHandlingForBFrames(value); return *this;}
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline CmafGroupSettings& WithPtsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames&& value) { SetPtsOffsetHandlingForBFrames(std::move(value)); return *this;}
+
+
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally
      * segmented using the Fragment Length and Segment Length. When set to
      * SEGMENTED_FILES, separate segment files will be created.
@@ -718,52 +930,99 @@ namespace Model
 
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline CmafGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
+
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline const CmafSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(const CmafSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(CmafSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline CmafGroupSettings& WithSegmentLengthControl(const CmafSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline CmafGroupSettings& WithSegmentLengthControl(CmafSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
@@ -801,6 +1060,85 @@ namespace Model
      * variant manifest.
      */
     inline CmafGroupSettings& WithStreamInfResolution(CmafStreamInfResolution&& value) { SetStreamInfResolution(std::move(value)); return *this;}
+
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline const CmafTargetDurationCompatibilityMode& GetTargetDurationCompatibilityMode() const{ return m_targetDurationCompatibilityMode; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline bool TargetDurationCompatibilityModeHasBeenSet() const { return m_targetDurationCompatibilityModeHasBeenSet; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(const CmafTargetDurationCompatibilityMode& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = value; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode&& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = std::move(value); }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline CmafGroupSettings& WithTargetDurationCompatibilityMode(const CmafTargetDurationCompatibilityMode& value) { SetTargetDurationCompatibilityMode(value); return *this;}
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline CmafGroupSettings& WithTargetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode&& value) { SetTargetDurationCompatibilityMode(std::move(value)); return *this;}
 
 
     /**
@@ -957,6 +1295,12 @@ namespace Model
     int m_fragmentLength;
     bool m_fragmentLengthHasBeenSet;
 
+    CmafImageBasedTrickPlay m_imageBasedTrickPlay;
+    bool m_imageBasedTrickPlayHasBeenSet;
+
+    CmafImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+
     CmafManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;
 
@@ -972,14 +1316,23 @@ namespace Model
     CmafMpdProfile m_mpdProfile;
     bool m_mpdProfileHasBeenSet;
 
+    CmafPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames;
+    bool m_ptsOffsetHandlingForBFramesHasBeenSet;
+
     CmafSegmentControl m_segmentControl;
     bool m_segmentControlHasBeenSet;
 
     int m_segmentLength;
     bool m_segmentLengthHasBeenSet;
 
+    CmafSegmentLengthControl m_segmentLengthControl;
+    bool m_segmentLengthControlHasBeenSet;
+
     CmafStreamInfResolution m_streamInfResolution;
     bool m_streamInfResolutionHasBeenSet;
+
+    CmafTargetDurationCompatibilityMode m_targetDurationCompatibilityMode;
+    bool m_targetDurationCompatibilityModeHasBeenSet;
 
     CmafWriteDASHManifest m_writeDashManifest;
     bool m_writeDashManifestHasBeenSet;

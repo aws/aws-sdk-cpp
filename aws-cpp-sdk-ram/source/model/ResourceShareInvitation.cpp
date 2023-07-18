@@ -26,7 +26,8 @@ ResourceShareInvitation::ResourceShareInvitation() :
     m_receiverAccountIdHasBeenSet(false),
     m_invitationTimestampHasBeenSet(false),
     m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_receiverArnHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ResourceShareInvitation::ResourceShareInvitation(JsonView jsonValue) :
     m_receiverAccountIdHasBeenSet(false),
     m_invitationTimestampHasBeenSet(false),
     m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_receiverArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,13 @@ ResourceShareInvitation& ResourceShareInvitation::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("receiverArn"))
+  {
+    m_receiverArn = jsonValue.GetString("receiverArn");
+
+    m_receiverArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +148,12 @@ JsonValue ResourceShareInvitation::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ResourceShareInvitationStatusMapper::GetNameForResourceShareInvitationStatus(m_status));
+  }
+
+  if(m_receiverArnHasBeenSet)
+  {
+   payload.WithString("receiverArn", m_receiverArn);
+
   }
 
   return payload;

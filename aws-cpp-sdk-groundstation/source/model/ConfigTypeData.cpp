@@ -23,6 +23,7 @@ ConfigTypeData::ConfigTypeData() :
     m_antennaDownlinkDemodDecodeConfigHasBeenSet(false),
     m_antennaUplinkConfigHasBeenSet(false),
     m_dataflowEndpointConfigHasBeenSet(false),
+    m_s3RecordingConfigHasBeenSet(false),
     m_trackingConfigHasBeenSet(false),
     m_uplinkEchoConfigHasBeenSet(false)
 {
@@ -33,6 +34,7 @@ ConfigTypeData::ConfigTypeData(JsonView jsonValue) :
     m_antennaDownlinkDemodDecodeConfigHasBeenSet(false),
     m_antennaUplinkConfigHasBeenSet(false),
     m_dataflowEndpointConfigHasBeenSet(false),
+    m_s3RecordingConfigHasBeenSet(false),
     m_trackingConfigHasBeenSet(false),
     m_uplinkEchoConfigHasBeenSet(false)
 {
@@ -67,6 +69,13 @@ ConfigTypeData& ConfigTypeData::operator =(JsonView jsonValue)
     m_dataflowEndpointConfig = jsonValue.GetObject("dataflowEndpointConfig");
 
     m_dataflowEndpointConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3RecordingConfig"))
+  {
+    m_s3RecordingConfig = jsonValue.GetObject("s3RecordingConfig");
+
+    m_s3RecordingConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("trackingConfig"))
@@ -111,6 +120,12 @@ JsonValue ConfigTypeData::Jsonize() const
   if(m_dataflowEndpointConfigHasBeenSet)
   {
    payload.WithObject("dataflowEndpointConfig", m_dataflowEndpointConfig.Jsonize());
+
+  }
+
+  if(m_s3RecordingConfigHasBeenSet)
+  {
+   payload.WithObject("s3RecordingConfig", m_s3RecordingConfig.Jsonize());
 
   }
 

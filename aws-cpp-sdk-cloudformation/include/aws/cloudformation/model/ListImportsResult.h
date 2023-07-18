@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImports() const{ return m_imports; }
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline void SetImports(const Aws::Vector<Aws::String>& value) { m_imports = value; }
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline void SetImports(Aws::Vector<Aws::String>&& value) { m_imports = std::move(value); }
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline ListImportsResult& WithImports(const Aws::Vector<Aws::String>& value) { SetImports(value); return *this;}
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline ListImportsResult& WithImports(Aws::Vector<Aws::String>&& value) { SetImports(std::move(value)); return *this;}
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline ListImportsResult& AddImports(const Aws::String& value) { m_imports.push_back(value); return *this; }
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline ListImportsResult& AddImports(Aws::String&& value) { m_imports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of stack names that are importing the specified exported output value.
-     * </p>
+     * <p>A list of stack names that are importing the specified exported output
+     * value.</p>
      */
     inline ListImportsResult& AddImports(const char* value) { m_imports.push_back(value); return *this; }
 

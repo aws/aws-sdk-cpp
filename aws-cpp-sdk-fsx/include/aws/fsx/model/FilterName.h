@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     file_system_id,
     backup_type,
-    file_system_type
+    file_system_type,
+    volume_id,
+    data_repository_type
   };
 
 namespace FilterNameMapper

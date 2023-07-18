@@ -25,6 +25,9 @@ ActiveViolation::ActiveViolation() :
     m_behaviorHasBeenSet(false),
     m_lastViolationValueHasBeenSet(false),
     m_violationEventAdditionalInfoHasBeenSet(false),
+    m_verificationState(VerificationState::NOT_SET),
+    m_verificationStateHasBeenSet(false),
+    m_verificationStateDescriptionHasBeenSet(false),
     m_lastViolationTimeHasBeenSet(false),
     m_violationStartTimeHasBeenSet(false)
 {
@@ -37,6 +40,9 @@ ActiveViolation::ActiveViolation(JsonView jsonValue) :
     m_behaviorHasBeenSet(false),
     m_lastViolationValueHasBeenSet(false),
     m_violationEventAdditionalInfoHasBeenSet(false),
+    m_verificationState(VerificationState::NOT_SET),
+    m_verificationStateHasBeenSet(false),
+    m_verificationStateDescriptionHasBeenSet(false),
     m_lastViolationTimeHasBeenSet(false),
     m_violationStartTimeHasBeenSet(false)
 {
@@ -85,6 +91,20 @@ ActiveViolation& ActiveViolation::operator =(JsonView jsonValue)
     m_violationEventAdditionalInfo = jsonValue.GetObject("violationEventAdditionalInfo");
 
     m_violationEventAdditionalInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("verificationState"))
+  {
+    m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("verificationState"));
+
+    m_verificationStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("verificationStateDescription"))
+  {
+    m_verificationStateDescription = jsonValue.GetString("verificationStateDescription");
+
+    m_verificationStateDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastViolationTime"))
@@ -141,6 +161,17 @@ JsonValue ActiveViolation::Jsonize() const
   if(m_violationEventAdditionalInfoHasBeenSet)
   {
    payload.WithObject("violationEventAdditionalInfo", m_violationEventAdditionalInfo.Jsonize());
+
+  }
+
+  if(m_verificationStateHasBeenSet)
+  {
+   payload.WithString("verificationState", VerificationStateMapper::GetNameForVerificationState(m_verificationState));
+  }
+
+  if(m_verificationStateDescriptionHasBeenSet)
+  {
+   payload.WithString("verificationStateDescription", m_verificationStateDescription);
 
   }
 

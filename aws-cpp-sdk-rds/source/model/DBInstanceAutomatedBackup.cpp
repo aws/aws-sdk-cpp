@@ -52,7 +52,8 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup() :
     m_backupRetentionPeriod(0),
     m_backupRetentionPeriodHasBeenSet(false),
     m_dBInstanceAutomatedBackupsArnHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
+    m_backupTargetHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup(const XmlNode& xmlNode) :
     m_backupRetentionPeriod(0),
     m_backupRetentionPeriodHasBeenSet(false),
     m_dBInstanceAutomatedBackupsArnHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
+    m_backupTargetHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -261,6 +263,12 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator =(const XmlNode& 
 
       m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true;
     }
+    XmlNode backupTargetNode = resultNode.FirstChild("BackupTarget");
+    if(!backupTargetNode.IsNull())
+    {
+      m_backupTarget = Aws::Utils::Xml::DecodeEscapedXmlText(backupTargetNode.GetText());
+      m_backupTargetHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -406,6 +414,11 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
+  if(m_backupTargetHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+
 }
 
 void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -521,6 +534,10 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
         dBInstanceAutomatedBackupsReplicationsSs << location <<  ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
         item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
       }
+  }
+  if(m_backupTargetHasBeenSet)
+  {
+      oStream << location << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 }
 

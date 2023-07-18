@@ -72,42 +72,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline LoadPermissionRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline LoadPermissionRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline LoadPermissionRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 

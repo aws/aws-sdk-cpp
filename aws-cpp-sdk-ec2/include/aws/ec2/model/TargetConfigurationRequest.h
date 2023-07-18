@@ -40,25 +40,25 @@ namespace Model
 
 
     /**
-     * <p>The number of instances the Covertible Reserved Instance offering can be
+     * <p>The number of instances the Convertible Reserved Instance offering can be
      * applied to. This parameter is reserved and cannot be specified in a request</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of instances the Covertible Reserved Instance offering can be
+     * <p>The number of instances the Convertible Reserved Instance offering can be
      * applied to. This parameter is reserved and cannot be specified in a request</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>The number of instances the Covertible Reserved Instance offering can be
+     * <p>The number of instances the Convertible Reserved Instance offering can be
      * applied to. This parameter is reserved and cannot be specified in a request</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of instances the Covertible Reserved Instance offering can be
+     * <p>The number of instances the Convertible Reserved Instance offering can be
      * applied to. This parameter is reserved and cannot be specified in a request</p>
      */
     inline TargetConfigurationRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}

@@ -168,42 +168,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline const Aws::String& GetVpcOwnerId() const{ return m_vpcOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline bool VpcOwnerIdHasBeenSet() const { return m_vpcOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline void SetVpcOwnerId(const Aws::String& value) { m_vpcOwnerIdHasBeenSet = true; m_vpcOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline void SetVpcOwnerId(Aws::String&& value) { m_vpcOwnerIdHasBeenSet = true; m_vpcOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline void SetVpcOwnerId(const char* value) { m_vpcOwnerIdHasBeenSet = true; m_vpcOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline TransitGatewayVpcAttachment& WithVpcOwnerId(const Aws::String& value) { SetVpcOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline TransitGatewayVpcAttachment& WithVpcOwnerId(Aws::String&& value) { SetVpcOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline TransitGatewayVpcAttachment& WithVpcOwnerId(const char* value) { SetVpcOwnerId(value); return *this;}
 

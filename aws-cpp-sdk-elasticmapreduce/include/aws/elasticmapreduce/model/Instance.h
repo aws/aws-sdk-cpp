@@ -488,42 +488,42 @@ namespace Model
 
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline const Aws::Vector<EbsVolume>& GetEbsVolumes() const{ return m_ebsVolumes; }
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline void SetEbsVolumes(const Aws::Vector<EbsVolume>& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline void SetEbsVolumes(Aws::Vector<EbsVolume>&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::move(value); }
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline Instance& WithEbsVolumes(const Aws::Vector<EbsVolume>& value) { SetEbsVolumes(value); return *this;}
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline Instance& WithEbsVolumes(Aws::Vector<EbsVolume>&& value) { SetEbsVolumes(std::move(value)); return *this;}
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline Instance& AddEbsVolumes(const EbsVolume& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.push_back(value); return *this; }
 
     /**
-     * <p>The list of EBS volumes that are attached to this instance.</p>
+     * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
     inline Instance& AddEbsVolumes(EbsVolume&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.push_back(std::move(value)); return *this; }
 

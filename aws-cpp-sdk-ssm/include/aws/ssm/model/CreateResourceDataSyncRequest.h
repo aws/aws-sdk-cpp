@@ -119,10 +119,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline const Aws::String& GetSyncType() const{ return m_syncType; }
@@ -132,10 +132,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
@@ -145,10 +145,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline void SetSyncType(const Aws::String& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
@@ -158,10 +158,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline void SetSyncType(Aws::String&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
@@ -171,10 +171,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline void SetSyncType(const char* value) { m_syncTypeHasBeenSet = true; m_syncType.assign(value); }
@@ -184,10 +184,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline CreateResourceDataSyncRequest& WithSyncType(const Aws::String& value) { SetSyncType(value); return *this;}
@@ -197,10 +197,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline CreateResourceDataSyncRequest& WithSyncType(Aws::String&& value) { SetSyncType(std::move(value)); return *this;}
@@ -210,10 +210,10 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
-     * <code>SyncFromSource</code>, you must provide a value for
-     * <code>SyncSource</code>. The default value is
+     * data from a single account and multiple Regions, or multiple Amazon Web Services
+     * accounts and Amazon Web Services Regions, as listed in Organizations for
+     * Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
+     * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
     inline CreateResourceDataSyncRequest& WithSyncType(const char* value) { SetSyncType(value); return *this;}

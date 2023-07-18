@@ -12,6 +12,7 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
+#include <aws/medialive/model/MaintenanceUpdateSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -274,6 +275,37 @@ namespace Model
 
 
     /**
+     * Maintenance settings for this channel.
+     */
+    inline const MaintenanceUpdateSettings& GetMaintenance() const{ return m_maintenance; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(const MaintenanceUpdateSettings& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(MaintenanceUpdateSettings&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline UpdateChannelRequest& WithMaintenance(const MaintenanceUpdateSettings& value) { SetMaintenance(value); return *this;}
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline UpdateChannelRequest& WithMaintenance(MaintenanceUpdateSettings&& value) { SetMaintenance(std::move(value)); return *this;}
+
+
+    /**
      * The name of the channel.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -392,6 +424,9 @@ namespace Model
 
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet;
+
+    MaintenanceUpdateSettings m_maintenance;
+    bool m_maintenanceHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

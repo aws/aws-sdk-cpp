@@ -70,9 +70,9 @@ namespace Model
 
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the
@@ -81,9 +81,9 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the
@@ -92,9 +92,9 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the
@@ -103,9 +103,9 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the
@@ -114,9 +114,9 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the
@@ -125,9 +125,9 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the
@@ -136,9 +136,9 @@ namespace Model
     inline ListResolverDnssecConfigsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the
@@ -147,9 +147,9 @@ namespace Model
     inline ListResolverDnssecConfigsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * DNSSEC configurations, use <code>NextToken</code> to get the second and
-     * subsequent pages of results.</p> <p>For the first
+     * <p>(Optional) If the current Amazon Web Services account has more than
+     * <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get
+     * the second and subsequent pages of results.</p> <p>For the first
      * <code>ListResolverDnssecConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
      * previous response and specify that value for <code>NextToken</code> in the

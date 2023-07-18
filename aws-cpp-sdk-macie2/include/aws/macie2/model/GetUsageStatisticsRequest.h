@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/model/UsageStatisticsSortBy.h>
+#include <aws/macie2/model/TimeRange.h>
 #include <aws/macie2/model/UsageStatisticsFilter.h>
 #include <utility>
 
@@ -37,57 +38,57 @@ namespace Model
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline const Aws::Vector<UsageStatisticsFilter>& GetFilterBy() const{ return m_filterBy; }
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline bool FilterByHasBeenSet() const { return m_filterByHasBeenSet; }
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline void SetFilterBy(const Aws::Vector<UsageStatisticsFilter>& value) { m_filterByHasBeenSet = true; m_filterBy = value; }
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline void SetFilterBy(Aws::Vector<UsageStatisticsFilter>&& value) { m_filterByHasBeenSet = true; m_filterBy = std::move(value); }
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline GetUsageStatisticsRequest& WithFilterBy(const Aws::Vector<UsageStatisticsFilter>& value) { SetFilterBy(value); return *this;}
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline GetUsageStatisticsRequest& WithFilterBy(Aws::Vector<UsageStatisticsFilter>&& value) { SetFilterBy(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline GetUsageStatisticsRequest& AddFilterBy(const UsageStatisticsFilter& value) { m_filterByHasBeenSet = true; m_filterBy.push_back(value); return *this; }
 
     /**
      * <p>An array of objects, one for each condition to use to filter the query
-     * results. If the array contains more than one object, Amazon Macie uses an AND
-     * operator to join the conditions specified by the objects.</p>
+     * results. If you specify more than one condition, Amazon Macie uses an AND
+     * operator to join the conditions.</p>
      */
     inline GetUsageStatisticsRequest& AddFilterBy(UsageStatisticsFilter&& value) { m_filterByHasBeenSet = true; m_filterBy.push_back(std::move(value)); return *this; }
 
@@ -192,6 +193,55 @@ namespace Model
      */
     inline GetUsageStatisticsRequest& WithSortBy(UsageStatisticsSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The inclusive time period to query usage data for. Valid values are:
+     * MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for
+     * the preceding 30 days. If you don't specify a value, Amazon Macie provides usage
+     * data for the preceding 30 days.</p>
+     */
+    inline const TimeRange& GetTimeRange() const{ return m_timeRange; }
+
+    /**
+     * <p>The inclusive time period to query usage data for. Valid values are:
+     * MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for
+     * the preceding 30 days. If you don't specify a value, Amazon Macie provides usage
+     * data for the preceding 30 days.</p>
+     */
+    inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
+
+    /**
+     * <p>The inclusive time period to query usage data for. Valid values are:
+     * MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for
+     * the preceding 30 days. If you don't specify a value, Amazon Macie provides usage
+     * data for the preceding 30 days.</p>
+     */
+    inline void SetTimeRange(const TimeRange& value) { m_timeRangeHasBeenSet = true; m_timeRange = value; }
+
+    /**
+     * <p>The inclusive time period to query usage data for. Valid values are:
+     * MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for
+     * the preceding 30 days. If you don't specify a value, Amazon Macie provides usage
+     * data for the preceding 30 days.</p>
+     */
+    inline void SetTimeRange(TimeRange&& value) { m_timeRangeHasBeenSet = true; m_timeRange = std::move(value); }
+
+    /**
+     * <p>The inclusive time period to query usage data for. Valid values are:
+     * MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for
+     * the preceding 30 days. If you don't specify a value, Amazon Macie provides usage
+     * data for the preceding 30 days.</p>
+     */
+    inline GetUsageStatisticsRequest& WithTimeRange(const TimeRange& value) { SetTimeRange(value); return *this;}
+
+    /**
+     * <p>The inclusive time period to query usage data for. Valid values are:
+     * MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for
+     * the preceding 30 days. If you don't specify a value, Amazon Macie provides usage
+     * data for the preceding 30 days.</p>
+     */
+    inline GetUsageStatisticsRequest& WithTimeRange(TimeRange&& value) { SetTimeRange(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<UsageStatisticsFilter> m_filterBy;
@@ -205,6 +255,9 @@ namespace Model
 
     UsageStatisticsSortBy m_sortBy;
     bool m_sortByHasBeenSet;
+
+    TimeRange m_timeRange;
+    bool m_timeRangeHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>A JSON-formatted name/value pair that represents the category name and
    * category code of the problem, selected from the <a>DescribeServices</a> response
-   * for each AWS service.</p><p><h3>See Also:</h3>   <a
+   * for each Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Category">AWS
    * API Reference</a></p>
    */

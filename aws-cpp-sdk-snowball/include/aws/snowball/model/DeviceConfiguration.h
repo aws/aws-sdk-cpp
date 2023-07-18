@@ -39,38 +39,32 @@ namespace Model
 
 
     /**
-     * <p>Returns information about the device configuration for an AWS Snowcone
-     * job.</p>
+     * <p>Returns information about the device configuration for an Snowcone job.</p>
      */
     inline const SnowconeDeviceConfiguration& GetSnowconeDeviceConfiguration() const{ return m_snowconeDeviceConfiguration; }
 
     /**
-     * <p>Returns information about the device configuration for an AWS Snowcone
-     * job.</p>
+     * <p>Returns information about the device configuration for an Snowcone job.</p>
      */
     inline bool SnowconeDeviceConfigurationHasBeenSet() const { return m_snowconeDeviceConfigurationHasBeenSet; }
 
     /**
-     * <p>Returns information about the device configuration for an AWS Snowcone
-     * job.</p>
+     * <p>Returns information about the device configuration for an Snowcone job.</p>
      */
     inline void SetSnowconeDeviceConfiguration(const SnowconeDeviceConfiguration& value) { m_snowconeDeviceConfigurationHasBeenSet = true; m_snowconeDeviceConfiguration = value; }
 
     /**
-     * <p>Returns information about the device configuration for an AWS Snowcone
-     * job.</p>
+     * <p>Returns information about the device configuration for an Snowcone job.</p>
      */
     inline void SetSnowconeDeviceConfiguration(SnowconeDeviceConfiguration&& value) { m_snowconeDeviceConfigurationHasBeenSet = true; m_snowconeDeviceConfiguration = std::move(value); }
 
     /**
-     * <p>Returns information about the device configuration for an AWS Snowcone
-     * job.</p>
+     * <p>Returns information about the device configuration for an Snowcone job.</p>
      */
     inline DeviceConfiguration& WithSnowconeDeviceConfiguration(const SnowconeDeviceConfiguration& value) { SetSnowconeDeviceConfiguration(value); return *this;}
 
     /**
-     * <p>Returns information about the device configuration for an AWS Snowcone
-     * job.</p>
+     * <p>Returns information about the device configuration for an Snowcone job.</p>
      */
     inline DeviceConfiguration& WithSnowconeDeviceConfiguration(SnowconeDeviceConfiguration&& value) { SetSnowconeDeviceConfiguration(std::move(value)); return *this;}
 

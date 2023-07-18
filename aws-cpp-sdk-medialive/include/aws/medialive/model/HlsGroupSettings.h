@@ -27,6 +27,7 @@
 #include <aws/medialive/model/HlsMode.h>
 #include <aws/medialive/model/HlsOutputSelection.h>
 #include <aws/medialive/model/HlsProgramDateTime.h>
+#include <aws/medialive/model/HlsProgramDateTimeClock.h>
 #include <aws/medialive/model/HlsRedundantManifest.h>
 #include <aws/medialive/model/HlsSegmentationMode.h>
 #include <aws/medialive/model/HlsStreamInfResolution.h>
@@ -1668,51 +1669,130 @@ SEGMENTS_ONLY: Does not generate any manifests for this output group.
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline const HlsProgramDateTime& GetProgramDateTime() const{ return m_programDateTime; }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline bool ProgramDateTimeHasBeenSet() const { return m_programDateTimeHasBeenSet; }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline void SetProgramDateTime(const HlsProgramDateTime& value) { m_programDateTimeHasBeenSet = true; m_programDateTime = value; }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline void SetProgramDateTime(HlsProgramDateTime&& value) { m_programDateTimeHasBeenSet = true; m_programDateTime = std::move(value); }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline HlsGroupSettings& WithProgramDateTime(const HlsProgramDateTime& value) { SetProgramDateTime(value); return *this;}
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline HlsGroupSettings& WithProgramDateTime(HlsProgramDateTime&& value) { SetProgramDateTime(std::move(value)); return *this;}
+
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline const HlsProgramDateTimeClock& GetProgramDateTimeClock() const{ return m_programDateTimeClock; }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline bool ProgramDateTimeClockHasBeenSet() const { return m_programDateTimeClockHasBeenSet; }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline void SetProgramDateTimeClock(const HlsProgramDateTimeClock& value) { m_programDateTimeClockHasBeenSet = true; m_programDateTimeClock = value; }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline void SetProgramDateTimeClock(HlsProgramDateTimeClock&& value) { m_programDateTimeClockHasBeenSet = true; m_programDateTimeClock = std::move(value); }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline HlsGroupSettings& WithProgramDateTimeClock(const HlsProgramDateTimeClock& value) { SetProgramDateTimeClock(value); return *this;}
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline HlsGroupSettings& WithProgramDateTimeClock(HlsProgramDateTimeClock&& value) { SetProgramDateTimeClock(std::move(value)); return *this;}
 
 
     /**
@@ -2231,6 +2311,9 @@ SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
 
     HlsProgramDateTime m_programDateTime;
     bool m_programDateTimeHasBeenSet;
+
+    HlsProgramDateTimeClock m_programDateTimeClock;
+    bool m_programDateTimeClockHasBeenSet;
 
     int m_programDateTimePeriod;
     bool m_programDateTimePeriodHasBeenSet;

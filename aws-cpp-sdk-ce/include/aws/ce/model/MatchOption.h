@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     EQUALS,
+    ABSENT,
     STARTS_WITH,
     ENDS_WITH,
     CONTAINS,

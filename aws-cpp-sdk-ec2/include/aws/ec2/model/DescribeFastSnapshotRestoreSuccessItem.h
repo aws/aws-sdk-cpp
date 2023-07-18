@@ -237,99 +237,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline DescribeFastSnapshotRestoreSuccessItem& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline DescribeFastSnapshotRestoreSuccessItem& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that enabled fast snapshot restores on the
-     * snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that enabled fast snapshot restores
+     * on the snapshot.</p>
      */
     inline DescribeFastSnapshotRestoreSuccessItem& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::move(value); }
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline void SetOwnerAlias(const char* value) { m_ownerAliasHasBeenSet = true; m_ownerAlias.assign(value); }
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline DescribeFastSnapshotRestoreSuccessItem& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline DescribeFastSnapshotRestoreSuccessItem& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This
-     * is intended for future use.</p>
+     * <p>The Amazon Web Services owner alias that enabled fast snapshot restores on
+     * the snapshot. This is intended for future use.</p>
      */
     inline DescribeFastSnapshotRestoreSuccessItem& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 

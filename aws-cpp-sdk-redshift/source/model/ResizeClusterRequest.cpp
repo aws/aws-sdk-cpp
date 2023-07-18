@@ -17,7 +17,9 @@ ResizeClusterRequest::ResizeClusterRequest() :
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_classic(false),
-    m_classicHasBeenSet(false)
+    m_classicHasBeenSet(false),
+    m_reservedNodeIdHasBeenSet(false),
+    m_targetReservedNodeOfferingIdHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,16 @@ Aws::String ResizeClusterRequest::SerializePayload() const
   if(m_classicHasBeenSet)
   {
     ss << "Classic=" << std::boolalpha << m_classic << "&";
+  }
+
+  if(m_reservedNodeIdHasBeenSet)
+  {
+    ss << "ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
+  }
+
+  if(m_targetReservedNodeOfferingIdHasBeenSet)
+  {
+    ss << "TargetReservedNodeOfferingId=" << StringUtils::URLEncode(m_targetReservedNodeOfferingId.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

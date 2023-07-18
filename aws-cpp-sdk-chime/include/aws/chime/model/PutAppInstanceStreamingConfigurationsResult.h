@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The streaming configurations of an app instance.</p>
+     * <p>The streaming configurations of an <code>AppInstance</code>.</p>
      */
     inline const Aws::Vector<AppInstanceStreamingConfiguration>& GetAppInstanceStreamingConfigurations() const{ return m_appInstanceStreamingConfigurations; }
 
     /**
-     * <p>The streaming configurations of an app instance.</p>
+     * <p>The streaming configurations of an <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceStreamingConfigurations(const Aws::Vector<AppInstanceStreamingConfiguration>& value) { m_appInstanceStreamingConfigurations = value; }
 
     /**
-     * <p>The streaming configurations of an app instance.</p>
+     * <p>The streaming configurations of an <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceStreamingConfigurations(Aws::Vector<AppInstanceStreamingConfiguration>&& value) { m_appInstanceStreamingConfigurations = std::move(value); }
 
     /**
-     * <p>The streaming configurations of an app instance.</p>
+     * <p>The streaming configurations of an <code>AppInstance</code>.</p>
      */
     inline PutAppInstanceStreamingConfigurationsResult& WithAppInstanceStreamingConfigurations(const Aws::Vector<AppInstanceStreamingConfiguration>& value) { SetAppInstanceStreamingConfigurations(value); return *this;}
 
     /**
-     * <p>The streaming configurations of an app instance.</p>
+     * <p>The streaming configurations of an <code>AppInstance</code>.</p>
      */
     inline PutAppInstanceStreamingConfigurationsResult& WithAppInstanceStreamingConfigurations(Aws::Vector<AppInstanceStreamingConfiguration>&& value) { SetAppInstanceStreamingConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>The streaming configurations of an app instance.</p>
+     * <p>The streaming configurations of an <code>AppInstance</code>.</p>
      */
     inline PutAppInstanceStreamingConfigurationsResult& AddAppInstanceStreamingConfigurations(const AppInstanceStreamingConfiguration& value) { m_appInstanceStreamingConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The streaming configurations of an app instance.</p>
+     * <p>The streaming configurations of an <code>AppInstance</code>.</p>
      */
     inline PutAppInstanceStreamingConfigurationsResult& AddAppInstanceStreamingConfigurations(AppInstanceStreamingConfiguration&& value) { m_appInstanceStreamingConfigurations.push_back(std::move(value)); return *this; }
 

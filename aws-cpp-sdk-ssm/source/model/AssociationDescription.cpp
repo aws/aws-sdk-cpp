@@ -44,7 +44,11 @@ AssociationDescription::AssociationDescription() :
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
     m_applyOnlyAtCronIntervalHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false)
+    m_calendarNamesHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_targetMapsHasBeenSet(false)
 {
 }
 
@@ -74,7 +78,11 @@ AssociationDescription::AssociationDescription(JsonView jsonValue) :
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
     m_applyOnlyAtCronIntervalHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false)
+    m_calendarNamesHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_targetMapsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -248,6 +256,16 @@ AssociationDescription& AssociationDescription::operator =(JsonView jsonValue)
     m_applyOnlyAtCronIntervalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CalendarNames"))
+  {
+    Array<JsonView> calendarNamesJsonList = jsonValue.GetArray("CalendarNames");
+    for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
+    {
+      m_calendarNames.push_back(calendarNamesJsonList[calendarNamesIndex].AsString());
+    }
+    m_calendarNamesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TargetLocations"))
   {
     Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
@@ -256,6 +274,36 @@ AssociationDescription& AssociationDescription::operator =(JsonView jsonValue)
       m_targetLocations.push_back(targetLocationsJsonList[targetLocationsIndex].AsObject());
     }
     m_targetLocationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduleOffset"))
+  {
+    m_scheduleOffset = jsonValue.GetInteger("ScheduleOffset");
+
+    m_scheduleOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetMaps"))
+  {
+    Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
+    for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
+    {
+      Aws::Map<Aws::String, JsonView> targetMapJsonMap = targetMapsJsonList[targetMapsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::Vector<Aws::String>> targetMapMap;
+      for(auto& targetMapItem : targetMapJsonMap)
+      {
+        Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
+        Aws::Vector<Aws::String> targetMapValueListList;
+        targetMapValueListList.reserve((size_t)targetMapValueListJsonList.GetLength());
+        for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
+        {
+          targetMapValueListList.push_back(targetMapValueListJsonList[targetMapValueListIndex].AsString());
+        }
+        targetMapMap[targetMapItem.first] = std::move(targetMapValueListList);
+      }
+      m_targetMaps.push_back(std::move(targetMapMap));
+    }
+    m_targetMapsHasBeenSet = true;
   }
 
   return *this;
@@ -406,6 +454,17 @@ JsonValue AssociationDescription::Jsonize() const
 
   }
 
+  if(m_calendarNamesHasBeenSet)
+  {
+   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
+   {
+     calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);
+   }
+   payload.WithArray("CalendarNames", std::move(calendarNamesJsonList));
+
+  }
+
   if(m_targetLocationsHasBeenSet)
   {
    Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
@@ -414,6 +473,33 @@ JsonValue AssociationDescription::Jsonize() const
      targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
    }
    payload.WithArray("TargetLocations", std::move(targetLocationsJsonList));
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_targetMapsHasBeenSet)
+  {
+   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
+   {
+     JsonValue targetMapJsonMap;
+     for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
+     {
+       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
+       {
+         targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
+       }
+       targetMapJsonMap.WithArray(targetMapItem.first, std::move(targetMapValueListJsonList));
+     }
+     targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
+   }
+   payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
 
   }
 

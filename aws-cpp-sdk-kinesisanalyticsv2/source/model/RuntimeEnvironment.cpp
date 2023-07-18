@@ -23,7 +23,10 @@ namespace Aws
         static const int SQL_1_0_HASH = HashingUtils::HashString("SQL-1_0");
         static const int FLINK_1_6_HASH = HashingUtils::HashString("FLINK-1_6");
         static const int FLINK_1_8_HASH = HashingUtils::HashString("FLINK-1_8");
+        static const int ZEPPELIN_FLINK_1_0_HASH = HashingUtils::HashString("ZEPPELIN-FLINK-1_0");
         static const int FLINK_1_11_HASH = HashingUtils::HashString("FLINK-1_11");
+        static const int FLINK_1_13_HASH = HashingUtils::HashString("FLINK-1_13");
+        static const int ZEPPELIN_FLINK_2_0_HASH = HashingUtils::HashString("ZEPPELIN-FLINK-2_0");
 
 
         RuntimeEnvironment GetRuntimeEnvironmentForName(const Aws::String& name)
@@ -41,9 +44,21 @@ namespace Aws
           {
             return RuntimeEnvironment::FLINK_1_8;
           }
+          else if (hashCode == ZEPPELIN_FLINK_1_0_HASH)
+          {
+            return RuntimeEnvironment::ZEPPELIN_FLINK_1_0;
+          }
           else if (hashCode == FLINK_1_11_HASH)
           {
             return RuntimeEnvironment::FLINK_1_11;
+          }
+          else if (hashCode == FLINK_1_13_HASH)
+          {
+            return RuntimeEnvironment::FLINK_1_13;
+          }
+          else if (hashCode == ZEPPELIN_FLINK_2_0_HASH)
+          {
+            return RuntimeEnvironment::ZEPPELIN_FLINK_2_0;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -65,8 +80,14 @@ namespace Aws
             return "FLINK-1_6";
           case RuntimeEnvironment::FLINK_1_8:
             return "FLINK-1_8";
+          case RuntimeEnvironment::ZEPPELIN_FLINK_1_0:
+            return "ZEPPELIN-FLINK-1_0";
           case RuntimeEnvironment::FLINK_1_11:
             return "FLINK-1_11";
+          case RuntimeEnvironment::FLINK_1_13:
+            return "FLINK-1_13";
+          case RuntimeEnvironment::ZEPPELIN_FLINK_2_0:
+            return "ZEPPELIN-FLINK-2_0";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

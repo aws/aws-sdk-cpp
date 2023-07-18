@@ -42,65 +42,65 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline ModifyDBSubnetGroupRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline ModifyDBSubnetGroupRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline ModifyDBSubnetGroupRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

@@ -37,6 +37,15 @@ DescribeRegionSettingsResult& DescribeRegionSettingsResult::operator =(const Aws
     }
   }
 
+  if(jsonValue.ValueExists("ResourceTypeManagementPreference"))
+  {
+    Aws::Map<Aws::String, JsonView> resourceTypeManagementPreferenceJsonMap = jsonValue.GetObject("ResourceTypeManagementPreference").GetAllObjects();
+    for(auto& resourceTypeManagementPreferenceItem : resourceTypeManagementPreferenceJsonMap)
+    {
+      m_resourceTypeManagementPreference[resourceTypeManagementPreferenceItem.first] = resourceTypeManagementPreferenceItem.second.AsBool();
+    }
+  }
+
 
 
   return *this;

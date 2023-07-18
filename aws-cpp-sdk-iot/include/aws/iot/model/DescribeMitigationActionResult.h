@@ -237,32 +237,32 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the mitigation action was added to your AWS
-     * account.</p>
+     * <p>The date and time when the mitigation action was added to your Amazon Web
+     * Services accounts.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date and time when the mitigation action was added to your AWS
-     * account.</p>
+     * <p>The date and time when the mitigation action was added to your Amazon Web
+     * Services accounts.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
 
     /**
-     * <p>The date and time when the mitigation action was added to your AWS
-     * account.</p>
+     * <p>The date and time when the mitigation action was added to your Amazon Web
+     * Services accounts.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
 
     /**
-     * <p>The date and time when the mitigation action was added to your AWS
-     * account.</p>
+     * <p>The date and time when the mitigation action was added to your Amazon Web
+     * Services accounts.</p>
      */
     inline DescribeMitigationActionResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date and time when the mitigation action was added to your AWS
-     * account.</p>
+     * <p>The date and time when the mitigation action was added to your Amazon Web
+     * Services accounts.</p>
      */
     inline DescribeMitigationActionResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

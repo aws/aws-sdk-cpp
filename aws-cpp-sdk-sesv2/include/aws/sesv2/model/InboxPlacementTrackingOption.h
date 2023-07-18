@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>An object that contains information about the inbox placement data settings
-   * for a verified domain that’s associated with your AWS account. This data is
-   * available only if you enabled the Deliverability dashboard for the
+   * for a verified domain that’s associated with your Amazon Web Services account.
+   * This data is available only if you enabled the Deliverability dashboard for the
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/InboxPlacementTrackingOption">AWS
    * API Reference</a></p>

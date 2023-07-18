@@ -144,7 +144,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
@@ -155,7 +155,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
@@ -166,7 +166,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
@@ -177,7 +177,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
@@ -188,7 +188,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
@@ -199,7 +199,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -210,7 +210,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
@@ -221,7 +221,7 @@ namespace Model
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -292,57 +292,57 @@ namespace Model
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
-     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
-     * Region, for example: <code>us-east-1d</code> </p>
+     * default value is a random, system-chosen Availability Zone in the endpoint's
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -392,9 +392,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -402,9 +402,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -412,9 +412,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -422,9 +422,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -432,9 +432,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -442,9 +442,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -452,9 +452,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -462,9 +462,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
-     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
-     * window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -626,74 +626,82 @@ namespace Model
 
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -813,8 +821,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
@@ -827,8 +835,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
@@ -841,8 +849,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
@@ -855,8 +863,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
@@ -869,8 +877,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
 
@@ -883,8 +891,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline CreateReplicationInstanceRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
 
@@ -897,8 +905,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline CreateReplicationInstanceRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
@@ -911,8 +919,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline CreateReplicationInstanceRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 

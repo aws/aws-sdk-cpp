@@ -112,11 +112,49 @@ namespace Model
      */
     inline ListProblemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupName = value; }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupName = std::move(value); }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline void SetResourceGroupName(const char* value) { m_resourceGroupName.assign(value); }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline ListProblemsResult& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline ListProblemsResult& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline ListProblemsResult& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+
   private:
 
     Aws::Vector<Problem> m_problemList;
 
     Aws::String m_nextToken;
+
+    Aws::String m_resourceGroupName;
   };
 
 } // namespace Model

@@ -27,8 +27,8 @@ namespace Model
    * <p>Describes the versioning state of an Amazon S3 bucket. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html">PUT
-   * Bucket versioning</a> in the <i>Amazon Simple Storage Service API
-   * Reference</i>.</p><p><h3>See Also:</h3>   <a
+   * Bucket versioning</a> in the <i>Amazon S3 API Reference</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/VersioningConfiguration">AWS
    * API Reference</a></p>
    */

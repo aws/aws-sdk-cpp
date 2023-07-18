@@ -235,63 +235,69 @@ namespace Model
 
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline const AutoMLSortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(const AutoMLSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(AutoMLSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortOrder(const AutoMLSortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortOrder(AutoMLSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline const AutoMLSortBy& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline void SetSortBy(const AutoMLSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline void SetSortBy(AutoMLSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortBy(const AutoMLSortBy& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortBy(AutoMLSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 

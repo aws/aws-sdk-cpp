@@ -137,26 +137,26 @@ namespace Model
 
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline int GetFinalBakeTimeInMinutes() const{ return m_finalBakeTimeInMinutes; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline bool FinalBakeTimeInMinutesHasBeenSet() const { return m_finalBakeTimeInMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline void SetFinalBakeTimeInMinutes(int value) { m_finalBakeTimeInMinutesHasBeenSet = true; m_finalBakeTimeInMinutes = value; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline UpdateDeploymentStrategyRequest& WithFinalBakeTimeInMinutes(int value) { SetFinalBakeTimeInMinutes(value); return *this;}
 
@@ -187,7 +187,7 @@ namespace Model
 
 
     /**
-     * <p>The algorithm used to define how percentage grows over time. AWS AppConfig
+     * <p>The algorithm used to define how percentage grows over time. AppConfig
      * supports the following growth types:</p> <p> <b>Linear</b>: For this type,
      * AppConfig processes the deployment by increments of the growth factor evenly
      * distributed over the deployment time. For example, a linear deployment that uses
@@ -208,7 +208,7 @@ namespace Model
     inline const GrowthType& GetGrowthType() const{ return m_growthType; }
 
     /**
-     * <p>The algorithm used to define how percentage grows over time. AWS AppConfig
+     * <p>The algorithm used to define how percentage grows over time. AppConfig
      * supports the following growth types:</p> <p> <b>Linear</b>: For this type,
      * AppConfig processes the deployment by increments of the growth factor evenly
      * distributed over the deployment time. For example, a linear deployment that uses
@@ -229,7 +229,7 @@ namespace Model
     inline bool GrowthTypeHasBeenSet() const { return m_growthTypeHasBeenSet; }
 
     /**
-     * <p>The algorithm used to define how percentage grows over time. AWS AppConfig
+     * <p>The algorithm used to define how percentage grows over time. AppConfig
      * supports the following growth types:</p> <p> <b>Linear</b>: For this type,
      * AppConfig processes the deployment by increments of the growth factor evenly
      * distributed over the deployment time. For example, a linear deployment that uses
@@ -250,7 +250,7 @@ namespace Model
     inline void SetGrowthType(const GrowthType& value) { m_growthTypeHasBeenSet = true; m_growthType = value; }
 
     /**
-     * <p>The algorithm used to define how percentage grows over time. AWS AppConfig
+     * <p>The algorithm used to define how percentage grows over time. AppConfig
      * supports the following growth types:</p> <p> <b>Linear</b>: For this type,
      * AppConfig processes the deployment by increments of the growth factor evenly
      * distributed over the deployment time. For example, a linear deployment that uses
@@ -271,7 +271,7 @@ namespace Model
     inline void SetGrowthType(GrowthType&& value) { m_growthTypeHasBeenSet = true; m_growthType = std::move(value); }
 
     /**
-     * <p>The algorithm used to define how percentage grows over time. AWS AppConfig
+     * <p>The algorithm used to define how percentage grows over time. AppConfig
      * supports the following growth types:</p> <p> <b>Linear</b>: For this type,
      * AppConfig processes the deployment by increments of the growth factor evenly
      * distributed over the deployment time. For example, a linear deployment that uses
@@ -292,7 +292,7 @@ namespace Model
     inline UpdateDeploymentStrategyRequest& WithGrowthType(const GrowthType& value) { SetGrowthType(value); return *this;}
 
     /**
-     * <p>The algorithm used to define how percentage grows over time. AWS AppConfig
+     * <p>The algorithm used to define how percentage grows over time. AppConfig
      * supports the following growth types:</p> <p> <b>Linear</b>: For this type,
      * AppConfig processes the deployment by increments of the growth factor evenly
      * distributed over the deployment time. For example, a linear deployment that uses

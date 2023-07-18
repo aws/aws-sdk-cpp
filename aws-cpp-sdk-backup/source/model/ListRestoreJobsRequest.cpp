@@ -23,7 +23,9 @@ ListRestoreJobsRequest::ListRestoreJobsRequest() :
     m_byCreatedBeforeHasBeenSet(false),
     m_byCreatedAfterHasBeenSet(false),
     m_byStatus(RestoreJobStatus::NOT_SET),
-    m_byStatusHasBeenSet(false)
+    m_byStatusHasBeenSet(false),
+    m_byCompleteBeforeHasBeenSet(false),
+    m_byCompleteAfterHasBeenSet(false)
 {
 }
 
@@ -58,14 +60,14 @@ void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_byCreatedBeforeHasBeenSet)
     {
-      ss << m_byCreatedBefore.ToGmtString(DateFormat::RFC822);
+      ss << m_byCreatedBefore.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdBefore", ss.str());
       ss.str("");
     }
 
     if(m_byCreatedAfterHasBeenSet)
     {
-      ss << m_byCreatedAfter.ToGmtString(DateFormat::RFC822);
+      ss << m_byCreatedAfter.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdAfter", ss.str());
       ss.str("");
     }
@@ -74,6 +76,20 @@ void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << RestoreJobStatusMapper::GetNameForRestoreJobStatus(m_byStatus);
       uri.AddQueryStringParameter("status", ss.str());
+      ss.str("");
+    }
+
+    if(m_byCompleteBeforeHasBeenSet)
+    {
+      ss << m_byCompleteBefore.ToGmtString(DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("completeBefore", ss.str());
+      ss.str("");
+    }
+
+    if(m_byCompleteAfterHasBeenSet)
+    {
+      ss << m_byCompleteAfter.ToGmtString(DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("completeAfter", ss.str());
       ss.str("");
     }
 

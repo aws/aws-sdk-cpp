@@ -21,6 +21,9 @@ CreateVpcEndpointRequest::CreateVpcEndpointRequest() :
     m_routeTableIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
+    m_dnsOptionsHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_privateDnsEnabled(false),
     m_privateDnsEnabledHasBeenSet(false),
@@ -88,6 +91,16 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupIdsCount++;
     }
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
+  if(m_dnsOptionsHasBeenSet)
+  {
+    m_dnsOptions.OutputToStream(ss, "DnsOptions");
   }
 
   if(m_clientTokenHasBeenSet)

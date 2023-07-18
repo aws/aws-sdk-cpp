@@ -24,17 +24,14 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>High-level information about a managed
-   * rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides
-   * information like the name and vendor name, that you provide when you add a
-   * <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include AWS
-   * Managed Rules rule groups, which are free of charge to AWS WAF customers, and
-   * AWS Marketplace managed rule groups, which you can subscribe to through AWS
-   * Marketplace. </p><p><h3>See Also:</h3>   <a
+   * <p>High-level information about a managed rule group, returned by
+   * <a>ListAvailableManagedRuleGroups</a>. This provides information like the name
+   * and vendor name, that you provide when you add a
+   * <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include
+   * Amazon Web Services Managed Rules rule groups, which are free of charge to WAF
+   * customers, and Amazon Web Services Marketplace managed rule groups, which you
+   * can subscribe to through Amazon Web Services Marketplace. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupSummary">AWS
    * API Reference</a></p>
    */
@@ -146,50 +143,79 @@ namespace Model
 
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline bool GetVersioningSupported() const{ return m_versioningSupported; }
+
+    /**
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline bool VersioningSupportedHasBeenSet() const { return m_versioningSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline void SetVersioningSupported(bool value) { m_versioningSupportedHasBeenSet = true; m_versioningSupported = value; }
+
+    /**
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline ManagedRuleGroupSummary& WithVersioningSupported(bool value) { SetVersioningSupported(value); return *this;}
+
+
+    /**
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline ManagedRuleGroupSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline ManagedRuleGroupSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the managed rule group, provided by AWS Managed Rules or
-     * the AWS Marketplace seller who manages it.</p>
+     * <p>The description of the managed rule group, provided by Amazon Web Services
+     * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
     inline ManagedRuleGroupSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -200,6 +226,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    bool m_versioningSupported;
+    bool m_versioningSupportedHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

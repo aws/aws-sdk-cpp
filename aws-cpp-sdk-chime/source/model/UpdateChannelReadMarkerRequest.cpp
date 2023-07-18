@@ -5,6 +5,7 @@
 
 #include <aws/chime/model/UpdateChannelReadMarkerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -13,13 +14,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateChannelReadMarkerRequest::UpdateChannelReadMarkerRequest() : 
-    m_channelArnHasBeenSet(false)
+    m_channelArnHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
 Aws::String UpdateChannelReadMarkerRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection UpdateChannelReadMarkerRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

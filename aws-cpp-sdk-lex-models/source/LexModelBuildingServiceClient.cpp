@@ -47,6 +47,8 @@
 #include <aws/lex-models/model/GetIntentRequest.h>
 #include <aws/lex-models/model/GetIntentVersionsRequest.h>
 #include <aws/lex-models/model/GetIntentsRequest.h>
+#include <aws/lex-models/model/GetMigrationRequest.h>
+#include <aws/lex-models/model/GetMigrationsRequest.h>
 #include <aws/lex-models/model/GetSlotTypeRequest.h>
 #include <aws/lex-models/model/GetSlotTypeVersionsRequest.h>
 #include <aws/lex-models/model/GetSlotTypesRequest.h>
@@ -57,6 +59,7 @@
 #include <aws/lex-models/model/PutIntentRequest.h>
 #include <aws/lex-models/model/PutSlotTypeRequest.h>
 #include <aws/lex-models/model/StartImportRequest.h>
+#include <aws/lex-models/model/StartMigrationRequest.h>
 #include <aws/lex-models/model/TagResourceRequest.h>
 #include <aws/lex-models/model/UntagResourceRequest.h>
 
@@ -107,7 +110,7 @@ LexModelBuildingServiceClient::~LexModelBuildingServiceClient()
 {
 }
 
-void LexModelBuildingServiceClient::init(const ClientConfiguration& config)
+void LexModelBuildingServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Lex Model Building Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -141,11 +144,9 @@ CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const Cr
     return CreateBotVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions");
   return CreateBotVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -175,11 +176,9 @@ CreateIntentVersionOutcome LexModelBuildingServiceClient::CreateIntentVersion(co
     return CreateIntentVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/intents/";
-  ss << request.GetName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/intents/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions");
   return CreateIntentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -209,11 +208,9 @@ CreateSlotTypeVersionOutcome LexModelBuildingServiceClient::CreateSlotTypeVersio
     return CreateSlotTypeVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slottypes/";
-  ss << request.GetName();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/slottypes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions");
   return CreateSlotTypeVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -243,10 +240,8 @@ DeleteBotOutcome LexModelBuildingServiceClient::DeleteBot(const DeleteBotRequest
     return DeleteBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetName());
   return DeleteBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -281,12 +276,10 @@ DeleteBotAliasOutcome LexModelBuildingServiceClient::DeleteBotAlias(const Delete
     return DeleteBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/aliases/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetName());
   return DeleteBotAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -326,14 +319,12 @@ DeleteBotChannelAssociationOutcome LexModelBuildingServiceClient::DeleteBotChann
     return DeleteBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/aliases/";
-  ss << request.GetBotAlias();
-  ss << "/channels/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetName());
   return DeleteBotChannelAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -368,12 +359,10 @@ DeleteBotVersionOutcome LexModelBuildingServiceClient::DeleteBotVersion(const De
     return DeleteBotVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetName();
-  ss << "/versions/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersion());
   return DeleteBotVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -403,10 +392,8 @@ DeleteIntentOutcome LexModelBuildingServiceClient::DeleteIntent(const DeleteInte
     return DeleteIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/intents/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/intents/");
+  uri.AddPathSegment(request.GetName());
   return DeleteIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -441,12 +428,10 @@ DeleteIntentVersionOutcome LexModelBuildingServiceClient::DeleteIntentVersion(co
     return DeleteIntentVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/intents/";
-  ss << request.GetName();
-  ss << "/versions/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/intents/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersion());
   return DeleteIntentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -476,10 +461,8 @@ DeleteSlotTypeOutcome LexModelBuildingServiceClient::DeleteSlotType(const Delete
     return DeleteSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slottypes/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/slottypes/");
+  uri.AddPathSegment(request.GetName());
   return DeleteSlotTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -514,12 +497,10 @@ DeleteSlotTypeVersionOutcome LexModelBuildingServiceClient::DeleteSlotTypeVersio
     return DeleteSlotTypeVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slottypes/";
-  ss << request.GetName();
-  ss << "/version/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/slottypes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/version/");
+  uri.AddPathSegment(request.GetVersion());
   return DeleteSlotTypeVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -554,12 +535,10 @@ DeleteUtterancesOutcome LexModelBuildingServiceClient::DeleteUtterances(const De
     return DeleteUtterancesOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/utterances/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/utterances/");
+  uri.AddPathSegment(request.GetUserId());
   return DeleteUtterancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -594,12 +573,10 @@ GetBotOutcome LexModelBuildingServiceClient::GetBot(const GetBotRequest& request
     return GetBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionOrAlias]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetName();
-  ss << "/versions/";
-  ss << request.GetVersionOrAlias();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionOrAlias());
   return GetBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -634,12 +611,10 @@ GetBotAliasOutcome LexModelBuildingServiceClient::GetBotAlias(const GetBotAliasR
     return GetBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/aliases/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetName());
   return GetBotAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -669,11 +644,9 @@ GetBotAliasesOutcome LexModelBuildingServiceClient::GetBotAliases(const GetBotAl
     return GetBotAliasesOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/aliases/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/aliases/");
   return GetBotAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -713,14 +686,12 @@ GetBotChannelAssociationOutcome LexModelBuildingServiceClient::GetBotChannelAsso
     return GetBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/aliases/";
-  ss << request.GetBotAlias();
-  ss << "/channels/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetName());
   return GetBotChannelAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -755,13 +726,11 @@ GetBotChannelAssociationsOutcome LexModelBuildingServiceClient::GetBotChannelAss
     return GetBotChannelAssociationsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/aliases/";
-  ss << request.GetBotAlias();
-  ss << "/channels/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/channels/");
   return GetBotChannelAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -791,11 +760,9 @@ GetBotVersionsOutcome LexModelBuildingServiceClient::GetBotVersions(const GetBot
     return GetBotVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetName();
-  ss << "/versions/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
   return GetBotVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -820,9 +787,7 @@ void LexModelBuildingServiceClient::GetBotVersionsAsyncHelper(const GetBotVersio
 GetBotsOutcome LexModelBuildingServiceClient::GetBots(const GetBotsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
   return GetBotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -852,10 +817,8 @@ GetBuiltinIntentOutcome LexModelBuildingServiceClient::GetBuiltinIntent(const Ge
     return GetBuiltinIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Signature]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/builtins/intents/";
-  ss << request.GetSignature();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/builtins/intents/");
+  uri.AddPathSegment(request.GetSignature());
   return GetBuiltinIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -880,9 +843,7 @@ void LexModelBuildingServiceClient::GetBuiltinIntentAsyncHelper(const GetBuiltin
 GetBuiltinIntentsOutcome LexModelBuildingServiceClient::GetBuiltinIntents(const GetBuiltinIntentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/builtins/intents/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/builtins/intents/");
   return GetBuiltinIntentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -907,9 +868,7 @@ void LexModelBuildingServiceClient::GetBuiltinIntentsAsyncHelper(const GetBuilti
 GetBuiltinSlotTypesOutcome LexModelBuildingServiceClient::GetBuiltinSlotTypes(const GetBuiltinSlotTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/builtins/slottypes/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/builtins/slottypes/");
   return GetBuiltinSlotTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -954,9 +913,7 @@ GetExportOutcome LexModelBuildingServiceClient::GetExport(const GetExportRequest
     return GetExportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/exports/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/exports/");
   return GetExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -986,10 +943,8 @@ GetImportOutcome LexModelBuildingServiceClient::GetImport(const GetImportRequest
     return GetImportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImportId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/imports/";
-  ss << request.GetImportId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/imports/");
+  uri.AddPathSegment(request.GetImportId());
   return GetImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1024,12 +979,10 @@ GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest
     return GetIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/intents/";
-  ss << request.GetName();
-  ss << "/versions/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/intents/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersion());
   return GetIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1059,11 +1012,9 @@ GetIntentVersionsOutcome LexModelBuildingServiceClient::GetIntentVersions(const 
     return GetIntentVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/intents/";
-  ss << request.GetName();
-  ss << "/versions/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/intents/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
   return GetIntentVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1088,9 +1039,7 @@ void LexModelBuildingServiceClient::GetIntentVersionsAsyncHelper(const GetIntent
 GetIntentsOutcome LexModelBuildingServiceClient::GetIntents(const GetIntentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/intents/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/intents/");
   return GetIntentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1112,6 +1061,62 @@ void LexModelBuildingServiceClient::GetIntentsAsyncHelper(const GetIntentsReques
   handler(this, request, GetIntents(request), context);
 }
 
+GetMigrationOutcome LexModelBuildingServiceClient::GetMigration(const GetMigrationRequest& request) const
+{
+  if (!request.MigrationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMigration", "Required field: MigrationId, is not set");
+    return GetMigrationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MigrationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/migrations/");
+  uri.AddPathSegment(request.GetMigrationId());
+  return GetMigrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMigrationOutcomeCallable LexModelBuildingServiceClient::GetMigrationCallable(const GetMigrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMigrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMigration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::GetMigrationAsync(const GetMigrationRequest& request, const GetMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMigrationAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::GetMigrationAsyncHelper(const GetMigrationRequest& request, const GetMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMigration(request), context);
+}
+
+GetMigrationsOutcome LexModelBuildingServiceClient::GetMigrations(const GetMigrationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/migrations");
+  return GetMigrationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMigrationsOutcomeCallable LexModelBuildingServiceClient::GetMigrationsCallable(const GetMigrationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMigrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMigrations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::GetMigrationsAsync(const GetMigrationsRequest& request, const GetMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMigrationsAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::GetMigrationsAsyncHelper(const GetMigrationsRequest& request, const GetMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMigrations(request), context);
+}
+
 GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -1125,12 +1130,10 @@ GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeR
     return GetSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slottypes/";
-  ss << request.GetName();
-  ss << "/versions/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/slottypes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersion());
   return GetSlotTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1160,11 +1163,9 @@ GetSlotTypeVersionsOutcome LexModelBuildingServiceClient::GetSlotTypeVersions(co
     return GetSlotTypeVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slottypes/";
-  ss << request.GetName();
-  ss << "/versions/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/slottypes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/");
   return GetSlotTypeVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1189,9 +1190,7 @@ void LexModelBuildingServiceClient::GetSlotTypeVersionsAsyncHelper(const GetSlot
 GetSlotTypesOutcome LexModelBuildingServiceClient::GetSlotTypes(const GetSlotTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slottypes/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/slottypes/");
   return GetSlotTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1232,10 +1231,9 @@ GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const 
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/utterances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/utterances");
   ss.str("?view=aggregation");
   uri.SetQueryString(ss.str());
   return GetUtterancesViewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -1267,10 +1265,8 @@ ListTagsForResourceOutcome LexModelBuildingServiceClient::ListTagsForResource(co
     return ListTagsForResourceOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1300,11 +1296,9 @@ PutBotOutcome LexModelBuildingServiceClient::PutBot(const PutBotRequest& request
     return PutBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetName();
-  ss << "/versions/$LATEST";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/$LATEST");
   return PutBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1339,12 +1333,10 @@ PutBotAliasOutcome LexModelBuildingServiceClient::PutBotAlias(const PutBotAliasR
     return PutBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotName();
-  ss << "/aliases/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetName());
   return PutBotAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1374,11 +1366,9 @@ PutIntentOutcome LexModelBuildingServiceClient::PutIntent(const PutIntentRequest
     return PutIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/intents/";
-  ss << request.GetName();
-  ss << "/versions/$LATEST";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/intents/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/$LATEST");
   return PutIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1408,11 +1398,9 @@ PutSlotTypeOutcome LexModelBuildingServiceClient::PutSlotType(const PutSlotTypeR
     return PutSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slottypes/";
-  ss << request.GetName();
-  ss << "/versions/$LATEST";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/slottypes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/versions/$LATEST");
   return PutSlotTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1437,9 +1425,7 @@ void LexModelBuildingServiceClient::PutSlotTypeAsyncHelper(const PutSlotTypeRequ
 StartImportOutcome LexModelBuildingServiceClient::StartImport(const StartImportRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/imports/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/imports/");
   return StartImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1461,6 +1447,31 @@ void LexModelBuildingServiceClient::StartImportAsyncHelper(const StartImportRequ
   handler(this, request, StartImport(request), context);
 }
 
+StartMigrationOutcome LexModelBuildingServiceClient::StartMigration(const StartMigrationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/migrations");
+  return StartMigrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartMigrationOutcomeCallable LexModelBuildingServiceClient::StartMigrationCallable(const StartMigrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMigrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMigration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::StartMigrationAsync(const StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMigrationAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::StartMigrationAsyncHelper(const StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMigration(request), context);
+}
+
 TagResourceOutcome LexModelBuildingServiceClient::TagResource(const TagResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -1469,10 +1480,8 @@ TagResourceOutcome LexModelBuildingServiceClient::TagResource(const TagResourceR
     return TagResourceOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1507,10 +1516,8 @@ UntagResourceOutcome LexModelBuildingServiceClient::UntagResource(const UntagRes
     return UntagResourceOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 

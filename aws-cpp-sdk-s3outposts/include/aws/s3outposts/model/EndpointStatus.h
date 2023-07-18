@@ -16,8 +16,9 @@ namespace Model
   enum class EndpointStatus
   {
     NOT_SET,
-    PENDING,
-    AVAILABLE
+    Pending,
+    Available,
+    Deleting
   };
 
 namespace EndpointStatusMapper

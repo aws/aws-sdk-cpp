@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-   * are only supported when you are using the EC2 launch type. Windows containers
+   * <p>This parameter is specified when you're using Docker volumes. Docker volumes
+   * are only supported when you're using the EC2 launch type. Windows containers
    * only support the use of the <code>local</code> driver. To use bind mounts,
    * specify a <code>host</code> instead.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DockerVolumeConfiguration">AWS
@@ -92,29 +92,29 @@ namespace Model
 
 
     /**
-     * <p>If this value is <code>true</code>, the Docker volume is created if it does
-     * not already exist.</p>  <p>This field is only used if the
+     * <p>If this value is <code>true</code>, the Docker volume is created if it
+     * doesn't already exist.</p>  <p>This field is only used if the
      * <code>scope</code> is <code>shared</code>.</p> 
      */
     inline bool GetAutoprovision() const{ return m_autoprovision; }
 
     /**
-     * <p>If this value is <code>true</code>, the Docker volume is created if it does
-     * not already exist.</p>  <p>This field is only used if the
+     * <p>If this value is <code>true</code>, the Docker volume is created if it
+     * doesn't already exist.</p>  <p>This field is only used if the
      * <code>scope</code> is <code>shared</code>.</p> 
      */
     inline bool AutoprovisionHasBeenSet() const { return m_autoprovisionHasBeenSet; }
 
     /**
-     * <p>If this value is <code>true</code>, the Docker volume is created if it does
-     * not already exist.</p>  <p>This field is only used if the
+     * <p>If this value is <code>true</code>, the Docker volume is created if it
+     * doesn't already exist.</p>  <p>This field is only used if the
      * <code>scope</code> is <code>shared</code>.</p> 
      */
     inline void SetAutoprovision(bool value) { m_autoprovisionHasBeenSet = true; m_autoprovision = value; }
 
     /**
-     * <p>If this value is <code>true</code>, the Docker volume is created if it does
-     * not already exist.</p>  <p>This field is only used if the
+     * <p>If this value is <code>true</code>, the Docker volume is created if it
+     * doesn't already exist.</p>  <p>This field is only used if the
      * <code>scope</code> is <code>shared</code>.</p> 
      */
     inline DockerVolumeConfiguration& WithAutoprovision(bool value) { SetAutoprovision(value); return *this;}

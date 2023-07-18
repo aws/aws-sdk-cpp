@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>A summary of domains.</p>
+     * <p>A list of domains.</p>
      */
     inline const Aws::Vector<DomainSummary>& GetDomains() const{ return m_domains; }
 
     /**
-     * <p>A summary of domains.</p>
+     * <p>A list of domains.</p>
      */
     inline void SetDomains(const Aws::Vector<DomainSummary>& value) { m_domains = value; }
 
     /**
-     * <p>A summary of domains.</p>
+     * <p>A list of domains.</p>
      */
     inline void SetDomains(Aws::Vector<DomainSummary>&& value) { m_domains = std::move(value); }
 
     /**
-     * <p>A summary of domains.</p>
+     * <p>A list of domains.</p>
      */
     inline ListDomainsResult& WithDomains(const Aws::Vector<DomainSummary>& value) { SetDomains(value); return *this;}
 
     /**
-     * <p>A summary of domains.</p>
+     * <p>A list of domains.</p>
      */
     inline ListDomainsResult& WithDomains(Aws::Vector<DomainSummary>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
-     * <p>A summary of domains.</p>
+     * <p>A list of domains.</p>
      */
     inline ListDomainsResult& AddDomains(const DomainSummary& value) { m_domains.push_back(value); return *this; }
 
     /**
-     * <p>A summary of domains.</p>
+     * <p>A list of domains.</p>
      */
     inline ListDomainsResult& AddDomains(DomainSummary&& value) { m_domains.push_back(std::move(value)); return *this; }
 

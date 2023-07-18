@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/model/ConnectionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -103,11 +104,39 @@ namespace Model
      */
     inline GetWirelessGatewayStatisticsResult& WithLastUplinkReceivedAt(const char* value) { SetLastUplinkReceivedAt(value); return *this;}
 
+
+    /**
+     * <p>The connection status of the wireless gateway.</p>
+     */
+    inline const ConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
+
+    /**
+     * <p>The connection status of the wireless gateway.</p>
+     */
+    inline void SetConnectionStatus(const ConnectionStatus& value) { m_connectionStatus = value; }
+
+    /**
+     * <p>The connection status of the wireless gateway.</p>
+     */
+    inline void SetConnectionStatus(ConnectionStatus&& value) { m_connectionStatus = std::move(value); }
+
+    /**
+     * <p>The connection status of the wireless gateway.</p>
+     */
+    inline GetWirelessGatewayStatisticsResult& WithConnectionStatus(const ConnectionStatus& value) { SetConnectionStatus(value); return *this;}
+
+    /**
+     * <p>The connection status of the wireless gateway.</p>
+     */
+    inline GetWirelessGatewayStatisticsResult& WithConnectionStatus(ConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_wirelessGatewayId;
 
     Aws::String m_lastUplinkReceivedAt;
+
+    ConnectionStatus m_connectionStatus;
   };
 
 } // namespace Model

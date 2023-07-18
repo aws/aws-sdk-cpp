@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The specified sync name was not found.</p><p><h3>See Also:</h3>   <a
+   * <p>The specified sync name wasn't found.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncNotFoundException">AWS
    * API Reference</a></p>
    */

@@ -36,6 +36,7 @@ namespace Aws
         static const int ACUITY_HASH = HashingUtils::HashString("ACUITY");
         static const int TEST_VALUE_HASH = HashingUtils::HashString("TEST_VALUE");
         static const int TEST_UNITS_HASH = HashingUtils::HashString("TEST_UNITS");
+        static const int TEST_UNIT_HASH = HashingUtils::HashString("TEST_UNIT");
         static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
         static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
 
@@ -107,6 +108,10 @@ namespace Aws
           {
             return RelationshipType::TEST_UNITS;
           }
+          else if (hashCode == TEST_UNIT_HASH)
+          {
+            return RelationshipType::TEST_UNIT;
+          }
           else if (hashCode == DIRECTION_HASH)
           {
             return RelationshipType::DIRECTION;
@@ -161,6 +166,8 @@ namespace Aws
             return "TEST_VALUE";
           case RelationshipType::TEST_UNITS:
             return "TEST_UNITS";
+          case RelationshipType::TEST_UNIT:
+            return "TEST_UNIT";
           case RelationshipType::DIRECTION:
             return "DIRECTION";
           case RelationshipType::SYSTEM_ORGAN_SITE:

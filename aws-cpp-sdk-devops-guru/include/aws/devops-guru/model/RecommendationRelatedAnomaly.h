@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-guru/model/RecommendationRelatedAnomalyResource.h>
 #include <aws/devops-guru/model/RecommendationRelatedAnomalySourceDetail.h>
 #include <utility>
@@ -137,6 +138,47 @@ namespace Model
      */
     inline RecommendationRelatedAnomaly& AddSourceDetails(RecommendationRelatedAnomalySourceDetail&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline const Aws::String& GetAnomalyId() const{ return m_anomalyId; }
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline bool AnomalyIdHasBeenSet() const { return m_anomalyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline void SetAnomalyId(const Aws::String& value) { m_anomalyIdHasBeenSet = true; m_anomalyId = value; }
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline void SetAnomalyId(Aws::String&& value) { m_anomalyIdHasBeenSet = true; m_anomalyId = std::move(value); }
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline void SetAnomalyId(const char* value) { m_anomalyIdHasBeenSet = true; m_anomalyId.assign(value); }
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline RecommendationRelatedAnomaly& WithAnomalyId(const Aws::String& value) { SetAnomalyId(value); return *this;}
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline RecommendationRelatedAnomaly& WithAnomalyId(Aws::String&& value) { SetAnomalyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+     */
+    inline RecommendationRelatedAnomaly& WithAnomalyId(const char* value) { SetAnomalyId(value); return *this;}
+
   private:
 
     Aws::Vector<RecommendationRelatedAnomalyResource> m_resources;
@@ -144,6 +186,9 @@ namespace Model
 
     Aws::Vector<RecommendationRelatedAnomalySourceDetail> m_sourceDetails;
     bool m_sourceDetailsHasBeenSet;
+
+    Aws::String m_anomalyId;
+    bool m_anomalyIdHasBeenSet;
   };
 
 } // namespace Model

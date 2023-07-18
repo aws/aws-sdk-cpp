@@ -19,7 +19,9 @@ namespace AppStreamErrorMapper
 {
 
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
+static const int ENTITLEMENT_NOT_FOUND_HASH = HashingUtils::HashString("EntitlementNotFoundException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
+static const int ENTITLEMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntitlementAlreadyExistsException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
 static const int INVALID_ACCOUNT_STATUS_HASH = HashingUtils::HashString("InvalidAccountStatusException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -38,9 +40,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::OPERATION_NOT_PERMITTED), false);
   }
+  else if (hashCode == ENTITLEMENT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::ENTITLEMENT_NOT_FOUND), false);
+  }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::RESOURCE_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == ENTITLEMENT_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::ENTITLEMENT_ALREADY_EXISTS), false);
   }
   else if (hashCode == INVALID_ROLE_HASH)
   {

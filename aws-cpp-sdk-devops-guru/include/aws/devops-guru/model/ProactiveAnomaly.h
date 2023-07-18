@@ -10,9 +10,13 @@
 #include <aws/devops-guru/model/AnomalyStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/devops-guru/model/AnomalyTimeRange.h>
+#include <aws/devops-guru/model/AnomalyReportedTimeRange.h>
 #include <aws/devops-guru/model/PredictionTimeRange.h>
 #include <aws/devops-guru/model/AnomalySourceDetails.h>
 #include <aws/devops-guru/model/ResourceCollection.h>
+#include <aws/devops-guru/model/AnomalySourceMetadata.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devops-guru/model/AnomalyResource.h>
 #include <utility>
 
 namespace Aws
@@ -87,32 +91,50 @@ namespace Model
 
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const AnomalySeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const AnomalySeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(AnomalySeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveAnomaly& WithSeverity(const AnomalySeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveAnomaly& WithSeverity(AnomalySeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
@@ -196,6 +218,43 @@ namespace Model
 
     
     inline ProactiveAnomaly& WithAnomalyTimeRange(AnomalyTimeRange&& value) { SetAnomalyTimeRange(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline const AnomalyReportedTimeRange& GetAnomalyReportedTimeRange() const{ return m_anomalyReportedTimeRange; }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline bool AnomalyReportedTimeRangeHasBeenSet() const { return m_anomalyReportedTimeRangeHasBeenSet; }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline void SetAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = value; }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline void SetAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = std::move(value); }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline ProactiveAnomaly& WithAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { SetAnomalyReportedTimeRange(value); return *this;}
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline ProactiveAnomaly& WithAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { SetAnomalyReportedTimeRange(std::move(value)); return *this;}
 
 
     
@@ -350,6 +409,86 @@ namespace Model
      */
     inline ProactiveAnomaly& WithLimit(double value) { SetLimit(value); return *this;}
 
+
+    /**
+     * <p>The metadata for the anomaly.</p>
+     */
+    inline const AnomalySourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+
+    /**
+     * <p>The metadata for the anomaly.</p>
+     */
+    inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
+
+    /**
+     * <p>The metadata for the anomaly.</p>
+     */
+    inline void SetSourceMetadata(const AnomalySourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
+
+    /**
+     * <p>The metadata for the anomaly.</p>
+     */
+    inline void SetSourceMetadata(AnomalySourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
+
+    /**
+     * <p>The metadata for the anomaly.</p>
+     */
+    inline ProactiveAnomaly& WithSourceMetadata(const AnomalySourceMetadata& value) { SetSourceMetadata(value); return *this;}
+
+    /**
+     * <p>The metadata for the anomaly.</p>
+     */
+    inline ProactiveAnomaly& WithSourceMetadata(AnomalySourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline const Aws::Vector<AnomalyResource>& GetAnomalyResources() const{ return m_anomalyResources; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline bool AnomalyResourcesHasBeenSet() const { return m_anomalyResourcesHasBeenSet; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline void SetAnomalyResources(const Aws::Vector<AnomalyResource>& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources = value; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline void SetAnomalyResources(Aws::Vector<AnomalyResource>&& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources = std::move(value); }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomaly& WithAnomalyResources(const Aws::Vector<AnomalyResource>& value) { SetAnomalyResources(value); return *this;}
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomaly& WithAnomalyResources(Aws::Vector<AnomalyResource>&& value) { SetAnomalyResources(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomaly& AddAnomalyResources(const AnomalyResource& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources.push_back(value); return *this; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomaly& AddAnomalyResources(AnomalyResource&& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -367,6 +506,9 @@ namespace Model
     AnomalyTimeRange m_anomalyTimeRange;
     bool m_anomalyTimeRangeHasBeenSet;
 
+    AnomalyReportedTimeRange m_anomalyReportedTimeRange;
+    bool m_anomalyReportedTimeRangeHasBeenSet;
+
     PredictionTimeRange m_predictionTimeRange;
     bool m_predictionTimeRangeHasBeenSet;
 
@@ -381,6 +523,12 @@ namespace Model
 
     double m_limit;
     bool m_limitHasBeenSet;
+
+    AnomalySourceMetadata m_sourceMetadata;
+    bool m_sourceMetadataHasBeenSet;
+
+    Aws::Vector<AnomalyResource> m_anomalyResources;
+    bool m_anomalyResourcesHasBeenSet;
   };
 
 } // namespace Model

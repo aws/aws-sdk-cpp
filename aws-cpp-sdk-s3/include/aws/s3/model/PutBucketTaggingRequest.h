@@ -7,6 +7,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/model/ChecksumAlgorithm.h>
 #include <aws/s3/model/Tagging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -41,7 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    inline bool ShouldComputeContentMd5() const override { return true; }
+    Aws::String GetChecksumAlgorithmName() const override;
 
 
     /**
@@ -90,8 +91,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
@@ -100,8 +101,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
@@ -110,8 +111,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
@@ -120,8 +121,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
@@ -130,8 +131,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
@@ -140,8 +141,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline PutBucketTaggingRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
@@ -150,8 +151,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline PutBucketTaggingRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
@@ -160,10 +161,95 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, see <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline PutBucketTaggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
+
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline PutBucketTaggingRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline PutBucketTaggingRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
 
 
     /**
@@ -198,58 +284,58 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketTaggingRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketTaggingRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketTaggingRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
@@ -300,6 +386,9 @@ namespace Model
 
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
+    ChecksumAlgorithm m_checksumAlgorithm;
+    bool m_checksumAlgorithmHasBeenSet;
 
     Tagging m_tagging;
     bool m_taggingHasBeenSet;

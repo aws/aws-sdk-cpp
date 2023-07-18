@@ -37,7 +37,9 @@ WriteCampaignRequest::WriteCampaignRequest() :
     m_tagsHasBeenSet(false),
     m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
+    m_treatmentNameHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ WriteCampaignRequest::WriteCampaignRequest(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
+    m_treatmentNameHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -185,6 +189,13 @@ WriteCampaignRequest& WriteCampaignRequest::operator =(JsonView jsonValue)
     m_treatmentNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetInteger("Priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -295,6 +306,12 @@ JsonValue WriteCampaignRequest::Jsonize() const
   if(m_treatmentNameHasBeenSet)
   {
    payload.WithString("TreatmentName", m_treatmentName);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("Priority", m_priority);
 
   }
 

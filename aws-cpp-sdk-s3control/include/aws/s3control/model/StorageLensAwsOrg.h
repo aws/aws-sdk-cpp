@@ -23,7 +23,8 @@ namespace Model
 {
 
   /**
-   * <p>The AWS organization for your S3 Storage Lens.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Web Services organization for your S3 Storage Lens.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/StorageLensAwsOrg">AWS
    * API Reference</a></p>
    */
@@ -38,64 +39,72 @@ namespace Model
 
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
     inline StorageLensAwsOrg& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
     inline StorageLensAwsOrg& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>A container for the Amazon Resource Name (ARN) of the AWS organization. This
-     * property is read-only and follows the following format: <code>
+     * <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services
+     * organization. This property is read-only and follows the following format:
+     * <code>
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */

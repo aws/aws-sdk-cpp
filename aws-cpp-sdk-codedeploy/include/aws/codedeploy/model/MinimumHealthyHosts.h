@@ -38,27 +38,6 @@ namespace Model
 
 
     /**
-     * <p>The minimum healthy instance value.</p>
-     */
-    inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>The minimum healthy instance value.</p>
-     */
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The minimum healthy instance value.</p>
-     */
-    inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The minimum healthy instance value.</p>
-     */
-    inline MinimumHealthyHosts& WithValue(int value) { SetValue(value); return *this;}
-
-
-    /**
      * <p>The minimum healthy instance type:</p> <ul> <li> <p> <code>HOST_COUNT</code>:
      * The minimum number of healthy instances as an absolute value.</p> </li> <li> <p>
      * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
@@ -208,13 +187,34 @@ namespace Model
      */
     inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(std::move(value)); return *this;}
 
-  private:
 
-    int m_value;
-    bool m_valueHasBeenSet;
+    /**
+     * <p>The minimum healthy instance value.</p>
+     */
+    inline int GetValue() const{ return m_value; }
+
+    /**
+     * <p>The minimum healthy instance value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The minimum healthy instance value.</p>
+     */
+    inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /**
+     * <p>The minimum healthy instance value.</p>
+     */
+    inline MinimumHealthyHosts& WithValue(int value) { SetValue(value); return *this;}
+
+  private:
 
     MinimumHealthyHostsType m_type;
     bool m_typeHasBeenSet;
+
+    int m_value;
+    bool m_valueHasBeenSet;
   };
 
 } // namespace Model

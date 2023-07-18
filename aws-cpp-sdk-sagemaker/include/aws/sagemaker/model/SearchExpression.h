@@ -9,7 +9,6 @@
 #include <aws/sagemaker/model/BooleanOperator.h>
 #include <aws/sagemaker/model/Filter.h>
 #include <aws/sagemaker/model/NestedFilters.h>
-#include <aws/sagemaker/model/SearchExpression.h>
 #include <utility>
 
 namespace Aws

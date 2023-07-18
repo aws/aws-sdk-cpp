@@ -306,6 +306,55 @@ namespace Model
      */
     inline CreatePredictorBacktestExportJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline CreatePredictorBacktestExportJobRequest& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline CreatePredictorBacktestExportJobRequest& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET. The default value is
+     * CSV.</p>
+     */
+    inline CreatePredictorBacktestExportJobRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
+
   private:
 
     Aws::String m_predictorBacktestExportJobName;
@@ -319,6 +368,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_format;
+    bool m_formatHasBeenSet;
   };
 
 } // namespace Model

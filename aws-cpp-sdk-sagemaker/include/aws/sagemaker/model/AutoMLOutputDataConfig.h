@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline AutoMLOutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline AutoMLOutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS encryption key ID.</p>
+     * <p>The Amazon Web Services KMS encryption key ID.</p>
      */
     inline AutoMLOutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

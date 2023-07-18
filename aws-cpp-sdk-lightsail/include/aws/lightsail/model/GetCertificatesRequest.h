@@ -40,8 +40,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const{ return m_certificateStatuses; }
 
@@ -49,8 +49,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline bool CertificateStatusesHasBeenSet() const { return m_certificateStatusesHasBeenSet; }
 
@@ -58,8 +58,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline void SetCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
 
@@ -67,8 +67,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = std::move(value); }
 
@@ -76,8 +76,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline GetCertificatesRequest& WithCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { SetCertificateStatuses(value); return *this;}
 
@@ -85,8 +85,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline GetCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(std::move(value)); return *this;}
 
@@ -94,8 +94,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline GetCertificatesRequest& AddCertificateStatuses(const CertificateStatus& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
 
@@ -103,8 +103,8 @@ namespace Model
      * <p>The status of the certificates for which to return information.</p> <p>For
      * example, specify <code>ISSUED</code> to return only certificates with an
      * <code>ISSUED</code> status.</p> <p>When omitted, the response includes all of
-     * your certificates in the AWS Region where the request is made, regardless of
-     * their current status.</p>
+     * your certificates in the Amazon Web Services Region where the request is made,
+     * regardless of their current status.</p>
      */
     inline GetCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(std::move(value)); return *this; }
 
@@ -140,57 +140,57 @@ namespace Model
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline GetCertificatesRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline GetCertificatesRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The name for the certificate for which to return information.</p> <p>When
-     * omitted, the response includes all of your certificates in the AWS Region where
-     * the request is made.</p>
+     * omitted, the response includes all of your certificates in the Amazon Web
+     * Services Region where the request is made.</p>
      */
     inline GetCertificatesRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
 

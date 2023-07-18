@@ -34,8 +34,8 @@ namespace Model
    * aggregate gender distribution statistics need to be analyzed without identifying
    * specific users. For example, the percentage of female users compared to male
    * users on a social media platform. </p> <p>We don't recommend using gender binary
-   * predictions to make decisions that impact&#x2028; an individual's rights,
-   * privacy, or access to services.</p><p><h3>See Also:</h3>   <a
+   * predictions to make decisions that impact an individual's rights, privacy, or
+   * access to services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Gender">AWS
    * API Reference</a></p>
    */

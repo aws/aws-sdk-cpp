@@ -35,42 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetModelPackageName(Aws::String&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::move(value); }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetModelPackageName(const char* value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName.assign(value); }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline DescribeModelPackageRequest& WithModelPackageName(const Aws::String& value) { SetModelPackageName(value); return *this;}
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline DescribeModelPackageRequest& WithModelPackageName(Aws::String&& value) { SetModelPackageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline DescribeModelPackageRequest& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
 

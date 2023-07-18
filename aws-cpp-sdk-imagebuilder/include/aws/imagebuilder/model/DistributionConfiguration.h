@@ -164,42 +164,50 @@ namespace Model
 
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline const Aws::Vector<Distribution>& GetDistributions() const{ return m_distributions; }
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline bool DistributionsHasBeenSet() const { return m_distributionsHasBeenSet; }
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline void SetDistributions(const Aws::Vector<Distribution>& value) { m_distributionsHasBeenSet = true; m_distributions = value; }
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline void SetDistributions(Aws::Vector<Distribution>&& value) { m_distributionsHasBeenSet = true; m_distributions = std::move(value); }
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline DistributionConfiguration& WithDistributions(const Aws::Vector<Distribution>& value) { SetDistributions(value); return *this;}
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline DistributionConfiguration& WithDistributions(Aws::Vector<Distribution>&& value) { SetDistributions(std::move(value)); return *this;}
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline DistributionConfiguration& AddDistributions(const Distribution& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(value); return *this; }
 
     /**
-     * <p>The distributions of the distribution configuration.</p>
+     * <p>The distribution objects that apply Region-specific settings for the
+     * deployment of the image to targeted Regions.</p>
      */
     inline DistributionConfiguration& AddDistributions(Distribution&& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(std::move(value)); return *this; }
 

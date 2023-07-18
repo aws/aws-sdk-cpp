@@ -40,37 +40,43 @@ namespace Model
 
     /**
      * <p>The type of origin request policy, either <code>managed</code> (created by
-     * AWS) or <code>custom</code> (created in this AWS account).</p>
+     * Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services
+     * account).</p>
      */
     inline const OriginRequestPolicyType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of origin request policy, either <code>managed</code> (created by
-     * AWS) or <code>custom</code> (created in this AWS account).</p>
+     * Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services
+     * account).</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of origin request policy, either <code>managed</code> (created by
-     * AWS) or <code>custom</code> (created in this AWS account).</p>
+     * Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services
+     * account).</p>
      */
     inline void SetType(const OriginRequestPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of origin request policy, either <code>managed</code> (created by
-     * AWS) or <code>custom</code> (created in this AWS account).</p>
+     * Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services
+     * account).</p>
      */
     inline void SetType(OriginRequestPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of origin request policy, either <code>managed</code> (created by
-     * AWS) or <code>custom</code> (created in this AWS account).</p>
+     * Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services
+     * account).</p>
      */
     inline OriginRequestPolicySummary& WithType(const OriginRequestPolicyType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of origin request policy, either <code>managed</code> (created by
-     * AWS) or <code>custom</code> (created in this AWS account).</p>
+     * Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services
+     * account).</p>
      */
     inline OriginRequestPolicySummary& WithType(OriginRequestPolicyType&& value) { SetType(std::move(value)); return *this;}
 

@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 CreateOpenIDConnectProviderRequest::CreateOpenIDConnectProviderRequest() : 
     m_urlHasBeenSet(false),
     m_clientIDListHasBeenSet(false),
-    m_thumbprintListHasBeenSet(false)
+    m_thumbprintListHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,16 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
       ss << "ThumbprintList.member." << thumbprintListCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       thumbprintListCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

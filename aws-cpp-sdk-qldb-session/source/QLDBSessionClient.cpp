@@ -69,7 +69,7 @@ QLDBSessionClient::~QLDBSessionClient()
 {
 }
 
-void QLDBSessionClient::init(const ClientConfiguration& config)
+void QLDBSessionClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("QLDB Session");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -98,9 +98,6 @@ void QLDBSessionClient::OverrideEndpoint(const Aws::String& endpoint)
 SendCommandOutcome QLDBSessionClient::SendCommand(const SendCommandRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SendCommandOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

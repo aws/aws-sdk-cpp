@@ -16,7 +16,8 @@ CreateTableRequest::CreateTableRequest() :
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_tableInputHasBeenSet(false),
-    m_partitionIndexesHasBeenSet(false)
+    m_partitionIndexesHasBeenSet(false),
+    m_transactionIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String CreateTableRequest::SerializePayload() const
      partitionIndexesJsonList[partitionIndexesIndex].AsObject(m_partitionIndexes[partitionIndexesIndex].Jsonize());
    }
    payload.WithArray("PartitionIndexes", std::move(partitionIndexesJsonList));
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
 
   }
 

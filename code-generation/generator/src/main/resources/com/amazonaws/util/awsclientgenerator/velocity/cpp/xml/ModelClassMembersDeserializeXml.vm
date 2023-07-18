@@ -8,6 +8,9 @@
 #set($memberName = $entry.key)
 #set($member = $entry.value)
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
+#if($lowerCaseVarName.equals("result"))
+#set($lowerCaseVarName = "$CppViewHelper.computeVariableName($shape.name)$CppViewHelper.convertToUpperCamel($memberName)")
+#end
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
 #if($memberName == $shape.payload)##member is the whole payload (not wrapped)
@@ -124,7 +127,7 @@
 #elseif($member.shape.mapValue.shape.string)
     ${spaces}      valueNode.GetText();
 #elseif($member.shape.mapValue.shape.timeStamp)
-    ${spaces}      DateTime(StringUtils::Trim(valueNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+    ${spaces}      DateTime(StringUtils::Trim(valueNode.GetText().c_str()).c_str(), DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape.mapValue.shape));
 #elseif($member.shape.mapValue.shape.enum)
     ${spaces}      ${member.shape.mapValue.shape.name}Mapper::Get${member.shape.mapValue.shape.name}ForName(StringUtils::Trim(valueNode.GetText().c_str()));
 #elseif($member.shape.mapValue.shape.primitive)
@@ -147,7 +150,7 @@
 #elseif($member.shape.listMember.shape.string)
     ${spaces}  ${memberVarName}.push_back(${listVarName}.GetText());
 #elseif($member.shape.listMember.shape.timeStamp)
-    ${spaces}  ${memberVarName}.push_back(DateTime(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str(), DateFormat::ISO_8601));
+    ${spaces}  ${memberVarName}.push_back(DateTime(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str(), DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape.listMember.shape)));
 #elseif($member.shape.listMember.shape.primitive)
     ${spaces}   ${memberVarName}.push_back(${CppViewHelper.computeXmlConversionMethodName($member.shape.listMember.shape)}(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str()));
 #end
@@ -174,7 +177,7 @@
 #elseif($member.shape.string)
     ${spaces}${memberVarName} = ${substituteString};
 #elseif($member.shape.timeStamp)
-    ${spaces}${memberVarName} = DateTime(StringUtils::Trim(${substituteString}.c_str()).c_str(), DateFormat::ISO_8601);
+    ${spaces}${memberVarName} = DateTime(StringUtils::Trim(${substituteString}.c_str()).c_str(), DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape));
 #end
 #if(!$member.required && $useRequiredField)
       $varNameHasBeenSet = true;

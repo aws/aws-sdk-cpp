@@ -73,7 +73,7 @@ MediaStoreDataClient::~MediaStoreDataClient()
 {
 }
 
-void MediaStoreDataClient::init(const ClientConfiguration& config)
+void MediaStoreDataClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MediaStore Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -107,10 +107,7 @@ DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest
     return DeleteObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetPath();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments(request.GetPath());
   return DeleteObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -140,10 +137,7 @@ DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectR
     return DescribeObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetPath();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments(request.GetPath());
   return DescribeObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -173,10 +167,7 @@ GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request
     return GetObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetPath();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments(request.GetPath());
   return GetObjectOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -201,9 +192,6 @@ void MediaStoreDataClient::GetObjectAsyncHelper(const GetObjectRequest& request,
 ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -233,10 +221,7 @@ PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request
     return PutObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetPath();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments(request.GetPath());
   return PutObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

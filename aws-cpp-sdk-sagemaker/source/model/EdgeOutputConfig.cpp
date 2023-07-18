@@ -20,13 +20,19 @@ namespace Model
 
 EdgeOutputConfig::EdgeOutputConfig() : 
     m_s3OutputLocationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_presetDeploymentType(EdgePresetDeploymentType::NOT_SET),
+    m_presetDeploymentTypeHasBeenSet(false),
+    m_presetDeploymentConfigHasBeenSet(false)
 {
 }
 
 EdgeOutputConfig::EdgeOutputConfig(JsonView jsonValue) : 
     m_s3OutputLocationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_presetDeploymentType(EdgePresetDeploymentType::NOT_SET),
+    m_presetDeploymentTypeHasBeenSet(false),
+    m_presetDeploymentConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +53,20 @@ EdgeOutputConfig& EdgeOutputConfig::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PresetDeploymentType"))
+  {
+    m_presetDeploymentType = EdgePresetDeploymentTypeMapper::GetEdgePresetDeploymentTypeForName(jsonValue.GetString("PresetDeploymentType"));
+
+    m_presetDeploymentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PresetDeploymentConfig"))
+  {
+    m_presetDeploymentConfig = jsonValue.GetString("PresetDeploymentConfig");
+
+    m_presetDeploymentConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +83,17 @@ JsonValue EdgeOutputConfig::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_presetDeploymentTypeHasBeenSet)
+  {
+   payload.WithString("PresetDeploymentType", EdgePresetDeploymentTypeMapper::GetNameForEdgePresetDeploymentType(m_presetDeploymentType));
+  }
+
+  if(m_presetDeploymentConfigHasBeenSet)
+  {
+   payload.WithString("PresetDeploymentConfig", m_presetDeploymentConfig);
 
   }
 

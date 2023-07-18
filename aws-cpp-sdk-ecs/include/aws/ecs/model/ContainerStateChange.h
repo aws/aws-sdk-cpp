@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a change in state for a container.</p><p><h3>See
+   * <p>An object that represents a change in state for a container.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerStateChange">AWS
    * API Reference</a></p>
@@ -189,42 +189,42 @@ namespace Model
 
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline const Aws::Vector<NetworkBinding>& GetNetworkBindings() const{ return m_networkBindings; }
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline bool NetworkBindingsHasBeenSet() const { return m_networkBindingsHasBeenSet; }
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline void SetNetworkBindings(const Aws::Vector<NetworkBinding>& value) { m_networkBindingsHasBeenSet = true; m_networkBindings = value; }
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline void SetNetworkBindings(Aws::Vector<NetworkBinding>&& value) { m_networkBindingsHasBeenSet = true; m_networkBindings = std::move(value); }
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline ContainerStateChange& WithNetworkBindings(const Aws::Vector<NetworkBinding>& value) { SetNetworkBindings(value); return *this;}
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline ContainerStateChange& WithNetworkBindings(Aws::Vector<NetworkBinding>&& value) { SetNetworkBindings(std::move(value)); return *this;}
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline ContainerStateChange& AddNetworkBindings(const NetworkBinding& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(value); return *this; }
 
     /**
-     * <p>Any network bindings associated with the container.</p>
+     * <p>Any network bindings that are associated with the container.</p>
      */
     inline ContainerStateChange& AddNetworkBindings(NetworkBinding&& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(std::move(value)); return *this; }
 

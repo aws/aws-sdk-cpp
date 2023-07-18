@@ -25,9 +25,11 @@ JobOperation::JobOperation() :
     m_s3PutObjectCopyHasBeenSet(false),
     m_s3PutObjectAclHasBeenSet(false),
     m_s3PutObjectTaggingHasBeenSet(false),
+    m_s3DeleteObjectTaggingHasBeenSet(false),
     m_s3InitiateRestoreObjectHasBeenSet(false),
     m_s3PutObjectLegalHoldHasBeenSet(false),
-    m_s3PutObjectRetentionHasBeenSet(false)
+    m_s3PutObjectRetentionHasBeenSet(false),
+    m_s3ReplicateObjectHasBeenSet(false)
 {
 }
 
@@ -36,9 +38,11 @@ JobOperation::JobOperation(const XmlNode& xmlNode) :
     m_s3PutObjectCopyHasBeenSet(false),
     m_s3PutObjectAclHasBeenSet(false),
     m_s3PutObjectTaggingHasBeenSet(false),
+    m_s3DeleteObjectTaggingHasBeenSet(false),
     m_s3InitiateRestoreObjectHasBeenSet(false),
     m_s3PutObjectLegalHoldHasBeenSet(false),
-    m_s3PutObjectRetentionHasBeenSet(false)
+    m_s3PutObjectRetentionHasBeenSet(false),
+    m_s3ReplicateObjectHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -73,6 +77,12 @@ JobOperation& JobOperation::operator =(const XmlNode& xmlNode)
       m_s3PutObjectTagging = s3PutObjectTaggingNode;
       m_s3PutObjectTaggingHasBeenSet = true;
     }
+    XmlNode s3DeleteObjectTaggingNode = resultNode.FirstChild("S3DeleteObjectTagging");
+    if(!s3DeleteObjectTaggingNode.IsNull())
+    {
+      m_s3DeleteObjectTagging = s3DeleteObjectTaggingNode;
+      m_s3DeleteObjectTaggingHasBeenSet = true;
+    }
     XmlNode s3InitiateRestoreObjectNode = resultNode.FirstChild("S3InitiateRestoreObject");
     if(!s3InitiateRestoreObjectNode.IsNull())
     {
@@ -90,6 +100,12 @@ JobOperation& JobOperation::operator =(const XmlNode& xmlNode)
     {
       m_s3PutObjectRetention = s3PutObjectRetentionNode;
       m_s3PutObjectRetentionHasBeenSet = true;
+    }
+    XmlNode s3ReplicateObjectNode = resultNode.FirstChild("S3ReplicateObject");
+    if(!s3ReplicateObjectNode.IsNull())
+    {
+      m_s3ReplicateObject = s3ReplicateObjectNode;
+      m_s3ReplicateObjectHasBeenSet = true;
     }
   }
 
@@ -123,6 +139,12 @@ void JobOperation::AddToNode(XmlNode& parentNode) const
    m_s3PutObjectTagging.AddToNode(s3PutObjectTaggingNode);
   }
 
+  if(m_s3DeleteObjectTaggingHasBeenSet)
+  {
+   XmlNode s3DeleteObjectTaggingNode = parentNode.CreateChildElement("S3DeleteObjectTagging");
+   m_s3DeleteObjectTagging.AddToNode(s3DeleteObjectTaggingNode);
+  }
+
   if(m_s3InitiateRestoreObjectHasBeenSet)
   {
    XmlNode s3InitiateRestoreObjectNode = parentNode.CreateChildElement("S3InitiateRestoreObject");
@@ -139,6 +161,12 @@ void JobOperation::AddToNode(XmlNode& parentNode) const
   {
    XmlNode s3PutObjectRetentionNode = parentNode.CreateChildElement("S3PutObjectRetention");
    m_s3PutObjectRetention.AddToNode(s3PutObjectRetentionNode);
+  }
+
+  if(m_s3ReplicateObjectHasBeenSet)
+  {
+   XmlNode s3ReplicateObjectNode = parentNode.CreateChildElement("S3ReplicateObject");
+   m_s3ReplicateObject.AddToNode(s3ReplicateObjectNode);
   }
 
 }

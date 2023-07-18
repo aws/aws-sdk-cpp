@@ -20,7 +20,8 @@ CreateWirelessDeviceRequest::CreateWirelessDeviceRequest() :
     m_destinationNameHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_loRaWANHasBeenSet(false)
+    m_loRaWANHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,17 @@ Aws::String CreateWirelessDeviceRequest::SerializePayload() const
   if(m_loRaWANHasBeenSet)
   {
    payload.WithObject("LoRaWAN", m_loRaWAN.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

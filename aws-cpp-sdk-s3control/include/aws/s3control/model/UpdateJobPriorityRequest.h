@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline UpdateJobPriorityRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline UpdateJobPriorityRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
+     * job.</p>
      */
     inline UpdateJobPriorityRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

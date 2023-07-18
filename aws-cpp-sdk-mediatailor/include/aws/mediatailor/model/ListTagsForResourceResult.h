@@ -34,134 +34,62 @@ namespace Model
 
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A comma-separated list of tag key:value pairs. For example: 
- {
- "Key1":
-     * "Value1",
- "Key2": "Value2"
- }
- </p>
+     * <p>A comma-separated list of tag key:value pairs.</p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

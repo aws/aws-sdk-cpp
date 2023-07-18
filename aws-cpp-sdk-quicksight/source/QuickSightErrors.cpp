@@ -15,8 +15,8 @@
 #include <aws/quicksight/model/InvalidParameterValueException.h>
 #include <aws/quicksight/model/InvalidNextTokenException.h>
 #include <aws/quicksight/model/InternalFailureException.h>
-#include <aws/quicksight/model/DomainNotWhitelistedException.h>
 #include <aws/quicksight/model/UnsupportedPricingPlanException.h>
+#include <aws/quicksight/model/DomainNotWhitelistedException.h>
 #include <aws/quicksight/model/ThrottlingException.h>
 #include <aws/quicksight/model/UnsupportedUserEditionException.h>
 #include <aws/quicksight/model/SessionLifetimeInMinutesInvalidException.h>
@@ -88,16 +88,16 @@ template<> AWS_QUICKSIGHT_API InternalFailureException QuickSightError::GetModel
   return InternalFailureException(this->GetJsonPayload().View());
 }
 
-template<> AWS_QUICKSIGHT_API DomainNotWhitelistedException QuickSightError::GetModeledError()
-{
-  assert(this->GetErrorType() == QuickSightErrors::DOMAIN_NOT_WHITELISTED);
-  return DomainNotWhitelistedException(this->GetJsonPayload().View());
-}
-
 template<> AWS_QUICKSIGHT_API UnsupportedPricingPlanException QuickSightError::GetModeledError()
 {
   assert(this->GetErrorType() == QuickSightErrors::UNSUPPORTED_PRICING_PLAN);
   return UnsupportedPricingPlanException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API DomainNotWhitelistedException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::DOMAIN_NOT_WHITELISTED);
+  return DomainNotWhitelistedException(this->GetJsonPayload().View());
 }
 
 template<> AWS_QUICKSIGHT_API ThrottlingException QuickSightError::GetModeledError()
@@ -151,8 +151,8 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int QUICK_SIGHT_USER_NOT_FOUND_HASH = HashingUtils::HashString("QuickSightUserNotFoundException");
 static const int IDENTITY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("IdentityTypeNotSupportedException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int DOMAIN_NOT_WHITELISTED_HASH = HashingUtils::HashString("DomainNotWhitelistedException");
 static const int UNSUPPORTED_PRICING_PLAN_HASH = HashingUtils::HashString("UnsupportedPricingPlanException");
+static const int DOMAIN_NOT_WHITELISTED_HASH = HashingUtils::HashString("DomainNotWhitelistedException");
 static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("UnsupportedUserEditionException");
 static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
@@ -188,13 +188,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_NEXT_TOKEN), false);
   }
-  else if (hashCode == DOMAIN_NOT_WHITELISTED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::DOMAIN_NOT_WHITELISTED), false);
-  }
   else if (hashCode == UNSUPPORTED_PRICING_PLAN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_PRICING_PLAN), false);
+  }
+  else if (hashCode == DOMAIN_NOT_WHITELISTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::DOMAIN_NOT_WHITELISTED), false);
   }
   else if (hashCode == UNSUPPORTED_USER_EDITION_HASH)
   {

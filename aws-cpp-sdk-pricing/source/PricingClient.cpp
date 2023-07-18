@@ -71,9 +71,9 @@ PricingClient::~PricingClient()
 {
 }
 
-void PricingClient::init(const ClientConfiguration& config)
+void PricingClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("api.pricing");
+  SetServiceClientName("Pricing");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -100,9 +100,6 @@ void PricingClient::OverrideEndpoint(const Aws::String& endpoint)
 DescribeServicesOutcome PricingClient::DescribeServices(const DescribeServicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeServicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -127,9 +124,6 @@ void PricingClient::DescribeServicesAsyncHelper(const DescribeServicesRequest& r
 GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeValuesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAttributeValuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -154,9 +148,6 @@ void PricingClient::GetAttributeValuesAsyncHelper(const GetAttributeValuesReques
 GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetProductsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -37,41 +37,31 @@ namespace Model
 
     /**
      * <p> A format that specifies the type of the package that contains the returned
-     * dependencies. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * dependencies. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
      * <p> A format that specifies the type of the package that contains the returned
-     * dependencies. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * dependencies. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_format = value; }
 
     /**
      * <p> A format that specifies the type of the package that contains the returned
-     * dependencies. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * dependencies. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_format = std::move(value); }
 
     /**
      * <p> A format that specifies the type of the package that contains the returned
-     * dependencies. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * dependencies. </p>
      */
     inline ListPackageVersionDependenciesResult& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
      * <p> A format that specifies the type of the package that contains the returned
-     * dependencies. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * dependencies. </p>
      */
     inline ListPackageVersionDependenciesResult& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -82,9 +72,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -94,9 +82,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
 
@@ -106,9 +92,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
 
@@ -118,9 +102,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespace.assign(value); }
 
@@ -130,9 +112,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionDependenciesResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -142,9 +122,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionDependenciesResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
@@ -154,9 +132,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionDependenciesResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
@@ -321,50 +297,50 @@ namespace Model
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline const Aws::Vector<PackageDependency>& GetDependencies() const{ return m_dependencies; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline void SetDependencies(const Aws::Vector<PackageDependency>& value) { m_dependencies = value; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline void SetDependencies(Aws::Vector<PackageDependency>&& value) { m_dependencies = std::move(value); }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& WithDependencies(const Aws::Vector<PackageDependency>& value) { SetDependencies(value); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& WithDependencies(Aws::Vector<PackageDependency>&& value) { SetDependencies(std::move(value)); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& AddDependencies(const PackageDependency& value) { m_dependencies.push_back(value); return *this; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& AddDependencies(PackageDependency&& value) { m_dependencies.push_back(std::move(value)); return *this; }
 

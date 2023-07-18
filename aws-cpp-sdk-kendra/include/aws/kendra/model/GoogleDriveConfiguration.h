@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for data sources that connect to Google
-   * Drive.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information to connect to Google Drive as your
+   * data source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GoogleDriveConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,72 +41,64 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline GoogleDriveConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline GoogleDriveConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
@@ -114,230 +106,264 @@ namespace Model
 
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns that apply to path on Google Drive.
-     * Items that match the pattern are included in the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are excluded from the
-     * index. If an item matches both an inclusion pattern and an exclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to include certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are included in the index. Items that don't match the patterns are
+     * excluded from the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns that apply to the path on Google Drive.
-     * Items that match the pattern are excluded from the index from both shared drives
-     * and users' My Drives. Items that don't match the pattern are included in the
-     * index. If an item matches both an exclusion pattern and an inclusion pattern, it
-     * is excluded from the index.</p>
+     * <p>A list of regular expression patterns to exclude certain items in your Google
+     * Drive, including shared drives and users' My Drives. Items that match the
+     * patterns are excluded from the index. Items that don't match the patterns are
+     * included in the index. If an item matches both an inclusion and exclusion
+     * pattern, the exclusion pattern takes precedence and the item isn't included in
+     * the index.</p>
      */
     inline GoogleDriveConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline GoogleDriveConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline GoogleDriveConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline GoogleDriveConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
-     * field.</p> <p>If you are using the console, you can define index fields when
-     * creating the mapping. If you are using the API, you must first create the field
-     * using the <a>UpdateIndex</a> operation.</p>
+     * <p>Maps Google Drive data source attributes or field names to Amazon Kendra
+     * index field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Google Drive fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Google Drive data source field names must exist in
+     * your Google Drive custom metadata.</p>
      */
     inline GoogleDriveConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 

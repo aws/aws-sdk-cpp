@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline const Aws::String& GetSnsTopic() const{ return m_snsTopic; }
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline bool SnsTopicHasBeenSet() const { return m_snsTopicHasBeenSet; }
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline void SetSnsTopic(const Aws::String& value) { m_snsTopicHasBeenSet = true; m_snsTopic = value; }
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline void SetSnsTopic(Aws::String&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::move(value); }
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline void SetSnsTopic(const char* value) { m_snsTopicHasBeenSet = true; m_snsTopic.assign(value); }
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline UpdateSettingsRequest& WithSnsTopic(const Aws::String& value) { SetSnsTopic(value); return *this;}
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline UpdateSettingsRequest& WithSnsTopic(Aws::String&& value) { SetSnsTopic(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit
-     * Manager sends notifications. </p>
+     * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
+     * sends notifications to. </p>
      */
     inline UpdateSettingsRequest& WithSnsTopic(const char* value) { SetSnsTopic(value); return *this;}
 
@@ -157,42 +157,42 @@ namespace Model
 
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline UpdateSettingsRequest& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline UpdateSettingsRequest& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline UpdateSettingsRequest& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 

@@ -37,107 +37,99 @@ namespace Model
 
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline GetUsagePlanKeyRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline GetUsagePlanKeyRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline GetUsagePlanKeyRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline GetUsagePlanKeyRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline GetUsagePlanKeyRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource
-     * representing a plan customer.</p>
+     * <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan
+     * customer.</p>
      */
     inline GetUsagePlanKeyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

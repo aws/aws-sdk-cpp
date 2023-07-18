@@ -26,7 +26,8 @@ namespace Model
   /**
    * <p>An action to remove a member from a Managed Blockchain network as the result
    * of a removal proposal that is <code>APPROVED</code>. The member and all
-   * associated resources are deleted from the network.</p><p><h3>See Also:</h3>   <a
+   * associated resources are deleted from the network.</p> <p>Applies only to
+   * Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/RemoveAction">AWS
    * API Reference</a></p>
    */

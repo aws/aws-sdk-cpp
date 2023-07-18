@@ -28,7 +28,9 @@ ImageVersion::ImageVersion() :
     m_platformHasBeenSet(false),
     m_osVersionHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false)
+    m_dateCreatedHasBeenSet(false),
+    m_buildType(BuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ImageVersion::ImageVersion(JsonView jsonValue) :
     m_platformHasBeenSet(false),
     m_osVersionHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false)
+    m_dateCreatedHasBeenSet(false),
+    m_buildType(BuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +109,13 @@ ImageVersion& ImageVersion::operator =(JsonView jsonValue)
     m_dateCreatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("buildType"))
+  {
+    m_buildType = BuildTypeMapper::GetBuildTypeForName(jsonValue.GetString("buildType"));
+
+    m_buildTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +167,11 @@ JsonValue ImageVersion::Jsonize() const
   {
    payload.WithString("dateCreated", m_dateCreated);
 
+  }
+
+  if(m_buildTypeHasBeenSet)
+  {
+   payload.WithString("buildType", BuildTypeMapper::GetNameForBuildType(m_buildType));
   }
 
   return payload;

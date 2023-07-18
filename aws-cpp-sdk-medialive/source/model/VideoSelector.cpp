@@ -21,6 +21,7 @@ namespace Model
 VideoSelector::VideoSelector() : 
     m_colorSpace(VideoSelectorColorSpace::NOT_SET),
     m_colorSpaceHasBeenSet(false),
+    m_colorSpaceSettingsHasBeenSet(false),
     m_colorSpaceUsage(VideoSelectorColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
     m_selectorSettingsHasBeenSet(false)
@@ -30,6 +31,7 @@ VideoSelector::VideoSelector() :
 VideoSelector::VideoSelector(JsonView jsonValue) : 
     m_colorSpace(VideoSelectorColorSpace::NOT_SET),
     m_colorSpaceHasBeenSet(false),
+    m_colorSpaceSettingsHasBeenSet(false),
     m_colorSpaceUsage(VideoSelectorColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
     m_selectorSettingsHasBeenSet(false)
@@ -44,6 +46,13 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_colorSpace = VideoSelectorColorSpaceMapper::GetVideoSelectorColorSpaceForName(jsonValue.GetString("colorSpace"));
 
     m_colorSpaceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("colorSpaceSettings"))
+  {
+    m_colorSpaceSettings = jsonValue.GetObject("colorSpaceSettings");
+
+    m_colorSpaceSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("colorSpaceUsage"))
@@ -70,6 +79,12 @@ JsonValue VideoSelector::Jsonize() const
   if(m_colorSpaceHasBeenSet)
   {
    payload.WithString("colorSpace", VideoSelectorColorSpaceMapper::GetNameForVideoSelectorColorSpace(m_colorSpace));
+  }
+
+  if(m_colorSpaceSettingsHasBeenSet)
+  {
+   payload.WithObject("colorSpaceSettings", m_colorSpaceSettings.Jsonize());
+
   }
 
   if(m_colorSpaceUsageHasBeenSet)

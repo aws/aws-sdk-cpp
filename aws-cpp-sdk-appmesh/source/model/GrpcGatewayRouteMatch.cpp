@@ -19,11 +19,15 @@ namespace Model
 {
 
 GrpcGatewayRouteMatch::GrpcGatewayRouteMatch() : 
+    m_hostnameHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
 }
 
 GrpcGatewayRouteMatch::GrpcGatewayRouteMatch(JsonView jsonValue) : 
+    m_hostnameHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +35,23 @@ GrpcGatewayRouteMatch::GrpcGatewayRouteMatch(JsonView jsonValue) :
 
 GrpcGatewayRouteMatch& GrpcGatewayRouteMatch::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("hostname"))
+  {
+    m_hostname = jsonValue.GetObject("hostname");
+
+    m_hostnameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
+    for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
+    {
+      m_metadata.push_back(metadataJsonList[metadataIndex].AsObject());
+    }
+    m_metadataHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
@@ -44,6 +65,23 @@ GrpcGatewayRouteMatch& GrpcGatewayRouteMatch::operator =(JsonView jsonValue)
 JsonValue GrpcGatewayRouteMatch::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_hostnameHasBeenSet)
+  {
+   payload.WithObject("hostname", m_hostname.Jsonize());
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   Array<JsonValue> metadataJsonList(m_metadata.size());
+   for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
+   {
+     metadataJsonList[metadataIndex].AsObject(m_metadata[metadataIndex].Jsonize());
+   }
+   payload.WithArray("metadata", std::move(metadataJsonList));
+
+  }
 
   if(m_serviceNameHasBeenSet)
   {

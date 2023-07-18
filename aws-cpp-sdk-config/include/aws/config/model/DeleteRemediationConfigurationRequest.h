@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline DeleteRemediationConfigurationRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline DeleteRemediationConfigurationRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * <p>The name of the Config rule for which you want to delete remediation
      * configuration.</p>
      */
     inline DeleteRemediationConfigurationRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}

@@ -83,106 +83,106 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline NamespaceSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline NamespaceSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when
+     * you create it.</p>
      */
     inline NamespaceSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline NamespaceSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline NamespaceSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * <p>The name of the namespace. When you create a namespace, Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline NamespaceSummary& WithName(const char* value) { SetName(value); return *this;}
@@ -281,22 +281,34 @@ namespace Model
     inline NamespaceSummary& WithServiceCount(int value) { SetServiceCount(value); return *this;}
 
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline const NamespaceProperties& GetProperties() const{ return m_properties; }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline void SetProperties(const NamespaceProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline void SetProperties(NamespaceProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline NamespaceSummary& WithProperties(const NamespaceProperties& value) { SetProperties(value); return *this;}
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline NamespaceSummary& WithProperties(NamespaceProperties&& value) { SetProperties(std::move(value)); return *this;}
 
 

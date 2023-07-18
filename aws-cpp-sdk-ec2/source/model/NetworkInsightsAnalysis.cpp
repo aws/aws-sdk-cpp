@@ -29,6 +29,7 @@ NetworkInsightsAnalysis::NetworkInsightsAnalysis() :
     m_status(AnalysisStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_warningMessageHasBeenSet(false),
     m_networkPathFound(false),
     m_networkPathFoundHasBeenSet(false),
     m_forwardPathComponentsHasBeenSet(false),
@@ -48,6 +49,7 @@ NetworkInsightsAnalysis::NetworkInsightsAnalysis(const XmlNode& xmlNode) :
     m_status(AnalysisStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_warningMessageHasBeenSet(false),
     m_networkPathFound(false),
     m_networkPathFoundHasBeenSet(false),
     m_forwardPathComponentsHasBeenSet(false),
@@ -112,6 +114,12 @@ NetworkInsightsAnalysis& NetworkInsightsAnalysis::operator =(const XmlNode& xmlN
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+    }
+    XmlNode warningMessageNode = resultNode.FirstChild("warningMessage");
+    if(!warningMessageNode.IsNull())
+    {
+      m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
+      m_warningMessageHasBeenSet = true;
     }
     XmlNode networkPathFoundNode = resultNode.FirstChild("networkPathFound");
     if(!networkPathFoundNode.IsNull())
@@ -225,6 +233,11 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
+  if(m_warningMessageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".WarningMessage=" << StringUtils::URLEncode(m_warningMessage.c_str()) << "&";
+  }
+
   if(m_networkPathFoundHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkPathFound=" << std::boolalpha << m_networkPathFound << "&";
@@ -320,6 +333,10 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  }
+  if(m_warningMessageHasBeenSet)
+  {
+      oStream << location << ".WarningMessage=" << StringUtils::URLEncode(m_warningMessage.c_str()) << "&";
   }
   if(m_networkPathFoundHasBeenSet)
   {

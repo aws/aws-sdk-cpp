@@ -7,6 +7,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -189,28 +190,149 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether a database engine is upgraded to a major
-     * version.</p>
+     * <p>A value that indicates whether upgrading to the target version requires
+     * upgrading the major version of the database engine.</p>
      */
     inline bool GetIsMajorVersionUpgrade() const{ return m_isMajorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether a database engine is upgraded to a major
-     * version.</p>
+     * <p>A value that indicates whether upgrading to the target version requires
+     * upgrading the major version of the database engine.</p>
      */
     inline bool IsMajorVersionUpgradeHasBeenSet() const { return m_isMajorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether a database engine is upgraded to a major
-     * version.</p>
+     * <p>A value that indicates whether upgrading to the target version requires
+     * upgrading the major version of the database engine.</p>
      */
     inline void SetIsMajorVersionUpgrade(bool value) { m_isMajorVersionUpgradeHasBeenSet = true; m_isMajorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether a database engine is upgraded to a major
-     * version.</p>
+     * <p>A value that indicates whether upgrading to the target version requires
+     * upgrading the major version of the database engine.</p>
      */
     inline UpgradeTarget& WithIsMajorVersionUpgrade(bool value) { SetIsMajorVersionUpgrade(value); return *this;}
+
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline bool SupportedEngineModesHasBeenSet() const { return m_supportedEngineModesHasBeenSet; }
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline UpgradeTarget& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline UpgradeTarget& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline UpgradeTarget& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline UpgradeTarget& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes for the target engine version.</p>
+     */
+    inline UpgradeTarget& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
+
+    /**
+     * <p>A value that indicates whether you can use Aurora parallel query with the
+     * target engine version.</p>
+     */
+    inline bool GetSupportsParallelQuery() const{ return m_supportsParallelQuery; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora parallel query with the
+     * target engine version.</p>
+     */
+    inline bool SupportsParallelQueryHasBeenSet() const { return m_supportsParallelQueryHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora parallel query with the
+     * target engine version.</p>
+     */
+    inline void SetSupportsParallelQuery(bool value) { m_supportsParallelQueryHasBeenSet = true; m_supportsParallelQuery = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora parallel query with the
+     * target engine version.</p>
+     */
+    inline UpgradeTarget& WithSupportsParallelQuery(bool value) { SetSupportsParallelQuery(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with the
+     * target engine version.</p>
+     */
+    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with the
+     * target engine version.</p>
+     */
+    inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with the
+     * target engine version.</p>
+     */
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with the
+     * target engine version.</p>
+     */
+    inline UpgradeTarget& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline bool SupportsBabelfishHasBeenSet() const { return m_supportsBabelfishHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline void SetSupportsBabelfish(bool value) { m_supportsBabelfishHasBeenSet = true; m_supportsBabelfish = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline UpgradeTarget& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
 
   private:
 
@@ -228,6 +350,18 @@ namespace Model
 
     bool m_isMajorVersionUpgrade;
     bool m_isMajorVersionUpgradeHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedEngineModes;
+    bool m_supportedEngineModesHasBeenSet;
+
+    bool m_supportsParallelQuery;
+    bool m_supportsParallelQueryHasBeenSet;
+
+    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabasesHasBeenSet;
+
+    bool m_supportsBabelfish;
+    bool m_supportsBabelfishHasBeenSet;
   };
 
 } // namespace Model

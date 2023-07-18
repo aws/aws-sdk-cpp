@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The compromised credentials actions type</p><p><h3>See Also:</h3>   <a
+   * <p>The compromised credentials actions type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompromisedCredentialsActionsType">AWS
    * API Reference</a></p>
    */

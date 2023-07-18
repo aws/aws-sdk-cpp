@@ -126,58 +126,58 @@ namespace Model
 
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline ListServiceSpecificCredentialsRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline ListServiceSpecificCredentialsRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the returned results to only those for the specified AWS service. If
-     * not specified, then AWS returns service-specific credentials for all
-     * services.</p>
+     * <p>Filters the returned results to only those for the specified Amazon Web
+     * Services service. If not specified, then Amazon Web Services returns
+     * service-specific credentials for all services.</p>
      */
     inline ListServiceSpecificCredentialsRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

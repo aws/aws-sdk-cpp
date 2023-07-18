@@ -21,8 +21,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information about the use cases for the specified Amazon
-   * Connect AppIntegration association.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides summary information about the use cases for the specified
+   * integration association.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCasesRequest">AWS
    * API Reference</a></p>
    */
@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline ListUseCasesRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline ListUseCasesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline ListUseCasesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -174,22 +182,22 @@ namespace Model
 
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline ListUseCasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

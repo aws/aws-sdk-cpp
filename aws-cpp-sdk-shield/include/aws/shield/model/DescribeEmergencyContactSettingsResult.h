@@ -34,51 +34,51 @@ namespace Model
 
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you if you have proactive engagement enabled, for escalations
-     * to the DRT and to initiate proactive customer support.</p>
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you if you have proactive engagement enabled, for
+     * escalations to the SRT and to initiate proactive customer support.</p>
      */
     inline const Aws::Vector<EmergencyContact>& GetEmergencyContactList() const{ return m_emergencyContactList; }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you if you have proactive engagement enabled, for escalations
-     * to the DRT and to initiate proactive customer support.</p>
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you if you have proactive engagement enabled, for
+     * escalations to the SRT and to initiate proactive customer support.</p>
      */
     inline void SetEmergencyContactList(const Aws::Vector<EmergencyContact>& value) { m_emergencyContactList = value; }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you if you have proactive engagement enabled, for escalations
-     * to the DRT and to initiate proactive customer support.</p>
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you if you have proactive engagement enabled, for
+     * escalations to the SRT and to initiate proactive customer support.</p>
      */
     inline void SetEmergencyContactList(Aws::Vector<EmergencyContact>&& value) { m_emergencyContactList = std::move(value); }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you if you have proactive engagement enabled, for escalations
-     * to the DRT and to initiate proactive customer support.</p>
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you if you have proactive engagement enabled, for
+     * escalations to the SRT and to initiate proactive customer support.</p>
      */
     inline DescribeEmergencyContactSettingsResult& WithEmergencyContactList(const Aws::Vector<EmergencyContact>& value) { SetEmergencyContactList(value); return *this;}
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you if you have proactive engagement enabled, for escalations
-     * to the DRT and to initiate proactive customer support.</p>
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you if you have proactive engagement enabled, for
+     * escalations to the SRT and to initiate proactive customer support.</p>
      */
     inline DescribeEmergencyContactSettingsResult& WithEmergencyContactList(Aws::Vector<EmergencyContact>&& value) { SetEmergencyContactList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you if you have proactive engagement enabled, for escalations
-     * to the DRT and to initiate proactive customer support.</p>
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you if you have proactive engagement enabled, for
+     * escalations to the SRT and to initiate proactive customer support.</p>
      */
     inline DescribeEmergencyContactSettingsResult& AddEmergencyContactList(const EmergencyContact& value) { m_emergencyContactList.push_back(value); return *this; }
 
     /**
-     * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
-     * can use to contact you if you have proactive engagement enabled, for escalations
-     * to the DRT and to initiate proactive customer support.</p>
+     * <p>A list of email addresses and phone numbers that the Shield Response Team
+     * (SRT) can use to contact you if you have proactive engagement enabled, for
+     * escalations to the SRT and to initiate proactive customer support.</p>
      */
     inline DescribeEmergencyContactSettingsResult& AddEmergencyContactList(EmergencyContact&& value) { m_emergencyContactList.push_back(std::move(value)); return *this; }
 

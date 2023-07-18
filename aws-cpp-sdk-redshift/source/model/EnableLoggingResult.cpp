@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 EnableLoggingResult::EnableLoggingResult() : 
-    m_loggingEnabled(false)
+    m_loggingEnabled(false),
+    m_logDestinationType(LogDestinationType::NOT_SET)
 {
 }
 
 EnableLoggingResult::EnableLoggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_loggingEnabled(false)
+    m_loggingEnabled(false),
+    m_logDestinationType(LogDestinationType::NOT_SET)
 {
   *this = result;
 }
@@ -69,6 +71,22 @@ EnableLoggingResult& EnableLoggingResult::operator =(const Aws::AmazonWebService
     if(!lastFailureMessageNode.IsNull())
     {
       m_lastFailureMessage = Aws::Utils::Xml::DecodeEscapedXmlText(lastFailureMessageNode.GetText());
+    }
+    XmlNode logDestinationTypeNode = resultNode.FirstChild("LogDestinationType");
+    if(!logDestinationTypeNode.IsNull())
+    {
+      m_logDestinationType = LogDestinationTypeMapper::GetLogDestinationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logDestinationTypeNode.GetText()).c_str()).c_str());
+    }
+    XmlNode logExportsNode = resultNode.FirstChild("LogExports");
+    if(!logExportsNode.IsNull())
+    {
+      XmlNode logExportsMember = logExportsNode.FirstChild("member");
+      while(!logExportsMember.IsNull())
+      {
+        m_logExports.push_back(logExportsMember.GetText());
+        logExportsMember = logExportsMember.NextNode("member");
+      }
+
     }
   }
 

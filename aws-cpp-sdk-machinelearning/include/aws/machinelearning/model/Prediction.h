@@ -98,22 +98,22 @@ namespace Model
 
 
     /**
-     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
      */
     inline double GetPredictedValue() const{ return m_predictedValue; }
 
     /**
-     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
      */
     inline bool PredictedValueHasBeenSet() const { return m_predictedValueHasBeenSet; }
 
     /**
-     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
      */
     inline void SetPredictedValue(double value) { m_predictedValueHasBeenSet = true; m_predictedValue = value; }
 
     /**
-     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
      */
     inline Prediction& WithPredictedValue(double value) { SetPredictedValue(value); return *this;}
 

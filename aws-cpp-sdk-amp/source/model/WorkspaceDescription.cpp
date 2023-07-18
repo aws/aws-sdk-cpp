@@ -24,6 +24,7 @@ WorkspaceDescription::WorkspaceDescription() :
     m_createdAtHasBeenSet(false),
     m_prometheusEndpointHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workspaceIdHasBeenSet(false)
 {
 }
@@ -34,6 +35,7 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_prometheusEndpointHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workspaceIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -76,6 +78,16 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
@@ -116,6 +128,17 @@ JsonValue WorkspaceDescription::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithObject("status", m_status.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

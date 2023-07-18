@@ -36,50 +36,50 @@ namespace Model
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+     * objects. </p>
      */
     inline const Aws::Vector<RepositorySummary>& GetRepositories() const{ return m_repositories; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+     * objects. </p>
      */
     inline void SetRepositories(const Aws::Vector<RepositorySummary>& value) { m_repositories = value; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+     * objects. </p>
      */
     inline void SetRepositories(Aws::Vector<RepositorySummary>&& value) { m_repositories = std::move(value); }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+     * objects. </p>
      */
     inline ListRepositoriesResult& WithRepositories(const Aws::Vector<RepositorySummary>& value) { SetRepositories(value); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+     * objects. </p>
      */
     inline ListRepositoriesResult& WithRepositories(Aws::Vector<RepositorySummary>&& value) { SetRepositories(std::move(value)); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+     * objects. </p>
      */
     inline ListRepositoriesResult& AddRepositories(const RepositorySummary& value) { m_repositories.push_back(value); return *this; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+     * objects. </p>
      */
     inline ListRepositoriesResult& AddRepositories(RepositorySummary&& value) { m_repositories.push_back(std::move(value)); return *this; }
 

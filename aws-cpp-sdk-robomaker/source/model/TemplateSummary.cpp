@@ -22,7 +22,8 @@ TemplateSummary::TemplateSummary() :
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ TemplateSummary::TemplateSummary(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ TemplateSummary& TemplateSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -91,6 +100,12 @@ JsonValue TemplateSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("version", m_version);
 
   }
 

@@ -16,11 +16,14 @@ namespace Model
   enum class KeyState
   {
     NOT_SET,
+    Creating,
     Enabled,
     Disabled,
     PendingDeletion,
     PendingImport,
-    Unavailable
+    PendingReplicaDeletion,
+    Unavailable,
+    Updating
   };
 
 namespace KeyStateMapper

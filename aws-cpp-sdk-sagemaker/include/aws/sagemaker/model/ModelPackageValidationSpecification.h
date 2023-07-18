@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies batch transform jobs that Amazon SageMaker runs to validate your
-   * model package.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies batch transform jobs that SageMaker runs to validate your model
+   * package.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackageValidationSpecification">AWS
    * API Reference</a></p>
    */
@@ -83,57 +83,57 @@ namespace Model
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline const Aws::Vector<ModelPackageValidationProfile>& GetValidationProfiles() const{ return m_validationProfiles; }
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline bool ValidationProfilesHasBeenSet() const { return m_validationProfilesHasBeenSet; }
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline void SetValidationProfiles(const Aws::Vector<ModelPackageValidationProfile>& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles = value; }
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline void SetValidationProfiles(Aws::Vector<ModelPackageValidationProfile>&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles = std::move(value); }
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline ModelPackageValidationSpecification& WithValidationProfiles(const Aws::Vector<ModelPackageValidationProfile>& value) { SetValidationProfiles(value); return *this;}
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline ModelPackageValidationSpecification& WithValidationProfiles(Aws::Vector<ModelPackageValidationProfile>&& value) { SetValidationProfiles(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline ModelPackageValidationSpecification& AddValidationProfiles(const ModelPackageValidationProfile& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
-     * specifies a batch transform job that Amazon SageMaker runs to validate your
-     * model package.</p>
+     * specifies a batch transform job that SageMaker runs to validate your model
+     * package.</p>
      */
     inline ModelPackageValidationSpecification& AddValidationProfiles(ModelPackageValidationProfile&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles.push_back(std::move(value)); return *this; }
 

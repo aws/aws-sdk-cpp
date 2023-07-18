@@ -22,7 +22,8 @@ ListJobExecutionsForThingRequest::ListJobExecutionsForThingRequest() :
     m_namespaceIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,13 @@ void ListJobExecutionsForThingRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_jobIdHasBeenSet)
+    {
+      ss << m_jobId;
+      uri.AddQueryStringParameter("jobId", ss.str());
       ss.str("");
     }
 

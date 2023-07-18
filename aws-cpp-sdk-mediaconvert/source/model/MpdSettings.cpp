@@ -25,10 +25,14 @@ MpdSettings::MpdSettings() :
     m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
+    m_klvMetadata(MpdKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(MpdScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(MpdTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
 }
 
@@ -39,10 +43,14 @@ MpdSettings::MpdSettings(JsonView jsonValue) :
     m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
+    m_klvMetadata(MpdKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(MpdScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(MpdTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +78,13 @@ MpdSettings& MpdSettings::operator =(JsonView jsonValue)
     m_captionContainerTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("klvMetadata"))
+  {
+    m_klvMetadata = MpdKlvMetadataMapper::GetMpdKlvMetadataForName(jsonValue.GetString("klvMetadata"));
+
+    m_klvMetadataHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scte35Esam"))
   {
     m_scte35Esam = MpdScte35EsamMapper::GetMpdScte35EsamForName(jsonValue.GetString("scte35Esam"));
@@ -82,6 +97,13 @@ MpdSettings& MpdSettings::operator =(JsonView jsonValue)
     m_scte35Source = MpdScte35SourceMapper::GetMpdScte35SourceForName(jsonValue.GetString("scte35Source"));
 
     m_scte35SourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadata"))
+  {
+    m_timedMetadata = MpdTimedMetadataMapper::GetMpdTimedMetadataForName(jsonValue.GetString("timedMetadata"));
+
+    m_timedMetadataHasBeenSet = true;
   }
 
   return *this;
@@ -106,6 +128,11 @@ JsonValue MpdSettings::Jsonize() const
    payload.WithString("captionContainerType", MpdCaptionContainerTypeMapper::GetNameForMpdCaptionContainerType(m_captionContainerType));
   }
 
+  if(m_klvMetadataHasBeenSet)
+  {
+   payload.WithString("klvMetadata", MpdKlvMetadataMapper::GetNameForMpdKlvMetadata(m_klvMetadata));
+  }
+
   if(m_scte35EsamHasBeenSet)
   {
    payload.WithString("scte35Esam", MpdScte35EsamMapper::GetNameForMpdScte35Esam(m_scte35Esam));
@@ -114,6 +141,11 @@ JsonValue MpdSettings::Jsonize() const
   if(m_scte35SourceHasBeenSet)
   {
    payload.WithString("scte35Source", MpdScte35SourceMapper::GetNameForMpdScte35Source(m_scte35Source));
+  }
+
+  if(m_timedMetadataHasBeenSet)
+  {
+   payload.WithString("timedMetadata", MpdTimedMetadataMapper::GetNameForMpdTimedMetadata(m_timedMetadata));
   }
 
   return payload;

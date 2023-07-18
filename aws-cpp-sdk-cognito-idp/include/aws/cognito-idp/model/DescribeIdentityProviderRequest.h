@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline DescribeIdentityProviderRequest& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline DescribeIdentityProviderRequest& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline DescribeIdentityProviderRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 

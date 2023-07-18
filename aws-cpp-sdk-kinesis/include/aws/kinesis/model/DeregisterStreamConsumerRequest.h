@@ -38,7 +38,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
 
@@ -46,7 +46,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
@@ -54,7 +54,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
@@ -62,7 +62,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
 
@@ -70,7 +70,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline DeregisterStreamConsumerRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
 
@@ -86,7 +86,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline DeregisterStreamConsumerRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
 
@@ -94,7 +94,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream that the consumer is registered with. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline DeregisterStreamConsumerRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
 

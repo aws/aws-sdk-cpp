@@ -19,12 +19,14 @@ namespace Model
 {
 
 DataSourceConfigurations::DataSourceConfigurations() : 
-    m_s3LogsHasBeenSet(false)
+    m_s3LogsHasBeenSet(false),
+    m_kubernetesHasBeenSet(false)
 {
 }
 
 DataSourceConfigurations::DataSourceConfigurations(JsonView jsonValue) : 
-    m_s3LogsHasBeenSet(false)
+    m_s3LogsHasBeenSet(false),
+    m_kubernetesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ DataSourceConfigurations& DataSourceConfigurations::operator =(JsonView jsonValu
     m_s3LogsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kubernetes"))
+  {
+    m_kubernetes = jsonValue.GetObject("kubernetes");
+
+    m_kubernetesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue DataSourceConfigurations::Jsonize() const
   if(m_s3LogsHasBeenSet)
   {
    payload.WithObject("s3Logs", m_s3Logs.Jsonize());
+
+  }
+
+  if(m_kubernetesHasBeenSet)
+  {
+   payload.WithObject("kubernetes", m_kubernetes.Jsonize());
 
   }
 

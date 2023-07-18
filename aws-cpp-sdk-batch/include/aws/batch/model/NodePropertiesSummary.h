@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the properties of a node that is associated with a
+   * <p>An object representing the properties of a node that's associated with a
    * multi-node parallel job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertiesSummary">AWS
    * API Reference</a></p>

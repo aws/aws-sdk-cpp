@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The AWS account that a partner event source has been offered
+   * <p>The Amazon Web Services account that a partner event source has been offered
    * to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PartnerEventSourceAccount">AWS
    * API Reference</a></p>
@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline PartnerEventSourceAccount& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline PartnerEventSourceAccount& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that the partner event source was offered to.</p>
+     * <p>The Amazon Web Services account ID that the partner event source was offered
+     * to.</p>
      */
     inline PartnerEventSourceAccount& WithAccount(const char* value) { SetAccount(value); return *this;}
 
@@ -113,38 +121,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline PartnerEventSourceAccount& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline PartnerEventSourceAccount& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
 

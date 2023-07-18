@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline DeleteAnalysisRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline DeleteAnalysisRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you want to delete an analysis.</p>
+     * <p>The ID of the Amazon Web Services account where you want to delete an
+     * analysis.</p>
      */
     inline DeleteAnalysisRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -121,32 +129,32 @@ namespace Model
 
 
     /**
-     * <p>A value that specifies the number of days that QuickSight waits before it
-     * deletes the analysis. You can't use this parameter with the
+     * <p>A value that specifies the number of days that Amazon QuickSight waits before
+     * it deletes the analysis. You can't use this parameter with the
      * <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default
      * value is 30.</p>
      */
     inline long long GetRecoveryWindowInDays() const{ return m_recoveryWindowInDays; }
 
     /**
-     * <p>A value that specifies the number of days that QuickSight waits before it
-     * deletes the analysis. You can't use this parameter with the
+     * <p>A value that specifies the number of days that Amazon QuickSight waits before
+     * it deletes the analysis. You can't use this parameter with the
      * <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default
      * value is 30.</p>
      */
     inline bool RecoveryWindowInDaysHasBeenSet() const { return m_recoveryWindowInDaysHasBeenSet; }
 
     /**
-     * <p>A value that specifies the number of days that QuickSight waits before it
-     * deletes the analysis. You can't use this parameter with the
+     * <p>A value that specifies the number of days that Amazon QuickSight waits before
+     * it deletes the analysis. You can't use this parameter with the
      * <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default
      * value is 30.</p>
      */
     inline void SetRecoveryWindowInDays(long long value) { m_recoveryWindowInDaysHasBeenSet = true; m_recoveryWindowInDays = value; }
 
     /**
-     * <p>A value that specifies the number of days that QuickSight waits before it
-     * deletes the analysis. You can't use this parameter with the
+     * <p>A value that specifies the number of days that Amazon QuickSight waits before
+     * it deletes the analysis. You can't use this parameter with the
      * <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default
      * value is 30.</p>
      */

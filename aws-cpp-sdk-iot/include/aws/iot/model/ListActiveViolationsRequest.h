@@ -8,6 +8,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/BehaviorCriteriaType.h>
+#include <aws/iot/model/VerificationState.h>
 #include <utility>
 
 namespace Aws
@@ -182,6 +183,37 @@ namespace Model
 
 
     /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline const VerificationState& GetVerificationState() const{ return m_verificationState; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline void SetVerificationState(const VerificationState& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline void SetVerificationState(VerificationState&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline ListActiveViolationsRequest& WithVerificationState(const VerificationState& value) { SetVerificationState(value); return *this;}
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline ListActiveViolationsRequest& WithVerificationState(VerificationState&& value) { SetVerificationState(std::move(value)); return *this;}
+
+
+    /**
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -255,6 +287,9 @@ namespace Model
 
     bool m_listSuppressedAlerts;
     bool m_listSuppressedAlertsHasBeenSet;
+
+    VerificationState m_verificationState;
+    bool m_verificationStateHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

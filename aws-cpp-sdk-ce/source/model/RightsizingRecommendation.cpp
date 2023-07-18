@@ -24,7 +24,8 @@ RightsizingRecommendation::RightsizingRecommendation() :
     m_rightsizingType(RightsizingType::NOT_SET),
     m_rightsizingTypeHasBeenSet(false),
     m_modifyRecommendationDetailHasBeenSet(false),
-    m_terminateRecommendationDetailHasBeenSet(false)
+    m_terminateRecommendationDetailHasBeenSet(false),
+    m_findingReasonCodesHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ RightsizingRecommendation::RightsizingRecommendation(JsonView jsonValue) :
     m_rightsizingType(RightsizingType::NOT_SET),
     m_rightsizingTypeHasBeenSet(false),
     m_modifyRecommendationDetailHasBeenSet(false),
-    m_terminateRecommendationDetailHasBeenSet(false)
+    m_terminateRecommendationDetailHasBeenSet(false),
+    m_findingReasonCodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,16 @@ RightsizingRecommendation& RightsizingRecommendation::operator =(JsonView jsonVa
     m_terminateRecommendationDetailHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FindingReasonCodes"))
+  {
+    Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("FindingReasonCodes");
+    for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
+    {
+      m_findingReasonCodes.push_back(FindingReasonCodeMapper::GetFindingReasonCodeForName(findingReasonCodesJsonList[findingReasonCodesIndex].AsString()));
+    }
+    m_findingReasonCodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +121,17 @@ JsonValue RightsizingRecommendation::Jsonize() const
   if(m_terminateRecommendationDetailHasBeenSet)
   {
    payload.WithObject("TerminateRecommendationDetail", m_terminateRecommendationDetail.Jsonize());
+
+  }
+
+  if(m_findingReasonCodesHasBeenSet)
+  {
+   Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
+   for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
+   {
+     findingReasonCodesJsonList[findingReasonCodesIndex].AsString(FindingReasonCodeMapper::GetNameForFindingReasonCode(m_findingReasonCodes[findingReasonCodesIndex]));
+   }
+   payload.WithArray("FindingReasonCodes", std::move(findingReasonCodesJsonList));
 
   }
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the location of a manifest file.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about the location of training output or the output of a model
+   * packaging job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/S3Location">AWS
    * API Reference</a></p>
    */
@@ -39,83 +39,107 @@ namespace Model
 
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline S3Location& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline S3Location& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 bucket that contain the manifest file.</p>
+     * <p>The S3 bucket that contains the training or model packaging job output. If
+     * you are training a model, the bucket must in your AWS account. If you use an S3
+     * bucket for a model packaging job, the S3 bucket must be in the same AWS Region
+     * and AWS account in which you use AWS IoT Greengrass.</p>
      */
     inline S3Location& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline S3Location& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline S3Location& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The path and name of the manifest file with the S3 bucket.</p>
+     * <p>The path of the folder, within the S3 bucket, that contains the output.</p>
      */
     inline S3Location& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

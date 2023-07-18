@@ -42,10 +42,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -56,10 +61,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -70,10 +80,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -84,10 +99,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -98,10 +118,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -112,10 +137,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -126,10 +156,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -140,10 +175,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -154,10 +194,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -168,10 +213,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -182,10 +232,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
@@ -196,10 +251,15 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
-     * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
-     * notifications should be sent.</p> </li> <li> <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+     * used to configure certificate-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.</p> </li> <li> <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.</p> </li> <li> <p> <code>EventEndpointCreated</code>
+     * – Topic ARN to which EndpointCreated event notifications should be sent.</p>
+     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
      * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event

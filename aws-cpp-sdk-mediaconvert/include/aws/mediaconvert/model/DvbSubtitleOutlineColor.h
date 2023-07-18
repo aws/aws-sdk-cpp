@@ -21,7 +21,8 @@ namespace Model
     YELLOW,
     RED,
     GREEN,
-    BLUE
+    BLUE,
+    AUTO
   };
 
 namespace DvbSubtitleOutlineColorMapper

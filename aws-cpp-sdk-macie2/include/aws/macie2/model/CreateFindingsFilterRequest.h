@@ -132,8 +132,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
@@ -141,8 +141,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
@@ -150,8 +150,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
@@ -159,8 +159,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
@@ -168,8 +168,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
@@ -177,8 +177,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline CreateFindingsFilterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
@@ -186,8 +186,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline CreateFindingsFilterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
@@ -195,8 +195,8 @@ namespace Model
      * <p>A custom description of the filter. The description can contain as many as
      * 512 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the description of a filter. Other users of your account might
-     * be able to see the filter's description, depending on the actions that they're
-     * allowed to perform in Amazon Macie.</p>
+     * be able to see this description, depending on the actions that they're allowed
+     * to perform in Amazon Macie.</p>
      */
     inline CreateFindingsFilterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -236,8 +236,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -245,8 +245,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -254,8 +254,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -263,8 +263,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -272,8 +272,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -281,8 +281,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline CreateFindingsFilterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -290,8 +290,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline CreateFindingsFilterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -299,8 +299,8 @@ namespace Model
      * <p>A custom name for the filter. The name must contain at least 3 characters and
      * can contain as many as 64 characters.</p> <p>We strongly recommend that you
      * avoid including any sensitive data in the name of a filter. Other users of your
-     * account might be able to see the filter's name, depending on the actions that
-     * they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline CreateFindingsFilterRequest& WithName(const char* value) { SetName(value); return *this;}
 

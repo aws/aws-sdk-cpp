@@ -24,6 +24,7 @@ UpdateCrawlerRequest::UpdateCrawlerRequest() :
     m_schemaChangePolicyHasBeenSet(false),
     m_recrawlPolicyHasBeenSet(false),
     m_lineageConfigurationHasBeenSet(false),
+    m_lakeFormationConfigurationHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_crawlerSecurityConfigurationHasBeenSet(false)
 {
@@ -101,6 +102,12 @@ Aws::String UpdateCrawlerRequest::SerializePayload() const
   if(m_lineageConfigurationHasBeenSet)
   {
    payload.WithObject("LineageConfiguration", m_lineageConfiguration.Jsonize());
+
+  }
+
+  if(m_lakeFormationConfigurationHasBeenSet)
+  {
+   payload.WithObject("LakeFormationConfiguration", m_lakeFormationConfiguration.Jsonize());
 
   }
 

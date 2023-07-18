@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     HealthCheckPath,
     SessionStickinessEnabled,
-    SessionStickiness_LB_CookieDurationSeconds
+    SessionStickiness_LB_CookieDurationSeconds,
+    HttpsRedirectionEnabled,
+    TlsPolicyName
   };
 
 namespace LoadBalancerAttributeNameMapper

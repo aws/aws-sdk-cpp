@@ -118,28 +118,28 @@ namespace Model
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
-     * is being referenced, the system returns an error and does not deregister the
+     * is being referenced, the system returns an error and doesn't deregister the
      * target from the maintenance window.</p>
      */
     inline bool GetSafe() const{ return m_safe; }
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
-     * is being referenced, the system returns an error and does not deregister the
+     * is being referenced, the system returns an error and doesn't deregister the
      * target from the maintenance window.</p>
      */
     inline bool SafeHasBeenSet() const { return m_safeHasBeenSet; }
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
-     * is being referenced, the system returns an error and does not deregister the
+     * is being referenced, the system returns an error and doesn't deregister the
      * target from the maintenance window.</p>
      */
     inline void SetSafe(bool value) { m_safeHasBeenSet = true; m_safe = value; }
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
-     * is being referenced, the system returns an error and does not deregister the
+     * is being referenced, the system returns an error and doesn't deregister the
      * target from the maintenance window.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithSafe(bool value) { SetSafe(value); return *this;}

@@ -130,6 +130,12 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("UserGroupResolutionConfiguration"))
+  {
+    m_userGroupResolutionConfiguration = jsonValue.GetObject("UserGroupResolutionConfiguration");
+
+  }
+
 
 
   return *this;

@@ -28,16 +28,18 @@ namespace Model
   /**
    * <p>A structure that contains value information. For more information, see <a
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html">AssetPropertyValue</a>
-   * in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are
-   * string data type, you can specify the following options: </p> <ul> <li> <p>Use a
-   * string. For example, the <code>quality</code> value can be
-   * <code>'GOOD'</code>.</p> </li> <li> <p>Use an expression. For example, the
-   * <code>quality</code> value can be
-   * <code>$input.TemperatureInput.sensorData.quality</code> .</p> <p>For more
-   * information, see <a
+   * in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>You must use expressions
+   * for all parameters in <code>AssetPropertyValue</code>. The expressions accept
+   * literals, operators, functions, references, and substitution templates.</p> <p
+   * class="title"> <b>Examples</b> </p> <ul> <li> <p>For literal values, the
+   * expressions must contain single quotes. For example, the value for the
+   * <code>quality</code> parameter can be <code>'GOOD'</code>.</p> </li> <li> <p>For
+   * references, you must specify either variables or input values. For example, the
+   * value for the <code>quality</code> parameter can be
+   * <code>$input.TemperatureInput.sensorData.quality</code>.</p> </li> </ul> <p>For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
-   * in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * in the <i>AWS IoT Events Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AssetPropertyValue">AWS
    * API Reference</a></p>
    */
@@ -119,58 +121,50 @@ namespace Model
 
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline const Aws::String& GetQuality() const{ return m_quality; }
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline void SetQuality(const Aws::String& value) { m_qualityHasBeenSet = true; m_quality = value; }
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline void SetQuality(Aws::String&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline void SetQuality(const char* value) { m_qualityHasBeenSet = true; m_quality.assign(value); }
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline AssetPropertyValue& WithQuality(const Aws::String& value) { SetQuality(value); return *this;}
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline AssetPropertyValue& WithQuality(Aws::String&& value) { SetQuality(std::move(value)); return *this;}
 
     /**
-     * <p>The quality of the asset property value. The value must be <code>GOOD</code>,
-     * <code>BAD</code>, or <code>UNCERTAIN</code>. You can also specify an
-     * expression.</p>
+     * <p>The quality of the asset property value. The value must be
+     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline AssetPropertyValue& WithQuality(const char* value) { SetQuality(value); return *this;}
 

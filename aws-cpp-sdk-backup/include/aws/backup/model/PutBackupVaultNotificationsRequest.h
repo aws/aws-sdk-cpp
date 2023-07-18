@@ -37,64 +37,64 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
 
@@ -158,49 +158,137 @@ namespace Model
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline void SetBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = value; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline void SetBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = std::move(value); }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { SetBackupVaultEvents(value); return *this;}
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { SetBackupVaultEvents(std::move(value)); return *this;}
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(const BackupVaultEvent& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(BackupVaultEvent&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(std::move(value)); return *this; }
 

@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline const Aws::String& GetForecastType() const{ return m_forecastType; }
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline bool ForecastTypeHasBeenSet() const { return m_forecastTypeHasBeenSet; }
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline void SetForecastType(const Aws::String& value) { m_forecastTypeHasBeenSet = true; m_forecastType = value; }
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline void SetForecastType(Aws::String&& value) { m_forecastTypeHasBeenSet = true; m_forecastType = std::move(value); }
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline void SetForecastType(const char* value) { m_forecastTypeHasBeenSet = true; m_forecastType.assign(value); }
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline ErrorMetric& WithForecastType(const Aws::String& value) { SetForecastType(value); return *this;}
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline ErrorMetric& WithForecastType(Aws::String&& value) { SetForecastType(std::move(value)); return *this;}
 
     /**
-     * <p> The Forecast type used to compute WAPE and RMSE. </p>
+     * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
     inline ErrorMetric& WithForecastType(const char* value) { SetForecastType(value); return *this;}
 
@@ -120,6 +120,48 @@ namespace Model
      */
     inline ErrorMetric& WithRMSE(double value) { SetRMSE(value); return *this;}
 
+
+    /**
+     * <p>The Mean Absolute Scaled Error (MASE)</p>
+     */
+    inline double GetMASE() const{ return m_mASE; }
+
+    /**
+     * <p>The Mean Absolute Scaled Error (MASE)</p>
+     */
+    inline bool MASEHasBeenSet() const { return m_mASEHasBeenSet; }
+
+    /**
+     * <p>The Mean Absolute Scaled Error (MASE)</p>
+     */
+    inline void SetMASE(double value) { m_mASEHasBeenSet = true; m_mASE = value; }
+
+    /**
+     * <p>The Mean Absolute Scaled Error (MASE)</p>
+     */
+    inline ErrorMetric& WithMASE(double value) { SetMASE(value); return *this;}
+
+
+    /**
+     * <p>The Mean Absolute Percentage Error (MAPE)</p>
+     */
+    inline double GetMAPE() const{ return m_mAPE; }
+
+    /**
+     * <p>The Mean Absolute Percentage Error (MAPE)</p>
+     */
+    inline bool MAPEHasBeenSet() const { return m_mAPEHasBeenSet; }
+
+    /**
+     * <p>The Mean Absolute Percentage Error (MAPE)</p>
+     */
+    inline void SetMAPE(double value) { m_mAPEHasBeenSet = true; m_mAPE = value; }
+
+    /**
+     * <p>The Mean Absolute Percentage Error (MAPE)</p>
+     */
+    inline ErrorMetric& WithMAPE(double value) { SetMAPE(value); return *this;}
+
   private:
 
     Aws::String m_forecastType;
@@ -130,6 +172,12 @@ namespace Model
 
     double m_rMSE;
     bool m_rMSEHasBeenSet;
+
+    double m_mASE;
+    bool m_mASEHasBeenSet;
+
+    double m_mAPE;
+    bool m_mAPEHasBeenSet;
   };
 
 } // namespace Model

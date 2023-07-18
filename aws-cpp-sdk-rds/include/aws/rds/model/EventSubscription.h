@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline const Aws::String& GetCustomerAwsId() const{ return m_customerAwsId; }
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline bool CustomerAwsIdHasBeenSet() const { return m_customerAwsIdHasBeenSet; }
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline void SetCustomerAwsId(const Aws::String& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = value; }
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline void SetCustomerAwsId(Aws::String&& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = std::move(value); }
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline void SetCustomerAwsId(const char* value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId.assign(value); }
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline EventSubscription& WithCustomerAwsId(const Aws::String& value) { SetCustomerAwsId(value); return *this;}
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline EventSubscription& WithCustomerAwsId(Aws::String&& value) { SetCustomerAwsId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS customer account associated with the RDS event notification
-     * subscription.</p>
+     * <p>The Amazon Web Services customer account associated with the RDS event
+     * notification subscription.</p>
      */
     inline EventSubscription& WithCustomerAwsId(const char* value) { SetCustomerAwsId(value); return *this;}
 

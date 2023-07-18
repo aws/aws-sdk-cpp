@@ -97,72 +97,72 @@ namespace Model
 
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The destination AWS Region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
-     * see <a
+     * <p>The destination Amazon Web Services Region that you want to copy snapshots
+     * to.</p> <p>Constraints: Must be the name of a valid Amazon Web Services Region.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
@@ -199,83 +199,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline void SetSnapshotCopyGrantName(const char* value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName.assign(value); }
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline EnableSnapshotCopyRequest& WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline EnableSnapshotCopyRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the snapshot copy grant to use when snapshots of an AWS
-     * KMS-encrypted cluster are copied to the destination region.</p>
+     * <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web
+     * Services KMS-encrypted cluster are copied to the destination region.</p>
      */
     inline EnableSnapshotCopyRequest& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
 
 
     /**
-     * <p>The number of days to retain newly copied snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region. If the value is -1, the
-     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
-     * an integer between 1 and 3,653.</p>
+     * <p>The number of days to retain newly copied snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     * <p>The value must be either -1 or an integer between 1 and 3,653.</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain newly copied snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region. If the value is -1, the
-     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
-     * an integer between 1 and 3,653.</p>
+     * <p>The number of days to retain newly copied snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     * <p>The value must be either -1 or an integer between 1 and 3,653.</p>
      */
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain newly copied snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region. If the value is -1, the
-     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
-     * an integer between 1 and 3,653.</p>
+     * <p>The number of days to retain newly copied snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     * <p>The value must be either -1 or an integer between 1 and 3,653.</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain newly copied snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region. If the value is -1, the
-     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
-     * an integer between 1 and 3,653.</p>
+     * <p>The number of days to retain newly copied snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     * <p>The value must be either -1 or an integer between 1 and 3,653.</p>
      */
     inline EnableSnapshotCopyRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 

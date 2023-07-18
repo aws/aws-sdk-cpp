@@ -28,7 +28,8 @@ SearchRecord::SearchRecord() :
     m_modelPackageGroupHasBeenSet(false),
     m_pipelineHasBeenSet(false),
     m_pipelineExecutionHasBeenSet(false),
-    m_featureGroupHasBeenSet(false)
+    m_featureGroupHasBeenSet(false),
+    m_projectHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ SearchRecord::SearchRecord(JsonView jsonValue) :
     m_modelPackageGroupHasBeenSet(false),
     m_pipelineHasBeenSet(false),
     m_pipelineExecutionHasBeenSet(false),
-    m_featureGroupHasBeenSet(false)
+    m_featureGroupHasBeenSet(false),
+    m_projectHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ SearchRecord& SearchRecord::operator =(JsonView jsonValue)
     m_featureGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Project"))
+  {
+    m_project = jsonValue.GetObject("Project");
+
+    m_projectHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue SearchRecord::Jsonize() const
   if(m_featureGroupHasBeenSet)
   {
    payload.WithObject("FeatureGroup", m_featureGroup.Jsonize());
+
+  }
+
+  if(m_projectHasBeenSet)
+  {
+   payload.WithObject("Project", m_project.Jsonize());
 
   }
 

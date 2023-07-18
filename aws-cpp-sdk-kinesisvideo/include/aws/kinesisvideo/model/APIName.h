@@ -22,7 +22,8 @@ namespace Model
     GET_MEDIA_FOR_FRAGMENT_LIST,
     GET_HLS_STREAMING_SESSION_URL,
     GET_DASH_STREAMING_SESSION_URL,
-    GET_CLIP
+    GET_CLIP,
+    GET_IMAGES
   };
 
 namespace APINameMapper

@@ -105,6 +105,12 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("maintenance"))
+  {
+    m_maintenance = jsonValue.GetObject("maintenance");
+
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -145,6 +151,12 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
   }
 
 

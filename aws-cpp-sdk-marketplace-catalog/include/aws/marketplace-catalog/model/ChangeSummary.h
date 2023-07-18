@@ -203,6 +203,47 @@ namespace Model
      */
     inline ChangeSummary& AddErrorDetailList(ErrorDetail&& value) { m_errorDetailListHasBeenSet = true; m_errorDetailList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline const Aws::String& GetChangeName() const{ return m_changeName; }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline bool ChangeNameHasBeenSet() const { return m_changeNameHasBeenSet; }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline void SetChangeName(const Aws::String& value) { m_changeNameHasBeenSet = true; m_changeName = value; }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline void SetChangeName(Aws::String&& value) { m_changeNameHasBeenSet = true; m_changeName = std::move(value); }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline void SetChangeName(const char* value) { m_changeNameHasBeenSet = true; m_changeName.assign(value); }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline ChangeSummary& WithChangeName(const Aws::String& value) { SetChangeName(value); return *this;}
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline ChangeSummary& WithChangeName(Aws::String&& value) { SetChangeName(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline ChangeSummary& WithChangeName(const char* value) { SetChangeName(value); return *this;}
+
   private:
 
     Aws::String m_changeType;
@@ -216,6 +257,9 @@ namespace Model
 
     Aws::Vector<ErrorDetail> m_errorDetailList;
     bool m_errorDetailListHasBeenSet;
+
+    Aws::String m_changeName;
+    bool m_changeNameHasBeenSet;
   };
 
 } // namespace Model

@@ -24,6 +24,7 @@ namespace Aws
         static const int CLOUD_TRAIL_HASH = HashingUtils::HashString("CLOUD_TRAIL");
         static const int DNS_LOGS_HASH = HashingUtils::HashString("DNS_LOGS");
         static const int S3_LOGS_HASH = HashingUtils::HashString("S3_LOGS");
+        static const int KUBERNETES_AUDIT_LOGS_HASH = HashingUtils::HashString("KUBERNETES_AUDIT_LOGS");
 
 
         DataSource GetDataSourceForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == S3_LOGS_HASH)
           {
             return DataSource::S3_LOGS;
+          }
+          else if (hashCode == KUBERNETES_AUDIT_LOGS_HASH)
+          {
+            return DataSource::KUBERNETES_AUDIT_LOGS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "DNS_LOGS";
           case DataSource::S3_LOGS:
             return "S3_LOGS";
+          case DataSource::KUBERNETES_AUDIT_LOGS:
+            return "KUBERNETES_AUDIT_LOGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

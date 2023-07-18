@@ -22,7 +22,9 @@ RowInfo::RowInfo() :
     m_rowsIngested(0),
     m_rowsIngestedHasBeenSet(false),
     m_rowsDropped(0),
-    m_rowsDroppedHasBeenSet(false)
+    m_rowsDroppedHasBeenSet(false),
+    m_totalRowsInDataset(0),
+    m_totalRowsInDatasetHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ RowInfo::RowInfo(JsonView jsonValue) :
     m_rowsIngested(0),
     m_rowsIngestedHasBeenSet(false),
     m_rowsDropped(0),
-    m_rowsDroppedHasBeenSet(false)
+    m_rowsDroppedHasBeenSet(false),
+    m_totalRowsInDataset(0),
+    m_totalRowsInDatasetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ RowInfo& RowInfo::operator =(JsonView jsonValue)
     m_rowsDroppedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalRowsInDataset"))
+  {
+    m_totalRowsInDataset = jsonValue.GetInt64("TotalRowsInDataset");
+
+    m_totalRowsInDatasetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue RowInfo::Jsonize() const
   if(m_rowsDroppedHasBeenSet)
   {
    payload.WithInt64("RowsDropped", m_rowsDropped);
+
+  }
+
+  if(m_totalRowsInDatasetHasBeenSet)
+  {
+   payload.WithInt64("TotalRowsInDataset", m_totalRowsInDataset);
 
   }
 

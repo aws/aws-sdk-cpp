@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 ListGeofencesRequest::ListGeofencesRequest() : 
     m_collectionNameHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -21,6 +23,12 @@ ListGeofencesRequest::ListGeofencesRequest() :
 Aws::String ListGeofencesRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

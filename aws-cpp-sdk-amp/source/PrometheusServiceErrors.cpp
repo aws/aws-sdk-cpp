@@ -9,8 +9,8 @@
 #include <aws/amp/model/ConflictException.h>
 #include <aws/amp/model/ThrottlingException.h>
 #include <aws/amp/model/ServiceQuotaExceededException.h>
-#include <aws/amp/model/InternalServerException.h>
 #include <aws/amp/model/ResourceNotFoundException.h>
+#include <aws/amp/model/InternalServerException.h>
 #include <aws/amp/model/ValidationException.h>
 
 using namespace Aws::Client;
@@ -40,16 +40,16 @@ template<> AWS_PROMETHEUSSERVICE_API ServiceQuotaExceededException PrometheusSer
   return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
-template<> AWS_PROMETHEUSSERVICE_API InternalServerException PrometheusServiceError::GetModeledError()
-{
-  assert(this->GetErrorType() == PrometheusServiceErrors::INTERNAL_SERVER);
-  return InternalServerException(this->GetJsonPayload().View());
-}
-
 template<> AWS_PROMETHEUSSERVICE_API ResourceNotFoundException PrometheusServiceError::GetModeledError()
 {
   assert(this->GetErrorType() == PrometheusServiceErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PROMETHEUSSERVICE_API InternalServerException PrometheusServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == PrometheusServiceErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_PROMETHEUSSERVICE_API ValidationException PrometheusServiceError::GetModeledError()

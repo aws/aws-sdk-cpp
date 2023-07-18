@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds-data/model/Value.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -23,9 +23,13 @@ namespace RDSDataService
 {
 namespace Model
 {
+  class Value;
 
   /**
-   * <p>A structure value returned by a call.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure value returned by a call.</p>  <p>This data structure
+   * is only used with the deprecated <code>ExecuteSql</code> operation. Use the
+   * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
+   * instead.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/StructValue">AWS
    * API Reference</a></p>
    */

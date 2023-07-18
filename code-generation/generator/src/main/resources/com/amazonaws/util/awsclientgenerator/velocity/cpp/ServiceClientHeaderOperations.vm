@@ -26,45 +26,41 @@
                 const ${operation.name}ResponseReceivedHandler& responseHandler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
-#else
+#else##--#if($operation.request.shape.hasEventStreamMembers())
         /**
          * ${operation.documentation}
          */
         $virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request) const;
 
+#if(!$operation.s3CrtSpecific)
         /**
-         * ${operation.documentation}
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ${operation.name} that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}Model::${operation.request.shape.name}& request) const;
+#end##--#if(!$operation.s3CrtSpecific)
 
         /**
-         * ${operation.documentation}
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ${operation.name} that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         $virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-#end
-#else
+#end##--#if($operation.request.shape.hasEventStreamMembers())--#else
+#else##--#if($operation.request)
         /**
          * ${operation.documentation}
          */
         $virtual Model::${operation.name}Outcome ${operation.name}() const;
 
+#if(!$operation.s3CrtSpecific)
         /**
-         * ${operation.documentation}
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ${operation.name} that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable() const;
+#end##--#if(!$operation.s3CrtSpecific)
 
         /**
-         * ${operation.documentation}
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ${operation.name} that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         $virtual void ${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-#end
-#end
+#end##--#if($operation.request)
+#end##--#foreach($operation in $serviceModel.operations)

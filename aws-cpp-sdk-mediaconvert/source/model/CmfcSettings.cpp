@@ -21,20 +21,44 @@ namespace Model
 CmfcSettings::CmfcSettings() : 
     m_audioDuration(CmfcAudioDuration::NOT_SET),
     m_audioDurationHasBeenSet(false),
+    m_audioGroupIdHasBeenSet(false),
+    m_audioRenditionSetsHasBeenSet(false),
+    m_audioTrackType(CmfcAudioTrackType::NOT_SET),
+    m_audioTrackTypeHasBeenSet(false),
+    m_descriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag::NOT_SET),
+    m_descriptiveVideoServiceFlagHasBeenSet(false),
+    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
+    m_iFrameOnlyManifestHasBeenSet(false),
+    m_klvMetadata(CmfcKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(CmfcTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
 }
 
 CmfcSettings::CmfcSettings(JsonView jsonValue) : 
     m_audioDuration(CmfcAudioDuration::NOT_SET),
     m_audioDurationHasBeenSet(false),
+    m_audioGroupIdHasBeenSet(false),
+    m_audioRenditionSetsHasBeenSet(false),
+    m_audioTrackType(CmfcAudioTrackType::NOT_SET),
+    m_audioTrackTypeHasBeenSet(false),
+    m_descriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag::NOT_SET),
+    m_descriptiveVideoServiceFlagHasBeenSet(false),
+    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
+    m_iFrameOnlyManifestHasBeenSet(false),
+    m_klvMetadata(CmfcKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(CmfcTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -46,6 +70,48 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
     m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
 
     m_audioDurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioGroupId"))
+  {
+    m_audioGroupId = jsonValue.GetString("audioGroupId");
+
+    m_audioGroupIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioRenditionSets"))
+  {
+    m_audioRenditionSets = jsonValue.GetString("audioRenditionSets");
+
+    m_audioRenditionSetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioTrackType"))
+  {
+    m_audioTrackType = CmfcAudioTrackTypeMapper::GetCmfcAudioTrackTypeForName(jsonValue.GetString("audioTrackType"));
+
+    m_audioTrackTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("descriptiveVideoServiceFlag"))
+  {
+    m_descriptiveVideoServiceFlag = CmfcDescriptiveVideoServiceFlagMapper::GetCmfcDescriptiveVideoServiceFlagForName(jsonValue.GetString("descriptiveVideoServiceFlag"));
+
+    m_descriptiveVideoServiceFlagHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iFrameOnlyManifest"))
+  {
+    m_iFrameOnlyManifest = CmfcIFrameOnlyManifestMapper::GetCmfcIFrameOnlyManifestForName(jsonValue.GetString("iFrameOnlyManifest"));
+
+    m_iFrameOnlyManifestHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("klvMetadata"))
+  {
+    m_klvMetadata = CmfcKlvMetadataMapper::GetCmfcKlvMetadataForName(jsonValue.GetString("klvMetadata"));
+
+    m_klvMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35Esam"))
@@ -62,6 +128,13 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
     m_scte35SourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timedMetadata"))
+  {
+    m_timedMetadata = CmfcTimedMetadataMapper::GetCmfcTimedMetadataForName(jsonValue.GetString("timedMetadata"));
+
+    m_timedMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +147,38 @@ JsonValue CmfcSettings::Jsonize() const
    payload.WithString("audioDuration", CmfcAudioDurationMapper::GetNameForCmfcAudioDuration(m_audioDuration));
   }
 
+  if(m_audioGroupIdHasBeenSet)
+  {
+   payload.WithString("audioGroupId", m_audioGroupId);
+
+  }
+
+  if(m_audioRenditionSetsHasBeenSet)
+  {
+   payload.WithString("audioRenditionSets", m_audioRenditionSets);
+
+  }
+
+  if(m_audioTrackTypeHasBeenSet)
+  {
+   payload.WithString("audioTrackType", CmfcAudioTrackTypeMapper::GetNameForCmfcAudioTrackType(m_audioTrackType));
+  }
+
+  if(m_descriptiveVideoServiceFlagHasBeenSet)
+  {
+   payload.WithString("descriptiveVideoServiceFlag", CmfcDescriptiveVideoServiceFlagMapper::GetNameForCmfcDescriptiveVideoServiceFlag(m_descriptiveVideoServiceFlag));
+  }
+
+  if(m_iFrameOnlyManifestHasBeenSet)
+  {
+   payload.WithString("iFrameOnlyManifest", CmfcIFrameOnlyManifestMapper::GetNameForCmfcIFrameOnlyManifest(m_iFrameOnlyManifest));
+  }
+
+  if(m_klvMetadataHasBeenSet)
+  {
+   payload.WithString("klvMetadata", CmfcKlvMetadataMapper::GetNameForCmfcKlvMetadata(m_klvMetadata));
+  }
+
   if(m_scte35EsamHasBeenSet)
   {
    payload.WithString("scte35Esam", CmfcScte35EsamMapper::GetNameForCmfcScte35Esam(m_scte35Esam));
@@ -82,6 +187,11 @@ JsonValue CmfcSettings::Jsonize() const
   if(m_scte35SourceHasBeenSet)
   {
    payload.WithString("scte35Source", CmfcScte35SourceMapper::GetNameForCmfcScte35Source(m_scte35Source));
+  }
+
+  if(m_timedMetadataHasBeenSet)
+  {
+   payload.WithString("timedMetadata", CmfcTimedMetadataMapper::GetNameForCmfcTimedMetadata(m_timedMetadata));
   }
 
   return payload;

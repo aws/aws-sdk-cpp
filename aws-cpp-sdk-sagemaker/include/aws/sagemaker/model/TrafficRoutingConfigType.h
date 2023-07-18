@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ALL_AT_ONCE,
-    CANARY
+    CANARY,
+    LINEAR
   };
 
 namespace TrafficRoutingConfigTypeMapper

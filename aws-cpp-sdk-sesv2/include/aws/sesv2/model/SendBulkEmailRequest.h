@@ -43,50 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::move(value); }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline void SetFromEmailAddress(const char* value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.assign(value); }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline SendBulkEmailRequest& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline SendBulkEmailRequest& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified.</p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified.</p>
      */
     inline SendBulkEmailRequest& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
 
@@ -605,50 +605,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline SendBulkEmailRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline SendBulkEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline SendBulkEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 

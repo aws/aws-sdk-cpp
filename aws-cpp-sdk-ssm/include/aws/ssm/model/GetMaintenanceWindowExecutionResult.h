@@ -139,44 +139,37 @@ namespace Model
 
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetails = value; }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetails.assign(value); }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline GetMaintenanceWindowExecutionResult& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline GetMaintenanceWindowExecutionResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline GetMaintenanceWindowExecutionResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 

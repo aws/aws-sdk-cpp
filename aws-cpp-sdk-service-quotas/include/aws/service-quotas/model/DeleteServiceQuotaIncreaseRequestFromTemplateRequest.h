@@ -35,124 +35,124 @@ namespace Model
 
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the code for the service that you want to delete.</p>
+     * <p>The service identifier.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the code for the quota that you want to delete.</p>
+     * <p>The quota identifier.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS Region for the quota that you want to delete.</p>
+     * <p>The AWS Region.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

@@ -35,51 +35,51 @@ namespace Model
 
 
     /**
-     * <p>The information about the namespaces in this AWS account. The response
-     * includes the namespace ARN, name, AWS Region, notification email address,
-     * creation status, and identity store.</p>
+     * <p>The information about the namespaces in this Amazon Web Services account. The
+     * response includes the namespace ARN, name, Amazon Web Services Region,
+     * notification email address, creation status, and identity store.</p>
      */
     inline const Aws::Vector<NamespaceInfoV2>& GetNamespaces() const{ return m_namespaces; }
 
     /**
-     * <p>The information about the namespaces in this AWS account. The response
-     * includes the namespace ARN, name, AWS Region, notification email address,
-     * creation status, and identity store.</p>
+     * <p>The information about the namespaces in this Amazon Web Services account. The
+     * response includes the namespace ARN, name, Amazon Web Services Region,
+     * notification email address, creation status, and identity store.</p>
      */
     inline void SetNamespaces(const Aws::Vector<NamespaceInfoV2>& value) { m_namespaces = value; }
 
     /**
-     * <p>The information about the namespaces in this AWS account. The response
-     * includes the namespace ARN, name, AWS Region, notification email address,
-     * creation status, and identity store.</p>
+     * <p>The information about the namespaces in this Amazon Web Services account. The
+     * response includes the namespace ARN, name, Amazon Web Services Region,
+     * notification email address, creation status, and identity store.</p>
      */
     inline void SetNamespaces(Aws::Vector<NamespaceInfoV2>&& value) { m_namespaces = std::move(value); }
 
     /**
-     * <p>The information about the namespaces in this AWS account. The response
-     * includes the namespace ARN, name, AWS Region, notification email address,
-     * creation status, and identity store.</p>
+     * <p>The information about the namespaces in this Amazon Web Services account. The
+     * response includes the namespace ARN, name, Amazon Web Services Region,
+     * notification email address, creation status, and identity store.</p>
      */
     inline ListNamespacesResult& WithNamespaces(const Aws::Vector<NamespaceInfoV2>& value) { SetNamespaces(value); return *this;}
 
     /**
-     * <p>The information about the namespaces in this AWS account. The response
-     * includes the namespace ARN, name, AWS Region, notification email address,
-     * creation status, and identity store.</p>
+     * <p>The information about the namespaces in this Amazon Web Services account. The
+     * response includes the namespace ARN, name, Amazon Web Services Region,
+     * notification email address, creation status, and identity store.</p>
      */
     inline ListNamespacesResult& WithNamespaces(Aws::Vector<NamespaceInfoV2>&& value) { SetNamespaces(std::move(value)); return *this;}
 
     /**
-     * <p>The information about the namespaces in this AWS account. The response
-     * includes the namespace ARN, name, AWS Region, notification email address,
-     * creation status, and identity store.</p>
+     * <p>The information about the namespaces in this Amazon Web Services account. The
+     * response includes the namespace ARN, name, Amazon Web Services Region,
+     * notification email address, creation status, and identity store.</p>
      */
     inline ListNamespacesResult& AddNamespaces(const NamespaceInfoV2& value) { m_namespaces.push_back(value); return *this; }
 
     /**
-     * <p>The information about the namespaces in this AWS account. The response
-     * includes the namespace ARN, name, AWS Region, notification email address,
-     * creation status, and identity store.</p>
+     * <p>The information about the namespaces in this Amazon Web Services account. The
+     * response includes the namespace ARN, name, Amazon Web Services Region,
+     * notification email address, creation status, and identity store.</p>
      */
     inline ListNamespacesResult& AddNamespaces(NamespaceInfoV2&& value) { m_namespaces.push_back(std::move(value)); return *this; }
 
@@ -121,37 +121,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListNamespacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListNamespacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListNamespacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

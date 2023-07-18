@@ -15,6 +15,7 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_descriptionHasBeenSet(false),
     m_templateBodyHasBeenSet(false),
     m_templateURLHasBeenSet(false),
+    m_stackIdHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -23,8 +24,11 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_permissionModel(PermissionModels::NOT_SET),
     m_permissionModelHasBeenSet(false),
     m_autoDeploymentHasBeenSet(false),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_managedExecutionHasBeenSet(false)
 {
 }
 
@@ -50,6 +54,11 @@ Aws::String CreateStackSetRequest::SerializePayload() const
   if(m_templateURLHasBeenSet)
   {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
+  }
+
+  if(m_stackIdHasBeenSet)
+  {
+    ss << "StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
   }
 
   if(m_parametersHasBeenSet)
@@ -103,9 +112,19 @@ Aws::String CreateStackSetRequest::SerializePayload() const
     m_autoDeployment.OutputToStream(ss, "AutoDeployment");
   }
 
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+  }
+
   if(m_clientRequestTokenHasBeenSet)
   {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
+  if(m_managedExecutionHasBeenSet)
+  {
+    m_managedExecution.OutputToStream(ss, "ManagedExecution");
   }
 
   ss << "Version=2010-05-15";

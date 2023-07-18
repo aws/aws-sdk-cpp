@@ -27,7 +27,8 @@ PendingModifiedValues::PendingModifiedValues() :
     m_engineVersionHasBeenSet(false),
     m_cacheNodeTypeHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false)
+    m_authTokenStatusHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_engineVersionHasBeenSet(false),
     m_cacheNodeTypeHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false)
+    m_authTokenStatusHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +87,18 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()).c_str());
       m_authTokenStatusHasBeenSet = true;
     }
+    XmlNode logDeliveryConfigurationsNode = resultNode.FirstChild("LogDeliveryConfigurations");
+    if(!logDeliveryConfigurationsNode.IsNull())
+    {
+      XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("member");
+      while(!logDeliveryConfigurationsMember.IsNull())
+      {
+        m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
+        logDeliveryConfigurationsMember = logDeliveryConfigurationsMember.NextNode("member");
+      }
+
+      m_logDeliveryConfigurationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +135,17 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
   }
 
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfigurations.member." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -148,6 +173,16 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_authTokenStatusHasBeenSet)
   {
       oStream << location << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
+  }
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfigurations.member." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
   }
 }
 

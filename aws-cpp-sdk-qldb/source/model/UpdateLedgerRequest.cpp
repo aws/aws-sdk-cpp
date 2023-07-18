@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateLedgerRequest::UpdateLedgerRequest() : 
     m_nameHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_kmsKeyHasBeenSet(false)
 {
 }
 
@@ -26,6 +27,12 @@ Aws::String UpdateLedgerRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
    payload.WithBool("DeletionProtection", m_deletionProtection);
+
+  }
+
+  if(m_kmsKeyHasBeenSet)
+  {
+   payload.WithString("KmsKey", m_kmsKey);
 
   }
 

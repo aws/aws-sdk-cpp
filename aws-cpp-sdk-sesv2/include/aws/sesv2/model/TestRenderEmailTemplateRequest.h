@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline TestRenderEmailTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline TestRenderEmailTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the template that you want to render.</p>
+     * <p>The name of the template.</p>
      */
     inline TestRenderEmailTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 

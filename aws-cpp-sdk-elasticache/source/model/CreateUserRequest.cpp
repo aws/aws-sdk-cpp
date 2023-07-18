@@ -17,7 +17,8 @@ CreateUserRequest::CreateUserRequest() :
     m_passwordsHasBeenSet(false),
     m_accessStringHasBeenSet(false),
     m_noPasswordRequired(false),
-    m_noPasswordRequiredHasBeenSet(false)
+    m_noPasswordRequiredHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,16 @@ Aws::String CreateUserRequest::SerializePayload() const
   if(m_noPasswordRequiredHasBeenSet)
   {
     ss << "NoPasswordRequired=" << std::boolalpha << m_noPasswordRequired << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

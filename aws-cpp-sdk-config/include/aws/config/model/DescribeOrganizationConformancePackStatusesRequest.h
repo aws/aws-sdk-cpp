@@ -37,92 +37,92 @@ namespace Model
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationConformancePackNames() const{ return m_organizationConformancePackNames; }
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline bool OrganizationConformancePackNamesHasBeenSet() const { return m_organizationConformancePackNamesHasBeenSet; }
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline void SetOrganizationConformancePackNames(const Aws::Vector<Aws::String>& value) { m_organizationConformancePackNamesHasBeenSet = true; m_organizationConformancePackNames = value; }
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline void SetOrganizationConformancePackNames(Aws::Vector<Aws::String>&& value) { m_organizationConformancePackNamesHasBeenSet = true; m_organizationConformancePackNames = std::move(value); }
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline DescribeOrganizationConformancePackStatusesRequest& WithOrganizationConformancePackNames(const Aws::Vector<Aws::String>& value) { SetOrganizationConformancePackNames(value); return *this;}
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline DescribeOrganizationConformancePackStatusesRequest& WithOrganizationConformancePackNames(Aws::Vector<Aws::String>&& value) { SetOrganizationConformancePackNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline DescribeOrganizationConformancePackStatusesRequest& AddOrganizationConformancePackNames(const Aws::String& value) { m_organizationConformancePackNamesHasBeenSet = true; m_organizationConformancePackNames.push_back(value); return *this; }
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline DescribeOrganizationConformancePackStatusesRequest& AddOrganizationConformancePackNames(Aws::String&& value) { m_organizationConformancePackNamesHasBeenSet = true; m_organizationConformancePackNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of organization conformance packs for which you want status
-     * details. If you do not specify any names, AWS Config returns details for all
-     * your organization conformance packs. </p>
+     * details. If you do not specify any names, Config returns details for all your
+     * organization conformance packs. </p>
      */
     inline DescribeOrganizationConformancePackStatusesRequest& AddOrganizationConformancePackNames(const char* value) { m_organizationConformancePackNamesHasBeenSet = true; m_organizationConformancePackNames.push_back(value); return *this; }
 
 
     /**
      * <p>The maximum number of OrganizationConformancePackStatuses returned on each
-     * page. If you do no specify a number, AWS Config uses the default. The default is
+     * page. If you do no specify a number, Config uses the default. The default is
      * 100. </p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of OrganizationConformancePackStatuses returned on each
-     * page. If you do no specify a number, AWS Config uses the default. The default is
+     * page. If you do no specify a number, Config uses the default. The default is
      * 100. </p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of OrganizationConformancePackStatuses returned on each
-     * page. If you do no specify a number, AWS Config uses the default. The default is
+     * page. If you do no specify a number, Config uses the default. The default is
      * 100. </p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of OrganizationConformancePackStatuses returned on each
-     * page. If you do no specify a number, AWS Config uses the default. The default is
+     * page. If you do no specify a number, Config uses the default. The default is
      * 100. </p>
      */
     inline DescribeOrganizationConformancePackStatusesRequest& WithLimit(int value) { SetLimit(value); return *this;}

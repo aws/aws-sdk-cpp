@@ -16,7 +16,8 @@ namespace Model
   enum class ModelTypeEnum
   {
     NOT_SET,
-    ONLINE_FRAUD_INSIGHTS
+    ONLINE_FRAUD_INSIGHTS,
+    TRANSACTION_FRAUD_INSIGHTS
   };
 
 namespace ModelTypeEnumMapper

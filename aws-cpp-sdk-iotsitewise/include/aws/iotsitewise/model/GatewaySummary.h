@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/GatewayPlatform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotsitewise/model/GatewayCapabilitySummary.h>
@@ -120,6 +121,25 @@ namespace Model
      * <p>The name of the asset.</p>
      */
     inline GatewaySummary& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+
+
+    
+    inline const GatewayPlatform& GetGatewayPlatform() const{ return m_gatewayPlatform; }
+
+    
+    inline bool GatewayPlatformHasBeenSet() const { return m_gatewayPlatformHasBeenSet; }
+
+    
+    inline void SetGatewayPlatform(const GatewayPlatform& value) { m_gatewayPlatformHasBeenSet = true; m_gatewayPlatform = value; }
+
+    
+    inline void SetGatewayPlatform(GatewayPlatform&& value) { m_gatewayPlatformHasBeenSet = true; m_gatewayPlatform = std::move(value); }
+
+    
+    inline GatewaySummary& WithGatewayPlatform(const GatewayPlatform& value) { SetGatewayPlatform(value); return *this;}
+
+    
+    inline GatewaySummary& WithGatewayPlatform(GatewayPlatform&& value) { SetGatewayPlatform(std::move(value)); return *this;}
 
 
     /**
@@ -255,6 +275,9 @@ namespace Model
 
     Aws::String m_gatewayName;
     bool m_gatewayNameHasBeenSet;
+
+    GatewayPlatform m_gatewayPlatform;
+    bool m_gatewayPlatformHasBeenSet;
 
     Aws::Vector<GatewayCapabilitySummary> m_gatewayCapabilitySummaries;
     bool m_gatewayCapabilitySummariesHasBeenSet;

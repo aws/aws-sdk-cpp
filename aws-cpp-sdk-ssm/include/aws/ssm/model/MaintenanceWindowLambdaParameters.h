@@ -25,15 +25,17 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for a LAMBDA task type.</p> <p>For information about
-   * specifying and updating task parameters, see
+   * <p>The parameters for a <code>LAMBDA</code> task type.</p> <p>For information
+   * about specifying and updating task parameters, see
    * <a>RegisterTaskWithMaintenanceWindow</a> and
    * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
-   * been deprecated. To specify an S3 bucket to contain logs, instead use the
-   * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
-   * the <code>TaskInvocationParameters</code> structure. For information about how
-   * Systems Manager handles these options for the supported maintenance window task
-   * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>
+   * been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket
+   * to contain logs, instead use the <code>OutputS3BucketName</code> and
+   * <code>OutputS3KeyPrefix</code> options in the
+   * <code>TaskInvocationParameters</code> structure. For information about how
+   * Amazon Web Services Systems Manager handles these options for the supported
+   * maintenance window task types, see
+   * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>
    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
    * to a task when it runs, instead use the <code>Parameters</code> option in the
    * <code>TaskInvocationParameters</code> structure. For information about how
@@ -111,66 +113,74 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
-     * function version, the action uses the qualified function ARN to invoke a
-     * specific Lambda function. If you specify an alias name, the action uses the
-     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+     * function version, the operation uses the qualified function Amazon Resource Name
+     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
+     * operation uses the alias ARN to invoke the Lambda function version to which the
+     * alias points.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 

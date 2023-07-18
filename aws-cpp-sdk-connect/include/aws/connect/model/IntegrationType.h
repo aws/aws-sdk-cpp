@@ -16,7 +16,11 @@ namespace Model
   enum class IntegrationType
   {
     NOT_SET,
-    EVENT
+    EVENT,
+    VOICE_ID,
+    PINPOINT_APP,
+    WISDOM_ASSISTANT,
+    WISDOM_KNOWLEDGE_BASE
   };
 
 namespace IntegrationTypeMapper

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/timestream-write/model/RetentionProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/timestream-write/model/MagneticStoreWriteProperties.h>
 #include <aws/timestream-write/model/Tag.h>
 #include <utility>
 
@@ -196,6 +197,43 @@ namespace Model
      */
     inline CreateTableRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline const MagneticStoreWriteProperties& GetMagneticStoreWriteProperties() const{ return m_magneticStoreWriteProperties; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline bool MagneticStoreWritePropertiesHasBeenSet() const { return m_magneticStoreWritePropertiesHasBeenSet; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline void SetMagneticStoreWriteProperties(const MagneticStoreWriteProperties& value) { m_magneticStoreWritePropertiesHasBeenSet = true; m_magneticStoreWriteProperties = value; }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline void SetMagneticStoreWriteProperties(MagneticStoreWriteProperties&& value) { m_magneticStoreWritePropertiesHasBeenSet = true; m_magneticStoreWriteProperties = std::move(value); }
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline CreateTableRequest& WithMagneticStoreWriteProperties(const MagneticStoreWriteProperties& value) { SetMagneticStoreWriteProperties(value); return *this;}
+
+    /**
+     * <p>Contains properties to set on the table when enabling magnetic store
+     * writes.</p>
+     */
+    inline CreateTableRequest& WithMagneticStoreWriteProperties(MagneticStoreWriteProperties&& value) { SetMagneticStoreWriteProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_databaseName;
@@ -209,6 +247,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    MagneticStoreWriteProperties m_magneticStoreWriteProperties;
+    bool m_magneticStoreWritePropertiesHasBeenSet;
   };
 
 } // namespace Model

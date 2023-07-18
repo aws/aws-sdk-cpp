@@ -8,6 +8,7 @@
 #include <aws/medialive/model/HlsAkamaiSettings.h>
 #include <aws/medialive/model/HlsBasicPutSettings.h>
 #include <aws/medialive/model/HlsMediaStoreSettings.h>
+#include <aws/medialive/model/HlsS3Settings.h>
 #include <aws/medialive/model/HlsWebdavSettings.h>
 #include <utility>
 
@@ -98,6 +99,25 @@ namespace Model
 
 
     
+    inline const HlsS3Settings& GetHlsS3Settings() const{ return m_hlsS3Settings; }
+
+    
+    inline bool HlsS3SettingsHasBeenSet() const { return m_hlsS3SettingsHasBeenSet; }
+
+    
+    inline void SetHlsS3Settings(const HlsS3Settings& value) { m_hlsS3SettingsHasBeenSet = true; m_hlsS3Settings = value; }
+
+    
+    inline void SetHlsS3Settings(HlsS3Settings&& value) { m_hlsS3SettingsHasBeenSet = true; m_hlsS3Settings = std::move(value); }
+
+    
+    inline HlsCdnSettings& WithHlsS3Settings(const HlsS3Settings& value) { SetHlsS3Settings(value); return *this;}
+
+    
+    inline HlsCdnSettings& WithHlsS3Settings(HlsS3Settings&& value) { SetHlsS3Settings(std::move(value)); return *this;}
+
+
+    
     inline const HlsWebdavSettings& GetHlsWebdavSettings() const{ return m_hlsWebdavSettings; }
 
     
@@ -125,6 +145,9 @@ namespace Model
 
     HlsMediaStoreSettings m_hlsMediaStoreSettings;
     bool m_hlsMediaStoreSettingsHasBeenSet;
+
+    HlsS3Settings m_hlsS3Settings;
+    bool m_hlsS3SettingsHasBeenSet;
 
     HlsWebdavSettings m_hlsWebdavSettings;
     bool m_hlsWebdavSettingsHasBeenSet;

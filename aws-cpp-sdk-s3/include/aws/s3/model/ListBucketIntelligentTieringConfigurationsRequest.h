@@ -89,50 +89,50 @@ namespace Model
 
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 

@@ -175,87 +175,63 @@ namespace Model
 
 
     /**
-     * <p>The time the attack started, in Unix time in seconds. For more information
-     * see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack started, in Unix time in seconds. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time the attack started, in Unix time in seconds. For more information
-     * see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack started, in Unix time in seconds. </p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The time the attack started, in Unix time in seconds. For more information
-     * see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack started, in Unix time in seconds. </p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time the attack started, in Unix time in seconds. For more information
-     * see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack started, in Unix time in seconds. </p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time the attack started, in Unix time in seconds. For more information
-     * see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack started, in Unix time in seconds. </p>
      */
     inline AttackDetail& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time the attack started, in Unix time in seconds. For more information
-     * see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack started, in Unix time in seconds. </p>
      */
     inline AttackDetail& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the attack ended, in Unix time in seconds. For more information see
-     * <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack ended, in Unix time in seconds. </p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time the attack ended, in Unix time in seconds. For more information see
-     * <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack ended, in Unix time in seconds. </p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The time the attack ended, in Unix time in seconds. For more information see
-     * <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack ended, in Unix time in seconds. </p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The time the attack ended, in Unix time in seconds. For more information see
-     * <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack ended, in Unix time in seconds. </p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The time the attack ended, in Unix time in seconds. For more information see
-     * <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack ended, in Unix time in seconds. </p>
      */
     inline AttackDetail& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time the attack ended, in Unix time in seconds. For more information see
-     * <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The time the attack ended, in Unix time in seconds. </p>
      */
     inline AttackDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -302,42 +278,74 @@ namespace Model
 
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline const Aws::Vector<AttackProperty>& GetAttackProperties() const{ return m_attackProperties; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline bool AttackPropertiesHasBeenSet() const { return m_attackPropertiesHasBeenSet; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline void SetAttackProperties(const Aws::Vector<AttackProperty>& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties = value; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline void SetAttackProperties(Aws::Vector<AttackProperty>&& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties = std::move(value); }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& WithAttackProperties(const Aws::Vector<AttackProperty>& value) { SetAttackProperties(value); return *this;}
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& WithAttackProperties(Aws::Vector<AttackProperty>&& value) { SetAttackProperties(std::move(value)); return *this;}
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& AddAttackProperties(const AttackProperty& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties.push_back(value); return *this; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events), you can view metrics for top
+     * contributors in Amazon CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& AddAttackProperties(AttackProperty&& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties.push_back(std::move(value)); return *this; }
 

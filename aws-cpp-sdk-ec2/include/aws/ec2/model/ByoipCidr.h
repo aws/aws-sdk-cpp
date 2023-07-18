@@ -25,10 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Information about an address range that is provisioned for use with your AWS
-   * resources through bring your own IP addresses (BYOIP).</p><p><h3>See Also:</h3> 
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ByoipCidr">AWS
-   * API Reference</a></p>
+   * <p>Information about an address range that is provisioned for use with your
+   * Amazon Web Services resources through bring your own IP addresses
+   * (BYOIP).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ByoipCidr">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API ByoipCidr
   {

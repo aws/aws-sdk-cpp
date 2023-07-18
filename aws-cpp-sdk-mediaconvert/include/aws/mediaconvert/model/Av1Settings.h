@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Av1AdaptiveQuantization.h>
+#include <aws/mediaconvert/model/Av1BitDepth.h>
 #include <aws/mediaconvert/model/Av1FramerateControl.h>
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
@@ -84,6 +85,43 @@ namespace Model
      * (spatialAdaptiveQuantization).
      */
     inline Av1Settings& WithAdaptiveQuantization(Av1AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
+
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline const Av1BitDepth& GetBitDepth() const{ return m_bitDepth; }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline void SetBitDepth(const Av1BitDepth& value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline void SetBitDepth(Av1BitDepth&& value) { m_bitDepthHasBeenSet = true; m_bitDepth = std::move(value); }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline Av1Settings& WithBitDepth(const Av1BitDepth& value) { SetBitDepth(value); return *this;}
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline Av1Settings& WithBitDepth(Av1BitDepth&& value) { SetBitDepth(std::move(value)); return *this;}
 
 
     /**
@@ -399,71 +437,67 @@ namespace Model
 
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline Av1Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline const Av1QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline bool QvbrSettingsHasBeenSet() const { return m_qvbrSettingsHasBeenSet; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(const Av1QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(Av1QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline Av1Settings& WithQvbrSettings(const Av1QvbrSettings& value) { SetQvbrSettings(value); return *this;}
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline Av1Settings& WithQvbrSettings(Av1QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 
@@ -650,6 +684,9 @@ namespace Model
 
     Av1AdaptiveQuantization m_adaptiveQuantization;
     bool m_adaptiveQuantizationHasBeenSet;
+
+    Av1BitDepth m_bitDepth;
+    bool m_bitDepthHasBeenSet;
 
     Av1FramerateControl m_framerateControl;
     bool m_framerateControlHasBeenSet;

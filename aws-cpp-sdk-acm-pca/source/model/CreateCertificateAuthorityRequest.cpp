@@ -18,6 +18,8 @@ CreateCertificateAuthorityRequest::CreateCertificateAuthorityRequest() :
     m_certificateAuthorityType(CertificateAuthorityType::NOT_SET),
     m_certificateAuthorityTypeHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
+    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
+    m_keyStorageSecurityStandardHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -47,6 +49,11 @@ Aws::String CreateCertificateAuthorityRequest::SerializePayload() const
   {
    payload.WithString("IdempotencyToken", m_idempotencyToken);
 
+  }
+
+  if(m_keyStorageSecurityStandardHasBeenSet)
+  {
+   payload.WithString("KeyStorageSecurityStandard", KeyStorageSecurityStandardMapper::GetNameForKeyStorageSecurityStandard(m_keyStorageSecurityStandard));
   }
 
   if(m_tagsHasBeenSet)

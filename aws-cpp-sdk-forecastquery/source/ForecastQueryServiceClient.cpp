@@ -69,7 +69,7 @@ ForecastQueryServiceClient::~ForecastQueryServiceClient()
 {
 }
 
-void ForecastQueryServiceClient::init(const ClientConfiguration& config)
+void ForecastQueryServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("forecastquery");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -98,9 +98,6 @@ void ForecastQueryServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 QueryForecastOutcome ForecastQueryServiceClient::QueryForecast(const QueryForecastRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return QueryForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

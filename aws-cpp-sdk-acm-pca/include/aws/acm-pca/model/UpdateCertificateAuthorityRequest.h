@@ -102,32 +102,74 @@ namespace Model
 
 
     /**
-     * <p>Revocation information for your private CA.</p>
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. If this parameter is not supplied, existing capibilites remain
+     * unchanged. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * types.</p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
 
     /**
-     * <p>Revocation information for your private CA.</p>
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. If this parameter is not supplied, existing capibilites remain
+     * unchanged. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * types.</p>
      */
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
 
     /**
-     * <p>Revocation information for your private CA.</p>
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. If this parameter is not supplied, existing capibilites remain
+     * unchanged. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * types.</p>
      */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
-     * <p>Revocation information for your private CA.</p>
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. If this parameter is not supplied, existing capibilites remain
+     * unchanged. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * types.</p>
      */
     inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
 
     /**
-     * <p>Revocation information for your private CA.</p>
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. If this parameter is not supplied, existing capibilites remain
+     * unchanged. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * types.</p>
      */
     inline UpdateCertificateAuthorityRequest& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
 
     /**
-     * <p>Revocation information for your private CA.</p>
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. If this parameter is not supplied, existing capibilites remain
+     * unchanged. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * types.</p>
      */
     inline UpdateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
 

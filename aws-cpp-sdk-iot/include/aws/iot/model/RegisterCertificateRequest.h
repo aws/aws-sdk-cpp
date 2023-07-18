@@ -119,32 +119,44 @@ namespace Model
 
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline RegisterCertificateRequest& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline RegisterCertificateRequest& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 

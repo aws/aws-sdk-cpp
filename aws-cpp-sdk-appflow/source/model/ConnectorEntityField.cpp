@@ -20,21 +20,35 @@ namespace Model
 
 ConnectorEntityField::ConnectorEntityField() : 
     m_identifierHasBeenSet(false),
+    m_parentIdentifierHasBeenSet(false),
     m_labelHasBeenSet(false),
+    m_isPrimaryKey(false),
+    m_isPrimaryKeyHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_isDeprecated(false),
+    m_isDeprecatedHasBeenSet(false),
     m_supportedFieldTypeDetailsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
-    m_destinationPropertiesHasBeenSet(false)
+    m_destinationPropertiesHasBeenSet(false),
+    m_customPropertiesHasBeenSet(false)
 {
 }
 
 ConnectorEntityField::ConnectorEntityField(JsonView jsonValue) : 
     m_identifierHasBeenSet(false),
+    m_parentIdentifierHasBeenSet(false),
     m_labelHasBeenSet(false),
+    m_isPrimaryKey(false),
+    m_isPrimaryKeyHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_isDeprecated(false),
+    m_isDeprecatedHasBeenSet(false),
     m_supportedFieldTypeDetailsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
-    m_destinationPropertiesHasBeenSet(false)
+    m_destinationPropertiesHasBeenSet(false),
+    m_customPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,11 +62,39 @@ ConnectorEntityField& ConnectorEntityField::operator =(JsonView jsonValue)
     m_identifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parentIdentifier"))
+  {
+    m_parentIdentifier = jsonValue.GetString("parentIdentifier");
+
+    m_parentIdentifierHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("label"))
   {
     m_label = jsonValue.GetString("label");
 
     m_labelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isPrimaryKey"))
+  {
+    m_isPrimaryKey = jsonValue.GetBool("isPrimaryKey");
+
+    m_isPrimaryKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("defaultValue"))
+  {
+    m_defaultValue = jsonValue.GetString("defaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isDeprecated"))
+  {
+    m_isDeprecated = jsonValue.GetBool("isDeprecated");
+
+    m_isDeprecatedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("supportedFieldTypeDetails"))
@@ -83,6 +125,16 @@ ConnectorEntityField& ConnectorEntityField::operator =(JsonView jsonValue)
     m_destinationPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("customProperties").GetAllObjects();
+    for(auto& customPropertiesItem : customPropertiesJsonMap)
+    {
+      m_customProperties[customPropertiesItem.first] = customPropertiesItem.second.AsString();
+    }
+    m_customPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,9 +148,33 @@ JsonValue ConnectorEntityField::Jsonize() const
 
   }
 
+  if(m_parentIdentifierHasBeenSet)
+  {
+   payload.WithString("parentIdentifier", m_parentIdentifier);
+
+  }
+
   if(m_labelHasBeenSet)
   {
    payload.WithString("label", m_label);
+
+  }
+
+  if(m_isPrimaryKeyHasBeenSet)
+  {
+   payload.WithBool("isPrimaryKey", m_isPrimaryKey);
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("defaultValue", m_defaultValue);
+
+  }
+
+  if(m_isDeprecatedHasBeenSet)
+  {
+   payload.WithBool("isDeprecated", m_isDeprecated);
 
   }
 
@@ -123,6 +199,17 @@ JsonValue ConnectorEntityField::Jsonize() const
   if(m_destinationPropertiesHasBeenSet)
   {
    payload.WithObject("destinationProperties", m_destinationProperties.Jsonize());
+
+  }
+
+  if(m_customPropertiesHasBeenSet)
+  {
+   JsonValue customPropertiesJsonMap;
+   for(auto& customPropertiesItem : m_customProperties)
+   {
+     customPropertiesJsonMap.WithString(customPropertiesItem.first, customPropertiesItem.second);
+   }
+   payload.WithObject("customProperties", std::move(customPropertiesJsonMap));
 
   }
 

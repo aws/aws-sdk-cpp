@@ -261,39 +261,53 @@ namespace Model
 
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetEncodedMessage() const{ return m_encodedMessage; }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
+    inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessage = value; }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+    inline void SetEncodedMessage(Aws::String&& value) { m_encodedMessage = std::move(value); }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(const char* value) { m_message.assign(value); }
+    inline void SetEncodedMessage(const char* value) { m_encodedMessage.assign(value); }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PutSessionResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline PutSessionResult& WithEncodedMessage(const Aws::String& value) { SetEncodedMessage(value); return *this;}
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PutSessionResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline PutSessionResult& WithEncodedMessage(Aws::String&& value) { SetEncodedMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PutSessionResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline PutSessionResult& WithEncodedMessage(const char* value) { SetEncodedMessage(value); return *this;}
 
 
     /**
@@ -573,7 +587,7 @@ namespace Model
 
     Aws::String m_sessionAttributes;
 
-    Aws::String m_message;
+    Aws::String m_encodedMessage;
 
     MessageFormatType m_messageFormat;
 

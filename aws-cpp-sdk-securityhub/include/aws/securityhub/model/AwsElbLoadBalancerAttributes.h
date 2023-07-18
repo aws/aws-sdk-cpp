@@ -9,6 +9,8 @@
 #include <aws/securityhub/model/AwsElbLoadBalancerConnectionDraining.h>
 #include <aws/securityhub/model/AwsElbLoadBalancerConnectionSettings.h>
 #include <aws/securityhub/model/AwsElbLoadBalancerCrossZoneLoadBalancing.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/AwsElbLoadBalancerAdditionalAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -223,6 +225,47 @@ namespace Model
      */
     inline AwsElbLoadBalancerAttributes& WithCrossZoneLoadBalancing(AwsElbLoadBalancerCrossZoneLoadBalancing&& value) { SetCrossZoneLoadBalancing(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline const Aws::Vector<AwsElbLoadBalancerAdditionalAttribute>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline void SetAdditionalAttributes(const Aws::Vector<AwsElbLoadBalancerAdditionalAttribute>& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline void SetAdditionalAttributes(Aws::Vector<AwsElbLoadBalancerAdditionalAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::move(value); }
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline AwsElbLoadBalancerAttributes& WithAdditionalAttributes(const Aws::Vector<AwsElbLoadBalancerAdditionalAttribute>& value) { SetAdditionalAttributes(value); return *this;}
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline AwsElbLoadBalancerAttributes& WithAdditionalAttributes(Aws::Vector<AwsElbLoadBalancerAdditionalAttribute>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline AwsElbLoadBalancerAttributes& AddAdditionalAttributes(const AwsElbLoadBalancerAdditionalAttribute& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>Any additional attributes for a load balancer.</p>
+     */
+    inline AwsElbLoadBalancerAttributes& AddAdditionalAttributes(AwsElbLoadBalancerAdditionalAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     AwsElbLoadBalancerAccessLog m_accessLog;
@@ -236,6 +279,9 @@ namespace Model
 
     AwsElbLoadBalancerCrossZoneLoadBalancing m_crossZoneLoadBalancing;
     bool m_crossZoneLoadBalancingHasBeenSet;
+
+    Aws::Vector<AwsElbLoadBalancerAdditionalAttribute> m_additionalAttributes;
+    bool m_additionalAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/imagebuilder/model/ContainerType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/InstanceConfiguration.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/TargetContainerRepository.h>
@@ -153,50 +154,122 @@ namespace Model
 
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
@@ -243,6 +316,43 @@ namespace Model
 
 
     /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline const InstanceConfiguration& GetInstanceConfiguration() const{ return m_instanceConfiguration; }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline bool InstanceConfigurationHasBeenSet() const { return m_instanceConfigurationHasBeenSet; }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline void SetInstanceConfiguration(const InstanceConfiguration& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = value; }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline void SetInstanceConfiguration(InstanceConfiguration&& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = std::move(value); }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline CreateContainerRecipeRequest& WithInstanceConfiguration(const InstanceConfiguration& value) { SetInstanceConfiguration(value); return *this;}
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline CreateContainerRecipeRequest& WithInstanceConfiguration(InstanceConfiguration&& value) { SetInstanceConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Dockerfile template used to build your image as an inline data blob.</p>
      */
     inline const Aws::String& GetDockerfileTemplateData() const{ return m_dockerfileTemplateData; }
@@ -284,169 +394,163 @@ namespace Model
 
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline const Aws::String& GetDockerfileTemplateUri() const{ return m_dockerfileTemplateUri; }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline bool DockerfileTemplateUriHasBeenSet() const { return m_dockerfileTemplateUriHasBeenSet; }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline void SetDockerfileTemplateUri(const Aws::String& value) { m_dockerfileTemplateUriHasBeenSet = true; m_dockerfileTemplateUri = value; }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline void SetDockerfileTemplateUri(Aws::String&& value) { m_dockerfileTemplateUriHasBeenSet = true; m_dockerfileTemplateUri = std::move(value); }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline void SetDockerfileTemplateUri(const char* value) { m_dockerfileTemplateUriHasBeenSet = true; m_dockerfileTemplateUri.assign(value); }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline CreateContainerRecipeRequest& WithDockerfileTemplateUri(const Aws::String& value) { SetDockerfileTemplateUri(value); return *this;}
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline CreateContainerRecipeRequest& WithDockerfileTemplateUri(Aws::String&& value) { SetDockerfileTemplateUri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline CreateContainerRecipeRequest& WithDockerfileTemplateUri(const char* value) { SetDockerfileTemplateUri(value); return *this;}
 
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline const Platform& GetPlatformOverride() const{ return m_platformOverride; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline bool PlatformOverrideHasBeenSet() const { return m_platformOverrideHasBeenSet; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline void SetPlatformOverride(const Platform& value) { m_platformOverrideHasBeenSet = true; m_platformOverride = value; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline void SetPlatformOverride(Platform&& value) { m_platformOverrideHasBeenSet = true; m_platformOverride = std::move(value); }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline CreateContainerRecipeRequest& WithPlatformOverride(const Platform& value) { SetPlatformOverride(value); return *this;}
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline CreateContainerRecipeRequest& WithPlatformOverride(Platform&& value) { SetPlatformOverride(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline const Aws::String& GetImageOsVersionOverride() const{ return m_imageOsVersionOverride; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline bool ImageOsVersionOverrideHasBeenSet() const { return m_imageOsVersionOverrideHasBeenSet; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(const Aws::String& value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride = value; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(Aws::String&& value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride = std::move(value); }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(const char* value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride.assign(value); }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(const Aws::String& value) { SetImageOsVersionOverride(value); return *this;}
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(Aws::String&& value) { SetImageOsVersionOverride(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(const char* value) { SetImageOsVersionOverride(value); return *this;}
 
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 
@@ -686,6 +790,9 @@ namespace Model
 
     Aws::Vector<ComponentConfiguration> m_components;
     bool m_componentsHasBeenSet;
+
+    InstanceConfiguration m_instanceConfiguration;
+    bool m_instanceConfigurationHasBeenSet;
 
     Aws::String m_dockerfileTemplateData;
     bool m_dockerfileTemplateDataHasBeenSet;

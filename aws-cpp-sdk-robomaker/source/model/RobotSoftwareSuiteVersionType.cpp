@@ -23,6 +23,7 @@ namespace Aws
         static const int Kinetic_HASH = HashingUtils::HashString("Kinetic");
         static const int Melodic_HASH = HashingUtils::HashString("Melodic");
         static const int Dashing_HASH = HashingUtils::HashString("Dashing");
+        static const int Foxy_HASH = HashingUtils::HashString("Foxy");
 
 
         RobotSoftwareSuiteVersionType GetRobotSoftwareSuiteVersionTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == Dashing_HASH)
           {
             return RobotSoftwareSuiteVersionType::Dashing;
+          }
+          else if (hashCode == Foxy_HASH)
+          {
+            return RobotSoftwareSuiteVersionType::Foxy;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "Melodic";
           case RobotSoftwareSuiteVersionType::Dashing:
             return "Dashing";
+          case RobotSoftwareSuiteVersionType::Foxy:
+            return "Foxy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

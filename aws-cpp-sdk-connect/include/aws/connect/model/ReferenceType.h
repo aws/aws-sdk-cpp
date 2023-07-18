@@ -16,7 +16,12 @@ namespace Model
   enum class ReferenceType
   {
     NOT_SET,
-    URL
+    URL,
+    ATTACHMENT,
+    NUMBER,
+    STRING,
+    DATE,
+    EMAIL
   };
 
 namespace ReferenceTypeMapper

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
+#include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -148,101 +149,115 @@ namespace Model
 
 
     /**
-     * <p>The resource that the task used during execution. For RUN_COMMAND and
-     * AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For
-     * LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS tasks, the
-     * value is the state machine ARN.</p>
+     * <p>The resource that the task used during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of
+     * <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code>
+     * tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+     * tasks, the value is the state machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The resource that the task used during execution. For RUN_COMMAND and
-     * AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For
-     * LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS tasks, the
-     * value is the state machine ARN.</p>
+     * <p>The resource that the task used during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of
+     * <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code>
+     * tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+     * tasks, the value is the state machine ARN.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
 
     /**
-     * <p>The resource that the task used during execution. For RUN_COMMAND and
-     * AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For
-     * LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS tasks, the
-     * value is the state machine ARN.</p>
+     * <p>The resource that the task used during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of
+     * <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code>
+     * tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+     * tasks, the value is the state machine ARN.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
 
     /**
-     * <p>The resource that the task used during execution. For RUN_COMMAND and
-     * AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For
-     * LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS tasks, the
-     * value is the state machine ARN.</p>
+     * <p>The resource that the task used during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of
+     * <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code>
+     * tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+     * tasks, the value is the state machine ARN.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
 
     /**
-     * <p>The resource that the task used during execution. For RUN_COMMAND and
-     * AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For
-     * LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS tasks, the
-     * value is the state machine ARN.</p>
+     * <p>The resource that the task used during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of
+     * <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code>
+     * tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+     * tasks, the value is the state machine ARN.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The resource that the task used during execution. For RUN_COMMAND and
-     * AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For
-     * LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS tasks, the
-     * value is the state machine ARN.</p>
+     * <p>The resource that the task used during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of
+     * <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code>
+     * tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+     * tasks, the value is the state machine ARN.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The resource that the task used during execution. For RUN_COMMAND and
-     * AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For
-     * LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS tasks, the
-     * value is the state machine ARN.</p>
+     * <p>The resource that the task used during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of
+     * <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code>
+     * tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code>
+     * tasks, the value is the state machine ARN.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -431,135 +446,201 @@ namespace Model
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you can't
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value doesn't affect the running of your task and can be ignored.</p> 
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you can't
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value doesn't affect the running of your task and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrency = value; }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you can't
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value doesn't affect the running of your task and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrency = std::move(value); }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you can't
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value doesn't affect the running of your task and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrency.assign(value); }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you can't
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value doesn't affect the running of your task and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you can't
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value doesn't affect the running of your task and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you can't
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value doesn't affect the running of your task and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you can't supply a value for this option. Instead, the system inserts
+     * a placeholder value of <code>1</code>, which may be reported in the response to
+     * this command. This value doesn't affect the running of your task and can be
+     * ignored.</p> 
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you can't supply a value for this option. Instead, the system inserts
+     * a placeholder value of <code>1</code>, which may be reported in the response to
+     * this command. This value doesn't affect the running of your task and can be
+     * ignored.</p> 
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrors = value; }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you can't supply a value for this option. Instead, the system inserts
+     * a placeholder value of <code>1</code>, which may be reported in the response to
+     * this command. This value doesn't affect the running of your task and can be
+     * ignored.</p> 
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you can't supply a value for this option. Instead, the system inserts
+     * a placeholder value of <code>1</code>, which may be reported in the response to
+     * this command. This value doesn't affect the running of your task and can be
+     * ignored.</p> 
      */
     inline void SetMaxErrors(const char* value) { m_maxErrors.assign(value); }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you can't supply a value for this option. Instead, the system inserts
+     * a placeholder value of <code>1</code>, which may be reported in the response to
+     * this command. This value doesn't affect the running of your task and can be
+     * ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you can't supply a value for this option. Instead, the system inserts
+     * a placeholder value of <code>1</code>, which may be reported in the response to
+     * this command. This value doesn't affect the running of your task and can be
+     * ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you can't supply a value for this option. Instead, the system inserts
+     * a placeholder value of <code>1</code>, which may be reported in the response to
+     * this command. This value doesn't affect the running of your task and can be
+     * ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
 
     /**
-     * <p>The location in Amazon S3 where the task results are logged.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>The location in Amazon Simple Storage Service (Amazon S3) where the task
+     * results are logged.</p>  <p> <code>LoggingInfo</code> has been deprecated.
+     * To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs,
+     * instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
-     * <p>The location in Amazon S3 where the task results are logged.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>The location in Amazon Simple Storage Service (Amazon S3) where the task
+     * results are logged.</p>  <p> <code>LoggingInfo</code> has been deprecated.
+     * To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs,
+     * instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfo = value; }
 
     /**
-     * <p>The location in Amazon S3 where the task results are logged.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>The location in Amazon Simple Storage Service (Amazon S3) where the task
+     * results are logged.</p>  <p> <code>LoggingInfo</code> has been deprecated.
+     * To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs,
+     * instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfo = std::move(value); }
 
     /**
-     * <p>The location in Amazon S3 where the task results are logged.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>The location in Amazon Simple Storage Service (Amazon S3) where the task
+     * results are logged.</p>  <p> <code>LoggingInfo</code> has been deprecated.
+     * To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs,
+     * instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where the task results are logged.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>The location in Amazon Simple Storage Service (Amazon S3) where the task
+     * results are logged.</p>  <p> <code>LoggingInfo</code> has been deprecated.
+     * To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs,
+     * instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 
@@ -635,6 +716,57 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline const MaintenanceWindowTaskCutoffBehavior& GetCutoffBehavior() const{ return m_cutoffBehavior; }
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline void SetCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { m_cutoffBehavior = value; }
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { m_cutoffBehavior = std::move(value); }
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline GetMaintenanceWindowTaskResult& WithCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { SetCutoffBehavior(value); return *this;}
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline GetMaintenanceWindowTaskResult& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -664,6 +796,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_description;
+
+    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
   };
 
 } // namespace Model

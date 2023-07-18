@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The definition of the AWS Network Firewall firewall policy.</p><p><h3>See
+   * <p>The definition of the Network Firewall firewall policy.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallPolicyDescription">AWS
    * API Reference</a></p>

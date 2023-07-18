@@ -7,6 +7,7 @@
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/synthetics/SyntheticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +110,133 @@ namespace Model
      */
     inline DescribeCanariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline DescribeCanariesRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline DescribeCanariesRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline DescribeCanariesRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline DescribeCanariesRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Use this parameter to return only canaries that match the names that you
+     * specify here. You can specify as many as five canary names.</p> <p>If you
+     * specify this parameter, the operation is successful only if you have
+     * authorization to view all the canaries that you specify in your request. If you
+     * do not have permission to view any of the canaries, the request fails with a 403
+     * response.</p> <p>You are required to use this parameter if you are logged on to
+     * a user or role that has an IAM policy that restricts which canaries that you are
+     * allowed to view. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+     * Limiting a user to viewing specific canaries</a>.</p>
+     */
+    inline DescribeCanariesRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+
   private:
 
     Aws::String m_nextToken;
@@ -116,6 +244,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_names;
+    bool m_namesHasBeenSet;
   };
 
 } // namespace Model

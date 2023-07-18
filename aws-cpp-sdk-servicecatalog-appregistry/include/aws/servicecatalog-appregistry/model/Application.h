@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a Service Catalog AppRegistry application that is the top-level
-   * node in a hierarchy of related cloud resource abstractions.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents a Amazon Web Services Service Catalog AppRegistry application that
+   * is the top-level node in a hierarchy of related cloud resource
+   * abstractions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/Application">AWS
    * API Reference</a></p>
    */

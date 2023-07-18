@@ -22,6 +22,7 @@ namespace Aws
 
         static const int KEY_HASH = HashingUtils::HashString("KEY");
         static const int VALUE_HASH = HashingUtils::HashString("VALUE");
+        static const int COLUMN_HEADER_HASH = HashingUtils::HashString("COLUMN_HEADER");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == VALUE_HASH)
           {
             return EntityType::VALUE;
+          }
+          else if (hashCode == COLUMN_HEADER_HASH)
+          {
+            return EntityType::COLUMN_HEADER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "KEY";
           case EntityType::VALUE:
             return "VALUE";
+          case EntityType::COLUMN_HEADER:
+            return "COLUMN_HEADER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -23,7 +23,8 @@ namespace Model
 
   /**
    * <p>Used to enable or disable email sending for messages that use this
-   * configuration set in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+   * configuration set in the current Amazon Web Services Region.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendingOptions">AWS
    * API Reference</a></p>
    */

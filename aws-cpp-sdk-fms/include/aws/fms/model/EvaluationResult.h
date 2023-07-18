@@ -40,46 +40,46 @@ namespace Model
 
 
     /**
-     * <p>Describes an AWS account's compliance with the AWS Firewall Manager
-     * policy.</p>
+     * <p>Describes an Amazon Web Services account's compliance with the Firewall
+     * Manager policy.</p>
      */
     inline const PolicyComplianceStatusType& GetComplianceStatus() const{ return m_complianceStatus; }
 
     /**
-     * <p>Describes an AWS account's compliance with the AWS Firewall Manager
-     * policy.</p>
+     * <p>Describes an Amazon Web Services account's compliance with the Firewall
+     * Manager policy.</p>
      */
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
 
     /**
-     * <p>Describes an AWS account's compliance with the AWS Firewall Manager
-     * policy.</p>
+     * <p>Describes an Amazon Web Services account's compliance with the Firewall
+     * Manager policy.</p>
      */
     inline void SetComplianceStatus(const PolicyComplianceStatusType& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
 
     /**
-     * <p>Describes an AWS account's compliance with the AWS Firewall Manager
-     * policy.</p>
+     * <p>Describes an Amazon Web Services account's compliance with the Firewall
+     * Manager policy.</p>
      */
     inline void SetComplianceStatus(PolicyComplianceStatusType&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
 
     /**
-     * <p>Describes an AWS account's compliance with the AWS Firewall Manager
-     * policy.</p>
+     * <p>Describes an Amazon Web Services account's compliance with the Firewall
+     * Manager policy.</p>
      */
     inline EvaluationResult& WithComplianceStatus(const PolicyComplianceStatusType& value) { SetComplianceStatus(value); return *this;}
 
     /**
-     * <p>Describes an AWS account's compliance with the AWS Firewall Manager
-     * policy.</p>
+     * <p>Describes an Amazon Web Services account's compliance with the Firewall
+     * Manager policy.</p>
      */
     inline EvaluationResult& WithComplianceStatus(PolicyComplianceStatusType&& value) { SetComplianceStatus(std::move(value)); return *this;}
 
 
     /**
      * <p>The number of resources that are noncompliant with the specified policy. For
-     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
-     * it is not associated with the policy. For security group policies, a resource is
+     * WAF and Shield Advanced policies, a resource is considered noncompliant if it is
+     * not associated with the policy. For security group policies, a resource is
      * considered noncompliant if it doesn't comply with the rules of the policy and
      * remediation is disabled or not possible.</p>
      */
@@ -87,8 +87,8 @@ namespace Model
 
     /**
      * <p>The number of resources that are noncompliant with the specified policy. For
-     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
-     * it is not associated with the policy. For security group policies, a resource is
+     * WAF and Shield Advanced policies, a resource is considered noncompliant if it is
+     * not associated with the policy. For security group policies, a resource is
      * considered noncompliant if it doesn't comply with the rules of the policy and
      * remediation is disabled or not possible.</p>
      */
@@ -96,8 +96,8 @@ namespace Model
 
     /**
      * <p>The number of resources that are noncompliant with the specified policy. For
-     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
-     * it is not associated with the policy. For security group policies, a resource is
+     * WAF and Shield Advanced policies, a resource is considered noncompliant if it is
+     * not associated with the policy. For security group policies, a resource is
      * considered noncompliant if it doesn't comply with the rules of the policy and
      * remediation is disabled or not possible.</p>
      */
@@ -105,8 +105,8 @@ namespace Model
 
     /**
      * <p>The number of resources that are noncompliant with the specified policy. For
-     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
-     * it is not associated with the policy. For security group policies, a resource is
+     * WAF and Shield Advanced policies, a resource is considered noncompliant if it is
+     * not associated with the policy. For security group policies, a resource is
      * considered noncompliant if it doesn't comply with the rules of the policy and
      * remediation is disabled or not possible.</p>
      */
@@ -114,26 +114,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
-     * Manager policy.</p>
+     * <p>Indicates that over 100 resources are noncompliant with the Firewall Manager
+     * policy.</p>
      */
     inline bool GetEvaluationLimitExceeded() const{ return m_evaluationLimitExceeded; }
 
     /**
-     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
-     * Manager policy.</p>
+     * <p>Indicates that over 100 resources are noncompliant with the Firewall Manager
+     * policy.</p>
      */
     inline bool EvaluationLimitExceededHasBeenSet() const { return m_evaluationLimitExceededHasBeenSet; }
 
     /**
-     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
-     * Manager policy.</p>
+     * <p>Indicates that over 100 resources are noncompliant with the Firewall Manager
+     * policy.</p>
      */
     inline void SetEvaluationLimitExceeded(bool value) { m_evaluationLimitExceededHasBeenSet = true; m_evaluationLimitExceeded = value; }
 
     /**
-     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
-     * Manager policy.</p>
+     * <p>Indicates that over 100 resources are noncompliant with the Firewall Manager
+     * policy.</p>
      */
     inline EvaluationResult& WithEvaluationLimitExceeded(bool value) { SetEvaluationLimitExceeded(value); return *this;}
 

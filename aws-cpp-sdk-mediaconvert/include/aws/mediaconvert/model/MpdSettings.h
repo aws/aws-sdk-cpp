@@ -8,8 +8,10 @@
 #include <aws/mediaconvert/model/MpdAccessibilityCaptionHints.h>
 #include <aws/mediaconvert/model/MpdAudioDuration.h>
 #include <aws/mediaconvert/model/MpdCaptionContainerType.h>
+#include <aws/mediaconvert/model/MpdKlvMetadata.h>
 #include <aws/mediaconvert/model/MpdScte35Esam.h>
 #include <aws/mediaconvert/model/MpdScte35Source.h>
+#include <aws/mediaconvert/model/MpdTimedMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +30,8 @@ namespace Model
 {
 
   /**
-   * Settings for MP4 segments in DASH<p><h3>See Also:</h3>   <a
+   * These settings relate to the fragmented MP4 container for the segments in your
+   * DASH outputs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MpdSettings">AWS
    * API Reference</a></p>
    */
@@ -273,6 +276,61 @@ namespace Model
 
 
     /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline const MpdKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline void SetKlvMetadata(const MpdKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline void SetKlvMetadata(MpdKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline MpdSettings& WithKlvMetadata(const MpdKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline MpdSettings& WithKlvMetadata(MpdKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
+
+
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT
      * to put SCTE-35 markers in this output at the insertion points that you specify
      * in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
@@ -363,6 +421,61 @@ namespace Model
      */
     inline MpdSettings& WithScte35Source(MpdScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline const MpdTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline void SetTimedMetadata(const MpdTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline void SetTimedMetadata(MpdTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline MpdSettings& WithTimedMetadata(const MpdTimedMetadata& value) { SetTimedMetadata(value); return *this;}
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline MpdSettings& WithTimedMetadata(MpdTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
+
   private:
 
     MpdAccessibilityCaptionHints m_accessibilityCaptionHints;
@@ -374,11 +487,17 @@ namespace Model
     MpdCaptionContainerType m_captionContainerType;
     bool m_captionContainerTypeHasBeenSet;
 
+    MpdKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
+
     MpdScte35Esam m_scte35Esam;
     bool m_scte35EsamHasBeenSet;
 
     MpdScte35Source m_scte35Source;
     bool m_scte35SourceHasBeenSet;
+
+    MpdTimedMetadata m_timedMetadata;
+    bool m_timedMetadataHasBeenSet;
   };
 
 } // namespace Model

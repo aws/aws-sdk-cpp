@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Defines configuration for syncing a Salesforce chatter feed. The contents of
-   * the object comes from the Salesforce FeedItem table.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The configuration information for syncing a Salesforce chatter feed. The
+   * contents of the object comes from the Salesforce FeedItem table.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceChatterFeedConfiguration">AWS
    * API Reference</a></p>
    */
@@ -93,49 +93,49 @@ namespace Model
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline const Aws::String& GetDocumentTitleFieldName() const{ return m_documentTitleFieldName; }
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline bool DocumentTitleFieldNameHasBeenSet() const { return m_documentTitleFieldNameHasBeenSet; }
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline void SetDocumentTitleFieldName(const Aws::String& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = value; }
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline void SetDocumentTitleFieldName(Aws::String&& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = std::move(value); }
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline void SetDocumentTitleFieldName(const char* value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName.assign(value); }
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline SalesforceChatterFeedConfiguration& WithDocumentTitleFieldName(const Aws::String& value) { SetDocumentTitleFieldName(value); return *this;}
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline SalesforceChatterFeedConfiguration& WithDocumentTitleFieldName(Aws::String&& value) { SetDocumentTitleFieldName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the column in the Salesforce FeedItem table that contains the
-     * title of the document. This is typically the <code>Title</code> collumn.</p>
+     * title of the document. This is typically the <code>Title</code> column.</p>
      */
     inline SalesforceChatterFeedConfiguration& WithDocumentTitleFieldName(const char* value) { SetDocumentTitleFieldName(value); return *this;}
 

@@ -21,6 +21,7 @@ namespace Model
 DestinationFlowConfig::DestinationFlowConfig() : 
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
+    m_apiVersionHasBeenSet(false),
     m_connectorProfileNameHasBeenSet(false),
     m_destinationConnectorPropertiesHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ DestinationFlowConfig::DestinationFlowConfig() :
 DestinationFlowConfig::DestinationFlowConfig(JsonView jsonValue) : 
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
+    m_apiVersionHasBeenSet(false),
     m_connectorProfileNameHasBeenSet(false),
     m_destinationConnectorPropertiesHasBeenSet(false)
 {
@@ -42,6 +44,13 @@ DestinationFlowConfig& DestinationFlowConfig::operator =(JsonView jsonValue)
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
 
     m_connectorTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("apiVersion"))
+  {
+    m_apiVersion = jsonValue.GetString("apiVersion");
+
+    m_apiVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("connectorProfileName"))
@@ -68,6 +77,12 @@ JsonValue DestinationFlowConfig::Jsonize() const
   if(m_connectorTypeHasBeenSet)
   {
    payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  }
+
+  if(m_apiVersionHasBeenSet)
+  {
+   payload.WithString("apiVersion", m_apiVersion);
+
   }
 
   if(m_connectorProfileNameHasBeenSet)

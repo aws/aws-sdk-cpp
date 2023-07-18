@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The metric to optimize during hyperparameter optimization
-   * (HPO).</p><p><h3>See Also:</h3>   <a
+   * <p>The metric to optimize during hyperparameter optimization (HPO).</p> 
+   * <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
+   * at this time.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HPOObjective">AWS
    * API Reference</a></p>
    */

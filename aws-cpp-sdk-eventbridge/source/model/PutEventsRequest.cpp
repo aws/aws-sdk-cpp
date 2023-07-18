@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutEventsRequest::PutEventsRequest() : 
-    m_entriesHasBeenSet(false)
+    m_entriesHasBeenSet(false),
+    m_endpointIdHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,12 @@ Aws::String PutEventsRequest::SerializePayload() const
      entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
    }
    payload.WithArray("Entries", std::move(entriesJsonList));
+
+  }
+
+  if(m_endpointIdHasBeenSet)
+  {
+   payload.WithString("EndpointId", m_endpointId);
 
   }
 

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a block device mapping.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a block device mapping, which defines the EBS volumes and instance
+   * store volumes to attach to an instance at launch.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BlockDeviceMapping">AWS
    * API Reference</a></p>
    */
@@ -248,50 +249,58 @@ namespace Model
 
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline BlockDeviceMapping& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline BlockDeviceMapping& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
      */
     inline BlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
 

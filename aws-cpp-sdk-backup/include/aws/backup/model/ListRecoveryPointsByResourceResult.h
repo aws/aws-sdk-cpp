@@ -93,43 +93,50 @@ namespace Model
 
     /**
      * <p>An array of objects that contain detailed information about recovery points
-     * of the specified resource type.</p>
+     * of the specified resource type.</p>  <p>Only Amazon EFS and Amazon EC2
+     * recovery points return BackupVaultName.</p> 
      */
     inline const Aws::Vector<RecoveryPointByResource>& GetRecoveryPoints() const{ return m_recoveryPoints; }
 
     /**
      * <p>An array of objects that contain detailed information about recovery points
-     * of the specified resource type.</p>
+     * of the specified resource type.</p>  <p>Only Amazon EFS and Amazon EC2
+     * recovery points return BackupVaultName.</p> 
      */
     inline void SetRecoveryPoints(const Aws::Vector<RecoveryPointByResource>& value) { m_recoveryPoints = value; }
 
     /**
      * <p>An array of objects that contain detailed information about recovery points
-     * of the specified resource type.</p>
+     * of the specified resource type.</p>  <p>Only Amazon EFS and Amazon EC2
+     * recovery points return BackupVaultName.</p> 
      */
     inline void SetRecoveryPoints(Aws::Vector<RecoveryPointByResource>&& value) { m_recoveryPoints = std::move(value); }
 
     /**
      * <p>An array of objects that contain detailed information about recovery points
-     * of the specified resource type.</p>
+     * of the specified resource type.</p>  <p>Only Amazon EFS and Amazon EC2
+     * recovery points return BackupVaultName.</p> 
      */
     inline ListRecoveryPointsByResourceResult& WithRecoveryPoints(const Aws::Vector<RecoveryPointByResource>& value) { SetRecoveryPoints(value); return *this;}
 
     /**
      * <p>An array of objects that contain detailed information about recovery points
-     * of the specified resource type.</p>
+     * of the specified resource type.</p>  <p>Only Amazon EFS and Amazon EC2
+     * recovery points return BackupVaultName.</p> 
      */
     inline ListRecoveryPointsByResourceResult& WithRecoveryPoints(Aws::Vector<RecoveryPointByResource>&& value) { SetRecoveryPoints(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects that contain detailed information about recovery points
-     * of the specified resource type.</p>
+     * of the specified resource type.</p>  <p>Only Amazon EFS and Amazon EC2
+     * recovery points return BackupVaultName.</p> 
      */
     inline ListRecoveryPointsByResourceResult& AddRecoveryPoints(const RecoveryPointByResource& value) { m_recoveryPoints.push_back(value); return *this; }
 
     /**
      * <p>An array of objects that contain detailed information about recovery points
-     * of the specified resource type.</p>
+     * of the specified resource type.</p>  <p>Only Amazon EFS and Amazon EC2
+     * recovery points return BackupVaultName.</p> 
      */
     inline ListRecoveryPointsByResourceResult& AddRecoveryPoints(RecoveryPointByResource&& value) { m_recoveryPoints.push_back(std::move(value)); return *this; }
 

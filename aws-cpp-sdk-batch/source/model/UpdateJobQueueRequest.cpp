@@ -16,6 +16,7 @@ UpdateJobQueueRequest::UpdateJobQueueRequest() :
     m_jobQueueHasBeenSet(false),
     m_state(JQState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_schedulingPolicyArnHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_computeEnvironmentOrderHasBeenSet(false)
@@ -35,6 +36,12 @@ Aws::String UpdateJobQueueRequest::SerializePayload() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", JQStateMapper::GetNameForJQState(m_state));
+  }
+
+  if(m_schedulingPolicyArnHasBeenSet)
+  {
+   payload.WithString("schedulingPolicyArn", m_schedulingPolicyArn);
+
   }
 
   if(m_priorityHasBeenSet)

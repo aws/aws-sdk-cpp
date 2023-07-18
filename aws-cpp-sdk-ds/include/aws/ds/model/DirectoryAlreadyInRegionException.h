@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The Region you specified is the same Region where the AWS Managed Microsoft
-   * AD directory was created. Specify a different Region and try
-   * again.</p><p><h3>See Also:</h3>   <a
+   * <p>The Region you specified is the same Region where the Managed Microsoft AD
+   * directory was created. Specify a different Region and try again.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryAlreadyInRegionException">AWS
    * API Reference</a></p>
    */

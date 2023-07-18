@@ -28,12 +28,12 @@ ListGroupResourcesResult::ListGroupResourcesResult(const Aws::AmazonWebServiceRe
 ListGroupResourcesResult& ListGroupResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ResourceIdentifiers"))
+  if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourceIdentifiersJsonList = jsonValue.GetArray("ResourceIdentifiers");
-    for(unsigned resourceIdentifiersIndex = 0; resourceIdentifiersIndex < resourceIdentifiersJsonList.GetLength(); ++resourceIdentifiersIndex)
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
-      m_resourceIdentifiers.push_back(resourceIdentifiersJsonList[resourceIdentifiersIndex].AsObject());
+      m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
     }
   }
 

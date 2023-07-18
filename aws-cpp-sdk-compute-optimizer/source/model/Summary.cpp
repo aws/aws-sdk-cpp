@@ -22,7 +22,8 @@ Summary::Summary() :
     m_name(Finding::NOT_SET),
     m_nameHasBeenSet(false),
     m_value(0.0),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_reasonCodeSummariesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Summary::Summary(JsonView jsonValue) :
     m_name(Finding::NOT_SET),
     m_nameHasBeenSet(false),
     m_value(0.0),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_reasonCodeSummariesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,16 @@ Summary& Summary::operator =(JsonView jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reasonCodeSummaries"))
+  {
+    Array<JsonView> reasonCodeSummariesJsonList = jsonValue.GetArray("reasonCodeSummaries");
+    for(unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength(); ++reasonCodeSummariesIndex)
+    {
+      m_reasonCodeSummaries.push_back(reasonCodeSummariesJsonList[reasonCodeSummariesIndex].AsObject());
+    }
+    m_reasonCodeSummariesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +78,17 @@ JsonValue Summary::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithDouble("value", m_value);
+
+  }
+
+  if(m_reasonCodeSummariesHasBeenSet)
+  {
+   Array<JsonValue> reasonCodeSummariesJsonList(m_reasonCodeSummaries.size());
+   for(unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength(); ++reasonCodeSummariesIndex)
+   {
+     reasonCodeSummariesJsonList[reasonCodeSummariesIndex].AsObject(m_reasonCodeSummaries[reasonCodeSummariesIndex].Jsonize());
+   }
+   payload.WithArray("reasonCodeSummaries", std::move(reasonCodeSummariesJsonList));
 
   }
 

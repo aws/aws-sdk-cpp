@@ -21,17 +21,23 @@
 #include <aws/redshift/RedshiftEndpoint.h>
 #include <aws/redshift/RedshiftErrorMarshaller.h>
 #include <aws/redshift/model/AcceptReservedNodeExchangeRequest.h>
+#include <aws/redshift/model/AddPartnerRequest.h>
+#include <aws/redshift/model/AssociateDataShareConsumerRequest.h>
 #include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressRequest.h>
+#include <aws/redshift/model/AuthorizeDataShareRequest.h>
+#include <aws/redshift/model/AuthorizeEndpointAccessRequest.h>
 #include <aws/redshift/model/AuthorizeSnapshotAccessRequest.h>
 #include <aws/redshift/model/BatchDeleteClusterSnapshotsRequest.h>
 #include <aws/redshift/model/BatchModifyClusterSnapshotsRequest.h>
 #include <aws/redshift/model/CancelResizeRequest.h>
 #include <aws/redshift/model/CopyClusterSnapshotRequest.h>
+#include <aws/redshift/model/CreateAuthenticationProfileRequest.h>
 #include <aws/redshift/model/CreateClusterRequest.h>
 #include <aws/redshift/model/CreateClusterParameterGroupRequest.h>
 #include <aws/redshift/model/CreateClusterSecurityGroupRequest.h>
 #include <aws/redshift/model/CreateClusterSnapshotRequest.h>
 #include <aws/redshift/model/CreateClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/CreateEndpointAccessRequest.h>
 #include <aws/redshift/model/CreateEventSubscriptionRequest.h>
 #include <aws/redshift/model/CreateHsmClientCertificateRequest.h>
 #include <aws/redshift/model/CreateHsmConfigurationRequest.h>
@@ -40,20 +46,25 @@
 #include <aws/redshift/model/CreateSnapshotScheduleRequest.h>
 #include <aws/redshift/model/CreateTagsRequest.h>
 #include <aws/redshift/model/CreateUsageLimitRequest.h>
+#include <aws/redshift/model/DeauthorizeDataShareRequest.h>
+#include <aws/redshift/model/DeleteAuthenticationProfileRequest.h>
 #include <aws/redshift/model/DeleteClusterRequest.h>
 #include <aws/redshift/model/DeleteClusterParameterGroupRequest.h>
 #include <aws/redshift/model/DeleteClusterSecurityGroupRequest.h>
 #include <aws/redshift/model/DeleteClusterSnapshotRequest.h>
 #include <aws/redshift/model/DeleteClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/DeleteEndpointAccessRequest.h>
 #include <aws/redshift/model/DeleteEventSubscriptionRequest.h>
 #include <aws/redshift/model/DeleteHsmClientCertificateRequest.h>
 #include <aws/redshift/model/DeleteHsmConfigurationRequest.h>
+#include <aws/redshift/model/DeletePartnerRequest.h>
 #include <aws/redshift/model/DeleteScheduledActionRequest.h>
 #include <aws/redshift/model/DeleteSnapshotCopyGrantRequest.h>
 #include <aws/redshift/model/DeleteSnapshotScheduleRequest.h>
 #include <aws/redshift/model/DeleteTagsRequest.h>
 #include <aws/redshift/model/DeleteUsageLimitRequest.h>
 #include <aws/redshift/model/DescribeAccountAttributesRequest.h>
+#include <aws/redshift/model/DescribeAuthenticationProfilesRequest.h>
 #include <aws/redshift/model/DescribeClusterDbRevisionsRequest.h>
 #include <aws/redshift/model/DescribeClusterParameterGroupsRequest.h>
 #include <aws/redshift/model/DescribeClusterParametersRequest.h>
@@ -63,7 +74,12 @@
 #include <aws/redshift/model/DescribeClusterTracksRequest.h>
 #include <aws/redshift/model/DescribeClusterVersionsRequest.h>
 #include <aws/redshift/model/DescribeClustersRequest.h>
+#include <aws/redshift/model/DescribeDataSharesRequest.h>
+#include <aws/redshift/model/DescribeDataSharesForConsumerRequest.h>
+#include <aws/redshift/model/DescribeDataSharesForProducerRequest.h>
 #include <aws/redshift/model/DescribeDefaultClusterParametersRequest.h>
+#include <aws/redshift/model/DescribeEndpointAccessRequest.h>
+#include <aws/redshift/model/DescribeEndpointAuthorizationRequest.h>
 #include <aws/redshift/model/DescribeEventCategoriesRequest.h>
 #include <aws/redshift/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/redshift/model/DescribeEventsRequest.h>
@@ -72,6 +88,8 @@
 #include <aws/redshift/model/DescribeLoggingStatusRequest.h>
 #include <aws/redshift/model/DescribeNodeConfigurationOptionsRequest.h>
 #include <aws/redshift/model/DescribeOrderableClusterOptionsRequest.h>
+#include <aws/redshift/model/DescribePartnersRequest.h>
+#include <aws/redshift/model/DescribeReservedNodeExchangeStatusRequest.h>
 #include <aws/redshift/model/DescribeReservedNodeOfferingsRequest.h>
 #include <aws/redshift/model/DescribeReservedNodesRequest.h>
 #include <aws/redshift/model/DescribeResizeRequest.h>
@@ -84,10 +102,15 @@
 #include <aws/redshift/model/DescribeUsageLimitsRequest.h>
 #include <aws/redshift/model/DisableLoggingRequest.h>
 #include <aws/redshift/model/DisableSnapshotCopyRequest.h>
+#include <aws/redshift/model/DisassociateDataShareConsumerRequest.h>
 #include <aws/redshift/model/EnableLoggingRequest.h>
 #include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsRequest.h>
+#include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
+#include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsRequest.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsRequest.h>
+#include <aws/redshift/model/ModifyAquaConfigurationRequest.h>
+#include <aws/redshift/model/ModifyAuthenticationProfileRequest.h>
 #include <aws/redshift/model/ModifyClusterRequest.h>
 #include <aws/redshift/model/ModifyClusterDbRevisionRequest.h>
 #include <aws/redshift/model/ModifyClusterIamRolesRequest.h>
@@ -96,6 +119,7 @@
 #include <aws/redshift/model/ModifyClusterSnapshotRequest.h>
 #include <aws/redshift/model/ModifyClusterSnapshotScheduleRequest.h>
 #include <aws/redshift/model/ModifyClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/ModifyEndpointAccessRequest.h>
 #include <aws/redshift/model/ModifyEventSubscriptionRequest.h>
 #include <aws/redshift/model/ModifyScheduledActionRequest.h>
 #include <aws/redshift/model/ModifySnapshotCopyRetentionPeriodRequest.h>
@@ -104,14 +128,17 @@
 #include <aws/redshift/model/PauseClusterRequest.h>
 #include <aws/redshift/model/PurchaseReservedNodeOfferingRequest.h>
 #include <aws/redshift/model/RebootClusterRequest.h>
+#include <aws/redshift/model/RejectDataShareRequest.h>
 #include <aws/redshift/model/ResetClusterParameterGroupRequest.h>
 #include <aws/redshift/model/ResizeClusterRequest.h>
 #include <aws/redshift/model/RestoreFromClusterSnapshotRequest.h>
 #include <aws/redshift/model/RestoreTableFromClusterSnapshotRequest.h>
 #include <aws/redshift/model/ResumeClusterRequest.h>
 #include <aws/redshift/model/RevokeClusterSecurityGroupIngressRequest.h>
+#include <aws/redshift/model/RevokeEndpointAccessRequest.h>
 #include <aws/redshift/model/RevokeSnapshotAccessRequest.h>
 #include <aws/redshift/model/RotateEncryptionKeyRequest.h>
+#include <aws/redshift/model/UpdatePartnerStatusRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -161,7 +188,7 @@ RedshiftClient::~RedshiftClient()
 {
 }
 
-void RedshiftClient::init(const ClientConfiguration& config)
+void RedshiftClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Redshift");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -200,9 +227,6 @@ Aws::String RedshiftClient::ConvertRequestToPresignedUrl(const AmazonSerializabl
 AcceptReservedNodeExchangeOutcome RedshiftClient::AcceptReservedNodeExchange(const AcceptReservedNodeExchangeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AcceptReservedNodeExchangeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -224,12 +248,57 @@ void RedshiftClient::AcceptReservedNodeExchangeAsyncHelper(const AcceptReservedN
   handler(this, request, AcceptReservedNodeExchange(request), context);
 }
 
+AddPartnerOutcome RedshiftClient::AddPartner(const AddPartnerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AddPartnerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AddPartnerOutcomeCallable RedshiftClient::AddPartnerCallable(const AddPartnerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddPartnerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddPartner(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::AddPartnerAsync(const AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddPartnerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::AddPartnerAsyncHelper(const AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddPartner(request), context);
+}
+
+AssociateDataShareConsumerOutcome RedshiftClient::AssociateDataShareConsumer(const AssociateDataShareConsumerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociateDataShareConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AssociateDataShareConsumerOutcomeCallable RedshiftClient::AssociateDataShareConsumerCallable(const AssociateDataShareConsumerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDataShareConsumerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDataShareConsumer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::AssociateDataShareConsumerAsync(const AssociateDataShareConsumerRequest& request, const AssociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateDataShareConsumerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::AssociateDataShareConsumerAsyncHelper(const AssociateDataShareConsumerRequest& request, const AssociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateDataShareConsumer(request), context);
+}
+
 AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecurityGroupIngress(const AuthorizeClusterSecurityGroupIngressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AuthorizeClusterSecurityGroupIngressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -251,12 +320,57 @@ void RedshiftClient::AuthorizeClusterSecurityGroupIngressAsyncHelper(const Autho
   handler(this, request, AuthorizeClusterSecurityGroupIngress(request), context);
 }
 
+AuthorizeDataShareOutcome RedshiftClient::AuthorizeDataShare(const AuthorizeDataShareRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AuthorizeDataShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AuthorizeDataShareOutcomeCallable RedshiftClient::AuthorizeDataShareCallable(const AuthorizeDataShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AuthorizeDataShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AuthorizeDataShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::AuthorizeDataShareAsync(const AuthorizeDataShareRequest& request, const AuthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeDataShareAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::AuthorizeDataShareAsyncHelper(const AuthorizeDataShareRequest& request, const AuthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AuthorizeDataShare(request), context);
+}
+
+AuthorizeEndpointAccessOutcome RedshiftClient::AuthorizeEndpointAccess(const AuthorizeEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AuthorizeEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AuthorizeEndpointAccessOutcomeCallable RedshiftClient::AuthorizeEndpointAccessCallable(const AuthorizeEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AuthorizeEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AuthorizeEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::AuthorizeEndpointAccessAsync(const AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::AuthorizeEndpointAccessAsyncHelper(const AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AuthorizeEndpointAccess(request), context);
+}
+
 AuthorizeSnapshotAccessOutcome RedshiftClient::AuthorizeSnapshotAccess(const AuthorizeSnapshotAccessRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AuthorizeSnapshotAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -281,9 +395,6 @@ void RedshiftClient::AuthorizeSnapshotAccessAsyncHelper(const AuthorizeSnapshotA
 BatchDeleteClusterSnapshotsOutcome RedshiftClient::BatchDeleteClusterSnapshots(const BatchDeleteClusterSnapshotsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeleteClusterSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -308,9 +419,6 @@ void RedshiftClient::BatchDeleteClusterSnapshotsAsyncHelper(const BatchDeleteClu
 BatchModifyClusterSnapshotsOutcome RedshiftClient::BatchModifyClusterSnapshots(const BatchModifyClusterSnapshotsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchModifyClusterSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -335,9 +443,6 @@ void RedshiftClient::BatchModifyClusterSnapshotsAsyncHelper(const BatchModifyClu
 CancelResizeOutcome RedshiftClient::CancelResize(const CancelResizeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CancelResizeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -362,9 +467,6 @@ void RedshiftClient::CancelResizeAsyncHelper(const CancelResizeRequest& request,
 CopyClusterSnapshotOutcome RedshiftClient::CopyClusterSnapshot(const CopyClusterSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CopyClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -386,12 +488,33 @@ void RedshiftClient::CopyClusterSnapshotAsyncHelper(const CopyClusterSnapshotReq
   handler(this, request, CopyClusterSnapshot(request), context);
 }
 
+CreateAuthenticationProfileOutcome RedshiftClient::CreateAuthenticationProfile(const CreateAuthenticationProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateAuthenticationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateAuthenticationProfileOutcomeCallable RedshiftClient::CreateAuthenticationProfileCallable(const CreateAuthenticationProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAuthenticationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAuthenticationProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::CreateAuthenticationProfileAsync(const CreateAuthenticationProfileRequest& request, const CreateAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAuthenticationProfileAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::CreateAuthenticationProfileAsyncHelper(const CreateAuthenticationProfileRequest& request, const CreateAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAuthenticationProfile(request), context);
+}
+
 CreateClusterOutcome RedshiftClient::CreateCluster(const CreateClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -416,9 +539,6 @@ void RedshiftClient::CreateClusterAsyncHelper(const CreateClusterRequest& reques
 CreateClusterParameterGroupOutcome RedshiftClient::CreateClusterParameterGroup(const CreateClusterParameterGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -443,9 +563,6 @@ void RedshiftClient::CreateClusterParameterGroupAsyncHelper(const CreateClusterP
 CreateClusterSecurityGroupOutcome RedshiftClient::CreateClusterSecurityGroup(const CreateClusterSecurityGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateClusterSecurityGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -470,9 +587,6 @@ void RedshiftClient::CreateClusterSecurityGroupAsyncHelper(const CreateClusterSe
 CreateClusterSnapshotOutcome RedshiftClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -497,9 +611,6 @@ void RedshiftClient::CreateClusterSnapshotAsyncHelper(const CreateClusterSnapsho
 CreateClusterSubnetGroupOutcome RedshiftClient::CreateClusterSubnetGroup(const CreateClusterSubnetGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateClusterSubnetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -521,12 +632,33 @@ void RedshiftClient::CreateClusterSubnetGroupAsyncHelper(const CreateClusterSubn
   handler(this, request, CreateClusterSubnetGroup(request), context);
 }
 
+CreateEndpointAccessOutcome RedshiftClient::CreateEndpointAccess(const CreateEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateEndpointAccessOutcomeCallable RedshiftClient::CreateEndpointAccessCallable(const CreateEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::CreateEndpointAccessAsync(const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::CreateEndpointAccessAsyncHelper(const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEndpointAccess(request), context);
+}
+
 CreateEventSubscriptionOutcome RedshiftClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateEventSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -551,9 +683,6 @@ void RedshiftClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscri
 CreateHsmClientCertificateOutcome RedshiftClient::CreateHsmClientCertificate(const CreateHsmClientCertificateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateHsmClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -578,9 +707,6 @@ void RedshiftClient::CreateHsmClientCertificateAsyncHelper(const CreateHsmClient
 CreateHsmConfigurationOutcome RedshiftClient::CreateHsmConfiguration(const CreateHsmConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateHsmConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -605,9 +731,6 @@ void RedshiftClient::CreateHsmConfigurationAsyncHelper(const CreateHsmConfigurat
 CreateScheduledActionOutcome RedshiftClient::CreateScheduledAction(const CreateScheduledActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateScheduledActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -632,9 +755,6 @@ void RedshiftClient::CreateScheduledActionAsyncHelper(const CreateScheduledActio
 CreateSnapshotCopyGrantOutcome RedshiftClient::CreateSnapshotCopyGrant(const CreateSnapshotCopyGrantRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateSnapshotCopyGrantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -659,9 +779,6 @@ void RedshiftClient::CreateSnapshotCopyGrantAsyncHelper(const CreateSnapshotCopy
 CreateSnapshotScheduleOutcome RedshiftClient::CreateSnapshotSchedule(const CreateSnapshotScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateSnapshotScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -686,9 +803,6 @@ void RedshiftClient::CreateSnapshotScheduleAsyncHelper(const CreateSnapshotSched
 CreateTagsOutcome RedshiftClient::CreateTags(const CreateTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -713,9 +827,6 @@ void RedshiftClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, con
 CreateUsageLimitOutcome RedshiftClient::CreateUsageLimit(const CreateUsageLimitRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateUsageLimitOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -737,12 +848,57 @@ void RedshiftClient::CreateUsageLimitAsyncHelper(const CreateUsageLimitRequest& 
   handler(this, request, CreateUsageLimit(request), context);
 }
 
+DeauthorizeDataShareOutcome RedshiftClient::DeauthorizeDataShare(const DeauthorizeDataShareRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeauthorizeDataShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeauthorizeDataShareOutcomeCallable RedshiftClient::DeauthorizeDataShareCallable(const DeauthorizeDataShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeauthorizeDataShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeauthorizeDataShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DeauthorizeDataShareAsync(const DeauthorizeDataShareRequest& request, const DeauthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeauthorizeDataShareAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DeauthorizeDataShareAsyncHelper(const DeauthorizeDataShareRequest& request, const DeauthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeauthorizeDataShare(request), context);
+}
+
+DeleteAuthenticationProfileOutcome RedshiftClient::DeleteAuthenticationProfile(const DeleteAuthenticationProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteAuthenticationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteAuthenticationProfileOutcomeCallable RedshiftClient::DeleteAuthenticationProfileCallable(const DeleteAuthenticationProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAuthenticationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAuthenticationProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DeleteAuthenticationProfileAsync(const DeleteAuthenticationProfileRequest& request, const DeleteAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAuthenticationProfileAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DeleteAuthenticationProfileAsyncHelper(const DeleteAuthenticationProfileRequest& request, const DeleteAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAuthenticationProfile(request), context);
+}
+
 DeleteClusterOutcome RedshiftClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -767,9 +923,6 @@ void RedshiftClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& reques
 DeleteClusterParameterGroupOutcome RedshiftClient::DeleteClusterParameterGroup(const DeleteClusterParameterGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -794,9 +947,6 @@ void RedshiftClient::DeleteClusterParameterGroupAsyncHelper(const DeleteClusterP
 DeleteClusterSecurityGroupOutcome RedshiftClient::DeleteClusterSecurityGroup(const DeleteClusterSecurityGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteClusterSecurityGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -821,9 +971,6 @@ void RedshiftClient::DeleteClusterSecurityGroupAsyncHelper(const DeleteClusterSe
 DeleteClusterSnapshotOutcome RedshiftClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -848,9 +995,6 @@ void RedshiftClient::DeleteClusterSnapshotAsyncHelper(const DeleteClusterSnapsho
 DeleteClusterSubnetGroupOutcome RedshiftClient::DeleteClusterSubnetGroup(const DeleteClusterSubnetGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteClusterSubnetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -872,12 +1016,33 @@ void RedshiftClient::DeleteClusterSubnetGroupAsyncHelper(const DeleteClusterSubn
   handler(this, request, DeleteClusterSubnetGroup(request), context);
 }
 
+DeleteEndpointAccessOutcome RedshiftClient::DeleteEndpointAccess(const DeleteEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteEndpointAccessOutcomeCallable RedshiftClient::DeleteEndpointAccessCallable(const DeleteEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DeleteEndpointAccessAsync(const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DeleteEndpointAccessAsyncHelper(const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEndpointAccess(request), context);
+}
+
 DeleteEventSubscriptionOutcome RedshiftClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteEventSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -902,9 +1067,6 @@ void RedshiftClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscri
 DeleteHsmClientCertificateOutcome RedshiftClient::DeleteHsmClientCertificate(const DeleteHsmClientCertificateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteHsmClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -929,9 +1091,6 @@ void RedshiftClient::DeleteHsmClientCertificateAsyncHelper(const DeleteHsmClient
 DeleteHsmConfigurationOutcome RedshiftClient::DeleteHsmConfiguration(const DeleteHsmConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteHsmConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -953,12 +1112,33 @@ void RedshiftClient::DeleteHsmConfigurationAsyncHelper(const DeleteHsmConfigurat
   handler(this, request, DeleteHsmConfiguration(request), context);
 }
 
+DeletePartnerOutcome RedshiftClient::DeletePartner(const DeletePartnerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeletePartnerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeletePartnerOutcomeCallable RedshiftClient::DeletePartnerCallable(const DeletePartnerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePartnerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePartner(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DeletePartnerAsync(const DeletePartnerRequest& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePartnerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DeletePartnerAsyncHelper(const DeletePartnerRequest& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePartner(request), context);
+}
+
 DeleteScheduledActionOutcome RedshiftClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteScheduledActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -983,9 +1163,6 @@ void RedshiftClient::DeleteScheduledActionAsyncHelper(const DeleteScheduledActio
 DeleteSnapshotCopyGrantOutcome RedshiftClient::DeleteSnapshotCopyGrant(const DeleteSnapshotCopyGrantRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteSnapshotCopyGrantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1010,9 +1187,6 @@ void RedshiftClient::DeleteSnapshotCopyGrantAsyncHelper(const DeleteSnapshotCopy
 DeleteSnapshotScheduleOutcome RedshiftClient::DeleteSnapshotSchedule(const DeleteSnapshotScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteSnapshotScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1037,9 +1211,6 @@ void RedshiftClient::DeleteSnapshotScheduleAsyncHelper(const DeleteSnapshotSched
 DeleteTagsOutcome RedshiftClient::DeleteTags(const DeleteTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1064,9 +1235,6 @@ void RedshiftClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, con
 DeleteUsageLimitOutcome RedshiftClient::DeleteUsageLimit(const DeleteUsageLimitRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteUsageLimitOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1091,9 +1259,6 @@ void RedshiftClient::DeleteUsageLimitAsyncHelper(const DeleteUsageLimitRequest& 
 DescribeAccountAttributesOutcome RedshiftClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAccountAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1115,12 +1280,33 @@ void RedshiftClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountA
   handler(this, request, DescribeAccountAttributes(request), context);
 }
 
+DescribeAuthenticationProfilesOutcome RedshiftClient::DescribeAuthenticationProfiles(const DescribeAuthenticationProfilesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeAuthenticationProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeAuthenticationProfilesOutcomeCallable RedshiftClient::DescribeAuthenticationProfilesCallable(const DescribeAuthenticationProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAuthenticationProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAuthenticationProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeAuthenticationProfilesAsync(const DescribeAuthenticationProfilesRequest& request, const DescribeAuthenticationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuthenticationProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeAuthenticationProfilesAsyncHelper(const DescribeAuthenticationProfilesRequest& request, const DescribeAuthenticationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAuthenticationProfiles(request), context);
+}
+
 DescribeClusterDbRevisionsOutcome RedshiftClient::DescribeClusterDbRevisions(const DescribeClusterDbRevisionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterDbRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1145,9 +1331,6 @@ void RedshiftClient::DescribeClusterDbRevisionsAsyncHelper(const DescribeCluster
 DescribeClusterParameterGroupsOutcome RedshiftClient::DescribeClusterParameterGroups(const DescribeClusterParameterGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterParameterGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1172,9 +1355,6 @@ void RedshiftClient::DescribeClusterParameterGroupsAsyncHelper(const DescribeClu
 DescribeClusterParametersOutcome RedshiftClient::DescribeClusterParameters(const DescribeClusterParametersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterParametersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1199,9 +1379,6 @@ void RedshiftClient::DescribeClusterParametersAsyncHelper(const DescribeClusterP
 DescribeClusterSecurityGroupsOutcome RedshiftClient::DescribeClusterSecurityGroups(const DescribeClusterSecurityGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterSecurityGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1226,9 +1403,6 @@ void RedshiftClient::DescribeClusterSecurityGroupsAsyncHelper(const DescribeClus
 DescribeClusterSnapshotsOutcome RedshiftClient::DescribeClusterSnapshots(const DescribeClusterSnapshotsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1253,9 +1427,6 @@ void RedshiftClient::DescribeClusterSnapshotsAsyncHelper(const DescribeClusterSn
 DescribeClusterSubnetGroupsOutcome RedshiftClient::DescribeClusterSubnetGroups(const DescribeClusterSubnetGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterSubnetGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1280,9 +1451,6 @@ void RedshiftClient::DescribeClusterSubnetGroupsAsyncHelper(const DescribeCluste
 DescribeClusterTracksOutcome RedshiftClient::DescribeClusterTracks(const DescribeClusterTracksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterTracksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1307,9 +1475,6 @@ void RedshiftClient::DescribeClusterTracksAsyncHelper(const DescribeClusterTrack
 DescribeClusterVersionsOutcome RedshiftClient::DescribeClusterVersions(const DescribeClusterVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1334,9 +1499,6 @@ void RedshiftClient::DescribeClusterVersionsAsyncHelper(const DescribeClusterVer
 DescribeClustersOutcome RedshiftClient::DescribeClusters(const DescribeClustersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1358,12 +1520,81 @@ void RedshiftClient::DescribeClustersAsyncHelper(const DescribeClustersRequest& 
   handler(this, request, DescribeClusters(request), context);
 }
 
+DescribeDataSharesOutcome RedshiftClient::DescribeDataShares(const DescribeDataSharesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeDataSharesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeDataSharesOutcomeCallable RedshiftClient::DescribeDataSharesCallable(const DescribeDataSharesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDataSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataShares(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeDataSharesAsync(const DescribeDataSharesRequest& request, const DescribeDataSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSharesAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeDataSharesAsyncHelper(const DescribeDataSharesRequest& request, const DescribeDataSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDataShares(request), context);
+}
+
+DescribeDataSharesForConsumerOutcome RedshiftClient::DescribeDataSharesForConsumer(const DescribeDataSharesForConsumerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeDataSharesForConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeDataSharesForConsumerOutcomeCallable RedshiftClient::DescribeDataSharesForConsumerCallable(const DescribeDataSharesForConsumerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDataSharesForConsumerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataSharesForConsumer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeDataSharesForConsumerAsync(const DescribeDataSharesForConsumerRequest& request, const DescribeDataSharesForConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSharesForConsumerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeDataSharesForConsumerAsyncHelper(const DescribeDataSharesForConsumerRequest& request, const DescribeDataSharesForConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDataSharesForConsumer(request), context);
+}
+
+DescribeDataSharesForProducerOutcome RedshiftClient::DescribeDataSharesForProducer(const DescribeDataSharesForProducerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeDataSharesForProducerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeDataSharesForProducerOutcomeCallable RedshiftClient::DescribeDataSharesForProducerCallable(const DescribeDataSharesForProducerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDataSharesForProducerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataSharesForProducer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeDataSharesForProducerAsync(const DescribeDataSharesForProducerRequest& request, const DescribeDataSharesForProducerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataSharesForProducerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeDataSharesForProducerAsyncHelper(const DescribeDataSharesForProducerRequest& request, const DescribeDataSharesForProducerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDataSharesForProducer(request), context);
+}
+
 DescribeDefaultClusterParametersOutcome RedshiftClient::DescribeDefaultClusterParameters(const DescribeDefaultClusterParametersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeDefaultClusterParametersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1385,12 +1616,57 @@ void RedshiftClient::DescribeDefaultClusterParametersAsyncHelper(const DescribeD
   handler(this, request, DescribeDefaultClusterParameters(request), context);
 }
 
+DescribeEndpointAccessOutcome RedshiftClient::DescribeEndpointAccess(const DescribeEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeEndpointAccessOutcomeCallable RedshiftClient::DescribeEndpointAccessCallable(const DescribeEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeEndpointAccessAsync(const DescribeEndpointAccessRequest& request, const DescribeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeEndpointAccessAsyncHelper(const DescribeEndpointAccessRequest& request, const DescribeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEndpointAccess(request), context);
+}
+
+DescribeEndpointAuthorizationOutcome RedshiftClient::DescribeEndpointAuthorization(const DescribeEndpointAuthorizationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeEndpointAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeEndpointAuthorizationOutcomeCallable RedshiftClient::DescribeEndpointAuthorizationCallable(const DescribeEndpointAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpointAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeEndpointAuthorizationAsync(const DescribeEndpointAuthorizationRequest& request, const DescribeEndpointAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeEndpointAuthorizationAsyncHelper(const DescribeEndpointAuthorizationRequest& request, const DescribeEndpointAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEndpointAuthorization(request), context);
+}
+
 DescribeEventCategoriesOutcome RedshiftClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeEventCategoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1415,9 +1691,6 @@ void RedshiftClient::DescribeEventCategoriesAsyncHelper(const DescribeEventCateg
 DescribeEventSubscriptionsOutcome RedshiftClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeEventSubscriptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1442,9 +1715,6 @@ void RedshiftClient::DescribeEventSubscriptionsAsyncHelper(const DescribeEventSu
 DescribeEventsOutcome RedshiftClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1469,9 +1739,6 @@ void RedshiftClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& requ
 DescribeHsmClientCertificatesOutcome RedshiftClient::DescribeHsmClientCertificates(const DescribeHsmClientCertificatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeHsmClientCertificatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1496,9 +1763,6 @@ void RedshiftClient::DescribeHsmClientCertificatesAsyncHelper(const DescribeHsmC
 DescribeHsmConfigurationsOutcome RedshiftClient::DescribeHsmConfigurations(const DescribeHsmConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeHsmConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1523,9 +1787,6 @@ void RedshiftClient::DescribeHsmConfigurationsAsyncHelper(const DescribeHsmConfi
 DescribeLoggingStatusOutcome RedshiftClient::DescribeLoggingStatus(const DescribeLoggingStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLoggingStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1550,9 +1811,6 @@ void RedshiftClient::DescribeLoggingStatusAsyncHelper(const DescribeLoggingStatu
 DescribeNodeConfigurationOptionsOutcome RedshiftClient::DescribeNodeConfigurationOptions(const DescribeNodeConfigurationOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeNodeConfigurationOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1577,9 +1835,6 @@ void RedshiftClient::DescribeNodeConfigurationOptionsAsyncHelper(const DescribeN
 DescribeOrderableClusterOptionsOutcome RedshiftClient::DescribeOrderableClusterOptions(const DescribeOrderableClusterOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeOrderableClusterOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1601,12 +1856,57 @@ void RedshiftClient::DescribeOrderableClusterOptionsAsyncHelper(const DescribeOr
   handler(this, request, DescribeOrderableClusterOptions(request), context);
 }
 
+DescribePartnersOutcome RedshiftClient::DescribePartners(const DescribePartnersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribePartnersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribePartnersOutcomeCallable RedshiftClient::DescribePartnersCallable(const DescribePartnersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePartnersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePartners(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribePartnersAsync(const DescribePartnersRequest& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePartnersAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribePartnersAsyncHelper(const DescribePartnersRequest& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePartners(request), context);
+}
+
+DescribeReservedNodeExchangeStatusOutcome RedshiftClient::DescribeReservedNodeExchangeStatus(const DescribeReservedNodeExchangeStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeReservedNodeExchangeStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeReservedNodeExchangeStatusOutcomeCallable RedshiftClient::DescribeReservedNodeExchangeStatusCallable(const DescribeReservedNodeExchangeStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedNodeExchangeStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservedNodeExchangeStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeReservedNodeExchangeStatusAsync(const DescribeReservedNodeExchangeStatusRequest& request, const DescribeReservedNodeExchangeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedNodeExchangeStatusAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeReservedNodeExchangeStatusAsyncHelper(const DescribeReservedNodeExchangeStatusRequest& request, const DescribeReservedNodeExchangeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReservedNodeExchangeStatus(request), context);
+}
+
 DescribeReservedNodeOfferingsOutcome RedshiftClient::DescribeReservedNodeOfferings(const DescribeReservedNodeOfferingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeReservedNodeOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1631,9 +1931,6 @@ void RedshiftClient::DescribeReservedNodeOfferingsAsyncHelper(const DescribeRese
 DescribeReservedNodesOutcome RedshiftClient::DescribeReservedNodes(const DescribeReservedNodesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeReservedNodesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1658,9 +1955,6 @@ void RedshiftClient::DescribeReservedNodesAsyncHelper(const DescribeReservedNode
 DescribeResizeOutcome RedshiftClient::DescribeResize(const DescribeResizeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeResizeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1685,9 +1979,6 @@ void RedshiftClient::DescribeResizeAsyncHelper(const DescribeResizeRequest& requ
 DescribeScheduledActionsOutcome RedshiftClient::DescribeScheduledActions(const DescribeScheduledActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeScheduledActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1712,9 +2003,6 @@ void RedshiftClient::DescribeScheduledActionsAsyncHelper(const DescribeScheduled
 DescribeSnapshotCopyGrantsOutcome RedshiftClient::DescribeSnapshotCopyGrants(const DescribeSnapshotCopyGrantsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeSnapshotCopyGrantsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1739,9 +2027,6 @@ void RedshiftClient::DescribeSnapshotCopyGrantsAsyncHelper(const DescribeSnapsho
 DescribeSnapshotSchedulesOutcome RedshiftClient::DescribeSnapshotSchedules(const DescribeSnapshotSchedulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeSnapshotSchedulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1766,9 +2051,6 @@ void RedshiftClient::DescribeSnapshotSchedulesAsyncHelper(const DescribeSnapshot
 DescribeStorageOutcome RedshiftClient::DescribeStorage(const DescribeStorageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1793,9 +2075,6 @@ void RedshiftClient::DescribeStorageAsyncHelper(const DescribeStorageRequest& re
 DescribeTableRestoreStatusOutcome RedshiftClient::DescribeTableRestoreStatus(const DescribeTableRestoreStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTableRestoreStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1820,9 +2099,6 @@ void RedshiftClient::DescribeTableRestoreStatusAsyncHelper(const DescribeTableRe
 DescribeTagsOutcome RedshiftClient::DescribeTags(const DescribeTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1847,9 +2123,6 @@ void RedshiftClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request,
 DescribeUsageLimitsOutcome RedshiftClient::DescribeUsageLimits(const DescribeUsageLimitsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeUsageLimitsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1874,9 +2147,6 @@ void RedshiftClient::DescribeUsageLimitsAsyncHelper(const DescribeUsageLimitsReq
 DisableLoggingOutcome RedshiftClient::DisableLogging(const DisableLoggingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisableLoggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1901,9 +2171,6 @@ void RedshiftClient::DisableLoggingAsyncHelper(const DisableLoggingRequest& requ
 DisableSnapshotCopyOutcome RedshiftClient::DisableSnapshotCopy(const DisableSnapshotCopyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisableSnapshotCopyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1925,12 +2192,33 @@ void RedshiftClient::DisableSnapshotCopyAsyncHelper(const DisableSnapshotCopyReq
   handler(this, request, DisableSnapshotCopy(request), context);
 }
 
+DisassociateDataShareConsumerOutcome RedshiftClient::DisassociateDataShareConsumer(const DisassociateDataShareConsumerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociateDataShareConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DisassociateDataShareConsumerOutcomeCallable RedshiftClient::DisassociateDataShareConsumerCallable(const DisassociateDataShareConsumerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateDataShareConsumerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateDataShareConsumer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DisassociateDataShareConsumerAsync(const DisassociateDataShareConsumerRequest& request, const DisassociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDataShareConsumerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DisassociateDataShareConsumerAsyncHelper(const DisassociateDataShareConsumerRequest& request, const DisassociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateDataShareConsumer(request), context);
+}
+
 EnableLoggingOutcome RedshiftClient::EnableLogging(const EnableLoggingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return EnableLoggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1955,9 +2243,6 @@ void RedshiftClient::EnableLoggingAsyncHelper(const EnableLoggingRequest& reques
 EnableSnapshotCopyOutcome RedshiftClient::EnableSnapshotCopy(const EnableSnapshotCopyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return EnableSnapshotCopyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1982,9 +2267,6 @@ void RedshiftClient::EnableSnapshotCopyAsyncHelper(const EnableSnapshotCopyReque
 GetClusterCredentialsOutcome RedshiftClient::GetClusterCredentials(const GetClusterCredentialsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetClusterCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2006,12 +2288,57 @@ void RedshiftClient::GetClusterCredentialsAsyncHelper(const GetClusterCredential
   handler(this, request, GetClusterCredentials(request), context);
 }
 
+GetClusterCredentialsWithIAMOutcome RedshiftClient::GetClusterCredentialsWithIAM(const GetClusterCredentialsWithIAMRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetClusterCredentialsWithIAMOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetClusterCredentialsWithIAMOutcomeCallable RedshiftClient::GetClusterCredentialsWithIAMCallable(const GetClusterCredentialsWithIAMRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetClusterCredentialsWithIAMOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClusterCredentialsWithIAM(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::GetClusterCredentialsWithIAMAsync(const GetClusterCredentialsWithIAMRequest& request, const GetClusterCredentialsWithIAMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetClusterCredentialsWithIAMAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::GetClusterCredentialsWithIAMAsyncHelper(const GetClusterCredentialsWithIAMRequest& request, const GetClusterCredentialsWithIAMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetClusterCredentialsWithIAM(request), context);
+}
+
+GetReservedNodeExchangeConfigurationOptionsOutcome RedshiftClient::GetReservedNodeExchangeConfigurationOptions(const GetReservedNodeExchangeConfigurationOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetReservedNodeExchangeConfigurationOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetReservedNodeExchangeConfigurationOptionsOutcomeCallable RedshiftClient::GetReservedNodeExchangeConfigurationOptionsCallable(const GetReservedNodeExchangeConfigurationOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetReservedNodeExchangeConfigurationOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReservedNodeExchangeConfigurationOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::GetReservedNodeExchangeConfigurationOptionsAsync(const GetReservedNodeExchangeConfigurationOptionsRequest& request, const GetReservedNodeExchangeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetReservedNodeExchangeConfigurationOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::GetReservedNodeExchangeConfigurationOptionsAsyncHelper(const GetReservedNodeExchangeConfigurationOptionsRequest& request, const GetReservedNodeExchangeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetReservedNodeExchangeConfigurationOptions(request), context);
+}
+
 GetReservedNodeExchangeOfferingsOutcome RedshiftClient::GetReservedNodeExchangeOfferings(const GetReservedNodeExchangeOfferingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetReservedNodeExchangeOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2033,12 +2360,57 @@ void RedshiftClient::GetReservedNodeExchangeOfferingsAsyncHelper(const GetReserv
   handler(this, request, GetReservedNodeExchangeOfferings(request), context);
 }
 
+ModifyAquaConfigurationOutcome RedshiftClient::ModifyAquaConfiguration(const ModifyAquaConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyAquaConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyAquaConfigurationOutcomeCallable RedshiftClient::ModifyAquaConfigurationCallable(const ModifyAquaConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyAquaConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyAquaConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::ModifyAquaConfigurationAsync(const ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyAquaConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::ModifyAquaConfigurationAsyncHelper(const ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyAquaConfiguration(request), context);
+}
+
+ModifyAuthenticationProfileOutcome RedshiftClient::ModifyAuthenticationProfile(const ModifyAuthenticationProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyAuthenticationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyAuthenticationProfileOutcomeCallable RedshiftClient::ModifyAuthenticationProfileCallable(const ModifyAuthenticationProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyAuthenticationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyAuthenticationProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::ModifyAuthenticationProfileAsync(const ModifyAuthenticationProfileRequest& request, const ModifyAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyAuthenticationProfileAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::ModifyAuthenticationProfileAsyncHelper(const ModifyAuthenticationProfileRequest& request, const ModifyAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyAuthenticationProfile(request), context);
+}
+
 ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2063,9 +2435,6 @@ void RedshiftClient::ModifyClusterAsyncHelper(const ModifyClusterRequest& reques
 ModifyClusterDbRevisionOutcome RedshiftClient::ModifyClusterDbRevision(const ModifyClusterDbRevisionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterDbRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2090,9 +2459,6 @@ void RedshiftClient::ModifyClusterDbRevisionAsyncHelper(const ModifyClusterDbRev
 ModifyClusterIamRolesOutcome RedshiftClient::ModifyClusterIamRoles(const ModifyClusterIamRolesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterIamRolesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2117,9 +2483,6 @@ void RedshiftClient::ModifyClusterIamRolesAsyncHelper(const ModifyClusterIamRole
 ModifyClusterMaintenanceOutcome RedshiftClient::ModifyClusterMaintenance(const ModifyClusterMaintenanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterMaintenanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2144,9 +2507,6 @@ void RedshiftClient::ModifyClusterMaintenanceAsyncHelper(const ModifyClusterMain
 ModifyClusterParameterGroupOutcome RedshiftClient::ModifyClusterParameterGroup(const ModifyClusterParameterGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2171,9 +2531,6 @@ void RedshiftClient::ModifyClusterParameterGroupAsyncHelper(const ModifyClusterP
 ModifyClusterSnapshotOutcome RedshiftClient::ModifyClusterSnapshot(const ModifyClusterSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2198,9 +2555,6 @@ void RedshiftClient::ModifyClusterSnapshotAsyncHelper(const ModifyClusterSnapsho
 ModifyClusterSnapshotScheduleOutcome RedshiftClient::ModifyClusterSnapshotSchedule(const ModifyClusterSnapshotScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterSnapshotScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2225,9 +2579,6 @@ void RedshiftClient::ModifyClusterSnapshotScheduleAsyncHelper(const ModifyCluste
 ModifyClusterSubnetGroupOutcome RedshiftClient::ModifyClusterSubnetGroup(const ModifyClusterSubnetGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyClusterSubnetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2249,12 +2600,33 @@ void RedshiftClient::ModifyClusterSubnetGroupAsyncHelper(const ModifyClusterSubn
   handler(this, request, ModifyClusterSubnetGroup(request), context);
 }
 
+ModifyEndpointAccessOutcome RedshiftClient::ModifyEndpointAccess(const ModifyEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyEndpointAccessOutcomeCallable RedshiftClient::ModifyEndpointAccessCallable(const ModifyEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::ModifyEndpointAccessAsync(const ModifyEndpointAccessRequest& request, const ModifyEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::ModifyEndpointAccessAsyncHelper(const ModifyEndpointAccessRequest& request, const ModifyEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyEndpointAccess(request), context);
+}
+
 ModifyEventSubscriptionOutcome RedshiftClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyEventSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2279,9 +2651,6 @@ void RedshiftClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscri
 ModifyScheduledActionOutcome RedshiftClient::ModifyScheduledAction(const ModifyScheduledActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyScheduledActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2306,9 +2675,6 @@ void RedshiftClient::ModifyScheduledActionAsyncHelper(const ModifyScheduledActio
 ModifySnapshotCopyRetentionPeriodOutcome RedshiftClient::ModifySnapshotCopyRetentionPeriod(const ModifySnapshotCopyRetentionPeriodRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifySnapshotCopyRetentionPeriodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2333,9 +2699,6 @@ void RedshiftClient::ModifySnapshotCopyRetentionPeriodAsyncHelper(const ModifySn
 ModifySnapshotScheduleOutcome RedshiftClient::ModifySnapshotSchedule(const ModifySnapshotScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifySnapshotScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2360,9 +2723,6 @@ void RedshiftClient::ModifySnapshotScheduleAsyncHelper(const ModifySnapshotSched
 ModifyUsageLimitOutcome RedshiftClient::ModifyUsageLimit(const ModifyUsageLimitRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ModifyUsageLimitOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2387,9 +2747,6 @@ void RedshiftClient::ModifyUsageLimitAsyncHelper(const ModifyUsageLimitRequest& 
 PauseClusterOutcome RedshiftClient::PauseCluster(const PauseClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PauseClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2414,9 +2771,6 @@ void RedshiftClient::PauseClusterAsyncHelper(const PauseClusterRequest& request,
 PurchaseReservedNodeOfferingOutcome RedshiftClient::PurchaseReservedNodeOffering(const PurchaseReservedNodeOfferingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PurchaseReservedNodeOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2441,9 +2795,6 @@ void RedshiftClient::PurchaseReservedNodeOfferingAsyncHelper(const PurchaseReser
 RebootClusterOutcome RedshiftClient::RebootCluster(const RebootClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RebootClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2465,12 +2816,33 @@ void RedshiftClient::RebootClusterAsyncHelper(const RebootClusterRequest& reques
   handler(this, request, RebootCluster(request), context);
 }
 
+RejectDataShareOutcome RedshiftClient::RejectDataShare(const RejectDataShareRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RejectDataShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RejectDataShareOutcomeCallable RedshiftClient::RejectDataShareCallable(const RejectDataShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RejectDataShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectDataShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::RejectDataShareAsync(const RejectDataShareRequest& request, const RejectDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RejectDataShareAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::RejectDataShareAsyncHelper(const RejectDataShareRequest& request, const RejectDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RejectDataShare(request), context);
+}
+
 ResetClusterParameterGroupOutcome RedshiftClient::ResetClusterParameterGroup(const ResetClusterParameterGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ResetClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2495,9 +2867,6 @@ void RedshiftClient::ResetClusterParameterGroupAsyncHelper(const ResetClusterPar
 ResizeClusterOutcome RedshiftClient::ResizeCluster(const ResizeClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ResizeClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2522,9 +2891,6 @@ void RedshiftClient::ResizeClusterAsyncHelper(const ResizeClusterRequest& reques
 RestoreFromClusterSnapshotOutcome RedshiftClient::RestoreFromClusterSnapshot(const RestoreFromClusterSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RestoreFromClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2549,9 +2915,6 @@ void RedshiftClient::RestoreFromClusterSnapshotAsyncHelper(const RestoreFromClus
 RestoreTableFromClusterSnapshotOutcome RedshiftClient::RestoreTableFromClusterSnapshot(const RestoreTableFromClusterSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RestoreTableFromClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2576,9 +2939,6 @@ void RedshiftClient::RestoreTableFromClusterSnapshotAsyncHelper(const RestoreTab
 ResumeClusterOutcome RedshiftClient::ResumeCluster(const ResumeClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ResumeClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2603,9 +2963,6 @@ void RedshiftClient::ResumeClusterAsyncHelper(const ResumeClusterRequest& reques
 RevokeClusterSecurityGroupIngressOutcome RedshiftClient::RevokeClusterSecurityGroupIngress(const RevokeClusterSecurityGroupIngressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RevokeClusterSecurityGroupIngressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2627,12 +2984,33 @@ void RedshiftClient::RevokeClusterSecurityGroupIngressAsyncHelper(const RevokeCl
   handler(this, request, RevokeClusterSecurityGroupIngress(request), context);
 }
 
+RevokeEndpointAccessOutcome RedshiftClient::RevokeEndpointAccess(const RevokeEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RevokeEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RevokeEndpointAccessOutcomeCallable RedshiftClient::RevokeEndpointAccessCallable(const RevokeEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::RevokeEndpointAccessAsync(const RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::RevokeEndpointAccessAsyncHelper(const RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeEndpointAccess(request), context);
+}
+
 RevokeSnapshotAccessOutcome RedshiftClient::RevokeSnapshotAccess(const RevokeSnapshotAccessRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RevokeSnapshotAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2657,9 +3035,6 @@ void RedshiftClient::RevokeSnapshotAccessAsyncHelper(const RevokeSnapshotAccessR
 RotateEncryptionKeyOutcome RedshiftClient::RotateEncryptionKey(const RotateEncryptionKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RotateEncryptionKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2681,5 +3056,27 @@ void RedshiftClient::RotateEncryptionKeyAsyncHelper(const RotateEncryptionKeyReq
   handler(this, request, RotateEncryptionKey(request), context);
 }
 
+UpdatePartnerStatusOutcome RedshiftClient::UpdatePartnerStatus(const UpdatePartnerStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdatePartnerStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
 
+UpdatePartnerStatusOutcomeCallable RedshiftClient::UpdatePartnerStatusCallable(const UpdatePartnerStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePartnerStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePartnerStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::UpdatePartnerStatusAsync(const UpdatePartnerStatusRequest& request, const UpdatePartnerStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePartnerStatusAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::UpdatePartnerStatusAsyncHelper(const UpdatePartnerStatusRequest& request, const UpdatePartnerStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePartnerStatus(request), context);
+}
 

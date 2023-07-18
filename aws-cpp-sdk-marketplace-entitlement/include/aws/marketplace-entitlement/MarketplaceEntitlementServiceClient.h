@@ -110,24 +110,12 @@ namespace Model
         virtual Model::GetEntitlementsOutcome GetEntitlements(const Model::GetEntitlementsRequest& request) const;
 
         /**
-         * <p>GetEntitlements retrieves entitlement values for a given product. The results
-         * can be filtered based on customer identifier or product
-         * dimensions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEntitlements that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEntitlementsOutcomeCallable GetEntitlementsCallable(const Model::GetEntitlementsRequest& request) const;
 
         /**
-         * <p>GetEntitlements retrieves entitlement values for a given product. The results
-         * can be filtered based on customer identifier or product
-         * dimensions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEntitlements that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEntitlementsAsync(const Model::GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

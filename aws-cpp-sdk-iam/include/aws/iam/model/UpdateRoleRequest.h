@@ -121,8 +121,8 @@ namespace Model
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
+     * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the
@@ -133,15 +133,15 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
 
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
+     * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the
@@ -152,15 +152,15 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
 
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
+     * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the
@@ -171,15 +171,15 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
 
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
+     * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the
@@ -190,7 +190,7 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UpdateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
 

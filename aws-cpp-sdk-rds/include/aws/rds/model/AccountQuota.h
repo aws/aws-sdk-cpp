@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a quota for an AWS account.</p> <p>The following are account
-   * quotas:</p> <ul> <li> <p> <code>AllocatedStorage</code> - The total allocated
-   * storage per account, in GiB. The used value is the total allocated storage in
-   * the account, in GiB.</p> </li> <li> <p>
+   * <p>Describes a quota for an Amazon Web Services account.</p> <p>The following
+   * are account quotas:</p> <ul> <li> <p> <code>AllocatedStorage</code> - The total
+   * allocated storage per account, in GiB. The used value is the total allocated
+   * storage in the account, in GiB.</p> </li> <li> <p>
    * <code>AuthorizationsPerDBSecurityGroup</code> - The number of ingress rules per
    * DB security group. The used value is the highest number of ingress rules in a DB
    * security group in the account. Other DB security groups in the account might
@@ -39,9 +39,9 @@ namespace Model
    * <code>DBClusterParameterGroups</code> - The number of DB cluster parameter
    * groups per account, excluding default parameter groups. The used value is the
    * count of nondefault DB cluster parameter groups in the account.</p> </li> <li>
-   * <p> <code>DBClusterRoles</code> - The number of associated AWS Identity and
-   * Access Management (IAM) roles per DB cluster. The used value is the highest
-   * number of associated IAM roles for a DB cluster in the account. Other DB
+   * <p> <code>DBClusterRoles</code> - The number of associated Amazon Web Services
+   * Identity and Access Management (IAM) roles per DB cluster. The used value is the
+   * highest number of associated IAM roles for a DB cluster in the account. Other DB
    * clusters in the account might have a lower number of associated IAM roles.</p>
    * </li> <li> <p> <code>DBClusters</code> - The number of DB clusters per account.
    * The used value is the count of DB clusters in the account.</p> </li> <li> <p>
@@ -101,42 +101,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccountQuotaName() const{ return m_accountQuotaName; }
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline bool AccountQuotaNameHasBeenSet() const { return m_accountQuotaNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline void SetAccountQuotaName(const Aws::String& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = value; }
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline void SetAccountQuotaName(Aws::String&& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline void SetAccountQuotaName(const char* value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName.assign(value); }
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline AccountQuota& WithAccountQuotaName(const Aws::String& value) { SetAccountQuotaName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline AccountQuota& WithAccountQuotaName(Aws::String&& value) { SetAccountQuotaName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
     inline AccountQuota& WithAccountQuotaName(const char* value) { SetAccountQuotaName(value); return *this;}
 

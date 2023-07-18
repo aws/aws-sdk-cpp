@@ -34,73 +34,93 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline UpdateInstanceAttributeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline UpdateInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline UpdateInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The type of attribute.</p>
+     * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
+     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
+     * Support for allowlisting.</p> 
      */
     inline const InstanceAttributeType& GetAttributeType() const{ return m_attributeType; }
 
     /**
-     * <p>The type of attribute.</p>
+     * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
+     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
+     * Support for allowlisting.</p> 
      */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
-     * <p>The type of attribute.</p>
+     * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
+     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
+     * Support for allowlisting.</p> 
      */
     inline void SetAttributeType(const InstanceAttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * <p>The type of attribute.</p>
+     * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
+     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
+     * Support for allowlisting.</p> 
      */
     inline void SetAttributeType(InstanceAttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
-     * <p>The type of attribute.</p>
+     * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
+     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
+     * Support for allowlisting.</p> 
      */
     inline UpdateInstanceAttributeRequest& WithAttributeType(const InstanceAttributeType& value) { SetAttributeType(value); return *this;}
 
     /**
-     * <p>The type of attribute.</p>
+     * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
+     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
+     * Support for allowlisting.</p> 
      */
     inline UpdateInstanceAttributeRequest& WithAttributeType(InstanceAttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
 

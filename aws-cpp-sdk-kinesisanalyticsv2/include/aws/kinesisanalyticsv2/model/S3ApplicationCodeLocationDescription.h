@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the location of a Flink-based Kinesis Data Analytics application's
-   * code stored in an S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the location of an application's code stored in an S3
+   * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ApplicationCodeLocationDescription">AWS
    * API Reference</a></p>
    */

@@ -17,7 +17,12 @@ namespace Model
   {
     NOT_SET,
     INCLUSIVE,
-    EXCLUSIVE
+    EXCLUSIVE,
+    CONTAINS,
+    BEFORE,
+    AFTER,
+    ON,
+    BETWEEN
   };
 
 namespace AttributeTypeMapper

@@ -224,42 +224,58 @@ namespace Model
 
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline const Aws::String& GetNotificationTopicStatus() const{ return m_notificationTopicStatus; }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline bool NotificationTopicStatusHasBeenSet() const { return m_notificationTopicStatusHasBeenSet; }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline void SetNotificationTopicStatus(const Aws::String& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = value; }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline void SetNotificationTopicStatus(Aws::String&& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = std::move(value); }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline void SetNotificationTopicStatus(const char* value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus.assign(value); }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline UpdateClusterRequest& WithNotificationTopicStatus(const Aws::String& value) { SetNotificationTopicStatus(value); return *this;}
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline UpdateClusterRequest& WithNotificationTopicStatus(Aws::String&& value) { SetNotificationTopicStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline UpdateClusterRequest& WithNotificationTopicStatus(const char* value) { SetNotificationTopicStatus(value); return *this;}
 

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>An AWS Identity and Access Management (IAM) policy assignment.</p><p><h3>See
+   * <p>An Identity and Access Management (IAM) policy assignment.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/IAMPolicyAssignment">AWS
    * API Reference</a></p>
@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline IAMPolicyAssignment& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline IAMPolicyAssignment& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline IAMPolicyAssignment& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

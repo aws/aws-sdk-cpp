@@ -7,10 +7,12 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/backup/BackupErrors.h>
 #include <aws/backup/model/ServiceUnavailableException.h>
+#include <aws/backup/model/ConflictException.h>
 #include <aws/backup/model/DependencyFailureException.h>
 #include <aws/backup/model/ResourceNotFoundException.h>
 #include <aws/backup/model/LimitExceededException.h>
 #include <aws/backup/model/AlreadyExistsException.h>
+#include <aws/backup/model/InvalidResourceStateException.h>
 #include <aws/backup/model/InvalidParameterValueException.h>
 #include <aws/backup/model/MissingParameterValueException.h>
 #include <aws/backup/model/InvalidRequestException.h>
@@ -28,6 +30,12 @@ template<> AWS_BACKUP_API ServiceUnavailableException BackupError::GetModeledErr
 {
   assert(this->GetErrorType() == BackupErrors::SERVICE_UNAVAILABLE);
   return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_BACKUP_API ConflictException BackupError::GetModeledError()
+{
+  assert(this->GetErrorType() == BackupErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
 }
 
 template<> AWS_BACKUP_API DependencyFailureException BackupError::GetModeledError()
@@ -54,6 +62,12 @@ template<> AWS_BACKUP_API AlreadyExistsException BackupError::GetModeledError()
   return AlreadyExistsException(this->GetJsonPayload().View());
 }
 
+template<> AWS_BACKUP_API InvalidResourceStateException BackupError::GetModeledError()
+{
+  assert(this->GetErrorType() == BackupErrors::INVALID_RESOURCE_STATE);
+  return InvalidResourceStateException(this->GetJsonPayload().View());
+}
+
 template<> AWS_BACKUP_API InvalidParameterValueException BackupError::GetModeledError()
 {
   assert(this->GetErrorType() == BackupErrors::INVALID_PARAMETER_VALUE);
@@ -75,9 +89,11 @@ template<> AWS_BACKUP_API InvalidRequestException BackupError::GetModeledError()
 namespace BackupErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int DEPENDENCY_FAILURE_HASH = HashingUtils::HashString("DependencyFailureException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
+static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
 static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
@@ -86,7 +102,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == DEPENDENCY_FAILURE_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::CONFLICT), false);
+  }
+  else if (hashCode == DEPENDENCY_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::DEPENDENCY_FAILURE), false);
   }
@@ -97,6 +117,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::ALREADY_EXISTS), false);
+  }
+  else if (hashCode == INVALID_RESOURCE_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::INVALID_RESOURCE_STATE), false);
   }
   else if (hashCode == MISSING_PARAMETER_VALUE_HASH)
   {

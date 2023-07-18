@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>This error indicates that you are calling an operation on an Amazon
    * QuickSight subscription where the edition doesn't include support for that
-   * operation. Amazon QuickSight currently has Standard Edition and Enterprise
-   * Edition. Not every operation and capability is available in every
+   * operation. Amazon Amazon QuickSight currently has Standard Edition and
+   * Enterprise Edition. Not every operation and capability is available in every
    * edition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UnsupportedUserEditionException">AWS
    * API Reference</a></p>
@@ -67,42 +67,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline UnsupportedUserEditionException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline UnsupportedUserEditionException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline UnsupportedUserEditionException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

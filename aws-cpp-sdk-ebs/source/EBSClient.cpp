@@ -74,7 +74,7 @@ EBSClient::~EBSClient()
 {
 }
 
-void EBSClient::init(const ClientConfiguration& config)
+void EBSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EBS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -113,10 +113,8 @@ CompleteSnapshotOutcome EBSClient::CompleteSnapshot(const CompleteSnapshotReques
     return CompleteSnapshotOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChangedBlocksCount]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/completion/";
-  ss << request.GetSnapshotId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/snapshots/completion/");
+  uri.AddPathSegment(request.GetSnapshotId());
   return CompleteSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -156,12 +154,10 @@ GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockReques
     return GetSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BlockToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/";
-  ss << request.GetSnapshotId();
-  ss << "/blocks/";
-  ss << request.GetBlockIndex();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSnapshotId());
+  uri.AddPathSegments("/blocks/");
+  uri.AddPathSegment(request.GetBlockIndex());
   return GetSnapshotBlockOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -191,11 +187,9 @@ ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksReq
     return ListChangedBlocksOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecondSnapshotId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/";
-  ss << request.GetSecondSnapshotId();
-  ss << "/changedblocks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSecondSnapshotId());
+  uri.AddPathSegments("/changedblocks");
   return ListChangedBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -225,11 +219,9 @@ ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocks
     return ListSnapshotBlocksOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/";
-  ss << request.GetSnapshotId();
-  ss << "/blocks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSnapshotId());
+  uri.AddPathSegments("/blocks");
   return ListSnapshotBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -279,12 +271,10 @@ PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockReques
     return PutSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChecksumAlgorithm]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/";
-  ss << request.GetSnapshotId();
-  ss << "/blocks/";
-  ss << request.GetBlockIndex();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSnapshotId());
+  uri.AddPathSegments("/blocks/");
+  uri.AddPathSegment(request.GetBlockIndex());
   return PutSnapshotBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -309,9 +299,7 @@ void EBSClient::PutSnapshotBlockAsyncHelper(const PutSnapshotBlockRequest& reque
 StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/snapshots");
   return StartSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

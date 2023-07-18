@@ -29,7 +29,7 @@ using namespace Aws::KMS;
 using namespace Aws::KMS::Model;
 
 static const char* AllocationTag = "EncryptionMaterialsTest";
-static Aws::String TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
+static const char* TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
 static const char* GCM_AAD = "AES/GCM/NoPadding";
 static size_t GCM_AAD_LENGTH = 17;
 

@@ -33,60 +33,60 @@ namespace Model
 
 
     /**
-     * <p>The request ID as logged by EC2 Connect. Please provide this when contacting
-     * AWS Support.</p>
+     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
+     * assistance.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request ID as logged by EC2 Connect. Please provide this when contacting
-     * AWS Support.</p>
+     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
+     * assistance.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The request ID as logged by EC2 Connect. Please provide this when contacting
-     * AWS Support.</p>
+     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
+     * assistance.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The request ID as logged by EC2 Connect. Please provide this when contacting
-     * AWS Support.</p>
+     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
+     * assistance.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The request ID as logged by EC2 Connect. Please provide this when contacting
-     * AWS Support.</p>
+     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
+     * assistance.</p>
      */
     inline SendSSHPublicKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request ID as logged by EC2 Connect. Please provide this when contacting
-     * AWS Support.</p>
+     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
+     * assistance.</p>
      */
     inline SendSSHPublicKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request ID as logged by EC2 Connect. Please provide this when contacting
-     * AWS Support.</p>
+     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
+     * assistance.</p>
      */
     inline SendSSHPublicKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * <p>Indicates request success.</p>
+     * <p>Is true if the request succeeds and an error otherwise.</p>
      */
     inline bool GetSuccess() const{ return m_success; }
 
     /**
-     * <p>Indicates request success.</p>
+     * <p>Is true if the request succeeds and an error otherwise.</p>
      */
     inline void SetSuccess(bool value) { m_success = value; }
 
     /**
-     * <p>Indicates request success.</p>
+     * <p>Is true if the request succeeds and an error otherwise.</p>
      */
     inline SendSSHPublicKeyResult& WithSuccess(bool value) { SetSuccess(value); return *this;}
 

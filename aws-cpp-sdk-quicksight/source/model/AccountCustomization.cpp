@@ -19,12 +19,14 @@ namespace Model
 {
 
 AccountCustomization::AccountCustomization() : 
-    m_defaultThemeHasBeenSet(false)
+    m_defaultThemeHasBeenSet(false),
+    m_defaultEmailCustomizationTemplateHasBeenSet(false)
 {
 }
 
 AccountCustomization::AccountCustomization(JsonView jsonValue) : 
-    m_defaultThemeHasBeenSet(false)
+    m_defaultThemeHasBeenSet(false),
+    m_defaultEmailCustomizationTemplateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ AccountCustomization& AccountCustomization::operator =(JsonView jsonValue)
     m_defaultThemeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultEmailCustomizationTemplate"))
+  {
+    m_defaultEmailCustomizationTemplate = jsonValue.GetString("DefaultEmailCustomizationTemplate");
+
+    m_defaultEmailCustomizationTemplateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue AccountCustomization::Jsonize() const
   if(m_defaultThemeHasBeenSet)
   {
    payload.WithString("DefaultTheme", m_defaultTheme);
+
+  }
+
+  if(m_defaultEmailCustomizationTemplateHasBeenSet)
+  {
+   payload.WithString("DefaultEmailCustomizationTemplate", m_defaultEmailCustomizationTemplate);
 
   }
 

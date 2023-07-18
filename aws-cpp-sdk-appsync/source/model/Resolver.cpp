@@ -29,7 +29,9 @@ Resolver::Resolver() :
     m_kindHasBeenSet(false),
     m_pipelineConfigHasBeenSet(false),
     m_syncConfigHasBeenSet(false),
-    m_cachingConfigHasBeenSet(false)
+    m_cachingConfigHasBeenSet(false),
+    m_maxBatchSize(0),
+    m_maxBatchSizeHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ Resolver::Resolver(JsonView jsonValue) :
     m_kindHasBeenSet(false),
     m_pipelineConfigHasBeenSet(false),
     m_syncConfigHasBeenSet(false),
-    m_cachingConfigHasBeenSet(false)
+    m_cachingConfigHasBeenSet(false),
+    m_maxBatchSize(0),
+    m_maxBatchSizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +125,13 @@ Resolver& Resolver::operator =(JsonView jsonValue)
     m_cachingConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxBatchSize"))
+  {
+    m_maxBatchSize = jsonValue.GetInteger("maxBatchSize");
+
+    m_maxBatchSizeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +195,12 @@ JsonValue Resolver::Jsonize() const
   if(m_cachingConfigHasBeenSet)
   {
    payload.WithObject("cachingConfig", m_cachingConfig.Jsonize());
+
+  }
+
+  if(m_maxBatchSizeHasBeenSet)
+  {
+   payload.WithInteger("maxBatchSize", m_maxBatchSize);
 
   }
 

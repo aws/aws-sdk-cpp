@@ -22,6 +22,7 @@ namespace Model
 
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() : 
     m_carrierIpHasBeenSet(false),
+    m_customerOwnedIpHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false)
@@ -30,6 +31,7 @@ InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() :
 
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation(const XmlNode& xmlNode) : 
     m_carrierIpHasBeenSet(false),
+    m_customerOwnedIpHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false)
@@ -48,6 +50,12 @@ InstanceNetworkInterfaceAssociation& InstanceNetworkInterfaceAssociation::operat
     {
       m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
       m_carrierIpHasBeenSet = true;
+    }
+    XmlNode customerOwnedIpNode = resultNode.FirstChild("customerOwnedIp");
+    if(!customerOwnedIpNode.IsNull())
+    {
+      m_customerOwnedIp = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpNode.GetText());
+      m_customerOwnedIpHasBeenSet = true;
     }
     XmlNode ipOwnerIdNode = resultNode.FirstChild("ipOwnerId");
     if(!ipOwnerIdNode.IsNull())
@@ -79,6 +87,11 @@ void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, 
       oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
   }
 
+  if(m_customerOwnedIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOwnedIp=" << StringUtils::URLEncode(m_customerOwnedIp.c_str()) << "&";
+  }
+
   if(m_ipOwnerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".IpOwnerId=" << StringUtils::URLEncode(m_ipOwnerId.c_str()) << "&";
@@ -101,6 +114,10 @@ void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, 
   if(m_carrierIpHasBeenSet)
   {
       oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+  if(m_customerOwnedIpHasBeenSet)
+  {
+      oStream << location << ".CustomerOwnedIp=" << StringUtils::URLEncode(m_customerOwnedIp.c_str()) << "&";
   }
   if(m_ipOwnerIdHasBeenSet)
   {

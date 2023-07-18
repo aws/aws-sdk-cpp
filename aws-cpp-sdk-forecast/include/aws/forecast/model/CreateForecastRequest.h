@@ -8,6 +8,7 @@
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/forecast/model/TimeSeriesSelector.h>
 #include <aws/forecast/model/Tag.h>
 #include <utility>
 
@@ -131,8 +132,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
 
@@ -141,8 +144,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline bool ForecastTypesHasBeenSet() const { return m_forecastTypesHasBeenSet; }
 
@@ -151,8 +156,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = value; }
 
@@ -161,8 +168,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::move(value); }
 
@@ -171,8 +180,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline CreateForecastRequest& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
 
@@ -181,8 +192,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline CreateForecastRequest& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
 
@@ -191,8 +204,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline CreateForecastRequest& AddForecastTypes(const Aws::String& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
 
@@ -201,8 +216,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline CreateForecastRequest& AddForecastTypes(Aws::String&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(std::move(value)); return *this; }
 
@@ -211,8 +228,10 @@ namespace Model
      * currently specify up to 5 quantiles per forecast</b>. Accepted values include
      * <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The
      * mean forecast is different from the median (0.50) when the distribution is not
-     * symmetric (for example, Beta and Negative Binomial). The default value is
-     * <code>["0.1", "0.5", "0.9"]</code>.</p>
+     * symmetric (for example, Beta and Negative Binomial). </p> <p>The default
+     * quantiles are the quantiles you specified during predictor creation. If you
+     * didn't specify quantiles, the default values are <code>["0.1", "0.5",
+     * "0.9"]</code>. </p>
      */
     inline CreateForecastRequest& AddForecastTypes(const char* value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
 
@@ -401,6 +420,61 @@ namespace Model
      */
     inline CreateForecastRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Defines the set of time series that are used to create the forecasts in a
+     * <code>TimeSeriesIdentifiers</code> object.</p> <p>The
+     * <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+     * <ul> <li> <p> <code>DataSource</code> </p> </li> <li> <p> <code>Format</code>
+     * </p> </li> <li> <p> <code>Schema</code> </p> </li> </ul>
+     */
+    inline const TimeSeriesSelector& GetTimeSeriesSelector() const{ return m_timeSeriesSelector; }
+
+    /**
+     * <p>Defines the set of time series that are used to create the forecasts in a
+     * <code>TimeSeriesIdentifiers</code> object.</p> <p>The
+     * <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+     * <ul> <li> <p> <code>DataSource</code> </p> </li> <li> <p> <code>Format</code>
+     * </p> </li> <li> <p> <code>Schema</code> </p> </li> </ul>
+     */
+    inline bool TimeSeriesSelectorHasBeenSet() const { return m_timeSeriesSelectorHasBeenSet; }
+
+    /**
+     * <p>Defines the set of time series that are used to create the forecasts in a
+     * <code>TimeSeriesIdentifiers</code> object.</p> <p>The
+     * <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+     * <ul> <li> <p> <code>DataSource</code> </p> </li> <li> <p> <code>Format</code>
+     * </p> </li> <li> <p> <code>Schema</code> </p> </li> </ul>
+     */
+    inline void SetTimeSeriesSelector(const TimeSeriesSelector& value) { m_timeSeriesSelectorHasBeenSet = true; m_timeSeriesSelector = value; }
+
+    /**
+     * <p>Defines the set of time series that are used to create the forecasts in a
+     * <code>TimeSeriesIdentifiers</code> object.</p> <p>The
+     * <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+     * <ul> <li> <p> <code>DataSource</code> </p> </li> <li> <p> <code>Format</code>
+     * </p> </li> <li> <p> <code>Schema</code> </p> </li> </ul>
+     */
+    inline void SetTimeSeriesSelector(TimeSeriesSelector&& value) { m_timeSeriesSelectorHasBeenSet = true; m_timeSeriesSelector = std::move(value); }
+
+    /**
+     * <p>Defines the set of time series that are used to create the forecasts in a
+     * <code>TimeSeriesIdentifiers</code> object.</p> <p>The
+     * <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+     * <ul> <li> <p> <code>DataSource</code> </p> </li> <li> <p> <code>Format</code>
+     * </p> </li> <li> <p> <code>Schema</code> </p> </li> </ul>
+     */
+    inline CreateForecastRequest& WithTimeSeriesSelector(const TimeSeriesSelector& value) { SetTimeSeriesSelector(value); return *this;}
+
+    /**
+     * <p>Defines the set of time series that are used to create the forecasts in a
+     * <code>TimeSeriesIdentifiers</code> object.</p> <p>The
+     * <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+     * <ul> <li> <p> <code>DataSource</code> </p> </li> <li> <p> <code>Format</code>
+     * </p> </li> <li> <p> <code>Schema</code> </p> </li> </ul>
+     */
+    inline CreateForecastRequest& WithTimeSeriesSelector(TimeSeriesSelector&& value) { SetTimeSeriesSelector(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_forecastName;
@@ -414,6 +488,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    TimeSeriesSelector m_timeSeriesSelector;
+    bool m_timeSeriesSelectorHasBeenSet;
   };
 
 } // namespace Model

@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p> The framework returned by the <code>GetAssessmentFramework</code> API. </p>
+     * <p> The framework that the <code>GetAssessmentFramework</code> API returned.
+     * </p>
      */
     inline const Framework& GetFramework() const{ return m_framework; }
 
     /**
-     * <p> The framework returned by the <code>GetAssessmentFramework</code> API. </p>
+     * <p> The framework that the <code>GetAssessmentFramework</code> API returned.
+     * </p>
      */
     inline void SetFramework(const Framework& value) { m_framework = value; }
 
     /**
-     * <p> The framework returned by the <code>GetAssessmentFramework</code> API. </p>
+     * <p> The framework that the <code>GetAssessmentFramework</code> API returned.
+     * </p>
      */
     inline void SetFramework(Framework&& value) { m_framework = std::move(value); }
 
     /**
-     * <p> The framework returned by the <code>GetAssessmentFramework</code> API. </p>
+     * <p> The framework that the <code>GetAssessmentFramework</code> API returned.
+     * </p>
      */
     inline GetAssessmentFrameworkResult& WithFramework(const Framework& value) { SetFramework(value); return *this;}
 
     /**
-     * <p> The framework returned by the <code>GetAssessmentFramework</code> API. </p>
+     * <p> The framework that the <code>GetAssessmentFramework</code> API returned.
+     * </p>
      */
     inline GetAssessmentFrameworkResult& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
 

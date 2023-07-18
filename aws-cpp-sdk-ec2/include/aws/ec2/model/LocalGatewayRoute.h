@@ -269,42 +269,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline LocalGatewayRoute& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline LocalGatewayRoute& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the local gateway route.</p>
+     * <p>The ID of the Amazon Web Services account that owns the local gateway
+     * route.</p>
      */
     inline LocalGatewayRoute& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

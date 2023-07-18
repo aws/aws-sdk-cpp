@@ -95,56 +95,56 @@ namespace Model
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline ResolverEndpoint& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline ResolverEndpoint& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request that created the Resolver
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
-     * without the risk of executing the operation twice.</p>
+     * without the risk of running the operation twice.</p>
      */
     inline ResolverEndpoint& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

@@ -31,7 +31,9 @@ DocDbSettings::DocDbSettings() :
     m_extractDocIdHasBeenSet(false),
     m_docsToInvestigate(0),
     m_docsToInvestigateHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ DocDbSettings::DocDbSettings(JsonView jsonValue) :
     m_extractDocIdHasBeenSet(false),
     m_docsToInvestigate(0),
     m_docsToInvestigateHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +122,20 @@ DocDbSettings& DocDbSettings::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
+  {
+    m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
+
+    m_secretsManagerAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerSecretId"))
+  {
+    m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
+
+    m_secretsManagerSecretIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -175,6 +193,18 @@ JsonValue DocDbSettings::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_secretsManagerAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
 
   }
 

@@ -19,7 +19,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the tags to remove from a trail.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the tags to remove from a trail or event data store.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTagsRequest">AWS
    * API Reference</a></p>
    */
@@ -40,58 +41,82 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline RemoveTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline RemoveTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is:</p> <p>
+     * <p>Specifies the ARN of the trail or event data store from which tags should be
+     * removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
      */
     inline RemoveTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

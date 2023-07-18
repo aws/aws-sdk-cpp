@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/ArchiveCdnSettings.h>
 #include <aws/medialive/model/OutputLocationRef.h>
 #include <utility>
 
@@ -35,6 +36,37 @@ namespace Model
     ArchiveGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     ArchiveGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline const ArchiveCdnSettings& GetArchiveCdnSettings() const{ return m_archiveCdnSettings; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline bool ArchiveCdnSettingsHasBeenSet() const { return m_archiveCdnSettingsHasBeenSet; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline void SetArchiveCdnSettings(const ArchiveCdnSettings& value) { m_archiveCdnSettingsHasBeenSet = true; m_archiveCdnSettings = value; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline void SetArchiveCdnSettings(ArchiveCdnSettings&& value) { m_archiveCdnSettingsHasBeenSet = true; m_archiveCdnSettings = std::move(value); }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline ArchiveGroupSettings& WithArchiveCdnSettings(const ArchiveCdnSettings& value) { SetArchiveCdnSettings(value); return *this;}
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline ArchiveGroupSettings& WithArchiveCdnSettings(ArchiveCdnSettings&& value) { SetArchiveCdnSettings(std::move(value)); return *this;}
 
 
     /**
@@ -93,6 +125,9 @@ namespace Model
     inline ArchiveGroupSettings& WithRolloverInterval(int value) { SetRolloverInterval(value); return *this;}
 
   private:
+
+    ArchiveCdnSettings m_archiveCdnSettings;
+    bool m_archiveCdnSettingsHasBeenSet;
 
     OutputLocationRef m_destination;
     bool m_destinationHasBeenSet;

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The details that identify a resource within AWS Config, including the
-   * resource type and resource ID.</p><p><h3>See Also:</h3>   <a
+   * <p>The details that identify a resource within Config, including the resource
+   * type and resource ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceKey">AWS
    * API Reference</a></p>
    */

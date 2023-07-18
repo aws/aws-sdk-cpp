@@ -34,31 +34,31 @@ namespace Model
 
     /**
      * <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-     * app instance. All timestamps use epoch milliseconds.</p>
+     * <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
      */
     inline const AppInstance& GetAppInstance() const{ return m_appInstance; }
 
     /**
      * <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-     * app instance. All timestamps use epoch milliseconds.</p>
+     * <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
      */
     inline void SetAppInstance(const AppInstance& value) { m_appInstance = value; }
 
     /**
      * <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-     * app instance. All timestamps use epoch milliseconds.</p>
+     * <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
      */
     inline void SetAppInstance(AppInstance&& value) { m_appInstance = std::move(value); }
 
     /**
      * <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-     * app instance. All timestamps use epoch milliseconds.</p>
+     * <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
      */
     inline DescribeAppInstanceResult& WithAppInstance(const AppInstance& value) { SetAppInstance(value); return *this;}
 
     /**
      * <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-     * app instance. All timestamps use epoch milliseconds.</p>
+     * <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
      */
     inline DescribeAppInstanceResult& WithAppInstance(AppInstance&& value) { SetAppInstance(std::move(value)); return *this;}
 

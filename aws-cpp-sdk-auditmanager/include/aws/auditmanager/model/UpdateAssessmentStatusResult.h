@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p> The name of the updated assessment returned by the
-     * <code>UpdateAssessmentStatus</code> API. </p>
+     * <p> The name of the updated assessment that the
+     * <code>UpdateAssessmentStatus</code> API returned. </p>
      */
     inline const Assessment& GetAssessment() const{ return m_assessment; }
 
     /**
-     * <p> The name of the updated assessment returned by the
-     * <code>UpdateAssessmentStatus</code> API. </p>
+     * <p> The name of the updated assessment that the
+     * <code>UpdateAssessmentStatus</code> API returned. </p>
      */
     inline void SetAssessment(const Assessment& value) { m_assessment = value; }
 
     /**
-     * <p> The name of the updated assessment returned by the
-     * <code>UpdateAssessmentStatus</code> API. </p>
+     * <p> The name of the updated assessment that the
+     * <code>UpdateAssessmentStatus</code> API returned. </p>
      */
     inline void SetAssessment(Assessment&& value) { m_assessment = std::move(value); }
 
     /**
-     * <p> The name of the updated assessment returned by the
-     * <code>UpdateAssessmentStatus</code> API. </p>
+     * <p> The name of the updated assessment that the
+     * <code>UpdateAssessmentStatus</code> API returned. </p>
      */
     inline UpdateAssessmentStatusResult& WithAssessment(const Assessment& value) { SetAssessment(value); return *this;}
 
     /**
-     * <p> The name of the updated assessment returned by the
-     * <code>UpdateAssessmentStatus</code> API. </p>
+     * <p> The name of the updated assessment that the
+     * <code>UpdateAssessmentStatus</code> API returned. </p>
      */
     inline UpdateAssessmentStatusResult& WithAssessment(Assessment&& value) { SetAssessment(std::move(value)); return *this;}
 

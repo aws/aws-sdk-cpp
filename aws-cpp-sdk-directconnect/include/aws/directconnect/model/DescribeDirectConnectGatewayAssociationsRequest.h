@@ -232,42 +232,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsRequest& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsRequest& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsRequest& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 

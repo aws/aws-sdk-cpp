@@ -136,8 +136,8 @@ namespace Model
      * <p>The encryption type to use on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
@@ -145,8 +145,8 @@ namespace Model
      * <p>The encryption type to use on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
 
@@ -154,8 +154,8 @@ namespace Model
      * <p>The encryption type to use on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
 
@@ -163,8 +163,8 @@ namespace Model
      * <p>The encryption type to use on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline PutRecordResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
@@ -172,8 +172,8 @@ namespace Model
      * <p>The encryption type to use on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline PutRecordResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 

@@ -19,7 +19,8 @@ CreateActivationRequest::CreateActivationRequest() :
     m_registrationLimit(0),
     m_registrationLimitHasBeenSet(false),
     m_expirationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_registrationMetadataHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,17 @@ Aws::String CreateActivationRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_registrationMetadataHasBeenSet)
+  {
+   Array<JsonValue> registrationMetadataJsonList(m_registrationMetadata.size());
+   for(unsigned registrationMetadataIndex = 0; registrationMetadataIndex < registrationMetadataJsonList.GetLength(); ++registrationMetadataIndex)
+   {
+     registrationMetadataJsonList[registrationMetadataIndex].AsObject(m_registrationMetadata[registrationMetadataIndex].Jsonize());
+   }
+   payload.WithArray("RegistrationMetadata", std::move(registrationMetadataJsonList));
 
   }
 

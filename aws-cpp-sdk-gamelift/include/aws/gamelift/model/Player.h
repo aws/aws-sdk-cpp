@@ -229,101 +229,101 @@ namespace Model
 
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline const Aws::Map<Aws::String, int>& GetLatencyInMs() const{ return m_latencyInMs; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline bool LatencyInMsHasBeenSet() const { return m_latencyInMsHasBeenSet; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline void SetLatencyInMs(const Aws::Map<Aws::String, int>& value) { m_latencyInMsHasBeenSet = true; m_latencyInMs = value; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline void SetLatencyInMs(Aws::Map<Aws::String, int>&& value) { m_latencyInMsHasBeenSet = true; m_latencyInMs = std::move(value); }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline Player& WithLatencyInMs(const Aws::Map<Aws::String, int>& value) { SetLatencyInMs(value); return *this;}
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline Player& WithLatencyInMs(Aws::Map<Aws::String, int>&& value) { SetLatencyInMs(std::move(value)); return *this;}
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline Player& AddLatencyInMs(const Aws::String& key, int value) { m_latencyInMsHasBeenSet = true; m_latencyInMs.emplace(key, value); return *this; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline Player& AddLatencyInMs(Aws::String&& key, int value) { m_latencyInMsHasBeenSet = true; m_latencyInMs.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. If this property is
-     * present, FlexMatch considers placing the match only in Regions for which latency
-     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
-     * players must report latency in order to be matched. If no latency is reported in
-     * this scenario, FlexMatch assumes that no Regions are available to the player and
-     * the ticket is not matchable. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. If this
+     * property is present, FlexMatch considers placing the match only in Regions for
+     * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
+     * player latency, players must report latency in order to be matched. If no
+     * latency is reported in this scenario, FlexMatch assumes that no Regions are
+     * available to the player and the ticket is not matchable. </p>
      */
     inline Player& AddLatencyInMs(const char* key, int value) { m_latencyInMsHasBeenSet = true; m_latencyInMs.emplace(key, value); return *this; }
 

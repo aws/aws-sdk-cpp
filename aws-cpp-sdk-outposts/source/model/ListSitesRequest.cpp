@@ -18,7 +18,10 @@ using namespace Aws::Http;
 ListSitesRequest::ListSitesRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_operatingAddressCountryCodeFilterHasBeenSet(false),
+    m_operatingAddressStateOrRegionFilterHasBeenSet(false),
+    m_operatingAddressCityFilterHasBeenSet(false)
 {
 }
 
@@ -42,6 +45,36 @@ void ListSitesRequest::AddQueryStringParameters(URI& uri) const
       ss << m_maxResults;
       uri.AddQueryStringParameter("MaxResults", ss.str());
       ss.str("");
+    }
+
+    if(m_operatingAddressCountryCodeFilterHasBeenSet)
+    {
+      for(const auto& item : m_operatingAddressCountryCodeFilter)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("OperatingAddressCountryCodeFilter", ss.str());
+        ss.str("");
+      }
+    }
+
+    if(m_operatingAddressStateOrRegionFilterHasBeenSet)
+    {
+      for(const auto& item : m_operatingAddressStateOrRegionFilter)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("OperatingAddressStateOrRegionFilter", ss.str());
+        ss.str("");
+      }
+    }
+
+    if(m_operatingAddressCityFilterHasBeenSet)
+    {
+      for(const auto& item : m_operatingAddressCityFilter)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("OperatingAddressCityFilter", ss.str());
+        ss.str("");
+      }
     }
 
 }

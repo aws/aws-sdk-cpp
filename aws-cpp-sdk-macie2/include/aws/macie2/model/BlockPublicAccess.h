@@ -25,9 +25,9 @@ namespace Model
    * <p>Provides information about the block public access settings for an S3 bucket.
    * These settings can apply to a bucket at the account level or bucket level. For
    * detailed information about each setting, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">Using
-   * Amazon S3 block public access</a> in the <i>Amazon Simple Storage Service
-   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking
+   * public access to your Amazon S3 storage</a> in the <i>Amazon Simple Storage
+   * Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BlockPublicAccess">AWS
    * API Reference</a></p>
    */

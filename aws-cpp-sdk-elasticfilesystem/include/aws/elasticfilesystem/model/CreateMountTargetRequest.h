@@ -78,42 +78,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline CreateMountTargetRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline CreateMountTargetRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in. For file systems that use
+     * One Zone storage classes, use the subnet that is associated with the file
+     * system's Availability Zone.</p>
      */
     inline CreateMountTargetRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 

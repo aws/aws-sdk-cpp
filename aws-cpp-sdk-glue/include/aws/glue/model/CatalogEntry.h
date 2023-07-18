@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a table definition in the AWS Glue Data Catalog.</p><p><h3>See
+   * <p>Specifies a table definition in the Glue Data Catalog.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogEntry">AWS
    * API Reference</a></p>

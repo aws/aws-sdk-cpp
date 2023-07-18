@@ -151,25 +151,53 @@ namespace Model
     inline GetRecordsResult& WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
 
 
-    
+    /**
+     * <p>The list of the current shard's child shards, returned in the
+     * <code>GetRecords</code> API's response only when the end of the current shard is
+     * reached.</p>
+     */
     inline const Aws::Vector<ChildShard>& GetChildShards() const{ return m_childShards; }
 
-    
+    /**
+     * <p>The list of the current shard's child shards, returned in the
+     * <code>GetRecords</code> API's response only when the end of the current shard is
+     * reached.</p>
+     */
     inline void SetChildShards(const Aws::Vector<ChildShard>& value) { m_childShards = value; }
 
-    
+    /**
+     * <p>The list of the current shard's child shards, returned in the
+     * <code>GetRecords</code> API's response only when the end of the current shard is
+     * reached.</p>
+     */
     inline void SetChildShards(Aws::Vector<ChildShard>&& value) { m_childShards = std::move(value); }
 
-    
+    /**
+     * <p>The list of the current shard's child shards, returned in the
+     * <code>GetRecords</code> API's response only when the end of the current shard is
+     * reached.</p>
+     */
     inline GetRecordsResult& WithChildShards(const Aws::Vector<ChildShard>& value) { SetChildShards(value); return *this;}
 
-    
+    /**
+     * <p>The list of the current shard's child shards, returned in the
+     * <code>GetRecords</code> API's response only when the end of the current shard is
+     * reached.</p>
+     */
     inline GetRecordsResult& WithChildShards(Aws::Vector<ChildShard>&& value) { SetChildShards(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The list of the current shard's child shards, returned in the
+     * <code>GetRecords</code> API's response only when the end of the current shard is
+     * reached.</p>
+     */
     inline GetRecordsResult& AddChildShards(const ChildShard& value) { m_childShards.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The list of the current shard's child shards, returned in the
+     * <code>GetRecords</code> API's response only when the end of the current shard is
+     * reached.</p>
+     */
     inline GetRecordsResult& AddChildShards(ChildShard&& value) { m_childShards.push_back(std::move(value)); return *this; }
 
   private:

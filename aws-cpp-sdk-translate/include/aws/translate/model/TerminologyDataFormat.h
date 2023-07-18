@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CSV,
-    TMX
+    TMX,
+    TSV
   };
 
 namespace TerminologyDataFormatMapper

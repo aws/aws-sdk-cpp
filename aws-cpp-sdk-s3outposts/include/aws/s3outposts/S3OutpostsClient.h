@@ -13,6 +13,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3outposts/model/CreateEndpointResult.h>
 #include <aws/s3outposts/model/ListEndpointsResult.h>
+#include <aws/s3outposts/model/ListSharedEndpointsResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -56,14 +57,17 @@ namespace Model
         class CreateEndpointRequest;
         class DeleteEndpointRequest;
         class ListEndpointsRequest;
+        class ListSharedEndpointsRequest;
 
         typedef Aws::Utils::Outcome<CreateEndpointResult, S3OutpostsError> CreateEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3OutpostsError> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<ListEndpointsResult, S3OutpostsError> ListEndpointsOutcome;
+        typedef Aws::Utils::Outcome<ListSharedEndpointsResult, S3OutpostsError> ListSharedEndpointsOutcome;
 
         typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
+        typedef std::future<ListSharedEndpointsOutcome> ListSharedEndpointsOutcomeCallable;
 } // namespace Model
 
   class S3OutpostsClient;
@@ -71,6 +75,7 @@ namespace Model
     typedef std::function<void(const S3OutpostsClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const S3OutpostsClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const S3OutpostsClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
+    typedef std::function<void(const S3OutpostsClient*, const Model::ListSharedEndpointsRequest&, const Model::ListSharedEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedEndpointsResponseReceivedHandler;
 
   /**
    * <p>Amazon S3 on Outposts provides access to S3 on Outposts operations.</p>
@@ -103,12 +108,9 @@ namespace Model
 
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action creates an endpoint and associates it
-         * with the specified Outpost. </p> <p/> <p>Related actions include:</p> <ul> <li>
-         * <p> <a
+         * <p>Creates an endpoint and associates it with the specified Outpost.</p> 
+         * <p>It can take up to 5 minutes for this action to finish.</p>  <p/>
+         * <p>Related actions include:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
@@ -119,47 +121,19 @@ namespace Model
         virtual Model::CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest& request) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action creates an endpoint and associates it
-         * with the specified Outpost. </p> <p/> <p>Related actions include:</p> <ul> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action creates an endpoint and associates it
-         * with the specified Outpost. </p> <p/> <p>Related actions include:</p> <ul> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action deletes an endpoint. </p> <p/>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
+         * <p>Deletes an endpoint.</p>  <p>It can take up to 5 minutes for this
+         * action to finish.</p>  <p/> <p>Related actions include:</p> <ul> <li> <p>
+         * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
@@ -170,45 +144,18 @@ namespace Model
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action deletes an endpoint. </p> <p/>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action deletes an endpoint. </p> <p/>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action lists endpoints associated with the
-         * Outpost. </p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a
+         * <p>Lists endpoints associated with the specified Outpost. </p> <p>Related
+         * actions include:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
@@ -219,38 +166,37 @@ namespace Model
         virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action lists endpoints associated with the
-         * Outpost. </p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const Model::ListEndpointsRequest& request) const;
 
         /**
-         * <p>S3 on Outposts access points simplify managing data access at scale for
-         * shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to
-         * connect to Outposts buckets so that you can perform actions within your virtual
-         * private cloud (VPC). </p> <p>This action lists endpoints associated with the
-         * Outpost. </p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a
+         * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all endpoints associated with an Outpost that has been shared by Amazon
+         * Web Services Resource Access Manager (RAM).</p> <p>Related actions include:</p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">AWS
          * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual Model::ListSharedEndpointsOutcome ListSharedEndpoints(const Model::ListSharedEndpointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSharedEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSharedEndpointsOutcomeCallable ListSharedEndpointsCallable(const Model::ListSharedEndpointsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSharedEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSharedEndpointsAsync(const Model::ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
@@ -259,6 +205,7 @@ namespace Model
         void CreateEndpointAsyncHelper(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointsAsyncHelper(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSharedEndpointsAsyncHelper(const Model::ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -26,7 +26,8 @@ namespace Model
     TEXT,
     ACCOUNTING,
     CONTACT,
-    ROWLINK
+    ROWLINK,
+    ROWSET
   };
 
 namespace FormatMapper

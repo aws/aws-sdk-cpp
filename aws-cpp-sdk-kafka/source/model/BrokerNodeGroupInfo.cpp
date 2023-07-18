@@ -24,7 +24,8 @@ BrokerNodeGroupInfo::BrokerNodeGroupInfo() :
     m_clientSubnetsHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
-    m_storageInfoHasBeenSet(false)
+    m_storageInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ BrokerNodeGroupInfo::BrokerNodeGroupInfo(JsonView jsonValue) :
     m_clientSubnetsHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
-    m_storageInfoHasBeenSet(false)
+    m_storageInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +84,13 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
     m_storageInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectivityInfo"))
+  {
+    m_connectivityInfo = jsonValue.GetObject("connectivityInfo");
+
+    m_connectivityInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue BrokerNodeGroupInfo::Jsonize() const
   if(m_storageInfoHasBeenSet)
   {
    payload.WithObject("storageInfo", m_storageInfo.Jsonize());
+
+  }
+
+  if(m_connectivityInfoHasBeenSet)
+  {
+   payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
 
   }
 

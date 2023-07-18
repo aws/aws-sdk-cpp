@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary data of the moderators in a channel.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary of the details of a <code>ChannelModerator</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelModeratorSummary">AWS
    * API Reference</a></p>
    */

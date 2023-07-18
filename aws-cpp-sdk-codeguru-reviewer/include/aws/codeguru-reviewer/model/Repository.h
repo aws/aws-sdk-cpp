@@ -7,6 +7,7 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/CodeCommitRepository.h>
 #include <aws/codeguru-reviewer/model/ThirdPartySourceRepository.h>
+#include <aws/codeguru-reviewer/model/S3Repository.h>
 #include <utility>
 
 namespace Aws
@@ -25,10 +26,11 @@ namespace Model
 {
 
   /**
-   * <p> Information about an associated AWS CodeCommit repository or an associated
-   * repository that is managed by AWS CodeStar Connections (for example, Bitbucket).
-   * This <code>Repository</code> object is not used if your source code is in an
-   * associated GitHub repository. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about an associated Amazon Web Services CodeCommit repository or
+   * an associated repository that is managed by Amazon Web Services CodeStar
+   * Connections (for example, Bitbucket). This <code>Repository</code> object is not
+   * used if your source code is in an associated GitHub repository. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/Repository">AWS
    * API Reference</a></p>
    */
@@ -42,32 +44,32 @@ namespace Model
 
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline const CodeCommitRepository& GetCodeCommit() const{ return m_codeCommit; }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline bool CodeCommitHasBeenSet() const { return m_codeCommitHasBeenSet; }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline void SetCodeCommit(const CodeCommitRepository& value) { m_codeCommitHasBeenSet = true; m_codeCommit = value; }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline void SetCodeCommit(CodeCommitRepository&& value) { m_codeCommitHasBeenSet = true; m_codeCommit = std::move(value); }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline Repository& WithCodeCommit(const CodeCommitRepository& value) { SetCodeCommit(value); return *this;}
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline Repository& WithCodeCommit(CodeCommitRepository&& value) { SetCodeCommit(std::move(value)); return *this;}
 
@@ -133,6 +135,25 @@ namespace Model
      */
     inline Repository& WithGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { SetGitHubEnterpriseServer(std::move(value)); return *this;}
 
+
+    
+    inline const S3Repository& GetS3Bucket() const{ return m_s3Bucket; }
+
+    
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    
+    inline void SetS3Bucket(const S3Repository& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+
+    
+    inline void SetS3Bucket(S3Repository&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
+
+    
+    inline Repository& WithS3Bucket(const S3Repository& value) { SetS3Bucket(value); return *this;}
+
+    
+    inline Repository& WithS3Bucket(S3Repository&& value) { SetS3Bucket(std::move(value)); return *this;}
+
   private:
 
     CodeCommitRepository m_codeCommit;
@@ -143,6 +164,9 @@ namespace Model
 
     ThirdPartySourceRepository m_gitHubEnterpriseServer;
     bool m_gitHubEnterpriseServerHasBeenSet;
+
+    S3Repository m_s3Bucket;
+    bool m_s3BucketHasBeenSet;
   };
 
 } // namespace Model

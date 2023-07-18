@@ -33,42 +33,37 @@ namespace Model
 
 
     /**
-     * <p> A <code> <a
+     * <p> A <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-     * </code> object that contains information about the requested package version.
-     * </p>
+     * object that contains information about the requested package version. </p>
      */
     inline const PackageVersionDescription& GetPackageVersion() const{ return m_packageVersion; }
 
     /**
-     * <p> A <code> <a
+     * <p> A <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-     * </code> object that contains information about the requested package version.
-     * </p>
+     * object that contains information about the requested package version. </p>
      */
     inline void SetPackageVersion(const PackageVersionDescription& value) { m_packageVersion = value; }
 
     /**
-     * <p> A <code> <a
+     * <p> A <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-     * </code> object that contains information about the requested package version.
-     * </p>
+     * object that contains information about the requested package version. </p>
      */
     inline void SetPackageVersion(PackageVersionDescription&& value) { m_packageVersion = std::move(value); }
 
     /**
-     * <p> A <code> <a
+     * <p> A <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-     * </code> object that contains information about the requested package version.
-     * </p>
+     * object that contains information about the requested package version. </p>
      */
     inline DescribePackageVersionResult& WithPackageVersion(const PackageVersionDescription& value) { SetPackageVersion(value); return *this;}
 
     /**
-     * <p> A <code> <a
+     * <p> A <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-     * </code> object that contains information about the requested package version.
-     * </p>
+     * object that contains information about the requested package version. </p>
      */
     inline DescribePackageVersionResult& WithPackageVersion(PackageVersionDescription&& value) { SetPackageVersion(std::move(value)); return *this;}
 

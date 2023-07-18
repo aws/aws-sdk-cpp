@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    SUSPENDED
+    SUSPENDED,
+    PENDING_CLOSURE
   };
 
 namespace AccountStatusMapper

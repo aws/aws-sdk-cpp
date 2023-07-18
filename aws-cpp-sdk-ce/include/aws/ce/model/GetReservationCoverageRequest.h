@@ -11,6 +11,7 @@
 #include <aws/ce/model/Granularity.h>
 #include <aws/ce/model/Expression.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/SortDefinition.h>
 #include <aws/ce/model/GroupDefinition.h>
 #include <utility>
 
@@ -114,8 +115,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
@@ -123,8 +125,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
@@ -132,8 +135,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
@@ -141,8 +145,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
@@ -150,8 +155,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
@@ -159,8 +165,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
@@ -168,8 +175,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
@@ -177,75 +185,76 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline GetReservationCoverageRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline GetReservationCoverageRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
@@ -418,60 +427,184 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationCoverageRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationCoverageRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationCoverageRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p> <code>OnDemandCost</code> </p>
+     * </li> <li> <p> <code>CoverageHoursPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandHours</code> </p> </li> <li> <p> <code>ReservedHours</code> </p>
+     * </li> <li> <p> <code>TotalRunningHours</code> </p> </li> <li> <p>
+     * <code>CoverageNormalizedUnitsPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>ReservedNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>TotalRunningNormalizedUnits</code> </p> </li> <li> <p> <code>Time</code>
+     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     */
+    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p> <code>OnDemandCost</code> </p>
+     * </li> <li> <p> <code>CoverageHoursPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandHours</code> </p> </li> <li> <p> <code>ReservedHours</code> </p>
+     * </li> <li> <p> <code>TotalRunningHours</code> </p> </li> <li> <p>
+     * <code>CoverageNormalizedUnitsPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>ReservedNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>TotalRunningNormalizedUnits</code> </p> </li> <li> <p> <code>Time</code>
+     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p> <code>OnDemandCost</code> </p>
+     * </li> <li> <p> <code>CoverageHoursPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandHours</code> </p> </li> <li> <p> <code>ReservedHours</code> </p>
+     * </li> <li> <p> <code>TotalRunningHours</code> </p> </li> <li> <p>
+     * <code>CoverageNormalizedUnitsPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>ReservedNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>TotalRunningNormalizedUnits</code> </p> </li> <li> <p> <code>Time</code>
+     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p> <code>OnDemandCost</code> </p>
+     * </li> <li> <p> <code>CoverageHoursPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandHours</code> </p> </li> <li> <p> <code>ReservedHours</code> </p>
+     * </li> <li> <p> <code>TotalRunningHours</code> </p> </li> <li> <p>
+     * <code>CoverageNormalizedUnitsPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>ReservedNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>TotalRunningNormalizedUnits</code> </p> </li> <li> <p> <code>Time</code>
+     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p> <code>OnDemandCost</code> </p>
+     * </li> <li> <p> <code>CoverageHoursPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandHours</code> </p> </li> <li> <p> <code>ReservedHours</code> </p>
+     * </li> <li> <p> <code>TotalRunningHours</code> </p> </li> <li> <p>
+     * <code>CoverageNormalizedUnitsPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>ReservedNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>TotalRunningNormalizedUnits</code> </p> </li> <li> <p> <code>Time</code>
+     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     */
+    inline GetReservationCoverageRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p> <code>OnDemandCost</code> </p>
+     * </li> <li> <p> <code>CoverageHoursPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandHours</code> </p> </li> <li> <p> <code>ReservedHours</code> </p>
+     * </li> <li> <p> <code>TotalRunningHours</code> </p> </li> <li> <p>
+     * <code>CoverageNormalizedUnitsPercentage</code> </p> </li> <li> <p>
+     * <code>OnDemandNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>ReservedNormalizedUnits</code> </p> </li> <li> <p>
+     * <code>TotalRunningNormalizedUnits</code> </p> </li> <li> <p> <code>Time</code>
+     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     */
+    inline GetReservationCoverageRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline GetReservationCoverageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
@@ -492,6 +625,12 @@ namespace Model
 
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
+    SortDefinition m_sortBy;
+    bool m_sortByHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

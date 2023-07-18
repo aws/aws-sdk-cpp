@@ -14,11 +14,13 @@ public class EnumModel {
     private String name;
     private List<EnumMemberModel> members;
 
-    public EnumModel(String enumName, Collection<String> enumMembers) {
+    public EnumModel(String serviceNamespace, String enumName, Collection<String> enumMembers) {
         name = enumName;
         members = new ArrayList<>(enumMembers.size());
         for (String enumMember : enumMembers) {
-           members.add(new EnumMemberModel(PlatformAndKeywordSanitizer.fixEnumValue(enumMember), enumMember));
+            String fixedEnumValue = PlatformAndKeywordSanitizer.fixEnumValue(enumMember);
+            boolean isPredefined = PlatformAndKeywordSanitizer.fixPredefinedSymbols(serviceNamespace, fixedEnumValue);
+            members.add(new EnumMemberModel(fixedEnumValue, enumMember, isPredefined));
         }
     }
 

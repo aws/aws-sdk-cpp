@@ -37,6 +37,7 @@
 #include <aws/autoscaling/model/DeletePolicyRequest.h>
 #include <aws/autoscaling/model/DeleteScheduledActionRequest.h>
 #include <aws/autoscaling/model/DeleteTagsRequest.h>
+#include <aws/autoscaling/model/DeleteWarmPoolRequest.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
@@ -56,6 +57,7 @@
 #include <aws/autoscaling/model/DescribeScheduledActionsRequest.h>
 #include <aws/autoscaling/model/DescribeTagsRequest.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesRequest.h>
+#include <aws/autoscaling/model/DescribeWarmPoolRequest.h>
 #include <aws/autoscaling/model/DetachInstancesRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancersRequest.h>
@@ -64,10 +66,12 @@
 #include <aws/autoscaling/model/EnterStandbyRequest.h>
 #include <aws/autoscaling/model/ExecutePolicyRequest.h>
 #include <aws/autoscaling/model/ExitStandbyRequest.h>
+#include <aws/autoscaling/model/GetPredictiveScalingForecastRequest.h>
 #include <aws/autoscaling/model/PutLifecycleHookRequest.h>
 #include <aws/autoscaling/model/PutNotificationConfigurationRequest.h>
 #include <aws/autoscaling/model/PutScalingPolicyRequest.h>
 #include <aws/autoscaling/model/PutScheduledUpdateGroupActionRequest.h>
+#include <aws/autoscaling/model/PutWarmPoolRequest.h>
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatRequest.h>
 #include <aws/autoscaling/model/ResumeProcessesRequest.h>
 #include <aws/autoscaling/model/SetDesiredCapacityRequest.h>
@@ -126,7 +130,7 @@ AutoScalingClient::~AutoScalingClient()
 {
 }
 
-void AutoScalingClient::init(const ClientConfiguration& config)
+void AutoScalingClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Auto Scaling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -165,9 +169,6 @@ Aws::String AutoScalingClient::ConvertRequestToPresignedUrl(const AmazonSerializ
 AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AttachInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -192,9 +193,6 @@ void AutoScalingClient::AttachInstancesAsyncHelper(const AttachInstancesRequest&
 AttachLoadBalancerTargetGroupsOutcome AutoScalingClient::AttachLoadBalancerTargetGroups(const AttachLoadBalancerTargetGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AttachLoadBalancerTargetGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -219,9 +217,6 @@ void AutoScalingClient::AttachLoadBalancerTargetGroupsAsyncHelper(const AttachLo
 AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLoadBalancersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AttachLoadBalancersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -246,9 +241,6 @@ void AutoScalingClient::AttachLoadBalancersAsyncHelper(const AttachLoadBalancers
 BatchDeleteScheduledActionOutcome AutoScalingClient::BatchDeleteScheduledAction(const BatchDeleteScheduledActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeleteScheduledActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -273,9 +265,6 @@ void AutoScalingClient::BatchDeleteScheduledActionAsyncHelper(const BatchDeleteS
 BatchPutScheduledUpdateGroupActionOutcome AutoScalingClient::BatchPutScheduledUpdateGroupAction(const BatchPutScheduledUpdateGroupActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchPutScheduledUpdateGroupActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -300,9 +289,6 @@ void AutoScalingClient::BatchPutScheduledUpdateGroupActionAsyncHelper(const Batc
 CancelInstanceRefreshOutcome AutoScalingClient::CancelInstanceRefresh(const CancelInstanceRefreshRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CancelInstanceRefreshOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -327,9 +313,6 @@ void AutoScalingClient::CancelInstanceRefreshAsyncHelper(const CancelInstanceRef
 CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const CompleteLifecycleActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CompleteLifecycleActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -354,9 +337,6 @@ void AutoScalingClient::CompleteLifecycleActionAsyncHelper(const CompleteLifecyc
 CreateAutoScalingGroupOutcome AutoScalingClient::CreateAutoScalingGroup(const CreateAutoScalingGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateAutoScalingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -381,9 +361,6 @@ void AutoScalingClient::CreateAutoScalingGroupAsyncHelper(const CreateAutoScalin
 CreateLaunchConfigurationOutcome AutoScalingClient::CreateLaunchConfiguration(const CreateLaunchConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLaunchConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -408,9 +385,6 @@ void AutoScalingClient::CreateLaunchConfigurationAsyncHelper(const CreateLaunchC
 CreateOrUpdateTagsOutcome AutoScalingClient::CreateOrUpdateTags(const CreateOrUpdateTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateOrUpdateTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -435,9 +409,6 @@ void AutoScalingClient::CreateOrUpdateTagsAsyncHelper(const CreateOrUpdateTagsRe
 DeleteAutoScalingGroupOutcome AutoScalingClient::DeleteAutoScalingGroup(const DeleteAutoScalingGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAutoScalingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -462,9 +433,6 @@ void AutoScalingClient::DeleteAutoScalingGroupAsyncHelper(const DeleteAutoScalin
 DeleteLaunchConfigurationOutcome AutoScalingClient::DeleteLaunchConfiguration(const DeleteLaunchConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteLaunchConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -489,9 +457,6 @@ void AutoScalingClient::DeleteLaunchConfigurationAsyncHelper(const DeleteLaunchC
 DeleteLifecycleHookOutcome AutoScalingClient::DeleteLifecycleHook(const DeleteLifecycleHookRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteLifecycleHookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -516,9 +481,6 @@ void AutoScalingClient::DeleteLifecycleHookAsyncHelper(const DeleteLifecycleHook
 DeleteNotificationConfigurationOutcome AutoScalingClient::DeleteNotificationConfiguration(const DeleteNotificationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -543,9 +505,6 @@ void AutoScalingClient::DeleteNotificationConfigurationAsyncHelper(const DeleteN
 DeletePolicyOutcome AutoScalingClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeletePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -570,9 +529,6 @@ void AutoScalingClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& reque
 DeleteScheduledActionOutcome AutoScalingClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteScheduledActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -597,9 +553,6 @@ void AutoScalingClient::DeleteScheduledActionAsyncHelper(const DeleteScheduledAc
 DeleteTagsOutcome AutoScalingClient::DeleteTags(const DeleteTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -621,12 +574,33 @@ void AutoScalingClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, 
   handler(this, request, DeleteTags(request), context);
 }
 
+DeleteWarmPoolOutcome AutoScalingClient::DeleteWarmPool(const DeleteWarmPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteWarmPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteWarmPoolOutcomeCallable AutoScalingClient::DeleteWarmPoolCallable(const DeleteWarmPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWarmPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWarmPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::DeleteWarmPoolAsync(const DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWarmPoolAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DeleteWarmPoolAsyncHelper(const DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWarmPool(request), context);
+}
+
 DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAccountLimitsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -651,9 +625,6 @@ void AutoScalingClient::DescribeAccountLimitsAsyncHelper(const DescribeAccountLi
 DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const DescribeAdjustmentTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAdjustmentTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -678,9 +649,6 @@ void AutoScalingClient::DescribeAdjustmentTypesAsyncHelper(const DescribeAdjustm
 DescribeAutoScalingGroupsOutcome AutoScalingClient::DescribeAutoScalingGroups(const DescribeAutoScalingGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAutoScalingGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -705,9 +673,6 @@ void AutoScalingClient::DescribeAutoScalingGroupsAsyncHelper(const DescribeAutoS
 DescribeAutoScalingInstancesOutcome AutoScalingClient::DescribeAutoScalingInstances(const DescribeAutoScalingInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAutoScalingInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -732,9 +697,6 @@ void AutoScalingClient::DescribeAutoScalingInstancesAsyncHelper(const DescribeAu
 DescribeAutoScalingNotificationTypesOutcome AutoScalingClient::DescribeAutoScalingNotificationTypes(const DescribeAutoScalingNotificationTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAutoScalingNotificationTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -759,9 +721,6 @@ void AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper(const De
 DescribeInstanceRefreshesOutcome AutoScalingClient::DescribeInstanceRefreshes(const DescribeInstanceRefreshesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeInstanceRefreshesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -786,9 +745,6 @@ void AutoScalingClient::DescribeInstanceRefreshesAsyncHelper(const DescribeInsta
 DescribeLaunchConfigurationsOutcome AutoScalingClient::DescribeLaunchConfigurations(const DescribeLaunchConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLaunchConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -813,9 +769,6 @@ void AutoScalingClient::DescribeLaunchConfigurationsAsyncHelper(const DescribeLa
 DescribeLifecycleHookTypesOutcome AutoScalingClient::DescribeLifecycleHookTypes(const DescribeLifecycleHookTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLifecycleHookTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -840,9 +793,6 @@ void AutoScalingClient::DescribeLifecycleHookTypesAsyncHelper(const DescribeLife
 DescribeLifecycleHooksOutcome AutoScalingClient::DescribeLifecycleHooks(const DescribeLifecycleHooksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLifecycleHooksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -867,9 +817,6 @@ void AutoScalingClient::DescribeLifecycleHooksAsyncHelper(const DescribeLifecycl
 DescribeLoadBalancerTargetGroupsOutcome AutoScalingClient::DescribeLoadBalancerTargetGroups(const DescribeLoadBalancerTargetGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLoadBalancerTargetGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -894,9 +841,6 @@ void AutoScalingClient::DescribeLoadBalancerTargetGroupsAsyncHelper(const Descri
 DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLoadBalancersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -921,9 +865,6 @@ void AutoScalingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalan
 DescribeMetricCollectionTypesOutcome AutoScalingClient::DescribeMetricCollectionTypes(const DescribeMetricCollectionTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeMetricCollectionTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -948,9 +889,6 @@ void AutoScalingClient::DescribeMetricCollectionTypesAsyncHelper(const DescribeM
 DescribeNotificationConfigurationsOutcome AutoScalingClient::DescribeNotificationConfigurations(const DescribeNotificationConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeNotificationConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -975,9 +913,6 @@ void AutoScalingClient::DescribeNotificationConfigurationsAsyncHelper(const Desc
 DescribePoliciesOutcome AutoScalingClient::DescribePolicies(const DescribePoliciesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribePoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1002,9 +937,6 @@ void AutoScalingClient::DescribePoliciesAsyncHelper(const DescribePoliciesReques
 DescribeScalingActivitiesOutcome AutoScalingClient::DescribeScalingActivities(const DescribeScalingActivitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeScalingActivitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1029,9 +961,6 @@ void AutoScalingClient::DescribeScalingActivitiesAsyncHelper(const DescribeScali
 DescribeScalingProcessTypesOutcome AutoScalingClient::DescribeScalingProcessTypes(const DescribeScalingProcessTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeScalingProcessTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1056,9 +985,6 @@ void AutoScalingClient::DescribeScalingProcessTypesAsyncHelper(const DescribeSca
 DescribeScheduledActionsOutcome AutoScalingClient::DescribeScheduledActions(const DescribeScheduledActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeScheduledActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1083,9 +1009,6 @@ void AutoScalingClient::DescribeScheduledActionsAsyncHelper(const DescribeSchedu
 DescribeTagsOutcome AutoScalingClient::DescribeTags(const DescribeTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1110,9 +1033,6 @@ void AutoScalingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& reque
 DescribeTerminationPolicyTypesOutcome AutoScalingClient::DescribeTerminationPolicyTypes(const DescribeTerminationPolicyTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTerminationPolicyTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1134,12 +1054,33 @@ void AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper(const Describe
   handler(this, request, DescribeTerminationPolicyTypes(request), context);
 }
 
+DescribeWarmPoolOutcome AutoScalingClient::DescribeWarmPool(const DescribeWarmPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeWarmPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeWarmPoolOutcomeCallable AutoScalingClient::DescribeWarmPoolCallable(const DescribeWarmPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWarmPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWarmPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::DescribeWarmPoolAsync(const DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWarmPoolAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DescribeWarmPoolAsyncHelper(const DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWarmPool(request), context);
+}
+
 DetachInstancesOutcome AutoScalingClient::DetachInstances(const DetachInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DetachInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1164,9 +1105,6 @@ void AutoScalingClient::DetachInstancesAsyncHelper(const DetachInstancesRequest&
 DetachLoadBalancerTargetGroupsOutcome AutoScalingClient::DetachLoadBalancerTargetGroups(const DetachLoadBalancerTargetGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DetachLoadBalancerTargetGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1191,9 +1129,6 @@ void AutoScalingClient::DetachLoadBalancerTargetGroupsAsyncHelper(const DetachLo
 DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLoadBalancersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DetachLoadBalancersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1218,9 +1153,6 @@ void AutoScalingClient::DetachLoadBalancersAsyncHelper(const DetachLoadBalancers
 DisableMetricsCollectionOutcome AutoScalingClient::DisableMetricsCollection(const DisableMetricsCollectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisableMetricsCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1245,9 +1177,6 @@ void AutoScalingClient::DisableMetricsCollectionAsyncHelper(const DisableMetrics
 EnableMetricsCollectionOutcome AutoScalingClient::EnableMetricsCollection(const EnableMetricsCollectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return EnableMetricsCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1272,9 +1201,6 @@ void AutoScalingClient::EnableMetricsCollectionAsyncHelper(const EnableMetricsCo
 EnterStandbyOutcome AutoScalingClient::EnterStandby(const EnterStandbyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return EnterStandbyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1299,9 +1225,6 @@ void AutoScalingClient::EnterStandbyAsyncHelper(const EnterStandbyRequest& reque
 ExecutePolicyOutcome AutoScalingClient::ExecutePolicy(const ExecutePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ExecutePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1326,9 +1249,6 @@ void AutoScalingClient::ExecutePolicyAsyncHelper(const ExecutePolicyRequest& req
 ExitStandbyOutcome AutoScalingClient::ExitStandby(const ExitStandbyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ExitStandbyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1350,12 +1270,33 @@ void AutoScalingClient::ExitStandbyAsyncHelper(const ExitStandbyRequest& request
   handler(this, request, ExitStandby(request), context);
 }
 
+GetPredictiveScalingForecastOutcome AutoScalingClient::GetPredictiveScalingForecast(const GetPredictiveScalingForecastRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetPredictiveScalingForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetPredictiveScalingForecastOutcomeCallable AutoScalingClient::GetPredictiveScalingForecastCallable(const GetPredictiveScalingForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPredictiveScalingForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPredictiveScalingForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::GetPredictiveScalingForecastAsync(const GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPredictiveScalingForecastAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::GetPredictiveScalingForecastAsyncHelper(const GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPredictiveScalingForecast(request), context);
+}
+
 PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHookRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutLifecycleHookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1380,9 +1321,6 @@ void AutoScalingClient::PutLifecycleHookAsyncHelper(const PutLifecycleHookReques
 PutNotificationConfigurationOutcome AutoScalingClient::PutNotificationConfiguration(const PutNotificationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1407,9 +1345,6 @@ void AutoScalingClient::PutNotificationConfigurationAsyncHelper(const PutNotific
 PutScalingPolicyOutcome AutoScalingClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1434,9 +1369,6 @@ void AutoScalingClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyReques
 PutScheduledUpdateGroupActionOutcome AutoScalingClient::PutScheduledUpdateGroupAction(const PutScheduledUpdateGroupActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutScheduledUpdateGroupActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1458,12 +1390,33 @@ void AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper(const PutSchedu
   handler(this, request, PutScheduledUpdateGroupAction(request), context);
 }
 
+PutWarmPoolOutcome AutoScalingClient::PutWarmPool(const PutWarmPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutWarmPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PutWarmPoolOutcomeCallable AutoScalingClient::PutWarmPoolCallable(const PutWarmPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutWarmPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutWarmPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::PutWarmPoolAsync(const PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutWarmPoolAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::PutWarmPoolAsyncHelper(const PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutWarmPool(request), context);
+}
+
 RecordLifecycleActionHeartbeatOutcome AutoScalingClient::RecordLifecycleActionHeartbeat(const RecordLifecycleActionHeartbeatRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RecordLifecycleActionHeartbeatOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1488,9 +1441,6 @@ void AutoScalingClient::RecordLifecycleActionHeartbeatAsyncHelper(const RecordLi
 ResumeProcessesOutcome AutoScalingClient::ResumeProcesses(const ResumeProcessesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ResumeProcessesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1515,9 +1465,6 @@ void AutoScalingClient::ResumeProcessesAsyncHelper(const ResumeProcessesRequest&
 SetDesiredCapacityOutcome AutoScalingClient::SetDesiredCapacity(const SetDesiredCapacityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SetDesiredCapacityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1542,9 +1489,6 @@ void AutoScalingClient::SetDesiredCapacityAsyncHelper(const SetDesiredCapacityRe
 SetInstanceHealthOutcome AutoScalingClient::SetInstanceHealth(const SetInstanceHealthRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SetInstanceHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1569,9 +1513,6 @@ void AutoScalingClient::SetInstanceHealthAsyncHelper(const SetInstanceHealthRequ
 SetInstanceProtectionOutcome AutoScalingClient::SetInstanceProtection(const SetInstanceProtectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SetInstanceProtectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1596,9 +1537,6 @@ void AutoScalingClient::SetInstanceProtectionAsyncHelper(const SetInstanceProtec
 StartInstanceRefreshOutcome AutoScalingClient::StartInstanceRefresh(const StartInstanceRefreshRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartInstanceRefreshOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1623,9 +1561,6 @@ void AutoScalingClient::StartInstanceRefreshAsyncHelper(const StartInstanceRefre
 SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcessesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SuspendProcessesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1650,9 +1585,6 @@ void AutoScalingClient::SuspendProcessesAsyncHelper(const SuspendProcessesReques
 TerminateInstanceInAutoScalingGroupOutcome AutoScalingClient::TerminateInstanceInAutoScalingGroup(const TerminateInstanceInAutoScalingGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TerminateInstanceInAutoScalingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1677,9 +1609,6 @@ void AutoScalingClient::TerminateInstanceInAutoScalingGroupAsyncHelper(const Ter
 UpdateAutoScalingGroupOutcome AutoScalingClient::UpdateAutoScalingGroup(const UpdateAutoScalingGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateAutoScalingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1700,6 +1629,4 @@ void AutoScalingClient::UpdateAutoScalingGroupAsyncHelper(const UpdateAutoScalin
 {
   handler(this, request, UpdateAutoScalingGroup(request), context);
 }
-
-
 

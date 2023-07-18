@@ -32,7 +32,8 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_disassociateAdditionalCodeRepositories(false),
     m_disassociateAdditionalCodeRepositoriesHasBeenSet(false),
     m_rootAccess(RootAccess::NOT_SET),
-    m_rootAccessHasBeenSet(false)
+    m_rootAccessHasBeenSet(false),
+    m_instanceMetadataServiceConfigurationHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,12 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const
   if(m_rootAccessHasBeenSet)
   {
    payload.WithString("RootAccess", RootAccessMapper::GetNameForRootAccess(m_rootAccess));
+  }
+
+  if(m_instanceMetadataServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("InstanceMetadataServiceConfiguration", m_instanceMetadataServiceConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

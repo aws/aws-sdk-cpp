@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>The result that is associated with a time period.</p><p><h3>See Also:</h3>  
+   * <p>The result that's associated with a time period.</p><p><h3>See Also:</h3>  
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ResultByTime">AWS
    * API Reference</a></p>
    */
@@ -176,22 +176,22 @@ namespace Model
 
 
     /**
-     * <p>Whether the result is estimated.</p>
+     * <p>Determines whether the result is estimated.</p>
      */
     inline bool GetEstimated() const{ return m_estimated; }
 
     /**
-     * <p>Whether the result is estimated.</p>
+     * <p>Determines whether the result is estimated.</p>
      */
     inline bool EstimatedHasBeenSet() const { return m_estimatedHasBeenSet; }
 
     /**
-     * <p>Whether the result is estimated.</p>
+     * <p>Determines whether the result is estimated.</p>
      */
     inline void SetEstimated(bool value) { m_estimatedHasBeenSet = true; m_estimated = value; }
 
     /**
-     * <p>Whether the result is estimated.</p>
+     * <p>Determines whether the result is estimated.</p>
      */
     inline ResultByTime& WithEstimated(bool value) { SetEstimated(value); return *this;}
 

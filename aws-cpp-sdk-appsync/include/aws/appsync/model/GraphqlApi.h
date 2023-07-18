@@ -12,6 +12,7 @@
 #include <aws/appsync/model/OpenIDConnectConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appsync/model/LambdaAuthorizerConfig.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -251,42 +252,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline GraphqlApi& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline GraphqlApi& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN.</p>
+     * <p>The Amazon Resource Name (ARN).</p>
      */
     inline GraphqlApi& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -473,77 +474,108 @@ namespace Model
 
 
     /**
-     * <p>A flag representing whether X-Ray tracing is enabled for this
+     * <p>A flag indicating whether to use X-Ray tracing for this
      * <code>GraphqlApi</code>.</p>
      */
     inline bool GetXrayEnabled() const{ return m_xrayEnabled; }
 
     /**
-     * <p>A flag representing whether X-Ray tracing is enabled for this
+     * <p>A flag indicating whether to use X-Ray tracing for this
      * <code>GraphqlApi</code>.</p>
      */
     inline bool XrayEnabledHasBeenSet() const { return m_xrayEnabledHasBeenSet; }
 
     /**
-     * <p>A flag representing whether X-Ray tracing is enabled for this
+     * <p>A flag indicating whether to use X-Ray tracing for this
      * <code>GraphqlApi</code>.</p>
      */
     inline void SetXrayEnabled(bool value) { m_xrayEnabledHasBeenSet = true; m_xrayEnabled = value; }
 
     /**
-     * <p>A flag representing whether X-Ray tracing is enabled for this
+     * <p>A flag indicating whether to use X-Ray tracing for this
      * <code>GraphqlApi</code>.</p>
      */
     inline GraphqlApi& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
 
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline const Aws::String& GetWafWebAclArn() const{ return m_wafWebAclArn; }
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline bool WafWebAclArnHasBeenSet() const { return m_wafWebAclArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline void SetWafWebAclArn(const Aws::String& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = value; }
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline void SetWafWebAclArn(Aws::String&& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline void SetWafWebAclArn(const char* value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline GraphqlApi& WithWafWebAclArn(const Aws::String& value) { SetWafWebAclArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline GraphqlApi& WithWafWebAclArn(Aws::String&& value) { SetWafWebAclArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <p>The ARN of the WAF access control list (ACL) associated with this
      * <code>GraphqlApi</code>, if one exists.</p>
      */
     inline GraphqlApi& WithWafWebAclArn(const char* value) { SetWafWebAclArn(value); return *this;}
+
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline void SetLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline void SetLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline GraphqlApi& WithLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { SetLambdaAuthorizerConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for Lambda function authorization.</p>
+     */
+    inline GraphqlApi& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 
   private:
 
@@ -582,6 +614,9 @@ namespace Model
 
     Aws::String m_wafWebAclArn;
     bool m_wafWebAclArnHasBeenSet;
+
+    LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
+    bool m_lambdaAuthorizerConfigHasBeenSet;
   };
 
 } // namespace Model

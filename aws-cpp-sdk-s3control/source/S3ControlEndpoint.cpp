@@ -26,12 +26,20 @@ namespace S3ControlEndpoint
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
   static const int FIPS_US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1-fips");
 
-  Aws::String ForOutpostsArn(const S3ControlARN& arn, const Aws::String& regionNameOverride)
+  Aws::String ForOutpostsArn(const S3ControlARN& arn, const Aws::String& regionNameOverride, bool useDualStack, const Aws::String& endpointOverride)
   {
+    AWS_UNREFERENCED_PARAM(useDualStack);
+    assert(!useDualStack);
+    Aws::StringStream ss;
+
+    if (!endpointOverride.empty())
+    {
+      return endpointOverride;
+    }
+
     const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
     auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
-    Aws::StringStream ss;
     ss << "s3-outposts." << region << ".amazonaws.com";
 
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)

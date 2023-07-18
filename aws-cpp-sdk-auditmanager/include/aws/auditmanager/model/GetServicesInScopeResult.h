@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p> The metadata associated with the aAWS service. </p>
+     * <p> The metadata that's associated with the Amazon Web Service. </p>
      */
     inline const Aws::Vector<ServiceMetadata>& GetServiceMetadata() const{ return m_serviceMetadata; }
 
     /**
-     * <p> The metadata associated with the aAWS service. </p>
+     * <p> The metadata that's associated with the Amazon Web Service. </p>
      */
     inline void SetServiceMetadata(const Aws::Vector<ServiceMetadata>& value) { m_serviceMetadata = value; }
 
     /**
-     * <p> The metadata associated with the aAWS service. </p>
+     * <p> The metadata that's associated with the Amazon Web Service. </p>
      */
     inline void SetServiceMetadata(Aws::Vector<ServiceMetadata>&& value) { m_serviceMetadata = std::move(value); }
 
     /**
-     * <p> The metadata associated with the aAWS service. </p>
+     * <p> The metadata that's associated with the Amazon Web Service. </p>
      */
     inline GetServicesInScopeResult& WithServiceMetadata(const Aws::Vector<ServiceMetadata>& value) { SetServiceMetadata(value); return *this;}
 
     /**
-     * <p> The metadata associated with the aAWS service. </p>
+     * <p> The metadata that's associated with the Amazon Web Service. </p>
      */
     inline GetServicesInScopeResult& WithServiceMetadata(Aws::Vector<ServiceMetadata>&& value) { SetServiceMetadata(std::move(value)); return *this;}
 
     /**
-     * <p> The metadata associated with the aAWS service. </p>
+     * <p> The metadata that's associated with the Amazon Web Service. </p>
      */
     inline GetServicesInScopeResult& AddServiceMetadata(const ServiceMetadata& value) { m_serviceMetadata.push_back(value); return *this; }
 
     /**
-     * <p> The metadata associated with the aAWS service. </p>
+     * <p> The metadata that's associated with the Amazon Web Service. </p>
      */
     inline GetServicesInScopeResult& AddServiceMetadata(ServiceMetadata&& value) { m_serviceMetadata.push_back(std::move(value)); return *this; }
 

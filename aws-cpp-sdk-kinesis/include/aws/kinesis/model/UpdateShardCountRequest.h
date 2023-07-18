@@ -81,10 +81,10 @@ namespace Model
      * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
      * than double your current shard count for a stream.</p> </li> <li> <p>Set this
      * value below half your current shard count for a stream.</p> </li> <li> <p>Set
-     * this value to more than 500 shards in a stream (the default limit for shard
-     * count per stream is 500 per account per region), unless you request a limit
-     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
-     * you set this value to less than 500 shards.</p> </li> </ul>
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline int GetTargetShardCount() const{ return m_targetShardCount; }
 
@@ -93,10 +93,10 @@ namespace Model
      * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
      * than double your current shard count for a stream.</p> </li> <li> <p>Set this
      * value below half your current shard count for a stream.</p> </li> <li> <p>Set
-     * this value to more than 500 shards in a stream (the default limit for shard
-     * count per stream is 500 per account per region), unless you request a limit
-     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
-     * you set this value to less than 500 shards.</p> </li> </ul>
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline bool TargetShardCountHasBeenSet() const { return m_targetShardCountHasBeenSet; }
 
@@ -105,10 +105,10 @@ namespace Model
      * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
      * than double your current shard count for a stream.</p> </li> <li> <p>Set this
      * value below half your current shard count for a stream.</p> </li> <li> <p>Set
-     * this value to more than 500 shards in a stream (the default limit for shard
-     * count per stream is 500 per account per region), unless you request a limit
-     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
-     * you set this value to less than 500 shards.</p> </li> </ul>
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline void SetTargetShardCount(int value) { m_targetShardCountHasBeenSet = true; m_targetShardCount = value; }
 
@@ -117,10 +117,10 @@ namespace Model
      * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
      * than double your current shard count for a stream.</p> </li> <li> <p>Set this
      * value below half your current shard count for a stream.</p> </li> <li> <p>Set
-     * this value to more than 500 shards in a stream (the default limit for shard
-     * count per stream is 500 per account per region), unless you request a limit
-     * increase.</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
-     * you set this value to less than 500 shards.</p> </li> </ul>
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline UpdateShardCountRequest& WithTargetShardCount(int value) { SetTargetShardCount(value); return *this;}
 

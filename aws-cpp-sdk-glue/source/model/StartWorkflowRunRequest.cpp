@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartWorkflowRunRequest::StartWorkflowRunRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_runPropertiesHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,17 @@ Aws::String StartWorkflowRunRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_runPropertiesHasBeenSet)
+  {
+   JsonValue runPropertiesJsonMap;
+   for(auto& runPropertiesItem : m_runProperties)
+   {
+     runPropertiesJsonMap.WithString(runPropertiesItem.first, runPropertiesItem.second);
+   }
+   payload.WithObject("RunProperties", std::move(runPropertiesJsonMap));
 
   }
 

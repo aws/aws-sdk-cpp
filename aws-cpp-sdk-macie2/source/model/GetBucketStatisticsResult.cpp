@@ -58,6 +58,12 @@ GetBucketStatisticsResult& GetBucketStatisticsResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("bucketCountByObjectEncryptionRequirement"))
+  {
+    m_bucketCountByObjectEncryptionRequirement = jsonValue.GetObject("bucketCountByObjectEncryptionRequirement");
+
+  }
+
   if(jsonValue.ValueExists("bucketCountBySharedAccessType"))
   {
     m_bucketCountBySharedAccessType = jsonValue.GetObject("bucketCountBySharedAccessType");

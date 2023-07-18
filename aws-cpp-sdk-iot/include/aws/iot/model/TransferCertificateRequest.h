@@ -92,42 +92,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline const Aws::String& GetTargetAwsAccount() const{ return m_targetAwsAccount; }
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline bool TargetAwsAccountHasBeenSet() const { return m_targetAwsAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline void SetTargetAwsAccount(const Aws::String& value) { m_targetAwsAccountHasBeenSet = true; m_targetAwsAccount = value; }
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline void SetTargetAwsAccount(Aws::String&& value) { m_targetAwsAccountHasBeenSet = true; m_targetAwsAccount = std::move(value); }
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline void SetTargetAwsAccount(const char* value) { m_targetAwsAccountHasBeenSet = true; m_targetAwsAccount.assign(value); }
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline TransferCertificateRequest& WithTargetAwsAccount(const Aws::String& value) { SetTargetAwsAccount(value); return *this;}
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline TransferCertificateRequest& WithTargetAwsAccount(Aws::String&& value) { SetTargetAwsAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account.</p>
+     * <p>The Amazon Web Services account.</p>
      */
     inline TransferCertificateRequest& WithTargetAwsAccount(const char* value) { SetTargetAwsAccount(value); return *this;}
 

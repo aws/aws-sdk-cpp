@@ -202,7 +202,7 @@ namespace Model
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -211,21 +211,20 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -234,21 +233,20 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -257,21 +255,20 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -280,21 +277,20 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -303,21 +299,20 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -326,21 +321,20 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline CreateProjectRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -349,21 +343,20 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline CreateProjectRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
      * <p>A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
      * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
@@ -372,14 +365,13 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul> <p>If <code>sourceVersion</code> is
-     * specified at the build level, then that version takes precedence over this
-     * <code>sourceVersion</code> (at the project level). </p> <p>For more information,
-     * see <a
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul> <p>If <code>sourceVersion</code> is specified at the build
+     * level, then that version takes precedence over this <code>sourceVersion</code>
+     * (at the project level). </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline CreateProjectRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 
@@ -590,87 +582,79 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline CreateProjectRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline CreateProjectRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS
-     * account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline CreateProjectRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-     * before it times out any build that has not been marked as completed. The default
-     * is 60 minutes.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * it times out any build that has not been marked as completed. The default is 60
+     * minutes.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-     * before it times out any build that has not been marked as completed. The default
-     * is 60 minutes.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * it times out any build that has not been marked as completed. The default is 60
+     * minutes.</p>
      */
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-     * before it times out any build that has not been marked as completed. The default
-     * is 60 minutes.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * it times out any build that has not been marked as completed. The default is 60
+     * minutes.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-     * before it times out any build that has not been marked as completed. The default
-     * is 60 minutes.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * it times out any build that has not been marked as completed. The default is 60
+     * minutes.</p>
      */
     inline CreateProjectRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
@@ -701,170 +685,170 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline CreateProjectRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline CreateProjectRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p>  <p>You can use a
-     * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p>  <p>You can specify either the Amazon
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the build output artifacts.</p>  <p>You can use a cross-account
+     * KMS key to encrypt the build output artifacts if your service role has
+     * permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/&lt;alias-name&gt;</code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
     inline CreateProjectRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline CreateProjectRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline CreateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline CreateProjectRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of tag key and value pairs associated with this build project.</p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * build project tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild build project tags.</p>
      */
     inline CreateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
      */
     inline CreateProjectRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
      */
     inline CreateProjectRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
@@ -895,38 +879,38 @@ namespace Model
 
 
     /**
-     * <p>Information about logs for the build project. These can be logs in Amazon
-     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+     * <p>Information about logs for the build project. These can be logs in CloudWatch
+     * Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline const LogsConfig& GetLogsConfig() const{ return m_logsConfig; }
 
     /**
-     * <p>Information about logs for the build project. These can be logs in Amazon
-     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+     * <p>Information about logs for the build project. These can be logs in CloudWatch
+     * Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline bool LogsConfigHasBeenSet() const { return m_logsConfigHasBeenSet; }
 
     /**
-     * <p>Information about logs for the build project. These can be logs in Amazon
-     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+     * <p>Information about logs for the build project. These can be logs in CloudWatch
+     * Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(const LogsConfig& value) { m_logsConfigHasBeenSet = true; m_logsConfig = value; }
 
     /**
-     * <p>Information about logs for the build project. These can be logs in Amazon
-     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+     * <p>Information about logs for the build project. These can be logs in CloudWatch
+     * Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(LogsConfig&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::move(value); }
 
     /**
-     * <p>Information about logs for the build project. These can be logs in Amazon
-     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+     * <p>Information about logs for the build project. These can be logs in CloudWatch
+     * Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline CreateProjectRequest& WithLogsConfig(const LogsConfig& value) { SetLogsConfig(value); return *this;}
 
     /**
-     * <p>Information about logs for the build project. These can be logs in Amazon
-     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+     * <p>Information about logs for the build project. These can be logs in CloudWatch
+     * Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline CreateProjectRequest& WithLogsConfig(LogsConfig&& value) { SetLogsConfig(std::move(value)); return *this;}
 
@@ -1040,6 +1024,39 @@ namespace Model
      */
     inline CreateProjectRequest& WithBuildBatchConfig(ProjectBuildBatchConfig&& value) { SetBuildBatchConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum number of concurrent builds that are allowed for this
+     * project.</p> <p>New builds are only started if the current number of builds is
+     * less than or equal to this limit. If the current build count meets this limit,
+     * new builds are throttled and are not run.</p>
+     */
+    inline int GetConcurrentBuildLimit() const{ return m_concurrentBuildLimit; }
+
+    /**
+     * <p>The maximum number of concurrent builds that are allowed for this
+     * project.</p> <p>New builds are only started if the current number of builds is
+     * less than or equal to this limit. If the current build count meets this limit,
+     * new builds are throttled and are not run.</p>
+     */
+    inline bool ConcurrentBuildLimitHasBeenSet() const { return m_concurrentBuildLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of concurrent builds that are allowed for this
+     * project.</p> <p>New builds are only started if the current number of builds is
+     * less than or equal to this limit. If the current build count meets this limit,
+     * new builds are throttled and are not run.</p>
+     */
+    inline void SetConcurrentBuildLimit(int value) { m_concurrentBuildLimitHasBeenSet = true; m_concurrentBuildLimit = value; }
+
+    /**
+     * <p>The maximum number of concurrent builds that are allowed for this
+     * project.</p> <p>New builds are only started if the current number of builds is
+     * less than or equal to this limit. If the current build count meets this limit,
+     * new builds are throttled and are not run.</p>
+     */
+    inline CreateProjectRequest& WithConcurrentBuildLimit(int value) { SetConcurrentBuildLimit(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1101,6 +1118,9 @@ namespace Model
 
     ProjectBuildBatchConfig m_buildBatchConfig;
     bool m_buildBatchConfigHasBeenSet;
+
+    int m_concurrentBuildLimit;
+    bool m_concurrentBuildLimitHasBeenSet;
   };
 
 } // namespace Model

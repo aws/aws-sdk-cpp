@@ -40,7 +40,8 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_userGroupIdsToAddHasBeenSet(false),
     m_userGroupIdsToRemoveHasBeenSet(false),
     m_removeUserGroups(false),
-    m_removeUserGroupsHasBeenSet(false)
+    m_removeUserGroupsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,16 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_removeUserGroupsHasBeenSet)
   {
     ss << "RemoveUserGroups=" << std::boolalpha << m_removeUserGroups << "&";
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

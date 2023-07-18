@@ -25,6 +25,7 @@ namespace Aws
         static const int DELETION_IN_PROGRESS_HASH = HashingUtils::HashString("DELETION_IN_PROGRESS");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int REBOOT_IN_PROGRESS_HASH = HashingUtils::HashString("REBOOT_IN_PROGRESS");
+        static const int CRITICAL_ACTION_REQUIRED_HASH = HashingUtils::HashString("CRITICAL_ACTION_REQUIRED");
 
 
         BrokerState GetBrokerStateForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return BrokerState::REBOOT_IN_PROGRESS;
           }
+          else if (hashCode == CRITICAL_ACTION_REQUIRED_HASH)
+          {
+            return BrokerState::CRITICAL_ACTION_REQUIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "RUNNING";
           case BrokerState::REBOOT_IN_PROGRESS:
             return "REBOOT_IN_PROGRESS";
+          case BrokerState::CRITICAL_ACTION_REQUIRED:
+            return "CRITICAL_ACTION_REQUIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

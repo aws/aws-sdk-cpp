@@ -240,6 +240,218 @@ namespace Model
 
 
     /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline const Aws::String& GetIpv4IpamPoolId() const{ return m_ipv4IpamPoolId; }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline bool Ipv4IpamPoolIdHasBeenSet() const { return m_ipv4IpamPoolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline void SetIpv4IpamPoolId(const Aws::String& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = value; }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline void SetIpv4IpamPoolId(Aws::String&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::move(value); }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline void SetIpv4IpamPoolId(const char* value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId.assign(value); }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline CreateVpcRequest& WithIpv4IpamPoolId(const Aws::String& value) { SetIpv4IpamPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline CreateVpcRequest& WithIpv4IpamPoolId(Aws::String&& value) { SetIpv4IpamPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline CreateVpcRequest& WithIpv4IpamPoolId(const char* value) { SetIpv4IpamPoolId(value); return *this;}
+
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline int GetIpv4NetmaskLength() const{ return m_ipv4NetmaskLength; }
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline bool Ipv4NetmaskLengthHasBeenSet() const { return m_ipv4NetmaskLengthHasBeenSet; }
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv4NetmaskLength(int value) { m_ipv4NetmaskLengthHasBeenSet = true; m_ipv4NetmaskLength = value; }
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv4NetmaskLength(int value) { SetIpv4NetmaskLength(value); return *this;}
+
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline const Aws::String& GetIpv6IpamPoolId() const{ return m_ipv6IpamPoolId; }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline bool Ipv6IpamPoolIdHasBeenSet() const { return m_ipv6IpamPoolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6IpamPoolId(const Aws::String& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = value; }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6IpamPoolId(Aws::String&& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = std::move(value); }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6IpamPoolId(const char* value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId.assign(value); }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6IpamPoolId(const Aws::String& value) { SetIpv6IpamPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6IpamPoolId(Aws::String&& value) { SetIpv6IpamPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6IpamPoolId(const char* value) { SetIpv6IpamPoolId(value); return *this;}
+
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline int GetIpv6NetmaskLength() const{ return m_ipv6NetmaskLength; }
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline bool Ipv6NetmaskLengthHasBeenSet() const { return m_ipv6NetmaskLengthHasBeenSet; }
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -469,6 +681,18 @@ namespace Model
 
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
+
+    Aws::String m_ipv4IpamPoolId;
+    bool m_ipv4IpamPoolIdHasBeenSet;
+
+    int m_ipv4NetmaskLength;
+    bool m_ipv4NetmaskLengthHasBeenSet;
+
+    Aws::String m_ipv6IpamPoolId;
+    bool m_ipv6IpamPoolIdHasBeenSet;
+
+    int m_ipv6NetmaskLength;
+    bool m_ipv6NetmaskLengthHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

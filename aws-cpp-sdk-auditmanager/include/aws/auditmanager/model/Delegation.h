@@ -83,83 +83,91 @@ namespace Model
 
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline const Aws::String& GetAssessmentName() const{ return m_assessmentName; }
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline bool AssessmentNameHasBeenSet() const { return m_assessmentNameHasBeenSet; }
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline void SetAssessmentName(const Aws::String& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = value; }
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline void SetAssessmentName(Aws::String&& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = std::move(value); }
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline void SetAssessmentName(const char* value) { m_assessmentNameHasBeenSet = true; m_assessmentName.assign(value); }
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline Delegation& WithAssessmentName(const Aws::String& value) { SetAssessmentName(value); return *this;}
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline Delegation& WithAssessmentName(Aws::String&& value) { SetAssessmentName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the associated assessment. </p>
+     * <p> The name of the assessment that's associated with the delegation. </p>
      */
     inline Delegation& WithAssessmentName(const char* value) { SetAssessmentName(value); return *this;}
 
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline Delegation& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline Delegation& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the associated assessment. </p>
+     * <p> The identifier for the assessment that's associated with the delegation.
+     * </p>
      */
     inline Delegation& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
 
@@ -360,83 +368,91 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline const Aws::String& GetControlSetId() const{ return m_controlSetId; }
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline bool ControlSetIdHasBeenSet() const { return m_controlSetIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline void SetControlSetId(const Aws::String& value) { m_controlSetIdHasBeenSet = true; m_controlSetId = value; }
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline void SetControlSetId(Aws::String&& value) { m_controlSetIdHasBeenSet = true; m_controlSetId = std::move(value); }
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline void SetControlSetId(const char* value) { m_controlSetIdHasBeenSet = true; m_controlSetId.assign(value); }
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline Delegation& WithControlSetId(const Aws::String& value) { SetControlSetId(value); return *this;}
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline Delegation& WithControlSetId(Aws::String&& value) { SetControlSetId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the associated control set. </p>
+     * <p> The identifier for the control set that's associated with the delegation.
+     * </p>
      */
     inline Delegation& WithControlSetId(const char* value) { SetControlSetId(value); return *this;}
 
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline Delegation& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline Delegation& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p> The comment related to the delegation. </p>
+     * <p> The comment that's related to the delegation. </p>
      */
     inline Delegation& WithComment(const char* value) { SetComment(value); return *this;}
 

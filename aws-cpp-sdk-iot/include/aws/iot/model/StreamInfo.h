@@ -288,42 +288,42 @@ namespace Model
 
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline StreamInfo& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline StreamInfo& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     * <p>An IAM role IoT assumes to access your S3 files.</p>
      */
     inline StreamInfo& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

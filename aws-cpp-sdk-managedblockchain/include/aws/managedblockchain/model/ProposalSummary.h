@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Properties of a proposal.</p><p><h3>See Also:</h3>   <a
+   * <p>Properties of a proposal.</p> <p>Applies only to Hyperledger
+   * Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ProposalSummary">AWS
    * API Reference</a></p>
    */
@@ -409,6 +410,71 @@ namespace Model
      */
     inline ProposalSummary& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline ProposalSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline ProposalSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline ProposalSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_proposalId;
@@ -431,6 +497,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expirationDate;
     bool m_expirationDateHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

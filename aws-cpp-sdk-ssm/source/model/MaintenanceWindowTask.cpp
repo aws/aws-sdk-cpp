@@ -33,7 +33,9 @@ MaintenanceWindowTask::MaintenanceWindowTask() :
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
+    m_cutoffBehaviorHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ MaintenanceWindowTask::MaintenanceWindowTask(JsonView jsonValue) :
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
+    m_cutoffBehaviorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +160,13 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CutoffBehavior"))
+  {
+    m_cutoffBehavior = MaintenanceWindowTaskCutoffBehaviorMapper::GetMaintenanceWindowTaskCutoffBehaviorForName(jsonValue.GetString("CutoffBehavior"));
+
+    m_cutoffBehaviorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -248,6 +259,11 @@ JsonValue MaintenanceWindowTask::Jsonize() const
   {
    payload.WithString("Description", m_description);
 
+  }
+
+  if(m_cutoffBehaviorHasBeenSet)
+  {
+   payload.WithString("CutoffBehavior", MaintenanceWindowTaskCutoffBehaviorMapper::GetNameForMaintenanceWindowTaskCutoffBehavior(m_cutoffBehavior));
   }
 
   return payload;

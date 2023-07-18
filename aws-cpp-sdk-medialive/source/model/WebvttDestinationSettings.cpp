@@ -18,24 +18,39 @@ namespace MediaLive
 namespace Model
 {
 
-WebvttDestinationSettings::WebvttDestinationSettings()
+WebvttDestinationSettings::WebvttDestinationSettings() : 
+    m_styleControl(WebvttDestinationStyleControl::NOT_SET),
+    m_styleControlHasBeenSet(false)
 {
 }
 
-WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue)
+WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue) : 
+    m_styleControl(WebvttDestinationStyleControl::NOT_SET),
+    m_styleControlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 WebvttDestinationSettings& WebvttDestinationSettings::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("styleControl"))
+  {
+    m_styleControl = WebvttDestinationStyleControlMapper::GetWebvttDestinationStyleControlForName(jsonValue.GetString("styleControl"));
+
+    m_styleControlHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue WebvttDestinationSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_styleControlHasBeenSet)
+  {
+   payload.WithString("styleControl", WebvttDestinationStyleControlMapper::GetNameForWebvttDestinationStyleControl(m_styleControl));
+  }
 
   return payload;
 }

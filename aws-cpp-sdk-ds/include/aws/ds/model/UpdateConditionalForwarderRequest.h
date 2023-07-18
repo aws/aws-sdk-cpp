@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline UpdateConditionalForwarderRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline UpdateConditionalForwarderRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The directory ID of the AWS directory for which to update the conditional
-     * forwarder.</p>
+     * <p>The directory ID of the Amazon Web Services directory for which to update the
+     * conditional forwarder.</p>
      */
     inline UpdateConditionalForwarderRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

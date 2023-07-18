@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/LoadBalancerState.h>
 #include <aws/securityhub/model/AvailabilityZone.h>
+#include <aws/securityhub/model/AwsElbv2LoadBalancerAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -500,6 +501,47 @@ namespace Model
      */
     inline AwsElbv2LoadBalancerDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline const Aws::Vector<AwsElbv2LoadBalancerAttribute>& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline bool LoadBalancerAttributesHasBeenSet() const { return m_loadBalancerAttributesHasBeenSet; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline void SetLoadBalancerAttributes(const Aws::Vector<AwsElbv2LoadBalancerAttribute>& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = value; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline void SetLoadBalancerAttributes(Aws::Vector<AwsElbv2LoadBalancerAttribute>&& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = std::move(value); }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& WithLoadBalancerAttributes(const Aws::Vector<AwsElbv2LoadBalancerAttribute>& value) { SetLoadBalancerAttributes(value); return *this;}
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& WithLoadBalancerAttributes(Aws::Vector<AwsElbv2LoadBalancerAttribute>&& value) { SetLoadBalancerAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& AddLoadBalancerAttributes(const AwsElbv2LoadBalancerAttribute& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& AddLoadBalancerAttributes(AwsElbv2LoadBalancerAttribute&& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
@@ -531,6 +573,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::Vector<AwsElbv2LoadBalancerAttribute> m_loadBalancerAttributes;
+    bool m_loadBalancerAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@
 # |   1. Bump the patch part of the version               |
 # |   2. Commit the changes to release-candidate branch   |
 # |   3. Tag the release candidate branch                 |
-# |   4. Merge release-candidate to master                |
+# |   4. Merge release-candidate to main branch           |
 # |   5. Push the changes to private repo                 |
 # |   6. Push the changes to public repo                  |
 # +-------------------------------------------------------+
@@ -269,6 +269,7 @@ Mappings:
               - mkdir build
               - cd build
               - cmake .. -DREGENERATE_CLIENTS=ON
+              - cmake .. -DREGENERATE_DEFAULTS=ON
               - cd ..
               - rm -rf build
           post_build:

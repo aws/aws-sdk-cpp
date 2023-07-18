@@ -20,13 +20,15 @@ namespace Model
 
 StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter() : 
     m_minSegmentConfidence(0.0),
-    m_minSegmentConfidenceHasBeenSet(false)
+    m_minSegmentConfidenceHasBeenSet(false),
+    m_blackFrameHasBeenSet(false)
 {
 }
 
 StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter(JsonView jsonValue) : 
     m_minSegmentConfidence(0.0),
-    m_minSegmentConfidenceHasBeenSet(false)
+    m_minSegmentConfidenceHasBeenSet(false),
+    m_blackFrameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ StartTechnicalCueDetectionFilter& StartTechnicalCueDetectionFilter::operator =(J
     m_minSegmentConfidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BlackFrame"))
+  {
+    m_blackFrame = jsonValue.GetObject("BlackFrame");
+
+    m_blackFrameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue StartTechnicalCueDetectionFilter::Jsonize() const
   if(m_minSegmentConfidenceHasBeenSet)
   {
    payload.WithDouble("MinSegmentConfidence", m_minSegmentConfidence);
+
+  }
+
+  if(m_blackFrameHasBeenSet)
+  {
+   payload.WithObject("BlackFrame", m_blackFrame.Jsonize());
 
   }
 

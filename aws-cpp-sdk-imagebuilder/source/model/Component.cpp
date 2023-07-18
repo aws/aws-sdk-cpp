@@ -29,6 +29,8 @@ Component::Component() :
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
     m_supportedOsVersionsHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
@@ -50,6 +52,8 @@ Component::Component(JsonView jsonValue) :
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
     m_supportedOsVersionsHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
@@ -120,6 +124,23 @@ Component& Component::operator =(JsonView jsonValue)
       m_supportedOsVersions.push_back(supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString());
     }
     m_supportedOsVersionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = jsonValue.GetObject("state");
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parameters"))
+  {
+    Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
+    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+    {
+      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
+    }
+    m_parametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("owner"))
@@ -222,6 +243,23 @@ JsonValue Component::Jsonize() const
      supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString(m_supportedOsVersions[supportedOsVersionsIndex]);
    }
    payload.WithArray("supportedOsVersions", std::move(supportedOsVersionsJsonList));
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithObject("state", m_state.Jsonize());
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   Array<JsonValue> parametersJsonList(m_parameters.size());
+   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+   {
+     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+   }
+   payload.WithArray("parameters", std::move(parametersJsonList));
 
   }
 

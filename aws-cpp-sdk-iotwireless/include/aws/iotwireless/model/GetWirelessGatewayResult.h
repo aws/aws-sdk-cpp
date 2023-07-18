@@ -204,37 +204,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the thing associated with the wireless gateway.</p>
+     * <p>The name of the thing associated with the wireless gateway. The value is
+     * empty if a thing isn't associated with the gateway.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * <p>The name of the thing associated with the wireless gateway.</p>
+     * <p>The name of the thing associated with the wireless gateway. The value is
+     * empty if a thing isn't associated with the gateway.</p>
      */
     inline void SetThingName(const Aws::String& value) { m_thingName = value; }
 
     /**
-     * <p>The name of the thing associated with the wireless gateway.</p>
+     * <p>The name of the thing associated with the wireless gateway. The value is
+     * empty if a thing isn't associated with the gateway.</p>
      */
     inline void SetThingName(Aws::String&& value) { m_thingName = std::move(value); }
 
     /**
-     * <p>The name of the thing associated with the wireless gateway.</p>
+     * <p>The name of the thing associated with the wireless gateway. The value is
+     * empty if a thing isn't associated with the gateway.</p>
      */
     inline void SetThingName(const char* value) { m_thingName.assign(value); }
 
     /**
-     * <p>The name of the thing associated with the wireless gateway.</p>
+     * <p>The name of the thing associated with the wireless gateway. The value is
+     * empty if a thing isn't associated with the gateway.</p>
      */
     inline GetWirelessGatewayResult& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the thing associated with the wireless gateway.</p>
+     * <p>The name of the thing associated with the wireless gateway. The value is
+     * empty if a thing isn't associated with the gateway.</p>
      */
     inline GetWirelessGatewayResult& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the thing associated with the wireless gateway.</p>
+     * <p>The name of the thing associated with the wireless gateway. The value is
+     * empty if a thing isn't associated with the gateway.</p>
      */
     inline GetWirelessGatewayResult& WithThingName(const char* value) { SetThingName(value); return *this;}
 

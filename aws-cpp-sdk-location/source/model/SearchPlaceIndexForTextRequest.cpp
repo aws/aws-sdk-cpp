@@ -17,6 +17,7 @@ SearchPlaceIndexForTextRequest::SearchPlaceIndexForTextRequest() :
     m_filterBBoxHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_textHasBeenSet(false)
@@ -57,6 +58,12 @@ Aws::String SearchPlaceIndexForTextRequest::SerializePayload() const
      filterCountriesJsonList[filterCountriesIndex].AsString(m_filterCountries[filterCountriesIndex]);
    }
    payload.WithArray("FilterCountries", std::move(filterCountriesJsonList));
+
+  }
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("Language", m_language);
 
   }
 

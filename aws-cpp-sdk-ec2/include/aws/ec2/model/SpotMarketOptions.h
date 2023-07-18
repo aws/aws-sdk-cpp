@@ -94,111 +94,69 @@ namespace Model
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline const SpotInstanceType& GetSpotInstanceType() const{ return m_spotInstanceType; }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline bool SpotInstanceTypeHasBeenSet() const { return m_spotInstanceTypeHasBeenSet; }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline void SetSpotInstanceType(const SpotInstanceType& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = value; }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline void SetSpotInstanceType(SpotInstanceType&& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = std::move(value); }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline SpotMarketOptions& WithSpotInstanceType(const SpotInstanceType& value) { SetSpotInstanceType(value); return *this;}
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline SpotMarketOptions& WithSpotInstanceType(SpotInstanceType&& value) { SetSpotInstanceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * <p>Deprecated.</p>
      */
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * <p>Deprecated.</p>
      */
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * <p>Deprecated.</p>
      */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * <p>Deprecated.</p>
      */
     inline SpotMarketOptions& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 

@@ -160,50 +160,58 @@ namespace Model
 
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
@@ -291,30 +299,30 @@ namespace Model
 
 
     /**
-     * <p>If True, then all fields that are required by the
-     * RegisterTargetWithMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.</p>
+     * <p>If <code>True</code>, then all fields that are required by the
+     * <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this
+     * API request. Optional fields that aren't specified are set to null.</p>
      */
     inline bool GetReplace() const{ return m_replace; }
 
     /**
-     * <p>If True, then all fields that are required by the
-     * RegisterTargetWithMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.</p>
+     * <p>If <code>True</code>, then all fields that are required by the
+     * <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this
+     * API request. Optional fields that aren't specified are set to null.</p>
      */
     inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
 
     /**
-     * <p>If True, then all fields that are required by the
-     * RegisterTargetWithMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.</p>
+     * <p>If <code>True</code>, then all fields that are required by the
+     * <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this
+     * API request. Optional fields that aren't specified are set to null.</p>
      */
     inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
 
     /**
-     * <p>If True, then all fields that are required by the
-     * RegisterTargetWithMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.</p>
+     * <p>If <code>True</code>, then all fields that are required by the
+     * <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this
+     * API request. Optional fields that aren't specified are set to null.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithReplace(bool value) { SetReplace(value); return *this;}
 

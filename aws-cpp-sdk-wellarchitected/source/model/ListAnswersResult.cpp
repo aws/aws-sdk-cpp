@@ -48,6 +48,12 @@ ListAnswersResult& ListAnswersResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("LensArn"))
+  {
+    m_lensArn = jsonValue.GetString("LensArn");
+
+  }
+
   if(jsonValue.ValueExists("AnswerSummaries"))
   {
     Array<JsonView> answerSummariesJsonList = jsonValue.GetArray("AnswerSummaries");

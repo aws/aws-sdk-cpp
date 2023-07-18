@@ -98,56 +98,56 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
+     * <p>The ID of the IoT SiteWise asset. You must specify either a
      * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */

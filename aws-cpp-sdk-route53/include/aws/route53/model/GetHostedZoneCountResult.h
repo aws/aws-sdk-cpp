@@ -38,19 +38,19 @@ namespace Model
 
     /**
      * <p>The total number of public and private hosted zones that are associated with
-     * the current AWS account.</p>
+     * the current Amazon Web Services account.</p>
      */
     inline long long GetHostedZoneCount() const{ return m_hostedZoneCount; }
 
     /**
      * <p>The total number of public and private hosted zones that are associated with
-     * the current AWS account.</p>
+     * the current Amazon Web Services account.</p>
      */
     inline void SetHostedZoneCount(long long value) { m_hostedZoneCount = value; }
 
     /**
      * <p>The total number of public and private hosted zones that are associated with
-     * the current AWS account.</p>
+     * the current Amazon Web Services account.</p>
      */
     inline GetHostedZoneCountResult& WithHostedZoneCount(long long value) { SetHostedZoneCount(value); return *this;}
 

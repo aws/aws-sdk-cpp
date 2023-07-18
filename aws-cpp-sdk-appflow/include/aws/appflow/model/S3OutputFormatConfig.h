@@ -139,6 +139,59 @@ namespace Model
     
     inline S3OutputFormatConfig& WithAggregationConfig(AggregationConfig&& value) { SetAggregationConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If your file output format is Parquet, use this parameter to set whether
+     * Amazon AppFlow preserves the data types in your source data when it writes the
+     * output to Amazon S3. </p> <ul> <li> <p> <code>true</code>: Amazon AppFlow
+     * preserves the data types when it writes to Amazon S3. For example, an integer or
+     * <code>1</code> in your source data is still an integer in your output.</p> </li>
+     * <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into
+     * strings when it writes to Amazon S3. For example, an integer of <code>1</code>
+     * in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+     * </ul>
+     */
+    inline bool GetPreserveSourceDataTyping() const{ return m_preserveSourceDataTyping; }
+
+    /**
+     * <p>If your file output format is Parquet, use this parameter to set whether
+     * Amazon AppFlow preserves the data types in your source data when it writes the
+     * output to Amazon S3. </p> <ul> <li> <p> <code>true</code>: Amazon AppFlow
+     * preserves the data types when it writes to Amazon S3. For example, an integer or
+     * <code>1</code> in your source data is still an integer in your output.</p> </li>
+     * <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into
+     * strings when it writes to Amazon S3. For example, an integer of <code>1</code>
+     * in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+     * </ul>
+     */
+    inline bool PreserveSourceDataTypingHasBeenSet() const { return m_preserveSourceDataTypingHasBeenSet; }
+
+    /**
+     * <p>If your file output format is Parquet, use this parameter to set whether
+     * Amazon AppFlow preserves the data types in your source data when it writes the
+     * output to Amazon S3. </p> <ul> <li> <p> <code>true</code>: Amazon AppFlow
+     * preserves the data types when it writes to Amazon S3. For example, an integer or
+     * <code>1</code> in your source data is still an integer in your output.</p> </li>
+     * <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into
+     * strings when it writes to Amazon S3. For example, an integer of <code>1</code>
+     * in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+     * </ul>
+     */
+    inline void SetPreserveSourceDataTyping(bool value) { m_preserveSourceDataTypingHasBeenSet = true; m_preserveSourceDataTyping = value; }
+
+    /**
+     * <p>If your file output format is Parquet, use this parameter to set whether
+     * Amazon AppFlow preserves the data types in your source data when it writes the
+     * output to Amazon S3. </p> <ul> <li> <p> <code>true</code>: Amazon AppFlow
+     * preserves the data types when it writes to Amazon S3. For example, an integer or
+     * <code>1</code> in your source data is still an integer in your output.</p> </li>
+     * <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into
+     * strings when it writes to Amazon S3. For example, an integer of <code>1</code>
+     * in your source data becomes the string <code>"1"</code> in the output.</p> </li>
+     * </ul>
+     */
+    inline S3OutputFormatConfig& WithPreserveSourceDataTyping(bool value) { SetPreserveSourceDataTyping(value); return *this;}
+
   private:
 
     FileType m_fileType;
@@ -149,6 +202,9 @@ namespace Model
 
     AggregationConfig m_aggregationConfig;
     bool m_aggregationConfigHasBeenSet;
+
+    bool m_preserveSourceDataTyping;
+    bool m_preserveSourceDataTypingHasBeenSet;
   };
 
 } // namespace Model

@@ -14,6 +14,7 @@
 #include <aws/securityhub/model/AwsRedshiftClusterPendingModifiedValues.h>
 #include <aws/securityhub/model/AwsRedshiftClusterResizeInfo.h>
 #include <aws/securityhub/model/AwsRedshiftClusterRestoreStatus.h>
+#include <aws/securityhub/model/AwsRedshiftClusterLoggingStatus.h>
 #include <aws/securityhub/model/AwsRedshiftClusterClusterNode.h>
 #include <aws/securityhub/model/AwsRedshiftClusterClusterParameterGroup.h>
 #include <aws/securityhub/model/AwsRedshiftClusterClusterSecurityGroup.h>
@@ -1247,99 +1248,99 @@ namespace Model
 
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline const Aws::Vector<AwsRedshiftClusterIamRole>& GetIamRoles() const{ return m_iamRoles; }
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline void SetIamRoles(const Aws::Vector<AwsRedshiftClusterIamRole>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline void SetIamRoles(Aws::Vector<AwsRedshiftClusterIamRole>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline AwsRedshiftClusterDetails& WithIamRoles(const Aws::Vector<AwsRedshiftClusterIamRole>& value) { SetIamRoles(value); return *this;}
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline AwsRedshiftClusterDetails& WithIamRoles(Aws::Vector<AwsRedshiftClusterIamRole>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline AwsRedshiftClusterDetails& AddIamRoles(const AwsRedshiftClusterIamRole& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
     /**
-     * <p>A list of IAM roles that the cluster can use to access other AWS
-     * services.</p>
+     * <p>A list of IAM roles that the cluster can use to access other Amazon Web
+     * Services services.</p>
      */
     inline AwsRedshiftClusterDetails& AddIamRoles(AwsRedshiftClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline AwsRedshiftClusterDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline AwsRedshiftClusterDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS encryption key that is used to encrypt data in
-     * the cluster.</p>
+     * <p>The identifier of the KMS encryption key that is used to encrypt data in the
+     * cluster.</p>
      */
     inline AwsRedshiftClusterDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -2036,6 +2037,37 @@ namespace Model
      */
     inline AwsRedshiftClusterDetails& AddVpcSecurityGroups(AwsRedshiftClusterVpcSecurityGroup&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline const AwsRedshiftClusterLoggingStatus& GetLoggingStatus() const{ return m_loggingStatus; }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline bool LoggingStatusHasBeenSet() const { return m_loggingStatusHasBeenSet; }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline void SetLoggingStatus(const AwsRedshiftClusterLoggingStatus& value) { m_loggingStatusHasBeenSet = true; m_loggingStatus = value; }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline void SetLoggingStatus(AwsRedshiftClusterLoggingStatus&& value) { m_loggingStatusHasBeenSet = true; m_loggingStatus = std::move(value); }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline AwsRedshiftClusterDetails& WithLoggingStatus(const AwsRedshiftClusterLoggingStatus& value) { SetLoggingStatus(value); return *this;}
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline AwsRedshiftClusterDetails& WithLoggingStatus(AwsRedshiftClusterLoggingStatus&& value) { SetLoggingStatus(std::move(value)); return *this;}
+
   private:
 
     bool m_allowVersionUpgrade;
@@ -2166,6 +2198,9 @@ namespace Model
 
     Aws::Vector<AwsRedshiftClusterVpcSecurityGroup> m_vpcSecurityGroups;
     bool m_vpcSecurityGroupsHasBeenSet;
+
+    AwsRedshiftClusterLoggingStatus m_loggingStatus;
+    bool m_loggingStatusHasBeenSet;
   };
 
 } // namespace Model

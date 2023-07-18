@@ -37,14 +37,15 @@ namespace Model
    * The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys
    * and values are case sensitive.</p> </li> <li> <p>For each associated resource,
    * each tag key must be unique and it can have only one value.</p> </li> <li>
-   * <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in
-   * any tag keys or values that you define. In addition, you can't edit or remove
-   * tag keys or values that use this prefix. Tags that use this prefix don’t count
-   * against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate
-   * tags with public or shared resources, but the tags are available only for your
-   * AWS account, not any other accounts that share the resource. In addition, the
-   * tags are available only for resources that are located in the specified AWS
-   * Region for your AWS account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>The <code>aws:</code> prefix is reserved for use by Amazon Web Services; you
+   * can’t use it in any tag keys or values that you define. In addition, you can't
+   * edit or remove tag keys or values that use this prefix. Tags that use this
+   * prefix don’t count against the limit of 50 tags per resource.</p> </li> <li>
+   * <p>You can associate tags with public or shared resources, but the tags are
+   * available only for your Amazon Web Services account, not any other accounts that
+   * share the resource. In addition, the tags are available only for resources that
+   * are located in the specified Amazon Web Services Region for your Amazon Web
+   * Services account.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Tag">AWS API
    * Reference</a></p>
    */

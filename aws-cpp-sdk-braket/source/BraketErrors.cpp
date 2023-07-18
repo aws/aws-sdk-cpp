@@ -19,6 +19,7 @@ namespace BraketErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int DEVICE_RETIRED_HASH = HashingUtils::HashString("DeviceRetiredException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int DEVICE_OFFLINE_HASH = HashingUtils::HashString("DeviceOfflineException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
@@ -31,6 +32,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::CONFLICT), false);
+  }
+  else if (hashCode == DEVICE_RETIRED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::DEVICE_RETIRED), false);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

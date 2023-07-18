@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests API Gateway to change information about a <a>Stage</a>
+   * <p>Requests API Gateway to change information about a Stage
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStageRequest">AWS
    * API Reference</a></p>
@@ -39,140 +39,140 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateStageRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateStageRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline UpdateStageRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline UpdateStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline UpdateStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>Stage</a> resource to change information
-     * about.</p>
+     * <p>The name of the Stage resource to change information about.</p>
      */
     inline UpdateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateStageRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateStageRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateStageRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateStageRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 

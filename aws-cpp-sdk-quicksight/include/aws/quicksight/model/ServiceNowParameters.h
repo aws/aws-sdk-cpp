@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>ServiceNow parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for ServiceNow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ServiceNowParameters">AWS
    * API Reference</a></p>
    */

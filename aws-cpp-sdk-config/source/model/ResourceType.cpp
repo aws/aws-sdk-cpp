@@ -85,6 +85,9 @@ namespace Aws
         static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
         static const int AWS_CloudFront_StreamingDistribution_HASH = HashingUtils::HashString("AWS::CloudFront::StreamingDistribution");
         static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
+        static const int AWS_NetworkFirewall_Firewall_HASH = HashingUtils::HashString("AWS::NetworkFirewall::Firewall");
+        static const int AWS_NetworkFirewall_FirewallPolicy_HASH = HashingUtils::HashString("AWS::NetworkFirewall::FirewallPolicy");
+        static const int AWS_NetworkFirewall_RuleGroup_HASH = HashingUtils::HashString("AWS::NetworkFirewall::RuleGroup");
         static const int AWS_ElasticBeanstalk_Application_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Application");
         static const int AWS_ElasticBeanstalk_ApplicationVersion_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::ApplicationVersion");
         static const int AWS_ElasticBeanstalk_Environment_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Environment");
@@ -98,6 +101,7 @@ namespace Aws
         static const int AWS_SSM_PatchCompliance_HASH = HashingUtils::HashString("AWS::SSM::PatchCompliance");
         static const int AWS_Shield_Protection_HASH = HashingUtils::HashString("AWS::Shield::Protection");
         static const int AWS_ShieldRegional_Protection_HASH = HashingUtils::HashString("AWS::ShieldRegional::Protection");
+        static const int AWS_Config_ConformancePackCompliance_HASH = HashingUtils::HashString("AWS::Config::ConformancePackCompliance");
         static const int AWS_Config_ResourceCompliance_HASH = HashingUtils::HashString("AWS::Config::ResourceCompliance");
         static const int AWS_ApiGateway_Stage_HASH = HashingUtils::HashString("AWS::ApiGateway::Stage");
         static const int AWS_ApiGateway_RestApi_HASH = HashingUtils::HashString("AWS::ApiGateway::RestApi");
@@ -113,6 +117,29 @@ namespace Aws
         static const int AWS_SecretsManager_Secret_HASH = HashingUtils::HashString("AWS::SecretsManager::Secret");
         static const int AWS_SNS_Topic_HASH = HashingUtils::HashString("AWS::SNS::Topic");
         static const int AWS_SSM_FileData_HASH = HashingUtils::HashString("AWS::SSM::FileData");
+        static const int AWS_Backup_BackupPlan_HASH = HashingUtils::HashString("AWS::Backup::BackupPlan");
+        static const int AWS_Backup_BackupSelection_HASH = HashingUtils::HashString("AWS::Backup::BackupSelection");
+        static const int AWS_Backup_BackupVault_HASH = HashingUtils::HashString("AWS::Backup::BackupVault");
+        static const int AWS_Backup_RecoveryPoint_HASH = HashingUtils::HashString("AWS::Backup::RecoveryPoint");
+        static const int AWS_ECR_Repository_HASH = HashingUtils::HashString("AWS::ECR::Repository");
+        static const int AWS_ECS_Cluster_HASH = HashingUtils::HashString("AWS::ECS::Cluster");
+        static const int AWS_ECS_Service_HASH = HashingUtils::HashString("AWS::ECS::Service");
+        static const int AWS_ECS_TaskDefinition_HASH = HashingUtils::HashString("AWS::ECS::TaskDefinition");
+        static const int AWS_EFS_AccessPoint_HASH = HashingUtils::HashString("AWS::EFS::AccessPoint");
+        static const int AWS_EFS_FileSystem_HASH = HashingUtils::HashString("AWS::EFS::FileSystem");
+        static const int AWS_EKS_Cluster_HASH = HashingUtils::HashString("AWS::EKS::Cluster");
+        static const int AWS_OpenSearch_Domain_HASH = HashingUtils::HashString("AWS::OpenSearch::Domain");
+        static const int AWS_EC2_TransitGateway_HASH = HashingUtils::HashString("AWS::EC2::TransitGateway");
+        static const int AWS_Kinesis_Stream_HASH = HashingUtils::HashString("AWS::Kinesis::Stream");
+        static const int AWS_Kinesis_StreamConsumer_HASH = HashingUtils::HashString("AWS::Kinesis::StreamConsumer");
+        static const int AWS_CodeDeploy_Application_HASH = HashingUtils::HashString("AWS::CodeDeploy::Application");
+        static const int AWS_CodeDeploy_DeploymentConfig_HASH = HashingUtils::HashString("AWS::CodeDeploy::DeploymentConfig");
+        static const int AWS_CodeDeploy_DeploymentGroup_HASH = HashingUtils::HashString("AWS::CodeDeploy::DeploymentGroup");
+        static const int AWS_EC2_LaunchTemplate_HASH = HashingUtils::HashString("AWS::EC2::LaunchTemplate");
+        static const int AWS_ECR_PublicRepository_HASH = HashingUtils::HashString("AWS::ECR::PublicRepository");
+        static const int AWS_GuardDuty_Detector_HASH = HashingUtils::HashString("AWS::GuardDuty::Detector");
+        static const int AWS_EMR_SecurityConfiguration_HASH = HashingUtils::HashString("AWS::EMR::SecurityConfiguration");
+        static const int AWS_SageMaker_CodeRepository_HASH = HashingUtils::HashString("AWS::SageMaker::CodeRepository");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -378,6 +405,18 @@ namespace Aws
           {
             return ResourceType::AWS_Lambda_Function;
           }
+          else if (hashCode == AWS_NetworkFirewall_Firewall_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_Firewall;
+          }
+          else if (hashCode == AWS_NetworkFirewall_FirewallPolicy_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_FirewallPolicy;
+          }
+          else if (hashCode == AWS_NetworkFirewall_RuleGroup_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_RuleGroup;
+          }
           else if (hashCode == AWS_ElasticBeanstalk_Application_HASH)
           {
             return ResourceType::AWS_ElasticBeanstalk_Application;
@@ -429,6 +468,10 @@ namespace Aws
           else if (hashCode == AWS_ShieldRegional_Protection_HASH)
           {
             return ResourceType::AWS_ShieldRegional_Protection;
+          }
+          else if (hashCode == AWS_Config_ConformancePackCompliance_HASH)
+          {
+            return ResourceType::AWS_Config_ConformancePackCompliance;
           }
           else if (hashCode == AWS_Config_ResourceCompliance_HASH)
           {
@@ -489,6 +532,98 @@ namespace Aws
           else if (hashCode == AWS_SSM_FileData_HASH)
           {
             return ResourceType::AWS_SSM_FileData;
+          }
+          else if (hashCode == AWS_Backup_BackupPlan_HASH)
+          {
+            return ResourceType::AWS_Backup_BackupPlan;
+          }
+          else if (hashCode == AWS_Backup_BackupSelection_HASH)
+          {
+            return ResourceType::AWS_Backup_BackupSelection;
+          }
+          else if (hashCode == AWS_Backup_BackupVault_HASH)
+          {
+            return ResourceType::AWS_Backup_BackupVault;
+          }
+          else if (hashCode == AWS_Backup_RecoveryPoint_HASH)
+          {
+            return ResourceType::AWS_Backup_RecoveryPoint;
+          }
+          else if (hashCode == AWS_ECR_Repository_HASH)
+          {
+            return ResourceType::AWS_ECR_Repository;
+          }
+          else if (hashCode == AWS_ECS_Cluster_HASH)
+          {
+            return ResourceType::AWS_ECS_Cluster;
+          }
+          else if (hashCode == AWS_ECS_Service_HASH)
+          {
+            return ResourceType::AWS_ECS_Service;
+          }
+          else if (hashCode == AWS_ECS_TaskDefinition_HASH)
+          {
+            return ResourceType::AWS_ECS_TaskDefinition;
+          }
+          else if (hashCode == AWS_EFS_AccessPoint_HASH)
+          {
+            return ResourceType::AWS_EFS_AccessPoint;
+          }
+          else if (hashCode == AWS_EFS_FileSystem_HASH)
+          {
+            return ResourceType::AWS_EFS_FileSystem;
+          }
+          else if (hashCode == AWS_EKS_Cluster_HASH)
+          {
+            return ResourceType::AWS_EKS_Cluster;
+          }
+          else if (hashCode == AWS_OpenSearch_Domain_HASH)
+          {
+            return ResourceType::AWS_OpenSearch_Domain;
+          }
+          else if (hashCode == AWS_EC2_TransitGateway_HASH)
+          {
+            return ResourceType::AWS_EC2_TransitGateway;
+          }
+          else if (hashCode == AWS_Kinesis_Stream_HASH)
+          {
+            return ResourceType::AWS_Kinesis_Stream;
+          }
+          else if (hashCode == AWS_Kinesis_StreamConsumer_HASH)
+          {
+            return ResourceType::AWS_Kinesis_StreamConsumer;
+          }
+          else if (hashCode == AWS_CodeDeploy_Application_HASH)
+          {
+            return ResourceType::AWS_CodeDeploy_Application;
+          }
+          else if (hashCode == AWS_CodeDeploy_DeploymentConfig_HASH)
+          {
+            return ResourceType::AWS_CodeDeploy_DeploymentConfig;
+          }
+          else if (hashCode == AWS_CodeDeploy_DeploymentGroup_HASH)
+          {
+            return ResourceType::AWS_CodeDeploy_DeploymentGroup;
+          }
+          else if (hashCode == AWS_EC2_LaunchTemplate_HASH)
+          {
+            return ResourceType::AWS_EC2_LaunchTemplate;
+          }
+          else if (hashCode == AWS_ECR_PublicRepository_HASH)
+          {
+            return ResourceType::AWS_ECR_PublicRepository;
+          }
+          else if (hashCode == AWS_GuardDuty_Detector_HASH)
+          {
+            return ResourceType::AWS_GuardDuty_Detector;
+          }
+          else if (hashCode == AWS_EMR_SecurityConfiguration_HASH)
+          {
+            return ResourceType::AWS_EMR_SecurityConfiguration;
+          }
+          else if (hashCode == AWS_SageMaker_CodeRepository_HASH)
+          {
+            return ResourceType::AWS_SageMaker_CodeRepository;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -634,6 +769,12 @@ namespace Aws
             return "AWS::CloudFront::StreamingDistribution";
           case ResourceType::AWS_Lambda_Function:
             return "AWS::Lambda::Function";
+          case ResourceType::AWS_NetworkFirewall_Firewall:
+            return "AWS::NetworkFirewall::Firewall";
+          case ResourceType::AWS_NetworkFirewall_FirewallPolicy:
+            return "AWS::NetworkFirewall::FirewallPolicy";
+          case ResourceType::AWS_NetworkFirewall_RuleGroup:
+            return "AWS::NetworkFirewall::RuleGroup";
           case ResourceType::AWS_ElasticBeanstalk_Application:
             return "AWS::ElasticBeanstalk::Application";
           case ResourceType::AWS_ElasticBeanstalk_ApplicationVersion:
@@ -660,6 +801,8 @@ namespace Aws
             return "AWS::Shield::Protection";
           case ResourceType::AWS_ShieldRegional_Protection:
             return "AWS::ShieldRegional::Protection";
+          case ResourceType::AWS_Config_ConformancePackCompliance:
+            return "AWS::Config::ConformancePackCompliance";
           case ResourceType::AWS_Config_ResourceCompliance:
             return "AWS::Config::ResourceCompliance";
           case ResourceType::AWS_ApiGateway_Stage:
@@ -690,6 +833,52 @@ namespace Aws
             return "AWS::SNS::Topic";
           case ResourceType::AWS_SSM_FileData:
             return "AWS::SSM::FileData";
+          case ResourceType::AWS_Backup_BackupPlan:
+            return "AWS::Backup::BackupPlan";
+          case ResourceType::AWS_Backup_BackupSelection:
+            return "AWS::Backup::BackupSelection";
+          case ResourceType::AWS_Backup_BackupVault:
+            return "AWS::Backup::BackupVault";
+          case ResourceType::AWS_Backup_RecoveryPoint:
+            return "AWS::Backup::RecoveryPoint";
+          case ResourceType::AWS_ECR_Repository:
+            return "AWS::ECR::Repository";
+          case ResourceType::AWS_ECS_Cluster:
+            return "AWS::ECS::Cluster";
+          case ResourceType::AWS_ECS_Service:
+            return "AWS::ECS::Service";
+          case ResourceType::AWS_ECS_TaskDefinition:
+            return "AWS::ECS::TaskDefinition";
+          case ResourceType::AWS_EFS_AccessPoint:
+            return "AWS::EFS::AccessPoint";
+          case ResourceType::AWS_EFS_FileSystem:
+            return "AWS::EFS::FileSystem";
+          case ResourceType::AWS_EKS_Cluster:
+            return "AWS::EKS::Cluster";
+          case ResourceType::AWS_OpenSearch_Domain:
+            return "AWS::OpenSearch::Domain";
+          case ResourceType::AWS_EC2_TransitGateway:
+            return "AWS::EC2::TransitGateway";
+          case ResourceType::AWS_Kinesis_Stream:
+            return "AWS::Kinesis::Stream";
+          case ResourceType::AWS_Kinesis_StreamConsumer:
+            return "AWS::Kinesis::StreamConsumer";
+          case ResourceType::AWS_CodeDeploy_Application:
+            return "AWS::CodeDeploy::Application";
+          case ResourceType::AWS_CodeDeploy_DeploymentConfig:
+            return "AWS::CodeDeploy::DeploymentConfig";
+          case ResourceType::AWS_CodeDeploy_DeploymentGroup:
+            return "AWS::CodeDeploy::DeploymentGroup";
+          case ResourceType::AWS_EC2_LaunchTemplate:
+            return "AWS::EC2::LaunchTemplate";
+          case ResourceType::AWS_ECR_PublicRepository:
+            return "AWS::ECR::PublicRepository";
+          case ResourceType::AWS_GuardDuty_Detector:
+            return "AWS::GuardDuty::Detector";
+          case ResourceType::AWS_EMR_SecurityConfiguration:
+            return "AWS::EMR::SecurityConfiguration";
+          case ResourceType::AWS_SageMaker_CodeRepository:
+            return "AWS::SageMaker::CodeRepository";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

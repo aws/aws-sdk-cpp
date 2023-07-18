@@ -194,50 +194,50 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline void SetLastModifiedUser(const Aws::String& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline void SetLastModifiedUser(Aws::String&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline void SetLastModifiedUser(const char* value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline ParameterMetadata& WithLastModifiedUser(const Aws::String& value) { SetLastModifiedUser(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline ParameterMetadata& WithLastModifiedUser(Aws::String&& value) { SetLastModifiedUser(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline ParameterMetadata& WithLastModifiedUser(const char* value) { SetLastModifiedUser(value); return *this;}
 

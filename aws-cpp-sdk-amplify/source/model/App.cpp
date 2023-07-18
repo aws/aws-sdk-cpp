@@ -46,7 +46,9 @@ App::App() :
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false)
+    m_autoBranchCreationConfigHasBeenSet(false),
+    m_repositoryCloneMethod(RepositoryCloneMethod::NOT_SET),
+    m_repositoryCloneMethodHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ App::App(JsonView jsonValue) :
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false)
+    m_autoBranchCreationConfigHasBeenSet(false),
+    m_repositoryCloneMethod(RepositoryCloneMethod::NOT_SET),
+    m_repositoryCloneMethodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -258,6 +262,13 @@ App& App::operator =(JsonView jsonValue)
     m_autoBranchCreationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("repositoryCloneMethod"))
+  {
+    m_repositoryCloneMethod = RepositoryCloneMethodMapper::GetRepositoryCloneMethodForName(jsonValue.GetString("repositoryCloneMethod"));
+
+    m_repositoryCloneMethodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -418,6 +429,11 @@ JsonValue App::Jsonize() const
   {
    payload.WithObject("autoBranchCreationConfig", m_autoBranchCreationConfig.Jsonize());
 
+  }
+
+  if(m_repositoryCloneMethodHasBeenSet)
+  {
+   payload.WithString("repositoryCloneMethod", RepositoryCloneMethodMapper::GetNameForRepositoryCloneMethod(m_repositoryCloneMethod));
   }
 
   return payload;

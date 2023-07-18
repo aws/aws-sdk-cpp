@@ -149,42 +149,42 @@ namespace Model
 
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline const Aws::String& GetEventBridgeBus() const{ return m_eventBridgeBus; }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline bool EventBridgeBusHasBeenSet() const { return m_eventBridgeBusHasBeenSet; }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline void SetEventBridgeBus(const Aws::String& value) { m_eventBridgeBusHasBeenSet = true; m_eventBridgeBus = value; }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline void SetEventBridgeBus(Aws::String&& value) { m_eventBridgeBusHasBeenSet = true; m_eventBridgeBus = std::move(value); }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline void SetEventBridgeBus(const char* value) { m_eventBridgeBusHasBeenSet = true; m_eventBridgeBus.assign(value); }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline CreateEventIntegrationRequest& WithEventBridgeBus(const Aws::String& value) { SetEventBridgeBus(value); return *this;}
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline CreateEventIntegrationRequest& WithEventBridgeBus(Aws::String&& value) { SetEventBridgeBus(std::move(value)); return *this;}
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline CreateEventIntegrationRequest& WithEventBridgeBus(const char* value) { SetEventBridgeBus(value); return *this;}
 

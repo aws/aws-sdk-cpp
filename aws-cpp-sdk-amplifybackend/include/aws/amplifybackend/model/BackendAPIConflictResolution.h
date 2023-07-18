@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the conflict resolution configuration for the data model configured
-   * in your Amplify project.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the conflict resolution configuration for your data model
+   * configured in your Amplify project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAPIConflictResolution">AWS
    * API Reference</a></p>
    */

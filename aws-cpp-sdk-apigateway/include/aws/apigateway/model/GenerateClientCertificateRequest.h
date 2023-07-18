@@ -18,8 +18,8 @@ namespace Model
 {
 
   /**
-   * <p>A request to generate a <a>ClientCertificate</a> resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A request to generate a ClientCertificate resource.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificateRequest">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline GenerateClientCertificateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline GenerateClientCertificateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline GenerateClientCertificateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

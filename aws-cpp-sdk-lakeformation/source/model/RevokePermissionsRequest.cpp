@@ -68,14 +68,6 @@ Aws::String RevokePermissionsRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RevokePermissionsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.RevokePermissions"));
-  return headers;
-
-}
-
 
 
 

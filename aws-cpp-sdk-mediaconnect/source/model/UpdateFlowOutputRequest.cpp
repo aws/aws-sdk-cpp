@@ -20,12 +20,18 @@ UpdateFlowOutputRequest::UpdateFlowOutputRequest() :
     m_flowArnHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_mediaStreamOutputConfigurationsHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_outputArnHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_remoteIdHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false),
@@ -72,6 +78,23 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
 
   }
 
+  if(m_mediaStreamOutputConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamOutputConfigurationsJsonList(m_mediaStreamOutputConfigurations.size());
+   for(unsigned mediaStreamOutputConfigurationsIndex = 0; mediaStreamOutputConfigurationsIndex < mediaStreamOutputConfigurationsJsonList.GetLength(); ++mediaStreamOutputConfigurationsIndex)
+   {
+     mediaStreamOutputConfigurationsJsonList[mediaStreamOutputConfigurationsIndex].AsObject(m_mediaStreamOutputConfigurations[mediaStreamOutputConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreamOutputConfigurations", std::move(mediaStreamOutputConfigurationsJsonList));
+
+  }
+
+  if(m_minLatencyHasBeenSet)
+  {
+   payload.WithInteger("minLatency", m_minLatency);
+
+  }
+
   if(m_portHasBeenSet)
   {
    payload.WithInteger("port", m_port);
@@ -86,6 +109,18 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
   if(m_remoteIdHasBeenSet)
   {
    payload.WithString("remoteId", m_remoteId);
+
+  }
+
+  if(m_senderControlPortHasBeenSet)
+  {
+   payload.WithInteger("senderControlPort", m_senderControlPort);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("senderIpAddress", m_senderIpAddress);
 
   }
 

@@ -100,37 +100,27 @@ namespace Model
 
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_format = value; }
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_format = std::move(value); }
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline ListPackageVersionsResult& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline ListPackageVersionsResult& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -141,9 +131,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -153,9 +141,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
 
@@ -165,9 +151,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
 
@@ -177,9 +161,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespace.assign(value); }
 
@@ -189,9 +171,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionsResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -201,9 +181,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionsResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
@@ -213,9 +191,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionsResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
@@ -258,50 +234,50 @@ namespace Model
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline const Aws::Vector<PackageVersionSummary>& GetVersions() const{ return m_versions; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline void SetVersions(const Aws::Vector<PackageVersionSummary>& value) { m_versions = value; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline void SetVersions(Aws::Vector<PackageVersionSummary>&& value) { m_versions = std::move(value); }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& WithVersions(const Aws::Vector<PackageVersionSummary>& value) { SetVersions(value); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& WithVersions(Aws::Vector<PackageVersionSummary>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& AddVersions(const PackageVersionSummary& value) { m_versions.push_back(value); return *this; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& AddVersions(PackageVersionSummary&& value) { m_versions.push_back(std::move(value)); return *this; }
 

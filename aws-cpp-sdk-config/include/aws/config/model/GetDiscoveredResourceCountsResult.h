@@ -35,44 +35,41 @@ namespace Model
 
 
     /**
-     * <p>The total number of resources that AWS Config is recording in the region for
-     * your account. If you specify resource types in the request, AWS Config returns
-     * only the total number of resources for those resource types.</p> <p
-     * class="title"> <b>Example</b> </p> <ol> <li> <p>AWS Config is recording three
-     * resource types in the US East (Ohio) Region for your account: 25 EC2 instances,
-     * 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li> <li>
-     * <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and
-     * specify the resource type, <code>"AWS::EC2::Instances"</code>, in the
-     * request.</p> </li> <li> <p>AWS Config returns 25 for
-     * <code>totalDiscoveredResources</code>.</p> </li> </ol>
+     * <p>The total number of resources that Config is recording in the region for your
+     * account. If you specify resource types in the request, Config returns only the
+     * total number of resources for those resource types.</p> <p class="title">
+     * <b>Example</b> </p> <ol> <li> <p>Config is recording three resource types in the
+     * US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15
+     * S3 buckets, for a total of 60 resources.</p> </li> <li> <p>You make a call to
+     * the <code>GetDiscoveredResourceCounts</code> action and specify the resource
+     * type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li> <li>
+     * <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li> </ol>
      */
     inline long long GetTotalDiscoveredResources() const{ return m_totalDiscoveredResources; }
 
     /**
-     * <p>The total number of resources that AWS Config is recording in the region for
-     * your account. If you specify resource types in the request, AWS Config returns
-     * only the total number of resources for those resource types.</p> <p
-     * class="title"> <b>Example</b> </p> <ol> <li> <p>AWS Config is recording three
-     * resource types in the US East (Ohio) Region for your account: 25 EC2 instances,
-     * 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li> <li>
-     * <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and
-     * specify the resource type, <code>"AWS::EC2::Instances"</code>, in the
-     * request.</p> </li> <li> <p>AWS Config returns 25 for
-     * <code>totalDiscoveredResources</code>.</p> </li> </ol>
+     * <p>The total number of resources that Config is recording in the region for your
+     * account. If you specify resource types in the request, Config returns only the
+     * total number of resources for those resource types.</p> <p class="title">
+     * <b>Example</b> </p> <ol> <li> <p>Config is recording three resource types in the
+     * US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15
+     * S3 buckets, for a total of 60 resources.</p> </li> <li> <p>You make a call to
+     * the <code>GetDiscoveredResourceCounts</code> action and specify the resource
+     * type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li> <li>
+     * <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li> </ol>
      */
     inline void SetTotalDiscoveredResources(long long value) { m_totalDiscoveredResources = value; }
 
     /**
-     * <p>The total number of resources that AWS Config is recording in the region for
-     * your account. If you specify resource types in the request, AWS Config returns
-     * only the total number of resources for those resource types.</p> <p
-     * class="title"> <b>Example</b> </p> <ol> <li> <p>AWS Config is recording three
-     * resource types in the US East (Ohio) Region for your account: 25 EC2 instances,
-     * 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li> <li>
-     * <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and
-     * specify the resource type, <code>"AWS::EC2::Instances"</code>, in the
-     * request.</p> </li> <li> <p>AWS Config returns 25 for
-     * <code>totalDiscoveredResources</code>.</p> </li> </ol>
+     * <p>The total number of resources that Config is recording in the region for your
+     * account. If you specify resource types in the request, Config returns only the
+     * total number of resources for those resource types.</p> <p class="title">
+     * <b>Example</b> </p> <ol> <li> <p>Config is recording three resource types in the
+     * US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15
+     * S3 buckets, for a total of 60 resources.</p> </li> <li> <p>You make a call to
+     * the <code>GetDiscoveredResourceCounts</code> action and specify the resource
+     * type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li> <li>
+     * <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li> </ol>
      */
     inline GetDiscoveredResourceCountsResult& WithTotalDiscoveredResources(long long value) { SetTotalDiscoveredResources(value); return *this;}
 

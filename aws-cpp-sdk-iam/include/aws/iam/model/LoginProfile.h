@@ -43,50 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline LoginProfile& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline LoginProfile& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the user, which can be used for signing in to the AWS Management
-     * Console.</p>
+     * <p>The name of the user, which can be used for signing in to the Amazon Web
+     * Services Management Console.</p>
      */
     inline LoginProfile& WithUserName(const char* value) { SetUserName(value); return *this;}
 

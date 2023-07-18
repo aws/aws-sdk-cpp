@@ -77,31 +77,72 @@ namespace Model
 
     /**
      * <p>If this parameter is <code>true</code>, the reboot is conducted through a
-     * Multi-AZ failover. (If the instance isn't configured for Multi-AZ, then you
-     * can't specify <code>true</code>.)</p>
+     * Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't
+     * specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
      */
     inline bool GetForceFailover() const{ return m_forceFailover; }
 
     /**
      * <p>If this parameter is <code>true</code>, the reboot is conducted through a
-     * Multi-AZ failover. (If the instance isn't configured for Multi-AZ, then you
-     * can't specify <code>true</code>.)</p>
+     * Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't
+     * specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
      */
     inline bool ForceFailoverHasBeenSet() const { return m_forceFailoverHasBeenSet; }
 
     /**
      * <p>If this parameter is <code>true</code>, the reboot is conducted through a
-     * Multi-AZ failover. (If the instance isn't configured for Multi-AZ, then you
-     * can't specify <code>true</code>.)</p>
+     * Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't
+     * specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
      */
     inline void SetForceFailover(bool value) { m_forceFailoverHasBeenSet = true; m_forceFailover = value; }
 
     /**
      * <p>If this parameter is <code>true</code>, the reboot is conducted through a
-     * Multi-AZ failover. (If the instance isn't configured for Multi-AZ, then you
-     * can't specify <code>true</code>.)</p>
+     * Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't
+     * specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
      */
     inline RebootReplicationInstanceRequest& WithForceFailover(bool value) { SetForceFailover(value); return *this;}
+
+
+    /**
+     * <p>If this parameter is <code>true</code>, the reboot is conducted through a
+     * planned Multi-AZ failover where resources are released and cleaned up prior to
+     * conducting the failover. If the instance isn''t configured for Multi-AZ, then
+     * you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+     */
+    inline bool GetForcePlannedFailover() const{ return m_forcePlannedFailover; }
+
+    /**
+     * <p>If this parameter is <code>true</code>, the reboot is conducted through a
+     * planned Multi-AZ failover where resources are released and cleaned up prior to
+     * conducting the failover. If the instance isn''t configured for Multi-AZ, then
+     * you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+     */
+    inline bool ForcePlannedFailoverHasBeenSet() const { return m_forcePlannedFailoverHasBeenSet; }
+
+    /**
+     * <p>If this parameter is <code>true</code>, the reboot is conducted through a
+     * planned Multi-AZ failover where resources are released and cleaned up prior to
+     * conducting the failover. If the instance isn''t configured for Multi-AZ, then
+     * you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+     */
+    inline void SetForcePlannedFailover(bool value) { m_forcePlannedFailoverHasBeenSet = true; m_forcePlannedFailover = value; }
+
+    /**
+     * <p>If this parameter is <code>true</code>, the reboot is conducted through a
+     * planned Multi-AZ failover where resources are released and cleaned up prior to
+     * conducting the failover. If the instance isn''t configured for Multi-AZ, then
+     * you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and
+     * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+     */
+    inline RebootReplicationInstanceRequest& WithForcePlannedFailover(bool value) { SetForcePlannedFailover(value); return *this;}
 
   private:
 
@@ -110,6 +151,9 @@ namespace Model
 
     bool m_forceFailover;
     bool m_forceFailoverHasBeenSet;
+
+    bool m_forcePlannedFailover;
+    bool m_forcePlannedFailoverHasBeenSet;
   };
 
 } // namespace Model

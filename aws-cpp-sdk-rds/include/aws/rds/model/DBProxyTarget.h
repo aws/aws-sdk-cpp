@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/TargetType.h>
+#include <aws/rds/model/TargetRole.h>
 #include <aws/rds/model/TargetHealth.h>
 #include <utility>
 
@@ -296,6 +297,43 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline const TargetRole& GetRole() const{ return m_role; }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline void SetRole(const TargetRole& value) { m_roleHasBeenSet = true; m_role = value; }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline void SetRole(TargetRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline DBProxyTarget& WithRole(const TargetRole& value) { SetRole(value); return *this;}
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline DBProxyTarget& WithRole(TargetRole&& value) { SetRole(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the connection health of the RDS Proxy target.</p>
      */
     inline const TargetHealth& GetTargetHealth() const{ return m_targetHealth; }
@@ -344,6 +382,9 @@ namespace Model
 
     TargetType m_type;
     bool m_typeHasBeenSet;
+
+    TargetRole m_role;
+    bool m_roleHasBeenSet;
 
     TargetHealth m_targetHealth;
     bool m_targetHealthHasBeenSet;

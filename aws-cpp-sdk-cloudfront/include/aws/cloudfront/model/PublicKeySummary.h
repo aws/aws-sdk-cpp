@@ -193,42 +193,50 @@ namespace Model
 
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline PublicKeySummary& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline PublicKeySummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>A comment to describe the public key.</p>
+     * <p>A comment to describe the public key. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline PublicKeySummary& WithComment(const char* value) { SetComment(value); return *this;}
 

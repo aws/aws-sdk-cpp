@@ -25,7 +25,7 @@ namespace SSM
 namespace Model
 {
   /**
-   * <p>The query result body of the GetServiceSetting API action.</p><p><h3>See
+   * <p>The query result body of the GetServiceSetting API operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSettingResult">AWS
    * API Reference</a></p>

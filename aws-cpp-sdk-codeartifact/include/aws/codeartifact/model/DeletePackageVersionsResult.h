@@ -36,57 +36,68 @@ namespace Model
 
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& GetSuccessfulVersions() const{ return m_successfulVersions; }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline void SetSuccessfulVersions(const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& value) { m_successfulVersions = value; }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline void SetSuccessfulVersions(Aws::Map<Aws::String, SuccessfulPackageVersionInfo>&& value) { m_successfulVersions = std::move(value); }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& WithSuccessfulVersions(const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& value) { SetSuccessfulVersions(value); return *this;}
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& WithSuccessfulVersions(Aws::Map<Aws::String, SuccessfulPackageVersionInfo>&& value) { SetSuccessfulVersions(std::move(value)); return *this;}
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& AddSuccessfulVersions(const Aws::String& key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(key, value); return *this; }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& AddSuccessfulVersions(Aws::String&& key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& AddSuccessfulVersions(const Aws::String& key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& AddSuccessfulVersions(Aws::String&& key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& AddSuccessfulVersions(const char* key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> A list of the package versions that were successfully deleted. </p>
+     * <p> A list of the package versions that were successfully deleted. The status of
+     * every successful version will be <code>Deleted</code>. </p>
      */
     inline DeletePackageVersionsResult& AddSuccessfulVersions(const char* key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(key, value); return *this; }
 

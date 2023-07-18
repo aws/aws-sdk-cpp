@@ -20,7 +20,9 @@ ListLayersRequest::ListLayersRequest() :
     m_compatibleRuntimeHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
+    m_maxItemsHasBeenSet(false),
+    m_compatibleArchitecture(Architecture::NOT_SET),
+    m_compatibleArchitectureHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,13 @@ void ListLayersRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxItems;
       uri.AddQueryStringParameter("MaxItems", ss.str());
+      ss.str("");
+    }
+
+    if(m_compatibleArchitectureHasBeenSet)
+    {
+      ss << ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitecture);
+      uri.AddQueryStringParameter("CompatibleArchitecture", ss.str());
       ss.str("");
     }
 

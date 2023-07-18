@@ -25,6 +25,8 @@ JobDefinition::JobDefinition() :
     m_revisionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_schedulingPriority(0),
+    m_schedulingPriorityHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
@@ -44,6 +46,8 @@ JobDefinition::JobDefinition(JsonView jsonValue) :
     m_revisionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_schedulingPriority(0),
+    m_schedulingPriorityHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
@@ -92,6 +96,13 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
     m_type = jsonValue.GetString("type");
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schedulingPriority"))
+  {
+    m_schedulingPriority = jsonValue.GetInteger("schedulingPriority");
+
+    m_schedulingPriorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parameters"))
@@ -193,6 +204,12 @@ JsonValue JobDefinition::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", m_type);
+
+  }
+
+  if(m_schedulingPriorityHasBeenSet)
+  {
+   payload.WithInteger("schedulingPriority", m_schedulingPriority);
 
   }
 

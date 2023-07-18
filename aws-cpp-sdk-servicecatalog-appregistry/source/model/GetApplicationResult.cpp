@@ -81,6 +81,12 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("integrations"))
+  {
+    m_integrations = jsonValue.GetObject("integrations");
+
+  }
+
 
 
   return *this;

@@ -21,7 +21,9 @@ CreateLagRequest::CreateLagRequest() :
     m_connectionIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_childConnectionTagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+    m_providerNameHasBeenSet(false),
+    m_requestMACSec(false),
+    m_requestMACSecHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,12 @@ Aws::String CreateLagRequest::SerializePayload() const
   if(m_providerNameHasBeenSet)
   {
    payload.WithString("providerName", m_providerName);
+
+  }
+
+  if(m_requestMACSecHasBeenSet)
+  {
+   payload.WithBool("requestMACSec", m_requestMACSec);
 
   }
 

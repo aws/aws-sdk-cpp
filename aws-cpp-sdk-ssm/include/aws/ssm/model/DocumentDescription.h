@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Systems Manager document. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes an Amazon Web Services Systems Manager document (SSM document).
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDescription">AWS
    * API Reference</a></p>
    */
@@ -178,44 +179,101 @@ namespace Model
 
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DocumentDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DocumentDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DocumentDescription& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentDescription& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentDescription& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentDescription& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
@@ -260,42 +318,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline DocumentDescription& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline DocumentDescription& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline DocumentDescription& WithOwner(const char* value) { SetOwner(value); return *this;}
 
@@ -332,97 +390,97 @@ namespace Model
 
 
     /**
-     * <p>The status of the Systems Manager document.</p>
+     * <p>The status of the SSM document.</p>
      */
     inline const DocumentStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the Systems Manager document.</p>
+     * <p>The status of the SSM document.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the Systems Manager document.</p>
+     * <p>The status of the SSM document.</p>
      */
     inline void SetStatus(const DocumentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the Systems Manager document.</p>
+     * <p>The status of the SSM document.</p>
      */
     inline void SetStatus(DocumentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the Systems Manager document.</p>
+     * <p>The status of the SSM document.</p>
      */
     inline DocumentDescription& WithStatus(const DocumentStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the Systems Manager document.</p>
+     * <p>The status of the SSM document.</p>
      */
     inline DocumentDescription& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline const Aws::String& GetStatusInformation() const{ return m_statusInformation; }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline bool StatusInformationHasBeenSet() const { return m_statusInformationHasBeenSet; }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline void SetStatusInformation(const Aws::String& value) { m_statusInformationHasBeenSet = true; m_statusInformation = value; }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline void SetStatusInformation(Aws::String&& value) { m_statusInformationHasBeenSet = true; m_statusInformation = std::move(value); }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline void SetStatusInformation(const char* value) { m_statusInformationHasBeenSet = true; m_statusInformation.assign(value); }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline DocumentDescription& WithStatusInformation(const Aws::String& value) { SetStatusInformation(value); return *this;}
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline DocumentDescription& WithStatusInformation(Aws::String&& value) { SetStatusInformation(std::move(value)); return *this;}
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline DocumentDescription& WithStatusInformation(const char* value) { SetStatusInformation(value); return *this;}
 
@@ -551,42 +609,50 @@ namespace Model
 
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline const Aws::Vector<PlatformType>& GetPlatformTypes() const{ return m_platformTypes; }
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline bool PlatformTypesHasBeenSet() const { return m_platformTypesHasBeenSet; }
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline void SetPlatformTypes(const Aws::Vector<PlatformType>& value) { m_platformTypesHasBeenSet = true; m_platformTypes = value; }
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline void SetPlatformTypes(Aws::Vector<PlatformType>&& value) { m_platformTypesHasBeenSet = true; m_platformTypes = std::move(value); }
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& WithPlatformTypes(const Aws::Vector<PlatformType>& value) { SetPlatformTypes(value); return *this;}
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& WithPlatformTypes(Aws::Vector<PlatformType>&& value) { SetPlatformTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& AddPlatformTypes(const PlatformType& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
 
     /**
-     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(std::move(value)); return *this; }
 
@@ -778,73 +844,81 @@ namespace Model
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User
-     * Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
@@ -1198,6 +1272,107 @@ namespace Model
      */
     inline DocumentDescription& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline void SetCategory(const Aws::Vector<Aws::String>& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline void SetCategory(Aws::Vector<Aws::String>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& WithCategory(const Aws::Vector<Aws::String>& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& WithCategory(Aws::Vector<Aws::String>&& value) { SetCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& AddCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& AddCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& AddCategory(const char* value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
+
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCategoryEnum() const{ return m_categoryEnum; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline bool CategoryEnumHasBeenSet() const { return m_categoryEnumHasBeenSet; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline void SetCategoryEnum(const Aws::Vector<Aws::String>& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum = value; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline void SetCategoryEnum(Aws::Vector<Aws::String>&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum = std::move(value); }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& WithCategoryEnum(const Aws::Vector<Aws::String>& value) { SetCategoryEnum(value); return *this;}
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& WithCategoryEnum(Aws::Vector<Aws::String>&& value) { SetCategoryEnum(std::move(value)); return *this;}
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& AddCategoryEnum(const Aws::String& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(value); return *this; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& AddCategoryEnum(Aws::String&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& AddCategoryEnum(const char* value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(value); return *this; }
+
   private:
 
     Aws::String m_sha1;
@@ -1211,6 +1386,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_versionName;
     bool m_versionNameHasBeenSet;
@@ -1280,6 +1458,12 @@ namespace Model
 
     ReviewStatus m_reviewStatus;
     bool m_reviewStatusHasBeenSet;
+
+    Aws::Vector<Aws::String> m_category;
+    bool m_categoryHasBeenSet;
+
+    Aws::Vector<Aws::String> m_categoryEnum;
+    bool m_categoryEnumHasBeenSet;
   };
 
 } // namespace Model

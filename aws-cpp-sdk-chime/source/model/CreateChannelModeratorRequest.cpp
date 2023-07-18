@@ -5,6 +5,7 @@
 
 #include <aws/chime/model/CreateChannelModeratorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -14,7 +15,8 @@ using namespace Aws::Utils;
 
 CreateChannelModeratorRequest::CreateChannelModeratorRequest() : 
     m_channelArnHasBeenSet(false),
-    m_channelModeratorArnHasBeenSet(false)
+    m_channelModeratorArnHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,21 @@ Aws::String CreateChannelModeratorRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection CreateChannelModeratorRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

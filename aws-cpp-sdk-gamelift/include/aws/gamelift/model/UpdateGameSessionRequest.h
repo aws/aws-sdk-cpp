@@ -155,32 +155,38 @@ namespace Model
 
 
     /**
-     * <p>Policy determining whether or not the game session accepts new players.</p>
+     * <p>A policy that determines whether the game session is accepting new
+     * players.</p>
      */
     inline const PlayerSessionCreationPolicy& GetPlayerSessionCreationPolicy() const{ return m_playerSessionCreationPolicy; }
 
     /**
-     * <p>Policy determining whether or not the game session accepts new players.</p>
+     * <p>A policy that determines whether the game session is accepting new
+     * players.</p>
      */
     inline bool PlayerSessionCreationPolicyHasBeenSet() const { return m_playerSessionCreationPolicyHasBeenSet; }
 
     /**
-     * <p>Policy determining whether or not the game session accepts new players.</p>
+     * <p>A policy that determines whether the game session is accepting new
+     * players.</p>
      */
     inline void SetPlayerSessionCreationPolicy(const PlayerSessionCreationPolicy& value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = value; }
 
     /**
-     * <p>Policy determining whether or not the game session accepts new players.</p>
+     * <p>A policy that determines whether the game session is accepting new
+     * players.</p>
      */
     inline void SetPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = std::move(value); }
 
     /**
-     * <p>Policy determining whether or not the game session accepts new players.</p>
+     * <p>A policy that determines whether the game session is accepting new
+     * players.</p>
      */
     inline UpdateGameSessionRequest& WithPlayerSessionCreationPolicy(const PlayerSessionCreationPolicy& value) { SetPlayerSessionCreationPolicy(value); return *this;}
 
     /**
-     * <p>Policy determining whether or not the game session accepts new players.</p>
+     * <p>A policy that determines whether the game session is accepting new
+     * players.</p>
      */
     inline UpdateGameSessionRequest& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(std::move(value)); return *this;}
 

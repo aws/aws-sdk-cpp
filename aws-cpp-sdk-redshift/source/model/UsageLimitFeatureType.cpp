@@ -22,6 +22,7 @@ namespace Aws
 
         static const int spectrum_HASH = HashingUtils::HashString("spectrum");
         static const int concurrency_scaling_HASH = HashingUtils::HashString("concurrency-scaling");
+        static const int cross_region_datasharing_HASH = HashingUtils::HashString("cross-region-datasharing");
 
 
         UsageLimitFeatureType GetUsageLimitFeatureTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == concurrency_scaling_HASH)
           {
             return UsageLimitFeatureType::concurrency_scaling;
+          }
+          else if (hashCode == cross_region_datasharing_HASH)
+          {
+            return UsageLimitFeatureType::cross_region_datasharing;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "spectrum";
           case UsageLimitFeatureType::concurrency_scaling:
             return "concurrency-scaling";
+          case UsageLimitFeatureType::cross_region_datasharing:
+            return "cross-region-datasharing";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

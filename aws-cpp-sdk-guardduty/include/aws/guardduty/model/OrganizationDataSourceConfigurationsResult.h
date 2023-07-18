@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/OrganizationS3LogsConfigurationResult.h>
+#include <aws/guardduty/model/OrganizationKubernetesConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +69,44 @@ namespace Model
      */
     inline OrganizationDataSourceConfigurationsResult& WithS3Logs(OrganizationS3LogsConfigurationResult&& value) { SetS3Logs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources.</p>
+     */
+    inline const OrganizationKubernetesConfigurationResult& GetKubernetes() const{ return m_kubernetes; }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources.</p>
+     */
+    inline bool KubernetesHasBeenSet() const { return m_kubernetesHasBeenSet; }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources.</p>
+     */
+    inline void SetKubernetes(const OrganizationKubernetesConfigurationResult& value) { m_kubernetesHasBeenSet = true; m_kubernetes = value; }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources.</p>
+     */
+    inline void SetKubernetes(OrganizationKubernetesConfigurationResult&& value) { m_kubernetesHasBeenSet = true; m_kubernetes = std::move(value); }
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources.</p>
+     */
+    inline OrganizationDataSourceConfigurationsResult& WithKubernetes(const OrganizationKubernetesConfigurationResult& value) { SetKubernetes(value); return *this;}
+
+    /**
+     * <p>Describes the configuration of Kubernetes data sources.</p>
+     */
+    inline OrganizationDataSourceConfigurationsResult& WithKubernetes(OrganizationKubernetesConfigurationResult&& value) { SetKubernetes(std::move(value)); return *this;}
+
   private:
 
     OrganizationS3LogsConfigurationResult m_s3Logs;
     bool m_s3LogsHasBeenSet;
+
+    OrganizationKubernetesConfigurationResult m_kubernetes;
+    bool m_kubernetesHasBeenSet;
   };
 
 } // namespace Model

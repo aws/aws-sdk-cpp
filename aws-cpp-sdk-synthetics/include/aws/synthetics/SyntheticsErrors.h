@@ -48,7 +48,8 @@ enum class SyntheticsErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  REQUEST_ENTITY_TOO_LARGE
 };
 
 class AWS_SYNTHETICS_API SyntheticsError : public Aws::Client::AWSError<SyntheticsErrors>

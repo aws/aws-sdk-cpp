@@ -20,7 +20,9 @@ namespace Model
     SFTP,
     MONGODB,
     KAFKA,
-    NETWORK
+    NETWORK,
+    MARKETPLACE,
+    CUSTOM
   };
 
 namespace ConnectionTypeMapper

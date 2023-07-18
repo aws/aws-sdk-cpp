@@ -41,69 +41,69 @@ namespace Model
 
 
     /**
-     * <p> Determines the level of granularity that's included in the prefix. </p>
+     * <p> Determines the format of the prefix, and whether it applies to the file
+     * name, file path, or both. </p>
      */
     inline const PrefixType& GetPrefixType() const{ return m_prefixType; }
 
     /**
-     * <p> Determines the level of granularity that's included in the prefix. </p>
+     * <p> Determines the format of the prefix, and whether it applies to the file
+     * name, file path, or both. </p>
      */
     inline bool PrefixTypeHasBeenSet() const { return m_prefixTypeHasBeenSet; }
 
     /**
-     * <p> Determines the level of granularity that's included in the prefix. </p>
+     * <p> Determines the format of the prefix, and whether it applies to the file
+     * name, file path, or both. </p>
      */
     inline void SetPrefixType(const PrefixType& value) { m_prefixTypeHasBeenSet = true; m_prefixType = value; }
 
     /**
-     * <p> Determines the level of granularity that's included in the prefix. </p>
+     * <p> Determines the format of the prefix, and whether it applies to the file
+     * name, file path, or both. </p>
      */
     inline void SetPrefixType(PrefixType&& value) { m_prefixTypeHasBeenSet = true; m_prefixType = std::move(value); }
 
     /**
-     * <p> Determines the level of granularity that's included in the prefix. </p>
+     * <p> Determines the format of the prefix, and whether it applies to the file
+     * name, file path, or both. </p>
      */
     inline PrefixConfig& WithPrefixType(const PrefixType& value) { SetPrefixType(value); return *this;}
 
     /**
-     * <p> Determines the level of granularity that's included in the prefix. </p>
+     * <p> Determines the format of the prefix, and whether it applies to the file
+     * name, file path, or both. </p>
      */
     inline PrefixConfig& WithPrefixType(PrefixType&& value) { SetPrefixType(std::move(value)); return *this;}
 
 
     /**
-     * <p> Determines the format of the prefix, and whether it applies to the file
-     * name, file path, or both. </p>
+     * <p> Determines the level of granularity that's included in the prefix. </p>
      */
     inline const PrefixFormat& GetPrefixFormat() const{ return m_prefixFormat; }
 
     /**
-     * <p> Determines the format of the prefix, and whether it applies to the file
-     * name, file path, or both. </p>
+     * <p> Determines the level of granularity that's included in the prefix. </p>
      */
     inline bool PrefixFormatHasBeenSet() const { return m_prefixFormatHasBeenSet; }
 
     /**
-     * <p> Determines the format of the prefix, and whether it applies to the file
-     * name, file path, or both. </p>
+     * <p> Determines the level of granularity that's included in the prefix. </p>
      */
     inline void SetPrefixFormat(const PrefixFormat& value) { m_prefixFormatHasBeenSet = true; m_prefixFormat = value; }
 
     /**
-     * <p> Determines the format of the prefix, and whether it applies to the file
-     * name, file path, or both. </p>
+     * <p> Determines the level of granularity that's included in the prefix. </p>
      */
     inline void SetPrefixFormat(PrefixFormat&& value) { m_prefixFormatHasBeenSet = true; m_prefixFormat = std::move(value); }
 
     /**
-     * <p> Determines the format of the prefix, and whether it applies to the file
-     * name, file path, or both. </p>
+     * <p> Determines the level of granularity that's included in the prefix. </p>
      */
     inline PrefixConfig& WithPrefixFormat(const PrefixFormat& value) { SetPrefixFormat(value); return *this;}
 
     /**
-     * <p> Determines the format of the prefix, and whether it applies to the file
-     * name, file path, or both. </p>
+     * <p> Determines the level of granularity that's included in the prefix. </p>
      */
     inline PrefixConfig& WithPrefixFormat(PrefixFormat&& value) { SetPrefixFormat(std::move(value)); return *this;}
 

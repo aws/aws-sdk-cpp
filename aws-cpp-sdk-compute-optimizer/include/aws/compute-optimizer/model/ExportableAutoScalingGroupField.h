@@ -26,6 +26,14 @@ namespace Model
     UtilizationMetricsEbsWriteOpsPerSecondMaximum,
     UtilizationMetricsEbsReadBytesPerSecondMaximum,
     UtilizationMetricsEbsWriteBytesPerSecondMaximum,
+    UtilizationMetricsDiskReadOpsPerSecondMaximum,
+    UtilizationMetricsDiskWriteOpsPerSecondMaximum,
+    UtilizationMetricsDiskReadBytesPerSecondMaximum,
+    UtilizationMetricsDiskWriteBytesPerSecondMaximum,
+    UtilizationMetricsNetworkInBytesPerSecondMaximum,
+    UtilizationMetricsNetworkOutBytesPerSecondMaximum,
+    UtilizationMetricsNetworkPacketsInPerSecondMaximum,
+    UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
     LookbackPeriodInDays,
     CurrentConfigurationInstanceType,
     CurrentConfigurationDesiredCapacity,
@@ -52,7 +60,16 @@ namespace Model
     RecommendationOptionsMemory,
     RecommendationOptionsStorage,
     RecommendationOptionsNetwork,
-    LastRefreshTimestamp
+    LastRefreshTimestamp,
+    CurrentPerformanceRisk,
+    RecommendationOptionsSavingsOpportunityPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    EffectiveRecommendationPreferencesCpuVendorArchitectures,
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    InferredWorkloadTypes,
+    RecommendationOptionsMigrationEffort
   };
 
 namespace ExportableAutoScalingGroupFieldMapper

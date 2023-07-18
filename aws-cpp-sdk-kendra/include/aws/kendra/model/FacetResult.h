@@ -7,8 +7,8 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/DocumentAttributeValueType.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/DocumentAttributeValueCountPair.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -25,6 +25,7 @@ namespace kendra
 {
 namespace Model
 {
+  class DocumentAttributeValueCountPair;
 
   /**
    * <p>The facet values for the documents in the response.</p><p><h3>See Also:</h3> 

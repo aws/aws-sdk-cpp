@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qldb/model/LedgerState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/qldb/model/PermissionsMode.h>
+#include <aws/qldb/model/LedgerEncryptionDescription.h>
 #include <utility>
 
 namespace Aws
@@ -169,13 +171,37 @@ namespace Model
 
 
     /**
+     * <p>The permissions mode of the ledger.</p>
+     */
+    inline const PermissionsMode& GetPermissionsMode() const{ return m_permissionsMode; }
+
+    /**
+     * <p>The permissions mode of the ledger.</p>
+     */
+    inline void SetPermissionsMode(const PermissionsMode& value) { m_permissionsMode = value; }
+
+    /**
+     * <p>The permissions mode of the ledger.</p>
+     */
+    inline void SetPermissionsMode(PermissionsMode&& value) { m_permissionsMode = std::move(value); }
+
+    /**
+     * <p>The permissions mode of the ledger.</p>
+     */
+    inline DescribeLedgerResult& WithPermissionsMode(const PermissionsMode& value) { SetPermissionsMode(value); return *this;}
+
+    /**
+     * <p>The permissions mode of the ledger.</p>
+     */
+    inline DescribeLedgerResult& WithPermissionsMode(PermissionsMode&& value) { SetPermissionsMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -183,10 +209,8 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtection = value; }
 
@@ -194,12 +218,46 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline DescribeLedgerResult& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline const LedgerEncryptionDescription& GetEncryptionDescription() const{ return m_encryptionDescription; }
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline void SetEncryptionDescription(const LedgerEncryptionDescription& value) { m_encryptionDescription = value; }
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline void SetEncryptionDescription(LedgerEncryptionDescription&& value) { m_encryptionDescription = std::move(value); }
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline DescribeLedgerResult& WithEncryptionDescription(const LedgerEncryptionDescription& value) { SetEncryptionDescription(value); return *this;}
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline DescribeLedgerResult& WithEncryptionDescription(LedgerEncryptionDescription&& value) { SetEncryptionDescription(std::move(value)); return *this;}
 
   private:
 
@@ -211,7 +269,11 @@ namespace Model
 
     Aws::Utils::DateTime m_creationDateTime;
 
+    PermissionsMode m_permissionsMode;
+
     bool m_deletionProtection;
+
+    LedgerEncryptionDescription m_encryptionDescription;
   };
 
 } // namespace Model

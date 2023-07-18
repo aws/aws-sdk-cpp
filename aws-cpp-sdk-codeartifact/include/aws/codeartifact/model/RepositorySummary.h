@@ -26,9 +26,9 @@ namespace Model
   /**
    * <p> Details about a repository, including its Amazon Resource Name (ARN),
    * description, and domain information. The <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">
-   * <code>ListRepositories</code> </a> operation returns a list of
-   * <code>RepositorySummary</code> objects. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">ListRepositories</a>
+   * operation returns a list of <code>RepositorySummary</code> objects.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/RepositorySummary">AWS
    * API Reference</a></p>
    */
@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline const Aws::String& GetAdministratorAccount() const{ return m_administratorAccount; }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline bool AdministratorAccountHasBeenSet() const { return m_administratorAccountHasBeenSet; }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline void SetAdministratorAccount(const Aws::String& value) { m_administratorAccountHasBeenSet = true; m_administratorAccount = value; }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline void SetAdministratorAccount(Aws::String&& value) { m_administratorAccountHasBeenSet = true; m_administratorAccount = std::move(value); }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline void SetAdministratorAccount(const char* value) { m_administratorAccountHasBeenSet = true; m_administratorAccount.assign(value); }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline RepositorySummary& WithAdministratorAccount(const Aws::String& value) { SetAdministratorAccount(value); return *this;}
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline RepositorySummary& WithAdministratorAccount(Aws::String&& value) { SetAdministratorAccount(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline RepositorySummary& WithAdministratorAccount(const char* value) { SetAdministratorAccount(value); return *this;}
 
@@ -165,50 +165,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline RepositorySummary& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline RepositorySummary& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline RepositorySummary& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>contains information about a REST API in version 1 of Amazon API
+   * <p>Contains information about a REST API in version 1 of Amazon API
    * Gateway.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayRestApiDetails">AWS
    * API Reference</a></p>

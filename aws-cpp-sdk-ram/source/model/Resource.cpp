@@ -27,7 +27,9 @@ Resource::Resource() :
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_resourceRegionScope(ResourceRegionScope::NOT_SET),
+    m_resourceRegionScopeHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ Resource::Resource(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_resourceRegionScope(ResourceRegionScope::NOT_SET),
+    m_resourceRegionScopeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +107,13 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceRegionScope"))
+  {
+    m_resourceRegionScope = ResourceRegionScopeMapper::GetResourceRegionScopeForName(jsonValue.GetString("resourceRegionScope"));
+
+    m_resourceRegionScopeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +164,11 @@ JsonValue Resource::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_resourceRegionScopeHasBeenSet)
+  {
+   payload.WithString("resourceRegionScope", ResourceRegionScopeMapper::GetNameForResourceRegionScope(m_resourceRegionScope));
   }
 
   return payload;

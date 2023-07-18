@@ -86,6 +86,12 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("FilterCriteria"))
+  {
+    m_filterCriteria = jsonValue.GetObject("FilterCriteria");
+
+  }
+
   if(jsonValue.ValueExists("FunctionArn"))
   {
     m_functionArn = jsonValue.GetString("FunctionArn");

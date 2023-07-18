@@ -71,43 +71,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetTrackerArn() const{ return m_trackerArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline void SetTrackerArn(const Aws::String& value) { m_trackerArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline void SetTrackerArn(Aws::String&& value) { m_trackerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline void SetTrackerArn(const char* value) { m_trackerArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline CreateTrackerResult& WithTrackerArn(const Aws::String& value) { SetTrackerArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline CreateTrackerResult& WithTrackerArn(Aws::String&& value) { SetTrackerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline CreateTrackerResult& WithTrackerArn(const char* value) { SetTrackerArn(value); return *this;}
 

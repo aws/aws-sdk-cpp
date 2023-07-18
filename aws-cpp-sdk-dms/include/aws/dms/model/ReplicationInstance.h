@@ -127,88 +127,88 @@ namespace Model
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the replication instance as defined for
      * the specified replication instance class. It is a required parameter, although a
-     * defualt value is pre-selected in the DMS console.</p> <p>For more information on
+     * default value is pre-selected in the DMS console.</p> <p>For more information on
      * the settings and capacities for the available replication instance classes, see
      * <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -711,74 +711,82 @@ namespace Model
 
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

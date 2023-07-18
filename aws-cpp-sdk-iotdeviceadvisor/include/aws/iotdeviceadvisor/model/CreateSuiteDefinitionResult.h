@@ -70,37 +70,37 @@ namespace Model
 
 
     /**
-     * <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+     * <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetSuiteDefinitionArn() const{ return m_suiteDefinitionArn; }
 
     /**
-     * <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+     * <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
      */
     inline void SetSuiteDefinitionArn(const Aws::String& value) { m_suiteDefinitionArn = value; }
 
     /**
-     * <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+     * <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
      */
     inline void SetSuiteDefinitionArn(Aws::String&& value) { m_suiteDefinitionArn = std::move(value); }
 
     /**
-     * <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+     * <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
      */
     inline void SetSuiteDefinitionArn(const char* value) { m_suiteDefinitionArn.assign(value); }
 
     /**
-     * <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+     * <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
      */
     inline CreateSuiteDefinitionResult& WithSuiteDefinitionArn(const Aws::String& value) { SetSuiteDefinitionArn(value); return *this;}
 
     /**
-     * <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+     * <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
      */
     inline CreateSuiteDefinitionResult& WithSuiteDefinitionArn(Aws::String&& value) { SetSuiteDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+     * <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
      */
     inline CreateSuiteDefinitionResult& WithSuiteDefinitionArn(const char* value) { SetSuiteDefinitionArn(value); return *this;}
 

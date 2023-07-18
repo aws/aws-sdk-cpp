@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The resource configuration for the data model, configured as a part of the
-   * Amplify project.</p><p><h3>See Also:</h3>   <a
+   * <p>The resource config for the data model, configured as a part of the Amplify
+   * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAPIResourceConfig">AWS
    * API Reference</a></p>
    */
@@ -84,49 +84,49 @@ namespace Model
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline const Aws::String& GetApiName() const{ return m_apiName; }
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline bool ApiNameHasBeenSet() const { return m_apiNameHasBeenSet; }
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline void SetApiName(const Aws::String& value) { m_apiNameHasBeenSet = true; m_apiName = value; }
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline void SetApiName(Aws::String&& value) { m_apiNameHasBeenSet = true; m_apiName = std::move(value); }
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline void SetApiName(const char* value) { m_apiNameHasBeenSet = true; m_apiName.assign(value); }
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline BackendAPIResourceConfig& WithApiName(const Aws::String& value) { SetApiName(value); return *this;}
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline BackendAPIResourceConfig& WithApiName(Aws::String&& value) { SetApiName(std::move(value)); return *this;}
 
     /**
      * <p>The API name used to interact with the data model, configured as a part of
-     * the Amplify project.</p>
+     * your Amplify project.</p>
      */
     inline BackendAPIResourceConfig& WithApiName(const char* value) { SetApiName(value); return *this;}
 

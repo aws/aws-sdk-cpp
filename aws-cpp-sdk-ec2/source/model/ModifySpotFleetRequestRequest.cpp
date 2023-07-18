@@ -18,7 +18,8 @@ ModifySpotFleetRequestRequest::ModifySpotFleetRequestRequest() :
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
     m_onDemandTargetCapacity(0),
-    m_onDemandTargetCapacityHasBeenSet(false)
+    m_onDemandTargetCapacityHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,11 @@ Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
   if(m_onDemandTargetCapacityHasBeenSet)
   {
     ss << "OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
+  }
+
+  if(m_contextHasBeenSet)
+  {
+    ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

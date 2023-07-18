@@ -16,7 +16,9 @@ PutIntegrationRequest::PutIntegrationRequest() :
     m_domainNameHasBeenSet(false),
     m_uriHasBeenSet(false),
     m_objectTypeNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_flowDefinitionHasBeenSet(false),
+    m_objectTypeNamesHasBeenSet(false)
 {
 }
 
@@ -44,6 +46,23 @@ Aws::String PutIntegrationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_flowDefinitionHasBeenSet)
+  {
+   payload.WithObject("FlowDefinition", m_flowDefinition.Jsonize());
+
+  }
+
+  if(m_objectTypeNamesHasBeenSet)
+  {
+   JsonValue objectTypeNamesJsonMap;
+   for(auto& objectTypeNamesItem : m_objectTypeNames)
+   {
+     objectTypeNamesJsonMap.WithString(objectTypeNamesItem.first, objectTypeNamesItem.second);
+   }
+   payload.WithObject("ObjectTypeNames", std::move(objectTypeNamesJsonMap));
 
   }
 

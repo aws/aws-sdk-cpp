@@ -19,6 +19,8 @@
 #include <aws/appflow/model/TrendmicroConnectorOperator.h>
 #include <aws/appflow/model/VeevaConnectorOperator.h>
 #include <aws/appflow/model/ZendeskConnectorOperator.h>
+#include <aws/appflow/model/SAPODataConnectorOperator.h>
+#include <aws/appflow/model/Operator.h>
 #include <utility>
 
 namespace Aws
@@ -502,6 +504,68 @@ namespace Model
      */
     inline ConnectorOperator& WithZendesk(ZendeskConnectorOperator&& value) { SetZendesk(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline const SAPODataConnectorOperator& GetSAPOData() const{ return m_sAPOData; }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline void SetSAPOData(const SAPODataConnectorOperator& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline void SetSAPOData(SAPODataConnectorOperator&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline ConnectorOperator& WithSAPOData(const SAPODataConnectorOperator& value) { SetSAPOData(value); return *this;}
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline ConnectorOperator& WithSAPOData(SAPODataConnectorOperator&& value) { SetSAPOData(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Operators supported by the custom connector.</p>
+     */
+    inline const Operator& GetCustomConnector() const{ return m_customConnector; }
+
+    /**
+     * <p>Operators supported by the custom connector.</p>
+     */
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    /**
+     * <p>Operators supported by the custom connector.</p>
+     */
+    inline void SetCustomConnector(const Operator& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    /**
+     * <p>Operators supported by the custom connector.</p>
+     */
+    inline void SetCustomConnector(Operator&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    /**
+     * <p>Operators supported by the custom connector.</p>
+     */
+    inline ConnectorOperator& WithCustomConnector(const Operator& value) { SetCustomConnector(value); return *this;}
+
+    /**
+     * <p>Operators supported by the custom connector.</p>
+     */
+    inline ConnectorOperator& WithCustomConnector(Operator&& value) { SetCustomConnector(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorOperator m_amplitude;
@@ -545,6 +609,12 @@ namespace Model
 
     ZendeskConnectorOperator m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    SAPODataConnectorOperator m_sAPOData;
+    bool m_sAPODataHasBeenSet;
+
+    Operator m_customConnector;
+    bool m_customConnectorHasBeenSet;
   };
 
 } // namespace Model

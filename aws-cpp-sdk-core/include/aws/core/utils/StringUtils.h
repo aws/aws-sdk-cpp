@@ -10,7 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-
+#include <aws/common/byte_buf.h>
 
 
 namespace Aws
@@ -211,6 +211,11 @@ namespace Aws
 
                 std::reverse(s.begin(), s.end());
                 return s;
+            }
+
+            static Aws::String FromByteCursor(aws_byte_cursor cursor)
+            {
+                return Aws::String(reinterpret_cast<char *>(cursor.ptr), cursor.len);
             }
         };
 

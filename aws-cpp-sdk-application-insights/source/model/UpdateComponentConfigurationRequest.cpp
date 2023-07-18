@@ -19,7 +19,9 @@ UpdateComponentConfigurationRequest::UpdateComponentConfigurationRequest() :
     m_monitorHasBeenSet(false),
     m_tier(Tier::NOT_SET),
     m_tierHasBeenSet(false),
-    m_componentConfigurationHasBeenSet(false)
+    m_componentConfigurationHasBeenSet(false),
+    m_autoConfigEnabled(false),
+    m_autoConfigEnabledHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,12 @@ Aws::String UpdateComponentConfigurationRequest::SerializePayload() const
   if(m_componentConfigurationHasBeenSet)
   {
    payload.WithString("ComponentConfiguration", m_componentConfiguration);
+
+  }
+
+  if(m_autoConfigEnabledHasBeenSet)
+  {
+   payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
 
   }
 

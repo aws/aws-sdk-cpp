@@ -102,7 +102,7 @@ CodeArtifactClient::~CodeArtifactClient()
 {
 }
 
-void CodeArtifactClient::init(const ClientConfiguration& config)
+void CodeArtifactClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("codeartifact");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -146,9 +146,7 @@ AssociateExternalConnectionOutcome CodeArtifactClient::AssociateExternalConnecti
     return AssociateExternalConnectionOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExternalConnection]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository/external-connection";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository/external-connection");
   return AssociateExternalConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,9 +196,7 @@ CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPac
     return CopyPackageVersionsOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/versions/copy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/versions/copy");
   return CopyPackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -230,9 +226,7 @@ CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& 
     return CreateDomainOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domain");
   return CreateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -267,9 +261,7 @@ CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateReposit
     return CreateRepositoryOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository");
   return CreateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -299,9 +291,7 @@ DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& 
     return DeleteDomainOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domain");
   return DeleteDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -331,9 +321,7 @@ DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissions
     return DeleteDomainPermissionsPolicyOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domain/permissions/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domain/permissions/policy");
   return DeleteDomainPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -378,9 +366,7 @@ DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const Del
     return DeletePackageVersionsOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/versions/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/versions/delete");
   return DeletePackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -415,9 +401,7 @@ DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteReposit
     return DeleteRepositoryOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository");
   return DeleteRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -452,9 +436,7 @@ DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPer
     return DeleteRepositoryPermissionsPolicyOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository/permissions/policies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository/permissions/policies");
   return DeleteRepositoryPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -484,9 +466,7 @@ DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainReq
     return DescribeDomainOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domain");
   return DescribeDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -536,9 +516,7 @@ DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const D
     return DescribePackageVersionOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/version";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/version");
   return DescribePackageVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -573,9 +551,7 @@ DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeR
     return DescribeRepositoryOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository");
   return DescribeRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -615,9 +591,7 @@ DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalCo
     return DisassociateExternalConnectionOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExternalConnection]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository/external-connection";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository/external-connection");
   return DisassociateExternalConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -662,9 +636,7 @@ DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const D
     return DisposePackageVersionsOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/versions/dispose";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/versions/dispose");
   return DisposePackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -694,9 +666,7 @@ GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const Get
     return GetAuthorizationTokenOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/authorization-token";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/authorization-token");
   return GetAuthorizationTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -726,9 +696,7 @@ GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy
     return GetDomainPermissionsPolicyOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domain/permissions/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domain/permissions/policy");
   return GetDomainPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -783,9 +751,7 @@ GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const G
     return GetPackageVersionAssetOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Asset]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/version/asset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/version/asset");
   return GetPackageVersionAssetOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -835,9 +801,7 @@ GetPackageVersionReadmeOutcome CodeArtifactClient::GetPackageVersionReadme(const
     return GetPackageVersionReadmeOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/version/readme";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/version/readme");
   return GetPackageVersionReadmeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -877,9 +841,7 @@ GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const Get
     return GetRepositoryEndpointOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository/endpoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository/endpoint");
   return GetRepositoryEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -914,9 +876,7 @@ GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissio
     return GetRepositoryPermissionsPolicyOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository/permissions/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository/permissions/policy");
   return GetRepositoryPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -941,9 +901,7 @@ void CodeArtifactClient::GetRepositoryPermissionsPolicyAsyncHelper(const GetRepo
 ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domains";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domains");
   return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -993,9 +951,7 @@ ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(con
     return ListPackageVersionAssetsOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/version/assets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/version/assets");
   return ListPackageVersionAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1045,9 +1001,7 @@ ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDepe
     return ListPackageVersionDependenciesOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/version/dependencies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/version/dependencies");
   return ListPackageVersionDependenciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1092,9 +1046,7 @@ ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPac
     return ListPackageVersionsOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/versions");
   return ListPackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1129,9 +1081,7 @@ ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& 
     return ListPackagesOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/packages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/packages");
   return ListPackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1156,9 +1106,7 @@ void CodeArtifactClient::ListPackagesAsyncHelper(const ListPackagesRequest& requ
 ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositoriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repositories";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repositories");
   return ListRepositoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1188,9 +1136,7 @@ ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(con
     return ListRepositoriesInDomainOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domain/repositories";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domain/repositories");
   return ListRepositoriesInDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1220,9 +1166,7 @@ ListTagsForResourceOutcome CodeArtifactClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1247,9 +1191,7 @@ void CodeArtifactClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy(const PutDomainPermissionsPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/domain/permissions/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/domain/permissions/policy");
   return PutDomainPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1284,9 +1226,7 @@ PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissio
     return PutRepositoryPermissionsPolicyOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository/permissions/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository/permissions/policy");
   return PutRepositoryPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1316,9 +1256,7 @@ TagResourceOutcome CodeArtifactClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tag";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tag");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1348,9 +1286,7 @@ UntagResourceOutcome CodeArtifactClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/untag";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/untag");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1395,9 +1331,7 @@ UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStat
     return UpdatePackageVersionsStatusOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/package/versions/update_status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/package/versions/update_status");
   return UpdatePackageVersionsStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1432,9 +1366,7 @@ UpdateRepositoryOutcome CodeArtifactClient::UpdateRepository(const UpdateReposit
     return UpdateRepositoryOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/repository";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/repository");
   return UpdateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

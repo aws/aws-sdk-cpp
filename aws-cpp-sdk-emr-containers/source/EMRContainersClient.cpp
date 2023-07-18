@@ -83,7 +83,7 @@ EMRContainersClient::~EMRContainersClient()
 {
 }
 
-void EMRContainersClient::init(const ClientConfiguration& config)
+void EMRContainersClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EMR containers");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -122,12 +122,10 @@ CancelJobRunOutcome EMRContainersClient::CancelJobRun(const CancelJobRunRequest&
     return CancelJobRunOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/jobruns/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/jobruns/");
+  uri.AddPathSegment(request.GetId());
   return CancelJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -157,11 +155,9 @@ CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const Cr
     return CreateManagedEndpointOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/endpoints";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/endpoints");
   return CreateManagedEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -186,9 +182,7 @@ void EMRContainersClient::CreateManagedEndpointAsyncHelper(const CreateManagedEn
 CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const CreateVirtualClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters");
   return CreateVirtualClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -223,12 +217,10 @@ DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const De
     return DeleteManagedEndpointOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/endpoints/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetId());
   return DeleteManagedEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -258,10 +250,8 @@ DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const Dele
     return DeleteVirtualClusterOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetId());
   return DeleteVirtualClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -296,12 +286,10 @@ DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRe
     return DescribeJobRunOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/jobruns/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/jobruns/");
+  uri.AddPathSegment(request.GetId());
   return DescribeJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -336,12 +324,10 @@ DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(cons
     return DescribeManagedEndpointOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/endpoints/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetId());
   return DescribeManagedEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -371,10 +357,8 @@ DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const 
     return DescribeVirtualClusterOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetId());
   return DescribeVirtualClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -404,11 +388,9 @@ ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& re
     return ListJobRunsOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/jobruns";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/jobruns");
   return ListJobRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -438,11 +420,9 @@ ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const List
     return ListManagedEndpointsOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/endpoints";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/endpoints");
   return ListManagedEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -472,10 +452,8 @@ ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTa
     return ListTagsForResourceOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -500,9 +478,7 @@ void EMRContainersClient::ListTagsForResourceAsyncHelper(const ListTagsForResour
 ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVirtualClustersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters");
   return ListVirtualClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -532,11 +508,9 @@ StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& re
     return StartJobRunOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/virtualclusters/";
-  ss << request.GetVirtualClusterId();
-  ss << "/jobruns";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/virtualclusters/");
+  uri.AddPathSegment(request.GetVirtualClusterId());
+  uri.AddPathSegments("/jobruns");
   return StartJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -566,10 +540,8 @@ TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& re
     return TagResourceOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -604,10 +576,8 @@ UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceReque
     return UntagResourceOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 

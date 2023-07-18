@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>An array of summary information for one or more thesauruses.</p>
+     * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
     inline const Aws::Vector<ThesaurusSummary>& GetThesaurusSummaryItems() const{ return m_thesaurusSummaryItems; }
 
     /**
-     * <p>An array of summary information for one or more thesauruses.</p>
+     * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
     inline void SetThesaurusSummaryItems(const Aws::Vector<ThesaurusSummary>& value) { m_thesaurusSummaryItems = value; }
 
     /**
-     * <p>An array of summary information for one or more thesauruses.</p>
+     * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
     inline void SetThesaurusSummaryItems(Aws::Vector<ThesaurusSummary>&& value) { m_thesaurusSummaryItems = std::move(value); }
 
     /**
-     * <p>An array of summary information for one or more thesauruses.</p>
+     * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
     inline ListThesauriResult& WithThesaurusSummaryItems(const Aws::Vector<ThesaurusSummary>& value) { SetThesaurusSummaryItems(value); return *this;}
 
     /**
-     * <p>An array of summary information for one or more thesauruses.</p>
+     * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
     inline ListThesauriResult& WithThesaurusSummaryItems(Aws::Vector<ThesaurusSummary>&& value) { SetThesaurusSummaryItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of summary information for one or more thesauruses.</p>
+     * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
     inline ListThesauriResult& AddThesaurusSummaryItems(const ThesaurusSummary& value) { m_thesaurusSummaryItems.push_back(value); return *this; }
 
     /**
-     * <p>An array of summary information for one or more thesauruses.</p>
+     * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
     inline ListThesauriResult& AddThesaurusSummaryItems(ThesaurusSummary&& value) { m_thesaurusSummaryItems.push_back(std::move(value)); return *this; }
 

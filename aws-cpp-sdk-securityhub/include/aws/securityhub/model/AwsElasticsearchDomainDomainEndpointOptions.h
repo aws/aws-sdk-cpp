@@ -60,7 +60,7 @@ namespace Model
 
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
@@ -69,7 +69,7 @@ namespace Model
     inline const Aws::String& GetTLSSecurityPolicy() const{ return m_tLSSecurityPolicy; }
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
@@ -78,7 +78,7 @@ namespace Model
     inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
@@ -87,7 +87,7 @@ namespace Model
     inline void SetTLSSecurityPolicy(const Aws::String& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
@@ -96,7 +96,7 @@ namespace Model
     inline void SetTLSSecurityPolicy(Aws::String&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::move(value); }
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
@@ -105,7 +105,7 @@ namespace Model
     inline void SetTLSSecurityPolicy(const char* value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy.assign(value); }
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
@@ -114,7 +114,7 @@ namespace Model
     inline AwsElasticsearchDomainDomainEndpointOptions& WithTLSSecurityPolicy(const Aws::String& value) { SetTLSSecurityPolicy(value); return *this;}
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
@@ -123,7 +123,7 @@ namespace Model
     inline AwsElasticsearchDomainDomainEndpointOptions& WithTLSSecurityPolicy(Aws::String&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch
+     * <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch
      * domain.</p> <p>Valid values:</p> <ul> <li> <p>
      * <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p>
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports

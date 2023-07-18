@@ -478,50 +478,58 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline CreateOTAUpdateRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline CreateOTAUpdateRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and
-     * AWS Code Signing resources to create an OTA update job.</p>
+     * <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon
+     * S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA
+     * update job.</p>
      */
     inline CreateOTAUpdateRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

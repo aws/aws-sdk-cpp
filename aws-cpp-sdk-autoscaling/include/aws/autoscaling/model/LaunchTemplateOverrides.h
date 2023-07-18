@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
+#include <aws/autoscaling/model/InstanceRequirements.h>
 #include <utility>
 
 namespace Aws
@@ -25,10 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an override for a launch template. The maximum number of instance
-   * types that can be associated with an Auto Scaling group is 20. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-override-options.html">Configuring
+   * <p>Describes an override for a launch template. For more information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-configuring-overrides.html">Configuring
    * overrides</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplateOverrides">AWS
@@ -119,199 +118,268 @@ namespace Model
 
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline const Aws::String& GetWeightedCapacity() const{ return m_weightedCapacity; }
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline void SetWeightedCapacity(const Aws::String& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline void SetWeightedCapacity(Aws::String&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::move(value); }
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline void SetWeightedCapacity(const char* value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity.assign(value); }
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline LaunchTemplateOverrides& WithWeightedCapacity(const Aws::String& value) { SetWeightedCapacity(value); return *this;}
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline LaunchTemplateOverrides& WithWeightedCapacity(Aws::String&& value) { SetWeightedCapacity(std::move(value)); return *this;}
 
     /**
-     * <p>The number of capacity units provided by the specified instance type in terms
-     * of virtual CPUs, memory, storage, throughput, or other relative performance
-     * characteristic. When a Spot or On-Demand Instance is provisioned, the capacity
-     * units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
-     * instances until the desired capacity is totally fulfilled, even if this results
-     * in an overage. For example, if there are 2 units remaining to fulfill capacity,
-     * and Amazon EC2 Auto Scaling can only provision an instance with a
-     * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * desired capacity is exceeded by 3 units. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. Value must be in the range of 1 to 999.</p>
+     * <p>The number of capacity units provided by the instance type specified in
+     * <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput,
+     * or other relative performance characteristic. When a Spot or On-Demand Instance
+     * is launched, the capacity units count toward the desired capacity. Amazon EC2
+     * Auto Scaling launches instances until the desired capacity is totally fulfilled,
+     * even if this results in an overage. For example, if there are two units
+     * remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an
+     * instance with a <code>WeightedCapacity</code> of five units, the instance is
+     * launched, and the desired capacity is exceeded by three units. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+     * instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>. Value must be in the range of 1–999.</p>
      */
     inline LaunchTemplateOverrides& WithWeightedCapacity(const char* value) { SetWeightedCapacity(value); return *this;}
 
 
     /**
-     * <p>Provides the launch template to be used when launching the instance type. For
-     * example, some instance types might require a launch template with a different
-     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
-     * defined for your mixed instances policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * <p>Provides a launch template for the specified instance type or instance
+     * requirements. For example, some instance types might require a launch template
+     * with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch
+     * template that's defined for your mixed instances policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
      * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. </p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
 
     /**
-     * <p>Provides the launch template to be used when launching the instance type. For
-     * example, some instance types might require a launch template with a different
-     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
-     * defined for your mixed instances policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * <p>Provides a launch template for the specified instance type or instance
+     * requirements. For example, some instance types might require a launch template
+     * with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch
+     * template that's defined for your mixed instances policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
      * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. </p>
      */
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
 
     /**
-     * <p>Provides the launch template to be used when launching the instance type. For
-     * example, some instance types might require a launch template with a different
-     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
-     * defined for your mixed instances policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * <p>Provides a launch template for the specified instance type or instance
+     * requirements. For example, some instance types might require a launch template
+     * with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch
+     * template that's defined for your mixed instances policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
      * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. </p>
      */
     inline void SetLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
 
     /**
-     * <p>Provides the launch template to be used when launching the instance type. For
-     * example, some instance types might require a launch template with a different
-     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
-     * defined for your mixed instances policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * <p>Provides a launch template for the specified instance type or instance
+     * requirements. For example, some instance types might require a launch template
+     * with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch
+     * template that's defined for your mixed instances policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
      * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. </p>
      */
     inline void SetLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
 
     /**
-     * <p>Provides the launch template to be used when launching the instance type. For
-     * example, some instance types might require a launch template with a different
-     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
-     * defined for your mixed instances policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * <p>Provides a launch template for the specified instance type or instance
+     * requirements. For example, some instance types might require a launch template
+     * with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch
+     * template that's defined for your mixed instances policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
      * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. </p>
      */
     inline LaunchTemplateOverrides& WithLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
 
     /**
-     * <p>Provides the launch template to be used when launching the instance type. For
-     * example, some instance types might require a launch template with a different
-     * AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's
-     * defined for your mixed instances policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     * <p>Provides a launch template for the specified instance type or instance
+     * requirements. For example, some instance types might require a launch template
+     * with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch
+     * template that's defined for your mixed instances policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
      * a different launch template for an instance type</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. </p>
      */
     inline LaunchTemplateOverrides& WithLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * Auto Scaling finds instance types that satisfy your requirements, and then uses
+     * your On-Demand and Spot allocation strategies to launch instances from these
+     * instance types, in the same way as when you specify a list of specific instance
+     * types. </p>
+     */
+    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * Auto Scaling finds instance types that satisfy your requirements, and then uses
+     * your On-Demand and Spot allocation strategies to launch instances from these
+     * instance types, in the same way as when you specify a list of specific instance
+     * types. </p>
+     */
+    inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * Auto Scaling finds instance types that satisfy your requirements, and then uses
+     * your On-Demand and Spot allocation strategies to launch instances from these
+     * instance types, in the same way as when you specify a list of specific instance
+     * types. </p>
+     */
+    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * Auto Scaling finds instance types that satisfy your requirements, and then uses
+     * your On-Demand and Spot allocation strategies to launch instances from these
+     * instance types, in the same way as when you specify a list of specific instance
+     * types. </p>
+     */
+    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * Auto Scaling finds instance types that satisfy your requirements, and then uses
+     * your On-Demand and Spot allocation strategies to launch instances from these
+     * instance types, in the same way as when you specify a list of specific instance
+     * types. </p>
+     */
+    inline LaunchTemplateOverrides& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * Auto Scaling finds instance types that satisfy your requirements, and then uses
+     * your On-Demand and Spot allocation strategies to launch instances from these
+     * instance types, in the same way as when you specify a list of specific instance
+     * types. </p>
+     */
+    inline LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
   private:
 
@@ -323,6 +391,9 @@ namespace Model
 
     LaunchTemplateSpecification m_launchTemplateSpecification;
     bool m_launchTemplateSpecificationHasBeenSet;
+
+    InstanceRequirements m_instanceRequirements;
+    bool m_instanceRequirementsHasBeenSet;
   };
 
 } // namespace Model

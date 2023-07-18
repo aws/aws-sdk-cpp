@@ -30,6 +30,18 @@ DescribeManagedRuleGroupResult::DescribeManagedRuleGroupResult(const Aws::Amazon
 DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+  }
+
+  if(jsonValue.ValueExists("SnsTopicArn"))
+  {
+    m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
+
+  }
+
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInt64("Capacity");
@@ -42,6 +54,30 @@ DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("LabelNamespace"))
+  {
+    m_labelNamespace = jsonValue.GetString("LabelNamespace");
+
+  }
+
+  if(jsonValue.ValueExists("AvailableLabels"))
+  {
+    Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
+    for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
+    {
+      m_availableLabels.push_back(availableLabelsJsonList[availableLabelsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ConsumedLabels"))
+  {
+    Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
+    for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
+    {
+      m_consumedLabels.push_back(consumedLabelsJsonList[consumedLabelsIndex].AsObject());
     }
   }
 

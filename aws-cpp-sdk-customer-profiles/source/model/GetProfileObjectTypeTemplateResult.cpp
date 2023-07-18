@@ -54,6 +54,12 @@ GetProfileObjectTypeTemplateResult& GetProfileObjectTypeTemplateResult::operator
 
   }
 
+  if(jsonValue.ValueExists("SourceLastUpdatedTimestampFormat"))
+  {
+    m_sourceLastUpdatedTimestampFormat = jsonValue.GetString("SourceLastUpdatedTimestampFormat");
+
+  }
+
   if(jsonValue.ValueExists("Fields"))
   {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("Fields").GetAllObjects();

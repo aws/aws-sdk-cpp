@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/macie2/model/TimeRange.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/model/UsageTotal.h>
 #include <utility>
@@ -31,6 +32,42 @@ namespace Model
     GetUsageTotalsResult();
     GetUsageTotalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetUsageTotalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline const TimeRange& GetTimeRange() const{ return m_timeRange; }
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline void SetTimeRange(const TimeRange& value) { m_timeRange = value; }
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline void SetTimeRange(TimeRange&& value) { m_timeRange = std::move(value); }
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline GetUsageTotalsResult& WithTimeRange(const TimeRange& value) { SetTimeRange(value); return *this;}
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline GetUsageTotalsResult& WithTimeRange(TimeRange&& value) { SetTimeRange(std::move(value)); return *this;}
 
 
     /**
@@ -76,6 +113,8 @@ namespace Model
     inline GetUsageTotalsResult& AddUsageTotals(UsageTotal&& value) { m_usageTotals.push_back(std::move(value)); return *this; }
 
   private:
+
+    TimeRange m_timeRange;
 
     Aws::Vector<UsageTotal> m_usageTotals;
   };

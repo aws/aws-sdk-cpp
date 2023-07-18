@@ -337,25 +337,37 @@ namespace Model
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline bool GetKeepJobFlowAliveWhenNoSteps() const{ return m_keepJobFlowAliveWhenNoSteps; }
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline bool KeepJobFlowAliveWhenNoStepsHasBeenSet() const { return m_keepJobFlowAliveWhenNoStepsHasBeenSet; }
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKeepJobFlowAliveWhenNoSteps(bool value) { m_keepJobFlowAliveWhenNoStepsHasBeenSet = true; m_keepJobFlowAliveWhenNoSteps = value; }
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline JobFlowInstancesConfig& WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
 
@@ -626,91 +638,115 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline const Aws::String& GetEmrManagedMasterSecurityGroup() const{ return m_emrManagedMasterSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline bool EmrManagedMasterSecurityGroupHasBeenSet() const { return m_emrManagedMasterSecurityGroupHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(const Aws::String& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(const char* value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const char* value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline bool EmrManagedSlaveSecurityGroupHasBeenSet() const { return m_emrManagedSlaveSecurityGroupHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const char* value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 

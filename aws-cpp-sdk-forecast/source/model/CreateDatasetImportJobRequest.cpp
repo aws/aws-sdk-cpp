@@ -21,7 +21,8 @@ CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() :
     m_useGeolocationForTimeZone(false),
     m_useGeolocationForTimeZoneHasBeenSet(false),
     m_geolocationFormatHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateDatasetImportJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", m_format);
 
   }
 

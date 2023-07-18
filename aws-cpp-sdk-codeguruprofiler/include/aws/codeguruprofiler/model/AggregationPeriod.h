@@ -16,9 +16,9 @@ namespace Model
   enum class AggregationPeriod
   {
     NOT_SET,
-    P1D,
+    PT5M,
     PT1H,
-    PT5M
+    P1D
   };
 
 namespace AggregationPeriodMapper

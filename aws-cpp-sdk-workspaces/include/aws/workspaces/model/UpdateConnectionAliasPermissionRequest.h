@@ -86,37 +86,37 @@ namespace Model
 
     /**
      * <p>Indicates whether to share or unshare the connection alias with the specified
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline const ConnectionAliasPermission& GetConnectionAliasPermission() const{ return m_connectionAliasPermission; }
 
     /**
      * <p>Indicates whether to share or unshare the connection alias with the specified
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline bool ConnectionAliasPermissionHasBeenSet() const { return m_connectionAliasPermissionHasBeenSet; }
 
     /**
      * <p>Indicates whether to share or unshare the connection alias with the specified
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline void SetConnectionAliasPermission(const ConnectionAliasPermission& value) { m_connectionAliasPermissionHasBeenSet = true; m_connectionAliasPermission = value; }
 
     /**
      * <p>Indicates whether to share or unshare the connection alias with the specified
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline void SetConnectionAliasPermission(ConnectionAliasPermission&& value) { m_connectionAliasPermissionHasBeenSet = true; m_connectionAliasPermission = std::move(value); }
 
     /**
      * <p>Indicates whether to share or unshare the connection alias with the specified
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline UpdateConnectionAliasPermissionRequest& WithConnectionAliasPermission(const ConnectionAliasPermission& value) { SetConnectionAliasPermission(value); return *this;}
 
     /**
      * <p>Indicates whether to share or unshare the connection alias with the specified
-     * AWS account.</p>
+     * Amazon Web Services account.</p>
      */
     inline UpdateConnectionAliasPermissionRequest& WithConnectionAliasPermission(ConnectionAliasPermission&& value) { SetConnectionAliasPermission(std::move(value)); return *this;}
 

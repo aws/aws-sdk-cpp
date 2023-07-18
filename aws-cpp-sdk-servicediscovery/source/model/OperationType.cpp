@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CREATE_NAMESPACE_HASH = HashingUtils::HashString("CREATE_NAMESPACE");
         static const int DELETE_NAMESPACE_HASH = HashingUtils::HashString("DELETE_NAMESPACE");
+        static const int UPDATE_NAMESPACE_HASH = HashingUtils::HashString("UPDATE_NAMESPACE");
         static const int UPDATE_SERVICE_HASH = HashingUtils::HashString("UPDATE_SERVICE");
         static const int REGISTER_INSTANCE_HASH = HashingUtils::HashString("REGISTER_INSTANCE");
         static const int DEREGISTER_INSTANCE_HASH = HashingUtils::HashString("DEREGISTER_INSTANCE");
@@ -37,6 +38,10 @@ namespace Aws
           else if (hashCode == DELETE_NAMESPACE_HASH)
           {
             return OperationType::DELETE_NAMESPACE;
+          }
+          else if (hashCode == UPDATE_NAMESPACE_HASH)
+          {
+            return OperationType::UPDATE_NAMESPACE;
           }
           else if (hashCode == UPDATE_SERVICE_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "CREATE_NAMESPACE";
           case OperationType::DELETE_NAMESPACE:
             return "DELETE_NAMESPACE";
+          case OperationType::UPDATE_NAMESPACE:
+            return "UPDATE_NAMESPACE";
           case OperationType::UPDATE_SERVICE:
             return "UPDATE_SERVICE";
           case OperationType::REGISTER_INSTANCE:

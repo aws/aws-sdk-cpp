@@ -22,11 +22,13 @@ CreateChannelRequest::CreateChannelRequest() :
     m_inputSpecificationHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
+    m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
    payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -110,6 +118,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vpcHasBeenSet)
+  {
+   payload.WithObject("vpc", m_vpc.Jsonize());
 
   }
 

@@ -80,6 +80,11 @@ AssumeRoleWithSAMLResult& AssumeRoleWithSAMLResult::operator =(const Aws::Amazon
     {
       m_nameQualifier = Aws::Utils::Xml::DecodeEscapedXmlText(nameQualifierNode.GetText());
     }
+    XmlNode sourceIdentityNode = resultNode.FirstChild("SourceIdentity");
+    if(!sourceIdentityNode.IsNull())
+    {
+      m_sourceIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentityNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

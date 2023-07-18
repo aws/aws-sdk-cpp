@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qldb/model/LedgerState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/qldb/model/PermissionsMode.h>
 #include <utility>
 
 namespace Aws
@@ -169,13 +170,37 @@ namespace Model
 
 
     /**
+     * <p>The permissions mode of the ledger that you created.</p>
+     */
+    inline const PermissionsMode& GetPermissionsMode() const{ return m_permissionsMode; }
+
+    /**
+     * <p>The permissions mode of the ledger that you created.</p>
+     */
+    inline void SetPermissionsMode(const PermissionsMode& value) { m_permissionsMode = value; }
+
+    /**
+     * <p>The permissions mode of the ledger that you created.</p>
+     */
+    inline void SetPermissionsMode(PermissionsMode&& value) { m_permissionsMode = std::move(value); }
+
+    /**
+     * <p>The permissions mode of the ledger that you created.</p>
+     */
+    inline CreateLedgerResult& WithPermissionsMode(const PermissionsMode& value) { SetPermissionsMode(value); return *this;}
+
+    /**
+     * <p>The permissions mode of the ledger that you created.</p>
+     */
+    inline CreateLedgerResult& WithPermissionsMode(PermissionsMode&& value) { SetPermissionsMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -183,10 +208,8 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtection = value; }
 
@@ -194,12 +217,60 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline CreateLedgerResult& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline CreateLedgerResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline CreateLedgerResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline CreateLedgerResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
   private:
 
@@ -211,7 +282,11 @@ namespace Model
 
     Aws::Utils::DateTime m_creationDateTime;
 
+    PermissionsMode m_permissionsMode;
+
     bool m_deletionProtection;
+
+    Aws::String m_kmsKeyArn;
   };
 
 } // namespace Model

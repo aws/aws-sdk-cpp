@@ -27,7 +27,12 @@ WirelessDeviceStatistics::WirelessDeviceStatistics() :
     m_destinationNameHasBeenSet(false),
     m_lastUplinkReceivedAtHasBeenSet(false),
     m_loRaWANHasBeenSet(false),
-    m_sidewalkHasBeenSet(false)
+    m_sidewalkHasBeenSet(false),
+    m_fuotaDeviceStatus(FuotaDeviceStatus::NOT_SET),
+    m_fuotaDeviceStatusHasBeenSet(false),
+    m_multicastDeviceStatusHasBeenSet(false),
+    m_mcGroupId(0),
+    m_mcGroupIdHasBeenSet(false)
 {
 }
 
@@ -40,7 +45,12 @@ WirelessDeviceStatistics::WirelessDeviceStatistics(JsonView jsonValue) :
     m_destinationNameHasBeenSet(false),
     m_lastUplinkReceivedAtHasBeenSet(false),
     m_loRaWANHasBeenSet(false),
-    m_sidewalkHasBeenSet(false)
+    m_sidewalkHasBeenSet(false),
+    m_fuotaDeviceStatus(FuotaDeviceStatus::NOT_SET),
+    m_fuotaDeviceStatusHasBeenSet(false),
+    m_multicastDeviceStatusHasBeenSet(false),
+    m_mcGroupId(0),
+    m_mcGroupIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +113,27 @@ WirelessDeviceStatistics& WirelessDeviceStatistics::operator =(JsonView jsonValu
     m_sidewalkHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FuotaDeviceStatus"))
+  {
+    m_fuotaDeviceStatus = FuotaDeviceStatusMapper::GetFuotaDeviceStatusForName(jsonValue.GetString("FuotaDeviceStatus"));
+
+    m_fuotaDeviceStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MulticastDeviceStatus"))
+  {
+    m_multicastDeviceStatus = jsonValue.GetString("MulticastDeviceStatus");
+
+    m_multicastDeviceStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("McGroupId"))
+  {
+    m_mcGroupId = jsonValue.GetInteger("McGroupId");
+
+    m_mcGroupIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +185,23 @@ JsonValue WirelessDeviceStatistics::Jsonize() const
   if(m_sidewalkHasBeenSet)
   {
    payload.WithObject("Sidewalk", m_sidewalk.Jsonize());
+
+  }
+
+  if(m_fuotaDeviceStatusHasBeenSet)
+  {
+   payload.WithString("FuotaDeviceStatus", FuotaDeviceStatusMapper::GetNameForFuotaDeviceStatus(m_fuotaDeviceStatus));
+  }
+
+  if(m_multicastDeviceStatusHasBeenSet)
+  {
+   payload.WithString("MulticastDeviceStatus", m_multicastDeviceStatus);
+
+  }
+
+  if(m_mcGroupIdHasBeenSet)
+  {
+   payload.WithInteger("McGroupId", m_mcGroupId);
 
   }
 

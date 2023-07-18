@@ -235,6 +235,31 @@ namespace Model
      */
     inline EbsInstanceBlockDeviceSpecification& WithVolumeType(EbsVolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
+    /**
+     * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
+     * supports. </p>
+     */
+    inline int GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
+     * supports. </p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
+     * supports. </p>
+     */
+    inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
+     * supports. </p>
+     */
+    inline EbsInstanceBlockDeviceSpecification& WithThroughput(int value) { SetThroughput(value); return *this;}
+
   private:
 
     bool m_encrypted;
@@ -257,6 +282,9 @@ namespace Model
 
     EbsVolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
+    int m_throughput;
+    bool m_throughputHasBeenSet;
   };
 
 } // namespace Model

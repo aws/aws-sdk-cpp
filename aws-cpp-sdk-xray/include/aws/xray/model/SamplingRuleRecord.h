@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A <a>SamplingRule</a> and its metadata.</p><p><h3>See Also:</h3>   <a
+   * <p>A <a
+   * href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingRule.html">SamplingRule</a>
+   * and its metadata.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingRuleRecord">AWS
    * API Reference</a></p>
    */

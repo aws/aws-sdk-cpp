@@ -41,49 +41,49 @@ namespace Model
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline const Aws::String& GetTransportTransitGatewayAttachmentId() const{ return m_transportTransitGatewayAttachmentId; }
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline bool TransportTransitGatewayAttachmentIdHasBeenSet() const { return m_transportTransitGatewayAttachmentIdHasBeenSet; }
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline void SetTransportTransitGatewayAttachmentId(const Aws::String& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = value; }
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline void SetTransportTransitGatewayAttachmentId(Aws::String&& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = std::move(value); }
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline void SetTransportTransitGatewayAttachmentId(const char* value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId.assign(value); }
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(const Aws::String& value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(Aws::String&& value) { SetTransportTransitGatewayAttachmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * a AWS Direct Connect attachment.</p>
+     * Amazon Web Services Direct Connect attachment.</p>
      */
     inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(const char* value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
 

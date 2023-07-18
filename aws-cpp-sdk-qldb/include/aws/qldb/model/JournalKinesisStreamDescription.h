@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>The information about an Amazon QLDB journal stream, including the Amazon
+   * <p>Information about an Amazon QLDB journal stream, including the Amazon
    * Resource Name (ARN), stream name, creation time, current status, and the
-   * parameters of your original stream creation request.</p><p><h3>See Also:</h3>  
+   * parameters of the original stream creation request.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/JournalKinesisStreamDescription">AWS
    * API Reference</a></p>
@@ -167,37 +167,37 @@ namespace Model
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline const Aws::Utils::DateTime& GetExclusiveEndTime() const{ return m_exclusiveEndTime; }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline bool ExclusiveEndTimeHasBeenSet() const { return m_exclusiveEndTimeHasBeenSet; }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline void SetExclusiveEndTime(const Aws::Utils::DateTime& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = value; }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline void SetExclusiveEndTime(Aws::Utils::DateTime&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::move(value); }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline JournalKinesisStreamDescription& WithExclusiveEndTime(const Aws::Utils::DateTime& value) { SetExclusiveEndTime(value); return *this;}
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline JournalKinesisStreamDescription& WithExclusiveEndTime(Aws::Utils::DateTime&& value) { SetExclusiveEndTime(std::move(value)); return *this;}
 
@@ -260,42 +260,42 @@ namespace Model
 
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline JournalKinesisStreamDescription& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline JournalKinesisStreamDescription& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
     inline JournalKinesisStreamDescription& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 
@@ -374,37 +374,37 @@ namespace Model
 
     /**
      * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
-     * your QLDB journal stream.</p>
+     * a QLDB journal stream.</p>
      */
     inline const KinesisConfiguration& GetKinesisConfiguration() const{ return m_kinesisConfiguration; }
 
     /**
      * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
-     * your QLDB journal stream.</p>
+     * a QLDB journal stream.</p>
      */
     inline bool KinesisConfigurationHasBeenSet() const { return m_kinesisConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
-     * your QLDB journal stream.</p>
+     * a QLDB journal stream.</p>
      */
     inline void SetKinesisConfiguration(const KinesisConfiguration& value) { m_kinesisConfigurationHasBeenSet = true; m_kinesisConfiguration = value; }
 
     /**
      * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
-     * your QLDB journal stream.</p>
+     * a QLDB journal stream.</p>
      */
     inline void SetKinesisConfiguration(KinesisConfiguration&& value) { m_kinesisConfigurationHasBeenSet = true; m_kinesisConfiguration = std::move(value); }
 
     /**
      * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
-     * your QLDB journal stream.</p>
+     * a QLDB journal stream.</p>
      */
     inline JournalKinesisStreamDescription& WithKinesisConfiguration(const KinesisConfiguration& value) { SetKinesisConfiguration(value); return *this;}
 
     /**
      * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
-     * your QLDB journal stream.</p>
+     * a QLDB journal stream.</p>
      */
     inline JournalKinesisStreamDescription& WithKinesisConfiguration(KinesisConfiguration&& value) { SetKinesisConfiguration(std::move(value)); return *this;}
 

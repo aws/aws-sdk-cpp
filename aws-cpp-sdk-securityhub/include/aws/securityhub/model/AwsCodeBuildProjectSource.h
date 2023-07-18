@@ -42,10 +42,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -57,10 +57,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -72,10 +72,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -87,10 +87,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -102,10 +102,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -117,10 +117,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -132,10 +132,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -147,10 +147,10 @@ namespace Model
      * <p>The type of repository that contains the source code to be built. Valid
      * values are:</p> <ul> <li> <p> <code>BITBUCKET</code> - The source code is in a
      * Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code> - The source
-     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code> - The source code settings are specified in the source
-     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>
-     * - The source code is in a GitHub repository.</p> </li> <li> <p>
+     * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code> -
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
      * <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise
      * repository.</p> </li> <li> <p> <code>NO_SOURCE</code> - The project does not
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
@@ -162,12 +162,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -184,12 +184,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -206,12 +206,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -228,12 +228,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -250,12 +250,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -272,12 +272,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -294,12 +294,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -316,12 +316,12 @@ namespace Model
     /**
      * <p>Information about the location of the source code to be built.</p> <p>Valid
      * values include:</p> <ul> <li> <p>For source code settings that are specified in
-     * the source action of a pipeline in AWS CodePipeline, location should not be
-     * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
+     * the source action of a pipeline in CodePipeline, location should not be
+     * specified. If it is specified, CodePipeline ignores it. This is because
      * CodePipeline uses the settings in a pipeline's source action instead of this
-     * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the build
-     * spec file (for example,
+     * value.</p> </li> <li> <p>For source code in an CodeCommit repository, the HTTPS
+     * clone URL to the repository that contains the source code and the build spec
+     * file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source

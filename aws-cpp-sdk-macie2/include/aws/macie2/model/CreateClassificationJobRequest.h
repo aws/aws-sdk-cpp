@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/model/JobType.h>
+#include <aws/macie2/model/ManagedDataIdentifierSelector.h>
 #include <aws/macie2/model/S3JobDefinition.h>
 #include <aws/macie2/model/JobScheduleFrequency.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -88,47 +89,74 @@ namespace Model
 
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const{ return m_customDataIdentifierIds; }
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline bool CustomDataIdentifierIdsHasBeenSet() const { return m_customDataIdentifierIdsHasBeenSet; }
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline void SetCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds = value; }
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline void SetCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds = std::move(value); }
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline CreateClassificationJobRequest& WithCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetCustomDataIdentifierIds(value); return *this;}
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline CreateClassificationJobRequest& WithCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetCustomDataIdentifierIds(std::move(value)); return *this;}
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline CreateClassificationJobRequest& AddCustomDataIdentifierIds(const Aws::String& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.push_back(value); return *this; }
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline CreateClassificationJobRequest& AddCustomDataIdentifierIds(Aws::String&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The custom data identifiers to use for data analysis and classification.</p>
+     * <p>An array of unique identifiers, one for each custom data identifier for the
+     * job to use when it analyzes data. To use only managed data identifiers, don't
+     * specify a value for this property and specify a value other than NONE for the
+     * managedDataIdentifierSelector property.</p>
      */
     inline CreateClassificationJobRequest& AddCustomDataIdentifierIds(const char* value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.push_back(value); return *this; }
 
@@ -183,26 +211,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to analyze all existing, eligible objects immediately after
-     * the job is created.</p>
+     * <p>For a recurring job, specifies whether to analyze all existing, eligible
+     * objects immediately after the job is created (true). To analyze only those
+     * objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job to run only once, don't specify a value for this property.</p>
      */
     inline bool GetInitialRun() const{ return m_initialRun; }
 
     /**
-     * <p>Specifies whether to analyze all existing, eligible objects immediately after
-     * the job is created.</p>
+     * <p>For a recurring job, specifies whether to analyze all existing, eligible
+     * objects immediately after the job is created (true). To analyze only those
+     * objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job to run only once, don't specify a value for this property.</p>
      */
     inline bool InitialRunHasBeenSet() const { return m_initialRunHasBeenSet; }
 
     /**
-     * <p>Specifies whether to analyze all existing, eligible objects immediately after
-     * the job is created.</p>
+     * <p>For a recurring job, specifies whether to analyze all existing, eligible
+     * objects immediately after the job is created (true). To analyze only those
+     * objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job to run only once, don't specify a value for this property.</p>
      */
     inline void SetInitialRun(bool value) { m_initialRunHasBeenSet = true; m_initialRun = value; }
 
     /**
-     * <p>Specifies whether to analyze all existing, eligible objects immediately after
-     * the job is created.</p>
+     * <p>For a recurring job, specifies whether to analyze all existing, eligible
+     * objects immediately after the job is created (true). To analyze only those
+     * objects that are created or changed after you create the job and before the
+     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job to run only once, don't specify a value for this property.</p>
      */
     inline CreateClassificationJobRequest& WithInitialRun(bool value) { SetInitialRun(value); return *this;}
 
@@ -260,6 +300,203 @@ namespace Model
      * property to define the recurrence pattern for the job.</p></li></ul>
      */
     inline CreateClassificationJobRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline bool ManagedDataIdentifierIdsHasBeenSet() const { return m_managedDataIdentifierIdsHasBeenSet; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = value; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::move(value); }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline CreateClassificationJobRequest& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline CreateClassificationJobRequest& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each managed data identifier for the
+     * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
+     * exclusion depends on the managed data identifier selection type that you specify
+     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * values for this property, use the ListManagedDataIdentifiers operation.</p>
+     */
+    inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The selection type to apply when determining which managed data identifiers
+     * the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides. If you specify this value,
+     * don't specify any values for the managedDataIdentifierIds property.</p></li>
+     * <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except
+     * the managed data identifiers specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. If you specify this value, specify at least
+     * one custom data identifier for the job (customDataIdentifierIds) and don't
+     * specify any values for the managedDataIdentifierIds property.</p></li></ul>
+     * <p>If you don't specify a value for this property, the job uses all managed data
+     * identifiers. If you don't specify a value for this property or you specify ALL
+     * or EXCLUDE for a recurring job, the job also uses new managed data identifiers
+     * as they are released.</p>
+     */
+    inline const ManagedDataIdentifierSelector& GetManagedDataIdentifierSelector() const{ return m_managedDataIdentifierSelector; }
+
+    /**
+     * <p>The selection type to apply when determining which managed data identifiers
+     * the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides. If you specify this value,
+     * don't specify any values for the managedDataIdentifierIds property.</p></li>
+     * <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except
+     * the managed data identifiers specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. If you specify this value, specify at least
+     * one custom data identifier for the job (customDataIdentifierIds) and don't
+     * specify any values for the managedDataIdentifierIds property.</p></li></ul>
+     * <p>If you don't specify a value for this property, the job uses all managed data
+     * identifiers. If you don't specify a value for this property or you specify ALL
+     * or EXCLUDE for a recurring job, the job also uses new managed data identifiers
+     * as they are released.</p>
+     */
+    inline bool ManagedDataIdentifierSelectorHasBeenSet() const { return m_managedDataIdentifierSelectorHasBeenSet; }
+
+    /**
+     * <p>The selection type to apply when determining which managed data identifiers
+     * the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides. If you specify this value,
+     * don't specify any values for the managedDataIdentifierIds property.</p></li>
+     * <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except
+     * the managed data identifiers specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. If you specify this value, specify at least
+     * one custom data identifier for the job (customDataIdentifierIds) and don't
+     * specify any values for the managedDataIdentifierIds property.</p></li></ul>
+     * <p>If you don't specify a value for this property, the job uses all managed data
+     * identifiers. If you don't specify a value for this property or you specify ALL
+     * or EXCLUDE for a recurring job, the job also uses new managed data identifiers
+     * as they are released.</p>
+     */
+    inline void SetManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { m_managedDataIdentifierSelectorHasBeenSet = true; m_managedDataIdentifierSelector = value; }
+
+    /**
+     * <p>The selection type to apply when determining which managed data identifiers
+     * the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides. If you specify this value,
+     * don't specify any values for the managedDataIdentifierIds property.</p></li>
+     * <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except
+     * the managed data identifiers specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. If you specify this value, specify at least
+     * one custom data identifier for the job (customDataIdentifierIds) and don't
+     * specify any values for the managedDataIdentifierIds property.</p></li></ul>
+     * <p>If you don't specify a value for this property, the job uses all managed data
+     * identifiers. If you don't specify a value for this property or you specify ALL
+     * or EXCLUDE for a recurring job, the job also uses new managed data identifiers
+     * as they are released.</p>
+     */
+    inline void SetManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { m_managedDataIdentifierSelectorHasBeenSet = true; m_managedDataIdentifierSelector = std::move(value); }
+
+    /**
+     * <p>The selection type to apply when determining which managed data identifiers
+     * the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides. If you specify this value,
+     * don't specify any values for the managedDataIdentifierIds property.</p></li>
+     * <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except
+     * the managed data identifiers specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. If you specify this value, specify at least
+     * one custom data identifier for the job (customDataIdentifierIds) and don't
+     * specify any values for the managedDataIdentifierIds property.</p></li></ul>
+     * <p>If you don't specify a value for this property, the job uses all managed data
+     * identifiers. If you don't specify a value for this property or you specify ALL
+     * or EXCLUDE for a recurring job, the job also uses new managed data identifiers
+     * as they are released.</p>
+     */
+    inline CreateClassificationJobRequest& WithManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { SetManagedDataIdentifierSelector(value); return *this;}
+
+    /**
+     * <p>The selection type to apply when determining which managed data identifiers
+     * the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the
+     * managed data identifiers that Amazon Macie provides. If you specify this value,
+     * don't specify any values for the managedDataIdentifierIds property.</p></li>
+     * <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except
+     * the managed data identifiers specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. If you specify this value, specify at least
+     * one custom data identifier for the job (customDataIdentifierIds) and don't
+     * specify any values for the managedDataIdentifierIds property.</p></li></ul>
+     * <p>If you don't specify a value for this property, the job uses all managed data
+     * identifiers. If you don't specify a value for this property or you specify ALL
+     * or EXCLUDE for a recurring job, the job also uses new managed data identifiers
+     * as they are released.</p>
+     */
+    inline CreateClassificationJobRequest& WithManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { SetManagedDataIdentifierSelector(std::move(value)); return *this;}
 
 
     /**
@@ -349,38 +586,38 @@ namespace Model
 
 
     /**
-     * <p>The sampling depth, as a percentage, to apply when processing objects. This
-     * value determines the percentage of eligible objects that the job analyzes. If
-     * this value is less than 100, Amazon Macie selects the objects to analyze at
-     * random, up to the specified percentage, and analyzes all the data in those
-     * objects.</p>
+     * <p>The sampling depth, as a percentage, for the job to apply when processing
+     * objects. This value determines the percentage of eligible objects that the job
+     * analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in
+     * those objects.</p>
      */
     inline int GetSamplingPercentage() const{ return m_samplingPercentage; }
 
     /**
-     * <p>The sampling depth, as a percentage, to apply when processing objects. This
-     * value determines the percentage of eligible objects that the job analyzes. If
-     * this value is less than 100, Amazon Macie selects the objects to analyze at
-     * random, up to the specified percentage, and analyzes all the data in those
-     * objects.</p>
+     * <p>The sampling depth, as a percentage, for the job to apply when processing
+     * objects. This value determines the percentage of eligible objects that the job
+     * analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in
+     * those objects.</p>
      */
     inline bool SamplingPercentageHasBeenSet() const { return m_samplingPercentageHasBeenSet; }
 
     /**
-     * <p>The sampling depth, as a percentage, to apply when processing objects. This
-     * value determines the percentage of eligible objects that the job analyzes. If
-     * this value is less than 100, Amazon Macie selects the objects to analyze at
-     * random, up to the specified percentage, and analyzes all the data in those
-     * objects.</p>
+     * <p>The sampling depth, as a percentage, for the job to apply when processing
+     * objects. This value determines the percentage of eligible objects that the job
+     * analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in
+     * those objects.</p>
      */
     inline void SetSamplingPercentage(int value) { m_samplingPercentageHasBeenSet = true; m_samplingPercentage = value; }
 
     /**
-     * <p>The sampling depth, as a percentage, to apply when processing objects. This
-     * value determines the percentage of eligible objects that the job analyzes. If
-     * this value is less than 100, Amazon Macie selects the objects to analyze at
-     * random, up to the specified percentage, and analyzes all the data in those
-     * objects.</p>
+     * <p>The sampling depth, as a percentage, for the job to apply when processing
+     * objects. This value determines the percentage of eligible objects that the job
+     * analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in
+     * those objects.</p>
      */
     inline CreateClassificationJobRequest& WithSamplingPercentage(int value) { SetSamplingPercentage(value); return *this;}
 
@@ -548,6 +785,12 @@ namespace Model
 
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
+    Aws::Vector<Aws::String> m_managedDataIdentifierIds;
+    bool m_managedDataIdentifierIdsHasBeenSet;
+
+    ManagedDataIdentifierSelector m_managedDataIdentifierSelector;
+    bool m_managedDataIdentifierSelectorHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

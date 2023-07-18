@@ -133,83 +133,83 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline SignUpRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline SignUpRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user you wish to register.</p>
+     * <p>The user name of the user you want to register.</p>
      */
     inline SignUpRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline SignUpRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline SignUpRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password of the user you wish to register.</p>
+     * <p>The password of the user you want to register.</p>
      */
     inline SignUpRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
@@ -313,420 +313,413 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline SignUpRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline SignUpRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetUserContextData(UserContextDataType&& value) { m_userContextDataHasBeenSet = true; m_userContextData = std::move(value); }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline SignUpRequest& WithUserContextData(const UserContextDataType& value) { SetUserContextData(value); return *this;}
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline SignUpRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
 
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
-     * assigning AWS Lambda functions to user pool triggers. When you use the SignUp
-     * API action, Amazon Cognito invokes any functions that are assigned to the
-     * following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
+     * workflows that this action triggers.</p> <p>You create custom workflows by
+     * assigning Lambda functions to user pool triggers. When you use the SignUp API
+     * action, Amazon Cognito invokes any functions that are assigned to the following
+     * triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
      * confirmation</i>. When Amazon Cognito invokes any of these functions, it passes
      * a JSON payload, which the function receives as input. This payload contains a
      * <code>clientMetadata</code> attribute, which provides the data that you assigned
      * to the ClientMetadata parameter in your SignUp request. In your function code in
-     * AWS Lambda, you can process the <code>clientMetadata</code> value to enhance
-     * your workflow for your specific needs.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * Lambda, you can process the <code>clientMetadata</code> value to enhance your
+     * workflow for your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration does not include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
-     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
-     * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> 
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline SignUpRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 

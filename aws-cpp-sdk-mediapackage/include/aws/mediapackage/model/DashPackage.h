@@ -338,37 +338,43 @@ the
 
     /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
-     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014",
+     * DVB-DASH 2014 compliant output is enabled.
      */
     inline const Profile& GetProfile() const{ return m_profile; }
 
     /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
-     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014",
+     * DVB-DASH 2014 compliant output is enabled.
      */
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
 
     /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
-     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014",
+     * DVB-DASH 2014 compliant output is enabled.
      */
     inline void SetProfile(const Profile& value) { m_profileHasBeenSet = true; m_profile = value; }
 
     /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
-     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014",
+     * DVB-DASH 2014 compliant output is enabled.
      */
     inline void SetProfile(Profile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
 
     /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
-     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014",
+     * DVB-DASH 2014 compliant output is enabled.
      */
     inline DashPackage& WithProfile(const Profile& value) { SetProfile(value); return *this;}
 
     /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
-     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014",
+     * DVB-DASH 2014 compliant output is enabled.
      */
     inline DashPackage& WithProfile(Profile&& value) { SetProfile(std::move(value)); return *this;}
 
@@ -546,49 +552,49 @@ rounded to the
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline const Aws::String& GetUtcTimingUri() const{ return m_utcTimingUri; }
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline bool UtcTimingUriHasBeenSet() const { return m_utcTimingUriHasBeenSet; }
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline void SetUtcTimingUri(const Aws::String& value) { m_utcTimingUriHasBeenSet = true; m_utcTimingUri = value; }
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline void SetUtcTimingUri(Aws::String&& value) { m_utcTimingUriHasBeenSet = true; m_utcTimingUri = std::move(value); }
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline void SetUtcTimingUri(const char* value) { m_utcTimingUriHasBeenSet = true; m_utcTimingUri.assign(value); }
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline DashPackage& WithUtcTimingUri(const Aws::String& value) { SetUtcTimingUri(value); return *this;}
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline DashPackage& WithUtcTimingUri(Aws::String&& value) { SetUtcTimingUri(std::move(value)); return *this;}
 
     /**
      * Specifies the value attribute of the UTCTiming field when utcTiming is set to
-     * HTTP-ISO or HTTP-HEAD
+     * HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
      */
     inline DashPackage& WithUtcTimingUri(const char* value) { SetUtcTimingUri(value); return *this;}
 

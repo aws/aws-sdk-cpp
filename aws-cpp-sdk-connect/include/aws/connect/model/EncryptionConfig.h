@@ -70,42 +70,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline EncryptionConfig& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline EncryptionConfig& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the encryption key.</p>
+     * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
+     * full ARN of the encryption key, not just the ID.</p> 
      */
     inline EncryptionConfig& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

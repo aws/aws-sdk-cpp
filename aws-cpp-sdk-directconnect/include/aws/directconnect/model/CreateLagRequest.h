@@ -355,6 +355,43 @@ namespace Model
      */
     inline CreateLagRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the connection will support MAC Security (MACsec).</p>
+     *  <p>All connections in the LAG must be capable of supporting MAC Security
+     * (MACsec). For information about MAC Security (MACsec) prerequisties, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
+     */
+    inline bool GetRequestMACSec() const{ return m_requestMACSec; }
+
+    /**
+     * <p>Indicates whether the connection will support MAC Security (MACsec).</p>
+     *  <p>All connections in the LAG must be capable of supporting MAC Security
+     * (MACsec). For information about MAC Security (MACsec) prerequisties, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
+     */
+    inline bool RequestMACSecHasBeenSet() const { return m_requestMACSecHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the connection will support MAC Security (MACsec).</p>
+     *  <p>All connections in the LAG must be capable of supporting MAC Security
+     * (MACsec). For information about MAC Security (MACsec) prerequisties, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
+     */
+    inline void SetRequestMACSec(bool value) { m_requestMACSecHasBeenSet = true; m_requestMACSec = value; }
+
+    /**
+     * <p>Indicates whether the connection will support MAC Security (MACsec).</p>
+     *  <p>All connections in the LAG must be capable of supporting MAC Security
+     * (MACsec). For information about MAC Security (MACsec) prerequisties, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
+     */
+    inline CreateLagRequest& WithRequestMACSec(bool value) { SetRequestMACSec(value); return *this;}
+
   private:
 
     int m_numberOfConnections;
@@ -380,6 +417,9 @@ namespace Model
 
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
+    bool m_requestMACSec;
+    bool m_requestMACSecHasBeenSet;
   };
 
 } // namespace Model

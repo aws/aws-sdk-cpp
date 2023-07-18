@@ -29,9 +29,9 @@ namespace Model
    * in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You
    * can enable catalog encryption or only password encryption.</p> <p>When a
    * <code>CreationConnection</code> request arrives containing a password, the Data
-   * Catalog first encrypts the password using your AWS KMS key. It then encrypts the
+   * Catalog first encrypts the password using your KMS key. It then encrypts the
    * whole connection object again if catalog encryption is also enabled.</p> <p>This
-   * encryption requires that you set AWS KMS key permissions to enable or restrict
+   * encryption requires that you set KMS key permissions to enable or restrict
    * access on the password key according to your security requirements. For example,
    * you might want only administrators to have decrypt permission on the password
    * key.</p><p><h3>See Also:</h3>   <a
@@ -81,10 +81,10 @@ namespace Model
 
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>
@@ -92,10 +92,10 @@ namespace Model
     inline const Aws::String& GetAwsKmsKeyId() const{ return m_awsKmsKeyId; }
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>
@@ -103,10 +103,10 @@ namespace Model
     inline bool AwsKmsKeyIdHasBeenSet() const { return m_awsKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>
@@ -114,10 +114,10 @@ namespace Model
     inline void SetAwsKmsKeyId(const Aws::String& value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId = value; }
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>
@@ -125,10 +125,10 @@ namespace Model
     inline void SetAwsKmsKeyId(Aws::String&& value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId = std::move(value); }
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>
@@ -136,10 +136,10 @@ namespace Model
     inline void SetAwsKmsKeyId(const char* value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId.assign(value); }
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>
@@ -147,10 +147,10 @@ namespace Model
     inline ConnectionPasswordEncryption& WithAwsKmsKeyId(const Aws::String& value) { SetAwsKmsKeyId(value); return *this;}
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>
@@ -158,10 +158,10 @@ namespace Model
     inline ConnectionPasswordEncryption& WithAwsKmsKeyId(Aws::String&& value) { SetAwsKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * <p>An KMS key that is used to encrypt the connection password. </p> <p>If
      * connection password protection is enabled, the caller of
      * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
-     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt
      * passwords before storing them in the Data Catalog. </p> <p>You can set the
      * decrypt permission to enable or restrict access on the password key according to
      * your security requirements.</p>

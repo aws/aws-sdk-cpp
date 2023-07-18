@@ -8,6 +8,7 @@
 #include <aws/acm-pca/model/KeyAlgorithm.h>
 #include <aws/acm-pca/model/SigningAlgorithm.h>
 #include <aws/acm-pca/model/ASN1Subject.h>
+#include <aws/acm-pca/model/CsrExtensions.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +168,43 @@ namespace Model
      */
     inline CertificateAuthorityConfiguration& WithSubject(ASN1Subject&& value) { SetSubject(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline const CsrExtensions& GetCsrExtensions() const{ return m_csrExtensions; }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline bool CsrExtensionsHasBeenSet() const { return m_csrExtensionsHasBeenSet; }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline void SetCsrExtensions(const CsrExtensions& value) { m_csrExtensionsHasBeenSet = true; m_csrExtensions = value; }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline void SetCsrExtensions(CsrExtensions&& value) { m_csrExtensionsHasBeenSet = true; m_csrExtensions = std::move(value); }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline CertificateAuthorityConfiguration& WithCsrExtensions(const CsrExtensions& value) { SetCsrExtensions(value); return *this;}
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline CertificateAuthorityConfiguration& WithCsrExtensions(CsrExtensions&& value) { SetCsrExtensions(std::move(value)); return *this;}
+
   private:
 
     KeyAlgorithm m_keyAlgorithm;
@@ -177,6 +215,9 @@ namespace Model
 
     ASN1Subject m_subject;
     bool m_subjectHasBeenSet;
+
+    CsrExtensions m_csrExtensions;
+    bool m_csrExtensionsHasBeenSet;
   };
 
 } // namespace Model

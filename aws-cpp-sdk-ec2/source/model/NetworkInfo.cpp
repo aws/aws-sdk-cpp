@@ -38,7 +38,10 @@ NetworkInfo::NetworkInfo() :
     m_enaSupport(EnaSupport::NOT_SET),
     m_enaSupportHasBeenSet(false),
     m_efaSupported(false),
-    m_efaSupportedHasBeenSet(false)
+    m_efaSupportedHasBeenSet(false),
+    m_efaInfoHasBeenSet(false),
+    m_encryptionInTransitSupported(false),
+    m_encryptionInTransitSupportedHasBeenSet(false)
 {
 }
 
@@ -60,7 +63,10 @@ NetworkInfo::NetworkInfo(const XmlNode& xmlNode) :
     m_enaSupport(EnaSupport::NOT_SET),
     m_enaSupportHasBeenSet(false),
     m_efaSupported(false),
-    m_efaSupportedHasBeenSet(false)
+    m_efaSupportedHasBeenSet(false),
+    m_efaInfoHasBeenSet(false),
+    m_encryptionInTransitSupported(false),
+    m_encryptionInTransitSupportedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -137,6 +143,18 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
       m_efaSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(efaSupportedNode.GetText()).c_str()).c_str());
       m_efaSupportedHasBeenSet = true;
     }
+    XmlNode efaInfoNode = resultNode.FirstChild("efaInfo");
+    if(!efaInfoNode.IsNull())
+    {
+      m_efaInfo = efaInfoNode;
+      m_efaInfoHasBeenSet = true;
+    }
+    XmlNode encryptionInTransitSupportedNode = resultNode.FirstChild("encryptionInTransitSupported");
+    if(!encryptionInTransitSupportedNode.IsNull())
+    {
+      m_encryptionInTransitSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionInTransitSupportedNode.GetText()).c_str()).c_str());
+      m_encryptionInTransitSupportedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -200,6 +218,18 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
   }
 
+  if(m_efaInfoHasBeenSet)
+  {
+      Aws::StringStream efaInfoLocationAndMemberSs;
+      efaInfoLocationAndMemberSs << location << index << locationValue << ".EfaInfo";
+      m_efaInfo.OutputToStream(oStream, efaInfoLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_encryptionInTransitSupportedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported << "&";
+  }
+
 }
 
 void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -249,6 +279,16 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_efaSupportedHasBeenSet)
   {
       oStream << location << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
+  }
+  if(m_efaInfoHasBeenSet)
+  {
+      Aws::String efaInfoLocationAndMember(location);
+      efaInfoLocationAndMember += ".EfaInfo";
+      m_efaInfo.OutputToStream(oStream, efaInfoLocationAndMember.c_str());
+  }
+  if(m_encryptionInTransitSupportedHasBeenSet)
+  {
+      oStream << location << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported << "&";
   }
 }
 

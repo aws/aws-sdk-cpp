@@ -47,7 +47,12 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_useDefaultProcessorFeaturesHasBeenSet(false),
     m_dBParameterGroupNameHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_enableCustomerOwnedIp(false),
+    m_enableCustomerOwnedIpHasBeenSet(false),
+    m_customIamInstanceProfileHasBeenSet(false),
+    m_backupTargetHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -215,6 +220,26 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_enableCustomerOwnedIpHasBeenSet)
+  {
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+  }
+
+  if(m_backupTargetHasBeenSet)
+  {
+    ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

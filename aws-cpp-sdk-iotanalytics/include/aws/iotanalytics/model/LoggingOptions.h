@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline LoggingOptions& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline LoggingOptions& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
     inline LoggingOptions& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -119,22 +119,22 @@ namespace Model
 
 
     /**
-     * <p>If true, logging is enabled for AWS IoT Analytics.</p>
+     * <p>If true, logging is enabled for IoT Analytics.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>If true, logging is enabled for AWS IoT Analytics.</p>
+     * <p>If true, logging is enabled for IoT Analytics.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>If true, logging is enabled for AWS IoT Analytics.</p>
+     * <p>If true, logging is enabled for IoT Analytics.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>If true, logging is enabled for AWS IoT Analytics.</p>
+     * <p>If true, logging is enabled for IoT Analytics.</p>
      */
     inline LoggingOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

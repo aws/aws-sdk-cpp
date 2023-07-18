@@ -16,13 +16,13 @@ namespace Model
   enum class StatusString
   {
     NOT_SET,
-    ABORTED,
-    ALL,
-    FAILED,
-    FINISHED,
+    SUBMITTED,
     PICKED,
     STARTED,
-    SUBMITTED
+    FINISHED,
+    ABORTED,
+    FAILED,
+    ALL
   };
 
 namespace StatusStringMapper

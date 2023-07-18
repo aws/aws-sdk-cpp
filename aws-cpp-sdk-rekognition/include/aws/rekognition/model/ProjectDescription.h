@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/rekognition/model/ProjectStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/DatasetMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>A description of a Amazon Rekognition Custom Labels project.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A description of an Amazon Rekognition Custom Labels project. For more
+   * information, see <a>DescribeProjects</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProjectDescription">AWS
    * API Reference</a></p>
    */
@@ -142,6 +144,47 @@ namespace Model
      */
     inline ProjectDescription& WithStatus(ProjectStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline const Aws::Vector<DatasetMetadata>& GetDatasets() const{ return m_datasets; }
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline bool DatasetsHasBeenSet() const { return m_datasetsHasBeenSet; }
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline void SetDatasets(const Aws::Vector<DatasetMetadata>& value) { m_datasetsHasBeenSet = true; m_datasets = value; }
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline void SetDatasets(Aws::Vector<DatasetMetadata>&& value) { m_datasetsHasBeenSet = true; m_datasets = std::move(value); }
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline ProjectDescription& WithDatasets(const Aws::Vector<DatasetMetadata>& value) { SetDatasets(value); return *this;}
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline ProjectDescription& WithDatasets(Aws::Vector<DatasetMetadata>&& value) { SetDatasets(std::move(value)); return *this;}
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline ProjectDescription& AddDatasets(const DatasetMetadata& value) { m_datasetsHasBeenSet = true; m_datasets.push_back(value); return *this; }
+
+    /**
+     * <p> Information about the training and test datasets in the project. </p>
+     */
+    inline ProjectDescription& AddDatasets(DatasetMetadata&& value) { m_datasetsHasBeenSet = true; m_datasets.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_projectArn;
@@ -152,6 +195,9 @@ namespace Model
 
     ProjectStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Vector<DatasetMetadata> m_datasets;
+    bool m_datasetsHasBeenSet;
   };
 
 } // namespace Model

@@ -117,13 +117,13 @@ class AWS_TESTING_API ExactTestMemorySystem : public BaseTestMemorySystem
 // Macros that can be used to bracket the inside of a gtest body
 #define AWS_BEGIN_MEMORY_TEST(x, y)   ExactTestMemorySystem memorySystem(x, y); \
                                       Aws::Utils::Memory::InitializeAWSMemorySystem(memorySystem); \
-                                      {  
+                                      {
 
 #define AWS_END_MEMORY_TEST           } \
                                       Aws::Utils::Memory::ShutdownAWSMemorySystem(); \
                                       ASSERT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL); \
                                       ASSERT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL); \
-                                      ASSERT_TRUE(memorySystem.IsClean()); 
+                                      ASSERT_TRUE(memorySystem.IsClean());
 
 #define AWS_END_MEMORY_OVERRIDE   } \
                                   Aws::Utils::Memory::ShutdownAWSMemorySystem();

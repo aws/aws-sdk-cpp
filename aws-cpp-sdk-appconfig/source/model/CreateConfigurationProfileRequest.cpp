@@ -19,7 +19,8 @@ CreateConfigurationProfileRequest::CreateConfigurationProfileRequest() :
     m_locationUriHasBeenSet(false),
     m_retrievalRoleArnHasBeenSet(false),
     m_validatorsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,12 @@ Aws::String CreateConfigurationProfileRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", m_type);
 
   }
 

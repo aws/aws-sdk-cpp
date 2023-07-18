@@ -21,6 +21,8 @@ namespace Model
 {
 
 StackSetOperationPreferences::StackSetOperationPreferences() : 
+    m_regionConcurrencyType(RegionConcurrencyType::NOT_SET),
+    m_regionConcurrencyTypeHasBeenSet(false),
     m_regionOrderHasBeenSet(false),
     m_failureToleranceCount(0),
     m_failureToleranceCountHasBeenSet(false),
@@ -34,6 +36,8 @@ StackSetOperationPreferences::StackSetOperationPreferences() :
 }
 
 StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNode) : 
+    m_regionConcurrencyType(RegionConcurrencyType::NOT_SET),
+    m_regionConcurrencyTypeHasBeenSet(false),
     m_regionOrderHasBeenSet(false),
     m_failureToleranceCount(0),
     m_failureToleranceCountHasBeenSet(false),
@@ -53,6 +57,12 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
 
   if(!resultNode.IsNull())
   {
+    XmlNode regionConcurrencyTypeNode = resultNode.FirstChild("RegionConcurrencyType");
+    if(!regionConcurrencyTypeNode.IsNull())
+    {
+      m_regionConcurrencyType = RegionConcurrencyTypeMapper::GetRegionConcurrencyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionConcurrencyTypeNode.GetText()).c_str()).c_str());
+      m_regionConcurrencyTypeHasBeenSet = true;
+    }
     XmlNode regionOrderNode = resultNode.FirstChild("RegionOrder");
     if(!regionOrderNode.IsNull())
     {
@@ -96,6 +106,11 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
 
 void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_regionConcurrencyTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RegionConcurrencyType=" << RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType) << "&";
+  }
+
   if(m_regionOrderHasBeenSet)
   {
       unsigned regionOrderIdx = 1;
@@ -129,6 +144,10 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
 
 void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_regionConcurrencyTypeHasBeenSet)
+  {
+      oStream << location << ".RegionConcurrencyType=" << RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType) << "&";
+  }
   if(m_regionOrderHasBeenSet)
   {
       unsigned regionOrderIdx = 1;

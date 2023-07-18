@@ -25,6 +25,7 @@ namespace Aws
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
         static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
+        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
 
 
         State GetStateForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return State::CLOSED;
           }
+          else if (hashCode == PAUSED_HASH)
+          {
+            return State::PAUSED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "CANCELLED";
           case State::CLOSED:
             return "CLOSED";
+          case State::PAUSED:
+            return "PAUSED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

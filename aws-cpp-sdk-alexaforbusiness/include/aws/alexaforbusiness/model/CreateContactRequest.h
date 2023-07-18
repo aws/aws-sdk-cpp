@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/alexaforbusiness/model/PhoneNumber.h>
 #include <aws/alexaforbusiness/model/SipAddress.h>
+#include <aws/alexaforbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -372,6 +373,55 @@ namespace Model
      */
     inline CreateContactRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline CreateContactRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline CreateContactRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline CreateContactRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system
+     * tags.</p>
+     */
+    inline CreateContactRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_displayName;
@@ -394,6 +444,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

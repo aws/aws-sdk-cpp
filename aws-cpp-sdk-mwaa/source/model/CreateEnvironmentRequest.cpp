@@ -22,12 +22,16 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_loggingConfigurationHasBeenSet(false),
     m_maxWorkers(0),
     m_maxWorkersHasBeenSet(false),
+    m_minWorkers(0),
+    m_minWorkersHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_pluginsS3ObjectVersionHasBeenSet(false),
     m_pluginsS3PathHasBeenSet(false),
     m_requirementsS3ObjectVersionHasBeenSet(false),
     m_requirementsS3PathHasBeenSet(false),
+    m_schedulers(0),
+    m_schedulersHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_webserverAccessMode(WebserverAccessMode::NOT_SET),
@@ -93,6 +97,12 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   }
 
+  if(m_minWorkersHasBeenSet)
+  {
+   payload.WithInteger("MinWorkers", m_minWorkers);
+
+  }
+
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
@@ -120,6 +130,12 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   if(m_requirementsS3PathHasBeenSet)
   {
    payload.WithString("RequirementsS3Path", m_requirementsS3Path);
+
+  }
+
+  if(m_schedulersHasBeenSet)
+  {
+   payload.WithInteger("Schedulers", m_schedulers);
 
   }
 

@@ -16,7 +16,8 @@ AddApplicationCloudWatchLoggingOptionRequest::AddApplicationCloudWatchLoggingOpt
     m_applicationNameHasBeenSet(false),
     m_currentApplicationVersionId(0),
     m_currentApplicationVersionIdHasBeenSet(false),
-    m_cloudWatchLoggingOptionHasBeenSet(false)
+    m_cloudWatchLoggingOptionHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String AddApplicationCloudWatchLoggingOptionRequest::SerializePayload() con
   if(m_cloudWatchLoggingOptionHasBeenSet)
   {
    payload.WithObject("CloudWatchLoggingOption", m_cloudWatchLoggingOption.Jsonize());
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
 
   }
 

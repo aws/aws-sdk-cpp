@@ -38,6 +38,8 @@ Profile::Profile() :
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
     m_pSTNEnabledHasBeenSet(false),
+    m_dataRetentionOptIn(false),
+    m_dataRetentionOptInHasBeenSet(false),
     m_addressBookArnHasBeenSet(false),
     m_meetingRoomConfigurationHasBeenSet(false)
 {
@@ -63,6 +65,8 @@ Profile::Profile(JsonView jsonValue) :
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
     m_pSTNEnabledHasBeenSet(false),
+    m_dataRetentionOptIn(false),
+    m_dataRetentionOptInHasBeenSet(false),
     m_addressBookArnHasBeenSet(false),
     m_meetingRoomConfigurationHasBeenSet(false)
 {
@@ -155,6 +159,13 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_pSTNEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataRetentionOptIn"))
+  {
+    m_dataRetentionOptIn = jsonValue.GetBool("DataRetentionOptIn");
+
+    m_dataRetentionOptInHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AddressBookArn"))
   {
     m_addressBookArn = jsonValue.GetString("AddressBookArn");
@@ -242,6 +253,12 @@ JsonValue Profile::Jsonize() const
   if(m_pSTNEnabledHasBeenSet)
   {
    payload.WithBool("PSTNEnabled", m_pSTNEnabled);
+
+  }
+
+  if(m_dataRetentionOptInHasBeenSet)
+  {
+   payload.WithBool("DataRetentionOptIn", m_dataRetentionOptIn);
 
   }
 

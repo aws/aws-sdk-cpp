@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p> A cost anomaly subscription ARN. </p>
+     * <p>A cost anomaly subscription ARN. </p>
      */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
 
     /**
-     * <p> A cost anomaly subscription ARN. </p>
+     * <p>A cost anomaly subscription ARN. </p>
      */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
 
     /**
-     * <p> A cost anomaly subscription ARN. </p>
+     * <p>A cost anomaly subscription ARN. </p>
      */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = std::move(value); }
 
     /**
-     * <p> A cost anomaly subscription ARN. </p>
+     * <p>A cost anomaly subscription ARN. </p>
      */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
 
     /**
-     * <p> A cost anomaly subscription ARN. </p>
+     * <p>A cost anomaly subscription ARN. </p>
      */
     inline UpdateAnomalySubscriptionResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
 
     /**
-     * <p> A cost anomaly subscription ARN. </p>
+     * <p>A cost anomaly subscription ARN. </p>
      */
     inline UpdateAnomalySubscriptionResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
 
     /**
-     * <p> A cost anomaly subscription ARN. </p>
+     * <p>A cost anomaly subscription ARN. </p>
      */
     inline UpdateAnomalySubscriptionResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 

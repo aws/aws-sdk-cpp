@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the password policy for your Amazon Cognito user pool that's
-   * configured as a part of your Amplify project.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the password policy for your Amazon Cognito user pool configured as
+   * a part of your Amplify project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthPasswordPolicyConfig">AWS
    * API Reference</a></p>
    */
@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline const Aws::Vector<AdditionalConstraintsElement>& GetAdditionalConstraints() const{ return m_additionalConstraints; }
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline bool AdditionalConstraintsHasBeenSet() const { return m_additionalConstraintsHasBeenSet; }
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline void SetAdditionalConstraints(const Aws::Vector<AdditionalConstraintsElement>& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints = value; }
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline void SetAdditionalConstraints(Aws::Vector<AdditionalConstraintsElement>&& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints = std::move(value); }
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& WithAdditionalConstraints(const Aws::Vector<AdditionalConstraintsElement>& value) { SetAdditionalConstraints(value); return *this;}
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& WithAdditionalConstraints(Aws::Vector<AdditionalConstraintsElement>&& value) { SetAdditionalConstraints(std::move(value)); return *this;}
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& AddAdditionalConstraints(const AdditionalConstraintsElement& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints.push_back(value); return *this; }
 
     /**
-     * <p>Describes additional constrains on the password requirements to sign in to
-     * the auth resource, configured as a part of your Amplify project.</p>
+     * <p>Describes additional constraints on password requirements to sign in to the
+     * auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& AddAdditionalConstraints(AdditionalConstraintsElement&& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints.push_back(std::move(value)); return *this; }
 

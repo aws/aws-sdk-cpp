@@ -24,7 +24,11 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() :
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
-    m_autoImportPolicyHasBeenSet(false)
+    m_autoImportPolicyHasBeenSet(false),
+    m_dataCompressionType(DataCompressionType::NOT_SET),
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_rootSquashConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,7 +38,11 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonVie
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
-    m_autoImportPolicyHasBeenSet(false)
+    m_autoImportPolicyHasBeenSet(false),
+    m_dataCompressionType(DataCompressionType::NOT_SET),
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_rootSquashConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +77,27 @@ UpdateFileSystemLustreConfiguration& UpdateFileSystemLustreConfiguration::operat
     m_autoImportPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataCompressionType"))
+  {
+    m_dataCompressionType = DataCompressionTypeMapper::GetDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
+
+    m_dataCompressionTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RootSquashConfiguration"))
+  {
+    m_rootSquashConfiguration = jsonValue.GetObject("RootSquashConfiguration");
+
+    m_rootSquashConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +126,23 @@ JsonValue UpdateFileSystemLustreConfiguration::Jsonize() const
   if(m_autoImportPolicyHasBeenSet)
   {
    payload.WithString("AutoImportPolicy", AutoImportPolicyTypeMapper::GetNameForAutoImportPolicyType(m_autoImportPolicy));
+  }
+
+  if(m_dataCompressionTypeHasBeenSet)
+  {
+   payload.WithString("DataCompressionType", DataCompressionTypeMapper::GetNameForDataCompressionType(m_dataCompressionType));
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_rootSquashConfigurationHasBeenSet)
+  {
+   payload.WithObject("RootSquashConfiguration", m_rootSquashConfiguration.Jsonize());
+
   }
 
   return payload;

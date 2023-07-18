@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ALWAYS_ON_HASH = HashingUtils::HashString("ALWAYS_ON");
         static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
+        static const int ELASTIC_HASH = HashingUtils::HashString("ELASTIC");
 
 
         FleetType GetFleetTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ON_DEMAND_HASH)
           {
             return FleetType::ON_DEMAND;
+          }
+          else if (hashCode == ELASTIC_HASH)
+          {
+            return FleetType::ELASTIC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ALWAYS_ON";
           case FleetType::ON_DEMAND:
             return "ON_DEMAND";
+          case FleetType::ELASTIC:
+            return "ELASTIC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

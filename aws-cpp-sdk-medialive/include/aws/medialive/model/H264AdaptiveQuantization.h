@@ -16,6 +16,7 @@ namespace Model
   enum class H264AdaptiveQuantization
   {
     NOT_SET,
+    AUTO,
     HIGH,
     HIGHER,
     LOW,

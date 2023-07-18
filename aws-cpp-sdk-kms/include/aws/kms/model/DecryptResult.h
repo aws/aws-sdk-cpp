@@ -37,80 +37,85 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+     * ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+     * ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+     * ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+     * ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+     * ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
      */
     inline DecryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+     * ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
      */
     inline DecryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
+     * ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
      */
     inline DecryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
 
     /**
-     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
-     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPlaintext(const Aws::Utils::CryptoBuffer& value) { m_plaintext = value; }
 
     /**
-     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPlaintext(Aws::Utils::CryptoBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
-     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline DecryptResult& WithPlaintext(const Aws::Utils::CryptoBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
-     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline DecryptResult& WithPlaintext(Aws::Utils::CryptoBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 

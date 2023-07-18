@@ -34,44 +34,44 @@ namespace Model
 
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDeleteDelegationByAssessment</code> API. </p>
+     * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
+     * returned. </p>
      */
     inline const Aws::Vector<BatchDeleteDelegationByAssessmentError>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDeleteDelegationByAssessment</code> API. </p>
+     * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
+     * returned. </p>
      */
     inline void SetErrors(const Aws::Vector<BatchDeleteDelegationByAssessmentError>& value) { m_errors = value; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDeleteDelegationByAssessment</code> API. </p>
+     * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
+     * returned. </p>
      */
     inline void SetErrors(Aws::Vector<BatchDeleteDelegationByAssessmentError>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDeleteDelegationByAssessment</code> API. </p>
+     * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
+     * returned. </p>
      */
     inline BatchDeleteDelegationByAssessmentResult& WithErrors(const Aws::Vector<BatchDeleteDelegationByAssessmentError>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDeleteDelegationByAssessment</code> API. </p>
+     * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
+     * returned. </p>
      */
     inline BatchDeleteDelegationByAssessmentResult& WithErrors(Aws::Vector<BatchDeleteDelegationByAssessmentError>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDeleteDelegationByAssessment</code> API. </p>
+     * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
+     * returned. </p>
      */
     inline BatchDeleteDelegationByAssessmentResult& AddErrors(const BatchDeleteDelegationByAssessmentError& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p> A list of errors returned by the
-     * <code>BatchDeleteDelegationByAssessment</code> API. </p>
+     * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
+     * returned. </p>
      */
     inline BatchDeleteDelegationByAssessmentResult& AddErrors(BatchDeleteDelegationByAssessmentError&& value) { m_errors.push_back(std::move(value)); return *this; }
 

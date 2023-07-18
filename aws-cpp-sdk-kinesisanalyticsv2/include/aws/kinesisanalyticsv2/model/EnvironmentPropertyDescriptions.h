@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the execution properties for a Flink-based Kinesis Data Analytics
-   * application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the execution properties for an Apache Flink runtime.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/EnvironmentPropertyDescriptions">AWS
    * API Reference</a></p>
    */

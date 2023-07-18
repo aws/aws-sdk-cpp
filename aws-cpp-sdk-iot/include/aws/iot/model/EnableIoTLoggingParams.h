@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameters used when defining a mitigation action that enable AWS IoT
-   * logging.</p><p><h3>See Also:</h3>   <a
+   * <p>Parameters used when defining a mitigation action that enable Amazon Web
+   * Services IoT Core logging.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableIoTLoggingParams">AWS
    * API Reference</a></p>
    */

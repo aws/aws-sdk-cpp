@@ -23,7 +23,16 @@ namespace Model
     search_m3_medium,
     search_m3_large,
     search_m3_xlarge,
-    search_m3_2xlarge
+    search_m3_2xlarge,
+    search_small,
+    search_medium,
+    search_large,
+    search_xlarge,
+    search_2xlarge,
+    search_previousgeneration_small,
+    search_previousgeneration_large,
+    search_previousgeneration_xlarge,
+    search_previousgeneration_2xlarge
   };
 
 namespace PartitionInstanceTypeMapper

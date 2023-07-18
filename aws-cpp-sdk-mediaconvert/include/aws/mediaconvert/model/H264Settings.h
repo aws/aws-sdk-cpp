@@ -22,6 +22,7 @@
 #include <aws/mediaconvert/model/H264QvbrSettings.h>
 #include <aws/mediaconvert/model/H264RateControlMode.h>
 #include <aws/mediaconvert/model/H264RepeatPps.h>
+#include <aws/mediaconvert/model/H264ScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/H264SceneChangeDetect.h>
 #include <aws/mediaconvert/model/H264SlowPal.h>
 #include <aws/mediaconvert/model/H264SpatialAdaptiveQuantization.h>
@@ -342,44 +343,56 @@ namespace Model
 
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline const H264FieldEncoding& GetFieldEncoding() const{ return m_fieldEncoding; }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline bool FieldEncodingHasBeenSet() const { return m_fieldEncodingHasBeenSet; }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline void SetFieldEncoding(const H264FieldEncoding& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = value; }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline void SetFieldEncoding(H264FieldEncoding&& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = std::move(value); }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline H264Settings& WithFieldEncoding(const H264FieldEncoding& value) { SetFieldEncoding(value); return *this;}
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline H264Settings& WithFieldEncoding(H264FieldEncoding&& value) { SetFieldEncoding(std::move(value)); return *this;}
 
@@ -777,88 +790,184 @@ namespace Model
 
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline int GetGopClosedCadence() const{ return m_gopClosedCadence; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline H264Settings& WithGopClosedCadence(int value) { SetGopClosedCadence(value); return *this;}
 
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline double GetGopSize() const{ return m_gopSize; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline H264Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
 
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline const H264GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline void SetGopSizeUnits(const H264GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline void SetGopSizeUnits(H264GopSizeUnits&& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = std::move(value); }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline H264Settings& WithGopSizeUnits(const H264GopSizeUnits& value) { SetGopSizeUnits(value); return *this;}
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline H264Settings& WithGopSizeUnits(H264GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
 
@@ -1032,67 +1141,127 @@ namespace Model
 
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline int GetMinIInterval() const{ return m_minIInterval; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline H264Settings& WithMinIInterval(int value) { SetMinIInterval(value); return *this;}
 
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline H264Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 
@@ -1315,50 +1484,38 @@ namespace Model
 
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline const H264QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline bool QvbrSettingsHasBeenSet() const { return m_qvbrSettingsHasBeenSet; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(const H264QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(H264QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline H264Settings& WithQvbrSettings(const H264QvbrSettings& value) { SetQvbrSettings(value); return *this;}
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline H264Settings& WithQvbrSettings(H264QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 
@@ -1429,6 +1586,109 @@ namespace Model
      * Places a PPS header on each encoded picture, even if repeated.
      */
     inline H264Settings& WithRepeatPps(H264RepeatPps&& value) { SetRepeatPps(std::move(value)); return *this;}
+
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const H264ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const H264ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(H264ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline H264Settings& WithScanTypeConversionMode(const H264ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline H264Settings& WithScanTypeConversionMode(H264ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
 
 
     /**
@@ -2182,6 +2442,9 @@ namespace Model
 
     H264RepeatPps m_repeatPps;
     bool m_repeatPpsHasBeenSet;
+
+    H264ScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     H264SceneChangeDetect m_sceneChangeDetect;
     bool m_sceneChangeDetectHasBeenSet;

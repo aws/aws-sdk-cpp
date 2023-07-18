@@ -70,7 +70,7 @@ MarketplaceCommerceAnalyticsClient::~MarketplaceCommerceAnalyticsClient()
 {
 }
 
-void MarketplaceCommerceAnalyticsClient::init(const ClientConfiguration& config)
+void MarketplaceCommerceAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Marketplace Commerce Analytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -99,9 +99,6 @@ void MarketplaceCommerceAnalyticsClient::OverrideEndpoint(const Aws::String& end
 GenerateDataSetOutcome MarketplaceCommerceAnalyticsClient::GenerateDataSet(const GenerateDataSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GenerateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -126,9 +123,6 @@ void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsyncHelper(const Genera
 StartSupportDataExportOutcome MarketplaceCommerceAnalyticsClient::StartSupportDataExport(const StartSupportDataExportRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartSupportDataExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

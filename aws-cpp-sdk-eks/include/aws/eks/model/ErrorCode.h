@@ -29,7 +29,10 @@ namespace Model
     InsufficientFreeAddresses,
     ClusterUnreachable,
     InsufficientNumberOfReplicas,
-    ConfigurationConflict
+    ConfigurationConflict,
+    AdmissionRequestDenied,
+    UnsupportedAddonModification,
+    K8sResourceNotFound
   };
 
 namespace ErrorCodeMapper

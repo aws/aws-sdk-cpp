@@ -22,7 +22,11 @@ DataLakeSettings::DataLakeSettings() :
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
-    m_trustedResourceOwnersHasBeenSet(false)
+    m_trustedResourceOwnersHasBeenSet(false),
+    m_allowExternalDataFiltering(false),
+    m_allowExternalDataFilteringHasBeenSet(false),
+    m_externalDataFilteringAllowListHasBeenSet(false),
+    m_authorizedSessionTagValueListHasBeenSet(false)
 {
 }
 
@@ -30,7 +34,11 @@ DataLakeSettings::DataLakeSettings(JsonView jsonValue) :
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
-    m_trustedResourceOwnersHasBeenSet(false)
+    m_trustedResourceOwnersHasBeenSet(false),
+    m_allowExternalDataFiltering(false),
+    m_allowExternalDataFilteringHasBeenSet(false),
+    m_externalDataFilteringAllowListHasBeenSet(false),
+    m_authorizedSessionTagValueListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +83,33 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
       m_trustedResourceOwners.push_back(trustedResourceOwnersJsonList[trustedResourceOwnersIndex].AsString());
     }
     m_trustedResourceOwnersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AllowExternalDataFiltering"))
+  {
+    m_allowExternalDataFiltering = jsonValue.GetBool("AllowExternalDataFiltering");
+
+    m_allowExternalDataFilteringHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalDataFilteringAllowList"))
+  {
+    Array<JsonView> externalDataFilteringAllowListJsonList = jsonValue.GetArray("ExternalDataFilteringAllowList");
+    for(unsigned externalDataFilteringAllowListIndex = 0; externalDataFilteringAllowListIndex < externalDataFilteringAllowListJsonList.GetLength(); ++externalDataFilteringAllowListIndex)
+    {
+      m_externalDataFilteringAllowList.push_back(externalDataFilteringAllowListJsonList[externalDataFilteringAllowListIndex].AsObject());
+    }
+    m_externalDataFilteringAllowListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuthorizedSessionTagValueList"))
+  {
+    Array<JsonView> authorizedSessionTagValueListJsonList = jsonValue.GetArray("AuthorizedSessionTagValueList");
+    for(unsigned authorizedSessionTagValueListIndex = 0; authorizedSessionTagValueListIndex < authorizedSessionTagValueListJsonList.GetLength(); ++authorizedSessionTagValueListIndex)
+    {
+      m_authorizedSessionTagValueList.push_back(authorizedSessionTagValueListJsonList[authorizedSessionTagValueListIndex].AsString());
+    }
+    m_authorizedSessionTagValueListHasBeenSet = true;
   }
 
   return *this;
@@ -125,6 +160,34 @@ JsonValue DataLakeSettings::Jsonize() const
      trustedResourceOwnersJsonList[trustedResourceOwnersIndex].AsString(m_trustedResourceOwners[trustedResourceOwnersIndex]);
    }
    payload.WithArray("TrustedResourceOwners", std::move(trustedResourceOwnersJsonList));
+
+  }
+
+  if(m_allowExternalDataFilteringHasBeenSet)
+  {
+   payload.WithBool("AllowExternalDataFiltering", m_allowExternalDataFiltering);
+
+  }
+
+  if(m_externalDataFilteringAllowListHasBeenSet)
+  {
+   Array<JsonValue> externalDataFilteringAllowListJsonList(m_externalDataFilteringAllowList.size());
+   for(unsigned externalDataFilteringAllowListIndex = 0; externalDataFilteringAllowListIndex < externalDataFilteringAllowListJsonList.GetLength(); ++externalDataFilteringAllowListIndex)
+   {
+     externalDataFilteringAllowListJsonList[externalDataFilteringAllowListIndex].AsObject(m_externalDataFilteringAllowList[externalDataFilteringAllowListIndex].Jsonize());
+   }
+   payload.WithArray("ExternalDataFilteringAllowList", std::move(externalDataFilteringAllowListJsonList));
+
+  }
+
+  if(m_authorizedSessionTagValueListHasBeenSet)
+  {
+   Array<JsonValue> authorizedSessionTagValueListJsonList(m_authorizedSessionTagValueList.size());
+   for(unsigned authorizedSessionTagValueListIndex = 0; authorizedSessionTagValueListIndex < authorizedSessionTagValueListJsonList.GetLength(); ++authorizedSessionTagValueListIndex)
+   {
+     authorizedSessionTagValueListJsonList[authorizedSessionTagValueListIndex].AsString(m_authorizedSessionTagValueList[authorizedSessionTagValueListIndex]);
+   }
+   payload.WithArray("AuthorizedSessionTagValueList", std::move(authorizedSessionTagValueListJsonList));
 
   }
 

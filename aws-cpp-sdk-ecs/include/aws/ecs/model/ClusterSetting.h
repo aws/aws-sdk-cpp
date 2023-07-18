@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The settings to use when creating a cluster. This parameter is used to enable
-   * CloudWatch Container Insights for a cluster.</p><p><h3>See Also:</h3>   <a
+   * <p>The settings to use when creating a cluster. This parameter is used to turn
+   * on CloudWatch Container Insights for a cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ClusterSetting">AWS
    * API Reference</a></p>
    */

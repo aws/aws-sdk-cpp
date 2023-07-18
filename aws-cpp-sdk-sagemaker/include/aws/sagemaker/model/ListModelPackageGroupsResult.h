@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of summaries of the model groups in your AWS account.</p>
+     * <p>A list of summaries of the model groups in your Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<ModelPackageGroupSummary>& GetModelPackageGroupSummaryList() const{ return m_modelPackageGroupSummaryList; }
 
     /**
-     * <p>A list of summaries of the model groups in your AWS account.</p>
+     * <p>A list of summaries of the model groups in your Amazon Web Services
+     * account.</p>
      */
     inline void SetModelPackageGroupSummaryList(const Aws::Vector<ModelPackageGroupSummary>& value) { m_modelPackageGroupSummaryList = value; }
 
     /**
-     * <p>A list of summaries of the model groups in your AWS account.</p>
+     * <p>A list of summaries of the model groups in your Amazon Web Services
+     * account.</p>
      */
     inline void SetModelPackageGroupSummaryList(Aws::Vector<ModelPackageGroupSummary>&& value) { m_modelPackageGroupSummaryList = std::move(value); }
 
     /**
-     * <p>A list of summaries of the model groups in your AWS account.</p>
+     * <p>A list of summaries of the model groups in your Amazon Web Services
+     * account.</p>
      */
     inline ListModelPackageGroupsResult& WithModelPackageGroupSummaryList(const Aws::Vector<ModelPackageGroupSummary>& value) { SetModelPackageGroupSummaryList(value); return *this;}
 
     /**
-     * <p>A list of summaries of the model groups in your AWS account.</p>
+     * <p>A list of summaries of the model groups in your Amazon Web Services
+     * account.</p>
      */
     inline ListModelPackageGroupsResult& WithModelPackageGroupSummaryList(Aws::Vector<ModelPackageGroupSummary>&& value) { SetModelPackageGroupSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of summaries of the model groups in your AWS account.</p>
+     * <p>A list of summaries of the model groups in your Amazon Web Services
+     * account.</p>
      */
     inline ListModelPackageGroupsResult& AddModelPackageGroupSummaryList(const ModelPackageGroupSummary& value) { m_modelPackageGroupSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>A list of summaries of the model groups in your AWS account.</p>
+     * <p>A list of summaries of the model groups in your Amazon Web Services
+     * account.</p>
      */
     inline ListModelPackageGroupsResult& AddModelPackageGroupSummaryList(ModelPackageGroupSummary&& value) { m_modelPackageGroupSummaryList.push_back(std::move(value)); return *this; }
 

@@ -37,43 +37,78 @@ namespace Model
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 64 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image. Each celebrity object includes
+     * the following attributes: <code>Face</code>, <code>Confidence</code>,
+     * <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>,
+     * <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+     * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+     * <code>Urls</code>.</p>
      */
     inline const Aws::Vector<Celebrity>& GetCelebrityFaces() const{ return m_celebrityFaces; }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 64 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image. Each celebrity object includes
+     * the following attributes: <code>Face</code>, <code>Confidence</code>,
+     * <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>,
+     * <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+     * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+     * <code>Urls</code>.</p>
      */
     inline void SetCelebrityFaces(const Aws::Vector<Celebrity>& value) { m_celebrityFaces = value; }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 64 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image. Each celebrity object includes
+     * the following attributes: <code>Face</code>, <code>Confidence</code>,
+     * <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>,
+     * <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+     * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+     * <code>Urls</code>.</p>
      */
     inline void SetCelebrityFaces(Aws::Vector<Celebrity>&& value) { m_celebrityFaces = std::move(value); }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 64 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image. Each celebrity object includes
+     * the following attributes: <code>Face</code>, <code>Confidence</code>,
+     * <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>,
+     * <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+     * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+     * <code>Urls</code>.</p>
      */
     inline RecognizeCelebritiesResult& WithCelebrityFaces(const Aws::Vector<Celebrity>& value) { SetCelebrityFaces(value); return *this;}
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 64 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image. Each celebrity object includes
+     * the following attributes: <code>Face</code>, <code>Confidence</code>,
+     * <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>,
+     * <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+     * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+     * <code>Urls</code>.</p>
      */
     inline RecognizeCelebritiesResult& WithCelebrityFaces(Aws::Vector<Celebrity>&& value) { SetCelebrityFaces(std::move(value)); return *this;}
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 64 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image. Each celebrity object includes
+     * the following attributes: <code>Face</code>, <code>Confidence</code>,
+     * <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>,
+     * <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+     * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+     * <code>Urls</code>.</p>
      */
     inline RecognizeCelebritiesResult& AddCelebrityFaces(const Celebrity& value) { m_celebrityFaces.push_back(value); return *this; }
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
-     * detect a maximum of 64 celebrities in an image.</p>
+     * detect a maximum of 64 celebrities in an image. Each celebrity object includes
+     * the following attributes: <code>Face</code>, <code>Confidence</code>,
+     * <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>,
+     * <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+     * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+     * <code>Urls</code>.</p>
      */
     inline RecognizeCelebritiesResult& AddCelebrityFaces(Celebrity&& value) { m_celebrityFaces.push_back(std::move(value)); return *this; }
 
@@ -115,6 +150,9 @@ namespace Model
 
 
     /**
+     *  <p>Support for estimating image orientation using the the
+     * OrientationCorrection field has ceased as of August 2021. Any returned values
+     * for this field included in an API response will always be NULL.</p> 
      * <p>The orientation of the input image (counterclockwise direction). If your
      * application displays the image, you can use this value to correct the
      * orientation. The bounding box coordinates returned in
@@ -131,6 +169,9 @@ namespace Model
     inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
 
     /**
+     *  <p>Support for estimating image orientation using the the
+     * OrientationCorrection field has ceased as of August 2021. Any returned values
+     * for this field included in an API response will always be NULL.</p> 
      * <p>The orientation of the input image (counterclockwise direction). If your
      * application displays the image, you can use this value to correct the
      * orientation. The bounding box coordinates returned in
@@ -147,6 +188,9 @@ namespace Model
     inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
 
     /**
+     *  <p>Support for estimating image orientation using the the
+     * OrientationCorrection field has ceased as of August 2021. Any returned values
+     * for this field included in an API response will always be NULL.</p> 
      * <p>The orientation of the input image (counterclockwise direction). If your
      * application displays the image, you can use this value to correct the
      * orientation. The bounding box coordinates returned in
@@ -163,6 +207,9 @@ namespace Model
     inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
 
     /**
+     *  <p>Support for estimating image orientation using the the
+     * OrientationCorrection field has ceased as of August 2021. Any returned values
+     * for this field included in an API response will always be NULL.</p> 
      * <p>The orientation of the input image (counterclockwise direction). If your
      * application displays the image, you can use this value to correct the
      * orientation. The bounding box coordinates returned in
@@ -179,6 +226,9 @@ namespace Model
     inline RecognizeCelebritiesResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
 
     /**
+     *  <p>Support for estimating image orientation using the the
+     * OrientationCorrection field has ceased as of August 2021. Any returned values
+     * for this field included in an API response will always be NULL.</p> 
      * <p>The orientation of the input image (counterclockwise direction). If your
      * application displays the image, you can use this value to correct the
      * orientation. The bounding box coordinates returned in

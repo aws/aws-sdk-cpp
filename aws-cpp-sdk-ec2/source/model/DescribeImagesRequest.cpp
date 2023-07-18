@@ -15,6 +15,8 @@ DescribeImagesRequest::DescribeImagesRequest() :
     m_filtersHasBeenSet(false),
     m_imageIdsHasBeenSet(false),
     m_ownersHasBeenSet(false),
+    m_includeDeprecated(false),
+    m_includeDeprecatedHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -65,6 +67,11 @@ Aws::String DescribeImagesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       ownersCount++;
     }
+  }
+
+  if(m_includeDeprecatedHasBeenSet)
+  {
+    ss << "IncludeDeprecated=" << std::boolalpha << m_includeDeprecated << "&";
   }
 
   if(m_dryRunHasBeenSet)

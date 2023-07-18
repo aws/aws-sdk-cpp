@@ -41,7 +41,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -54,7 +54,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -67,7 +67,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -80,7 +80,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -93,7 +93,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -106,7 +106,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -119,7 +119,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -132,7 +132,7 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
@@ -142,30 +142,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items that you want AWS Cloud Map to return in the
-     * response to a <code>ListOperations</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 operations.</p>
+     * <p>The maximum number of items that you want Cloud Map to return in the response
+     * to a <code>ListOperations</code> request. If you don't specify a value for
+     * <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items that you want AWS Cloud Map to return in the
-     * response to a <code>ListOperations</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 operations.</p>
+     * <p>The maximum number of items that you want Cloud Map to return in the response
+     * to a <code>ListOperations</code> request. If you don't specify a value for
+     * <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of items that you want AWS Cloud Map to return in the
-     * response to a <code>ListOperations</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 operations.</p>
+     * <p>The maximum number of items that you want Cloud Map to return in the response
+     * to a <code>ListOperations</code> request. If you don't specify a value for
+     * <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items that you want AWS Cloud Map to return in the
-     * response to a <code>ListOperations</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 operations.</p>
+     * <p>The maximum number of items that you want Cloud Map to return in the response
+     * to a <code>ListOperations</code> request. If you don't specify a value for
+     * <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
      */
     inline ListOperationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

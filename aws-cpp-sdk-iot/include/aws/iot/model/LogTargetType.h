@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     DEFAULT,
-    THING_GROUP
+    THING_GROUP,
+    CLIENT_ID,
+    SOURCE_IP,
+    PRINCIPAL_ID
   };
 
 namespace LogTargetTypeMapper

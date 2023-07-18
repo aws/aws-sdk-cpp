@@ -23,6 +23,7 @@ SearchPlaceIndexForTextSummary::SearchPlaceIndexForTextSummary() :
     m_dataSourceHasBeenSet(false),
     m_filterBBoxHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_resultBBoxHasBeenSet(false),
@@ -35,6 +36,7 @@ SearchPlaceIndexForTextSummary::SearchPlaceIndexForTextSummary(JsonView jsonValu
     m_dataSourceHasBeenSet(false),
     m_filterBBoxHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_resultBBoxHasBeenSet(false),
@@ -80,6 +82,13 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
       m_filterCountries.push_back(filterCountriesJsonList[filterCountriesIndex].AsString());
     }
     m_filterCountriesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Language"))
+  {
+    m_language = jsonValue.GetString("Language");
+
+    m_languageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MaxResults"))
@@ -149,6 +158,12 @@ JsonValue SearchPlaceIndexForTextSummary::Jsonize() const
      filterCountriesJsonList[filterCountriesIndex].AsString(m_filterCountries[filterCountriesIndex]);
    }
    payload.WithArray("FilterCountries", std::move(filterCountriesJsonList));
+
+  }
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("Language", m_language);
 
   }
 

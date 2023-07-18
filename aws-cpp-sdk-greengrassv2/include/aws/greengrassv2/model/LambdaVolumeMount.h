@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p>Contains information about a volume that Linux processes in a container can
-   * access. When you define a volume, the AWS IoT Greengrass Core software mounts
-   * the source files to the destination inside the container.</p><p><h3>See
-   * Also:</h3>   <a
+   * access. When you define a volume, the IoT Greengrass Core software mounts the
+   * source files to the destination inside the container.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaVolumeMount">AWS
    * API Reference</a></p>
    */
@@ -161,25 +161,25 @@ namespace Model
 
 
     /**
-     * <p>Whether or not to add the AWS IoT Greengrass user group as an owner of the
+     * <p>Whether or not to add the IoT Greengrass user group as an owner of the
      * volume.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAddGroupOwner() const{ return m_addGroupOwner; }
 
     /**
-     * <p>Whether or not to add the AWS IoT Greengrass user group as an owner of the
+     * <p>Whether or not to add the IoT Greengrass user group as an owner of the
      * volume.</p> <p>Default: <code>false</code> </p>
      */
     inline bool AddGroupOwnerHasBeenSet() const { return m_addGroupOwnerHasBeenSet; }
 
     /**
-     * <p>Whether or not to add the AWS IoT Greengrass user group as an owner of the
+     * <p>Whether or not to add the IoT Greengrass user group as an owner of the
      * volume.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetAddGroupOwner(bool value) { m_addGroupOwnerHasBeenSet = true; m_addGroupOwner = value; }
 
     /**
-     * <p>Whether or not to add the AWS IoT Greengrass user group as an owner of the
+     * <p>Whether or not to add the IoT Greengrass user group as an owner of the
      * volume.</p> <p>Default: <code>false</code> </p>
      */
     inline LambdaVolumeMount& WithAddGroupOwner(bool value) { SetAddGroupOwner(value); return *this;}

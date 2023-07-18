@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline const ChannelStorage& GetStorage() const{ return m_storage; }
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline void SetStorage(const ChannelStorage& value) { m_storageHasBeenSet = true; m_storage = value; }
@@ -111,7 +111,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline void SetStorage(ChannelStorage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline Channel& WithStorage(const ChannelStorage& value) { SetStorage(value); return *this;}
@@ -127,7 +127,7 @@ namespace Model
     /**
      * <p>Where channel data is stored. You can choose one of
      * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+     * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
     inline Channel& WithStorage(ChannelStorage&& value) { SetStorage(std::move(value)); return *this;}
@@ -299,8 +299,8 @@ namespace Model
 
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -308,8 +308,8 @@ namespace Model
     inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const{ return m_lastMessageArrivalTime; }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -317,8 +317,8 @@ namespace Model
     inline bool LastMessageArrivalTimeHasBeenSet() const { return m_lastMessageArrivalTimeHasBeenSet; }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -326,8 +326,8 @@ namespace Model
     inline void SetLastMessageArrivalTime(const Aws::Utils::DateTime& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = value; }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -335,8 +335,8 @@ namespace Model
     inline void SetLastMessageArrivalTime(Aws::Utils::DateTime&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::move(value); }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -344,8 +344,8 @@ namespace Model
     inline Channel& WithLastMessageArrivalTime(const Aws::Utils::DateTime& value) { SetLastMessageArrivalTime(value); return *this;}
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>

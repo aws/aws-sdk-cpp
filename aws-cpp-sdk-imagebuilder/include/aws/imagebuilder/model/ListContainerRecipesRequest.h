@@ -79,50 +79,66 @@ namespace Model
 
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline ListContainerRecipesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline ListContainerRecipesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline ListContainerRecipesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Request filters that are used to narrow the list of container images that are
-     * returned.</p>
+     * <p>Use the following filters to streamline results:</p> <ul> <li> <p>
+     * <code>containerType</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li>
+     * <p> <code>parentImage</code> </p> </li> <li> <p> <code>platform</code> </p>
+     * </li> </ul>
      */
     inline ListContainerRecipesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

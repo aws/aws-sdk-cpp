@@ -40,50 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
@@ -147,29 +139,29 @@ namespace Model
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline GetComplianceDetailsByConfigRuleRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

@@ -14,6 +14,7 @@
 #include <aws/s3control/model/S3StorageClass.h>
 #include <aws/s3control/model/S3ObjectLockLegalHoldStatus.h>
 #include <aws/s3control/model/S3ObjectLockMode.h>
+#include <aws/s3control/model/S3ChecksumAlgorithm.h>
 #include <aws/s3control/model/S3Grant.h>
 #include <aws/s3control/model/S3Tag.h>
 #include <utility>
@@ -34,8 +35,8 @@ namespace Model
 
   /**
    * <p>Contains the configuration parameters for a PUT Copy object operation. S3
-   * Batch Operations passes each value through to the underlying PUT Copy object
-   * API. For more information about the parameters for this operation, see <a
+   * Batch Operations passes every object to the underlying PUT Copy object API. For
+   * more information about the parameters for this operation, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
    * Object - Copy</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3CopyObjectOperation">AWS
@@ -243,32 +244,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline const S3ObjectMetadata& GetNewObjectMetadata() const{ return m_newObjectMetadata; }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline bool NewObjectMetadataHasBeenSet() const { return m_newObjectMetadataHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline void SetNewObjectMetadata(const S3ObjectMetadata& value) { m_newObjectMetadataHasBeenSet = true; m_newObjectMetadata = value; }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline void SetNewObjectMetadata(S3ObjectMetadata&& value) { m_newObjectMetadataHasBeenSet = true; m_newObjectMetadata = std::move(value); }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline S3CopyObjectOperation& WithNewObjectMetadata(const S3ObjectMetadata& value) { SetNewObjectMetadata(value); return *this;}
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline S3CopyObjectOperation& WithNewObjectMetadata(S3ObjectMetadata&& value) { SetNewObjectMetadata(std::move(value)); return *this;}
 
@@ -497,57 +510,57 @@ namespace Model
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline const Aws::String& GetTargetKeyPrefix() const{ return m_targetKeyPrefix; }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline bool TargetKeyPrefixHasBeenSet() const { return m_targetKeyPrefixHasBeenSet; }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(const Aws::String& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = value; }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(Aws::String&& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = std::move(value); }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(const char* value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix.assign(value); }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const Aws::String& value) { SetTargetKeyPrefix(value); return *this;}
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(Aws::String&& value) { SetTargetKeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const char* value) { SetTargetKeyPrefix(value); return *this;}
 
@@ -662,6 +675,96 @@ namespace Model
      */
     inline S3CopyObjectOperation& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
+     */
+    inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
+     */
+    inline S3CopyObjectOperation& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
+    /**
+     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const S3ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumAlgorithm(const S3ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+
+    /**
+     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumAlgorithm(S3ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline S3CopyObjectOperation& WithChecksumAlgorithm(const S3ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline S3CopyObjectOperation& WithChecksumAlgorithm(S3ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetResource;
@@ -711,6 +814,12 @@ namespace Model
 
     Aws::Utils::DateTime m_objectLockRetainUntilDate;
     bool m_objectLockRetainUntilDateHasBeenSet;
+
+    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabledHasBeenSet;
+
+    S3ChecksumAlgorithm m_checksumAlgorithm;
+    bool m_checksumAlgorithmHasBeenSet;
   };
 
 } // namespace Model

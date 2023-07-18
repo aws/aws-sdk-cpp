@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/Adjustment.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +142,88 @@ namespace Model
      */
     inline Cvss& WithBaseVector(const char* value) { SetBaseVector(value); return *this;}
 
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline Cvss& WithSource(const Aws::String& value) { SetSource(value); return *this;}
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline Cvss& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The origin of the original CVSS score and vector.</p>
+     */
+    inline Cvss& WithSource(const char* value) { SetSource(value); return *this;}
+
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline const Aws::Vector<Adjustment>& GetAdjustments() const{ return m_adjustments; }
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline bool AdjustmentsHasBeenSet() const { return m_adjustmentsHasBeenSet; }
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline void SetAdjustments(const Aws::Vector<Adjustment>& value) { m_adjustmentsHasBeenSet = true; m_adjustments = value; }
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline void SetAdjustments(Aws::Vector<Adjustment>&& value) { m_adjustmentsHasBeenSet = true; m_adjustments = std::move(value); }
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline Cvss& WithAdjustments(const Aws::Vector<Adjustment>& value) { SetAdjustments(value); return *this;}
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline Cvss& WithAdjustments(Aws::Vector<Adjustment>&& value) { SetAdjustments(std::move(value)); return *this;}
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline Cvss& AddAdjustments(const Adjustment& value) { m_adjustmentsHasBeenSet = true; m_adjustments.push_back(value); return *this; }
+
+    /**
+     * <p>Adjustments to the CVSS metrics.</p>
+     */
+    inline Cvss& AddAdjustments(Adjustment&& value) { m_adjustmentsHasBeenSet = true; m_adjustments.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_version;
@@ -150,6 +234,12 @@ namespace Model
 
     Aws::String m_baseVector;
     bool m_baseVectorHasBeenSet;
+
+    Aws::String m_source;
+    bool m_sourceHasBeenSet;
+
+    Aws::Vector<Adjustment> m_adjustments;
+    bool m_adjustmentsHasBeenSet;
   };
 
 } // namespace Model

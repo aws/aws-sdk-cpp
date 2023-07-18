@@ -9,6 +9,7 @@
 #include <aws/healthlake/model/JobStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/healthlake/model/InputDataConfig.h>
+#include <aws/healthlake/model/OutputDataConfig.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +29,7 @@ namespace Model
 
   /**
    * <p>Displays the properties of the import job, including the ID, Arn, Name, and
-   * the status of the datastore.</p><p><h3>See Also:</h3>   <a
+   * the status of the Data Store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ImportJobProperties">AWS
    * API Reference</a></p>
    */
@@ -300,6 +301,25 @@ namespace Model
     inline ImportJobProperties& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
 
+    
+    inline const OutputDataConfig& GetJobOutputDataConfig() const{ return m_jobOutputDataConfig; }
+
+    
+    inline bool JobOutputDataConfigHasBeenSet() const { return m_jobOutputDataConfigHasBeenSet; }
+
+    
+    inline void SetJobOutputDataConfig(const OutputDataConfig& value) { m_jobOutputDataConfigHasBeenSet = true; m_jobOutputDataConfig = value; }
+
+    
+    inline void SetJobOutputDataConfig(OutputDataConfig&& value) { m_jobOutputDataConfigHasBeenSet = true; m_jobOutputDataConfig = std::move(value); }
+
+    
+    inline ImportJobProperties& WithJobOutputDataConfig(const OutputDataConfig& value) { SetJobOutputDataConfig(value); return *this;}
+
+    
+    inline ImportJobProperties& WithJobOutputDataConfig(OutputDataConfig&& value) { SetJobOutputDataConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
      * input data.</p>
@@ -419,6 +439,9 @@ namespace Model
 
     InputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet;
+
+    OutputDataConfig m_jobOutputDataConfig;
+    bool m_jobOutputDataConfigHasBeenSet;
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet;

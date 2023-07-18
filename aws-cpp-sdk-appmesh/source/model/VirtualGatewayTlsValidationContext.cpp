@@ -19,11 +19,13 @@ namespace Model
 {
 
 VirtualGatewayTlsValidationContext::VirtualGatewayTlsValidationContext() : 
+    m_subjectAlternativeNamesHasBeenSet(false),
     m_trustHasBeenSet(false)
 {
 }
 
 VirtualGatewayTlsValidationContext::VirtualGatewayTlsValidationContext(JsonView jsonValue) : 
+    m_subjectAlternativeNamesHasBeenSet(false),
     m_trustHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ VirtualGatewayTlsValidationContext::VirtualGatewayTlsValidationContext(JsonView 
 
 VirtualGatewayTlsValidationContext& VirtualGatewayTlsValidationContext::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("subjectAlternativeNames"))
+  {
+    m_subjectAlternativeNames = jsonValue.GetObject("subjectAlternativeNames");
+
+    m_subjectAlternativeNamesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("trust"))
   {
     m_trust = jsonValue.GetObject("trust");
@@ -44,6 +53,12 @@ VirtualGatewayTlsValidationContext& VirtualGatewayTlsValidationContext::operator
 JsonValue VirtualGatewayTlsValidationContext::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_subjectAlternativeNamesHasBeenSet)
+  {
+   payload.WithObject("subjectAlternativeNames", m_subjectAlternativeNames.Jsonize());
+
+  }
 
   if(m_trustHasBeenSet)
   {

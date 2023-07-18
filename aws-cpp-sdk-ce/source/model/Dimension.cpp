@@ -49,6 +49,9 @@ namespace Aws
         static const int SAVINGS_PLANS_TYPE_HASH = HashingUtils::HashString("SAVINGS_PLANS_TYPE");
         static const int SAVINGS_PLAN_ARN_HASH = HashingUtils::HashString("SAVINGS_PLAN_ARN");
         static const int PAYMENT_OPTION_HASH = HashingUtils::HashString("PAYMENT_OPTION");
+        static const int AGREEMENT_END_DATE_TIME_AFTER_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_AFTER");
+        static const int AGREEMENT_END_DATE_TIME_BEFORE_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_BEFORE");
+        static const int INVOICING_ENTITY_HASH = HashingUtils::HashString("INVOICING_ENTITY");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
@@ -170,6 +173,18 @@ namespace Aws
           {
             return Dimension::PAYMENT_OPTION;
           }
+          else if (hashCode == AGREEMENT_END_DATE_TIME_AFTER_HASH)
+          {
+            return Dimension::AGREEMENT_END_DATE_TIME_AFTER;
+          }
+          else if (hashCode == AGREEMENT_END_DATE_TIME_BEFORE_HASH)
+          {
+            return Dimension::AGREEMENT_END_DATE_TIME_BEFORE;
+          }
+          else if (hashCode == INVOICING_ENTITY_HASH)
+          {
+            return Dimension::INVOICING_ENTITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -242,6 +257,12 @@ namespace Aws
             return "SAVINGS_PLAN_ARN";
           case Dimension::PAYMENT_OPTION:
             return "PAYMENT_OPTION";
+          case Dimension::AGREEMENT_END_DATE_TIME_AFTER:
+            return "AGREEMENT_END_DATE_TIME_AFTER";
+          case Dimension::AGREEMENT_END_DATE_TIME_BEFORE:
+            return "AGREEMENT_END_DATE_TIME_BEFORE";
+          case Dimension::INVOICING_ENTITY:
+            return "INVOICING_ENTITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

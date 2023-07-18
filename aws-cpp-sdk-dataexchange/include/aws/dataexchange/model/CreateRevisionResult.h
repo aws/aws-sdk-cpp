@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline CreateRevisionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline CreateRevisionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline CreateRevisionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -374,6 +374,91 @@ namespace Model
      */
     inline CreateRevisionResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline const Aws::String& GetRevocationComment() const{ return m_revocationComment; }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline void SetRevocationComment(const Aws::String& value) { m_revocationComment = value; }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline void SetRevocationComment(Aws::String&& value) { m_revocationComment = std::move(value); }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline void SetRevocationComment(const char* value) { m_revocationComment.assign(value); }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline CreateRevisionResult& WithRevocationComment(const Aws::String& value) { SetRevocationComment(value); return *this;}
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline CreateRevisionResult& WithRevocationComment(Aws::String&& value) { SetRevocationComment(std::move(value)); return *this;}
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline CreateRevisionResult& WithRevocationComment(const char* value) { SetRevocationComment(value); return *this;}
+
+
+    /**
+     * <p>A status indicating that subscribers' access to the revision was revoked.</p>
+     */
+    inline bool GetRevoked() const{ return m_revoked; }
+
+    /**
+     * <p>A status indicating that subscribers' access to the revision was revoked.</p>
+     */
+    inline void SetRevoked(bool value) { m_revoked = value; }
+
+    /**
+     * <p>A status indicating that subscribers' access to the revision was revoked.</p>
+     */
+    inline CreateRevisionResult& WithRevoked(bool value) { SetRevoked(value); return *this;}
+
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAt = value; }
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAt = std::move(value); }
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline CreateRevisionResult& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline CreateRevisionResult& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -393,6 +478,12 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Utils::DateTime m_updatedAt;
+
+    Aws::String m_revocationComment;
+
+    bool m_revoked;
+
+    Aws::Utils::DateTime m_revokedAt;
   };
 
 } // namespace Model

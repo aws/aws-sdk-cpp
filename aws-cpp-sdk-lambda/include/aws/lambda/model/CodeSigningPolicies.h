@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Code signing configuration policies specifies the validation failure action
-   * for signature mismatch or expiry.</p><p><h3>See Also:</h3>   <a
+   * <p>Code signing configuration <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html#config-codesigning-policies">policies</a>
+   * specify the validation failure action for signature mismatch or
+   * expiry.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CodeSigningPolicies">AWS
    * API Reference</a></p>
    */

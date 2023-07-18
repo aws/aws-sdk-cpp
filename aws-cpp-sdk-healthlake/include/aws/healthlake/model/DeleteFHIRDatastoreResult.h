@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS-generated ID for the datastore to be deleted.</p>
+     * <p>The AWS-generated ID for the Data Store to be deleted.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
 
     /**
-     * <p>The AWS-generated ID for the datastore to be deleted.</p>
+     * <p>The AWS-generated ID for the Data Store to be deleted.</p>
      */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreId = value; }
 
     /**
-     * <p>The AWS-generated ID for the datastore to be deleted.</p>
+     * <p>The AWS-generated ID for the Data Store to be deleted.</p>
      */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreId = std::move(value); }
 
     /**
-     * <p>The AWS-generated ID for the datastore to be deleted.</p>
+     * <p>The AWS-generated ID for the Data Store to be deleted.</p>
      */
     inline void SetDatastoreId(const char* value) { m_datastoreId.assign(value); }
 
     /**
-     * <p>The AWS-generated ID for the datastore to be deleted.</p>
+     * <p>The AWS-generated ID for the Data Store to be deleted.</p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
 
     /**
-     * <p>The AWS-generated ID for the datastore to be deleted.</p>
+     * <p>The AWS-generated ID for the Data Store to be deleted.</p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS-generated ID for the datastore to be deleted.</p>
+     * <p>The AWS-generated ID for the Data Store to be deleted.</p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
 
@@ -113,63 +113,63 @@ namespace Model
 
 
     /**
-     * <p>The status of the datastore that the user has requested to be deleted. </p>
+     * <p>The status of the Data Store that the user has requested to be deleted. </p>
      */
     inline const DatastoreStatus& GetDatastoreStatus() const{ return m_datastoreStatus; }
 
     /**
-     * <p>The status of the datastore that the user has requested to be deleted. </p>
+     * <p>The status of the Data Store that the user has requested to be deleted. </p>
      */
     inline void SetDatastoreStatus(const DatastoreStatus& value) { m_datastoreStatus = value; }
 
     /**
-     * <p>The status of the datastore that the user has requested to be deleted. </p>
+     * <p>The status of the Data Store that the user has requested to be deleted. </p>
      */
     inline void SetDatastoreStatus(DatastoreStatus&& value) { m_datastoreStatus = std::move(value); }
 
     /**
-     * <p>The status of the datastore that the user has requested to be deleted. </p>
+     * <p>The status of the Data Store that the user has requested to be deleted. </p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreStatus(const DatastoreStatus& value) { SetDatastoreStatus(value); return *this;}
 
     /**
-     * <p>The status of the datastore that the user has requested to be deleted. </p>
+     * <p>The status of the Data Store that the user has requested to be deleted. </p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreStatus(DatastoreStatus&& value) { SetDatastoreStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS endpoint for the datastore the user has requested to be deleted.</p>
+     * <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
      */
     inline const Aws::String& GetDatastoreEndpoint() const{ return m_datastoreEndpoint; }
 
     /**
-     * <p>The AWS endpoint for the datastore the user has requested to be deleted.</p>
+     * <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
      */
     inline void SetDatastoreEndpoint(const Aws::String& value) { m_datastoreEndpoint = value; }
 
     /**
-     * <p>The AWS endpoint for the datastore the user has requested to be deleted.</p>
+     * <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
      */
     inline void SetDatastoreEndpoint(Aws::String&& value) { m_datastoreEndpoint = std::move(value); }
 
     /**
-     * <p>The AWS endpoint for the datastore the user has requested to be deleted.</p>
+     * <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
      */
     inline void SetDatastoreEndpoint(const char* value) { m_datastoreEndpoint.assign(value); }
 
     /**
-     * <p>The AWS endpoint for the datastore the user has requested to be deleted.</p>
+     * <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreEndpoint(const Aws::String& value) { SetDatastoreEndpoint(value); return *this;}
 
     /**
-     * <p>The AWS endpoint for the datastore the user has requested to be deleted.</p>
+     * <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreEndpoint(Aws::String&& value) { SetDatastoreEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS endpoint for the datastore the user has requested to be deleted.</p>
+     * <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
      */
     inline DeleteFHIRDatastoreResult& WithDatastoreEndpoint(const char* value) { SetDatastoreEndpoint(value); return *this;}
 

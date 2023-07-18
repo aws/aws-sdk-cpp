@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
@@ -83,7 +83,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
@@ -99,7 +99,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
@@ -115,7 +115,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability
+     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */

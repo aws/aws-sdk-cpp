@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/MxfAfdSignaling.h>
 #include <aws/mediaconvert/model/MxfProfile.h>
+#include <aws/mediaconvert/model/MxfXavcProfileSettings.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * MXF settings<p><h3>See Also:</h3>   <a
+   * These settings relate to your MXF output container.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MxfSettings">AWS
    * API Reference</a></p>
    */
@@ -171,6 +172,43 @@ namespace Model
      */
     inline MxfSettings& WithProfile(MxfProfile&& value) { SetProfile(std::move(value)); return *this;}
 
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
+     * to XAVC.
+     */
+    inline const MxfXavcProfileSettings& GetXavcProfileSettings() const{ return m_xavcProfileSettings; }
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
+     * to XAVC.
+     */
+    inline bool XavcProfileSettingsHasBeenSet() const { return m_xavcProfileSettingsHasBeenSet; }
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
+     * to XAVC.
+     */
+    inline void SetXavcProfileSettings(const MxfXavcProfileSettings& value) { m_xavcProfileSettingsHasBeenSet = true; m_xavcProfileSettings = value; }
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
+     * to XAVC.
+     */
+    inline void SetXavcProfileSettings(MxfXavcProfileSettings&& value) { m_xavcProfileSettingsHasBeenSet = true; m_xavcProfileSettings = std::move(value); }
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
+     * to XAVC.
+     */
+    inline MxfSettings& WithXavcProfileSettings(const MxfXavcProfileSettings& value) { SetXavcProfileSettings(value); return *this;}
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
+     * to XAVC.
+     */
+    inline MxfSettings& WithXavcProfileSettings(MxfXavcProfileSettings&& value) { SetXavcProfileSettings(std::move(value)); return *this;}
+
   private:
 
     MxfAfdSignaling m_afdSignaling;
@@ -178,6 +216,9 @@ namespace Model
 
     MxfProfile m_profile;
     bool m_profileHasBeenSet;
+
+    MxfXavcProfileSettings m_xavcProfileSettings;
+    bool m_xavcProfileSettingsHasBeenSet;
   };
 
 } // namespace Model

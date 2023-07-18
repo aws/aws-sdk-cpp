@@ -39,98 +39,138 @@ namespace Model
 
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline const Aws::String& GetServeSignature() const{ return m_serveSignature; }
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline bool ServeSignatureHasBeenSet() const { return m_serveSignatureHasBeenSet; }
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline void SetServeSignature(const Aws::String& value) { m_serveSignatureHasBeenSet = true; m_serveSignature = value; }
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline void SetServeSignature(Aws::String&& value) { m_serveSignatureHasBeenSet = true; m_serveSignature = std::move(value); }
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline void SetServeSignature(const char* value) { m_serveSignatureHasBeenSet = true; m_serveSignature.assign(value); }
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline DNSSECStatus& WithServeSignature(const Aws::String& value) { SetServeSignature(value); return *this;}
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline DNSSECStatus& WithServeSignature(Aws::String&& value) { SetServeSignature(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates your hosted zone signging status: <code>SIGNING</code>,
-     * <code>NOT_SIGNING</code>, or <code>INTERNAL_FAILURE</code>. If the status is
-     * <code>INTERNAL_FAILURE</code>, see <code>StatusMessage</code> for information
-     * about steps that you can take to correct the problem.</p> <p>A status
-     * <code>INTERNAL_FAILURE</code> means there was an error during a request. Before
-     * you can continue to work with DNSSEC signing, including working with key signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p>
+     * <p>A string that represents the current hosted zone signing status.</p>
+     * <p>Status can have one of the following values:</p> <dl> <dt>SIGNING</dt> <dd>
+     * <p>DNSSEC signing is enabled for the hosted zone.</p> </dd> <dt>NOT_SIGNING</dt>
+     * <dd> <p>DNSSEC signing is not enabled for the hosted zone.</p> </dd>
+     * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
+     * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
+     * with signing in the hosted zone that requires you to take action to resolve. For
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline DNSSECStatus& WithServeSignature(const char* value) { SetServeSignature(value); return *this;}
 

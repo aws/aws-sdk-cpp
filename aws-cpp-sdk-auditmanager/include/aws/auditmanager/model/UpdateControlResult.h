@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateControl</code> API. </p>
+     * <p> The name of the updated control set that the <code>UpdateControl</code> API
+     * returned. </p>
      */
     inline const Control& GetControl() const{ return m_control; }
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateControl</code> API. </p>
+     * <p> The name of the updated control set that the <code>UpdateControl</code> API
+     * returned. </p>
      */
     inline void SetControl(const Control& value) { m_control = value; }
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateControl</code> API. </p>
+     * <p> The name of the updated control set that the <code>UpdateControl</code> API
+     * returned. </p>
      */
     inline void SetControl(Control&& value) { m_control = std::move(value); }
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateControl</code> API. </p>
+     * <p> The name of the updated control set that the <code>UpdateControl</code> API
+     * returned. </p>
      */
     inline UpdateControlResult& WithControl(const Control& value) { SetControl(value); return *this;}
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateControl</code> API. </p>
+     * <p> The name of the updated control set that the <code>UpdateControl</code> API
+     * returned. </p>
      */
     inline UpdateControlResult& WithControl(Control&& value) { SetControl(std::move(value)); return *this;}
 

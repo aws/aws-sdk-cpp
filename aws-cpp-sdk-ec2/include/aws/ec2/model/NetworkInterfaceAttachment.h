@@ -222,42 +222,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline const Aws::String& GetInstanceOwnerId() const{ return m_instanceOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline void SetInstanceOwnerId(const char* value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline NetworkInterfaceAttachment& WithInstanceOwnerId(const Aws::String& value) { SetInstanceOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline NetworkInterfaceAttachment& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline NetworkInterfaceAttachment& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
 

@@ -78,50 +78,58 @@ namespace Model
 
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotFoundIdentifierIds() const{ return m_notFoundIdentifierIds; }
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline void SetNotFoundIdentifierIds(const Aws::Vector<Aws::String>& value) { m_notFoundIdentifierIds = value; }
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline void SetNotFoundIdentifierIds(Aws::Vector<Aws::String>&& value) { m_notFoundIdentifierIds = std::move(value); }
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& WithNotFoundIdentifierIds(const Aws::Vector<Aws::String>& value) { SetNotFoundIdentifierIds(value); return *this;}
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& WithNotFoundIdentifierIds(Aws::Vector<Aws::String>&& value) { SetNotFoundIdentifierIds(std::move(value)); return *this;}
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& AddNotFoundIdentifierIds(const Aws::String& value) { m_notFoundIdentifierIds.push_back(value); return *this; }
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& AddNotFoundIdentifierIds(Aws::String&& value) { m_notFoundIdentifierIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of identifiers, one for each identifier that was specified in the
-     * request, but doesn't correlate to an existing custom data identifier.</p>
+     * <p>An array of custom data identifier IDs, one for each custom data identifier
+     * that was specified in the request but doesn't correlate to an existing custom
+     * data identifier.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& AddNotFoundIdentifierIds(const char* value) { m_notFoundIdentifierIds.push_back(value); return *this; }
 

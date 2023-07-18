@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the access point you are trying to create already exists, with
-   * the creation token you provided in the request.</p><p><h3>See Also:</h3>   <a
+   * <p>Returned if the access point that you are trying to create already exists,
+   * with the creation token you provided in the request.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointAlreadyExists">AWS
    * API Reference</a></p>
    */

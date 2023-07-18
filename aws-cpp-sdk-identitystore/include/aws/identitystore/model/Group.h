@@ -80,82 +80,82 @@ namespace Model
 
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline Group& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline Group& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the group’s display name value. The length limit is 1024 characters.
-     * This value can consist of letters, accented characters, symbols, numbers,
-     * punctuation, tab, new line, carriage return, space and non breaking space in
-     * this attribute. The characters “&lt;&gt;;:%” are excluded. This value is
-     * specified at the time the group is created and stored as an attribute of the
-     * group object in the identity store.</p>
+     * <p>Contains the group’s display name value. The length limit is 1,024
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, punctuation, tab, new line, carriage return, space, and nonbreaking
+     * space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded.
+     * This value is specified at the time the group is created and stored as an
+     * attribute of the group object in the identity store.</p>
      */
     inline Group& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

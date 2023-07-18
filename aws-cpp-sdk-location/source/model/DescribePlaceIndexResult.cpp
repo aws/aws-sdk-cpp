@@ -64,6 +64,15 @@ DescribePlaceIndexResult& DescribePlaceIndexResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");

@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p> Quantifies the anomaly. The higher score means that it is more anomalous.
+   * <p>Quantifies the anomaly. The higher score means that it's more anomalous.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/AnomalyScore">AWS API
    * Reference</a></p>
@@ -37,43 +37,47 @@ namespace Model
 
 
     /**
-     * <p> The maximum score observed during the <code>AnomalyDateInterval</code>. </p>
+     * <p>The maximum score that's observed during the
+     * <code>AnomalyDateInterval</code>. </p>
      */
     inline double GetMaxScore() const{ return m_maxScore; }
 
     /**
-     * <p> The maximum score observed during the <code>AnomalyDateInterval</code>. </p>
+     * <p>The maximum score that's observed during the
+     * <code>AnomalyDateInterval</code>. </p>
      */
     inline bool MaxScoreHasBeenSet() const { return m_maxScoreHasBeenSet; }
 
     /**
-     * <p> The maximum score observed during the <code>AnomalyDateInterval</code>. </p>
+     * <p>The maximum score that's observed during the
+     * <code>AnomalyDateInterval</code>. </p>
      */
     inline void SetMaxScore(double value) { m_maxScoreHasBeenSet = true; m_maxScore = value; }
 
     /**
-     * <p> The maximum score observed during the <code>AnomalyDateInterval</code>. </p>
+     * <p>The maximum score that's observed during the
+     * <code>AnomalyDateInterval</code>. </p>
      */
     inline AnomalyScore& WithMaxScore(double value) { SetMaxScore(value); return *this;}
 
 
     /**
-     * <p> The last observed score. </p>
+     * <p>The last observed score. </p>
      */
     inline double GetCurrentScore() const{ return m_currentScore; }
 
     /**
-     * <p> The last observed score. </p>
+     * <p>The last observed score. </p>
      */
     inline bool CurrentScoreHasBeenSet() const { return m_currentScoreHasBeenSet; }
 
     /**
-     * <p> The last observed score. </p>
+     * <p>The last observed score. </p>
      */
     inline void SetCurrentScore(double value) { m_currentScoreHasBeenSet = true; m_currentScore = value; }
 
     /**
-     * <p> The last observed score. </p>
+     * <p>The last observed score. </p>
      */
     inline AnomalyScore& WithCurrentScore(double value) { SetCurrentScore(value); return *this;}
 

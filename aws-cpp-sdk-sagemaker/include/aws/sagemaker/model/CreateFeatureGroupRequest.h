@@ -41,65 +41,73 @@ namespace Model
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * AWS Region in an AWS account. The name:</p> <ul> <li> <p>Must start and end with
-     * an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric
-     * character and hyphens. Spaces are not allowed. </p> </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
+     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
+     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 
@@ -471,8 +479,9 @@ namespace Model
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
      * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest
-     * encryption of the <code>OnlineStore</code>.</p>
+     * <p>You can also include an Amazon Web Services KMS key ID
+     * (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p>
      */
     inline const OnlineStoreConfig& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
 
@@ -480,8 +489,9 @@ namespace Model
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
      * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest
-     * encryption of the <code>OnlineStore</code>.</p>
+     * <p>You can also include an Amazon Web Services KMS key ID
+     * (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p>
      */
     inline bool OnlineStoreConfigHasBeenSet() const { return m_onlineStoreConfigHasBeenSet; }
 
@@ -489,8 +499,9 @@ namespace Model
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
      * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest
-     * encryption of the <code>OnlineStore</code>.</p>
+     * <p>You can also include an Amazon Web Services KMS key ID
+     * (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p>
      */
     inline void SetOnlineStoreConfig(const OnlineStoreConfig& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = value; }
 
@@ -498,8 +509,9 @@ namespace Model
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
      * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest
-     * encryption of the <code>OnlineStore</code>.</p>
+     * <p>You can also include an Amazon Web Services KMS key ID
+     * (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p>
      */
     inline void SetOnlineStoreConfig(OnlineStoreConfig&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::move(value); }
 
@@ -507,8 +519,9 @@ namespace Model
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
      * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest
-     * encryption of the <code>OnlineStore</code>.</p>
+     * <p>You can also include an Amazon Web Services KMS key ID
+     * (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p>
      */
     inline CreateFeatureGroupRequest& WithOnlineStoreConfig(const OnlineStoreConfig& value) { SetOnlineStoreConfig(value); return *this;}
 
@@ -516,8 +529,9 @@ namespace Model
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
      * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest
-     * encryption of the <code>OnlineStore</code>.</p>
+     * <p>You can also include an Amazon Web Services KMS key ID
+     * (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p>
      */
     inline CreateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfig&& value) { SetOnlineStoreConfig(std::move(value)); return *this;}
 
@@ -526,10 +540,15 @@ namespace Model
      * <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter
      * allows you to specify:</p> <ul> <li> <p>The Amazon Simple Storage Service
      * (Amazon S3) location of an <code>OfflineStore</code>.</p> </li> <li> <p>A
-     * configuration for an AWS Glue or AWS Hive data cataolgue. </p> </li> <li> <p>An
-     * KMS encryption key to encrypt the Amazon S3 location used for
-     * <code>OfflineStore</code>.</p> </li> </ul> <p>To learn more about this
-     * parameter, see <a>OfflineStoreConfig</a>.</p>
+     * configuration for an Amazon Web Services Glue or Amazon Web Services Hive data
+     * catalog. </p> </li> <li> <p>An KMS encryption key to encrypt the Amazon S3
+     * location used for <code>OfflineStore</code>. If KMS encryption key is not
+     * specified, by default we encrypt all data at rest using Amazon Web Services KMS
+     * key. By defining your <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
+     * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
+     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * <a>OfflineStoreConfig</a>.</p>
      */
     inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
 
@@ -537,10 +556,15 @@ namespace Model
      * <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter
      * allows you to specify:</p> <ul> <li> <p>The Amazon Simple Storage Service
      * (Amazon S3) location of an <code>OfflineStore</code>.</p> </li> <li> <p>A
-     * configuration for an AWS Glue or AWS Hive data cataolgue. </p> </li> <li> <p>An
-     * KMS encryption key to encrypt the Amazon S3 location used for
-     * <code>OfflineStore</code>.</p> </li> </ul> <p>To learn more about this
-     * parameter, see <a>OfflineStoreConfig</a>.</p>
+     * configuration for an Amazon Web Services Glue or Amazon Web Services Hive data
+     * catalog. </p> </li> <li> <p>An KMS encryption key to encrypt the Amazon S3
+     * location used for <code>OfflineStore</code>. If KMS encryption key is not
+     * specified, by default we encrypt all data at rest using Amazon Web Services KMS
+     * key. By defining your <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
+     * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
+     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * <a>OfflineStoreConfig</a>.</p>
      */
     inline bool OfflineStoreConfigHasBeenSet() const { return m_offlineStoreConfigHasBeenSet; }
 
@@ -548,10 +572,15 @@ namespace Model
      * <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter
      * allows you to specify:</p> <ul> <li> <p>The Amazon Simple Storage Service
      * (Amazon S3) location of an <code>OfflineStore</code>.</p> </li> <li> <p>A
-     * configuration for an AWS Glue or AWS Hive data cataolgue. </p> </li> <li> <p>An
-     * KMS encryption key to encrypt the Amazon S3 location used for
-     * <code>OfflineStore</code>.</p> </li> </ul> <p>To learn more about this
-     * parameter, see <a>OfflineStoreConfig</a>.</p>
+     * configuration for an Amazon Web Services Glue or Amazon Web Services Hive data
+     * catalog. </p> </li> <li> <p>An KMS encryption key to encrypt the Amazon S3
+     * location used for <code>OfflineStore</code>. If KMS encryption key is not
+     * specified, by default we encrypt all data at rest using Amazon Web Services KMS
+     * key. By defining your <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
+     * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
+     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * <a>OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = value; }
 
@@ -559,10 +588,15 @@ namespace Model
      * <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter
      * allows you to specify:</p> <ul> <li> <p>The Amazon Simple Storage Service
      * (Amazon S3) location of an <code>OfflineStore</code>.</p> </li> <li> <p>A
-     * configuration for an AWS Glue or AWS Hive data cataolgue. </p> </li> <li> <p>An
-     * KMS encryption key to encrypt the Amazon S3 location used for
-     * <code>OfflineStore</code>.</p> </li> </ul> <p>To learn more about this
-     * parameter, see <a>OfflineStoreConfig</a>.</p>
+     * configuration for an Amazon Web Services Glue or Amazon Web Services Hive data
+     * catalog. </p> </li> <li> <p>An KMS encryption key to encrypt the Amazon S3
+     * location used for <code>OfflineStore</code>. If KMS encryption key is not
+     * specified, by default we encrypt all data at rest using Amazon Web Services KMS
+     * key. By defining your <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
+     * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
+     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * <a>OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = std::move(value); }
 
@@ -570,10 +604,15 @@ namespace Model
      * <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter
      * allows you to specify:</p> <ul> <li> <p>The Amazon Simple Storage Service
      * (Amazon S3) location of an <code>OfflineStore</code>.</p> </li> <li> <p>A
-     * configuration for an AWS Glue or AWS Hive data cataolgue. </p> </li> <li> <p>An
-     * KMS encryption key to encrypt the Amazon S3 location used for
-     * <code>OfflineStore</code>.</p> </li> </ul> <p>To learn more about this
-     * parameter, see <a>OfflineStoreConfig</a>.</p>
+     * configuration for an Amazon Web Services Glue or Amazon Web Services Hive data
+     * catalog. </p> </li> <li> <p>An KMS encryption key to encrypt the Amazon S3
+     * location used for <code>OfflineStore</code>. If KMS encryption key is not
+     * specified, by default we encrypt all data at rest using Amazon Web Services KMS
+     * key. By defining your <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
+     * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
+     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * <a>OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
 
@@ -581,10 +620,15 @@ namespace Model
      * <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter
      * allows you to specify:</p> <ul> <li> <p>The Amazon Simple Storage Service
      * (Amazon S3) location of an <code>OfflineStore</code>.</p> </li> <li> <p>A
-     * configuration for an AWS Glue or AWS Hive data cataolgue. </p> </li> <li> <p>An
-     * KMS encryption key to encrypt the Amazon S3 location used for
-     * <code>OfflineStore</code>.</p> </li> </ul> <p>To learn more about this
-     * parameter, see <a>OfflineStoreConfig</a>.</p>
+     * configuration for an Amazon Web Services Glue or Amazon Web Services Hive data
+     * catalog. </p> </li> <li> <p>An KMS encryption key to encrypt the Amazon S3
+     * location used for <code>OfflineStore</code>. If KMS encryption key is not
+     * specified, by default we encrypt all data at rest using Amazon Web Services KMS
+     * key. By defining your <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
+     * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
+     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * <a>OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
 

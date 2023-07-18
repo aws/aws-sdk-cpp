@@ -27,14 +27,20 @@ namespace Model
 
   /**
    * <p> WriteRecords would throw this exception in the following cases: </p> <ul>
-   * <li> <p> Records with duplicate data where there are multiple records with the
-   * same dimensions, timestamps, and measure names but different measure values.
-   * </p> </li> <li> <p> Records with timestamps that lie outside the retention
-   * duration of the memory store </p> </li> <li> <p> Records with dimensions or
-   * measures that exceed the Timestream defined limits. </p> </li> </ul> <p> For
-   * more information, see <a
-   * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-   * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+   * <li> <p>Records with duplicate data where there are multiple records with the
+   * same dimensions, timestamps, and measure names but: </p> <ul> <li> <p>Measure
+   * values are different</p> </li> <li> <p>Version is not present in the request
+   * <i>or</i> the value of version in the new record is equal to or lower than the
+   * existing value</p> </li> </ul> <p> In this case, if Timestream rejects data, the
+   * <code>ExistingVersion</code> field in the <code>RejectedRecords</code> response
+   * will indicate the current record’s version. To force an update, you can resend
+   * the request with a version for the record set to a value greater than the
+   * <code>ExistingVersion</code>.</p> </li> <li> <p> Records with timestamps that
+   * lie outside the retention duration of the memory store </p> </li> <li> <p>
+   * Records with dimensions or measures that exceed the Timestream defined limits.
+   * </p> </li> </ul> <p> For more information, see <a
+   * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a>
+   * in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RejectedRecordsException">AWS
    * API Reference</a></p>
    */

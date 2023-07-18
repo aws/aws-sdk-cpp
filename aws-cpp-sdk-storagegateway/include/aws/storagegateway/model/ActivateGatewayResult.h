@@ -25,13 +25,13 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated
+   * <p>Storage Gateway returns the Amazon Resource Name (ARN) of the activated
    * gateway. It is a string made of information such as your account, gateway name,
-   * and AWS Region. This ARN is used to reference the gateway in other API
-   * operations as well as resource-based authorization.</p>  <p>For gateways
-   * activated prior to September 02, 2015, the gateway ARN contains the gateway name
-   * rather than the gateway ID. Changing the name of the gateway has no effect on
-   * the gateway ARN.</p> <p><h3>See Also:</h3>   <a
+   * and Amazon Web Services Region. This ARN is used to reference the gateway in
+   * other API operations as well as resource-based authorization.</p>  <p>For
+   * gateways activated prior to September 02, 2015, the gateway ARN contains the
+   * gateway name rather than the gateway ID. Changing the name of the gateway has no
+   * effect on the gateway ARN.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGatewayOutput">AWS
    * API Reference</a></p>
    */

@@ -26,6 +26,7 @@ namespace Aws
         static const int HIGH_HASH = HashingUtils::HashString("HIGH");
         static const int HIGHER_HASH = HashingUtils::HashString("HIGHER");
         static const int MAX_HASH = HashingUtils::HashString("MAX");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         H265AdaptiveQuantization GetH265AdaptiveQuantizationForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return H265AdaptiveQuantization::MAX;
           }
+          else if (hashCode == AUTO_HASH)
+          {
+            return H265AdaptiveQuantization::AUTO;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "HIGHER";
           case H265AdaptiveQuantization::MAX:
             return "MAX";
+          case H265AdaptiveQuantization::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

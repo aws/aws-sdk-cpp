@@ -41,96 +41,96 @@ namespace Model
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline DescribeFastSnapshotRestoresRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline DescribeFastSnapshotRestoresRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline DescribeFastSnapshotRestoresRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters. The possible values are:</p> <ul> <li> <p>
      * <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-     * <li> <p> <code>owner-id</code>: The ID of the AWS account that enabled fast
-     * snapshot restore on the snapshot.</p> </li> <li> <p> <code>snapshot-id</code>:
-     * The ID of the snapshot.</p> </li> <li> <p> <code>state</code>: The state of fast
-     * snapshot restores for the snapshot (<code>enabling</code> |
-     * <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> |
-     * <code>disabled</code>).</p> </li> </ul>
+     * <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that
+     * enabled fast snapshot restore on the snapshot.</p> </li> <li> <p>
+     * <code>snapshot-id</code>: The ID of the snapshot.</p> </li> <li> <p>
+     * <code>state</code>: The state of fast snapshot restores for the snapshot
+     * (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> |
+     * <code>disabling</code> | <code>disabled</code>).</p> </li> </ul>
      */
     inline DescribeFastSnapshotRestoresRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A query, where <code>QueryString</code> is the list of SQL query statements
-   * that comprise the query.</p><p><h3>See Also:</h3>   <a
+   * <p>A query, where <code>QueryString</code> contains the SQL statements that make
+   * up the query.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/NamedQuery">AWS
    * API Reference</a></p>
    */
@@ -162,42 +162,42 @@ namespace Model
 
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline NamedQuery& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline NamedQuery& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
-     * <p>The SQL query statements that comprise the query.</p>
+     * <p>The SQL statements that make up the query.</p>
      */
     inline NamedQuery& WithQueryString(const char* value) { SetQueryString(value); return *this;}
 

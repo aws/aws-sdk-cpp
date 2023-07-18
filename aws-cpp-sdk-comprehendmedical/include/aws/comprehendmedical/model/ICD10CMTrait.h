@@ -71,26 +71,26 @@ namespace Model
 
 
     /**
-     * <p>The level of confidence that Amazon Comprehend Medical has that the segment
-     * of text is correctly recognized as a trait.</p>
+     * <p>The level of confidence that Comprehend Medical; has that the segment of text
+     * is correctly recognized as a trait.</p>
      */
     inline double GetScore() const{ return m_score; }
 
     /**
-     * <p>The level of confidence that Amazon Comprehend Medical has that the segment
-     * of text is correctly recognized as a trait.</p>
+     * <p>The level of confidence that Comprehend Medical; has that the segment of text
+     * is correctly recognized as a trait.</p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p>The level of confidence that Amazon Comprehend Medical has that the segment
-     * of text is correctly recognized as a trait.</p>
+     * <p>The level of confidence that Comprehend Medical; has that the segment of text
+     * is correctly recognized as a trait.</p>
      */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p>The level of confidence that Amazon Comprehend Medical has that the segment
-     * of text is correctly recognized as a trait.</p>
+     * <p>The level of confidence that Comprehend Medical; has that the segment of text
+     * is correctly recognized as a trait.</p>
      */
     inline ICD10CMTrait& WithScore(double value) { SetScore(value); return *this;}
 

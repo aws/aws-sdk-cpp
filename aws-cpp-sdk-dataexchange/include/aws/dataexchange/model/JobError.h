@@ -72,22 +72,34 @@ namespace Model
     inline JobError& WithCode(Code&& value) { SetCode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline const Details& GetDetails() const{ return m_details; }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline void SetDetails(const Details& value) { m_detailsHasBeenSet = true; m_details = value; }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline void SetDetails(Details&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline JobError& WithDetails(const Details& value) { SetDetails(value); return *this;}
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline JobError& WithDetails(Details&& value) { SetDetails(std::move(value)); return *this;}
 
 

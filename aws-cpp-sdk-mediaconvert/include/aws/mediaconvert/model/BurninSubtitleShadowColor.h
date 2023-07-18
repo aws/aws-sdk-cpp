@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     BLACK,
-    WHITE
+    WHITE,
+    AUTO
   };
 
 namespace BurninSubtitleShadowColorMapper

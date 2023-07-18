@@ -41,49 +41,49 @@ namespace Model
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline Patch& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline Patch& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
-     * is not the same as the Microsoft Knowledge Base ID.</p> 
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline Patch& WithId(const char* value) { SetId(value); return *this;}
 
@@ -636,206 +636,206 @@ namespace Model
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdvisoryIds() const{ return m_advisoryIds; }
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline bool AdvisoryIdsHasBeenSet() const { return m_advisoryIdsHasBeenSet; }
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline void SetAdvisoryIds(const Aws::Vector<Aws::String>& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds = value; }
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline void SetAdvisoryIds(Aws::Vector<Aws::String>&& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds = std::move(value); }
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithAdvisoryIds(const Aws::Vector<Aws::String>& value) { SetAdvisoryIds(value); return *this;}
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithAdvisoryIds(Aws::Vector<Aws::String>&& value) { SetAdvisoryIds(std::move(value)); return *this;}
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& AddAdvisoryIds(const Aws::String& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds.push_back(value); return *this; }
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& AddAdvisoryIds(Aws::String&& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
-     * Applies to Linux-based instances only.</p>
+     * Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& AddAdvisoryIds(const char* value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds.push_back(value); return *this; }
 
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBugzillaIds() const{ return m_bugzillaIds; }
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline bool BugzillaIdsHasBeenSet() const { return m_bugzillaIdsHasBeenSet; }
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline void SetBugzillaIds(const Aws::Vector<Aws::String>& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds = value; }
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline void SetBugzillaIds(Aws::Vector<Aws::String>&& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds = std::move(value); }
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline Patch& WithBugzillaIds(const Aws::Vector<Aws::String>& value) { SetBugzillaIds(value); return *this;}
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline Patch& WithBugzillaIds(Aws::Vector<Aws::String>&& value) { SetBugzillaIds(std::move(value)); return *this;}
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline Patch& AddBugzillaIds(const Aws::String& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds.push_back(value); return *this; }
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline Patch& AddBugzillaIds(Aws::String&& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
-     * Linux-based instances only.</p>
+     * Linux-based managed nodes only.</p>
      */
     inline Patch& AddBugzillaIds(const char* value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds.push_back(value); return *this; }
 
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCVEIds() const{ return m_cVEIds; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline bool CVEIdsHasBeenSet() const { return m_cVEIdsHasBeenSet; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetCVEIds(const Aws::Vector<Aws::String>& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = value; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetCVEIds(Aws::Vector<Aws::String>&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::move(value); }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithCVEIds(const Aws::Vector<Aws::String>& value) { SetCVEIds(value); return *this;}
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithCVEIds(Aws::Vector<Aws::String>&& value) { SetCVEIds(std::move(value)); return *this;}
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& AddCVEIds(const Aws::String& value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(value); return *this; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& AddCVEIds(Aws::String&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& AddCVEIds(const char* value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the patch. Applies to Linux-based instances only.</p>
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithName(const char* value) { SetName(value); return *this;}
 
@@ -843,28 +843,28 @@ namespace Model
     /**
      * <p>The epoch of the patch. For example in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-     * <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline int GetEpoch() const{ return m_epoch; }
 
     /**
      * <p>The epoch of the patch. For example in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-     * <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline bool EpochHasBeenSet() const { return m_epochHasBeenSet; }
 
     /**
      * <p>The epoch of the patch. For example in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-     * <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetEpoch(int value) { m_epochHasBeenSet = true; m_epoch = value; }
 
     /**
      * <p>The epoch of the patch. For example in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
-     * <code>20180914-2</code>. Applies to Linux-based instances only.</p>
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithEpoch(int value) { SetEpoch(value); return *this;}
 
@@ -872,56 +872,56 @@ namespace Model
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the patch. For example, in
      * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
-     * indicated by <code>-1</code>. Applies to Linux-based instances only.</p>
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -929,56 +929,56 @@ namespace Model
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline const Aws::String& GetRelease() const{ return m_release; }
 
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline bool ReleaseHasBeenSet() const { return m_releaseHasBeenSet; }
 
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetRelease(const Aws::String& value) { m_releaseHasBeenSet = true; m_release = value; }
 
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetRelease(Aws::String&& value) { m_releaseHasBeenSet = true; m_release = std::move(value); }
 
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetRelease(const char* value) { m_releaseHasBeenSet = true; m_release.assign(value); }
 
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithRelease(const Aws::String& value) { SetRelease(value); return *this;}
 
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithRelease(Aws::String&& value) { SetRelease(std::move(value)); return *this;}
 
     /**
      * <p>The particular release of a patch. For example, in
      * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
-     * <code>2.amaz1</code>. Applies to Linux-based instances only.</p>
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithRelease(const char* value) { SetRelease(value); return *this;}
 
@@ -986,56 +986,56 @@ namespace Model
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline const Aws::String& GetArch() const{ return m_arch; }
 
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline bool ArchHasBeenSet() const { return m_archHasBeenSet; }
 
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetArch(const Aws::String& value) { m_archHasBeenSet = true; m_arch = value; }
 
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetArch(Aws::String&& value) { m_archHasBeenSet = true; m_arch = std::move(value); }
 
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline void SetArch(const char* value) { m_archHasBeenSet = true; m_arch.assign(value); }
 
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithArch(const Aws::String& value) { SetArch(value); return *this;}
 
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithArch(Aws::String&& value) { SetArch(std::move(value)); return *this;}
 
     /**
      * <p>The architecture of the patch. For example, in
      * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
-     * by <code>x86_64</code>. Applies to Linux-based instances only.</p>
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
      */
     inline Patch& WithArch(const char* value) { SetArch(value); return *this;}
 
@@ -1093,7 +1093,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline const Aws::String& GetRepository() const{ return m_repository; }
 
@@ -1101,7 +1101,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
 
@@ -1109,7 +1109,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
 
@@ -1117,7 +1117,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
 
@@ -1125,7 +1125,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
 
@@ -1133,7 +1133,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline Patch& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
 
@@ -1141,7 +1141,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline Patch& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
 
@@ -1149,7 +1149,7 @@ namespace Model
      * <p>The source patch repository for the operating system and version, such as
      * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
      * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
-     * instances only.</p>
+     * managed nodes only.</p>
      */
     inline Patch& WithRepository(const char* value) { SetRepository(value); return *this;}
 

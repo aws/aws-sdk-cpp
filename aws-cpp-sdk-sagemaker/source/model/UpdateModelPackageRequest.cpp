@@ -16,7 +16,10 @@ UpdateModelPackageRequest::UpdateModelPackageRequest() :
     m_modelPackageArnHasBeenSet(false),
     m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
     m_modelApprovalStatusHasBeenSet(false),
-    m_approvalDescriptionHasBeenSet(false)
+    m_approvalDescriptionHasBeenSet(false),
+    m_customerMetadataPropertiesHasBeenSet(false),
+    m_customerMetadataPropertiesToRemoveHasBeenSet(false),
+    m_additionalInferenceSpecificationsToAddHasBeenSet(false)
 {
 }
 
@@ -38,6 +41,39 @@ Aws::String UpdateModelPackageRequest::SerializePayload() const
   if(m_approvalDescriptionHasBeenSet)
   {
    payload.WithString("ApprovalDescription", m_approvalDescription);
+
+  }
+
+  if(m_customerMetadataPropertiesHasBeenSet)
+  {
+   JsonValue customerMetadataPropertiesJsonMap;
+   for(auto& customerMetadataPropertiesItem : m_customerMetadataProperties)
+   {
+     customerMetadataPropertiesJsonMap.WithString(customerMetadataPropertiesItem.first, customerMetadataPropertiesItem.second);
+   }
+   payload.WithObject("CustomerMetadataProperties", std::move(customerMetadataPropertiesJsonMap));
+
+  }
+
+  if(m_customerMetadataPropertiesToRemoveHasBeenSet)
+  {
+   Array<JsonValue> customerMetadataPropertiesToRemoveJsonList(m_customerMetadataPropertiesToRemove.size());
+   for(unsigned customerMetadataPropertiesToRemoveIndex = 0; customerMetadataPropertiesToRemoveIndex < customerMetadataPropertiesToRemoveJsonList.GetLength(); ++customerMetadataPropertiesToRemoveIndex)
+   {
+     customerMetadataPropertiesToRemoveJsonList[customerMetadataPropertiesToRemoveIndex].AsString(m_customerMetadataPropertiesToRemove[customerMetadataPropertiesToRemoveIndex]);
+   }
+   payload.WithArray("CustomerMetadataPropertiesToRemove", std::move(customerMetadataPropertiesToRemoveJsonList));
+
+  }
+
+  if(m_additionalInferenceSpecificationsToAddHasBeenSet)
+  {
+   Array<JsonValue> additionalInferenceSpecificationsToAddJsonList(m_additionalInferenceSpecificationsToAdd.size());
+   for(unsigned additionalInferenceSpecificationsToAddIndex = 0; additionalInferenceSpecificationsToAddIndex < additionalInferenceSpecificationsToAddJsonList.GetLength(); ++additionalInferenceSpecificationsToAddIndex)
+   {
+     additionalInferenceSpecificationsToAddJsonList[additionalInferenceSpecificationsToAddIndex].AsObject(m_additionalInferenceSpecificationsToAdd[additionalInferenceSpecificationsToAddIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalInferenceSpecificationsToAdd", std::move(additionalInferenceSpecificationsToAddJsonList));
 
   }
 

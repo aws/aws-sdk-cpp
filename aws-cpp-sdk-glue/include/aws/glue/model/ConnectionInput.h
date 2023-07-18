@@ -133,7 +133,12 @@ namespace Model
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
      * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
      * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> </li> </ul> <p>SFTP is not supported.</p>
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from Amazon Web Services Marketplace
+     * to read from and write to data stores that are not natively supported by
+     * Glue.</p> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings
+     * contained in a custom connector to read from and write to data stores that are
+     * not natively supported by Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
@@ -145,7 +150,12 @@ namespace Model
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
      * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
      * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> </li> </ul> <p>SFTP is not supported.</p>
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from Amazon Web Services Marketplace
+     * to read from and write to data stores that are not natively supported by
+     * Glue.</p> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings
+     * contained in a custom connector to read from and write to data stores that are
+     * not natively supported by Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
@@ -157,7 +167,12 @@ namespace Model
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
      * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
      * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> </li> </ul> <p>SFTP is not supported.</p>
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from Amazon Web Services Marketplace
+     * to read from and write to data stores that are not natively supported by
+     * Glue.</p> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings
+     * contained in a custom connector to read from and write to data stores that are
+     * not natively supported by Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
@@ -169,7 +184,12 @@ namespace Model
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
      * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
      * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> </li> </ul> <p>SFTP is not supported.</p>
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from Amazon Web Services Marketplace
+     * to read from and write to data stores that are not natively supported by
+     * Glue.</p> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings
+     * contained in a custom connector to read from and write to data stores that are
+     * not natively supported by Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
@@ -181,7 +201,12 @@ namespace Model
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
      * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
      * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> </li> </ul> <p>SFTP is not supported.</p>
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from Amazon Web Services Marketplace
+     * to read from and write to data stores that are not natively supported by
+     * Glue.</p> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings
+     * contained in a custom connector to read from and write to data stores that are
+     * not natively supported by Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline ConnectionInput& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
@@ -193,7 +218,12 @@ namespace Model
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
      * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
      * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> </li> </ul> <p>SFTP is not supported.</p>
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from Amazon Web Services Marketplace
+     * to read from and write to data stores that are not natively supported by
+     * Glue.</p> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings
+     * contained in a custom connector to read from and write to data stores that are
+     * not natively supported by Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline ConnectionInput& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 

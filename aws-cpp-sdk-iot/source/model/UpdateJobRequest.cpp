@@ -22,7 +22,8 @@ UpdateJobRequest::UpdateJobRequest() :
     m_jobExecutionsRolloutConfigHasBeenSet(false),
     m_abortConfigHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,12 @@ Aws::String UpdateJobRequest::SerializePayload() const
   if(m_timeoutConfigHasBeenSet)
   {
    payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
+
+  }
+
+  if(m_jobExecutionsRetryConfigHasBeenSet)
+  {
+   payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
 
   }
 

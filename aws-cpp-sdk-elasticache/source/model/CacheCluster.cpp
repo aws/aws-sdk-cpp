@@ -54,7 +54,10 @@ CacheCluster::CacheCluster() :
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_replicationGroupLogDeliveryEnabled(false),
+    m_replicationGroupLogDeliveryEnabledHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -92,7 +95,10 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_replicationGroupLogDeliveryEnabled(false),
+    m_replicationGroupLogDeliveryEnabledHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -289,6 +295,24 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
     }
+    XmlNode replicationGroupLogDeliveryEnabledNode = resultNode.FirstChild("ReplicationGroupLogDeliveryEnabled");
+    if(!replicationGroupLogDeliveryEnabledNode.IsNull())
+    {
+      m_replicationGroupLogDeliveryEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupLogDeliveryEnabledNode.GetText()).c_str()).c_str());
+      m_replicationGroupLogDeliveryEnabledHasBeenSet = true;
+    }
+    XmlNode logDeliveryConfigurationsNode = resultNode.FirstChild("LogDeliveryConfigurations");
+    if(!logDeliveryConfigurationsNode.IsNull())
+    {
+      XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("LogDeliveryConfiguration");
+      while(!logDeliveryConfigurationsMember.IsNull())
+      {
+        m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
+        logDeliveryConfigurationsMember = logDeliveryConfigurationsMember.NextNode("LogDeliveryConfiguration");
+      }
+
+      m_logDeliveryConfigurationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -462,6 +486,22 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 
+  if(m_replicationGroupLogDeliveryEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicationGroupLogDeliveryEnabled=" << std::boolalpha << m_replicationGroupLogDeliveryEnabled << "&";
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
+  }
+
 }
 
 void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -603,6 +643,20 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_aRNHasBeenSet)
   {
       oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+  if(m_replicationGroupLogDeliveryEnabledHasBeenSet)
+  {
+      oStream << location << ".ReplicationGroupLogDeliveryEnabled=" << std::boolalpha << m_replicationGroupLogDeliveryEnabled << "&";
+  }
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
   }
 }
 

@@ -23,6 +23,7 @@ RecoveryPointByResource::RecoveryPointByResource() :
     m_creationDateHasBeenSet(false),
     m_status(RecoveryPointStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
     m_encryptionKeyArnHasBeenSet(false),
     m_backupSizeBytes(0),
     m_backupSizeBytesHasBeenSet(false),
@@ -35,6 +36,7 @@ RecoveryPointByResource::RecoveryPointByResource(JsonView jsonValue) :
     m_creationDateHasBeenSet(false),
     m_status(RecoveryPointStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
     m_encryptionKeyArnHasBeenSet(false),
     m_backupSizeBytes(0),
     m_backupSizeBytesHasBeenSet(false),
@@ -64,6 +66,13 @@ RecoveryPointByResource& RecoveryPointByResource::operator =(JsonView jsonValue)
     m_status = RecoveryPointStatusMapper::GetRecoveryPointStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+
+    m_statusMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EncryptionKeyArn"))
@@ -108,6 +117,12 @@ JsonValue RecoveryPointByResource::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", RecoveryPointStatusMapper::GetNameForRecoveryPointStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("StatusMessage", m_statusMessage);
+
   }
 
   if(m_encryptionKeyArnHasBeenSet)

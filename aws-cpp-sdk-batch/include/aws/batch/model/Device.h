@@ -27,8 +27,8 @@ namespace Model
 
   /**
    * <p>An object representing a container instance host device.</p>  <p>This
-   * object isn't applicable to jobs running on Fargate resources and shouldn't be
-   * provided.</p> <p><h3>See Also:</h3>   <a
+   * object isn't applicable to jobs that are running on Fargate resources and
+   * shouldn't be provided.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Device">AWS API
    * Reference</a></p>
    */
@@ -83,50 +83,50 @@ namespace Model
 
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline Device& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline Device& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path inside the container used to expose the host device. By default the
-     * <code>hostPath</code> value is used.</p>
+     * <p>The path inside the container that's used to expose the host device. By
+     * default, the <code>hostPath</code> value is used.</p>
      */
     inline Device& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
 

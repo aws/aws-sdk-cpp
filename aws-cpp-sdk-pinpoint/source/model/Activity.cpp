@@ -28,7 +28,8 @@ Activity::Activity() :
     m_pUSHHasBeenSet(false),
     m_randomSplitHasBeenSet(false),
     m_sMSHasBeenSet(false),
-    m_waitHasBeenSet(false)
+    m_waitHasBeenSet(false),
+    m_contactCenterHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Activity::Activity(JsonView jsonValue) :
     m_pUSHHasBeenSet(false),
     m_randomSplitHasBeenSet(false),
     m_sMSHasBeenSet(false),
-    m_waitHasBeenSet(false)
+    m_waitHasBeenSet(false),
+    m_contactCenterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ Activity& Activity::operator =(JsonView jsonValue)
     m_waitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContactCenter"))
+  {
+    m_contactCenter = jsonValue.GetObject("ContactCenter");
+
+    m_contactCenterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue Activity::Jsonize() const
   if(m_waitHasBeenSet)
   {
    payload.WithObject("Wait", m_wait.Jsonize());
+
+  }
+
+  if(m_contactCenterHasBeenSet)
+  {
+   payload.WithObject("ContactCenter", m_contactCenter.Jsonize());
 
   }
 

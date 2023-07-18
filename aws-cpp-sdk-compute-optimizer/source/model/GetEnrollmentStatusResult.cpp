@@ -18,13 +18,15 @@ using namespace Aws;
 
 GetEnrollmentStatusResult::GetEnrollmentStatusResult() : 
     m_status(Status::NOT_SET),
-    m_memberAccountsEnrolled(false)
+    m_memberAccountsEnrolled(false),
+    m_numberOfMemberAccountsOptedIn(0)
 {
 }
 
 GetEnrollmentStatusResult::GetEnrollmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(Status::NOT_SET),
-    m_memberAccountsEnrolled(false)
+    m_memberAccountsEnrolled(false),
+    m_numberOfMemberAccountsOptedIn(0)
 {
   *this = result;
 }
@@ -47,6 +49,18 @@ GetEnrollmentStatusResult& GetEnrollmentStatusResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("memberAccountsEnrolled"))
   {
     m_memberAccountsEnrolled = jsonValue.GetBool("memberAccountsEnrolled");
+
+  }
+
+  if(jsonValue.ValueExists("lastUpdatedTimestamp"))
+  {
+    m_lastUpdatedTimestamp = jsonValue.GetDouble("lastUpdatedTimestamp");
+
+  }
+
+  if(jsonValue.ValueExists("numberOfMemberAccountsOptedIn"))
+  {
+    m_numberOfMemberAccountsOptedIn = jsonValue.GetInteger("numberOfMemberAccountsOptedIn");
 
   }
 

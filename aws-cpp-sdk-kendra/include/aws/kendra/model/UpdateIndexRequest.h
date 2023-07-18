@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra/model/UserContextPolicy.h>
+#include <aws/kendra/model/UserGroupResolutionConfiguration.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
 #include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
@@ -212,91 +213,97 @@ namespace Model
 
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline const Aws::Vector<DocumentMetadataConfiguration>& GetDocumentMetadataConfigurationUpdates() const{ return m_documentMetadataConfigurationUpdates; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline bool DocumentMetadataConfigurationUpdatesHasBeenSet() const { return m_documentMetadataConfigurationUpdatesHasBeenSet; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline void SetDocumentMetadataConfigurationUpdates(const Aws::Vector<DocumentMetadataConfiguration>& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates = value; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline void SetDocumentMetadataConfigurationUpdates(Aws::Vector<DocumentMetadataConfiguration>&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates = std::move(value); }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& WithDocumentMetadataConfigurationUpdates(const Aws::Vector<DocumentMetadataConfiguration>& value) { SetDocumentMetadataConfigurationUpdates(value); return *this;}
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& WithDocumentMetadataConfigurationUpdates(Aws::Vector<DocumentMetadataConfiguration>&& value) { SetDocumentMetadataConfigurationUpdates(std::move(value)); return *this;}
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(const DocumentMetadataConfiguration& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(value); return *this; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(DocumentMetadataConfiguration&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Sets the number of addtional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
 
     /**
-     * <p>Sets the number of addtional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline bool CapacityUnitsHasBeenSet() const { return m_capacityUnitsHasBeenSet; }
 
     /**
-     * <p>Sets the number of addtional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = value; }
 
     /**
-     * <p>Sets the number of addtional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = std::move(value); }
 
     /**
-     * <p>Sets the number of addtional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline UpdateIndexRequest& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
 
     /**
-     * <p>Sets the number of addtional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline UpdateIndexRequest& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
 
@@ -343,34 +350,77 @@ namespace Model
 
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = std::move(value); }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline UpdateIndexRequest& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline UpdateIndexRequest& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an Amazon Web
+     * Services Single Sign On identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an Amazon Web
+     * Services Single Sign On identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an Amazon Web
+     * Services Single Sign On identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an Amazon Web
+     * Services Single Sign On identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an Amazon Web
+     * Services Single Sign On identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an Amazon Web
+     * Services Single Sign On identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -397,6 +447,9 @@ namespace Model
 
     UserContextPolicy m_userContextPolicy;
     bool m_userContextPolicyHasBeenSet;
+
+    UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
+    bool m_userGroupResolutionConfigurationHasBeenSet;
   };
 
 } // namespace Model

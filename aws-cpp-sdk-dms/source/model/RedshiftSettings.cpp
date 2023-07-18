@@ -61,7 +61,9 @@ RedshiftSettings::RedshiftSettings() :
     m_truncateColumnsHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_writeBufferSize(0),
-    m_writeBufferSizeHasBeenSet(false)
+    m_writeBufferSizeHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
 }
 
@@ -108,7 +110,9 @@ RedshiftSettings::RedshiftSettings(JsonView jsonValue) :
     m_truncateColumnsHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_writeBufferSize(0),
-    m_writeBufferSizeHasBeenSet(false)
+    m_writeBufferSizeHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -311,6 +315,20 @@ RedshiftSettings& RedshiftSettings::operator =(JsonView jsonValue)
     m_writeBufferSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
+  {
+    m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
+
+    m_secretsManagerAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerSecretId"))
+  {
+    m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
+
+    m_secretsManagerSecretIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -482,6 +500,18 @@ JsonValue RedshiftSettings::Jsonize() const
   if(m_writeBufferSizeHasBeenSet)
   {
    payload.WithInteger("WriteBufferSize", m_writeBufferSize);
+
+  }
+
+  if(m_secretsManagerAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
 
   }
 

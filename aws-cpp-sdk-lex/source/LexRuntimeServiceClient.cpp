@@ -73,7 +73,7 @@ LexRuntimeServiceClient::~LexRuntimeServiceClient()
 {
 }
 
-void LexRuntimeServiceClient::init(const ClientConfiguration& config)
+void LexRuntimeServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Lex Runtime Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -117,15 +117,13 @@ DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionR
     return DeleteSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bot/";
-  ss << request.GetBotName();
-  ss << "/alias/";
-  ss << request.GetBotAlias();
-  ss << "/user/";
-  ss << request.GetUserId();
-  ss << "/session";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bot/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/alias/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/session");
   return DeleteSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -165,15 +163,13 @@ GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& r
     return GetSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bot/";
-  ss << request.GetBotName();
-  ss << "/alias/";
-  ss << request.GetBotAlias();
-  ss << "/user/";
-  ss << request.GetUserId();
-  ss << "/session/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bot/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/alias/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/session/");
   return GetSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -213,15 +209,13 @@ PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest
     return PostContentOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bot/";
-  ss << request.GetBotName();
-  ss << "/alias/";
-  ss << request.GetBotAlias();
-  ss << "/user/";
-  ss << request.GetUserId();
-  ss << "/content";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bot/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/alias/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/content");
   return PostContentOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -261,15 +255,13 @@ PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request
     return PostTextOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bot/";
-  ss << request.GetBotName();
-  ss << "/alias/";
-  ss << request.GetBotAlias();
-  ss << "/user/";
-  ss << request.GetUserId();
-  ss << "/text";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bot/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/alias/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/text");
   return PostTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -309,15 +301,13 @@ PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& r
     return PutSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bot/";
-  ss << request.GetBotName();
-  ss << "/alias/";
-  ss << request.GetBotAlias();
-  ss << "/user/";
-  ss << request.GetUserId();
-  ss << "/session";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bot/");
+  uri.AddPathSegment(request.GetBotName());
+  uri.AddPathSegments("/alias/");
+  uri.AddPathSegment(request.GetBotAlias());
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/session");
   return PutSessionOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 

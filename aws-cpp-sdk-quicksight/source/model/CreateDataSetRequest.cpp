@@ -21,10 +21,13 @@ CreateDataSetRequest::CreateDataSetRequest() :
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
+    m_fieldFoldersHasBeenSet(false),
     m_permissionsHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataSetUsageConfigurationHasBeenSet(false)
 {
 }
 
@@ -82,6 +85,17 @@ Aws::String CreateDataSetRequest::SerializePayload() const
 
   }
 
+  if(m_fieldFoldersHasBeenSet)
+  {
+   JsonValue fieldFoldersJsonMap;
+   for(auto& fieldFoldersItem : m_fieldFolders)
+   {
+     fieldFoldersJsonMap.WithObject(fieldFoldersItem.first, fieldFoldersItem.second.Jsonize());
+   }
+   payload.WithObject("FieldFolders", std::move(fieldFoldersJsonMap));
+
+  }
+
   if(m_permissionsHasBeenSet)
   {
    Array<JsonValue> permissionsJsonList(m_permissions.size());
@@ -96,6 +110,12 @@ Aws::String CreateDataSetRequest::SerializePayload() const
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_rowLevelPermissionTagConfigurationHasBeenSet)
+  {
+   payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
 
   }
 
@@ -118,6 +138,12 @@ Aws::String CreateDataSetRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_dataSetUsageConfigurationHasBeenSet)
+  {
+   payload.WithObject("DataSetUsageConfiguration", m_dataSetUsageConfiguration.Jsonize());
 
   }
 

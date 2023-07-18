@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeFleetPortSettingsRequest::DescribeFleetPortSettingsRequest() : 
-    m_fleetIdHasBeenSet(false)
+    m_fleetIdHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DescribeFleetPortSettingsRequest::SerializePayload() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

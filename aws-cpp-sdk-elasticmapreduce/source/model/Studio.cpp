@@ -34,6 +34,8 @@ Studio::Studio() :
     m_urlHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_defaultS3LocationHasBeenSet(false),
+    m_idpAuthUrlHasBeenSet(false),
+    m_idpRelayStateParameterNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -54,6 +56,8 @@ Studio::Studio(JsonView jsonValue) :
     m_urlHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_defaultS3LocationHasBeenSet(false),
+    m_idpAuthUrlHasBeenSet(false),
+    m_idpRelayStateParameterNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -162,6 +166,20 @@ Studio& Studio::operator =(JsonView jsonValue)
     m_defaultS3LocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdpAuthUrl"))
+  {
+    m_idpAuthUrl = jsonValue.GetString("IdpAuthUrl");
+
+    m_idpAuthUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdpRelayStateParameterName"))
+  {
+    m_idpRelayStateParameterName = jsonValue.GetString("IdpRelayStateParameterName");
+
+    m_idpRelayStateParameterNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -263,6 +281,18 @@ JsonValue Studio::Jsonize() const
   if(m_defaultS3LocationHasBeenSet)
   {
    payload.WithString("DefaultS3Location", m_defaultS3Location);
+
+  }
+
+  if(m_idpAuthUrlHasBeenSet)
+  {
+   payload.WithString("IdpAuthUrl", m_idpAuthUrl);
+
+  }
+
+  if(m_idpRelayStateParameterNameHasBeenSet)
+  {
+   payload.WithString("IdpRelayStateParameterName", m_idpRelayStateParameterName);
 
   }
 

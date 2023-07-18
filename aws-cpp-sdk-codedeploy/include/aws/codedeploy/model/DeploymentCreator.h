@@ -20,6 +20,7 @@ namespace Model
     autoscaling,
     codeDeployRollback,
     CodeDeploy,
+    CodeDeployAutoUpdate,
     CloudFormation,
     CloudFormationRollback
   };

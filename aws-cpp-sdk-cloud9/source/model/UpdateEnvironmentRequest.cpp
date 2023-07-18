@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
     m_environmentIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_managedCredentialsAction(ManagedCredentialsAction::NOT_SET),
+    m_managedCredentialsActionHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   {
    payload.WithString("description", m_description);
 
+  }
+
+  if(m_managedCredentialsActionHasBeenSet)
+  {
+   payload.WithString("managedCredentialsAction", ManagedCredentialsActionMapper::GetNameForManagedCredentialsAction(m_managedCredentialsAction));
   }
 
   return payload.View().WriteReadable();

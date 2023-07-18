@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 ModifyClusterIamRolesRequest::ModifyClusterIamRolesRequest() : 
     m_clusterIdentifierHasBeenSet(false),
     m_addIamRolesHasBeenSet(false),
-    m_removeIamRolesHasBeenSet(false)
+    m_removeIamRolesHasBeenSet(false),
+    m_defaultIamRoleArnHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,11 @@ Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       removeIamRolesCount++;
     }
+  }
+
+  if(m_defaultIamRoleArnHasBeenSet)
+  {
+    ss << "DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

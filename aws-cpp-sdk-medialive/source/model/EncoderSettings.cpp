@@ -26,6 +26,7 @@ EncoderSettings::EncoderSettings() :
     m_captionDescriptionsHasBeenSet(false),
     m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
+    m_motionGraphicsConfigurationHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
@@ -41,6 +42,7 @@ EncoderSettings::EncoderSettings(JsonView jsonValue) :
     m_captionDescriptionsHasBeenSet(false),
     m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
+    m_motionGraphicsConfigurationHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
@@ -104,6 +106,13 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
     m_globalConfiguration = jsonValue.GetObject("globalConfiguration");
 
     m_globalConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("motionGraphicsConfiguration"))
+  {
+    m_motionGraphicsConfiguration = jsonValue.GetObject("motionGraphicsConfiguration");
+
+    m_motionGraphicsConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nielsenConfiguration"))
@@ -196,6 +205,12 @@ JsonValue EncoderSettings::Jsonize() const
   if(m_globalConfigurationHasBeenSet)
   {
    payload.WithObject("globalConfiguration", m_globalConfiguration.Jsonize());
+
+  }
+
+  if(m_motionGraphicsConfigurationHasBeenSet)
+  {
+   payload.WithObject("motionGraphicsConfiguration", m_motionGraphicsConfiguration.Jsonize());
 
   }
 

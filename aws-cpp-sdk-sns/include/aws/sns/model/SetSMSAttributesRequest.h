@@ -41,16 +41,16 @@ namespace Model
   public:
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -79,14 +79,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -95,16 +95,16 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -133,14 +133,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -149,16 +149,16 @@ namespace Model
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -187,14 +187,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -203,16 +203,16 @@ namespace Model
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -241,14 +241,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -257,16 +257,16 @@ namespace Model
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -295,14 +295,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -311,16 +311,16 @@ namespace Model
     inline SetSMSAttributesRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -349,14 +349,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -365,16 +365,16 @@ namespace Model
     inline SetSMSAttributesRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -403,14 +403,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -419,16 +419,16 @@ namespace Model
     inline SetSMSAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -457,14 +457,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -473,16 +473,16 @@ namespace Model
     inline SetSMSAttributesRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -511,14 +511,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -527,16 +527,16 @@ namespace Model
     inline SetSMSAttributesRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -565,14 +565,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -581,16 +581,16 @@ namespace Model
     inline SetSMSAttributesRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -619,14 +619,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -635,16 +635,16 @@ namespace Model
     inline SetSMSAttributesRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -673,14 +673,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -689,16 +689,16 @@ namespace Model
     inline SetSMSAttributesRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The default settings for sending SMS messages from your account. You can set
-     * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
-     * – The maximum amount in USD that you are willing to spend each month to send SMS
-     * messages. When Amazon SNS determines that sending an SMS message would incur a
-     * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
-     * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p>  <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
-     * the limit, submit an <a
+     * <p>The default settings for sending SMS messages from your Amazon Web Services
+     * account. You can set values for the following attribute names:</p> <p>
+     * <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing
+     * to spend each month to send SMS messages. When Amazon SNS determines that
+     * sending an SMS message would incur a cost that exceeds this limit, it stops
+     * sending SMS messages within minutes.</p>  <p>Amazon SNS stops sending
+     * SMS messages within minutes of the limit being crossed. During that interval, if
+     * you continue to send SMS messages, you will incur costs that exceed your
+     * limit.</p>  <p>By default, the spend limit is set to the maximum
+     * allowed by Amazon SNS. If you want to raise the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
      * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
      * spend limit. In the <b>Use Case Description</b> field, explain that you are
@@ -727,14 +727,14 @@ namespace Model
      * <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive
      * daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a
      * usage report as a CSV file to the bucket. The report includes the following
-     * information for each SMS message that was successfully delivered by your
-     * account:</p> <ul> <li> <p>Time that the message was published (in UTC)</p> </li>
-     * <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p> </li> <li>
-     * <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li> <p>Message
-     * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
-     * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
-     * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * information for each SMS message that was successfully delivered by your Amazon
+     * Web Services account:</p> <ul> <li> <p>Time that the message was published (in
+     * UTC)</p> </li> <li> <p>Message ID</p> </li> <li> <p>Destination phone number</p>
+     * </li> <li> <p>Message type</p> </li> <li> <p>Delivery status</p> </li> <li>
+     * <p>Message price (in USD)</p> </li> <li> <p>Part number (a message is split into
+     * multiple parts if it is too long for a single message)</p> </li> <li> <p>Total
+     * number of parts</p> </li> </ul> <p>To receive the report, the bucket must have a
+     * policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS

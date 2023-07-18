@@ -160,50 +160,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline bool VpnGatewayIdHasBeenSet() const { return m_vpnGatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline void SetVpnGatewayId(const Aws::String& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline void SetVpnGatewayId(const char* value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline ModifyVpnConnectionRequest& WithVpnGatewayId(const Aws::String& value) { SetVpnGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline ModifyVpnConnectionRequest& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline ModifyVpnConnectionRequest& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
 

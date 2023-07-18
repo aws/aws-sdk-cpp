@@ -21,7 +21,9 @@ namespace Model
     YELLOW,
     RED,
     GREEN,
-    BLUE
+    BLUE,
+    HEX,
+    AUTO
   };
 
 namespace DvbSubtitleFontColorMapper

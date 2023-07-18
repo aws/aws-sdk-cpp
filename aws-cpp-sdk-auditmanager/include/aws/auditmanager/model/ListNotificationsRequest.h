@@ -39,67 +39,67 @@ namespace Model
 
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListNotificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListNotificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListNotificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline ListNotificationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -48,7 +48,8 @@ FleetData::FleetData() :
     m_onDemandOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_errorsHasBeenSet(false),
-    m_instancesHasBeenSet(false)
+    m_instancesHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ FleetData::FleetData(const XmlNode& xmlNode) :
     m_onDemandOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_errorsHasBeenSet(false),
-    m_instancesHasBeenSet(false)
+    m_instancesHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -235,6 +237,12 @@ FleetData& FleetData::operator =(const XmlNode& xmlNode)
 
       m_instancesHasBeenSet = true;
     }
+    XmlNode contextNode = resultNode.FirstChild("context");
+    if(!contextNode.IsNull())
+    {
+      m_context = Aws::Utils::Xml::DecodeEscapedXmlText(contextNode.GetText());
+      m_contextHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -372,6 +380,11 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+
 }
 
 void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -485,6 +498,10 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) cons
         instancesSs << location <<  ".FleetInstanceSet." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
+  }
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 }
 

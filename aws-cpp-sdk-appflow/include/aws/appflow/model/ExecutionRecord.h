@@ -211,6 +211,80 @@ namespace Model
      */
     inline ExecutionRecord& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The timestamp that determines the first new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline const Aws::Utils::DateTime& GetDataPullStartTime() const{ return m_dataPullStartTime; }
+
+    /**
+     * <p> The timestamp that determines the first new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline bool DataPullStartTimeHasBeenSet() const { return m_dataPullStartTimeHasBeenSet; }
+
+    /**
+     * <p> The timestamp that determines the first new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline void SetDataPullStartTime(const Aws::Utils::DateTime& value) { m_dataPullStartTimeHasBeenSet = true; m_dataPullStartTime = value; }
+
+    /**
+     * <p> The timestamp that determines the first new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline void SetDataPullStartTime(Aws::Utils::DateTime&& value) { m_dataPullStartTimeHasBeenSet = true; m_dataPullStartTime = std::move(value); }
+
+    /**
+     * <p> The timestamp that determines the first new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline ExecutionRecord& WithDataPullStartTime(const Aws::Utils::DateTime& value) { SetDataPullStartTime(value); return *this;}
+
+    /**
+     * <p> The timestamp that determines the first new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline ExecutionRecord& WithDataPullStartTime(Aws::Utils::DateTime&& value) { SetDataPullStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The timestamp that indicates the last new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline const Aws::Utils::DateTime& GetDataPullEndTime() const{ return m_dataPullEndTime; }
+
+    /**
+     * <p> The timestamp that indicates the last new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline bool DataPullEndTimeHasBeenSet() const { return m_dataPullEndTimeHasBeenSet; }
+
+    /**
+     * <p> The timestamp that indicates the last new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline void SetDataPullEndTime(const Aws::Utils::DateTime& value) { m_dataPullEndTimeHasBeenSet = true; m_dataPullEndTime = value; }
+
+    /**
+     * <p> The timestamp that indicates the last new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline void SetDataPullEndTime(Aws::Utils::DateTime&& value) { m_dataPullEndTimeHasBeenSet = true; m_dataPullEndTime = std::move(value); }
+
+    /**
+     * <p> The timestamp that indicates the last new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline ExecutionRecord& WithDataPullEndTime(const Aws::Utils::DateTime& value) { SetDataPullEndTime(value); return *this;}
+
+    /**
+     * <p> The timestamp that indicates the last new or updated record to be
+     * transferred in the flow run. </p>
+     */
+    inline ExecutionRecord& WithDataPullEndTime(Aws::Utils::DateTime&& value) { SetDataPullEndTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionId;
@@ -227,6 +301,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
+    Aws::Utils::DateTime m_dataPullStartTime;
+    bool m_dataPullStartTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_dataPullEndTime;
+    bool m_dataPullEndTimeHasBeenSet;
   };
 
 } // namespace Model

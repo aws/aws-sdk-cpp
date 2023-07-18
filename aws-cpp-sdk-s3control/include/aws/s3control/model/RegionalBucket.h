@@ -173,42 +173,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline RegionalBucket& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline RegionalBucket& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Outposts ID of the regional bucket.</p>
+     * <p>The Outposts ID of the regional bucket.</p>
      */
     inline RegionalBucket& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 

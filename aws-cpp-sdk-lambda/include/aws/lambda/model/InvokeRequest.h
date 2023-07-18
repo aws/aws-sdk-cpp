@@ -234,32 +234,38 @@ namespace Model
 
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline const LogType& GetLogType() const{ return m_logType; }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline InvokeRequest& WithLogType(const LogType& value) { SetLogType(value); return *this;}
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline InvokeRequest& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
 

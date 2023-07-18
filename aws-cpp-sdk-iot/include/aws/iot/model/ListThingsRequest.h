@@ -241,6 +241,43 @@ namespace Model
      */
     inline ListThingsRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
 
+
+    /**
+     * <p>When <code>true</code>, the action returns the thing resources with attribute
+     * values that start with the <code>attributeValue</code> provided.</p> <p>When
+     * <code>false</code>, or not present, the action returns only the thing resources
+     * with attribute values that match the entire <code>attributeValue</code>
+     * provided. </p>
+     */
+    inline bool GetUsePrefixAttributeValue() const{ return m_usePrefixAttributeValue; }
+
+    /**
+     * <p>When <code>true</code>, the action returns the thing resources with attribute
+     * values that start with the <code>attributeValue</code> provided.</p> <p>When
+     * <code>false</code>, or not present, the action returns only the thing resources
+     * with attribute values that match the entire <code>attributeValue</code>
+     * provided. </p>
+     */
+    inline bool UsePrefixAttributeValueHasBeenSet() const { return m_usePrefixAttributeValueHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, the action returns the thing resources with attribute
+     * values that start with the <code>attributeValue</code> provided.</p> <p>When
+     * <code>false</code>, or not present, the action returns only the thing resources
+     * with attribute values that match the entire <code>attributeValue</code>
+     * provided. </p>
+     */
+    inline void SetUsePrefixAttributeValue(bool value) { m_usePrefixAttributeValueHasBeenSet = true; m_usePrefixAttributeValue = value; }
+
+    /**
+     * <p>When <code>true</code>, the action returns the thing resources with attribute
+     * values that start with the <code>attributeValue</code> provided.</p> <p>When
+     * <code>false</code>, or not present, the action returns only the thing resources
+     * with attribute values that match the entire <code>attributeValue</code>
+     * provided. </p>
+     */
+    inline ListThingsRequest& WithUsePrefixAttributeValue(bool value) { SetUsePrefixAttributeValue(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -257,6 +294,9 @@ namespace Model
 
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
+    bool m_usePrefixAttributeValue;
+    bool m_usePrefixAttributeValueHasBeenSet;
   };
 
 } // namespace Model

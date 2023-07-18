@@ -78,72 +78,64 @@ namespace Model
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use <a
+     * you must specify the correct name in <code>filterName</code>. To find the name
+     * of the filter currently associated with a log group, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
@@ -195,11 +187,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
@@ -208,11 +204,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
@@ -221,11 +221,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
@@ -234,11 +238,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
@@ -247,11 +255,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
@@ -260,11 +272,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
@@ -273,11 +289,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
@@ -286,11 +306,15 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose delivery stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
-     * function belonging to the same account as the subscription filter, for
-     * same-account delivery.</p> </li> </ul>
+     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * cross-account subscription, the destination must have an IAM policy associated
+     * with it that allows the sender to send logs to the destination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * account as the subscription filter, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 

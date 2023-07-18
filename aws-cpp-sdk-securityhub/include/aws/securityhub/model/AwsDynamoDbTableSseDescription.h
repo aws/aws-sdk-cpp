@@ -194,50 +194,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline const Aws::String& GetKmsMasterKeyArn() const{ return m_kmsMasterKeyArn; }
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline bool KmsMasterKeyArnHasBeenSet() const { return m_kmsMasterKeyArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline void SetKmsMasterKeyArn(const Aws::String& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = value; }
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline void SetKmsMasterKeyArn(Aws::String&& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline void SetKmsMasterKeyArn(const char* value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(const Aws::String& value) { SetKmsMasterKeyArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(Aws::String&& value) { SetKmsMasterKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
-     * encryption.</p>
+     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(const char* value) { SetKmsMasterKeyArn(value); return *this;}
 

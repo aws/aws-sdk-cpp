@@ -25,11 +25,11 @@ namespace Model
 
   /**
    * <p>A <i>sheet</i>, which is an object that contains a set of visuals that are
-   * viewed together on one page in the Amazon QuickSight console. Every analysis and
-   * dashboard contains at least one sheet. Each sheet contains at least one
-   * visualization widget, for example a chart, pivot table, or narrative insight.
-   * Sheets can be associated with other components, such as controls, filters, and
-   * so on.</p><p><h3>See Also:</h3>   <a
+   * viewed together on one page in Amazon QuickSight. Every analysis and dashboard
+   * contains at least one sheet. Each sheet contains at least one visualization
+   * widget, for example a chart, pivot table, or narrative insight. Sheets can be
+   * associated with other components, such as controls, filters, and so
+   * on.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Sheet">AWS
    * API Reference</a></p>
    */
@@ -84,49 +84,49 @@ namespace Model
 
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline Sheet& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline Sheet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
     inline Sheet& WithName(const char* value) { SetName(value); return *this;}

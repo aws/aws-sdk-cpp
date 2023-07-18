@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Returned if one of the specified security groups doesn't exist in the
-   * subnet's VPC.</p><p><h3>See Also:</h3>   <a
+   * subnet's virtual private cloud (VPC).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/SecurityGroupNotFound">AWS
    * API Reference</a></p>
    */

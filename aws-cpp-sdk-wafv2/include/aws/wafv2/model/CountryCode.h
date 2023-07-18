@@ -264,7 +264,8 @@ namespace Model
     EH,
     YE,
     ZM,
-    ZW
+    ZW,
+    XK
   };
 
 namespace CountryCodeMapper

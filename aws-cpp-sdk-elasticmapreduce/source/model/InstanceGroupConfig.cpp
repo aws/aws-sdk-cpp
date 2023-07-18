@@ -30,7 +30,8 @@ InstanceGroupConfig::InstanceGroupConfig() :
     m_instanceCountHasBeenSet(false),
     m_configurationsHasBeenSet(false),
     m_ebsConfigurationHasBeenSet(false),
-    m_autoScalingPolicyHasBeenSet(false)
+    m_autoScalingPolicyHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ InstanceGroupConfig::InstanceGroupConfig(JsonView jsonValue) :
     m_instanceCountHasBeenSet(false),
     m_configurationsHasBeenSet(false),
     m_ebsConfigurationHasBeenSet(false),
-    m_autoScalingPolicyHasBeenSet(false)
+    m_autoScalingPolicyHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(JsonView jsonValue)
     m_autoScalingPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomAmiId"))
+  {
+    m_customAmiId = jsonValue.GetString("CustomAmiId");
+
+    m_customAmiIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +189,12 @@ JsonValue InstanceGroupConfig::Jsonize() const
   if(m_autoScalingPolicyHasBeenSet)
   {
    payload.WithObject("AutoScalingPolicy", m_autoScalingPolicy.Jsonize());
+
+  }
+
+  if(m_customAmiIdHasBeenSet)
+  {
+   payload.WithString("CustomAmiId", m_customAmiId);
 
   }
 

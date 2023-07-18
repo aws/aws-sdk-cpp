@@ -28,7 +28,8 @@ namespace Model
 {
   /**
    * <p>A complex type that contains information about the reusable delegation sets
-   * that are associated with the current AWS account.</p><p><h3>See Also:</h3>   <a
+   * that are associated with the current Amazon Web Services account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSetsResponse">AWS
    * API Reference</a></p>
    */
@@ -42,43 +43,50 @@ namespace Model
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
-     * reusable delegation set that was created by the current AWS account.</p>
+     * reusable delegation set that was created by the current Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<DelegationSet>& GetDelegationSets() const{ return m_delegationSets; }
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
-     * reusable delegation set that was created by the current AWS account.</p>
+     * reusable delegation set that was created by the current Amazon Web Services
+     * account.</p>
      */
     inline void SetDelegationSets(const Aws::Vector<DelegationSet>& value) { m_delegationSets = value; }
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
-     * reusable delegation set that was created by the current AWS account.</p>
+     * reusable delegation set that was created by the current Amazon Web Services
+     * account.</p>
      */
     inline void SetDelegationSets(Aws::Vector<DelegationSet>&& value) { m_delegationSets = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
-     * reusable delegation set that was created by the current AWS account.</p>
+     * reusable delegation set that was created by the current Amazon Web Services
+     * account.</p>
      */
     inline ListReusableDelegationSetsResult& WithDelegationSets(const Aws::Vector<DelegationSet>& value) { SetDelegationSets(value); return *this;}
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
-     * reusable delegation set that was created by the current AWS account.</p>
+     * reusable delegation set that was created by the current Amazon Web Services
+     * account.</p>
      */
     inline ListReusableDelegationSetsResult& WithDelegationSets(Aws::Vector<DelegationSet>&& value) { SetDelegationSets(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
-     * reusable delegation set that was created by the current AWS account.</p>
+     * reusable delegation set that was created by the current Amazon Web Services
+     * account.</p>
      */
     inline ListReusableDelegationSetsResult& AddDelegationSets(const DelegationSet& value) { m_delegationSets.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
-     * reusable delegation set that was created by the current AWS account.</p>
+     * reusable delegation set that was created by the current Amazon Web Services
+     * account.</p>
      */
     inline ListReusableDelegationSetsResult& AddDelegationSets(DelegationSet&& value) { m_delegationSets.push_back(std::move(value)); return *this; }
 

@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/PendingCloudwatchLogsExports.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/AutomationMode.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
 
@@ -27,9 +29,9 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a response element in the
-   * <code>ModifyDBInstance</code> action and contains changes that will be applied
-   * during the next maintenance window. </p><p><h3>See Also:</h3>   <a
+   * <p>This data type is used as a response element in the
+   * <code>ModifyDBInstance</code> operation and contains changes that will be
+   * applied during the next maintenance window.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingModifiedValues">AWS
    * API Reference</a></p>
    */
@@ -86,22 +88,26 @@ namespace Model
 
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline PendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -190,26 +196,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline PendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -566,28 +572,126 @@ namespace Model
 
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline PendingModifiedValues& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
+
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all-paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all-paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline const AutomationMode& GetAutomationMode() const{ return m_automationMode; }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all-paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all-paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline bool AutomationModeHasBeenSet() const { return m_automationModeHasBeenSet; }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all-paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all-paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline void SetAutomationMode(const AutomationMode& value) { m_automationModeHasBeenSet = true; m_automationMode = value; }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all-paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all-paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline void SetAutomationMode(AutomationMode&& value) { m_automationModeHasBeenSet = true; m_automationMode = std::move(value); }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all-paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all-paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline PendingModifiedValues& WithAutomationMode(const AutomationMode& value) { SetAutomationMode(value); return *this;}
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all-paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all-paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline PendingModifiedValues& WithAutomationMode(AutomationMode&& value) { SetAutomationMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440.</p>
+     */
+    inline const Aws::Utils::DateTime& GetResumeFullAutomationModeTime() const{ return m_resumeFullAutomationModeTime; }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440.</p>
+     */
+    inline bool ResumeFullAutomationModeTimeHasBeenSet() const { return m_resumeFullAutomationModeTimeHasBeenSet; }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440.</p>
+     */
+    inline void SetResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = value; }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440.</p>
+     */
+    inline void SetResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = std::move(value); }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440.</p>
+     */
+    inline PendingModifiedValues& WithResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { SetResumeFullAutomationModeTime(value); return *this;}
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440.</p>
+     */
+    inline PendingModifiedValues& WithResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { SetResumeFullAutomationModeTime(std::move(value)); return *this;}
 
   private:
 
@@ -638,6 +742,12 @@ namespace Model
 
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+
+    AutomationMode m_automationMode;
+    bool m_automationModeHasBeenSet;
+
+    Aws::Utils::DateTime m_resumeFullAutomationModeTime;
+    bool m_resumeFullAutomationModeTimeHasBeenSet;
   };
 
 } // namespace Model

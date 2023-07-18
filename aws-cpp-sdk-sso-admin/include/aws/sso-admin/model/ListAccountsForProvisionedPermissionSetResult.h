@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIds = value; }
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIds = std::move(value); }
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetResult& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetResult& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetResult& AddAccountIds(const Aws::String& value) { m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetResult& AddAccountIds(Aws::String&& value) { m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of AWS <code>AccountIds</code>.</p>
+     * <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetResult& AddAccountIds(const char* value) { m_accountIds.push_back(value); return *this; }
 

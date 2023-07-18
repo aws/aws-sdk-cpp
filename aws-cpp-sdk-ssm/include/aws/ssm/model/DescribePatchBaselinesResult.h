@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>An array of PatchBaselineIdentity elements.</p>
+     * <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
      */
     inline const Aws::Vector<PatchBaselineIdentity>& GetBaselineIdentities() const{ return m_baselineIdentities; }
 
     /**
-     * <p>An array of PatchBaselineIdentity elements.</p>
+     * <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
      */
     inline void SetBaselineIdentities(const Aws::Vector<PatchBaselineIdentity>& value) { m_baselineIdentities = value; }
 
     /**
-     * <p>An array of PatchBaselineIdentity elements.</p>
+     * <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
      */
     inline void SetBaselineIdentities(Aws::Vector<PatchBaselineIdentity>&& value) { m_baselineIdentities = std::move(value); }
 
     /**
-     * <p>An array of PatchBaselineIdentity elements.</p>
+     * <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
      */
     inline DescribePatchBaselinesResult& WithBaselineIdentities(const Aws::Vector<PatchBaselineIdentity>& value) { SetBaselineIdentities(value); return *this;}
 
     /**
-     * <p>An array of PatchBaselineIdentity elements.</p>
+     * <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
      */
     inline DescribePatchBaselinesResult& WithBaselineIdentities(Aws::Vector<PatchBaselineIdentity>&& value) { SetBaselineIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>An array of PatchBaselineIdentity elements.</p>
+     * <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
      */
     inline DescribePatchBaselinesResult& AddBaselineIdentities(const PatchBaselineIdentity& value) { m_baselineIdentities.push_back(value); return *this; }
 
     /**
-     * <p>An array of PatchBaselineIdentity elements.</p>
+     * <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
      */
     inline DescribePatchBaselinesResult& AddBaselineIdentities(PatchBaselineIdentity&& value) { m_baselineIdentities.push_back(std::move(value)); return *this; }
 

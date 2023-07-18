@@ -19,12 +19,14 @@ namespace Model
 {
 
 DnsProperties::DnsProperties() : 
-    m_hostedZoneIdHasBeenSet(false)
+    m_hostedZoneIdHasBeenSet(false),
+    m_sOAHasBeenSet(false)
 {
 }
 
 DnsProperties::DnsProperties(JsonView jsonValue) : 
-    m_hostedZoneIdHasBeenSet(false)
+    m_hostedZoneIdHasBeenSet(false),
+    m_sOAHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ DnsProperties& DnsProperties::operator =(JsonView jsonValue)
     m_hostedZoneIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SOA"))
+  {
+    m_sOA = jsonValue.GetObject("SOA");
+
+    m_sOAHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue DnsProperties::Jsonize() const
   if(m_hostedZoneIdHasBeenSet)
   {
    payload.WithString("HostedZoneId", m_hostedZoneId);
+
+  }
+
+  if(m_sOAHasBeenSet)
+  {
+   payload.WithObject("SOA", m_sOA.Jsonize());
 
   }
 

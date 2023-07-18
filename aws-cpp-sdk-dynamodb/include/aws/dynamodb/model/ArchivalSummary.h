@@ -78,8 +78,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline const Aws::String& GetArchivalReason() const{ return m_archivalReason; }
@@ -87,8 +87,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline bool ArchivalReasonHasBeenSet() const { return m_archivalReasonHasBeenSet; }
@@ -96,8 +96,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline void SetArchivalReason(const Aws::String& value) { m_archivalReasonHasBeenSet = true; m_archivalReason = value; }
@@ -105,8 +105,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline void SetArchivalReason(Aws::String&& value) { m_archivalReasonHasBeenSet = true; m_archivalReason = std::move(value); }
@@ -114,8 +114,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline void SetArchivalReason(const char* value) { m_archivalReasonHasBeenSet = true; m_archivalReason.assign(value); }
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline ArchivalSummary& WithArchivalReason(const Aws::String& value) { SetArchivalReason(value); return *this;}
@@ -132,8 +132,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline ArchivalSummary& WithArchivalReason(Aws::String&& value) { SetArchivalReason(std::move(value)); return *this;}
@@ -141,8 +141,8 @@ namespace Model
     /**
      * <p>The reason DynamoDB archived the table. Currently, the only possible value
      * is:</p> <ul> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * table was archived due to the table's AWS KMS key being inaccessible for more
-     * than seven days. An On-Demand backup was created at the archival time.</p> </li>
+     * table was archived due to the table's KMS key being inaccessible for more than
+     * seven days. An On-Demand backup was created at the archival time.</p> </li>
      * </ul>
      */
     inline ArchivalSummary& WithArchivalReason(const char* value) { SetArchivalReason(value); return *this;}

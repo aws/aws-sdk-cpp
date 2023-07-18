@@ -26,7 +26,9 @@ ReactiveInsightSummary::ReactiveInsightSummary() :
     m_status(InsightStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_insightTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_serviceCollectionHasBeenSet(false),
+    m_associatedResourceArnsHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ReactiveInsightSummary::ReactiveInsightSummary(JsonView jsonValue) :
     m_status(InsightStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_insightTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_serviceCollectionHasBeenSet(false),
+    m_associatedResourceArnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +91,23 @@ ReactiveInsightSummary& ReactiveInsightSummary::operator =(JsonView jsonValue)
     m_resourceCollectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceCollection"))
+  {
+    m_serviceCollection = jsonValue.GetObject("ServiceCollection");
+
+    m_serviceCollectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociatedResourceArns"))
+  {
+    Array<JsonView> associatedResourceArnsJsonList = jsonValue.GetArray("AssociatedResourceArns");
+    for(unsigned associatedResourceArnsIndex = 0; associatedResourceArnsIndex < associatedResourceArnsJsonList.GetLength(); ++associatedResourceArnsIndex)
+    {
+      m_associatedResourceArns.push_back(associatedResourceArnsJsonList[associatedResourceArnsIndex].AsString());
+    }
+    m_associatedResourceArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +146,23 @@ JsonValue ReactiveInsightSummary::Jsonize() const
   if(m_resourceCollectionHasBeenSet)
   {
    payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
+
+  }
+
+  if(m_serviceCollectionHasBeenSet)
+  {
+   payload.WithObject("ServiceCollection", m_serviceCollection.Jsonize());
+
+  }
+
+  if(m_associatedResourceArnsHasBeenSet)
+  {
+   Array<JsonValue> associatedResourceArnsJsonList(m_associatedResourceArns.size());
+   for(unsigned associatedResourceArnsIndex = 0; associatedResourceArnsIndex < associatedResourceArnsJsonList.GetLength(); ++associatedResourceArnsIndex)
+   {
+     associatedResourceArnsJsonList[associatedResourceArnsIndex].AsString(m_associatedResourceArns[associatedResourceArnsIndex]);
+   }
+   payload.WithArray("AssociatedResourceArns", std::move(associatedResourceArnsJsonList));
 
   }
 

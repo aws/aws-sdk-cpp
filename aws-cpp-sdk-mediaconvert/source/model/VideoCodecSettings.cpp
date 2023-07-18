@@ -30,7 +30,8 @@ VideoCodecSettings::VideoCodecSettings() :
     m_proresSettingsHasBeenSet(false),
     m_vc3SettingsHasBeenSet(false),
     m_vp8SettingsHasBeenSet(false),
-    m_vp9SettingsHasBeenSet(false)
+    m_vp9SettingsHasBeenSet(false),
+    m_xavcSettingsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) :
     m_proresSettingsHasBeenSet(false),
     m_vc3SettingsHasBeenSet(false),
     m_vp8SettingsHasBeenSet(false),
-    m_vp9SettingsHasBeenSet(false)
+    m_vp9SettingsHasBeenSet(false),
+    m_xavcSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +132,13 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_vp9SettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("xavcSettings"))
+  {
+    m_xavcSettings = jsonValue.GetObject("xavcSettings");
+
+    m_xavcSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +208,12 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_vp9SettingsHasBeenSet)
   {
    payload.WithObject("vp9Settings", m_vp9Settings.Jsonize());
+
+  }
+
+  if(m_xavcSettingsHasBeenSet)
+  {
+   payload.WithObject("xavcSettings", m_xavcSettings.Jsonize());
 
   }
 

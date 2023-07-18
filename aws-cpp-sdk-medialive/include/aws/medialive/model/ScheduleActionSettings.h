@@ -9,6 +9,8 @@
 #include <aws/medialive/model/HlsTimedMetadataScheduleActionSettings.h>
 #include <aws/medialive/model/InputPrepareScheduleActionSettings.h>
 #include <aws/medialive/model/InputSwitchScheduleActionSettings.h>
+#include <aws/medialive/model/MotionGraphicsActivateScheduleActionSettings.h>
+#include <aws/medialive/model/MotionGraphicsDeactivateScheduleActionSettings.h>
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35ReturnToNetworkScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35SpliceInsertScheduleActionSettings.h>
@@ -168,6 +170,68 @@ namespace Model
      * Action to switch the input
      */
     inline ScheduleActionSettings& WithInputSwitchSettings(InputSwitchScheduleActionSettings&& value) { SetInputSwitchSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Action to activate a motion graphics image overlay
+     */
+    inline const MotionGraphicsActivateScheduleActionSettings& GetMotionGraphicsImageActivateSettings() const{ return m_motionGraphicsImageActivateSettings; }
+
+    /**
+     * Action to activate a motion graphics image overlay
+     */
+    inline bool MotionGraphicsImageActivateSettingsHasBeenSet() const { return m_motionGraphicsImageActivateSettingsHasBeenSet; }
+
+    /**
+     * Action to activate a motion graphics image overlay
+     */
+    inline void SetMotionGraphicsImageActivateSettings(const MotionGraphicsActivateScheduleActionSettings& value) { m_motionGraphicsImageActivateSettingsHasBeenSet = true; m_motionGraphicsImageActivateSettings = value; }
+
+    /**
+     * Action to activate a motion graphics image overlay
+     */
+    inline void SetMotionGraphicsImageActivateSettings(MotionGraphicsActivateScheduleActionSettings&& value) { m_motionGraphicsImageActivateSettingsHasBeenSet = true; m_motionGraphicsImageActivateSettings = std::move(value); }
+
+    /**
+     * Action to activate a motion graphics image overlay
+     */
+    inline ScheduleActionSettings& WithMotionGraphicsImageActivateSettings(const MotionGraphicsActivateScheduleActionSettings& value) { SetMotionGraphicsImageActivateSettings(value); return *this;}
+
+    /**
+     * Action to activate a motion graphics image overlay
+     */
+    inline ScheduleActionSettings& WithMotionGraphicsImageActivateSettings(MotionGraphicsActivateScheduleActionSettings&& value) { SetMotionGraphicsImageActivateSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     */
+    inline const MotionGraphicsDeactivateScheduleActionSettings& GetMotionGraphicsImageDeactivateSettings() const{ return m_motionGraphicsImageDeactivateSettings; }
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     */
+    inline bool MotionGraphicsImageDeactivateSettingsHasBeenSet() const { return m_motionGraphicsImageDeactivateSettingsHasBeenSet; }
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     */
+    inline void SetMotionGraphicsImageDeactivateSettings(const MotionGraphicsDeactivateScheduleActionSettings& value) { m_motionGraphicsImageDeactivateSettingsHasBeenSet = true; m_motionGraphicsImageDeactivateSettings = value; }
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     */
+    inline void SetMotionGraphicsImageDeactivateSettings(MotionGraphicsDeactivateScheduleActionSettings&& value) { m_motionGraphicsImageDeactivateSettingsHasBeenSet = true; m_motionGraphicsImageDeactivateSettings = std::move(value); }
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     */
+    inline ScheduleActionSettings& WithMotionGraphicsImageDeactivateSettings(const MotionGraphicsDeactivateScheduleActionSettings& value) { SetMotionGraphicsImageDeactivateSettings(value); return *this;}
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     */
+    inline ScheduleActionSettings& WithMotionGraphicsImageDeactivateSettings(MotionGraphicsDeactivateScheduleActionSettings&& value) { SetMotionGraphicsImageDeactivateSettings(std::move(value)); return *this;}
 
 
     /**
@@ -368,6 +432,12 @@ namespace Model
 
     InputSwitchScheduleActionSettings m_inputSwitchSettings;
     bool m_inputSwitchSettingsHasBeenSet;
+
+    MotionGraphicsActivateScheduleActionSettings m_motionGraphicsImageActivateSettings;
+    bool m_motionGraphicsImageActivateSettingsHasBeenSet;
+
+    MotionGraphicsDeactivateScheduleActionSettings m_motionGraphicsImageDeactivateSettings;
+    bool m_motionGraphicsImageDeactivateSettingsHasBeenSet;
 
     PauseStateScheduleActionSettings m_pauseStateSettings;
     bool m_pauseStateSettingsHasBeenSet;

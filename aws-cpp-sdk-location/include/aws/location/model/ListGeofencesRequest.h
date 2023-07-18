@@ -74,6 +74,31 @@ namespace Model
 
 
     /**
+     * <p>An optional limit for the number of geofences returned in a single call. </p>
+     * <p>Default value: <code>100</code> </p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>An optional limit for the number of geofences returned in a single call. </p>
+     * <p>Default value: <code>100</code> </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>An optional limit for the number of geofences returned in a single call. </p>
+     * <p>Default value: <code>100</code> </p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>An optional limit for the number of geofences returned in a single call. </p>
+     * <p>Default value: <code>100</code> </p>
+     */
+    inline ListGeofencesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
      * <p>The pagination token specifying which page of results to return in the
      * response. If no token is provided, the default page is the first page. </p>
      * <p>Default value: <code>null</code> </p>
@@ -133,6 +158,9 @@ namespace Model
 
     Aws::String m_collectionName;
     bool m_collectionNameHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

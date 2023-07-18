@@ -5,6 +5,7 @@
 
 #include <aws/chime/model/UpdateChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -17,7 +18,8 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_nameHasBeenSet(false),
     m_mode(ChannelMode::NOT_SET),
     m_modeHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,21 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection UpdateChannelRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

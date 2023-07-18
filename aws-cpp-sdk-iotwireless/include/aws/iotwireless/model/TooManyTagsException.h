@@ -63,28 +63,44 @@ namespace Model
     inline TooManyTagsException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline TooManyTagsException& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline TooManyTagsException& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+     */
     inline TooManyTagsException& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:

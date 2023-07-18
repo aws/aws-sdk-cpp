@@ -20,12 +20,12 @@ GetKeyGroupConfig2020_05_31Result::GetKeyGroupConfig2020_05_31Result()
 {
 }
 
-GetKeyGroupConfig2020_05_31Result::GetKeyGroupConfig2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+GetKeyGroupConfig2020_05_31Result::GetKeyGroupConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetKeyGroupConfig2020_05_31Result& GetKeyGroupConfig2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetKeyGroupConfig2020_05_31Result& GetKeyGroupConfig2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

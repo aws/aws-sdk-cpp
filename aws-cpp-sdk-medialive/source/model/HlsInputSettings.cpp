@@ -26,7 +26,9 @@ HlsInputSettings::HlsInputSettings() :
     m_retries(0),
     m_retriesHasBeenSet(false),
     m_retryInterval(0),
-    m_retryIntervalHasBeenSet(false)
+    m_retryIntervalHasBeenSet(false),
+    m_scte35Source(HlsScte35SourceType::NOT_SET),
+    m_scte35SourceHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ HlsInputSettings::HlsInputSettings(JsonView jsonValue) :
     m_retries(0),
     m_retriesHasBeenSet(false),
     m_retryInterval(0),
-    m_retryIntervalHasBeenSet(false)
+    m_retryIntervalHasBeenSet(false),
+    m_scte35Source(HlsScte35SourceType::NOT_SET),
+    m_scte35SourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +77,13 @@ HlsInputSettings& HlsInputSettings::operator =(JsonView jsonValue)
     m_retryIntervalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scte35Source"))
+  {
+    m_scte35Source = HlsScte35SourceTypeMapper::GetHlsScte35SourceTypeForName(jsonValue.GetString("scte35Source"));
+
+    m_scte35SourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +113,11 @@ JsonValue HlsInputSettings::Jsonize() const
   {
    payload.WithInteger("retryInterval", m_retryInterval);
 
+  }
+
+  if(m_scte35SourceHasBeenSet)
+  {
+   payload.WithString("scte35Source", HlsScte35SourceTypeMapper::GetNameForHlsScte35SourceType(m_scte35Source));
   }
 
   return payload;

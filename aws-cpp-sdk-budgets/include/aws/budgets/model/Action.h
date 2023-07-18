@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> A budget action resource. </p><p><h3>See Also:</h3>   <a
+   * <p>A budget action resource. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Action">AWS API
    * Reference</a></p>
    */
@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline const Aws::String& GetActionId() const{ return m_actionId; }
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline Action& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline Action& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
 
     /**
-     * <p> A system-generated universally unique identifier (UUID) for the action. </p>
+     * <p>A system-generated universally unique identifier (UUID) for the action. </p>
      */
     inline Action& WithActionId(const char* value) { SetActionId(value); return *this;}
 
@@ -131,211 +131,211 @@ namespace Model
 
 
     /**
-     * <p> The type of action. This defines the type of tasks that can be carried out
-     * by this action. This field also determines the format for definition. </p>
+     * <p>The type of action. This defines the type of tasks that can be carried out by
+     * this action. This field also determines the format for definition. </p>
      */
     inline const ActionType& GetActionType() const{ return m_actionType; }
 
     /**
-     * <p> The type of action. This defines the type of tasks that can be carried out
-     * by this action. This field also determines the format for definition. </p>
+     * <p>The type of action. This defines the type of tasks that can be carried out by
+     * this action. This field also determines the format for definition. </p>
      */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
 
     /**
-     * <p> The type of action. This defines the type of tasks that can be carried out
-     * by this action. This field also determines the format for definition. </p>
+     * <p>The type of action. This defines the type of tasks that can be carried out by
+     * this action. This field also determines the format for definition. </p>
      */
     inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
-     * <p> The type of action. This defines the type of tasks that can be carried out
-     * by this action. This field also determines the format for definition. </p>
+     * <p>The type of action. This defines the type of tasks that can be carried out by
+     * this action. This field also determines the format for definition. </p>
      */
     inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
 
     /**
-     * <p> The type of action. This defines the type of tasks that can be carried out
-     * by this action. This field also determines the format for definition. </p>
+     * <p>The type of action. This defines the type of tasks that can be carried out by
+     * this action. This field also determines the format for definition. </p>
      */
     inline Action& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
 
     /**
-     * <p> The type of action. This defines the type of tasks that can be carried out
-     * by this action. This field also determines the format for definition. </p>
+     * <p>The type of action. This defines the type of tasks that can be carried out by
+     * this action. This field also determines the format for definition. </p>
      */
     inline Action& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
 
 
     /**
-     * <p> The trigger threshold of the action. </p>
+     * <p>The trigger threshold of the action. </p>
      */
     inline const ActionThreshold& GetActionThreshold() const{ return m_actionThreshold; }
 
     /**
-     * <p> The trigger threshold of the action. </p>
+     * <p>The trigger threshold of the action. </p>
      */
     inline bool ActionThresholdHasBeenSet() const { return m_actionThresholdHasBeenSet; }
 
     /**
-     * <p> The trigger threshold of the action. </p>
+     * <p>The trigger threshold of the action. </p>
      */
     inline void SetActionThreshold(const ActionThreshold& value) { m_actionThresholdHasBeenSet = true; m_actionThreshold = value; }
 
     /**
-     * <p> The trigger threshold of the action. </p>
+     * <p>The trigger threshold of the action. </p>
      */
     inline void SetActionThreshold(ActionThreshold&& value) { m_actionThresholdHasBeenSet = true; m_actionThreshold = std::move(value); }
 
     /**
-     * <p> The trigger threshold of the action. </p>
+     * <p>The trigger threshold of the action. </p>
      */
     inline Action& WithActionThreshold(const ActionThreshold& value) { SetActionThreshold(value); return *this;}
 
     /**
-     * <p> The trigger threshold of the action. </p>
+     * <p>The trigger threshold of the action. </p>
      */
     inline Action& WithActionThreshold(ActionThreshold&& value) { SetActionThreshold(std::move(value)); return *this;}
 
 
     /**
-     * <p> Where you specify all of the type-specific parameters. </p>
+     * <p>Where you specify all of the type-specific parameters. </p>
      */
     inline const Definition& GetDefinition() const{ return m_definition; }
 
     /**
-     * <p> Where you specify all of the type-specific parameters. </p>
+     * <p>Where you specify all of the type-specific parameters. </p>
      */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
     /**
-     * <p> Where you specify all of the type-specific parameters. </p>
+     * <p>Where you specify all of the type-specific parameters. </p>
      */
     inline void SetDefinition(const Definition& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
-     * <p> Where you specify all of the type-specific parameters. </p>
+     * <p>Where you specify all of the type-specific parameters. </p>
      */
     inline void SetDefinition(Definition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
-     * <p> Where you specify all of the type-specific parameters. </p>
+     * <p>Where you specify all of the type-specific parameters. </p>
      */
     inline Action& WithDefinition(const Definition& value) { SetDefinition(value); return *this;}
 
     /**
-     * <p> Where you specify all of the type-specific parameters. </p>
+     * <p>Where you specify all of the type-specific parameters. </p>
      */
     inline Action& WithDefinition(Definition&& value) { SetDefinition(std::move(value)); return *this;}
 
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline Action& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline Action& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> The role passed for action execution and reversion. Roles and actions must
-     * be in the same account. </p>
+     * <p>The role passed for action execution and reversion. Roles and actions must be
+     * in the same account. </p>
      */
     inline Action& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
 
     /**
-     * <p> This specifies if the action needs manual or automatic approval. </p>
+     * <p>This specifies if the action needs manual or automatic approval. </p>
      */
     inline const ApprovalModel& GetApprovalModel() const{ return m_approvalModel; }
 
     /**
-     * <p> This specifies if the action needs manual or automatic approval. </p>
+     * <p>This specifies if the action needs manual or automatic approval. </p>
      */
     inline bool ApprovalModelHasBeenSet() const { return m_approvalModelHasBeenSet; }
 
     /**
-     * <p> This specifies if the action needs manual or automatic approval. </p>
+     * <p>This specifies if the action needs manual or automatic approval. </p>
      */
     inline void SetApprovalModel(const ApprovalModel& value) { m_approvalModelHasBeenSet = true; m_approvalModel = value; }
 
     /**
-     * <p> This specifies if the action needs manual or automatic approval. </p>
+     * <p>This specifies if the action needs manual or automatic approval. </p>
      */
     inline void SetApprovalModel(ApprovalModel&& value) { m_approvalModelHasBeenSet = true; m_approvalModel = std::move(value); }
 
     /**
-     * <p> This specifies if the action needs manual or automatic approval. </p>
+     * <p>This specifies if the action needs manual or automatic approval. </p>
      */
     inline Action& WithApprovalModel(const ApprovalModel& value) { SetApprovalModel(value); return *this;}
 
     /**
-     * <p> This specifies if the action needs manual or automatic approval. </p>
+     * <p>This specifies if the action needs manual or automatic approval. </p>
      */
     inline Action& WithApprovalModel(ApprovalModel&& value) { SetApprovalModel(std::move(value)); return *this;}
 
 
     /**
-     * <p> The status of action. </p>
+     * <p>The status of the action. </p>
      */
     inline const ActionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of action. </p>
+     * <p>The status of the action. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status of action. </p>
+     * <p>The status of the action. </p>
      */
     inline void SetStatus(const ActionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status of action. </p>
+     * <p>The status of the action. </p>
      */
     inline void SetStatus(ActionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status of action. </p>
+     * <p>The status of the action. </p>
      */
     inline Action& WithStatus(const ActionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of action. </p>
+     * <p>The status of the action. </p>
      */
     inline Action& WithStatus(ActionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

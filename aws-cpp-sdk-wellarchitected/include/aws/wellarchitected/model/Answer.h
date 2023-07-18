@@ -8,7 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/model/Risk.h>
+#include <aws/wellarchitected/model/AnswerReason.h>
 #include <aws/wellarchitected/model/Choice.h>
+#include <aws/wellarchitected/model/ChoiceAnswer.h>
 #include <utility>
 
 namespace Aws
@@ -190,6 +192,47 @@ namespace Model
     inline Answer& WithHelpfulResourceUrl(const char* value) { SetHelpfulResourceUrl(value); return *this;}
 
 
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline const Aws::String& GetHelpfulResourceDisplayText() const{ return m_helpfulResourceDisplayText; }
+
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline bool HelpfulResourceDisplayTextHasBeenSet() const { return m_helpfulResourceDisplayTextHasBeenSet; }
+
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline void SetHelpfulResourceDisplayText(const Aws::String& value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText = value; }
+
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline void SetHelpfulResourceDisplayText(Aws::String&& value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText = std::move(value); }
+
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline void SetHelpfulResourceDisplayText(const char* value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText.assign(value); }
+
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline Answer& WithHelpfulResourceDisplayText(const Aws::String& value) { SetHelpfulResourceDisplayText(value); return *this;}
+
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline Answer& WithHelpfulResourceDisplayText(Aws::String&& value) { SetHelpfulResourceDisplayText(std::move(value)); return *this;}
+
+    /**
+     * <p>The helpful resource text to be displayed.</p>
+     */
+    inline Answer& WithHelpfulResourceDisplayText(const char* value) { SetHelpfulResourceDisplayText(value); return *this;}
+
+
     
     inline const Aws::Vector<Choice>& GetChoices() const{ return m_choices; }
 
@@ -241,6 +284,47 @@ namespace Model
 
     
     inline Answer& AddSelectedChoices(const char* value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline const Aws::Vector<ChoiceAnswer>& GetChoiceAnswers() const{ return m_choiceAnswers; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline bool ChoiceAnswersHasBeenSet() const { return m_choiceAnswersHasBeenSet; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline void SetChoiceAnswers(const Aws::Vector<ChoiceAnswer>& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers = value; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline void SetChoiceAnswers(Aws::Vector<ChoiceAnswer>&& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers = std::move(value); }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline Answer& WithChoiceAnswers(const Aws::Vector<ChoiceAnswer>& value) { SetChoiceAnswers(value); return *this;}
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline Answer& WithChoiceAnswers(Aws::Vector<ChoiceAnswer>&& value) { SetChoiceAnswers(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline Answer& AddChoiceAnswers(const ChoiceAnswer& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers.push_back(value); return *this; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline Answer& AddChoiceAnswers(ChoiceAnswer&& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers.push_back(std::move(value)); return *this; }
 
 
     
@@ -299,6 +383,37 @@ namespace Model
     
     inline Answer& WithNotes(const char* value) { SetNotes(value); return *this;}
 
+
+    /**
+     * <p>The reason why the question is not applicable to your workload.</p>
+     */
+    inline const AnswerReason& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason why the question is not applicable to your workload.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason why the question is not applicable to your workload.</p>
+     */
+    inline void SetReason(const AnswerReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason why the question is not applicable to your workload.</p>
+     */
+    inline void SetReason(AnswerReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason why the question is not applicable to your workload.</p>
+     */
+    inline Answer& WithReason(const AnswerReason& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason why the question is not applicable to your workload.</p>
+     */
+    inline Answer& WithReason(AnswerReason&& value) { SetReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_questionId;
@@ -319,11 +434,17 @@ namespace Model
     Aws::String m_helpfulResourceUrl;
     bool m_helpfulResourceUrlHasBeenSet;
 
+    Aws::String m_helpfulResourceDisplayText;
+    bool m_helpfulResourceDisplayTextHasBeenSet;
+
     Aws::Vector<Choice> m_choices;
     bool m_choicesHasBeenSet;
 
     Aws::Vector<Aws::String> m_selectedChoices;
     bool m_selectedChoicesHasBeenSet;
+
+    Aws::Vector<ChoiceAnswer> m_choiceAnswers;
+    bool m_choiceAnswersHasBeenSet;
 
     bool m_isApplicable;
     bool m_isApplicableHasBeenSet;
@@ -333,6 +454,9 @@ namespace Model
 
     Aws::String m_notes;
     bool m_notesHasBeenSet;
+
+    AnswerReason m_reason;
+    bool m_reasonHasBeenSet;
   };
 
 } // namespace Model

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int RDS_HASH = HashingUtils::HashString("RDS");
+        static const int DOCDB_HASH = HashingUtils::HashString("DOCDB");
 
 
         ServiceType GetServiceTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == RDS_HASH)
           {
             return ServiceType::RDS;
+          }
+          else if (hashCode == DOCDB_HASH)
+          {
+            return ServiceType::DOCDB;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ServiceType::RDS:
             return "RDS";
+          case ServiceType::DOCDB:
+            return "DOCDB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

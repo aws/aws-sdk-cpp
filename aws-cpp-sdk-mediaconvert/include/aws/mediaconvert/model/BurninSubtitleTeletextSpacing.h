@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     FIXED_GRID,
-    PROPORTIONAL
+    PROPORTIONAL,
+    AUTO
   };
 
 namespace BurninSubtitleTeletextSpacingMapper

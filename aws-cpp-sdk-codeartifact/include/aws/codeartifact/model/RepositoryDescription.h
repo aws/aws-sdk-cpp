@@ -27,13 +27,13 @@ namespace Model
 {
 
   /**
-   * <p> The details of a repository stored in AWS CodeArtifact. A CodeArtifact
+   * <p> The details of a repository stored in CodeArtifact. A CodeArtifact
    * repository contains a set of package versions, each of which maps to a set of
    * assets. Repositories are polyglot—a single repository can contain packages of
    * any supported type. Each repository exposes endpoints for fetching and
    * publishing packages using tools like the <code>npm</code> CLI, the Maven CLI
    * (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories
-   * per AWS account. </p><p><h3>See Also:</h3>   <a
+   * per Amazon Web Services account. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/RepositoryDescription">AWS
    * API Reference</a></p>
    */
@@ -88,50 +88,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline const Aws::String& GetAdministratorAccount() const{ return m_administratorAccount; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline bool AdministratorAccountHasBeenSet() const { return m_administratorAccountHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline void SetAdministratorAccount(const Aws::String& value) { m_administratorAccountHasBeenSet = true; m_administratorAccount = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline void SetAdministratorAccount(Aws::String&& value) { m_administratorAccountHasBeenSet = true; m_administratorAccount = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline void SetAdministratorAccount(const char* value) { m_administratorAccountHasBeenSet = true; m_administratorAccount.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline RepositoryDescription& WithAdministratorAccount(const Aws::String& value) { SetAdministratorAccount(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline RepositoryDescription& WithAdministratorAccount(Aws::String&& value) { SetAdministratorAccount(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that manages the repository.
-     * </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that manages
+     * the repository. </p>
      */
     inline RepositoryDescription& WithAdministratorAccount(const char* value) { SetAdministratorAccount(value); return *this;}
 
@@ -178,50 +178,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline RepositoryDescription& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline RepositoryDescription& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline RepositoryDescription& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -311,8 +311,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -321,8 +320,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -331,8 +329,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -341,8 +338,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -351,8 +347,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -361,8 +356,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -371,8 +365,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -381,8 +374,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */

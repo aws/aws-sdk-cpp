@@ -7,6 +7,8 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/PositionFiltering.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -106,44 +108,195 @@ namespace Model
 
 
     /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     */
+    inline DescribeTrackerResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     */
+    inline DescribeTrackerResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     */
+    inline DescribeTrackerResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline const PositionFiltering& GetPositionFiltering() const{ return m_positionFiltering; }
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline void SetPositionFiltering(const PositionFiltering& value) { m_positionFiltering = value; }
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline void SetPositionFiltering(PositionFiltering&& value) { m_positionFiltering = std::move(value); }
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& WithPositionFiltering(const PositionFiltering& value) { SetPositionFiltering(value); return *this;}
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& WithPositionFiltering(PositionFiltering&& value) { SetPositionFiltering(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags associated with the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetTrackerArn() const{ return m_trackerArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline void SetTrackerArn(const Aws::String& value) { m_trackerArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline void SetTrackerArn(Aws::String&& value) { m_trackerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline void SetTrackerArn(const char* value) { m_trackerArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline DescribeTrackerResult& WithTrackerArn(const Aws::String& value) { SetTrackerArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline DescribeTrackerResult& WithTrackerArn(Aws::String&& value) { SetTrackerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p>
+     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+     * </ul>
      */
     inline DescribeTrackerResult& WithTrackerArn(const char* value) { SetTrackerArn(value); return *this;}
 
@@ -224,6 +377,12 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_description;
+
+    Aws::String m_kmsKeyId;
+
+    PositionFiltering m_positionFiltering;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::String m_trackerArn;
 

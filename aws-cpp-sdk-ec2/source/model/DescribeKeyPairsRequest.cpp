@@ -15,7 +15,9 @@ DescribeKeyPairsRequest::DescribeKeyPairsRequest() :
     m_keyNamesHasBeenSet(false),
     m_keyPairIdsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_includePublicKey(false),
+    m_includePublicKeyHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,11 @@ Aws::String DescribeKeyPairsRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_includePublicKeyHasBeenSet)
+  {
+    ss << "IncludePublicKey=" << std::boolalpha << m_includePublicKey << "&";
   }
 
   ss << "Version=2016-11-15";

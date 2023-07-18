@@ -48,8 +48,10 @@ enum class DatabaseMigrationServiceErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ACCESS_DENIED_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  COLLECTOR_NOT_FOUND_FAULT,
   INSUFFICIENT_RESOURCE_CAPACITY_FAULT,
   INVALID_CERTIFICATE_FAULT,
+  INVALID_OPERATION_FAULT,
   INVALID_RESOURCE_STATE_FAULT,
   INVALID_SUBNET,
   K_M_S_ACCESS_DENIED_FAULT,

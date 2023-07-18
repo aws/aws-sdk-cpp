@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p> A <code>controlSet</code> entity that represents a collection of controls in
-   * AWS Audit Manager. This does not contain the control set ID. </p><p><h3>See
+   * Audit Manager. This doesn't contain the control set ID. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkControlSet">AWS
    * API Reference</a></p>
@@ -124,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline const Aws::Vector<CreateAssessmentFrameworkControl>& GetControls() const{ return m_controls; }
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline bool ControlsHasBeenSet() const { return m_controlsHasBeenSet; }
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline void SetControls(const Aws::Vector<CreateAssessmentFrameworkControl>& value) { m_controlsHasBeenSet = true; m_controls = value; }
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline void SetControls(Aws::Vector<CreateAssessmentFrameworkControl>&& value) { m_controlsHasBeenSet = true; m_controls = std::move(value); }
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline UpdateAssessmentFrameworkControlSet& WithControls(const Aws::Vector<CreateAssessmentFrameworkControl>& value) { SetControls(value); return *this;}
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline UpdateAssessmentFrameworkControlSet& WithControls(Aws::Vector<CreateAssessmentFrameworkControl>&& value) { SetControls(std::move(value)); return *this;}
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline UpdateAssessmentFrameworkControlSet& AddControls(const CreateAssessmentFrameworkControl& value) { m_controlsHasBeenSet = true; m_controls.push_back(value); return *this; }
 
     /**
-     * <p> The list of controls contained within the control set. </p>
+     * <p> The list of controls that are contained within the control set. </p>
      */
     inline UpdateAssessmentFrameworkControlSet& AddControls(CreateAssessmentFrameworkControl&& value) { m_controlsHasBeenSet = true; m_controls.push_back(std::move(value)); return *this; }
 

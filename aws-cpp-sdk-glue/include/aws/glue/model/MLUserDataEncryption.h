@@ -42,48 +42,48 @@ namespace Model
     /**
      * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
      * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     * Amazon S3.</p> </li> </ul>
+     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     * S3.</p> </li> </ul>
      */
     inline const MLUserDataEncryptionModeString& GetMlUserDataEncryptionMode() const{ return m_mlUserDataEncryptionMode; }
 
     /**
      * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
      * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     * Amazon S3.</p> </li> </ul>
+     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     * S3.</p> </li> </ul>
      */
     inline bool MlUserDataEncryptionModeHasBeenSet() const { return m_mlUserDataEncryptionModeHasBeenSet; }
 
     /**
      * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
      * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     * Amazon S3.</p> </li> </ul>
+     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     * S3.</p> </li> </ul>
      */
     inline void SetMlUserDataEncryptionMode(const MLUserDataEncryptionModeString& value) { m_mlUserDataEncryptionModeHasBeenSet = true; m_mlUserDataEncryptionMode = value; }
 
     /**
      * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
      * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     * Amazon S3.</p> </li> </ul>
+     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     * S3.</p> </li> </ul>
      */
     inline void SetMlUserDataEncryptionMode(MLUserDataEncryptionModeString&& value) { m_mlUserDataEncryptionModeHasBeenSet = true; m_mlUserDataEncryptionMode = std::move(value); }
 
     /**
      * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
      * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     * Amazon S3.</p> </li> </ul>
+     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     * S3.</p> </li> </ul>
      */
     inline MLUserDataEncryption& WithMlUserDataEncryptionMode(const MLUserDataEncryptionModeString& value) { SetMlUserDataEncryptionMode(value); return *this;}
 
     /**
      * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
      * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     * Amazon S3.</p> </li> </ul>
+     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     * S3.</p> </li> </ul>
      */
     inline MLUserDataEncryption& WithMlUserDataEncryptionMode(MLUserDataEncryptionModeString&& value) { SetMlUserDataEncryptionMode(std::move(value)); return *this;}
 

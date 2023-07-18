@@ -76,98 +76,98 @@ namespace Model
 
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline const Aws::String& GetWebACLLockToken() const{ return m_webACLLockToken; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline bool WebACLLockTokenHasBeenSet() const { return m_webACLLockTokenHasBeenSet; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline void SetWebACLLockToken(const Aws::String& value) { m_webACLLockTokenHasBeenSet = true; m_webACLLockToken = value; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline void SetWebACLLockToken(Aws::String&& value) { m_webACLLockTokenHasBeenSet = true; m_webACLLockToken = std::move(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline void SetWebACLLockToken(const char* value) { m_webACLLockTokenHasBeenSet = true; m_webACLLockToken.assign(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLLockToken(const Aws::String& value) { SetWebACLLockToken(value); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLLockToken(Aws::String&& value) { SetWebACLLockToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLLockToken(const char* value) { SetWebACLLockToken(value); return *this;}
 

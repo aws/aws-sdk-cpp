@@ -30,7 +30,9 @@ RepositoryAssociation::RepositoryAssociation() :
     m_stateHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false)
+    m_createdTimeStampHasBeenSet(false),
+    m_kMSKeyDetailsHasBeenSet(false),
+    m_s3RepositoryDetailsHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ RepositoryAssociation::RepositoryAssociation(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false)
+    m_createdTimeStampHasBeenSet(false),
+    m_kMSKeyDetailsHasBeenSet(false),
+    m_s3RepositoryDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +127,20 @@ RepositoryAssociation& RepositoryAssociation::operator =(JsonView jsonValue)
     m_createdTimeStampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KMSKeyDetails"))
+  {
+    m_kMSKeyDetails = jsonValue.GetObject("KMSKeyDetails");
+
+    m_kMSKeyDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3RepositoryDetails"))
+  {
+    m_s3RepositoryDetails = jsonValue.GetObject("S3RepositoryDetails");
+
+    m_s3RepositoryDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +202,18 @@ JsonValue RepositoryAssociation::Jsonize() const
   if(m_createdTimeStampHasBeenSet)
   {
    payload.WithDouble("CreatedTimeStamp", m_createdTimeStamp.SecondsWithMSPrecision());
+  }
+
+  if(m_kMSKeyDetailsHasBeenSet)
+  {
+   payload.WithObject("KMSKeyDetails", m_kMSKeyDetails.Jsonize());
+
+  }
+
+  if(m_s3RepositoryDetailsHasBeenSet)
+  {
+   payload.WithObject("S3RepositoryDetails", m_s3RepositoryDetails.Jsonize());
+
   }
 
   return payload;

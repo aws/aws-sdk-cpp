@@ -21,7 +21,11 @@ namespace Model
 StatementData::StatementData() : 
     m_createdAtHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_isBatchStatement(false),
+    m_isBatchStatementHasBeenSet(false),
+    m_queryParametersHasBeenSet(false),
     m_queryStringHasBeenSet(false),
+    m_queryStringsHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_status(StatusString::NOT_SET),
@@ -33,7 +37,11 @@ StatementData::StatementData() :
 StatementData::StatementData(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_isBatchStatement(false),
+    m_isBatchStatementHasBeenSet(false),
+    m_queryParametersHasBeenSet(false),
     m_queryStringHasBeenSet(false),
+    m_queryStringsHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_status(StatusString::NOT_SET),
@@ -59,11 +67,38 @@ StatementData& StatementData::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsBatchStatement"))
+  {
+    m_isBatchStatement = jsonValue.GetBool("IsBatchStatement");
+
+    m_isBatchStatementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueryParameters"))
+  {
+    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
+    for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+    {
+      m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
+    }
+    m_queryParametersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");
 
     m_queryStringHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueryStrings"))
+  {
+    Array<JsonView> queryStringsJsonList = jsonValue.GetArray("QueryStrings");
+    for(unsigned queryStringsIndex = 0; queryStringsIndex < queryStringsJsonList.GetLength(); ++queryStringsIndex)
+    {
+      m_queryStrings.push_back(queryStringsJsonList[queryStringsIndex].AsString());
+    }
+    m_queryStringsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SecretArn"))
@@ -112,9 +147,37 @@ JsonValue StatementData::Jsonize() const
 
   }
 
+  if(m_isBatchStatementHasBeenSet)
+  {
+   payload.WithBool("IsBatchStatement", m_isBatchStatement);
+
+  }
+
+  if(m_queryParametersHasBeenSet)
+  {
+   Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
+   for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+   {
+     queryParametersJsonList[queryParametersIndex].AsObject(m_queryParameters[queryParametersIndex].Jsonize());
+   }
+   payload.WithArray("QueryParameters", std::move(queryParametersJsonList));
+
+  }
+
   if(m_queryStringHasBeenSet)
   {
    payload.WithString("QueryString", m_queryString);
+
+  }
+
+  if(m_queryStringsHasBeenSet)
+  {
+   Array<JsonValue> queryStringsJsonList(m_queryStrings.size());
+   for(unsigned queryStringsIndex = 0; queryStringsIndex < queryStringsJsonList.GetLength(); ++queryStringsIndex)
+   {
+     queryStringsJsonList[queryStringsIndex].AsString(m_queryStrings[queryStringsIndex]);
+   }
+   payload.WithArray("QueryStrings", std::move(queryStringsJsonList));
 
   }
 

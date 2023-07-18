@@ -20,7 +20,8 @@ CreateIntegrationAssociationRequest::CreateIntegrationAssociationRequest() :
     m_sourceApplicationUrlHasBeenSet(false),
     m_sourceApplicationNameHasBeenSet(false),
     m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,17 @@ Aws::String CreateIntegrationAssociationRequest::SerializePayload() const
   if(m_sourceTypeHasBeenSet)
   {
    payload.WithString("SourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

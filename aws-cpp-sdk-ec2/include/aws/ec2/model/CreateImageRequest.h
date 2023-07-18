@@ -269,34 +269,62 @@ namespace Model
 
 
     /**
-     * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this option is
-     * used, file system integrity on the created image can't be guaranteed.</p>
+     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
+     * that it can take snapshots of the attached volumes while data is at rest, in
+     * order to ensure a consistent state. You can set the <code>NoReboot</code>
+     * parameter to <code>true</code> in the API request, or use the
+     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
+     * down and rebooting the instance.</p>  <p>If you choose to bypass the
+     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
+     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
+     * option in the CLI, we can't guarantee the file system integrity of the created
+     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
+     * process)</p>
      */
     inline bool GetNoReboot() const{ return m_noReboot; }
 
     /**
-     * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this option is
-     * used, file system integrity on the created image can't be guaranteed.</p>
+     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
+     * that it can take snapshots of the attached volumes while data is at rest, in
+     * order to ensure a consistent state. You can set the <code>NoReboot</code>
+     * parameter to <code>true</code> in the API request, or use the
+     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
+     * down and rebooting the instance.</p>  <p>If you choose to bypass the
+     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
+     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
+     * option in the CLI, we can't guarantee the file system integrity of the created
+     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
+     * process)</p>
      */
     inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
 
     /**
-     * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this option is
-     * used, file system integrity on the created image can't be guaranteed.</p>
+     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
+     * that it can take snapshots of the attached volumes while data is at rest, in
+     * order to ensure a consistent state. You can set the <code>NoReboot</code>
+     * parameter to <code>true</code> in the API request, or use the
+     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
+     * down and rebooting the instance.</p>  <p>If you choose to bypass the
+     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
+     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
+     * option in the CLI, we can't guarantee the file system integrity of the created
+     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
+     * process)</p>
      */
     inline void SetNoReboot(bool value) { m_noRebootHasBeenSet = true; m_noReboot = value; }
 
     /**
-     * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this option is
-     * used, file system integrity on the created image can't be guaranteed.</p>
+     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
+     * that it can take snapshots of the attached volumes while data is at rest, in
+     * order to ensure a consistent state. You can set the <code>NoReboot</code>
+     * parameter to <code>true</code> in the API request, or use the
+     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
+     * down and rebooting the instance.</p>  <p>If you choose to bypass the
+     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
+     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
+     * option in the CLI, we can't guarantee the file system integrity of the created
+     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
+     * process)</p>
      */
     inline CreateImageRequest& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
 
@@ -305,12 +333,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
@@ -320,12 +348,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
@@ -335,12 +363,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
@@ -350,12 +378,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
@@ -365,12 +393,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
@@ -380,12 +408,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
@@ -395,12 +423,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
@@ -410,12 +438,12 @@ namespace Model
      * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
      * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
      * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other EBS volumes that
-     * are attached to the instance, the value for <code>ResourceType</code> must be
-     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
-     * created.</p> </li> </ul> <p>If you specify other values for
-     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
-     * after it has been created, see <a
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */

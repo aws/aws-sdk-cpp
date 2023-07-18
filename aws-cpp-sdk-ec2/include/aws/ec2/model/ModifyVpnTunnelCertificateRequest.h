@@ -37,42 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline ModifyVpnTunnelCertificateRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline ModifyVpnTunnelCertificateRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Site-to-Site VPN connection.</p>
+     * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
     inline ModifyVpnTunnelCertificateRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
 

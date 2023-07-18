@@ -20,6 +20,14 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <fstream>
 #include <thread>
+#include <aws/core/utils/logging/LogMacros.h>
+
+// TODO: temporary fix for naming conflicts for Windows.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#endif
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -86,6 +94,9 @@ protected:
         mockHttpClient = nullptr;
         mockHttpClientFactory = nullptr;
 
+        Aws::Environment::UnSetEnv("AWS_LAMBDA_FUNCTION_NAME");
+        Aws::Environment::UnSetEnv("_X_AMZN_TRACE_ID");
+
         CleanupHttp();
         InitHttp();
     }
@@ -133,6 +144,37 @@ protected:
     }
 };
 
+TEST_F(AWSClientTestSuite, TestCreateHttpRequestWithIpV6KeepsEndpointWhenNoPortInURI)
+{
+    mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+    mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+    mockHttpClientFactory->SetClient(mockHttpClient);
+    SetHttpClientFactory(mockHttpClientFactory);
+    // Region provider is initiated during Aws::Init(), after setting mock http client, we need to re-initiate it.
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Internal::InitEC2MetadataClient();
+    URI requestUri = "http://[fd00:ec2::254]/latest/meta-data/placement/availability-zone";
+    std::shared_ptr<HttpRequest> azRequest = CreateHttpRequest(requestUri, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    Aws::String parsedUri = azRequest->GetURIString();
+    ASSERT_STREQ("http://[fd00:ec2::254]/latest/meta-data/placement/availability-zone", parsedUri.c_str());
+}
+
+TEST_F(AWSClientTestSuite, TestCreateHttpRequestWithIpV6KeepsEndpointWhenPortInURI)
+{
+    mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+    mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+    mockHttpClientFactory->SetClient(mockHttpClient);
+    SetHttpClientFactory(mockHttpClientFactory);
+    // Region provider is initiated during Aws::Init(), after setting mock http client, we need to re-initiate it.
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Internal::InitEC2MetadataClient();
+    URI requestUri = "http://[fd00:ec2::254]:8080/latest/meta-data/placement/availability-zone";
+    std::shared_ptr<HttpRequest> azRequest = CreateHttpRequest(requestUri, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    Aws::String parsedUri = azRequest->GetURIString();
+    ASSERT_STREQ("http://[fd00:ec2::254]:8080/latest/meta-data/placement/availability-zone", parsedUri.c_str());
+}
+
+
 class AWSConfigTestSuite : public ::testing::Test
 {
 protected:
@@ -143,6 +185,7 @@ protected:
         SaveEnvironmentVariable("AWS_PROFILE");
         SaveEnvironmentVariable("AWS_DEFAULT_REGION");
         SaveEnvironmentVariable("AWS_REGION");
+        SaveEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT");
 
         Aws::StringStream ss;
         ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
@@ -152,6 +195,7 @@ protected:
         Aws::Environment::UnSetEnv("AWS_PROFILE");
         Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
         Aws::Environment::UnSetEnv("AWS_REGION");
+        Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
 
         auto profileDirectory = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
         Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
@@ -403,6 +447,107 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     ASSERT_TRUE(outcome.IsSuccess());
     ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(3, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+}
+
+TEST_F(AWSClientTestSuite, TestRecursionDetection)
+{
+    struct AWSClientTestSuite_TestRecursionDetection_TestCase
+    {
+        Aws::Map<Aws::String, Aws::String> envVars;
+        Aws::Map<Aws::String, Aws::String> requestHeadersBefore;
+        Aws::Map<Aws::String, Aws::String> requestHeadersAfter;
+        bool xAmznTraceIdHeaderExpected;
+    };
+
+    static const std::vector<AWSClientTestSuite_TestRecursionDetection_TestCase> TEST_CASES =
+            {
+                    {{}, {}, {}, false},
+
+                    {/*envVars*/ {{"AWS_LAMBDA_FUNCTION_NAME", "some-function"},
+                                  {"_X_AMZN_TRACE_ID", "Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {{"X-Amzn-Trace-Id", "Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2"}},
+                     /*xAmznTraceIdHeaderExpected*/ true},
+
+                    {/*envVars*/ {{"_X_AMZN_TRACE_ID", "Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {},
+                     /*xAmznTraceIdHeaderExpected*/ false},
+
+                    {/*envVars*/ {{"AWS_LAMBDA_FUNCTION_NAME", "some-function"},
+                                  {"_X_AMZN_TRACE_ID", "first\nsecond"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {{"X-Amzn-Trace-Id", "first%0Asecond"}},
+                     /*xAmznTraceIdHeaderExpected*/ true},
+
+                    {/*envVars*/ {{"AWS_LAMBDA_FUNCTION_NAME", "some-function"},
+                                  {"_X_AMZN_TRACE_ID", "test123-=;:+&[]{}\"'"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {{"X-Amzn-Trace-Id", "test123-=;:+&[]{}\"'"}},
+                     /*xAmznTraceIdHeaderExpected*/ true}
+            };
+
+    for(const auto& test_case : TEST_CASES)
+    {
+        // Set environment
+        Aws::Environment::UnSetEnv("AWS_LAMBDA_FUNCTION_NAME");
+        Aws::Environment::UnSetEnv("_X_AMZN_TRACE_ID");
+
+        for(const auto& envVarToSet : test_case.envVars)
+        {
+            Aws::Environment::SetEnv(envVarToSet.first.c_str(), envVarToSet.second.c_str(), /*overwrite*/ true);
+        }
+
+        ClientConfiguration config;
+        auto countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG);
+        config.retryStrategy = std::static_pointer_cast<DefaultRetryStrategy>(countedRetryStrategy); // must be set thanks to the Mock design
+        MockAWSClient mockedClient(config);
+
+        HeaderValueCollection responseHeaders;
+        QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+
+        // Prepare request
+        AmazonWebServiceRequestMock request;
+        auto requestHeaders = request.GetHeaders();
+        for(const auto& requestHeaderToSet : test_case.requestHeadersBefore)
+        {
+            requestHeaders.emplace(requestHeaderToSet);
+        }
+        request.SetHeaders(requestHeaders);
+
+        // Make request
+        auto outcome = mockedClient.MakeRequest(request);
+        ASSERT_TRUE(outcome.IsSuccess());
+
+        // Validate actual headers set
+        const auto& requestsMade = mockHttpClient->GetAllRequestsMade();
+        ASSERT_EQ(1u, requestsMade.size());
+
+        if(test_case.xAmznTraceIdHeaderExpected)
+        {
+            for(const auto& expectedHeader : test_case.requestHeadersAfter)
+            {
+                ASSERT_TRUE(requestsMade[0].HasHeader(expectedHeader.first.c_str()));
+                const auto& headersMade = requestsMade[0].GetHeaders();
+                auto setHeaderIt = headersMade.find(expectedHeader.first);
+                if(setHeaderIt == headersMade.end())
+                {
+                    setHeaderIt = headersMade.find(Aws::Utils::StringUtils::ToLower(expectedHeader.first.c_str()));
+                }
+
+                ASSERT_TRUE(setHeaderIt != headersMade.end());
+                if(setHeaderIt != headersMade.end())
+                {
+                    ASSERT_EQ(expectedHeader.second, setHeaderIt->second);
+                }
+            }
+        }
+        else
+        {
+            ASSERT_FALSE(requestsMade[0].HasHeader("X-Amzn-Trace-Id"));
+        }
+        mockHttpClient->Reset();
+    }
 }
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
@@ -744,4 +889,158 @@ TEST_F(AWSRegionTest, TestResolveDefaultRegion)
     ASSERT_STREQ("us-east-1", config.region.c_str());
 
     Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+
+class AWSMetadataEndpointTestSuite : public ::testing::Test
+{
+public:
+    void SetUp()
+    {
+        SaveEnvironmentVariable("AWS_CONFIG_FILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
+        SaveEnvironmentVariable("AWS_PROFILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_REGION");
+        SaveEnvironmentVariable("AWS_REGION");
+        SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
+        SaveEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+
+        Aws::StringStream ss;
+        ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+        m_configFileName = ss.str();
+        Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFileName.c_str(), 1);
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
+        Aws::Environment::UnSetEnv("AWS_PROFILE");
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+        Aws::Environment::UnSetEnv("AWS_REGION");
+        Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+
+        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+    }
+
+    void TearDown()
+    {
+        RestoreEnvironmentVariables();
+    }
+
+    void SaveEnvironmentVariable(const char* variableName)
+    {
+        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
+    }
+
+    void RestoreEnvironmentVariables()
+    {
+        for(const auto& iter : m_environment)
+        {
+            if(iter.second.empty())
+            {
+                Aws::Environment::UnSetEnv(iter.first);
+            }
+            else
+            {
+                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
+            }
+        }
+    }
+
+    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
+    Aws::String m_configFileName;
+    std::shared_ptr<MockHttpClient> mockHttpClient;
+    std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+};
+
+TEST_F(AWSMetadataEndpointTestSuite, TestUndeclaredEndpointForEC2MetadataInEnvUsesDefaultURI)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE");
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://169.254.169.254", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataIsReadFromEnvWhenDeclared)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE");
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataCanBeOverriddenBySet)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE");
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
+
+    client->SetEndpoint("http://127.0.0.1");
+    EXPECT_EQ("http://127.0.0.1", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsSetWhenNoExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV6", 1/*overwrite*/);
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[fd00:ec2::254]", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV4ModeIsSetWhenNoExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV4", 1/*overwrite*/);
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+
+    EXPECT_EQ("http://169.254.169.254", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsIgnoredSetWhenExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV6", 1/*overwrite*/);
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV4ModeIsIgnoredSetWhenExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV4", 1/*overwrite*/);
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
 }

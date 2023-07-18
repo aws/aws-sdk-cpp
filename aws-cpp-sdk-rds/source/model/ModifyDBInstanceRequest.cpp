@@ -73,7 +73,15 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_certificateRotationRestart(false),
     m_certificateRotationRestartHasBeenSet(false),
     m_replicaMode(ReplicaMode::NOT_SET),
-    m_replicaModeHasBeenSet(false)
+    m_replicaModeHasBeenSet(false),
+    m_enableCustomerOwnedIp(false),
+    m_enableCustomerOwnedIpHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_automationMode(AutomationMode::NOT_SET),
+    m_automationModeHasBeenSet(false),
+    m_resumeFullAutomationModeMinutes(0),
+    m_resumeFullAutomationModeMinutesHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -311,6 +319,31 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_replicaModeHasBeenSet)
   {
     ss << "ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+  }
+
+  if(m_enableCustomerOwnedIpHasBeenSet)
+  {
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+    ss << "AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+
+  if(m_automationModeHasBeenSet)
+  {
+    ss << "AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+  }
+
+  if(m_resumeFullAutomationModeMinutesHasBeenSet)
+  {
+    ss << "ResumeFullAutomationModeMinutes=" << m_resumeFullAutomationModeMinutes << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -24,8 +24,12 @@ ShareInvitationSummary::ShareInvitationSummary() :
     m_sharedWithHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
+    m_shareResourceType(ShareResourceType::NOT_SET),
+    m_shareResourceTypeHasBeenSet(false),
     m_workloadNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false)
+    m_workloadIdHasBeenSet(false),
+    m_lensNameHasBeenSet(false),
+    m_lensArnHasBeenSet(false)
 {
 }
 
@@ -35,8 +39,12 @@ ShareInvitationSummary::ShareInvitationSummary(JsonView jsonValue) :
     m_sharedWithHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
+    m_shareResourceType(ShareResourceType::NOT_SET),
+    m_shareResourceTypeHasBeenSet(false),
     m_workloadNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false)
+    m_workloadIdHasBeenSet(false),
+    m_lensNameHasBeenSet(false),
+    m_lensArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +79,13 @@ ShareInvitationSummary& ShareInvitationSummary::operator =(JsonView jsonValue)
     m_permissionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShareResourceType"))
+  {
+    m_shareResourceType = ShareResourceTypeMapper::GetShareResourceTypeForName(jsonValue.GetString("ShareResourceType"));
+
+    m_shareResourceTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
@@ -83,6 +98,20 @@ ShareInvitationSummary& ShareInvitationSummary::operator =(JsonView jsonValue)
     m_workloadId = jsonValue.GetString("WorkloadId");
 
     m_workloadIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LensName"))
+  {
+    m_lensName = jsonValue.GetString("LensName");
+
+    m_lensNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LensArn"))
+  {
+    m_lensArn = jsonValue.GetString("LensArn");
+
+    m_lensArnHasBeenSet = true;
   }
 
   return *this;
@@ -115,6 +144,11 @@ JsonValue ShareInvitationSummary::Jsonize() const
    payload.WithString("PermissionType", PermissionTypeMapper::GetNameForPermissionType(m_permissionType));
   }
 
+  if(m_shareResourceTypeHasBeenSet)
+  {
+   payload.WithString("ShareResourceType", ShareResourceTypeMapper::GetNameForShareResourceType(m_shareResourceType));
+  }
+
   if(m_workloadNameHasBeenSet)
   {
    payload.WithString("WorkloadName", m_workloadName);
@@ -124,6 +158,18 @@ JsonValue ShareInvitationSummary::Jsonize() const
   if(m_workloadIdHasBeenSet)
   {
    payload.WithString("WorkloadId", m_workloadId);
+
+  }
+
+  if(m_lensNameHasBeenSet)
+  {
+   payload.WithString("LensName", m_lensName);
+
+  }
+
+  if(m_lensArnHasBeenSet)
+  {
+   payload.WithString("LensArn", m_lensArn);
 
   }
 

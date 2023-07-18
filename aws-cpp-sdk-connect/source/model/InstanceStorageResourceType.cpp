@@ -26,6 +26,7 @@ namespace Aws
         static const int MEDIA_STREAMS_HASH = HashingUtils::HashString("MEDIA_STREAMS");
         static const int CONTACT_TRACE_RECORDS_HASH = HashingUtils::HashString("CONTACT_TRACE_RECORDS");
         static const int AGENT_EVENTS_HASH = HashingUtils::HashString("AGENT_EVENTS");
+        static const int REAL_TIME_CONTACT_ANALYSIS_SEGMENTS_HASH = HashingUtils::HashString("REAL_TIME_CONTACT_ANALYSIS_SEGMENTS");
 
 
         InstanceStorageResourceType GetInstanceStorageResourceTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return InstanceStorageResourceType::AGENT_EVENTS;
           }
+          else if (hashCode == REAL_TIME_CONTACT_ANALYSIS_SEGMENTS_HASH)
+          {
+            return InstanceStorageResourceType::REAL_TIME_CONTACT_ANALYSIS_SEGMENTS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "CONTACT_TRACE_RECORDS";
           case InstanceStorageResourceType::AGENT_EVENTS:
             return "AGENT_EVENTS";
+          case InstanceStorageResourceType::REAL_TIME_CONTACT_ANALYSIS_SEGMENTS:
+            return "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

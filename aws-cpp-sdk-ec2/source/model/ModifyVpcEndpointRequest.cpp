@@ -23,6 +23,9 @@ ModifyVpcEndpointRequest::ModifyVpcEndpointRequest() :
     m_removeSubnetIdsHasBeenSet(false),
     m_addSecurityGroupIdsHasBeenSet(false),
     m_removeSecurityGroupIdsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
+    m_dnsOptionsHasBeenSet(false),
     m_privateDnsEnabled(false),
     m_privateDnsEnabledHasBeenSet(false)
 {
@@ -116,6 +119,16 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       removeSecurityGroupIdsCount++;
     }
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
+  if(m_dnsOptionsHasBeenSet)
+  {
+    m_dnsOptions.OutputToStream(ss, "DnsOptions");
   }
 
   if(m_privateDnsEnabledHasBeenSet)

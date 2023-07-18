@@ -77,6 +77,84 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline StartTopicsDetectionJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline StartTopicsDetectionJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
+     * fully qualified identifier for the job. It includes the AWS account, Region, and
+     * the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline StartTopicsDetectionJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+
+
+    /**
      * <p>The status of the job: </p> <ul> <li> <p>SUBMITTED - The job has been
      * received and is queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon
      * Comprehend is processing the job.</p> </li> <li> <p>COMPLETED - The job was
@@ -129,6 +207,8 @@ namespace Model
   private:
 
     Aws::String m_jobId;
+
+    Aws::String m_jobArn;
 
     JobStatus m_jobStatus;
   };

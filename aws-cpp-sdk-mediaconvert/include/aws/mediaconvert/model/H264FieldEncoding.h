@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     PAFF,
-    FORCE_FIELD
+    FORCE_FIELD,
+    MBAFF
   };
 
 namespace H264FieldEncodingMapper

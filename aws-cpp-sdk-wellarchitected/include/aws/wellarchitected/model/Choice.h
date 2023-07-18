@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/model/ChoiceContent.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +112,68 @@ namespace Model
     
     inline Choice& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The choice level helpful resource.</p>
+     */
+    inline const ChoiceContent& GetHelpfulResource() const{ return m_helpfulResource; }
+
+    /**
+     * <p>The choice level helpful resource.</p>
+     */
+    inline bool HelpfulResourceHasBeenSet() const { return m_helpfulResourceHasBeenSet; }
+
+    /**
+     * <p>The choice level helpful resource.</p>
+     */
+    inline void SetHelpfulResource(const ChoiceContent& value) { m_helpfulResourceHasBeenSet = true; m_helpfulResource = value; }
+
+    /**
+     * <p>The choice level helpful resource.</p>
+     */
+    inline void SetHelpfulResource(ChoiceContent&& value) { m_helpfulResourceHasBeenSet = true; m_helpfulResource = std::move(value); }
+
+    /**
+     * <p>The choice level helpful resource.</p>
+     */
+    inline Choice& WithHelpfulResource(const ChoiceContent& value) { SetHelpfulResource(value); return *this;}
+
+    /**
+     * <p>The choice level helpful resource.</p>
+     */
+    inline Choice& WithHelpfulResource(ChoiceContent&& value) { SetHelpfulResource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The choice level improvement plan.</p>
+     */
+    inline const ChoiceContent& GetImprovementPlan() const{ return m_improvementPlan; }
+
+    /**
+     * <p>The choice level improvement plan.</p>
+     */
+    inline bool ImprovementPlanHasBeenSet() const { return m_improvementPlanHasBeenSet; }
+
+    /**
+     * <p>The choice level improvement plan.</p>
+     */
+    inline void SetImprovementPlan(const ChoiceContent& value) { m_improvementPlanHasBeenSet = true; m_improvementPlan = value; }
+
+    /**
+     * <p>The choice level improvement plan.</p>
+     */
+    inline void SetImprovementPlan(ChoiceContent&& value) { m_improvementPlanHasBeenSet = true; m_improvementPlan = std::move(value); }
+
+    /**
+     * <p>The choice level improvement plan.</p>
+     */
+    inline Choice& WithImprovementPlan(const ChoiceContent& value) { SetImprovementPlan(value); return *this;}
+
+    /**
+     * <p>The choice level improvement plan.</p>
+     */
+    inline Choice& WithImprovementPlan(ChoiceContent&& value) { SetImprovementPlan(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_choiceId;
@@ -121,6 +184,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    ChoiceContent m_helpfulResource;
+    bool m_helpfulResourceHasBeenSet;
+
+    ChoiceContent m_improvementPlan;
+    bool m_improvementPlanHasBeenSet;
   };
 
 } // namespace Model

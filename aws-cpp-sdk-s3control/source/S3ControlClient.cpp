@@ -16,45 +16,64 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/platform/Environment.h>
 
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/S3ControlEndpoint.h>
 #include <aws/s3control/S3ControlErrorMarshaller.h>
 #include <aws/s3control/S3ControlARN.h>
 #include <aws/s3control/model/CreateAccessPointRequest.h>
+#include <aws/s3control/model/CreateAccessPointForObjectLambdaRequest.h>
 #include <aws/s3control/model/CreateBucketRequest.h>
 #include <aws/s3control/model/CreateJobRequest.h>
+#include <aws/s3control/model/CreateMultiRegionAccessPointRequest.h>
 #include <aws/s3control/model/DeleteAccessPointRequest.h>
+#include <aws/s3control/model/DeleteAccessPointForObjectLambdaRequest.h>
 #include <aws/s3control/model/DeleteAccessPointPolicyRequest.h>
+#include <aws/s3control/model/DeleteAccessPointPolicyForObjectLambdaRequest.h>
 #include <aws/s3control/model/DeleteBucketRequest.h>
 #include <aws/s3control/model/DeleteBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/DeleteBucketPolicyRequest.h>
 #include <aws/s3control/model/DeleteBucketTaggingRequest.h>
 #include <aws/s3control/model/DeleteJobTaggingRequest.h>
+#include <aws/s3control/model/DeleteMultiRegionAccessPointRequest.h>
 #include <aws/s3control/model/DeletePublicAccessBlockRequest.h>
 #include <aws/s3control/model/DeleteStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/DeleteStorageLensConfigurationTaggingRequest.h>
 #include <aws/s3control/model/DescribeJobRequest.h>
+#include <aws/s3control/model/DescribeMultiRegionAccessPointOperationRequest.h>
 #include <aws/s3control/model/GetAccessPointRequest.h>
+#include <aws/s3control/model/GetAccessPointConfigurationForObjectLambdaRequest.h>
+#include <aws/s3control/model/GetAccessPointForObjectLambdaRequest.h>
 #include <aws/s3control/model/GetAccessPointPolicyRequest.h>
+#include <aws/s3control/model/GetAccessPointPolicyForObjectLambdaRequest.h>
 #include <aws/s3control/model/GetAccessPointPolicyStatusRequest.h>
+#include <aws/s3control/model/GetAccessPointPolicyStatusForObjectLambdaRequest.h>
 #include <aws/s3control/model/GetBucketRequest.h>
 #include <aws/s3control/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/GetBucketPolicyRequest.h>
 #include <aws/s3control/model/GetBucketTaggingRequest.h>
 #include <aws/s3control/model/GetJobTaggingRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointPolicyRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointPolicyStatusRequest.h>
 #include <aws/s3control/model/GetPublicAccessBlockRequest.h>
 #include <aws/s3control/model/GetStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/GetStorageLensConfigurationTaggingRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
+#include <aws/s3control/model/ListAccessPointsForObjectLambdaRequest.h>
 #include <aws/s3control/model/ListJobsRequest.h>
+#include <aws/s3control/model/ListMultiRegionAccessPointsRequest.h>
 #include <aws/s3control/model/ListRegionalBucketsRequest.h>
 #include <aws/s3control/model/ListStorageLensConfigurationsRequest.h>
+#include <aws/s3control/model/PutAccessPointConfigurationForObjectLambdaRequest.h>
 #include <aws/s3control/model/PutAccessPointPolicyRequest.h>
+#include <aws/s3control/model/PutAccessPointPolicyForObjectLambdaRequest.h>
 #include <aws/s3control/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/PutBucketPolicyRequest.h>
 #include <aws/s3control/model/PutBucketTaggingRequest.h>
 #include <aws/s3control/model/PutJobTaggingRequest.h>
+#include <aws/s3control/model/PutMultiRegionAccessPointPolicyRequest.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/PutStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/PutStorageLensConfigurationTaggingRequest.h>
@@ -109,9 +128,10 @@ S3ControlClient::~S3ControlClient()
 {
 }
 
-void S3ControlClient::init(const ClientConfiguration& config)
+void S3ControlClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("S3 Control");
+  LoadS3ControlSpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   m_useDualStack = config.useDualStack;
@@ -163,7 +183,7 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "");
   if (!computeEndpointOutcome.IsSuccess())
@@ -185,10 +205,8 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
       return CreateAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/accesspoint/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/accesspoint/");
+  uri.AddPathSegment(request.GetName());
   return CreateAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -210,6 +228,65 @@ void S3ControlClient::CreateAccessPointAsyncHelper(const CreateAccessPointReques
   handler(this, request, CreateAccessPoint(request), context);
 }
 
+CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObjectLambda(const CreateAccessPointForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAccessPointForObjectLambda", "Required field: Name, is not set");
+    return CreateAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return CreateAccessPointForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("CreateAccessPointForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return CreateAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateAccessPointForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  return CreateAccessPointForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+CreateAccessPointForObjectLambdaOutcomeCallable S3ControlClient::CreateAccessPointForObjectLambdaCallable(const CreateAccessPointForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccessPointForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessPointForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::CreateAccessPointForObjectLambdaAsync(const CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPointForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::CreateAccessPointForObjectLambdaAsyncHelper(const CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAccessPointForObjectLambda(request), context);
+}
+
 CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& request) const
 {
   if (!request.BucketHasBeenSet())
@@ -223,10 +300,8 @@ CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& req
     return CreateBucketOutcome(computeEndpointOutcome.GetError());
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
-  Aws::StringStream ss;
-  ss << "/v20180820/bucket/";
-  ss << request.GetBucket();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/bucket/");
+  uri.AddPathSegment(request.GetBucket());
   return CreateBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -275,9 +350,7 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
       return CreateJobOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs");
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -299,6 +372,55 @@ void S3ControlClient::CreateJobAsyncHelper(const CreateJobRequest& request, cons
   handler(this, request, CreateJob(request), context);
 }
 
+CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoint(const CreateMultiRegionAccessPointRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateMultiRegionAccessPoint", "Required field: AccountId, is not set");
+    return CreateMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return CreateMultiRegionAccessPointOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("CreateMultiRegionAccessPoint", "HostPrefix required field: AccountId, is empty");
+      return CreateMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateMultiRegionAccessPoint", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/create");
+  return CreateMultiRegionAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+CreateMultiRegionAccessPointOutcomeCallable S3ControlClient::CreateMultiRegionAccessPointCallable(const CreateMultiRegionAccessPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMultiRegionAccessPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::CreateMultiRegionAccessPointAsync(const CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::CreateMultiRegionAccessPointAsyncHelper(const CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMultiRegionAccessPoint(request), context);
+}
+
 DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -315,7 +437,7 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -337,8 +459,6 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
       return DeleteAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -360,6 +480,65 @@ void S3ControlClient::DeleteAccessPointAsyncHelper(const DeleteAccessPointReques
   handler(this, request, DeleteAccessPoint(request), context);
 }
 
+DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObjectLambda(const DeleteAccessPointForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAccessPointForObjectLambda", "Required field: Name, is not set");
+    return DeleteAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteAccessPointForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DeleteAccessPointForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return DeleteAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteAccessPointForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  return DeleteAccessPointForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteAccessPointForObjectLambdaOutcomeCallable S3ControlClient::DeleteAccessPointForObjectLambdaCallable(const DeleteAccessPointForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessPointForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessPointForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DeleteAccessPointForObjectLambdaAsync(const DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPointForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DeleteAccessPointForObjectLambdaAsyncHelper(const DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAccessPointForObjectLambda(request), context);
+}
+
 DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const DeleteAccessPointPolicyRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -376,7 +555,7 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -398,9 +577,7 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
       return DeleteAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return DeleteAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -422,6 +599,66 @@ void S3ControlClient::DeleteAccessPointPolicyAsyncHelper(const DeleteAccessPoint
   handler(this, request, DeleteAccessPointPolicy(request), context);
 }
 
+DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPointPolicyForObjectLambda(const DeleteAccessPointPolicyForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAccessPointPolicyForObjectLambda", "Required field: Name, is not set");
+    return DeleteAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteAccessPointPolicyForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DeleteAccessPointPolicyForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return DeleteAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteAccessPointPolicyForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policy");
+  return DeleteAccessPointPolicyForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::DeleteAccessPointPolicyForObjectLambdaCallable(const DeleteAccessPointPolicyForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessPointPolicyForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessPointPolicyForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DeleteAccessPointPolicyForObjectLambdaAsync(const DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPointPolicyForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DeleteAccessPointPolicyForObjectLambdaAsyncHelper(const DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAccessPointPolicyForObjectLambda(request), context);
+}
+
 DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& request) const
 {
   if (!request.BucketHasBeenSet())
@@ -438,7 +675,7 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -460,8 +697,6 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
       return DeleteBucketOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -499,7 +734,7 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -521,9 +756,7 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
       return DeleteBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/lifecycleconfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/lifecycleconfiguration");
   return DeleteBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -561,7 +794,7 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -583,9 +816,7 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
       return DeleteBucketPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return DeleteBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -623,7 +854,7 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -645,9 +876,7 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
       return DeleteBucketTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagging");
   return DeleteBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -701,11 +930,9 @@ DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTagging
       return DeleteJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/tagging");
   return DeleteJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -725,6 +952,55 @@ void S3ControlClient::DeleteJobTaggingAsync(const DeleteJobTaggingRequest& reque
 void S3ControlClient::DeleteJobTaggingAsyncHelper(const DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteJobTagging(request), context);
+}
+
+DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoint(const DeleteMultiRegionAccessPointRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMultiRegionAccessPoint", "Required field: AccountId, is not set");
+    return DeleteMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteMultiRegionAccessPointOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DeleteMultiRegionAccessPoint", "HostPrefix required field: AccountId, is empty");
+      return DeleteMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteMultiRegionAccessPoint", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/delete");
+  return DeleteMultiRegionAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteMultiRegionAccessPointOutcomeCallable S3ControlClient::DeleteMultiRegionAccessPointCallable(const DeleteMultiRegionAccessPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMultiRegionAccessPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DeleteMultiRegionAccessPointAsync(const DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DeleteMultiRegionAccessPointAsyncHelper(const DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMultiRegionAccessPoint(request), context);
 }
 
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
@@ -754,9 +1030,7 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
       return DeletePublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/configuration/publicAccessBlock";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/configuration/publicAccessBlock");
   return DeletePublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -810,10 +1084,8 @@ DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfigur
       return DeleteStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
   return DeleteStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -867,11 +1139,9 @@ DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensC
       return DeleteStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
+  uri.AddPathSegments("/tagging");
   return DeleteStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -925,10 +1195,8 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
       return DescribeJobOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return DescribeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -950,6 +1218,61 @@ void S3ControlClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, 
   handler(this, request, DescribeJob(request), context);
 }
 
+DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiRegionAccessPointOperation(const DescribeMultiRegionAccessPointOperationRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "Required field: AccountId, is not set");
+    return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.RequestTokenARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "Required field: RequestTokenARN, is not set");
+    return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestTokenARN]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DescribeMultiRegionAccessPointOperationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "HostPrefix required field: AccountId, is empty");
+      return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/");
+  uri.AddPathSegments(request.GetRequestTokenARN());
+  return DescribeMultiRegionAccessPointOperationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DescribeMultiRegionAccessPointOperationOutcomeCallable S3ControlClient::DescribeMultiRegionAccessPointOperationCallable(const DescribeMultiRegionAccessPointOperationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMultiRegionAccessPointOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMultiRegionAccessPointOperation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DescribeMultiRegionAccessPointOperationAsync(const DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMultiRegionAccessPointOperationAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DescribeMultiRegionAccessPointOperationAsyncHelper(const DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMultiRegionAccessPointOperation(request), context);
+}
+
 GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -966,7 +1289,7 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -988,8 +1311,6 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
       return GetAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1011,6 +1332,125 @@ void S3ControlClient::GetAccessPointAsyncHelper(const GetAccessPointRequest& req
   handler(this, request, GetAccessPoint(request), context);
 }
 
+GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPointConfigurationForObjectLambda(const GetAccessPointConfigurationForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPointConfigurationForObjectLambda", "Required field: Name, is not set");
+    return GetAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetAccessPointConfigurationForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointConfigurationForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return GetAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointConfigurationForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return GetAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/configuration");
+  return GetAccessPointConfigurationForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetAccessPointConfigurationForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointConfigurationForObjectLambdaCallable(const GetAccessPointConfigurationForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointConfigurationForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointConfigurationForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetAccessPointConfigurationForObjectLambdaAsync(const GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointConfigurationForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetAccessPointConfigurationForObjectLambdaAsyncHelper(const GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessPointConfigurationForObjectLambda(request), context);
+}
+
+GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLambda(const GetAccessPointForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPointForObjectLambda", "Required field: Name, is not set");
+    return GetAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetAccessPointForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return GetAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return GetAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  return GetAccessPointForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetAccessPointForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointForObjectLambdaCallable(const GetAccessPointForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetAccessPointForObjectLambdaAsync(const GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetAccessPointForObjectLambdaAsyncHelper(const GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessPointForObjectLambda(request), context);
+}
+
 GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAccessPointPolicyRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -1027,7 +1467,7 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1049,9 +1489,7 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
       return GetAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return GetAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1073,6 +1511,66 @@ void S3ControlClient::GetAccessPointPolicyAsyncHelper(const GetAccessPointPolicy
   handler(this, request, GetAccessPointPolicy(request), context);
 }
 
+GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyForObjectLambda(const GetAccessPointPolicyForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPointPolicyForObjectLambda", "Required field: Name, is not set");
+    return GetAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetAccessPointPolicyForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointPolicyForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return GetAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointPolicyForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return GetAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policy");
+  return GetAccessPointPolicyForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointPolicyForObjectLambdaCallable(const GetAccessPointPolicyForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointPolicyForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointPolicyForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetAccessPointPolicyForObjectLambdaAsync(const GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointPolicyForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetAccessPointPolicyForObjectLambdaAsyncHelper(const GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessPointPolicyForObjectLambda(request), context);
+}
+
 GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(const GetAccessPointPolicyStatusRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -1089,7 +1587,7 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1111,9 +1609,7 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
       return GetAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policyStatus";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policyStatus");
   return GetAccessPointPolicyStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1135,6 +1631,66 @@ void S3ControlClient::GetAccessPointPolicyStatusAsyncHelper(const GetAccessPoint
   handler(this, request, GetAccessPointPolicyStatus(request), context);
 }
 
+GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyStatusForObjectLambda(const GetAccessPointPolicyStatusForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPointPolicyStatusForObjectLambda", "Required field: Name, is not set");
+    return GetAccessPointPolicyStatusForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetAccessPointPolicyStatusForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointPolicyStatusForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return GetAccessPointPolicyStatusForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetAccessPointPolicyStatusForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return GetAccessPointPolicyStatusForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policyStatus");
+  return GetAccessPointPolicyStatusForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetAccessPointPolicyStatusForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointPolicyStatusForObjectLambdaCallable(const GetAccessPointPolicyStatusForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointPolicyStatusForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointPolicyStatusForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetAccessPointPolicyStatusForObjectLambdaAsync(const GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointPolicyStatusForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetAccessPointPolicyStatusForObjectLambdaAsyncHelper(const GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessPointPolicyStatusForObjectLambda(request), context);
+}
+
 GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) const
 {
   if (!request.BucketHasBeenSet())
@@ -1151,7 +1707,7 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1173,8 +1729,6 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
       return GetBucketOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1212,7 +1766,7 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1234,9 +1788,7 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
       return GetBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/lifecycleconfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/lifecycleconfiguration");
   return GetBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1274,7 +1826,7 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1296,9 +1848,7 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
       return GetBucketPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return GetBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1336,7 +1886,7 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1358,9 +1908,7 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
       return GetBucketTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagging");
   return GetBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1414,11 +1962,9 @@ GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& 
       return GetJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/tagging");
   return GetJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1438,6 +1984,185 @@ void S3ControlClient::GetJobTaggingAsync(const GetJobTaggingRequest& request, co
 void S3ControlClient::GetJobTaggingAsyncHelper(const GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetJobTagging(request), context);
+}
+
+GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(const GetMultiRegionAccessPointRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPoint", "Required field: Name, is not set");
+    return GetMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/mrap/instances/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetMultiRegionAccessPointOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPoint", "HostPrefix required field: AccountId, is empty");
+      return GetMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPoint", "Invalid DNS host: " << uri.GetAuthority());
+      return GetMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  return GetMultiRegionAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetMultiRegionAccessPointOutcomeCallable S3ControlClient::GetMultiRegionAccessPointCallable(const GetMultiRegionAccessPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetMultiRegionAccessPointAsync(const GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetMultiRegionAccessPointAsyncHelper(const GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMultiRegionAccessPoint(request), context);
+}
+
+GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPointPolicy(const GetMultiRegionAccessPointPolicyRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicy", "Required field: Name, is not set");
+    return GetMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/mrap/instances/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetMultiRegionAccessPointPolicyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicy", "HostPrefix required field: AccountId, is empty");
+      return GetMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicy", "Invalid DNS host: " << uri.GetAuthority());
+      return GetMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policy");
+  return GetMultiRegionAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::GetMultiRegionAccessPointPolicyCallable(const GetMultiRegionAccessPointPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPointPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyAsync(const GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyAsyncHelper(const GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMultiRegionAccessPointPolicy(request), context);
+}
+
+GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAccessPointPolicyStatus(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicyStatus", "Required field: Name, is not set");
+    return GetMultiRegionAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/mrap/instances/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetMultiRegionAccessPointPolicyStatusOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicyStatus", "HostPrefix required field: AccountId, is empty");
+      return GetMultiRegionAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicyStatus", "Invalid DNS host: " << uri.GetAuthority());
+      return GetMultiRegionAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policystatus");
+  return GetMultiRegionAccessPointPolicyStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetMultiRegionAccessPointPolicyStatusOutcomeCallable S3ControlClient::GetMultiRegionAccessPointPolicyStatusCallable(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointPolicyStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPointPolicyStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsync(const GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointPolicyStatusAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsyncHelper(const GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMultiRegionAccessPointPolicyStatus(request), context);
 }
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
@@ -1467,9 +2192,7 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
       return GetPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/configuration/publicAccessBlock";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/configuration/publicAccessBlock");
   return GetPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1523,10 +2246,8 @@ GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(
       return GetStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
   return GetStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1580,11 +2301,9 @@ GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigu
       return GetStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
+  uri.AddPathSegments("/tagging");
   return GetStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1617,7 +2336,7 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1639,9 +2358,7 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
       return ListAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/accesspoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/accesspoint");
   return ListAccessPointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1661,6 +2378,55 @@ void S3ControlClient::ListAccessPointsAsync(const ListAccessPointsRequest& reque
 void S3ControlClient::ListAccessPointsAsyncHelper(const ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAccessPoints(request), context);
+}
+
+ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjectLambda(const ListAccessPointsForObjectLambdaRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAccessPointsForObjectLambda", "Required field: AccountId, is not set");
+    return ListAccessPointsForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListAccessPointsForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("ListAccessPointsForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return ListAccessPointsForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListAccessPointsForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return ListAccessPointsForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/accesspointforobjectlambda");
+  return ListAccessPointsForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+ListAccessPointsForObjectLambdaOutcomeCallable S3ControlClient::ListAccessPointsForObjectLambdaCallable(const ListAccessPointsForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessPointsForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPointsForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::ListAccessPointsForObjectLambdaAsync(const ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPointsForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::ListAccessPointsForObjectLambdaAsyncHelper(const ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccessPointsForObjectLambda(request), context);
 }
 
 ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
@@ -1690,9 +2456,7 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
       return ListJobsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1712,6 +2476,55 @@ void S3ControlClient::ListJobsAsync(const ListJobsRequest& request, const ListJo
 void S3ControlClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListJobs(request), context);
+}
+
+ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(const ListMultiRegionAccessPointsRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMultiRegionAccessPoints", "Required field: AccountId, is not set");
+    return ListMultiRegionAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListMultiRegionAccessPointsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("ListMultiRegionAccessPoints", "HostPrefix required field: AccountId, is empty");
+      return ListMultiRegionAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListMultiRegionAccessPoints", "Invalid DNS host: " << uri.GetAuthority());
+      return ListMultiRegionAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/mrap/instances");
+  return ListMultiRegionAccessPointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+ListMultiRegionAccessPointsOutcomeCallable S3ControlClient::ListMultiRegionAccessPointsCallable(const ListMultiRegionAccessPointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMultiRegionAccessPointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMultiRegionAccessPoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::ListMultiRegionAccessPointsAsync(const ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMultiRegionAccessPointsAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::ListMultiRegionAccessPointsAsyncHelper(const ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMultiRegionAccessPoints(request), context);
 }
 
 ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegionalBucketsRequest& request) const
@@ -1741,9 +2554,7 @@ ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegion
       return ListRegionalBucketsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/bucket";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/bucket");
   return ListRegionalBucketsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1792,9 +2603,7 @@ ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurati
       return ListStorageLensConfigurationsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens");
   return ListStorageLensConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1816,6 +2625,66 @@ void S3ControlClient::ListStorageLensConfigurationsAsyncHelper(const ListStorage
   handler(this, request, ListStorageLensConfigurations(request), context);
 }
 
+PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPointConfigurationForObjectLambda(const PutAccessPointConfigurationForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAccessPointConfigurationForObjectLambda", "Required field: Name, is not set");
+    return PutAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutAccessPointConfigurationForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutAccessPointConfigurationForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return PutAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutAccessPointConfigurationForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return PutAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/configuration");
+  return PutAccessPointConfigurationForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutAccessPointConfigurationForObjectLambdaOutcomeCallable S3ControlClient::PutAccessPointConfigurationForObjectLambdaCallable(const PutAccessPointConfigurationForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccessPointConfigurationForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccessPointConfigurationForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutAccessPointConfigurationForObjectLambdaAsync(const PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAccessPointConfigurationForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::PutAccessPointConfigurationForObjectLambdaAsyncHelper(const PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAccessPointConfigurationForObjectLambda(request), context);
+}
+
 PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAccessPointPolicyRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -1832,7 +2701,7 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1854,9 +2723,7 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
       return PutAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return PutAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1878,6 +2745,66 @@ void S3ControlClient::PutAccessPointPolicyAsyncHelper(const PutAccessPointPolicy
   handler(this, request, PutAccessPointPolicy(request), context);
 }
 
+PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicyForObjectLambda(const PutAccessPointPolicyForObjectLambdaRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAccessPointPolicyForObjectLambda", "Required field: Name, is not set");
+    return PutAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspointforobjectlambda/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutAccessPointPolicyForObjectLambdaOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutAccessPointPolicyForObjectLambda", "HostPrefix required field: AccountId, is empty");
+      return PutAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutAccessPointPolicyForObjectLambda", "Invalid DNS host: " << uri.GetAuthority());
+      return PutAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policy");
+  return PutAccessPointPolicyForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::PutAccessPointPolicyForObjectLambdaCallable(const PutAccessPointPolicyForObjectLambdaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccessPointPolicyForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccessPointPolicyForObjectLambda(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutAccessPointPolicyForObjectLambdaAsync(const PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAccessPointPolicyForObjectLambdaAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::PutAccessPointPolicyForObjectLambdaAsyncHelper(const PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAccessPointPolicyForObjectLambda(request), context);
+}
+
 PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
 {
   if (!request.BucketHasBeenSet())
@@ -1894,7 +2821,7 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1916,9 +2843,7 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
       return PutBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/lifecycleconfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/lifecycleconfiguration");
   return PutBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1956,7 +2881,7 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1978,9 +2903,7 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
       return PutBucketPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return PutBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2018,7 +2941,7 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -2040,9 +2963,7 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
       return PutBucketTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagging");
   return PutBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2096,11 +3017,9 @@ PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& 
       return PutJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/tagging");
   return PutJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2120,6 +3039,55 @@ void S3ControlClient::PutJobTaggingAsync(const PutJobTaggingRequest& request, co
 void S3ControlClient::PutJobTaggingAsyncHelper(const PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutJobTagging(request), context);
+}
+
+PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPointPolicy(const PutMultiRegionAccessPointPolicyRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMultiRegionAccessPointPolicy", "Required field: AccountId, is not set");
+    return PutMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutMultiRegionAccessPointPolicyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutMultiRegionAccessPointPolicy", "HostPrefix required field: AccountId, is empty");
+      return PutMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutMultiRegionAccessPointPolicy", "Invalid DNS host: " << uri.GetAuthority());
+      return PutMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/put-policy");
+  return PutMultiRegionAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::PutMultiRegionAccessPointPolicyCallable(const PutMultiRegionAccessPointPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutMultiRegionAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMultiRegionAccessPointPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutMultiRegionAccessPointPolicyAsync(const PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutMultiRegionAccessPointPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::PutMultiRegionAccessPointPolicyAsyncHelper(const PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutMultiRegionAccessPointPolicy(request), context);
 }
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
@@ -2149,9 +3117,7 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
       return PutPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/configuration/publicAccessBlock";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/configuration/publicAccessBlock");
   return PutPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2205,10 +3171,8 @@ PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(
       return PutStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
   return PutStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2262,11 +3226,9 @@ PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigu
       return PutStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
+  uri.AddPathSegments("/tagging");
   return PutStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2325,11 +3287,9 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
       return UpdateJobPriorityOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/priority";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/priority");
   return UpdateJobPriorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2388,11 +3348,9 @@ UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusReq
       return UpdateJobStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/status");
   return UpdateJobStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2414,9 +3372,6 @@ void S3ControlClient::UpdateJobStatusAsyncHelper(const UpdateJobStatusRequest& r
   handler(this, request, UpdateJobStatus(request), context);
 }
 
-
-
-#include<aws/core/platform/Environment.h>
 
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
@@ -2446,6 +3401,12 @@ void S3ControlClient::LoadS3ControlSpecificConfig(const Aws::String& profile)
 
 ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(bool hasOutpostId) const
 {
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
+
     Aws::StringStream ss;
     ss << m_scheme << "://";
     if (hasOutpostId)
@@ -2454,6 +3415,11 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(bool hasOutpostId)
         {
             return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
                 "S3 Outposts endpoints do not support dualstack right now.", false));
+        }
+        else if (m_useCustomEndpoint)
+        {
+            ss << m_baseUri;
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), "s3-outposts"));
         }
         else
         {
@@ -2470,6 +3436,12 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(bool hasOutpostId)
 
 ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const
 {
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
+
     Aws::StringStream ss;
     ss << m_scheme << "://";
     Aws::String signerRegion = Aws::Region::ComputeSignerRegion(m_region);
@@ -2477,12 +3449,6 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(const Aws::String&
 
     if (arn)
     {
-        if (m_useCustomEndpoint)
-        {
-            return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-                "Custom endpoint is not compatible with ARNs as request parameters.", false));
-        }
-
         S3ControlARNOutcome S3ControlArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
         if (!S3ControlArnOutcome.IsSuccess())
         {
@@ -2496,7 +3462,7 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(const Aws::String&
                 return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
                     "Outposts Access Points do not support dualstack right now.", false));
             }
-            ss << S3ControlEndpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region);
+            ss << S3ControlEndpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             if (!uriPathPrefix.empty())
             {
                 ss << uriPathPrefix << arn.GetSubResourceId();

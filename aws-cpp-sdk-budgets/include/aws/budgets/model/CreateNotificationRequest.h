@@ -90,50 +90,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline CreateNotificationRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline CreateNotificationRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the budget that you want AWS to notify you about. Budget names
-     * must be unique within an account.</p>
+     * <p>The name of the budget that you want Amazon Web Services to notify you about.
+     * Budget names must be unique within an account.</p>
      */
     inline CreateNotificationRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 

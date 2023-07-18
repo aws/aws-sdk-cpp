@@ -20,13 +20,17 @@ namespace Model
 
 ExcelOptions::ExcelOptions() : 
     m_sheetNamesHasBeenSet(false),
-    m_sheetIndexesHasBeenSet(false)
+    m_sheetIndexesHasBeenSet(false),
+    m_headerRow(false),
+    m_headerRowHasBeenSet(false)
 {
 }
 
 ExcelOptions::ExcelOptions(JsonView jsonValue) : 
     m_sheetNamesHasBeenSet(false),
-    m_sheetIndexesHasBeenSet(false)
+    m_sheetIndexesHasBeenSet(false),
+    m_headerRow(false),
+    m_headerRowHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ ExcelOptions& ExcelOptions::operator =(JsonView jsonValue)
       m_sheetIndexes.push_back(sheetIndexesJsonList[sheetIndexesIndex].AsInteger());
     }
     m_sheetIndexesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HeaderRow"))
+  {
+    m_headerRow = jsonValue.GetBool("HeaderRow");
+
+    m_headerRowHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +90,12 @@ JsonValue ExcelOptions::Jsonize() const
      sheetIndexesJsonList[sheetIndexesIndex].AsInteger(m_sheetIndexes[sheetIndexesIndex]);
    }
    payload.WithArray("SheetIndexes", std::move(sheetIndexesJsonList));
+
+  }
+
+  if(m_headerRowHasBeenSet)
+  {
+   payload.WithBool("HeaderRow", m_headerRow);
 
   }
 

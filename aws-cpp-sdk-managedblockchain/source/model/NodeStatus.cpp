@@ -22,11 +22,13 @@ namespace Aws
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int INACCESSIBLE_ENCRYPTION_KEY_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_KEY");
 
 
         NodeStatus GetNodeStatusForName(const Aws::String& name)
@@ -39,6 +41,10 @@ namespace Aws
           else if (hashCode == AVAILABLE_HASH)
           {
             return NodeStatus::AVAILABLE;
+          }
+          else if (hashCode == UNHEALTHY_HASH)
+          {
+            return NodeStatus::UNHEALTHY;
           }
           else if (hashCode == CREATE_FAILED_HASH)
           {
@@ -60,6 +66,10 @@ namespace Aws
           {
             return NodeStatus::FAILED;
           }
+          else if (hashCode == INACCESSIBLE_ENCRYPTION_KEY_HASH)
+          {
+            return NodeStatus::INACCESSIBLE_ENCRYPTION_KEY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -78,6 +88,8 @@ namespace Aws
             return "CREATING";
           case NodeStatus::AVAILABLE:
             return "AVAILABLE";
+          case NodeStatus::UNHEALTHY:
+            return "UNHEALTHY";
           case NodeStatus::CREATE_FAILED:
             return "CREATE_FAILED";
           case NodeStatus::UPDATING:
@@ -88,6 +100,8 @@ namespace Aws
             return "DELETED";
           case NodeStatus::FAILED:
             return "FAILED";
+          case NodeStatus::INACCESSIBLE_ENCRYPTION_KEY:
+            return "INACCESSIBLE_ENCRYPTION_KEY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

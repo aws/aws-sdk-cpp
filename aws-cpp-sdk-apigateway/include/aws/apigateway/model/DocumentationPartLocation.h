@@ -40,8 +40,8 @@ namespace Model
 
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -53,8 +53,8 @@ namespace Model
     inline const DocumentationPartType& GetType() const{ return m_type; }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -66,8 +66,8 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -79,8 +79,8 @@ namespace Model
     inline void SetType(const DocumentationPartType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -92,8 +92,8 @@ namespace Model
     inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -105,8 +105,8 @@ namespace Model
     inline DocumentationPartLocation& WithType(const DocumentationPartType& value) { SetType(value); return *this;}
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,

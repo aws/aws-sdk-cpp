@@ -181,58 +181,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline Volume& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline Volume& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the volume.</p>
      */
     inline Volume& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

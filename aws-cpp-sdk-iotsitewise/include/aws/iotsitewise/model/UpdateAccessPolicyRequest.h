@@ -78,74 +78,74 @@ namespace Model
 
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline const Identity& GetAccessPolicyIdentity() const{ return m_accessPolicyIdentity; }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline bool AccessPolicyIdentityHasBeenSet() const { return m_accessPolicyIdentityHasBeenSet; }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline void SetAccessPolicyIdentity(const Identity& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = value; }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline void SetAccessPolicyIdentity(Identity&& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = std::move(value); }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline UpdateAccessPolicyRequest& WithAccessPolicyIdentity(const Identity& value) { SetAccessPolicyIdentity(value); return *this;}
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline UpdateAccessPolicyRequest& WithAccessPolicyIdentity(Identity&& value) { SetAccessPolicyIdentity(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline const Resource& GetAccessPolicyResource() const{ return m_accessPolicyResource; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline bool AccessPolicyResourceHasBeenSet() const { return m_accessPolicyResourceHasBeenSet; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline void SetAccessPolicyResource(const Resource& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = value; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline void SetAccessPolicyResource(Resource&& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = std::move(value); }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline UpdateAccessPolicyRequest& WithAccessPolicyResource(const Resource& value) { SetAccessPolicyResource(value); return *this;}
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline UpdateAccessPolicyRequest& WithAccessPolicyResource(Resource&& value) { SetAccessPolicyResource(std::move(value)); return *this;}

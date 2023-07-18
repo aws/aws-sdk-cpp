@@ -7,6 +7,8 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/ErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotsitewise/model/DetailedError.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an AWS IoT SiteWise error.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains the details of an IoT SiteWise error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ErrorDetails">AWS
    * API Reference</a></p>
    */
@@ -110,6 +111,47 @@ namespace Model
      */
     inline ErrorDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline const Aws::Vector<DetailedError>& GetDetails() const{ return m_details; }
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline void SetDetails(const Aws::Vector<DetailedError>& value) { m_detailsHasBeenSet = true; m_details = value; }
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline void SetDetails(Aws::Vector<DetailedError>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline ErrorDetails& WithDetails(const Aws::Vector<DetailedError>& value) { SetDetails(value); return *this;}
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline ErrorDetails& WithDetails(Aws::Vector<DetailedError>&& value) { SetDetails(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline ErrorDetails& AddDetails(const DetailedError& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
+
+    /**
+     * <p> A list of detailed errors. </p>
+     */
+    inline ErrorDetails& AddDetails(DetailedError&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
+
   private:
 
     ErrorCode m_code;
@@ -117,6 +159,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
+    Aws::Vector<DetailedError> m_details;
+    bool m_detailsHasBeenSet;
   };
 
 } // namespace Model

@@ -177,8 +177,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -186,8 +185,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -195,8 +193,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -204,8 +201,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -213,8 +209,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -222,8 +217,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -231,8 +225,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -240,8 +233,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -249,8 +241,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -258,8 +249,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -267,8 +257,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -276,8 +265,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -285,10 +273,50 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAssetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline const Aws::String& GetAssetDescription() const{ return m_assetDescription; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline bool AssetDescriptionHasBeenSet() const { return m_assetDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(const Aws::String& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = value; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(Aws::String&& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = std::move(value); }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(const char* value) { m_assetDescriptionHasBeenSet = true; m_assetDescription.assign(value); }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline CreateAssetRequest& WithAssetDescription(const Aws::String& value) { SetAssetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline CreateAssetRequest& WithAssetDescription(Aws::String&& value) { SetAssetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline CreateAssetRequest& WithAssetDescription(const char* value) { SetAssetDescription(value); return *this;}
 
   private:
 
@@ -303,6 +331,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_assetDescription;
+    bool m_assetDescriptionHasBeenSet;
   };
 
 } // namespace Model

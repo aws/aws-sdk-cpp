@@ -29,7 +29,7 @@ namespace S3ControlEndpoint
    * @param arn The S3 Outposts ARN
    * @param regionNameOverride Override region name in ARN if it's not empty
    */
-  AWS_S3CONTROL_API Aws::String ForOutpostsArn(const S3ControlARN& arn, const Aws::String& regionNameOverride = "");
+  AWS_S3CONTROL_API Aws::String ForOutpostsArn(const S3ControlARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false, const Aws::String& endpointOverride = "");
 } // namespace S3ControlEndpoint
 } // namespace S3Control
 } // namespace Aws

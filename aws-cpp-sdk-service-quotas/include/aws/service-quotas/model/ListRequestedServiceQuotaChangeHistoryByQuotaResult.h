@@ -35,122 +35,80 @@ namespace Model
 
 
     /**
-     * <p>If present in the response, this value indicates there's more output
-     * available that what's included in the current response. This can occur even when
-     * the response includes no values at all, such as when you ask for a filtered view
-     * of a very long list. Use this value in the <code>NextToken</code> request
-     * parameter in a subsequent call to the operation to continue processing and get
-     * the next part of the output. You should repeat this until the
-     * <code>NextToken</code> response element comes back empty (as
-     * <code>null</code>).</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If present in the response, this value indicates there's more output
-     * available that what's included in the current response. This can occur even when
-     * the response includes no values at all, such as when you ask for a filtered view
-     * of a very long list. Use this value in the <code>NextToken</code> request
-     * parameter in a subsequent call to the operation to continue processing and get
-     * the next part of the output. You should repeat this until the
-     * <code>NextToken</code> response element comes back empty (as
-     * <code>null</code>).</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If present in the response, this value indicates there's more output
-     * available that what's included in the current response. This can occur even when
-     * the response includes no values at all, such as when you ask for a filtered view
-     * of a very long list. Use this value in the <code>NextToken</code> request
-     * parameter in a subsequent call to the operation to continue processing and get
-     * the next part of the output. You should repeat this until the
-     * <code>NextToken</code> response element comes back empty (as
-     * <code>null</code>).</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If present in the response, this value indicates there's more output
-     * available that what's included in the current response. This can occur even when
-     * the response includes no values at all, such as when you ask for a filtered view
-     * of a very long list. Use this value in the <code>NextToken</code> request
-     * parameter in a subsequent call to the operation to continue processing and get
-     * the next part of the output. You should repeat this until the
-     * <code>NextToken</code> response element comes back empty (as
-     * <code>null</code>).</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If present in the response, this value indicates there's more output
-     * available that what's included in the current response. This can occur even when
-     * the response includes no values at all, such as when you ask for a filtered view
-     * of a very long list. Use this value in the <code>NextToken</code> request
-     * parameter in a subsequent call to the operation to continue processing and get
-     * the next part of the output. You should repeat this until the
-     * <code>NextToken</code> response element comes back empty (as
-     * <code>null</code>).</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If present in the response, this value indicates there's more output
-     * available that what's included in the current response. This can occur even when
-     * the response includes no values at all, such as when you ask for a filtered view
-     * of a very long list. Use this value in the <code>NextToken</code> request
-     * parameter in a subsequent call to the operation to continue processing and get
-     * the next part of the output. You should repeat this until the
-     * <code>NextToken</code> response element comes back empty (as
-     * <code>null</code>).</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If present in the response, this value indicates there's more output
-     * available that what's included in the current response. This can occur even when
-     * the response includes no values at all, such as when you ask for a filtered view
-     * of a very long list. Use this value in the <code>NextToken</code> request
-     * parameter in a subsequent call to the operation to continue processing and get
-     * the next part of the output. You should repeat this until the
-     * <code>NextToken</code> response element comes back empty (as
-     * <code>null</code>).</p>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase requests.</p>
      */
     inline const Aws::Vector<RequestedServiceQuotaChange>& GetRequestedQuotas() const{ return m_requestedQuotas; }
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase requests.</p>
      */
     inline void SetRequestedQuotas(const Aws::Vector<RequestedServiceQuotaChange>& value) { m_requestedQuotas = value; }
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase requests.</p>
      */
     inline void SetRequestedQuotas(Aws::Vector<RequestedServiceQuotaChange>&& value) { m_requestedQuotas = std::move(value); }
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase requests.</p>
      */
     inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestedQuotas(const Aws::Vector<RequestedServiceQuotaChange>& value) { SetRequestedQuotas(value); return *this;}
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase requests.</p>
      */
     inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestedQuotas(Aws::Vector<RequestedServiceQuotaChange>&& value) { SetRequestedQuotas(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase requests.</p>
      */
     inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& AddRequestedQuotas(const RequestedServiceQuotaChange& value) { m_requestedQuotas.push_back(value); return *this; }
 
     /**
-     * <p>Returns a list of service quota requests.</p>
+     * <p>Information about the quota increase requests.</p>
      */
     inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& AddRequestedQuotas(RequestedServiceQuotaChange&& value) { m_requestedQuotas.push_back(std::move(value)); return *this; }
 

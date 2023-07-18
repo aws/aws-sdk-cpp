@@ -20,13 +20,17 @@ namespace Model
 
 LaunchPermissionConfiguration::LaunchPermissionConfiguration() : 
     m_userIdsHasBeenSet(false),
-    m_userGroupsHasBeenSet(false)
+    m_userGroupsHasBeenSet(false),
+    m_organizationArnsHasBeenSet(false),
+    m_organizationalUnitArnsHasBeenSet(false)
 {
 }
 
 LaunchPermissionConfiguration::LaunchPermissionConfiguration(JsonView jsonValue) : 
     m_userIdsHasBeenSet(false),
-    m_userGroupsHasBeenSet(false)
+    m_userGroupsHasBeenSet(false),
+    m_organizationArnsHasBeenSet(false),
+    m_organizationalUnitArnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,26 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
       m_userGroups.push_back(userGroupsJsonList[userGroupsIndex].AsString());
     }
     m_userGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("organizationArns"))
+  {
+    Array<JsonView> organizationArnsJsonList = jsonValue.GetArray("organizationArns");
+    for(unsigned organizationArnsIndex = 0; organizationArnsIndex < organizationArnsJsonList.GetLength(); ++organizationArnsIndex)
+    {
+      m_organizationArns.push_back(organizationArnsJsonList[organizationArnsIndex].AsString());
+    }
+    m_organizationArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("organizationalUnitArns"))
+  {
+    Array<JsonView> organizationalUnitArnsJsonList = jsonValue.GetArray("organizationalUnitArns");
+    for(unsigned organizationalUnitArnsIndex = 0; organizationalUnitArnsIndex < organizationalUnitArnsJsonList.GetLength(); ++organizationalUnitArnsIndex)
+    {
+      m_organizationalUnitArns.push_back(organizationalUnitArnsJsonList[organizationalUnitArnsIndex].AsString());
+    }
+    m_organizationalUnitArnsHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +103,28 @@ JsonValue LaunchPermissionConfiguration::Jsonize() const
      userGroupsJsonList[userGroupsIndex].AsString(m_userGroups[userGroupsIndex]);
    }
    payload.WithArray("userGroups", std::move(userGroupsJsonList));
+
+  }
+
+  if(m_organizationArnsHasBeenSet)
+  {
+   Array<JsonValue> organizationArnsJsonList(m_organizationArns.size());
+   for(unsigned organizationArnsIndex = 0; organizationArnsIndex < organizationArnsJsonList.GetLength(); ++organizationArnsIndex)
+   {
+     organizationArnsJsonList[organizationArnsIndex].AsString(m_organizationArns[organizationArnsIndex]);
+   }
+   payload.WithArray("organizationArns", std::move(organizationArnsJsonList));
+
+  }
+
+  if(m_organizationalUnitArnsHasBeenSet)
+  {
+   Array<JsonValue> organizationalUnitArnsJsonList(m_organizationalUnitArns.size());
+   for(unsigned organizationalUnitArnsIndex = 0; organizationalUnitArnsIndex < organizationalUnitArnsJsonList.GetLength(); ++organizationalUnitArnsIndex)
+   {
+     organizationalUnitArnsJsonList[organizationalUnitArnsIndex].AsString(m_organizationalUnitArns[organizationalUnitArnsIndex]);
+   }
+   payload.WithArray("organizationalUnitArns", std::move(organizationalUnitArnsJsonList));
 
   }
 

@@ -80,32 +80,32 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds which have elapsed on the timer.</p>
+     * <p>The expiration time for the timer.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The number of seconds which have elapsed on the timer.</p>
+     * <p>The expiration time for the timer.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
-     * <p>The number of seconds which have elapsed on the timer.</p>
+     * <p>The expiration time for the timer.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The number of seconds which have elapsed on the timer.</p>
+     * <p>The expiration time for the timer.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>The number of seconds which have elapsed on the timer.</p>
+     * <p>The expiration time for the timer.</p>
      */
     inline Timer& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The number of seconds which have elapsed on the timer.</p>
+     * <p>The expiration time for the timer.</p>
      */
     inline Timer& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 

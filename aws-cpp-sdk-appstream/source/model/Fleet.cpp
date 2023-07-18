@@ -45,7 +45,13 @@ Fleet::Fleet() :
     m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_streamView(StreamView::NOT_SET),
-    m_streamViewHasBeenSet(false)
+    m_streamViewHasBeenSet(false),
+    m_platform(PlatformType::NOT_SET),
+    m_platformHasBeenSet(false),
+    m_maxConcurrentSessions(0),
+    m_maxConcurrentSessionsHasBeenSet(false),
+    m_usbDeviceFilterStringsHasBeenSet(false),
+    m_sessionScriptS3LocationHasBeenSet(false)
 {
 }
 
@@ -76,7 +82,13 @@ Fleet::Fleet(JsonView jsonValue) :
     m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_streamView(StreamView::NOT_SET),
-    m_streamViewHasBeenSet(false)
+    m_streamViewHasBeenSet(false),
+    m_platform(PlatformType::NOT_SET),
+    m_platformHasBeenSet(false),
+    m_maxConcurrentSessions(0),
+    m_maxConcurrentSessionsHasBeenSet(false),
+    m_usbDeviceFilterStringsHasBeenSet(false),
+    m_sessionScriptS3LocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -226,6 +238,37 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_streamViewHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Platform"))
+  {
+    m_platform = PlatformTypeMapper::GetPlatformTypeForName(jsonValue.GetString("Platform"));
+
+    m_platformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxConcurrentSessions"))
+  {
+    m_maxConcurrentSessions = jsonValue.GetInteger("MaxConcurrentSessions");
+
+    m_maxConcurrentSessionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UsbDeviceFilterStrings"))
+  {
+    Array<JsonView> usbDeviceFilterStringsJsonList = jsonValue.GetArray("UsbDeviceFilterStrings");
+    for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
+    {
+      m_usbDeviceFilterStrings.push_back(usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString());
+    }
+    m_usbDeviceFilterStringsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SessionScriptS3Location"))
+  {
+    m_sessionScriptS3Location = jsonValue.GetObject("SessionScriptS3Location");
+
+    m_sessionScriptS3LocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -352,6 +395,34 @@ JsonValue Fleet::Jsonize() const
   if(m_streamViewHasBeenSet)
   {
    payload.WithString("StreamView", StreamViewMapper::GetNameForStreamView(m_streamView));
+  }
+
+  if(m_platformHasBeenSet)
+  {
+   payload.WithString("Platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
+  }
+
+  if(m_maxConcurrentSessionsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentSessions", m_maxConcurrentSessions);
+
+  }
+
+  if(m_usbDeviceFilterStringsHasBeenSet)
+  {
+   Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
+   for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
+   {
+     usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);
+   }
+   payload.WithArray("UsbDeviceFilterStrings", std::move(usbDeviceFilterStringsJsonList));
+
+  }
+
+  if(m_sessionScriptS3LocationHasBeenSet)
+  {
+   payload.WithObject("SessionScriptS3Location", m_sessionScriptS3Location.Jsonize());
+
   }
 
   return payload;

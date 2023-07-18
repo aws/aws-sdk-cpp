@@ -13,14 +13,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
-    m_nameHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_latencyMode(ChannelLatencyMode::NOT_SET),
+    m_latencyModeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_type(ChannelType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -28,9 +29,9 @@ Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
+  if(m_authorizedHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("authorized", m_authorized);
 
   }
 
@@ -39,14 +40,15 @@ Aws::String CreateChannelRequest::SerializePayload() const
    payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
+   payload.WithString("name", m_name);
+
   }
 
-  if(m_authorizedHasBeenSet)
+  if(m_recordingConfigurationArnHasBeenSet)
   {
-   payload.WithBool("authorized", m_authorized);
+   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
 
   }
 
@@ -59,6 +61,11 @@ Aws::String CreateChannelRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
   }
 
   return payload.View().WriteReadable();

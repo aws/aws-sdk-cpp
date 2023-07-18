@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/CharLengthSemantics.h>
 #include <utility>
@@ -73,77 +74,267 @@ namespace Model
 
 
     /**
-     * <p>Specifies the destination of the archived redo logs. The value should be the
-     * same as the DEST_ID number in the v$archived_log table. When working with
-     * multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by
-     * ensuring that the correct logs are accessed from the outset.</p>
+     * <p>Specifies the ID of the destination for the archived redo logs. This value
+     * should be the same as a number in the dest_id column of the v$archived_log view.
+     * If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional
+     * destination ID. Doing this improves performance by ensuring that the correct
+     * logs are accessed from the outset.</p>
      */
     inline int GetArchivedLogDestId() const{ return m_archivedLogDestId; }
 
     /**
-     * <p>Specifies the destination of the archived redo logs. The value should be the
-     * same as the DEST_ID number in the v$archived_log table. When working with
-     * multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by
-     * ensuring that the correct logs are accessed from the outset.</p>
+     * <p>Specifies the ID of the destination for the archived redo logs. This value
+     * should be the same as a number in the dest_id column of the v$archived_log view.
+     * If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional
+     * destination ID. Doing this improves performance by ensuring that the correct
+     * logs are accessed from the outset.</p>
      */
     inline bool ArchivedLogDestIdHasBeenSet() const { return m_archivedLogDestIdHasBeenSet; }
 
     /**
-     * <p>Specifies the destination of the archived redo logs. The value should be the
-     * same as the DEST_ID number in the v$archived_log table. When working with
-     * multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by
-     * ensuring that the correct logs are accessed from the outset.</p>
+     * <p>Specifies the ID of the destination for the archived redo logs. This value
+     * should be the same as a number in the dest_id column of the v$archived_log view.
+     * If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional
+     * destination ID. Doing this improves performance by ensuring that the correct
+     * logs are accessed from the outset.</p>
      */
     inline void SetArchivedLogDestId(int value) { m_archivedLogDestIdHasBeenSet = true; m_archivedLogDestId = value; }
 
     /**
-     * <p>Specifies the destination of the archived redo logs. The value should be the
-     * same as the DEST_ID number in the v$archived_log table. When working with
-     * multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by
-     * ensuring that the correct logs are accessed from the outset.</p>
+     * <p>Specifies the ID of the destination for the archived redo logs. This value
+     * should be the same as a number in the dest_id column of the v$archived_log view.
+     * If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional
+     * destination ID. Doing this improves performance by ensuring that the correct
+     * logs are accessed from the outset.</p>
      */
     inline OracleSettings& WithArchivedLogDestId(int value) { SetArchivedLogDestId(value); return *this;}
 
 
     /**
-     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
-     * setup. This attribute is useful in the case of a switchover. In this case, AWS
-     * DMS needs to know which destination to get archive redo logs from to read
-     * changes. This need arises because the previous primary instance is now a standby
-     * instance after switchover.</p>
+     * <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, DMS
+     * needs to know which destination to get archive redo logs from to read changes.
+     * This need arises because the previous primary instance is now a standby instance
+     * after switchover.</p> <p>Although DMS supports the use of the Oracle
+     * <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about
+     * <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN
+     * Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's
+     * Guide</i>.</p>
      */
     inline int GetAdditionalArchivedLogDestId() const{ return m_additionalArchivedLogDestId; }
 
     /**
-     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
-     * setup. This attribute is useful in the case of a switchover. In this case, AWS
-     * DMS needs to know which destination to get archive redo logs from to read
-     * changes. This need arises because the previous primary instance is now a standby
-     * instance after switchover.</p>
+     * <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, DMS
+     * needs to know which destination to get archive redo logs from to read changes.
+     * This need arises because the previous primary instance is now a standby instance
+     * after switchover.</p> <p>Although DMS supports the use of the Oracle
+     * <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about
+     * <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN
+     * Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's
+     * Guide</i>.</p>
      */
     inline bool AdditionalArchivedLogDestIdHasBeenSet() const { return m_additionalArchivedLogDestIdHasBeenSet; }
 
     /**
-     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
-     * setup. This attribute is useful in the case of a switchover. In this case, AWS
-     * DMS needs to know which destination to get archive redo logs from to read
-     * changes. This need arises because the previous primary instance is now a standby
-     * instance after switchover.</p>
+     * <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, DMS
+     * needs to know which destination to get archive redo logs from to read changes.
+     * This need arises because the previous primary instance is now a standby instance
+     * after switchover.</p> <p>Although DMS supports the use of the Oracle
+     * <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about
+     * <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN
+     * Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's
+     * Guide</i>.</p>
      */
     inline void SetAdditionalArchivedLogDestId(int value) { m_additionalArchivedLogDestIdHasBeenSet = true; m_additionalArchivedLogDestId = value; }
 
     /**
-     * <p>Set this attribute with <code>archivedLogDestId</code> in a primary/ standby
-     * setup. This attribute is useful in the case of a switchover. In this case, AWS
-     * DMS needs to know which destination to get archive redo logs from to read
-     * changes. This need arises because the previous primary instance is now a standby
-     * instance after switchover.</p>
+     * <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby
+     * setup. This attribute is useful in the case of a switchover. In this case, DMS
+     * needs to know which destination to get archive redo logs from to read changes.
+     * This need arises because the previous primary instance is now a standby instance
+     * after switchover.</p> <p>Although DMS supports the use of the Oracle
+     * <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about
+     * <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN
+     * Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's
+     * Guide</i>.</p>
      */
     inline OracleSettings& WithAdditionalArchivedLogDestId(int value) { SetAdditionalArchivedLogDestId(value); return *this;}
+
+
+    /**
+     * <p>Specifies the IDs of one more destinations for one or more archived redo
+     * logs. These IDs are the values of the <code>dest_id</code> column in the
+     * <code>v$archived_log</code> view. Use this setting with the
+     * <code>archivedLogDestId</code> extra connection attribute in a primary-to-single
+     * setup or a primary-to-multiple-standby setup. </p> <p>This setting is useful in
+     * a switchover when you use an Oracle Data Guard database as a source. In this
+     * case, DMS needs information about what destination to get archive redo logs from
+     * to read changes. DMS needs this because after the switchover the previous
+     * primary is a standby instance. For example, in a primary-to-single standby setup
+     * you might apply the following settings. </p> <p> <code>archivedLogDestId=1;
+     * ExtraArchivedLogDestIds=[2]</code> </p> <p>In a primary-to-multiple-standby
+     * setup, you might apply the following settings.</p> <p>
+     * <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+     * <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to
+     * open the database, never use <code>RESETLOGS</code> unless it's necessary. For
+     * more information about <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+     * RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+     * User's Guide</i>.</p>
+     */
+    inline const Aws::Vector<int>& GetExtraArchivedLogDestIds() const{ return m_extraArchivedLogDestIds; }
+
+    /**
+     * <p>Specifies the IDs of one more destinations for one or more archived redo
+     * logs. These IDs are the values of the <code>dest_id</code> column in the
+     * <code>v$archived_log</code> view. Use this setting with the
+     * <code>archivedLogDestId</code> extra connection attribute in a primary-to-single
+     * setup or a primary-to-multiple-standby setup. </p> <p>This setting is useful in
+     * a switchover when you use an Oracle Data Guard database as a source. In this
+     * case, DMS needs information about what destination to get archive redo logs from
+     * to read changes. DMS needs this because after the switchover the previous
+     * primary is a standby instance. For example, in a primary-to-single standby setup
+     * you might apply the following settings. </p> <p> <code>archivedLogDestId=1;
+     * ExtraArchivedLogDestIds=[2]</code> </p> <p>In a primary-to-multiple-standby
+     * setup, you might apply the following settings.</p> <p>
+     * <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+     * <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to
+     * open the database, never use <code>RESETLOGS</code> unless it's necessary. For
+     * more information about <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+     * RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+     * User's Guide</i>.</p>
+     */
+    inline bool ExtraArchivedLogDestIdsHasBeenSet() const { return m_extraArchivedLogDestIdsHasBeenSet; }
+
+    /**
+     * <p>Specifies the IDs of one more destinations for one or more archived redo
+     * logs. These IDs are the values of the <code>dest_id</code> column in the
+     * <code>v$archived_log</code> view. Use this setting with the
+     * <code>archivedLogDestId</code> extra connection attribute in a primary-to-single
+     * setup or a primary-to-multiple-standby setup. </p> <p>This setting is useful in
+     * a switchover when you use an Oracle Data Guard database as a source. In this
+     * case, DMS needs information about what destination to get archive redo logs from
+     * to read changes. DMS needs this because after the switchover the previous
+     * primary is a standby instance. For example, in a primary-to-single standby setup
+     * you might apply the following settings. </p> <p> <code>archivedLogDestId=1;
+     * ExtraArchivedLogDestIds=[2]</code> </p> <p>In a primary-to-multiple-standby
+     * setup, you might apply the following settings.</p> <p>
+     * <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+     * <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to
+     * open the database, never use <code>RESETLOGS</code> unless it's necessary. For
+     * more information about <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+     * RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+     * User's Guide</i>.</p>
+     */
+    inline void SetExtraArchivedLogDestIds(const Aws::Vector<int>& value) { m_extraArchivedLogDestIdsHasBeenSet = true; m_extraArchivedLogDestIds = value; }
+
+    /**
+     * <p>Specifies the IDs of one more destinations for one or more archived redo
+     * logs. These IDs are the values of the <code>dest_id</code> column in the
+     * <code>v$archived_log</code> view. Use this setting with the
+     * <code>archivedLogDestId</code> extra connection attribute in a primary-to-single
+     * setup or a primary-to-multiple-standby setup. </p> <p>This setting is useful in
+     * a switchover when you use an Oracle Data Guard database as a source. In this
+     * case, DMS needs information about what destination to get archive redo logs from
+     * to read changes. DMS needs this because after the switchover the previous
+     * primary is a standby instance. For example, in a primary-to-single standby setup
+     * you might apply the following settings. </p> <p> <code>archivedLogDestId=1;
+     * ExtraArchivedLogDestIds=[2]</code> </p> <p>In a primary-to-multiple-standby
+     * setup, you might apply the following settings.</p> <p>
+     * <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+     * <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to
+     * open the database, never use <code>RESETLOGS</code> unless it's necessary. For
+     * more information about <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+     * RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+     * User's Guide</i>.</p>
+     */
+    inline void SetExtraArchivedLogDestIds(Aws::Vector<int>&& value) { m_extraArchivedLogDestIdsHasBeenSet = true; m_extraArchivedLogDestIds = std::move(value); }
+
+    /**
+     * <p>Specifies the IDs of one more destinations for one or more archived redo
+     * logs. These IDs are the values of the <code>dest_id</code> column in the
+     * <code>v$archived_log</code> view. Use this setting with the
+     * <code>archivedLogDestId</code> extra connection attribute in a primary-to-single
+     * setup or a primary-to-multiple-standby setup. </p> <p>This setting is useful in
+     * a switchover when you use an Oracle Data Guard database as a source. In this
+     * case, DMS needs information about what destination to get archive redo logs from
+     * to read changes. DMS needs this because after the switchover the previous
+     * primary is a standby instance. For example, in a primary-to-single standby setup
+     * you might apply the following settings. </p> <p> <code>archivedLogDestId=1;
+     * ExtraArchivedLogDestIds=[2]</code> </p> <p>In a primary-to-multiple-standby
+     * setup, you might apply the following settings.</p> <p>
+     * <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+     * <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to
+     * open the database, never use <code>RESETLOGS</code> unless it's necessary. For
+     * more information about <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+     * RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+     * User's Guide</i>.</p>
+     */
+    inline OracleSettings& WithExtraArchivedLogDestIds(const Aws::Vector<int>& value) { SetExtraArchivedLogDestIds(value); return *this;}
+
+    /**
+     * <p>Specifies the IDs of one more destinations for one or more archived redo
+     * logs. These IDs are the values of the <code>dest_id</code> column in the
+     * <code>v$archived_log</code> view. Use this setting with the
+     * <code>archivedLogDestId</code> extra connection attribute in a primary-to-single
+     * setup or a primary-to-multiple-standby setup. </p> <p>This setting is useful in
+     * a switchover when you use an Oracle Data Guard database as a source. In this
+     * case, DMS needs information about what destination to get archive redo logs from
+     * to read changes. DMS needs this because after the switchover the previous
+     * primary is a standby instance. For example, in a primary-to-single standby setup
+     * you might apply the following settings. </p> <p> <code>archivedLogDestId=1;
+     * ExtraArchivedLogDestIds=[2]</code> </p> <p>In a primary-to-multiple-standby
+     * setup, you might apply the following settings.</p> <p>
+     * <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+     * <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to
+     * open the database, never use <code>RESETLOGS</code> unless it's necessary. For
+     * more information about <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+     * RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+     * User's Guide</i>.</p>
+     */
+    inline OracleSettings& WithExtraArchivedLogDestIds(Aws::Vector<int>&& value) { SetExtraArchivedLogDestIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the IDs of one more destinations for one or more archived redo
+     * logs. These IDs are the values of the <code>dest_id</code> column in the
+     * <code>v$archived_log</code> view. Use this setting with the
+     * <code>archivedLogDestId</code> extra connection attribute in a primary-to-single
+     * setup or a primary-to-multiple-standby setup. </p> <p>This setting is useful in
+     * a switchover when you use an Oracle Data Guard database as a source. In this
+     * case, DMS needs information about what destination to get archive redo logs from
+     * to read changes. DMS needs this because after the switchover the previous
+     * primary is a standby instance. For example, in a primary-to-single standby setup
+     * you might apply the following settings. </p> <p> <code>archivedLogDestId=1;
+     * ExtraArchivedLogDestIds=[2]</code> </p> <p>In a primary-to-multiple-standby
+     * setup, you might apply the following settings.</p> <p>
+     * <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
+     * <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to
+     * open the database, never use <code>RESETLOGS</code> unless it's necessary. For
+     * more information about <code>RESETLOGS</code>, see <a
+     * href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+     * RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+     * User's Guide</i>.</p>
+     */
+    inline OracleSettings& AddExtraArchivedLogDestIds(int value) { m_extraArchivedLogDestIdsHasBeenSet = true; m_extraArchivedLogDestIds.push_back(value); return *this; }
 
 
     /**
@@ -173,7 +364,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of threads that DMS configures to
-     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * perform a change data capture (CDC) load using Oracle Automatic Storage
      * Management (ASM). You can specify an integer value between 2 (the default) and 8
      * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
      * attribute.</p>
@@ -182,7 +373,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of threads that DMS configures to
-     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * perform a change data capture (CDC) load using Oracle Automatic Storage
      * Management (ASM). You can specify an integer value between 2 (the default) and 8
      * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
      * attribute.</p>
@@ -191,7 +382,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of threads that DMS configures to
-     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * perform a change data capture (CDC) load using Oracle Automatic Storage
      * Management (ASM). You can specify an integer value between 2 (the default) and 8
      * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
      * attribute.</p>
@@ -200,7 +391,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of threads that DMS configures to
-     * perform a Change Data Capture (CDC) load using Oracle Automatic Storage
+     * perform a change data capture (CDC) load using Oracle Automatic Storage
      * Management (ASM). You can specify an integer value between 2 (the default) and 8
      * (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
      * attribute.</p>
@@ -210,7 +401,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of read-ahead blocks that DMS
-     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * configures to perform a change data capture (CDC) load using Oracle Automatic
      * Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).</p>
      */
@@ -218,7 +409,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of read-ahead blocks that DMS
-     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * configures to perform a change data capture (CDC) load using Oracle Automatic
      * Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).</p>
      */
@@ -226,7 +417,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of read-ahead blocks that DMS
-     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * configures to perform a change data capture (CDC) load using Oracle Automatic
      * Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).</p>
      */
@@ -234,7 +425,7 @@ namespace Model
 
     /**
      * <p>Set this attribute to change the number of read-ahead blocks that DMS
-     * configures to perform a Change Data Capture (CDC) load using Oracle Automatic
+     * configures to perform a change data capture (CDC) load using Oracle Automatic
      * Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).</p>
      */
@@ -517,30 +708,30 @@ namespace Model
 
 
     /**
-     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
-     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
-     * user account needs to be granted ASM privileges.</p>
+     * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
+     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
+     * account needs to be granted ASM privileges.</p>
      */
     inline bool GetArchivedLogsOnly() const{ return m_archivedLogsOnly; }
 
     /**
-     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
-     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
-     * user account needs to be granted ASM privileges.</p>
+     * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
+     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
+     * account needs to be granted ASM privileges.</p>
      */
     inline bool ArchivedLogsOnlyHasBeenSet() const { return m_archivedLogsOnlyHasBeenSet; }
 
     /**
-     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
-     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
-     * user account needs to be granted ASM privileges.</p>
+     * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
+     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
+     * account needs to be granted ASM privileges.</p>
      */
     inline void SetArchivedLogsOnly(bool value) { m_archivedLogsOnlyHasBeenSet = true; m_archivedLogsOnly = value; }
 
     /**
-     * <p>When this field is set to <code>Y</code>, AWS DMS only accesses the archived
-     * redo logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS
-     * user account needs to be granted ASM privileges.</p>
+     * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
+     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
+     * account needs to be granted ASM privileges.</p>
      */
     inline OracleSettings& WithArchivedLogsOnly(bool value) { SetArchivedLogsOnly(value); return *this;}
 
@@ -889,32 +1080,32 @@ namespace Model
     /**
      * <p>When set to <code>true</code>, this attribute specifies a parallel load when
      * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
-     * only applies when you use the AWS DMS parallel load feature. Note that the
-     * target table cannot have any constraints or indexes.</p>
+     * only applies when you use the DMS parallel load feature. Note that the target
+     * table cannot have any constraints or indexes.</p>
      */
     inline bool GetDirectPathParallelLoad() const{ return m_directPathParallelLoad; }
 
     /**
      * <p>When set to <code>true</code>, this attribute specifies a parallel load when
      * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
-     * only applies when you use the AWS DMS parallel load feature. Note that the
-     * target table cannot have any constraints or indexes.</p>
+     * only applies when you use the DMS parallel load feature. Note that the target
+     * table cannot have any constraints or indexes.</p>
      */
     inline bool DirectPathParallelLoadHasBeenSet() const { return m_directPathParallelLoadHasBeenSet; }
 
     /**
      * <p>When set to <code>true</code>, this attribute specifies a parallel load when
      * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
-     * only applies when you use the AWS DMS parallel load feature. Note that the
-     * target table cannot have any constraints or indexes.</p>
+     * only applies when you use the DMS parallel load feature. Note that the target
+     * table cannot have any constraints or indexes.</p>
      */
     inline void SetDirectPathParallelLoad(bool value) { m_directPathParallelLoadHasBeenSet = true; m_directPathParallelLoad = value; }
 
     /**
      * <p>When set to <code>true</code>, this attribute specifies a parallel load when
      * <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also
-     * only applies when you use the AWS DMS parallel load feature. Note that the
-     * target table cannot have any constraints or indexes.</p>
+     * only applies when you use the DMS parallel load feature. Note that the target
+     * table cannot have any constraints or indexes.</p>
      */
     inline OracleSettings& WithDirectPathParallelLoad(bool value) { SetDirectPathParallelLoad(value); return *this;}
 
@@ -1106,8 +1297,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline const Aws::String& GetSecurityDbEncryption() const{ return m_securityDbEncryption; }
 
@@ -1120,8 +1311,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline bool SecurityDbEncryptionHasBeenSet() const { return m_securityDbEncryptionHasBeenSet; }
 
@@ -1134,8 +1325,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline void SetSecurityDbEncryption(const Aws::String& value) { m_securityDbEncryptionHasBeenSet = true; m_securityDbEncryption = value; }
 
@@ -1148,8 +1339,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline void SetSecurityDbEncryption(Aws::String&& value) { m_securityDbEncryptionHasBeenSet = true; m_securityDbEncryption = std::move(value); }
 
@@ -1162,8 +1353,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline void SetSecurityDbEncryption(const char* value) { m_securityDbEncryptionHasBeenSet = true; m_securityDbEncryption.assign(value); }
 
@@ -1176,8 +1367,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline OracleSettings& WithSecurityDbEncryption(const Aws::String& value) { SetSecurityDbEncryption(value); return *this;}
 
@@ -1190,8 +1381,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline OracleSettings& WithSecurityDbEncryption(Aws::String&& value) { SetSecurityDbEncryption(std::move(value)); return *this;}
 
@@ -1204,8 +1395,8 @@ namespace Model
      * related to this <code>SecurityDbEncryptionName</code> setting. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>. </p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>. </p>
      */
     inline OracleSettings& WithSecurityDbEncryption(const char* value) { SetSecurityDbEncryption(value); return *this;}
 
@@ -1219,8 +1410,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline const Aws::String& GetSecurityDbEncryptionName() const{ return m_securityDbEncryptionName; }
 
@@ -1233,8 +1424,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline bool SecurityDbEncryptionNameHasBeenSet() const { return m_securityDbEncryptionNameHasBeenSet; }
 
@@ -1247,8 +1438,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline void SetSecurityDbEncryptionName(const Aws::String& value) { m_securityDbEncryptionNameHasBeenSet = true; m_securityDbEncryptionName = value; }
 
@@ -1261,8 +1452,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline void SetSecurityDbEncryptionName(Aws::String&& value) { m_securityDbEncryptionNameHasBeenSet = true; m_securityDbEncryptionName = std::move(value); }
 
@@ -1275,8 +1466,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline void SetSecurityDbEncryptionName(const char* value) { m_securityDbEncryptionNameHasBeenSet = true; m_securityDbEncryptionName.assign(value); }
 
@@ -1289,8 +1480,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline OracleSettings& WithSecurityDbEncryptionName(const Aws::String& value) { SetSecurityDbEncryptionName(value); return *this;}
 
@@ -1303,8 +1494,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline OracleSettings& WithSecurityDbEncryptionName(Aws::String&& value) { SetSecurityDbEncryptionName(std::move(value)); return *this;}
 
@@ -1317,8 +1508,8 @@ namespace Model
      * example for setting the <code>securityDbEncryptionName</code> extra connection
      * attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.</p>
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the
+     * <i>Database Migration Service User Guide</i>.</p>
      */
     inline OracleSettings& WithSecurityDbEncryptionName(const char* value) { SetSecurityDbEncryptionName(value); return *this;}
 
@@ -1365,6 +1556,124 @@ namespace Model
 
 
     /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline const Aws::String& GetSpatialDataOptionToGeoJsonFunctionName() const{ return m_spatialDataOptionToGeoJsonFunctionName; }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline bool SpatialDataOptionToGeoJsonFunctionNameHasBeenSet() const { return m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet; }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline void SetSpatialDataOptionToGeoJsonFunctionName(const Aws::String& value) { m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true; m_spatialDataOptionToGeoJsonFunctionName = value; }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline void SetSpatialDataOptionToGeoJsonFunctionName(Aws::String&& value) { m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true; m_spatialDataOptionToGeoJsonFunctionName = std::move(value); }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline void SetSpatialDataOptionToGeoJsonFunctionName(const char* value) { m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true; m_spatialDataOptionToGeoJsonFunctionName.assign(value); }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline OracleSettings& WithSpatialDataOptionToGeoJsonFunctionName(const Aws::String& value) { SetSpatialDataOptionToGeoJsonFunctionName(value); return *this;}
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline OracleSettings& WithSpatialDataOptionToGeoJsonFunctionName(Aws::String&& value) { SetSpatialDataOptionToGeoJsonFunctionName(std::move(value)); return *this;}
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline OracleSettings& WithSpatialDataOptionToGeoJsonFunctionName(const char* value) { SetSpatialDataOptionToGeoJsonFunctionName(value); return *this;}
+
+
+    /**
+     * <p>Use this attribute to specify a time in minutes for the delay in standby
+     * sync. If the source is an Oracle Active Data Guard standby database, use this
+     * attribute to specify the time lag between primary and standby databases.</p>
+     * <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard
+     * standby instance as a source for replicating ongoing changes. Doing this
+     * eliminates the need to connect to an active database that might be in
+     * production.</p>
+     */
+    inline int GetStandbyDelayTime() const{ return m_standbyDelayTime; }
+
+    /**
+     * <p>Use this attribute to specify a time in minutes for the delay in standby
+     * sync. If the source is an Oracle Active Data Guard standby database, use this
+     * attribute to specify the time lag between primary and standby databases.</p>
+     * <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard
+     * standby instance as a source for replicating ongoing changes. Doing this
+     * eliminates the need to connect to an active database that might be in
+     * production.</p>
+     */
+    inline bool StandbyDelayTimeHasBeenSet() const { return m_standbyDelayTimeHasBeenSet; }
+
+    /**
+     * <p>Use this attribute to specify a time in minutes for the delay in standby
+     * sync. If the source is an Oracle Active Data Guard standby database, use this
+     * attribute to specify the time lag between primary and standby databases.</p>
+     * <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard
+     * standby instance as a source for replicating ongoing changes. Doing this
+     * eliminates the need to connect to an active database that might be in
+     * production.</p>
+     */
+    inline void SetStandbyDelayTime(int value) { m_standbyDelayTimeHasBeenSet = true; m_standbyDelayTime = value; }
+
+    /**
+     * <p>Use this attribute to specify a time in minutes for the delay in standby
+     * sync. If the source is an Oracle Active Data Guard standby database, use this
+     * attribute to specify the time lag between primary and standby databases.</p>
+     * <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard
+     * standby instance as a source for replicating ongoing changes. Doing this
+     * eliminates the need to connect to an active database that might be in
+     * production.</p>
+     */
+    inline OracleSettings& WithStandbyDelayTime(int value) { SetStandbyDelayTime(value); return *this;}
+
+
+    /**
      * <p>Endpoint connection user name.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
@@ -1404,6 +1713,577 @@ namespace Model
      */
     inline OracleSettings& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Binary Reader
+     * utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To
+     * use Binary Reader with Amazon RDS for Oracle as the source, you set additional
+     * attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+     */
+    inline bool GetUseBFile() const{ return m_useBFile; }
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Binary Reader
+     * utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To
+     * use Binary Reader with Amazon RDS for Oracle as the source, you set additional
+     * attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+     */
+    inline bool UseBFileHasBeenSet() const { return m_useBFileHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Binary Reader
+     * utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To
+     * use Binary Reader with Amazon RDS for Oracle as the source, you set additional
+     * attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+     */
+    inline void SetUseBFile(bool value) { m_useBFileHasBeenSet = true; m_useBFile = value; }
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Binary Reader
+     * utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To
+     * use Binary Reader with Amazon RDS for Oracle as the source, you set additional
+     * attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+     */
+    inline OracleSettings& WithUseBFile(bool value) { SetUseBFile(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to Y to have DMS use a direct path full load. Specify this
+     * value to use the direct path protocol in the Oracle Call Interface (OCI). By
+     * using this OCI protocol, you can bulk-load Oracle target tables during a full
+     * load.</p>
+     */
+    inline bool GetUseDirectPathFullLoad() const{ return m_useDirectPathFullLoad; }
+
+    /**
+     * <p>Set this attribute to Y to have DMS use a direct path full load. Specify this
+     * value to use the direct path protocol in the Oracle Call Interface (OCI). By
+     * using this OCI protocol, you can bulk-load Oracle target tables during a full
+     * load.</p>
+     */
+    inline bool UseDirectPathFullLoadHasBeenSet() const { return m_useDirectPathFullLoadHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to Y to have DMS use a direct path full load. Specify this
+     * value to use the direct path protocol in the Oracle Call Interface (OCI). By
+     * using this OCI protocol, you can bulk-load Oracle target tables during a full
+     * load.</p>
+     */
+    inline void SetUseDirectPathFullLoad(bool value) { m_useDirectPathFullLoadHasBeenSet = true; m_useDirectPathFullLoad = value; }
+
+    /**
+     * <p>Set this attribute to Y to have DMS use a direct path full load. Specify this
+     * value to use the direct path protocol in the Oracle Call Interface (OCI). By
+     * using this OCI protocol, you can bulk-load Oracle target tables during a full
+     * load.</p>
+     */
+    inline OracleSettings& WithUseDirectPathFullLoad(bool value) { SetUseDirectPathFullLoad(value); return *this;}
+
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Oracle LogMiner
+     * utility (the default). Set this attribute to N if you want to access the redo
+     * logs as a binary file. When you set <code>UseLogminerReader</code> to N, also
+     * set <code>UseBfile</code> to Y. For more information on this setting and using
+     * Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User
+     * Guide</i>.</p>
+     */
+    inline bool GetUseLogminerReader() const{ return m_useLogminerReader; }
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Oracle LogMiner
+     * utility (the default). Set this attribute to N if you want to access the redo
+     * logs as a binary file. When you set <code>UseLogminerReader</code> to N, also
+     * set <code>UseBfile</code> to Y. For more information on this setting and using
+     * Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User
+     * Guide</i>.</p>
+     */
+    inline bool UseLogminerReaderHasBeenSet() const { return m_useLogminerReaderHasBeenSet; }
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Oracle LogMiner
+     * utility (the default). Set this attribute to N if you want to access the redo
+     * logs as a binary file. When you set <code>UseLogminerReader</code> to N, also
+     * set <code>UseBfile</code> to Y. For more information on this setting and using
+     * Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User
+     * Guide</i>.</p>
+     */
+    inline void SetUseLogminerReader(bool value) { m_useLogminerReaderHasBeenSet = true; m_useLogminerReader = value; }
+
+    /**
+     * <p>Set this attribute to Y to capture change data using the Oracle LogMiner
+     * utility (the default). Set this attribute to N if you want to access the redo
+     * logs as a binary file. When you set <code>UseLogminerReader</code> to N, also
+     * set <code>UseBfile</code> to Y. For more information on this setting and using
+     * Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     * Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User
+     * Guide</i>.</p>
+     */
+    inline OracleSettings& WithUseLogminerReader(bool value) { SetUseLogminerReader(value); return *this;}
+
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the Oracle endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline OracleSettings& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline OracleSettings& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection
+     * details.</p>
+     */
+    inline OracleSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
+
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline const Aws::String& GetSecretsManagerOracleAsmAccessRoleArn() const{ return m_secretsManagerOracleAsmAccessRoleArn; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline bool SecretsManagerOracleAsmAccessRoleArnHasBeenSet() const { return m_secretsManagerOracleAsmAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerOracleAsmAccessRoleArn(const Aws::String& value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn = value; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerOracleAsmAccessRoleArn(Aws::String&& value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerOracleAsmAccessRoleArn(const char* value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn.assign(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(const Aws::String& value) { SetSecretsManagerOracleAsmAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(Aws::String&& value) { SetSecretsManagerOracleAsmAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
+     * the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(const char* value) { SetSecretsManagerOracleAsmAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline const Aws::String& GetSecretsManagerOracleAsmSecretId() const{ return m_secretsManagerOracleAsmSecretId; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline bool SecretsManagerOracleAsmSecretIdHasBeenSet() const { return m_secretsManagerOracleAsmSecretIdHasBeenSet; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline void SetSecretsManagerOracleAsmSecretId(const Aws::String& value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId = value; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline void SetSecretsManagerOracleAsmSecretId(Aws::String&& value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId = std::move(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline void SetSecretsManagerOracleAsmSecretId(const char* value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId.assign(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const Aws::String& value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmSecretId(Aws::String&& value) { SetSecretsManagerOracleAsmSecretId(std::move(value)); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const char* value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
+
   private:
 
     bool m_addSupplementalLogging;
@@ -1414,6 +2294,9 @@ namespace Model
 
     int m_additionalArchivedLogDestId;
     bool m_additionalArchivedLogDestIdHasBeenSet;
+
+    Aws::Vector<int> m_extraArchivedLogDestIds;
+    bool m_extraArchivedLogDestIdsHasBeenSet;
 
     bool m_allowSelectNestedTables;
     bool m_allowSelectNestedTablesHasBeenSet;
@@ -1493,8 +2376,35 @@ namespace Model
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
 
+    Aws::String m_spatialDataOptionToGeoJsonFunctionName;
+    bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet;
+
+    int m_standbyDelayTime;
+    bool m_standbyDelayTimeHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
+    bool m_useBFile;
+    bool m_useBFileHasBeenSet;
+
+    bool m_useDirectPathFullLoad;
+    bool m_useDirectPathFullLoadHasBeenSet;
+
+    bool m_useLogminerReader;
+    bool m_useLogminerReaderHasBeenSet;
+
+    Aws::String m_secretsManagerAccessRoleArn;
+    bool m_secretsManagerAccessRoleArnHasBeenSet;
+
+    Aws::String m_secretsManagerSecretId;
+    bool m_secretsManagerSecretIdHasBeenSet;
+
+    Aws::String m_secretsManagerOracleAsmAccessRoleArn;
+    bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet;
+
+    Aws::String m_secretsManagerOracleAsmSecretId;
+    bool m_secretsManagerOracleAsmSecretIdHasBeenSet;
   };
 
 } // namespace Model

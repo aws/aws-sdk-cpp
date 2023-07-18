@@ -141,80 +141,80 @@ namespace Model
 
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
     inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
     inline CreateVirtualGatewayRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
     inline CreateVirtualGatewayRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then the account that you specify must share the mesh with your
-     * account before you can create the resource in the service mesh. For more
-     * information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then the account that you specify must share the
+     * mesh with your account before you can create the resource in the service mesh.
+     * For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */

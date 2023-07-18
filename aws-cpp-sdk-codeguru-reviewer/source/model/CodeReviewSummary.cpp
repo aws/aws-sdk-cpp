@@ -32,7 +32,8 @@ CodeReviewSummary::CodeReviewSummary() :
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
     m_pullRequestIdHasBeenSet(false),
-    m_metricsSummaryHasBeenSet(false)
+    m_metricsSummaryHasBeenSet(false),
+    m_sourceCodeTypeHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ CodeReviewSummary::CodeReviewSummary(JsonView jsonValue) :
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
     m_pullRequestIdHasBeenSet(false),
-    m_metricsSummaryHasBeenSet(false)
+    m_metricsSummaryHasBeenSet(false),
+    m_sourceCodeTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +136,13 @@ CodeReviewSummary& CodeReviewSummary::operator =(JsonView jsonValue)
     m_metricsSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceCodeType"))
+  {
+    m_sourceCodeType = jsonValue.GetObject("SourceCodeType");
+
+    m_sourceCodeTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +208,12 @@ JsonValue CodeReviewSummary::Jsonize() const
   if(m_metricsSummaryHasBeenSet)
   {
    payload.WithObject("MetricsSummary", m_metricsSummary.Jsonize());
+
+  }
+
+  if(m_sourceCodeTypeHasBeenSet)
+  {
+   payload.WithObject("SourceCodeType", m_sourceCodeType.Jsonize());
 
   }
 

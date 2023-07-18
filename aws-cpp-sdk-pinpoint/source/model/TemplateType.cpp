@@ -24,6 +24,7 @@ namespace Aws
         static const int SMS_HASH = HashingUtils::HashString("SMS");
         static const int VOICE_HASH = HashingUtils::HashString("VOICE");
         static const int PUSH_HASH = HashingUtils::HashString("PUSH");
+        static const int INAPP_HASH = HashingUtils::HashString("INAPP");
 
 
         TemplateType GetTemplateTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == PUSH_HASH)
           {
             return TemplateType::PUSH;
+          }
+          else if (hashCode == INAPP_HASH)
+          {
+            return TemplateType::INAPP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "VOICE";
           case TemplateType::PUSH:
             return "PUSH";
+          case TemplateType::INAPP:
+            return "INAPP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

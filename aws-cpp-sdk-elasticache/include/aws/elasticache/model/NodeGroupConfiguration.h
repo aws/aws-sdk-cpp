@@ -293,42 +293,42 @@ namespace Model
 
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline const Aws::String& GetPrimaryOutpostArn() const{ return m_primaryOutpostArn; }
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline bool PrimaryOutpostArnHasBeenSet() const { return m_primaryOutpostArnHasBeenSet; }
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline void SetPrimaryOutpostArn(const Aws::String& value) { m_primaryOutpostArnHasBeenSet = true; m_primaryOutpostArn = value; }
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline void SetPrimaryOutpostArn(Aws::String&& value) { m_primaryOutpostArnHasBeenSet = true; m_primaryOutpostArn = std::move(value); }
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline void SetPrimaryOutpostArn(const char* value) { m_primaryOutpostArnHasBeenSet = true; m_primaryOutpostArn.assign(value); }
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline NodeGroupConfiguration& WithPrimaryOutpostArn(const Aws::String& value) { SetPrimaryOutpostArn(value); return *this;}
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline NodeGroupConfiguration& WithPrimaryOutpostArn(Aws::String&& value) { SetPrimaryOutpostArn(std::move(value)); return *this;}
 
     /**
-     * <p>The output ARN of the primary node.</p>
+     * <p>The outpost ARN of the primary node.</p>
      */
     inline NodeGroupConfiguration& WithPrimaryOutpostArn(const char* value) { SetPrimaryOutpostArn(value); return *this;}
 

@@ -18,13 +18,15 @@ using namespace Aws;
 
 DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult() : 
     m_autoEnable(false),
-    m_memberAccountLimitReached(false)
+    m_memberAccountLimitReached(false),
+    m_autoEnableStandards(AutoEnableStandards::NOT_SET)
 {
 }
 
 DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_autoEnable(false),
-    m_memberAccountLimitReached(false)
+    m_memberAccountLimitReached(false),
+    m_autoEnableStandards(AutoEnableStandards::NOT_SET)
 {
   *this = result;
 }
@@ -41,6 +43,12 @@ DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult
   if(jsonValue.ValueExists("MemberAccountLimitReached"))
   {
     m_memberAccountLimitReached = jsonValue.GetBool("MemberAccountLimitReached");
+
+  }
+
+  if(jsonValue.ValueExists("AutoEnableStandards"))
+  {
+    m_autoEnableStandards = AutoEnableStandardsMapper::GetAutoEnableStandardsForName(jsonValue.GetString("AutoEnableStandards"));
 
   }
 

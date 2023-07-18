@@ -136,7 +136,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
 
@@ -144,7 +146,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
 
@@ -152,7 +156,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
 
@@ -160,7 +166,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
 
@@ -168,7 +176,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
 
@@ -176,7 +186,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline PutEventsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
 
@@ -184,7 +196,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline PutEventsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
 
@@ -192,7 +206,9 @@ namespace Model
      * <p>The session ID associated with the user's visit. Your application generates
      * the sessionId when a user first visits your website or uses your application.
      * Amazon Personalize uses the sessionId to associate events with the user before
-     * they log in. For more information see <a>event-record-api</a>.</p>
+     * they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+     * Events</a>.</p>
      */
     inline PutEventsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 

@@ -26,21 +26,17 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>The collection of tagging definitions
-   * for an AWS resource. Tags are key:value pairs that you can use to categorize and
-   * manage your resources, for purposes like billing or other management. Typically,
-   * the tag key represents a category, such as "environment", and the tag value
-   * represents a specific value within that category, such as "test," "development,"
-   * or "production". Or you might set the tag key to "customer" and the value to the
-   * customer name or ID. You can specify one or more tags to add to each AWS
-   * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
-   * that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex
-   * pattern sets. You can't manage or view tags through the AWS WAF console.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>The collection of tagging definitions for an Amazon Web Services resource.
+   * Tags are key:value pairs that you can use to categorize and manage your
+   * resources, for purposes like billing or other management. Typically, the tag key
+   * represents a category, such as "environment", and the tag value represents a
+   * specific value within that category, such as "test," "development," or
+   * "production". Or you might set the tag key to "customer" and the value to the
+   * customer name or ID. You can specify one or more tags to add to each Amazon Web
+   * Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon
+   * Web Services resources that you manage through WAF: web ACLs, rule groups, IP
+   * sets, and regex pattern sets. You can't manage or view tags through the WAF
+   * console. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagInfoForResource">AWS
    * API Reference</a></p>
    */

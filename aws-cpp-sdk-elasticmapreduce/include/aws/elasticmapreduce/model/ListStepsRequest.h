@@ -186,42 +186,74 @@ namespace Model
 
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline ListStepsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline ListStepsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The maximum number of steps that a single <code>ListSteps</code> action
+     * returns is 50. To return a longer list of steps, use multiple
+     * <code>ListSteps</code> actions along with the <code>Marker</code> parameter,
+     * which is a pagination token that indicates the next set of results to
+     * retrieve.</p>
      */
     inline ListStepsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

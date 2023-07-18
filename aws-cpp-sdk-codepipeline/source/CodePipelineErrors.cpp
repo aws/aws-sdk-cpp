@@ -26,6 +26,7 @@ static const int NOT_LATEST_PIPELINE_EXECUTION_HASH = HashingUtils::HashString("
 static const int INVALID_BLOCKER_DECLARATION_HASH = HashingUtils::HashString("InvalidBlockerDeclarationException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_ACTION_DECLARATION_HASH = HashingUtils::HashString("InvalidActionDeclarationException");
+static const int REQUEST_FAILED_HASH = HashingUtils::HashString("RequestFailedException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int PIPELINE_NAME_IN_USE_HASH = HashingUtils::HashString("PipelineNameInUseException");
 static const int APPROVAL_ALREADY_COMPLETED_HASH = HashingUtils::HashString("ApprovalAlreadyCompletedException");
@@ -88,6 +89,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_ACTION_DECLARATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ACTION_DECLARATION), false);
+  }
+  else if (hashCode == REQUEST_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::REQUEST_FAILED), false);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {

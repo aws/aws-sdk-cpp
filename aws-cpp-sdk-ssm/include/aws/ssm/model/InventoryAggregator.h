@@ -7,7 +7,6 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ssm/model/InventoryAggregator.h>
 #include <aws/ssm/model/InventoryGroup.h>
 #include <utility>
 

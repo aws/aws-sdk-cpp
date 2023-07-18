@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline const Aws::String& GetSmsMessage() const{ return m_smsMessage; }
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline bool SmsMessageHasBeenSet() const { return m_smsMessageHasBeenSet; }
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline void SetSmsMessage(const Aws::String& value) { m_smsMessageHasBeenSet = true; m_smsMessage = value; }
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline void SetSmsMessage(Aws::String&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::move(value); }
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline void SetSmsMessage(const char* value) { m_smsMessageHasBeenSet = true; m_smsMessage.assign(value); }
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline SmsSettings& WithSmsMessage(const Aws::String& value) { SetSmsMessage(value); return *this;}
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline SmsSettings& WithSmsMessage(Aws::String&& value) { SetSmsMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The body of the SMS message.</p>
+     * <p>The contents of the SMS message.</p>
      */
     inline SmsSettings& WithSmsMessage(const char* value) { SetSmsMessage(value); return *this;}
 

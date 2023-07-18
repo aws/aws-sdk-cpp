@@ -16,7 +16,8 @@ GetSavingsPlansUtilizationRequest::GetSavingsPlansUtilizationRequest() :
     m_timePeriodHasBeenSet(false),
     m_granularity(Granularity::NOT_SET),
     m_granularityHasBeenSet(false),
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_sortByHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String GetSavingsPlansUtilizationRequest::SerializePayload() const
   if(m_filterHasBeenSet)
   {
    payload.WithObject("Filter", m_filter.Jsonize());
+
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithObject("SortBy", m_sortBy.Jsonize());
 
   }
 

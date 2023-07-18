@@ -21,7 +21,8 @@ AssumeRoleRequest::AssumeRoleRequest() :
     m_transitiveTagKeysHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
-    m_tokenCodeHasBeenSet(false)
+    m_tokenCodeHasBeenSet(false),
+    m_sourceIdentityHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,11 @@ Aws::String AssumeRoleRequest::SerializePayload() const
   if(m_tokenCodeHasBeenSet)
   {
     ss << "TokenCode=" << StringUtils::URLEncode(m_tokenCode.c_str()) << "&";
+  }
+
+  if(m_sourceIdentityHasBeenSet)
+  {
+    ss << "SourceIdentity=" << StringUtils::URLEncode(m_sourceIdentity.c_str()) << "&";
   }
 
   ss << "Version=2011-06-15";

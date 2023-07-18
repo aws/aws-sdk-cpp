@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>This object contains the details about the quota increase request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline const ServiceQuotaIncreaseRequestInTemplate& GetServiceQuotaIncreaseRequestInTemplate() const{ return m_serviceQuotaIncreaseRequestInTemplate; }
 
     /**
-     * <p>This object contains the details about the quota increase request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline void SetServiceQuotaIncreaseRequestInTemplate(const ServiceQuotaIncreaseRequestInTemplate& value) { m_serviceQuotaIncreaseRequestInTemplate = value; }
 
     /**
-     * <p>This object contains the details about the quota increase request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline void SetServiceQuotaIncreaseRequestInTemplate(ServiceQuotaIncreaseRequestInTemplate&& value) { m_serviceQuotaIncreaseRequestInTemplate = std::move(value); }
 
     /**
-     * <p>This object contains the details about the quota increase request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline GetServiceQuotaIncreaseRequestFromTemplateResult& WithServiceQuotaIncreaseRequestInTemplate(const ServiceQuotaIncreaseRequestInTemplate& value) { SetServiceQuotaIncreaseRequestInTemplate(value); return *this;}
 
     /**
-     * <p>This object contains the details about the quota increase request.</p>
+     * <p>Information about the quota increase request.</p>
      */
     inline GetServiceQuotaIncreaseRequestFromTemplateResult& WithServiceQuotaIncreaseRequestInTemplate(ServiceQuotaIncreaseRequestInTemplate&& value) { SetServiceQuotaIncreaseRequestInTemplate(std::move(value)); return *this;}
 

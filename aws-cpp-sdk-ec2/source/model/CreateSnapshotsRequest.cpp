@@ -13,6 +13,7 @@ using namespace Aws::Utils;
 CreateSnapshotsRequest::CreateSnapshotsRequest() : 
     m_descriptionHasBeenSet(false),
     m_instanceSpecificationHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
@@ -33,6 +34,11 @@ Aws::String CreateSnapshotsRequest::SerializePayload() const
   if(m_instanceSpecificationHasBeenSet)
   {
     m_instanceSpecification.OutputToStream(ss, "InstanceSpecification");
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+    ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

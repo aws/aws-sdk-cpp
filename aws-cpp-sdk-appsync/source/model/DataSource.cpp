@@ -28,6 +28,7 @@ DataSource::DataSource() :
     m_dynamodbConfigHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_elasticsearchConfigHasBeenSet(false),
+    m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
     m_relationalDatabaseConfigHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ DataSource::DataSource(JsonView jsonValue) :
     m_dynamodbConfigHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_elasticsearchConfigHasBeenSet(false),
+    m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
     m_relationalDatabaseConfigHasBeenSet(false)
 {
@@ -105,6 +107,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_elasticsearchConfig = jsonValue.GetObject("elasticsearchConfig");
 
     m_elasticsearchConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("openSearchServiceConfig"))
+  {
+    m_openSearchServiceConfig = jsonValue.GetObject("openSearchServiceConfig");
+
+    m_openSearchServiceConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("httpConfig"))
@@ -172,6 +181,12 @@ JsonValue DataSource::Jsonize() const
   if(m_elasticsearchConfigHasBeenSet)
   {
    payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
+
+  }
+
+  if(m_openSearchServiceConfigHasBeenSet)
+  {
+   payload.WithObject("openSearchServiceConfig", m_openSearchServiceConfig.Jsonize());
 
   }
 

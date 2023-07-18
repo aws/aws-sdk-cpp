@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Evidence that is uploaded to AWS Audit Manager manually. </p><p><h3>See
+   * <p> Evidence that's uploaded to Audit Manager manually. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ManualEvidence">AWS
    * API Reference</a></p>

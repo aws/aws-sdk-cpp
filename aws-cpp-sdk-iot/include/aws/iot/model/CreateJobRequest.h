@@ -13,6 +13,8 @@
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/iot/model/JobExecutionsRetryConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
 
@@ -40,50 +42,58 @@ namespace Model
 
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
@@ -135,123 +145,139 @@ namespace Model
 
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline const Aws::String& GetDocumentSource() const{ return m_documentSource; }
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline bool DocumentSourceHasBeenSet() const { return m_documentSourceHasBeenSet; }
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocumentSource(const Aws::String& value) { m_documentSourceHasBeenSet = true; m_documentSource = value; }
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocumentSource(Aws::String&& value) { m_documentSourceHasBeenSet = true; m_documentSource = std::move(value); }
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocumentSource(const char* value) { m_documentSourceHasBeenSet = true; m_documentSource.assign(value); }
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocumentSource(const Aws::String& value) { SetDocumentSource(value); return *this;}
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocumentSource(Aws::String&& value) { SetDocumentSource(std::move(value)); return *this;}
 
     /**
-     * <p>An S3 link to the job document.</p>
+     * <p>An S3 link to the job document. Required if you don't specify a value for
+     * <code>document</code>.</p>  <p>If the job document resides in an S3
+     * bucket, you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocumentSource(const char* value) { SetDocumentSource(value); return *this;}
 
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline CreateJobRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline CreateJobRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
-     * you must use a placeholder link when specifying the document.</p> <p>The
-     * placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>The job document. Required if you don't specify a value for
+     * <code>documentSource</code>.</p>
      */
     inline CreateJobRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 
@@ -334,7 +360,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
 
@@ -344,7 +373,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
@@ -354,7 +386,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
@@ -364,7 +399,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
 
@@ -374,7 +412,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline CreateJobRequest& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
 
@@ -384,7 +425,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline CreateJobRequest& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
 
@@ -421,32 +465,32 @@ namespace Model
 
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline const AbortConfig& GetAbortConfig() const{ return m_abortConfig; }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline bool AbortConfigHasBeenSet() const { return m_abortConfigHasBeenSet; }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline void SetAbortConfig(const AbortConfig& value) { m_abortConfigHasBeenSet = true; m_abortConfig = value; }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline void SetAbortConfig(AbortConfig&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::move(value); }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline CreateJobRequest& WithAbortConfig(const AbortConfig& value) { SetAbortConfig(value); return *this;}
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline CreateJobRequest& WithAbortConfig(AbortConfig&& value) { SetAbortConfig(std::move(value)); return *this;}
 
@@ -549,9 +593,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -560,9 +604,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -571,9 +615,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -582,9 +626,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -593,9 +637,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -604,9 +648,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -615,9 +659,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -626,14 +670,204 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
      */
     inline CreateJobRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline const Aws::String& GetJobTemplateArn() const{ return m_jobTemplateArn; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline bool JobTemplateArnHasBeenSet() const { return m_jobTemplateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(const Aws::String& value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn = value; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(Aws::String&& value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(const char* value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline CreateJobRequest& WithJobTemplateArn(const Aws::String& value) { SetJobTemplateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline CreateJobRequest& WithJobTemplateArn(Aws::String&& value) { SetJobTemplateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline CreateJobRequest& WithJobTemplateArn(const char* value) { SetJobTemplateArn(value); return *this;}
+
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline const JobExecutionsRetryConfig& GetJobExecutionsRetryConfig() const{ return m_jobExecutionsRetryConfig; }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline bool JobExecutionsRetryConfigHasBeenSet() const { return m_jobExecutionsRetryConfigHasBeenSet; }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = value; }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = std::move(value); }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline CreateJobRequest& WithJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { SetJobExecutionsRetryConfig(value); return *this;}
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline CreateJobRequest& WithJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { SetJobExecutionsRetryConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline bool DocumentParametersHasBeenSet() const { return m_documentParametersHasBeenSet; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters of an Amazon Web Services managed template that you can specify to
+     * create the job document.</p>  <p> <code>documentParameters</code> can only
+     * be used when creating jobs from Amazon Web Services managed templates. This
+     * parameter can't be used with custom job templates or to create jobs from
+     * them.</p> 
+     */
+    inline CreateJobRequest& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
 
   private:
 
@@ -672,6 +906,15 @@ namespace Model
 
     Aws::String m_namespaceId;
     bool m_namespaceIdHasBeenSet;
+
+    Aws::String m_jobTemplateArn;
+    bool m_jobTemplateArnHasBeenSet;
+
+    JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
+    bool m_jobExecutionsRetryConfigHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_documentParameters;
+    bool m_documentParametersHasBeenSet;
   };
 
 } // namespace Model

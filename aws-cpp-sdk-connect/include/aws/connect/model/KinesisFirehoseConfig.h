@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information of a Kinesis Firehose delivery
+   * <p>Configuration information of a Kinesis Data Firehose delivery
    * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/KinesisFirehoseConfig">AWS
    * API Reference</a></p>

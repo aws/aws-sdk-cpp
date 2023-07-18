@@ -19,6 +19,7 @@ namespace Model
 {
 
 ClientPolicyTls::ClientPolicyTls() : 
+    m_certificateHasBeenSet(false),
     m_enforce(false),
     m_enforceHasBeenSet(false),
     m_portsHasBeenSet(false),
@@ -27,6 +28,7 @@ ClientPolicyTls::ClientPolicyTls() :
 }
 
 ClientPolicyTls::ClientPolicyTls(JsonView jsonValue) : 
+    m_certificateHasBeenSet(false),
     m_enforce(false),
     m_enforceHasBeenSet(false),
     m_portsHasBeenSet(false),
@@ -37,6 +39,13 @@ ClientPolicyTls::ClientPolicyTls(JsonView jsonValue) :
 
 ClientPolicyTls& ClientPolicyTls::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("certificate"))
+  {
+    m_certificate = jsonValue.GetObject("certificate");
+
+    m_certificateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("enforce"))
   {
     m_enforce = jsonValue.GetBool("enforce");
@@ -67,6 +76,12 @@ ClientPolicyTls& ClientPolicyTls::operator =(JsonView jsonValue)
 JsonValue ClientPolicyTls::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithObject("certificate", m_certificate.Jsonize());
+
+  }
 
   if(m_enforceHasBeenSet)
   {

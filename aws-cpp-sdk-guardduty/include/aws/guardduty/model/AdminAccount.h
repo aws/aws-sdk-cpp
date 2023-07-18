@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline const Aws::String& GetAdminAccountId() const{ return m_adminAccountId; }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline bool AdminAccountIdHasBeenSet() const { return m_adminAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline void SetAdminAccountId(const Aws::String& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = value; }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline void SetAdminAccountId(Aws::String&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline void SetAdminAccountId(const char* value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline AdminAccount& WithAdminAccountId(const Aws::String& value) { SetAdminAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline AdminAccount& WithAdminAccountId(Aws::String&& value) { SetAdminAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline AdminAccount& WithAdminAccountId(const char* value) { SetAdminAccountId(value); return *this;}
 

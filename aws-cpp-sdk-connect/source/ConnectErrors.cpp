@@ -6,7 +6,9 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/connect/ConnectErrors.h>
+#include <aws/connect/model/PropertyValidationException.h>
 #include <aws/connect/model/InvalidContactFlowException.h>
+#include <aws/connect/model/InvalidContactFlowModuleException.h>
 #include <aws/connect/model/ResourceInUseException.h>
 
 using namespace Aws::Client;
@@ -18,10 +20,22 @@ namespace Aws
 {
 namespace Connect
 {
+template<> AWS_CONNECT_API PropertyValidationException ConnectError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectErrors::PROPERTY_VALIDATION);
+  return PropertyValidationException(this->GetJsonPayload().View());
+}
+
 template<> AWS_CONNECT_API InvalidContactFlowException ConnectError::GetModeledError()
 {
   assert(this->GetErrorType() == ConnectErrors::INVALID_CONTACT_FLOW);
   return InvalidContactFlowException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CONNECT_API InvalidContactFlowModuleException ConnectError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectErrors::INVALID_CONTACT_FLOW_MODULE);
+  return InvalidContactFlowModuleException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError()
@@ -33,6 +47,8 @@ template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError(
 namespace ConnectErrorMapper
 {
 
+static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
+static const int PROPERTY_VALIDATION_HASH = HashingUtils::HashString("PropertyValidationException");
 static const int INVALID_CONTACT_FLOW_HASH = HashingUtils::HashString("InvalidContactFlowException");
 static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -40,6 +56,7 @@ static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateRe
 static const int DESTINATION_NOT_ALLOWED_HASH = HashingUtils::HashString("DestinationNotAllowedException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int CONTACT_FLOW_NOT_PUBLISHED_HASH = HashingUtils::HashString("ContactFlowNotPublishedException");
+static const int INVALID_CONTACT_FLOW_MODULE_HASH = HashingUtils::HashString("InvalidContactFlowModuleException");
 static const int OUTBOUND_CONTACT_NOT_PERMITTED_HASH = HashingUtils::HashString("OutboundContactNotPermittedException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int CONTACT_NOT_FOUND_HASH = HashingUtils::HashString("ContactNotFoundException");
@@ -53,7 +70,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_CONTACT_FLOW_HASH)
+  if (hashCode == IDEMPOTENCY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::IDEMPOTENCY), false);
+  }
+  else if (hashCode == PROPERTY_VALIDATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::PROPERTY_VALIDATION), false);
+  }
+  else if (hashCode == INVALID_CONTACT_FLOW_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_CONTACT_FLOW), false);
   }
@@ -80,6 +105,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONTACT_FLOW_NOT_PUBLISHED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_FLOW_NOT_PUBLISHED), false);
+  }
+  else if (hashCode == INVALID_CONTACT_FLOW_MODULE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_CONTACT_FLOW_MODULE), false);
   }
   else if (hashCode == OUTBOUND_CONTACT_NOT_PERMITTED_HASH)
   {

@@ -21,6 +21,7 @@ namespace ShieldEndpoint
   static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
   static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
 
+  static const int FIPS_AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("fips-aws-global");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
@@ -28,6 +29,13 @@ namespace ShieldEndpoint
     Aws::String region = regionName == Aws::Region::AWS_GLOBAL ? Aws::Region::US_EAST_1 : regionName;
     auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
+    if(!useDualStack)
+    {
+      if(hash == FIPS_AWS_GLOBAL_HASH)
+      {
+        return "shield-fips.us-east-1.amazonaws.com";
+      }
+    }
     Aws::StringStream ss;
     ss << "shield" << ".";
 

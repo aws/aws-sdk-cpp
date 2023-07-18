@@ -27,6 +27,8 @@ MsSmoothGroupSettings::MsSmoothGroupSettings() :
     m_encryptionHasBeenSet(false),
     m_fragmentLength(0),
     m_fragmentLengthHasBeenSet(false),
+    m_fragmentLengthControl(MsSmoothFragmentLengthControl::NOT_SET),
+    m_fragmentLengthControlHasBeenSet(false),
     m_manifestEncoding(MsSmoothManifestEncoding::NOT_SET),
     m_manifestEncodingHasBeenSet(false)
 {
@@ -41,6 +43,8 @@ MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue) :
     m_encryptionHasBeenSet(false),
     m_fragmentLength(0),
     m_fragmentLengthHasBeenSet(false),
+    m_fragmentLengthControl(MsSmoothFragmentLengthControl::NOT_SET),
+    m_fragmentLengthControlHasBeenSet(false),
     m_manifestEncoding(MsSmoothManifestEncoding::NOT_SET),
     m_manifestEncodingHasBeenSet(false)
 {
@@ -92,6 +96,13 @@ MsSmoothGroupSettings& MsSmoothGroupSettings::operator =(JsonView jsonValue)
     m_fragmentLength = jsonValue.GetInteger("fragmentLength");
 
     m_fragmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fragmentLengthControl"))
+  {
+    m_fragmentLengthControl = MsSmoothFragmentLengthControlMapper::GetMsSmoothFragmentLengthControlForName(jsonValue.GetString("fragmentLengthControl"));
+
+    m_fragmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manifestEncoding"))
@@ -146,6 +157,11 @@ JsonValue MsSmoothGroupSettings::Jsonize() const
   {
    payload.WithInteger("fragmentLength", m_fragmentLength);
 
+  }
+
+  if(m_fragmentLengthControlHasBeenSet)
+  {
+   payload.WithString("fragmentLengthControl", MsSmoothFragmentLengthControlMapper::GetNameForMsSmoothFragmentLengthControl(m_fragmentLengthControl));
   }
 
   if(m_manifestEncodingHasBeenSet)

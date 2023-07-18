@@ -9,6 +9,7 @@
 #include <aws/robomaker/model/WorldExportJobStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/robomaker/model/OutputLocation.h>
 #include <utility>
 
 namespace Aws
@@ -236,6 +237,25 @@ namespace Model
      */
     inline WorldExportJobSummary& AddWorlds(const char* value) { m_worldsHasBeenSet = true; m_worlds.push_back(value); return *this; }
 
+
+    
+    inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+
+    
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
+
+    
+    inline void SetOutputLocation(const OutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
+
+    
+    inline void SetOutputLocation(OutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
+
+    
+    inline WorldExportJobSummary& WithOutputLocation(const OutputLocation& value) { SetOutputLocation(value); return *this;}
+
+    
+    inline WorldExportJobSummary& WithOutputLocation(OutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -249,6 +269,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_worlds;
     bool m_worldsHasBeenSet;
+
+    OutputLocation m_outputLocation;
+    bool m_outputLocationHasBeenSet;
   };
 
 } // namespace Model

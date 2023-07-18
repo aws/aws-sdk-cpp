@@ -26,7 +26,8 @@ DeviceSummary::DeviceSummary() :
     m_iotThingNameHasBeenSet(false),
     m_registrationTimeHasBeenSet(false),
     m_latestHeartbeatHasBeenSet(false),
-    m_modelsHasBeenSet(false)
+    m_modelsHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ DeviceSummary::DeviceSummary(JsonView jsonValue) :
     m_iotThingNameHasBeenSet(false),
     m_registrationTimeHasBeenSet(false),
     m_latestHeartbeatHasBeenSet(false),
-    m_modelsHasBeenSet(false)
+    m_modelsHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
     m_modelsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AgentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("AgentVersion");
+
+    m_agentVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +168,12 @@ JsonValue DeviceSummary::Jsonize() const
      modelsJsonList[modelsIndex].AsObject(m_models[modelsIndex].Jsonize());
    }
    payload.WithArray("Models", std::move(modelsJsonList));
+
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("AgentVersion", m_agentVersion);
 
   }
 

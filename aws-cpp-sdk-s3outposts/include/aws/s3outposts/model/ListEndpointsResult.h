@@ -35,73 +35,87 @@ namespace Model
 
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>The list of endpoints associated with the specified Outpost.</p>
      */
     inline const Aws::Vector<Endpoint>& GetEndpoints() const{ return m_endpoints; }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>The list of endpoints associated with the specified Outpost.</p>
      */
     inline void SetEndpoints(const Aws::Vector<Endpoint>& value) { m_endpoints = value; }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>The list of endpoints associated with the specified Outpost.</p>
      */
     inline void SetEndpoints(Aws::Vector<Endpoint>&& value) { m_endpoints = std::move(value); }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>The list of endpoints associated with the specified Outpost.</p>
      */
     inline ListEndpointsResult& WithEndpoints(const Aws::Vector<Endpoint>& value) { SetEndpoints(value); return *this;}
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>The list of endpoints associated with the specified Outpost.</p>
      */
     inline ListEndpointsResult& WithEndpoints(Aws::Vector<Endpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>The list of endpoints associated with the specified Outpost.</p>
      */
     inline ListEndpointsResult& AddEndpoints(const Endpoint& value) { m_endpoints.push_back(value); return *this; }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>The list of endpoints associated with the specified Outpost.</p>
      */
     inline ListEndpointsResult& AddEndpoints(Endpoint&& value) { m_endpoints.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The next endpoint returned in the list.</p>
+     * <p>If the number of endpoints associated with the specified Outpost exceeds
+     * <code>MaxResults</code>, you can include this value in subsequent calls to this
+     * operation to retrieve more results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The next endpoint returned in the list.</p>
+     * <p>If the number of endpoints associated with the specified Outpost exceeds
+     * <code>MaxResults</code>, you can include this value in subsequent calls to this
+     * operation to retrieve more results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The next endpoint returned in the list.</p>
+     * <p>If the number of endpoints associated with the specified Outpost exceeds
+     * <code>MaxResults</code>, you can include this value in subsequent calls to this
+     * operation to retrieve more results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The next endpoint returned in the list.</p>
+     * <p>If the number of endpoints associated with the specified Outpost exceeds
+     * <code>MaxResults</code>, you can include this value in subsequent calls to this
+     * operation to retrieve more results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The next endpoint returned in the list.</p>
+     * <p>If the number of endpoints associated with the specified Outpost exceeds
+     * <code>MaxResults</code>, you can include this value in subsequent calls to this
+     * operation to retrieve more results.</p>
      */
     inline ListEndpointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next endpoint returned in the list.</p>
+     * <p>If the number of endpoints associated with the specified Outpost exceeds
+     * <code>MaxResults</code>, you can include this value in subsequent calls to this
+     * operation to retrieve more results.</p>
      */
     inline ListEndpointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The next endpoint returned in the list.</p>
+     * <p>If the number of endpoints associated with the specified Outpost exceeds
+     * <code>MaxResults</code>, you can include this value in subsequent calls to this
+     * operation to retrieve more results.</p>
      */
     inline ListEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

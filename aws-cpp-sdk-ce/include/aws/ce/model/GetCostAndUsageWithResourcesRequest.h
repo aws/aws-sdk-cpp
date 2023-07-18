@@ -107,50 +107,50 @@ namespace Model
 
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
@@ -166,7 +166,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -181,7 +186,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -196,7 +206,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -211,7 +226,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -226,7 +246,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -241,7 +266,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
@@ -259,7 +289,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -279,7 +309,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -299,7 +329,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -319,7 +349,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -339,7 +369,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -359,7 +389,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -379,7 +409,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -399,7 +429,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -419,7 +449,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -477,58 +507,58 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

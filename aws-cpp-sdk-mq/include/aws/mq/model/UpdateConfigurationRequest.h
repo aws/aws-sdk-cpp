@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * Updates the specified configuration.<p><h3>See Also:</h3>   <a
+   * <p>Updates the specified configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -36,124 +36,124 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline UpdateConfigurationRequest& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline UpdateConfigurationRequest& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline UpdateConfigurationRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline UpdateConfigurationRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline UpdateConfigurationRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline UpdateConfigurationRequest& WithData(const char* value) { SetData(value); return *this;}
 
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline UpdateConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline UpdateConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline UpdateConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

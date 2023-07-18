@@ -33,7 +33,8 @@ namespace Model
     InsufficientFreeAddresses,
     AccessDenied,
     InternalFailure,
-    ClusterUnreachable
+    ClusterUnreachable,
+    Ec2SubnetMissingIpv6Assignment
   };
 
 namespace NodegroupIssueCodeMapper

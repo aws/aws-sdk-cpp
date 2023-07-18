@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An attribute is a name-value pair associated with an Amazon ECS object.
-   * Attributes enable you to extend the Amazon ECS data model by adding custom
+   * <p>An attribute is a name-value pair that's associated with an Amazon ECS
+   * object. Use attributes to extend the Amazon ECS data model by adding custom
    * metadata to your resources. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
    * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
@@ -45,171 +45,179 @@ namespace Model
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline Attribute& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline Attribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute. The <code>name</code> must contain between 1 and
-     * 128 characters and name may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, forward slashes, back slashes, or periods.</p>
+     * 128 characters. The name may contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
+     * (.).</p>
      */
     inline Attribute& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline Attribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline Attribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
-     * 128 characters and may contain letters (uppercase and lowercase), numbers,
-     * hyphens, underscores, periods, at signs (@), forward slashes, back slashes,
-     * colons, or spaces. The value cannot contain any leading or trailing
-     * whitespace.</p>
+     * 128 characters. It can contain letters (uppercase and lowercase), numbers,
+     * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
+     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
+     * a space.</p>
      */
     inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
-     * <p>The type of the target with which to attach the attribute. This parameter is
+     * <p>The type of the target to attach the attribute with. This parameter is
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */
     inline const TargetType& GetTargetType() const{ return m_targetType; }
 
     /**
-     * <p>The type of the target with which to attach the attribute. This parameter is
+     * <p>The type of the target to attach the attribute with. This parameter is
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
-     * <p>The type of the target with which to attach the attribute. This parameter is
+     * <p>The type of the target to attach the attribute with. This parameter is
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */
     inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
-     * <p>The type of the target with which to attach the attribute. This parameter is
+     * <p>The type of the target to attach the attribute with. This parameter is
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */
     inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
-     * <p>The type of the target with which to attach the attribute. This parameter is
+     * <p>The type of the target to attach the attribute with. This parameter is
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */
     inline Attribute& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
 
     /**
-     * <p>The type of the target with which to attach the attribute. This parameter is
+     * <p>The type of the target to attach the attribute with. This parameter is
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */

@@ -27,6 +27,9 @@
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/crypto/MD5.h>
+#include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/Sha256.h>
+#include <aws/core/utils/crypto/Sha1.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/event/EventStream.h>
@@ -35,10 +38,12 @@
 #include <aws/core/Region.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/Version.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
 
 #include <cstring>
 #include <cassert>
+#include <iomanip>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -51,6 +56,9 @@ static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 
 static const char AWS_CLIENT_LOG_TAG[] = "AWSClient";
+static const char AWS_LAMBDA_FUNCTION_NAME[] = "AWS_LAMBDA_FUNCTION_NAME";
+static const char X_AMZN_TRACE_ID[] = "_X_AMZN_TRACE_ID";
+
 //4 Minutes
 static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::minutes(4);
 //-4 Minutes
@@ -137,7 +145,7 @@ void AWSClient::SetServiceClientName(const Aws::String& name)
     if (!m_customizedUserAgent)
     {
         Aws::StringStream ss;
-        ss << "aws-sdk-cpp/" << Version::GetVersionString() << "/" << m_serviceName << "/" <<  Aws::OSVersionInfo::ComputeOSVersionString()
+        ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString()
             << " " << Version::GetCompilerVersionString();
         m_userAgent = ss.str();
     }
@@ -232,16 +240,24 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
-    Aws::String invocationId = UUID::RandomUUID();
+    Aws::String invocationId = Aws::Utils::UUID::RandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
     requestInfo.maxAttempts = 0;
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
+    AppendRecursionDetectionHeader(httpRequest);
 
     for (long retries = 0;; retries++)
     {
-        m_retryStrategy->GetSendToken();
+        if(!m_retryStrategy->HasSendToken())
+        {
+            return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::SLOW_DOWN,
+                                                               "",
+                                                               "Unable to acquire enough send tokens to execute request.",
+                                                               false/*retryable*/));
+
+        };
         httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
 
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
@@ -358,16 +374,24 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
-    Aws::String invocationId = UUID::RandomUUID();
+    Aws::String invocationId = Aws::Utils::UUID::RandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
     requestInfo.maxAttempts = 0;
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
+    AppendRecursionDetectionHeader(httpRequest);
 
     for (long retries = 0;; retries++)
     {
-        m_retryStrategy->GetSendToken();
+        if(!m_retryStrategy->HasSendToken())
+        {
+            return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::SLOW_DOWN,
+                                                            "",
+                                                            "Unable to acquire enough send tokens to execute request.",
+                                                            false/*retryable*/));
+
+        };
         outcome = AttemptOneRequest(httpRequest, signerName, requestName, signerRegion, signerServiceNameOverride);
         if (retries == 0)
         {
@@ -480,6 +504,30 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
         m_httpClient->MakeRequest(httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
+
+    if (request.ShouldValidateResponseChecksum())
+    {
+        for (const auto& hashIterator : httpRequest->GetResponseValidationHashes())
+        {
+            Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + hashIterator.first;
+            // TODO: If checksum ends with -#, then skip
+            if (httpResponse->HasHeader(checksumHeaderKey.c_str()))
+            {
+                Aws::String checksumHeaderValue = httpResponse->GetHeader(checksumHeaderKey.c_str());
+                if (HashingUtils::Base64Encode(hashIterator.second->GetHash().GetResult()) != checksumHeaderValue)
+                {
+                    AWSError<CoreErrors> error(CoreErrors::VALIDATION, "", "Response checksums mismatch", false/*retryable*/);
+                    error.SetResponseHeaders(httpResponse->GetHeaders());
+                    error.SetResponseCode(httpResponse->GetResponseCode());
+                    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
+                    AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
+                    return HttpResponseOutcome(error);
+                }
+                // Validate only a single checksum returned in an HTTP response
+                break;
+            }
+        }
+    }
 
     if (DoesResponseGenerateError(httpResponse))
     {
@@ -603,6 +651,105 @@ void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest
     AddCommonHeaders(*httpRequest);
 }
 
+void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
+    const Aws::AmazonWebServiceRequest& request) const
+{
+    Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
+
+    // Request checksums
+    if (!checksumAlgorithmName.empty())
+    {
+        // For non streaming payload, the resolved checksum location is always header.
+        // For streaming payload, the resolved checksum location depends on whether it's unsigned payload, we let AwsAuthSigner decide it.
+        if (checksumAlgorithmName == "crc32")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("crc32", Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-crc32", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "crc32c")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("crc32c", Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-crc32c", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "sha256")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("sha256", Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-sha256", HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "sha1")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("sha1", Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-sha1", HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "md5")
+        {
+            httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(request.GetBody()))));
+        }
+        else
+        {
+            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Checksum algorithm: " << checksumAlgorithmName << "is not supported by SDK.");
+        }
+    }
+
+    // Response checksums
+    if (request.ShouldValidateResponseChecksum())
+    {
+        for (const Aws::String& responseChecksumAlgorithmName : request.GetResponseChecksumAlgorithmNames())
+        {
+            checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(responseChecksumAlgorithmName.c_str());
+
+            if (checksumAlgorithmName == "crc32c")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::CRC32C> crc32c = Aws::MakeShared<Aws::Utils::Crypto::CRC32C>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("crc32c", crc32c);
+            }
+            else if (checksumAlgorithmName == "crc32")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::CRC32> crc32 = Aws::MakeShared<Aws::Utils::Crypto::CRC32>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("crc", crc32);
+            }
+            else if (checksumAlgorithmName == "sha1")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::Sha1> sha1 = Aws::MakeShared<Aws::Utils::Crypto::Sha1>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("sha1", sha1);
+            }
+            else if (checksumAlgorithmName == "sha256")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::Sha256> sha256 = Aws::MakeShared<Aws::Utils::Crypto::Sha256>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("sha256", sha256);
+            }
+            else
+            {
+                AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Checksum algorithm: " << checksumAlgorithmName << " is not supported in validating response body yet.");
+            }
+        }
+    }
+}
+
 void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5, bool isChunked) const
 {
@@ -626,7 +773,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     }
 
     //Add transfer-encoding:chunked to header
-    if (body && isChunked)
+    if (body && isChunked && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
     {
         httpRequest->SetTransferEncoding(CHUNKED_VALUE);
     }
@@ -687,6 +834,8 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 {
     //do headers first since the request likely will set content-length as it's own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
+
+    AddChecksumToRequest(httpRequest, request);
 
     if (request.IsEventStreamRequest())
     {
@@ -794,6 +943,34 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto signer = GetSignerByName(signerName);
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    for (const auto& it: customizedHeaders)
+    {
+        request->SetHeaderValue(it.first.c_str(), it.second);
+    }
+    auto signer = GetSignerByName(signerName);
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
@@ -855,6 +1032,41 @@ std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_
     return m_httpClient->MakeRequest(request, m_readRateLimiter.get(), m_writeRateLimiter.get());
 }
 
+void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest)
+{
+    if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
+        return;
+    }
+    Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
+    if(awsLambdaFunctionName.empty()) {
+        return;
+    }
+    Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
+    if(xAmznTraceIdVal.empty()) {
+        return;
+    }
+
+    // Escape all non-printable ASCII characters by percent encoding
+    Aws::OStringStream xAmznTraceIdValEncodedStr;
+    for(const char ch : xAmznTraceIdVal)
+    {
+        if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
+        {
+            xAmznTraceIdValEncodedStr << ch;
+        }
+        else
+        {
+            // A percent-encoded octet is encoded as a character triplet
+            xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
+                                      << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
+                                      << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
+                                      << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
+        }
+    }
+    xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
+
+    ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
+}
 
 ////////////////////////////////////////////////////////////////////////////
 AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,

@@ -24,7 +24,9 @@ CrlConfiguration::CrlConfiguration() :
     m_expirationInDays(0),
     m_expirationInDaysHasBeenSet(false),
     m_customCnameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
+    m_s3BucketNameHasBeenSet(false),
+    m_s3ObjectAcl(S3ObjectAcl::NOT_SET),
+    m_s3ObjectAclHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ CrlConfiguration::CrlConfiguration(JsonView jsonValue) :
     m_expirationInDays(0),
     m_expirationInDaysHasBeenSet(false),
     m_customCnameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
+    m_s3BucketNameHasBeenSet(false),
+    m_s3ObjectAcl(S3ObjectAcl::NOT_SET),
+    m_s3ObjectAclHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ CrlConfiguration& CrlConfiguration::operator =(JsonView jsonValue)
     m_s3BucketNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3ObjectAcl"))
+  {
+    m_s3ObjectAcl = S3ObjectAclMapper::GetS3ObjectAclForName(jsonValue.GetString("S3ObjectAcl"));
+
+    m_s3ObjectAclHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +109,11 @@ JsonValue CrlConfiguration::Jsonize() const
   {
    payload.WithString("S3BucketName", m_s3BucketName);
 
+  }
+
+  if(m_s3ObjectAclHasBeenSet)
+  {
+   payload.WithString("S3ObjectAcl", S3ObjectAclMapper::GetNameForS3ObjectAcl(m_s3ObjectAcl));
   }
 
   return payload;

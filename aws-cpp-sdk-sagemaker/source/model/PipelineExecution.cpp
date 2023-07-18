@@ -25,10 +25,13 @@ PipelineExecution::PipelineExecution() :
     m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
     m_pipelineExecutionStatusHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
+    m_pipelineExperimentConfigHasBeenSet(false),
+    m_failureReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_parallelismConfigurationHasBeenSet(false),
     m_pipelineParametersHasBeenSet(false)
 {
 }
@@ -40,10 +43,13 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
     m_pipelineExecutionStatusHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
+    m_pipelineExperimentConfigHasBeenSet(false),
+    m_failureReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_parallelismConfigurationHasBeenSet(false),
     m_pipelineParametersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -86,6 +92,20 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_pipelineExecutionDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PipelineExperimentConfig"))
+  {
+    m_pipelineExperimentConfig = jsonValue.GetObject("PipelineExperimentConfig");
+
+    m_pipelineExperimentConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = jsonValue.GetString("FailureReason");
+
+    m_failureReasonHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
@@ -112,6 +132,13 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
 
     m_lastModifiedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParallelismConfiguration"))
+  {
+    m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
+
+    m_parallelismConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PipelineParameters"))
@@ -160,6 +187,18 @@ JsonValue PipelineExecution::Jsonize() const
 
   }
 
+  if(m_pipelineExperimentConfigHasBeenSet)
+  {
+   payload.WithObject("PipelineExperimentConfig", m_pipelineExperimentConfig.Jsonize());
+
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("FailureReason", m_failureReason);
+
+  }
+
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
@@ -179,6 +218,12 @@ JsonValue PipelineExecution::Jsonize() const
   if(m_lastModifiedByHasBeenSet)
   {
    payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
+
+  }
+
+  if(m_parallelismConfigurationHasBeenSet)
+  {
+   payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
 
   }
 

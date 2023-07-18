@@ -8,6 +8,7 @@
 #include <aws/location/model/MapConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -169,44 +170,51 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p>
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline const Aws::String& GetMapArn() const{ return m_mapArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p>
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline void SetMapArn(const Aws::String& value) { m_mapArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p>
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline void SetMapArn(Aws::String&& value) { m_mapArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p>
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline void SetMapArn(const char* value) { m_mapArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p>
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline DescribeMapResult& WithMapArn(const Aws::String& value) { SetMapArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p>
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline DescribeMapResult& WithMapArn(Aws::String&& value) { SetMapArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p>
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline DescribeMapResult& WithMapArn(const char* value) { SetMapArn(value); return *this;}
 
@@ -245,6 +253,67 @@ namespace Model
      * <p>The map style selected from an available provider.</p>
      */
     inline DescribeMapResult& WithMapName(const char* value) { SetMapName(value); return *this;}
+
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags associated with the map resource.</p>
+     */
+    inline DescribeMapResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
     /**
@@ -295,6 +364,8 @@ namespace Model
     Aws::String m_mapArn;
 
     Aws::String m_mapName;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Utils::DateTime m_updateTime;
   };

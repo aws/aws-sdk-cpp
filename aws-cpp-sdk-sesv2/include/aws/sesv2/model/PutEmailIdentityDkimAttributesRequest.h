@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The email identity that you want to change the DKIM settings for.</p>
+     * <p>The email identity.</p>
      */
     inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
 

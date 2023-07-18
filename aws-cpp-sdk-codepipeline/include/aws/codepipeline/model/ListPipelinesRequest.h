@@ -86,10 +86,42 @@ namespace Model
      */
     inline ListPipelinesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of pipelines to return in a single call. To retrieve the
+     * remaining pipelines, make another call with the returned nextToken value. The
+     * minimum value you can specify is 1. The maximum accepted value is 1000.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of pipelines to return in a single call. To retrieve the
+     * remaining pipelines, make another call with the returned nextToken value. The
+     * minimum value you can specify is 1. The maximum accepted value is 1000.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of pipelines to return in a single call. To retrieve the
+     * remaining pipelines, make another call with the returned nextToken value. The
+     * minimum value you can specify is 1. The maximum accepted value is 1000.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of pipelines to return in a single call. To retrieve the
+     * remaining pipelines, make another call with the returned nextToken value. The
+     * minimum value you can specify is 1. The maximum accepted value is 1000.</p>
+     */
+    inline ListPipelinesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

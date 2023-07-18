@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/translate/model/EncryptionKey.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/translate/model/Directionality.h>
+#include <aws/translate/model/TerminologyDataFormat.h>
 #include <utility>
 
 namespace Aws
@@ -214,55 +216,55 @@ namespace Model
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetLanguageCodes() const{ return m_targetLanguageCodes; }
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline bool TargetLanguageCodesHasBeenSet() const { return m_targetLanguageCodesHasBeenSet; }
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline void SetTargetLanguageCodes(const Aws::Vector<Aws::String>& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes = value; }
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline void SetTargetLanguageCodes(Aws::Vector<Aws::String>&& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes = std::move(value); }
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline TerminologyProperties& WithTargetLanguageCodes(const Aws::Vector<Aws::String>& value) { SetTargetLanguageCodes(value); return *this;}
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline TerminologyProperties& WithTargetLanguageCodes(Aws::Vector<Aws::String>&& value) { SetTargetLanguageCodes(std::move(value)); return *this;}
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline TerminologyProperties& AddTargetLanguageCodes(const Aws::String& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes.push_back(value); return *this; }
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline TerminologyProperties& AddTargetLanguageCodes(Aws::String&& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The language codes for the target languages available with the custom
-     * terminology file. All possible target languages are returned in array.</p>
+     * terminology resource. All possible target languages are returned in array.</p>
      */
     inline TerminologyProperties& AddTargetLanguageCodes(const char* value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes.push_back(value); return *this; }
 
@@ -413,6 +415,172 @@ namespace Model
      */
     inline TerminologyProperties& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The directionality of your terminology resource indicates whether it has one
+     * source language (uni-directional) or multiple (multi-directional). </p> <dl>
+     * <dt>UNI</dt> <dd> <p>The terminology resource has one source language (the first
+     * column in a CSV file), and all of its other languages are target languages.</p>
+     * </dd> <dt>MULTI</dt> <dd> <p>Any language in the terminology resource can be the
+     * source language.</p> </dd> </dl>
+     */
+    inline const Directionality& GetDirectionality() const{ return m_directionality; }
+
+    /**
+     * <p>The directionality of your terminology resource indicates whether it has one
+     * source language (uni-directional) or multiple (multi-directional). </p> <dl>
+     * <dt>UNI</dt> <dd> <p>The terminology resource has one source language (the first
+     * column in a CSV file), and all of its other languages are target languages.</p>
+     * </dd> <dt>MULTI</dt> <dd> <p>Any language in the terminology resource can be the
+     * source language.</p> </dd> </dl>
+     */
+    inline bool DirectionalityHasBeenSet() const { return m_directionalityHasBeenSet; }
+
+    /**
+     * <p>The directionality of your terminology resource indicates whether it has one
+     * source language (uni-directional) or multiple (multi-directional). </p> <dl>
+     * <dt>UNI</dt> <dd> <p>The terminology resource has one source language (the first
+     * column in a CSV file), and all of its other languages are target languages.</p>
+     * </dd> <dt>MULTI</dt> <dd> <p>Any language in the terminology resource can be the
+     * source language.</p> </dd> </dl>
+     */
+    inline void SetDirectionality(const Directionality& value) { m_directionalityHasBeenSet = true; m_directionality = value; }
+
+    /**
+     * <p>The directionality of your terminology resource indicates whether it has one
+     * source language (uni-directional) or multiple (multi-directional). </p> <dl>
+     * <dt>UNI</dt> <dd> <p>The terminology resource has one source language (the first
+     * column in a CSV file), and all of its other languages are target languages.</p>
+     * </dd> <dt>MULTI</dt> <dd> <p>Any language in the terminology resource can be the
+     * source language.</p> </dd> </dl>
+     */
+    inline void SetDirectionality(Directionality&& value) { m_directionalityHasBeenSet = true; m_directionality = std::move(value); }
+
+    /**
+     * <p>The directionality of your terminology resource indicates whether it has one
+     * source language (uni-directional) or multiple (multi-directional). </p> <dl>
+     * <dt>UNI</dt> <dd> <p>The terminology resource has one source language (the first
+     * column in a CSV file), and all of its other languages are target languages.</p>
+     * </dd> <dt>MULTI</dt> <dd> <p>Any language in the terminology resource can be the
+     * source language.</p> </dd> </dl>
+     */
+    inline TerminologyProperties& WithDirectionality(const Directionality& value) { SetDirectionality(value); return *this;}
+
+    /**
+     * <p>The directionality of your terminology resource indicates whether it has one
+     * source language (uni-directional) or multiple (multi-directional). </p> <dl>
+     * <dt>UNI</dt> <dd> <p>The terminology resource has one source language (the first
+     * column in a CSV file), and all of its other languages are target languages.</p>
+     * </dd> <dt>MULTI</dt> <dd> <p>Any language in the terminology resource can be the
+     * source language.</p> </dd> </dl>
+     */
+    inline TerminologyProperties& WithDirectionality(Directionality&& value) { SetDirectionality(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline TerminologyProperties& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline TerminologyProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional information from Amazon Translate about the terminology
+     * resource.</p>
+     */
+    inline TerminologyProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
+    /**
+     * <p>The number of terms in the input file that Amazon Translate skipped when you
+     * created or updated the terminology resource.</p>
+     */
+    inline int GetSkippedTermCount() const{ return m_skippedTermCount; }
+
+    /**
+     * <p>The number of terms in the input file that Amazon Translate skipped when you
+     * created or updated the terminology resource.</p>
+     */
+    inline bool SkippedTermCountHasBeenSet() const { return m_skippedTermCountHasBeenSet; }
+
+    /**
+     * <p>The number of terms in the input file that Amazon Translate skipped when you
+     * created or updated the terminology resource.</p>
+     */
+    inline void SetSkippedTermCount(int value) { m_skippedTermCountHasBeenSet = true; m_skippedTermCount = value; }
+
+    /**
+     * <p>The number of terms in the input file that Amazon Translate skipped when you
+     * created or updated the terminology resource.</p>
+     */
+    inline TerminologyProperties& WithSkippedTermCount(int value) { SetSkippedTermCount(value); return *this;}
+
+
+    /**
+     * <p>The format of the custom terminology input file.</p>
+     */
+    inline const TerminologyDataFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the custom terminology input file.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The format of the custom terminology input file.</p>
+     */
+    inline void SetFormat(const TerminologyDataFormat& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>The format of the custom terminology input file.</p>
+     */
+    inline void SetFormat(TerminologyDataFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>The format of the custom terminology input file.</p>
+     */
+    inline TerminologyProperties& WithFormat(const TerminologyDataFormat& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The format of the custom terminology input file.</p>
+     */
+    inline TerminologyProperties& WithFormat(TerminologyDataFormat&& value) { SetFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -444,6 +612,18 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
+    Directionality m_directionality;
+    bool m_directionalityHasBeenSet;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet;
+
+    int m_skippedTermCount;
+    bool m_skippedTermCountHasBeenSet;
+
+    TerminologyDataFormat m_format;
+    bool m_formatHasBeenSet;
   };
 
 } // namespace Model

@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListDomainsRequest::ListDomainsRequest() : 
+    m_filterConditionsHasBeenSet(false),
+    m_sortConditionHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
     m_maxItemsHasBeenSet(false)
@@ -22,6 +24,23 @@ ListDomainsRequest::ListDomainsRequest() :
 Aws::String ListDomainsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_filterConditionsHasBeenSet)
+  {
+   Array<JsonValue> filterConditionsJsonList(m_filterConditions.size());
+   for(unsigned filterConditionsIndex = 0; filterConditionsIndex < filterConditionsJsonList.GetLength(); ++filterConditionsIndex)
+   {
+     filterConditionsJsonList[filterConditionsIndex].AsObject(m_filterConditions[filterConditionsIndex].Jsonize());
+   }
+   payload.WithArray("FilterConditions", std::move(filterConditionsJsonList));
+
+  }
+
+  if(m_sortConditionHasBeenSet)
+  {
+   payload.WithObject("SortCondition", m_sortCondition.Jsonize());
+
+  }
 
   if(m_markerHasBeenSet)
   {

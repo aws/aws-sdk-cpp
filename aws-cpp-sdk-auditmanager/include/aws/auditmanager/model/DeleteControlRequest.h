@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline const Aws::String& GetControlId() const{ return m_controlId; }
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline DeleteControlRequest& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline DeleteControlRequest& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline DeleteControlRequest& WithControlId(const char* value) { SetControlId(value); return *this;}
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ATTACHMENTS_HASH = HashingUtils::HashString("ATTACHMENTS");
+        static const int CONFIGURATIONS_HASH = HashingUtils::HashString("CONFIGURATIONS");
         static const int SETTINGS_HASH = HashingUtils::HashString("SETTINGS");
         static const int STATISTICS_HASH = HashingUtils::HashString("STATISTICS");
         static const int TAGS_HASH = HashingUtils::HashString("TAGS");
@@ -32,6 +33,10 @@ namespace Aws
           if (hashCode == ATTACHMENTS_HASH)
           {
             return ClusterField::ATTACHMENTS;
+          }
+          else if (hashCode == CONFIGURATIONS_HASH)
+          {
+            return ClusterField::CONFIGURATIONS;
           }
           else if (hashCode == SETTINGS_HASH)
           {
@@ -61,6 +66,8 @@ namespace Aws
           {
           case ClusterField::ATTACHMENTS:
             return "ATTACHMENTS";
+          case ClusterField::CONFIGURATIONS:
+            return "CONFIGURATIONS";
           case ClusterField::SETTINGS:
             return "SETTINGS";
           case ClusterField::STATISTICS:

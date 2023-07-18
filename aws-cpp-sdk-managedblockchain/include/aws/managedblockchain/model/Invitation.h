@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>An invitation to an AWS account to create a member and join the
-   * network.</p><p><h3>See Also:</h3>   <a
+   * <p>An invitation to an AWS account to create a member and join the network.</p>
+   * <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Invitation">AWS
    * API Reference</a></p>
    */
@@ -265,6 +265,71 @@ namespace Model
     
     inline Invitation& WithNetworkSummary(NetworkSummary&& value) { SetNetworkSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline Invitation& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline Invitation& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline Invitation& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_invitationId;
@@ -281,6 +346,9 @@ namespace Model
 
     NetworkSummary m_networkSummary;
     bool m_networkSummaryHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

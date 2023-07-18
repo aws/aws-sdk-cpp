@@ -18,6 +18,7 @@ using namespace Aws;
 
 DescribeStatementResult::DescribeStatementResult() : 
     m_duration(0),
+    m_hasResultSet(false),
     m_redshiftPid(0),
     m_redshiftQueryId(0),
     m_resultRows(0),
@@ -28,6 +29,7 @@ DescribeStatementResult::DescribeStatementResult() :
 
 DescribeStatementResult::DescribeStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_duration(0),
+    m_hasResultSet(false),
     m_redshiftPid(0),
     m_redshiftQueryId(0),
     m_resultRows(0),
@@ -76,10 +78,25 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("HasResultSet"))
+  {
+    m_hasResultSet = jsonValue.GetBool("HasResultSet");
+
+  }
+
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
 
+  }
+
+  if(jsonValue.ValueExists("QueryParameters"))
+  {
+    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
+    for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+    {
+      m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("QueryString"))
@@ -122,6 +139,15 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
   {
     m_status = StatusStringMapper::GetStatusStringForName(jsonValue.GetString("Status"));
 
+  }
+
+  if(jsonValue.ValueExists("SubStatements"))
+  {
+    Array<JsonView> subStatementsJsonList = jsonValue.GetArray("SubStatements");
+    for(unsigned subStatementsIndex = 0; subStatementsIndex < subStatementsJsonList.GetLength(); ++subStatementsIndex)
+    {
+      m_subStatements.push_back(subStatementsJsonList[subStatementsIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("UpdatedAt"))

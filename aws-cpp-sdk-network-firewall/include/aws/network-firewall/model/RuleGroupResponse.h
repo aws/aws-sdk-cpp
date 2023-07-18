@@ -9,6 +9,9 @@
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/SourceMetadata.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -398,6 +401,248 @@ namespace Model
      */
     inline RuleGroupResponse& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline int GetConsumedCapacity() const{ return m_consumedCapacity; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline bool ConsumedCapacityHasBeenSet() const { return m_consumedCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline void SetConsumedCapacity(int value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = value; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline RuleGroupResponse& WithConsumedCapacity(int value) { SetConsumedCapacity(value); return *this;}
+
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline int GetNumberOfAssociations() const{ return m_numberOfAssociations; }
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline void SetNumberOfAssociations(int value) { m_numberOfAssociationsHasBeenSet = true; m_numberOfAssociations = value; }
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline RuleGroupResponse& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
+
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline RuleGroupResponse& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline RuleGroupResponse& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to track the version updates made
+     * to the originating rule group.</p>
+     */
+    inline const SourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to track the version updates made
+     * to the originating rule group.</p>
+     */
+    inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to track the version updates made
+     * to the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(const SourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to track the version updates made
+     * to the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(SourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to track the version updates made
+     * to the originating rule group.</p>
+     */
+    inline RuleGroupResponse& WithSourceMetadata(const SourceMetadata& value) { SetSourceMetadata(value); return *this;}
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to track the version updates made
+     * to the originating rule group.</p>
+     */
+    inline RuleGroupResponse& WithSourceMetadata(SourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline const Aws::String& GetSnsTopic() const{ return m_snsTopic; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline bool SnsTopicHasBeenSet() const { return m_snsTopicHasBeenSet; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline void SetSnsTopic(const Aws::String& value) { m_snsTopicHasBeenSet = true; m_snsTopic = value; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline void SetSnsTopic(Aws::String&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::move(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline void SetSnsTopic(const char* value) { m_snsTopicHasBeenSet = true; m_snsTopic.assign(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline RuleGroupResponse& WithSnsTopic(const Aws::String& value) { SetSnsTopic(value); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline RuleGroupResponse& WithSnsTopic(Aws::String&& value) { SetSnsTopic(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide.</a>.</p>
+     */
+    inline RuleGroupResponse& WithSnsTopic(const char* value) { SetSnsTopic(value); return *this;}
+
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline RuleGroupResponse& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline RuleGroupResponse& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupArn;
@@ -423,6 +668,24 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    int m_consumedCapacity;
+    bool m_consumedCapacityHasBeenSet;
+
+    int m_numberOfAssociations;
+    bool m_numberOfAssociationsHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
+
+    SourceMetadata m_sourceMetadata;
+    bool m_sourceMetadataHasBeenSet;
+
+    Aws::String m_snsTopic;
+    bool m_snsTopicHasBeenSet;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet;
   };
 
 } // namespace Model

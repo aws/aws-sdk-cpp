@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The request was rejected because it attempted to create resources beyond the
-   * current AWS account limits. The error code describes the limit exceeded.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>(Discontinued) The request was rejected because it attempted to create
+   * resources beyond the current Amazon Web Services account quotas. The error code
+   * describes the quota exceeded.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/LimitExceededException">AWS
    * API Reference</a></p>
    */

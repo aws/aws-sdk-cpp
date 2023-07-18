@@ -41,38 +41,44 @@ namespace Model
 
 
     /**
-     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
-     * parameter is required if you specify <code>identityId</code>.</p>
+     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
+     * group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
-     * parameter is required if you specify <code>identityId</code>.</p>
+     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
+     * group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
-     * parameter is required if you specify <code>identityId</code>.</p>
+     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
+     * group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
-     * parameter is required if you specify <code>identityId</code>.</p>
+     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
+     * group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
-     * parameter is required if you specify <code>identityId</code>.</p>
+     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
+     * group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This
-     * parameter is required if you specify <code>identityId</code>.</p>
+     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
+     * group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 
@@ -319,25 +325,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline ListAccessPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

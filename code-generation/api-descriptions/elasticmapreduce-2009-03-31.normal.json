@@ -6,7 +6,7 @@
     "jsonVersion":"1.1",
     "protocol":"json",
     "serviceAbbreviation":"Amazon EMR",
-    "serviceFullName":"Amazon Elastic MapReduce",
+    "serviceFullName":"Amazon EMR",
     "serviceId":"EMR",
     "signatureVersion":"v4",
     "targetPrefix":"ElasticMapReduce",
@@ -51,7 +51,7 @@
       "errors":[
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed in each job flow.</p> <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html\">Add More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on the master node of the cluster or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step.</p> <p>Amazon EMR executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully.</p> <p>You can only add steps to a cluster that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p>"
+      "documentation":"<p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed in each job flow.</p> <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html\">Add More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on the master node of the cluster or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step.</p> <p>Amazon EMR executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully.</p> <p>You can only add steps to a cluster that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p> <note> <p>The string values passed into <code>HadoopJarStep</code> object cannot exceed a total of 10240 characters.</p> </note>"
     },
     "AddTags":{
       "name":"AddTags",
@@ -65,7 +65,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html\">Tag Clusters</a>. </p>"
+      "documentation":"<p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html\">Tag Clusters</a>. </p>"
     },
     "CancelSteps":{
       "name":"CancelSteps",
@@ -79,7 +79,7 @@
         {"shape":"InternalServerError"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is successfully submitted. You can only cancel steps that are in a <code>PENDING</code> state.</p>"
+      "documentation":"<p>Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only cancel steps that are in a <code>PENDING</code> state. </p>"
     },
     "CreateSecurityConfiguration":{
       "name":"CreateSecurityConfiguration",
@@ -107,7 +107,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Creates a new Amazon EMR Studio.</p>"
+      "documentation":"<p>Creates a new Amazon EMR Studio.</p>"
     },
     "CreateStudioSessionMapping":{
       "name":"CreateStudioSessionMapping",
@@ -120,7 +120,7 @@
         {"shape":"InternalServerError"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to refine Studio permissions for that user or group.</p>"
+      "documentation":"<p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use Amazon Web Services SSO authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups\">Assign a user or group to your EMR Studio</a>.</p>"
     },
     "DeleteSecurityConfiguration":{
       "name":"DeleteSecurityConfiguration",
@@ -147,7 +147,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Removes an Amazon EMR Studio from the Studio metadata store.</p>"
+      "documentation":"<p>Removes an Amazon EMR Studio from the Studio metadata store.</p>"
     },
     "DeleteStudioSessionMapping":{
       "name":"DeleteStudioSessionMapping",
@@ -160,7 +160,7 @@
         {"shape":"InternalServerError"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Removes a user or group from an Amazon EMR Studio.</p>"
+      "documentation":"<p>Removes a user or group from an Amazon EMR Studio.</p>"
     },
     "DescribeCluster":{
       "name":"DescribeCluster",
@@ -174,7 +174,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. </p>"
+      "documentation":"<p>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on.</p>"
     },
     "DescribeJobFlows":{
       "name":"DescribeJobFlows",
@@ -203,6 +203,20 @@
         {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Provides details of a notebook execution.</p>"
+    },
+    "DescribeReleaseLabel":{
+      "name":"DescribeReleaseLabel",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeReleaseLabelInput"},
+      "output":{"shape":"DescribeReleaseLabelOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Provides EMR release label details, such as releases available the region where the API request is run, and the available applications for a specific EMR release label. Can also list EMR release versions that support a specified version of Spark.</p>"
     },
     "DescribeSecurityConfiguration":{
       "name":"DescribeSecurityConfiguration",
@@ -244,7 +258,17 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.</p>"
+      "documentation":"<p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.</p>"
+    },
+    "GetAutoTerminationPolicy":{
+      "name":"GetAutoTerminationPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetAutoTerminationPolicyInput"},
+      "output":{"shape":"GetAutoTerminationPolicyOutput"},
+      "documentation":"<p>Returns the auto-termination policy for an Amazon EMR cluster.</p>"
     },
     "GetBlockPublicAccessConfiguration":{
       "name":"GetBlockPublicAccessConfiguration",
@@ -258,7 +282,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Returns the Amazon EMR block public access configuration for your AWS account in the current Region. For more information see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html\">Configure Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p>"
+      "documentation":"<p>Returns the Amazon EMR block public access configuration for your Amazon Web Services account in the current Region. For more information see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html\">Configure Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p>"
     },
     "GetManagedScalingPolicy":{
       "name":"GetManagedScalingPolicy",
@@ -282,7 +306,7 @@
         {"shape":"InternalServerError"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).</p>"
+      "documentation":"<p>Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).</p>"
     },
     "ListBootstrapActions":{
       "name":"ListBootstrapActions",
@@ -310,7 +334,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls.</p>"
+      "documentation":"<p>Provides the status of all clusters visible to this Amazon Web Services account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls.</p>"
     },
     "ListInstanceFleets":{
       "name":"ListInstanceFleets",
@@ -368,6 +392,20 @@
       ],
       "documentation":"<p>Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.</p>"
     },
+    "ListReleaseLabels":{
+      "name":"ListReleaseLabels",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListReleaseLabelsInput"},
+      "output":{"shape":"ListReleaseLabelsOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Retrieves release labels of EMR services in the region where the API is called.</p>"
+    },
     "ListSecurityConfigurations":{
       "name":"ListSecurityConfigurations",
       "http":{
@@ -394,7 +432,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the request of filter by <code>StepStates</code>. You can specify a maximum of ten <code>stepIDs</code>.</p>"
+      "documentation":"<p>Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the request or filter by <code>StepStates</code>. You can specify a maximum of 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>, which is a pagination token that indicates the next set of steps to retrieve.</p>"
     },
     "ListStudioSessionMappings":{
       "name":"ListStudioSessionMappings",
@@ -408,7 +446,7 @@
         {"shape":"InternalServerError"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Returns a list of all user or group session mappings for the EMR Studio specified by <code>StudioId</code>.</p>"
+      "documentation":"<p>Returns a list of all user or group session mappings for the Amazon EMR Studio specified by <code>StudioId</code>.</p>"
     },
     "ListStudios":{
       "name":"ListStudios",
@@ -422,7 +460,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID, Studio Access URL, and creation time for each Studio.</p>"
+      "documentation":"<p>Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account. The list includes details such as ID, Studio Access URL, and creation time for each Studio.</p>"
     },
     "ModifyCluster":{
       "name":"ModifyCluster",
@@ -473,6 +511,16 @@
       "output":{"shape":"PutAutoScalingPolicyOutput"},
       "documentation":"<p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.</p>"
     },
+    "PutAutoTerminationPolicy":{
+      "name":"PutAutoTerminationPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutAutoTerminationPolicyInput"},
+      "output":{"shape":"PutAutoTerminationPolicyOutput"},
+      "documentation":"<note> <p>Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0 and later. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html\">Using an auto-termination policy</a>.</p> </note> <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html\">Control cluster termination</a>.</p>"
+    },
     "PutBlockPublicAccessConfiguration":{
       "name":"PutBlockPublicAccessConfiguration",
       "http":{
@@ -485,7 +533,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Creates or updates an Amazon EMR block public access configuration for your AWS account in the current Region. For more information see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html\">Configure Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p>"
+      "documentation":"<p>Creates or updates an Amazon EMR block public access configuration for your Amazon Web Services account in the current Region. For more information see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html\">Configure Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p>"
     },
     "PutManagedScalingPolicy":{
       "name":"PutManagedScalingPolicy",
@@ -506,6 +554,16 @@
       "input":{"shape":"RemoveAutoScalingPolicyInput"},
       "output":{"shape":"RemoveAutoScalingPolicyOutput"},
       "documentation":"<p>Removes an automatic scaling policy from a specified instance group within an EMR cluster.</p>"
+    },
+    "RemoveAutoTerminationPolicy":{
+      "name":"RemoveAutoTerminationPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RemoveAutoTerminationPolicyInput"},
+      "output":{"shape":"RemoveAutoTerminationPolicyOutput"},
+      "documentation":"<p>Removes an auto-termination policy from an Amazon EMR cluster.</p>"
     },
     "RemoveManagedScalingPolicy":{
       "name":"RemoveManagedScalingPolicy",
@@ -529,7 +587,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html\">Tag Clusters</a>. </p> <p>The following example removes the stack tag with value Prod from a cluster:</p>"
+      "documentation":"<p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html\">Tag Clusters</a>. </p> <p>The following example removes the stack tag with value Prod from a cluster:</p>"
     },
     "RunJobFlow":{
       "name":"RunJobFlow",
@@ -566,7 +624,7 @@
       "errors":[
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the cluster is visible to all IAM users of the AWS account associated with the cluster. Only the IAM user who created the cluster or the AWS account root user can call this action. The default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if they have the proper IAM policy permissions. If set to <code>false</code>, only the IAM user that created the cluster can perform actions. This action works on running clusters. You can override the default <code>true</code> setting when you create a cluster by using the <code>VisibleToAllUsers</code> parameter with <code>RunJobFlow</code>.</p>"
+      "documentation":"<important> <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html\">Identity and Access Management for EMR</a>. </p> </important> <p>Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p> <p>This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users\">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>"
     },
     "StartNotebookExecution":{
       "name":"StartNotebookExecution",
@@ -607,6 +665,19 @@
       ],
       "documentation":"<p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which the cluster is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.</p> <p>The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration of the cluster, it may take up to 1-5 minutes for the cluster to completely terminate and release allocated resources, such as Amazon EC2 instances.</p>"
     },
+    "UpdateStudio":{
+      "name":"UpdateStudio",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateStudioInput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets.</p>"
+    },
     "UpdateStudioSessionMapping":{
       "name":"UpdateStudioSessionMapping",
       "http":{
@@ -618,7 +689,7 @@
         {"shape":"InternalServerError"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<note> <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.</p> </note> <p>Updates the session policy attached to the user or group for the specified Amazon EMR Studio.</p>"
+      "documentation":"<p>Updates the session policy attached to the user or group for the specified Amazon EMR Studio.</p>"
     }
   },
   "shapes":{
@@ -738,14 +809,14 @@
       "members":{
         "ResourceId":{
           "shape":"ResourceId",
-          "documentation":"<p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>"
+          "documentation":"<p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>"
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>"
+          "documentation":"<p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>"
         }
       },
-      "documentation":"<p>This input identifies a cluster and a list of tags to attach.</p>"
+      "documentation":"<p>This input identifies an Amazon EMR resource and a list of tags to attach.</p>"
     },
     "AddTagsOutput":{
       "type":"structure",
@@ -882,6 +953,16 @@
       },
       "documentation":"<p>The status of an automatic scaling policy. </p>"
     },
+    "AutoTerminationPolicy":{
+      "type":"structure",
+      "members":{
+        "IdleTimeout":{
+          "shape":"Long",
+          "documentation":"<p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>"
+        }
+      },
+      "documentation":"<p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html\">Control cluster termination</a>.</p>"
+    },
     "BlockPublicAccessConfiguration":{
       "type":"structure",
       "required":["BlockPublicSecurityGroupRules"],
@@ -913,7 +994,7 @@
           "documentation":"<p>The Amazon Resource Name that created or last modified the configuration.</p>"
         }
       },
-      "documentation":"<p>Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>"
+      "documentation":"<p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>"
     },
     "Boolean":{"type":"boolean"},
     "BooleanObject":{"type":"boolean"},
@@ -1091,7 +1172,7 @@
         },
         "LogEncryptionKmsKeyId":{
           "shape":"String",
-          "documentation":"<p> The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>"
+          "documentation":"<p> The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>"
         },
         "RequestedAmiVersion":{
           "shape":"String",
@@ -1115,7 +1196,7 @@
         },
         "VisibleToAllUsers":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. The default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM user that created the cluster can perform actions. This value can be changed on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you create a cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code> action.</p>"
+          "documentation":"<p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command, the CLI <a href=\"https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html\">create-cluster</a> command, or the Amazon Web Services Management Console.</p>"
         },
         "Applications":{
           "shape":"ApplicationList",
@@ -1127,7 +1208,7 @@
         },
         "ServiceRole":{
           "shape":"String",
-          "documentation":"<p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>"
+          "documentation":"<p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>"
         },
         "NormalizedInstanceHours":{
           "shape":"Integer",
@@ -1184,6 +1265,10 @@
         "PlacementGroups":{
           "shape":"PlacementGroupConfigList",
           "documentation":"<p>Placement group configured for an Amazon EMR cluster.</p>"
+        },
+        "OSReleaseLabel":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>"
         }
       },
       "documentation":"<p>The detailed description of the cluster.</p>"
@@ -1436,9 +1521,9 @@
         "VpcId",
         "SubnetIds",
         "ServiceRole",
-        "UserRole",
         "WorkspaceSecurityGroupId",
-        "EngineSecurityGroupId"
+        "EngineSecurityGroupId",
+        "DefaultS3Location"
       ],
       "members":{
         "Name":{
@@ -1447,11 +1532,11 @@
         },
         "Description":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>A detailed description of the Studio.</p>"
+          "documentation":"<p>A detailed description of the Amazon EMR Studio.</p>"
         },
         "AuthMode":{
           "shape":"AuthMode",
-          "documentation":"<p>Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM. Amazon EMR Studio currently only supports SSO authentication.</p>"
+          "documentation":"<p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>"
         },
         "VpcId":{
           "shape":"XmlStringMaxLen256",
@@ -1459,15 +1544,15 @@
         },
         "SubnetIds":{
           "shape":"SubnetIdList",
-          "documentation":"<p>A list of subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>"
+          "documentation":"<p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>"
         },
         "ServiceRole":{
           "shape":"XmlString",
-          "documentation":"<p>The IAM role that will be assumed by the Amazon EMR Studio. The service role provides a way for Amazon EMR Studio to interoperate with other AWS services.</p>"
+          "documentation":"<p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>"
         },
         "UserRole":{
           "shape":"XmlString",
-          "documentation":"<p>The IAM user role that will be assumed by users and groups logged in to a Studio. The permissions attached to this IAM role can be scoped down for each user or group using session policies.</p>"
+          "documentation":"<p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>"
         },
         "WorkspaceSecurityGroupId":{
           "shape":"XmlStringMaxLen256",
@@ -1479,11 +1564,19 @@
         },
         "DefaultS3Location":{
           "shape":"XmlString",
-          "documentation":"<p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can select an alternative Amazon S3 location when creating a Workspace.</p>"
+          "documentation":"<p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>"
+        },
+        "IdpAuthUrl":{
+          "shape":"XmlString",
+          "documentation":"<p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>"
+        },
+        "IdpRelayStateParameterName":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>"
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>A list of tags to associate with the Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>"
+          "documentation":"<p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>"
         }
       }
     },
@@ -1514,19 +1607,19 @@
         },
         "IdentityId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The globally unique identifier (GUID) of the user or group from the AWS SSO Identity Store. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>"
         },
         "IdentityName":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The name of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The name of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>"
         },
         "IdentityType":{
           "shape":"IdentityType",
-          "documentation":"<p>Specifies whether the identity to map to the Studio is a user or a group.</p>"
+          "documentation":"<p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>"
         },
         "SessionPolicyArn":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. Session policies refine Studio user permissions without the need to use multiple IAM user roles.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html\">Create an EMR Studio User Role with Session Policies</a>.</p>"
         }
       }
     },
@@ -1569,15 +1662,15 @@
         },
         "IdentityId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
         },
         "IdentityName":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The name of the user name or group to remove from the Studio. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
         },
         "IdentityType":{
           "shape":"IdentityType",
-          "documentation":"<p>Specifies whether the identity to delete from the Studio is a user or a group.</p>"
+          "documentation":"<p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>"
         }
       }
     },
@@ -1650,6 +1743,44 @@
         "NotebookExecution":{
           "shape":"NotebookExecution",
           "documentation":"<p>Properties of the notebook execution.</p>"
+        }
+      }
+    },
+    "DescribeReleaseLabelInput":{
+      "type":"structure",
+      "members":{
+        "ReleaseLabel":{
+          "shape":"String",
+          "documentation":"<p>The target release label to be described.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token. Reserved for future use. Currently set to null.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResultsNumber",
+          "documentation":"<p>Reserved for future use. Currently set to null.</p>"
+        }
+      }
+    },
+    "DescribeReleaseLabelOutput":{
+      "type":"structure",
+      "members":{
+        "ReleaseLabel":{
+          "shape":"String",
+          "documentation":"<p>The target release label described in the response.</p>"
+        },
+        "Applications":{
+          "shape":"SimplifiedApplicationList",
+          "documentation":"<p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token. Reserved for future use. Currently set to null.</p>"
+        },
+        "AvailableOSReleases":{
+          "shape":"OSReleaseList",
+          "documentation":"<p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href=\"https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html\"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href=\"https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html\">2.0.20220218.1</a>.</p>"
         }
       }
     },
@@ -1901,6 +2032,25 @@
       },
       "documentation":"<p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>"
     },
+    "GetAutoTerminationPolicyInput":{
+      "type":"structure",
+      "required":["ClusterId"],
+      "members":{
+        "ClusterId":{
+          "shape":"ClusterId",
+          "documentation":"<p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>"
+        }
+      }
+    },
+    "GetAutoTerminationPolicyOutput":{
+      "type":"structure",
+      "members":{
+        "AutoTerminationPolicy":{
+          "shape":"AutoTerminationPolicy",
+          "documentation":"<p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>"
+        }
+      }
+    },
     "GetBlockPublicAccessConfigurationInput":{
       "type":"structure",
       "members":{
@@ -1919,7 +2069,7 @@
         },
         "BlockPublicAccessConfigurationMetadata":{
           "shape":"BlockPublicAccessConfigurationMetadata",
-          "documentation":"<p>Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>"
+          "documentation":"<p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>"
         }
       }
     },
@@ -1955,11 +2105,11 @@
         },
         "IdentityId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The globally unique identifier (GUID) of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The globally unique identifier (GUID) of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
         },
         "IdentityName":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The name of the user or group to fetch. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The name of the user or group to fetch. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
         },
         "IdentityType":{
           "shape":"IdentityType",
@@ -1982,7 +2132,7 @@
       "members":{
         "Properties":{
           "shape":"KeyValueList",
-          "documentation":"<p>A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>"
+          "documentation":"<p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>"
         },
         "Jar":{
           "shape":"XmlString",
@@ -2077,7 +2227,7 @@
         },
         "EbsVolumes":{
           "shape":"EbsVolumeList",
-          "documentation":"<p>The list of EBS volumes that are attached to this instance.</p>"
+          "documentation":"<p>The list of Amazon EBS volumes that are attached to this instance.</p>"
         }
       },
       "documentation":"<p>Represents an EC2 instance provisioned as part of cluster.</p>"
@@ -2114,7 +2264,7 @@
         },
         "TargetSpotCapacity":{
           "shape":"WholeNumber",
-          "documentation":"<p>The target capacity of Spot units for the instance fleet, which determines how many Spot instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> <p>If not specified or set to 0, only On-Demand instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> </note>"
+          "documentation":"<p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> </note>"
         },
         "ProvisionedOnDemandCapacity":{
           "shape":"WholeNumber",
@@ -2126,7 +2276,7 @@
         },
         "InstanceTypeSpecifications":{
           "shape":"InstanceTypeSpecificationList",
-          "documentation":"<p>The specification for the instance types that comprise an instance fleet. Up to five unique instance specifications may be defined for each instance fleet. </p>"
+          "documentation":"<p>An array of specifications for the instance types that comprise an instance fleet.</p>"
         },
         "LaunchSpecifications":{
           "shape":"InstanceFleetProvisioningSpecifications",
@@ -2145,7 +2295,7 @@
         },
         "InstanceFleetType":{
           "shape":"InstanceFleetType",
-          "documentation":"<p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.</p>"
+          "documentation":"<p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>"
         },
         "TargetOnDemandCapacity":{
           "shape":"WholeNumber",
@@ -2308,7 +2458,7 @@
         },
         "BidPrice":{
           "shape":"String",
-          "documentation":"<p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>"
+          "documentation":"<p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>"
         },
         "InstanceType":{
           "shape":"InstanceType",
@@ -2328,7 +2478,7 @@
         },
         "Configurations":{
           "shape":"ConfigurationList",
-          "documentation":"<note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>"
+          "documentation":"<note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>"
         },
         "ConfigurationsVersion":{
           "shape":"Long",
@@ -2357,6 +2507,10 @@
         "AutoScalingPolicy":{
           "shape":"AutoScalingPolicyDescription",
           "documentation":"<p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>"
+        },
+        "CustomAmiId":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The custom AMI ID to use for the provisioned instance group.</p>"
         }
       },
       "documentation":"<p>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.</p>"
@@ -2383,7 +2537,7 @@
         },
         "BidPrice":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>"
+          "documentation":"<p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>"
         },
         "InstanceType":{
           "shape":"InstanceType",
@@ -2404,6 +2558,10 @@
         "AutoScalingPolicy":{
           "shape":"AutoScalingPolicy",
           "documentation":"<p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>"
+        },
+        "CustomAmiId":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The custom AMI ID to use for the provisioned instance group.</p>"
         }
       },
       "documentation":"<p>Configuration defining a new instance group.</p>"
@@ -2442,7 +2600,7 @@
         },
         "BidPrice":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>"
+          "documentation":"<p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>"
         },
         "InstanceType":{
           "shape":"InstanceType",
@@ -2458,7 +2616,7 @@
         },
         "State":{
           "shape":"InstanceGroupState",
-          "documentation":"<p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>"
+          "documentation":"<p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>"
         },
         "LastStateChangeReason":{
           "shape":"XmlString",
@@ -2479,6 +2637,10 @@
         "EndDateTime":{
           "shape":"Date",
           "documentation":"<p>The date/time the instance group was terminated.</p>"
+        },
+        "CustomAmiId":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The custom AMI ID to use for the provisioned instance group.</p>"
         }
       },
       "documentation":"<p>Detailed information about an instance group.</p>"
@@ -2515,6 +2677,10 @@
         "ShrinkPolicy":{
           "shape":"ShrinkPolicy",
           "documentation":"<p>Policy for customizing shrink operations.</p>"
+        },
+        "ReconfigurationType":{
+          "shape":"ReconfigurationType",
+          "documentation":"<p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>"
         },
         "Configurations":{
           "shape":"ConfigurationList",
@@ -2747,14 +2913,18 @@
         },
         "EbsConfiguration":{
           "shape":"EbsConfiguration",
-          "documentation":"<p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>"
+          "documentation":"<p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>"
         },
         "Configurations":{
           "shape":"ConfigurationList",
           "documentation":"<p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>"
+        },
+        "CustomAmiId":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The custom AMI ID to use for the instance type.</p>"
         }
       },
-      "documentation":"<p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of five instance type configurations in a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>"
+      "documentation":"<p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. When you use an allocation strategy, you can include a maximum of 30 instance type configurations for a fleet. For more information about how to use an allocation strategy, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html\">Configure Instance Fleets</a>. Without an allocation strategy, you may specify a maximum of five instance type configurations for a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>"
     },
     "InstanceTypeConfigList":{
       "type":"list",
@@ -2785,11 +2955,15 @@
         },
         "EbsBlockDevices":{
           "shape":"EbsBlockDeviceList",
-          "documentation":"<p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>"
+          "documentation":"<p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>"
         },
         "EbsOptimized":{
           "shape":"BooleanObject",
           "documentation":"<p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>"
+        },
+        "CustomAmiId":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The custom AMI ID to use for the instance type.</p>"
         }
       },
       "documentation":"<p>The configuration specification for each instance type in an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>"
@@ -2814,7 +2988,7 @@
           "documentation":"<p>The message associated with the exception.</p>"
         }
       },
-      "documentation":"<p>This exception occurs when there is an internal failure in the EMR service.</p>",
+      "documentation":"<p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>",
       "exception":true,
       "fault":true
     },
@@ -2856,7 +3030,7 @@
         },
         "LogEncryptionKmsKeyId":{
           "shape":"XmlString",
-          "documentation":"<p>The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>"
+          "documentation":"<p>The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>"
         },
         "AmiVersion":{
           "shape":"XmlStringMaxLen256",
@@ -2884,7 +3058,7 @@
         },
         "VisibleToAllUsers":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. The default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM user that created the cluster can perform actions. This value can be changed on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you create a cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code> action.</p>"
+          "documentation":"<p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command, the CLI <a href=\"https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html\">create-cluster</a> command, or the Amazon Web Services Management Console.</p>"
         },
         "JobFlowRole":{
           "shape":"XmlString",
@@ -2892,7 +3066,7 @@
         },
         "ServiceRole":{
           "shape":"XmlString",
-          "documentation":"<p>The IAM role that is assumed by the Amazon EMR service to access AWS resources on your behalf.</p>"
+          "documentation":"<p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your behalf.</p>"
         },
         "AutoScalingRole":{
           "shape":"XmlString",
@@ -2994,7 +3168,7 @@
         },
         "KeepJobFlowAliveWhenNoSteps":{
           "shape":"Boolean",
-          "documentation":"<p>Specifies whether the cluster should remain available after completing all steps.</p>"
+          "documentation":"<p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html\">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>"
         },
         "TerminationProtected":{
           "shape":"Boolean",
@@ -3014,11 +3188,11 @@
         },
         "EmrManagedMasterSecurityGroup":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The identifier of the Amazon EC2 security group for the master node.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>"
         },
         "EmrManagedSlaveSecurityGroup":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>"
         },
         "ServiceAccessSecurityGroup":{
           "shape":"XmlStringMaxLen256",
@@ -3188,7 +3362,7 @@
         },
         "ClusterStates":{
           "shape":"ClusterStateList",
-          "documentation":"<p>The cluster state filters to apply when listing clusters.</p>"
+          "documentation":"<p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>"
         },
         "Marker":{
           "shape":"Marker",
@@ -3354,6 +3528,36 @@
         }
       }
     },
+    "ListReleaseLabelsInput":{
+      "type":"structure",
+      "members":{
+        "Filters":{
+          "shape":"ReleaseLabelFilter",
+          "documentation":"<p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResultsNumber",
+          "documentation":"<p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>"
+        }
+      }
+    },
+    "ListReleaseLabelsOutput":{
+      "type":"structure",
+      "members":{
+        "ReleaseLabels":{
+          "shape":"StringList",
+          "documentation":"<p>The returned release labels.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>"
+        }
+      }
+    },
     "ListSecurityConfigurationsInput":{
       "type":"structure",
       "members":{
@@ -3394,7 +3598,7 @@
         },
         "Marker":{
           "shape":"Marker",
-          "documentation":"<p>The pagination token that indicates the next set of results to retrieve.</p>"
+          "documentation":"<p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>"
         }
       },
       "documentation":"<p>This input determines which steps to list.</p>"
@@ -3408,7 +3612,7 @@
         },
         "Marker":{
           "shape":"Marker",
-          "documentation":"<p>The pagination token that indicates the next set of results to retrieve.</p>"
+          "documentation":"<p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>"
         }
       },
       "documentation":"<p>This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.</p>"
@@ -3435,7 +3639,7 @@
       "members":{
         "SessionMappings":{
           "shape":"SessionMappingSummaryList",
-          "documentation":"<p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Studio ID.</p>"
+          "documentation":"<p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>"
         },
         "Marker":{
           "shape":"Marker",
@@ -3484,6 +3688,11 @@
         "SPOT"
       ]
     },
+    "MaxResultsNumber":{
+      "type":"integer",
+      "max":100,
+      "min":1
+    },
     "MetricDimension":{
       "type":"structure",
       "members":{
@@ -3512,7 +3721,7 @@
         },
         "StepConcurrencyLevel":{
           "shape":"Integer",
-          "documentation":"<p>The number of steps that can be executed concurrently. You can specify a maximum of 256 steps. </p>"
+          "documentation":"<p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>"
         }
       }
     },
@@ -3538,7 +3747,7 @@
         },
         "InstanceFleet":{
           "shape":"InstanceFleetModifyConfig",
-          "documentation":"<p>The unique identifier of the instance fleet.</p>"
+          "documentation":"<p>The configuration parameters of the instance fleet.</p>"
         }
       }
     },
@@ -3665,11 +3874,54 @@
           "documentation":"<p>The timestamp when notebook execution started.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>Details for a notebook execution. The details include information such as the unique ID and status of the notebook execution.</p>"
     },
     "NotebookExecutionSummaryList":{
       "type":"list",
       "member":{"shape":"NotebookExecutionSummary"}
+    },
+    "OSRelease":{
+      "type":"structure",
+      "members":{
+        "Label":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href=\"https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html\"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>"
+        }
+      },
+      "documentation":"<p>The Amazon Linux release specified for a cluster in the RunJobFlow request.</p>"
+    },
+    "OSReleaseList":{
+      "type":"list",
+      "member":{"shape":"OSRelease"}
+    },
+    "OnDemandCapacityReservationOptions":{
+      "type":"structure",
+      "members":{
+        "UsageStrategy":{
+          "shape":"OnDemandCapacityReservationUsageStrategy",
+          "documentation":"<p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p> <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p> <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>"
+        },
+        "CapacityReservationPreference":{
+          "shape":"OnDemandCapacityReservationPreference",
+          "documentation":"<p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p> <ul> <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li> <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>"
+        },
+        "CapacityReservationResourceGroupArn":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>"
+        }
+      },
+      "documentation":"<p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>"
+    },
+    "OnDemandCapacityReservationPreference":{
+      "type":"string",
+      "enum":[
+        "open",
+        "none"
+      ]
+    },
+    "OnDemandCapacityReservationUsageStrategy":{
+      "type":"string",
+      "enum":["use-capacity-reservations-first"]
     },
     "OnDemandProvisioningAllocationStrategy":{
       "type":"string",
@@ -3681,7 +3933,11 @@
       "members":{
         "AllocationStrategy":{
           "shape":"OnDemandProvisioningAllocationStrategy",
-          "documentation":"<p> Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is lowest-price (the default), which launches the lowest price first. </p>"
+          "documentation":"<p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>"
+        },
+        "CapacityReservationOptions":{
+          "shape":"OnDemandCapacityReservationOptions",
+          "documentation":"<p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>"
         }
       },
       "documentation":"<p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> </note>"
@@ -3796,8 +4052,27 @@
         },
         "ClusterArn":{
           "shape":"ArnType",
-          "documentation":"<p>The Amazon Resource Name of the cluster.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the cluster.</p>"
         }
+      }
+    },
+    "PutAutoTerminationPolicyInput":{
+      "type":"structure",
+      "required":["ClusterId"],
+      "members":{
+        "ClusterId":{
+          "shape":"ClusterId",
+          "documentation":"<p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>"
+        },
+        "AutoTerminationPolicy":{
+          "shape":"AutoTerminationPolicy",
+          "documentation":"<p>Specifies the auto-termination policy to attach to the cluster.</p>"
+        }
+      }
+    },
+    "PutAutoTerminationPolicyOutput":{
+      "type":"structure",
+      "members":{
       }
     },
     "PutBlockPublicAccessConfigurationInput":{
@@ -3837,6 +4112,27 @@
       "members":{
       }
     },
+    "ReconfigurationType":{
+      "type":"string",
+      "enum":[
+        "OVERWRITE",
+        "MERGE"
+      ]
+    },
+    "ReleaseLabelFilter":{
+      "type":"structure",
+      "members":{
+        "Prefix":{
+          "shape":"String",
+          "documentation":"<p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>"
+        },
+        "Application":{
+          "shape":"String",
+          "documentation":"<p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>"
+        }
+      },
+      "documentation":"<p>The release label filters by application or version prefix.</p>"
+    },
     "RemoveAutoScalingPolicyInput":{
       "type":"structure",
       "required":[
@@ -3855,6 +4151,21 @@
       }
     },
     "RemoveAutoScalingPolicyOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "RemoveAutoTerminationPolicyInput":{
+      "type":"structure",
+      "required":["ClusterId"],
+      "members":{
+        "ClusterId":{
+          "shape":"ClusterId",
+          "documentation":"<p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>"
+        }
+      }
+    },
+    "RemoveAutoTerminationPolicyOutput":{
       "type":"structure",
       "members":{
       }
@@ -3883,20 +4194,20 @@
       "members":{
         "ResourceId":{
           "shape":"ResourceId",
-          "documentation":"<p>The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</p>"
+          "documentation":"<p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>"
         },
         "TagKeys":{
           "shape":"StringList",
-          "documentation":"<p>A list of tag keys to remove from a resource.</p>"
+          "documentation":"<p>A list of tag keys to remove from the resource.</p>"
         }
       },
-      "documentation":"<p>This input identifies a cluster and a list of tags to remove.</p>"
+      "documentation":"<p>This input identifies an Amazon EMR resource and a list of tags to remove.</p>"
     },
     "RemoveTagsOutput":{
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>This output indicates the result of removing tags from a resource.</p>"
+      "documentation":"<p>This output indicates the result of removing tags from the resource.</p>"
     },
     "RepoUpgradeOnBoot":{
       "type":"string",
@@ -3923,7 +4234,7 @@
         },
         "LogEncryptionKmsKeyId":{
           "shape":"XmlString",
-          "documentation":"<p>The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>"
+          "documentation":"<p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>"
         },
         "AdditionalInfo":{
           "shape":"XmlString",
@@ -3955,11 +4266,11 @@
         },
         "NewSupportedProducts":{
           "shape":"NewSupportedProductsList",
-          "documentation":"<note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p> </note> <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see \"Launch a Job Flow on the MapR Distribution for Hadoop\" in the <a href=\"https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf\">Amazon EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>\"mapr-m3\" - launch the cluster using MapR M3 Edition.</p> </li> <li> <p>\"mapr-m5\" - launch the cluster using MapR M5 Edition.</p> </li> <li> <p>\"mapr\" with the user arguments specifying \"--edition,m3\" or \"--edition,m5\" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>\"mapr-m7\" - launch the cluster using MapR M7 Edition.</p> </li> <li> <p>\"hunk\" - launch the cluster with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>\"hue\"- launch the cluster with Hue installed.</p> </li> <li> <p>\"spark\" - launch the cluster with Apache Spark installed.</p> </li> <li> <p>\"ganglia\" - launch the cluster with the Ganglia Monitoring System installed.</p> </li> </ul>"
+          "documentation":"<note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p> </note> <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see \"Launch a Job Flow on the MapR Distribution for Hadoop\" in the <a href=\"https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf\">Amazon EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>\"mapr-m3\" - launch the cluster using MapR M3 Edition.</p> </li> <li> <p>\"mapr-m5\" - launch the cluster using MapR M5 Edition.</p> </li> <li> <p>\"mapr\" with the user arguments specifying \"--edition,m3\" or \"--edition,m5\" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>\"mapr-m7\" - launch the cluster using MapR M7 Edition.</p> </li> <li> <p>\"hunk\" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>\"hue\"- launch the cluster with Hue installed.</p> </li> <li> <p>\"spark\" - launch the cluster with Apache Spark installed.</p> </li> <li> <p>\"ganglia\" - launch the cluster with the Ganglia Monitoring System installed.</p> </li> </ul>"
         },
         "Applications":{
           "shape":"ApplicationList",
-          "documentation":"<p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href=\"https://docs.aws.amazon.com/emr/latest/ReleaseGuide/\">Amazon EMR Release Guide</a>.</p>"
+          "documentation":"<p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href=\"https://docs.aws.amazon.com/emr/latest/ReleaseGuide/\">Amazon EMRRelease Guide</a>.</p>"
         },
         "Configurations":{
           "shape":"ConfigurationList",
@@ -3967,7 +4278,7 @@
         },
         "VisibleToAllUsers":{
           "shape":"Boolean",
-          "documentation":"<p>A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions if they have the proper IAM policy permissions. This is the default. A value of <code>false</code> indicates that only the IAM user who created the cluster can perform actions.</p>"
+          "documentation":"<important> <p>The VisibleToAllUsers parameter is no longer supported. By default, the value is set to <code>true</code>. Setting it to <code>false</code> now has no effect.</p> </important> <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href=\"https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html\">create-cluster</a> command.</p> <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users\">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>"
         },
         "JobFlowRole":{
           "shape":"XmlString",
@@ -3975,7 +4286,7 @@
         },
         "ServiceRole":{
           "shape":"XmlString",
-          "documentation":"<p>The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.</p>"
+          "documentation":"<p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>"
         },
         "Tags":{
           "shape":"TagList",
@@ -4020,6 +4331,11 @@
         "PlacementGroupConfigs":{
           "shape":"PlacementGroupConfigList",
           "documentation":"<p>The specified placement group configuration for an Amazon EMR cluster.</p>"
+        },
+        "AutoTerminationPolicy":{"shape":"AutoTerminationPolicy"},
+        "OSReleaseLabel":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>"
         }
       },
       "documentation":"<p> Input to the <a>RunJobFlow</a> operation. </p>"
@@ -4029,11 +4345,11 @@
       "members":{
         "JobFlowId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>An unique identifier for the job flow.</p>"
+          "documentation":"<p>A unique identifier for the job flow.</p>"
         },
         "ClusterArn":{
           "shape":"ArnType",
-          "documentation":"<p>The Amazon Resource Name of the cluster.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the cluster.</p>"
         }
       },
       "documentation":"<p> The result of the <a>RunJobFlow</a> operation. </p>"
@@ -4126,7 +4442,7 @@
       "members":{
         "Path":{
           "shape":"XmlString",
-          "documentation":"<p>Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.</p>"
+          "documentation":"<p>Location in Amazon S3 of the script to run during a bootstrap action.</p>"
         },
         "Args":{
           "shape":"XmlStringList",
@@ -4170,11 +4486,11 @@
         },
         "IdentityName":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The name of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>.</p>"
+          "documentation":"<p>The name of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>"
         },
         "IdentityType":{
           "shape":"IdentityType",
-          "documentation":"<p>Specifies whether the identity mapped to the Studio is a user or a group.</p>"
+          "documentation":"<p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>"
         },
         "SessionPolicyArn":{
           "shape":"XmlStringMaxLen256",
@@ -4200,15 +4516,15 @@
         },
         "IdentityId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The globally unique identifier (GUID) of the user or group from the AWS SSO Identity Store.</p>"
+          "documentation":"<p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.</p>"
         },
         "IdentityName":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The name of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>.</p>"
+          "documentation":"<p>The name of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>"
         },
         "IdentityType":{
           "shape":"IdentityType",
-          "documentation":"<p>Specifies whether the identity mapped to the Studio is a user or a group.</p>"
+          "documentation":"<p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>"
         },
         "SessionPolicyArn":{
           "shape":"XmlStringMaxLen256",
@@ -4256,7 +4572,7 @@
         },
         "VisibleToAllUsers":{
           "shape":"Boolean",
-          "documentation":"<p>A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions if they have the proper IAM policy permissions. This is the default. A value of <code>false</code> indicates that only the IAM user who created the cluster can perform actions.</p>"
+          "documentation":"<p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>"
         }
       },
       "documentation":"<p>The input to the SetVisibleToAllUsers action.</p>"
@@ -4294,6 +4610,24 @@
       },
       "documentation":"<p>An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.</p>"
     },
+    "SimplifiedApplication":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The returned release label application name. For example, <code>hadoop</code>.</p>"
+        },
+        "Version":{
+          "shape":"String",
+          "documentation":"<p>The returned release label application version. For example, <code>3.2.1</code>.</p>"
+        }
+      },
+      "documentation":"<p>The returned release label application names or versions.</p>"
+    },
+    "SimplifiedApplicationList":{
+      "type":"list",
+      "member":{"shape":"SimplifiedApplication"}
+    },
     "SpotProvisioningAllocationStrategy":{
       "type":"string",
       "enum":["capacity-optimized"]
@@ -4315,14 +4649,14 @@
         },
         "BlockDurationMinutes":{
           "shape":"WholeNumber",
-          "documentation":"<p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p>"
+          "documentation":"<p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note> <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> </note>"
         },
         "AllocationStrategy":{
           "shape":"SpotProvisioningAllocationStrategy",
           "documentation":"<p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>"
         }
       },
-      "documentation":"<p>The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> </note>"
+      "documentation":"<p>The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> </note> <note> <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> </note>"
     },
     "SpotProvisioningTimeoutAction":{
       "type":"string",
@@ -4410,7 +4744,7 @@
         },
         "ActionOnFailure":{
           "shape":"ActionOnFailure",
-          "documentation":"<p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>"
+          "documentation":"<p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>"
         },
         "Status":{
           "shape":"StepStatus",
@@ -4439,14 +4773,14 @@
         },
         "ActionOnFailure":{
           "shape":"ActionOnFailure",
-          "documentation":"<p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>"
+          "documentation":"<p>The action to take when the step fails. Use one of the following values:</p> <ul> <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li> <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li> <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> </ul> <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>"
         },
         "HadoopJarStep":{
           "shape":"HadoopJarStepConfig",
           "documentation":"<p>The JAR file used for the step.</p>"
         }
       },
-      "documentation":"<p>Specification of a cluster (job flow) step.</p>"
+      "documentation":"<p>Specification for a cluster (job flow) step.</p>"
     },
     "StepConfigList":{
       "type":"list",
@@ -4594,7 +4928,7 @@
         },
         "ActionOnFailure":{
           "shape":"ActionOnFailure",
-          "documentation":"<p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>"
+          "documentation":"<p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>"
         },
         "Status":{
           "shape":"StepStatus",
@@ -4650,27 +4984,27 @@
       "members":{
         "StudioId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The ID of the EMR Studio.</p>"
+          "documentation":"<p>The ID of the Amazon EMR Studio.</p>"
         },
         "StudioArn":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the EMR Studio.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>"
         },
         "Name":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The name of the EMR Studio.</p>"
+          "documentation":"<p>The name of the Amazon EMR Studio.</p>"
         },
         "Description":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The detailed description of the EMR Studio.</p>"
+          "documentation":"<p>The detailed description of the Amazon EMR Studio.</p>"
         },
         "AuthMode":{
           "shape":"AuthMode",
-          "documentation":"<p>Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.</p>"
+          "documentation":"<p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>"
         },
         "VpcId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The ID of the VPC associated with the EMR Studio.</p>"
+          "documentation":"<p>The ID of the VPC associated with the Amazon EMR Studio.</p>"
         },
         "SubnetIds":{
           "shape":"SubnetIdList",
@@ -4682,7 +5016,7 @@
         },
         "UserRole":{
           "shape":"XmlString",
-          "documentation":"<p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.</p>"
+          "documentation":"<p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>"
         },
         "WorkspaceSecurityGroupId":{
           "shape":"XmlStringMaxLen256",
@@ -4702,7 +5036,15 @@
         },
         "DefaultS3Location":{
           "shape":"XmlString",
-          "documentation":"<p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>"
+          "documentation":"<p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>"
+        },
+        "IdpAuthUrl":{
+          "shape":"XmlString",
+          "documentation":"<p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>"
+        },
+        "IdpRelayStateParameterName":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The name of your identity provider's <code>RelayState</code> parameter.</p>"
         },
         "Tags":{
           "shape":"TagList",
@@ -4728,11 +5070,15 @@
         },
         "Description":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The detailed description of the EMR Studio.</p>"
+          "documentation":"<p>The detailed description of the Amazon EMR Studio.</p>"
         },
         "Url":{
           "shape":"XmlStringMaxLen256",
           "documentation":"<p>The unique access URL of the Amazon EMR Studio.</p>"
+        },
+        "AuthMode":{
+          "shape":"AuthMode",
+          "documentation":"<p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>"
         },
         "CreationTime":{
           "shape":"Date",
@@ -4761,7 +5107,7 @@
           "documentation":"<p>The list of user-supplied arguments.</p>"
         }
       },
-      "documentation":"<p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>"
+      "documentation":"<p>The list of supported product configurations that allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>"
     },
     "SupportedProductsList":{
       "type":"list",
@@ -4772,7 +5118,7 @@
       "members":{
         "Key":{
           "shape":"String",
-          "documentation":"<p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html\">Tag </a>. </p>"
+          "documentation":"<p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html\">Tag</a>. </p>"
         },
         "Value":{
           "shape":"String",
@@ -4828,6 +5174,32 @@
         "COUNT_PER_SECOND"
       ]
     },
+    "UpdateStudioInput":{
+      "type":"structure",
+      "required":["StudioId"],
+      "members":{
+        "StudioId":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>The ID of the Amazon EMR Studio to update.</p>"
+        },
+        "Name":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>A descriptive name for the Amazon EMR Studio.</p>"
+        },
+        "Description":{
+          "shape":"XmlStringMaxLen256",
+          "documentation":"<p>A detailed description to assign to the Amazon EMR Studio.</p>"
+        },
+        "SubnetIds":{
+          "shape":"SubnetIdList",
+          "documentation":"<p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>"
+        },
+        "DefaultS3Location":{
+          "shape":"XmlString",
+          "documentation":"<p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>"
+        }
+      }
+    },
     "UpdateStudioSessionMappingInput":{
       "type":"structure",
       "required":[
@@ -4838,15 +5210,15 @@
       "members":{
         "StudioId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The ID of the EMR Studio.</p>"
+          "documentation":"<p>The ID of the Amazon EMR Studio.</p>"
         },
         "IdentityId":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The globally unique identifier (GUID) of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The globally unique identifier (GUID) of the user or group. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserId</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId\">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
         },
         "IdentityName":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The name of the user or group to update. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>AWS SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
+          "documentation":"<p>The name of the user or group to update. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName\">UserName</a> and <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName\">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>"
         },
         "IdentityType":{
           "shape":"IdentityType",
@@ -4867,7 +5239,7 @@
       "members":{
         "VolumeType":{
           "shape":"String",
-          "documentation":"<p>The volume type. Volume types supported are gp2, io1, standard.</p>"
+          "documentation":"<p>The volume type. Volume types supported are gp2, io1, and standard.</p>"
         },
         "Iops":{
           "shape":"Integer",
@@ -4905,5 +5277,5 @@
       "member":{"shape":"XmlStringMaxLen256"}
     }
   },
-  "documentation":"<p>Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with several AWS services to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data warehouse management.</p>"
+  "documentation":"<p>Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with several Amazon Web Services services to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data warehouse management.</p>"
 }

@@ -9,6 +9,7 @@
 #include <aws/managedblockchain/model/ProposalActions.h>
 #include <aws/managedblockchain/model/ProposalStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -27,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Properties of a proposal on a Managed Blockchain network.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Properties of a proposal on a Managed Blockchain network.</p> <p>Applies only
+   * to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Proposal">AWS
    * API Reference</a></p>
    */
@@ -580,6 +581,228 @@ namespace Model
      */
     inline Proposal& WithOutstandingVoteCount(int value) { SetOutstandingVoteCount(value); return *this;}
 
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags assigned to the proposal. Each tag consists of a key and optional
+     * value.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline Proposal& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline Proposal& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline Proposal& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
+     * ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline Proposal& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_proposalId;
@@ -617,6 +840,12 @@ namespace Model
 
     int m_outstandingVoteCount;
     bool m_outstandingVoteCountHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

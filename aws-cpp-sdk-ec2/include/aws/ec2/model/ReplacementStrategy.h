@@ -16,7 +16,8 @@ namespace Model
   enum class ReplacementStrategy
   {
     NOT_SET,
-    launch
+    launch,
+    launch_before_terminate
   };
 
 namespace ReplacementStrategyMapper

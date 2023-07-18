@@ -113,6 +113,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline LensUpgradeSummary& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline LensUpgradeSummary& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline LensUpgradeSummary& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+
+
+    /**
      * <p>The current version of the lens.</p>
      */
     inline const Aws::String& GetCurrentLensVersion() const{ return m_currentLensVersion; }
@@ -203,6 +244,9 @@ namespace Model
 
     Aws::String m_lensAlias;
     bool m_lensAliasHasBeenSet;
+
+    Aws::String m_lensArn;
+    bool m_lensArnHasBeenSet;
 
     Aws::String m_currentLensVersion;
     bool m_currentLensVersionHasBeenSet;

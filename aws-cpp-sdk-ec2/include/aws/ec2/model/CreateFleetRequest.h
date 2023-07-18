@@ -82,7 +82,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -106,7 +106,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -114,7 +114,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -122,7 +122,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline CreateFleetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -130,7 +130,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline CreateFleetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -138,7 +138,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline CreateFleetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -346,110 +346,104 @@ namespace Model
 
 
     /**
-     * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
-     * for your desired capacity, and continues to maintain your desired Spot capacity
-     * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
-     * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
-     * your desired capacity, but does submit Spot requests in alternative capacity
-     * pools if Spot capacity is unavailable, and does not maintain Spot capacity if
-     * Spot Instances are interrupted.</p> </li> <li> <p> <code>instant</code> - The
-     * EC2 Fleet places a synchronous one-time request for your desired capacity, and
-     * returns errors for any instances that could not be launched.</p> </li> </ul>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * <p>The fleet type. The default value is <code>maintain</code>.</p> <ul> <li> <p>
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your
+     * desired capacity, and continues to maintain your desired Spot capacity by
+     * replenishing interrupted Spot Instances.</p> </li> <li> <p> <code>request</code>
+     * - The EC2 Fleet places an asynchronous one-time request for your desired
+     * capacity, but does submit Spot requests in alternative capacity pools if Spot
+     * capacity is unavailable, and does not maintain Spot capacity if Spot Instances
+     * are interrupted.</p> </li> <li> <p> <code>instant</code> - The EC2 Fleet places
+     * a synchronous one-time request for your desired capacity, and returns errors for
+     * any instances that could not be launched.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
-     * for your desired capacity, and continues to maintain your desired Spot capacity
-     * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
-     * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
-     * your desired capacity, but does submit Spot requests in alternative capacity
-     * pools if Spot capacity is unavailable, and does not maintain Spot capacity if
-     * Spot Instances are interrupted.</p> </li> <li> <p> <code>instant</code> - The
-     * EC2 Fleet places a synchronous one-time request for your desired capacity, and
-     * returns errors for any instances that could not be launched.</p> </li> </ul>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * <p>The fleet type. The default value is <code>maintain</code>.</p> <ul> <li> <p>
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your
+     * desired capacity, and continues to maintain your desired Spot capacity by
+     * replenishing interrupted Spot Instances.</p> </li> <li> <p> <code>request</code>
+     * - The EC2 Fleet places an asynchronous one-time request for your desired
+     * capacity, but does submit Spot requests in alternative capacity pools if Spot
+     * capacity is unavailable, and does not maintain Spot capacity if Spot Instances
+     * are interrupted.</p> </li> <li> <p> <code>instant</code> - The EC2 Fleet places
+     * a synchronous one-time request for your desired capacity, and returns errors for
+     * any instances that could not be launched.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
-     * for your desired capacity, and continues to maintain your desired Spot capacity
-     * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
-     * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
-     * your desired capacity, but does submit Spot requests in alternative capacity
-     * pools if Spot capacity is unavailable, and does not maintain Spot capacity if
-     * Spot Instances are interrupted.</p> </li> <li> <p> <code>instant</code> - The
-     * EC2 Fleet places a synchronous one-time request for your desired capacity, and
-     * returns errors for any instances that could not be launched.</p> </li> </ul>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * <p>The fleet type. The default value is <code>maintain</code>.</p> <ul> <li> <p>
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your
+     * desired capacity, and continues to maintain your desired Spot capacity by
+     * replenishing interrupted Spot Instances.</p> </li> <li> <p> <code>request</code>
+     * - The EC2 Fleet places an asynchronous one-time request for your desired
+     * capacity, but does submit Spot requests in alternative capacity pools if Spot
+     * capacity is unavailable, and does not maintain Spot capacity if Spot Instances
+     * are interrupted.</p> </li> <li> <p> <code>instant</code> - The EC2 Fleet places
+     * a synchronous one-time request for your desired capacity, and returns errors for
+     * any instances that could not be launched.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
-     * for your desired capacity, and continues to maintain your desired Spot capacity
-     * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
-     * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
-     * your desired capacity, but does submit Spot requests in alternative capacity
-     * pools if Spot capacity is unavailable, and does not maintain Spot capacity if
-     * Spot Instances are interrupted.</p> </li> <li> <p> <code>instant</code> - The
-     * EC2 Fleet places a synchronous one-time request for your desired capacity, and
-     * returns errors for any instances that could not be launched.</p> </li> </ul>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * <p>The fleet type. The default value is <code>maintain</code>.</p> <ul> <li> <p>
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your
+     * desired capacity, and continues to maintain your desired Spot capacity by
+     * replenishing interrupted Spot Instances.</p> </li> <li> <p> <code>request</code>
+     * - The EC2 Fleet places an asynchronous one-time request for your desired
+     * capacity, but does submit Spot requests in alternative capacity pools if Spot
+     * capacity is unavailable, and does not maintain Spot capacity if Spot Instances
+     * are interrupted.</p> </li> <li> <p> <code>instant</code> - The EC2 Fleet places
+     * a synchronous one-time request for your desired capacity, and returns errors for
+     * any instances that could not be launched.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
-     * for your desired capacity, and continues to maintain your desired Spot capacity
-     * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
-     * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
-     * your desired capacity, but does submit Spot requests in alternative capacity
-     * pools if Spot capacity is unavailable, and does not maintain Spot capacity if
-     * Spot Instances are interrupted.</p> </li> <li> <p> <code>instant</code> - The
-     * EC2 Fleet places a synchronous one-time request for your desired capacity, and
-     * returns errors for any instances that could not be launched.</p> </li> </ul>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * <p>The fleet type. The default value is <code>maintain</code>.</p> <ul> <li> <p>
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your
+     * desired capacity, and continues to maintain your desired Spot capacity by
+     * replenishing interrupted Spot Instances.</p> </li> <li> <p> <code>request</code>
+     * - The EC2 Fleet places an asynchronous one-time request for your desired
+     * capacity, but does submit Spot requests in alternative capacity pools if Spot
+     * capacity is unavailable, and does not maintain Spot capacity if Spot Instances
+     * are interrupted.</p> </li> <li> <p> <code>instant</code> - The EC2 Fleet places
+     * a synchronous one-time request for your desired capacity, and returns errors for
+     * any instances that could not be launched.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(const FleetType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
-     * for your desired capacity, and continues to maintain your desired Spot capacity
-     * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
-     * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
-     * your desired capacity, but does submit Spot requests in alternative capacity
-     * pools if Spot capacity is unavailable, and does not maintain Spot capacity if
-     * Spot Instances are interrupted.</p> </li> <li> <p> <code>instant</code> - The
-     * EC2 Fleet places a synchronous one-time request for your desired capacity, and
-     * returns errors for any instances that could not be launched.</p> </li> </ul>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * <p>The fleet type. The default value is <code>maintain</code>.</p> <ul> <li> <p>
+     * <code>maintain</code> - The EC2 Fleet places an asynchronous request for your
+     * desired capacity, and continues to maintain your desired Spot capacity by
+     * replenishing interrupted Spot Instances.</p> </li> <li> <p> <code>request</code>
+     * - The EC2 Fleet places an asynchronous one-time request for your desired
+     * capacity, but does submit Spot requests in alternative capacity pools if Spot
+     * capacity is unavailable, and does not maintain Spot capacity if Spot Instances
+     * are interrupted.</p> </li> <li> <p> <code>instant</code> - The EC2 Fleet places
+     * a synchronous one-time request for your desired capacity, and returns errors for
+     * any instances that could not be launched.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}
 
@@ -547,113 +541,202 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetReplaceUnhealthyInstances() const{ return m_replaceUnhealthyInstances; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool ReplaceUnhealthyInstancesHasBeenSet() const { return m_replaceUnhealthyInstancesHasBeenSet; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
 
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline CreateFleetRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline CreateFleetRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline CreateFleetRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
-     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
-     * request fails. To tag instances at launch, specify the tags in the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * your resources</a>.</p>
+     * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
+     * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
+     * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
+     * or <code>request</code>, specify a resource type of <code>fleet</code> to tag
+     * the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     * instances at launch, specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>.</p>
      */
     inline CreateFleetRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateFleetRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateFleetRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateFleetRequest& WithContext(const char* value) { SetContext(value); return *this;}
 
   private:
 
@@ -695,6 +778,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
   };
 
 } // namespace Model

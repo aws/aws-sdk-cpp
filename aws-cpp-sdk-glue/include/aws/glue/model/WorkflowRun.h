@@ -11,6 +11,7 @@
 #include <aws/glue/model/WorkflowRunStatus.h>
 #include <aws/glue/model/WorkflowRunStatistics.h>
 #include <aws/glue/model/WorkflowGraph.h>
+#include <aws/glue/model/StartingEventBatchCondition.h>
 #include <utility>
 
 namespace Aws
@@ -44,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline WorkflowRun& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline WorkflowRun& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the workflow that was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline WorkflowRun& WithName(const char* value) { SetName(value); return *this;}
 
@@ -414,40 +415,71 @@ namespace Model
 
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline const WorkflowGraph& GetGraph() const{ return m_graph; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline bool GraphHasBeenSet() const { return m_graphHasBeenSet; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(const WorkflowGraph& value) { m_graphHasBeenSet = true; m_graph = value; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(WorkflowGraph&& value) { m_graphHasBeenSet = true; m_graph = std::move(value); }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline WorkflowRun& WithGraph(const WorkflowGraph& value) { SetGraph(value); return *this;}
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline WorkflowRun& WithGraph(WorkflowGraph&& value) { SetGraph(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline const StartingEventBatchCondition& GetStartingEventBatchCondition() const{ return m_startingEventBatchCondition; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline bool StartingEventBatchConditionHasBeenSet() const { return m_startingEventBatchConditionHasBeenSet; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline void SetStartingEventBatchCondition(const StartingEventBatchCondition& value) { m_startingEventBatchConditionHasBeenSet = true; m_startingEventBatchCondition = value; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline void SetStartingEventBatchCondition(StartingEventBatchCondition&& value) { m_startingEventBatchConditionHasBeenSet = true; m_startingEventBatchCondition = std::move(value); }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline WorkflowRun& WithStartingEventBatchCondition(const StartingEventBatchCondition& value) { SetStartingEventBatchCondition(value); return *this;}
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline WorkflowRun& WithStartingEventBatchCondition(StartingEventBatchCondition&& value) { SetStartingEventBatchCondition(std::move(value)); return *this;}
 
   private:
 
@@ -480,6 +512,9 @@ namespace Model
 
     WorkflowGraph m_graph;
     bool m_graphHasBeenSet;
+
+    StartingEventBatchCondition m_startingEventBatchCondition;
+    bool m_startingEventBatchConditionHasBeenSet;
   };
 
 } // namespace Model

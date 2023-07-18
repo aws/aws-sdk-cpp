@@ -49,6 +49,7 @@ static const int D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashStri
 static const int INVALID_D_B_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBParameterGroupState");
 static const int D_B_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupNotFound");
 static const int INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterSnapshotStateFault");
+static const int GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("GlobalClusterNotFoundFault");
 static const int D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterSnapshotAlreadyExistsFault");
 static const int INVALID_D_B_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSecurityGroupState");
 static const int PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT_HASH = HashingUtils::HashString("ProvisionedIopsNotAvailableInAZFault");
@@ -57,11 +58,13 @@ static const int INVALID_D_B_INSTANCE_STATE_FAULT_HASH = HashingUtils::HashStrin
 static const int D_B_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBSubnetQuotaExceededFault");
 static const int D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterSnapshotNotFoundFault");
 static const int D_B_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterAlreadyExistsFault");
+static const int GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("GlobalClusterQuotaExceededFault");
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
 static const int INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBInstanceCapacity");
 static const int D_B_CLUSTER_ROLE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterRoleQuotaExceeded");
 static const int D_B_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBParameterGroupNotFound");
 static const int INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("InstanceQuotaExceeded");
+static const int GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("GlobalClusterAlreadyExistsFault");
 static const int INVALID_D_B_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterStateFault");
 static const int SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = HashingUtils::HashString("SubscriptionAlreadyExist");
 static const int D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSnapshotNotFound");
@@ -81,6 +84,7 @@ static const int D_B_CLUSTER_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashStrin
 static const int D_B_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterQuotaExceededFault");
 static const int INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBClusterCapacityFault");
 static const int SOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SourceNotFound");
+static const int INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidGlobalClusterStateFault");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -211,6 +215,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT), false);
   }
+  else if (hashCode == GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_NOT_FOUND_FAULT), false);
+  }
   else if (hashCode == D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), false);
@@ -243,6 +251,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ALREADY_EXISTS_FAULT), false);
   }
+  else if (hashCode == GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT), false);
+  }
   else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::RESOURCE_NOT_FOUND_FAULT), false);
@@ -262,6 +274,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INSTANCE_QUOTA_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSTANCE_QUOTA_EXCEEDED_FAULT), false);
+  }
+  else if (hashCode == GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT), false);
   }
   else if (hashCode == INVALID_D_B_CLUSTER_STATE_FAULT_HASH)
   {
@@ -338,6 +354,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SOURCE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

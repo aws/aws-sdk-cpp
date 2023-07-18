@@ -76,22 +76,26 @@ namespace Model
 
 
     /**
-     * <p>The version number of the scaling plan.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
 
     /**
-     * <p>The version number of the scaling plan.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>
      */
     inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the scaling plan.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>
      */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
 
     /**
-     * <p>The version number of the scaling plan.</p>
+     * <p>The version number of the scaling plan. Currently, the only valid value is
+     * <code>1</code>.</p>
      */
     inline DescribeScalingPlanResourcesRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
 

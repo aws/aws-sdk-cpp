@@ -34,6 +34,8 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
      * <p>The ARN of the channel.</p>
@@ -186,42 +188,42 @@ namespace Model
 
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline SendChannelMessageRequest& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline SendChannelMessageRequest& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The optional metadata for each message. </p>
+     * <p>The optional metadata for each message.</p>
      */
     inline SendChannelMessageRequest& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
@@ -266,6 +268,47 @@ namespace Model
      */
     inline SendChannelMessageRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline SendChannelMessageRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline SendChannelMessageRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline SendChannelMessageRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -285,6 +328,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::String m_chimeBearer;
+    bool m_chimeBearerHasBeenSet;
   };
 
 } // namespace Model

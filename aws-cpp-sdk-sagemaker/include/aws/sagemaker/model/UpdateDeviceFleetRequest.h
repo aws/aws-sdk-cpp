@@ -188,6 +188,43 @@ namespace Model
      */
     inline UpdateDeviceFleetRequest& WithOutputConfig(EdgeOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
+     * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
+     * called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".</p>
+     */
+    inline bool GetEnableIotRoleAlias() const{ return m_enableIotRoleAlias; }
+
+    /**
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
+     * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
+     * called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".</p>
+     */
+    inline bool EnableIotRoleAliasHasBeenSet() const { return m_enableIotRoleAliasHasBeenSet; }
+
+    /**
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
+     * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
+     * called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".</p>
+     */
+    inline void SetEnableIotRoleAlias(bool value) { m_enableIotRoleAliasHasBeenSet = true; m_enableIotRoleAlias = value; }
+
+    /**
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
+     * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
+     * called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".</p>
+     */
+    inline UpdateDeviceFleetRequest& WithEnableIotRoleAlias(bool value) { SetEnableIotRoleAlias(value); return *this;}
+
   private:
 
     Aws::String m_deviceFleetName;
@@ -201,6 +238,9 @@ namespace Model
 
     EdgeOutputConfig m_outputConfig;
     bool m_outputConfigHasBeenSet;
+
+    bool m_enableIotRoleAlias;
+    bool m_enableIotRoleAliasHasBeenSet;
   };
 
 } // namespace Model

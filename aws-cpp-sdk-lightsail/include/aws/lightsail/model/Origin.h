@@ -28,10 +28,11 @@ namespace Model
 
   /**
    * <p>Describes the origin resource of an Amazon Lightsail content delivery network
-   * (CDN) distribution.</p> <p>An origin can be a Lightsail instance or load
-   * balancer. A distribution pulls content from an origin, caches it, and serves it
-   * to viewers via a worldwide network of edge servers.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Origin">AWS
+   * (CDN) distribution.</p> <p>An origin can be a Lightsail instance, bucket, or
+   * load balancer. A distribution pulls content from an origin, caches it, and
+   * serves it to viewers via a worldwide network of edge servers.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Origin">AWS
    * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API Origin

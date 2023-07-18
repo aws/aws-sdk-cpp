@@ -15,7 +15,9 @@ ListStackSetsRequest::ListStackSetsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false)
 {
 }
 
@@ -36,6 +38,11 @@ Aws::String ListStackSetsRequest::SerializePayload() const
   if(m_statusHasBeenSet)
   {
     ss << "Status=" << StackSetStatusMapper::GetNameForStackSetStatus(m_status) << "&";
+  }
+
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
   }
 
   ss << "Version=2010-05-15";

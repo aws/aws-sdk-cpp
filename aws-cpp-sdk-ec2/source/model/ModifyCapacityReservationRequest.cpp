@@ -17,8 +17,11 @@ ModifyCapacityReservationRequest::ModifyCapacityReservationRequest() :
     m_endDateHasBeenSet(false),
     m_endDateType(EndDateType::NOT_SET),
     m_endDateTypeHasBeenSet(false),
+    m_accept(false),
+    m_acceptHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_additionalInfoHasBeenSet(false)
 {
 }
 
@@ -46,9 +49,19 @@ Aws::String ModifyCapacityReservationRequest::SerializePayload() const
     ss << "EndDateType=" << EndDateTypeMapper::GetNameForEndDateType(m_endDateType) << "&";
   }
 
+  if(m_acceptHasBeenSet)
+  {
+    ss << "Accept=" << std::boolalpha << m_accept << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_additionalInfoHasBeenSet)
+  {
+    ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -47,8 +47,7 @@ enum class RoboMakerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_DEPLOYMENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  IDEMPOTENT_PARAMETER_MISMATCH,
+  IDEMPOTENT_PARAMETER_MISMATCH= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_PARAMETER,
   LIMIT_EXCEEDED,

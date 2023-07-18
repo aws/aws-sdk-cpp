@@ -65,57 +65,49 @@ namespace Model
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline const Aws::String& GetBadgeRequestUrl() const{ return m_badgeRequestUrl; }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline bool BadgeRequestUrlHasBeenSet() const { return m_badgeRequestUrlHasBeenSet; }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline void SetBadgeRequestUrl(const Aws::String& value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl = value; }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline void SetBadgeRequestUrl(Aws::String&& value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl = std::move(value); }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline void SetBadgeRequestUrl(const char* value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl.assign(value); }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline ProjectBadge& WithBadgeRequestUrl(const Aws::String& value) { SetBadgeRequestUrl(value); return *this;}
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline ProjectBadge& WithBadgeRequestUrl(Aws::String&& value) { SetBadgeRequestUrl(std::move(value)); return *this;}
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p> <p>The publicly accessible URL through which you can access
-     * the build badge for your project. </p>
+     * your project. </p>
      */
     inline ProjectBadge& WithBadgeRequestUrl(const char* value) { SetBadgeRequestUrl(value); return *this;}
 

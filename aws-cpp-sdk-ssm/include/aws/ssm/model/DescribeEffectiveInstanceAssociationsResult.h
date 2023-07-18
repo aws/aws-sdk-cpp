@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The associations for the requested instance.</p>
+     * <p>The associations for the requested managed node.</p>
      */
     inline const Aws::Vector<InstanceAssociation>& GetAssociations() const{ return m_associations; }
 
     /**
-     * <p>The associations for the requested instance.</p>
+     * <p>The associations for the requested managed node.</p>
      */
     inline void SetAssociations(const Aws::Vector<InstanceAssociation>& value) { m_associations = value; }
 
     /**
-     * <p>The associations for the requested instance.</p>
+     * <p>The associations for the requested managed node.</p>
      */
     inline void SetAssociations(Aws::Vector<InstanceAssociation>&& value) { m_associations = std::move(value); }
 
     /**
-     * <p>The associations for the requested instance.</p>
+     * <p>The associations for the requested managed node.</p>
      */
     inline DescribeEffectiveInstanceAssociationsResult& WithAssociations(const Aws::Vector<InstanceAssociation>& value) { SetAssociations(value); return *this;}
 
     /**
-     * <p>The associations for the requested instance.</p>
+     * <p>The associations for the requested managed node.</p>
      */
     inline DescribeEffectiveInstanceAssociationsResult& WithAssociations(Aws::Vector<InstanceAssociation>&& value) { SetAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>The associations for the requested instance.</p>
+     * <p>The associations for the requested managed node.</p>
      */
     inline DescribeEffectiveInstanceAssociationsResult& AddAssociations(const InstanceAssociation& value) { m_associations.push_back(value); return *this; }
 
     /**
-     * <p>The associations for the requested instance.</p>
+     * <p>The associations for the requested managed node.</p>
      */
     inline DescribeEffectiveInstanceAssociationsResult& AddAssociations(InstanceAssociation&& value) { m_associations.push_back(std::move(value)); return *this; }
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>This exception is thrown when a resource is not found by the AWS Transfer
-   * Family service.</p><p><h3>See Also:</h3>   <a
+   * <p>This exception is thrown when a resource is not found by the Amazon Web
+   * ServicesTransfer Family service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */

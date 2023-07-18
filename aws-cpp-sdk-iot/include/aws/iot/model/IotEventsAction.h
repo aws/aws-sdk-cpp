@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Sends an input to an AWS IoT Events detector.</p><p><h3>See Also:</h3>   <a
+   * <p>Sends an input to an IoT Events detector.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotEventsAction">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline const Aws::String& GetInputName() const{ return m_inputName; }
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline IotEventsAction& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline IotEventsAction& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS IoT Events input.</p>
+     * <p>The name of the IoT Events input.</p>
      */
     inline IotEventsAction& WithInputName(const char* value) { SetInputName(value); return *this;}
 
@@ -83,8 +83,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
@@ -93,8 +92,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
@@ -103,8 +101,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
@@ -113,8 +110,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
@@ -123,8 +119,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
@@ -133,8 +128,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline IotEventsAction& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
@@ -143,8 +137,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline IotEventsAction& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
@@ -153,8 +146,7 @@ namespace Model
      * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
      * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
      * <p>Assign a value to this property to ensure that only one input (message) with
-     * a given <code>messageId</code> will be processed by an AWS IoT Events
-     * detector.</p>
+     * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
     inline IotEventsAction& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
@@ -164,8 +156,8 @@ namespace Model
      * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
      * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
      * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
-     * element is treated as a separate message when it's sent to AWS IoT Events by
-     * calling <a
+     * element is treated as a separate message when it's sent to IoT Events by calling
+     * <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
      * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
      * messages.</p>
@@ -177,8 +169,8 @@ namespace Model
      * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
      * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
      * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
-     * element is treated as a separate message when it's sent to AWS IoT Events by
-     * calling <a
+     * element is treated as a separate message when it's sent to IoT Events by calling
+     * <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
      * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
      * messages.</p>
@@ -190,8 +182,8 @@ namespace Model
      * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
      * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
      * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
-     * element is treated as a separate message when it's sent to AWS IoT Events by
-     * calling <a
+     * element is treated as a separate message when it's sent to IoT Events by calling
+     * <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
      * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
      * messages.</p>
@@ -203,8 +195,8 @@ namespace Model
      * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
      * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
      * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
-     * element is treated as a separate message when it's sent to AWS IoT Events by
-     * calling <a
+     * element is treated as a separate message when it's sent to IoT Events by calling
+     * <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
      * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
      * messages.</p>
@@ -213,50 +205,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline IotEventsAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline IotEventsAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
-     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     * <p>The ARN of the role that grants IoT permission to send an input to an IoT
+     * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline IotEventsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

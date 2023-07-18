@@ -18,24 +18,38 @@ namespace WAFV2
 namespace Model
 {
 
-AllowAction::AllowAction()
+AllowAction::AllowAction() : 
+    m_customRequestHandlingHasBeenSet(false)
 {
 }
 
-AllowAction::AllowAction(JsonView jsonValue)
+AllowAction::AllowAction(JsonView jsonValue) : 
+    m_customRequestHandlingHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AllowAction& AllowAction::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("CustomRequestHandling"))
+  {
+    m_customRequestHandling = jsonValue.GetObject("CustomRequestHandling");
+
+    m_customRequestHandlingHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue AllowAction::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customRequestHandlingHasBeenSet)
+  {
+   payload.WithObject("CustomRequestHandling", m_customRequestHandling.Jsonize());
+
+  }
 
   return payload;
 }

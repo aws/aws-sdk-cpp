@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p> Information about the Git submodules configuration for an AWS CodeBuild
-   * build project. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about the Git submodules configuration for an CodeBuild build
+   * project. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GitSubmodulesConfig">AWS
    * API Reference</a></p>
    */
@@ -37,26 +37,22 @@ namespace Model
 
 
     /**
-     * <p> Set to true to fetch Git submodules for your AWS CodeBuild build project.
-     * </p>
+     * <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
      */
     inline bool GetFetchSubmodules() const{ return m_fetchSubmodules; }
 
     /**
-     * <p> Set to true to fetch Git submodules for your AWS CodeBuild build project.
-     * </p>
+     * <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
      */
     inline bool FetchSubmodulesHasBeenSet() const { return m_fetchSubmodulesHasBeenSet; }
 
     /**
-     * <p> Set to true to fetch Git submodules for your AWS CodeBuild build project.
-     * </p>
+     * <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
      */
     inline void SetFetchSubmodules(bool value) { m_fetchSubmodulesHasBeenSet = true; m_fetchSubmodules = value; }
 
     /**
-     * <p> Set to true to fetch Git submodules for your AWS CodeBuild build project.
-     * </p>
+     * <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
      */
     inline GitSubmodulesConfig& WithFetchSubmodules(bool value) { SetFetchSubmodules(value); return *this;}
 

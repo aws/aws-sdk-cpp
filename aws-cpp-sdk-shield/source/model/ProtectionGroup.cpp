@@ -26,7 +26,8 @@ ProtectionGroup::ProtectionGroup() :
     m_patternHasBeenSet(false),
     m_resourceType(ProtectedResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_membersHasBeenSet(false)
+    m_membersHasBeenSet(false),
+    m_protectionGroupArnHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ProtectionGroup::ProtectionGroup(JsonView jsonValue) :
     m_patternHasBeenSet(false),
     m_resourceType(ProtectedResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_membersHasBeenSet(false)
+    m_membersHasBeenSet(false),
+    m_protectionGroupArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ ProtectionGroup& ProtectionGroup::operator =(JsonView jsonValue)
     m_membersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProtectionGroupArn"))
+  {
+    m_protectionGroupArn = jsonValue.GetString("ProtectionGroupArn");
+
+    m_protectionGroupArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +128,12 @@ JsonValue ProtectionGroup::Jsonize() const
      membersJsonList[membersIndex].AsString(m_members[membersIndex]);
    }
    payload.WithArray("Members", std::move(membersJsonList));
+
+  }
+
+  if(m_protectionGroupArnHasBeenSet)
+  {
+   payload.WithString("ProtectionGroupArn", m_protectionGroupArn);
 
   }
 

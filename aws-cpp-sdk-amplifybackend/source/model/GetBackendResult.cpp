@@ -28,6 +28,12 @@ GetBackendResult::GetBackendResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetBackendResult& GetBackendResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("amplifyFeatureFlags"))
+  {
+    m_amplifyFeatureFlags = jsonValue.GetString("amplifyFeatureFlags");
+
+  }
+
   if(jsonValue.ValueExists("amplifyMetaConfig"))
   {
     m_amplifyMetaConfig = jsonValue.GetString("amplifyMetaConfig");

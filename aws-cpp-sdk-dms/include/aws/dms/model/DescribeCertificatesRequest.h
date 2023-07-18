@@ -37,50 +37,58 @@ namespace Model
 
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Filters applied to the certificates described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -25,13 +25,14 @@ namespace Model
   /**
    * <p>Container for the transition rule that describes when noncurrent objects
    * transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>,
-   * <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or
-   * <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled
+   * <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>,
+   * or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled
    * (or versioning is suspended), you can set this action to request that Amazon S3
    * transition noncurrent object versions to the <code>STANDARD_IA</code>,
-   * <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>,
-   * or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's
-   * lifetime.</p><p><h3>See Also:</h3>   <a
+   * <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>,
+   * <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code>
+   * storage class at a specific period in the object's lifetime.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NoncurrentVersionTransition">AWS
    * API Reference</a></p>
    */
@@ -51,7 +52,7 @@ namespace Model
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
      * Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * S3 User Guide</i>.</p>
      */
     inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
 
@@ -61,7 +62,7 @@ namespace Model
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
      * Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * S3 User Guide</i>.</p>
      */
     inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
 
@@ -71,7 +72,7 @@ namespace Model
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
      * Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * S3 User Guide</i>.</p>
      */
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
 
@@ -81,7 +82,7 @@ namespace Model
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
      * Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * S3 User Guide</i>.</p>
      */
     inline NoncurrentVersionTransition& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
 
@@ -116,6 +117,43 @@ namespace Model
      */
     inline NoncurrentVersionTransition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are
+     * this many more recent noncurrent versions, Amazon S3 will take the associated
+     * action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+     * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline int GetNewerNoncurrentVersions() const{ return m_newerNoncurrentVersions; }
+
+    /**
+     * <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are
+     * this many more recent noncurrent versions, Amazon S3 will take the associated
+     * action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+     * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline bool NewerNoncurrentVersionsHasBeenSet() const { return m_newerNoncurrentVersionsHasBeenSet; }
+
+    /**
+     * <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are
+     * this many more recent noncurrent versions, Amazon S3 will take the associated
+     * action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+     * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetNewerNoncurrentVersions(int value) { m_newerNoncurrentVersionsHasBeenSet = true; m_newerNoncurrentVersions = value; }
+
+    /**
+     * <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are
+     * this many more recent noncurrent versions, Amazon S3 will take the associated
+     * action. For more information about noncurrent versions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+     * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline NoncurrentVersionTransition& WithNewerNoncurrentVersions(int value) { SetNewerNoncurrentVersions(value); return *this;}
+
   private:
 
     int m_noncurrentDays;
@@ -123,6 +161,9 @@ namespace Model
 
     TransitionStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
+    int m_newerNoncurrentVersions;
+    bool m_newerNoncurrentVersionsHasBeenSet;
   };
 
 } // namespace Model

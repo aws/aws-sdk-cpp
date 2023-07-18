@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(Aws::String&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const char* value) { m_brokerIdHasBeenSet = true; m_brokerId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DeleteBrokerRequest& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DeleteBrokerRequest& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DeleteBrokerRequest& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
 

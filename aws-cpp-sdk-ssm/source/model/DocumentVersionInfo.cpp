@@ -20,6 +20,7 @@ namespace Model
 
 DocumentVersionInfo::DocumentVersionInfo() : 
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -37,6 +38,7 @@ DocumentVersionInfo::DocumentVersionInfo() :
 
 DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -60,6 +62,13 @@ DocumentVersionInfo& DocumentVersionInfo::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DocumentVersion"))
@@ -128,6 +137,12 @@ JsonValue DocumentVersionInfo::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 

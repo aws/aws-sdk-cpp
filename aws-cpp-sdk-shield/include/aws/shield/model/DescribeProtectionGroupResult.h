@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>A grouping of protected resources that you and AWS Shield Advanced can
-     * monitor as a collective. This resource grouping improves the accuracy of
-     * detection and reduces false positives. </p>
+     * <p>A grouping of protected resources that you and Shield Advanced can monitor as
+     * a collective. This resource grouping improves the accuracy of detection and
+     * reduces false positives. </p>
      */
     inline const ProtectionGroup& GetProtectionGroup() const{ return m_protectionGroup; }
 
     /**
-     * <p>A grouping of protected resources that you and AWS Shield Advanced can
-     * monitor as a collective. This resource grouping improves the accuracy of
-     * detection and reduces false positives. </p>
+     * <p>A grouping of protected resources that you and Shield Advanced can monitor as
+     * a collective. This resource grouping improves the accuracy of detection and
+     * reduces false positives. </p>
      */
     inline void SetProtectionGroup(const ProtectionGroup& value) { m_protectionGroup = value; }
 
     /**
-     * <p>A grouping of protected resources that you and AWS Shield Advanced can
-     * monitor as a collective. This resource grouping improves the accuracy of
-     * detection and reduces false positives. </p>
+     * <p>A grouping of protected resources that you and Shield Advanced can monitor as
+     * a collective. This resource grouping improves the accuracy of detection and
+     * reduces false positives. </p>
      */
     inline void SetProtectionGroup(ProtectionGroup&& value) { m_protectionGroup = std::move(value); }
 
     /**
-     * <p>A grouping of protected resources that you and AWS Shield Advanced can
-     * monitor as a collective. This resource grouping improves the accuracy of
-     * detection and reduces false positives. </p>
+     * <p>A grouping of protected resources that you and Shield Advanced can monitor as
+     * a collective. This resource grouping improves the accuracy of detection and
+     * reduces false positives. </p>
      */
     inline DescribeProtectionGroupResult& WithProtectionGroup(const ProtectionGroup& value) { SetProtectionGroup(value); return *this;}
 
     /**
-     * <p>A grouping of protected resources that you and AWS Shield Advanced can
-     * monitor as a collective. This resource grouping improves the accuracy of
-     * detection and reduces false positives. </p>
+     * <p>A grouping of protected resources that you and Shield Advanced can monitor as
+     * a collective. This resource grouping improves the accuracy of detection and
+     * reduces false positives. </p>
      */
     inline DescribeProtectionGroupResult& WithProtectionGroup(ProtectionGroup&& value) { SetProtectionGroup(std::move(value)); return *this;}
 

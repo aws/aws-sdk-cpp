@@ -186,11 +186,11 @@ namespace Model
      * the position in the playback window to display.</p> </li> </ul> <p>In all
      * playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the HLS media playlist. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the HLS media playlist. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the largest fragment number (that
+     * is, the newest fragment) is included in the HLS media playlist. The other
+     * fragments are not included. Fragments that have different timestamps but have
+     * overlapping durations are still included in the HLS media playlist. This can
+     * lead to unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline const HLSPlaybackMode& GetPlaybackMode() const{ return m_playbackMode; }
@@ -230,11 +230,11 @@ namespace Model
      * the position in the playback window to display.</p> </li> </ul> <p>In all
      * playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the HLS media playlist. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the HLS media playlist. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the largest fragment number (that
+     * is, the newest fragment) is included in the HLS media playlist. The other
+     * fragments are not included. Fragments that have different timestamps but have
+     * overlapping durations are still included in the HLS media playlist. This can
+     * lead to unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
@@ -274,11 +274,11 @@ namespace Model
      * the position in the playback window to display.</p> </li> </ul> <p>In all
      * playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the HLS media playlist. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the HLS media playlist. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the largest fragment number (that
+     * is, the newest fragment) is included in the HLS media playlist. The other
+     * fragments are not included. Fragments that have different timestamps but have
+     * overlapping durations are still included in the HLS media playlist. This can
+     * lead to unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline void SetPlaybackMode(const HLSPlaybackMode& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
@@ -318,11 +318,11 @@ namespace Model
      * the position in the playback window to display.</p> </li> </ul> <p>In all
      * playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the HLS media playlist. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the HLS media playlist. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the largest fragment number (that
+     * is, the newest fragment) is included in the HLS media playlist. The other
+     * fragments are not included. Fragments that have different timestamps but have
+     * overlapping durations are still included in the HLS media playlist. This can
+     * lead to unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline void SetPlaybackMode(HLSPlaybackMode&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
@@ -362,11 +362,11 @@ namespace Model
      * the position in the playback window to display.</p> </li> </ul> <p>In all
      * playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the HLS media playlist. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the HLS media playlist. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the largest fragment number (that
+     * is, the newest fragment) is included in the HLS media playlist. The other
+     * fragments are not included. Fragments that have different timestamps but have
+     * overlapping durations are still included in the HLS media playlist. This can
+     * lead to unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline GetHLSStreamingSessionURLRequest& WithPlaybackMode(const HLSPlaybackMode& value) { SetPlaybackMode(value); return *this;}
@@ -406,11 +406,11 @@ namespace Model
      * the position in the playback window to display.</p> </li> </ul> <p>In all
      * playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the HLS media playlist. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the HLS media playlist. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the largest fragment number (that
+     * is, the newest fragment) is included in the HLS media playlist. The other
+     * fragments are not included. Fragments that have different timestamps but have
+     * overlapping durations are still included in the HLS media playlist. This can
+     * lead to unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline GetHLSStreamingSessionURLRequest& WithPlaybackMode(HLSPlaybackMode&& value) { SetPlaybackMode(std::move(value)); return *this;}
@@ -592,7 +592,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -621,7 +621,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -650,7 +650,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -679,7 +679,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -708,7 +708,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -737,7 +737,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -900,9 +900,9 @@ namespace Model
      * fragments and a maximum of 10 fragments.</p> <p>The default is 5 fragments if
      * <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p> <p>The
-     * maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-     * streams with 1-second fragments, and more than 2 1/2 hours of video on streams
-     * with 10-second fragments.</p>
+     * maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
+     * streams with 1-second fragments, and more than 13 hours of video on streams with
+     * 10-second fragments.</p>
      */
     inline long long GetMaxMediaPlaylistFragmentResults() const{ return m_maxMediaPlaylistFragmentResults; }
 
@@ -919,9 +919,9 @@ namespace Model
      * fragments and a maximum of 10 fragments.</p> <p>The default is 5 fragments if
      * <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p> <p>The
-     * maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-     * streams with 1-second fragments, and more than 2 1/2 hours of video on streams
-     * with 10-second fragments.</p>
+     * maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
+     * streams with 1-second fragments, and more than 13 hours of video on streams with
+     * 10-second fragments.</p>
      */
     inline bool MaxMediaPlaylistFragmentResultsHasBeenSet() const { return m_maxMediaPlaylistFragmentResultsHasBeenSet; }
 
@@ -938,9 +938,9 @@ namespace Model
      * fragments and a maximum of 10 fragments.</p> <p>The default is 5 fragments if
      * <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p> <p>The
-     * maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-     * streams with 1-second fragments, and more than 2 1/2 hours of video on streams
-     * with 10-second fragments.</p>
+     * maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
+     * streams with 1-second fragments, and more than 13 hours of video on streams with
+     * 10-second fragments.</p>
      */
     inline void SetMaxMediaPlaylistFragmentResults(long long value) { m_maxMediaPlaylistFragmentResultsHasBeenSet = true; m_maxMediaPlaylistFragmentResults = value; }
 
@@ -957,9 +957,9 @@ namespace Model
      * fragments and a maximum of 10 fragments.</p> <p>The default is 5 fragments if
      * <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p> <p>The
-     * maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-     * streams with 1-second fragments, and more than 2 1/2 hours of video on streams
-     * with 10-second fragments.</p>
+     * maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
+     * streams with 1-second fragments, and more than 13 hours of video on streams with
+     * 10-second fragments.</p>
      */
     inline GetHLSStreamingSessionURLRequest& WithMaxMediaPlaylistFragmentResults(long long value) { SetMaxMediaPlaylistFragmentResults(value); return *this;}
 

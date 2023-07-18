@@ -43,49 +43,105 @@ namespace Model
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>A required parameter. Options available for the given engine name are
-     * described.</p>
+     * described.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -181,37 +237,37 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}

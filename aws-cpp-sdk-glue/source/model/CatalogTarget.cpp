@@ -20,13 +20,15 @@ namespace Model
 
 CatalogTarget::CatalogTarget() : 
     m_databaseNameHasBeenSet(false),
-    m_tablesHasBeenSet(false)
+    m_tablesHasBeenSet(false),
+    m_connectionNameHasBeenSet(false)
 {
 }
 
 CatalogTarget::CatalogTarget(JsonView jsonValue) : 
     m_databaseNameHasBeenSet(false),
-    m_tablesHasBeenSet(false)
+    m_tablesHasBeenSet(false),
+    m_connectionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ CatalogTarget& CatalogTarget::operator =(JsonView jsonValue)
     m_tablesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectionName"))
+  {
+    m_connectionName = jsonValue.GetString("ConnectionName");
+
+    m_connectionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue CatalogTarget::Jsonize() const
      tablesJsonList[tablesIndex].AsString(m_tables[tablesIndex]);
    }
    payload.WithArray("Tables", std::move(tablesJsonList));
+
+  }
+
+  if(m_connectionNameHasBeenSet)
+  {
+   payload.WithString("ConnectionName", m_connectionName);
 
   }
 

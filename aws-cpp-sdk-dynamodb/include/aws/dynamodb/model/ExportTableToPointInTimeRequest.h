@@ -271,50 +271,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the bucket the export will be stored
-     * in.</p>
+     * <p>The ID of the Amazon Web Services account that owns the bucket the export
+     * will be stored in.</p>
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
 
@@ -372,7 +372,7 @@ namespace Model
      * <p>Type of encryption used on the bucket where export data will be stored. Valid
      * values for <code>S3SseAlgorithm</code> are:</p> <ul> <li> <p>
      * <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
-     * </li> <li> <p> <code>KMS</code> - server-side encryption with AWS KMS managed
+     * </li> <li> <p> <code>KMS</code> - server-side encryption with KMS managed
      * keys</p> </li> </ul>
      */
     inline const S3SseAlgorithm& GetS3SseAlgorithm() const{ return m_s3SseAlgorithm; }
@@ -381,7 +381,7 @@ namespace Model
      * <p>Type of encryption used on the bucket where export data will be stored. Valid
      * values for <code>S3SseAlgorithm</code> are:</p> <ul> <li> <p>
      * <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
-     * </li> <li> <p> <code>KMS</code> - server-side encryption with AWS KMS managed
+     * </li> <li> <p> <code>KMS</code> - server-side encryption with KMS managed
      * keys</p> </li> </ul>
      */
     inline bool S3SseAlgorithmHasBeenSet() const { return m_s3SseAlgorithmHasBeenSet; }
@@ -390,7 +390,7 @@ namespace Model
      * <p>Type of encryption used on the bucket where export data will be stored. Valid
      * values for <code>S3SseAlgorithm</code> are:</p> <ul> <li> <p>
      * <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
-     * </li> <li> <p> <code>KMS</code> - server-side encryption with AWS KMS managed
+     * </li> <li> <p> <code>KMS</code> - server-side encryption with KMS managed
      * keys</p> </li> </ul>
      */
     inline void SetS3SseAlgorithm(const S3SseAlgorithm& value) { m_s3SseAlgorithmHasBeenSet = true; m_s3SseAlgorithm = value; }
@@ -399,7 +399,7 @@ namespace Model
      * <p>Type of encryption used on the bucket where export data will be stored. Valid
      * values for <code>S3SseAlgorithm</code> are:</p> <ul> <li> <p>
      * <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
-     * </li> <li> <p> <code>KMS</code> - server-side encryption with AWS KMS managed
+     * </li> <li> <p> <code>KMS</code> - server-side encryption with KMS managed
      * keys</p> </li> </ul>
      */
     inline void SetS3SseAlgorithm(S3SseAlgorithm&& value) { m_s3SseAlgorithmHasBeenSet = true; m_s3SseAlgorithm = std::move(value); }
@@ -408,7 +408,7 @@ namespace Model
      * <p>Type of encryption used on the bucket where export data will be stored. Valid
      * values for <code>S3SseAlgorithm</code> are:</p> <ul> <li> <p>
      * <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
-     * </li> <li> <p> <code>KMS</code> - server-side encryption with AWS KMS managed
+     * </li> <li> <p> <code>KMS</code> - server-side encryption with KMS managed
      * keys</p> </li> </ul>
      */
     inline ExportTableToPointInTimeRequest& WithS3SseAlgorithm(const S3SseAlgorithm& value) { SetS3SseAlgorithm(value); return *this;}
@@ -417,57 +417,57 @@ namespace Model
      * <p>Type of encryption used on the bucket where export data will be stored. Valid
      * values for <code>S3SseAlgorithm</code> are:</p> <ul> <li> <p>
      * <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
-     * </li> <li> <p> <code>KMS</code> - server-side encryption with AWS KMS managed
+     * </li> <li> <p> <code>KMS</code> - server-side encryption with KMS managed
      * keys</p> </li> </ul>
      */
     inline ExportTableToPointInTimeRequest& WithS3SseAlgorithm(S3SseAlgorithm&& value) { SetS3SseAlgorithm(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline const Aws::String& GetS3SseKmsKeyId() const{ return m_s3SseKmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline bool S3SseKmsKeyIdHasBeenSet() const { return m_s3SseKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline void SetS3SseKmsKeyId(const Aws::String& value) { m_s3SseKmsKeyIdHasBeenSet = true; m_s3SseKmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline void SetS3SseKmsKeyId(Aws::String&& value) { m_s3SseKmsKeyIdHasBeenSet = true; m_s3SseKmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline void SetS3SseKmsKeyId(const char* value) { m_s3SseKmsKeyIdHasBeenSet = true; m_s3SseKmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline ExportTableToPointInTimeRequest& WithS3SseKmsKeyId(const Aws::String& value) { SetS3SseKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline ExportTableToPointInTimeRequest& WithS3SseKmsKeyId(Aws::String&& value) { SetS3SseKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export
-     * data will be stored (if applicable).</p>
+     * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
+     * will be stored (if applicable).</p>
      */
     inline ExportTableToPointInTimeRequest& WithS3SseKmsKeyId(const char* value) { SetS3SseKmsKeyId(value); return *this;}
 

@@ -23,7 +23,8 @@ namespace Model
 
   /**
    * <p>A request to get information about the traffic policy instances that you
-   * created by using the current AWS account.</p><p><h3>See Also:</h3>   <a
+   * created by using the current Amazon Web Services account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesRequest">AWS
    * API Reference</a></p>
    */

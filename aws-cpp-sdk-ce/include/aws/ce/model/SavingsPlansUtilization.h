@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The measurement of how well you are using your existing Savings
+   * <p>The measurement of how well you're using your existing Savings
    * Plans.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilization">AWS
    * API Reference</a></p>
@@ -137,50 +137,50 @@ namespace Model
 
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline const Aws::String& GetUnusedCommitment() const{ return m_unusedCommitment; }
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline bool UnusedCommitmentHasBeenSet() const { return m_unusedCommitmentHasBeenSet; }
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline void SetUnusedCommitment(const Aws::String& value) { m_unusedCommitmentHasBeenSet = true; m_unusedCommitment = value; }
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline void SetUnusedCommitment(Aws::String&& value) { m_unusedCommitmentHasBeenSet = true; m_unusedCommitment = std::move(value); }
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline void SetUnusedCommitment(const char* value) { m_unusedCommitmentHasBeenSet = true; m_unusedCommitment.assign(value); }
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline SavingsPlansUtilization& WithUnusedCommitment(const Aws::String& value) { SetUnusedCommitment(value); return *this;}
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline SavingsPlansUtilization& WithUnusedCommitment(Aws::String&& value) { SetUnusedCommitment(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of your Savings Plans commitment that was not consumed from
-     * Savings Plans eligible usage in a specific period.</p>
+     * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
+     * Plans eligible usage in a specific period.</p>
      */
     inline SavingsPlansUtilization& WithUnusedCommitment(const char* value) { SetUnusedCommitment(value); return *this;}
 

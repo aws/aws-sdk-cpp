@@ -76,56 +76,64 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline AttachPolicyRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline AttachPolicyRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-     * to which the policy is attached.</p>
+     * to which the policy is attached. For example, a thing group or a
+     * certificate.</p>
      */
     inline AttachPolicyRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
 

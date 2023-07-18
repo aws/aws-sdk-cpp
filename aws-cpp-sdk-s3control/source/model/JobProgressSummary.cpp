@@ -26,7 +26,8 @@ JobProgressSummary::JobProgressSummary() :
     m_numberOfTasksSucceeded(0),
     m_numberOfTasksSucceededHasBeenSet(false),
     m_numberOfTasksFailed(0),
-    m_numberOfTasksFailedHasBeenSet(false)
+    m_numberOfTasksFailedHasBeenSet(false),
+    m_timersHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ JobProgressSummary::JobProgressSummary(const XmlNode& xmlNode) :
     m_numberOfTasksSucceeded(0),
     m_numberOfTasksSucceededHasBeenSet(false),
     m_numberOfTasksFailed(0),
-    m_numberOfTasksFailedHasBeenSet(false)
+    m_numberOfTasksFailedHasBeenSet(false),
+    m_timersHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -64,6 +66,12 @@ JobProgressSummary& JobProgressSummary::operator =(const XmlNode& xmlNode)
     {
       m_numberOfTasksFailed = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfTasksFailedNode.GetText()).c_str()).c_str());
       m_numberOfTasksFailedHasBeenSet = true;
+    }
+    XmlNode timersNode = resultNode.FirstChild("Timers");
+    if(!timersNode.IsNull())
+    {
+      m_timers = timersNode;
+      m_timersHasBeenSet = true;
     }
   }
 
@@ -95,6 +103,12 @@ void JobProgressSummary::AddToNode(XmlNode& parentNode) const
    ss << m_numberOfTasksFailed;
    numberOfTasksFailedNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_timersHasBeenSet)
+  {
+   XmlNode timersNode = parentNode.CreateChildElement("Timers");
+   m_timers.AddToNode(timersNode);
   }
 
 }

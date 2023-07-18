@@ -130,64 +130,64 @@ namespace Model
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline const Aws::Map<Aws::String, int>& GetAssociationStatusAggregatedCount() const{ return m_associationStatusAggregatedCount; }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline bool AssociationStatusAggregatedCountHasBeenSet() const { return m_associationStatusAggregatedCountHasBeenSet; }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline void SetAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount = value; }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline void SetAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount = std::move(value); }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline AssociationOverview& WithAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { SetAssociationStatusAggregatedCount(value); return *this;}
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline AssociationOverview& WithAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { SetAssociationStatusAggregatedCount(std::move(value)); return *this;}
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline AssociationOverview& AddAssociationStatusAggregatedCount(const Aws::String& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this; }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline AssociationOverview& AddAssociationStatusAggregatedCount(Aws::String&& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
-     * created an association with two instances, and one of them was successful, this
-     * would return the count of instances by status.</p>
+     * created an association with two managed nodes, and one of them was successful,
+     * this would return the count of managed nodes by status.</p>
      */
     inline AssociationOverview& AddAssociationStatusAggregatedCount(const char* key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this; }
 

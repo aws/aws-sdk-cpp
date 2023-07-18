@@ -24,7 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>Describes a tag. </p><p><h3>See Also:</h3>   <a
+   * <p>A tag object that consists of a key and an optional value, used to manage
+   * metadata for SageMaker Amazon Web Services resources.</p> <p>You can add tags to
+   * notebook instances, training jobs, hyperparameter tuning jobs, batch transform
+   * jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
+   * For more information on adding tags to SageMaker resources, see
+   * <a>AddTags</a>.</p> <p>For more information on adding metadata to your Amazon
+   * Web Services resources with tagging, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+   * Amazon Web Services resources</a>. For advice on best practices for managing
+   * Amazon Web Services resources with tagging, see <a
+   * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+   * Best Practices: Implement an Effective Amazon Web Services Resource Tagging
+   * Strategy</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Tag">AWS API
    * Reference</a></p>
    */
@@ -38,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The tag key.</p>
+     * <p>The tag key. Tag keys must be unique per resource.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 

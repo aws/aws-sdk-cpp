@@ -26,6 +26,8 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings() :
     m_databaseNameHasBeenSet(false),
     m_controlTablesFileGroupHasBeenSet(false),
     m_passwordHasBeenSet(false),
+    m_querySingleAlwaysOnNode(false),
+    m_querySingleAlwaysOnNodeHasBeenSet(false),
     m_readBackupOnly(false),
     m_readBackupOnlyHasBeenSet(false),
     m_safeguardPolicy(SafeguardPolicy::NOT_SET),
@@ -33,7 +35,11 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings() :
     m_serverNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_useBcpFullLoad(false),
-    m_useBcpFullLoadHasBeenSet(false)
+    m_useBcpFullLoadHasBeenSet(false),
+    m_useThirdPartyBackupDevice(false),
+    m_useThirdPartyBackupDeviceHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
 }
 
@@ -45,6 +51,8 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings(JsonView jsonValue) :
     m_databaseNameHasBeenSet(false),
     m_controlTablesFileGroupHasBeenSet(false),
     m_passwordHasBeenSet(false),
+    m_querySingleAlwaysOnNode(false),
+    m_querySingleAlwaysOnNodeHasBeenSet(false),
     m_readBackupOnly(false),
     m_readBackupOnlyHasBeenSet(false),
     m_safeguardPolicy(SafeguardPolicy::NOT_SET),
@@ -52,7 +60,11 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings(JsonView jsonValue) :
     m_serverNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_useBcpFullLoad(false),
-    m_useBcpFullLoadHasBeenSet(false)
+    m_useBcpFullLoadHasBeenSet(false),
+    m_useThirdPartyBackupDevice(false),
+    m_useThirdPartyBackupDeviceHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +106,13 @@ MicrosoftSQLServerSettings& MicrosoftSQLServerSettings::operator =(JsonView json
     m_passwordHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QuerySingleAlwaysOnNode"))
+  {
+    m_querySingleAlwaysOnNode = jsonValue.GetBool("QuerySingleAlwaysOnNode");
+
+    m_querySingleAlwaysOnNodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ReadBackupOnly"))
   {
     m_readBackupOnly = jsonValue.GetBool("ReadBackupOnly");
@@ -127,6 +146,27 @@ MicrosoftSQLServerSettings& MicrosoftSQLServerSettings::operator =(JsonView json
     m_useBcpFullLoad = jsonValue.GetBool("UseBcpFullLoad");
 
     m_useBcpFullLoadHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseThirdPartyBackupDevice"))
+  {
+    m_useThirdPartyBackupDevice = jsonValue.GetBool("UseThirdPartyBackupDevice");
+
+    m_useThirdPartyBackupDeviceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
+  {
+    m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
+
+    m_secretsManagerAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerSecretId"))
+  {
+    m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
+
+    m_secretsManagerSecretIdHasBeenSet = true;
   }
 
   return *this;
@@ -166,6 +206,12 @@ JsonValue MicrosoftSQLServerSettings::Jsonize() const
 
   }
 
+  if(m_querySingleAlwaysOnNodeHasBeenSet)
+  {
+   payload.WithBool("QuerySingleAlwaysOnNode", m_querySingleAlwaysOnNode);
+
+  }
+
   if(m_readBackupOnlyHasBeenSet)
   {
    payload.WithBool("ReadBackupOnly", m_readBackupOnly);
@@ -192,6 +238,24 @@ JsonValue MicrosoftSQLServerSettings::Jsonize() const
   if(m_useBcpFullLoadHasBeenSet)
   {
    payload.WithBool("UseBcpFullLoad", m_useBcpFullLoad);
+
+  }
+
+  if(m_useThirdPartyBackupDeviceHasBeenSet)
+  {
+   payload.WithBool("UseThirdPartyBackupDevice", m_useThirdPartyBackupDevice);
+
+  }
+
+  if(m_secretsManagerAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
 
   }
 

@@ -12,6 +12,7 @@
 #include <aws/robomaker/model/RenderingEngine.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/robomaker/model/Environment.h>
 #include <aws/robomaker/model/Source.h>
 #include <utility>
 
@@ -388,6 +389,80 @@ namespace Model
      */
     inline DescribeSimulationApplicationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the simulation
+     * application.</p>
+     */
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the simulation
+     * application.</p>
+     */
+    inline void SetEnvironment(const Environment& value) { m_environment = value; }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the simulation
+     * application.</p>
+     */
+    inline void SetEnvironment(Environment&& value) { m_environment = std::move(value); }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the simulation
+     * application.</p>
+     */
+    inline DescribeSimulationApplicationResult& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the simulation
+     * application.</p>
+     */
+    inline DescribeSimulationApplicationResult& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your simulation
+     * application.</p>
+     */
+    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your simulation
+     * application.</p>
+     */
+    inline void SetImageDigest(const Aws::String& value) { m_imageDigest = value; }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your simulation
+     * application.</p>
+     */
+    inline void SetImageDigest(Aws::String&& value) { m_imageDigest = std::move(value); }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your simulation
+     * application.</p>
+     */
+    inline void SetImageDigest(const char* value) { m_imageDigest.assign(value); }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your simulation
+     * application.</p>
+     */
+    inline DescribeSimulationApplicationResult& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your simulation
+     * application.</p>
+     */
+    inline DescribeSimulationApplicationResult& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your simulation
+     * application.</p>
+     */
+    inline DescribeSimulationApplicationResult& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -409,6 +484,10 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Environment m_environment;
+
+    Aws::String m_imageDigest;
   };
 
 } // namespace Model

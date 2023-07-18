@@ -316,58 +316,58 @@ namespace Model
 
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline const Aws::Vector<DocumentAttribute>& GetDocumentAttributes() const{ return m_documentAttributes; }
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline bool DocumentAttributesHasBeenSet() const { return m_documentAttributesHasBeenSet; }
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline void SetDocumentAttributes(const Aws::Vector<DocumentAttribute>& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes = value; }
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline void SetDocumentAttributes(Aws::Vector<DocumentAttribute>&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes = std::move(value); }
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& WithDocumentAttributes(const Aws::Vector<DocumentAttribute>& value) { SetDocumentAttributes(value); return *this;}
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& WithDocumentAttributes(Aws::Vector<DocumentAttribute>&& value) { SetDocumentAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& AddDocumentAttributes(const DocumentAttribute& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(value); return *this; }
 
     /**
-     * <p>An array of document attributes for the document that the query result maps
-     * to. For example, the document author (Author) or the source URI (SourceUri) of
-     * the document.</p>
+     * <p>An array of document attributes assigned to a document in the search results.
+     * For example, the document author (<code>_author</code>) or the source URI
+     * (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& AddDocumentAttributes(DocumentAttribute&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(std::move(value)); return *this; }
 

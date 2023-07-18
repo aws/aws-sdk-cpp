@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline UpdateDatasetRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline UpdateDatasetRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data set to update.</p>
+     * <p>The name of the dataset to update.</p>
      */
     inline UpdateDatasetRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
@@ -256,8 +256,8 @@ namespace Model
      * are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-     * Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics
-     * User Guide</i>.</p>
+     * Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
+     * Guide</i>.</p>
      */
     inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
 
@@ -267,8 +267,8 @@ namespace Model
      * are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-     * Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics
-     * User Guide</i>.</p>
+     * Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
+     * Guide</i>.</p>
      */
     inline bool VersioningConfigurationHasBeenSet() const { return m_versioningConfigurationHasBeenSet; }
 
@@ -278,8 +278,8 @@ namespace Model
      * are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-     * Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics
-     * User Guide</i>.</p>
+     * Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
+     * Guide</i>.</p>
      */
     inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = value; }
 
@@ -289,8 +289,8 @@ namespace Model
      * are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-     * Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics
-     * User Guide</i>.</p>
+     * Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
+     * Guide</i>.</p>
      */
     inline void SetVersioningConfiguration(VersioningConfiguration&& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = std::move(value); }
 
@@ -300,8 +300,8 @@ namespace Model
      * are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-     * Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics
-     * User Guide</i>.</p>
+     * Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
+     * Guide</i>.</p>
      */
     inline UpdateDatasetRequest& WithVersioningConfiguration(const VersioningConfiguration& value) { SetVersioningConfiguration(value); return *this;}
 
@@ -311,71 +311,71 @@ namespace Model
      * are different) are kept for the time period specified by the
      * <code>retentionPeriod</code> parameter. For more information, see <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
-     * Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics
-     * User Guide</i>.</p>
+     * Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
+     * Guide</i>.</p>
      */
     inline UpdateDatasetRequest& WithVersioningConfiguration(VersioningConfiguration&& value) { SetVersioningConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
     inline const Aws::Vector<LateDataRule>& GetLateDataRules() const{ return m_lateDataRules; }
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
     inline bool LateDataRulesHasBeenSet() const { return m_lateDataRulesHasBeenSet; }
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
     inline void SetLateDataRules(const Aws::Vector<LateDataRule>& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules = value; }
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
     inline void SetLateDataRules(Aws::Vector<LateDataRule>&& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules = std::move(value); }
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
     inline UpdateDatasetRequest& WithLateDataRules(const Aws::Vector<LateDataRule>& value) { SetLateDataRules(value); return *this;}
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
     inline UpdateDatasetRequest& WithLateDataRules(Aws::Vector<LateDataRule>&& value) { SetLateDataRules(std::move(value)); return *this;}
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
     inline UpdateDatasetRequest& AddLateDataRules(const LateDataRule& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules.push_back(value); return *this; }
 
     /**
-     * <p>A list of data rules that send notifications to Amazon CloudWatch, when data
-     * arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a
+     * <p>A list of data rules that send notifications to CloudWatch, when data arrives
+     * late. To specify <code>lateDataRules</code>, the dataset must use a <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */

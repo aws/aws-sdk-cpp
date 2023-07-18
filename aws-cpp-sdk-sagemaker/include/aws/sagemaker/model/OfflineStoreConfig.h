@@ -28,8 +28,8 @@ namespace Model
    * <p>The configuration of an <code>OfflineStore</code>.</p> <p>Provide an
    * <code>OfflineStoreConfig</code> in a request to <code>CreateFeatureGroup</code>
    * to create an <code>OfflineStore</code>.</p> <p>To encrypt an
-   * <code>OfflineStore</code> using at rest data encryption, specify AWS Key
-   * Management Service (KMS) key ID, or <code>KMSKeyId</code>, in
+   * <code>OfflineStore</code> using at rest data encryption, specify Amazon Web
+   * Services Key Management Service (KMS) key ID, or <code>KMSKeyId</code>, in
    * <code>S3StorageConfig</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OfflineStoreConfig">AWS
    * API Reference</a></p>
@@ -81,26 +81,26 @@ namespace Model
 
 
     /**
-     * <p>Set to <code>True</code> to disable the automatic creation of an AWS Glue
-     * table when configuring an <code>OfflineStore</code>.</p>
+     * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
+     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
      */
     inline bool GetDisableGlueTableCreation() const{ return m_disableGlueTableCreation; }
 
     /**
-     * <p>Set to <code>True</code> to disable the automatic creation of an AWS Glue
-     * table when configuring an <code>OfflineStore</code>.</p>
+     * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
+     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
      */
     inline bool DisableGlueTableCreationHasBeenSet() const { return m_disableGlueTableCreationHasBeenSet; }
 
     /**
-     * <p>Set to <code>True</code> to disable the automatic creation of an AWS Glue
-     * table when configuring an <code>OfflineStore</code>.</p>
+     * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
+     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
      */
     inline void SetDisableGlueTableCreation(bool value) { m_disableGlueTableCreationHasBeenSet = true; m_disableGlueTableCreation = value; }
 
     /**
-     * <p>Set to <code>True</code> to disable the automatic creation of an AWS Glue
-     * table when configuring an <code>OfflineStore</code>.</p>
+     * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
+     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
      */
     inline OfflineStoreConfig& WithDisableGlueTableCreation(bool value) { SetDisableGlueTableCreation(value); return *this;}
 

@@ -157,55 +157,55 @@ namespace Model
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline Event& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline Event& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline Event& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline Event& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
-     * Monitoring, Security</p>
+     * Monitoring, Security, Pending</p>
      */
     inline Event& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 

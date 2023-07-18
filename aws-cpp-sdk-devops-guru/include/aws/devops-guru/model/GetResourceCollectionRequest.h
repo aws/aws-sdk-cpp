@@ -40,38 +40,44 @@ namespace Model
 
 
     /**
-     * <p> The type of AWS resource collections to return. The one valid value is
-     * <code>CLOUD_FORMATION</code> for AWS CloudFormation stacks. </p>
+     * <p> The type of Amazon Web Services resource collections to return. The one
+     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline const ResourceCollectionType& GetResourceCollectionType() const{ return m_resourceCollectionType; }
 
     /**
-     * <p> The type of AWS resource collections to return. The one valid value is
-     * <code>CLOUD_FORMATION</code> for AWS CloudFormation stacks. </p>
+     * <p> The type of Amazon Web Services resource collections to return. The one
+     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline bool ResourceCollectionTypeHasBeenSet() const { return m_resourceCollectionTypeHasBeenSet; }
 
     /**
-     * <p> The type of AWS resource collections to return. The one valid value is
-     * <code>CLOUD_FORMATION</code> for AWS CloudFormation stacks. </p>
+     * <p> The type of Amazon Web Services resource collections to return. The one
+     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline void SetResourceCollectionType(const ResourceCollectionType& value) { m_resourceCollectionTypeHasBeenSet = true; m_resourceCollectionType = value; }
 
     /**
-     * <p> The type of AWS resource collections to return. The one valid value is
-     * <code>CLOUD_FORMATION</code> for AWS CloudFormation stacks. </p>
+     * <p> The type of Amazon Web Services resource collections to return. The one
+     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline void SetResourceCollectionType(ResourceCollectionType&& value) { m_resourceCollectionTypeHasBeenSet = true; m_resourceCollectionType = std::move(value); }
 
     /**
-     * <p> The type of AWS resource collections to return. The one valid value is
-     * <code>CLOUD_FORMATION</code> for AWS CloudFormation stacks. </p>
+     * <p> The type of Amazon Web Services resource collections to return. The one
+     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline GetResourceCollectionRequest& WithResourceCollectionType(const ResourceCollectionType& value) { SetResourceCollectionType(value); return *this;}
 
     /**
-     * <p> The type of AWS resource collections to return. The one valid value is
-     * <code>CLOUD_FORMATION</code> for AWS CloudFormation stacks. </p>
+     * <p> The type of Amazon Web Services resource collections to return. The one
+     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
+     * CloudFormation stacks. </p>
      */
     inline GetResourceCollectionRequest& WithResourceCollectionType(ResourceCollectionType&& value) { SetResourceCollectionType(std::move(value)); return *this;}
 

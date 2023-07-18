@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> The description of details of the event. </p><p><h3>See Also:</h3>   <a
+   * <p>The description of the details for the event. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ActionHistoryDetails">AWS
    * API Reference</a></p>
    */
@@ -64,32 +64,32 @@ namespace Model
 
 
     /**
-     * <p> The budget action resource. </p>
+     * <p>The budget action resource. </p>
      */
     inline const Action& GetAction() const{ return m_action; }
 
     /**
-     * <p> The budget action resource. </p>
+     * <p>The budget action resource. </p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p> The budget action resource. </p>
+     * <p>The budget action resource. </p>
      */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p> The budget action resource. </p>
+     * <p>The budget action resource. </p>
      */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p> The budget action resource. </p>
+     * <p>The budget action resource. </p>
      */
     inline ActionHistoryDetails& WithAction(const Action& value) { SetAction(value); return *this;}
 
     /**
-     * <p> The budget action resource. </p>
+     * <p>The budget action resource. </p>
      */
     inline ActionHistoryDetails& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 

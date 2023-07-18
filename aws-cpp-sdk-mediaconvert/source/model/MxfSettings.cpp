@@ -22,7 +22,8 @@ MxfSettings::MxfSettings() :
     m_afdSignaling(MxfAfdSignaling::NOT_SET),
     m_afdSignalingHasBeenSet(false),
     m_profile(MxfProfile::NOT_SET),
-    m_profileHasBeenSet(false)
+    m_profileHasBeenSet(false),
+    m_xavcProfileSettingsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ MxfSettings::MxfSettings(JsonView jsonValue) :
     m_afdSignaling(MxfAfdSignaling::NOT_SET),
     m_afdSignalingHasBeenSet(false),
     m_profile(MxfProfile::NOT_SET),
-    m_profileHasBeenSet(false)
+    m_profileHasBeenSet(false),
+    m_xavcProfileSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ MxfSettings& MxfSettings::operator =(JsonView jsonValue)
     m_profileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("xavcProfileSettings"))
+  {
+    m_xavcProfileSettings = jsonValue.GetObject("xavcProfileSettings");
+
+    m_xavcProfileSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +75,12 @@ JsonValue MxfSettings::Jsonize() const
   if(m_profileHasBeenSet)
   {
    payload.WithString("profile", MxfProfileMapper::GetNameForMxfProfile(m_profile));
+  }
+
+  if(m_xavcProfileSettingsHasBeenSet)
+  {
+   payload.WithObject("xavcProfileSettings", m_xavcProfileSettings.Jsonize());
+
   }
 
   return payload;

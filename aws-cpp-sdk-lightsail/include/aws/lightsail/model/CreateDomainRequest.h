@@ -41,7 +41,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -50,7 +50,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
@@ -59,7 +59,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
@@ -68,7 +68,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
@@ -77,7 +77,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
@@ -86,7 +86,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline CreateDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
@@ -95,7 +95,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
@@ -104,7 +104,7 @@ namespace Model
      * cannot register a new domain name using Lightsail. You must register a domain
      * name using Amazon Route 53 or another domain name registrar. If you have already
      * registered your domain, you can enter its name in this parameter to manage the
-     * DNS records for that domain.</p> 
+     * DNS records for that domain using Lightsail.</p> 
      */
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

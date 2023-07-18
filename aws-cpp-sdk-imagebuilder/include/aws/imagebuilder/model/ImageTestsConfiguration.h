@@ -22,7 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Image tests configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Configure image tests for your pipeline build. Tests run after building the
+   * image, to verify that the AMI or container image is valid before distributing
+   * it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageTestsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -36,22 +38,30 @@ namespace Model
 
 
     /**
-     * <p>Defines if tests should be executed when building this image.</p>
+     * <p>Determines if tests should run after building the image. Image Builder
+     * defaults to enable tests to run following the image build, before image
+     * distribution.</p>
      */
     inline bool GetImageTestsEnabled() const{ return m_imageTestsEnabled; }
 
     /**
-     * <p>Defines if tests should be executed when building this image.</p>
+     * <p>Determines if tests should run after building the image. Image Builder
+     * defaults to enable tests to run following the image build, before image
+     * distribution.</p>
      */
     inline bool ImageTestsEnabledHasBeenSet() const { return m_imageTestsEnabledHasBeenSet; }
 
     /**
-     * <p>Defines if tests should be executed when building this image.</p>
+     * <p>Determines if tests should run after building the image. Image Builder
+     * defaults to enable tests to run following the image build, before image
+     * distribution.</p>
      */
     inline void SetImageTestsEnabled(bool value) { m_imageTestsEnabledHasBeenSet = true; m_imageTestsEnabled = value; }
 
     /**
-     * <p>Defines if tests should be executed when building this image.</p>
+     * <p>Determines if tests should run after building the image. Image Builder
+     * defaults to enable tests to run following the image build, before image
+     * distribution.</p>
      */
     inline ImageTestsConfiguration& WithImageTestsEnabled(bool value) { SetImageTestsEnabled(value); return *this;}
 

@@ -21,24 +21,33 @@
 #include <aws/accessanalyzer/AccessAnalyzerEndpoint.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>
 #include <aws/accessanalyzer/model/ApplyArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/CancelPolicyGenerationRequest.h>
+#include <aws/accessanalyzer/model/CreateAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/CreateArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/DeleteAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/DeleteArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/GetAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/GetAnalyzedResourceRequest.h>
 #include <aws/accessanalyzer/model/GetAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/GetArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/GetFindingRequest.h>
+#include <aws/accessanalyzer/model/GetGeneratedPolicyRequest.h>
+#include <aws/accessanalyzer/model/ListAccessPreviewFindingsRequest.h>
+#include <aws/accessanalyzer/model/ListAccessPreviewsRequest.h>
 #include <aws/accessanalyzer/model/ListAnalyzedResourcesRequest.h>
 #include <aws/accessanalyzer/model/ListAnalyzersRequest.h>
 #include <aws/accessanalyzer/model/ListArchiveRulesRequest.h>
 #include <aws/accessanalyzer/model/ListFindingsRequest.h>
+#include <aws/accessanalyzer/model/ListPolicyGenerationsRequest.h>
 #include <aws/accessanalyzer/model/ListTagsForResourceRequest.h>
+#include <aws/accessanalyzer/model/StartPolicyGenerationRequest.h>
 #include <aws/accessanalyzer/model/StartResourceScanRequest.h>
 #include <aws/accessanalyzer/model/TagResourceRequest.h>
 #include <aws/accessanalyzer/model/UntagResourceRequest.h>
 #include <aws/accessanalyzer/model/UpdateArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/UpdateFindingsRequest.h>
+#include <aws/accessanalyzer/model/ValidatePolicyRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -87,7 +96,7 @@ AccessAnalyzerClient::~AccessAnalyzerClient()
 {
 }
 
-void AccessAnalyzerClient::init(const ClientConfiguration& config)
+void AccessAnalyzerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AccessAnalyzer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -116,9 +125,7 @@ void AccessAnalyzerClient::OverrideEndpoint(const Aws::String& endpoint)
 ApplyArchiveRuleOutcome AccessAnalyzerClient::ApplyArchiveRule(const ApplyArchiveRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/archive-rule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/archive-rule");
   return ApplyArchiveRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -140,12 +147,66 @@ void AccessAnalyzerClient::ApplyArchiveRuleAsyncHelper(const ApplyArchiveRuleReq
   handler(this, request, ApplyArchiveRule(request), context);
 }
 
+CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const CancelPolicyGenerationRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelPolicyGeneration", "Required field: JobId, is not set");
+    return CancelPolicyGenerationOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/policy/generation/");
+  uri.AddPathSegment(request.GetJobId());
+  return CancelPolicyGenerationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelPolicyGenerationOutcomeCallable AccessAnalyzerClient::CancelPolicyGenerationCallable(const CancelPolicyGenerationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelPolicyGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelPolicyGeneration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::CancelPolicyGenerationAsync(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelPolicyGenerationAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::CancelPolicyGenerationAsyncHelper(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelPolicyGeneration(request), context);
+}
+
+CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const CreateAccessPreviewRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/access-preview");
+  return CreateAccessPreviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAccessPreviewOutcomeCallable AccessAnalyzerClient::CreateAccessPreviewCallable(const CreateAccessPreviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccessPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessPreview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::CreateAccessPreviewAsync(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPreviewAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::CreateAccessPreviewAsyncHelper(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAccessPreview(request), context);
+}
+
 CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer");
   return CreateAnalyzerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -175,11 +236,9 @@ CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArc
     return CreateArchiveRuleOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer/";
-  ss << request.GetAnalyzerName();
-  ss << "/archive-rule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer/");
+  uri.AddPathSegment(request.GetAnalyzerName());
+  uri.AddPathSegments("/archive-rule");
   return CreateArchiveRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -209,10 +268,8 @@ DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerR
     return DeleteAnalyzerOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer/";
-  ss << request.GetAnalyzerName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer/");
+  uri.AddPathSegment(request.GetAnalyzerName());
   return DeleteAnalyzerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -247,12 +304,10 @@ DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArc
     return DeleteArchiveRuleOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer/";
-  ss << request.GetAnalyzerName();
-  ss << "/archive-rule/";
-  ss << request.GetRuleName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer/");
+  uri.AddPathSegment(request.GetAnalyzerName());
+  uri.AddPathSegments("/archive-rule/");
+  uri.AddPathSegment(request.GetRuleName());
   return DeleteArchiveRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -274,6 +329,42 @@ void AccessAnalyzerClient::DeleteArchiveRuleAsyncHelper(const DeleteArchiveRuleR
   handler(this, request, DeleteArchiveRule(request), context);
 }
 
+GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPreviewRequest& request) const
+{
+  if (!request.AccessPreviewIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPreview", "Required field: AccessPreviewId, is not set");
+    return GetAccessPreviewOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPreviewId]", false));
+  }
+  if (!request.AnalyzerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPreview", "Required field: AnalyzerArn, is not set");
+    return GetAccessPreviewOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/access-preview/");
+  uri.AddPathSegment(request.GetAccessPreviewId());
+  return GetAccessPreviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAccessPreviewOutcomeCallable AccessAnalyzerClient::GetAccessPreviewCallable(const GetAccessPreviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPreview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::GetAccessPreviewAsync(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPreviewAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::GetAccessPreviewAsyncHelper(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessPreview(request), context);
+}
+
 GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAnalyzedResourceRequest& request) const
 {
   if (!request.AnalyzerArnHasBeenSet())
@@ -287,9 +378,7 @@ GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAn
     return GetAnalyzedResourceOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzed-resource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzed-resource");
   return GetAnalyzedResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -319,10 +408,8 @@ GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& r
     return GetAnalyzerOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer/";
-  ss << request.GetAnalyzerName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer/");
+  uri.AddPathSegment(request.GetAnalyzerName());
   return GetAnalyzerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -357,12 +444,10 @@ GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleR
     return GetArchiveRuleOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer/";
-  ss << request.GetAnalyzerName();
-  ss << "/archive-rule/";
-  ss << request.GetRuleName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer/");
+  uri.AddPathSegment(request.GetAnalyzerName());
+  uri.AddPathSegments("/archive-rule/");
+  uri.AddPathSegment(request.GetRuleName());
   return GetArchiveRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -397,10 +482,8 @@ GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& requ
     return GetFindingOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/finding/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/finding/");
+  uri.AddPathSegment(request.GetId());
   return GetFindingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -422,12 +505,102 @@ void AccessAnalyzerClient::GetFindingAsyncHelper(const GetFindingRequest& reques
   handler(this, request, GetFinding(request), context);
 }
 
+GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGeneratedPolicyRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGeneratedPolicy", "Required field: JobId, is not set");
+    return GetGeneratedPolicyOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/policy/generation/");
+  uri.AddPathSegment(request.GetJobId());
+  return GetGeneratedPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetGeneratedPolicyOutcomeCallable AccessAnalyzerClient::GetGeneratedPolicyCallable(const GetGeneratedPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGeneratedPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGeneratedPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::GetGeneratedPolicyAsync(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGeneratedPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::GetGeneratedPolicyAsyncHelper(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGeneratedPolicy(request), context);
+}
+
+ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const
+{
+  if (!request.AccessPreviewIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAccessPreviewFindings", "Required field: AccessPreviewId, is not set");
+    return ListAccessPreviewFindingsOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPreviewId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/access-preview/");
+  uri.AddPathSegment(request.GetAccessPreviewId());
+  return ListAccessPreviewFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAccessPreviewFindingsOutcomeCallable AccessAnalyzerClient::ListAccessPreviewFindingsCallable(const ListAccessPreviewFindingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessPreviewFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPreviewFindings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ListAccessPreviewFindingsAsync(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPreviewFindingsAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ListAccessPreviewFindingsAsyncHelper(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccessPreviewFindings(request), context);
+}
+
+ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAccessPreviewsRequest& request) const
+{
+  if (!request.AnalyzerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAccessPreviews", "Required field: AnalyzerArn, is not set");
+    return ListAccessPreviewsOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/access-preview");
+  return ListAccessPreviewsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAccessPreviewsOutcomeCallable AccessAnalyzerClient::ListAccessPreviewsCallable(const ListAccessPreviewsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessPreviewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPreviews(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ListAccessPreviewsAsync(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPreviewsAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ListAccessPreviewsAsyncHelper(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccessPreviews(request), context);
+}
+
 ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const ListAnalyzedResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzed-resource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzed-resource");
   return ListAnalyzedResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -452,9 +625,7 @@ void AccessAnalyzerClient::ListAnalyzedResourcesAsyncHelper(const ListAnalyzedRe
 ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer");
   return ListAnalyzersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -484,11 +655,9 @@ ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchive
     return ListArchiveRulesOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer/";
-  ss << request.GetAnalyzerName();
-  ss << "/archive-rule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer/");
+  uri.AddPathSegment(request.GetAnalyzerName());
+  uri.AddPathSegments("/archive-rule");
   return ListArchiveRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -513,9 +682,7 @@ void AccessAnalyzerClient::ListArchiveRulesAsyncHelper(const ListArchiveRulesReq
 ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/finding";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/finding");
   return ListFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -537,6 +704,31 @@ void AccessAnalyzerClient::ListFindingsAsyncHelper(const ListFindingsRequest& re
   handler(this, request, ListFindings(request), context);
 }
 
+ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const ListPolicyGenerationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/policy/generation");
+  return ListPolicyGenerationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPolicyGenerationsOutcomeCallable AccessAnalyzerClient::ListPolicyGenerationsCallable(const ListPolicyGenerationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPolicyGenerationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPolicyGenerations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ListPolicyGenerationsAsync(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPolicyGenerationsAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ListPolicyGenerationsAsyncHelper(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPolicyGenerations(request), context);
+}
+
 ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -545,10 +737,8 @@ ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListT
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -570,12 +760,35 @@ void AccessAnalyzerClient::ListTagsForResourceAsyncHelper(const ListTagsForResou
   handler(this, request, ListTagsForResource(request), context);
 }
 
+StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const StartPolicyGenerationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/policy/generation");
+  return StartPolicyGenerationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartPolicyGenerationOutcomeCallable AccessAnalyzerClient::StartPolicyGenerationCallable(const StartPolicyGenerationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartPolicyGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartPolicyGeneration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::StartPolicyGenerationAsync(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartPolicyGenerationAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::StartPolicyGenerationAsyncHelper(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartPolicyGeneration(request), context);
+}
+
 StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartResourceScanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resource/scan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resource/scan");
   return StartResourceScanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -605,10 +818,8 @@ TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& r
     return TagResourceOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -643,10 +854,8 @@ UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequ
     return UntagResourceOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -681,12 +890,10 @@ UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArc
     return UpdateArchiveRuleOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/analyzer/";
-  ss << request.GetAnalyzerName();
-  ss << "/archive-rule/";
-  ss << request.GetRuleName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/analyzer/");
+  uri.AddPathSegment(request.GetAnalyzerName());
+  uri.AddPathSegments("/archive-rule/");
+  uri.AddPathSegment(request.GetRuleName());
   return UpdateArchiveRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -711,9 +918,7 @@ void AccessAnalyzerClient::UpdateArchiveRuleAsyncHelper(const UpdateArchiveRuleR
 UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/finding";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/finding");
   return UpdateFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -733,5 +938,30 @@ void AccessAnalyzerClient::UpdateFindingsAsync(const UpdateFindingsRequest& requ
 void AccessAnalyzerClient::UpdateFindingsAsyncHelper(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFindings(request), context);
+}
+
+ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/policy/validation");
+  return ValidatePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ValidatePolicyOutcomeCallable AccessAnalyzerClient::ValidatePolicyCallable(const ValidatePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ValidatePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidatePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ValidatePolicyAsync(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ValidatePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ValidatePolicyAsyncHelper(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ValidatePolicy(request), context);
 }
 

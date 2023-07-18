@@ -37,9 +37,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with
@@ -50,9 +50,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with
@@ -63,9 +63,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with
@@ -76,9 +76,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with
@@ -89,9 +89,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with
@@ -102,9 +102,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with
@@ -115,9 +115,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with
@@ -128,9 +128,9 @@ namespace Model
 
     /**
      * <p>The ID of the resource to remove a tag from.</p> <p>You can specify any of
-     * the following taggable resources.</p> <ul> <li> <p>AWS account – specify the
-     * account ID number.</p> </li> <li> <p>Organizational unit – specify the OU ID
-     * that begins with <code>ou-</code> and looks similar to:
+     * the following taggable resources.</p> <ul> <li> <p>Amazon Web Services account –
+     * specify the account ID number.</p> </li> <li> <p>Organizational unit – specify
+     * the OU ID that begins with <code>ou-</code> and looks similar to:
      * <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li> <li> <p>Root – specify the root
      * ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i>
      * </code> </p> </li> <li> <p>Policy – specify the policy ID that begins with

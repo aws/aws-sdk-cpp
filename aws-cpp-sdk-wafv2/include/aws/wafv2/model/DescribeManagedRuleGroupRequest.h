@@ -134,70 +134,133 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline DescribeManagedRuleGroupRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline DescribeManagedRuleGroupRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline DescribeManagedRuleGroupRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline DescribeManagedRuleGroupRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline DescribeManagedRuleGroupRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 
   private:
 
@@ -209,6 +272,9 @@ namespace Model
 
     Scope m_scope;
     bool m_scopeHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
   };
 
 } // namespace Model

@@ -62,42 +62,42 @@ namespace Model
 
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline ClusterPendingModifiedValues& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline ClusterPendingModifiedValues& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The DBClusterIdentifier for the DB cluster.</p>
+     * <p>The DBClusterIdentifier value for the DB cluster.</p>
      */
     inline ClusterPendingModifiedValues& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -144,26 +144,26 @@ namespace Model
 
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>A value that indicates whether mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>A value that indicates whether mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>A value that indicates whether mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>A value that indicates whether mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline ClusterPendingModifiedValues& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

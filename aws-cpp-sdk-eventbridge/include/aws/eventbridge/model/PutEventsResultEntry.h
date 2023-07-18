@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents an event that failed to be submitted.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents an event that failed to be submitted. For information about the
+   * errors that are common to all actions, see <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">Common
+   * Errors</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEventsResultEntry">AWS
    * API Reference</a></p>
    */

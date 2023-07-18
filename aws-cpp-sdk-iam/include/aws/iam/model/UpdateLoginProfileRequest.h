@@ -120,7 +120,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
@@ -136,7 +136,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
@@ -152,7 +152,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
@@ -168,7 +168,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
@@ -184,7 +184,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
@@ -200,7 +200,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline UpdateLoginProfileRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
@@ -216,7 +216,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline UpdateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
@@ -232,7 +232,7 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the AWS account. For more information, see
+     * on the Amazon Web Services account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline UpdateLoginProfileRequest& WithPassword(const char* value) { SetPassword(value); return *this;}

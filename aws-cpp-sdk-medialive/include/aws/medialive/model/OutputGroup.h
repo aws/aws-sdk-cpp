@@ -42,50 +42,42 @@ namespace Model
 
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline OutputGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline OutputGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * Custom output group name optionally defined by the user.  Only letters, numbers,
-     * and the underscore character allowed; only 32 characters allowed.
+     * Custom output group name optionally defined by the user.
      */
     inline OutputGroup& WithName(const char* value) { SetName(value); return *this;}
 

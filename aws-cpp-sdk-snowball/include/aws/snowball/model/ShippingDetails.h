@@ -49,7 +49,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul>
      */
@@ -65,7 +65,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul>
      */
@@ -81,7 +81,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul>
      */
@@ -97,7 +97,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul>
      */
@@ -113,7 +113,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul>
      */
@@ -129,7 +129,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul>
      */
@@ -138,37 +138,37 @@ namespace Model
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow
-     * device being returned to AWS for a particular job.</p>
+     * device being returned to Amazon Web Services for a particular job.</p>
      */
     inline const Shipment& GetInboundShipment() const{ return m_inboundShipment; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow
-     * device being returned to AWS for a particular job.</p>
+     * device being returned to Amazon Web Services for a particular job.</p>
      */
     inline bool InboundShipmentHasBeenSet() const { return m_inboundShipmentHasBeenSet; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow
-     * device being returned to AWS for a particular job.</p>
+     * device being returned to Amazon Web Services for a particular job.</p>
      */
     inline void SetInboundShipment(const Shipment& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = value; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow
-     * device being returned to AWS for a particular job.</p>
+     * device being returned to Amazon Web Services for a particular job.</p>
      */
     inline void SetInboundShipment(Shipment&& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = std::move(value); }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow
-     * device being returned to AWS for a particular job.</p>
+     * device being returned to Amazon Web Services for a particular job.</p>
      */
     inline ShippingDetails& WithInboundShipment(const Shipment& value) { SetInboundShipment(value); return *this;}
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow
-     * device being returned to AWS for a particular job.</p>
+     * device being returned to Amazon Web Services for a particular job.</p>
      */
     inline ShippingDetails& WithInboundShipment(Shipment&& value) { SetInboundShipment(std::move(value)); return *this;}
 

@@ -40,6 +40,8 @@ LightsailDistribution::LightsailDistribution() :
     m_cacheBehaviorsHasBeenSet(false),
     m_ableToUpdateBundle(false),
     m_ableToUpdateBundleHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -66,6 +68,8 @@ LightsailDistribution::LightsailDistribution(JsonView jsonValue) :
     m_cacheBehaviorsHasBeenSet(false),
     m_ableToUpdateBundle(false),
     m_ableToUpdateBundleHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -205,6 +209,13 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
     m_ableToUpdateBundleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+
+    m_ipAddressTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -336,6 +347,11 @@ JsonValue LightsailDistribution::Jsonize() const
   {
    payload.WithBool("ableToUpdateBundle", m_ableToUpdateBundle);
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   if(m_tagsHasBeenSet)

@@ -40,66 +40,66 @@ namespace Model
 
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline const Aws::String& GetAttributePath() const{ return m_attributePath; }
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline bool AttributePathHasBeenSet() const { return m_attributePathHasBeenSet; }
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline void SetAttributePath(const Aws::String& value) { m_attributePathHasBeenSet = true; m_attributePath = value; }
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline void SetAttributePath(Aws::String&& value) { m_attributePathHasBeenSet = true; m_attributePath = std::move(value); }
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline void SetAttributePath(const char* value) { m_attributePathHasBeenSet = true; m_attributePath.assign(value); }
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline Filter& WithAttributePath(const Aws::String& value) { SetAttributePath(value); return *this;}
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline Filter& WithAttributePath(Aws::String&& value) { SetAttributePath(std::move(value)); return *this;}
 
     /**
-     * <p>The attribute path used to specify which attribute name to search. Length
-     * limit is 255 characters. For example, <code>UserName</code> is a valid attribute
-     * path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid
-     * attribute path for the <code>ListGroups</code> API.</p>
+     * <p>The attribute path that is used to specify which attribute name to search.
+     * Length limit is 255 characters. For example, <code>UserName</code> is a valid
+     * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
+     * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
     inline Filter& WithAttributePath(const char* value) { SetAttributePath(value); return *this;}
 

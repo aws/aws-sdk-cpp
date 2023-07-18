@@ -10,6 +10,7 @@
 #include <aws/iotsitewise/model/ImageFile.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iotsitewise/model/AuthMode.h>
+#include <aws/iotsitewise/model/Alarms.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -119,42 +120,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline const Aws::String& GetPortalContactEmail() const{ return m_portalContactEmail; }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline bool PortalContactEmailHasBeenSet() const { return m_portalContactEmailHasBeenSet; }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline void SetPortalContactEmail(const Aws::String& value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail = value; }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline void SetPortalContactEmail(Aws::String&& value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail = std::move(value); }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline void SetPortalContactEmail(const char* value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail.assign(value); }
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline CreatePortalRequest& WithPortalContactEmail(const Aws::String& value) { SetPortalContactEmail(value); return *this;}
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline CreatePortalRequest& WithPortalContactEmail(Aws::String&& value) { SetPortalContactEmail(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS administrator's contact email address.</p>
+     * <p>The Amazon Web Services administrator's contact email address.</p>
      */
     inline CreatePortalRequest& WithPortalContactEmail(const char* value) { SetPortalContactEmail(value); return *this;}
 
@@ -256,10 +257,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
@@ -267,10 +268,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -278,10 +279,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
@@ -289,10 +290,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
@@ -300,10 +301,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
@@ -311,10 +312,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline CreatePortalRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
@@ -322,10 +323,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline CreatePortalRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
@@ -333,10 +334,10 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of a service role that allows the portal's users to access your AWS IoT SiteWise
+     * of a service role that allows the portal's users to access your IoT SiteWise
      * resources on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using
-     * service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User
+     * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline CreatePortalRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -346,8 +347,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -355,8 +355,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -364,8 +363,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -373,8 +371,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -382,8 +379,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -391,8 +387,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -400,8 +395,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -409,8 +403,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -418,8 +411,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -427,8 +419,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -436,8 +427,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -445,8 +435,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -454,107 +443,248 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreatePortalRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
-     * Single Sign-On to authenticate users and manage user permissions. Before you can
-     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
-     * information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
+     * Web Services Single Sign On to authenticate users and manage user permissions.
+     * Before you can create a portal that uses Amazon Web Services SSO, you must
+     * enable Amazon Web Services SSO. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
-     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
-     * authenticate users and manage user permissions. This option is only available in
-     * the China Regions.</p> </li> </ul> <p>You can't change this value after you
-     * create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
+     * is only available in Amazon Web Services Regions other than the China
+     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline const AuthMode& GetPortalAuthMode() const{ return m_portalAuthMode; }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
-     * Single Sign-On to authenticate users and manage user permissions. Before you can
-     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
-     * information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
+     * Web Services Single Sign On to authenticate users and manage user permissions.
+     * Before you can create a portal that uses Amazon Web Services SSO, you must
+     * enable Amazon Web Services SSO. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
-     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
-     * authenticate users and manage user permissions. This option is only available in
-     * the China Regions.</p> </li> </ul> <p>You can't change this value after you
-     * create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
+     * is only available in Amazon Web Services Regions other than the China
+     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline bool PortalAuthModeHasBeenSet() const { return m_portalAuthModeHasBeenSet; }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
-     * Single Sign-On to authenticate users and manage user permissions. Before you can
-     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
-     * information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
+     * Web Services Single Sign On to authenticate users and manage user permissions.
+     * Before you can create a portal that uses Amazon Web Services SSO, you must
+     * enable Amazon Web Services SSO. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
-     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
-     * authenticate users and manage user permissions. This option is only available in
-     * the China Regions.</p> </li> </ul> <p>You can't change this value after you
-     * create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
+     * is only available in Amazon Web Services Regions other than the China
+     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline void SetPortalAuthMode(const AuthMode& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = value; }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
-     * Single Sign-On to authenticate users and manage user permissions. Before you can
-     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
-     * information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
+     * Web Services Single Sign On to authenticate users and manage user permissions.
+     * Before you can create a portal that uses Amazon Web Services SSO, you must
+     * enable Amazon Web Services SSO. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
-     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
-     * authenticate users and manage user permissions. This option is only available in
-     * the China Regions.</p> </li> </ul> <p>You can't change this value after you
-     * create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
+     * is only available in Amazon Web Services Regions other than the China
+     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline void SetPortalAuthMode(AuthMode&& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = std::move(value); }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
-     * Single Sign-On to authenticate users and manage user permissions. Before you can
-     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
-     * information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
+     * Web Services Single Sign On to authenticate users and manage user permissions.
+     * Before you can create a portal that uses Amazon Web Services SSO, you must
+     * enable Amazon Web Services SSO. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
-     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
-     * authenticate users and manage user permissions. This option is only available in
-     * the China Regions.</p> </li> </ul> <p>You can't change this value after you
-     * create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
+     * is only available in Amazon Web Services Regions other than the China
+     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline CreatePortalRequest& WithPortalAuthMode(const AuthMode& value) { SetPortalAuthMode(value); return *this;}
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses AWS
-     * Single Sign-On to authenticate users and manage user permissions. Before you can
-     * create a portal that uses AWS SSO, you must enable AWS SSO. For more
-     * information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
+     * Web Services Single Sign On to authenticate users and manage user permissions.
+     * Before you can create a portal that uses Amazon Web Services SSO, you must
+     * enable Amazon Web Services SSO. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only
-     * available in AWS Regions other than the China Regions.</p> </li> <li> <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to
-     * authenticate users and manage user permissions. This option is only available in
-     * the China Regions.</p> </li> </ul> <p>You can't change this value after you
-     * create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
+     * is only available in Amazon Web Services Regions other than the China
+     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline CreatePortalRequest& WithPortalAuthMode(AuthMode&& value) { SetPortalAuthMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline const Aws::String& GetNotificationSenderEmail() const{ return m_notificationSenderEmail; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline bool NotificationSenderEmailHasBeenSet() const { return m_notificationSenderEmailHasBeenSet; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline void SetNotificationSenderEmail(const Aws::String& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = value; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline void SetNotificationSenderEmail(Aws::String&& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = std::move(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline void SetNotificationSenderEmail(const char* value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail.assign(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline CreatePortalRequest& WithNotificationSenderEmail(const Aws::String& value) { SetNotificationSenderEmail(value); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline CreatePortalRequest& WithNotificationSenderEmail(Aws::String&& value) { SetNotificationSenderEmail(std::move(value)); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline CreatePortalRequest& WithNotificationSenderEmail(const char* value) { SetNotificationSenderEmail(value); return *this;}
+
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline const Alarms& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline void SetAlarms(const Alarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline void SetAlarms(Alarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline CreatePortalRequest& WithAlarms(const Alarms& value) { SetAlarms(value); return *this;}
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an IoT SiteWise
+     * Monitor portal. You can use the alarm to monitor an asset property and get
+     * notified when the asset property value is outside a specified range. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+     * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+     */
+    inline CreatePortalRequest& WithAlarms(Alarms&& value) { SetAlarms(std::move(value)); return *this;}
 
   private:
 
@@ -581,6 +711,12 @@ namespace Model
 
     AuthMode m_portalAuthMode;
     bool m_portalAuthModeHasBeenSet;
+
+    Aws::String m_notificationSenderEmail;
+    bool m_notificationSenderEmailHasBeenSet;
+
+    Alarms m_alarms;
+    bool m_alarmsHasBeenSet;
   };
 
 } // namespace Model
